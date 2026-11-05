@@ -611,7 +611,30 @@ impl crate::hkpAction {
     pub fn field_C4_ptr(&self) -> *mut u32 { Self::__member_field_C4(core::ptr::from_ref(self)) }
 }
 
+impl crate::hkpAllCdPointCollector {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_228(this: *const Self) -> *mut u8 { unsafe { member!(this, "hkpAllCdPointCollector.field_228", 0x228, u8) } }
+    /// `hkpAllCdPointCollector::field_228`, at +0x228 on 1.7.104.
+    #[inline]
+    pub fn field_228(&self) -> u8 { unsafe { Self::__member_field_228(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_228(&mut self, value: u8) { unsafe { Self::__member_field_228(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_228_ptr(&self) -> *mut u8 { Self::__member_field_228(core::ptr::from_ref(self)) }
+}
+
 impl crate::hkpAllRayHitTempCollector {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut u64 { unsafe { member!(this, "hkpAllRayHitTempCollector.field_10", 0x10, u64) } }
+    /// `hkpAllRayHitTempCollector::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> u64 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: u64) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut u64 { Self::__member_field_10(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_100(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkpAllRayHitTempCollector.field_100", 0x100, u32) } }

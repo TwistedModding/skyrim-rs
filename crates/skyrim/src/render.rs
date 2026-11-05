@@ -516,6 +516,7 @@ pub fn from_euler_zxy(z: f32, x: f32, y: f32) -> Matrix3 {
 }
 
 impl From<&NiTransform> for Transform {
+    #[allow(clippy::cast_ptr_alignment)]
     fn from(t: &NiTransform) -> Self {
         unsafe { core::ptr::from_ref(t).cast::<Self>().read_volatile() }
     }
@@ -607,18 +608,20 @@ impl NiAVObjectExt for NiAVObject {
         Transform::from(&self.local)
     }
 
+    #[allow(clippy::cast_ptr_alignment)]
     fn set_local_transform(&self, local: Transform) {
         unsafe { core::ptr::from_ref(&self.local).cast::<Transform>().cast_mut().write_volatile(local) }
     }
 
     fn set_local_scale(&self, scale: f32) {
-        crate::store(&self.local.scale, scale);
+        unsafe { self.local.scale_ptr().write_volatile(scale) };
     }
 
     fn world_transform(&self) -> Transform {
         Transform::from(&self.world)
     }
 
+    #[allow(clippy::cast_ptr_alignment)]
     fn set_previous_world(&self, world: Transform) {
         unsafe { core::ptr::from_ref(&self.previousWorld).cast::<Transform>().cast_mut().write_volatile(world) }
     }
@@ -701,14 +704,14 @@ pub trait NiSkinInstanceExt {
 
 impl NiSkinInstanceExt for NiSkinInstance {
     fn bones(&self) -> &[Option<&NiAVObject>] {
-        let count = unsafe { self.skinData.as_ref() }.map_or(0, |d| d.boneCount);
+        let count = unsafe { self.skinData.as_ref() }.map_or(0, sre::NiSkinData::boneCount);
         if self.boneNodes.is_null() { &[] } else { unsafe { ptr_slice(self.boneNodes, count) } }
     }
 
     fn rewind_palette(&self, frame: u32) -> bool {
         use windows_sys::Win32::System::Threading::{CRITICAL_SECTION, EnterCriticalSection, LeaveCriticalSection};
         const { assert!(size_of::<CRITICAL_SECTION>() == 40) };
-        let lock = (&raw const self.paletteLock).cast::<CRITICAL_SECTION>().cast_mut();
+        let lock = self.paletteLock_ptr().cast::<CRITICAL_SECTION>();
         unsafe { EnterCriticalSection(lock) };
         let built = unsafe { (&raw const self.paletteFrame).read_volatile() } == frame;
         if built {
@@ -741,17 +744,18 @@ impl BSFlattenedBoneTreeExt for BSFlattenedBoneTree {
         unsafe { core::slice::from_raw_parts(self.bones.cast::<FlatBone>(), self.boneCount as usize) }
     }
 
+    #[allow(clippy::cast_ptr_alignment)]
     fn rechain_bones(&self) {
         let bones = BSFlattenedBoneTreeExt::bones(self);
         for bone in bones {
             let world = bone.node().map_or_else(
                 || {
-                    let parent = usize::try_from(bone.parentIndex.cast_signed()).ok().and_then(|i| bones.get(i)).map_or(&self.world, |p| &p.world);
-                    Transform::from(parent).compose(&Transform::from(&bone.local))
+                    let parent = usize::try_from(bone.parentIndex().cast_signed()).ok().and_then(|i| bones.get(i)).map_or(&self.world, |p| p.world());
+                    Transform::from(parent).compose(&Transform::from(bone.local()))
                 },
                 |node| node.world_transform(),
             );
-            unsafe { (&raw const bone.world).cast::<Transform>().cast_mut().write_volatile(world) }
+            unsafe { (bone.world_ptr().cast_const()).cast::<Transform>().cast_mut().write_volatile(world) }
         }
     }
 }
@@ -955,14 +959,14 @@ pub trait NiPointLightExt {
 
 impl NiPointLightExt for NiPointLight {
     fn values(&self) -> LightValues {
-        LightValues { color: [self.diffuse.r, self.diffuse.g, self.diffuse.b], fade: self.fade, radius: self.radius.x }
+        LightValues { color: [self.diffuse.r(), self.diffuse.g(), self.diffuse.b()], fade: self.fade, radius: self.radius.x }
     }
 
     #[allow(clippy::cast_possible_truncation, clippy::cast_sign_loss)]
     fn set_values(&self, values: LightValues) {
         let [r, g, b] = values.color;
-        for (field, value) in [(&self.diffuse.r, r), (&self.diffuse.g, g), (&self.diffuse.b, b), (&self.radius.x, values.radius), (&self.radius.y, values.radius), (&self.radius.z, values.radius), (&self.fade, values.fade)] {
-            crate::store(field, value);
+        for (field, value) in [(self.diffuse.r_ptr(), r), (self.diffuse.g_ptr(), g), (self.diffuse.b_ptr(), b), (core::ptr::from_ref(&self.radius.x).cast_mut(), values.radius), (core::ptr::from_ref(&self.radius.y).cast_mut(), values.radius), (core::ptr::from_ref(&self.radius.z).cast_mut(), values.radius), (core::ptr::from_ref(&self.fade).cast_mut(), values.fade)] {
+            unsafe { field.write_volatile(value) };
         }
         sre::apply_light_attenuation_settings(self, values.radius.max(0.0) as u32);
     }

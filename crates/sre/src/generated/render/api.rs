@@ -164,6 +164,26 @@ impl crate::BSCullingProcess {
     pub fn acceptFlag12Nodes_ptr(&self) -> *mut u8 { Self::__member_acceptFlag12Nodes(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_appendTag(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSCullingProcess.appendTag", 0x301F4, u32) } }
+    /// `BSCullingProcess::appendTag`, at +0x301F4 on 1.7.104.
+    #[inline]
+    pub fn appendTag(&self) -> u32 { unsafe { Self::__member_appendTag(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_appendTag(&mut self, value: u32) { unsafe { Self::__member_appendTag(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn appendTag_ptr(&self) -> *mut u32 { Self::__member_appendTag(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_cullMode(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSCullingProcess.cullMode", 0x30198, u32) } }
+    /// `BSCullingProcess::cullMode`, at +0x30198 on 1.7.104.
+    #[inline]
+    pub fn cullMode(&self) -> u32 { unsafe { Self::__member_cullMode(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_cullMode(&mut self, value: u32) { unsafe { Self::__member_cullMode(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn cullMode_ptr(&self) -> *mut u32 { Self::__member_cullMode(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_customPlanes(this: *const Self) -> *mut [u8; 112] { unsafe { member!(this, "BSCullingProcess.customPlanes", 0xAC, [u8; 112]) } }
     /// `BSCullingProcess::customPlanes`, at +0xAC on 1.7.104.
     #[inline]
@@ -340,6 +360,14 @@ impl crate::BSCullingProcess {
     pub fn set_useCustomPlanes(&mut self, value: u8) { unsafe { Self::__member_useCustomPlanes(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn useCustomPlanes_ptr(&self) -> *mut u8 { Self::__member_useCustomPlanes(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_visibleGeometry(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "BSCullingProcess.visibleGeometry", 0x128, crate::BSTArray) } }
+    /// `BSCullingProcess::visibleGeometry`, at +0x128 on 1.7.104.
+    #[inline]
+    pub fn visibleGeometry(&self) -> &crate::BSTArray { unsafe { &*Self::__member_visibleGeometry(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn visibleGeometry_ptr(&self) -> *mut crate::BSTArray { Self::__member_visibleGeometry(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSGeometry {
@@ -357,6 +385,44 @@ impl crate::BSGeometry {
     /// Semantic field, render pass, high; `None` while the pointer is null.
     #[inline]
     pub fn skin_instance(&self) -> Option<&crate::NiSkinInstance> { unsafe { { self.skinInstance }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_extraDataCapacity(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSGeometry.extraDataCapacity", 0x2A, u16) } }
+    /// `BSGeometry::extraDataCapacity`, at +0x2A on 1.7.104.
+    #[inline]
+    pub fn extraDataCapacity(&self) -> u16 { unsafe { Self::__member_extraDataCapacity(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_extraDataCapacity(&mut self, value: u16) { unsafe { Self::__member_extraDataCapacity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn extraDataCapacity_ptr(&self) -> *mut u16 { Self::__member_extraDataCapacity(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_flags2(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSGeometry.flags2", 0x109, u8) } }
+    /// `BSGeometry::flags2`, at +0x109 on 1.7.104.
+    #[inline]
+    pub fn flags2(&self) -> u8 { unsafe { Self::__member_flags2(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_flags2(&mut self, value: u8) { unsafe { Self::__member_flags2(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn flags2_ptr(&self) -> *mut u8 { Self::__member_flags2(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_local(this: *const Self) -> *mut crate::NiTransform { unsafe { member!(this, "BSGeometry.local", 0x48, crate::NiTransform) } }
+    /// `BSGeometry::local`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn local(&self) -> &crate::NiTransform { unsafe { &*Self::__member_local(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn local_ptr(&self) -> *mut crate::NiTransform { Self::__member_local(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_previousWorldFrame(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSGeometry.previousWorldFrame", 0x104, u32) } }
+    /// `BSGeometry::previousWorldFrame`, at +0x104 on 1.7.104.
+    #[inline]
+    pub fn previousWorldFrame(&self) -> u32 { unsafe { Self::__member_previousWorldFrame(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_previousWorldFrame(&mut self, value: u32) { unsafe { Self::__member_previousWorldFrame(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn previousWorldFrame_ptr(&self) -> *mut u32 { Self::__member_previousWorldFrame(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSLight {
@@ -396,6 +462,16 @@ impl crate::BSLight {
     pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSLight.field_20", 0x20, u64) } }
+    /// `BSLight::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_28(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSLight.field_28", 0x28, u32) } }
@@ -514,6 +590,16 @@ impl crate::BSLightingShaderProperty {
     pub fn set_depthPassLists(&mut self, value: [u8; 48]) { unsafe { Self::__member_depthPassLists(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn depthPassLists_ptr(&self) -> *mut [u8; 48] { Self::__member_depthPassLists(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_extraDataCapacity(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSLightingShaderProperty.extraDataCapacity", 0x2A, u16) } }
+    /// `BSLightingShaderProperty::extraDataCapacity`, at +0x2A on 1.7.104.
+    #[inline]
+    pub fn extraDataCapacity(&self) -> u16 { unsafe { Self::__member_extraDataCapacity(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_extraDataCapacity(&mut self, value: u16) { unsafe { Self::__member_extraDataCapacity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn extraDataCapacity_ptr(&self) -> *mut u16 { Self::__member_extraDataCapacity(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_lightDataStorage(this: *const Self) -> *mut [u8; 36] { unsafe { member!(this, "BSLightingShaderProperty.lightDataStorage", 0x138, [u8; 36]) } }
@@ -735,6 +821,26 @@ impl crate::BSShaderAccumulator {
     pub fn acceptAlphaDecalsInDepth_ptr(&self) -> *mut u8 { Self::__member_acceptAlphaDecalsInDepth(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_currentBucket(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSShaderAccumulator.currentBucket", 0x13C, u32) } }
+    /// `BSShaderAccumulator::currentBucket`, at +0x13C on 1.7.104.
+    #[inline]
+    pub fn currentBucket(&self) -> u32 { unsafe { Self::__member_currentBucket(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_currentBucket(&mut self, value: u32) { unsafe { Self::__member_currentBucket(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn currentBucket_ptr(&self) -> *mut u32 { Self::__member_currentBucket(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_currentTechnique(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSShaderAccumulator.currentTechnique", 0x138, u32) } }
+    /// `BSShaderAccumulator::currentTechnique`, at +0x138 on 1.7.104.
+    #[inline]
+    pub fn currentTechnique(&self) -> u32 { unsafe { Self::__member_currentTechnique(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_currentTechnique(&mut self, value: u32) { unsafe { Self::__member_currentTechnique(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn currentTechnique_ptr(&self) -> *mut u32 { Self::__member_currentTechnique(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_field_129(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSShaderAccumulator.field_129", 0x129, u8) } }
     /// `BSShaderAccumulator::field_129`, at +0x129 on 1.7.104.
     #[inline]
@@ -783,6 +889,26 @@ impl crate::BSShaderAccumulator {
     pub fn set_field_B4(&mut self, value: u8) { unsafe { Self::__member_field_B4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_B4_ptr(&self) -> *mut u8 { Self::__member_field_B4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_hasMoreBatches(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSShaderAccumulator.hasMoreBatches", 0x140, u8) } }
+    /// `BSShaderAccumulator::hasMoreBatches`, at +0x140 on 1.7.104.
+    #[inline]
+    pub fn hasMoreBatches(&self) -> u8 { unsafe { Self::__member_hasMoreBatches(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_hasMoreBatches(&mut self, value: u8) { unsafe { Self::__member_hasMoreBatches(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn hasMoreBatches_ptr(&self) -> *mut u8 { Self::__member_hasMoreBatches(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_shadowMapMask(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSShaderAccumulator.shadowMapMask", 0x164, u32) } }
+    /// `BSShaderAccumulator::shadowMapMask`, at +0x164 on 1.7.104.
+    #[inline]
+    pub fn shadowMapMask(&self) -> u32 { unsafe { Self::__member_shadowMapMask(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_shadowMapMask(&mut self, value: u32) { unsafe { Self::__member_shadowMapMask(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn shadowMapMask_ptr(&self) -> *mut u32 { Self::__member_shadowMapMask(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_shadowSceneNode(this: *const Self) -> *mut *mut crate::ShadowSceneNode { unsafe { member!(this, "BSShaderAccumulator.shadowSceneNode", 0x148, *mut crate::ShadowSceneNode) } }
@@ -957,6 +1083,16 @@ impl crate::BSShaderProperty {
     /// Semantic field, render pass, high; `None` while the pointer is null.
     #[inline]
     pub fn material(&self) -> Option<&crate::BSShaderMaterial> { unsafe { { self.material }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_extraDataCapacity(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSShaderProperty.extraDataCapacity", 0x2A, u16) } }
+    /// `BSShaderProperty::extraDataCapacity`, at +0x2A on 1.7.104.
+    #[inline]
+    pub fn extraDataCapacity(&self) -> u16 { unsafe { Self::__member_extraDataCapacity(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_extraDataCapacity(&mut self, value: u16) { unsafe { Self::__member_extraDataCapacity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn extraDataCapacity_ptr(&self) -> *mut u16 { Self::__member_extraDataCapacity(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSShadowDirectionalLight {
@@ -1009,6 +1145,26 @@ impl crate::BSShadowDirectionalLight {
     pub fn light_camera(&self) -> Option<&crate::NiCamera> { unsafe { { self.lightCamera }.as_ref() } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_casterCandidateCount(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSShadowDirectionalLight.casterCandidateCount", 0x538, u32) } }
+    /// `BSShadowDirectionalLight::casterCandidateCount`, at +0x538 on 1.7.104.
+    #[inline]
+    pub fn casterCandidateCount(&self) -> u32 { unsafe { Self::__member_casterCandidateCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_casterCandidateCount(&mut self, value: u32) { unsafe { Self::__member_casterCandidateCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn casterCandidateCount_ptr(&self) -> *mut u32 { Self::__member_casterCandidateCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_casterCandidates(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "BSShadowDirectionalLight.casterCandidates", 0x528, [u8; 16]) } }
+    /// `BSShadowDirectionalLight::casterCandidates`, at +0x528 on 1.7.104.
+    #[inline]
+    pub fn casterCandidates(&self) -> [u8; 16] { unsafe { Self::__member_casterCandidates(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_casterCandidates(&mut self, value: [u8; 16]) { unsafe { Self::__member_casterCandidates(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn casterCandidates_ptr(&self) -> *mut [u8; 16] { Self::__member_casterCandidates(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_directionBlend(this: *const Self) -> *mut f32 { unsafe { member!(this, "BSShadowDirectionalLight.directionBlend", 0x5B0, f32) } }
     /// `BSShadowDirectionalLight::directionBlend`, at +0x5B0 on 1.7.104.
     #[inline]
@@ -1037,6 +1193,16 @@ impl crate::BSShadowDirectionalLight {
     pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSShadowDirectionalLight.field_20", 0x20, u64) } }
+    /// `BSShadowDirectionalLight::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_28(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSShadowDirectionalLight.field_28", 0x28, u32) } }
@@ -1085,6 +1251,16 @@ impl crate::BSShadowDirectionalLight {
     pub fn previousLightDirection(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_previousLightDirection(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn previousLightDirection_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_previousLightDirection(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_sceneIndex(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSShadowDirectionalLight.sceneIndex", 0x554, u32) } }
+    /// `BSShadowDirectionalLight::sceneIndex`, at +0x554 on 1.7.104.
+    #[inline]
+    pub fn sceneIndex(&self) -> u32 { unsafe { Self::__member_sceneIndex(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_sceneIndex(&mut self, value: u32) { unsafe { Self::__member_sceneIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn sceneIndex_ptr(&self) -> *mut u32 { Self::__member_sceneIndex(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_sphereCuller(this: *const Self) -> *mut *mut crate::BSCullingProcess { unsafe { member!(this, "BSShadowDirectionalLight.sphereCuller", 0x128, *mut crate::BSCullingProcess) } }
@@ -1144,6 +1320,26 @@ impl crate::BSShadowFrustumLight {
     pub fn update_for_camera(&self, camera: &crate::NiCamera) -> bool { unsafe { virtual_function!(self, 16, (*const Self, *const crate::NiCamera) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(camera)) } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_casterCandidateCount(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSShadowFrustumLight.casterCandidateCount", 0x538, u32) } }
+    /// `BSShadowFrustumLight::casterCandidateCount`, at +0x538 on 1.7.104.
+    #[inline]
+    pub fn casterCandidateCount(&self) -> u32 { unsafe { Self::__member_casterCandidateCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_casterCandidateCount(&mut self, value: u32) { unsafe { Self::__member_casterCandidateCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn casterCandidateCount_ptr(&self) -> *mut u32 { Self::__member_casterCandidateCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_casterCandidates(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "BSShadowFrustumLight.casterCandidates", 0x528, [u8; 16]) } }
+    /// `BSShadowFrustumLight::casterCandidates`, at +0x528 on 1.7.104.
+    #[inline]
+    pub fn casterCandidates(&self) -> [u8; 16] { unsafe { Self::__member_casterCandidates(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_casterCandidates(&mut self, value: [u8; 16]) { unsafe { Self::__member_casterCandidates(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn casterCandidates_ptr(&self) -> *mut [u8; 16] { Self::__member_casterCandidates(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_field_130(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSShadowFrustumLight.field_130", 0x130, u64) } }
     /// `BSShadowFrustumLight::field_130`, at +0x130 on 1.7.104.
     #[inline]
@@ -1162,6 +1358,16 @@ impl crate::BSShadowFrustumLight {
     pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSShadowFrustumLight.field_20", 0x20, u64) } }
+    /// `BSShadowFrustumLight::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_28(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSShadowFrustumLight.field_28", 0x28, u32) } }
@@ -1202,6 +1408,16 @@ impl crate::BSShadowFrustumLight {
     pub fn set_portalStrictCull(&mut self, value: u8) { unsafe { Self::__member_portalStrictCull(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn portalStrictCull_ptr(&self) -> *mut u8 { Self::__member_portalStrictCull(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_sceneIndex(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSShadowFrustumLight.sceneIndex", 0x554, u32) } }
+    /// `BSShadowFrustumLight::sceneIndex`, at +0x554 on 1.7.104.
+    #[inline]
+    pub fn sceneIndex(&self) -> u32 { unsafe { Self::__member_sceneIndex(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_sceneIndex(&mut self, value: u32) { unsafe { Self::__member_sceneIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn sceneIndex_ptr(&self) -> *mut u32 { Self::__member_sceneIndex(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_sphereCuller(this: *const Self) -> *mut *mut crate::BSCullingProcess { unsafe { member!(this, "BSShadowFrustumLight.sphereCuller", 0x128, *mut crate::BSCullingProcess) } }
@@ -1313,6 +1529,26 @@ impl crate::BSShadowLight {
     pub fn setup_focus_shadows(&self, camera: &crate::NiAVObject) { unsafe { function!(107601, (*const Self, *const crate::NiAVObject))(core::ptr::from_ref(self), core::ptr::from_ref(camera)) } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_casterCandidateCount(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSShadowLight.casterCandidateCount", 0x538, u32) } }
+    /// `BSShadowLight::casterCandidateCount`, at +0x538 on 1.7.104.
+    #[inline]
+    pub fn casterCandidateCount(&self) -> u32 { unsafe { Self::__member_casterCandidateCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_casterCandidateCount(&mut self, value: u32) { unsafe { Self::__member_casterCandidateCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn casterCandidateCount_ptr(&self) -> *mut u32 { Self::__member_casterCandidateCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_casterCandidates(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "BSShadowLight.casterCandidates", 0x528, [u8; 16]) } }
+    /// `BSShadowLight::casterCandidates`, at +0x528 on 1.7.104.
+    #[inline]
+    pub fn casterCandidates(&self) -> [u8; 16] { unsafe { Self::__member_casterCandidates(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_casterCandidates(&mut self, value: [u8; 16]) { unsafe { Self::__member_casterCandidates(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn casterCandidates_ptr(&self) -> *mut [u8; 16] { Self::__member_casterCandidates(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_field_130(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSShadowLight.field_130", 0x130, u64) } }
     /// `BSShadowLight::field_130`, at +0x130 on 1.7.104.
     #[inline]
@@ -1331,6 +1567,16 @@ impl crate::BSShadowLight {
     pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSShadowLight.field_20", 0x20, u64) } }
+    /// `BSShadowLight::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_28(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSShadowLight.field_28", 0x28, u32) } }
@@ -1361,6 +1607,16 @@ impl crate::BSShadowLight {
     pub fn set_portalStrictCull(&mut self, value: u8) { unsafe { Self::__member_portalStrictCull(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn portalStrictCull_ptr(&self) -> *mut u8 { Self::__member_portalStrictCull(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_sceneIndex(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSShadowLight.sceneIndex", 0x554, u32) } }
+    /// `BSShadowLight::sceneIndex`, at +0x554 on 1.7.104.
+    #[inline]
+    pub fn sceneIndex(&self) -> u32 { unsafe { Self::__member_sceneIndex(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_sceneIndex(&mut self, value: u32) { unsafe { Self::__member_sceneIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn sceneIndex_ptr(&self) -> *mut u32 { Self::__member_sceneIndex(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_sphereCuller(this: *const Self) -> *mut *mut crate::BSCullingProcess { unsafe { member!(this, "BSShadowLight.sphereCuller", 0x128, *mut crate::BSCullingProcess) } }
@@ -1416,6 +1672,26 @@ impl crate::BSShadowParabolicLight {
     pub fn uses_two_maps(&self) -> bool { unsafe { virtual_function!(self, 8, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_casterCandidateCount(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSShadowParabolicLight.casterCandidateCount", 0x538, u32) } }
+    /// `BSShadowParabolicLight::casterCandidateCount`, at +0x538 on 1.7.104.
+    #[inline]
+    pub fn casterCandidateCount(&self) -> u32 { unsafe { Self::__member_casterCandidateCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_casterCandidateCount(&mut self, value: u32) { unsafe { Self::__member_casterCandidateCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn casterCandidateCount_ptr(&self) -> *mut u32 { Self::__member_casterCandidateCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_casterCandidates(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "BSShadowParabolicLight.casterCandidates", 0x528, [u8; 16]) } }
+    /// `BSShadowParabolicLight::casterCandidates`, at +0x528 on 1.7.104.
+    #[inline]
+    pub fn casterCandidates(&self) -> [u8; 16] { unsafe { Self::__member_casterCandidates(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_casterCandidates(&mut self, value: [u8; 16]) { unsafe { Self::__member_casterCandidates(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn casterCandidates_ptr(&self) -> *mut [u8; 16] { Self::__member_casterCandidates(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_field_130(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSShadowParabolicLight.field_130", 0x130, u64) } }
     /// `BSShadowParabolicLight::field_130`, at +0x130 on 1.7.104.
     #[inline]
@@ -1434,6 +1710,16 @@ impl crate::BSShadowParabolicLight {
     pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSShadowParabolicLight.field_20", 0x20, u64) } }
+    /// `BSShadowParabolicLight::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_28(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSShadowParabolicLight.field_28", 0x28, u32) } }
@@ -1474,6 +1760,16 @@ impl crate::BSShadowParabolicLight {
     pub fn set_portalStrictCull(&mut self, value: u8) { unsafe { Self::__member_portalStrictCull(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn portalStrictCull_ptr(&self) -> *mut u8 { Self::__member_portalStrictCull(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_sceneIndex(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSShadowParabolicLight.sceneIndex", 0x554, u32) } }
+    /// `BSShadowParabolicLight::sceneIndex`, at +0x554 on 1.7.104.
+    #[inline]
+    pub fn sceneIndex(&self) -> u32 { unsafe { Self::__member_sceneIndex(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_sceneIndex(&mut self, value: u32) { unsafe { Self::__member_sceneIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn sceneIndex_ptr(&self) -> *mut u32 { Self::__member_sceneIndex(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_sphereCuller(this: *const Self) -> *mut *mut crate::BSCullingProcess { unsafe { member!(this, "BSShadowParabolicLight.sphereCuller", 0x128, *mut crate::BSCullingProcess) } }
@@ -1645,6 +1941,36 @@ impl crate::NiAVObject {
     /// Semantic field, render pass, high; `None` while the pointer is null.
     #[inline]
     pub fn collision_object(&self) -> Option<&crate::NiCollisionObject> { unsafe { { self.collisionObject }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_extraDataCapacity(this: *const Self) -> *mut u16 { unsafe { member!(this, "NiAVObject.extraDataCapacity", 0x2A, u16) } }
+    /// `NiAVObject::extraDataCapacity`, at +0x2A on 1.7.104.
+    #[inline]
+    pub fn extraDataCapacity(&self) -> u16 { unsafe { Self::__member_extraDataCapacity(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_extraDataCapacity(&mut self, value: u16) { unsafe { Self::__member_extraDataCapacity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn extraDataCapacity_ptr(&self) -> *mut u16 { Self::__member_extraDataCapacity(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_flags2(this: *const Self) -> *mut u8 { unsafe { member!(this, "NiAVObject.flags2", 0x109, u8) } }
+    /// `NiAVObject::flags2`, at +0x109 on 1.7.104.
+    #[inline]
+    pub fn flags2(&self) -> u8 { unsafe { Self::__member_flags2(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_flags2(&mut self, value: u8) { unsafe { Self::__member_flags2(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn flags2_ptr(&self) -> *mut u8 { Self::__member_flags2(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_previousWorldFrame(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiAVObject.previousWorldFrame", 0x104, u32) } }
+    /// `NiAVObject::previousWorldFrame`, at +0x104 on 1.7.104.
+    #[inline]
+    pub fn previousWorldFrame(&self) -> u32 { unsafe { Self::__member_previousWorldFrame(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_previousWorldFrame(&mut self, value: u32) { unsafe { Self::__member_previousWorldFrame(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn previousWorldFrame_ptr(&self) -> *mut u32 { Self::__member_previousWorldFrame(core::ptr::from_ref(self)) }
 }
 
 impl crate::NiNode {
@@ -1730,6 +2056,44 @@ impl crate::NiNode {
     /// `void (NiNode* this)`
     #[inline]
     pub fn update_upward_pass(&self) { unsafe { virtual_function!(self, 61, (*const Self))(core::ptr::from_ref(self)) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_extraDataCapacity(this: *const Self) -> *mut u16 { unsafe { member!(this, "NiNode.extraDataCapacity", 0x2A, u16) } }
+    /// `NiNode::extraDataCapacity`, at +0x2A on 1.7.104.
+    #[inline]
+    pub fn extraDataCapacity(&self) -> u16 { unsafe { Self::__member_extraDataCapacity(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_extraDataCapacity(&mut self, value: u16) { unsafe { Self::__member_extraDataCapacity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn extraDataCapacity_ptr(&self) -> *mut u16 { Self::__member_extraDataCapacity(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_flags2(this: *const Self) -> *mut u8 { unsafe { member!(this, "NiNode.flags2", 0x109, u8) } }
+    /// `NiNode::flags2`, at +0x109 on 1.7.104.
+    #[inline]
+    pub fn flags2(&self) -> u8 { unsafe { Self::__member_flags2(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_flags2(&mut self, value: u8) { unsafe { Self::__member_flags2(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn flags2_ptr(&self) -> *mut u8 { Self::__member_flags2(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_local(this: *const Self) -> *mut crate::NiTransform { unsafe { member!(this, "NiNode.local", 0x48, crate::NiTransform) } }
+    /// `NiNode::local`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn local(&self) -> &crate::NiTransform { unsafe { &*Self::__member_local(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn local_ptr(&self) -> *mut crate::NiTransform { Self::__member_local(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_previousWorldFrame(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiNode.previousWorldFrame", 0x104, u32) } }
+    /// `NiNode::previousWorldFrame`, at +0x104 on 1.7.104.
+    #[inline]
+    pub fn previousWorldFrame(&self) -> u32 { unsafe { Self::__member_previousWorldFrame(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_previousWorldFrame(&mut self, value: u32) { unsafe { Self::__member_previousWorldFrame(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn previousWorldFrame_ptr(&self) -> *mut u32 { Self::__member_previousWorldFrame(core::ptr::from_ref(self)) }
 }
 
 impl crate::NiSkinInstance {
@@ -1816,6 +2180,26 @@ impl crate::NiSkinInstance {
     /// Semantic field, render pass, high; `None` while the pointer is null.
     #[inline]
     pub fn skin_partition(&self) -> Option<&crate::NiSkinPartition> { unsafe { { self.skinPartition }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paletteLock(this: *const Self) -> *mut [u8; 40] { unsafe { member!(this, "NiSkinInstance.paletteLock", 0x60, [u8; 40]) } }
+    /// `NiSkinInstance::paletteLock`, at +0x60 on 1.7.104.
+    #[inline]
+    pub fn paletteLock(&self) -> [u8; 40] { unsafe { Self::__member_paletteLock(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paletteLock(&mut self, value: [u8; 40]) { unsafe { Self::__member_paletteLock(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paletteLock_ptr(&self) -> *mut [u8; 40] { Self::__member_paletteLock(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paletteRowsPerBone(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiSkinInstance.paletteRowsPerBone", 0x40, u32) } }
+    /// `NiSkinInstance::paletteRowsPerBone`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn paletteRowsPerBone(&self) -> u32 { unsafe { Self::__member_paletteRowsPerBone(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paletteRowsPerBone(&mut self, value: u32) { unsafe { Self::__member_paletteRowsPerBone(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paletteRowsPerBone_ptr(&self) -> *mut u32 { Self::__member_paletteRowsPerBone(core::ptr::from_ref(self)) }
 }
 
 impl crate::ShadowMapData {
@@ -1833,7 +2217,73 @@ impl crate::ShadowMapData {
     ///
     /// Semantic field, render pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn culler(&self) -> Option<&crate::BSCullingProcess> { unsafe { { self.culler }.as_ref() } }
+    pub fn culler(&self) -> Option<&crate::BSCullingProcess> { unsafe { Self::__member_culler(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_clearBeforeRender(this: *const Self) -> *mut u8 { unsafe { member!(this, "ShadowMapData.clearBeforeRender", 0xE8, u8) } }
+    /// `ShadowMapData::clearBeforeRender`, at +0xE8 on 1.7.104.
+    #[inline]
+    pub fn clearBeforeRender(&self) -> u8 { unsafe { Self::__member_clearBeforeRender(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_clearBeforeRender(&mut self, value: u8) { unsafe { Self::__member_clearBeforeRender(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn clearBeforeRender_ptr(&self) -> *mut u8 { Self::__member_clearBeforeRender(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_culler(this: *const Self) -> *mut *mut crate::BSCullingProcess { unsafe { member!(this, "ShadowMapData.culler", 0xE0, *mut crate::BSCullingProcess) } }
+    /// `ShadowMapData::culler`, at +0xE0 on 1.7.104.
+    #[inline]
+    pub fn culler_field(&self) -> *mut crate::BSCullingProcess { unsafe { Self::__member_culler(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_culler(&mut self, value: *mut crate::BSCullingProcess) { unsafe { Self::__member_culler(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn culler_ptr(&self) -> *mut *mut crate::BSCullingProcess { Self::__member_culler(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_slice(this: *const Self) -> *mut u32 { unsafe { member!(this, "ShadowMapData.slice", 0x58, u32) } }
+    /// `ShadowMapData::slice`, at +0x58 on 1.7.104.
+    #[inline]
+    pub fn slice(&self) -> u32 { unsafe { Self::__member_slice(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_slice(&mut self, value: u32) { unsafe { Self::__member_slice(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn slice_ptr(&self) -> *mut u32 { Self::__member_slice(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_splitFarPlane(this: *const Self) -> *mut crate::NiPlane { unsafe { member!(this, "ShadowMapData.splitFarPlane", 0x6C, crate::NiPlane) } }
+    /// `ShadowMapData::splitFarPlane`, at +0x6C on 1.7.104.
+    #[inline]
+    pub fn splitFarPlane(&self) -> &crate::NiPlane { unsafe { &*Self::__member_splitFarPlane(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn splitFarPlane_ptr(&self) -> *mut crate::NiPlane { Self::__member_splitFarPlane(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_splitNearPlane(this: *const Self) -> *mut crate::NiPlane { unsafe { member!(this, "ShadowMapData.splitNearPlane", 0x5C, crate::NiPlane) } }
+    /// `ShadowMapData::splitNearPlane`, at +0x5C on 1.7.104.
+    #[inline]
+    pub fn splitNearPlane(&self) -> &crate::NiPlane { unsafe { &*Self::__member_splitNearPlane(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn splitNearPlane_ptr(&self) -> *mut crate::NiPlane { Self::__member_splitNearPlane(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_texelScale(this: *const Self) -> *mut f32 { unsafe { member!(this, "ShadowMapData.texelScale", 0xCC, f32) } }
+    /// `ShadowMapData::texelScale`, at +0xCC on 1.7.104.
+    #[inline]
+    pub fn texelScale(&self) -> f32 { unsafe { Self::__member_texelScale(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_texelScale(&mut self, value: f32) { unsafe { Self::__member_texelScale(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn texelScale_ptr(&self) -> *mut f32 { Self::__member_texelScale(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_worldToShadow(this: *const Self) -> *mut [u8; 64] { unsafe { member!(this, "ShadowMapData.worldToShadow", 0x0, [u8; 64]) } }
+    /// `ShadowMapData::worldToShadow`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn worldToShadow(&self) -> [u8; 64] { unsafe { Self::__member_worldToShadow(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_worldToShadow(&mut self, value: [u8; 64]) { unsafe { Self::__member_worldToShadow(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn worldToShadow_ptr(&self) -> *mut [u8; 64] { Self::__member_worldToShadow(core::ptr::from_ref(self)) }
 }
 
 impl crate::ShadowSceneNode {
@@ -1933,6 +2383,16 @@ impl crate::ShadowSceneNode {
     pub fn sun_shadow_light(&self) -> Option<&crate::BSShadowDirectionalLight> { unsafe { { self.sunShadowLight }.as_ref() } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_extraDataCapacity(this: *const Self) -> *mut u16 { unsafe { member!(this, "ShadowSceneNode.extraDataCapacity", 0x2A, u16) } }
+    /// `ShadowSceneNode::extraDataCapacity`, at +0x2A on 1.7.104.
+    #[inline]
+    pub fn extraDataCapacity(&self) -> u16 { unsafe { Self::__member_extraDataCapacity(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_extraDataCapacity(&mut self, value: u16) { unsafe { Self::__member_extraDataCapacity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn extraDataCapacity_ptr(&self) -> *mut u16 { Self::__member_extraDataCapacity(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_field_2CC(this: *const Self) -> *mut u64 { unsafe { member!(this, "ShadowSceneNode.field_2CC", 0x2CC, u64) } }
     /// `ShadowSceneNode::field_2CC`, at +0x2CC on 1.7.104.
     #[inline]
@@ -1983,6 +2443,16 @@ impl crate::ShadowSceneNode {
     pub fn field_2F0_ptr(&self) -> *mut f32 { Self::__member_field_2F0(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_flags2(this: *const Self) -> *mut u8 { unsafe { member!(this, "ShadowSceneNode.flags2", 0x109, u8) } }
+    /// `ShadowSceneNode::flags2`, at +0x109 on 1.7.104.
+    #[inline]
+    pub fn flags2(&self) -> u8 { unsafe { Self::__member_flags2(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_flags2(&mut self, value: u8) { unsafe { Self::__member_flags2(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn flags2_ptr(&self) -> *mut u8 { Self::__member_flags2(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_frameShadowLights(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "ShadowSceneNode.frameShadowLights", 0x230, crate::BSTArray) } }
     /// `ShadowSceneNode::frameShadowLights`, at +0x230 on 1.7.104.
     #[inline]
@@ -2011,12 +2481,54 @@ impl crate::ShadowSceneNode {
     pub fn lightQueueLock_ptr(&self) -> *mut u64 { Self::__member_lightQueueLock(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_local(this: *const Self) -> *mut crate::NiTransform { unsafe { member!(this, "ShadowSceneNode.local", 0x48, crate::NiTransform) } }
+    /// `ShadowSceneNode::local`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn local(&self) -> &crate::NiTransform { unsafe { &*Self::__member_local(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn local_ptr(&self) -> *mut crate::NiTransform { Self::__member_local(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_pendingGeometryDetach(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "ShadowSceneNode.pendingGeometryDetach", 0x1B0, crate::BSTArray) } }
+    /// `ShadowSceneNode::pendingGeometryDetach`, at +0x1B0 on 1.7.104.
+    #[inline]
+    pub fn pendingGeometryDetach(&self) -> &crate::BSTArray { unsafe { &*Self::__member_pendingGeometryDetach(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn pendingGeometryDetach_ptr(&self) -> *mut crate::BSTArray { Self::__member_pendingGeometryDetach(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_pendingGeometryRelight(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "ShadowSceneNode.pendingGeometryRelight", 0x1C8, crate::BSTArray) } }
+    /// `ShadowSceneNode::pendingGeometryRelight`, at +0x1C8 on 1.7.104.
+    #[inline]
+    pub fn pendingGeometryRelight(&self) -> &crate::BSTArray { unsafe { &*Self::__member_pendingGeometryRelight(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn pendingGeometryRelight_ptr(&self) -> *mut crate::BSTArray { Self::__member_pendingGeometryRelight(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_pendingGeometryRelightActive(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "ShadowSceneNode.pendingGeometryRelightActive", 0x1E0, crate::BSTArray) } }
+    /// `ShadowSceneNode::pendingGeometryRelightActive`, at +0x1E0 on 1.7.104.
+    #[inline]
+    pub fn pendingGeometryRelightActive(&self) -> &crate::BSTArray { unsafe { &*Self::__member_pendingGeometryRelightActive(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn pendingGeometryRelightActive_ptr(&self) -> *mut crate::BSTArray { Self::__member_pendingGeometryRelightActive(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_pendingLightAdds(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "ShadowSceneNode.pendingLightAdds", 0x160, crate::BSTArray) } }
     /// `ShadowSceneNode::pendingLightAdds`, at +0x160 on 1.7.104.
     #[inline]
     pub fn pendingLightAdds(&self) -> &crate::BSTArray { unsafe { &*Self::__member_pendingLightAdds(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn pendingLightAdds_ptr(&self) -> *mut crate::BSTArray { Self::__member_pendingLightAdds(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_previousWorldFrame(this: *const Self) -> *mut u32 { unsafe { member!(this, "ShadowSceneNode.previousWorldFrame", 0x104, u32) } }
+    /// `ShadowSceneNode::previousWorldFrame`, at +0x104 on 1.7.104.
+    #[inline]
+    pub fn previousWorldFrame(&self) -> u32 { unsafe { Self::__member_previousWorldFrame(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_previousWorldFrame(&mut self, value: u32) { unsafe { Self::__member_previousWorldFrame(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn previousWorldFrame_ptr(&self) -> *mut u32 { Self::__member_previousWorldFrame(core::ptr::from_ref(self)) }
 }
 
 /// `CullShadowLights`: updates and culls the casters of the scene's shadow lights and runs the sun's slot 9 (cascade caster cull) while the main camera cull jobs run

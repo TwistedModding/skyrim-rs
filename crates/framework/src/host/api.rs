@@ -567,6 +567,7 @@ mod tests {
     #[test]
     fn a_native_closure_runs_through_the_host_and_drops_once() {
         static DROPS: AtomicU32 = AtomicU32::new(0);
+        versionlib::profile::assume_canonical();
         let counted = Counted(&DROPS);
         let f = native_fn(abi::native(move |call| {
             let first = call.args.first()?.as_int().filter(|_| counted.alive())?;

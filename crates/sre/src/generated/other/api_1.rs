@@ -5560,6 +5560,16 @@ impl crate::ActorMediator {
     /// `a0` must point to what the engine expects.
     #[inline]
     pub unsafe fn send_action_event(a0: *mut c_void, action: *mut crate::TESActionData) -> bool { unsafe { function!(43567, (*mut c_void, *mut crate::TESActionData) -> bool)(a0, action) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut u64 { unsafe { member!(this, "ActorMediator.field_10", 0x10, u64) } }
+    /// `ActorMediator::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> u64 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: u64) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut u64 { Self::__member_field_10(core::ptr::from_ref(self)) }
 }
 
 impl crate::AddCellGrassTask {
@@ -5586,6 +5596,16 @@ impl crate::AlarmPackage {
     pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_D8(this: *const Self) -> *mut u32 { unsafe { member!(this, "AlarmPackage.field_D8", 0xD8, u32) } }
+    /// `AlarmPackage::field_D8`, at +0xD8 on 1.7.104.
+    #[inline]
+    pub fn field_D8(&self) -> u32 { unsafe { Self::__member_field_D8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_D8(&mut self, value: u32) { unsafe { Self::__member_field_D8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_D8_ptr(&self) -> *mut u32 { Self::__member_field_D8(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_DC(this: *const Self) -> *mut u32 { unsafe { member!(this, "AlarmPackage.field_DC", 0xDC, u32) } }
@@ -5657,6 +5677,26 @@ impl crate::AlchemyItem {
     /// The `TESWeightForm` base at +0xF0.
     #[inline]
     pub fn as_tes_weight_form(&self) -> &crate::TESWeightForm { unsafe { &*core::ptr::from_ref(self).byte_add(0xF0).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u16 { unsafe { member!(this, "AlchemyItem.field_28", 0x28, u16) } }
+    /// `AlchemyItem::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u16 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u16) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u16 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2A(this: *const Self) -> *mut u16 { unsafe { member!(this, "AlchemyItem.field_2A", 0x2A, u16) } }
+    /// `AlchemyItem::field_2A`, at +0x2A on 1.7.104.
+    #[inline]
+    pub fn field_2A(&self) -> u16 { unsafe { Self::__member_field_2A(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2A(&mut self, value: u16) { unsafe { Self::__member_field_2A(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2A_ptr(&self) -> *mut u16 { Self::__member_field_2A(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_A0(this: *const Self) -> *mut u64 { unsafe { member!(this, "AlchemyItem.field_A0", 0xA0, u64) } }
@@ -8482,6 +8522,26 @@ impl crate::Clouds {
     pub fn set_field_488(&mut self, value: u64) { unsafe { Self::__member_field_488(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_488_ptr(&self) -> *mut u64 { Self::__member_field_488(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_512(this: *const Self) -> *mut u8 { unsafe { member!(this, "Clouds.field_512", 0x512, u8) } }
+    /// `Clouds::field_512`, at +0x512 on 1.7.104.
+    #[inline]
+    pub fn field_512(&self) -> u8 { unsafe { Self::__member_field_512(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_512(&mut self, value: u8) { unsafe { Self::__member_field_512(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_512_ptr(&self) -> *mut u8 { Self::__member_field_512(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_518(this: *const Self) -> *mut u64 { unsafe { member!(this, "Clouds.field_518", 0x518, u64) } }
+    /// `Clouds::field_518`, at +0x518 on 1.7.104.
+    #[inline]
+    pub fn field_518(&self) -> u64 { unsafe { Self::__member_field_518(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_518(&mut self, value: u64) { unsafe { Self::__member_field_518(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_518_ptr(&self) -> *mut u64 { Self::__member_field_518(core::ptr::from_ref(self)) }
 }
 
 impl crate::ConeProjectile {
@@ -9654,6 +9714,29 @@ impl crate::DLCPurchased__PurchasedDLCDialogCallback {
     pub fn __vftable_ptr(&self) -> *mut *const crate::raw::vtables::DLCPurchased__PurchasedDLCDialogCallback_vtable { Self::__member___vftable(core::ptr::from_ref(self)) }
 }
 
+impl crate::DebugText {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u32 { unsafe { member!(this, "DebugText.field_48", 0x48, u32) } }
+    /// `DebugText::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u32 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u32) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u32 { Self::__member_field_48(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_54(this: *const Self) -> *mut u32 { unsafe { member!(this, "DebugText.field_54", 0x54, u32) } }
+    /// `DebugText::field_54`, at +0x54 on 1.7.104.
+    #[inline]
+    pub fn field_54(&self) -> u32 { unsafe { Self::__member_field_54(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_54(&mut self, value: u32) { unsafe { Self::__member_field_54(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_54_ptr(&self) -> *mut u32 { Self::__member_field_54(core::ptr::from_ref(self)) }
+}
+
 impl crate::DescriptionBox {
     #[doc(hidden)]
     #[inline]
@@ -10031,6 +10114,16 @@ impl crate::DialoguePackage {
     pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_D8(this: *const Self) -> *mut u32 { unsafe { member!(this, "DialoguePackage.field_D8", 0xD8, u32) } }
+    /// `DialoguePackage::field_D8`, at +0xD8 on 1.7.104.
+    #[inline]
+    pub fn field_D8(&self) -> u32 { unsafe { Self::__member_field_D8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_D8(&mut self, value: u32) { unsafe { Self::__member_field_D8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_D8_ptr(&self) -> *mut u32 { Self::__member_field_D8(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_DC(this: *const Self) -> *mut u32 { unsafe { member!(this, "DialoguePackage.field_DC", 0xDC, u32) } }
@@ -10473,6 +10566,26 @@ impl crate::EffectSetting {
     pub fn field_68_ptr(&self) -> *mut u64 { Self::__member_field_68(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_field_B0(this: *const Self) -> *mut u64 { unsafe { member!(this, "EffectSetting.field_B0", 0xB0, u64) } }
+    /// `EffectSetting::field_B0`, at +0xB0 on 1.7.104.
+    #[inline]
+    pub fn field_B0(&self) -> u64 { unsafe { Self::__member_field_B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B0(&mut self, value: u64) { unsafe { Self::__member_field_B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B0_ptr(&self) -> *mut u64 { Self::__member_field_B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_DC(this: *const Self) -> *mut u32 { unsafe { member!(this, "EffectSetting.field_DC", 0xDC, u32) } }
+    /// `EffectSetting::field_DC`, at +0xDC on 1.7.104.
+    #[inline]
+    pub fn field_DC(&self) -> u32 { unsafe { Self::__member_field_DC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_DC(&mut self, value: u32) { unsafe { Self::__member_field_DC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_DC_ptr(&self) -> *mut u32 { Self::__member_field_DC(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_field_F0(this: *const Self) -> *mut u64 { unsafe { member!(this, "EffectSetting.field_F0", 0xF0, u64) } }
     /// `EffectSetting::field_F0`, at +0xF0 on 1.7.104.
     #[inline]
@@ -10504,6 +10617,29 @@ impl crate::EffectSettingCollection {
     pub fn set___vftable(&mut self, value: *const crate::raw::vtables::EffectSettingCollection_vtable) { unsafe { Self::__member___vftable(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn __vftable_ptr(&self) -> *mut *const crate::raw::vtables::EffectSettingCollection_vtable { Self::__member___vftable(core::ptr::from_ref(self)) }
+}
+
+impl crate::EnchantmentItem {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u16 { unsafe { member!(this, "EnchantmentItem.field_28", 0x28, u16) } }
+    /// `EnchantmentItem::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u16 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u16) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u16 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2A(this: *const Self) -> *mut u16 { unsafe { member!(this, "EnchantmentItem.field_2A", 0x2A, u16) } }
+    /// `EnchantmentItem::field_2A`, at +0x2A on 1.7.104.
+    #[inline]
+    pub fn field_2A(&self) -> u16 { unsafe { Self::__member_field_2A(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2A(&mut self, value: u16) { unsafe { Self::__member_field_2A(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2A_ptr(&self) -> *mut u16 { Self::__member_field_2A(core::ptr::from_ref(self)) }
 }
 
 impl crate::EnhanceWeaponEffect {
@@ -11188,6 +11324,16 @@ impl crate::FleePackage {
     pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_D8(this: *const Self) -> *mut u32 { unsafe { member!(this, "FleePackage.field_D8", 0xD8, u32) } }
+    /// `FleePackage::field_D8`, at +0xD8 on 1.7.104.
+    #[inline]
+    pub fn field_D8(&self) -> u32 { unsafe { Self::__member_field_D8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_D8(&mut self, value: u32) { unsafe { Self::__member_field_D8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_D8_ptr(&self) -> *mut u32 { Self::__member_field_D8(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_DC(this: *const Self) -> *mut u32 { unsafe { member!(this, "FleePackage.field_DC", 0xDC, u32) } }
@@ -13738,6 +13884,26 @@ impl crate::IngredientItem {
     /// The `TESWeightForm` base at +0xD8.
     #[inline]
     pub fn as_tes_weight_form(&self) -> &crate::TESWeightForm { unsafe { &*core::ptr::from_ref(self).byte_add(0xD8).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u16 { unsafe { member!(this, "IngredientItem.field_28", 0x28, u16) } }
+    /// `IngredientItem::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u16 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u16) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u16 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2A(this: *const Self) -> *mut u16 { unsafe { member!(this, "IngredientItem.field_2A", 0x2A, u16) } }
+    /// `IngredientItem::field_2A`, at +0x2A on 1.7.104.
+    #[inline]
+    pub fn field_2A(&self) -> u16 { unsafe { Self::__member_field_2A(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2A(&mut self, value: u16) { unsafe { Self::__member_field_2A(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2A_ptr(&self) -> *mut u16 { Self::__member_field_2A(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_A0(this: *const Self) -> *mut u64 { unsafe { member!(this, "IngredientItem.field_A0", 0xA0, u64) } }

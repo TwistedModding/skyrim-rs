@@ -8076,14 +8076,17 @@ pub struct CombatCoverLocation {
     #[doc(hidden)]
     pub __field_50: [u8; 4],
     /// +0x54 `undefined4`, ctor store
-    pub field_54: u32,
+    #[doc(hidden)]
+    pub __field_54: [u8; 4],
     /// +0x58 `undefined4`, ctor store
-    pub field_58: u32,
+    #[doc(hidden)]
+    pub __field_58: [u8; 4],
     /// +0x5C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_5C: [u8; 4],
     /// +0x60 `undefined4`, ctor store
-    pub field_60: u32,
+    #[doc(hidden)]
+    pub __field_60: [u8; 4],
     /// +0x64 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_64: [u8; 4],
@@ -8136,10 +8139,10 @@ const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_44) == 
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_4C) == 0x4C);
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_54) == 0x54);
-const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_5C) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_64) == 0x64);
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_6C) == 0x6C);
@@ -12516,24 +12519,18 @@ pub struct CombatNavmeshSearch {
     pub field_168: u64,
     unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_1B0: [u8; 8],
+    pub field_1B0: u64,
     /// +0x1B8 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_1B8: [u8; 8],
+    pub field_1B8: u64,
     /// +0x1C0 `undefined4`, ctor store
-    #[doc(hidden)]
-    pub __field_1C0: [u8; 4],
+    pub field_1C0: u32,
     unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_1D0: [u8; 8],
+    pub field_1D0: u64,
     /// +0x1D8 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_1D8: [u8; 8],
+    pub field_1D8: u64,
     /// +0x1E0 `undefined4`, ctor store
-    #[doc(hidden)]
-    pub __field_1E0: [u8; 4],
+    pub field_1E0: u32,
     unknown_1E4: [u8; 92],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -12559,12 +12556,12 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_130) == 0
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, __field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, __field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, __field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, __field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, __field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, __field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_1E0) == 0x1E0);
 
 /// `CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>`: size 0x210 (exact, medium); primary base `CombatNavmeshSearch`.
 /// Evidence: allocation sites (medium): {'528': 1}.
@@ -12625,24 +12622,18 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSe
     pub field_168: u64,
     unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B0: [u8; 8],
+    pub field_1B0: u64,
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B8: [u8; 8],
+    pub field_1B8: u64,
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1C0: [u8; 4],
+    pub field_1C0: u32,
     unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D0: [u8; 8],
+    pub field_1D0: u64,
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D8: [u8; 8],
+    pub field_1D8: u64,
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1E0: [u8; 4],
+    pub field_1E0: u32,
     unknown_1E4: [u8; 4],
     /// +0x1E8 `undefined8`, ctor store
     pub field_1E8: u64,
@@ -12685,12 +12676,12 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_1E8) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_1F0) == 0x1F0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_1F4) == 0x1F4);
@@ -12758,24 +12749,18 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_Combat
     pub field_168: u64,
     unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B0: [u8; 8],
+    pub field_1B0: u64,
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B8: [u8; 8],
+    pub field_1B8: u64,
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1C0: [u8; 4],
+    pub field_1C0: u32,
     unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D0: [u8; 8],
+    pub field_1D0: u64,
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D8: [u8; 8],
+    pub field_1D8: u64,
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1E0: [u8; 4],
+    pub field_1E0: u32,
     unknown_1E4: [u8; 4],
     /// +0x1E8 `undefined8`, ctor store
     pub field_1E8: u64,
@@ -12828,12 +12813,12 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_1E8) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __field_1F0) == 0x1F0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __field_1F8) == 0x1F8);
@@ -12904,24 +12889,18 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSe
     pub field_168: u64,
     unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B0: [u8; 8],
+    pub field_1B0: u64,
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B8: [u8; 8],
+    pub field_1B8: u64,
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1C0: [u8; 4],
+    pub field_1C0: u32,
     unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D0: [u8; 8],
+    pub field_1D0: u64,
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D8: [u8; 8],
+    pub field_1D8: u64,
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1E0: [u8; 4],
+    pub field_1E0: u32,
     unknown_1E4: [u8; 4],
     /// +0x1E8 `undefined8`, ctor store
     pub field_1E8: u64,
@@ -12957,12 +12936,12 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_1E8) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_1F0) == 0x1F0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_1F8) == 0x1F8);
@@ -13027,24 +13006,18 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathi
     pub field_168: u64,
     unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B0: [u8; 8],
+    pub field_1B0: u64,
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B8: [u8; 8],
+    pub field_1B8: u64,
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1C0: [u8; 4],
+    pub field_1C0: u32,
     unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D0: [u8; 8],
+    pub field_1D0: u64,
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D8: [u8; 8],
+    pub field_1D8: u64,
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1E0: [u8; 4],
+    pub field_1E0: u32,
     unknown_1E4: [u8; 4],
     /// +0x1E8 `undefined8`, ctor store
     pub field_1E8: u64,
@@ -13080,12 +13053,12 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_1E8) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_1F0) == 0x1F0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_1F8) == 0x1F8);
@@ -13150,34 +13123,31 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_Combat
     pub field_168: u64,
     unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B0: [u8; 8],
+    pub field_1B0: u64,
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B8: [u8; 8],
+    pub field_1B8: u64,
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1C0: [u8; 4],
+    pub field_1C0: u32,
     unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D0: [u8; 8],
+    pub field_1D0: u64,
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D8: [u8; 8],
+    pub field_1D8: u64,
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1E0: [u8; 4],
+    pub field_1E0: u32,
     unknown_1E4: [u8; 20],
     /// +0x1F8 `undefined8`, ctor store
-    pub field_1F8: u64,
+    #[doc(hidden)]
+    pub __field_1F8: [u8; 8],
     /// +0x200 `undefined4`, ctor store
-    pub field_200: u32,
+    #[doc(hidden)]
+    pub __field_200: [u8; 4],
     unknown_204: [u8; 4],
     /// +0x208 `undefined8`, ctor store
     pub field_208: u64,
     /// +0x210 `undefined8`, ctor store
-    pub field_210: u64,
+    #[doc(hidden)]
+    pub __field_210: [u8; 8],
     /// +0x218 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_218: [u8; 8],
@@ -13213,16 +13183,16 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_1F8) == 0x1F8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_200) == 0x200);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_1F8) == 0x1F8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_200) == 0x200);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_208) == 0x208);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_210) == 0x210);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_210) == 0x210);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_218) == 0x218);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_220) == 0x220);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_223) == 0x223);
@@ -13286,24 +13256,18 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearch
     pub field_168: u64,
     unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B0: [u8; 8],
+    pub field_1B0: u64,
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B8: [u8; 8],
+    pub field_1B8: u64,
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1C0: [u8; 4],
+    pub field_1C0: u32,
     unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D0: [u8; 8],
+    pub field_1D0: u64,
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D8: [u8; 8],
+    pub field_1D8: u64,
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1E0: [u8; 4],
+    pub field_1E0: u32,
     unknown_1E4: [u8; 20],
     /// +0x1F8 `undefined8`, ctor store
     #[doc(hidden)]
@@ -13365,12 +13329,12 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __field_1F8) == 0x1F8);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __field_200) == 0x200);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_208) == 0x208);
@@ -13445,24 +13409,18 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathin
     pub field_168: u64,
     unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B0: [u8; 8],
+    pub field_1B0: u64,
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B8: [u8; 8],
+    pub field_1B8: u64,
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1C0: [u8; 4],
+    pub field_1C0: u32,
     unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D0: [u8; 8],
+    pub field_1D0: u64,
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D8: [u8; 8],
+    pub field_1D8: u64,
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1E0: [u8; 4],
+    pub field_1E0: u32,
     unknown_1E4: [u8; 4],
     /// +0x1E8 `undefined4`, ctor store (widths [4, 8])
     pub field_1E8: u32,
@@ -13512,12 +13470,12 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_1E8) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_1EC) == 0x1EC);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_1F0) == 0x1F0);
@@ -13587,24 +13545,18 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchP
     pub field_168: u64,
     unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B0: [u8; 8],
+    pub field_1B0: u64,
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B8: [u8; 8],
+    pub field_1B8: u64,
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1C0: [u8; 4],
+    pub field_1C0: u32,
     unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D0: [u8; 8],
+    pub field_1D0: u64,
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D8: [u8; 8],
+    pub field_1D8: u64,
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1E0: [u8; 4],
+    pub field_1E0: u32,
     unknown_1E4: [u8; 4],
     /// +0x1E8 `float`, ctor store
     pub field_1E8: f32,
@@ -13648,12 +13600,12 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_1E8) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_1EC) == 0x1EC);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_1F0) == 0x1F0);
@@ -13722,29 +13674,25 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSea
     pub field_168: u64,
     unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B0: [u8; 8],
+    pub field_1B0: u64,
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B8: [u8; 8],
+    pub field_1B8: u64,
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1C0: [u8; 4],
+    pub field_1C0: u32,
     unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D0: [u8; 8],
+    pub field_1D0: u64,
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D8: [u8; 8],
+    pub field_1D8: u64,
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1E0: [u8; 4],
+    pub field_1E0: u32,
     unknown_1E4: [u8; 20],
     /// +0x1F8 `undefined8`, ctor store
-    pub field_1F8: u64,
+    #[doc(hidden)]
+    pub __field_1F8: [u8; 8],
     /// +0x200 `undefined4`, ctor store
-    pub field_200: u32,
+    #[doc(hidden)]
+    pub __field_200: [u8; 4],
     unknown_204: [u8; 4],
     /// +0x208 `undefined8`, ctor store
     #[doc(hidden)]
@@ -13781,14 +13729,14 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_1F8) == 0x1F8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_200) == 0x200);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_1F8) == 0x1F8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_200) == 0x200);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_208) == 0x208);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_210) == 0x210);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_213) == 0x213);
@@ -13852,24 +13800,18 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSear
     pub field_168: u64,
     unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B0: [u8; 8],
+    pub field_1B0: u64,
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B8: [u8; 8],
+    pub field_1B8: u64,
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1C0: [u8; 4],
+    pub field_1C0: u32,
     unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D0: [u8; 8],
+    pub field_1D0: u64,
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D8: [u8; 8],
+    pub field_1D8: u64,
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1E0: [u8; 4],
+    pub field_1E0: u32,
     unknown_1E4: [u8; 4],
     /// +0x1E8 `float`, ctor store
     pub field_1E8: f32,
@@ -13911,12 +13853,12 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_1E8) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_1EC) == 0x1EC);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_1F0) == 0x1F0);
@@ -13984,24 +13926,18 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_Combat
     pub field_168: u64,
     unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B0: [u8; 8],
+    pub field_1B0: u64,
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B8: [u8; 8],
+    pub field_1B8: u64,
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1C0: [u8; 4],
+    pub field_1C0: u32,
     unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D0: [u8; 8],
+    pub field_1D0: u64,
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D8: [u8; 8],
+    pub field_1D8: u64,
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1E0: [u8; 4],
+    pub field_1E0: u32,
     unknown_1E4: [u8; 20],
     /// +0x1F8 `undefined8`, ctor store
     #[doc(hidden)]
@@ -14011,11 +13947,14 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_Combat
     pub __field_200: [u8; 4],
     unknown_204: [u8; 4],
     /// +0x208 `undefined8`, ctor store
-    pub field_208: u64,
+    #[doc(hidden)]
+    pub __field_208: [u8; 8],
     /// +0x210 `undefined8`, ctor store
-    pub field_210: u64,
+    #[doc(hidden)]
+    pub __field_210: [u8; 8],
     /// +0x218 `undefined4`, ctor store
-    pub field_218: u32,
+    #[doc(hidden)]
+    pub __field_218: [u8; 4],
     unknown_21C: [u8; 4],
     /// +0x220 `undefined8`, ctor store
     pub field_220: u64,
@@ -14049,17 +13988,17 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_1F8) == 0x1F8);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_200) == 0x200);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_208) == 0x208);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_210) == 0x210);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_218) == 0x218);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_208) == 0x208);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_210) == 0x210);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_218) == 0x218);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_220) == 0x220);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_228) == 0x228);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_22B) == 0x22B);
@@ -14123,24 +14062,18 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearc
     pub field_168: u64,
     unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B0: [u8; 8],
+    pub field_1B0: u64,
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B8: [u8; 8],
+    pub field_1B8: u64,
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1C0: [u8; 4],
+    pub field_1C0: u32,
     unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D0: [u8; 8],
+    pub field_1D0: u64,
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D8: [u8; 8],
+    pub field_1D8: u64,
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1E0: [u8; 4],
+    pub field_1E0: u32,
     unknown_1E4: [u8; 76],
     /// +0x230 `undefined8`, ctor store
     #[doc(hidden)]
@@ -14177,12 +14110,12 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_230) == 0x230);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_238) == 0x238);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_23B) == 0x23B);
@@ -14246,24 +14179,18 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathin
     pub field_168: u64,
     unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B0: [u8; 8],
+    pub field_1B0: u64,
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B8: [u8; 8],
+    pub field_1B8: u64,
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1C0: [u8; 4],
+    pub field_1C0: u32,
     unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D0: [u8; 8],
+    pub field_1D0: u64,
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D8: [u8; 8],
+    pub field_1D8: u64,
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1E0: [u8; 4],
+    pub field_1E0: u32,
     unknown_1E4: [u8; 4],
     /// +0x1E8 `undefined4`, ctor store
     pub field_1E8: u32,
@@ -14312,12 +14239,12 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_1E8) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_1F0) == 0x1F0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __field_1F8) == 0x1F8);
@@ -14386,30 +14313,25 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSea
     pub field_168: u64,
     unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B0: [u8; 8],
+    pub field_1B0: u64,
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1B8: [u8; 8],
+    pub field_1B8: u64,
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1C0: [u8; 4],
+    pub field_1C0: u32,
     unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D0: [u8; 8],
+    pub field_1D0: u64,
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1D8: [u8; 8],
+    pub field_1D8: u64,
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    #[doc(hidden)]
-    pub __field_1E0: [u8; 4],
+    pub field_1E0: u32,
     unknown_1E4: [u8; 20],
     /// +0x1F8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1F8: [u8; 8],
     /// +0x200 `undefined4`, ctor store
-    pub field_200: u32,
+    #[doc(hidden)]
+    pub __field_200: [u8; 4],
     unknown_204: [u8; 4],
     /// +0x208 `undefined8`, ctor store
     #[doc(hidden)]
@@ -14446,14 +14368,14 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_1F8) == 0x1F8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_200) == 0x200);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_200) == 0x200);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_208) == 0x208);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_210) == 0x210);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_213) == 0x213);
@@ -14747,4 +14669,32 @@ const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilder
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_50) == 0x50);
+
+/// `CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>`: size 0xD8 (exact, high); primary base `CombatPathBuilderOpen`.
+/// Evidence: allocation sites (high): {'216': 2}.
+/// Bases: `CombatPathBuilderOpen`@0x0, `CombatPathBuilder`@0x0, `IPathBuilder`@0x0.
+#[repr(C)]
+pub struct CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard {
+    /// +0x0 `vtbl:CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard_vtable,
+    /// +0x8 `undefined8`, base CombatPathBuilder
+    pub field_8: u64,
+    /// +0x10 `undefined8`, base CombatPathBuilder
+    pub field_10: u64,
+    pub unknown_18: [u8; 48],
+    /// +0x48 `undefined8`, base CombatPathBuilder
+    pub field_48: u64,
+    /// +0x50 `undefined8`, base CombatPathBuilderOpen
+    pub field_50: u64,
+    pub unknown_58: [u8; 128],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard>() == 0xD8);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_50) == 0x50);
 

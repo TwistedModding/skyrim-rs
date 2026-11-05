@@ -3,34 +3,6 @@
 
 use core::ffi::c_void;
 
-/// `CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>`: size 0xD8 (exact, high); primary base `CombatPathBuilderOpen`.
-/// Evidence: allocation sites (high): {'216': 2}.
-/// Bases: `CombatPathBuilderOpen`@0x0, `CombatPathBuilder`@0x0, `IPathBuilder`@0x0.
-#[repr(C)]
-pub struct CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard {
-    /// +0x0 `vtbl:CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard_vtable,
-    /// +0x8 `undefined8`, base CombatPathBuilder
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base CombatPathBuilder
-    pub field_10: u64,
-    pub unknown_18: [u8; 48],
-    /// +0x48 `undefined8`, base CombatPathBuilder
-    pub field_48: u64,
-    /// +0x50 `undefined8`, base CombatPathBuilderOpen
-    pub field_50: u64,
-    pub unknown_58: [u8; 128],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard>() == 0xD8);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_50) == 0x50);
-
 /// `CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>`: size 0xD8 (exact, high); primary base `CombatPathBuilderOpen`.
 /// Evidence: allocation sites (high): {'216': 2}.
 /// Bases: `CombatPathBuilderOpen`@0x0, `CombatPathBuilder`@0x0, `IPathBuilder`@0x0.
@@ -3263,7 +3235,8 @@ pub struct CombatThreat {
     pub field_8: u32,
     unknown_C: [u8; 8],
     /// +0x14 `undefined8`, ctor store
-    pub field_14: u64,
+    #[doc(hidden)]
+    pub __field_14: [u8; 8],
     /// +0x1C `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1C: [u8; 8],
@@ -3277,7 +3250,8 @@ pub struct CombatThreat {
     /// +0x40 `undefined4`, ctor store
     pub field_40: u32,
     /// +0x44 `undefined4`, ctor store
-    pub field_44: u32,
+    #[doc(hidden)]
+    pub __field_44: [u8; 4],
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
     /// +0x50 `undefined8`, ctor store
@@ -3296,12 +3270,12 @@ pub struct CombatThreat {
 }
 const _: () = assert!(core::mem::offset_of!(CombatThreat, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatThreat, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatThreat, field_14) == 0x14);
+const _: () = assert!(core::mem::offset_of!(CombatThreat, __field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(CombatThreat, __field_1C) == 0x1C);
 const _: () = assert!(core::mem::offset_of!(CombatThreat, __field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(CombatThreat, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(CombatThreat, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(CombatThreat, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(CombatThreat, __field_44) == 0x44);
 const _: () = assert!(core::mem::offset_of!(CombatThreat, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(CombatThreat, field_50) == 0x50);
 const _: () = assert!(core::mem::offset_of!(CombatThreat, field_58) == 0x58);

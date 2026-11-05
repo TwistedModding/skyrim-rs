@@ -1035,6 +1035,16 @@ impl crate::ExtraMagicCaster {
     /// The `MagicCaster` base at +0x10.
     #[inline]
     pub fn as_magic_caster(&self) -> &crate::MagicCaster { unsafe { &*core::ptr::from_ref(self).byte_add(0x10).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u32 { unsafe { member!(this, "ExtraMagicCaster.field_28", 0x28, u32) } }
+    /// `ExtraMagicCaster::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u32 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u32) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u32 { Self::__member_field_28(core::ptr::from_ref(self)) }
 }
 
 impl crate::ExtraPackage {

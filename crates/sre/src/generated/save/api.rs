@@ -253,6 +253,72 @@ impl crate::BGSSaveLoadGame {
     pub unsafe fn save_global_data_range(stream: *mut c_void, first: u32, end: u32) -> u32 { unsafe { function!(35638, (*mut c_void, u32, u32) -> u32)(stream, first, end) } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_changeFlags(this: *const Self) -> *mut [u8; 8] { unsafe { member!(this, "BGSSaveLoadGame.changeFlags", 0x330, [u8; 8]) } }
+    /// `BGSSaveLoadGame::changeFlags`, at +0x330 on 1.7.104.
+    #[inline]
+    pub fn changeFlags(&self) -> [u8; 8] { unsafe { Self::__member_changeFlags(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_changeFlags(&mut self, value: [u8; 8]) { unsafe { Self::__member_changeFlags(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn changeFlags_ptr(&self) -> *mut [u8; 8] { Self::__member_changeFlags(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_formIdIndexMap(this: *const Self) -> *mut [u8; 104] { unsafe { member!(this, "BGSSaveLoadGame.formIdIndexMap", 0x298, [u8; 104]) } }
+    /// `BGSSaveLoadGame::formIdIndexMap`, at +0x298 on 1.7.104.
+    #[inline]
+    pub fn formIdIndexMap(&self) -> [u8; 104] { unsafe { Self::__member_formIdIndexMap(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_formIdIndexMap(&mut self, value: [u8; 104]) { unsafe { Self::__member_formIdIndexMap(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn formIdIndexMap_ptr(&self) -> *mut [u8; 104] { Self::__member_formIdIndexMap(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_formsToRefresh(this: *const Self) -> *mut [u8; 128] { unsafe { member!(this, "BGSSaveLoadGame.formsToRefresh", 0x188, [u8; 128]) } }
+    /// `BGSSaveLoadGame::formsToRefresh`, at +0x188 on 1.7.104.
+    #[inline]
+    pub fn formsToRefresh(&self) -> [u8; 128] { unsafe { Self::__member_formsToRefresh(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_formsToRefresh(&mut self, value: [u8; 128]) { unsafe { Self::__member_formsToRefresh(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn formsToRefresh_ptr(&self) -> *mut [u8; 128] { Self::__member_formsToRefresh(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_history(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "BGSSaveLoadGame.history", 0x300, crate::BSTArray) } }
+    /// `BGSSaveLoadGame::history`, at +0x300 on 1.7.104.
+    #[inline]
+    pub fn history(&self) -> &crate::BSTArray { unsafe { &*Self::__member_history(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn history_ptr(&self) -> *mut crate::BSTArray { Self::__member_history(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_loadScratchMaps(this: *const Self) -> *mut [u8; 72] { unsafe { member!(this, "BGSSaveLoadGame.loadScratchMaps", 0xC8, [u8; 72]) } }
+    /// `BGSSaveLoadGame::loadScratchMaps`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn loadScratchMaps(&self) -> [u8; 72] { unsafe { Self::__member_loadScratchMaps(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_loadScratchMaps(&mut self, value: [u8; 72]) { unsafe { Self::__member_loadScratchMaps(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn loadScratchMaps_ptr(&self) -> *mut [u8; 72] { Self::__member_loadScratchMaps(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_loadedChangeForms(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "BGSSaveLoadGame.loadedChangeForms", 0x318, crate::BSTArray) } }
+    /// `BGSSaveLoadGame::loadedChangeForms`, at +0x318 on 1.7.104.
+    #[inline]
+    pub fn loadedChangeForms(&self) -> &crate::BSTArray { unsafe { &*Self::__member_loadedChangeForms(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn loadedChangeForms_ptr(&self) -> *mut crate::BSTArray { Self::__member_loadedChangeForms(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_loadingFormVersion(this: *const Self) -> *mut u8 { unsafe { member!(this, "BGSSaveLoadGame.loadingFormVersion", 0x344, u8) } }
+    /// `BGSSaveLoadGame::loadingFormVersion`, at +0x344 on 1.7.104.
+    #[inline]
+    pub fn loadingFormVersion(&self) -> u8 { unsafe { Self::__member_loadingFormVersion(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_loadingFormVersion(&mut self, value: u8) { unsafe { Self::__member_loadingFormVersion(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn loadingFormVersion_ptr(&self) -> *mut u8 { Self::__member_loadingFormVersion(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_pluginListMismatch(this: *const Self) -> *mut u8 { unsafe { member!(this, "BGSSaveLoadGame.pluginListMismatch", 0x345, u8) } }
     /// `BGSSaveLoadGame::pluginListMismatch`, at +0x345 on 1.7.104.
     #[inline]
@@ -261,6 +327,36 @@ impl crate::BGSSaveLoadGame {
     pub fn set_pluginListMismatch(&mut self, value: u8) { unsafe { Self::__member_pluginListMismatch(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn pluginListMismatch_ptr(&self) -> *mut u8 { Self::__member_pluginListMismatch(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_previousChangeFlags(this: *const Self) -> *mut [u8; 8] { unsafe { member!(this, "BGSSaveLoadGame.previousChangeFlags", 0x338, [u8; 8]) } }
+    /// `BGSSaveLoadGame::previousChangeFlags`, at +0x338 on 1.7.104.
+    #[inline]
+    pub fn previousChangeFlags(&self) -> [u8; 8] { unsafe { Self::__member_previousChangeFlags(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_previousChangeFlags(&mut self, value: [u8; 8]) { unsafe { Self::__member_previousChangeFlags(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn previousChangeFlags_ptr(&self) -> *mut [u8; 8] { Self::__member_previousChangeFlags(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateFlags(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSSaveLoadGame.stateFlags", 0x340, u32) } }
+    /// `BGSSaveLoadGame::stateFlags`, at +0x340 on 1.7.104.
+    #[inline]
+    pub fn stateFlags(&self) -> u32 { unsafe { Self::__member_stateFlags(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_stateFlags(&mut self, value: u32) { unsafe { Self::__member_stateFlags(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn stateFlags_ptr(&self) -> *mut u32 { Self::__member_stateFlags(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_worldspaceIdMap(this: *const Self) -> *mut [u8; 104] { unsafe { member!(this, "BGSSaveLoadGame.worldspaceIdMap", 0x30, [u8; 104]) } }
+    /// `BGSSaveLoadGame::worldspaceIdMap`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn worldspaceIdMap(&self) -> [u8; 104] { unsafe { Self::__member_worldspaceIdMap(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_worldspaceIdMap(&mut self, value: [u8; 104]) { unsafe { Self::__member_worldspaceIdMap(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn worldspaceIdMap_ptr(&self) -> *mut [u8; 104] { Self::__member_worldspaceIdMap(core::ptr::from_ref(self)) }
 }
 
 impl crate::BGSSaveLoadManager {
@@ -434,6 +530,16 @@ impl crate::BGSSaveLoadManager {
     pub fn currentSaveNameCapacity_ptr(&self) -> *mut u16 { Self::__member_currentSaveNameCapacity(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_currentSaveNameLength(this: *const Self) -> *mut u16 { unsafe { member!(this, "BGSSaveLoadManager.currentSaveNameLength", 0x248, u16) } }
+    /// `BGSSaveLoadManager::currentSaveNameLength`, at +0x248 on 1.7.104.
+    #[inline]
+    pub fn currentSaveNameLength(&self) -> u16 { unsafe { Self::__member_currentSaveNameLength(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_currentSaveNameLength(&mut self, value: u16) { unsafe { Self::__member_currentSaveNameLength(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn currentSaveNameLength_ptr(&self) -> *mut u16 { Self::__member_currentSaveNameLength(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_displayPlayerId(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSSaveLoadManager.displayPlayerId", 0xD8, u64) } }
     /// `BGSSaveLoadManager::displayPlayerId`, at +0xD8 on 1.7.104.
     #[inline]
@@ -504,6 +610,16 @@ impl crate::BGSSaveLoadManager {
     pub fn pendingLoadReady_ptr(&self) -> *mut u8 { Self::__member_pendingLoadReady(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_playerIdFlags(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSSaveLoadManager.playerIdFlags", 0xD4, u32) } }
+    /// `BGSSaveLoadManager::playerIdFlags`, at +0xD4 on 1.7.104.
+    #[inline]
+    pub fn playerIdFlags(&self) -> u32 { unsafe { Self::__member_playerIdFlags(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_playerIdFlags(&mut self, value: u32) { unsafe { Self::__member_playerIdFlags(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn playerIdFlags_ptr(&self) -> *mut u32 { Self::__member_playerIdFlags(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_saveFiles(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "BGSSaveLoadManager.saveFiles", 0x100, crate::BSTArray) } }
     /// `BGSSaveLoadManager::saveFiles`, at +0x100 on 1.7.104.
     #[inline]
@@ -528,6 +644,16 @@ impl crate::BGSSaveLoadManager {
     pub fn thread(&self) -> &crate::BGSSaveLoadManager__Thread { unsafe { &*Self::__member_thread(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn thread_ptr(&self) -> *mut crate::BGSSaveLoadManager__Thread { Self::__member_thread(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_unk121(this: *const Self) -> *mut u8 { unsafe { member!(this, "BGSSaveLoadManager.unk121", 0x121, u8) } }
+    /// `BGSSaveLoadManager::unk121`, at +0x121 on 1.7.104.
+    #[inline]
+    pub fn unk121(&self) -> u8 { unsafe { Self::__member_unk121(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_unk121(&mut self, value: u8) { unsafe { Self::__member_unk121(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn unk121_ptr(&self) -> *mut u8 { Self::__member_unk121(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_unknownMap(this: *const Self) -> *mut [u8; 48] { unsafe { member!(this, "BGSSaveLoadManager.unknownMap", 0xA0, [u8; 48]) } }
@@ -563,6 +689,16 @@ impl crate::BGSSaveLoadManager__Thread {
     pub fn paused_ptr(&self) -> *mut u32 { Self::__member_paused(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_queue(this: *const Self) -> *mut [u8; 96] { unsafe { member!(this, "BGSSaveLoadManager::Thread.queue", 0x60, [u8; 96]) } }
+    /// `BGSSaveLoadManager::Thread::queue`, at +0x60 on 1.7.104.
+    #[inline]
+    pub fn queue(&self) -> [u8; 96] { unsafe { Self::__member_queue(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_queue(&mut self, value: [u8; 96]) { unsafe { Self::__member_queue(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn queue_ptr(&self) -> *mut [u8; 96] { Self::__member_queue(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_running(this: *const Self) -> *mut u8 { unsafe { member!(this, "BGSSaveLoadManager::Thread.running", 0x50, u8) } }
     /// `BGSSaveLoadManager::Thread::running`, at +0x50 on 1.7.104.
     #[inline]
@@ -580,6 +716,26 @@ impl crate::ChangeFormMap {
     /// `void (ChangeFormMap* map, u32 formID, u32 flags)`
     #[inline]
     pub fn add_flags(&self, formID: u32, flags: u32) { unsafe { function!(35507, (*const Self, u32, u32))(core::ptr::from_ref(self), formID, flags) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_lock(this: *const Self) -> *mut u64 { unsafe { member!(this, "ChangeFormMap.lock", 0x30, u64) } }
+    /// `ChangeFormMap::lock`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn lock(&self) -> u64 { unsafe { Self::__member_lock(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_lock(&mut self, value: u64) { unsafe { Self::__member_lock(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn lock_ptr(&self) -> *mut u64 { Self::__member_lock(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_map(this: *const Self) -> *mut [u8; 40] { unsafe { member!(this, "ChangeFormMap.map", 0x8, [u8; 40]) } }
+    /// `ChangeFormMap::map`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn map(&self) -> [u8; 40] { unsafe { Self::__member_map(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_map(&mut self, value: [u8; 40]) { unsafe { Self::__member_map(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn map_ptr(&self) -> *mut [u8; 40] { Self::__member_map(core::ptr::from_ref(self)) }
 }
 
 impl crate::SavedChangeFormRecord {
@@ -588,6 +744,26 @@ impl crate::SavedChangeFormRecord {
     /// Semantic field, save pass, high; `None` while the pointer is null.
     #[inline]
     pub fn form(&self) -> Option<&crate::TESForm> { unsafe { { self.form }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_flags(this: *const Self) -> *mut u32 { unsafe { member!(this, "SavedChangeFormRecord.flags", 0x1C, u32) } }
+    /// `SavedChangeFormRecord::flags`, at +0x1C on 1.7.104.
+    #[inline]
+    pub fn flags(&self) -> u32 { unsafe { Self::__member_flags(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_flags(&mut self, value: u32) { unsafe { Self::__member_flags(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn flags_ptr(&self) -> *mut u32 { Self::__member_flags(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_state(this: *const Self) -> *mut u16 { unsafe { member!(this, "SavedChangeFormRecord.state", 0x20, u16) } }
+    /// `SavedChangeFormRecord::state`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn state(&self) -> u16 { unsafe { Self::__member_state(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_state(&mut self, value: u16) { unsafe { Self::__member_state(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn state_ptr(&self) -> *mut u16 { Self::__member_state(core::ptr::from_ref(self)) }
 }
 
 impl crate::_anon_14F04957__Win32FileType {
@@ -621,16 +797,6 @@ impl crate::_anon_14F04957__Win32FileType {
     pub fn set_payloadSize(&mut self, value: u32) { unsafe { Self::__member_payloadSize(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn payloadSize_ptr(&self) -> *mut u32 { Self::__member_payloadSize(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_saveName(this: *const Self) -> *mut [u8; 8] { unsafe { member!(this, "_anon_14F04957::Win32FileType.saveName", 0xBB0, [u8; 8]) } }
-    /// `_anon_14F04957::Win32FileType::saveName`, at +0xBB0 on 1.7.104.
-    #[inline]
-    pub fn saveName(&self) -> [u8; 8] { unsafe { Self::__member_saveName(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_saveName(&mut self, value: [u8; 8]) { unsafe { Self::__member_saveName(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn saveName_ptr(&self) -> *mut [u8; 8] { Self::__member_saveName(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_saveNameBuffer(this: *const Self) -> *mut [u8; 256] { unsafe { member!(this, "_anon_14F04957::Win32FileType.saveNameBuffer", 0xAB0, [u8; 256]) } }

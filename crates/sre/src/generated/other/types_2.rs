@@ -3766,13 +3766,14 @@ pub struct MagicCaster {
     /// +0x0 `vtbl:MagicCaster:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::MagicCaster_vtable,
-    pub unknown_8: [u8; 16],
+    unknown_8: [u8; 16],
     /// +0x18 `undefined4`, ctor store
-    pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    #[doc(hidden)]
+    pub __field_18: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
     /// +0x30 `undefined4`, ctor store
@@ -3790,7 +3791,7 @@ pub struct MagicCaster {
 }
 const _: () = assert!(size_of::<MagicCaster>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(MagicCaster, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(MagicCaster, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(MagicCaster, __field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(MagicCaster, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(MagicCaster, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(MagicCaster, field_30) == 0x30);
@@ -3871,7 +3872,7 @@ const _: () = assert!(core::mem::offset_of!(MagicFavorites, __field_38) == 0x38)
 /// `MagicItem`: size 0x90 (exact, medium); primary base `TESBoundObject`.
 /// Evidence: lower bound field field_88 meets upper bound next base of AlchemyItem at 0x90.
 /// Bases: `TESBoundObject`@0x0, `TESObject`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `TESFullName`@0x30, `BaseFormComponent`@0x30, `BGSKeywordForm`@0x40, `BaseFormComponent`@0x40.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct MagicItem {
     /// +0x0 `vtbl:MagicItem:0`, rtti
     #[doc(hidden)]
@@ -3886,16 +3887,18 @@ pub struct MagicItem {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 13],
+    unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
-    pub field_28: u16,
+    #[doc(hidden)]
+    pub __field_28: [u8; 2],
     /// +0x2A `undefined2`, base TESBoundObject
-    pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __field_2A: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:MagicItem:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::MagicItem_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `vtbl:MagicItem:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::MagicItem_vtable_40,
@@ -3903,15 +3906,15 @@ pub struct MagicItem {
     pub keywords: *mut c_void,
     /// +0x50 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
-    pub unknown_54: [u8; 28],
+    unknown_54: [u8; 28],
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `undefined8`, ctor store
     pub field_78: u64,
     /// +0x80 `undefined4`, ctor store
     pub field_80: u32,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
     #[doc(hidden)]
@@ -3924,8 +3927,8 @@ const _: () = assert!(core::mem::offset_of!(MagicItem, formFlags) == 0x10);
 const _: () = assert!(core::mem::offset_of!(MagicItem, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(MagicItem, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(MagicItem, formType) == 0x1A);
-const _: () = assert!(core::mem::offset_of!(MagicItem, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(MagicItem, field_2A) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(MagicItem, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(MagicItem, __field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(MagicItem, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(MagicItem, __vftable_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(MagicItem, keywords) == 0x48);
@@ -6434,7 +6437,8 @@ pub struct Moon {
     /// +0xCC `undefined4`, ctor store
     pub field_CC: u32,
     /// +0xD0 `undefined4`, ctor store
-    pub field_D0: u32,
+    #[doc(hidden)]
+    pub __field_D0: [u8; 4],
     unknown_D4: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -6454,7 +6458,7 @@ const _: () = assert!(core::mem::offset_of!(Moon, field_C0) == 0xC0);
 const _: () = assert!(core::mem::offset_of!(Moon, field_C4) == 0xC4);
 const _: () = assert!(core::mem::offset_of!(Moon, field_C8) == 0xC8);
 const _: () = assert!(core::mem::offset_of!(Moon, field_CC) == 0xCC);
-const _: () = assert!(core::mem::offset_of!(Moon, field_D0) == 0xD0);
+const _: () = assert!(core::mem::offset_of!(Moon, __field_D0) == 0xD0);
 
 /// `MotionDrivenHandler`: size 0x10 (exact, medium); primary base `IHandlerFunctor<Actor,BSFixedStringCI>`.
 /// Evidence: runtime: 0x10 at 1 allocation sites.
@@ -6906,7 +6910,8 @@ pub struct NavMeshSearchClosePoint {
     pub __field_1AC: [u8; 4],
     unknown_1B0: [u8; 8],
     /// +0x1B8 `undefined8`, ctor store
-    pub field_1B8: u64,
+    #[doc(hidden)]
+    pub __field_1B8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -6936,7 +6941,7 @@ const _: () = assert!(core::mem::offset_of!(NavMeshSearchClosePoint, __field_194
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchClosePoint, __field_19C) == 0x19C);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchClosePoint, __field_1A4) == 0x1A4);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchClosePoint, __field_1AC) == 0x1AC);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchClosePoint, field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchClosePoint, __field_1B8) == 0x1B8);
 
 /// `NavMeshSearchFitSphere`: size >= 0x1A0 (lower bound); partial, the struct stops at the lower bound; primary base `AStarSearch<BSFastNavmeshTriLocation,void*___ptr64,3>`.
 /// Evidence: field field_198.
@@ -7002,7 +7007,8 @@ pub struct NavMeshSearchFitSphere {
     pub __field_16C: [u8; 8],
     unknown_174: [u8; 28],
     /// +0x190 `undefined8`, ctor store
-    pub field_190: u64,
+    #[doc(hidden)]
+    pub __field_190: [u8; 8],
     /// +0x198 `undefined2`, ctor store
     pub field_198: u16,
     unknown_19A: [u8; 6],
@@ -7031,7 +7037,7 @@ const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, field_160) =
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, field_164) == 0x164);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, field_168) == 0x168);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, __field_16C) == 0x16C);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, field_190) == 0x190);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, __field_190) == 0x190);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, field_198) == 0x198);
 
 /// `NavMeshSearchFlee`: size >= 0x1A8 (lower bound); partial, the struct stops at the lower bound; primary base `AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>`.
@@ -7098,18 +7104,22 @@ pub struct NavMeshSearchFlee {
     pub __field_180: [u8; 4],
     unknown_184: [u8; 4],
     /// +0x188 `undefined8`, ctor store
-    pub field_188: u64,
+    #[doc(hidden)]
+    pub __field_188: [u8; 8],
     /// +0x190 `undefined4`, ctor store
-    pub field_190: u32,
+    #[doc(hidden)]
+    pub __field_190: [u8; 4],
     unknown_194: [u8; 4],
     /// +0x198 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_198: [u8; 1],
     unknown_199: [u8; 3],
     /// +0x19C `undefined8`, ctor store
-    pub field_19C: u64,
+    #[doc(hidden)]
+    pub __field_19C: [u8; 8],
     /// +0x1A4 `undefined4`, ctor store
-    pub field_1A4: u32,
+    #[doc(hidden)]
+    pub __field_1A4: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -7134,11 +7144,11 @@ const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, field_158) == 0x1
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, __field_178) == 0x178);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, __field_180) == 0x180);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, field_188) == 0x188);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, field_190) == 0x190);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, __field_188) == 0x188);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, __field_190) == 0x190);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, __field_198) == 0x198);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, field_19C) == 0x19C);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, field_1A4) == 0x1A4);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, __field_19C) == 0x19C);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, __field_1A4) == 0x1A4);
 
 /// `NavMeshSearchHide`: size >= 0x208 (lower bound); partial, the struct stops at the lower bound; primary base `BSNavmeshSearch`.
 /// Evidence: field field_200.
@@ -7208,7 +7218,8 @@ pub struct NavMeshSearchHide {
     pub __field_198: [u8; 4],
     unknown_19C: [u8; 4],
     /// +0x1A0 `undefined8`, base BSNavmeshSearch
-    pub field_1A0: u64,
+    #[doc(hidden)]
+    pub __field_1A0: [u8; 8],
     /// +0x1A8 `float`, base BSNavmeshSearch
     #[doc(hidden)]
     pub __field_1A8: [u8; 4],
@@ -7237,7 +7248,8 @@ pub struct NavMeshSearchHide {
     pub __field_1F0: [u8; 4],
     unknown_1F4: [u8; 4],
     /// +0x1F8 `undefined8`, ctor store
-    pub field_1F8: u64,
+    #[doc(hidden)]
+    pub __field_1F8: [u8; 8],
     /// +0x200 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_200: [u8; 4],
@@ -7267,7 +7279,7 @@ const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, __field_170) == 0
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, __field_178) == 0x178);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, __field_190) == 0x190);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, __field_198) == 0x198);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, field_1A0) == 0x1A0);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, __field_1A0) == 0x1A0);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, __field_1A8) == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, field_1B0) == 0x1B0);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, __field_1C8) == 0x1C8);
@@ -7276,7 +7288,7 @@ const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, __field_1D8) == 0
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, __field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, __field_1E8) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, __field_1F0) == 0x1F0);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, field_1F8) == 0x1F8);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, __field_1F8) == 0x1F8);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, __field_200) == 0x200);
 
 /// `NavMeshSearchLOS`: size >= 0x1E0 (lower bound); partial, the struct stops at the lower bound; primary base `AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>`.
@@ -7366,9 +7378,11 @@ pub struct NavMeshSearchLOS {
     #[doc(hidden)]
     pub __field_1C8: [u8; 8],
     /// +0x1D0 `undefined8`, ctor store
-    pub field_1D0: u64,
+    #[doc(hidden)]
+    pub __field_1D0: [u8; 8],
     /// +0x1D8 `undefined4`, ctor store
-    pub field_1D8: u32,
+    #[doc(hidden)]
+    pub __field_1D8: [u8; 4],
     unknown_1DC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -7401,8 +7415,8 @@ const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, __field_1B0) == 0x
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, __field_1B8) == 0x1B8);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, __field_1C0) == 0x1C0);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, __field_1C8) == 0x1C8);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, __field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, __field_1D8) == 0x1D8);
 
 /// `NavMeshSearchMaxCost`: size >= 0x1D0 (lower bound); partial, the struct stops at the lower bound; primary base `BSNavmeshSearch`.
 /// Evidence: field field_1CC.
@@ -7472,7 +7486,8 @@ pub struct NavMeshSearchMaxCost {
     pub __field_198: [u8; 4],
     unknown_19C: [u8; 4],
     /// +0x1A0 `undefined8`, base BSNavmeshSearch
-    pub field_1A0: u64,
+    #[doc(hidden)]
+    pub __field_1A0: [u8; 8],
     /// +0x1A8 `float`, base BSNavmeshSearch
     #[doc(hidden)]
     pub __field_1A8: [u8; 4],
@@ -7513,7 +7528,7 @@ const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, __field_170) =
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, __field_178) == 0x178);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, __field_190) == 0x190);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, __field_198) == 0x198);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, field_1A0) == 0x1A0);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, __field_1A0) == 0x1A0);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, __field_1A8) == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, field_1B0) == 0x1B0);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, field_1B8) == 0x1B8);
@@ -7589,7 +7604,8 @@ pub struct NavMeshSearchMultipleGoals {
     pub __field_198: [u8; 4],
     unknown_19C: [u8; 4],
     /// +0x1A0 `undefined8`, base BSNavmeshSearch
-    pub field_1A0: u64,
+    #[doc(hidden)]
+    pub __field_1A0: [u8; 8],
     /// +0x1A8 `float`, base BSNavmeshSearch
     #[doc(hidden)]
     pub __field_1A8: [u8; 4],
@@ -7632,7 +7648,7 @@ const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, __field_
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, __field_178) == 0x178);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, __field_190) == 0x190);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, __field_198) == 0x198);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, field_1A0) == 0x1A0);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, __field_1A0) == 0x1A0);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, __field_1A8) == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, field_1B0) == 0x1B0);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, field_1B8) == 0x1B8);
@@ -7708,21 +7724,27 @@ pub struct NavMeshSearchSLPoint {
     pub __field_198: [u8; 4],
     unknown_19C: [u8; 4],
     /// +0x1A0 `undefined8`, base BSNavmeshSearch
-    pub field_1A0: u64,
+    #[doc(hidden)]
+    pub __field_1A0: [u8; 8],
     /// +0x1A8 `float`, base BSNavmeshSearch
     #[doc(hidden)]
     pub __field_1A8: [u8; 4],
     unknown_1AC: [u8; 4],
     /// +0x1B0 `undefined8`, ctor store
-    pub field_1B0: u64,
+    #[doc(hidden)]
+    pub __field_1B0: [u8; 8],
     /// +0x1B8 `undefined8`, ctor store
-    pub field_1B8: u64,
+    #[doc(hidden)]
+    pub __field_1B8: [u8; 8],
     /// +0x1C0 `undefined8`, ctor store
-    pub field_1C0: u64,
+    #[doc(hidden)]
+    pub __field_1C0: [u8; 8],
     /// +0x1C8 `undefined8`, ctor store
-    pub field_1C8: u64,
+    #[doc(hidden)]
+    pub __field_1C8: [u8; 8],
     /// +0x1D0 `undefined4`, ctor store
-    pub field_1D0: u32,
+    #[doc(hidden)]
+    pub __field_1D0: [u8; 4],
     unknown_1D4: [u8; 4],
     /// +0x1D8 `undefined8`, ctor store
     pub field_1D8: u64,
@@ -7759,13 +7781,13 @@ const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, __field_170) =
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, __field_178) == 0x178);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, __field_190) == 0x190);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, __field_198) == 0x198);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, field_1A0) == 0x1A0);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, __field_1A0) == 0x1A0);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, __field_1A8) == 0x1A8);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, field_1C8) == 0x1C8);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, __field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, __field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, __field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, __field_1C8) == 0x1C8);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, __field_1D0) == 0x1D0);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, field_1D8) == 0x1D8);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, field_1E8) == 0x1E8);
@@ -7961,13 +7983,14 @@ pub struct NonActorMagicCaster {
     /// +0x10 `vtbl:NonActorMagicCaster:10`, rtti
     #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::NonActorMagicCaster_vtable_10,
-    pub unknown_18: [u8; 16],
+    unknown_18: [u8; 16],
     /// +0x28 `undefined4`, base MagicCaster
-    pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __field_28: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined4`, base MagicCaster
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base MagicCaster
     pub field_38: u64,
     /// +0x40 `undefined4`, base MagicCaster
@@ -7984,7 +8007,7 @@ pub struct NonActorMagicCaster {
     pub field_58: u64,
     /// +0x60 `undefined4`, ctor store
     pub field_60: u32,
-    pub unknown_64: [u8; 4],
+    unknown_64: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -7992,7 +8015,7 @@ const _: () = assert!(size_of::<NonActorMagicCaster>() == 0x68);
 const _: () = assert!(core::mem::offset_of!(NonActorMagicCaster, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(NonActorMagicCaster, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NonActorMagicCaster, __vftable_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(NonActorMagicCaster, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(NonActorMagicCaster, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NonActorMagicCaster, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NonActorMagicCaster, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NonActorMagicCaster, field_40) == 0x40);
@@ -8868,19 +8891,22 @@ pub struct PlayerRegionState {
     pub __field_40: [u8; 2],
     unknown_42: [u8; 6],
     /// +0x48 `undefined8`, ctor store
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     /// +0x50 `undefined8`, ctor store
-    pub field_50: u64,
+    #[doc(hidden)]
+    pub __field_50: [u8; 8],
     /// +0x58 `undefined8`, ctor store
-    pub field_58: u64,
+    #[doc(hidden)]
+    pub __field_58: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PlayerRegionState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(PlayerRegionState, __field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(PlayerRegionState, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(PlayerRegionState, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(PlayerRegionState, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(PlayerRegionState, __field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(PlayerRegionState, __field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(PlayerRegionState, __field_58) == 0x58);
 
 /// `PlayerSleepWaitMovementControllerAdapter`: size >= 0x28 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<TESSleepStartEvent>`.
 /// Evidence: vptr at 0x20.
@@ -10028,7 +10054,8 @@ pub struct QueuedPromoteLargeReferencesTask {
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
     /// +0x50 `undefined4`, ctor store
-    pub field_50: u32,
+    #[doc(hidden)]
+    pub __field_50: [u8; 4],
     unknown_54: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -10039,7 +10066,7 @@ const _: () = assert!(core::mem::offset_of!(QueuedPromoteLargeReferencesTask, __
 const _: () = assert!(core::mem::offset_of!(QueuedPromoteLargeReferencesTask, __field_C) == 0xC);
 const _: () = assert!(core::mem::offset_of!(QueuedPromoteLargeReferencesTask, __field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(QueuedPromoteLargeReferencesTask, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(QueuedPromoteLargeReferencesTask, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(QueuedPromoteLargeReferencesTask, __field_50) == 0x50);
 
 /// `QueuedPromoteLocationReferencesTask`: size 0x58 (exact, medium); primary base `QueuedPromoteReferencesTask`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -11181,14 +11208,14 @@ const _: () = assert!(core::mem::offset_of!(SaveStorageWrapper, field_28) == 0x2
 /// `SceneGraph`: size 0x150 (exact, high); primary base `BSSceneGraph`.
 /// Evidence: runtime: 0x150 at 3 allocation sites; agrees with the static allocation sites.
 /// Bases: `BSSceneGraph`@0x0, `NiNode`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct SceneGraph {
     /// +0x0 `vtbl:SceneGraph:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SceneGraph_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -11198,17 +11225,19 @@ pub struct SceneGraph {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
     pub world: crate::NiTransform,
     /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
@@ -11222,26 +11251,29 @@ pub struct SceneGraph {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
+    unknown_10A: [u8; 6],
     /// +0x110 `undefined1`, base NiNode, semantic; NiTObjectArray<NiPointer<NiAVObject>>: vtable +0x110, data +0x118, capacity u16 +0x120, slots in use u16 +0x122, non-null count u16 +0x124, grow step u16 +0x126 (high)
     pub children: [u8; 24],
     /// +0x128 `undefined8`, base BSSceneGraph
     pub field_128: u64,
     /// +0x130 `undefined8`, base BSSceneGraph
-    pub field_130: u64,
+    #[doc(hidden)]
+    pub __field_130: [u8; 8],
     /// +0x138 `undefined1`, base BSSceneGraph
     pub field_138: u8,
-    pub unknown_139: [u8; 7],
+    unknown_139: [u8; 7],
     /// +0x140 `undefined8`, ctor store
     pub field_140: u64,
     /// +0x148 `undefined2`, ctor store
     pub field_148: u16,
-    pub unknown_14A: [u8; 6],
+    unknown_14A: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -11252,23 +11284,23 @@ const _: () = assert!(core::mem::offset_of!(SceneGraph, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(SceneGraph, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(SceneGraph, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(SceneGraph, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(SceneGraph, __local) == 0x48);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, world) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, previousWorld) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(SceneGraph, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(SceneGraph, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(SceneGraph, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(SceneGraph, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, children) == 0x110);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, field_128) == 0x128);
-const _: () = assert!(core::mem::offset_of!(SceneGraph, field_130) == 0x130);
+const _: () = assert!(core::mem::offset_of!(SceneGraph, __field_130) == 0x130);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, field_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, field_140) == 0x140);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, field_148) == 0x148);
@@ -11542,9 +11574,11 @@ pub struct ScrollItem {
     pub formType: u8,
     unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
-    pub field_28: u16,
+    #[doc(hidden)]
+    pub __field_28: [u8; 2],
     /// +0x2A `undefined2`, base TESBoundObject
-    pub field_2A: u16,
+    #[doc(hidden)]
+    pub __field_2A: [u8; 2],
     unknown_2C: [u8; 4],
     /// +0x30 `vtbl:ScrollItem:30`, rtti
     #[doc(hidden)]
@@ -11645,8 +11679,8 @@ const _: () = assert!(core::mem::offset_of!(ScrollItem, formFlags) == 0x10);
 const _: () = assert!(core::mem::offset_of!(ScrollItem, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(ScrollItem, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(ScrollItem, formType) == 0x1A);
-const _: () = assert!(core::mem::offset_of!(ScrollItem, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(ScrollItem, field_2A) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(ScrollItem, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(ScrollItem, __field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(ScrollItem, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(ScrollItem, __vftable_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(ScrollItem, keywords) == 0x48);
@@ -12982,7 +13016,8 @@ pub struct SpectatorPackage {
     pub field_70: u64,
     unknown_78: [u8; 96],
     /// +0xD8 `undefined4`, base TESPackage
-    pub field_D8: u32,
+    #[doc(hidden)]
+    pub __field_D8: [u8; 4],
     /// +0xDC `undefined4`, base TESPackage
     #[doc(hidden)]
     pub __field_DC: [u8; 4],
@@ -13026,7 +13061,7 @@ const _: () = assert!(core::mem::offset_of!(SpectatorPackage, field_40) == 0x40)
 const _: () = assert!(core::mem::offset_of!(SpectatorPackage, __field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(SpectatorPackage, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(SpectatorPackage, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(SpectatorPackage, field_D8) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(SpectatorPackage, __field_D8) == 0xD8);
 const _: () = assert!(core::mem::offset_of!(SpectatorPackage, __field_DC) == 0xDC);
 const _: () = assert!(core::mem::offset_of!(SpectatorPackage, field_E0) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(SpectatorPackage, field_E8) == 0xE8);
@@ -13056,16 +13091,18 @@ pub struct SpellItem {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 13],
+    unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
-    pub field_28: u16,
+    #[doc(hidden)]
+    pub __field_28: [u8; 2],
     /// +0x2A `undefined2`, base TESBoundObject
-    pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __field_2A: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:SpellItem:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::SpellItem_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `vtbl:SpellItem:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::SpellItem_vtable_40,
@@ -13073,15 +13110,15 @@ pub struct SpellItem {
     pub keywords: *mut c_void,
     /// +0x50 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
-    pub unknown_54: [u8; 28],
+    unknown_54: [u8; 28],
     /// +0x70 `undefined4`, base MagicItem
     pub field_70: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `undefined8`, base MagicItem
     pub field_78: u64,
     /// +0x80 `undefined4`, base MagicItem
     pub field_80: u32,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined8`, base MagicItem
     pub field_88: u64,
     /// +0x90 `vtbl:SpellItem:90`, rtti
@@ -13099,7 +13136,7 @@ pub struct SpellItem {
     pub __vftable_B0: *const crate::raw::vtables::SpellItem_vtable_B0,
     /// +0xB8 `undefined4`, base TESDescription
     pub field_B8: u32,
-    pub unknown_BC: [u8; 4],
+    unknown_BC: [u8; 4],
     /// +0xC0 `undefined4`, ctor store
     pub field_C0: u32,
     /// +0xC4 `undefined8`, ctor store
@@ -13124,8 +13161,8 @@ const _: () = assert!(core::mem::offset_of!(SpellItem, formFlags) == 0x10);
 const _: () = assert!(core::mem::offset_of!(SpellItem, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(SpellItem, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(SpellItem, formType) == 0x1A);
-const _: () = assert!(core::mem::offset_of!(SpellItem, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(SpellItem, field_2A) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(SpellItem, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(SpellItem, __field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(SpellItem, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(SpellItem, __vftable_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(SpellItem, keywords) == 0x48);
@@ -13668,12 +13705,14 @@ pub struct SummonCreatureEffect {
     /// +0x98 `float`, ctor store (widths [4, 8])
     pub field_98: f32,
     /// +0x9C `float`, ctor store
-    pub field_9C: f32,
+    #[doc(hidden)]
+    pub __field_9C: [u8; 4],
     /// +0xA0 `float`, ctor store (widths [4, 8])
     #[doc(hidden)]
     pub __field_A0: [u8; 4],
     /// +0xA4 `float`, ctor store
-    pub field_A4: f32,
+    #[doc(hidden)]
+    pub __field_A4: [u8; 4],
     /// +0xA8 `undefined4`, ctor store
     pub field_A8: u32,
     unknown_AC: [u8; 4],
@@ -13683,7 +13722,8 @@ pub struct SummonCreatureEffect {
     #[doc(hidden)]
     pub __field_B8: [u8; 2],
     /// +0xBA `undefined1`, ctor store
-    pub field_BA: u8,
+    #[doc(hidden)]
+    pub __field_BA: [u8; 1],
     unknown_BB: [u8; 5],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -13716,13 +13756,13 @@ const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, field_88) == 0
 const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, field_90) == 0x90);
 const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, field_94) == 0x94);
 const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, field_9C) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, __field_9C) == 0x9C);
 const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, __field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, __field_A4) == 0xA4);
 const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, field_A8) == 0xA8);
 const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, __field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, field_BA) == 0xBA);
+const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, __field_BA) == 0xBA);
 
 /// `SummonPlacementEffect`: size 0xA0 (exact, high); primary base `ReferenceEffect`.
 /// Evidence: allocation sites (high): {'160': 3}.
@@ -13757,7 +13797,8 @@ pub struct SummonPlacementEffect {
     /// +0x40 `u8`, base ReferenceEffect, semantic; set to 1 to end the effect (high)
     pub finished: u8,
     /// +0x41 `u8`, base ReferenceEffect, semantic; set to 1 by InitAndRegisterOrDestroy (low)
-    pub field_41: u8,
+    #[doc(hidden)]
+    pub __field_41: [u8; 1],
     unknown_42: [u8; 6],
     /// +0x48 `vtbl:SummonPlacementEffect:48`, rtti
     #[doc(hidden)]
@@ -13804,7 +13845,7 @@ const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, controller) =
 const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, target) == 0x38);
 const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, field_3C) == 0x3C);
 const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, finished) == 0x40);
-const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, field_41) == 0x41);
+const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, __field_41) == 0x41);
 const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, __vftable_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, field_50) == 0x50);
 const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, __field_58) == 0x58);
@@ -13896,7 +13937,8 @@ pub struct SynchronizedPriorityQueue_NiPointer_IOTask__ {
     #[doc(hidden)]
     pub __field_10: [u8; 4],
     /// +0x14 `undefined4`, ctor store
-    pub field_14: u32,
+    #[doc(hidden)]
+    pub __field_14: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -13904,7 +13946,7 @@ const _: () = assert!(size_of::<SynchronizedPriorityQueue_NiPointer_IOTask__>() 
 const _: () = assert!(core::mem::offset_of!(SynchronizedPriorityQueue_NiPointer_IOTask__, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(SynchronizedPriorityQueue_NiPointer_IOTask__, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(SynchronizedPriorityQueue_NiPointer_IOTask__, __field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(SynchronizedPriorityQueue_NiPointer_IOTask__, field_14) == 0x14);
+const _: () = assert!(core::mem::offset_of!(SynchronizedPriorityQueue_NiPointer_IOTask__, __field_14) == 0x14);
 
 /// `SynchronizedQueue<NiPointer<AttachDistant3DTask>_>`: size 0x40 (exact, medium); primary base `InterfacedClass`.
 /// Evidence: runtime: 0x40 at 1 allocation sites.
@@ -14916,7 +14958,8 @@ pub struct TrespassPackage {
     pub field_70: u64,
     unknown_78: [u8; 96],
     /// +0xD8 `undefined4`, base TESPackage
-    pub field_D8: u32,
+    #[doc(hidden)]
+    pub __field_D8: [u8; 4],
     /// +0xDC `undefined4`, base TESPackage
     #[doc(hidden)]
     pub __field_DC: [u8; 4],
@@ -14951,7 +14994,7 @@ const _: () = assert!(core::mem::offset_of!(TrespassPackage, field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(TrespassPackage, __field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(TrespassPackage, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(TrespassPackage, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(TrespassPackage, field_D8) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(TrespassPackage, __field_D8) == 0xD8);
 const _: () = assert!(core::mem::offset_of!(TrespassPackage, __field_DC) == 0xDC);
 const _: () = assert!(core::mem::offset_of!(TrespassPackage, field_E0) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(TrespassPackage, field_E8) == 0xE8);

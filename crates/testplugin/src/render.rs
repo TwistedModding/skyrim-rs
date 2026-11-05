@@ -12,9 +12,7 @@ use skyrim::render::{CullFn, HIDDEN, SetFirstPersonFn, floats, frame_counter, sh
 use sre::raw::vtables;
 use sre::{CameraState, NiAVObject, NiNode, PlayerCamera, PlayerCharacter, ShadowMapData, ShadowSceneNode};
 
-use crate::{Test, check, lacks, needs};
-
-const MAP_SIZE: &str = "size ShadowMapData";
+use crate::{Test, check};
 
 fn is_hidden(node: &NiAVObject) -> bool {
     node.flags & HIDDEN != 0
@@ -70,7 +68,6 @@ fn count(view: usize, root: usize, pass: usize, hidden: usize, is_self: usize) -
 unsafe extern "C" fn cull_detour(node: *mut sre::NiAVObject, culler: *mut sre::NiCullingProcess, plane_mask: u32) {
     let original = CULL.get().expect("stored before enabling").original();
     if ACTIVE.load(Ordering::Acquire)
-        && !lacks(MAP_SIZE)
         && let (Some(n), Some(c)) = (unsafe { node.as_ref() }, unsafe { culler.cast::<sre::BSCullingProcess>().as_ref() })
     {
         let roots = [THIRD_ROOT.load(Ordering::Relaxed), FIRST_ROOT.load(Ordering::Relaxed)];
@@ -160,7 +157,6 @@ fn scene() -> Result<String, String> {
 /// The sun's cascade records are filled by the first frame of the loaded cell; before it (at
 /// `PostLoadGame`) only the counts and the bias are checked.
 fn sun() -> Result<String, String> {
-    needs(&[MAP_SIZE])?;
     let w = world()?;
     let sun = w.sun_shadow_light().ok_or("sunShadowLight is null")?;
     let class = skyrim::class_of(sun).ok_or("the sun's vtable is not in the ledger")?;
@@ -291,7 +287,6 @@ fn table() -> String {
 }
 
 fn casters() -> Result<String, String> {
-    needs(&[MAP_SIZE])?;
     let t = table();
     check(count(0, 0, 0, 0, 1) > 0, &format!("third person: the third-person root was never visited by a shadow camera ({t})"))?;
     check(count(0, 0, 1, 0, 1) > 0, &format!("third person: the third-person root was never visited by the frame camera ({t})"))?;
@@ -305,7 +300,6 @@ fn casters() -> Result<String, String> {
 }
 
 fn lights() -> Result<String, String> {
-    needs(&[MAP_SIZE])?;
     let w = world()?;
     let sun = w.sun_shadow_light().ok_or("sunShadowLight is null")?;
     let portal_graph = w.portalGraph;

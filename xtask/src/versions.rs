@@ -97,6 +97,20 @@ impl Diff {
             _ => Self::Unverified,
         }
     }
+
+    /// A field, slot, base or class size, where a wrong value is a silently wrong offset the
+    /// manifest cannot see. Status comes first: review and confidence never make an `unverified`
+    /// row usable. A value at any confidence, any row at `low` and a `same` at `medium` from RE's
+    /// `statics.py` (evidence `hand: statics`) are unverified unless a review accepts them, and
+    /// `rejected` is never usable. Other `same` at `medium` stays usable, and the suites are its
+    /// only check.
+    fn checked(row: &Cells, status: &str, value: &str) -> Self {
+        let diff = Self::of(row.text(status), row.number(value));
+        let confidence = row.text("confidence");
+        let scripted = confidence == Some("medium") && diff == Self::Same && row.text("evidence").is_some_and(|e| e.starts_with("hand: statics"));
+        let weak = scripted || confidence == Some("low") || matches!(diff, Self::Value(_));
+        if row.text("review") == Some("rejected") || (weak && !accepted(row)) { Self::Unverified } else { diff }
+    }
 }
 
 /// An AE id on one runtime.
@@ -107,6 +121,8 @@ enum IdState {
     /// The function is known here, but that library holds no id at its address.
     Missing,
     Unverified,
+    /// The address is good and the signature was not compared, with the id here when it differs.
+    Address(Option<u32>),
 }
 
 #[derive(Clone, Debug, PartialEq, Eq)]
@@ -171,22 +187,31 @@ pub struct Runtime {
     seen: HashSet<u32>,
 }
 
+/// Whether a review accepted this row and says on what basis; RE's older reviews have none and
+/// were not re-read, so they count as no review.
+fn accepted(row: &Cells) -> bool {
+    row.text("review") == Some("accepted") && row.text("review_basis").is_some()
+}
+
+/// How a reviewed function row's note says that only its address was read.
+const ADDRESS_ONLY: &str = "the verdict covers the address only";
+
 /// Whether an id's own row lets it be used on a runtime.
 #[derive(Clone, Copy, PartialEq, Eq)]
 enum Usable {
     Yes,
+    Address,
     Unverified,
     Rejected,
 }
 
 /// A row's status and review. `rejected` is never usable, and `accepted` on a `changed` signature is
-/// a real parameter change: the runtime's prototype applies, which the generator cannot express yet.
+/// a real parameter change: the runtime's prototype applies, which the generator cannot express yet,
+/// so only the address is good, as it is on a row whose note says the verdict covers nothing more.
 /// An identical body reads the same arguments, since the comparison masks only addresses, so it is
-/// usable whatever its signature says; any other body needs a compared signature or a review. On SE
-/// most prototypes were never recovered, so an unverified signature does not count against a
-/// compared body and the pair's own confidence decides. Tables with no signature column (globals,
-/// vtables) need only a row that was compared.
-fn usable(row: &Cells, signature: bool, se_database: bool) -> Usable {
+/// usable whatever its signature says; any other body needs a compared signature or a review.
+/// Tables with no signature column (globals, vtables) need only a row that was compared.
+fn usable(row: &Cells, signature: bool) -> Usable {
     let review = row.text("review");
     let status = row.text("status");
     let signature_status = row.text("signature_status");
@@ -194,9 +219,9 @@ fn usable(row: &Cells, signature: bool, se_database: bool) -> Usable {
         Usable::Rejected
     } else if !signature {
         if status == Some("unverified") { Usable::Unverified } else { Usable::Yes }
-    } else if review == Some("accepted") && signature_status == Some("changed") {
-        Usable::Unverified
-    } else if status == Some("same") || review == Some("accepted") || signature_status == Some("same") || (se_database && status == Some("changed") && signature_status != Some("changed")) {
+    } else if accepted(row) && (signature_status == Some("changed") || row.text("note").is_some_and(|n| n.contains(ADDRESS_ONLY))) {
+        Usable::Address
+    } else if status == Some("same") || accepted(row) || signature_status == Some("same") {
         Usable::Yes
     } else {
         Usable::Unverified
@@ -206,6 +231,8 @@ fn usable(row: &Cells, signature: bool, se_database: bool) -> Usable {
 impl Runtime {
     fn of(file: File) -> Self {
         let database = file.address_library.database.to_ascii_lowercase();
+        let canonical = file.runtime == CANONICAL;
+        let diff = |row: &Cells, status: &str, value: &str| if canonical { Diff::of(row.text(status), row.number(value)) } else { Diff::checked(row, status, value) };
         let mut runtime = Self {
             name: file.runtime,
             address_library: file.address_library.file,
@@ -220,33 +247,33 @@ impl Runtime {
             seen: HashSet::new(),
         };
         file.fields.for_each(|r| {
-            runtime.members.insert((r.name("class"), r.name("name")), Diff::of(r.text("status"), r.number("offset")));
+            runtime.members.insert((r.name("class"), r.name("name")), diff(&r, "status", "offset"));
         });
         file.classes.for_each(|r| {
-            let size = if r.text("status") == Some("absent") { Diff::Missing } else { Diff::of(r.text("size_status"), r.number("size")) };
-            runtime.sizes.insert(r.name("name"), size);
+            let status = if r.text("status") == Some("absent") { "status" } else { "size_status" };
+            runtime.sizes.insert(r.name("name"), diff(&r, status, "size"));
         });
         file.bases.for_each(|r| {
-            runtime.bases.insert((r.name("class"), r.name("base")), Diff::of(r.text("status"), r.number("offset")));
+            runtime.bases.insert((r.name("class"), r.name("base")), diff(&r, "status", "offset"));
         });
         file.slots.for_each(|r| {
             if let (Some(displacement), Some(index)) = (r.u32("displacement"), r.u32("index_canonical")) {
-                runtime.slots.insert((r.name("class"), displacement, index), Diff::of(r.text("status"), r.number("index")));
+                runtime.slots.insert((r.name("class"), displacement, index), diff(&r, "status", "index"));
             }
         });
         file.sites.for_each(|r| {
             let (Some(id), Some(canonical)) = (r.u32("id"), r.u32("offset_canonical")) else { return };
             let site = match (r.text("status"), r.u32("offset"), r.bytes("bytes")) {
                 (Some(status @ ("same" | "differs")), Some(offset), Some(bytes)) => Site::Here { same: status == "same", offset, bytes, replacement: r.bytes("replacement") },
-                (Some("absent"), ..) => Site::Missing,
+                (Some("absent"), ..) | (Some("differs"), None, _) => Site::Missing,
                 _ => Site::Unverified,
             };
             runtime.sites.insert((id, canonical), site);
         });
         file.enums.for_each(|r| {
-            let diff = Diff::of(r.text("status"), r.number("value"));
-            if matches!(diff, Diff::Value(_) | Diff::Missing) {
-                runtime.enums.insert((r.name("enum"), r.name("name")), diff);
+            let value = Diff::of(r.text("status"), r.number("value"));
+            if matches!(value, Diff::Value(_) | Diff::Missing) {
+                runtime.enums.insert((r.name("enum"), r.name("name")), value);
             }
         });
         runtime.read_ids(&file.functions, &file.globals, &file.vtables, &file.id_map);
@@ -286,7 +313,7 @@ impl Runtime {
                 if r.text("status") != Some("absent")
                     && let Some(id) = r.u32(id)
                 {
-                    rows.insert(id, usable(&r, signature, se_database));
+                    rows.insert(id, usable(&r, signature));
                 }
             });
         };
@@ -295,7 +322,7 @@ impl Runtime {
         read(vtables, "id_canonical", false);
         self.seen = rows.keys().copied().collect();
         if !se_database {
-            self.ids = rows.iter().filter(|&(_, &u)| u != Usable::Yes).map(|(&id, _)| (id, IdState::Unverified)).collect();
+            self.ids = rows.iter().filter(|&(_, &u)| u != Usable::Yes).map(|(&id, &u)| (id, if u == Usable::Address { IdState::Address(None) } else { IdState::Unverified })).collect();
         }
         vtables.for_each(|r| {
             if let (Some(ae), Some(here)) = (r.u32("id_canonical"), r.u32("id"))
@@ -308,16 +335,17 @@ impl Runtime {
         id_map.for_each(|r| {
             let Some(ae) = r.u32("ae") else { return };
             let row = rows.get(&ae).copied().unwrap_or(Usable::Yes);
-            let review = r.text("review");
-            if row == Usable::Rejected || review == Some("rejected") {
+            if row == Usable::Rejected || r.text("review") == Some("rejected") {
                 if !se_database {
                     self.ids.insert(ae, IdState::Unverified);
                 }
                 return;
             }
+            let pair = accepted(&r) || r.text("confidence") == Some("high");
             let state = match r.u32("se") {
                 None => IdState::Missing,
-                Some(here) if row == Usable::Yes && (review == Some("accepted") || r.text("confidence") == Some("high")) => IdState::Mapped(here),
+                Some(here) if row == Usable::Yes && pair => IdState::Mapped(here),
+                Some(here) if row == Usable::Address && pair => IdState::Address(Some(here)),
                 Some(_) => IdState::Unverified,
             };
             self.ids.insert(ae, state);
@@ -490,6 +518,7 @@ fn profile(runtime: &Runtime, inp: &Inputs, sites: &BTreeSet<(u32, u32)>) -> Pro
                 IdState::Mapped(se) => Written::Id { ae, se: *se },
                 IdState::Missing => Written::IdMissing(ae),
                 IdState::Unverified => Written::IdUnverified(ae),
+                IdState::Address(here) => Written::IdAddress { ae, here: *here },
             });
         }
         if runtime.database != "se" {

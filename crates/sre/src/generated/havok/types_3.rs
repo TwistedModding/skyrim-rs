@@ -9392,26 +9392,27 @@ const _: () = assert!(core::mem::offset_of!(hkpAllCdBodyPairTempCollector, __vft
 /// `hkpAllCdPointCollector`: size 0x230 (exact, medium); primary base `hkpCdPointCollector`.
 /// Evidence: runtime: 0x230 at 1 allocation sites.
 /// Bases: `hkpCdPointCollector`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct hkpAllCdPointCollector {
     /// +0x0 `vtbl:hkpAllCdPointCollector:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkpAllCdPointCollector_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
     /// +0x18 `undefined4`, ctor store
     pub field_18: u32,
     /// +0x1C `undefined4`, ctor store
     pub field_1C: u32,
-    pub unknown_20: [u8; 512],
+    unknown_20: [u8; 512],
     /// +0x220 `undefined8`, ctor store
     pub field_220: u64,
     /// +0x228 `undefined1`, ctor store
-    pub field_228: u8,
-    pub unknown_229: [u8; 3],
+    #[doc(hidden)]
+    pub __field_228: [u8; 1],
+    unknown_229: [u8; 3],
     /// +0x22C `undefined4`, ctor store
     pub field_22C: u32,
     #[doc(hidden)]
@@ -9424,7 +9425,7 @@ const _: () = assert!(core::mem::offset_of!(hkpAllCdPointCollector, field_10) ==
 const _: () = assert!(core::mem::offset_of!(hkpAllCdPointCollector, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(hkpAllCdPointCollector, field_1C) == 0x1C);
 const _: () = assert!(core::mem::offset_of!(hkpAllCdPointCollector, field_220) == 0x220);
-const _: () = assert!(core::mem::offset_of!(hkpAllCdPointCollector, field_228) == 0x228);
+const _: () = assert!(core::mem::offset_of!(hkpAllCdPointCollector, __field_228) == 0x228);
 const _: () = assert!(core::mem::offset_of!(hkpAllCdPointCollector, field_22C) == 0x22C);
 
 /// `hkpAllCdPointTempCollector`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `hkpCdPointCollector`.
@@ -9467,7 +9468,8 @@ pub struct hkpAllRayHitTempCollector {
     pub __field_8: [u8; 4],
     unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
-    pub field_10: u64,
+    #[doc(hidden)]
+    pub __field_10: [u8; 8],
     /// +0x18 `undefined4`, ctor store
     pub field_18: u32,
     /// +0x1C `undefined4`, ctor store
@@ -9629,7 +9631,7 @@ pub struct hkpAllRayHitTempCollector {
 }
 const _: () = assert!(core::mem::offset_of!(hkpAllRayHitTempCollector, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpAllRayHitTempCollector, __field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(hkpAllRayHitTempCollector, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkpAllRayHitTempCollector, __field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(hkpAllRayHitTempCollector, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(hkpAllRayHitTempCollector, field_1C) == 0x1C);
 const _: () = assert!(core::mem::offset_of!(hkpAllRayHitTempCollector, __field_30) == 0x30);

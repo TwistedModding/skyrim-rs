@@ -138,7 +138,8 @@ pub struct BSTEventSource {
     pub sinkCount: u32,
     unknown_14: [u8; 4],
     /// +0x18 `pointer`, semantic; BSTArray data of sinks added while a notification runs (high)
-    pub pendingRegisters: *mut c_void,
+    #[doc(hidden)]
+    pub __pendingRegisters: [u8; 8],
     /// +0x20 `undefined4`, semantic; capacity of pendingRegisters (high)
     #[doc(hidden)]
     pub __pendingRegisterCapacity: [u8; 4],
@@ -148,7 +149,8 @@ pub struct BSTEventSource {
     pub __pendingRegisterCount: [u8; 4],
     unknown_2C: [u8; 4],
     /// +0x30 `pointer`, semantic; BSTArray data of sinks removed while a notification runs (high)
-    pub pendingUnregisters: *mut c_void,
+    #[doc(hidden)]
+    pub __pendingUnregisters: [u8; 8],
     /// +0x38 `undefined4`, semantic; capacity of pendingUnregisters (high)
     #[doc(hidden)]
     pub __pendingUnregisterCapacity: [u8; 4],
@@ -168,10 +170,10 @@ const _: () = assert!(size_of::<BSTEventSource>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSTEventSource, sinks) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSTEventSource, __sinkCapacity) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSTEventSource, sinkCount) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSTEventSource, pendingRegisters) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSTEventSource, __pendingRegisters) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSTEventSource, __pendingRegisterCapacity) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSTEventSource, __pendingRegisterCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSTEventSource, pendingUnregisters) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSTEventSource, __pendingUnregisters) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSTEventSource, __pendingUnregisterCapacity) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSTEventSource, pendingUnregisterCount) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSTEventSource, lock) == 0x48);
@@ -181,7 +183,7 @@ const _: () = assert!(core::mem::offset_of!(BSTEventSource, notifying) == 0x50);
 /// Meaning: button press or release (medium, events pass).
 /// Evidence: events pass (semantic): RTTI class; size from the last field stored by the ctor (0xcfafe0).
 /// Bases: `IDEvent`@0x0, `InputEvent`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct ButtonEvent {
     /// +0x0 `vtbl:ButtonEvent:0`, rtti
     #[doc(hidden)]
@@ -189,14 +191,16 @@ pub struct ButtonEvent {
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
     /// +0xC `undefined4`, ctor store
-    pub field_C: u32,
+    #[doc(hidden)]
+    pub __field_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
-    pub field_10: u64,
+    #[doc(hidden)]
+    pub __field_10: [u8; 8],
     /// +0x18 `class:BSFixedString`, semantic; the user event name (e.g. 'Activate') mapped from the control map (medium)
     pub userEvent: crate::BSFixedString,
     /// +0x20 `undefined4`, semantic; device key code (medium)
     pub idCode: u32,
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `float`, semantic; button value (1 pressed, 0 released; axis value for triggers) (medium)
     pub value: f32,
     /// +0x2C `float`, semantic; seconds held (medium)
@@ -207,8 +211,8 @@ pub struct ButtonEvent {
 const _: () = assert!(size_of::<ButtonEvent>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(ButtonEvent, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ButtonEvent, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(ButtonEvent, field_C) == 0xC);
-const _: () = assert!(core::mem::offset_of!(ButtonEvent, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(ButtonEvent, __field_C) == 0xC);
+const _: () = assert!(core::mem::offset_of!(ButtonEvent, __field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(ButtonEvent, userEvent) == 0x18);
 const _: () = assert!(core::mem::offset_of!(ButtonEvent, idCode) == 0x20);
 const _: () = assert!(core::mem::offset_of!(ButtonEvent, value) == 0x28);
@@ -285,8 +289,8 @@ pub struct EventSourceHolder_MenuOpenClose {
     /// +0x120 `u32`, semantic; number of menus on the stack: the size of the BSTArray<IMenu*> whose data is menuStack (+0x110), capacity +0x118 (high)
     pub menuStackCount: u32,
     unknown_124: [u8; 4],
-    /// +0x128 `undefined1`, semantic; BSTHashMap<BSFixedString, MenuTableEntry>: capacity (power of two) +0x134, free count +0x138, last free index +0x13c, end sentinel +0x140, entry array +0x150 (0x20 per entry); hash = CRC32 of the BSFixedString data pointer (0xce25f0) & (capacity-1) (high)
-    pub menuTable: [u8; 48],
+    /// +0x128 `class:MenuTable`, semantic; BSTHashMap<BSFixedString, MenuTableEntry>: capacity (power of two) +0x134, free count +0x138, last free index +0x13c, end sentinel +0x140, entry array +0x150 (0x20 per entry); hash = CRC32 of the BSFixedString data pointer (0xce25f0) & (capacity-1) (high)
+    pub menuTable: crate::MenuTable,
     /// +0x158 `class:BSSpinLock`, semantic; lock taken by ProcessMessages around the menu table (medium)
     #[doc(hidden)]
     pub __lock: [u8; 8],
@@ -295,20 +299,25 @@ pub struct EventSourceHolder_MenuOpenClose {
     /// +0x164 `undefined4`, semantic; open menus with flag 0x2000; a 0x2000 menu is not shown while it is non-zero, and InventoryUpdate (type 8) messages are only queued while it is non-zero (medium)
     pub numInventoryMenus: u32,
     /// +0x168 `undefined4`, semantic; open menus with flag 0x80; UI3DScene::Render 0x9899c0 draws only when non-zero, OpenContainerMenu 0x911fb0 and ShowBarterMenu do not open while non-zero (medium)
-    pub numMenus80: u32,
+    #[doc(hidden)]
+    pub __numMenus80: [u8; 4],
     /// +0x16C `undefined4`, semantic; open menus with flag 0x800; saving is allowed only when it equals the stack size (every open menu allows it) (high)
     pub numMenusAllowingSave: u32,
     /// +0x170 `undefined4`, semantic; open menus with flag 0x4000 (high)
-    pub numMenus4000: u32,
+    #[doc(hidden)]
+    pub __numMenus4000: [u8; 4],
     /// +0x174 `undefined4`, semantic; open menus with flag 0x8000; (count == stack size) is the bool sent through the source at +0xb8 when it changes (high)
-    pub numMenus8000: u32,
+    #[doc(hidden)]
+    pub __numMenus8000: [u8; 4],
     /// +0x178 `undefined4`, semantic; open menus with flag 0x20000 (low)
-    pub numMenus20000: u32,
+    #[doc(hidden)]
+    pub __numMenus20000: [u8; 4],
     /// +0x17C `undefined1`, semantic; 1 after a menu with flag 0x10 (modal) is shown, 0 after one is hidden (high)
     pub modalMenuOpen: u8,
     unknown_17D: [u8; 3],
     /// +0x180 `undefined1`, semantic; UI frame timer; +0x19c (delta) and +0x1a0 (time) are passed to every open menu's slot 5 each frame (medium)
-    pub timer: [u8; 64],
+    #[doc(hidden)]
+    pub __timer: [u8; 64],
     /// +0x1C0 `undefined1`, semantic; RenderMenuStack draws nothing while 0; the console command ToggleMenus flips it ('Menus -> %s'); 1 after construction (high)
     pub menusVisible: u8,
     /// +0x1C1 `undefined1`, semantic; set by CloseAllMenus, cleared when ProcessMessages finds the queue empty (medium)
@@ -327,13 +336,13 @@ const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, men
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, __lock) == 0x158);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, numPausesGame) == 0x160);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, numInventoryMenus) == 0x164);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, numMenus80) == 0x168);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, __numMenus80) == 0x168);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, numMenusAllowingSave) == 0x16C);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, numMenus4000) == 0x170);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, numMenus8000) == 0x174);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, numMenus20000) == 0x178);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, __numMenus4000) == 0x170);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, __numMenus8000) == 0x174);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, __numMenus20000) == 0x178);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, modalMenuOpen) == 0x17C);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, timer) == 0x180);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, __timer) == 0x180);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, menusVisible) == 0x1C0);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, closingAllMenus) == 0x1C1);
 
@@ -348,15 +357,18 @@ pub struct EventSourceHolder_TES {
     /// +0x58 `class:BSTEventSource`, semantic; source of TESActivateEvent (high)
     pub source_TESActivateEvent: crate::BSTEventSource,
     /// +0xB0 `class:BSTEventSource`, semantic; source of TESActiveEffectApplyRemoveEvent (high)
-    pub source_TESActiveEffectApplyRemoveEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESActiveEffectApplyRemoveEvent: [u8; 88],
     /// +0x108 `class:BSTEventSource`, semantic; source of TESActorLocationChangeEvent (high)
     pub source_TESActorLocationChangeEvent: crate::BSTEventSource,
     /// +0x160 `class:BSTEventSource`, semantic; source of TESBookReadEvent (high)
-    pub source_TESBookReadEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESBookReadEvent: [u8; 88],
     /// +0x1B8 `class:BSTEventSource`, semantic; source of TESCellAttachDetachEvent (high)
     pub source_TESCellAttachDetachEvent: crate::BSTEventSource,
     /// +0x210 `class:BSTEventSource`, semantic; source of TESCellFullyLoadedEvent (high)
-    pub source_TESCellFullyLoadedEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESCellFullyLoadedEvent: [u8; 88],
     /// +0x268 `class:BSTEventSource`, semantic; source of TESCellReadyToApplyDecalsEvent (high)
     #[doc(hidden)]
     pub __source_TESCellReadyToApplyDecalsEvent: [u8; 88],
@@ -365,19 +377,24 @@ pub struct EventSourceHolder_TES {
     /// +0x318 `class:BSTEventSource`, semantic; source of TESContainerChangedEvent (high)
     pub source_TESContainerChangedEvent: crate::BSTEventSource,
     /// +0x370 `class:BSTEventSource`, semantic; source of TESDeathEvent (high)
-    pub source_TESDeathEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESDeathEvent: [u8; 88],
     /// +0x3C8 `class:BSTEventSource`, semantic; source of TESDestructionStageChangedEvent (high)
-    pub source_TESDestructionStageChangedEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESDestructionStageChangedEvent: [u8; 88],
     /// +0x420 `class:BSTEventSource`, semantic; source of TESEnterBleedoutEvent (high)
-    pub source_TESEnterBleedoutEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESEnterBleedoutEvent: [u8; 88],
     /// +0x478 `class:BSTEventSource`, semantic; source of TESEquipEvent (high)
     pub source_TESEquipEvent: crate::BSTEventSource,
     /// +0x4D0 `class:BSTEventSource`, semantic; source of TESFormDeleteEvent (high)
-    pub source_TESFormDeleteEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESFormDeleteEvent: [u8; 88],
     /// +0x528 `class:BSTEventSource`, semantic; source of TESFurnitureEvent (high)
     pub source_TESFurnitureEvent: crate::BSTEventSource,
     /// +0x580 `class:BSTEventSource`, semantic; source of TESGrabReleaseEvent (high)
-    pub source_TESGrabReleaseEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESGrabReleaseEvent: [u8; 88],
     /// +0x5D8 `class:BSTEventSource`, semantic; source of TESHitEvent (high)
     pub source_TESHitEvent: crate::BSTEventSource,
     /// +0x630 `class:BSTEventSource`, semantic; source of TESInitScriptEvent (high)
@@ -387,25 +404,33 @@ pub struct EventSourceHolder_TES {
     /// +0x6E0 `class:BSTEventSource`, semantic; source of TESLockChangedEvent (high)
     pub source_TESLockChangedEvent: crate::BSTEventSource,
     /// +0x738 `class:BSTEventSource`, semantic; source of TESMagicEffectApplyEvent (high)
-    pub source_TESMagicEffectApplyEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESMagicEffectApplyEvent: [u8; 88],
     /// +0x790 `class:BSTEventSource`, semantic; source of TESMagicWardHitEvent (high)
-    pub source_TESMagicWardHitEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESMagicWardHitEvent: [u8; 88],
     /// +0x7E8 `class:BSTEventSource`, semantic; source of TESMoveAttachDetachEvent (high)
-    pub source_TESMoveAttachDetachEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESMoveAttachDetachEvent: [u8; 88],
     /// +0x840 `class:BSTEventSource`, semantic; source of TESObjectLoadedEvent (high)
     pub source_TESObjectLoadedEvent: crate::BSTEventSource,
     /// +0x898 `class:BSTEventSource`, semantic; source of TESObjectREFRTranslationEvent (high)
-    pub source_TESObjectREFRTranslationEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESObjectREFRTranslationEvent: [u8; 88],
     /// +0x8F0 `class:BSTEventSource`, semantic; source of TESOpenCloseEvent (high)
-    pub source_TESOpenCloseEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESOpenCloseEvent: [u8; 88],
     /// +0x948 `class:BSTEventSource`, semantic; source of TESPackageEvent (high)
     pub source_TESPackageEvent: crate::BSTEventSource,
     /// +0x9A0 `class:BSTEventSource`, semantic; source of TESPerkEntryRunEvent (high)
-    pub source_TESPerkEntryRunEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESPerkEntryRunEvent: [u8; 88],
     /// +0x9F8 `class:BSTEventSource`, semantic; source of TESQuestInitEvent (high)
-    pub source_TESQuestInitEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESQuestInitEvent: [u8; 88],
     /// +0xA50 `class:BSTEventSource`, semantic; source of TESQuestStageEvent (high)
-    pub source_TESQuestStageEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESQuestStageEvent: [u8; 88],
     /// +0xAA8 `class:BSTEventSource`, semantic; source of TESQuestStageItemDoneEvent (high)
     #[doc(hidden)]
     pub __source_TESQuestStageItemDoneEvent: [u8; 88],
@@ -413,40 +438,56 @@ pub struct EventSourceHolder_TES {
     #[doc(hidden)]
     pub __source_TESQuestStartStopEvent: [u8; 88],
     /// +0xB58 `class:BSTEventSource`, semantic; source of TESResetEvent (high)
-    pub source_TESResetEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESResetEvent: [u8; 88],
     /// +0xBB0 `class:BSTEventSource`, semantic; source of TESResolveNPCTemplatesEvent (high)
-    pub source_TESResolveNPCTemplatesEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESResolveNPCTemplatesEvent: [u8; 88],
     /// +0xC08 `class:BSTEventSource`, semantic; source of TESSceneEvent (high)
-    pub source_TESSceneEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESSceneEvent: [u8; 88],
     /// +0xC60 `class:BSTEventSource`, semantic; source of TESSceneActionEvent (high)
-    pub source_TESSceneActionEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESSceneActionEvent: [u8; 88],
     /// +0xCB8 `class:BSTEventSource`, semantic; source of TESScenePhaseEvent (high)
-    pub source_TESScenePhaseEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESScenePhaseEvent: [u8; 88],
     /// +0xD10 `class:BSTEventSource`, semantic; source of TESSellEvent (high)
-    pub source_TESSellEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESSellEvent: [u8; 88],
     /// +0xD68 `class:BSTEventSource`, semantic; source of TESSleepStartEvent (high)
-    pub source_TESSleepStartEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESSleepStartEvent: [u8; 88],
     /// +0xDC0 `class:BSTEventSource`, semantic; source of TESSleepStopEvent (high)
-    pub source_TESSleepStopEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESSleepStopEvent: [u8; 88],
     /// +0xE18 `class:BSTEventSource`, semantic; source of TESSpellCastEvent (high)
-    pub source_TESSpellCastEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESSpellCastEvent: [u8; 88],
     /// +0xE70 `class:BSTEventSource`, semantic; source of TESPlayerBowShotEvent (high)
     #[doc(hidden)]
     pub __source_TESPlayerBowShotEvent: [u8; 88],
     /// +0xEC8 `class:BSTEventSource`, semantic; source of TESTopicInfoEvent (high)
-    pub source_TESTopicInfoEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESTopicInfoEvent: [u8; 88],
     /// +0xF20 `class:BSTEventSource`, semantic; source of TESTrackedStatsEvent (high)
-    pub source_TESTrackedStatsEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESTrackedStatsEvent: [u8; 88],
     /// +0xF78 `class:BSTEventSource`, semantic; source of TESTrapHitEvent (high)
-    pub source_TESTrapHitEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESTrapHitEvent: [u8; 88],
     /// +0xFD0 `class:BSTEventSource`, semantic; source of TESTriggerEvent (high)
-    pub source_TESTriggerEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESTriggerEvent: [u8; 88],
     /// +0x1028 `class:BSTEventSource`, semantic; source of TESTriggerEnterEvent (high)
-    pub source_TESTriggerEnterEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESTriggerEnterEvent: [u8; 88],
     /// +0x1080 `class:BSTEventSource`, semantic; source of TESTriggerLeaveEvent (high)
-    pub source_TESTriggerLeaveEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESTriggerLeaveEvent: [u8; 88],
     /// +0x10D8 `class:BSTEventSource`, semantic; source of TESUniqueIDChangeEvent (high)
-    pub source_TESUniqueIDChangeEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESUniqueIDChangeEvent: [u8; 88],
     /// +0x1130 `class:BSTEventSource`, semantic; source of TESWaitStartEvent (high)
     #[doc(hidden)]
     pub __source_TESWaitStartEvent: [u8; 88],
@@ -454,7 +495,8 @@ pub struct EventSourceHolder_TES {
     #[doc(hidden)]
     pub __source_TESWaitStopEvent: [u8; 88],
     /// +0x11E0 `class:BSTEventSource`, semantic; source of TESSwitchRaceCompleteEvent (high)
-    pub source_TESSwitchRaceCompleteEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_TESSwitchRaceCompleteEvent: [u8; 88],
     /// +0x1238 `class:BSTEventSource`, semantic; source of TESFastTravelEndEvent (high)
     #[doc(hidden)]
     pub __source_TESFastTravelEndEvent: [u8; 88],
@@ -470,57 +512,57 @@ pub struct EventSourceHolder_TES {
 const _: () = assert!(size_of::<EventSourceHolder_TES>() == 0x1340);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_BGSEventProcessedEvent) == 0x0);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESActivateEvent) == 0x58);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESActiveEffectApplyRemoveEvent) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESActiveEffectApplyRemoveEvent) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESActorLocationChangeEvent) == 0x108);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESBookReadEvent) == 0x160);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESBookReadEvent) == 0x160);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESCellAttachDetachEvent) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESCellFullyLoadedEvent) == 0x210);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESCellFullyLoadedEvent) == 0x210);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESCellReadyToApplyDecalsEvent) == 0x268);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESCombatEvent) == 0x2C0);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESContainerChangedEvent) == 0x318);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESDeathEvent) == 0x370);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESDestructionStageChangedEvent) == 0x3C8);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESEnterBleedoutEvent) == 0x420);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESDeathEvent) == 0x370);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESDestructionStageChangedEvent) == 0x3C8);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESEnterBleedoutEvent) == 0x420);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESEquipEvent) == 0x478);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESFormDeleteEvent) == 0x4D0);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESFormDeleteEvent) == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESFurnitureEvent) == 0x528);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESGrabReleaseEvent) == 0x580);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESGrabReleaseEvent) == 0x580);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESHitEvent) == 0x5D8);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESInitScriptEvent) == 0x630);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESLoadGameEvent) == 0x688);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESLockChangedEvent) == 0x6E0);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESMagicEffectApplyEvent) == 0x738);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESMagicWardHitEvent) == 0x790);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESMoveAttachDetachEvent) == 0x7E8);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESMagicEffectApplyEvent) == 0x738);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESMagicWardHitEvent) == 0x790);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESMoveAttachDetachEvent) == 0x7E8);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESObjectLoadedEvent) == 0x840);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESObjectREFRTranslationEvent) == 0x898);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESOpenCloseEvent) == 0x8F0);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESObjectREFRTranslationEvent) == 0x898);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESOpenCloseEvent) == 0x8F0);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESPackageEvent) == 0x948);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESPerkEntryRunEvent) == 0x9A0);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESQuestInitEvent) == 0x9F8);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESQuestStageEvent) == 0xA50);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESPerkEntryRunEvent) == 0x9A0);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESQuestInitEvent) == 0x9F8);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESQuestStageEvent) == 0xA50);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESQuestStageItemDoneEvent) == 0xAA8);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESQuestStartStopEvent) == 0xB00);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESResetEvent) == 0xB58);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESResolveNPCTemplatesEvent) == 0xBB0);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESSceneEvent) == 0xC08);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESSceneActionEvent) == 0xC60);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESScenePhaseEvent) == 0xCB8);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESSellEvent) == 0xD10);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESSleepStartEvent) == 0xD68);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESSleepStopEvent) == 0xDC0);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESSpellCastEvent) == 0xE18);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESResetEvent) == 0xB58);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESResolveNPCTemplatesEvent) == 0xBB0);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESSceneEvent) == 0xC08);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESSceneActionEvent) == 0xC60);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESScenePhaseEvent) == 0xCB8);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESSellEvent) == 0xD10);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESSleepStartEvent) == 0xD68);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESSleepStopEvent) == 0xDC0);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESSpellCastEvent) == 0xE18);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESPlayerBowShotEvent) == 0xE70);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESTopicInfoEvent) == 0xEC8);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESTrackedStatsEvent) == 0xF20);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESTrapHitEvent) == 0xF78);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESTriggerEvent) == 0xFD0);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESTriggerEnterEvent) == 0x1028);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESTriggerLeaveEvent) == 0x1080);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESUniqueIDChangeEvent) == 0x10D8);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESTopicInfoEvent) == 0xEC8);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESTrackedStatsEvent) == 0xF20);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESTrapHitEvent) == 0xF78);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESTriggerEvent) == 0xFD0);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESTriggerEnterEvent) == 0x1028);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESTriggerLeaveEvent) == 0x1080);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESUniqueIDChangeEvent) == 0x10D8);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESWaitStartEvent) == 0x1130);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESWaitStopEvent) == 0x1188);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESSwitchRaceCompleteEvent) == 0x11E0);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESSwitchRaceCompleteEvent) == 0x11E0);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESFastTravelEndEvent) == 0x1238);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESAmiiboTouchEvent) == 0x1290);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESAmiiboForcedStopDetectionEvent) == 0x12E8);
@@ -529,21 +571,20 @@ const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, __source_TESA
 /// Meaning: input event carrying a user event name (medium, events pass).
 /// Evidence: events pass (semantic): RTTI class between InputEvent and ButtonEvent.
 /// Bases: `InputEvent`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct IDEvent {
     /// +0x0 `vtbl:IDEvent:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IDEvent_vtable,
-    unknown_8: [u8; 16],
+    pub unknown_8: [u8; 16],
     /// +0x18 `class:BSFixedString`, semantic; the user event name (e.g. 'Activate') mapped from the control map (medium)
-    #[doc(hidden)]
-    pub __userEvent: [u8; 8],
+    pub userEvent: crate::BSFixedString,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IDEvent>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(IDEvent, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(IDEvent, __userEvent) == 0x18);
+const _: () = assert!(core::mem::offset_of!(IDEvent, userEvent) == 0x18);
 
 /// `InputEvent`: size 0x18 (exact, medium).
 /// Meaning: base of every input event of the frame list dispatched through EventSourceHolder_Input (medium, events pass).
@@ -605,15 +646,16 @@ const _: () = assert!(core::mem::offset_of!(MenuOpenCloseEvent, opening) == 0x8)
 /// `PositionPlayerEvent`: size 0x4 (exact).
 /// Meaning: the player is being positioned (medium, events pass).
 /// Evidence: the player is being positioned; stack event of ID_40438 / Err_FastTravelCouldNotComputePathLength through PlayerCharacter+0x390.
-#[repr(C)]
+#[repr(C, align(4))]
 pub struct PositionPlayerEvent {
     /// +0x0 `undefined4`, semantic; the step of a player move (the VM handler acts on 4 = finished) (medium)
-    pub type_: u32,
+    #[doc(hidden)]
+    pub __type_: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PositionPlayerEvent>() == 0x4);
-const _: () = assert!(core::mem::offset_of!(PositionPlayerEvent, type_) == 0x0);
+const _: () = assert!(core::mem::offset_of!(PositionPlayerEvent, __type_) == 0x0);
 
 /// `TESActivateEvent`: size 0x10 (exact).
 /// Meaning: a reference was activated (high, events pass).
@@ -683,9 +725,11 @@ const _: () = assert!(core::mem::offset_of!(TESActorLocationChangeEvent, newLoc)
 #[repr(C, align(8))]
 pub struct TESBookReadEvent {
     /// +0x0 `ptr:TESObjectREFR`, semantic; the book reference (NiPointer), null for inventory books (medium)
-    pub book: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
+    pub __book: [u8; 8],
     /// +0x8 `undefined4`, semantic; form id of the book (medium)
-    pub baseObject: u32,
+    #[doc(hidden)]
+    pub __baseObject: [u8; 4],
     /// +0xC `undefined2`, semantic; inventory unique id (medium)
     #[doc(hidden)]
     pub __uniqueID: [u8; 2],
@@ -694,8 +738,8 @@ pub struct TESBookReadEvent {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESBookReadEvent>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESBookReadEvent, book) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESBookReadEvent, baseObject) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESBookReadEvent, __book) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESBookReadEvent, __baseObject) == 0x8);
 const _: () = assert!(core::mem::offset_of!(TESBookReadEvent, __uniqueID) == 0xC);
 
 /// `TESCellAttachDetachEvent`: size 0x10 (exact).
@@ -718,15 +762,16 @@ const _: () = assert!(core::mem::offset_of!(TESCellAttachDetachEvent, attached) 
 /// `TESCellFullyLoadedEvent`: size 0x8 (exact).
 /// Meaning: a cell finished loading (medium, events pass).
 /// Evidence: a cell finished loading; stack event; the Notify instance 0x1b4e50 was hooked but never hit in the two sessions (a save load and no cell change by foot).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESCellFullyLoadedEvent {
     /// +0x0 `ptr:TESObjectCELL`, semantic; the cell that finished loading (medium)
-    pub cell: *mut crate::TESObjectCELL,
+    #[doc(hidden)]
+    pub __cell: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESCellFullyLoadedEvent>() == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESCellFullyLoadedEvent, cell) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESCellFullyLoadedEvent, __cell) == 0x0);
 
 /// `TESCombatEvent`: size 0x18 (exact).
 /// Meaning: an actor's combat state changed (high, events pass).
@@ -780,22 +825,25 @@ const _: () = assert!(core::mem::offset_of!(TESContainerChangedEvent, uniqueID) 
 /// `TESDeathEvent`: size 0x18 (exact).
 /// Meaning: an actor is dying or died (medium, events pass).
 /// Evidence: an actor is dying or died; stack event of Actor::vfunc_270 and ID_37735; not provoked in the sessions (Actor.Kill on Alvor did not kill him).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESDeathEvent {
     /// +0x0 `ptr:TESObjectREFR`, semantic; the dying actor (NiPointer) (medium)
-    pub actorDying: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
+    pub __actorDying: [u8; 8],
     /// +0x8 `ptr:TESObjectREFR`, semantic; the killer (NiPointer), may be null (medium)
-    pub actorKiller: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
+    pub __actorKiller: [u8; 8],
     /// +0x10 `undefined1`, semantic; 0 while dying (OnDying), 1 once dead (OnDeath) (medium)
-    pub dead: u8,
-    pub unknown_11: [u8; 7],
+    #[doc(hidden)]
+    pub __dead: [u8; 1],
+    unknown_11: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESDeathEvent>() == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESDeathEvent, actorDying) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESDeathEvent, actorKiller) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESDeathEvent, dead) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESDeathEvent, __actorDying) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESDeathEvent, __actorKiller) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESDeathEvent, __dead) == 0x10);
 
 /// `TESDestructionStageChangedEvent`: size 0x10 (exact).
 /// Meaning: a destructible changed stage (medium, events pass).
@@ -803,9 +851,11 @@ const _: () = assert!(core::mem::offset_of!(TESDeathEvent, dead) == 0x10);
 #[repr(C, align(8))]
 pub struct TESDestructionStageChangedEvent {
     /// +0x0 `ptr:TESObjectREFR`, semantic; the damaged reference (NiPointer) (medium)
-    pub target: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
+    pub __target: [u8; 8],
     /// +0x8 `undefined4`, semantic; previous destruction stage (medium)
-    pub oldStage: u32,
+    #[doc(hidden)]
+    pub __oldStage: [u8; 4],
     /// +0xC `undefined4`, semantic; new stage (medium)
     #[doc(hidden)]
     pub __newStage: [u8; 4],
@@ -813,8 +863,8 @@ pub struct TESDestructionStageChangedEvent {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESDestructionStageChangedEvent>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESDestructionStageChangedEvent, target) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESDestructionStageChangedEvent, oldStage) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESDestructionStageChangedEvent, __target) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESDestructionStageChangedEvent, __oldStage) == 0x8);
 const _: () = assert!(core::mem::offset_of!(TESDestructionStageChangedEvent, __newStage) == 0xC);
 
 /// `TESEnterBleedoutEvent`: size 0x8 (exact).
@@ -860,66 +910,69 @@ const _: () = assert!(core::mem::offset_of!(TESEquipEvent, equipped) == 0x12);
 /// `TESFastTravelEndEvent`: size 0x4 (exact).
 /// Meaning: a fast travel finished (medium, events pass).
 /// Evidence: a fast travel finished; stack event of Err_FastTravelCouldNotComputePathLength (0x744600).
-#[repr(C)]
+#[repr(C, align(4))]
 pub struct TESFastTravelEndEvent {
     /// +0x0 `float`, semantic; game hours the travel took (medium)
-    pub fastTravelEndHours: f32,
+    #[doc(hidden)]
+    pub __fastTravelEndHours: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFastTravelEndEvent>() == 0x4);
-const _: () = assert!(core::mem::offset_of!(TESFastTravelEndEvent, fastTravelEndHours) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESFastTravelEndEvent, __fastTravelEndHours) == 0x0);
 
 /// `TESFormDeleteEvent`: size 0x4 (exact).
 /// Meaning: a reference is being deleted (medium, events pass).
 /// Evidence: a reference is being deleted; stack event of TESObjectREFR::dtor and ID_36459.
-#[repr(C)]
+#[repr(C, align(4))]
 pub struct TESFormDeleteEvent {
     /// +0x0 `undefined4`, semantic; form id of the deleted form (medium)
-    pub formID: u32,
+    #[doc(hidden)]
+    pub __formID: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFormDeleteEvent>() == 0x4);
-const _: () = assert!(core::mem::offset_of!(TESFormDeleteEvent, formID) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESFormDeleteEvent, __formID) == 0x0);
 
 /// `TESFurnitureEvent`: size 0x18 (exact).
 /// Meaning: an actor sat down on or got up from furniture (high, events pass).
 /// Evidence: an actor sat down on or got up from furniture; stack event of ID_39912 (0x7246a0).
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct TESFurnitureEvent {
     /// +0x0 `ptr:TESObjectREFR`, semantic; the actor using the furniture (NiPointer) (high)
     pub actor: *mut crate::TESObjectREFR,
     /// +0x8 `ptr:TESObjectREFR`, semantic; the furniture reference (NiPointer) (high)
     pub targetFurniture: *mut crate::TESObjectREFR,
     /// +0x10 `undefined4`, semantic; 0 sit (OnSit), 1 get up (OnGetUp) (high)
-    #[doc(hidden)]
-    pub __type_: [u8; 4],
-    unknown_14: [u8; 4],
+    pub type_: u32,
+    pub unknown_14: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFurnitureEvent>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESFurnitureEvent, actor) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TESFurnitureEvent, targetFurniture) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESFurnitureEvent, __type_) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESFurnitureEvent, type_) == 0x10);
 
 /// `TESGrabReleaseEvent`: size 0x10 (exact).
 /// Meaning: the player grabbed or released a reference (medium, events pass).
 /// Evidence: the player grabbed or released a reference; stack event of ID_40557.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESGrabReleaseEvent {
     /// +0x0 `ptr:TESObjectREFR`, semantic; the grabbed reference (NiPointer) (medium)
-    pub ref_: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
+    pub __ref_: [u8; 8],
     /// +0x8 `undefined1`, semantic; 1 grabbed, 0 released (medium)
-    pub grabbed: u8,
-    pub unknown_9: [u8; 7],
+    #[doc(hidden)]
+    pub __grabbed: [u8; 1],
+    unknown_9: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESGrabReleaseEvent>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESGrabReleaseEvent, ref_) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESGrabReleaseEvent, grabbed) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESGrabReleaseEvent, __ref_) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESGrabReleaseEvent, __grabbed) == 0x8);
 
 /// `TESHitEvent`: size 0x20 (exact).
 /// Meaning: a reference was hit (high, events pass).
@@ -987,22 +1040,25 @@ const _: () = assert!(core::mem::offset_of!(TESLockChangedEvent, lockedObject) =
 /// `TESMagicEffectApplyEvent`: size 0x18 (exact).
 /// Meaning: a magic effect was applied (medium, events pass).
 /// Evidence: a magic effect was applied; stack event of MagicTarget::vfunc_1; not captured (Spell.Cast from the VM produced a hit but no effect application in the window).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESMagicEffectApplyEvent {
     /// +0x0 `ptr:TESObjectREFR`, semantic; the affected reference (NiPointer) (medium)
-    pub target: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
+    pub __target: [u8; 8],
     /// +0x8 `ptr:TESObjectREFR`, semantic; the caster (NiPointer) (medium)
-    pub caster: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
+    pub __caster: [u8; 8],
     /// +0x10 `undefined4`, semantic; form id of the MGEF (medium)
-    pub magicEffect: u32,
-    pub unknown_14: [u8; 4],
+    #[doc(hidden)]
+    pub __magicEffect: [u8; 4],
+    unknown_14: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESMagicEffectApplyEvent>() == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESMagicEffectApplyEvent, target) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESMagicEffectApplyEvent, caster) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESMagicEffectApplyEvent, magicEffect) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESMagicEffectApplyEvent, __target) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESMagicEffectApplyEvent, __caster) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESMagicEffectApplyEvent, __magicEffect) == 0x10);
 
 /// `TESMagicWardHitEvent`: size 0x18 (exact).
 /// Meaning: a ward was hit (medium, events pass).
@@ -1010,22 +1066,25 @@ const _: () = assert!(core::mem::offset_of!(TESMagicEffectApplyEvent, magicEffec
 #[repr(C, align(8))]
 pub struct TESMagicWardHitEvent {
     /// +0x0 `ptr:TESObjectREFR`, semantic; the warded reference (NiPointer) (medium)
-    pub target: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
+    pub __target: [u8; 8],
     /// +0x8 `ptr:TESObjectREFR`, semantic; the caster (NiPointer) (medium)
-    pub caster: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
+    pub __caster: [u8; 8],
     /// +0x10 `undefined4`, semantic; form id of the spell (SPEL, 0x16) (medium)
     #[doc(hidden)]
     pub __spell: [u8; 4],
     /// +0x14 `undefined4`, semantic; ward status (OnWardHit's aiStatus) (medium)
-    pub status: u32,
+    #[doc(hidden)]
+    pub __status: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESMagicWardHitEvent>() == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESMagicWardHitEvent, target) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESMagicWardHitEvent, caster) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESMagicWardHitEvent, __target) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESMagicWardHitEvent, __caster) == 0x8);
 const _: () = assert!(core::mem::offset_of!(TESMagicWardHitEvent, __spell) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESMagicWardHitEvent, status) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESMagicWardHitEvent, __status) == 0x14);
 
 /// `TESMoveAttachDetachEvent`: size 0x10 (exact).
 /// Meaning: a reference was moved into or out of a loaded cell (medium, events pass).
@@ -1066,19 +1125,21 @@ const _: () = assert!(core::mem::offset_of!(TESObjectLoadedEvent, loaded) == 0x4
 /// `TESObjectREFRTranslationEvent`: size 0x10 (exact).
 /// Meaning: a reference translation progressed (high, events pass).
 /// Evidence: a reference translation progressed; stack event of the spline translation paths (SplineTranslateTo, ID_18898).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESObjectREFRTranslationEvent {
     /// +0x0 `ptr:TESObjectREFR`, semantic; the translating reference (NiPointer) (high)
-    pub ref_: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
+    pub __ref_: [u8; 8],
     /// +0x8 `undefined4`, semantic; 0 failed, 1 completed, 2 almost completed (the VM handler's OnTranslationFailed / Complete / AlmostComplete order) (high)
-    pub type_: u32,
-    pub unknown_C: [u8; 4],
+    #[doc(hidden)]
+    pub __type_: [u8; 4],
+    unknown_C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectREFRTranslationEvent>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESObjectREFRTranslationEvent, ref_) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESObjectREFRTranslationEvent, type_) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFRTranslationEvent, __ref_) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFRTranslationEvent, __type_) == 0x8);
 
 /// `TESOpenCloseEvent`: size 0x18 (exact).
 /// Meaning: a door opened or closed (low, events pass).
@@ -1155,11 +1216,14 @@ const _: () = assert!(core::mem::offset_of!(TESPerkEntryRunEvent, __flag) == 0x1
 #[repr(C, align(4))]
 pub struct TESPlayerBowShotEvent {
     /// +0x0 `undefined4`, semantic; form id of the bow (WEAP, 0x29) (medium)
-    pub weapon: u32,
+    #[doc(hidden)]
+    pub __weapon: [u8; 4],
     /// +0x4 `undefined4`, semantic; form id of the ammo (AMMO, 0x2a) (medium)
-    pub ammo: u32,
+    #[doc(hidden)]
+    pub __ammo: [u8; 4],
     /// +0x8 `float`, semantic; draw power (medium)
-    pub power: f32,
+    #[doc(hidden)]
+    pub __power: [u8; 4],
     /// +0xC `undefined1`, semantic; non-zero when aimed at the sun (medium)
     #[doc(hidden)]
     pub __isSunGazing: [u8; 1],
@@ -1168,47 +1232,52 @@ pub struct TESPlayerBowShotEvent {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESPlayerBowShotEvent>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESPlayerBowShotEvent, weapon) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESPlayerBowShotEvent, ammo) == 0x4);
-const _: () = assert!(core::mem::offset_of!(TESPlayerBowShotEvent, power) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESPlayerBowShotEvent, __weapon) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESPlayerBowShotEvent, __ammo) == 0x4);
+const _: () = assert!(core::mem::offset_of!(TESPlayerBowShotEvent, __power) == 0x8);
 const _: () = assert!(core::mem::offset_of!(TESPlayerBowShotEvent, __isSunGazing) == 0xC);
 
 /// `TESQuestStageEvent`: size 0x10 (exact).
 /// Meaning: a quest stage was set (medium, events pass).
 /// Evidence: a quest stage was set; stack event of 0x3e1f60 (quest stage set).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESQuestStageEvent {
     /// +0x0 `pointer`, semantic; ref-counted callback object released by the VM handler through its vtable (medium)
-    pub finishedCallback: *mut c_void,
+    #[doc(hidden)]
+    pub __finishedCallback: [u8; 8],
     /// +0x8 `undefined4`, semantic; form id of the quest (medium)
-    pub formID: u32,
+    #[doc(hidden)]
+    pub __formID: [u8; 4],
     /// +0xC `undefined2`, semantic; the stage set (medium)
-    pub stage: u16,
+    #[doc(hidden)]
+    pub __stage: [u8; 2],
     /// +0xE `undefined1`, semantic; stage flags byte (medium)
-    pub flags: u8,
-    pub unknown_F: [u8; 1],
+    #[doc(hidden)]
+    pub __flags: [u8; 1],
+    unknown_F: [u8; 1],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESQuestStageEvent>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESQuestStageEvent, finishedCallback) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESQuestStageEvent, formID) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESQuestStageEvent, stage) == 0xC);
-const _: () = assert!(core::mem::offset_of!(TESQuestStageEvent, flags) == 0xE);
+const _: () = assert!(core::mem::offset_of!(TESQuestStageEvent, __finishedCallback) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESQuestStageEvent, __formID) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESQuestStageEvent, __stage) == 0xC);
+const _: () = assert!(core::mem::offset_of!(TESQuestStageEvent, __flags) == 0xE);
 
 /// `TESQuestStageItemDoneEvent`: size 0x8 (exact).
 /// Meaning: a quest stage item finished (low, events pass).
 /// Evidence: a quest stage item finished; stack event of _anon_A5EEF477::StageItemFinishedCallback::vfunc_1; layout not read beyond the form id.
-#[repr(C)]
+#[repr(C, align(4))]
 pub struct TESQuestStageItemDoneEvent {
     /// +0x0 `undefined4`, semantic; form id of the quest (low)
-    pub formID: u32,
-    pub unknown_4: [u8; 4],
+    #[doc(hidden)]
+    pub __formID: [u8; 4],
+    unknown_4: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESQuestStageItemDoneEvent>() == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESQuestStageItemDoneEvent, formID) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESQuestStageItemDoneEvent, __formID) == 0x0);
 
 /// `TESQuestStartStopEvent`: size 0x8 (exact).
 /// Meaning: a quest started or stopped (medium, events pass).
@@ -1216,7 +1285,8 @@ const _: () = assert!(core::mem::offset_of!(TESQuestStageItemDoneEvent, formID) 
 #[repr(C, align(4))]
 pub struct TESQuestStartStopEvent {
     /// +0x0 `undefined4`, semantic; form id of the quest (medium)
-    pub formID: u32,
+    #[doc(hidden)]
+    pub __formID: [u8; 4],
     /// +0x4 `undefined1`, semantic; 1 started, 0 stopped (medium)
     #[doc(hidden)]
     pub __started: [u8; 1],
@@ -1225,21 +1295,22 @@ pub struct TESQuestStartStopEvent {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESQuestStartStopEvent>() == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESQuestStartStopEvent, formID) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESQuestStartStopEvent, __formID) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TESQuestStartStopEvent, __started) == 0x4);
 
 /// `TESResetEvent`: size 0x8 (exact).
 /// Meaning: a reference was reset (medium, events pass).
 /// Evidence: a reference was reset; stack event of ID_19286.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESResetEvent {
     /// +0x0 `ptr:TESObjectREFR`, semantic; the reset reference (NiPointer) (medium)
-    pub object: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
+    pub __object: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESResetEvent>() == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESResetEvent, object) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESResetEvent, __object) == 0x0);
 
 /// `TESResolveNPCTemplatesEvent`: size 0x4 (exact).
 /// Meaning: an NPC's leveled templates were resolved (medium, events pass).
@@ -1257,21 +1328,24 @@ const _: () = assert!(core::mem::offset_of!(TESResolveNPCTemplatesEvent, formID)
 /// `TESSceneEvent`: size 0x10 (exact).
 /// Meaning: a scene started or ended (low, events pass).
 /// Evidence: a scene started or ended; stack event of Papyrus::Scene::ForceStart_sub0, ID_24125, ID_24140; TESSceneActionEvent (+0x10 action) and TESScenePhaseEvent (+0x10 phase) extend it by one field.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESSceneEvent {
     /// +0x0 `pointer`, semantic; ref-counted callback released by the handler (low)
-    pub finishedCallback: *mut c_void,
+    #[doc(hidden)]
+    pub __finishedCallback: [u8; 8],
     /// +0x8 `undefined4`, semantic; form id of the scene's quest (low)
-    pub quest: u32,
+    #[doc(hidden)]
+    pub __quest: [u8; 4],
     /// +0xC `undefined4`, semantic; 0 start, else end (low)
-    pub type_: u32,
+    #[doc(hidden)]
+    pub __type_: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESSceneEvent>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESSceneEvent, finishedCallback) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESSceneEvent, quest) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESSceneEvent, type_) == 0xC);
+const _: () = assert!(core::mem::offset_of!(TESSceneEvent, __finishedCallback) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESSceneEvent, __quest) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESSceneEvent, __type_) == 0xC);
 
 /// `TESSellEvent`: size 0x10 (exact).
 /// Meaning: an item was sold (medium, events pass).
@@ -1279,9 +1353,11 @@ const _: () = assert!(core::mem::offset_of!(TESSceneEvent, type_) == 0xC);
 #[repr(C, align(8))]
 pub struct TESSellEvent {
     /// +0x0 `ptr:TESObjectREFR`, semantic; the selling reference (NiPointer) (medium)
-    pub seller: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
+    pub __seller: [u8; 8],
     /// +0x8 `undefined4`, semantic; form id of the item (medium)
-    pub baseObject: u32,
+    #[doc(hidden)]
+    pub __baseObject: [u8; 4],
     /// +0xC `undefined2`, semantic; inventory unique id (medium)
     #[doc(hidden)]
     pub __uniqueID: [u8; 2],
@@ -1290,8 +1366,8 @@ pub struct TESSellEvent {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESSellEvent>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESSellEvent, seller) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESSellEvent, baseObject) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESSellEvent, __seller) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESSellEvent, __baseObject) == 0x8);
 const _: () = assert!(core::mem::offset_of!(TESSellEvent, __uniqueID) == 0xC);
 
 /// `TESSleepStartEvent`: size 0x8 (exact).
@@ -1318,150 +1394,168 @@ const _: () = assert!(core::mem::offset_of!(TESSleepStartEvent, __desiredSleepEn
 #[repr(C)]
 pub struct TESSleepStopEvent {
     /// +0x0 `undefined1`, semantic; non-zero when the sleep was interrupted (medium)
-    pub interrupted: u8,
+    #[doc(hidden)]
+    pub __interrupted: [u8; 1],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESSleepStopEvent>() == 0x1);
-const _: () = assert!(core::mem::offset_of!(TESSleepStopEvent, interrupted) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESSleepStopEvent, __interrupted) == 0x0);
 
 /// `TESSpellCastEvent`: size 0x10 (exact).
 /// Meaning: an actor cast a spell (medium, events pass).
 /// Evidence: an actor cast a spell; stack event of ActorMagicCaster::vfunc_9.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESSpellCastEvent {
     /// +0x0 `ptr:TESObjectREFR`, semantic; the casting reference (NiPointer) (medium)
-    pub object: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
+    pub __object: [u8; 8],
     /// +0x8 `undefined4`, semantic; form id of the spell, scroll or shout (medium)
-    pub spell: u32,
-    pub unknown_C: [u8; 4],
+    #[doc(hidden)]
+    pub __spell: [u8; 4],
+    unknown_C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESSpellCastEvent>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESSpellCastEvent, object) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESSpellCastEvent, spell) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESSpellCastEvent, __object) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESSpellCastEvent, __spell) == 0x8);
 
 /// `TESSwitchRaceCompleteEvent`: size 0x8 (exact).
 /// Meaning: a race switch completed (medium, events pass).
 /// Evidence: a race switch completed; stack event of ID_34616.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESSwitchRaceCompleteEvent {
     /// +0x0 `ptr:TESObjectREFR`, semantic; the actor whose race switch finished (NiPointer) (medium)
-    pub subject: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
+    pub __subject: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESSwitchRaceCompleteEvent>() == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESSwitchRaceCompleteEvent, subject) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESSwitchRaceCompleteEvent, __subject) == 0x0);
 
 /// `TESTopicInfoEvent`: size 0x18 (exact).
 /// Meaning: a topic info began or ended (low, events pass).
 /// Evidence: a topic info began or ended; stack event of ID_25616; +8 unnamed.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESTopicInfoEvent {
     /// +0x0 `ptr:TESObjectREFR`, semantic; the speaking reference (NiPointer) (low)
-    pub speaker: *mut crate::TESObjectREFR,
-    pub unknown_8: [u8; 8],
+    #[doc(hidden)]
+    pub __speaker: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined4`, semantic; form id of the topic info (low)
-    pub topicInfo: u32,
+    #[doc(hidden)]
+    pub __topicInfo: [u8; 4],
     /// +0x14 `undefined4`, semantic; 0 begin, 1 end (low)
-    pub type_: u32,
+    #[doc(hidden)]
+    pub __type_: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESTopicInfoEvent>() == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESTopicInfoEvent, speaker) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESTopicInfoEvent, topicInfo) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESTopicInfoEvent, type_) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESTopicInfoEvent, __speaker) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESTopicInfoEvent, __topicInfo) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESTopicInfoEvent, __type_) == 0x14);
 
 /// `TESTrackedStatsEvent`: size 0x10 (exact).
 /// Meaning: a tracked stat changed (low, events pass).
 /// Evidence: a tracked stat changed; no Notify instance was found for holder+0xf20 (the senders inline a different shape or are not reached); layout from the VM handler 0x9dfa40.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESTrackedStatsEvent {
     /// +0x0 `class:BSFixedString`, semantic; the tracked stat's name (low)
     pub stat: crate::BSFixedString,
     /// +0x8 `undefined4`, semantic; the stat's new value (low)
-    pub value: u32,
-    pub unknown_C: [u8; 4],
+    #[doc(hidden)]
+    pub __value: [u8; 4],
+    unknown_C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESTrackedStatsEvent>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESTrackedStatsEvent, stat) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESTrackedStatsEvent, value) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESTrackedStatsEvent, __value) == 0x8);
 
 /// `TESTrapHitEvent`: size 0x50 (exact).
 /// Meaning: a trap hit (low, events pass).
 /// Evidence: a trap hit; stack event of TrapTargetEntry::vfunc_1/2; TrapHitArguments reads nine more scalars at +0x20..+0x48 (damage, push, hit position and direction, flags) that are left unnamed.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESTrapHitEvent {
     /// +0x0 `ptr:TESObjectREFR`, semantic; the hit reference (NiPointer) (low)
-    pub target: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
+    pub __target: [u8; 8],
     /// +0x8 `ptr:TESObjectREFR`, semantic; the trap (NiPointer) (low)
-    pub trap: *mut crate::TESObjectREFR,
-    pub unknown_10: [u8; 64],
+    #[doc(hidden)]
+    pub __trap: [u8; 8],
+    unknown_10: [u8; 64],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESTrapHitEvent>() == 0x50);
-const _: () = assert!(core::mem::offset_of!(TESTrapHitEvent, target) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESTrapHitEvent, trap) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESTrapHitEvent, __target) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESTrapHitEvent, __trap) == 0x8);
 
 /// `TESTriggerEvent`: size 0x10 (exact).
 /// Meaning: a trigger fired (medium, events pass).
 /// Evidence: a trigger fired; stack event of TESTrapListener::bhkTrapListener_vfunc_6_sub0_sub0; TESTriggerEnterEvent and TESTriggerLeaveEvent (ID_26044) have the same layout.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESTriggerEvent {
     /// +0x0 `ptr:TESObjectREFR`, semantic; the trigger volume (NiPointer) (medium)
-    pub target: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
+    pub __target: [u8; 8],
     /// +0x8 `ptr:TESObjectREFR`, semantic; the reference that triggered it (NiPointer) (medium)
-    pub caster: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
+    pub __caster: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESTriggerEvent>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESTriggerEvent, target) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESTriggerEvent, caster) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESTriggerEvent, __target) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESTriggerEvent, __caster) == 0x8);
 
 /// `TESUniqueIDChangeEvent`: size 0x10 (exact).
 /// Meaning: an inventory item's unique id changed (medium, events pass).
 /// Evidence: an inventory item's unique id changed; stack event of ID_16065 and ID_16147.
-#[repr(C)]
+#[repr(C, align(4))]
 pub struct TESUniqueIDChangeEvent {
     /// +0x0 `undefined4`, semantic; form id of the previous owner (medium)
-    pub oldBaseID: u32,
+    #[doc(hidden)]
+    pub __oldBaseID: [u8; 4],
     /// +0x4 `undefined4`, semantic; form id of the new owner (medium)
-    pub newBaseID: u32,
+    #[doc(hidden)]
+    pub __newBaseID: [u8; 4],
     /// +0x8 `undefined4`, semantic; form id of the item (medium)
-    pub objectID: u32,
+    #[doc(hidden)]
+    pub __objectID: [u8; 4],
     /// +0xC `undefined2`, semantic; previous unique id (medium)
-    pub oldUniqueID: u16,
+    #[doc(hidden)]
+    pub __oldUniqueID: [u8; 2],
     /// +0xE `undefined2`, semantic; new unique id (medium)
-    pub newUniqueID: u16,
+    #[doc(hidden)]
+    pub __newUniqueID: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESUniqueIDChangeEvent>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESUniqueIDChangeEvent, oldBaseID) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESUniqueIDChangeEvent, newBaseID) == 0x4);
-const _: () = assert!(core::mem::offset_of!(TESUniqueIDChangeEvent, objectID) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESUniqueIDChangeEvent, oldUniqueID) == 0xC);
-const _: () = assert!(core::mem::offset_of!(TESUniqueIDChangeEvent, newUniqueID) == 0xE);
+const _: () = assert!(core::mem::offset_of!(TESUniqueIDChangeEvent, __oldBaseID) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESUniqueIDChangeEvent, __newBaseID) == 0x4);
+const _: () = assert!(core::mem::offset_of!(TESUniqueIDChangeEvent, __objectID) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESUniqueIDChangeEvent, __oldUniqueID) == 0xC);
+const _: () = assert!(core::mem::offset_of!(TESUniqueIDChangeEvent, __newUniqueID) == 0xE);
 
 /// `TESWaitStartEvent`: size 0x4 (exact).
 /// Meaning: the player started waiting (medium, events pass).
 /// Evidence: the player started waiting; stack event of 0x75a390; the only sink registrations for this source and TESWaitStopEvent's are in 0x65d7a0 (TES init thread step), so both have no sink at the main menu.
-#[repr(C)]
+#[repr(C, align(4))]
 pub struct TESWaitStartEvent {
     /// +0x0 `float`, semantic; game hours at the start of the wait (medium)
-    pub waitStartTime: f32,
+    #[doc(hidden)]
+    pub __waitStartTime: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWaitStartEvent>() == 0x4);
-const _: () = assert!(core::mem::offset_of!(TESWaitStartEvent, waitStartTime) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESWaitStartEvent, __waitStartTime) == 0x0);
 
 /// `TESWaitStopEvent`: size 0x1 (exact).
 /// Meaning: the player stopped waiting (medium, events pass).
@@ -1469,12 +1563,13 @@ const _: () = assert!(core::mem::offset_of!(TESWaitStartEvent, waitStartTime) ==
 #[repr(C)]
 pub struct TESWaitStopEvent {
     /// +0x0 `undefined1`, semantic; non-zero when the wait was interrupted (medium)
-    pub interrupted: u8,
+    #[doc(hidden)]
+    pub __interrupted: [u8; 1],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWaitStopEvent>() == 0x1);
-const _: () = assert!(core::mem::offset_of!(TESWaitStopEvent, interrupted) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESWaitStopEvent, __interrupted) == 0x0);
 
 /// ProcessEvent result: 0 continue the walk, 1 stop it (events pass).
 #[repr(u32)]

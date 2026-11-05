@@ -1506,17 +1506,18 @@ pub struct ExtraMagicCaster {
     /// +0x0 `vtbl:ExtraMagicCaster:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ExtraMagicCaster_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `vtbl:ExtraMagicCaster:10`, rtti
     #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::ExtraMagicCaster_vtable_10,
-    pub unknown_18: [u8; 16],
+    unknown_18: [u8; 16],
     /// +0x28 `undefined4`, base MagicCaster
-    pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __field_28: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined4`, base MagicCaster
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base MagicCaster
     pub field_38: u64,
     /// +0x40 `undefined4`, base MagicCaster
@@ -1535,7 +1536,7 @@ pub struct ExtraMagicCaster {
 const _: () = assert!(size_of::<ExtraMagicCaster>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(ExtraMagicCaster, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ExtraMagicCaster, __vftable_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(ExtraMagicCaster, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(ExtraMagicCaster, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(ExtraMagicCaster, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(ExtraMagicCaster, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(ExtraMagicCaster, field_40) == 0x40);

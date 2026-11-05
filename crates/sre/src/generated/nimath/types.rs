@@ -27,18 +27,21 @@ const _: () = assert!(core::mem::offset_of!(NiBound, radius) == 0xC);
 #[derive(Default)]
 pub struct NiColor {
     /// +0x0 `float`, semantic; red (medium)
-    pub r: f32,
+    #[doc(hidden)]
+    pub __r: [u8; 4],
     /// +0x4 `float`, semantic; green (medium)
-    pub g: f32,
+    #[doc(hidden)]
+    pub __g: [u8; 4],
     /// +0x8 `float`, semantic; blue (medium)
-    pub b: f32,
+    #[doc(hidden)]
+    pub __b: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiColor>() == 0xC);
-const _: () = assert!(core::mem::offset_of!(NiColor, r) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiColor, g) == 0x4);
-const _: () = assert!(core::mem::offset_of!(NiColor, b) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiColor, __r) == 0x0);
+const _: () = assert!(core::mem::offset_of!(NiColor, __g) == 0x4);
+const _: () = assert!(core::mem::offset_of!(NiColor, __b) == 0x8);
 
 /// `NiColorA`: size 0x10 (exact).
 /// Meaning: RGBA colour, four floats (high, nimath pass).
@@ -53,7 +56,8 @@ pub struct NiColorA {
     #[doc(hidden)]
     pub __g: [u8; 4],
     /// +0x8 `float`, semantic; blue (high)
-    pub b: f32,
+    #[doc(hidden)]
+    pub __b: [u8; 4],
     /// +0xC `float`, semantic; alpha (high)
     #[doc(hidden)]
     pub __a: [u8; 4],
@@ -63,7 +67,7 @@ pub struct NiColorA {
 const _: () = assert!(size_of::<NiColorA>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiColorA, __r) == 0x0);
 const _: () = assert!(core::mem::offset_of!(NiColorA, __g) == 0x4);
-const _: () = assert!(core::mem::offset_of!(NiColorA, b) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiColorA, __b) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiColorA, __a) == 0xC);
 
 /// `NiFrustum`: size 0x1C (exact).
@@ -73,19 +77,26 @@ const _: () = assert!(core::mem::offset_of!(NiColorA, __a) == 0xC);
 #[derive(Default)]
 pub struct NiFrustum {
     /// +0x0 `float`, semantic; left (high)
-    pub left: f32,
+    #[doc(hidden)]
+    pub __left: [u8; 4],
     /// +0x4 `float`, semantic; right (high)
-    pub right: f32,
+    #[doc(hidden)]
+    pub __right: [u8; 4],
     /// +0x8 `float`, semantic; top (high)
-    pub top: f32,
+    #[doc(hidden)]
+    pub __top: [u8; 4],
     /// +0xC `float`, semantic; bottom (high)
-    pub bottom: f32,
+    #[doc(hidden)]
+    pub __bottom: [u8; 4],
     /// +0x10 `float`, semantic; near distance (high)
-    pub near: f32,
+    #[doc(hidden)]
+    pub __near: [u8; 4],
     /// +0x14 `float`, semantic; far distance (high)
-    pub far: f32,
+    #[doc(hidden)]
+    pub __far: [u8; 4],
     /// +0x18 `u8`, semantic; orthographic when non-zero (high)
-    pub ortho: u8,
+    #[doc(hidden)]
+    pub __ortho: [u8; 1],
     /// +0x19 `undefined1`, semantic; alignment padding to 0x1c (high)
     #[doc(hidden)]
     pub __padding19: [u8; 3],
@@ -93,13 +104,13 @@ pub struct NiFrustum {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiFrustum>() == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiFrustum, left) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiFrustum, right) == 0x4);
-const _: () = assert!(core::mem::offset_of!(NiFrustum, top) == 0x8);
-const _: () = assert!(core::mem::offset_of!(NiFrustum, bottom) == 0xC);
-const _: () = assert!(core::mem::offset_of!(NiFrustum, near) == 0x10);
-const _: () = assert!(core::mem::offset_of!(NiFrustum, far) == 0x14);
-const _: () = assert!(core::mem::offset_of!(NiFrustum, ortho) == 0x18);
+const _: () = assert!(core::mem::offset_of!(NiFrustum, __left) == 0x0);
+const _: () = assert!(core::mem::offset_of!(NiFrustum, __right) == 0x4);
+const _: () = assert!(core::mem::offset_of!(NiFrustum, __top) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiFrustum, __bottom) == 0xC);
+const _: () = assert!(core::mem::offset_of!(NiFrustum, __near) == 0x10);
+const _: () = assert!(core::mem::offset_of!(NiFrustum, __far) == 0x14);
+const _: () = assert!(core::mem::offset_of!(NiFrustum, __ortho) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiFrustum, __padding19) == 0x19);
 
 /// `NiMatrix3`: size 0x24 (exact).
@@ -143,36 +154,40 @@ const _: () = assert!(core::mem::offset_of!(NiMatrix3, entry22) == 0x20);
 /// `NiPlane`: size 0x10 (exact).
 /// Meaning: plane {normal, constant}: points p with dot(normal, p) = constant (high, nimath pass).
 /// Evidence: plane {normal, constant}: points p with dot(normal, p) = constant; MakePlaneFromNormalAndPoint 0xef74a0: [0..2] = normal, [3] = dot(normal, point); 0xfee940 tests dot(n, center) - [3] against +/-radius; SetupReflectedCamera 0xfde350 reflects the eye with 2 * (dot(n, eye) - [3]); the layout and names match the Gamebryo math type as I remember it, derived here from the code only; size: ComputeFrustumPlanes 0xef7710 writes six planes at stride 4 floats; BSCullingProcess::TestBoundAgainstPlanes 0xfee940 steps 0x10 per plane.
-#[repr(C)]
+#[repr(C, align(4))]
 #[derive(Default)]
 pub struct NiPlane {
     /// +0x0 `class:NiPoint3`, semantic; plane normal (high)
-    pub normal: crate::NiPoint3,
+    #[doc(hidden)]
+    pub __normal: [u8; 12],
     /// +0xC `float`, semantic; dot(normal, any point on the plane) (high)
-    pub constant: f32,
+    #[doc(hidden)]
+    pub __constant: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPlane>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(NiPlane, normal) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPlane, constant) == 0xC);
+const _: () = assert!(core::mem::offset_of!(NiPlane, __normal) == 0x0);
+const _: () = assert!(core::mem::offset_of!(NiPlane, __constant) == 0xC);
 
 /// `NiPoint2`: size 0x8 (exact).
 /// Meaning: 2D float vector (x, y) (high, nimath pass).
 /// Evidence: 2D float vector (x, y); ApplyLookInputSensitivity 0x7aeba0: [0] is scaled by fMouseHeadingXScale/fGamepadHeadingXScale (heading), [1] by the Y scales and negated by bInvertYValues (pitch); AddFreeRotation adds [0]/[1] to ThirdPersonState +0xd4/+0xd8 (yaw, pitch); the layout and names match the Gamebryo math type as I remember it, derived here from the code only; size: TESCamera::Update 0x558e70 resets +0x8/+0xc from the 8-byte zero constant 0x20ccb20; ThirdPersonState::ProcessLookInput (slot 15) and PlayerCamera::AddFreeRotation 0x8f9070 read exactly [0] and [1]; NormalizeVector2AndGetLength 0x7b5480 touches two floats.
-#[repr(C)]
+#[repr(C, align(4))]
 #[derive(Default)]
 pub struct NiPoint2 {
     /// +0x0 `float`, semantic; x (heading/yaw for look input) (high)
-    pub x: f32,
+    #[doc(hidden)]
+    pub __x: [u8; 4],
     /// +0x4 `float`, semantic; y (pitch for look input) (high)
-    pub y: f32,
+    #[doc(hidden)]
+    pub __y: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPoint2>() == 0x8);
-const _: () = assert!(core::mem::offset_of!(NiPoint2, x) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPoint2, y) == 0x4);
+const _: () = assert!(core::mem::offset_of!(NiPoint2, __x) == 0x0);
+const _: () = assert!(core::mem::offset_of!(NiPoint2, __y) == 0x4);
 
 /// `NiPoint3`: size 0xC (exact).
 /// Meaning: 3D float vector/point (x, y, z), z up (high, nimath pass).
@@ -201,11 +216,14 @@ const _: () = assert!(core::mem::offset_of!(NiPoint3, z) == 0x8);
 #[derive(Default)]
 pub struct NiPoint4 {
     /// +0x0 `float`, semantic; x (high)
-    pub x: f32,
+    #[doc(hidden)]
+    pub __x: [u8; 4],
     /// +0x4 `float`, semantic; y (high)
-    pub y: f32,
+    #[doc(hidden)]
+    pub __y: [u8; 4],
     /// +0x8 `float`, semantic; z (high)
-    pub z: f32,
+    #[doc(hidden)]
+    pub __z: [u8; 4],
     /// +0xC `float`, semantic; w (0 in the only writer) (high)
     #[doc(hidden)]
     pub __w: [u8; 4],
@@ -213,9 +231,9 @@ pub struct NiPoint4 {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPoint4>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(NiPoint4, x) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPoint4, y) == 0x4);
-const _: () = assert!(core::mem::offset_of!(NiPoint4, z) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPoint4, __x) == 0x0);
+const _: () = assert!(core::mem::offset_of!(NiPoint4, __y) == 0x4);
+const _: () = assert!(core::mem::offset_of!(NiPoint4, __z) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPoint4, __w) == 0xC);
 
 /// `NiQuaternion`: size 0x10 (exact).
@@ -227,48 +245,54 @@ pub struct NiQuaternion {
     /// +0x0 `float`, semantic; scalar part (high)
     pub w: f32,
     /// +0x4 `float`, semantic; x (high)
-    pub x: f32,
+    #[doc(hidden)]
+    pub __x: [u8; 4],
     /// +0x8 `float`, semantic; y (high)
-    pub y: f32,
+    #[doc(hidden)]
+    pub __y: [u8; 4],
     /// +0xC `float`, semantic; z (high)
-    pub z: f32,
+    #[doc(hidden)]
+    pub __z: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiQuaternion>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiQuaternion, w) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiQuaternion, x) == 0x4);
-const _: () = assert!(core::mem::offset_of!(NiQuaternion, y) == 0x8);
-const _: () = assert!(core::mem::offset_of!(NiQuaternion, z) == 0xC);
+const _: () = assert!(core::mem::offset_of!(NiQuaternion, __x) == 0x4);
+const _: () = assert!(core::mem::offset_of!(NiQuaternion, __y) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiQuaternion, __z) == 0xC);
 
 /// `NiTransform`: size 0x34 (exact).
 /// Meaning: similarity transform: rotate (NiMatrix3), translate (NiPoint3), uniform scale (high, nimath pass).
 /// Evidence: similarity transform: rotate (NiMatrix3), translate (NiPoint3), uniform scale; NiTransform::Multiply 0x3059a0 computes out.rotate[r][c] = sum_k lhs[4*(3r+k)] * rhs[4*(3k+c)] for the nine floats at +0x0..+0x20, out.translate (+0x24..+0x2c) = lhs.scale (+0x30) * (lhs.rotate * rhs.translate) + lhs.translate, out.scale = lhs.scale * rhs.scale; NiTransform::Invert 0x6bdfd0: adjugate/determinant of +0x0..+0x20, scale' = 1/scale, translate' = -(R' t) / scale; SetIdentity 0xef5b60: identity rotation, translate from the zero point constants ID_410468..ID_410470, scale 1.0; ApplyPoseToBoneNodes 0xbdfa20 writes the rotation to node +0x48 and the translation to node +0x6c..+0x74; the layout and names match the Gamebryo math type as I remember it, derived here from the code only; size: NiAVObject local +0x48 and world +0x7c are 0x34 apart, previousWorld +0xb0 follows; NiTransform::SetIdentity 0xef5b60 writes +0x0..+0x33; NiSkinData::BoneData (0x34 transform + 0x10 bound).
 #[repr(C)]
-#[derive(Default)]
 pub struct NiTransform {
     /// +0x0 `class:NiMatrix3`, semantic; rotation (high)
-    pub rotate: crate::NiMatrix3,
+    #[doc(hidden)]
+    pub __rotate: [u8; 36],
     /// +0x24 `class:NiPoint3`, semantic; translation (high)
-    pub translate: crate::NiPoint3,
+    #[doc(hidden)]
+    pub __translate: [u8; 12],
     /// +0x30 `float`, semantic; uniform scale (high)
-    pub scale: f32,
+    #[doc(hidden)]
+    pub __scale: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTransform>() == 0x34);
-const _: () = assert!(core::mem::offset_of!(NiTransform, rotate) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiTransform, translate) == 0x24);
-const _: () = assert!(core::mem::offset_of!(NiTransform, scale) == 0x30);
+const _: () = assert!(core::mem::offset_of!(NiTransform, __rotate) == 0x0);
+const _: () = assert!(core::mem::offset_of!(NiTransform, __translate) == 0x24);
+const _: () = assert!(core::mem::offset_of!(NiTransform, __scale) == 0x30);
 
 /// `hkQsTransform`: size 0x30 (exact).
 /// Meaning: Havok translation/rotation/scale transform (high, nimath pass).
 /// Evidence: Havok translation/rotation/scale transform; 0xbf17b0 model = parent * local: translation' = parent.t + rotate(parent.q, local.t) (the rotate uses w^2 terms with the ID_219020 constant), rotation' = parent.q * local.q, scale' = parent.s * local.s (component-wise at +0x20); 0xbdfa20 writes translation [0..2] and the matrix of the normalised rotation into NiAVObject local (+0x48) or the flattened bone entry; matches the Havok type as I remember it, derived here from the code only; size: ApplyPoseToBoneNodes 0xbdfa20 and TransformLocalPosesToModelSpace 0xbf17b0 step 0x30 (12 floats) per bone; hkbCharacter row: worldFromModel points at one 0x30 record.
-#[repr(C)]
+#[repr(C, align(4))]
 #[derive(Default)]
 pub struct hkQsTransform {
     /// +0x0 `class:hkVector4`, semantic; translation (w unused) (high)
-    pub translation: crate::hkVector4,
+    #[doc(hidden)]
+    pub __translation: [u8; 16],
     /// +0x10 `class:hkQuaternion`, semantic; rotation (high)
     pub rotation: crate::hkQuaternion,
     /// +0x20 `class:hkVector4`, semantic; per-axis scale (high)
@@ -277,7 +301,7 @@ pub struct hkQsTransform {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkQsTransform>() == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkQsTransform, translation) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkQsTransform, __translation) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkQsTransform, rotation) == 0x10);
 const _: () = assert!(core::mem::offset_of!(hkQsTransform, scale) == 0x20);
 
@@ -288,7 +312,8 @@ const _: () = assert!(core::mem::offset_of!(hkQsTransform, scale) == 0x20);
 #[derive(Default)]
 pub struct hkQuaternion {
     /// +0x0 `float`, semantic; x (high)
-    pub x: f32,
+    #[doc(hidden)]
+    pub __x: [u8; 4],
     /// +0x4 `float`, semantic; y (high)
     #[doc(hidden)]
     pub __y: [u8; 4],
@@ -302,7 +327,7 @@ pub struct hkQuaternion {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkQuaternion>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkQuaternion, x) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkQuaternion, __x) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkQuaternion, __y) == 0x4);
 const _: () = assert!(core::mem::offset_of!(hkQuaternion, __z) == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkQuaternion, __w) == 0xC);
@@ -314,7 +339,8 @@ const _: () = assert!(core::mem::offset_of!(hkQuaternion, __w) == 0xC);
 #[derive(Default)]
 pub struct hkVector4 {
     /// +0x0 `float`, semantic; x (high)
-    pub x: f32,
+    #[doc(hidden)]
+    pub __x: [u8; 4],
     /// +0x4 `float`, semantic; y (high)
     #[doc(hidden)]
     pub __y: [u8; 4],
@@ -328,7 +354,7 @@ pub struct hkVector4 {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkVector4>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkVector4, x) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkVector4, __x) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkVector4, __y) == 0x4);
 const _: () = assert!(core::mem::offset_of!(hkVector4, __z) == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkVector4, __w) == 0xC);

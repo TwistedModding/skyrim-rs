@@ -60,12 +60,17 @@ type ObjectTypeInfo = sre::BSScript__ObjectTypeInfo;
 type CallBindingSlot = unsafe extern "C" fn(this: *mut NativeHeader, self_: *mut VariableRaw, vm: *mut VirtualMachine, stack_id: u32, result: *mut VariableRaw, frame: *mut sre::BSScript__StackFrame) -> bool;
 type HasBindingSlot = unsafe extern "C" fn(this: *mut NativeHeader) -> bool;
 
-const fn type_info(bits: u64) -> sre::BSScript__TypeInfo {
-    sre::BSScript__TypeInfo { rawTypeOrObjectType: bits, __engine: sre::Engine::new() }
+fn type_info(bits: u64) -> sre::BSScript__TypeInfo {
+    let mut info: sre::BSScript__TypeInfo = unsafe { core::mem::zeroed() };
+    info.rawTypeOrObjectType = bits;
+    info
 }
 
-const fn variable(type_bits: u64, value: u64) -> VariableRaw {
-    VariableRaw { type_: type_info(type_bits), value, __engine: sre::Engine::new() }
+fn variable(type_bits: u64, value: u64) -> VariableRaw {
+    let mut raw: VariableRaw = unsafe { core::mem::zeroed() };
+    raw.type_ = type_info(type_bits);
+    raw.value = value;
+    raw
 }
 
 /// `Variable::assign` (id 104297): releases what `target` held and takes a reference to `value`'s.
@@ -184,7 +189,7 @@ pub fn alias_handles(reference: &TESObjectREFR) -> Vec<Handle> {
     let array = unsafe { &*core::ptr::from_ref(extra).cast::<sre::ExtraAliasInstanceArray>() };
     array.lock.lock_for_read();
     let entries = array.entries.cast::<*const sre::ExtraAliasInstanceArray__Entry>();
-    let handles = (0..array.count() as usize)
+    let handles = (0..array.count as usize)
         .filter_map(|i| {
             let entry = unsafe { (*entries.add(i)).as_ref() }?;
             Some(Handle::alias(entry.quest()?.formID, entry.alias()?.aliasID as u16))
@@ -320,27 +325,27 @@ pub struct Variable(VariableRaw);
 
 impl Variable {
     #[must_use]
-    pub const fn none() -> Self {
+    pub fn none() -> Self {
         Self::scalar(PapyrusType::None, 0)
     }
 
-    const fn scalar(ty: PapyrusType, value: u64) -> Self {
+    fn scalar(ty: PapyrusType, value: u64) -> Self {
         Self(variable(ty as u64, value))
     }
 
     #[must_use]
-    pub const fn int(value: i32) -> Self {
-        Self::scalar(PapyrusType::Int, value.cast_unsigned() as u64)
+    pub fn int(value: i32) -> Self {
+        Self::scalar(PapyrusType::Int, u64::from(value.cast_unsigned()))
     }
 
     #[must_use]
-    pub const fn float(value: f32) -> Self {
-        Self::scalar(PapyrusType::Float, value.to_bits() as u64)
+    pub fn float(value: f32) -> Self {
+        Self::scalar(PapyrusType::Float, u64::from(value.to_bits()))
     }
 
     #[must_use]
-    pub const fn bool(value: bool) -> Self {
-        Self::scalar(PapyrusType::Bool, value as u64)
+    pub fn bool(value: bool) -> Self {
+        Self::scalar(PapyrusType::Bool, u64::from(value))
     }
 
     /// A String holding its own reference to the interned text.
@@ -1331,33 +1336,21 @@ fn bind<F: Send + Sync + 'static>(
         param_infos.push(param.type_info(vm)?.bits());
     }
     let param_infos = Box::leak(param_infos.into_boxed_slice());
-    let native = Box::leak(Box::new(Native {
-        header: NativeHeader {
-            base: sre::BSScript__NF_util__NativeFunctionBase {
-                __vftable: (&raw const native_vtable().0).cast(),
-                refCount: 1,
-                unknown_C: [0; 4],
-                name: BSFixedString::new(name).into_raw(),
-                objectTypeName: BSFixedString::new(class).into_raw(),
-                stateName: BSFixedString::new("").into_raw(),
-                returnType: type_info(return_type.bits()),
-                params: param_infos[1..].as_mut_ptr().cast(),
-                paramCount: count,
-                variableCount: count,
-                unknown_3C: [0; 4],
-                isStatic: u8::from(kind != NativeKind::Method),
-                isCallableFromTasklet: 0,
-                isLatent: u8::from(kind == NativeKind::Latent),
-                unknown_43: [0; 1],
-                userFlags: 0,
-                docString: BSFixedString::empty().into_raw(),
-                binding: invoke as *mut c_void,
-                __engine: sre::Engine::new(),
-            },
-            invoke,
-        },
-        f,
-    }));
+    let mut base: sre::BSScript__NF_util__NativeFunctionBase = unsafe { core::mem::zeroed() };
+    base.__vftable = (&raw const native_vtable().0).cast();
+    base.refCount = 1;
+    base.name = BSFixedString::new(name).into_raw();
+    base.objectTypeName = BSFixedString::new(class).into_raw();
+    base.stateName = BSFixedString::new("").into_raw();
+    base.returnType = type_info(return_type.bits());
+    base.params = param_infos[1..].as_mut_ptr().cast();
+    base.paramCount = count;
+    base.variableCount = count;
+    base.isStatic = u8::from(kind != NativeKind::Method);
+    base.isLatent = u8::from(kind == NativeKind::Latent);
+    base.docString = BSFixedString::empty().into_raw();
+    base.binding = invoke as *mut c_void;
+    let native = Box::leak(Box::new(Native { header: NativeHeader { base, invoke }, f }));
     let function = unsafe { &*(&raw const native.header).cast::<sre::BSScript__IFunction>() };
     if !vm.bind_native_method(Some(function)) {
         return Err(Error::Bind { class: class.to_owned(), name: name.to_owned() });

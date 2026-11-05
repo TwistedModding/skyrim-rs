@@ -3,19 +3,20 @@
 
 use core::ffi::c_void;
 
-/// `BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
-/// Evidence: runtime: 0x58 at 1 allocation sites.
+/// `BSScript::NativeFunction1<TESFaction,void,unsigned_int>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
+/// Evidence: runtime: 0x58 at 2 allocation sites.
 /// Bases: `BSScript::NF_util::NativeFunctionBase`@0x0, `BSScript::IFunction`@0x0, `BSIntrusiveRefCounted`@0x8.
 #[repr(C, align(8))]
-pub struct BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64 {
-    /// +0x0 `vtbl:BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>:0`, rtti
+pub struct BSScript__NativeFunction1_TESFaction_void_unsigned_int {
+    /// +0x0 `vtbl:BSScript::NativeFunction1<TESFaction,void,unsigned_int>:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64_vtable,
+    pub __vftable: *const crate::raw::vtables::BSScript__NativeFunction1_TESFaction_void_unsigned_int_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -27,7 +28,8 @@ pub struct BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64 {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -45,26 +47,93 @@ pub struct BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64 {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSScript__NativeFunction1_TESFaction_void_unsigned_int>() == 0x58);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESFaction_void_unsigned_int, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESFaction_void_unsigned_int, refCount) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESFaction_void_unsigned_int, __name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESFaction_void_unsigned_int, __objectTypeName) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESFaction_void_unsigned_int, __stateName) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESFaction_void_unsigned_int, returnType) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESFaction_void_unsigned_int, params) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESFaction_void_unsigned_int, __paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESFaction_void_unsigned_int, variableCount) == 0x3A);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESFaction_void_unsigned_int, isStatic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESFaction_void_unsigned_int, isCallableFromTasklet) == 0x41);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESFaction_void_unsigned_int, __isLatent) == 0x42);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESFaction_void_unsigned_int, userFlags) == 0x44);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESFaction_void_unsigned_int, __docString) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESFaction_void_unsigned_int, __binding) == 0x50);
+
+/// `BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
+/// Evidence: runtime: 0x58 at 1 allocation sites.
+/// Bases: `BSScript::NF_util::NativeFunctionBase`@0x0, `BSScript::IFunction`@0x0, `BSIntrusiveRefCounted`@0x8.
+#[repr(C, align(8))]
+pub struct BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64 {
+    /// +0x0 `vtbl:BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64_vtable,
+    /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
+    pub refCount: u32,
+    unknown_C: [u8; 4],
+    /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
+    #[doc(hidden)]
+    pub __name: [u8; 8],
+    /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
+    #[doc(hidden)]
+    pub __objectTypeName: [u8; 8],
+    /// +0x20 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (a four-argument ctor variant 0x14a9fc0 takes one) (high)
+    #[doc(hidden)]
+    pub __stateName: [u8; 8],
+    /// +0x28 `class:BSScript::TypeInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the return type; 0 (None) from the ctor, set by the NativeFunction<N> ctor from its template argument (form types through GetScriptObjectTypeByID, 1 when that fails); for a latent native the value type the native returns through ReturnFromLatent (high)
+    pub returnType: crate::BSScript__TypeInfo,
+    /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
+    pub params: *mut crate::BSScript__NF_util__ParamInfo,
+    /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
+    /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
+    pub variableCount: u16,
+    unknown_3C: [u8; 4],
+    /// +0x40 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for global functions (BSScript::StaticFunctionTag self): the VM passes a null self (high)
+    pub isStatic: u8,
+    /// +0x41 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; read by slot 19; stays 0 for natives (SetCallableFromTasklets flags the type's table instead) (high)
+    pub isCallableFromTasklet: u8,
+    /// +0x42 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for NativeLatentFunction<N>: Call returns 2 and the callback's bool result means 'started' (high)
+    #[doc(hidden)]
+    pub __isLatent: [u8; 1],
+    unknown_43: [u8; 1],
+    /// +0x44 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; 0 for natives (high)
+    pub userFlags: u32,
+    /// +0x48 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (high)
+    #[doc(hidden)]
+    pub __docString: [u8; 8],
+    /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESForm,void,float>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 4 allocation sites.
@@ -78,7 +147,8 @@ pub struct BSScript__NativeFunction1_TESForm_void_float {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -90,7 +160,8 @@ pub struct BSScript__NativeFunction1_TESForm_void_float {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -108,26 +179,27 @@ pub struct BSScript__NativeFunction1_TESForm_void_float {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESForm_void_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_void_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_void_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_void_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_void_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_void_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_void_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_void_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_void_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_void_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_void_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_void_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_void_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_void_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_void_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_void_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_void_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_void_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_void_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESGlobal,void,float>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -141,7 +213,8 @@ pub struct BSScript__NativeFunction1_TESGlobal_void_float {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -153,7 +226,8 @@ pub struct BSScript__NativeFunction1_TESGlobal_void_float {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -171,26 +245,27 @@ pub struct BSScript__NativeFunction1_TESGlobal_void_float {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESGlobal_void_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_void_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_void_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_void_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_void_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_void_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_void_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_void_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_void_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_void_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_void_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_void_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_void_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_void_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_void_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_void_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_void_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_void_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_void_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESImageSpaceModifier,void,float>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 2 allocation sites.
@@ -204,7 +279,8 @@ pub struct BSScript__NativeFunction1_TESImageSpaceModifier_void_float {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -216,7 +292,8 @@ pub struct BSScript__NativeFunction1_TESImageSpaceModifier_void_float {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -234,26 +311,27 @@ pub struct BSScript__NativeFunction1_TESImageSpaceModifier_void_float {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESImageSpaceModifier_void_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESNPC,void,bool>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 3 allocation sites.
@@ -267,7 +345,8 @@ pub struct BSScript__NativeFunction1_TESNPC_void_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -279,7 +358,8 @@ pub struct BSScript__NativeFunction1_TESNPC_void_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -297,26 +377,27 @@ pub struct BSScript__NativeFunction1_TESNPC_void_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESNPC_void_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -330,7 +411,8 @@ pub struct BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64 {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -342,7 +424,8 @@ pub struct BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64 {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -360,26 +443,27 @@ pub struct BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64 {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -393,7 +477,8 @@ pub struct BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64 {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -405,7 +490,8 @@ pub struct BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64 {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -423,26 +509,27 @@ pub struct BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64 {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectCELL,void,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -456,7 +543,8 @@ pub struct BSScript__NativeFunction1_TESObjectCELL_void_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -468,7 +556,8 @@ pub struct BSScript__NativeFunction1_TESObjectCELL_void_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -486,26 +575,27 @@ pub struct BSScript__NativeFunction1_TESObjectCELL_void_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectCELL_void_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectCELL,void,float>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -519,7 +609,8 @@ pub struct BSScript__NativeFunction1_TESObjectCELL_void_float {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -531,7 +622,8 @@ pub struct BSScript__NativeFunction1_TESObjectCELL_void_float {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -549,26 +641,27 @@ pub struct BSScript__NativeFunction1_TESObjectCELL_void_float {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectCELL_void_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectCELL_void_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -582,7 +675,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKey
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -594,7 +688,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKey
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -612,26 +707,27 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKey
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKeyword____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKeyword____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKeyword____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKeyword____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKeyword____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKeyword____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKeyword____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKeyword____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKeyword____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKeyword____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKeyword____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKeyword____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKeyword____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKeyword____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKeyword____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKeyword____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKeyword____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKeyword____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKeyword____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -645,7 +741,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -657,7 +754,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -675,26 +773,27 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -708,7 +807,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64 {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -720,7 +820,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64 {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -738,26 +839,27 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64 {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -771,7 +873,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____pt
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -783,7 +886,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____pt
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -801,26 +905,27 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____pt
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 3 allocation sites; agrees with the static allocation sites.
@@ -834,7 +939,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____p
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -846,7 +952,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____p
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -864,26 +971,27 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____p
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 3 allocation sites; agrees with the static allocation sites.
@@ -897,7 +1005,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64 {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -909,7 +1018,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64 {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -927,26 +1037,27 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64 {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectREFR,bool,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -960,7 +1071,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_bool_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -972,7 +1084,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_bool_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -990,26 +1103,27 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_bool_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectREFR_bool_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectREFR,bool,float>`: size >= 0x58 (lower bound); partial, the struct stops at the lower bound; primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: lower field field_44; upper first own field of BSScript::NativeLatentFunction1<TESObjectREFR,void,float> at 0x50 (soft); the semantic base BSScript::NF_util::NativeFunctionBase (0x58) ends at 0x58.
@@ -1023,7 +1137,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_bool_float {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -1035,7 +1150,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_bool_float {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -1053,25 +1169,26 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_bool_float {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_bool_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -1085,7 +1202,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -1097,7 +1215,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -1115,26 +1234,27 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 2 allocation sites; agrees with the static allocation sites.
@@ -1148,7 +1268,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64 
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -1160,7 +1281,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64 
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -1178,26 +1300,27 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64 
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -1211,7 +1334,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____pt
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -1223,7 +1347,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____pt
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -1241,26 +1366,27 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____pt
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -1274,7 +1400,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -1286,7 +1413,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -1304,26 +1432,27 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -1337,7 +1466,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -1349,7 +1479,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -1367,26 +1498,27 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 2 allocation sites; agrees with the static allocation sites.
@@ -1400,7 +1532,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64 {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -1412,7 +1545,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64 {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -1430,26 +1564,27 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64 {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -1463,7 +1598,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64 {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -1475,7 +1611,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64 {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -1493,26 +1630,27 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64 {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 2 allocation sites; agrees with the static allocation sites.
@@ -1526,7 +1664,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64 {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -1538,7 +1677,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64 {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -1556,26 +1696,27 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64 {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -1589,7 +1730,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64 {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -1601,7 +1743,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64 {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -1619,26 +1762,27 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64 {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 2 allocation sites; agrees with the static allocation sites.
@@ -1652,7 +1796,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64 {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -1664,7 +1809,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64 {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -1682,26 +1828,27 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64 {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectREFR,void,bool>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 10 allocation sites; agrees with the static allocation sites.
@@ -1715,7 +1862,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_void_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -1727,7 +1875,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_void_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -1745,26 +1894,27 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_void_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectREFR_void_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -1778,7 +1928,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -1790,7 +1941,8 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -1808,26 +1960,27 @@ pub struct BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -1841,7 +1994,8 @@ pub struct BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -1853,7 +2007,8 @@ pub struct BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -1871,26 +2026,27 @@ pub struct BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -1904,7 +2060,8 @@ pub struct BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64 {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -1916,7 +2073,8 @@ pub struct BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64 {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -1934,26 +2092,27 @@ pub struct BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64 {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESQuest,bool,unsigned_int>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 4 allocation sites.
@@ -1967,7 +2126,8 @@ pub struct BSScript__NativeFunction1_TESQuest_bool_unsigned_int {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -1979,7 +2139,8 @@ pub struct BSScript__NativeFunction1_TESQuest_bool_unsigned_int {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -1997,26 +2158,27 @@ pub struct BSScript__NativeFunction1_TESQuest_bool_unsigned_int {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESQuest_bool_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_unsigned_int, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_unsigned_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_unsigned_int, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_unsigned_int, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_unsigned_int, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_unsigned_int, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_unsigned_int, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_unsigned_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_unsigned_int, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_unsigned_int, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_unsigned_int, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_unsigned_int, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_unsigned_int, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_unsigned_int, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_unsigned_int, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_unsigned_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_unsigned_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_bool_unsigned_int, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESQuest,void,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -2030,7 +2192,8 @@ pub struct BSScript__NativeFunction1_TESQuest_void_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -2042,7 +2205,8 @@ pub struct BSScript__NativeFunction1_TESQuest_void_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -2060,26 +2224,27 @@ pub struct BSScript__NativeFunction1_TESQuest_void_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESQuest_void_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_void_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_void_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_void_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_void_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_void_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_void_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_void_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_void_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_void_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_void_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_void_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_void_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_void_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_void_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_void_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_void_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_void_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESQuest_void_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: lower bound BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64> (size 0x58 at 0x0) adds no fields or bases meets upper bound derived BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64> size 0x58 at 0x0.
@@ -2093,7 +2258,8 @@ pub struct BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64 {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -2105,7 +2271,8 @@ pub struct BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64 {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -2123,26 +2290,27 @@ pub struct BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64 {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -2156,7 +2324,8 @@ pub struct BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr6
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -2168,7 +2337,8 @@ pub struct BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr6
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -2186,26 +2356,27 @@ pub struct BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr6
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction1<TESWeather,void,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -2219,7 +2390,8 @@ pub struct BSScript__NativeFunction1_TESWeather_void_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -2231,7 +2403,8 @@ pub struct BSScript__NativeFunction1_TESWeather_void_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -2249,26 +2422,27 @@ pub struct BSScript__NativeFunction1_TESWeather_void_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESWeather_void_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESWeather_void_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESWeather_void_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESWeather_void_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESWeather_void_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESWeather_void_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESWeather_void_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESWeather_void_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESWeather_void_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESWeather_void_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESWeather_void_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESWeather_void_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESWeather_void_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESWeather_void_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESWeather_void_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESWeather_void_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESWeather_void_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESWeather_void_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESWeather_void_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -2282,7 +2456,8 @@ pub struct BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BS
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -2294,7 +2469,8 @@ pub struct BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BS
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -2312,26 +2488,27 @@ pub struct BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BS
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 4 allocation sites.
@@ -2345,7 +2522,8 @@ pub struct BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectR
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -2357,7 +2535,8 @@ pub struct BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectR
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -2375,26 +2554,27 @@ pub struct BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectR
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectREFR____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectREFR____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectREFR____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectREFR____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectREFR____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectREFR____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectREFR____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectREFR____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectREFR____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectREFR____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectREFR____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectREFR____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectREFR____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectREFR____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectREFR____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectREFR____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectREFR____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectREFR____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -2408,7 +2588,8 @@ pub struct BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BS
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -2420,7 +2601,8 @@ pub struct BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BS
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -2438,26 +2620,27 @@ pub struct BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BS
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -2471,7 +2654,8 @@ pub struct BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Acto
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -2483,7 +2667,8 @@ pub struct BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Acto
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -2501,26 +2686,27 @@ pub struct BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Acto
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Actor____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Actor____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Actor____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Actor____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Actor____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Actor____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Actor____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Actor____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Actor____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Actor____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Actor____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Actor____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Actor____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Actor____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Actor____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Actor____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Actor____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Actor____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Actor____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -2534,7 +2720,8 @@ pub struct BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -2546,7 +2733,8 @@ pub struct BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -2564,26 +2752,27 @@ pub struct BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -2597,7 +2786,8 @@ pub struct BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectRE
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -2609,7 +2799,8 @@ pub struct BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectRE
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -2627,26 +2818,27 @@ pub struct BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectRE
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectREFR____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectREFR____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectREFR____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectREFR____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectREFR____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectREFR____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectREFR____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectREFR____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectREFR____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectREFR____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectREFR____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectREFR____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectREFR____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectREFR____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectREFR____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectREFR____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectREFR____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectREFR____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: allocation sites (medium): {'88': 1}.
@@ -2660,7 +2852,8 @@ pub struct BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -2672,7 +2865,8 @@ pub struct BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -2690,26 +2884,27 @@ pub struct BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -2723,7 +2918,8 @@ pub struct BSScript__NativeFunction2_Actor_void_Actor____ptr64_int {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -2735,7 +2931,8 @@ pub struct BSScript__NativeFunction2_Actor_void_Actor____ptr64_int {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -2753,26 +2950,27 @@ pub struct BSScript__NativeFunction2_Actor_void_Actor____ptr64_int {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_Actor_void_Actor____ptr64_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_Actor____ptr64_int, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_Actor____ptr64_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_Actor____ptr64_int, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_Actor____ptr64_int, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_Actor____ptr64_int, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_Actor____ptr64_int, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_Actor____ptr64_int, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_Actor____ptr64_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_Actor____ptr64_int, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_Actor____ptr64_int, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_Actor____ptr64_int, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_Actor____ptr64_int, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_Actor____ptr64_int, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_Actor____ptr64_int, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_Actor____ptr64_int, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_Actor____ptr64_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_Actor____ptr64_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_Actor____ptr64_int, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -2786,7 +2984,8 @@ pub struct BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -2798,7 +2997,8 @@ pub struct BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -2816,26 +3016,27 @@ pub struct BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 6 allocation sites; agrees with the static allocation sites.
@@ -2849,7 +3050,8 @@ pub struct BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_flo
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -2861,7 +3063,8 @@ pub struct BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_flo
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -2879,26 +3082,27 @@ pub struct BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_flo
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -2912,7 +3116,8 @@ pub struct BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -2924,7 +3129,8 @@ pub struct BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -2942,26 +3148,27 @@ pub struct BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 2 allocation sites; agrees with the static allocation sites.
@@ -2975,7 +3182,8 @@ pub struct BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int 
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -2987,7 +3195,8 @@ pub struct BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int 
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -3005,26 +3214,27 @@ pub struct BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int 
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 2 allocation sites; agrees with the static allocation sites.
@@ -3038,7 +3248,8 @@ pub struct BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -3050,7 +3261,8 @@ pub struct BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -3068,26 +3280,27 @@ pub struct BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -3101,7 +3314,8 @@ pub struct BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -3113,7 +3327,8 @@ pub struct BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -3131,26 +3346,27 @@ pub struct BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<Actor,void,bool,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -3164,7 +3380,8 @@ pub struct BSScript__NativeFunction2_Actor_void_bool_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -3176,7 +3393,8 @@ pub struct BSScript__NativeFunction2_Actor_void_bool_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -3194,26 +3412,27 @@ pub struct BSScript__NativeFunction2_Actor_void_bool_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_Actor_void_bool_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_bool_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_bool_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_bool_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_bool_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_bool_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_bool_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_bool_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_bool_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_bool_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_bool_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_bool_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_bool_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_bool_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_bool_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_bool_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_bool_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_bool_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_bool_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<Actor,void,float,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -3227,7 +3446,8 @@ pub struct BSScript__NativeFunction2_Actor_void_float_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -3239,7 +3459,8 @@ pub struct BSScript__NativeFunction2_Actor_void_float_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -3257,26 +3478,27 @@ pub struct BSScript__NativeFunction2_Actor_void_float_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_Actor_void_float_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_float_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_float_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_float_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_float_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_float_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_float_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_float_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_float_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_float_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_float_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_float_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_float_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_float_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_float_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_float_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_float_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_float_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_float_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -3290,7 +3512,8 @@ pub struct BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -3302,7 +3525,8 @@ pub struct BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -3320,26 +3544,27 @@ pub struct BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -3353,7 +3578,8 @@ pub struct BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BS
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -3365,7 +3591,8 @@ pub struct BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BS
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -3383,26 +3610,27 @@ pub struct BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BS
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 4 allocation sites.
@@ -3416,7 +3644,8 @@ pub struct BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectR
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -3428,7 +3657,8 @@ pub struct BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectR
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -3446,26 +3676,27 @@ pub struct BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectR
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectREFR____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectREFR____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectREFR____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectREFR____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectREFR____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectREFR____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectREFR____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectREFR____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectREFR____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectREFR____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectREFR____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectREFR____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectREFR____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectREFR____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectREFR____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectREFR____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectREFR____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectREFR____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -3479,7 +3710,8 @@ pub struct BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BS
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -3491,7 +3723,8 @@ pub struct BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BS
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -3509,26 +3742,27 @@ pub struct BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BS
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -3542,7 +3776,8 @@ pub struct BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKe
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -3554,7 +3789,8 @@ pub struct BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKe
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -3572,26 +3808,27 @@ pub struct BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKe
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKeyword____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKeyword____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKeyword____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKeyword____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKeyword____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKeyword____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKeyword____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKeyword____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKeyword____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKeyword____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKeyword____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKeyword____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKeyword____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKeyword____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKeyword____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKeyword____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKeyword____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKeyword____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKeyword____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -3605,7 +3842,8 @@ pub struct BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float 
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -3617,7 +3855,8 @@ pub struct BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float 
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -3635,26 +3874,27 @@ pub struct BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float 
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -3668,7 +3908,8 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr6
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -3680,7 +3921,8 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr6
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -3698,26 +3940,27 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr6
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int_BSFixedString_const____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int_BSFixedString_const____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int_BSFixedString_const____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int_BSFixedString_const____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int_BSFixedString_const____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int_BSFixedString_const____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int_BSFixedString_const____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int_BSFixedString_const____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int_BSFixedString_const____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int_BSFixedString_const____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int_BSFixedString_const____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int_BSFixedString_const____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int_BSFixedString_const____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int_BSFixedString_const____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int_BSFixedString_const____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int_BSFixedString_const____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int_BSFixedString_const____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int_BSFixedString_const____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 2 allocation sites.
@@ -3731,7 +3974,8 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_flo
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -3743,7 +3987,8 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_flo
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -3761,26 +4006,27 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_flo
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -3794,7 +4040,8 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -3806,7 +4053,8 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -3824,26 +4072,27 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 2 allocation sites.
@@ -3857,7 +4106,8 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedStr
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -3869,7 +4119,8 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedStr
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -3887,26 +4138,27 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedStr
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -3920,7 +4172,8 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedStr
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -3932,7 +4185,8 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedStr
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -3950,26 +4204,27 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedStr
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 2 allocation sites.
@@ -3983,7 +4238,8 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedStr
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -3995,7 +4251,8 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedStr
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -4013,26 +4270,27 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedStr
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 2 allocation sites.
@@ -4046,7 +4304,8 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedStr
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -4058,7 +4317,8 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedStr
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -4076,26 +4336,27 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedStr
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_int, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_int, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_int, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_int, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_int, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_int, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_int, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_int, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_int, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_int, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_int, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_int, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_int, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_int, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 3 allocation sites.
@@ -4109,7 +4370,8 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedStr
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -4121,7 +4383,8 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedStr
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -4139,26 +4402,27 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedStr
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_unsigned_int, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_unsigned_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_unsigned_int, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_unsigned_int, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_unsigned_int, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_unsigned_int, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_unsigned_int, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_unsigned_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_unsigned_int, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_unsigned_int, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_unsigned_int, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_unsigned_int, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_unsigned_int, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_unsigned_int, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_unsigned_int, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_unsigned_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_unsigned_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_unsigned_int, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -4172,7 +4436,8 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectR
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -4184,7 +4449,8 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectR
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -4202,26 +4468,27 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectR
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -4235,7 +4502,8 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_i
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -4247,7 +4515,8 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_i
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -4265,26 +4534,27 @@ pub struct BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_i
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_int_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_int_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_int_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_int_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_int_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_int_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_int_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_int_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_int_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_int_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_int_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_int_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_int_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_int_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_int_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_int_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_int_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_int_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_int_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: lower bound BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64> (size 0x58 at 0x0) adds no fields or bases meets upper bound derived BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64> size 0x58 at 0x0.
@@ -4298,7 +4568,8 @@ pub struct BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESO
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -4310,7 +4581,8 @@ pub struct BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESO
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -4328,26 +4600,27 @@ pub struct BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESO
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: lower bound BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64> (size 0x58 at 0x0) adds no fields or bases meets upper bound derived BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64> size 0x58 at 0x0.
@@ -4361,7 +4634,8 @@ pub struct BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESOb
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -4373,7 +4647,8 @@ pub struct BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESOb
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -4391,26 +4666,27 @@ pub struct BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESOb
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -4424,7 +4700,8 @@ pub struct BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -4436,7 +4713,8 @@ pub struct BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -4454,26 +4732,27 @@ pub struct BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESFaction,bool,bool,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: lower bound BSScript::NativeLatentFunction2<TESFaction,void,bool,bool> (size 0x58 at 0x0) adds no fields or bases meets upper bound derived BSScript::NativeLatentFunction2<TESFaction,void,bool,bool> size 0x58 at 0x0.
@@ -4487,7 +4766,8 @@ pub struct BSScript__NativeFunction2_TESFaction_bool_bool_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -4499,7 +4779,8 @@ pub struct BSScript__NativeFunction2_TESFaction_bool_bool_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -4517,26 +4798,27 @@ pub struct BSScript__NativeFunction2_TESFaction_bool_bool_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESFaction_bool_bool_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_bool_bool_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_bool_bool_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_bool_bool_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_bool_bool_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_bool_bool_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_bool_bool_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_bool_bool_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_bool_bool_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_bool_bool_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_bool_bool_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_bool_bool_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_bool_bool_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_bool_bool_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_bool_bool_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_bool_bool_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_bool_bool_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_bool_bool_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_bool_bool_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 2 allocation sites.
@@ -4550,7 +4832,8 @@ pub struct BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -4562,7 +4845,8 @@ pub struct BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -4580,26 +4864,27 @@ pub struct BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESFaction,void,bool,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -4613,7 +4898,8 @@ pub struct BSScript__NativeFunction2_TESFaction_void_bool_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -4625,7 +4911,8 @@ pub struct BSScript__NativeFunction2_TESFaction_void_bool_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -4643,26 +4930,27 @@ pub struct BSScript__NativeFunction2_TESFaction_void_bool_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESFaction_void_bool_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_bool_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_bool_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_bool_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_bool_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_bool_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_bool_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_bool_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_bool_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_bool_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_bool_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_bool_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_bool_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_bool_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_bool_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_bool_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_bool_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_bool_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_bool_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESFaction,void,int,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -4676,7 +4964,8 @@ pub struct BSScript__NativeFunction2_TESFaction_void_int_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -4688,7 +4977,8 @@ pub struct BSScript__NativeFunction2_TESFaction_void_int_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -4706,26 +4996,27 @@ pub struct BSScript__NativeFunction2_TESFaction_void_int_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESFaction_void_int_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_int_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_int_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_int_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_int_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_int_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_int_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_int_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_int_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_int_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_int_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_int_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_int_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_int_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_int_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_int_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_int_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_int_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESFaction_void_int_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -4739,7 +5030,8 @@ pub struct BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixed
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -4751,7 +5043,8 @@ pub struct BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixed
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -4769,26 +5062,27 @@ pub struct BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixed
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 4 allocation sites.
@@ -4802,7 +5096,8 @@ pub struct BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR__
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -4814,7 +5109,8 @@ pub struct BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR__
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -4832,26 +5128,27 @@ pub struct BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR__
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -4865,7 +5162,8 @@ pub struct BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixed
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -4877,7 +5175,8 @@ pub struct BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixed
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -4895,26 +5194,27 @@ pub struct BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixed
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -4928,7 +5228,8 @@ pub struct BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceMod
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -4940,7 +5241,8 @@ pub struct BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceMod
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -4958,26 +5260,27 @@ pub struct BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceMod
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceModifier____ptr64_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceModifier____ptr64_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceModifier____ptr64_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceModifier____ptr64_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceModifier____ptr64_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceModifier____ptr64_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceModifier____ptr64_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceModifier____ptr64_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceModifier____ptr64_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceModifier____ptr64_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceModifier____ptr64_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceModifier____ptr64_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceModifier____ptr64_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceModifier____ptr64_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceModifier____ptr64_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceModifier____ptr64_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceModifier____ptr64_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceModifier____ptr64_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceModifier____ptr64_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -4991,7 +5294,8 @@ pub struct BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsig
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -5003,7 +5307,8 @@ pub struct BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsig
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -5021,26 +5326,27 @@ pub struct BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsig
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsigned_int, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsigned_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsigned_int, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsigned_int, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsigned_int, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsigned_int, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsigned_int, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsigned_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsigned_int, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsigned_int, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsigned_int, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsigned_int, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsigned_int, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsigned_int, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsigned_int, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsigned_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsigned_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsigned_int, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -5054,7 +5360,8 @@ pub struct BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -5066,7 +5373,8 @@ pub struct BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -5084,26 +5392,27 @@ pub struct BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_int, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_int, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_int, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_int, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_int, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_int, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_int, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_int, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_int, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_int, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_int, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_int, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_int, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_int, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -5117,7 +5426,8 @@ pub struct BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -5129,7 +5439,8 @@ pub struct BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -5147,26 +5458,27 @@ pub struct BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESObjectCELL,void,float,float>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -5180,7 +5492,8 @@ pub struct BSScript__NativeFunction2_TESObjectCELL_void_float_float {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -5192,7 +5505,8 @@ pub struct BSScript__NativeFunction2_TESObjectCELL_void_float_float {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -5210,26 +5524,27 @@ pub struct BSScript__NativeFunction2_TESObjectCELL_void_float_float {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESObjectCELL_void_float_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectCELL_void_float_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectCELL_void_float_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectCELL_void_float_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectCELL_void_float_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectCELL_void_float_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectCELL_void_float_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectCELL_void_float_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectCELL_void_float_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectCELL_void_float_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectCELL_void_float_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectCELL_void_float_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectCELL_void_float_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectCELL_void_float_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectCELL_void_float_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectCELL_void_float_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectCELL_void_float_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectCELL_void_float_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectCELL_void_float_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: lower bound BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64> (size 0x58 at 0x0) adds no fields or bases meets upper bound derived BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64> size 0x58 at 0x0.
@@ -5243,7 +5558,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____p
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -5255,7 +5571,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____p
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -5273,26 +5590,27 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____p
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: lower bound BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int> (size 0x58 at 0x0) adds no fields or bases meets upper bound derived BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int> size 0x58 at 0x0.
@@ -5306,7 +5624,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigne
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -5318,7 +5637,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigne
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -5336,26 +5656,27 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigne
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigned_int, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigned_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigned_int, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigned_int, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigned_int, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigned_int, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigned_int, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigned_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigned_int, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigned_int, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigned_int, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigned_int, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigned_int, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigned_int, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigned_int, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigned_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigned_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigned_int, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: allocation sites (medium): {'88': 1}.
@@ -5369,7 +5690,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_B
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -5381,7 +5703,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_B
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -5399,26 +5722,27 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_B
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -5432,7 +5756,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_b
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -5444,7 +5769,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_b
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -5462,26 +5788,27 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_b
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -5495,7 +5822,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -5507,7 +5835,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -5525,26 +5854,27 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -5558,7 +5888,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -5570,7 +5901,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -5588,26 +5920,27 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -5621,7 +5954,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -5633,7 +5967,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -5651,26 +5986,27 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_int, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_int, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_int, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_int, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_int, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_int, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_int, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_int, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_int, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_int, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_int, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_int, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_int, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_int, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -5684,7 +6020,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____p
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -5696,7 +6033,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____p
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -5714,26 +6052,27 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____p
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -5747,7 +6086,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____p
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -5759,7 +6099,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____p
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -5777,26 +6118,27 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____p
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -5810,7 +6152,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____p
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -5822,7 +6165,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____p
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -5840,26 +6184,27 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____p
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -5873,7 +6218,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____p
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -5885,7 +6231,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____p
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -5903,26 +6250,27 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____p
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_int, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_int, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_int, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_int, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_int, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_int, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_int, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_int, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_int, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_int, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_int, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_int, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_int, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_int, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -5936,7 +6284,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_bool_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -5948,7 +6297,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_bool_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -5966,26 +6316,27 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_bool_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESObjectREFR_void_bool_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_bool_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_bool_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_bool_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_bool_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_bool_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_bool_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_bool_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_bool_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_bool_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_bool_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_bool_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_bool_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_bool_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_bool_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_bool_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_bool_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_bool_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_bool_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESObjectREFR,void,float,float>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -5999,7 +6350,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_float_float {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -6011,7 +6363,8 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_float_float {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -6029,26 +6382,27 @@ pub struct BSScript__NativeFunction2_TESObjectREFR_void_float_float {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESObjectREFR_void_float_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_float_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_float_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_float_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_float_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_float_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_float_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_float_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_float_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_float_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_float_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_float_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_float_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_float_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_float_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_float_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_float_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_float_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectREFR_void_float_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -6062,7 +6416,8 @@ pub struct BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_T
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -6074,7 +6429,8 @@ pub struct BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_T
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -6092,26 +6448,27 @@ pub struct BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_T
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_TESAmmo____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_TESAmmo____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_TESAmmo____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_TESAmmo____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_TESAmmo____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_TESAmmo____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_TESAmmo____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_TESAmmo____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_TESAmmo____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_TESAmmo____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_TESAmmo____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_TESAmmo____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_TESAmmo____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_TESAmmo____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_TESAmmo____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_TESAmmo____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_TESAmmo____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_TESAmmo____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_TESAmmo____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 2 allocation sites.
@@ -6125,7 +6482,8 @@ pub struct BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -6137,7 +6495,8 @@ pub struct BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -6155,26 +6514,27 @@ pub struct BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction2<TESWeather,void,bool,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -6188,7 +6548,8 @@ pub struct BSScript__NativeFunction2_TESWeather_void_bool_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -6200,7 +6561,8 @@ pub struct BSScript__NativeFunction2_TESWeather_void_bool_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -6218,26 +6580,27 @@ pub struct BSScript__NativeFunction2_TESWeather_void_bool_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction2_TESWeather_void_bool_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESWeather_void_bool_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESWeather_void_bool_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESWeather_void_bool_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESWeather_void_bool_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESWeather_void_bool_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESWeather_void_bool_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESWeather_void_bool_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESWeather_void_bool_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESWeather_void_bool_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESWeather_void_bool_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESWeather_void_bool_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESWeather_void_bool_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESWeather_void_bool_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESWeather_void_bool_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESWeather_void_bool_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESWeather_void_bool_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESWeather_void_bool_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction2_TESWeather_void_bool_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 2 allocation sites; agrees with the static allocation sites.
@@ -6251,7 +6614,8 @@ pub struct BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -6263,7 +6627,8 @@ pub struct BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -6281,26 +6646,27 @@ pub struct BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction3<Actor,void,bool,bool,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -6314,7 +6680,8 @@ pub struct BSScript__NativeFunction3_Actor_void_bool_bool_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -6326,7 +6693,8 @@ pub struct BSScript__NativeFunction3_Actor_void_bool_bool_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -6344,26 +6712,27 @@ pub struct BSScript__NativeFunction3_Actor_void_bool_bool_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction3_Actor_void_bool_bool_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_bool_bool_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_bool_bool_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_bool_bool_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_bool_bool_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_bool_bool_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_bool_bool_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_bool_bool_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_bool_bool_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_bool_bool_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_bool_bool_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_bool_bool_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_bool_bool_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_bool_bool_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_bool_bool_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_bool_bool_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_bool_bool_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_bool_bool_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_Actor_void_bool_bool_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -6377,7 +6746,8 @@ pub struct BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____pt
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -6389,7 +6759,8 @@ pub struct BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____pt
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -6407,26 +6778,27 @@ pub struct BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____pt
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____ptr64_float_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____ptr64_float_TESObjectREFR____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____ptr64_float_TESObjectREFR____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____ptr64_float_TESObjectREFR____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____ptr64_float_TESObjectREFR____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____ptr64_float_TESObjectREFR____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____ptr64_float_TESObjectREFR____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____ptr64_float_TESObjectREFR____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____ptr64_float_TESObjectREFR____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____ptr64_float_TESObjectREFR____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____ptr64_float_TESObjectREFR____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____ptr64_float_TESObjectREFR____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____ptr64_float_TESObjectREFR____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____ptr64_float_TESObjectREFR____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____ptr64_float_TESObjectREFR____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____ptr64_float_TESObjectREFR____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____ptr64_float_TESObjectREFR____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____ptr64_float_TESObjectREFR____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____ptr64_float_TESObjectREFR____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -6440,7 +6812,8 @@ pub struct BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedStr
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -6452,7 +6825,8 @@ pub struct BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedStr
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -6470,26 +6844,27 @@ pub struct BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedStr
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64_BSFixedS_cebe0cb5d35d>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64_BSFixedS_cebe0cb5d35d, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64_BSFixedS_cebe0cb5d35d, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64_BSFixedS_cebe0cb5d35d, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64_BSFixedS_cebe0cb5d35d, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64_BSFixedS_cebe0cb5d35d, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64_BSFixedS_cebe0cb5d35d, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64_BSFixedS_cebe0cb5d35d, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64_BSFixedS_cebe0cb5d35d, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64_BSFixedS_cebe0cb5d35d, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64_BSFixedS_cebe0cb5d35d, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64_BSFixedS_cebe0cb5d35d, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64_BSFixedS_cebe0cb5d35d, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64_BSFixedS_cebe0cb5d35d, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64_BSFixedS_cebe0cb5d35d, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64_BSFixedS_cebe0cb5d35d, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64_BSFixedS_cebe0cb5d35d, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64_BSFixedS_cebe0cb5d35d, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64_BSFixedS_cebe0cb5d35d, __binding) == 0x50);
 
 /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -6503,7 +6878,8 @@ pub struct BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectR
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -6515,7 +6891,8 @@ pub struct BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectR
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -6533,26 +6910,27 @@ pub struct BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectR
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_float_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_float_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_float_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_float_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_float_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_float_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_float_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_float_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_float_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_float_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_float_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_float_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_float_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_float_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_float_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_float_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_float_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_float_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_float_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -6566,7 +6944,8 @@ pub struct BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -6578,7 +6957,8 @@ pub struct BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -6596,26 +6976,27 @@ pub struct BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -6629,7 +7010,8 @@ pub struct BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_floa
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -6641,7 +7023,8 @@ pub struct BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_floa
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -6659,26 +7042,27 @@ pub struct BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_floa
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_float_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_float_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_float_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_float_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_float_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_float_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_float_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_float_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_float_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_float_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_float_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_float_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_float_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_float_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_float_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_float_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_float_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_float_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_float_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: lower bound BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64> (size 0x58 at 0x0) adds no fields or bases meets upper bound derived BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64> size 0x58 at 0x0.
@@ -6692,7 +7076,8 @@ pub struct BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -6704,7 +7089,8 @@ pub struct BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -6722,26 +7108,27 @@ pub struct BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 2 allocation sites.
@@ -6755,7 +7142,8 @@ pub struct BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bo
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -6767,7 +7155,8 @@ pub struct BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bo
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -6785,26 +7174,27 @@ pub struct BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bo
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -6818,7 +7208,8 @@ pub struct BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_i
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -6830,7 +7221,8 @@ pub struct BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_i
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -6848,26 +7240,27 @@ pub struct BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_i
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_int_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_int_unsigned_int, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_int_unsigned_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_int_unsigned_int, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_int_unsigned_int, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_int_unsigned_int, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_int_unsigned_int, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_int_unsigned_int, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_int_unsigned_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_int_unsigned_int, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_int_unsigned_int, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_int_unsigned_int, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_int_unsigned_int, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_int_unsigned_int, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_int_unsigned_int, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_int_unsigned_int, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_int_unsigned_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_int_unsigned_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_int_unsigned_int, __binding) == 0x50);
 
 /// `BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -6881,7 +7274,8 @@ pub struct BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr6
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -6893,7 +7287,8 @@ pub struct BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr6
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -6911,26 +7306,27 @@ pub struct BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr6
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr64_unsigned_int_BGSEncounterZone____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr64_unsigned_int_BGSEncounterZone____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr64_unsigned_int_BGSEncounterZone____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr64_unsigned_int_BGSEncounterZone____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr64_unsigned_int_BGSEncounterZone____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr64_unsigned_int_BGSEncounterZone____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr64_unsigned_int_BGSEncounterZone____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr64_unsigned_int_BGSEncounterZone____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr64_unsigned_int_BGSEncounterZone____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr64_unsigned_int_BGSEncounterZone____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr64_unsigned_int_BGSEncounterZone____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr64_unsigned_int_BGSEncounterZone____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr64_unsigned_int_BGSEncounterZone____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr64_unsigned_int_BGSEncounterZone____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr64_unsigned_int_BGSEncounterZone____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr64_unsigned_int_BGSEncounterZone____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr64_unsigned_int_BGSEncounterZone____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr64_unsigned_int_BGSEncounterZone____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr64_unsigned_int_BGSEncounterZone____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -6944,7 +7340,8 @@ pub struct BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____p
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -6956,7 +7353,8 @@ pub struct BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____p
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -6974,26 +7372,27 @@ pub struct BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____p
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_TESObjectREFR____ptr64_53c46d626bbe>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_TESObjectREFR____ptr64_53c46d626bbe, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_TESObjectREFR____ptr64_53c46d626bbe, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_TESObjectREFR____ptr64_53c46d626bbe, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_TESObjectREFR____ptr64_53c46d626bbe, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_TESObjectREFR____ptr64_53c46d626bbe, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_TESObjectREFR____ptr64_53c46d626bbe, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_TESObjectREFR____ptr64_53c46d626bbe, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_TESObjectREFR____ptr64_53c46d626bbe, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_TESObjectREFR____ptr64_53c46d626bbe, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_TESObjectREFR____ptr64_53c46d626bbe, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_TESObjectREFR____ptr64_53c46d626bbe, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_TESObjectREFR____ptr64_53c46d626bbe, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_TESObjectREFR____ptr64_53c46d626bbe, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_TESObjectREFR____ptr64_53c46d626bbe, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_TESObjectREFR____ptr64_53c46d626bbe, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_TESObjectREFR____ptr64_53c46d626bbe, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_TESObjectREFR____ptr64_53c46d626bbe, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_TESObjectREFR____ptr64_53c46d626bbe, __binding) == 0x50);
 
 /// `BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -7007,7 +7406,8 @@ pub struct BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____p
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -7019,7 +7419,8 @@ pub struct BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____p
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -7037,26 +7438,27 @@ pub struct BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____p
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_bool_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_bool_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_bool_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_bool_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_bool_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_bool_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_bool_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_bool_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_bool_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_bool_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_bool_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_bool_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_bool_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_bool_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_bool_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_bool_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_bool_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_bool_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_bool_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: lower bound BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool> (size 0x58 at 0x0) adds no fields or bases meets upper bound derived BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool> size 0x58 at 0x0.
@@ -7070,7 +7472,8 @@ pub struct BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigne
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -7082,7 +7485,8 @@ pub struct BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigne
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -7100,26 +7504,27 @@ pub struct BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigne
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>`: size >= 0x58 (lower bound); partial, the struct stops at the lower bound; primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: lower field field_44; upper first own field of BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float> at 0x50 (soft); the semantic base BSScript::NF_util::NativeFunctionBase (0x58) ends at 0x58.
@@ -7133,7 +7538,8 @@ pub struct BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -7145,7 +7551,8 @@ pub struct BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -7163,25 +7570,26 @@ pub struct BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -7195,7 +7603,8 @@ pub struct BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_b
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -7207,7 +7616,8 @@ pub struct BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_b
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -7225,26 +7635,27 @@ pub struct BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_b
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_bool_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_bool_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_bool_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_bool_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_bool_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_bool_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_bool_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_bool_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_bool_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_bool_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_bool_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_bool_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_bool_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_bool_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_bool_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_bool_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_bool_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_bool_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_bool_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -7258,7 +7669,8 @@ pub struct BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor_
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -7270,7 +7682,8 @@ pub struct BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor_
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -7288,26 +7701,27 @@ pub struct BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor_
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor____ptr64_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor____ptr64_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor____ptr64_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor____ptr64_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor____ptr64_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor____ptr64_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor____ptr64_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor____ptr64_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor____ptr64_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor____ptr64_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor____ptr64_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor____ptr64_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor____ptr64_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor____ptr64_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor____ptr64_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor____ptr64_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor____ptr64_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor____ptr64_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor____ptr64_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -7321,7 +7735,8 @@ pub struct BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -7333,7 +7748,8 @@ pub struct BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -7351,26 +7767,27 @@ pub struct BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: allocation sites (medium): {'88': 1}.
@@ -7384,7 +7801,8 @@ pub struct BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_b
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -7396,7 +7814,8 @@ pub struct BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_b
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -7414,26 +7833,27 @@ pub struct BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_b
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -7447,7 +7867,8 @@ pub struct BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr6
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -7459,7 +7880,8 @@ pub struct BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr6
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -7477,26 +7899,27 @@ pub struct BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr6
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr64_float_float_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr64_float_float_int, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr64_float_float_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr64_float_float_int, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr64_float_float_int, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr64_float_float_int, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr64_float_float_int, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr64_float_float_int, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr64_float_float_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr64_float_float_int, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr64_float_float_int, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr64_float_float_int, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr64_float_float_int, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr64_float_float_int, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr64_float_float_int, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr64_float_float_int, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr64_float_float_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr64_float_float_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr64_float_float_int, __binding) == 0x50);
 
 /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 2 allocation sites.
@@ -7510,7 +7933,8 @@ pub struct BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -7522,7 +7946,8 @@ pub struct BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -7540,26 +7965,27 @@ pub struct BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: lower bound BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64> (size 0x58 at 0x0) adds no fields or bases meets upper bound derived BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64> size 0x58 at 0x0.
@@ -7573,7 +7999,8 @@ pub struct BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectR
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -7585,7 +8012,8 @@ pub struct BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectR
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -7603,26 +8031,27 @@ pub struct BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectR
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36, __binding) == 0x50);
 
 /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -7636,7 +8065,8 @@ pub struct BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -7648,7 +8078,8 @@ pub struct BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -7666,26 +8097,27 @@ pub struct BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -7699,7 +8131,8 @@ pub struct BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESFor
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -7711,7 +8144,8 @@ pub struct BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESFor
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -7729,26 +8163,27 @@ pub struct BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESFor
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: allocation sites (medium): {'88': 1}.
@@ -7762,7 +8197,8 @@ pub struct BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigne
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -7774,7 +8210,8 @@ pub struct BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigne
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -7792,26 +8229,27 @@ pub struct BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigne
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: lower bound BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float> (size 0x58 at 0x0) adds no fields or bases meets upper bound derived BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float> size 0x58 at 0x0.
@@ -7825,7 +8263,8 @@ pub struct BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float 
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -7837,7 +8276,8 @@ pub struct BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float 
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -7855,26 +8295,27 @@ pub struct BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float 
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: lower bound BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int> (size 0x58 at 0x0) adds no fields or bases meets upper bound derived BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int> size 0x58 at 0x0.
@@ -7888,7 +8329,8 @@ pub struct BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObj
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -7900,7 +8342,8 @@ pub struct BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObj
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -7918,26 +8361,27 @@ pub struct BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObj
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289, __binding) == 0x50);
 
 /// `BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -7951,7 +8395,8 @@ pub struct BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObj
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -7963,7 +8408,8 @@ pub struct BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObj
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -7981,26 +8427,27 @@ pub struct BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObj
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413, __binding) == 0x50);
 
 /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 2 allocation sites.
@@ -8014,7 +8461,8 @@ pub struct BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR__
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -8026,7 +8474,8 @@ pub struct BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR__
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -8044,26 +8493,27 @@ pub struct BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR__
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55, __binding) == 0x50);
 
 /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 2 allocation sites.
@@ -8077,7 +8527,8 @@ pub struct BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR__
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -8089,7 +8540,8 @@ pub struct BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR__
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -8107,26 +8559,27 @@ pub struct BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR__
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_TESForm____ptr64_float_float_float_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_TESForm____ptr64_float_float_float_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_TESForm____ptr64_float_float_float_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_TESForm____ptr64_float_float_float_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_TESForm____ptr64_float_float_float_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_TESForm____ptr64_float_float_float_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_TESForm____ptr64_float_float_float_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_TESForm____ptr64_float_float_float_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_TESForm____ptr64_float_float_float_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_TESForm____ptr64_float_float_float_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_TESForm____ptr64_float_float_float_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_TESForm____ptr64_float_float_float_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_TESForm____ptr64_float_float_float_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_TESForm____ptr64_float_float_float_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_TESForm____ptr64_float_float_float_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_TESForm____ptr64_float_float_float_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_TESForm____ptr64_float_float_float_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_TESForm____ptr64_float_float_float_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_TESForm____ptr64_float_float_float_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -8140,7 +8593,8 @@ pub struct BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedStr
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -8152,7 +8606,8 @@ pub struct BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedStr
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -8170,26 +8625,27 @@ pub struct BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedStr
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool_bool_bool_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool_bool_bool_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool_bool_bool_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool_bool_bool_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool_bool_bool_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool_bool_bool_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool_bool_bool_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool_bool_bool_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool_bool_bool_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool_bool_bool_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool_bool_bool_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool_bool_bool_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool_bool_bool_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool_bool_bool_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool_bool_bool_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool_bool_bool_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool_bool_bool_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool_bool_bool_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool_bool_bool_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: allocation sites (medium): {'88': 1}.
@@ -8203,7 +8659,8 @@ pub struct BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____p
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -8215,7 +8672,8 @@ pub struct BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____p
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -8233,26 +8691,27 @@ pub struct BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____p
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____d65118ed5622>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____d65118ed5622, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____d65118ed5622, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____d65118ed5622, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____d65118ed5622, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____d65118ed5622, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____d65118ed5622, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____d65118ed5622, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____d65118ed5622, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____d65118ed5622, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____d65118ed5622, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____d65118ed5622, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____d65118ed5622, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____d65118ed5622, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____d65118ed5622, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____d65118ed5622, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____d65118ed5622, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____d65118ed5622, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____d65118ed5622, __binding) == 0x50);
 
 /// `BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: allocation sites (medium): {'88': 1}.
@@ -8266,7 +8725,8 @@ pub struct BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_f
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -8278,7 +8738,8 @@ pub struct BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_f
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -8296,26 +8757,27 @@ pub struct BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_f
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_float_float_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_float_float_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_float_float_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_float_float_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_float_float_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_float_float_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_float_float_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_float_float_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_float_float_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_float_float_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_float_float_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_float_float_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_float_float_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_float_float_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_float_float_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_float_float_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_float_float_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_float_float_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_float_float_bool, __binding) == 0x50);
 
 /// `BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -8329,7 +8791,8 @@ pub struct BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_B
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -8341,7 +8804,8 @@ pub struct BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_B
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -8359,26 +8823,27 @@ pub struct BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_B
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_float_float_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_float_float_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_float_float_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_float_float_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_float_float_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_float_float_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_float_float_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_float_float_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_float_float_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_float_float_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_float_float_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_float_float_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_float_float_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_float_float_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_float_float_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_float_float_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_float_float_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_float_float_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_float_float_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -8392,7 +8857,8 @@ pub struct BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_in
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -8404,7 +8870,8 @@ pub struct BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_in
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -8422,26 +8889,27 @@ pub struct BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_in
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsigned_int_unsigned_int_4cf828fffc9c>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsigned_int_unsigned_int_4cf828fffc9c, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsigned_int_unsigned_int_4cf828fffc9c, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsigned_int_unsigned_int_4cf828fffc9c, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsigned_int_unsigned_int_4cf828fffc9c, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsigned_int_unsigned_int_4cf828fffc9c, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsigned_int_unsigned_int_4cf828fffc9c, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsigned_int_unsigned_int_4cf828fffc9c, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsigned_int_unsigned_int_4cf828fffc9c, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsigned_int_unsigned_int_4cf828fffc9c, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsigned_int_unsigned_int_4cf828fffc9c, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsigned_int_unsigned_int_4cf828fffc9c, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsigned_int_unsigned_int_4cf828fffc9c, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsigned_int_unsigned_int_4cf828fffc9c, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsigned_int_unsigned_int_4cf828fffc9c, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsigned_int_unsigned_int_4cf828fffc9c, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsigned_int_unsigned_int_4cf828fffc9c, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsigned_int_unsigned_int_4cf828fffc9c, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsigned_int_unsigned_int_4cf828fffc9c, __binding) == 0x50);
 
 /// `BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -8455,7 +8923,8 @@ pub struct BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr6
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -8467,7 +8936,8 @@ pub struct BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr6
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -8485,26 +8955,27 @@ pub struct BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr6
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFixedString_const____pt_5d9a4796be0a>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFixedString_const____pt_5d9a4796be0a, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFixedString_const____pt_5d9a4796be0a, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFixedString_const____pt_5d9a4796be0a, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFixedString_const____pt_5d9a4796be0a, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFixedString_const____pt_5d9a4796be0a, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFixedString_const____pt_5d9a4796be0a, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFixedString_const____pt_5d9a4796be0a, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFixedString_const____pt_5d9a4796be0a, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFixedString_const____pt_5d9a4796be0a, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFixedString_const____pt_5d9a4796be0a, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFixedString_const____pt_5d9a4796be0a, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFixedString_const____pt_5d9a4796be0a, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFixedString_const____pt_5d9a4796be0a, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFixedString_const____pt_5d9a4796be0a, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFixedString_const____pt_5d9a4796be0a, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFixedString_const____pt_5d9a4796be0a, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFixedString_const____pt_5d9a4796be0a, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFixedString_const____pt_5d9a4796be0a, __binding) == 0x50);
 
 /// `BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -8518,7 +8989,8 @@ pub struct BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -8530,7 +9002,8 @@ pub struct BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -8548,26 +9021,27 @@ pub struct BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_float_float_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_float_float_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_float_float_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_float_float_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_float_float_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_float_float_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_float_float_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_float_float_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_float_float_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_float_float_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_float_float_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_float_float_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_float_float_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_float_float_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_float_float_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_float_float_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_float_float_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_float_float_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_float_float_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -8581,7 +9055,8 @@ pub struct BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -8593,7 +9068,8 @@ pub struct BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -8611,26 +9087,27 @@ pub struct BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float_float_float_float_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float_float_float_float_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float_float_float_float_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float_float_float_float_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float_float_float_float_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float_float_float_float_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float_float_float_float_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float_float_float_float_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float_float_float_float_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float_float_float_float_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float_float_float_float_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float_float_float_float_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float_float_float_float_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float_float_float_float_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float_float_float_float_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float_float_float_float_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float_float_float_float_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float_float_float_float_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float_float_float_float_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: lower bound BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float> (size 0x58 at 0x0) adds no fields or bases meets upper bound derived BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float> size 0x58 at 0x0.
@@ -8644,7 +9121,8 @@ pub struct BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_flo
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -8656,7 +9134,8 @@ pub struct BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_flo
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -8674,26 +9153,27 @@ pub struct BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_flo
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_float_float_float_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_float_float_float_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_float_float_float_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_float_float_float_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_float_float_float_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_float_float_float_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_float_float_float_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_float_float_float_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_float_float_float_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_float_float_float_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_float_float_float_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_float_float_float_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_float_float_float_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_float_float_float_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_float_float_float_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_float_float_float_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_float_float_float_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_float_float_float_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_float_float_float_float, __binding) == 0x50);
 
 /// `BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 2 allocation sites.
@@ -8707,7 +9187,8 @@ pub struct BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -8719,7 +9200,8 @@ pub struct BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -8737,26 +9219,27 @@ pub struct BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_bool_bool_bool_bool_bool_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_bool_bool_bool_bool_bool_unsigned_int, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_bool_bool_bool_bool_bool_unsigned_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_bool_bool_bool_bool_bool_unsigned_int, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_bool_bool_bool_bool_bool_unsigned_int, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_bool_bool_bool_bool_bool_unsigned_int, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_bool_bool_bool_bool_bool_unsigned_int, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_bool_bool_bool_bool_bool_unsigned_int, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_bool_bool_bool_bool_bool_unsigned_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_bool_bool_bool_bool_bool_unsigned_int, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_bool_bool_bool_bool_bool_unsigned_int, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_bool_bool_bool_bool_bool_unsigned_int, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_bool_bool_bool_bool_bool_unsigned_int, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_bool_bool_bool_bool_bool_unsigned_int, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_bool_bool_bool_bool_bool_unsigned_int, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_bool_bool_bool_bool_bool_unsigned_int, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_bool_bool_bool_bool_bool_unsigned_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_bool_bool_bool_bool_bool_unsigned_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_bool_bool_bool_bool_bool_unsigned_int, __binding) == 0x50);
 
 /// `BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>`: size 0x58 (exact, medium); primary base `BSScript::NF_util::NativeFunctionBase`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -8770,7 +9253,8 @@ pub struct BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -8782,7 +9266,8 @@ pub struct BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -8800,26 +9285,27 @@ pub struct BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_float_float_float_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_float_float_float_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_float_float_float_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_float_float_float_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_float_float_float_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_float_float_float_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_float_float_float_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_float_float_float_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_float_float_float_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_float_float_float_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_float_float_float_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_float_float_float_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_float_float_float_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_float_float_float_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_float_float_float_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_float_float_float_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_float_float_float_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_float_float_float_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_float_float_float_float, __binding) == 0x50);
 
 /// `BSScript::NativeLatentFunction0<Actor,void>`: size 0x58 (exact, high); primary base `BSScript::NativeFunction0<Actor,bool>`.
 /// Evidence: runtime: 0x58 at 2 allocation sites.
@@ -8833,7 +9319,8 @@ pub struct BSScript__NativeLatentFunction0_Actor_void {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -8845,7 +9332,8 @@ pub struct BSScript__NativeLatentFunction0_Actor_void {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -8863,26 +9351,27 @@ pub struct BSScript__NativeLatentFunction0_Actor_void {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction0_Actor_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_Actor_void, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_Actor_void, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_Actor_void, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_Actor_void, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_Actor_void, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_Actor_void, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_Actor_void, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_Actor_void, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_Actor_void, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_Actor_void, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_Actor_void, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_Actor_void, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_Actor_void, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_Actor_void, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_Actor_void, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_Actor_void, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_Actor_void, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_Actor_void, __binding) == 0x50);
 
 /// `BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>`: size 0x58 (exact, high); primary base `BSScript::NativeFunction0<BSScript::StaticFunctionTag,bool>`.
 /// Evidence: runtime: 0x58 at 3 allocation sites.
@@ -8896,7 +9385,8 @@ pub struct BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedSt
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -8908,7 +9398,8 @@ pub struct BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedSt
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -8926,26 +9417,27 @@ pub struct BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedSt
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_const____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_const____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_const____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_const____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_const____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_const____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_const____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_const____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_const____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_const____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_const____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_const____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_const____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_const____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_const____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_const____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_const____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_const____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NativeFunction0<EffectSetting,bool>`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -8959,7 +9451,8 @@ pub struct BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -8971,7 +9464,8 @@ pub struct BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -8989,26 +9483,27 @@ pub struct BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeLatentFunction0<TESObjectREFR,void>`: size 0x58 (exact, high); primary base `BSScript::NativeFunction0<TESObjectREFR,bool>`.
 /// Evidence: runtime: 0x58 at 4 allocation sites; agrees with the static allocation sites.
@@ -9022,7 +9517,8 @@ pub struct BSScript__NativeLatentFunction0_TESObjectREFR_void {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -9034,7 +9530,8 @@ pub struct BSScript__NativeLatentFunction0_TESObjectREFR_void {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -9052,26 +9549,27 @@ pub struct BSScript__NativeLatentFunction0_TESObjectREFR_void {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction0_TESObjectREFR_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESObjectREFR_void, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESObjectREFR_void, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESObjectREFR_void, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESObjectREFR_void, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESObjectREFR_void, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESObjectREFR_void, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESObjectREFR_void, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESObjectREFR_void, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESObjectREFR_void, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESObjectREFR_void, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESObjectREFR_void, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESObjectREFR_void, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESObjectREFR_void, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESObjectREFR_void, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESObjectREFR_void, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESObjectREFR_void, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESObjectREFR_void, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESObjectREFR_void, __binding) == 0x50);
 
 /// `BSScript::NativeLatentFunction0<TESQuest,bool>`: size 0x58 (exact, medium); primary base `BSScript::NativeFunction0<TESQuest,bool>`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -9085,7 +9583,8 @@ pub struct BSScript__NativeLatentFunction0_TESQuest_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -9097,7 +9596,8 @@ pub struct BSScript__NativeLatentFunction0_TESQuest_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -9115,26 +9615,27 @@ pub struct BSScript__NativeLatentFunction0_TESQuest_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction0_TESQuest_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESQuest_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESQuest_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESQuest_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESQuest_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESQuest_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESQuest_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESQuest_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESQuest_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESQuest_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESQuest_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESQuest_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESQuest_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESQuest_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESQuest_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESQuest_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESQuest_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESQuest_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction0_TESQuest_bool, __binding) == 0x50);
 
 /// `BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>`: size >= 0x58 (lower bound); partial, the struct stops at the lower bound; primary base `BSScript::NativeFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>`.
 /// Evidence: field field_50.
@@ -9148,7 +9649,8 @@ pub struct BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TES
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -9160,7 +9662,8 @@ pub struct BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TES
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -9178,25 +9681,26 @@ pub struct BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TES
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixed_05afeaf1fbe1, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixed_05afeaf1fbe1, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixed_05afeaf1fbe1, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixed_05afeaf1fbe1, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixed_05afeaf1fbe1, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixed_05afeaf1fbe1, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixed_05afeaf1fbe1, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixed_05afeaf1fbe1, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixed_05afeaf1fbe1, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixed_05afeaf1fbe1, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixed_05afeaf1fbe1, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixed_05afeaf1fbe1, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixed_05afeaf1fbe1, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixed_05afeaf1fbe1, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixed_05afeaf1fbe1, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixed_05afeaf1fbe1, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixed_05afeaf1fbe1, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixed_05afeaf1fbe1, __binding) == 0x50);
 
 /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64>`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -9210,7 +9714,8 @@ pub struct BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedSt
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -9222,7 +9727,8 @@ pub struct BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedSt
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -9240,26 +9746,27 @@ pub struct BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedSt
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_BSFixedString_const____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_BSFixedString_const____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_BSFixedString_const____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_BSFixedString_const____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_BSFixedString_const____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_BSFixedString_const____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_BSFixedString_const____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_BSFixedString_const____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_BSFixedString_const____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_BSFixedString_const____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_BSFixedString_const____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>`: size 0x58 (exact, medium); primary base `BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,float>`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -9273,7 +9780,8 @@ pub struct BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedSt
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -9285,7 +9793,8 @@ pub struct BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedSt
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -9303,26 +9812,27 @@ pub struct BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedSt
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_float, __binding) == 0x50);
 
 /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>`: size 0x58 (exact, high); primary base `BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64>`.
 /// Evidence: runtime: 0x58 at 2 allocation sites.
@@ -9336,7 +9846,8 @@ pub struct BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSF
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -9348,7 +9859,8 @@ pub struct BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSF
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -9366,26 +9878,27 @@ pub struct BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSF
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>`: size 0x58 (exact, high); primary base `BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,float>`.
 /// Evidence: runtime: 0x58 at 3 allocation sites.
@@ -9399,7 +9912,8 @@ pub struct BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_floa
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -9411,7 +9925,8 @@ pub struct BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_floa
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -9429,26 +9944,27 @@ pub struct BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_floa
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float, __binding) == 0x50);
 
 /// `BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>`.
 /// Evidence: runtime: 0x58 at 1 allocation sites; agrees with the static allocation sites.
@@ -9462,7 +9978,8 @@ pub struct BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_cons
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -9474,7 +9991,8 @@ pub struct BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_cons
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -9492,26 +10010,27 @@ pub struct BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_cons
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>`: size 0x58 (exact, high); primary base `BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>`.
 /// Evidence: runtime: 0x58 at 2 allocation sites; agrees with the static allocation sites.
@@ -9525,7 +10044,8 @@ pub struct BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____p
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -9537,7 +10057,8 @@ pub struct BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____p
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -9555,26 +10076,27 @@ pub struct BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____p
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>`: size 0x58 (exact, high); primary base `BSScript::NativeFunction1<TESObjectREFR,bool,bool>`.
 /// Evidence: runtime: 0x58 at 2 allocation sites.
@@ -9588,7 +10110,8 @@ pub struct BSScript__NativeLatentFunction1_TESObjectREFR_void_bool {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -9600,7 +10123,8 @@ pub struct BSScript__NativeLatentFunction1_TESObjectREFR_void_bool {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -9618,26 +10142,27 @@ pub struct BSScript__NativeLatentFunction1_TESObjectREFR_void_bool {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction1_TESObjectREFR_void_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_bool, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_bool, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_bool, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_bool, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_bool, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_bool, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_bool, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_bool, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_bool, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_bool, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_bool, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_bool, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_bool, __binding) == 0x50);
 
 /// `BSScript::NativeLatentFunction1<TESObjectREFR,void,float>`: size 0x58 (exact, high); primary base `BSScript::NativeFunction1<TESObjectREFR,bool,float>`.
 /// Evidence: runtime: 0x58 at 2 allocation sites; agrees with the static allocation sites.
@@ -9651,7 +10176,8 @@ pub struct BSScript__NativeLatentFunction1_TESObjectREFR_void_float {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -9663,7 +10189,8 @@ pub struct BSScript__NativeLatentFunction1_TESObjectREFR_void_float {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -9681,26 +10208,27 @@ pub struct BSScript__NativeLatentFunction1_TESObjectREFR_void_float {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction1_TESObjectREFR_void_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESObjectREFR_void_float, __binding) == 0x50);
 
 /// `BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>`: size 0x58 (exact, medium); primary base `BSScript::NativeFunction1<TESQuest,bool,unsigned_int>`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -9714,7 +10242,8 @@ pub struct BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -9726,7 +10255,8 @@ pub struct BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int {
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -9744,26 +10274,27 @@ pub struct BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int {
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int, __binding) == 0x50);
 
 /// `BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -9777,7 +10308,8 @@ pub struct BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64 
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -9789,7 +10321,8 @@ pub struct BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64 
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -9807,26 +10340,27 @@ pub struct BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64 
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>`: size 0x58 (exact, medium); primary base `BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -9840,7 +10374,8 @@ pub struct BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_flo
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -9852,7 +10387,8 @@ pub struct BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_flo
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -9870,26 +10406,27 @@ pub struct BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_flo
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float, __binding) == 0x50);
 
 /// `BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -9903,7 +10440,8 @@ pub struct BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr6
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -9915,7 +10453,8 @@ pub struct BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr6
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -9933,26 +10472,27 @@ pub struct BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr6
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __binding) == 0x50);
 
 /// `BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
@@ -9966,7 +10506,8 @@ pub struct BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -9978,7 +10519,8 @@ pub struct BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64
     /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
     pub params: *mut crate::BSScript__NF_util__ParamInfo,
     /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
+    #[doc(hidden)]
+    pub __paramCount: [u8; 2],
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
     unknown_3C: [u8; 4],
@@ -9996,150 +10538,25 @@ pub struct BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64
     #[doc(hidden)]
     pub __docString: [u8; 8],
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __binding: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, returnType) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, isStatic) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, isCallableFromTasklet) == 0x41);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __isLatent) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, binding) == 0x50);
-
-/// `BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>`: size 0x58 (exact, medium); primary base `BSScript::NativeFunction2<TESFaction,bool,bool,bool>`.
-/// Evidence: runtime: 0x58 at 1 allocation sites.
-/// Bases: `BSScript::NativeFunction2<TESFaction,bool,bool,bool>`@0x0, `BSScript::NF_util::NativeFunctionBase`@0x0, `BSScript::IFunction`@0x0, `BSIntrusiveRefCounted`@0x8.
-#[repr(C, align(8))]
-pub struct BSScript__NativeLatentFunction2_TESFaction_void_bool_bool {
-    /// +0x0 `vtbl:BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction2_TESFaction_void_bool_bool_vtable,
-    /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
-    pub refCount: u32,
-    unknown_C: [u8; 4],
-    /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
-    /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
-    #[doc(hidden)]
-    pub __objectTypeName: [u8; 8],
-    /// +0x20 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (a four-argument ctor variant 0x14a9fc0 takes one) (high)
-    #[doc(hidden)]
-    pub __stateName: [u8; 8],
-    /// +0x28 `class:BSScript::TypeInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the return type; 0 (None) from the ctor, set by the NativeFunction<N> ctor from its template argument (form types through GetScriptObjectTypeByID, 1 when that fails); for a latent native the value type the native returns through ReturnFromLatent (high)
-    pub returnType: crate::BSScript__TypeInfo,
-    /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
-    pub params: *mut crate::BSScript__NF_util__ParamInfo,
-    /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
-    /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
-    pub variableCount: u16,
-    unknown_3C: [u8; 4],
-    /// +0x40 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for global functions (BSScript::StaticFunctionTag self): the VM passes a null self (high)
-    pub isStatic: u8,
-    /// +0x41 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; read by slot 19; stays 0 for natives (SetCallableFromTasklets flags the type's table instead) (high)
-    pub isCallableFromTasklet: u8,
-    /// +0x42 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for NativeLatentFunction<N>: Call returns 2 and the callback's bool result means 'started' (high)
-    #[doc(hidden)]
-    pub __isLatent: [u8; 1],
-    unknown_43: [u8; 1],
-    /// +0x44 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; 0 for natives (high)
-    pub userFlags: u32,
-    /// +0x48 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (high)
-    #[doc(hidden)]
-    pub __docString: [u8; 8],
-    /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BSScript__NativeLatentFunction2_TESFaction_void_bool_bool>() == 0x58);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESFaction_void_bool_bool, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESFaction_void_bool_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESFaction_void_bool_bool, name) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESFaction_void_bool_bool, __objectTypeName) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESFaction_void_bool_bool, __stateName) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESFaction_void_bool_bool, returnType) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESFaction_void_bool_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESFaction_void_bool_bool, paramCount) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESFaction_void_bool_bool, variableCount) == 0x3A);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESFaction_void_bool_bool, isStatic) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESFaction_void_bool_bool, isCallableFromTasklet) == 0x41);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESFaction_void_bool_bool, __isLatent) == 0x42);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESFaction_void_bool_bool, userFlags) == 0x44);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESFaction_void_bool_bool, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESFaction_void_bool_bool, binding) == 0x50);
-
-/// `BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>`: size 0x58 (exact, medium); primary base `BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>`.
-/// Evidence: runtime: 0x58 at 1 allocation sites.
-/// Bases: `BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>`@0x0, `BSScript::NF_util::NativeFunctionBase`@0x0, `BSScript::IFunction`@0x0, `BSIntrusiveRefCounted`@0x8.
-#[repr(C, align(8))]
-pub struct BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int {
-    /// +0x0 `vtbl:BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_vtable,
-    /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
-    pub refCount: u32,
-    unknown_C: [u8; 4],
-    /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
-    /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
-    #[doc(hidden)]
-    pub __objectTypeName: [u8; 8],
-    /// +0x20 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (a four-argument ctor variant 0x14a9fc0 takes one) (high)
-    #[doc(hidden)]
-    pub __stateName: [u8; 8],
-    /// +0x28 `class:BSScript::TypeInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the return type; 0 (None) from the ctor, set by the NativeFunction<N> ctor from its template argument (form types through GetScriptObjectTypeByID, 1 when that fails); for a latent native the value type the native returns through ReturnFromLatent (high)
-    pub returnType: crate::BSScript__TypeInfo,
-    /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
-    pub params: *mut crate::BSScript__NF_util__ParamInfo,
-    /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
-    /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
-    pub variableCount: u16,
-    unknown_3C: [u8; 4],
-    /// +0x40 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for global functions (BSScript::StaticFunctionTag self): the VM passes a null self (high)
-    pub isStatic: u8,
-    /// +0x41 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; read by slot 19; stays 0 for natives (SetCallableFromTasklets flags the type's table instead) (high)
-    pub isCallableFromTasklet: u8,
-    /// +0x42 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for NativeLatentFunction<N>: Call returns 2 and the callback's bool result means 'started' (high)
-    #[doc(hidden)]
-    pub __isLatent: [u8; 1],
-    unknown_43: [u8; 1],
-    /// +0x44 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; 0 for natives (high)
-    pub userFlags: u32,
-    /// +0x48 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (high)
-    #[doc(hidden)]
-    pub __docString: [u8; 8],
-    /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int>() == 0x58);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int, name) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int, __objectTypeName) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int, __stateName) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int, returnType) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int, paramCount) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int, variableCount) == 0x3A);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int, isStatic) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int, isCallableFromTasklet) == 0x41);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int, __isLatent) == 0x42);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int, userFlags) == 0x44);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int, __docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int, binding) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64, __binding) == 0x50);
 

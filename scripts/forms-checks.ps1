@@ -26,6 +26,8 @@ $rows = @(
        ok = ((Detail "lookup_weapon") -match 'formID=00012EB7 type=41' -and (Returned 5).formId -eq "0x00012EB7" -and (Returned 5).formType -eq "41") }
     @{ name = "get_file Skyrim";   plugin = (Detail "get_file"); devbench = "GetFormFromFile(77495, Skyrim.esm) = $((Returned 6).formId)";
        ok = ((Detail "get_file") -match 'Skyrim\.esm 0x12eb7 -> 00012EB7' -and (Returned 6).formId -eq "0x00012EB7") }
+    @{ name = "get_file Dawnguard"; plugin = (Detail "get_file"); devbench = "GetFormFromFile(10298, Dawnguard.esm) = $((Returned 15).formId)";
+       ok = ((Captured (Detail "get_file") 'Dawnguard\.esm 0x283a -> ([0-9A-F]{8})') -eq (((Returned 15).formId) -replace '^0x', '')) }
     @{ name = "get_file Curios";   notRun = $NoCreations; plugin = (Detail "get_file"); devbench = "GetFormFromFile(2048, Curios) = $((Returned 7).formId)";
        ok = ((Captured (Detail "get_file") 'Curios 0x800 -> ([0-9A-F]{8})') -eq (((Returned 7).formId) -replace '^0x', '')) }
     @{ name = "get_file Fish";     notRun = $NoCreations; plugin = (Detail "get_file"); devbench = "GetFormFromFile(2048, Fish) = $((Returned 8).formId)";

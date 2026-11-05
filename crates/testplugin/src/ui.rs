@@ -17,7 +17,7 @@ use skyrim::prelude::*;
 use skyrim::ui::{AddMessageFn, Function, FunctionHandler, Menu, MenuBase, MessageType, Params, RenderMenuStackFn, ShowHudMessageFn, Value, ValueType};
 use sre::{BSEventNotifyControl, EventSourceHolder_MenuOpenClose as Ui, IMenu, IMenu_flags, MenuOpenCloseEvent, UIMessage, UIMessageQueue, UIMessageResult};
 
-use crate::{Test, check, lacks};
+use crate::{Test, check};
 
 /// The menu's class without its `::vftable` suffix, `?` when the ledger has no vtable for it.
 fn class_name(menu: &IMenu) -> &'static str {
@@ -25,8 +25,6 @@ fn class_name(menu: &IMenu) -> &'static str {
 }
 
 pub const MENU: &str = "SkyrimRsTestMenu";
-const VALUE_SIZE: &str = "size GFxValue";
-const STACK_LOCK: &str = "id 412033";
 const DEPTH: u8 = 6;
 const NOTE: &str = "skyrim-rs-note";
 const OWN_FRAMES: u32 = 60;
@@ -131,9 +129,7 @@ struct Counter {
 impl FunctionHandler for Counter {
     fn call(&self, params: &mut Params) {
         self.calls.fetch_add(1, Ordering::Relaxed);
-        if !lacks(VALUE_SIZE)
-            && let Some(n) = params.args().first().and_then(Value::as_number)
-        {
+        if let Some(n) = params.args().first().and_then(Value::as_number) {
             self.last.store(n.to_bits(), Ordering::Relaxed);
         }
         params.set_return(&Value::number(42.0));
@@ -142,16 +138,9 @@ impl FunctionHandler for Counter {
 
 static CALLBACK: Function<Counter> = Function::new(Counter { calls: AtomicU32::new(0), last: AtomicU64::new(0) });
 
-/// Each open menu's name, depth and flags, under the stack lock where this game has it verified and
-/// otherwise as the draw and the main thread read the stack, without it.
+/// Each open menu's name, depth and flags, under the stack lock.
 fn open_menus(ui: &Ui) -> Vec<(String, u8, u32)> {
-    let describe = |m: &IMenu| (name_of(m), m.depth, m.flags);
-    if lacks(STACK_LOCK) {
-        let count = if ui.menuStack.is_null() { 0 } else { ui.menuStackCount as usize };
-        let menus = unsafe { core::slice::from_raw_parts(ui.menuStack.cast::<*mut IMenu>().cast_const(), count) };
-        return menus.iter().map(|&m| describe(unsafe { &*m })).collect();
-    }
-    ui.stack().iter().map(describe).collect()
+    ui.stack().iter().map(|m| (name_of(m), m.depth, m.flags)).collect()
 }
 
 fn name_of(menu: &IMenu) -> String {
@@ -322,7 +311,7 @@ fn probe(ui: &Ui) -> Result<String, String> {
     let returned = movie.invoke("_root.skyrimRsCall", &[Value::number(3.0)]).ok_or("invoke(_root.skyrimRsCall) failed")?;
     let calls = CALLBACK.handler().calls.load(Ordering::Relaxed);
     let last = f64::from_bits(CALLBACK.handler().last.load(Ordering::Relaxed));
-    check(calls == 1 && (lacks(VALUE_SIZE) || (last - 3.0).abs() < f64::EPSILON), &format!("the callback ran {calls} times, last argument {last}"))?;
+    check(calls == 1 && (last - 3.0).abs() < f64::EPSILON, &format!("the callback ran {calls} times, last argument {last}"))?;
     check(returned.as_number() == Some(42.0), &format!("the callback's return read back as {returned:?}"))?;
     let hud_root = Value::view(&hud.root);
     check(hud_root.has_member("ShowMessage"), "the HUD root has no ShowMessage")?;

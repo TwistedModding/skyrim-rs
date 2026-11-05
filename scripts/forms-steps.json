@@ -13,5 +13,6 @@
   {"tool": "papyrus", "args": {"action": "call", "script": "Form", "function": "HasKeyword", "self": {"form": "0x12eb7"}, "args": [{"form": "VendorItemWeapon"}]}},
   {"tool": "console", "args": {"command": "help VendorItemWeapon 4", "capture": true}},
   {"tool": "console", "args": {"command": "help IronSword 4", "capture": true}},
-  {"tool": "console", "args": {"command": "help GameHour 3", "capture": true}}
+  {"tool": "console", "args": {"command": "help GameHour 3", "capture": true}},
+  {"tool": "papyrus", "args": {"action": "call", "script": "Game", "function": "GetFormFromFile", "args": [10298, "Dawnguard.esm"]}}
 ]

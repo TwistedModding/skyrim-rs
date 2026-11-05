@@ -12,24 +12,30 @@ pub struct CameraMatrixEntry {
     pub camera: *mut crate::NiCamera,
     unknown_8: [u8; 8],
     /// +0x10 `undefined1`, semantic; camera world rotation rows (medium)
-    pub worldRotation: [u8; 48],
+    #[doc(hidden)]
+    pub __worldRotation: [u8; 48],
     /// +0x40 `undefined1`, semantic; view matrix without translation (rows right, up, forward); rendering is camera-relative, the eye is subtracted through g_CurrentCameraState's eye position (medium)
-    pub view: [u8; 64],
+    #[doc(hidden)]
+    pub __view: [u8; 64],
     /// +0x80 `undefined1`, semantic; projection (jittered when TAA is on and the entry's jitter flag is set) (high)
-    pub projection: [u8; 64],
+    #[doc(hidden)]
+    pub __projection: [u8; 64],
     /// +0xC0 `undefined1`, semantic; view * projection (jittered) (medium)
     #[doc(hidden)]
     pub __viewProjection: [u8; 64],
     /// +0x100 `undefined1`, semantic; unjittered view-projection of the previous update (low)
-    pub previousViewProjection: [u8; 64],
+    #[doc(hidden)]
+    pub __previousViewProjection: [u8; 64],
     /// +0x140 `undefined1`, semantic (medium)
-    pub viewProjectionUnjittered: [u8; 64],
+    #[doc(hidden)]
+    pub __viewProjectionUnjittered: [u8; 64],
     unknown_180: [u8; 64],
     /// +0x1C0 `undefined1`, semantic (high)
     pub projectionUnjittered: [u8; 64],
     unknown_200: [u8; 96],
     /// +0x260 `class:NiPoint3`, semantic; camera world translation at the update; +0x26c and +0x278 hold the two previous ones (medium); retyped float -> class:NiPoint3: UpdateCameraMatricesWithJitter 0x101e4e0 copies camera +0xa0..+0xa8
-    pub eyePosition: crate::NiPoint3,
+    #[doc(hidden)]
+    pub __eyePosition: [u8; 12],
     unknown_26C: [u8; 24],
     /// +0x284 `u8`, semantic; second lookup key: entry built with TAA jitter (high)
     #[doc(hidden)]
@@ -40,14 +46,14 @@ pub struct CameraMatrixEntry {
 }
 const _: () = assert!(size_of::<CameraMatrixEntry>() == 0x290);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, camera) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, worldRotation) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, view) == 0x40);
-const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, projection) == 0x80);
+const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __worldRotation) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __view) == 0x40);
+const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __projection) == 0x80);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __viewProjection) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, previousViewProjection) == 0x100);
-const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, viewProjectionUnjittered) == 0x140);
+const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __previousViewProjection) == 0x100);
+const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __viewProjectionUnjittered) == 0x140);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, projectionUnjittered) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, eyePosition) == 0x260);
+const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __eyePosition) == 0x260);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __jittered) == 0x284);
 
 /// `ImageSpaceModifierInstanceForm`: size 0x50 (exact, medium); primary base `ImageSpaceModifierInstance`.
@@ -105,24 +111,26 @@ const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceForm, fiel
 /// `SystemTimerRecord`: size 0x18 (exact).
 /// Meaning: one QPC accumulator of the timer table at 0x3699270 (code next to BSSystemMonitor's threads 0x1595200..) (medium, graphics pass).
 /// Evidence: one QPC accumulator of the timer table at 0x3699270 (code next to BSSystemMonitor's threads 0x1595200..); the plugin's 'system monitor timer' name is supported only by locality: the four timer functions sit at 0x1594850..0x15949a9, directly before BSSystemMonitor::SocketThread/MemOpsThread code; no string names the table; size: stride 0x18 of the table 0x3699270 in 0x1594850/0x15948a0/0x1594920/0x1594970.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct SystemTimerRecord {
     /// +0x0 `u64`, semantic; QueryPerformanceCounter at the last start (high)
     pub startTicks: u64,
     /// +0x8 `u64`, semantic; zeroed at start (medium)
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `float`, semantic; running total since the last start, in seconds (ticks * 1/frequency 0x20ccad8) (high)
     pub accumulatedSeconds: f32,
     /// +0x14 `float`, semantic; previous period's total, saved by the start function before it zeroes +0x10 (high)
-    pub lastTotal: f32,
+    #[doc(hidden)]
+    pub __lastTotal: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SystemTimerRecord>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(SystemTimerRecord, startTicks) == 0x0);
-const _: () = assert!(core::mem::offset_of!(SystemTimerRecord, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(SystemTimerRecord, __field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(SystemTimerRecord, accumulatedSeconds) == 0x10);
-const _: () = assert!(core::mem::offset_of!(SystemTimerRecord, lastTotal) == 0x14);
+const _: () = assert!(core::mem::offset_of!(SystemTimerRecord, __lastTotal) == 0x14);
 
 /// `VolumetricLightingParams`: size 0x90 (exact).
 /// Meaning: the volumetric lighting state; one static instance, g_VolumetricLighting (high, graphics pass).

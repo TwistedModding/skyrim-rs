@@ -90,6 +90,26 @@ impl crate::BSReadWriteLock {
     /// `void BSReadWriteLock::UnlockForWrite(BSReadWriteLock* this)`
     #[inline]
     pub fn unlock_for_write(&self) { unsafe { function!(68240, (*const Self))(core::ptr::from_ref(self)) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_lockCount(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSReadWriteLock.lockCount", 0x4, u32) } }
+    /// `BSReadWriteLock::lockCount`, at +0x4 on 1.7.104.
+    #[inline]
+    pub fn lockCount(&self) -> u32 { unsafe { Self::__member_lockCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_lockCount(&mut self, value: u32) { unsafe { Self::__member_lockCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn lockCount_ptr(&self) -> *mut u32 { Self::__member_lockCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_writerThread(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSReadWriteLock.writerThread", 0x0, u32) } }
+    /// `BSReadWriteLock::writerThread`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn writerThread(&self) -> u32 { unsafe { Self::__member_writerThread(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_writerThread(&mut self, value: u32) { unsafe { Self::__member_writerThread(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn writerThread_ptr(&self) -> *mut u32 { Self::__member_writerThread(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSTArray {
@@ -103,6 +123,19 @@ impl crate::BSTArray {
     pub fn set_capacity(&mut self, value: u32) { unsafe { Self::__member_capacity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn capacity_ptr(&self) -> *mut u32 { Self::__member_capacity(core::ptr::from_ref(self)) }
+}
+
+impl crate::Setting {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "Setting.name", 0x10, *mut c_void) } }
+    /// `Setting::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> *mut c_void { unsafe { Self::__member_name(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_name(&mut self, value: *mut c_void) { unsafe { Self::__member_name(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut *mut c_void { Self::__member_name(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESDataHandler {
@@ -197,12 +230,62 @@ impl crate::TESDataHandler {
     ///
     /// Semantic field, forms pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn region_data_manager(&self) -> Option<&crate::TESRegionDataManager> { unsafe { { self.regionDataManager }.as_ref() } }
+    pub fn region_data_manager(&self) -> Option<&crate::TESRegionDataManager> { unsafe { Self::__member_regionDataManager(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
     /// `TESDataHandler::regionList` at +0xD00: region list
     ///
     /// Semantic field, forms pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn region_list(&self) -> Option<&crate::TESRegionList> { unsafe { { self.regionList }.as_ref() } }
+    pub fn region_list(&self) -> Option<&crate::TESRegionList> { unsafe { Self::__member_regionList(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_activeFile(this: *const Self) -> *mut *mut crate::TESFile { unsafe { member!(this, "TESDataHandler.activeFile", 0xD58, *mut crate::TESFile) } }
+    /// `TESDataHandler::activeFile`, at +0xD58 on 1.7.104.
+    #[inline]
+    pub fn activeFile(&self) -> *mut crate::TESFile { unsafe { Self::__member_activeFile(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_activeFile(&mut self, value: *mut crate::TESFile) { unsafe { Self::__member_activeFile(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn activeFile_ptr(&self) -> *mut *mut crate::TESFile { Self::__member_activeFile(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_addonNodes(this: *const Self) -> *mut [u8; 24] { unsafe { member!(this, "TESDataHandler.addonNodes", 0xD20, [u8; 24]) } }
+    /// `TESDataHandler::addonNodes`, at +0xD20 on 1.7.104.
+    #[inline]
+    pub fn addonNodes(&self) -> [u8; 24] { unsafe { Self::__member_addonNodes(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_addonNodes(&mut self, value: [u8; 24]) { unsafe { Self::__member_addonNodes(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn addonNodes_ptr(&self) -> *mut [u8; 24] { Self::__member_addonNodes(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_cells(this: *const Self) -> *mut [u8; 24] { unsafe { member!(this, "TESDataHandler.cells", 0xD08, [u8; 24]) } }
+    /// `TESDataHandler::cells`, at +0xD08 on 1.7.104.
+    #[inline]
+    pub fn cells(&self) -> [u8; 24] { unsafe { Self::__member_cells(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_cells(&mut self, value: [u8; 24]) { unsafe { Self::__member_cells(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn cells_ptr(&self) -> *mut [u8; 24] { Self::__member_cells(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_regionDataManager(this: *const Self) -> *mut *mut crate::TESRegionDataManager { unsafe { member!(this, "TESDataHandler.regionDataManager", 0xDB0, *mut crate::TESRegionDataManager) } }
+    /// `TESDataHandler::regionDataManager`, at +0xDB0 on 1.7.104.
+    #[inline]
+    pub fn regionDataManager(&self) -> *mut crate::TESRegionDataManager { unsafe { Self::__member_regionDataManager(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_regionDataManager(&mut self, value: *mut crate::TESRegionDataManager) { unsafe { Self::__member_regionDataManager(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn regionDataManager_ptr(&self) -> *mut *mut crate::TESRegionDataManager { Self::__member_regionDataManager(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_regionList(this: *const Self) -> *mut *mut crate::TESRegionList { unsafe { member!(this, "TESDataHandler.regionList", 0xD00, *mut crate::TESRegionList) } }
+    /// `TESDataHandler::regionList`, at +0xD00 on 1.7.104.
+    #[inline]
+    pub fn regionList(&self) -> *mut crate::TESRegionList { unsafe { Self::__member_regionList(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_regionList(&mut self, value: *mut crate::TESRegionList) { unsafe { Self::__member_regionList(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn regionList_ptr(&self) -> *mut *mut crate::TESRegionList { Self::__member_regionList(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_selectedFiles(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "TESDataHandler.selectedFiles", 0xDC0, crate::BSTArray) } }
@@ -211,6 +294,16 @@ impl crate::TESDataHandler {
     pub fn selectedFiles(&self) -> &crate::BSTArray { unsafe { &*Self::__member_selectedFiles(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn selectedFiles_ptr(&self) -> *mut crate::BSTArray { Self::__member_selectedFiles(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_skipFormRegistration(this: *const Self) -> *mut u8 { unsafe { member!(this, "TESDataHandler.skipFormRegistration", 0xDA8, u8) } }
+    /// `TESDataHandler::skipFormRegistration`, at +0xDA8 on 1.7.104.
+    #[inline]
+    pub fn skipFormRegistration(&self) -> u8 { unsafe { Self::__member_skipFormRegistration(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_skipFormRegistration(&mut self, value: u8) { unsafe { Self::__member_skipFormRegistration(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn skipFormRegistration_ptr(&self) -> *mut u8 { Self::__member_skipFormRegistration(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESEditorIDMap {
@@ -250,6 +343,16 @@ impl crate::TESEditorIDMap {
     pub unsafe fn insert_editor_id(&self, editorID: *const c_char, form: *mut crate::TESForm) -> bool { unsafe { function!(13907, (*const Self, *const c_char, *mut crate::TESForm) -> bool)(core::ptr::from_ref(self), editorID, form) } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_capacity(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESEditorIDMap.capacity", 0xC, u32) } }
+    /// `TESEditorIDMap::capacity`, at +0xC on 1.7.104.
+    #[inline]
+    pub fn capacity(&self) -> u32 { unsafe { Self::__member_capacity(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_capacity(&mut self, value: u32) { unsafe { Self::__member_capacity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn capacity_ptr(&self) -> *mut u32 { Self::__member_capacity(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_entries(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "TESEditorIDMap.entries", 0x28, *mut c_void) } }
     /// `TESEditorIDMap::entries`, at +0x28 on 1.7.104.
     #[inline]
@@ -278,6 +381,16 @@ impl crate::TESEditorIDMap {
     pub fn set_freeScan(&mut self, value: u32) { unsafe { Self::__member_freeScan(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn freeScan_ptr(&self) -> *mut u32 { Self::__member_freeScan(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_sentinel(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "TESEditorIDMap.sentinel", 0x18, *mut c_void) } }
+    /// `TESEditorIDMap::sentinel`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn sentinel(&self) -> *mut c_void { unsafe { Self::__member_sentinel(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_sentinel(&mut self, value: *mut c_void) { unsafe { Self::__member_sentinel(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn sentinel_ptr(&self) -> *mut *mut c_void { Self::__member_sentinel(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESEditorIDMapEntry {
@@ -406,6 +519,16 @@ impl crate::TESFile {
     pub unsafe fn ctor(&self, path: *const c_char, name: *const c_char, bufferSize: i32, unused: u32, arg: *mut c_void) -> *mut Self { unsafe { function!(441548, (*const Self, *const c_char, *const c_char, i32, u32, *mut c_void) -> *mut Self)(core::ptr::from_ref(self), path, name, bufferSize, unused, arg) } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_path(this: *const Self) -> *mut [u8; 260] { unsafe { member!(this, "TESFile.path", 0x15C, [u8; 260]) } }
+    /// `TESFile::path`, at +0x15C on 1.7.104.
+    #[inline]
+    pub fn path(&self) -> [u8; 260] { unsafe { Self::__member_path(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_path(&mut self, value: [u8; 260]) { unsafe { Self::__member_path(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn path_ptr(&self) -> *mut [u8; 260] { Self::__member_path(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_version(this: *const Self) -> *mut f32 { unsafe { member!(this, "TESFile.version", 0x42C, f32) } }
     /// `TESFile::version`, at +0x42C on 1.7.104.
     #[inline]
@@ -414,6 +537,19 @@ impl crate::TESFile {
     pub fn set_version(&mut self, value: f32) { unsafe { Self::__member_version(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn version_ptr(&self) -> *mut f32 { Self::__member_version(core::ptr::from_ref(self)) }
+}
+
+impl crate::TESFileArray {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_files(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "TESFileArray.files", 0x0, *mut c_void) } }
+    /// `TESFileArray::files`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn files(&self) -> *mut c_void { unsafe { Self::__member_files(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_files(&mut self, value: *mut c_void) { unsafe { Self::__member_files(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn files_ptr(&self) -> *mut *mut c_void { Self::__member_files(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESForm {
@@ -587,6 +723,16 @@ impl crate::TESFormIDMap {
     pub unsafe fn remove(&self, formID: *const u32, out: *mut *mut crate::TESForm) -> bool { unsafe { function!(14710, (*const Self, *const u32, *mut *mut crate::TESForm) -> bool)(core::ptr::from_ref(self), formID, out) } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_capacity(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESFormIDMap.capacity", 0xC, u32) } }
+    /// `TESFormIDMap::capacity`, at +0xC on 1.7.104.
+    #[inline]
+    pub fn capacity(&self) -> u32 { unsafe { Self::__member_capacity(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_capacity(&mut self, value: u32) { unsafe { Self::__member_capacity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn capacity_ptr(&self) -> *mut u32 { Self::__member_capacity(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_entries(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "TESFormIDMap.entries", 0x28, *mut c_void) } }
     /// `TESFormIDMap::entries`, at +0x28 on 1.7.104.
     #[inline]
@@ -615,6 +761,16 @@ impl crate::TESFormIDMap {
     pub fn set_freeScan(&mut self, value: u32) { unsafe { Self::__member_freeScan(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn freeScan_ptr(&self) -> *mut u32 { Self::__member_freeScan(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_sentinel(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "TESFormIDMap.sentinel", 0x18, *mut c_void) } }
+    /// `TESFormIDMap::sentinel`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn sentinel(&self) -> *mut c_void { unsafe { Self::__member_sentinel(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_sentinel(&mut self, value: *mut c_void) { unsafe { Self::__member_sentinel(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn sentinel_ptr(&self) -> *mut *mut c_void { Self::__member_sentinel(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESFormIDMapEntry {

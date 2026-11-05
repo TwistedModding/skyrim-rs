@@ -185,6 +185,14 @@ impl Site {
     }
 }
 
+/// [`site!`] for a site code can go without: `None` where the profile says the runtime has none.
+#[doc(hidden)]
+#[must_use]
+pub fn optional_site(id: u32, offset: u32) -> Option<usize> {
+    let running = versionlib::running().unwrap_or_else(|e| panic!("site {id}+{offset:#x}: {e}"));
+    (!running.site_missing(u64::from(id), offset)).then(|| Site::new(id, offset).address())
+}
+
 /// Entry `index` of the vtable `object` starts with.
 ///
 /// # Safety
@@ -373,6 +381,20 @@ macro_rules! id {
     }};
 }
 
+/// An id whose address is all the code uses, to locate a call site or compare a callee, never to
+/// call through it. Recorded so that a runtime with the address good and the signature not compared
+/// still serves it.
+#[macro_export]
+macro_rules! address_id {
+    ($id:expr) => {{
+        #[allow(unused_unsafe)]
+        unsafe {
+            core::arch::asm!(".pushsection .sremf,\"dr\"", ".byte 9", ".long {id}, 0", ".byte 0", ".popsection", id = const $id, options(nomem, nostack, preserves_flags))
+        };
+        $id
+    }};
+}
+
 /// Gives a DLL a manifest section even if it records nothing, so that it does not read as built
 /// before the manifest.
 #[macro_export]
@@ -388,6 +410,15 @@ macro_rules! declare_manifest {
 /// Records in the DLL's manifest the site `offset` bytes into the function at an id on 1.7.104.
 #[macro_export]
 macro_rules! record_site {
+    (located $id:expr, $offset:expr) => {
+        #[allow(unused_unsafe)]
+        unsafe {
+            core::arch::asm!(
+                ".pushsection .sremf,\"dr\"", ".byte 9", ".long {id}, 0", ".byte 0", ".byte 4", ".long {id}, {offset}", ".byte 0", ".popsection",
+                id = const $id, offset = const $offset, options(nomem, nostack, preserves_flags)
+            )
+        };
+    };
     ($id:expr, $offset:expr) => {
         #[allow(unused_unsafe)]
         unsafe {
@@ -411,6 +442,23 @@ macro_rules! site {
         $crate::record_site!($id, $offset);
         static SITE: $crate::Site = $crate::Site::new($id as u32, $offset as u32);
         SITE.address()
+    }};
+}
+
+/// The live address of a site that may not exist on the running game, `None` where its profile
+/// says so, recorded in the DLL's manifest so that only an unverified one refuses the DLL.
+///
+/// # Panics
+/// When the site or its function has no usable row; the manifest check prevents that in a plugin
+/// that loaded.
+#[macro_export]
+macro_rules! optional_site {
+    ($id:expr, $offset:expr) => {{
+        #[allow(unused_unsafe)]
+        unsafe {
+            core::arch::asm!(".pushsection .sremf,\"dr\"", ".byte 10", ".long {id}, {offset}", ".byte 0", ".popsection", id = const $id, offset = const $offset, options(nomem, nostack, preserves_flags))
+        };
+        $crate::optional_site($id as u32, $offset as u32)
     }};
 }
 

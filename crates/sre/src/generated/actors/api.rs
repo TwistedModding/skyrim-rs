@@ -2305,6 +2305,29 @@ impl crate::ExtraContainerChanges {
     pub fn changes(&self) -> Option<&crate::InventoryChanges> { unsafe { { self.changes }.as_ref() } }
 }
 
+impl crate::HandleEntry {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_ageAndNext(this: *const Self) -> *mut u32 { unsafe { member!(this, "HandleEntry.ageAndNext", 0x0, u32) } }
+    /// `HandleEntry::ageAndNext`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn ageAndNext(&self) -> u32 { unsafe { Self::__member_ageAndNext(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_ageAndNext(&mut self, value: u32) { unsafe { Self::__member_ageAndNext(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn ageAndNext_ptr(&self) -> *mut u32 { Self::__member_ageAndNext(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_ref_(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "HandleEntry.ref", 0x8, *mut c_void) } }
+    /// `HandleEntry::ref`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn ref_(&self) -> *mut c_void { unsafe { Self::__member_ref_(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_ref_(&mut self, value: *mut c_void) { unsafe { Self::__member_ref_(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn ref__ptr(&self) -> *mut *mut c_void { Self::__member_ref_(core::ptr::from_ref(self)) }
+}
+
 impl crate::InventoryChanges {
     /// `InventoryChanges::CountItem`: count of an item, base plus delta
     ///
@@ -2341,6 +2364,16 @@ impl crate::InventoryChanges {
     /// Semantic field, actors pass, high; `None` while the pointer is null.
     #[inline]
     pub fn owner(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.owner }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_cachedValue(this: *const Self) -> *mut f32 { unsafe { member!(this, "InventoryChanges.cachedValue", 0x10, f32) } }
+    /// `InventoryChanges::cachedValue`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn cachedValue(&self) -> f32 { unsafe { Self::__member_cachedValue(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_cachedValue(&mut self, value: f32) { unsafe { Self::__member_cachedValue(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn cachedValue_ptr(&self) -> *mut f32 { Self::__member_cachedValue(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_previousCachedValue(this: *const Self) -> *mut f32 { unsafe { member!(this, "InventoryChanges.previousCachedValue", 0x14, f32) } }
@@ -2397,6 +2430,16 @@ impl crate::MiddleHighProcessData {
     pub fn right_hand_entry(&self) -> Option<&crate::InventoryEntry> { unsafe { { self.rightHandEntry }.as_ref() } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_animationGraphManagerData(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "MiddleHighProcessData.animationGraphManagerData", 0x1B0, *mut c_void) } }
+    /// `MiddleHighProcessData::animationGraphManagerData`, at +0x1B0 on 1.7.104.
+    #[inline]
+    pub fn animationGraphManagerData(&self) -> *mut c_void { unsafe { Self::__member_animationGraphManagerData(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_animationGraphManagerData(&mut self, value: *mut c_void) { unsafe { Self::__member_animationGraphManagerData(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn animationGraphManagerData_ptr(&self) -> *mut *mut c_void { Self::__member_animationGraphManagerData(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_charController(this: *const Self) -> *mut *mut crate::bhkCharacterController { unsafe { member!(this, "MiddleHighProcessData.charController", 0x250, *mut crate::bhkCharacterController) } }
     /// `MiddleHighProcessData::charController`, at +0x250 on 1.7.104.
     #[inline]
@@ -2427,6 +2470,16 @@ impl crate::MiddleHighProcessData {
     pub fn lastIdlePlayed_ptr(&self) -> *mut *mut crate::TESIdleForm { Self::__member_lastIdlePlayed(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_leftHandEquipType(this: *const Self) -> *mut u16 { unsafe { member!(this, "MiddleHighProcessData.leftHandEquipType", 0x304, u16) } }
+    /// `MiddleHighProcessData::leftHandEquipType`, at +0x304 on 1.7.104.
+    #[inline]
+    pub fn leftHandEquipType(&self) -> u16 { unsafe { Self::__member_leftHandEquipType(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_leftHandEquipType(&mut self, value: u16) { unsafe { Self::__member_leftHandEquipType(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn leftHandEquipType_ptr(&self) -> *mut u16 { Self::__member_leftHandEquipType(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_lock(this: *const Self) -> *mut u64 { unsafe { member!(this, "MiddleHighProcessData.lock", 0x1E8, u64) } }
     /// `MiddleHighProcessData::lock`, at +0x1E8 on 1.7.104.
     #[inline]
@@ -2447,6 +2500,46 @@ impl crate::MiddleHighProcessData {
     pub fn movementDirection_ptr(&self) -> *mut f32 { Self::__member_movementDirection(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_pitch(this: *const Self) -> *mut f32 { unsafe { member!(this, "MiddleHighProcessData.pitch", 0xB0, f32) } }
+    /// `MiddleHighProcessData::pitch`, at +0xB0 on 1.7.104.
+    #[inline]
+    pub fn pitch(&self) -> f32 { unsafe { Self::__member_pitch(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_pitch(&mut self, value: f32) { unsafe { Self::__member_pitch(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn pitch_ptr(&self) -> *mut f32 { Self::__member_pitch(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_pitchDelta(this: *const Self) -> *mut f32 { unsafe { member!(this, "MiddleHighProcessData.pitchDelta", 0xBC, f32) } }
+    /// `MiddleHighProcessData::pitchDelta`, at +0xBC on 1.7.104.
+    #[inline]
+    pub fn pitchDelta(&self) -> f32 { unsafe { Self::__member_pitchDelta(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_pitchDelta(&mut self, value: f32) { unsafe { Self::__member_pitchDelta(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn pitchDelta_ptr(&self) -> *mut f32 { Self::__member_pitchDelta(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_rightHandEquipType(this: *const Self) -> *mut u16 { unsafe { member!(this, "MiddleHighProcessData.rightHandEquipType", 0x306, u16) } }
+    /// `MiddleHighProcessData::rightHandEquipType`, at +0x306 on 1.7.104.
+    #[inline]
+    pub fn rightHandEquipType(&self) -> u16 { unsafe { Self::__member_rightHandEquipType(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_rightHandEquipType(&mut self, value: u16) { unsafe { Self::__member_rightHandEquipType(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn rightHandEquipType_ptr(&self) -> *mut u16 { Self::__member_rightHandEquipType(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_roll(this: *const Self) -> *mut f32 { unsafe { member!(this, "MiddleHighProcessData.roll", 0xB4, f32) } }
+    /// `MiddleHighProcessData::roll`, at +0xB4 on 1.7.104.
+    #[inline]
+    pub fn roll(&self) -> f32 { unsafe { Self::__member_roll(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_roll(&mut self, value: f32) { unsafe { Self::__member_roll(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn roll_ptr(&self) -> *mut f32 { Self::__member_roll(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_speed(this: *const Self) -> *mut f32 { unsafe { member!(this, "MiddleHighProcessData.speed", 0x2A8, f32) } }
     /// `MiddleHighProcessData::speed`, at +0x2A8 on 1.7.104.
     #[inline]
@@ -2455,6 +2548,26 @@ impl crate::MiddleHighProcessData {
     pub fn set_speed(&mut self, value: f32) { unsafe { Self::__member_speed(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn speed_ptr(&self) -> *mut f32 { Self::__member_speed(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_targetSpeed(this: *const Self) -> *mut f32 { unsafe { member!(this, "MiddleHighProcessData.targetSpeed", 0x2AC, f32) } }
+    /// `MiddleHighProcessData::targetSpeed`, at +0x2AC on 1.7.104.
+    #[inline]
+    pub fn targetSpeed(&self) -> f32 { unsafe { Self::__member_targetSpeed(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_targetSpeed(&mut self, value: f32) { unsafe { Self::__member_targetSpeed(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn targetSpeed_ptr(&self) -> *mut f32 { Self::__member_targetSpeed(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_wardMagnitude(this: *const Self) -> *mut f32 { unsafe { member!(this, "MiddleHighProcessData.wardMagnitude", 0x2BC, f32) } }
+    /// `MiddleHighProcessData::wardMagnitude`, at +0x2BC on 1.7.104.
+    #[inline]
+    pub fn wardMagnitude(&self) -> f32 { unsafe { Self::__member_wardMagnitude(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_wardMagnitude(&mut self, value: f32) { unsafe { Self::__member_wardMagnitude(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn wardMagnitude_ptr(&self) -> *mut f32 { Self::__member_wardMagnitude(core::ptr::from_ref(self)) }
 }
 
 impl crate::PlayerCharacter {
@@ -5567,6 +5680,26 @@ impl crate::TESNPC {
     /// Semantic field, actors pass, high; `None` while the pointer is null.
     #[inline]
     pub fn race(&self) -> Option<&crate::TESRace> { unsafe { { self.race }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u16 { unsafe { member!(this, "TESNPC.field_28", 0x28, u16) } }
+    /// `TESNPC::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u16 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u16) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u16 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2A(this: *const Self) -> *mut u16 { unsafe { member!(this, "TESNPC.field_2A", 0x2A, u16) } }
+    /// `TESNPC::field_2A`, at +0x2A on 1.7.104.
+    #[inline]
+    pub fn field_2A(&self) -> u16 { unsafe { Self::__member_field_2A(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2A(&mut self, value: u16) { unsafe { Self::__member_field_2A(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2A_ptr(&self) -> *mut u16 { Self::__member_field_2A(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_9C(this: *const Self) -> *mut u8 { unsafe { member!(this, "TESNPC.field_9C", 0x9C, u8) } }

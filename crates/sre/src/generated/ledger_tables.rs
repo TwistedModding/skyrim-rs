@@ -33721,6 +33721,8 @@ MenuOpenCloseEvent.menuName	0
 MenuOpenCloseEvent.opening	8
 MenuOpenHandler.__vftable	0
 MenuOpenHandler.tweenMenuAllowed	10
+MenuTable.capacity	c
+MenuTable.entries	28
 MenuTableEntry.create	10
 MenuTableEntry.menu	8
 MenuTableEntry.menuName	0
@@ -94299,6 +94301,7 @@ MenuEventHandler
 MenuModeChangeEvent	
 MenuOpenCloseEvent	
 MenuOpenHandler	
+MenuTable	
 MenuTableEntry	
 MenuTopicManager	
 MessageBoxData	

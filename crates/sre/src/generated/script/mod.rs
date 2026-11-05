@@ -12,7 +12,9 @@ mod api_1;
 #[cfg(feature = "script")]
 mod api_2;
 #[cfg(feature = "script")]
-pub use api_2::*;
+mod api_3;
+#[cfg(feature = "script")]
+pub use api_3::*;
 #[cfg(all(feature = "script", feature = "tier-high"))]
 mod tier_high;
 #[cfg(all(feature = "script", feature = "tier-medium"))]

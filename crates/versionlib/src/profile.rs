@@ -34,6 +34,9 @@ pub struct Profile {
     address_library: String,
     se_database: bool,
     ids: BTreeMap<u32, Row<u32>>,
+    /// Ids whose address is good and whose signature was not compared, with the number the library
+    /// holds them under when it differs. To [`Self::id`] these are unverified.
+    addresses: BTreeMap<u32, Option<u32>>,
     members: BTreeMap<String, Row<u32>>,
     slots: BTreeMap<(String, u32, u32), Row<u32>>,
     sizes: BTreeMap<String, Row<u32>>,
@@ -44,7 +47,7 @@ pub struct Profile {
 
 impl Profile {
     fn new(runtime: u32, address_library: String, se_database: bool) -> Self {
-        Self { runtime, address_library, se_database, ids: BTreeMap::new(), members: BTreeMap::new(), slots: BTreeMap::new(), sizes: BTreeMap::new(), bases: BTreeMap::new(), sites: BTreeMap::new(), enums: BTreeMap::new() }
+        Self { runtime, address_library, se_database, ids: BTreeMap::new(), addresses: BTreeMap::new(), members: BTreeMap::new(), slots: BTreeMap::new(), sizes: BTreeMap::new(), bases: BTreeMap::new(), sites: BTreeMap::new(), enums: BTreeMap::new() }
     }
 
     /// The runtime the file describes, packed with store 0.
@@ -81,6 +84,17 @@ impl Profile {
             Some(&row) => row,
             None if self.se_database => Row::Missing,
             None => Row::Same,
+        }
+    }
+
+    /// An AE id for code that only locates a call site or compares an address: [`Self::id`], but
+    /// usable for an `id-address` row too.
+    #[must_use]
+    pub fn address_id(&self, ae_id: u32) -> Row<u32> {
+        match self.addresses.get(&ae_id) {
+            Some(Some(here)) => Row::Here(*here),
+            Some(None) => Row::Same,
+            None => self.id(ae_id),
         }
     }
 
@@ -126,12 +140,19 @@ impl Profile {
         self.enums.get(value).copied().unwrap_or(Row::Same)
     }
 
+    fn add_address(&mut self, ae: u32, here: Option<u32>) -> Option<()> {
+        put(&mut self.ids, ae, Row::Unverified)?;
+        put(&mut self.addresses, ae, here)
+    }
+
     /// Adds a body row; `None` when the row is malformed or repeats a key.
     fn add_row(&mut self, fields: &[&str]) -> Option<()> {
         match *fields {
             ["id", ae, se] => put(&mut self.ids, decimal(ae)?, Row::Here(decimal(se)?)),
             ["id-missing", ae] => put(&mut self.ids, decimal(ae)?, Row::Missing),
             ["id-unverified", ae] => put(&mut self.ids, decimal(ae)?, Row::Unverified),
+            ["id-address", ae] => self.add_address(decimal(ae)?, None),
+            ["id-address", ae, here] => self.add_address(decimal(ae)?, Some(decimal(here)?)),
             ["member", key, offset] => put(&mut self.members, member_key(key)?, Row::Here(hex(offset)?)),
             ["member-missing", key] => put(&mut self.members, member_key(key)?, Row::Missing),
             ["member-unverified", key] => put(&mut self.members, member_key(key)?, Row::Unverified),
@@ -259,10 +280,17 @@ fn load(runtime: u32, plugins: &Path) -> Result<Profile, String> {
     Ok(profile)
 }
 
+static CURRENT: OnceLock<Result<Profile, String>> = OnceLock::new();
+
+/// For a unit test, whose process is no game and has no profile: every lookup answers as on 1.7.104.
+#[doc(hidden)]
+pub fn assume_canonical() {
+    let _ = CURRENT.set(Ok(Profile::new(runtime::pack(1, 7, 104, 0), "versionlib-1-7-104-0.bin".to_owned(), false)));
+}
+
 /// The running runtime's profile, read by the first call in this DLL. A plain SKSE plugin reads it
 /// for itself, without the host.
 pub fn current() -> Result<&'static Profile, &'static str> {
-    static CURRENT: OnceLock<Result<Profile, String>> = OnceLock::new();
     CURRENT
         .get_or_init(|| {
             let running = runtime::running().ok_or("the running executable has no file version")?;

@@ -763,19 +763,20 @@ const _: () = assert!(core::mem::offset_of!(ActorKnowledge, field_44) == 0x44);
 /// `ActorMediator`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<BSAnimationGraphEvent>`.
 /// Evidence: field field_10.
 /// Bases: `BSTSingletonSDM<ActorMediator,BSTSingletonSDMOpStaticBuffer>`@0x8, `BSTSingletonSDMBase<BSTSDMTraits<ActorMediator,BSTSingletonSDMOpStaticBuffer<ActorMediator>_>_>`@0x8, `BSTSDMTraits<ActorMediator,BSTSingletonSDMOpStaticBuffer<ActorMediator>_>`@0x8, `BSTSingletonSDMOpStaticBuffer<ActorMediator>`@0x9, `BSTEventSink<BSAnimationGraphEvent>`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct ActorMediator {
     /// +0x0 `vtbl:ActorMediator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorMediator_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, ctor store
-    pub field_10: u64,
+    #[doc(hidden)]
+    pub __field_10: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ActorMediator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ActorMediator, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(ActorMediator, __field_10) == 0x10);
 
 /// `ActorMovementMessageMap<16>::IMessageHandlerWrapper`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound.
 /// Evidence: vptr at 0x0.
@@ -1125,7 +1126,8 @@ pub struct AlarmPackage {
     pub field_70: u64,
     unknown_78: [u8; 96],
     /// +0xD8 `undefined4`, base TESPackage
-    pub field_D8: u32,
+    #[doc(hidden)]
+    pub __field_D8: [u8; 4],
     /// +0xDC `undefined4`, base TESPackage
     #[doc(hidden)]
     pub __field_DC: [u8; 4],
@@ -1157,7 +1159,7 @@ const _: () = assert!(core::mem::offset_of!(AlarmPackage, field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(AlarmPackage, __field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(AlarmPackage, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(AlarmPackage, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(AlarmPackage, field_D8) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(AlarmPackage, __field_D8) == 0xD8);
 const _: () = assert!(core::mem::offset_of!(AlarmPackage, __field_DC) == 0xDC);
 const _: () = assert!(core::mem::offset_of!(AlarmPackage, field_E0) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(AlarmPackage, field_E8) == 0xE8);
@@ -1183,9 +1185,11 @@ pub struct AlchemyItem {
     pub formType: u8,
     unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
-    pub field_28: u16,
+    #[doc(hidden)]
+    pub __field_28: [u8; 2],
     /// +0x2A `undefined2`, base TESBoundObject
-    pub field_2A: u16,
+    #[doc(hidden)]
+    pub __field_2A: [u8; 2],
     unknown_2C: [u8; 4],
     /// +0x30 `vtbl:AlchemyItem:30`, rtti
     #[doc(hidden)]
@@ -1275,8 +1279,8 @@ const _: () = assert!(core::mem::offset_of!(AlchemyItem, formFlags) == 0x10);
 const _: () = assert!(core::mem::offset_of!(AlchemyItem, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(AlchemyItem, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(AlchemyItem, formType) == 0x1A);
-const _: () = assert!(core::mem::offset_of!(AlchemyItem, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(AlchemyItem, field_2A) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(AlchemyItem, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(AlchemyItem, __field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(AlchemyItem, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(AlchemyItem, __vftable_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(AlchemyItem, keywords) == 0x48);
@@ -5386,10 +5390,12 @@ pub struct Clouds {
     /// +0x510 `undefined2`, ctor store
     pub field_510: u16,
     /// +0x512 `undefined1`, ctor store
-    pub field_512: u8,
+    #[doc(hidden)]
+    pub __field_512: [u8; 1],
     unknown_513: [u8; 5],
     /// +0x518 `undefined8`, ctor store
-    pub field_518: u64,
+    #[doc(hidden)]
+    pub __field_518: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -5446,8 +5452,8 @@ const _: () = assert!(core::mem::offset_of!(Clouds, __field_478) == 0x478);
 const _: () = assert!(core::mem::offset_of!(Clouds, __field_480) == 0x480);
 const _: () = assert!(core::mem::offset_of!(Clouds, __field_488) == 0x488);
 const _: () = assert!(core::mem::offset_of!(Clouds, field_510) == 0x510);
-const _: () = assert!(core::mem::offset_of!(Clouds, field_512) == 0x512);
-const _: () = assert!(core::mem::offset_of!(Clouds, field_518) == 0x518);
+const _: () = assert!(core::mem::offset_of!(Clouds, __field_512) == 0x512);
+const _: () = assert!(core::mem::offset_of!(Clouds, __field_518) == 0x518);
 
 /// `CommandEffect`: size 0xA0 (exact, medium); primary base `ActiveEffect`.
 /// Evidence: lower bound ReanimateEffect (size 0xA0 at 0x0) adds no fields or bases meets upper bound derived ReanimateEffect size 0xA0 at 0x0.
@@ -8585,7 +8591,7 @@ const _: () = assert!(core::mem::offset_of!(DeathStopHandler, __vftable) == 0x0)
 /// `DebugText`: size 0x60 (exact, medium); primary base `IDebugText`.
 /// Evidence: runtime: 0x60 at 1 allocation sites.
 /// Bases: `IDebugText`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct DebugText {
     /// +0x0 `vtbl:DebugText:0`, rtti
     #[doc(hidden)]
@@ -8596,7 +8602,7 @@ pub struct DebugText {
     pub field_10: u64,
     /// +0x18 `undefined4`, ctor store
     pub field_18: u32,
-    pub unknown_1C: [u8; 28],
+    unknown_1C: [u8; 28],
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
     /// +0x40 `undefined4`, ctor store
@@ -8604,16 +8610,18 @@ pub struct DebugText {
     /// +0x44 `undefined4`, ctor store (widths [4, 8])
     pub field_44: u32,
     /// +0x48 `undefined4`, ctor store
-    pub field_48: u32,
+    #[doc(hidden)]
+    pub __field_48: [u8; 4],
     /// +0x4C `undefined4`, ctor store
     pub field_4C: u32,
     /// +0x50 `undefined4`, ctor store (widths [4, 8])
     pub field_50: u32,
     /// +0x54 `undefined4`, ctor store
-    pub field_54: u32,
+    #[doc(hidden)]
+    pub __field_54: [u8; 4],
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
-    pub unknown_5C: [u8; 4],
+    unknown_5C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8625,10 +8633,10 @@ const _: () = assert!(core::mem::offset_of!(DebugText, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(DebugText, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(DebugText, field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(DebugText, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(DebugText, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(DebugText, __field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(DebugText, field_4C) == 0x4C);
 const _: () = assert!(core::mem::offset_of!(DebugText, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(DebugText, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(DebugText, __field_54) == 0x54);
 const _: () = assert!(core::mem::offset_of!(DebugText, field_58) == 0x58);
 
 /// `DecapitateHandler`: size 0x10 (exact, medium); primary base `IHandlerFunctor<Actor,BSFixedStringCI>`.
@@ -9145,7 +9153,8 @@ pub struct DialoguePackage {
     pub field_70: u64,
     unknown_78: [u8; 96],
     /// +0xD8 `undefined4`, base TESPackage
-    pub field_D8: u32,
+    #[doc(hidden)]
+    pub __field_D8: [u8; 4],
     /// +0xDC `undefined4`, base TESPackage
     #[doc(hidden)]
     pub __field_DC: [u8; 4],
@@ -9185,7 +9194,7 @@ const _: () = assert!(core::mem::offset_of!(DialoguePackage, field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(DialoguePackage, __field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(DialoguePackage, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(DialoguePackage, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(DialoguePackage, field_D8) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(DialoguePackage, __field_D8) == 0xD8);
 const _: () = assert!(core::mem::offset_of!(DialoguePackage, __field_DC) == 0xDC);
 const _: () = assert!(core::mem::offset_of!(DialoguePackage, field_E0) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(DialoguePackage, field_E8) == 0xE8);
@@ -9830,7 +9839,8 @@ pub struct EffectSetting {
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
     /// +0xB0 `undefined8`, ctor store
-    pub field_B0: u64,
+    #[doc(hidden)]
+    pub __field_B0: [u8; 8],
     /// +0xB8 `undefined8`, ctor store
     pub field_B8: u64,
     /// +0xC0 `undefined4`, ctor store
@@ -9844,7 +9854,8 @@ pub struct EffectSetting {
     /// +0xD8 `undefined4`, ctor store
     pub field_D8: u32,
     /// +0xDC `undefined4`, ctor store
-    pub field_DC: u32,
+    #[doc(hidden)]
+    pub __field_DC: [u8; 4],
     /// +0xE0 `undefined4`, ctor store
     pub field_E0: u32,
     unknown_E4: [u8; 4],
@@ -9929,14 +9940,14 @@ const _: () = assert!(core::mem::offset_of!(EffectSetting, field_90) == 0x90);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_98) == 0x98);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_A0) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(EffectSetting, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(EffectSetting, __field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_B8) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_C0) == 0xC0);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_C4) == 0xC4);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_C8) == 0xC8);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_D0) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_D8) == 0xD8);
-const _: () = assert!(core::mem::offset_of!(EffectSetting, field_DC) == 0xDC);
+const _: () = assert!(core::mem::offset_of!(EffectSetting, __field_DC) == 0xDC);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_E0) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_E8) == 0xE8);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, __field_F0) == 0xF0);
@@ -10015,7 +10026,7 @@ const _: () = assert!(core::mem::offset_of!(EnableCharacterPitchHandler, __vftab
 /// `EnchantmentItem`: size 0xC0 (exact, medium); primary base `MagicItem`.
 /// Evidence: runtime: 0xC0 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `MagicItem`@0x0, `TESBoundObject`@0x0, `TESObject`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `TESFullName`@0x30, `BaseFormComponent`@0x30, `BGSKeywordForm`@0x40, `BaseFormComponent`@0x40.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct EnchantmentItem {
     /// +0x0 `vtbl:EnchantmentItem:0`, rtti
     #[doc(hidden)]
@@ -10030,16 +10041,18 @@ pub struct EnchantmentItem {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 13],
+    unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
-    pub field_28: u16,
+    #[doc(hidden)]
+    pub __field_28: [u8; 2],
     /// +0x2A `undefined2`, base TESBoundObject
-    pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __field_2A: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:EnchantmentItem:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::EnchantmentItem_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `vtbl:EnchantmentItem:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::EnchantmentItem_vtable_40,
@@ -10047,15 +10060,15 @@ pub struct EnchantmentItem {
     pub keywords: *mut c_void,
     /// +0x50 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
-    pub unknown_54: [u8; 28],
+    unknown_54: [u8; 28],
     /// +0x70 `undefined4`, base MagicItem
     pub field_70: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `undefined8`, base MagicItem
     pub field_78: u64,
     /// +0x80 `undefined4`, base MagicItem
     pub field_80: u32,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined8`, base MagicItem
     pub field_88: u64,
     /// +0x90 `undefined4`, ctor store
@@ -10072,7 +10085,7 @@ pub struct EnchantmentItem {
     pub field_A4: u32,
     /// +0xA8 `undefined4`, ctor store
     pub field_A8: u32,
-    pub unknown_AC: [u8; 4],
+    unknown_AC: [u8; 4],
     /// +0xB0 `undefined8`, ctor store
     pub field_B0: u64,
     /// +0xB8 `undefined8`, ctor store
@@ -10087,8 +10100,8 @@ const _: () = assert!(core::mem::offset_of!(EnchantmentItem, formFlags) == 0x10)
 const _: () = assert!(core::mem::offset_of!(EnchantmentItem, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(EnchantmentItem, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(EnchantmentItem, formType) == 0x1A);
-const _: () = assert!(core::mem::offset_of!(EnchantmentItem, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(EnchantmentItem, field_2A) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(EnchantmentItem, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(EnchantmentItem, __field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(EnchantmentItem, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(EnchantmentItem, __vftable_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(EnchantmentItem, keywords) == 0x48);
@@ -11302,7 +11315,8 @@ pub struct FleePackage {
     pub field_70: u64,
     unknown_78: [u8; 96],
     /// +0xD8 `undefined4`, base TESPackage
-    pub field_D8: u32,
+    #[doc(hidden)]
+    pub __field_D8: [u8; 4],
     /// +0xDC `undefined4`, base TESPackage
     #[doc(hidden)]
     pub __field_DC: [u8; 4],
@@ -11349,7 +11363,7 @@ const _: () = assert!(core::mem::offset_of!(FleePackage, field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(FleePackage, __field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(FleePackage, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(FleePackage, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(FleePackage, field_D8) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(FleePackage, __field_D8) == 0xD8);
 const _: () = assert!(core::mem::offset_of!(FleePackage, __field_DC) == 0xDC);
 const _: () = assert!(core::mem::offset_of!(FleePackage, field_F0) == 0xF0);
 const _: () = assert!(core::mem::offset_of!(FleePackage, field_F8) == 0xF8);
@@ -18989,9 +19003,11 @@ pub struct IngredientItem {
     pub formType: u8,
     unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
-    pub field_28: u16,
+    #[doc(hidden)]
+    pub __field_28: [u8; 2],
     /// +0x2A `undefined2`, base TESBoundObject
-    pub field_2A: u16,
+    #[doc(hidden)]
+    pub __field_2A: [u8; 2],
     unknown_2C: [u8; 4],
     /// +0x30 `vtbl:IngredientItem:30`, rtti
     #[doc(hidden)]
@@ -19076,8 +19092,8 @@ const _: () = assert!(core::mem::offset_of!(IngredientItem, formFlags) == 0x10);
 const _: () = assert!(core::mem::offset_of!(IngredientItem, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(IngredientItem, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(IngredientItem, formType) == 0x1A);
-const _: () = assert!(core::mem::offset_of!(IngredientItem, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(IngredientItem, field_2A) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(IngredientItem, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(IngredientItem, __field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(IngredientItem, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(IngredientItem, __vftable_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(IngredientItem, keywords) == 0x48);

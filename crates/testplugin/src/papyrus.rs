@@ -23,13 +23,8 @@ use skyrim::prelude::*;
 use sre::raw::globals;
 use sre::{Actor, ActorValue, BSScript__Object, BSScript__ObjectTypeInfo, PapyrusType, TESForm, TESObjectREFR, VMTypeID};
 
-use crate::{IRON_SWORD, PLAYER, Test, check, describe as form_name, form, lacks, needs};
+use crate::{IRON_SWORD, PLAYER, Test, check, describe as form_name, form};
 
-const ALIAS_COUNT: &str = "member ExtraAliasInstanceArray.count";
-const PARAM_SIZE: &str = "size BSScript::NF_util::ParamInfo";
-const VARIABLE_SIZE: &str = "size BSScript::Variable";
-const ARRAY_SIZE: &str = "size BSScript::Array";
-const HANDLE_POLICY: &str = "id 414391";
 const CLASS: &str = "SkyrimRsTest";
 const REF_CLASS: &str = "SkyrimRsTestRef";
 const ALIAS_CLASS: &str = "SkyrimRsTestAlias";
@@ -76,13 +71,10 @@ fn describe_object(object: &BSScript__Object) -> String {
     format!("{class} object {} (refs {})", Handle(object.get_handle()), object.refCountAndLock & 0x7FFF_FFFF)
 }
 
-/// What `g_IObjectHandlePolicy_ptr` holds, `None` on a game that lacks it.
-fn handle_policy_global() -> Result<Option<usize>, String> {
-    if lacks(HANDLE_POLICY) {
-        return Ok(None);
-    }
+/// What `g_IObjectHandlePolicy_ptr` holds.
+fn handle_policy_global() -> Result<usize, String> {
     let at = skyrim::reloc().address(sre::id!(globals::g_IObjectHandlePolicy_ptr)).map_err(|e| e.to_string())?;
-    Ok(Some(unsafe { *(at as *const usize) }))
+    Ok(unsafe { *(at as *const usize) })
 }
 
 fn is_type(vm: &VirtualMachine, type_id: VMTypeID, handle: Handle) -> bool {
@@ -159,8 +151,7 @@ fn player_health(actor: Option<&'static Actor>) -> f32 {
 }
 
 fn echo(s: BSFixedString) -> BSFixedString {
-    let refs = if lacks("size BSStringPool::Entry") { "?".to_owned() } else { s.ref_count().to_string() };
-    record("Echo", format!("s={s:?} refcount {refs} -> same"));
+    record("Echo", format!("s={s:?} refcount {} -> same", s.ref_count()));
     s
 }
 
@@ -244,7 +235,7 @@ fn bind_relay_targets(vm: &VirtualMachine, thread: &GameThread) {
         return;
     }
     let Some(player) = form(PLAYER).ok().and_then(TESForm::cast::<Actor>) else { return };
-    let alias = if lacks(ALIAS_COUNT) { None } else { alias_handles(player).into_iter().find(|&h| is_type(vm, VMTypeID::ReferenceAlias, h)) };
+    let alias = alias_handles(player).into_iter().find(|&h| is_type(vm, VMTypeID::ReferenceAlias, h));
     let effect = active_effect_handles(player).into_iter().find(|&h| is_type(vm, VMTypeID::ActiveMagicEffect, h));
     for (class, handle) in [(ALIAS_CLASS, alias), (EFFECT_CLASS, effect)] {
         let Some(handle) = handle else {
@@ -289,7 +280,7 @@ fn vm_identity() -> Result<String, String> {
     check(via_slot == policy && registry.handle_policy().is_some_and(|p| core::ptr::from_ref(p) as usize == policy), "GetObjectHandlePolicy is not VM+0x90")?;
     let global = handle_policy_global()?;
     let refs = registry.refCount;
-    Ok(format!("registry {registry:p} = g_SkyrimVM+0x210, refCount {refs}, handle policy {policy:#x} = g_SkyrimVM+0x338 = GetObjectHandlePolicy(), bind policy {bind:#x} = g_SkyrimVM+0x3a8; g_IObjectHandlePolicy_ptr holds {global:x?} during registration"))
+    Ok(format!("registry {registry:p} = g_SkyrimVM+0x210, refCount {refs}, handle policy {policy:#x} = g_SkyrimVM+0x338 = GetObjectHandlePolicy(), bind policy {bind:#x} = g_SkyrimVM+0x3a8; g_IObjectHandlePolicy_ptr holds {global:#x} during registration"))
 }
 
 fn type_ids_before() -> Result<String, String> {
@@ -320,8 +311,7 @@ fn register() -> Result<String, String> {
     let mut bind = |name: &'static str, result: Result<&'static NativeFunction, skyrim::papyrus::Error>| -> Result<(), String> {
         let native = result.map_err(|e| format!("{name}: {e}"))?;
         check(native.ref_count() == 2 && *native.name() == *name && (*native.class_name() == *CLASS || *native.class_name() == *REF_CLASS), &format!("{name}: refCount {} name {} class {}", native.ref_count(), native.name(), native.class_name()))?;
-        let params = if lacks(PARAM_SIZE) { "?".to_owned() } else { format!("{:?}", native.param_types()) };
-        summary.push(format!("{}.{name}({params}) -> {:?} at {:p}", native.class_name(), native.return_type(), native.as_ptr()));
+        summary.push(format!("{}.{name}({:?}) -> {:?} at {:p}", native.class_name(), native.param_types(), native.return_type(), native.as_ptr()));
         natives.push((name, native));
         Ok(())
     };
@@ -334,10 +324,8 @@ fn register() -> Result<String, String> {
     bind("Tick", vm.register_native(CLASS, "Tick", tick))?;
     bind("Describe", vm.register_native(CLASS, "Describe", describe))?;
     bind("SelfFormId", vm.register_method(REF_CLASS, "SelfFormId", self_form_id))?;
-    if !lacks(VARIABLE_SIZE) && !lacks(ARRAY_SIZE) {
-        bind("Halves", vm.register_native(CLASS, "Halves", halves))?;
-        bind("Forms", vm.register_native(CLASS, "Forms", forms))?;
-    }
+    bind("Halves", vm.register_native(CLASS, "Halves", halves))?;
+    bind("Forms", vm.register_native(CLASS, "Forms", forms))?;
     bind("DoubleNow", vm.register_latent(CLASS, "DoubleNow", double_now))?;
     bind("DoubleLater", vm.register_latent(CLASS, "DoubleLater", double_later))?;
     bind("RecordEvent", vm.register_native(CLASS, "RecordEvent", record_event))?;
@@ -367,7 +355,7 @@ fn handles() -> Result<String, String> {
     let vm = vm()?;
     let policy = vm.handle_policy().ok_or("the VM has no handle policy")?;
     let global = handle_policy_global()?;
-    check(global.is_none_or(|global| global == core::ptr::from_ref(policy) as usize), &format!("g_IObjectHandlePolicy_ptr holds {global:x?}, not the VM's policy"))?;
+    check(global == core::ptr::from_ref(policy) as usize, &format!("g_IObjectHandlePolicy_ptr holds {global:#x}, not the VM's policy"))?;
     let is_type = |ty: VMTypeID, h: Handle| policy.handle_is_type(ty, h.0);
     let is_available = |h: Handle| policy.is_handle_object_available(h.0);
     let invalid = Handle(policy.get_invalid_handle());
@@ -491,7 +479,6 @@ fn stack_ids() -> Result<String, String> {
 }
 
 fn arrays() -> Result<String, String> {
-    needs(&[VARIABLE_SIZE, ARRAY_SIZE])?;
     let calls = CALLS.lock().unwrap();
     let find = |name: &str| calls.iter().find(|c| c.name == name).map(|c| c.detail.clone()).ok_or_else(|| format!("{name} was never called"));
     let halves = find("Halves")?;
@@ -532,7 +519,6 @@ fn events() -> Result<String, String> {
 }
 
 fn relay() -> Result<String, String> {
-    needs(&[ALIAS_COUNT])?;
     let targets = RELAY_TARGETS.lock().unwrap().clone();
     check(targets.len() == 2 && targets.iter().all(|t| t.ends_with("bound Some(true)")), &format!("relay targets {targets:?}"))?;
     let relayed = RELAYED.lock().unwrap().clone();

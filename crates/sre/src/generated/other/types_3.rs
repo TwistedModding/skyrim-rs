@@ -1431,13 +1431,16 @@ pub struct _anon_705FD51E__MagicMenuAddActiveEffectVisitor {
     #[doc(hidden)]
     pub __field_10: [u8; 2],
     /// +0x12 `undefined2`, ctor store
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     unknown_14: [u8; 4],
     /// +0x18 `undefined8`, ctor store
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     unknown_20: [u8; 12],
     /// +0x2C `undefined8`, ctor store
-    pub field_2C: u64,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 8],
     /// +0x34 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_34: [u8; 4],
@@ -1470,9 +1473,9 @@ pub struct _anon_705FD51E__MagicMenuAddActiveEffectVisitor {
 const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, __field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, field_12) == 0x12);
-const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, __field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, __field_34) == 0x34);
 const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, __field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, field_48) == 0x48);

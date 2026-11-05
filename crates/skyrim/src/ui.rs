@@ -202,7 +202,7 @@ impl MenuManagerExt for EventSourceHolder_MenuOpenClose {
     }
 
     fn is_paused(&self) -> bool {
-        (unsafe { (&raw const self.numPausesGame).read_volatile() }) != 0
+        (unsafe { (&raw const (self.numPausesGame)).read_volatile() }) != 0
     }
 
     fn is_registered(&self, name: &str) -> bool {
@@ -210,7 +210,7 @@ impl MenuManagerExt for EventSourceHolder_MenuOpenClose {
     }
 
     fn menu(&self, name: &str) -> Option<&IMenu> {
-        unsafe { find(self, name)?.menu.as_ref() }
+        find(self, name)?.menu()
     }
 
     fn hud(&self) -> Option<&HUDMenu> {
@@ -246,19 +246,18 @@ impl RaceSexMenuExt for RaceSexMenu {
     }
 }
 
-/// The menu table's entry for `name`. `menuTable` is a `BSTHashMap`, capacity at +0xc and entries at
-/// +0x28, each with a null `next` when empty; the engine's lookup is a function of its own only on
-/// some runtimes, so this walks the entries. Names are interned, so the data pointers compare.
+/// The menu table's entry for `name`. Each entry has a null `next` when empty; the engine's lookup
+/// is a function of its own only on some runtimes, so this walks the entries. Names are interned,
+/// so the data pointers compare.
 fn find<'a>(ui: &'a EventSourceHolder_MenuOpenClose, name: &str) -> Option<&'a sre::MenuTableEntry> {
     let name = BSFixedString::new(name);
-    let table = (&raw const ui.menuTable).cast::<u8>();
-    let capacity = unsafe { table.add(0xC).cast::<u32>().read_unaligned() } as usize;
-    let entries = unsafe { table.add(0x28).cast::<*const sre::MenuTableEntry>().read_unaligned() };
+    let table = &ui.menuTable;
+    let (capacity, entries) = (table.capacity as usize, table.entries.cast_const());
     if entries.is_null() {
         return None;
     }
     sre::fixed_size!("MenuTableEntry", sre::MenuTableEntry);
-    unsafe { core::slice::from_raw_parts(entries, capacity) }.iter().find(|entry| !entry.next.is_null() && entry.menuName.data == name.raw().data)
+    unsafe { core::slice::from_raw_parts(entries, capacity) }.iter().find(|entry| entry.next().is_some() && entry.menuName.data == name.raw().data)
 }
 
 /// The `IMenu` part of a menu of this mod's own, handed to the [`Menu`] callbacks.
@@ -563,23 +562,26 @@ const VALUE_TYPE_MASK: u32 = 0xF;
 pub struct Value(sre::GFxValue);
 
 impl Value {
-    const fn unmanaged(type_: u32, data: u64) -> Self {
-        Self(sre::GFxValue { objectInterface: core::ptr::null_mut(), type_, unknown_C: [0; 4], data, __engine: sre::Engine::new() })
+    fn unmanaged(type_: u32, data: u64) -> Self {
+        let mut value: sre::GFxValue = unsafe { core::mem::zeroed() };
+        value.type_ = type_;
+        value.data = data;
+        Self(value)
     }
 
     #[must_use]
-    pub const fn undefined() -> Self {
+    pub fn undefined() -> Self {
         Self::unmanaged(0, 0)
     }
 
     #[must_use]
-    pub const fn null() -> Self {
+    pub fn null() -> Self {
         Self::unmanaged(1, 0)
     }
 
     #[must_use]
-    pub const fn boolean(value: bool) -> Self {
-        Self::unmanaged(2, value as u64)
+    pub fn boolean(value: bool) -> Self {
+        Self::unmanaged(2, u64::from(value))
     }
 
     #[must_use]
@@ -746,7 +748,7 @@ impl Params {
 
     #[must_use]
     pub fn args(&self) -> &[Value] {
-        if self.0.args.is_null() || self.0.argCount == 0 {
+        if self.0.args().is_none() || self.0.argCount == 0 {
             return &[];
         }
         sre::fixed_size!("GFxValue", sre::GFxValue);
@@ -755,12 +757,12 @@ impl Params {
 
     #[must_use]
     pub fn this_value(&self) -> Option<&Value> {
-        unsafe { self.0.thisValue.cast::<Value>().as_ref() }
+        unsafe { self.0.thisValue().cast::<Value>().as_ref() }
     }
 
     #[must_use]
     pub fn movie(&self) -> Option<&GFxMovieView> {
-        unsafe { self.0.movie.as_ref() }
+        unsafe { self.0.movie().as_ref() }
     }
 
     pub fn set_return(&mut self, value: &Value) {

@@ -89,13 +89,13 @@ impl BSFixedString {
     /// Whether the entry holds `wchar_t` characters.
     #[must_use]
     pub fn is_wide(&self) -> bool {
-        self.entry().is_some_and(|e| sre::BSStringPool__Entry_flags(e.flags).contains(sre::BSStringPool__Entry_flags::WIDE))
+        self.entry().is_some_and(|e| sre::BSStringPool__Entry_flags(entry_flags(e)).contains(sre::BSStringPool__Entry_flags::WIDE))
     }
 
     /// Bits 0-14 of the entry flags: the reference count, [`PINNED`] for a pinned entry; 0 for the empty string.
     #[must_use]
     pub fn ref_count(&self) -> u32 {
-        self.entry().map_or(0, |e| e.flags & PINNED)
+        self.entry().map_or(0, |e| entry_flags(e) & PINNED)
     }
 
     /// The bytes up to the NUL; empty for the empty string, one character of a wide entry.
@@ -170,4 +170,9 @@ impl fmt::Debug for BSFixedString {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{:?}@{:p}", self.to_string(), self.0.data)
     }
+}
+
+/// Through the profile by hand: this module is always compiled, and the accessor sits in a feature's group.
+fn entry_flags(entry: &sre::BSStringPool__Entry) -> u32 {
+    unsafe { core::ptr::from_ref(entry).byte_add(sre::member_offset!("BSStringPool::Entry.flags")).cast::<u32>().read() }
 }

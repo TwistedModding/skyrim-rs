@@ -114,6 +114,16 @@ impl crate::BSScript__Internal__AutoPropGetFunction {
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_returnType(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSScript::Internal::AutoPropGetFunction.returnType", 0x20, u64) } }
+    /// `BSScript::Internal::AutoPropGetFunction::returnType`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn returnType(&self) -> u64 { unsafe { Self::__member_returnType(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_returnType(&mut self, value: u64) { unsafe { Self::__member_returnType(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn returnType_ptr(&self) -> *mut u64 { Self::__member_returnType(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSScript__Internal__AutoPropSetFunction {
@@ -188,6 +198,16 @@ impl crate::BSScript__Internal__CodeTasklet {
     pub fn vm(&self) -> Option<&crate::BSScript__Internal__VirtualMachine> { unsafe { { self.vm }.as_ref() } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_code(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::Internal::CodeTasklet.code", 0x48, *mut c_void) } }
+    /// `BSScript::Internal::CodeTasklet::code`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn code(&self) -> *mut c_void { unsafe { Self::__member_code(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_code(&mut self, value: *mut c_void) { unsafe { Self::__member_code(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn code_ptr(&self) -> *mut *mut c_void { Self::__member_code(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_codeBits(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::Internal::CodeTasklet.codeBits", 0x40, u32) } }
     /// `BSScript::Internal::CodeTasklet::codeBits`, at +0x40 on 1.7.104.
     #[inline]
@@ -196,6 +216,16 @@ impl crate::BSScript__Internal__CodeTasklet {
     pub fn set_codeBits(&mut self, value: u32) { unsafe { Self::__member_codeBits(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn codeBits_ptr(&self) -> *mut u32 { Self::__member_codeBits(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_frame(this: *const Self) -> *mut *mut crate::BSScript__StackFrame { unsafe { member!(this, "BSScript::Internal::CodeTasklet.frame", 0x30, *mut crate::BSScript__StackFrame) } }
+    /// `BSScript::Internal::CodeTasklet::frame`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn frame(&self) -> *mut crate::BSScript__StackFrame { unsafe { Self::__member_frame(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_frame(&mut self, value: *mut crate::BSScript__StackFrame) { unsafe { Self::__member_frame(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn frame_ptr(&self) -> *mut *mut crate::BSScript__StackFrame { Self::__member_frame(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_framePage(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::Internal::CodeTasklet.framePage", 0x38, u32) } }
@@ -216,6 +246,26 @@ impl crate::BSScript__Internal__CodeTasklet {
     pub fn set_jumpBits(&mut self, value: u8) { unsafe { Self::__member_jumpBits(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn jumpBits_ptr(&self) -> *mut u8 { Self::__member_jumpBits(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_operandBitsA(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::Internal::CodeTasklet.operandBitsA", 0x3D, u8) } }
+    /// `BSScript::Internal::CodeTasklet::operandBitsA`, at +0x3D on 1.7.104.
+    #[inline]
+    pub fn operandBitsA(&self) -> u8 { unsafe { Self::__member_operandBitsA(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_operandBitsA(&mut self, value: u8) { unsafe { Self::__member_operandBitsA(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn operandBitsA_ptr(&self) -> *mut u8 { Self::__member_operandBitsA(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_operandBitsB(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::Internal::CodeTasklet.operandBitsB", 0x3E, u8) } }
+    /// `BSScript::Internal::CodeTasklet::operandBitsB`, at +0x3E on 1.7.104.
+    #[inline]
+    pub fn operandBitsB(&self) -> u8 { unsafe { Self::__member_operandBitsB(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_operandBitsB(&mut self, value: u8) { unsafe { Self::__member_operandBitsB(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn operandBitsB_ptr(&self) -> *mut u8 { Self::__member_operandBitsB(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSScript__Internal__FunctionMessage {
@@ -223,7 +273,37 @@ impl crate::BSScript__Internal__FunctionMessage {
     ///
     /// Semantic field, vmstack pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn stack(&self) -> Option<&crate::BSScript__Stack> { unsafe { { self.stack }.as_ref() } }
+    pub fn stack(&self) -> Option<&crate::BSScript__Stack> { unsafe { Self::__member_stack(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_kind(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::Internal::FunctionMessage.kind", 0x0, u32) } }
+    /// `BSScript::Internal::FunctionMessage::kind`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn kind(&self) -> u32 { unsafe { Self::__member_kind(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_kind(&mut self, value: u32) { unsafe { Self::__member_kind(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn kind_ptr(&self) -> *mut u32 { Self::__member_kind(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_query(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::Internal::FunctionMessage.query", 0x10, *mut c_void) } }
+    /// `BSScript::Internal::FunctionMessage::query`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn query(&self) -> *mut c_void { unsafe { Self::__member_query(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_query(&mut self, value: *mut c_void) { unsafe { Self::__member_query(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn query_ptr(&self) -> *mut *mut c_void { Self::__member_query(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stack(this: *const Self) -> *mut *mut crate::BSScript__Stack { unsafe { member!(this, "BSScript::Internal::FunctionMessage.stack", 0x8, *mut crate::BSScript__Stack) } }
+    /// `BSScript::Internal::FunctionMessage::stack`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn stack_field(&self) -> *mut crate::BSScript__Stack { unsafe { Self::__member_stack(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_stack(&mut self, value: *mut crate::BSScript__Stack) { unsafe { Self::__member_stack(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn stack_ptr(&self) -> *mut *mut crate::BSScript__Stack { Self::__member_stack(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSScript__Internal__NativeFunctionStub {
@@ -260,6 +340,14 @@ impl crate::BSScript__Internal__NativeFunctionStub {
     /// `const BSFixedString* (BSScript::Internal::NativeFunctionStub* this)`
     #[inline]
     pub fn get_source_file_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 16, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::Internal::NativeFunctionStub.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::Internal::NativeFunctionStub::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::Internal::NativeFunctionStub.objectTypeName", 0x18, crate::BSFixedString) } }
@@ -568,6 +656,16 @@ impl crate::BSScript__Internal__StackMapEntry {
     pub fn set_stack(&mut self, value: *mut crate::BSScript__Stack) { unsafe { Self::__member_stack(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn stack_ptr(&self) -> *mut *mut crate::BSScript__Stack { Self::__member_stack(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stackID(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::Internal::StackMapEntry.stackID", 0x0, u32) } }
+    /// `BSScript::Internal::StackMapEntry::stackID`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn stackID(&self) -> u32 { unsafe { Self::__member_stackID(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_stackID(&mut self, value: u32) { unsafe { Self::__member_stackID(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn stackID_ptr(&self) -> *mut u32 { Self::__member_stackID(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSScript__Internal__SuspendedStack {
@@ -575,7 +673,27 @@ impl crate::BSScript__Internal__SuspendedStack {
     ///
     /// Semantic field, vmstack pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn stack(&self) -> Option<&crate::BSScript__Stack> { unsafe { { self.stack }.as_ref() } }
+    pub fn stack(&self) -> Option<&crate::BSScript__Stack> { unsafe { Self::__member_stack(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_query(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::Internal::SuspendedStack.query", 0x8, *mut c_void) } }
+    /// `BSScript::Internal::SuspendedStack::query`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn query(&self) -> *mut c_void { unsafe { Self::__member_query(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_query(&mut self, value: *mut c_void) { unsafe { Self::__member_query(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn query_ptr(&self) -> *mut *mut c_void { Self::__member_query(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stack(this: *const Self) -> *mut *mut crate::BSScript__Stack { unsafe { member!(this, "BSScript::Internal::SuspendedStack.stack", 0x0, *mut crate::BSScript__Stack) } }
+    /// `BSScript::Internal::SuspendedStack::stack`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn stack_field(&self) -> *mut crate::BSScript__Stack { unsafe { Self::__member_stack(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_stack(&mut self, value: *mut crate::BSScript__Stack) { unsafe { Self::__member_stack(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn stack_ptr(&self) -> *mut *mut crate::BSScript__Stack { Self::__member_stack(core::ptr::from_ref(self)) }
 }
 
 /// `AllocateStackFrame`: finds (size + 4) * 0x10 bytes in the last page or a new page from the page policy, InitStackFrameAndClearVariables, frame+8 = top, top = frame, frameCount + 1; 0 ok, 1 failed, 2 retry later

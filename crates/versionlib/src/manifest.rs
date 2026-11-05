@@ -20,6 +20,10 @@ pub enum Record {
     Base(String),
     /// `Enum.Value`.
     Enum(String),
+    /// An id whose address is all the code uses: a usable id or an `id-address` row serves it.
+    AddressId(u32),
+    /// A site the code goes without where the runtime has none, so only an unverified one lacks.
+    OptionalSite { id: u32, offset: u32 },
 }
 
 impl fmt::Display for Record {
@@ -32,6 +36,8 @@ impl fmt::Display for Record {
             Self::Size(class) => write!(f, "size {class}"),
             Self::Base(class_and_base) => write!(f, "base {class_and_base}"),
             Self::Enum(value) => write!(f, "enum {value}"),
+            Self::AddressId(id) => write!(f, "address-id {id}"),
+            Self::OptionalSite { id, offset } => write!(f, "optional-site {id} {offset:x}"),
         }
     }
 }
@@ -58,6 +64,8 @@ pub fn records(section: &[u8]) -> Result<BTreeSet<Record>, String> {
             5 => Record::Size(name),
             6 => Record::Base(name),
             7 => Record::Enum(name),
+            9 => Record::AddressId(a),
+            10 => Record::OptionalSite { id: a, offset: b },
             _ => return Err(format!("record at {:#x} has unknown kind {kind}", at - 1)),
         });
         at += 8 + len + 1;
@@ -137,6 +145,11 @@ fn profile_lack(record: &Record, profile: &Profile) -> Option<Lack> {
         Record::Size(class) => lack(&profile.size(class)),
         Record::Base(class_and_base) => lack(&profile.base(class_and_base)),
         Record::Enum(value) => lack(&profile.enum_value(value)),
+        Record::AddressId(id) => lack(&profile.address_id(*id)),
+        Record::OptionalSite { id, offset } => match profile.site(*id, *offset) {
+            Row::Missing => None,
+            site => lack(&site).or_else(|| lack(&profile.address_id(*id))),
+        },
     }
 }
 
@@ -153,8 +166,13 @@ pub fn lacking_in<'a>(records: impl IntoIterator<Item = &'a Record>, profile: &P
         .into_iter()
         .filter_map(|record| {
             let lacks = profile_lack(record, profile).or_else(|| match (record, db) {
-                (Record::Id(id), Some(db)) => {
-                    let here = if let Row::Here(here) = profile.id(*id) { here } else { *id };
+                (Record::Id(id) | Record::AddressId(id), Some(db)) => {
+                    let row = if matches!(record, Record::Id(_)) { profile.id(*id) } else { profile.address_id(*id) };
+                    let here = if let Row::Here(here) = row { here } else { *id };
+                    db.offset(u64::from(here)).is_none().then_some(Lack::Missing)
+                }
+                (Record::OptionalSite { id, offset }, Some(db)) if !matches!(profile.site(*id, *offset), Row::Missing) => {
+                    let here = if let Row::Here(here) = profile.address_id(*id) { here } else { *id };
                     db.offset(u64::from(here)).is_none().then_some(Lack::Missing)
                 }
                 _ => None,
@@ -251,7 +269,7 @@ mod tests {
     fn refuses_what_is_not_a_record() {
         assert!(records(&[1, 0, 0]).unwrap_err().contains("cut short"));
         assert!(records(&[1, 0, 0, 0, 0, 0, 0, 0, 0, b'a']).unwrap_err().contains("no end"));
-        assert!(records(&record(9, 0, 0, "")).unwrap_err().contains("unknown kind"));
+        assert!(records(&record(8, 0, 0, "")).unwrap_err().contains("unknown kind"));
     }
 
     fn pe_with(name: [u8; 8], data: &[u8]) -> Vec<u8> {
@@ -331,6 +349,23 @@ mod tests {
         assert_eq!(refusal(&found, &profile.name()).unwrap(), "1.7.104 lacks what it uses: 3 missing (id 2, member Actor.a, size Actor), 3 unverified (slot Actor[0].5, site 1 10, base Actor:TESForm)");
         let clean = crate::profile::parse(CANONICAL_HEADER).unwrap();
         assert_eq!(fit(&pe_with(*SECTION, &record(1, 1, 0, "")), &clean, Some(&db)), Fit::Fits);
+    }
+
+    #[test]
+    fn an_optional_site_lacks_only_where_it_is_unverified() {
+        let profile = crate::profile::parse(&format!("{CANONICAL_HEADER}site-missing 1 10\nsite-unverified 2 20\nsite 3 30 34 e8\nid-unverified 3\n")).unwrap();
+        let wanted = [Record::OptionalSite { id: 1, offset: 0x10 }, Record::OptionalSite { id: 2, offset: 0x20 }, Record::OptionalSite { id: 3, offset: 0x30 }];
+        assert_eq!(lacking(&wanted, &profile), [(&wanted[1], Lack::Unverified), (&wanted[2], Lack::Unverified)]);
+        assert_eq!(records(&record(10, 7, 0x40, "")).unwrap().into_iter().collect::<Vec<_>>(), [Record::OptionalSite { id: 7, offset: 0x40 }]);
+    }
+
+    #[test]
+    fn an_id_address_row_serves_only_an_address_record() {
+        let profile = crate::profile::parse(&format!("{CANONICAL_HEADER}id-address 1\nid-unverified 2\n")).unwrap();
+        let wanted = [Record::Id(1), Record::AddressId(1), Record::AddressId(2), Record::AddressId(3)];
+        assert_eq!(lacking(&wanted, &profile), [(&Record::Id(1), Lack::Unverified), (&Record::AddressId(2), Lack::Unverified)]);
+        assert_eq!(records(&record(9, 7, 0, "")).unwrap().into_iter().collect::<Vec<_>>(), [Record::AddressId(7)]);
+        assert_eq!(Record::AddressId(7).to_string(), "address-id 7");
     }
 
     #[test]

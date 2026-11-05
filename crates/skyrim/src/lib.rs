@@ -102,22 +102,6 @@ pub fn init(_: &skse::Interface) -> Result<(), Error> {
     Ok(())
 }
 
-/// [`init`] for the test plugin, which runs on a game that lacks part of its manifest: returns what
-/// is lacking, each as the manifest names it, for the plugin to keep its code off. A lookup of any
-/// of them still panics, so nothing lacking is ever read.
-#[doc(hidden)]
-pub fn init_guarded(_: &skse::Interface) -> Result<Vec<String>, Error> {
-    let reloc = hook::Reloc::open()?;
-    let (dll, pe) = own_file()?;
-    let lacking = match versionlib::manifest::fit(&pe, reloc.running().profile(), Some(reloc.running().db())) {
-        versionlib::manifest::Fit::Lacks(lacks) => lacks.into_iter().map(|(record, _)| record.to_string()).collect(),
-        versionlib::manifest::Fit::Fits => Vec::new(),
-        other => return Err(Error::Refused(format!("{}: {other:?}", dll.display()))),
-    };
-    let _ = RELOC.set(reloc);
-    Ok(lacking)
-}
-
 /// This DLL's path and bytes.
 fn own_file() -> Result<(std::path::PathBuf, Vec<u8>), Error> {
     sre::declare_manifest!();

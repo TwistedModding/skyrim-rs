@@ -78,7 +78,7 @@ pub fn set_fov_offset(offset: f32) {
 #[must_use]
 #[allow(clippy::cast_ptr_alignment)]
 pub fn hands_fov() -> f32 {
-    unsafe { (*sre::g_first_person_view_params().cast::<sre::FirstPersonRenderContext>()).firstPersonFOV() }
+    unsafe { (*sre::g_first_person_view_params().cast::<sre::FirstPersonRenderContext>()).firstPersonFOV }
 }
 
 /// Creates, disabled, a detour on `TESCamera::Update` (id 33025), the per-frame camera update on
@@ -91,34 +91,35 @@ pub unsafe fn hook_update(detour: CameraUpdateFn) -> Result<hook::Hook<CameraUpd
     unsafe { hook::Hook::create(address(sre::id!(fns::TESCamera__Update))?, detour) }
 }
 
-/// Two `call rel32` sites redirected to one detour; created disabled, enabled once stored.
+/// `call rel32` sites redirected to one detour; created disabled, enabled once stored.
 pub struct CallSites<F: Copy> {
-    sites: [hook::CallSite<F>; 2],
+    sites: Vec<hook::CallSite<F>>,
 }
 
 impl<F: Copy> CallSites<F> {
-    unsafe fn create(sites: [usize; 2], target: usize, detour: F) -> Result<Self, hook::Error> {
-        for site in sites {
+    unsafe fn create(sites: &[usize], target: usize, detour: F) -> Result<Self, hook::Error> {
+        for &site in sites {
             if hook::find_call(site, 5, target) != Some(site) {
                 return Err(hook::Error::NotRel32(site));
             }
         }
-        Ok(Self { sites: [unsafe { hook::CallSite::create(sites[0], detour) }?, unsafe { hook::CallSite::create(sites[1], detour) }?] })
+        Ok(Self { sites: sites.iter().map(|&site| unsafe { hook::CallSite::create(site, detour) }).collect::<Result<_, _>>()? })
     }
 
-    /// Writes both sites. Call it after the hook is stored where the detour reads [`Self::original`].
+    /// Writes every site. Call it after the hook is stored where the detour reads [`Self::original`].
     pub fn enable(&self) -> Result<(), hook::Error> {
         self.sites.iter().try_for_each(|s| unsafe { s.enable() })
     }
 
-    /// The callee both sites reached before (the same function in the shipped game).
+    /// The callee the sites reached before (the same function in the shipped game).
+    #[must_use]
     pub fn original(&self) -> F {
         self.sites[0].original()
     }
 
     #[must_use]
-    pub fn sites(&self) -> [usize; 2] {
-        [self.sites[0].site(), self.sites[1].site()]
+    pub fn sites(&self) -> Vec<usize> {
+        self.sites.iter().map(hook::CallSite::site).collect()
     }
 }
 
@@ -137,15 +138,16 @@ pub type StateStepHook = CallSites<CameraUpdateFn>;
 /// Same as [`hook::CallSite::create`].
 pub unsafe fn hook_state_step(detour: CameraUpdateFn) -> Result<StateStepHook, hook::Error> {
     let sites = [sre::site!(fns::PlayerCamera__Update, PLAYER_UPDATE_STATE_STEP), sre::site!(fns::UpdateActorWithCamera, FREE_CAMERA_STATE_STEP)];
-    unsafe { CallSites::create(sites, address(sre::id!(fns::TESCamera__Update))?, detour) }
+    unsafe { CallSites::create(&sites, address(sre::id!(fns::TESCamera__Update))?, detour) }
 }
 
-/// The two hands projection sites, as [`hook_hands_projection`] installs them.
+/// The hands projection sites, as [`hook_hands_projection`] installs them.
 pub type HandsProjectionHook = CallSites<SetPerspectiveFromFovFn>;
 
 /// Redirects the two `call`s to `NiCamera::SetPerspectiveFromFov` that set the hands camera's
 /// projection in every first-person frame: `SetupFirstPersonCamera` +0x106 (id 107123, before the
 /// GPU snapshot) and `RenderWorldDepthPrepass` +0x7fd (id 107139, before the first-person draws).
+/// A runtime without the second has the depth path call through the first, so one site is enough.
 /// Both are called with `fov = ` [`fov_offset`] ` + ` [`hands_fov`], the first-person near, the
 /// world far and the screen size; a detour that changes the FOV must change it at both, or the
 /// second resets the camera. Main thread.
@@ -153,8 +155,9 @@ pub type HandsProjectionHook = CallSites<SetPerspectiveFromFovFn>;
 /// # Safety
 /// Same as [`hook::CallSite::create`].
 pub unsafe fn hook_hands_projection(detour: SetPerspectiveFromFovFn) -> Result<HandsProjectionHook, hook::Error> {
-    let sites = [sre::site!(fns::SetupFirstPersonCamera, SETUP_FIRST_PERSON_PROJECTION), sre::site!(fns::RenderWorldDepthPrepass, DEPTH_PREPASS_PROJECTION)];
-    unsafe { CallSites::create(sites, address(sre::id!(fns::NiCamera__SetPerspectiveFromFov))?, detour) }
+    let mut sites = vec![sre::site!(fns::SetupFirstPersonCamera, SETUP_FIRST_PERSON_PROJECTION)];
+    sites.extend(sre::optional_site!(fns::RenderWorldDepthPrepass, DEPTH_PREPASS_PROJECTION));
+    unsafe { CallSites::create(&sites, address(sre::id!(fns::NiCamera__SetPerspectiveFromFov))?, detour) }
 }
 
 pub trait PlayerCameraExt {

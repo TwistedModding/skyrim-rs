@@ -136,7 +136,6 @@ fn manager() -> Result<String, String> {
     let manager = sre::get_audio_manager().ok_or("no audio manager")?;
     let master = manager.masterVolume;
     check(master > 0.0 && master <= 1.0, &format!("master volume {master}"))?;
-    crate::needs(&["id 390241"])?;
     let music = skyrim::audio::current_music().ok_or("no music type playing")?;
     let kind = FormType::from_u8(music.formType);
     check(kind == Some(FormType::MUSC), &format!("the current music is a {kind:?}"))?;

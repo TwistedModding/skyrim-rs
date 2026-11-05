@@ -51,7 +51,8 @@ pub struct BSCullingProcess {
     pub field_121: u8,
     unknown_122: [u8; 6],
     /// +0x128 `class:BSTArray`, semantic; geometry accepted by the walk (references added) (high)
-    pub visibleGeometry: crate::BSTArray,
+    #[doc(hidden)]
+    pub __visibleGeometry: [u8; 24],
     unknown_140: [u8; 65536],
     /// +0x10140 `undefined1`, semantic; lock-free ring of 0x10-byte records {object, groupIndex, appendTag} filled by slot 24 for objects of an ordered group (or when +0x301d5 is set) (medium)
     #[doc(hidden)]
@@ -77,7 +78,8 @@ pub struct BSCullingProcess {
     #[doc(hidden)]
     pub __field_30190: [u8; 8],
     /// +0x30198 `undefined4`, semantic; 1 and 2 accept without testing, 3 and 4 test planes and portals (4 also visits nodes with flag bit 12); the sun's geometry list cullers use 3 + light+0x47 (medium)
-    pub cullMode: u32,
+    #[doc(hidden)]
+    pub __cullMode: [u8; 4],
     unknown_3019C: [u8; 4],
     /// +0x301A0 `undefined8`, semantic; portal frusta used by cullMode 4: plane sets of 0x70 bytes with their mask at +0x60, a node tree at +0x18, count at +0xbc (medium)
     #[doc(hidden)]
@@ -99,7 +101,8 @@ pub struct BSCullingProcess {
     #[doc(hidden)]
     pub __lastGroupIndex: [u8; 4],
     /// +0x301F4 `undefined4`, semantic; value passed with each appended object (AppendGeometry's second argument); BSParabolicCullingProcess stores the hemisphere (1 or 2) its bound test returned (medium)
-    pub appendTag: u32,
+    #[doc(hidden)]
+    pub __appendTag: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -118,7 +121,7 @@ const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __acceptFlag12Node
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __useCustomPlanes) == 0x11F);
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __narrowPlaneMask) == 0x120);
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, field_121) == 0x121);
-const _: () = assert!(core::mem::offset_of!(BSCullingProcess, visibleGeometry) == 0x128);
+const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __visibleGeometry) == 0x128);
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __queuedVisible) == 0x10140);
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __freeRecords) == 0x20150);
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __field_3016C) == 0x3016C);
@@ -126,27 +129,27 @@ const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __field_30174) == 
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __field_30178) == 0x30178);
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __field_30188) == 0x30188);
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __field_30190) == 0x30190);
-const _: () = assert!(core::mem::offset_of!(BSCullingProcess, cullMode) == 0x30198);
+const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __cullMode) == 0x30198);
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __portalPlaneTree) == 0x301A0);
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __field_301D0) == 0x301D0);
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __descendIntoNodes) == 0x301D4);
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __deferAllAppends) == 0x301D5);
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, groupBuckets) == 0x301D8);
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __lastGroupIndex) == 0x301F0);
-const _: () = assert!(core::mem::offset_of!(BSCullingProcess, appendTag) == 0x301F4);
+const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __appendTag) == 0x301F4);
 
 /// `BSGeometry`: size 0x158 (exact, low); primary base `NiAVObject`.
 /// Meaning: renderable geometry: alpha and shader properties, skin instance, type (medium, render pass).
 /// Evidence: lower bound field field_150 meets upper bound first own field of BSLines at 0x158 (soft).
 /// Bases: `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSGeometry {
     /// +0x0 `vtbl:BSGeometry:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSGeometry_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -156,17 +159,19 @@ pub struct BSGeometry {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
     pub world: crate::NiTransform,
     /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
@@ -180,12 +185,14 @@ pub struct BSGeometry {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
+    unknown_10A: [u8; 6],
     /// +0x110 `float`, ctor store
     pub field_110: f32,
     /// +0x114 `float`, ctor store
@@ -208,7 +215,7 @@ pub struct BSGeometry {
     pub field_148: u64,
     /// +0x150 `undefined1`, ctor store, semantic, runtime; geometry type byte (3 for BSTriShape) (high)
     pub type_: u8,
-    pub unknown_151: [u8; 7],
+    unknown_151: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -219,20 +226,20 @@ const _: () = assert!(core::mem::offset_of!(BSGeometry, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSGeometry, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSGeometry, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSGeometry, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSGeometry, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(BSGeometry, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(BSGeometry, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSGeometry, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSGeometry, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSGeometry, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BSGeometry, __local) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSGeometry, world) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(BSGeometry, previousWorld) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(BSGeometry, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(BSGeometry, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(BSGeometry, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(BSGeometry, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(BSGeometry, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(BSGeometry, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(BSGeometry, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(BSGeometry, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(BSGeometry, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(BSGeometry, field_110) == 0x110);
 const _: () = assert!(core::mem::offset_of!(BSGeometry, field_114) == 0x114);
 const _: () = assert!(core::mem::offset_of!(BSGeometry, field_118) == 0x118);
@@ -263,7 +270,8 @@ pub struct BSLight {
     #[doc(hidden)]
     pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, ctor store
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_28: [u8; 4],
@@ -312,7 +320,7 @@ const _: () = assert!(core::mem::offset_of!(BSLight, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSLight, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSLight, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSLight, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSLight, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSLight, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSLight, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSLight, __field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSLight, __portalStrictCull) == 0x47);
@@ -349,7 +357,8 @@ pub struct BSLightingShaderProperty {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
     unknown_2C: [u8; 4],
     /// +0x30 `float`, base BSShaderProperty, semantic; alpha, 1.0 by default (high)
     pub alpha: f32,
@@ -426,7 +435,7 @@ const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, name) == 0
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, alpha) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, lastRenderPassState) == 0x34);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, flags) == 0x38);
@@ -569,11 +578,14 @@ pub struct BSShaderAccumulator {
     /// +0x130 `ptr:BSBatchRenderer`, semantic; batch renderer the passes are sorted into (high)
     pub batchRenderer: *mut crate::BSBatchRenderer,
     /// +0x138 `undefined4`, semantic; iteration state of RenderBatches: technique being drawn (medium)
-    pub currentTechnique: u32,
+    #[doc(hidden)]
+    pub __currentTechnique: [u8; 4],
     /// +0x13C `undefined4`, semantic; iteration state of RenderBatches: sub-list index (medium)
-    pub currentBucket: u32,
+    #[doc(hidden)]
+    pub __currentBucket: [u8; 4],
     /// +0x140 `undefined1`, semantic; iteration state: more techniques to draw (medium)
-    pub hasMoreBatches: u8,
+    #[doc(hidden)]
+    pub __hasMoreBatches: [u8; 1],
     unknown_141: [u8; 7],
     /// +0x148 `ptr:ShadowSceneNode`, semantic; scene node whose lights the draw uses (medium)
     #[doc(hidden)]
@@ -586,7 +598,8 @@ pub struct BSShaderAccumulator {
     /// +0x160 `undefined4`, semantic; map index + 1 of the shadow map this accumulator draws (high)
     pub shadowMapIndex: u32,
     /// +0x164 `undefined4`, semantic; bit ORed into the property's shadow-map receiver mask (property+0x70 object +0x1c) when shadowMapIndex != 0; index 0xffff clears that mask (medium)
-    pub shadowMapMask: u32,
+    #[doc(hidden)]
+    pub __shadowMapMask: [u8; 4],
     /// +0x168 `u32`, semantic; cascade number of a sun map accumulator (high)
     pub cascadeIndex: u32,
     /// +0x16C `class:NiPoint3`, semantic; camera world position (vec3) (high); retyped float -> class:NiPoint3: RenderWorld 0x656d10 copies camera +0xa0..+0xa8; ctor 0x151dea0 seeds it from the zero point ID_410468..ID_410470
@@ -640,14 +653,14 @@ const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, acceptDecalsInD
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, __acceptAlphaDecalsInDepth) == 0x12D);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, isCascadeAccumulator) == 0x12E);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, batchRenderer) == 0x130);
-const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, currentTechnique) == 0x138);
-const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, currentBucket) == 0x13C);
-const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, hasMoreBatches) == 0x140);
+const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, __currentTechnique) == 0x138);
+const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, __currentBucket) == 0x13C);
+const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, __hasMoreBatches) == 0x140);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, __shadowSceneNode) == 0x148);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, renderMode) == 0x150);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, shadowMapIndex) == 0x160);
-const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, shadowMapMask) == 0x164);
+const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, __shadowMapMask) == 0x164);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, cascadeIndex) == 0x168);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, eyePosition) == 0x16C);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, field_178) == 0x178);
@@ -656,14 +669,14 @@ const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, field_178) == 0
 /// Meaning: material state of a geometry and the source of its render passes (medium, render pass).
 /// Evidence: lower bound field field_80 meets upper bound first own field of BSBloodSplatterShaderProperty at 0x88 (soft).
 /// Bases: `NiShadeProperty`@0x0, `NiProperty`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSShaderProperty {
     /// +0x0 `vtbl:BSShaderProperty:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSShaderProperty_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -673,8 +686,9 @@ pub struct BSShaderProperty {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `float`, semantic; alpha, 1.0 by default (high)
     pub alpha: f32,
     /// +0x34 `undefined4`, ctor store, semantic, runtime; key of the state the pass list at +0x40 was built for: (renderMode << 8) | shadowLightMask; 0x7fffffff = invalid (forces a rebuild) (high)
@@ -699,7 +713,7 @@ pub struct BSShaderProperty {
     pub material: *mut crate::BSShaderMaterial,
     /// +0x80 `undefined4`, semantic; render frame the pass lists were last rebuilt in (high)
     pub passFrame: u32,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -710,7 +724,7 @@ const _: () = assert!(core::mem::offset_of!(BSShaderProperty, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSShaderProperty, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSShaderProperty, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSShaderProperty, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSShaderProperty, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(BSShaderProperty, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(BSShaderProperty, alpha) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSShaderProperty, lastRenderPassState) == 0x34);
 const _: () = assert!(core::mem::offset_of!(BSShaderProperty, flags) == 0x38);
@@ -742,7 +756,8 @@ pub struct BSShadowDirectionalLight {
     #[doc(hidden)]
     pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base BSLight
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined4`, base BSLight
     #[doc(hidden)]
     pub __field_28: [u8; 4],
@@ -795,16 +810,19 @@ pub struct BSShadowDirectionalLight {
     pub frameIndex: u32,
     unknown_524: [u8; 4],
     /// +0x528 `class:BSTArray`, base BSShadowLight, semantic; objects inside the light's sphere/portal set, collected by UpdateLight, culled as casters by the map cull and released after the draw (medium)
-    pub casterCandidates: [u8; 16],
+    #[doc(hidden)]
+    pub __casterCandidates: [u8; 16],
     /// +0x538 `u32`, base BSShadowLight, semantic; size of +0x528 (high)
-    pub casterCandidateCount: u32,
+    #[doc(hidden)]
+    pub __casterCandidateCount: [u8; 4],
     unknown_53C: [u8; 4],
     /// +0x540 `float`, base BSShadowLight, semantic; shadow depth bias scale (fShadowBiasScale; the sun uses 60) (high)
     pub biasScale: f32,
     /// +0x544 `u32`, base BSShadowLight, semantic; pixel rect of the light sphere on screen: left +0x544, right +0x548, top +0x54c, bottom +0x550 (medium)
     pub screenRect: [u8; 16],
     /// +0x554 `u32`, base BSShadowLight, semantic; index into g_ShadowSceneNode[] whose root a light without candidates culls (medium)
-    pub sceneIndex: u32,
+    #[doc(hidden)]
+    pub __sceneIndex: [u8; 4],
     /// +0x558 `undefined1`, base BSShadowLight, semantic; whether this frame renders the focus shadow maps (high)
     pub focusShadowsActive: u8,
     unknown_559: [u8; 7],
@@ -834,7 +852,7 @@ const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, __vftable)
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, __field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, __portalStrictCull) == 0x47);
@@ -853,11 +871,11 @@ const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, shadowMapC
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, shadowMaps) == 0x148);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, __focusShadowMaps) == 0x160);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, frameIndex) == 0x520);
-const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, casterCandidates) == 0x528);
-const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, casterCandidateCount) == 0x538);
+const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, __casterCandidates) == 0x528);
+const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, __casterCandidateCount) == 0x538);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, biasScale) == 0x540);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, screenRect) == 0x544);
-const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, sceneIndex) == 0x554);
+const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, __sceneIndex) == 0x554);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, focusShadowsActive) == 0x558);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, lightDirection) == 0x560);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, __previousLightDirection) == 0x56C);
@@ -886,7 +904,8 @@ pub struct BSShadowFrustumLight {
     #[doc(hidden)]
     pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base BSLight
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined4`, base BSLight
     #[doc(hidden)]
     pub __field_28: [u8; 4],
@@ -939,16 +958,19 @@ pub struct BSShadowFrustumLight {
     pub frameIndex: u32,
     unknown_524: [u8; 4],
     /// +0x528 `class:BSTArray`, base BSShadowLight, semantic; objects inside the light's sphere/portal set, collected by UpdateLight, culled as casters by the map cull and released after the draw (medium)
-    pub casterCandidates: [u8; 16],
+    #[doc(hidden)]
+    pub __casterCandidates: [u8; 16],
     /// +0x538 `u32`, base BSShadowLight, semantic; size of +0x528 (high)
-    pub casterCandidateCount: u32,
+    #[doc(hidden)]
+    pub __casterCandidateCount: [u8; 4],
     unknown_53C: [u8; 4],
     /// +0x540 `float`, base BSShadowLight, semantic; shadow depth bias scale (fShadowBiasScale; the sun uses 60) (high)
     pub biasScale: f32,
     /// +0x544 `u32`, base BSShadowLight, semantic; pixel rect of the light sphere on screen: left +0x544, right +0x548, top +0x54c, bottom +0x550 (medium)
     pub screenRect: [u8; 16],
     /// +0x554 `u32`, base BSShadowLight, semantic; index into g_ShadowSceneNode[] whose root a light without candidates culls (medium)
-    pub sceneIndex: u32,
+    #[doc(hidden)]
+    pub __sceneIndex: [u8; 4],
     /// +0x558 `undefined1`, base BSShadowLight, semantic; whether this frame renders the focus shadow maps (high)
     pub focusShadowsActive: u8,
     unknown_559: [u8; 7],
@@ -973,7 +995,7 @@ const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, __vftable) == 
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, __field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, __portalStrictCull) == 0x47);
@@ -992,11 +1014,11 @@ const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, shadowMapCount
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, shadowMaps) == 0x148);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, __focusShadowMaps) == 0x160);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, frameIndex) == 0x520);
-const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, casterCandidates) == 0x528);
-const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, casterCandidateCount) == 0x538);
+const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, __casterCandidates) == 0x528);
+const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, __casterCandidateCount) == 0x538);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, biasScale) == 0x540);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, screenRect) == 0x544);
-const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, sceneIndex) == 0x554);
+const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, __sceneIndex) == 0x554);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, focusShadowsActive) == 0x558);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, __tanHalfFovX) == 0x560);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, __tanHalfFovY) == 0x564);
@@ -1022,7 +1044,8 @@ pub struct BSShadowLight {
     #[doc(hidden)]
     pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base BSLight
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined4`, base BSLight
     #[doc(hidden)]
     pub __field_28: [u8; 4],
@@ -1074,16 +1097,19 @@ pub struct BSShadowLight {
     pub frameIndex: u32,
     unknown_524: [u8; 4],
     /// +0x528 `class:BSTArray`, semantic; objects inside the light's sphere/portal set, collected by UpdateLight, culled as casters by the map cull and released after the draw (medium)
-    pub casterCandidates: [u8; 16],
+    #[doc(hidden)]
+    pub __casterCandidates: [u8; 16],
     /// +0x538 `u32`, semantic; size of +0x528 (high)
-    pub casterCandidateCount: u32,
+    #[doc(hidden)]
+    pub __casterCandidateCount: [u8; 4],
     unknown_53C: [u8; 4],
     /// +0x540 `float`, ctor store, semantic, runtime; shadow depth bias scale (fShadowBiasScale; the sun uses 60) (high)
     pub biasScale: f32,
     /// +0x544 `u32`, semantic; pixel rect of the light sphere on screen: left +0x544, right +0x548, top +0x54c, bottom +0x550 (medium)
     pub screenRect: [u8; 16],
     /// +0x554 `u32`, semantic; index into g_ShadowSceneNode[] whose root a light without candidates culls (medium)
-    pub sceneIndex: u32,
+    #[doc(hidden)]
+    pub __sceneIndex: [u8; 4],
     /// +0x558 `undefined1`, ctor store, semantic, runtime; whether this frame renders the focus shadow maps (high)
     pub focusShadowsActive: u8,
     unknown_559: [u8; 7],
@@ -1095,7 +1121,7 @@ const _: () = assert!(core::mem::offset_of!(BSShadowLight, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSShadowLight, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSShadowLight, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, __field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, __portalStrictCull) == 0x47);
@@ -1114,11 +1140,11 @@ const _: () = assert!(core::mem::offset_of!(BSShadowLight, shadowMapCount) == 0x
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, shadowMaps) == 0x148);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, focusShadowMaps) == 0x160);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, frameIndex) == 0x520);
-const _: () = assert!(core::mem::offset_of!(BSShadowLight, casterCandidates) == 0x528);
-const _: () = assert!(core::mem::offset_of!(BSShadowLight, casterCandidateCount) == 0x538);
+const _: () = assert!(core::mem::offset_of!(BSShadowLight, __casterCandidates) == 0x528);
+const _: () = assert!(core::mem::offset_of!(BSShadowLight, __casterCandidateCount) == 0x538);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, biasScale) == 0x540);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, screenRect) == 0x544);
-const _: () = assert!(core::mem::offset_of!(BSShadowLight, sceneIndex) == 0x554);
+const _: () = assert!(core::mem::offset_of!(BSShadowLight, __sceneIndex) == 0x554);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, focusShadowsActive) == 0x558);
 
 /// `BSShadowParabolicLight`: size 0x560 (exact, medium); primary base `BSShadowLight`.
@@ -1139,7 +1165,8 @@ pub struct BSShadowParabolicLight {
     #[doc(hidden)]
     pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base BSLight
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined4`, base BSLight
     #[doc(hidden)]
     pub __field_28: [u8; 4],
@@ -1192,16 +1219,19 @@ pub struct BSShadowParabolicLight {
     pub frameIndex: u32,
     unknown_524: [u8; 4],
     /// +0x528 `class:BSTArray`, base BSShadowLight, semantic; objects inside the light's sphere/portal set, collected by UpdateLight, culled as casters by the map cull and released after the draw (medium)
-    pub casterCandidates: [u8; 16],
+    #[doc(hidden)]
+    pub __casterCandidates: [u8; 16],
     /// +0x538 `u32`, base BSShadowLight, semantic; size of +0x528 (high)
-    pub casterCandidateCount: u32,
+    #[doc(hidden)]
+    pub __casterCandidateCount: [u8; 4],
     unknown_53C: [u8; 4],
     /// +0x540 `float`, base BSShadowLight, semantic; shadow depth bias scale (fShadowBiasScale; the sun uses 60) (high)
     pub biasScale: f32,
     /// +0x544 `u32`, base BSShadowLight, semantic; pixel rect of the light sphere on screen: left +0x544, right +0x548, top +0x54c, bottom +0x550 (medium)
     pub screenRect: [u8; 16],
     /// +0x554 `u32`, base BSShadowLight, semantic; index into g_ShadowSceneNode[] whose root a light without candidates culls (medium)
-    pub sceneIndex: u32,
+    #[doc(hidden)]
+    pub __sceneIndex: [u8; 4],
     /// +0x558 `undefined1`, base BSShadowLight, semantic; whether this frame renders the focus shadow maps (high)
     pub focusShadowsActive: u8,
     unknown_559: [u8; 7],
@@ -1213,7 +1243,7 @@ const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, __vftable) =
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, __field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, __portalStrictCull) == 0x47);
@@ -1232,25 +1262,25 @@ const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, shadowMapCou
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, shadowMaps) == 0x148);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, __focusShadowMaps) == 0x160);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, frameIndex) == 0x520);
-const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, casterCandidates) == 0x528);
-const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, casterCandidateCount) == 0x538);
+const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, __casterCandidates) == 0x528);
+const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, __casterCandidateCount) == 0x538);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, biasScale) == 0x540);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, screenRect) == 0x544);
-const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, sceneIndex) == 0x554);
+const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, __sceneIndex) == 0x554);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, focusShadowsActive) == 0x558);
 
 /// `NiAVObject`: size 0x110 (exact, medium); primary base `NiObjectNET`.
 /// Meaning: scene graph object: parent, transforms, bound and the flag word every culling process tests (medium, render pass).
 /// Evidence: lower bound field field_108 meets upper bound first own field of BSGeometry at 0x110 (soft); runtime: live BSFadeNode embeds a NiTObjectArray<NiPointer<NiAVObject>_> right at 0x110.
 /// Bases: `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiAVObject {
     /// +0x0 `vtbl:NiAVObject:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiAVObject_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -1260,13 +1290,14 @@ pub struct NiAVObject {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, ctor store, semantic, runtime; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, ctor store, semantic, runtime; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
@@ -1284,12 +1315,14 @@ pub struct NiAVObject {
     /// +0x100 `float`, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
+    unknown_10A: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1300,7 +1333,7 @@ const _: () = assert!(core::mem::offset_of!(NiAVObject, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiAVObject, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiAVObject, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiAVObject, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiAVObject, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiAVObject, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(NiAVObject, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiAVObject, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiAVObject, collisionObject) == 0x40);
@@ -1311,22 +1344,22 @@ const _: () = assert!(core::mem::offset_of!(NiAVObject, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(NiAVObject, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(NiAVObject, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(NiAVObject, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(NiAVObject, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(NiAVObject, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(NiAVObject, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(NiAVObject, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(NiAVObject, __flags2) == 0x109);
 
 /// `NiNode`: size 0x128 (exact, high); primary base `NiAVObject`.
 /// Meaning: scene graph node with an array of children (high, render pass).
 /// Evidence: runtime: 0x128 at 40 allocation sites; agrees with the static allocation sites.
 /// Bases: `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiNode {
     /// +0x0 `vtbl:NiNode:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiNode_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -1336,17 +1369,19 @@ pub struct NiNode {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
     pub world: crate::NiTransform,
     /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
@@ -1360,12 +1395,14 @@ pub struct NiNode {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
+    unknown_10A: [u8; 6],
     /// +0x110 `undefined1`, member ctor NiTObjectArray<NiPointer<NiAVObject>_>, semantic, runtime; NiTObjectArray<NiPointer<NiAVObject>>: vtable +0x110, data +0x118, capacity u16 +0x120, slots in use u16 +0x122, non-null count u16 +0x124, grow step u16 +0x126 (high)
     pub children: [u8; 24],
     #[doc(hidden)]
@@ -1378,34 +1415,34 @@ const _: () = assert!(core::mem::offset_of!(NiNode, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiNode, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiNode, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiNode, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiNode, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiNode, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(NiNode, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiNode, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiNode, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(NiNode, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiNode, __local) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiNode, world) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(NiNode, previousWorld) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(NiNode, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(NiNode, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(NiNode, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(NiNode, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(NiNode, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(NiNode, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(NiNode, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(NiNode, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(NiNode, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(NiNode, children) == 0x110);
 
 /// `NiSkinInstance`: size 0x88 (exact, high); primary base `NiObject`.
 /// Meaning: per-geometry skinning state: bone pointers and the once-per-frame bone matrix palette (high, render pass).
 /// Evidence: runtime: 0x88 at 2 allocation sites; agrees with the static allocation sites.
 /// Bases: `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiSkinInstance {
     /// +0x0 `vtbl:NiSkinInstance:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSkinInstance_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `ptr:NiSkinData`, semantic; bind data: bone count at +0x58, per-bone transforms at +0x50 (0x58 each) (high)
     pub skinData: *mut crate::NiSkinData,
     /// +0x18 `ptr:NiSkinPartition`, semantic; the partitions slot 37 draws (high)
@@ -1421,7 +1458,8 @@ pub struct NiSkinInstance {
     /// +0x3C `undefined4`, semantic; bone count of the last build (high)
     pub paletteBoneCount: u32,
     /// +0x40 `undefined4`, semantic; float4 rows per bone (always 3) (medium)
-    pub paletteRowsPerBone: u32,
+    #[doc(hidden)]
+    pub __paletteRowsPerBone: [u8; 4],
     /// +0x44 `undefined4`, semantic; byte capacity of the two palette buffers (high)
     pub paletteCapacity: u32,
     /// +0x48 `pointer`, semantic; bone matrix palette of the current frame (3 rows of 4 floats per bone) (high)
@@ -1431,7 +1469,8 @@ pub struct NiSkinInstance {
     /// +0x58 `undefined8`, semantic; unknown, zeroed by both ctors (low)
     pub field58: u64,
     /// +0x60 `undefined1`, semantic; serialises palette builds (the skin can be drawn from several threads) (high)
-    pub paletteLock: [u8; 40],
+    #[doc(hidden)]
+    pub __paletteLock: [u8; 40],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1445,12 +1484,12 @@ const _: () = assert!(core::mem::offset_of!(NiSkinInstance, boneNodes) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiSkinInstance, boneWorldTransforms) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiSkinInstance, paletteFrame) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiSkinInstance, paletteBoneCount) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(NiSkinInstance, paletteRowsPerBone) == 0x40);
+const _: () = assert!(core::mem::offset_of!(NiSkinInstance, __paletteRowsPerBone) == 0x40);
 const _: () = assert!(core::mem::offset_of!(NiSkinInstance, paletteCapacity) == 0x44);
 const _: () = assert!(core::mem::offset_of!(NiSkinInstance, palette) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiSkinInstance, previousPalette) == 0x50);
 const _: () = assert!(core::mem::offset_of!(NiSkinInstance, field58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(NiSkinInstance, paletteLock) == 0x60);
+const _: () = assert!(core::mem::offset_of!(NiSkinInstance, __paletteLock) == 0x60);
 
 /// `ShaderPropertyLightData`: size 0x28 (exact).
 /// Meaning: the light record BSShaderProperty+0x70 points at (medium, render pass).
@@ -1470,48 +1509,55 @@ const _: () = assert!(core::mem::offset_of!(ShaderPropertyLightData, receiverMas
 /// `ShadowMapData`: size 0xF0 (exact).
 /// Meaning: one shadow map of a light: camera, accumulator, depth target slice, viewport and culler (high, render pass).
 /// Evidence: one shadow map of a light: camera, accumulator, depth target slice, viewport and culler; record of BSShadowLight.shadowMaps and focusShadowMaps; run-render2 sunmaps-tp/fp.bin: the sun's two cascade records.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct ShadowMapData {
     /// +0x0 `float`, semantic; world to shadow-map texture matrix written after the draw (medium)
-    pub worldToShadow: [u8; 64],
+    #[doc(hidden)]
+    pub __worldToShadow: [u8; 64],
     /// +0x40 `ptr:NiCamera`, semantic; the map's camera (the cascade or hemisphere view) (high)
     pub camera: *mut crate::NiCamera,
     /// +0x48 `ptr:BSShaderAccumulator`, semantic; the accumulator the map's casters are gathered into (high)
     pub accumulator: *mut crate::BSShaderAccumulator,
-    pub unknown_50: [u8; 4],
+    unknown_50: [u8; 4],
     /// +0x54 `undefined4`, semantic; depth-stencil target id while the map renders (2 cascades, 3 the low-resolution pre-pass, 4 focus and local maps), -1 when unassigned (high)
     pub depthTarget: u32,
     /// +0x58 `undefined4`, semantic; array slice of the depth target (the cascade index for target 2, a slot from the free mask for target 4) (high)
-    pub slice: u32,
+    #[doc(hidden)]
+    pub __slice: [u8; 4],
     /// +0x5C `class:NiPlane`, semantic; view-space plane through eye + forward*cascadeNear[i], normal = camera forward (high); retyped float -> class:NiPlane: pass 12g: 0x157f080 MakePlaneFromNormalAndPoint(camera forward, eye + fwd*near_i) into it
-    pub splitNearPlane: crate::NiPlane,
+    #[doc(hidden)]
+    pub __splitNearPlane: [u8; 16],
     /// +0x6C `class:NiPlane`, semantic; plane through eye + forward*cascadeFar[i], normal = -forward (high); retyped float -> class:NiPlane: pass 12g: 0x157f080 MakePlaneFromNormalAndPoint(-forward, eye + fwd*far_i)
-    pub splitFarPlane: crate::NiPlane,
-    pub unknown_7C: [u8; 80],
+    #[doc(hidden)]
+    pub __splitFarPlane: [u8; 16],
+    unknown_7C: [u8; 80],
     /// +0xCC `float`, semantic; quantised world-units/texel ratio of the cascade: the cascade origin is snapped to multiples of it; recomputed from the cascade extent and the target size when bDirShadowMapFullViewPort == 0 (medium)
-    pub texelScale: f32,
+    #[doc(hidden)]
+    pub __texelScale: [u8; 4],
     /// +0xD0 `undefined1`, semantic; u32 left, right, top, bottom of the map in pixels (high)
     pub viewport: [u8; 16],
     /// +0xE0 `ptr:BSCullingProcess`, semantic; per-map culling process (0x301f8) (high)
-    pub culler: *mut crate::BSCullingProcess,
+    #[doc(hidden)]
+    pub __culler: [u8; 8],
     /// +0xE8 `undefined1`, semantic; set when the target slice must be bound and cleared before the casters are drawn (medium)
-    pub clearBeforeRender: u8,
-    pub unknown_E9: [u8; 7],
+    #[doc(hidden)]
+    pub __clearBeforeRender: [u8; 1],
+    unknown_E9: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ShadowMapData>() == 0xF0);
-const _: () = assert!(core::mem::offset_of!(ShadowMapData, worldToShadow) == 0x0);
+const _: () = assert!(core::mem::offset_of!(ShadowMapData, __worldToShadow) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ShadowMapData, camera) == 0x40);
 const _: () = assert!(core::mem::offset_of!(ShadowMapData, accumulator) == 0x48);
 const _: () = assert!(core::mem::offset_of!(ShadowMapData, depthTarget) == 0x54);
-const _: () = assert!(core::mem::offset_of!(ShadowMapData, slice) == 0x58);
-const _: () = assert!(core::mem::offset_of!(ShadowMapData, splitNearPlane) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(ShadowMapData, splitFarPlane) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(ShadowMapData, texelScale) == 0xCC);
+const _: () = assert!(core::mem::offset_of!(ShadowMapData, __slice) == 0x58);
+const _: () = assert!(core::mem::offset_of!(ShadowMapData, __splitNearPlane) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(ShadowMapData, __splitFarPlane) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(ShadowMapData, __texelScale) == 0xCC);
 const _: () = assert!(core::mem::offset_of!(ShadowMapData, viewport) == 0xD0);
-const _: () = assert!(core::mem::offset_of!(ShadowMapData, culler) == 0xE0);
-const _: () = assert!(core::mem::offset_of!(ShadowMapData, clearBeforeRender) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(ShadowMapData, __culler) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(ShadowMapData, __clearBeforeRender) == 0xE8);
 
 /// `ShadowSceneNode`: size 0x308 (exact, high); primary base `NiNode`.
 /// Meaning: root of a lit scene: owns the light lists, the sun and its cascaded shadow light, the light queues and the portal graph; g_ShadowSceneNode[0] is the world (high, render pass).
@@ -1535,7 +1581,8 @@ pub struct ShadowSceneNode {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
     unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
@@ -1545,7 +1592,8 @@ pub struct ShadowSceneNode {
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
     pub world: crate::NiTransform,
     /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
@@ -1559,11 +1607,13 @@ pub struct ShadowSceneNode {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
     unknown_10A: [u8; 6],
     /// +0x110 `undefined1`, base NiNode, semantic; NiTObjectArray<NiPointer<NiAVObject>>: vtable +0x110, data +0x118, capacity u16 +0x120, slots in use u16 +0x122, non-null count u16 +0x124, grow step u16 +0x126 (high)
     pub children: [u8; 24],
@@ -1583,11 +1633,14 @@ pub struct ShadowSceneNode {
     #[doc(hidden)]
     pub __lightQueueLock: [u8; 8],
     /// +0x1B0 `class:BSTArray`, semantic; objects leaving the scene: a geometry is unlinked from its shader property's light list (+0x128 -> +0x70), a node has its subtree's lists cleared (medium)
-    pub pendingGeometryDetach: crate::BSTArray,
+    #[doc(hidden)]
+    pub __pendingGeometryDetach: [u8; 24],
     /// +0x1C8 `class:BSTArray`, semantic; objects whose light lists are rebuilt against every scene light (flag 0) (medium)
-    pub pendingGeometryRelight: crate::BSTArray,
+    #[doc(hidden)]
+    pub __pendingGeometryRelight: [u8; 24],
     /// +0x1E0 `class:BSTArray`, semantic; the same with flag 1: on the small-node path only lights with +0x5c != 0xff (active this frame) are considered (low)
-    pub pendingGeometryRelightActive: crate::BSTArray,
+    #[doc(hidden)]
+    pub __pendingGeometryRelightActive: [u8; 24],
     /// +0x1F8 `undefined8`, semantic; BSSpinLock for +0x1b0/+0x1c8/+0x1e0 (high)
     #[doc(hidden)]
     pub __geometryQueueLock: [u8; 8],
@@ -1650,20 +1703,20 @@ const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, __local) == 0x48);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, world) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, previousWorld) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, children) == 0x110);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, lights) == 0x130);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, shadowLights) == 0x148);
@@ -1671,9 +1724,9 @@ const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, __pendingLightAdds)
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, pendingLightRemovals) == 0x178);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, pendingLightUpdates) == 0x190);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, __lightQueueLock) == 0x1A8);
-const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, pendingGeometryDetach) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, pendingGeometryRelight) == 0x1C8);
-const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, pendingGeometryRelightActive) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, __pendingGeometryDetach) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, __pendingGeometryRelight) == 0x1C8);
+const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, __pendingGeometryRelightActive) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, __geometryQueueLock) == 0x1F8);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, sunLight) == 0x200);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, field_208) == 0x208);

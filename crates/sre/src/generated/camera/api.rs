@@ -470,6 +470,16 @@ impl crate::ActorMagicCaster {
     pub fn actor(&self) -> Option<&crate::Actor> { unsafe { { self.actor }.as_ref() } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u32 { unsafe { member!(this, "ActorMagicCaster.field_18", 0x18, u32) } }
+    /// `ActorMagicCaster::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u32 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u32) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u32 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_field_58(this: *const Self) -> *mut u64 { unsafe { member!(this, "ActorMagicCaster.field_58", 0x58, u64) } }
     /// `ActorMagicCaster::field_58`, at +0x58 on 1.7.104.
     #[inline]
@@ -739,6 +749,27 @@ impl crate::BGSAcousticSpaceListener {
     pub unsafe fn vfunc_8(&self, collisionEvent: *mut c_void) -> bool { unsafe { virtual_function!(self, 8, (*const Self, *mut c_void) -> bool)(core::ptr::from_ref(self), collisionEvent) } }
 }
 
+impl crate::BGSBodyPart {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_nodeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BGSBodyPart.nodeName", 0x0, crate::BSFixedString) } }
+    /// `BGSBodyPart::nodeName`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn nodeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_nodeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn nodeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_nodeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_type_(this: *const Self) -> *mut u8 { unsafe { member!(this, "BGSBodyPart.type", 0x7D, u8) } }
+    /// `BGSBodyPart::type`, at +0x7D on 1.7.104.
+    #[inline]
+    pub fn type_(&self) -> u8 { unsafe { Self::__member_type_(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_type_(&mut self, value: u8) { unsafe { Self::__member_type_(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn type__ptr(&self) -> *mut u8 { Self::__member_type_(core::ptr::from_ref(self)) }
+}
+
 impl crate::BGSBodyPartData {
     /// The `BGSPreloadable` base at +0x48.
     #[inline]
@@ -758,6 +789,14 @@ impl crate::BGSBodyPartData {
     /// `BGSBodyPart* (const BGSBodyPartData* this, i32 partIndex)`
     #[inline]
     pub fn get_part(&self, partIndex: i32) -> Option<&'static crate::BGSBodyPart> { unsafe { function!(23473, (*const Self, i32) -> Option<&'static crate::BGSBodyPart>)(core::ptr::from_ref(self), partIndex) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_model(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BGSBodyPartData.model", 0x28, crate::BSFixedString) } }
+    /// `BGSBodyPartData::model`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn model(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_model(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn model_ptr(&self) -> *mut crate::BSFixedString { Self::__member_model(core::ptr::from_ref(self)) }
 }
 
 impl crate::BGSCameraPath {
@@ -1060,6 +1099,26 @@ impl crate::BGSCameraShot {
     pub fn source_files(&self) -> Option<&crate::TESFileArray> { unsafe { { self.sourceFiles }.as_ref() } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_cutAway(this: *const Self) -> *mut u8 { unsafe { member!(this, "BGSCameraShot.cutAway", 0xB1, u8) } }
+    /// `BGSCameraShot::cutAway`, at +0xB1 on 1.7.104.
+    #[inline]
+    pub fn cutAway(&self) -> u8 { unsafe { Self::__member_cutAway(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_cutAway(&mut self, value: u8) { unsafe { Self::__member_cutAway(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn cutAway_ptr(&self) -> *mut u8 { Self::__member_cutAway(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_minTime(this: *const Self) -> *mut f32 { unsafe { member!(this, "BGSCameraShot.minTime", 0x78, f32) } }
+    /// `BGSCameraShot::minTime`, at +0x78 on 1.7.104.
+    #[inline]
+    pub fn minTime(&self) -> f32 { unsafe { Self::__member_minTime(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_minTime(&mut self, value: f32) { unsafe { Self::__member_minTime(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn minTime_ptr(&self) -> *mut f32 { Self::__member_minTime(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_pad1B(this: *const Self) -> *mut [u8; 5] { unsafe { member!(this, "BGSCameraShot.pad1B", 0x1B, [u8; 5]) } }
     /// `BGSCameraShot::pad1B`, at +0x1B on 1.7.104.
     #[inline]
@@ -1098,6 +1157,69 @@ impl crate::BGSCameraShot {
     pub fn set_padB2(&mut self, value: [u8; 6]) { unsafe { Self::__member_padB2(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn padB2_ptr(&self) -> *mut [u8; 6] { Self::__member_padB2(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_projectileCutDistance(this: *const Self) -> *mut f32 { unsafe { member!(this, "BGSCameraShot.projectileCutDistance", 0x80, f32) } }
+    /// `BGSCameraShot::projectileCutDistance`, at +0x80 on 1.7.104.
+    #[inline]
+    pub fn projectileCutDistance(&self) -> f32 { unsafe { Self::__member_projectileCutDistance(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_projectileCutDistance(&mut self, value: f32) { unsafe { Self::__member_projectileCutDistance(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn projectileCutDistance_ptr(&self) -> *mut f32 { Self::__member_projectileCutDistance(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_target(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSCameraShot.target", 0x60, u32) } }
+    /// `BGSCameraShot::target`, at +0x60 on 1.7.104.
+    #[inline]
+    pub fn target(&self) -> u32 { unsafe { Self::__member_target(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_target(&mut self, value: u32) { unsafe { Self::__member_target(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn target_ptr(&self) -> *mut u32 { Self::__member_target(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_targetTimeMult(this: *const Self) -> *mut f32 { unsafe { member!(this, "BGSCameraShot.targetTimeMult", 0x6C, f32) } }
+    /// `BGSCameraShot::targetTimeMult`, at +0x6C on 1.7.104.
+    #[inline]
+    pub fn targetTimeMult(&self) -> f32 { unsafe { Self::__member_targetTimeMult(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_targetTimeMult(&mut self, value: f32) { unsafe { Self::__member_targetTimeMult(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn targetTimeMult_ptr(&self) -> *mut f32 { Self::__member_targetTimeMult(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSEffectShaderData {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_nodeFilter(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSEffectShaderData.nodeFilter", 0x8, *mut c_void) } }
+    /// `BSEffectShaderData::nodeFilter`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn nodeFilter(&self) -> *mut c_void { unsafe { Self::__member_nodeFilter(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_nodeFilter(&mut self, value: *mut c_void) { unsafe { Self::__member_nodeFilter(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn nodeFilter_ptr(&self) -> *mut *mut c_void { Self::__member_nodeFilter(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_refCount(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSEffectShaderData.refCount", 0x0, u32) } }
+    /// `BSEffectShaderData::refCount`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn refCount(&self) -> u32 { unsafe { Self::__member_refCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_refCount(&mut self, value: u32) { unsafe { Self::__member_refCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn refCount_ptr(&self) -> *mut u32 { Self::__member_refCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_textures(this: *const Self) -> *mut [u8; 24] { unsafe { member!(this, "BSEffectShaderData.textures", 0x10, [u8; 24]) } }
+    /// `BSEffectShaderData::textures`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn textures(&self) -> [u8; 24] { unsafe { Self::__member_textures(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_textures(&mut self, value: [u8; 24]) { unsafe { Self::__member_textures(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn textures_ptr(&self) -> *mut [u8; 24] { Self::__member_textures(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSFaceGenKeyframeMultiple {
@@ -1161,6 +1283,34 @@ impl crate::BSFlattenedBoneTree {
     pub fn bones(&self) -> Option<&crate::FlatBone> { unsafe { { self.bones }.as_ref() } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_extraDataCapacity(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSFlattenedBoneTree.extraDataCapacity", 0x2A, u16) } }
+    /// `BSFlattenedBoneTree::extraDataCapacity`, at +0x2A on 1.7.104.
+    #[inline]
+    pub fn extraDataCapacity(&self) -> u16 { unsafe { Self::__member_extraDataCapacity(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_extraDataCapacity(&mut self, value: u16) { unsafe { Self::__member_extraDataCapacity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn extraDataCapacity_ptr(&self) -> *mut u16 { Self::__member_extraDataCapacity(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_flags2(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSFlattenedBoneTree.flags2", 0x109, u8) } }
+    /// `BSFlattenedBoneTree::flags2`, at +0x109 on 1.7.104.
+    #[inline]
+    pub fn flags2(&self) -> u8 { unsafe { Self::__member_flags2(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_flags2(&mut self, value: u8) { unsafe { Self::__member_flags2(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn flags2_ptr(&self) -> *mut u8 { Self::__member_flags2(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_local(this: *const Self) -> *mut crate::NiTransform { unsafe { member!(this, "BSFlattenedBoneTree.local", 0x48, crate::NiTransform) } }
+    /// `BSFlattenedBoneTree::local`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn local(&self) -> &crate::NiTransform { unsafe { &*Self::__member_local(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn local_ptr(&self) -> *mut crate::NiTransform { Self::__member_local(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_nameMap(this: *const Self) -> *mut [u8; 48] { unsafe { member!(this, "BSFlattenedBoneTree.nameMap", 0x138, [u8; 48]) } }
     /// `BSFlattenedBoneTree::nameMap`, at +0x138 on 1.7.104.
     #[inline]
@@ -1169,6 +1319,16 @@ impl crate::BSFlattenedBoneTree {
     pub fn set_nameMap(&mut self, value: [u8; 48]) { unsafe { Self::__member_nameMap(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn nameMap_ptr(&self) -> *mut [u8; 48] { Self::__member_nameMap(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_previousWorldFrame(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSFlattenedBoneTree.previousWorldFrame", 0x104, u32) } }
+    /// `BSFlattenedBoneTree::previousWorldFrame`, at +0x104 on 1.7.104.
+    #[inline]
+    pub fn previousWorldFrame(&self) -> u32 { unsafe { Self::__member_previousWorldFrame(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_previousWorldFrame(&mut self, value: u32) { unsafe { Self::__member_previousWorldFrame(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn previousWorldFrame_ptr(&self) -> *mut u32 { Self::__member_previousWorldFrame(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSFrustumFOVController {
@@ -1874,6 +2034,46 @@ impl crate::BipedAnim {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self, owner: *mut crate::TESObjectREFR, root: *mut crate::NiNode) -> *mut Self { unsafe { function!(15655, (*const Self, *mut crate::TESObjectREFR, *mut crate::NiNode) -> *mut Self)(core::ptr::from_ref(self), owner, root) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_bufferedObjects(this: *const Self) -> *mut [u8; 5040] { unsafe { member!(this, "BipedAnim.bufferedObjects", 0x13C0, [u8; 5040]) } }
+    /// `BipedAnim::bufferedObjects`, at +0x13C0 on 1.7.104.
+    #[inline]
+    pub fn bufferedObjects(&self) -> [u8; 5040] { unsafe { Self::__member_bufferedObjects(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_bufferedObjects(&mut self, value: [u8; 5040]) { unsafe { Self::__member_bufferedObjects(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn bufferedObjects_ptr(&self) -> *mut [u8; 5040] { Self::__member_bufferedObjects(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_ownerHandle(this: *const Self) -> *mut u32 { unsafe { member!(this, "BipedAnim.ownerHandle", 0x2770, u32) } }
+    /// `BipedAnim::ownerHandle`, at +0x2770 on 1.7.104.
+    #[inline]
+    pub fn ownerHandle(&self) -> u32 { unsafe { Self::__member_ownerHandle(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_ownerHandle(&mut self, value: u32) { unsafe { Self::__member_ownerHandle(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn ownerHandle_ptr(&self) -> *mut u32 { Self::__member_ownerHandle(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_refCount(this: *const Self) -> *mut u32 { unsafe { member!(this, "BipedAnim.refCount", 0x0, u32) } }
+    /// `BipedAnim::refCount`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn refCount(&self) -> u32 { unsafe { Self::__member_refCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_refCount(&mut self, value: u32) { unsafe { Self::__member_refCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn refCount_ptr(&self) -> *mut u32 { Self::__member_refCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_root(this: *const Self) -> *mut *mut crate::NiNode { unsafe { member!(this, "BipedAnim.root", 0x8, *mut crate::NiNode) } }
+    /// `BipedAnim::root`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn root(&self) -> *mut crate::NiNode { unsafe { Self::__member_root(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_root(&mut self, value: *mut crate::NiNode) { unsafe { Self::__member_root(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn root_ptr(&self) -> *mut *mut crate::NiNode { Self::__member_root(core::ptr::from_ref(self)) }
 }
 
 impl crate::BipedObject {
@@ -1881,22 +2081,82 @@ impl crate::BipedObject {
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn addon(&self) -> Option<&crate::TESObjectARMA> { unsafe { { self.addon }.as_ref() } }
+    pub fn addon(&self) -> Option<&crate::TESObjectARMA> { unsafe { Self::__member_addon(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
     /// `BipedObject::item` at +0x0: the equipped form (armor 0x1a, weapon 0x29, light 0x1f, ammo 0x2a, or the addon)
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn item(&self) -> Option<&crate::TESForm> { unsafe { { self.item }.as_ref() } }
+    pub fn item(&self) -> Option<&crate::TESForm> { unsafe { Self::__member_item(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
     /// `BipedObject::model` at +0x10: the model component used to load the part (slot 4 = path)
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn model(&self) -> Option<&crate::TESModel> { unsafe { { self.model }.as_ref() } }
+    pub fn model(&self) -> Option<&crate::TESModel> { unsafe { Self::__member_model(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
     /// `BipedObject::partClone` at +0x20: the attached 3D clone of the part (refcounted NiPointer)
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn part_clone(&self) -> Option<&crate::NiAVObject> { unsafe { { self.partClone }.as_ref() } }
+    pub fn part_clone(&self) -> Option<&crate::NiAVObject> { unsafe { Self::__member_partClone(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_addon(this: *const Self) -> *mut *mut crate::TESObjectARMA { unsafe { member!(this, "BipedObject.addon", 0x8, *mut crate::TESObjectARMA) } }
+    /// `BipedObject::addon`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn addon_field(&self) -> *mut crate::TESObjectARMA { unsafe { Self::__member_addon(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_addon(&mut self, value: *mut crate::TESObjectARMA) { unsafe { Self::__member_addon(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn addon_ptr(&self) -> *mut *mut crate::TESObjectARMA { Self::__member_addon(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BipedObject.field_18", 0x18, *mut c_void) } }
+    /// `BipedObject::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> *mut c_void { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: *mut c_void) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut *mut c_void { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_graphHolder(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BipedObject.graphHolder", 0x60, *mut c_void) } }
+    /// `BipedObject::graphHolder`, at +0x60 on 1.7.104.
+    #[inline]
+    pub fn graphHolder(&self) -> *mut c_void { unsafe { Self::__member_graphHolder(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_graphHolder(&mut self, value: *mut c_void) { unsafe { Self::__member_graphHolder(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn graphHolder_ptr(&self) -> *mut *mut c_void { Self::__member_graphHolder(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_item(this: *const Self) -> *mut *mut crate::TESForm { unsafe { member!(this, "BipedObject.item", 0x0, *mut crate::TESForm) } }
+    /// `BipedObject::item`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn item_field(&self) -> *mut crate::TESForm { unsafe { Self::__member_item(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_item(&mut self, value: *mut crate::TESForm) { unsafe { Self::__member_item(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn item_ptr(&self) -> *mut *mut crate::TESForm { Self::__member_item(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_model(this: *const Self) -> *mut *mut crate::TESModel { unsafe { member!(this, "BipedObject.model", 0x10, *mut crate::TESModel) } }
+    /// `BipedObject::model`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn model_field(&self) -> *mut crate::TESModel { unsafe { Self::__member_model(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_model(&mut self, value: *mut crate::TESModel) { unsafe { Self::__member_model(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn model_ptr(&self) -> *mut *mut crate::TESModel { Self::__member_model(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_partClone(this: *const Self) -> *mut *mut crate::NiAVObject { unsafe { member!(this, "BipedObject.partClone", 0x20, *mut crate::NiAVObject) } }
+    /// `BipedObject::partClone`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn partClone(&self) -> *mut crate::NiAVObject { unsafe { Self::__member_partClone(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_partClone(&mut self, value: *mut crate::NiAVObject) { unsafe { Self::__member_partClone(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn partClone_ptr(&self) -> *mut *mut crate::NiAVObject { Self::__member_partClone(core::ptr::from_ref(self)) }
 }
 
 impl crate::BleedoutCameraState {
@@ -1932,6 +2192,16 @@ impl crate::BleedoutCameraState {
     pub fn camera_control_node(&self) -> Option<&crate::NiNode> { unsafe { { self.cameraControlNode }.as_ref() } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_applyThirdPerson(this: *const Self) -> *mut u8 { unsafe { member!(this, "BleedoutCameraState.applyThirdPerson", 0xDE, u8) } }
+    /// `BleedoutCameraState::applyThirdPerson`, at +0xDE on 1.7.104.
+    #[inline]
+    pub fn applyThirdPerson(&self) -> u8 { unsafe { Self::__member_applyThirdPerson(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_applyThirdPerson(&mut self, value: u8) { unsafe { Self::__member_applyThirdPerson(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn applyThirdPerson_ptr(&self) -> *mut u8 { Self::__member_applyThirdPerson(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_followHeading(this: *const Self) -> *mut u8 { unsafe { member!(this, "BleedoutCameraState.followHeading", 0x134, u8) } }
     /// `BleedoutCameraState::followHeading`, at +0x134 on 1.7.104.
     #[inline]
@@ -1940,6 +2210,16 @@ impl crate::BleedoutCameraState {
     pub fn set_followHeading(&mut self, value: u8) { unsafe { Self::__member_followHeading(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn followHeading_ptr(&self) -> *mut u8 { Self::__member_followHeading(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_keepFreeRotation(this: *const Self) -> *mut u8 { unsafe { member!(this, "BleedoutCameraState.keepFreeRotation", 0xDF, u8) } }
+    /// `BleedoutCameraState::keepFreeRotation`, at +0xDF on 1.7.104.
+    #[inline]
+    pub fn keepFreeRotation(&self) -> u8 { unsafe { Self::__member_keepFreeRotation(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_keepFreeRotation(&mut self, value: u8) { unsafe { Self::__member_keepFreeRotation(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn keepFreeRotation_ptr(&self) -> *mut u8 { Self::__member_keepFreeRotation(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_orbitDistance(this: *const Self) -> *mut f32 { unsafe { member!(this, "BleedoutCameraState.orbitDistance", 0x10C, f32) } }
@@ -2012,6 +2292,14 @@ impl crate::BleedoutCameraState {
     pub fn pitch_ptr(&self) -> *mut f32 { Self::__member_pitch(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_recoveryStart(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "BleedoutCameraState.recoveryStart", 0x90, crate::NiPoint3) } }
+    /// `BleedoutCameraState::recoveryStart`, at +0x90 on 1.7.104.
+    #[inline]
+    pub fn recoveryStart(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_recoveryStart(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn recoveryStart_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_recoveryStart(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_soundHandle(this: *const Self) -> *mut u32 { unsafe { member!(this, "BleedoutCameraState.soundHandle", 0x128, u32) } }
     /// `BleedoutCameraState::soundHandle`, at +0x128 on 1.7.104.
     #[inline]
@@ -2060,6 +2348,16 @@ impl crate::BleedoutCameraState {
     pub fn targetOffset_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_targetOffset(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_toggleToFirstPerson(this: *const Self) -> *mut u8 { unsafe { member!(this, "BleedoutCameraState.toggleToFirstPerson", 0xDD, u8) } }
+    /// `BleedoutCameraState::toggleToFirstPerson`, at +0xDD on 1.7.104.
+    #[inline]
+    pub fn toggleToFirstPerson(&self) -> u8 { unsafe { Self::__member_toggleToFirstPerson(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_toggleToFirstPerson(&mut self, value: u8) { unsafe { Self::__member_toggleToFirstPerson(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn toggleToFirstPerson_ptr(&self) -> *mut u8 { Self::__member_toggleToFirstPerson(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_useShoulderOffsets(this: *const Self) -> *mut u8 { unsafe { member!(this, "BleedoutCameraState.useShoulderOffsets", 0xE1, u8) } }
     /// `BleedoutCameraState::useShoulderOffsets`, at +0xE1 on 1.7.104.
     #[inline]
@@ -2068,6 +2366,16 @@ impl crate::BleedoutCameraState {
     pub fn set_useShoulderOffsets(&mut self, value: u8) { unsafe { Self::__member_useShoulderOffsets(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn useShoulderOffsets_ptr(&self) -> *mut u8 { Self::__member_useShoulderOffsets(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_yaw(this: *const Self) -> *mut f32 { unsafe { member!(this, "BleedoutCameraState.yaw", 0x118, f32) } }
+    /// `BleedoutCameraState::yaw`, at +0x118 on 1.7.104.
+    #[inline]
+    pub fn yaw(&self) -> f32 { unsafe { Self::__member_yaw(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_yaw(&mut self, value: f32) { unsafe { Self::__member_yaw(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn yaw_ptr(&self) -> *mut f32 { Self::__member_yaw(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_yawOffset(this: *const Self) -> *mut f32 { unsafe { member!(this, "BleedoutCameraState.yawOffset", 0x114, f32) } }
@@ -2095,7 +2403,57 @@ impl crate::CachedRaycastData {
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn world(&self) -> Option<&crate::bhkWorld> { unsafe { { self.world }.as_ref() } }
+    pub fn world(&self) -> Option<&crate::bhkWorld> { unsafe { Self::__member_world(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_cachingPhantom(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "CachedRaycastData.cachingPhantom", 0x10, *mut c_void) } }
+    /// `CachedRaycastData::cachingPhantom`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn cachingPhantom(&self) -> *mut c_void { unsafe { Self::__member_cachingPhantom(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_cachingPhantom(&mut self, value: *mut c_void) { unsafe { Self::__member_cachingPhantom(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn cachingPhantom_ptr(&self) -> *mut *mut c_void { Self::__member_cachingPhantom(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_collectedBodies(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "CachedRaycastData.collectedBodies", 0x18, *mut c_void) } }
+    /// `CachedRaycastData::collectedBodies`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn collectedBodies(&self) -> *mut c_void { unsafe { Self::__member_collectedBodies(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_collectedBodies(&mut self, value: *mut c_void) { unsafe { Self::__member_collectedBodies(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn collectedBodies_ptr(&self) -> *mut *mut c_void { Self::__member_collectedBodies(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_collisionGroup(this: *const Self) -> *mut u32 { unsafe { member!(this, "CachedRaycastData.collisionGroup", 0x28, u32) } }
+    /// `CachedRaycastData::collisionGroup`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn collisionGroup(&self) -> u32 { unsafe { Self::__member_collisionGroup(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_collisionGroup(&mut self, value: u32) { unsafe { Self::__member_collisionGroup(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn collisionGroup_ptr(&self) -> *mut u32 { Self::__member_collisionGroup(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_everHit(this: *const Self) -> *mut u8 { unsafe { member!(this, "CachedRaycastData.everHit", 0x30, u8) } }
+    /// `CachedRaycastData::everHit`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn everHit(&self) -> u8 { unsafe { Self::__member_everHit(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_everHit(&mut self, value: u8) { unsafe { Self::__member_everHit(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn everHit_ptr(&self) -> *mut u8 { Self::__member_everHit(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_handle(this: *const Self) -> *mut u32 { unsafe { member!(this, "CachedRaycastData.handle", 0x8, u32) } }
+    /// `CachedRaycastData::handle`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn handle(&self) -> u32 { unsafe { Self::__member_handle(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_handle(&mut self, value: u32) { unsafe { Self::__member_handle(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn handle_ptr(&self) -> *mut u32 { Self::__member_handle(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_useWorldOnly(this: *const Self) -> *mut u8 { unsafe { member!(this, "CachedRaycastData.useWorldOnly", 0x2C, u8) } }
@@ -2106,6 +2464,16 @@ impl crate::CachedRaycastData {
     pub fn set_useWorldOnly(&mut self, value: u8) { unsafe { Self::__member_useWorldOnly(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn useWorldOnly_ptr(&self) -> *mut u8 { Self::__member_useWorldOnly(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_world(this: *const Self) -> *mut *mut crate::bhkWorld { unsafe { member!(this, "CachedRaycastData.world", 0x20, *mut crate::bhkWorld) } }
+    /// `CachedRaycastData::world`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn world_field(&self) -> *mut crate::bhkWorld { unsafe { Self::__member_world(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_world(&mut self, value: *mut crate::bhkWorld) { unsafe { Self::__member_world(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn world_ptr(&self) -> *mut *mut crate::bhkWorld { Self::__member_world(core::ptr::from_ref(self)) }
 }
 
 impl crate::Calendar {
@@ -2138,6 +2506,16 @@ impl crate::Calendar {
     pub fn game_hour(&self) -> Option<&crate::TESGlobal> { unsafe { { self.gameHour }.as_ref() } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_daysAdvanced(this: *const Self) -> *mut u32 { unsafe { member!(this, "Calendar.daysAdvanced", 0x38, u32) } }
+    /// `Calendar::daysAdvanced`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn daysAdvanced(&self) -> u32 { unsafe { Self::__member_daysAdvanced(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_daysAdvanced(&mut self, value: u32) { unsafe { Self::__member_daysAdvanced(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn daysAdvanced_ptr(&self) -> *mut u32 { Self::__member_daysAdvanced(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_field_3c(this: *const Self) -> *mut f32 { unsafe { member!(this, "Calendar.field_3c", 0x3C, f32) } }
     /// `Calendar::field_3c`, at +0x3C on 1.7.104.
     #[inline]
@@ -2146,6 +2524,36 @@ impl crate::Calendar {
     pub fn set_field_3c(&mut self, value: f32) { unsafe { Self::__member_field_3c(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_3c_ptr(&self) -> *mut f32 { Self::__member_field_3c(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_gameDay(this: *const Self) -> *mut *mut crate::TESGlobal { unsafe { member!(this, "Calendar.gameDay", 0x18, *mut crate::TESGlobal) } }
+    /// `Calendar::gameDay`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn gameDay(&self) -> *mut crate::TESGlobal { unsafe { Self::__member_gameDay(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_gameDay(&mut self, value: *mut crate::TESGlobal) { unsafe { Self::__member_gameDay(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn gameDay_ptr(&self) -> *mut *mut crate::TESGlobal { Self::__member_gameDay(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_gameMonth(this: *const Self) -> *mut *mut crate::TESGlobal { unsafe { member!(this, "Calendar.gameMonth", 0x10, *mut crate::TESGlobal) } }
+    /// `Calendar::gameMonth`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn gameMonth(&self) -> *mut crate::TESGlobal { unsafe { Self::__member_gameMonth(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_gameMonth(&mut self, value: *mut crate::TESGlobal) { unsafe { Self::__member_gameMonth(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn gameMonth_ptr(&self) -> *mut *mut crate::TESGlobal { Self::__member_gameMonth(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_timeScale(this: *const Self) -> *mut *mut crate::TESGlobal { unsafe { member!(this, "Calendar.timeScale", 0x30, *mut crate::TESGlobal) } }
+    /// `Calendar::timeScale`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn timeScale(&self) -> *mut crate::TESGlobal { unsafe { Self::__member_timeScale(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_timeScale(&mut self, value: *mut crate::TESGlobal) { unsafe { Self::__member_timeScale(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn timeScale_ptr(&self) -> *mut *mut crate::TESGlobal { Self::__member_timeScale(core::ptr::from_ref(self)) }
 }
 
 impl crate::CameraCasterHolder {
@@ -2158,6 +2566,26 @@ impl crate::CameraCasterHolder {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self, radius: f32) -> *mut Self { unsafe { function!(33005, (*const Self, f32) -> *mut Self)(core::ptr::from_ref(self), radius) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_castPhantom(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "CameraCasterHolder.castPhantom", 0x0, *mut c_void) } }
+    /// `CameraCasterHolder::castPhantom`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn castPhantom(&self) -> *mut c_void { unsafe { Self::__member_castPhantom(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_castPhantom(&mut self, value: *mut c_void) { unsafe { Self::__member_castPhantom(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn castPhantom_ptr(&self) -> *mut *mut c_void { Self::__member_castPhantom(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_overlapPhantom(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "CameraCasterHolder.overlapPhantom", 0x8, *mut c_void) } }
+    /// `CameraCasterHolder::overlapPhantom`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn overlapPhantom(&self) -> *mut c_void { unsafe { Self::__member_overlapPhantom(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_overlapPhantom(&mut self, value: *mut c_void) { unsafe { Self::__member_overlapPhantom(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn overlapPhantom_ptr(&self) -> *mut *mut c_void { Self::__member_overlapPhantom(core::ptr::from_ref(self)) }
 }
 
 impl crate::CameraOverrideStartHandler {
@@ -2323,6 +2751,84 @@ impl crate::CrosshairPickData {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor(&self) { unsafe { function!(26126, (*const Self))(core::ptr::from_ref(self)) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_actorHandle(this: *const Self) -> *mut u32 { unsafe { member!(this, "CrosshairPickData.actorHandle", 0x8, u32) } }
+    /// `CrosshairPickData::actorHandle`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn actorHandle(&self) -> u32 { unsafe { Self::__member_actorHandle(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_actorHandle(&mut self, value: u32) { unsafe { Self::__member_actorHandle(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn actorHandle_ptr(&self) -> *mut u32 { Self::__member_actorHandle(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_collisionGroup(this: *const Self) -> *mut u32 { unsafe { member!(this, "CrosshairPickData.collisionGroup", 0x30, u32) } }
+    /// `CrosshairPickData::collisionGroup`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn collisionGroup(&self) -> u32 { unsafe { Self::__member_collisionGroup(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_collisionGroup(&mut self, value: u32) { unsafe { Self::__member_collisionGroup(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn collisionGroup_ptr(&self) -> *mut u32 { Self::__member_collisionGroup(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_grabTargetHandle(this: *const Self) -> *mut u32 { unsafe { member!(this, "CrosshairPickData.grabTargetHandle", 0xC, u32) } }
+    /// `CrosshairPickData::grabTargetHandle`, at +0xC on 1.7.104.
+    #[inline]
+    pub fn grabTargetHandle(&self) -> u32 { unsafe { Self::__member_grabTargetHandle(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_grabTargetHandle(&mut self, value: u32) { unsafe { Self::__member_grabTargetHandle(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn grabTargetHandle_ptr(&self) -> *mut u32 { Self::__member_grabTargetHandle(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_hitObject(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "CrosshairPickData.hitObject", 0x20, *mut c_void) } }
+    /// `CrosshairPickData::hitObject`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn hitObject(&self) -> *mut c_void { unsafe { Self::__member_hitObject(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_hitObject(&mut self, value: *mut c_void) { unsafe { Self::__member_hitObject(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn hitObject_ptr(&self) -> *mut *mut c_void { Self::__member_hitObject(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_hitPoint(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "CrosshairPickData.hitPoint", 0x10, crate::NiPoint3) } }
+    /// `CrosshairPickData::hitPoint`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn hitPoint(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_hitPoint(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn hitPoint_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_hitPoint(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_phantom(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "CrosshairPickData.phantom", 0x28, *mut c_void) } }
+    /// `CrosshairPickData::phantom`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn phantom(&self) -> *mut c_void { unsafe { Self::__member_phantom(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_phantom(&mut self, value: *mut c_void) { unsafe { Self::__member_phantom(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn phantom_ptr(&self) -> *mut *mut c_void { Self::__member_phantom(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_promptActive(this: *const Self) -> *mut u8 { unsafe { member!(this, "CrosshairPickData.promptActive", 0x34, u8) } }
+    /// `CrosshairPickData::promptActive`, at +0x34 on 1.7.104.
+    #[inline]
+    pub fn promptActive(&self) -> u8 { unsafe { Self::__member_promptActive(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_promptActive(&mut self, value: u8) { unsafe { Self::__member_promptActive(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn promptActive_ptr(&self) -> *mut u8 { Self::__member_promptActive(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_targetHandle(this: *const Self) -> *mut u32 { unsafe { member!(this, "CrosshairPickData.targetHandle", 0x4, u32) } }
+    /// `CrosshairPickData::targetHandle`, at +0x4 on 1.7.104.
+    #[inline]
+    pub fn targetHandle(&self) -> u32 { unsafe { Self::__member_targetHandle(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_targetHandle(&mut self, value: u32) { unsafe { Self::__member_targetHandle(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn targetHandle_ptr(&self) -> *mut u32 { Self::__member_targetHandle(core::ptr::from_ref(self)) }
 }
 
 impl crate::DragonCameraState {
@@ -2351,6 +2857,42 @@ impl crate::DragonCameraState {
     /// Semantic field, frame pass, high; `None` while the pointer is null.
     #[inline]
     pub fn camera_control_node(&self) -> Option<&crate::NiNode> { unsafe { { self.cameraControlNode }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_applyThirdPerson(this: *const Self) -> *mut u8 { unsafe { member!(this, "DragonCameraState.applyThirdPerson", 0xDE, u8) } }
+    /// `DragonCameraState::applyThirdPerson`, at +0xDE on 1.7.104.
+    #[inline]
+    pub fn applyThirdPerson(&self) -> u8 { unsafe { Self::__member_applyThirdPerson(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_applyThirdPerson(&mut self, value: u8) { unsafe { Self::__member_applyThirdPerson(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn applyThirdPerson_ptr(&self) -> *mut u8 { Self::__member_applyThirdPerson(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_dollyFrom(this: *const Self) -> *mut crate::NiPoint2 { unsafe { member!(this, "DragonCameraState.dollyFrom", 0xFC, crate::NiPoint2) } }
+    /// `DragonCameraState::dollyFrom`, at +0xFC on 1.7.104.
+    #[inline]
+    pub fn dollyFrom(&self) -> &crate::NiPoint2 { unsafe { &*Self::__member_dollyFrom(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn dollyFrom_ptr(&self) -> *mut crate::NiPoint2 { Self::__member_dollyFrom(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_dollyTo(this: *const Self) -> *mut crate::NiPoint2 { unsafe { member!(this, "DragonCameraState.dollyTo", 0x104, crate::NiPoint2) } }
+    /// `DragonCameraState::dollyTo`, at +0x104 on 1.7.104.
+    #[inline]
+    pub fn dollyTo(&self) -> &crate::NiPoint2 { unsafe { &*Self::__member_dollyTo(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn dollyTo_ptr(&self) -> *mut crate::NiPoint2 { Self::__member_dollyTo(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_keepFreeRotation(this: *const Self) -> *mut u8 { unsafe { member!(this, "DragonCameraState.keepFreeRotation", 0xDF, u8) } }
+    /// `DragonCameraState::keepFreeRotation`, at +0xDF on 1.7.104.
+    #[inline]
+    pub fn keepFreeRotation(&self) -> u8 { unsafe { Self::__member_keepFreeRotation(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_keepFreeRotation(&mut self, value: u8) { unsafe { Self::__member_keepFreeRotation(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn keepFreeRotation_ptr(&self) -> *mut u8 { Self::__member_keepFreeRotation(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_pad0c(this: *const Self) -> *mut u32 { unsafe { member!(this, "DragonCameraState.pad0c", 0xC, u32) } }
@@ -2403,12 +2945,30 @@ impl crate::DragonCameraState {
     pub fn padF9_ptr(&self) -> *mut [u8; 3] { Self::__member_padF9(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_recoveryStart(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "DragonCameraState.recoveryStart", 0x90, crate::NiPoint3) } }
+    /// `DragonCameraState::recoveryStart`, at +0x90 on 1.7.104.
+    #[inline]
+    pub fn recoveryStart(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_recoveryStart(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn recoveryStart_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_recoveryStart(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_targetOffset(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "DragonCameraState.targetOffset", 0x5C, crate::NiPoint3) } }
     /// `DragonCameraState::targetOffset`, at +0x5C on 1.7.104.
     #[inline]
     pub fn targetOffset(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_targetOffset(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn targetOffset_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_targetOffset(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_toggleToFirstPerson(this: *const Self) -> *mut u8 { unsafe { member!(this, "DragonCameraState.toggleToFirstPerson", 0xDD, u8) } }
+    /// `DragonCameraState::toggleToFirstPerson`, at +0xDD on 1.7.104.
+    #[inline]
+    pub fn toggleToFirstPerson(&self) -> u8 { unsafe { Self::__member_toggleToFirstPerson(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_toggleToFirstPerson(&mut self, value: u8) { unsafe { Self::__member_toggleToFirstPerson(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn toggleToFirstPerson_ptr(&self) -> *mut u8 { Self::__member_toggleToFirstPerson(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_useShoulderOffsets(this: *const Self) -> *mut u8 { unsafe { member!(this, "DragonCameraState.useShoulderOffsets", 0xE1, u8) } }
@@ -2451,12 +3011,12 @@ impl crate::FirstPersonRenderContext {
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn first_person_root(&self) -> Option<&crate::NiNode> { unsafe { { self.firstPersonRoot }.as_ref() } }
+    pub fn first_person_root(&self) -> Option<&crate::NiNode> { unsafe { Self::__member_firstPersonRoot(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
     /// `FirstPersonRenderContext::sceneGraph` at +0x28: g_SceneGraph (also stored by main +0x898); ID_415032 is this field
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn scene_graph(&self) -> Option<&crate::SceneGraph> { unsafe { { self.sceneGraph }.as_ref() } }
+    pub fn scene_graph(&self) -> Option<&crate::SceneGraph> { unsafe { Self::__member_sceneGraph(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
     /// `FirstPersonRenderContext::shadowSceneNode` at +0x30: g_ShadowSceneNode
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
@@ -2466,17 +3026,25 @@ impl crate::FirstPersonRenderContext {
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn third_person_root(&self) -> Option<&crate::NiNode> { unsafe { { self.thirdPersonRoot }.as_ref() } }
+    pub fn third_person_root(&self) -> Option<&crate::NiNode> { unsafe { Self::__member_thirdPersonRoot(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_firstPersonFOV(this: *const Self) -> *mut f32 { unsafe { member!(this, "FirstPersonRenderContext.firstPersonFOV", 0xC, f32) } }
-    /// `FirstPersonRenderContext::firstPersonFOV`, at +0xC on 1.7.104.
+    pub fn __member_eyePosition(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "FirstPersonRenderContext.eyePosition", 0x0, crate::NiPoint3) } }
+    /// `FirstPersonRenderContext::eyePosition`, at +0x0 on 1.7.104.
     #[inline]
-    pub fn firstPersonFOV(&self) -> f32 { unsafe { Self::__member_firstPersonFOV(core::ptr::from_ref(self)).read_unaligned() } }
+    pub fn eyePosition(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_eyePosition(core::ptr::from_ref(self)) } }
     #[inline]
-    pub fn set_firstPersonFOV(&mut self, value: f32) { unsafe { Self::__member_firstPersonFOV(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    pub fn eyePosition_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_eyePosition(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
     #[inline]
-    pub fn firstPersonFOV_ptr(&self) -> *mut f32 { Self::__member_firstPersonFOV(core::ptr::from_ref(self)) }
+    pub fn __member_firstPersonRoot(this: *const Self) -> *mut *mut crate::NiNode { unsafe { member!(this, "FirstPersonRenderContext.firstPersonRoot", 0x18, *mut crate::NiNode) } }
+    /// `FirstPersonRenderContext::firstPersonRoot`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn firstPersonRoot(&self) -> *mut crate::NiNode { unsafe { Self::__member_firstPersonRoot(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_firstPersonRoot(&mut self, value: *mut crate::NiNode) { unsafe { Self::__member_firstPersonRoot(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn firstPersonRoot_ptr(&self) -> *mut *mut crate::NiNode { Self::__member_firstPersonRoot(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_killCam(this: *const Self) -> *mut u8 { unsafe { member!(this, "FirstPersonRenderContext.killCam", 0x50, u8) } }
@@ -2489,6 +3057,16 @@ impl crate::FirstPersonRenderContext {
     pub fn killCam_ptr(&self) -> *mut u8 { Self::__member_killCam(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_sceneGraph(this: *const Self) -> *mut *mut crate::SceneGraph { unsafe { member!(this, "FirstPersonRenderContext.sceneGraph", 0x28, *mut crate::SceneGraph) } }
+    /// `FirstPersonRenderContext::sceneGraph`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn sceneGraph(&self) -> *mut crate::SceneGraph { unsafe { Self::__member_sceneGraph(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_sceneGraph(&mut self, value: *mut crate::SceneGraph) { unsafe { Self::__member_sceneGraph(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn sceneGraph_ptr(&self) -> *mut *mut crate::SceneGraph { Self::__member_sceneGraph(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_shadowSceneNode(this: *const Self) -> *mut *mut crate::ShadowSceneNode { unsafe { member!(this, "FirstPersonRenderContext.shadowSceneNode", 0x30, *mut crate::ShadowSceneNode) } }
     /// `FirstPersonRenderContext::shadowSceneNode`, at +0x30 on 1.7.104.
     #[inline]
@@ -2497,6 +3075,36 @@ impl crate::FirstPersonRenderContext {
     pub fn set_shadowSceneNode(&mut self, value: *mut crate::ShadowSceneNode) { unsafe { Self::__member_shadowSceneNode(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn shadowSceneNode_ptr(&self) -> *mut *mut crate::ShadowSceneNode { Self::__member_shadowSceneNode(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_thirdPersonRoot(this: *const Self) -> *mut *mut crate::NiNode { unsafe { member!(this, "FirstPersonRenderContext.thirdPersonRoot", 0x20, *mut crate::NiNode) } }
+    /// `FirstPersonRenderContext::thirdPersonRoot`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn thirdPersonRoot(&self) -> *mut crate::NiNode { unsafe { Self::__member_thirdPersonRoot(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_thirdPersonRoot(&mut self, value: *mut crate::NiNode) { unsafe { Self::__member_thirdPersonRoot(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn thirdPersonRoot_ptr(&self) -> *mut *mut crate::NiNode { Self::__member_thirdPersonRoot(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_unk51(this: *const Self) -> *mut u8 { unsafe { member!(this, "FirstPersonRenderContext.unk51", 0x51, u8) } }
+    /// `FirstPersonRenderContext::unk51`, at +0x51 on 1.7.104.
+    #[inline]
+    pub fn unk51(&self) -> u8 { unsafe { Self::__member_unk51(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_unk51(&mut self, value: u8) { unsafe { Self::__member_unk51(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn unk51_ptr(&self) -> *mut u8 { Self::__member_unk51(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_worldFOV(this: *const Self) -> *mut f32 { unsafe { member!(this, "FirstPersonRenderContext.worldFOV", 0x10, f32) } }
+    /// `FirstPersonRenderContext::worldFOV`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn worldFOV(&self) -> f32 { unsafe { Self::__member_worldFOV(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_worldFOV(&mut self, value: f32) { unsafe { Self::__member_worldFOV(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn worldFOV_ptr(&self) -> *mut f32 { Self::__member_worldFOV(core::ptr::from_ref(self)) }
 }
 
 impl crate::FirstPersonState {
@@ -2546,17 +3154,37 @@ impl crate::FirstPersonState {
     ///
     /// Semantic field, frame pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn camera(&self) -> Option<&crate::PlayerCamera> { unsafe { { self.camera }.as_ref() } }
+    pub fn camera(&self) -> Option<&crate::PlayerCamera> { unsafe { Self::__member_camera(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
     /// `FirstPersonState::cameraControlNode` at +0x60: 'Camera Control' node of the first-person skeleton (FOV offset and image space, as ThirdPersonState+0x38)
     ///
     /// Semantic field, frame pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn camera_control_node(&self) -> Option<&crate::NiNode> { unsafe { { self.cameraControlNode }.as_ref() } }
+    pub fn camera_control_node(&self) -> Option<&crate::NiNode> { unsafe { Self::__member_cameraControlNode(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
     /// `FirstPersonState::cameraNode` at +0x58: first-person camera node: world rotation (+0x7c) and translation (+0xa0) are the camera pose
     ///
     /// Semantic field, frame pass, high; `None` while the pointer is null.
     #[inline]
     pub fn camera_node(&self) -> Option<&crate::NiAVObject> { unsafe { { self.cameraNode }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_camera(this: *const Self) -> *mut *mut crate::PlayerCamera { unsafe { member!(this, "FirstPersonState.camera", 0x10, *mut crate::PlayerCamera) } }
+    /// `FirstPersonState::camera`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn camera_field(&self) -> *mut crate::PlayerCamera { unsafe { Self::__member_camera(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_camera(&mut self, value: *mut crate::PlayerCamera) { unsafe { Self::__member_camera(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn camera_ptr(&self) -> *mut *mut crate::PlayerCamera { Self::__member_camera(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_cameraControlNode(this: *const Self) -> *mut *mut crate::NiNode { unsafe { member!(this, "FirstPersonState.cameraControlNode", 0x60, *mut crate::NiNode) } }
+    /// `FirstPersonState::cameraControlNode`, at +0x60 on 1.7.104.
+    #[inline]
+    pub fn cameraControlNode(&self) -> *mut crate::NiNode { unsafe { Self::__member_cameraControlNode(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_cameraControlNode(&mut self, value: *mut crate::NiNode) { unsafe { Self::__member_cameraControlNode(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn cameraControlNode_ptr(&self) -> *mut *mut crate::NiNode { Self::__member_cameraControlNode(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_cameraOverride(this: *const Self) -> *mut u8 { unsafe { member!(this, "FirstPersonState.cameraOverride", 0x88, u8) } }
@@ -2595,6 +3223,14 @@ impl crate::FirstPersonState {
     pub fn set_id(&mut self, value: u32) { unsafe { Self::__member_id(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn id_ptr(&self) -> *mut u32 { Self::__member_id(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_inputHandler(this: *const Self) -> *mut crate::PlayerInputHandler { unsafe { member!(this, "FirstPersonState.inputHandler", 0x20, crate::PlayerInputHandler) } }
+    /// `FirstPersonState::inputHandler`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn inputHandler(&self) -> &crate::PlayerInputHandler { unsafe { &*Self::__member_inputHandler(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn inputHandler_ptr(&self) -> *mut crate::PlayerInputHandler { Self::__member_inputHandler(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_laggedPitchOffset(this: *const Self) -> *mut f32 { unsafe { member!(this, "FirstPersonState.laggedPitchOffset", 0x74, f32) } }
@@ -2695,6 +3331,16 @@ impl crate::FirstPersonState {
     pub fn set_refCount(&mut self, value: u32) { unsafe { Self::__member_refCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn refCount_ptr(&self) -> *mut u32 { Self::__member_refCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_sittingYaw(this: *const Self) -> *mut f32 { unsafe { member!(this, "FirstPersonState.sittingYaw", 0x68, f32) } }
+    /// `FirstPersonState::sittingYaw`, at +0x68 on 1.7.104.
+    #[inline]
+    pub fn sittingYaw(&self) -> f32 { unsafe { Self::__member_sittingYaw(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_sittingYaw(&mut self, value: f32) { unsafe { Self::__member_sittingYaw(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn sittingYaw_ptr(&self) -> *mut f32 { Self::__member_sittingYaw(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_skipFrames(this: *const Self) -> *mut u32 { unsafe { member!(this, "FirstPersonState.skipFrames", 0x84, u32) } }
@@ -3231,7 +3877,51 @@ impl crate::FlatBone {
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn node(&self) -> Option<&crate::NiNode> { unsafe { { self.node }.as_ref() } }
+    pub fn node(&self) -> Option<&crate::NiNode> { unsafe { Self::__member_node(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_local(this: *const Self) -> *mut crate::NiTransform { unsafe { member!(this, "FlatBone.local", 0x0, crate::NiTransform) } }
+    /// `FlatBone::local`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn local(&self) -> &crate::NiTransform { unsafe { &*Self::__member_local(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn local_ptr(&self) -> *mut crate::NiTransform { Self::__member_local(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "FlatBone.name", 0x78, crate::BSFixedString) } }
+    /// `FlatBone::name`, at +0x78 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_node(this: *const Self) -> *mut *mut crate::NiNode { unsafe { member!(this, "FlatBone.node", 0x70, *mut crate::NiNode) } }
+    /// `FlatBone::node`, at +0x70 on 1.7.104.
+    #[inline]
+    pub fn node_field(&self) -> *mut crate::NiNode { unsafe { Self::__member_node(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_node(&mut self, value: *mut crate::NiNode) { unsafe { Self::__member_node(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn node_ptr(&self) -> *mut *mut crate::NiNode { Self::__member_node(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_parentIndex(this: *const Self) -> *mut u16 { unsafe { member!(this, "FlatBone.parentIndex", 0x68, u16) } }
+    /// `FlatBone::parentIndex`, at +0x68 on 1.7.104.
+    #[inline]
+    pub fn parentIndex(&self) -> u16 { unsafe { Self::__member_parentIndex(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_parentIndex(&mut self, value: u16) { unsafe { Self::__member_parentIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn parentIndex_ptr(&self) -> *mut u16 { Self::__member_parentIndex(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_world(this: *const Self) -> *mut crate::NiTransform { unsafe { member!(this, "FlatBone.world", 0x34, crate::NiTransform) } }
+    /// `FlatBone::world`, at +0x34 on 1.7.104.
+    #[inline]
+    pub fn world(&self) -> &crate::NiTransform { unsafe { &*Self::__member_world(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn world_ptr(&self) -> *mut crate::NiTransform { Self::__member_world(core::ptr::from_ref(self)) }
 }
 
 impl crate::FreeCameraState {
@@ -3257,7 +3947,17 @@ impl crate::FreeCameraState {
     ///
     /// Semantic field, frame pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn camera(&self) -> Option<&crate::PlayerCamera> { unsafe { { self.camera }.as_ref() } }
+    pub fn camera(&self) -> Option<&crate::PlayerCamera> { unsafe { Self::__member_camera(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_camera(this: *const Self) -> *mut *mut crate::PlayerCamera { unsafe { member!(this, "FreeCameraState.camera", 0x10, *mut crate::PlayerCamera) } }
+    /// `FreeCameraState::camera`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn camera_field(&self) -> *mut crate::PlayerCamera { unsafe { Self::__member_camera(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_camera(&mut self, value: *mut crate::PlayerCamera) { unsafe { Self::__member_camera(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn camera_ptr(&self) -> *mut *mut crate::PlayerCamera { Self::__member_camera(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_forwardInputA(this: *const Self) -> *mut f32 { unsafe { member!(this, "FreeCameraState.forwardInputA", 0x44, f32) } }
@@ -3300,6 +4000,14 @@ impl crate::FreeCameraState {
     pub fn id_ptr(&self) -> *mut u32 { Self::__member_id(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_inputHandler(this: *const Self) -> *mut crate::PlayerInputHandler { unsafe { member!(this, "FreeCameraState.inputHandler", 0x20, crate::PlayerInputHandler) } }
+    /// `FreeCameraState::inputHandler`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn inputHandler(&self) -> &crate::PlayerInputHandler { unsafe { &*Self::__member_inputHandler(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn inputHandler_ptr(&self) -> *mut crate::PlayerInputHandler { Self::__member_inputHandler(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_pad0c(this: *const Self) -> *mut u32 { unsafe { member!(this, "FreeCameraState.pad0c", 0xC, u32) } }
     /// `FreeCameraState::pad0c`, at +0xC on 1.7.104.
     #[inline]
@@ -3338,6 +4046,16 @@ impl crate::FreeCameraState {
     pub fn set_run(&mut self, value: u8) { unsafe { Self::__member_run(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn run_ptr(&self) -> *mut u8 { Self::__member_run(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_verticalInput(this: *const Self) -> *mut u16 { unsafe { member!(this, "FreeCameraState.verticalInput", 0x4C, u16) } }
+    /// `FreeCameraState::verticalInput`, at +0x4C on 1.7.104.
+    #[inline]
+    pub fn verticalInput(&self) -> u16 { unsafe { Self::__member_verticalInput(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_verticalInput(&mut self, value: u16) { unsafe { Self::__member_verticalInput(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn verticalInput_ptr(&self) -> *mut u16 { Self::__member_verticalInput(core::ptr::from_ref(self)) }
 }
 
 impl crate::FurnitureCameraState {
@@ -3418,6 +4136,27 @@ impl crate::FurnitureCameraState {
     pub fn set_refCount(&mut self, value: u32) { unsafe { Self::__member_refCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn refCount_ptr(&self) -> *mut u32 { Self::__member_refCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_translate(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "FurnitureCameraState.translate", 0x24, crate::NiPoint3) } }
+    /// `FurnitureCameraState::translate`, at +0x24 on 1.7.104.
+    #[inline]
+    pub fn translate(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_translate(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn translate_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_translate(core::ptr::from_ref(self)) }
+}
+
+impl crate::FurnitureMarker {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_0(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "FurnitureMarker.field_0", 0x0, [u8; 16]) } }
+    /// `FurnitureMarker::field_0`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn field_0(&self) -> [u8; 16] { unsafe { Self::__member_field_0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_0(&mut self, value: [u8; 16]) { unsafe { Self::__member_field_0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_0_ptr(&self) -> *mut [u8; 16] { Self::__member_field_0(core::ptr::from_ref(self)) }
 }
 
 impl crate::HorseCameraState {
@@ -3446,6 +4185,26 @@ impl crate::HorseCameraState {
     /// Semantic field, frame pass, high; `None` while the pointer is null.
     #[inline]
     pub fn camera_control_node(&self) -> Option<&crate::NiNode> { unsafe { { self.cameraControlNode }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_applyThirdPerson(this: *const Self) -> *mut u8 { unsafe { member!(this, "HorseCameraState.applyThirdPerson", 0xDE, u8) } }
+    /// `HorseCameraState::applyThirdPerson`, at +0xDE on 1.7.104.
+    #[inline]
+    pub fn applyThirdPerson(&self) -> u8 { unsafe { Self::__member_applyThirdPerson(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_applyThirdPerson(&mut self, value: u8) { unsafe { Self::__member_applyThirdPerson(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn applyThirdPerson_ptr(&self) -> *mut u8 { Self::__member_applyThirdPerson(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_keepFreeRotation(this: *const Self) -> *mut u8 { unsafe { member!(this, "HorseCameraState.keepFreeRotation", 0xDF, u8) } }
+    /// `HorseCameraState::keepFreeRotation`, at +0xDF on 1.7.104.
+    #[inline]
+    pub fn keepFreeRotation(&self) -> u8 { unsafe { Self::__member_keepFreeRotation(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_keepFreeRotation(&mut self, value: u8) { unsafe { Self::__member_keepFreeRotation(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn keepFreeRotation_ptr(&self) -> *mut u8 { Self::__member_keepFreeRotation(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_pad0c(this: *const Self) -> *mut u32 { unsafe { member!(this, "HorseCameraState.pad0c", 0xC, u32) } }
@@ -3488,12 +4247,30 @@ impl crate::HorseCameraState {
     pub fn padF1_ptr(&self) -> *mut [u8; 7] { Self::__member_padF1(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_recoveryStart(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "HorseCameraState.recoveryStart", 0x90, crate::NiPoint3) } }
+    /// `HorseCameraState::recoveryStart`, at +0x90 on 1.7.104.
+    #[inline]
+    pub fn recoveryStart(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_recoveryStart(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn recoveryStart_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_recoveryStart(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_targetOffset(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "HorseCameraState.targetOffset", 0x5C, crate::NiPoint3) } }
     /// `HorseCameraState::targetOffset`, at +0x5C on 1.7.104.
     #[inline]
     pub fn targetOffset(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_targetOffset(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn targetOffset_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_targetOffset(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_toggleToFirstPerson(this: *const Self) -> *mut u8 { unsafe { member!(this, "HorseCameraState.toggleToFirstPerson", 0xDD, u8) } }
+    /// `HorseCameraState::toggleToFirstPerson`, at +0xDD on 1.7.104.
+    #[inline]
+    pub fn toggleToFirstPerson(&self) -> u8 { unsafe { Self::__member_toggleToFirstPerson(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_toggleToFirstPerson(&mut self, value: u8) { unsafe { Self::__member_toggleToFirstPerson(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn toggleToFirstPerson_ptr(&self) -> *mut u8 { Self::__member_toggleToFirstPerson(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_useShoulderOffsets(this: *const Self) -> *mut u8 { unsafe { member!(this, "HorseCameraState.useShoulderOffsets", 0xE1, u8) } }
@@ -3572,12 +4349,22 @@ impl crate::IronSightsState {
     ///
     /// Semantic field, frame pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn camera(&self) -> Option<&crate::PlayerCamera> { unsafe { { self.camera }.as_ref() } }
+    pub fn camera(&self) -> Option<&crate::PlayerCamera> { unsafe { Self::__member_camera(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
     /// `IronSightsState::sightNode` at +0x20: node whose world rotation (+0x7c) and translation (+0xa0) are the pose
     ///
     /// Semantic field, frame pass, high; `None` while the pointer is null.
     #[inline]
     pub fn sight_node(&self) -> Option<&crate::NiAVObject> { unsafe { { self.sightNode }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_camera(this: *const Self) -> *mut *mut crate::PlayerCamera { unsafe { member!(this, "IronSightsState.camera", 0x10, *mut crate::PlayerCamera) } }
+    /// `IronSightsState::camera`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn camera_field(&self) -> *mut crate::PlayerCamera { unsafe { Self::__member_camera(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_camera(&mut self, value: *mut crate::PlayerCamera) { unsafe { Self::__member_camera(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn camera_ptr(&self) -> *mut *mut crate::PlayerCamera { Self::__member_camera(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_id(this: *const Self) -> *mut u32 { unsafe { member!(this, "IronSightsState.id", 0x18, u32) } }
@@ -3711,7 +4498,25 @@ impl crate::LocalMapCamera__DefaultState {
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn camera(&self) -> Option<&crate::TESCamera> { unsafe { { self.camera }.as_ref() } }
+    pub fn camera(&self) -> Option<&crate::TESCamera> { unsafe { Self::__member_camera(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_camera(this: *const Self) -> *mut *mut crate::TESCamera { unsafe { member!(this, "LocalMapCamera::DefaultState.camera", 0x10, *mut crate::TESCamera) } }
+    /// `LocalMapCamera::DefaultState::camera`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn camera_field(&self) -> *mut crate::TESCamera { unsafe { Self::__member_camera(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_camera(&mut self, value: *mut crate::TESCamera) { unsafe { Self::__member_camera(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn camera_ptr(&self) -> *mut *mut crate::TESCamera { Self::__member_camera(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_center(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "LocalMapCamera::DefaultState.center", 0x20, crate::NiPoint3) } }
+    /// `LocalMapCamera::DefaultState::center`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn center(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_center(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn center_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_center(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_id(this: *const Self) -> *mut u32 { unsafe { member!(this, "LocalMapCamera::DefaultState.id", 0x18, u32) } }
@@ -3722,6 +4527,26 @@ impl crate::LocalMapCamera__DefaultState {
     pub fn set_id(&mut self, value: u32) { unsafe { Self::__member_id(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn id_ptr(&self) -> *mut u32 { Self::__member_id(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_minHalfHeight(this: *const Self) -> *mut f32 { unsafe { member!(this, "LocalMapCamera::DefaultState.minHalfHeight", 0x40, f32) } }
+    /// `LocalMapCamera::DefaultState::minHalfHeight`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn minHalfHeight(&self) -> f32 { unsafe { Self::__member_minHalfHeight(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_minHalfHeight(&mut self, value: f32) { unsafe { Self::__member_minHalfHeight(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn minHalfHeight_ptr(&self) -> *mut f32 { Self::__member_minHalfHeight(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_minHalfWidth(this: *const Self) -> *mut f32 { unsafe { member!(this, "LocalMapCamera::DefaultState.minHalfWidth", 0x3C, f32) } }
+    /// `LocalMapCamera::DefaultState::minHalfWidth`, at +0x3C on 1.7.104.
+    #[inline]
+    pub fn minHalfWidth(&self) -> f32 { unsafe { Self::__member_minHalfWidth(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_minHalfWidth(&mut self, value: f32) { unsafe { Self::__member_minHalfWidth(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn minHalfWidth_ptr(&self) -> *mut f32 { Self::__member_minHalfWidth(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_padding0C(this: *const Self) -> *mut u32 { unsafe { member!(this, "LocalMapCamera::DefaultState.padding0C", 0xC, u32) } }
@@ -4033,6 +4858,16 @@ impl crate::MapCameraStates__Transition {
     pub fn id_ptr(&self) -> *mut u32 { Self::__member_id(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_mode(this: *const Self) -> *mut u32 { unsafe { member!(this, "MapCameraStates::Transition.mode", 0x80, u32) } }
+    /// `MapCameraStates::Transition::mode`, at +0x80 on 1.7.104.
+    #[inline]
+    pub fn mode(&self) -> u32 { unsafe { Self::__member_mode(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_mode(&mut self, value: u32) { unsafe { Self::__member_mode(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn mode_ptr(&self) -> *mut u32 { Self::__member_mode(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_padding0C(this: *const Self) -> *mut u32 { unsafe { member!(this, "MapCameraStates::Transition.padding0C", 0xC, u32) } }
     /// `MapCameraStates::Transition::padding0C`, at +0xC on 1.7.104.
     #[inline]
@@ -4189,6 +5024,14 @@ impl crate::MapCameraStates__World {
     pub fn field_5c_ptr(&self) -> *mut f32 { Self::__member_field_5c(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_heightOffset(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "MapCameraStates::World.heightOffset", 0x38, crate::NiPoint3) } }
+    /// `MapCameraStates::World::heightOffset`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn heightOffset(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_heightOffset(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn heightOffset_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_heightOffset(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_padding0C(this: *const Self) -> *mut u32 { unsafe { member!(this, "MapCameraStates::World.padding0C", 0xC, u32) } }
     /// `MapCameraStates::World::padding0C`, at +0xC on 1.7.104.
     #[inline]
@@ -4255,6 +5098,14 @@ impl crate::MapCameraStates__World {
     pub fn set_zoom(&mut self, value: f32) { unsafe { Self::__member_zoom(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn zoom_ptr(&self) -> *mut f32 { Self::__member_zoom(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_zoomAxis(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "MapCameraStates::World.zoomAxis", 0x44, crate::NiPoint3) } }
+    /// `MapCameraStates::World::zoomAxis`, at +0x44 on 1.7.104.
+    #[inline]
+    pub fn zoomAxis(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_zoomAxis(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn zoomAxis_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_zoomAxis(core::ptr::from_ref(self)) }
 }
 
 impl crate::ModelReferenceEffect {
@@ -4272,6 +5123,16 @@ impl crate::ModelReferenceEffect {
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
     pub fn art_object(&self) -> Option<&crate::BGSArtObject> { unsafe { { self.artObject }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_41(this: *const Self) -> *mut u8 { unsafe { member!(this, "ModelReferenceEffect.field_41", 0x41, u8) } }
+    /// `ModelReferenceEffect::field_41`, at +0x41 on 1.7.104.
+    #[inline]
+    pub fn field_41(&self) -> u8 { unsafe { Self::__member_field_41(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_41(&mut self, value: u8) { unsafe { Self::__member_field_41(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_41_ptr(&self) -> *mut u8 { Self::__member_field_41(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_58(this: *const Self) -> *mut u64 { unsafe { member!(this, "ModelReferenceEffect.field_58", 0x58, u64) } }
@@ -4404,6 +5265,44 @@ impl crate::NiLight {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(70565, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_extraDataCapacity(this: *const Self) -> *mut u16 { unsafe { member!(this, "NiLight.extraDataCapacity", 0x2A, u16) } }
+    /// `NiLight::extraDataCapacity`, at +0x2A on 1.7.104.
+    #[inline]
+    pub fn extraDataCapacity(&self) -> u16 { unsafe { Self::__member_extraDataCapacity(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_extraDataCapacity(&mut self, value: u16) { unsafe { Self::__member_extraDataCapacity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn extraDataCapacity_ptr(&self) -> *mut u16 { Self::__member_extraDataCapacity(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_flags2(this: *const Self) -> *mut u8 { unsafe { member!(this, "NiLight.flags2", 0x109, u8) } }
+    /// `NiLight::flags2`, at +0x109 on 1.7.104.
+    #[inline]
+    pub fn flags2(&self) -> u8 { unsafe { Self::__member_flags2(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_flags2(&mut self, value: u8) { unsafe { Self::__member_flags2(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn flags2_ptr(&self) -> *mut u8 { Self::__member_flags2(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_local(this: *const Self) -> *mut crate::NiTransform { unsafe { member!(this, "NiLight.local", 0x48, crate::NiTransform) } }
+    /// `NiLight::local`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn local(&self) -> &crate::NiTransform { unsafe { &*Self::__member_local(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn local_ptr(&self) -> *mut crate::NiTransform { Self::__member_local(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_previousWorldFrame(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiLight.previousWorldFrame", 0x104, u32) } }
+    /// `NiLight::previousWorldFrame`, at +0x104 on 1.7.104.
+    #[inline]
+    pub fn previousWorldFrame(&self) -> u32 { unsafe { Self::__member_previousWorldFrame(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_previousWorldFrame(&mut self, value: u32) { unsafe { Self::__member_previousWorldFrame(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn previousWorldFrame_ptr(&self) -> *mut u32 { Self::__member_previousWorldFrame(core::ptr::from_ref(self)) }
 }
 
 impl crate::NiPointLight {
@@ -4416,6 +5315,54 @@ impl crate::NiPointLight {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(70967, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_extraDataCapacity(this: *const Self) -> *mut u16 { unsafe { member!(this, "NiPointLight.extraDataCapacity", 0x2A, u16) } }
+    /// `NiPointLight::extraDataCapacity`, at +0x2A on 1.7.104.
+    #[inline]
+    pub fn extraDataCapacity(&self) -> u16 { unsafe { Self::__member_extraDataCapacity(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_extraDataCapacity(&mut self, value: u16) { unsafe { Self::__member_extraDataCapacity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn extraDataCapacity_ptr(&self) -> *mut u16 { Self::__member_extraDataCapacity(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_flags2(this: *const Self) -> *mut u8 { unsafe { member!(this, "NiPointLight.flags2", 0x109, u8) } }
+    /// `NiPointLight::flags2`, at +0x109 on 1.7.104.
+    #[inline]
+    pub fn flags2(&self) -> u8 { unsafe { Self::__member_flags2(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_flags2(&mut self, value: u8) { unsafe { Self::__member_flags2(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn flags2_ptr(&self) -> *mut u8 { Self::__member_flags2(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_local(this: *const Self) -> *mut crate::NiTransform { unsafe { member!(this, "NiPointLight.local", 0x48, crate::NiTransform) } }
+    /// `NiPointLight::local`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn local(&self) -> &crate::NiTransform { unsafe { &*Self::__member_local(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn local_ptr(&self) -> *mut crate::NiTransform { Self::__member_local(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_previousWorldFrame(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPointLight.previousWorldFrame", 0x104, u32) } }
+    /// `NiPointLight::previousWorldFrame`, at +0x104 on 1.7.104.
+    #[inline]
+    pub fn previousWorldFrame(&self) -> u32 { unsafe { Self::__member_previousWorldFrame(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_previousWorldFrame(&mut self, value: u32) { unsafe { Self::__member_previousWorldFrame(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn previousWorldFrame_ptr(&self) -> *mut u32 { Self::__member_previousWorldFrame(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_quadraticAttenuation(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPointLight.quadraticAttenuation", 0x148, f32) } }
+    /// `NiPointLight::quadraticAttenuation`, at +0x148 on 1.7.104.
+    #[inline]
+    pub fn quadraticAttenuation(&self) -> f32 { unsafe { Self::__member_quadraticAttenuation(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_quadraticAttenuation(&mut self, value: f32) { unsafe { Self::__member_quadraticAttenuation(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn quadraticAttenuation_ptr(&self) -> *mut f32 { Self::__member_quadraticAttenuation(core::ptr::from_ref(self)) }
 }
 
 impl crate::OwnedCameraEffectController {
@@ -5002,12 +5949,14 @@ impl crate::PlayerCamera {
     pub fn camera_root(&self) -> Option<&crate::NiNode> { unsafe { { self.cameraRoot }.as_ref() } }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_cachedPosition(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "PlayerCamera.cachedPosition", 0x144, crate::NiPoint3) } }
-    /// `PlayerCamera::cachedPosition`, at +0x144 on 1.7.104.
+    pub fn __member_allowFreeRotation(this: *const Self) -> *mut u8 { unsafe { member!(this, "PlayerCamera.allowFreeRotation", 0x162, u8) } }
+    /// `PlayerCamera::allowFreeRotation`, at +0x162 on 1.7.104.
     #[inline]
-    pub fn cachedPosition(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_cachedPosition(core::ptr::from_ref(self)) } }
+    pub fn allowFreeRotation(&self) -> u8 { unsafe { Self::__member_allowFreeRotation(core::ptr::from_ref(self)).read_unaligned() } }
     #[inline]
-    pub fn cachedPosition_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_cachedPosition(core::ptr::from_ref(self)) }
+    pub fn set_allowFreeRotation(&mut self, value: u8) { unsafe { Self::__member_allowFreeRotation(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn allowFreeRotation_ptr(&self) -> *mut u8 { Self::__member_allowFreeRotation(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_pad_166(this: *const Self) -> *mut [u8; 2] { unsafe { member!(this, "PlayerCamera.pad_166", 0x166, [u8; 2]) } }
@@ -5050,6 +5999,16 @@ impl crate::PlayerCamera {
     pub fn pad_b4_ptr(&self) -> *mut [u8; 4] { Self::__member_pad_b4(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_pitchZeroStart(this: *const Self) -> *mut f32 { unsafe { member!(this, "PlayerCamera.pitchZeroStart", 0x15C, f32) } }
+    /// `PlayerCamera::pitchZeroStart`, at +0x15C on 1.7.104.
+    #[inline]
+    pub fn pitchZeroStart(&self) -> f32 { unsafe { Self::__member_pitchZeroStart(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_pitchZeroStart(&mut self, value: f32) { unsafe { Self::__member_pitchZeroStart(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn pitchZeroStart_ptr(&self) -> *mut f32 { Self::__member_pitchZeroStart(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_positionLock(this: *const Self) -> *mut crate::BSSpinLock { unsafe { member!(this, "PlayerCamera.positionLock", 0x134, crate::BSSpinLock) } }
     /// `PlayerCamera::positionLock`, at +0x134 on 1.7.104.
     #[inline]
@@ -5066,16 +6025,6 @@ impl crate::PlayerCamera {
     pub fn set_singletonBase(&mut self, value: u8) { unsafe { Self::__member_singletonBase(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn singletonBase_ptr(&self) -> *mut u8 { Self::__member_singletonBase(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_yaw(this: *const Self) -> *mut f32 { unsafe { member!(this, "PlayerCamera.yaw", 0x154, f32) } }
-    /// `PlayerCamera::yaw`, at +0x154 on 1.7.104.
-    #[inline]
-    pub fn yaw(&self) -> f32 { unsafe { Self::__member_yaw(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_yaw(&mut self, value: f32) { unsafe { Self::__member_yaw(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn yaw_ptr(&self) -> *mut f32 { Self::__member_yaw(core::ptr::from_ref(self)) }
 }
 
 impl crate::PlayerCameraTransitionState {
@@ -5111,6 +6060,16 @@ impl crate::PlayerCameraTransitionState {
     pub fn to_state(&self) -> Option<&crate::TESCameraState> { unsafe { { self.toState }.as_ref() } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_easing(this: *const Self) -> *mut u32 { unsafe { member!(this, "PlayerCameraTransitionState.easing", 0x38, u32) } }
+    /// `PlayerCameraTransitionState::easing`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn easing(&self) -> u32 { unsafe { Self::__member_easing(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_easing(&mut self, value: u32) { unsafe { Self::__member_easing(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn easing_ptr(&self) -> *mut u32 { Self::__member_easing(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_id(this: *const Self) -> *mut u32 { unsafe { member!(this, "PlayerCameraTransitionState.id", 0x18, u32) } }
     /// `PlayerCameraTransitionState::id`, at +0x18 on 1.7.104.
     #[inline]
@@ -5119,6 +6078,16 @@ impl crate::PlayerCameraTransitionState {
     pub fn set_id(&mut self, value: u32) { unsafe { Self::__member_id(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn id_ptr(&self) -> *mut u32 { Self::__member_id(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_pad0c(this: *const Self) -> *mut u32 { unsafe { member!(this, "PlayerCameraTransitionState.pad0c", 0xC, u32) } }
+    /// `PlayerCameraTransitionState::pad0c`, at +0xC on 1.7.104.
+    #[inline]
+    pub fn pad0c(&self) -> u32 { unsafe { Self::__member_pad0c(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_pad0c(&mut self, value: u32) { unsafe { Self::__member_pad0c(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn pad0c_ptr(&self) -> *mut u32 { Self::__member_pad0c(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_pad1c(this: *const Self) -> *mut u32 { unsafe { member!(this, "PlayerCameraTransitionState.pad1c", 0x1C, u32) } }
@@ -5139,6 +6108,36 @@ impl crate::PlayerCameraTransitionState {
     pub fn set_pad3E(&mut self, value: u16) { unsafe { Self::__member_pad3E(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn pad3E_ptr(&self) -> *mut u16 { Self::__member_pad3E(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_refCount(this: *const Self) -> *mut u32 { unsafe { member!(this, "PlayerCameraTransitionState.refCount", 0x8, u32) } }
+    /// `PlayerCameraTransitionState::refCount`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn refCount(&self) -> u32 { unsafe { Self::__member_refCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_refCount(&mut self, value: u32) { unsafe { Self::__member_refCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn refCount_ptr(&self) -> *mut u32 { Self::__member_refCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_startTime(this: *const Self) -> *mut u32 { unsafe { member!(this, "PlayerCameraTransitionState.startTime", 0x20, u32) } }
+    /// `PlayerCameraTransitionState::startTime`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn startTime(&self) -> u32 { unsafe { Self::__member_startTime(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_startTime(&mut self, value: u32) { unsafe { Self::__member_startTime(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn startTime_ptr(&self) -> *mut u32 { Self::__member_startTime(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_updateFrom(this: *const Self) -> *mut u8 { unsafe { member!(this, "PlayerCameraTransitionState.updateFrom", 0x3C, u8) } }
+    /// `PlayerCameraTransitionState::updateFrom`, at +0x3C on 1.7.104.
+    #[inline]
+    pub fn updateFrom(&self) -> u8 { unsafe { Self::__member_updateFrom(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_updateFrom(&mut self, value: u8) { unsafe { Self::__member_updateFrom(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn updateFrom_ptr(&self) -> *mut u8 { Self::__member_updateFrom(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_updateTo(this: *const Self) -> *mut u8 { unsafe { member!(this, "PlayerCameraTransitionState.updateTo", 0x3D, u8) } }
@@ -5249,6 +6248,14 @@ impl crate::RaceSexCamera {
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
     pub fn camera_root(&self) -> Option<&crate::NiNode> { unsafe { { self.cameraRoot }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_initialPosition(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "RaceSexCamera.initialPosition", 0x38, crate::NiPoint3) } }
+    /// `RaceSexCamera::initialPosition`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn initialPosition(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_initialPosition(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn initialPosition_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_initialPosition(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_initialRotation(this: *const Self) -> *mut crate::NiQuaternion { unsafe { member!(this, "RaceSexCamera.initialRotation", 0x44, crate::NiQuaternion) } }
@@ -5391,6 +6398,16 @@ impl crate::ReferenceEffect {
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
     pub fn controller(&self) -> Option<&crate::ReferenceEffectController> { unsafe { { self.controller }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_41(this: *const Self) -> *mut u8 { unsafe { member!(this, "ReferenceEffect.field_41", 0x41, u8) } }
+    /// `ReferenceEffect::field_41`, at +0x41 on 1.7.104.
+    #[inline]
+    pub fn field_41(&self) -> u8 { unsafe { Self::__member_field_41(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_41(&mut self, value: u8) { unsafe { Self::__member_field_41(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_41_ptr(&self) -> *mut u8 { Self::__member_field_41(core::ptr::from_ref(self)) }
 }
 
 impl crate::ShaderReferenceEffect {
@@ -5430,6 +6447,26 @@ impl crate::ShaderReferenceEffect {
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
     pub fn effect_shader(&self) -> Option<&crate::TESEffectShader> { unsafe { { self.effectShader }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_applyDelay(this: *const Self) -> *mut u32 { unsafe { member!(this, "ShaderReferenceEffect.applyDelay", 0x134, u32) } }
+    /// `ShaderReferenceEffect::applyDelay`, at +0x134 on 1.7.104.
+    #[inline]
+    pub fn applyDelay(&self) -> u32 { unsafe { Self::__member_applyDelay(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_applyDelay(&mut self, value: u32) { unsafe { Self::__member_applyDelay(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn applyDelay_ptr(&self) -> *mut u32 { Self::__member_applyDelay(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_41(this: *const Self) -> *mut u8 { unsafe { member!(this, "ShaderReferenceEffect.field_41", 0x41, u8) } }
+    /// `ShaderReferenceEffect::field_41`, at +0x41 on 1.7.104.
+    #[inline]
+    pub fn field_41(&self) -> u8 { unsafe { Self::__member_field_41(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_41(&mut self, value: u8) { unsafe { Self::__member_field_41(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_41_ptr(&self) -> *mut u8 { Self::__member_field_41(core::ptr::from_ref(self)) }
 }
 
 impl crate::StatsMenu {
@@ -5890,6 +6927,16 @@ impl crate::StatsMenu {
     pub fn field_27C_ptr(&self) -> *mut u64 { Self::__member_field_27C(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_field_324(this: *const Self) -> *mut u16 { unsafe { member!(this, "StatsMenu.field_324", 0x324, u16) } }
+    /// `StatsMenu::field_324`, at +0x324 on 1.7.104.
+    #[inline]
+    pub fn field_324(&self) -> u16 { unsafe { Self::__member_field_324(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_324(&mut self, value: u16) { unsafe { Self::__member_field_324(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_324_ptr(&self) -> *mut u16 { Self::__member_field_324(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_field_BC(this: *const Self) -> *mut u32 { unsafe { member!(this, "StatsMenu.field_BC", 0xBC, u32) } }
     /// `StatsMenu::field_BC`, at +0xBC on 1.7.104.
     #[inline]
@@ -5989,12 +7036,38 @@ impl crate::StealthMeter {
     pub fn update(&self) { unsafe { virtual_function!(self, 1, (*const Self))(core::ptr::from_ref(self)) } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_displayedLevel(this: *const Self) -> *mut u32 { unsafe { member!(this, "StealthMeter.displayedLevel", 0x88, u32) } }
+    /// `StealthMeter::displayedLevel`, at +0x88 on 1.7.104.
+    #[inline]
+    pub fn displayedLevel(&self) -> u32 { unsafe { Self::__member_displayedLevel(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_displayedLevel(&mut self, value: u32) { unsafe { Self::__member_displayedLevel(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn displayedLevel_ptr(&self) -> *mut u32 { Self::__member_displayedLevel(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_fadeClip(this: *const Self) -> *mut crate::GFxValue { unsafe { member!(this, "StealthMeter.fadeClip", 0x28, crate::GFxValue) } }
     /// `StealthMeter::fadeClip`, at +0x28 on 1.7.104.
     #[inline]
     pub fn fadeClip(&self) -> &crate::GFxValue { unsafe { &*Self::__member_fadeClip(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn fadeClip_ptr(&self) -> *mut crate::GFxValue { Self::__member_fadeClip(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_flashClip(this: *const Self) -> *mut crate::GFxValue { unsafe { member!(this, "StealthMeter.flashClip", 0x58, crate::GFxValue) } }
+    /// `StealthMeter::flashClip`, at +0x58 on 1.7.104.
+    #[inline]
+    pub fn flashClip(&self) -> &crate::GFxValue { unsafe { &*Self::__member_flashClip(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn flashClip_ptr(&self) -> *mut crate::GFxValue { Self::__member_flashClip(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_meterClip(this: *const Self) -> *mut crate::GFxValue { unsafe { member!(this, "StealthMeter.meterClip", 0x40, crate::GFxValue) } }
+    /// `StealthMeter::meterClip`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn meterClip(&self) -> &crate::GFxValue { unsafe { &*Self::__member_meterClip(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn meterClip_ptr(&self) -> *mut crate::GFxValue { Self::__member_meterClip(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_pad_92(this: *const Self) -> *mut [u8; 6] { unsafe { member!(this, "StealthMeter.pad_92", 0x92, [u8; 6]) } }
@@ -6015,6 +7088,24 @@ impl crate::StealthMeter {
     pub fn set_shown(&mut self, value: u8) { unsafe { Self::__member_shown(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn shown_ptr(&self) -> *mut u8 { Self::__member_shown(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_targetLevel(this: *const Self) -> *mut u32 { unsafe { member!(this, "StealthMeter.targetLevel", 0x8C, u32) } }
+    /// `StealthMeter::targetLevel`, at +0x8C on 1.7.104.
+    #[inline]
+    pub fn targetLevel(&self) -> u32 { unsafe { Self::__member_targetLevel(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_targetLevel(&mut self, value: u32) { unsafe { Self::__member_targetLevel(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn targetLevel_ptr(&self) -> *mut u32 { Self::__member_targetLevel(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_textField(this: *const Self) -> *mut crate::GFxValue { unsafe { member!(this, "StealthMeter.textField", 0x70, crate::GFxValue) } }
+    /// `StealthMeter::textField`, at +0x70 on 1.7.104.
+    #[inline]
+    pub fn textField(&self) -> &crate::GFxValue { unsafe { &*Self::__member_textField(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn textField_ptr(&self) -> *mut crate::GFxValue { Self::__member_textField(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_updatePending(this: *const Self) -> *mut u8 { unsafe { member!(this, "StealthMeter.updatePending", 0x91, u8) } }
@@ -6216,7 +7307,17 @@ impl crate::TESCameraState {
     ///
     /// Semantic field, frame pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn camera(&self) -> Option<&crate::TESCamera> { unsafe { { self.camera }.as_ref() } }
+    pub fn camera(&self) -> Option<&crate::TESCamera> { unsafe { Self::__member_camera(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_camera(this: *const Self) -> *mut *mut crate::TESCamera { unsafe { member!(this, "TESCameraState.camera", 0x10, *mut crate::TESCamera) } }
+    /// `TESCameraState::camera`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn camera_field(&self) -> *mut crate::TESCamera { unsafe { Self::__member_camera(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_camera(&mut self, value: *mut crate::TESCamera) { unsafe { Self::__member_camera(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn camera_ptr(&self) -> *mut *mut crate::TESCamera { Self::__member_camera(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_pad_1c(this: *const Self) -> *mut [u8; 4] { unsafe { member!(this, "TESCameraState.pad_1c", 0x1C, [u8; 4]) } }
@@ -6227,6 +7328,16 @@ impl crate::TESCameraState {
     pub fn set_pad_1c(&mut self, value: [u8; 4]) { unsafe { Self::__member_pad_1c(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn pad_1c_ptr(&self) -> *mut [u8; 4] { Self::__member_pad_1c(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_pad_c(this: *const Self) -> *mut [u8; 4] { unsafe { member!(this, "TESCameraState.pad_c", 0xC, [u8; 4]) } }
+    /// `TESCameraState::pad_c`, at +0xC on 1.7.104.
+    #[inline]
+    pub fn pad_c(&self) -> [u8; 4] { unsafe { Self::__member_pad_c(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_pad_c(&mut self, value: [u8; 4]) { unsafe { Self::__member_pad_c(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn pad_c_ptr(&self) -> *mut [u8; 4] { Self::__member_pad_c(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESFurniture {
@@ -6294,6 +7405,26 @@ impl crate::TESFurniture {
     pub fn associated_spell(&self) -> Option<&crate::SpellItem> { unsafe { { self.associatedSpell }.as_ref() } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u16 { unsafe { member!(this, "TESFurniture.field_28", 0x28, u16) } }
+    /// `TESFurniture::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u16 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u16) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u16 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2A(this: *const Self) -> *mut u16 { unsafe { member!(this, "TESFurniture.field_2A", 0x2A, u16) } }
+    /// `TESFurniture::field_2A`, at +0x2A on 1.7.104.
+    #[inline]
+    pub fn field_2A(&self) -> u16 { unsafe { Self::__member_field_2A(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2A(&mut self, value: u16) { unsafe { Self::__member_field_2A(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2A_ptr(&self) -> *mut u16 { Self::__member_field_2A(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_field_50(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESFurniture.field_50", 0x50, u64) } }
     /// `TESFurniture::field_50`, at +0x50 on 1.7.104.
     #[inline]
@@ -6302,6 +7433,14 @@ impl crate::TESFurniture {
     pub fn set_field_50(&mut self, value: u64) { unsafe { Self::__member_field_50(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_50_ptr(&self) -> *mut u64 { Self::__member_field_50(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_markerEntries(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "TESFurniture.markerEntries", 0xC8, crate::BSTArray) } }
+    /// `TESFurniture::markerEntries`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn markerEntries(&self) -> &crate::BSTArray { unsafe { &*Self::__member_markerEntries(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn markerEntries_ptr(&self) -> *mut crate::BSTArray { Self::__member_markerEntries(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_workbenchSkill(this: *const Self) -> *mut u8 { unsafe { member!(this, "TESFurniture.workbenchSkill", 0xE1, u8) } }
@@ -6346,6 +7485,16 @@ impl crate::TESIdleForm {
     pub fn conditions_ptr(&self) -> *mut *mut c_void { Self::__member_conditions(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_field_2A(this: *const Self) -> *mut u8 { unsafe { member!(this, "TESIdleForm.field_2A", 0x2A, u8) } }
+    /// `TESIdleForm::field_2A`, at +0x2A on 1.7.104.
+    #[inline]
+    pub fn field_2A(&self) -> u8 { unsafe { Self::__member_field_2A(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2A(&mut self, value: u8) { unsafe { Self::__member_field_2A(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2A_ptr(&self) -> *mut u8 { Self::__member_field_2A(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_loopMax(this: *const Self) -> *mut u8 { unsafe { member!(this, "TESIdleForm.loopMax", 0x29, u8) } }
     /// `TESIdleForm::loopMax`, at +0x29 on 1.7.104.
     #[inline]
@@ -6354,6 +7503,16 @@ impl crate::TESIdleForm {
     pub fn set_loopMax(&mut self, value: u8) { unsafe { Self::__member_loopMax(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn loopMax_ptr(&self) -> *mut u8 { Self::__member_loopMax(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_loopMin(this: *const Self) -> *mut u8 { unsafe { member!(this, "TESIdleForm.loopMin", 0x28, u8) } }
+    /// `TESIdleForm::loopMin`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn loopMin(&self) -> u8 { unsafe { Self::__member_loopMin(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_loopMin(&mut self, value: u8) { unsafe { Self::__member_loopMin(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn loopMin_ptr(&self) -> *mut u8 { Self::__member_loopMin(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESModel {
@@ -6366,6 +7525,24 @@ impl crate::TESModel {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(14775, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_22(this: *const Self) -> *mut u8 { unsafe { member!(this, "TESModel.field_22", 0x22, u8) } }
+    /// `TESModel::field_22`, at +0x22 on 1.7.104.
+    #[inline]
+    pub fn field_22(&self) -> u8 { unsafe { Self::__member_field_22(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_22(&mut self, value: u8) { unsafe { Self::__member_field_22(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_22_ptr(&self) -> *mut u8 { Self::__member_field_22(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_model(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "TESModel.model", 0x8, crate::BSFixedString) } }
+    /// `TESModel::model`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn model(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_model(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn model_ptr(&self) -> *mut crate::BSFixedString { Self::__member_model(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESObjectLIGH {
@@ -6448,6 +7625,66 @@ impl crate::TESObjectLIGH {
     pub fn set_fade(&mut self, value: f32) { unsafe { Self::__member_fade(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn fade_ptr(&self) -> *mut f32 { Self::__member_fade(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u16 { unsafe { member!(this, "TESObjectLIGH.field_20", 0x20, u16) } }
+    /// `TESObjectLIGH::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u16 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u16) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u16 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_22(this: *const Self) -> *mut u16 { unsafe { member!(this, "TESObjectLIGH.field_22", 0x22, u16) } }
+    /// `TESObjectLIGH::field_22`, at +0x22 on 1.7.104.
+    #[inline]
+    pub fn field_22(&self) -> u16 { unsafe { Self::__member_field_22(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_22(&mut self, value: u16) { unsafe { Self::__member_field_22(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_22_ptr(&self) -> *mut u16 { Self::__member_field_22(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_24(this: *const Self) -> *mut u16 { unsafe { member!(this, "TESObjectLIGH.field_24", 0x24, u16) } }
+    /// `TESObjectLIGH::field_24`, at +0x24 on 1.7.104.
+    #[inline]
+    pub fn field_24(&self) -> u16 { unsafe { Self::__member_field_24(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_24(&mut self, value: u16) { unsafe { Self::__member_field_24(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_24_ptr(&self) -> *mut u16 { Self::__member_field_24(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_26(this: *const Self) -> *mut u16 { unsafe { member!(this, "TESObjectLIGH.field_26", 0x26, u16) } }
+    /// `TESObjectLIGH::field_26`, at +0x26 on 1.7.104.
+    #[inline]
+    pub fn field_26(&self) -> u16 { unsafe { Self::__member_field_26(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_26(&mut self, value: u16) { unsafe { Self::__member_field_26(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_26_ptr(&self) -> *mut u16 { Self::__member_field_26(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u16 { unsafe { member!(this, "TESObjectLIGH.field_28", 0x28, u16) } }
+    /// `TESObjectLIGH::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u16 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u16) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u16 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2A(this: *const Self) -> *mut u16 { unsafe { member!(this, "TESObjectLIGH.field_2A", 0x2A, u16) } }
+    /// `TESObjectLIGH::field_2A`, at +0x2A on 1.7.104.
+    #[inline]
+    pub fn field_2A(&self) -> u16 { unsafe { Self::__member_field_2A(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2A(&mut self, value: u16) { unsafe { Self::__member_field_2A(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2A_ptr(&self) -> *mut u16 { Self::__member_field_2A(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_50(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESObjectLIGH.field_50", 0x50, u64) } }
@@ -6623,6 +7860,26 @@ impl crate::TESObjectWEAP {
     pub fn get_weapon_type_name(&self) -> *const c_char { unsafe { virtual_function!(self, 57, (*const Self) -> *const c_char)(core::ptr::from_ref(self)) } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u16 { unsafe { member!(this, "TESObjectWEAP.field_28", 0x28, u16) } }
+    /// `TESObjectWEAP::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u16 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u16) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u16 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2A(this: *const Self) -> *mut u16 { unsafe { member!(this, "TESObjectWEAP.field_2A", 0x2A, u16) } }
+    /// `TESObjectWEAP::field_2A`, at +0x2A on 1.7.104.
+    #[inline]
+    pub fn field_2A(&self) -> u16 { unsafe { Self::__member_field_2A(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2A(&mut self, value: u16) { unsafe { Self::__member_field_2A(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2A_ptr(&self) -> *mut u16 { Self::__member_field_2A(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_field_50(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESObjectWEAP.field_50", 0x50, u64) } }
     /// `TESObjectWEAP::field_50`, at +0x50 on 1.7.104.
     #[inline]
@@ -6771,6 +8028,16 @@ impl crate::TESRace {
     pub fn get_form_editor_id(&self) -> *const c_char { unsafe { function!(25468, (*const Self) -> *const c_char)(core::ptr::from_ref(self)) } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_field_168(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESRace.field_168", 0x168, u64) } }
+    /// `TESRace::field_168`, at +0x168 on 1.7.104.
+    #[inline]
+    pub fn field_168(&self) -> u64 { unsafe { Self::__member_field_168(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_168(&mut self, value: u64) { unsafe { Self::__member_field_168(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_168_ptr(&self) -> *mut u64 { Self::__member_field_168(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_field_170(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESRace.field_170", 0x170, u64) } }
     /// `TESRace::field_170`, at +0x170 on 1.7.104.
     #[inline]
@@ -6781,6 +8048,16 @@ impl crate::TESRace {
     pub fn field_170_ptr(&self) -> *mut u64 { Self::__member_field_170(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_field_178(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESRace.field_178", 0x178, u64) } }
+    /// `TESRace::field_178`, at +0x178 on 1.7.104.
+    #[inline]
+    pub fn field_178(&self) -> u64 { unsafe { Self::__member_field_178(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_178(&mut self, value: u64) { unsafe { Self::__member_field_178(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_178_ptr(&self) -> *mut u64 { Self::__member_field_178(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_field_180(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESRace.field_180", 0x180, u64) } }
     /// `TESRace::field_180`, at +0x180 on 1.7.104.
     #[inline]
@@ -6789,6 +8066,36 @@ impl crate::TESRace {
     pub fn set_field_180(&mut self, value: u64) { unsafe { Self::__member_field_180(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_180_ptr(&self) -> *mut u64 { Self::__member_field_180(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_188(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESRace.field_188", 0x188, u32) } }
+    /// `TESRace::field_188`, at +0x188 on 1.7.104.
+    #[inline]
+    pub fn field_188(&self) -> u32 { unsafe { Self::__member_field_188(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_188(&mut self, value: u32) { unsafe { Self::__member_field_188(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_188_ptr(&self) -> *mut u32 { Self::__member_field_188(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2E0(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESRace.field_2E0", 0x2E0, u64) } }
+    /// `TESRace::field_2E0`, at +0x2E0 on 1.7.104.
+    #[inline]
+    pub fn field_2E0(&self) -> u64 { unsafe { Self::__member_field_2E0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2E0(&mut self, value: u64) { unsafe { Self::__member_field_2E0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2E0_ptr(&self) -> *mut u64 { Self::__member_field_2E0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_leftHandBipedIndex(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESRace.leftHandBipedIndex", 0x138, u32) } }
+    /// `TESRace::leftHandBipedIndex`, at +0x138 on 1.7.104.
+    #[inline]
+    pub fn leftHandBipedIndex(&self) -> u32 { unsafe { Self::__member_leftHandBipedIndex(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_leftHandBipedIndex(&mut self, value: u32) { unsafe { Self::__member_leftHandBipedIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn leftHandBipedIndex_ptr(&self) -> *mut u32 { Self::__member_leftHandBipedIndex(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESWeather {
@@ -6802,6 +8109,146 @@ impl crate::TESWeather {
     pub fn set_dataFlags(&mut self, value: u8) { unsafe { Self::__member_dataFlags(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn dataFlags_ptr(&self) -> *mut u8 { Self::__member_dataFlags(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_228(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWeather.field_228", 0x228, u64) } }
+    /// `TESWeather::field_228`, at +0x228 on 1.7.104.
+    #[inline]
+    pub fn field_228(&self) -> u64 { unsafe { Self::__member_field_228(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_228(&mut self, value: u64) { unsafe { Self::__member_field_228(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_228_ptr(&self) -> *mut u64 { Self::__member_field_228(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_230(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWeather.field_230", 0x230, u64) } }
+    /// `TESWeather::field_230`, at +0x230 on 1.7.104.
+    #[inline]
+    pub fn field_230(&self) -> u64 { unsafe { Self::__member_field_230(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_230(&mut self, value: u64) { unsafe { Self::__member_field_230(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_230_ptr(&self) -> *mut u64 { Self::__member_field_230(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_238(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWeather.field_238", 0x238, u64) } }
+    /// `TESWeather::field_238`, at +0x238 on 1.7.104.
+    #[inline]
+    pub fn field_238(&self) -> u64 { unsafe { Self::__member_field_238(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_238(&mut self, value: u64) { unsafe { Self::__member_field_238(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_238_ptr(&self) -> *mut u64 { Self::__member_field_238(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_240(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWeather.field_240", 0x240, u64) } }
+    /// `TESWeather::field_240`, at +0x240 on 1.7.104.
+    #[inline]
+    pub fn field_240(&self) -> u64 { unsafe { Self::__member_field_240(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_240(&mut self, value: u64) { unsafe { Self::__member_field_240(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_240_ptr(&self) -> *mut u64 { Self::__member_field_240(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_248(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWeather.field_248", 0x248, u64) } }
+    /// `TESWeather::field_248`, at +0x248 on 1.7.104.
+    #[inline]
+    pub fn field_248(&self) -> u64 { unsafe { Self::__member_field_248(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_248(&mut self, value: u64) { unsafe { Self::__member_field_248(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_248_ptr(&self) -> *mut u64 { Self::__member_field_248(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_250(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWeather.field_250", 0x250, u64) } }
+    /// `TESWeather::field_250`, at +0x250 on 1.7.104.
+    #[inline]
+    pub fn field_250(&self) -> u64 { unsafe { Self::__member_field_250(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_250(&mut self, value: u64) { unsafe { Self::__member_field_250(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_250_ptr(&self) -> *mut u64 { Self::__member_field_250(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_258(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWeather.field_258", 0x258, u64) } }
+    /// `TESWeather::field_258`, at +0x258 on 1.7.104.
+    #[inline]
+    pub fn field_258(&self) -> u64 { unsafe { Self::__member_field_258(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_258(&mut self, value: u64) { unsafe { Self::__member_field_258(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_258_ptr(&self) -> *mut u64 { Self::__member_field_258(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_464(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESWeather.field_464", 0x464, u32) } }
+    /// `TESWeather::field_464`, at +0x464 on 1.7.104.
+    #[inline]
+    pub fn field_464(&self) -> u32 { unsafe { Self::__member_field_464(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_464(&mut self, value: u32) { unsafe { Self::__member_field_464(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_464_ptr(&self) -> *mut u32 { Self::__member_field_464(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_468(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESWeather.field_468", 0x468, u32) } }
+    /// `TESWeather::field_468`, at +0x468 on 1.7.104.
+    #[inline]
+    pub fn field_468(&self) -> u32 { unsafe { Self::__member_field_468(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_468(&mut self, value: u32) { unsafe { Self::__member_field_468(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_468_ptr(&self) -> *mut u32 { Self::__member_field_468(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_46C(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESWeather.field_46C", 0x46C, u32) } }
+    /// `TESWeather::field_46C`, at +0x46C on 1.7.104.
+    #[inline]
+    pub fn field_46C(&self) -> u32 { unsafe { Self::__member_field_46C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_46C(&mut self, value: u32) { unsafe { Self::__member_field_46C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_46C_ptr(&self) -> *mut u32 { Self::__member_field_46C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_660(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESWeather.field_660", 0x660, u32) } }
+    /// `TESWeather::field_660`, at +0x660 on 1.7.104.
+    #[inline]
+    pub fn field_660(&self) -> u32 { unsafe { Self::__member_field_660(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_660(&mut self, value: u32) { unsafe { Self::__member_field_660(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_660_ptr(&self) -> *mut u32 { Self::__member_field_660(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_664(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWeather.field_664", 0x664, u64) } }
+    /// `TESWeather::field_664`, at +0x664 on 1.7.104.
+    #[inline]
+    pub fn field_664(&self) -> u64 { unsafe { Self::__member_field_664(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_664(&mut self, value: u64) { unsafe { Self::__member_field_664(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_664_ptr(&self) -> *mut u64 { Self::__member_field_664(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_674(this: *const Self) -> *mut u16 { unsafe { member!(this, "TESWeather.field_674", 0x674, u16) } }
+    /// `TESWeather::field_674`, at +0x674 on 1.7.104.
+    #[inline]
+    pub fn field_674(&self) -> u16 { unsafe { Self::__member_field_674(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_674(&mut self, value: u16) { unsafe { Self::__member_field_674(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_674_ptr(&self) -> *mut u16 { Self::__member_field_674(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_676(this: *const Self) -> *mut u8 { unsafe { member!(this, "TESWeather.field_676", 0x676, u8) } }
+    /// `TESWeather::field_676`, at +0x676 on 1.7.104.
+    #[inline]
+    pub fn field_676(&self) -> u8 { unsafe { Self::__member_field_676(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_676(&mut self, value: u8) { unsafe { Self::__member_field_676(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_676_ptr(&self) -> *mut u8 { Self::__member_field_676(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_678(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWeather.field_678", 0x678, u64) } }
@@ -6822,6 +8269,46 @@ impl crate::TESWeather {
     pub fn set_field_680(&mut self, value: u64) { unsafe { Self::__member_field_680(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_680_ptr(&self) -> *mut u64 { Self::__member_field_680(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_688(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESWeather.field_688", 0x688, u32) } }
+    /// `TESWeather::field_688`, at +0x688 on 1.7.104.
+    #[inline]
+    pub fn field_688(&self) -> u32 { unsafe { Self::__member_field_688(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_688(&mut self, value: u32) { unsafe { Self::__member_field_688(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_688_ptr(&self) -> *mut u32 { Self::__member_field_688(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_68C(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESWeather.field_68C", 0x68C, u32) } }
+    /// `TESWeather::field_68C`, at +0x68C on 1.7.104.
+    #[inline]
+    pub fn field_68C(&self) -> u32 { unsafe { Self::__member_field_68C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_68C(&mut self, value: u32) { unsafe { Self::__member_field_68C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_68C_ptr(&self) -> *mut u32 { Self::__member_field_68C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_690(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESWeather.field_690", 0x690, u32) } }
+    /// `TESWeather::field_690`, at +0x690 on 1.7.104.
+    #[inline]
+    pub fn field_690(&self) -> u32 { unsafe { Self::__member_field_690(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_690(&mut self, value: u32) { unsafe { Self::__member_field_690(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_690_ptr(&self) -> *mut u32 { Self::__member_field_690(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_694(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESWeather.field_694", 0x694, u32) } }
+    /// `TESWeather::field_694`, at +0x694 on 1.7.104.
+    #[inline]
+    pub fn field_694(&self) -> u32 { unsafe { Self::__member_field_694(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_694(&mut self, value: u32) { unsafe { Self::__member_field_694(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_694_ptr(&self) -> *mut u32 { Self::__member_field_694(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_778(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESWeather.field_778", 0x778, u32) } }
@@ -6864,6 +8351,16 @@ impl crate::TESWeather {
     pub fn field_784_ptr(&self) -> *mut u32 { Self::__member_field_784(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_field_788(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESWeather.field_788", 0x788, u32) } }
+    /// `TESWeather::field_788`, at +0x788 on 1.7.104.
+    #[inline]
+    pub fn field_788(&self) -> u32 { unsafe { Self::__member_field_788(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_788(&mut self, value: u32) { unsafe { Self::__member_field_788(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_788_ptr(&self) -> *mut u32 { Self::__member_field_788(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_field_78C(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESWeather.field_78C", 0x78C, u32) } }
     /// `TESWeather::field_78C`, at +0x78C on 1.7.104.
     #[inline]
@@ -6892,6 +8389,16 @@ impl crate::TESWeather {
     pub fn set_field_794(&mut self, value: u32) { unsafe { Self::__member_field_794(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_794_ptr(&self) -> *mut u32 { Self::__member_field_794(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_798(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESWeather.field_798", 0x798, u32) } }
+    /// `TESWeather::field_798`, at +0x798 on 1.7.104.
+    #[inline]
+    pub fn field_798(&self) -> u32 { unsafe { Self::__member_field_798(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_798(&mut self, value: u32) { unsafe { Self::__member_field_798(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_798_ptr(&self) -> *mut u32 { Self::__member_field_798(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_79C(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESWeather.field_79C", 0x79C, u32) } }
@@ -6944,6 +8451,36 @@ impl crate::TESWeather {
     pub fn field_7B0_ptr(&self) -> *mut u64 { Self::__member_field_7B0(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_field_7E0(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWeather.field_7E0", 0x7E0, u64) } }
+    /// `TESWeather::field_7E0`, at +0x7E0 on 1.7.104.
+    #[inline]
+    pub fn field_7E0(&self) -> u64 { unsafe { Self::__member_field_7E0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_7E0(&mut self, value: u64) { unsafe { Self::__member_field_7E0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_7E0_ptr(&self) -> *mut u64 { Self::__member_field_7E0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_7E8(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWeather.field_7E8", 0x7E8, u64) } }
+    /// `TESWeather::field_7E8`, at +0x7E8 on 1.7.104.
+    #[inline]
+    pub fn field_7E8(&self) -> u64 { unsafe { Self::__member_field_7E8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_7E8(&mut self, value: u64) { unsafe { Self::__member_field_7E8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_7E8_ptr(&self) -> *mut u64 { Self::__member_field_7E8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_7F0(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWeather.field_7F0", 0x7F0, u64) } }
+    /// `TESWeather::field_7F0`, at +0x7F0 on 1.7.104.
+    #[inline]
+    pub fn field_7F0(&self) -> u64 { unsafe { Self::__member_field_7F0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_7F0(&mut self, value: u64) { unsafe { Self::__member_field_7F0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_7F0_ptr(&self) -> *mut u64 { Self::__member_field_7F0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_field_8A0(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWeather.field_8A0", 0x8A0, u64) } }
     /// `TESWeather::field_8A0`, at +0x8A0 on 1.7.104.
     #[inline]
@@ -6952,6 +8489,36 @@ impl crate::TESWeather {
     pub fn set_field_8A0(&mut self, value: u64) { unsafe { Self::__member_field_8A0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_8A0_ptr(&self) -> *mut u64 { Self::__member_field_8A0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8B0(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWeather.field_8B0", 0x8B0, u64) } }
+    /// `TESWeather::field_8B0`, at +0x8B0 on 1.7.104.
+    #[inline]
+    pub fn field_8B0(&self) -> u64 { unsafe { Self::__member_field_8B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8B0(&mut self, value: u64) { unsafe { Self::__member_field_8B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8B0_ptr(&self) -> *mut u64 { Self::__member_field_8B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWeather.field_8B8", 0x8B8, u64) } }
+    /// `TESWeather::field_8B8`, at +0x8B8 on 1.7.104.
+    #[inline]
+    pub fn field_8B8(&self) -> u64 { unsafe { Self::__member_field_8B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8B8(&mut self, value: u64) { unsafe { Self::__member_field_8B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8B8_ptr(&self) -> *mut u64 { Self::__member_field_8B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8C0(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWeather.field_8C0", 0x8C0, u64) } }
+    /// `TESWeather::field_8C0`, at +0x8C0 on 1.7.104.
+    #[inline]
+    pub fn field_8C0(&self) -> u64 { unsafe { Self::__member_field_8C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8C0(&mut self, value: u64) { unsafe { Self::__member_field_8C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8C0_ptr(&self) -> *mut u64 { Self::__member_field_8C0(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_m_TESModel_878(this: *const Self) -> *mut [u8; 24] { unsafe { member!(this, "TESWeather.m_TESModel_878", 0x878, [u8; 24]) } }
@@ -7091,6 +8658,26 @@ impl crate::ThirdPersonState {
     pub fn camera_control_node(&self) -> Option<&crate::NiNode> { unsafe { { self.cameraControlNode }.as_ref() } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_applyThirdPerson(this: *const Self) -> *mut u8 { unsafe { member!(this, "ThirdPersonState.applyThirdPerson", 0xDE, u8) } }
+    /// `ThirdPersonState::applyThirdPerson`, at +0xDE on 1.7.104.
+    #[inline]
+    pub fn applyThirdPerson(&self) -> u8 { unsafe { Self::__member_applyThirdPerson(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_applyThirdPerson(&mut self, value: u8) { unsafe { Self::__member_applyThirdPerson(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn applyThirdPerson_ptr(&self) -> *mut u8 { Self::__member_applyThirdPerson(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_keepFreeRotation(this: *const Self) -> *mut u8 { unsafe { member!(this, "ThirdPersonState.keepFreeRotation", 0xDF, u8) } }
+    /// `ThirdPersonState::keepFreeRotation`, at +0xDF on 1.7.104.
+    #[inline]
+    pub fn keepFreeRotation(&self) -> u8 { unsafe { Self::__member_keepFreeRotation(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_keepFreeRotation(&mut self, value: u8) { unsafe { Self::__member_keepFreeRotation(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn keepFreeRotation_ptr(&self) -> *mut u8 { Self::__member_keepFreeRotation(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_pad0c(this: *const Self) -> *mut u32 { unsafe { member!(this, "ThirdPersonState.pad0c", 0xC, u32) } }
     /// `ThirdPersonState::pad0c`, at +0xC on 1.7.104.
     #[inline]
@@ -7119,6 +8706,24 @@ impl crate::ThirdPersonState {
     pub fn set_padE3(&mut self, value: [u8; 5]) { unsafe { Self::__member_padE3(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn padE3_ptr(&self) -> *mut [u8; 5] { Self::__member_padE3(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_recoveryStart(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "ThirdPersonState.recoveryStart", 0x90, crate::NiPoint3) } }
+    /// `ThirdPersonState::recoveryStart`, at +0x90 on 1.7.104.
+    #[inline]
+    pub fn recoveryStart(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_recoveryStart(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn recoveryStart_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_recoveryStart(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_toggleToFirstPerson(this: *const Self) -> *mut u8 { unsafe { member!(this, "ThirdPersonState.toggleToFirstPerson", 0xDD, u8) } }
+    /// `ThirdPersonState::toggleToFirstPerson`, at +0xDD on 1.7.104.
+    #[inline]
+    pub fn toggleToFirstPerson(&self) -> u8 { unsafe { Self::__member_toggleToFirstPerson(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_toggleToFirstPerson(&mut self, value: u8) { unsafe { Self::__member_toggleToFirstPerson(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn toggleToFirstPerson_ptr(&self) -> *mut u8 { Self::__member_toggleToFirstPerson(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_useShoulderOffsets(this: *const Self) -> *mut u8 { unsafe { member!(this, "ThirdPersonState.useShoulderOffsets", 0xE1, u8) } }
@@ -7163,6 +8768,22 @@ impl crate::TransitionState {
     pub fn target_state(&self) -> Option<&crate::TESCameraState> { unsafe { { self.targetState }.as_ref() } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_fromPosition(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "TransitionState.fromPosition", 0x40, crate::NiPoint3) } }
+    /// `TransitionState::fromPosition`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn fromPosition(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_fromPosition(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn fromPosition_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_fromPosition(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_fromRotation(this: *const Self) -> *mut crate::NiQuaternion { unsafe { member!(this, "TransitionState.fromRotation", 0x20, crate::NiQuaternion) } }
+    /// `TransitionState::fromRotation`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn fromRotation(&self) -> &crate::NiQuaternion { unsafe { &*Self::__member_fromRotation(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn fromRotation_ptr(&self) -> *mut crate::NiQuaternion { Self::__member_fromRotation(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_id(this: *const Self) -> *mut u32 { unsafe { member!(this, "TransitionState.id", 0x18, u32) } }
     /// `TransitionState::id`, at +0x18 on 1.7.104.
     #[inline]
@@ -7193,6 +8814,16 @@ impl crate::TransitionState {
     pub fn padding1C_ptr(&self) -> *mut u32 { Self::__member_padding1C(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_progress(this: *const Self) -> *mut f32 { unsafe { member!(this, "TransitionState.progress", 0x6C, f32) } }
+    /// `TransitionState::progress`, at +0x6C on 1.7.104.
+    #[inline]
+    pub fn progress(&self) -> f32 { unsafe { Self::__member_progress(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_progress(&mut self, value: f32) { unsafe { Self::__member_progress(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn progress_ptr(&self) -> *mut f32 { Self::__member_progress(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_refCount(this: *const Self) -> *mut u32 { unsafe { member!(this, "TransitionState.refCount", 0x8, u32) } }
     /// `TransitionState::refCount`, at +0x8 on 1.7.104.
     #[inline]
@@ -7201,6 +8832,16 @@ impl crate::TransitionState {
     pub fn set_refCount(&mut self, value: u32) { unsafe { Self::__member_refCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn refCount_ptr(&self) -> *mut u32 { Self::__member_refCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_startTimeMs(this: *const Self) -> *mut u32 { unsafe { member!(this, "TransitionState.startTimeMs", 0x58, u32) } }
+    /// `TransitionState::startTimeMs`, at +0x58 on 1.7.104.
+    #[inline]
+    pub fn startTimeMs(&self) -> u32 { unsafe { Self::__member_startTimeMs(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_startTimeMs(&mut self, value: u32) { unsafe { Self::__member_startTimeMs(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn startTimeMs_ptr(&self) -> *mut u32 { Self::__member_startTimeMs(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_toPosition(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "TransitionState.toPosition", 0x4C, crate::NiPoint3) } }
@@ -7291,6 +8932,56 @@ impl crate::UICursor {
     /// `None` until the engine creates it.
     #[inline]
     pub fn singleton() -> Option<&'static Self> { unsafe { *(address!(403551) as *const Option<&'static Self>) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_bounds(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "UICursor.bounds", 0xC, [u8; 16]) } }
+    /// `UICursor::bounds`, at +0xC on 1.7.104.
+    #[inline]
+    pub fn bounds(&self) -> [u8; 16] { unsafe { Self::__member_bounds(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_bounds(&mut self, value: [u8; 16]) { unsafe { Self::__member_bounds(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn bounds_ptr(&self) -> *mut [u8; 16] { Self::__member_bounds(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_speedScale(this: *const Self) -> *mut f32 { unsafe { member!(this, "UICursor.speedScale", 0x1C, f32) } }
+    /// `UICursor::speedScale`, at +0x1C on 1.7.104.
+    #[inline]
+    pub fn speedScale(&self) -> f32 { unsafe { Self::__member_speedScale(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_speedScale(&mut self, value: f32) { unsafe { Self::__member_speedScale(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn speedScale_ptr(&self) -> *mut f32 { Self::__member_speedScale(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_speedScale2(this: *const Self) -> *mut f32 { unsafe { member!(this, "UICursor.speedScale2", 0x28, f32) } }
+    /// `UICursor::speedScale2`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn speedScale2(&self) -> f32 { unsafe { Self::__member_speedScale2(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_speedScale2(&mut self, value: f32) { unsafe { Self::__member_speedScale2(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn speedScale2_ptr(&self) -> *mut f32 { Self::__member_speedScale2(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_x(this: *const Self) -> *mut f32 { unsafe { member!(this, "UICursor.x", 0x4, f32) } }
+    /// `UICursor::x`, at +0x4 on 1.7.104.
+    #[inline]
+    pub fn x(&self) -> f32 { unsafe { Self::__member_x(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_x(&mut self, value: f32) { unsafe { Self::__member_x(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn x_ptr(&self) -> *mut f32 { Self::__member_x(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_y(this: *const Self) -> *mut f32 { unsafe { member!(this, "UICursor.y", 0x8, f32) } }
+    /// `UICursor::y`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn y(&self) -> f32 { unsafe { Self::__member_y(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_y(&mut self, value: f32) { unsafe { Self::__member_y(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn y_ptr(&self) -> *mut f32 { Self::__member_y(core::ptr::from_ref(self)) }
 }
 
 impl crate::VATSCameraState {
@@ -7538,6 +9229,24 @@ impl crate::bhkCharacterController {
     pub fn set_m_BSBound_150(&mut self, value: u64) { unsafe { Self::__member_m_BSBound_150(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn m_BSBound_150_ptr(&self) -> *mut u64 { Self::__member_m_BSBound_150(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_shapes(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "bhkCharacterController.shapes", 0x280, [u8; 16]) } }
+    /// `bhkCharacterController::shapes`, at +0x280 on 1.7.104.
+    #[inline]
+    pub fn shapes(&self) -> [u8; 16] { unsafe { Self::__member_shapes(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_shapes(&mut self, value: [u8; 16]) { unsafe { Self::__member_shapes(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn shapes_ptr(&self) -> *mut [u8; 16] { Self::__member_shapes(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_source_bhkCharacterMoveFinishEvent(this: *const Self) -> *mut crate::BSTEventSource { unsafe { member!(this, "bhkCharacterController.source_bhkCharacterMoveFinishEvent", 0x10, crate::BSTEventSource) } }
+    /// `bhkCharacterController::source_bhkCharacterMoveFinishEvent`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn source_bhkCharacterMoveFinishEvent(&self) -> &crate::BSTEventSource { unsafe { &*Self::__member_source_bhkCharacterMoveFinishEvent(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn source_bhkCharacterMoveFinishEvent_ptr(&self) -> *mut crate::BSTEventSource { Self::__member_source_bhkCharacterMoveFinishEvent(core::ptr::from_ref(self)) }
 }
 
 impl crate::bhkPickData {
@@ -7545,12 +9254,112 @@ impl crate::bhkPickData {
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn closest_collector(&self) -> Option<&crate::hkpClosestRayHitCollector> { unsafe { { self.closestCollector }.as_ref() } }
+    pub fn closest_collector(&self) -> Option<&crate::hkpClosestRayHitCollector> { unsafe { Self::__member_closestCollector(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
     /// `bhkPickData::rootCollidable` at +0x80: out: the hit body's root collidable; null = no hit. owner = collidable + (int8)collidable[+0x20], type collidable[+0x28] (1 = entity), filterInfo collidable[+0x2c]
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
     pub fn root_collidable(&self) -> Option<&crate::hkpCollidable> { unsafe { { self.rootCollidable }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_allHitsCollector(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "bhkPickData.allHitsCollector", 0xB0, *mut c_void) } }
+    /// `bhkPickData::allHitsCollector`, at +0xB0 on 1.7.104.
+    #[inline]
+    pub fn allHitsCollector(&self) -> *mut c_void { unsafe { Self::__member_allHitsCollector(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_allHitsCollector(&mut self, value: *mut c_void) { unsafe { Self::__member_allHitsCollector(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn allHitsCollector_ptr(&self) -> *mut *mut c_void { Self::__member_allHitsCollector(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_allHitsCollector2(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "bhkPickData.allHitsCollector2", 0xB8, *mut c_void) } }
+    /// `bhkPickData::allHitsCollector2`, at +0xB8 on 1.7.104.
+    #[inline]
+    pub fn allHitsCollector2(&self) -> *mut c_void { unsafe { Self::__member_allHitsCollector2(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_allHitsCollector2(&mut self, value: *mut c_void) { unsafe { Self::__member_allHitsCollector2(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn allHitsCollector2_ptr(&self) -> *mut *mut c_void { Self::__member_allHitsCollector2(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_closestCollector(this: *const Self) -> *mut *mut crate::hkpClosestRayHitCollector { unsafe { member!(this, "bhkPickData.closestCollector", 0xA8, *mut crate::hkpClosestRayHitCollector) } }
+    /// `bhkPickData::closestCollector`, at +0xA8 on 1.7.104.
+    #[inline]
+    pub fn closestCollector(&self) -> *mut crate::hkpClosestRayHitCollector { unsafe { Self::__member_closestCollector(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_closestCollector(&mut self, value: *mut crate::hkpClosestRayHitCollector) { unsafe { Self::__member_closestCollector(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn closestCollector_ptr(&self) -> *mut *mut crate::hkpClosestRayHitCollector { Self::__member_closestCollector(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_enableShapeCollectionFilter(this: *const Self) -> *mut u8 { unsafe { member!(this, "bhkPickData.enableShapeCollectionFilter", 0x20, u8) } }
+    /// `bhkPickData::enableShapeCollectionFilter`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn enableShapeCollectionFilter(&self) -> u8 { unsafe { Self::__member_enableShapeCollectionFilter(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_enableShapeCollectionFilter(&mut self, value: u8) { unsafe { Self::__member_enableShapeCollectionFilter(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn enableShapeCollectionFilter_ptr(&self) -> *mut u8 { Self::__member_enableShapeCollectionFilter(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_extraInfo(this: *const Self) -> *mut u32 { unsafe { member!(this, "bhkPickData.extraInfo", 0x44, u32) } }
+    /// `bhkPickData::extraInfo`, at +0x44 on 1.7.104.
+    #[inline]
+    pub fn extraInfo(&self) -> u32 { unsafe { Self::__member_extraInfo(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_extraInfo(&mut self, value: u32) { unsafe { Self::__member_extraInfo(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn extraInfo_ptr(&self) -> *mut u32 { Self::__member_extraInfo(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u64 { unsafe { member!(this, "bhkPickData.field_28", 0x28, u64) } }
+    /// `bhkPickData::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u64 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u64) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u64 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_filterInfo(this: *const Self) -> *mut u32 { unsafe { member!(this, "bhkPickData.filterInfo", 0x24, u32) } }
+    /// `bhkPickData::filterInfo`, at +0x24 on 1.7.104.
+    #[inline]
+    pub fn filterInfo(&self) -> u32 { unsafe { Self::__member_filterInfo(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_filterInfo(&mut self, value: u32) { unsafe { Self::__member_filterInfo(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn filterInfo_ptr(&self) -> *mut u32 { Self::__member_filterInfo(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_from(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "bhkPickData.from", 0x0, [u8; 16]) } }
+    /// `bhkPickData::from`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn from(&self) -> [u8; 16] { unsafe { Self::__member_from(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_from(&mut self, value: [u8; 16]) { unsafe { Self::__member_from(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn from_ptr(&self) -> *mut [u8; 16] { Self::__member_from(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_hitFraction(this: *const Self) -> *mut f32 { unsafe { member!(this, "bhkPickData.hitFraction", 0x40, f32) } }
+    /// `bhkPickData::hitFraction`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn hitFraction(&self) -> f32 { unsafe { Self::__member_hitFraction(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_hitFraction(&mut self, value: f32) { unsafe { Self::__member_hitFraction(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn hitFraction_ptr(&self) -> *mut f32 { Self::__member_hitFraction(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_normal(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "bhkPickData.normal", 0x30, [u8; 16]) } }
+    /// `bhkPickData::normal`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn normal(&self) -> [u8; 16] { unsafe { Self::__member_normal(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_normal(&mut self, value: [u8; 16]) { unsafe { Self::__member_normal(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn normal_ptr(&self) -> *mut [u8; 16] { Self::__member_normal(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_ray(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "bhkPickData.ray", 0x90, [u8; 16]) } }
@@ -7561,6 +9370,56 @@ impl crate::bhkPickData {
     pub fn set_ray(&mut self, value: [u8; 16]) { unsafe { Self::__member_ray(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn ray_ptr(&self) -> *mut [u8; 16] { Self::__member_ray(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_rayCache(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "bhkPickData.rayCache", 0xA0, *mut c_void) } }
+    /// `bhkPickData::rayCache`, at +0xA0 on 1.7.104.
+    #[inline]
+    pub fn rayCache(&self) -> *mut c_void { unsafe { Self::__member_rayCache(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_rayCache(&mut self, value: *mut c_void) { unsafe { Self::__member_rayCache(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn rayCache_ptr(&self) -> *mut *mut c_void { Self::__member_rayCache(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_shapeKeyIndex(this: *const Self) -> *mut u32 { unsafe { member!(this, "bhkPickData.shapeKeyIndex", 0x70, u32) } }
+    /// `bhkPickData::shapeKeyIndex`, at +0x70 on 1.7.104.
+    #[inline]
+    pub fn shapeKeyIndex(&self) -> u32 { unsafe { Self::__member_shapeKeyIndex(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_shapeKeyIndex(&mut self, value: u32) { unsafe { Self::__member_shapeKeyIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn shapeKeyIndex_ptr(&self) -> *mut u32 { Self::__member_shapeKeyIndex(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_shapeKeys(this: *const Self) -> *mut [u8; 32] { unsafe { member!(this, "bhkPickData.shapeKeys", 0x48, [u8; 32]) } }
+    /// `bhkPickData::shapeKeys`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn shapeKeys(&self) -> [u8; 32] { unsafe { Self::__member_shapeKeys(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_shapeKeys(&mut self, value: [u8; 32]) { unsafe { Self::__member_shapeKeys(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn shapeKeys_ptr(&self) -> *mut [u8; 32] { Self::__member_shapeKeys(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_skipped(this: *const Self) -> *mut u8 { unsafe { member!(this, "bhkPickData.skipped", 0xC0, u8) } }
+    /// `bhkPickData::skipped`, at +0xC0 on 1.7.104.
+    #[inline]
+    pub fn skipped(&self) -> u8 { unsafe { Self::__member_skipped(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_skipped(&mut self, value: u8) { unsafe { Self::__member_skipped(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn skipped_ptr(&self) -> *mut u8 { Self::__member_skipped(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_to(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "bhkPickData.to", 0x10, [u8; 16]) } }
+    /// `bhkPickData::to`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn to(&self) -> [u8; 16] { unsafe { Self::__member_to(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_to(&mut self, value: [u8; 16]) { unsafe { Self::__member_to(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn to_ptr(&self) -> *mut [u8; 16] { Self::__member_to(core::ptr::from_ref(self)) }
 }
 
 impl crate::bhkShape {
@@ -7706,6 +9565,39 @@ impl crate::bhkWorld {
     pub fn m_bhkWorldCinfo_C5E0_ptr(&self) -> *mut crate::bhkWorldCinfo { Self::__member_m_bhkWorldCinfo_C5E0(core::ptr::from_ref(self)) }
 }
 
+impl crate::hkArray {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_capacityAndFlags(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkArray.capacityAndFlags", 0xC, u32) } }
+    /// `hkArray::capacityAndFlags`, at +0xC on 1.7.104.
+    #[inline]
+    pub fn capacityAndFlags(&self) -> u32 { unsafe { Self::__member_capacityAndFlags(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_capacityAndFlags(&mut self, value: u32) { unsafe { Self::__member_capacityAndFlags(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn capacityAndFlags_ptr(&self) -> *mut u32 { Self::__member_capacityAndFlags(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_data(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "hkArray.data", 0x0, *mut c_void) } }
+    /// `hkArray::data`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn data(&self) -> *mut c_void { unsafe { Self::__member_data(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_data(&mut self, value: *mut c_void) { unsafe { Self::__member_data(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn data_ptr(&self) -> *mut *mut c_void { Self::__member_data(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_size(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkArray.size", 0x8, u32) } }
+    /// `hkArray::size`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn size(&self) -> u32 { unsafe { Self::__member_size(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_size(&mut self, value: u32) { unsafe { Self::__member_size(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn size_ptr(&self) -> *mut u32 { Self::__member_size(core::ptr::from_ref(self)) }
+}
+
 impl crate::hkContainerHeapAllocator__Allocator {
     /// `hkContainerHeapAllocator::Allocator::AllocateBuffer`, vtable slot 3: allocates a buffer from the thread's Havok heap (heap slot 3 with the same arguments)
     ///
@@ -7732,7 +9624,17 @@ impl crate::hkMemoryRouter {
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn heap(&self) -> Option<&crate::hkMemoryAllocator> { unsafe { { self.heap }.as_ref() } }
+    pub fn heap(&self) -> Option<&crate::hkMemoryAllocator> { unsafe { Self::__member_heap(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_heap(this: *const Self) -> *mut *mut crate::hkMemoryAllocator { unsafe { member!(this, "hkMemoryRouter.heap", 0x58, *mut crate::hkMemoryAllocator) } }
+    /// `hkMemoryRouter::heap`, at +0x58 on 1.7.104.
+    #[inline]
+    pub fn heap_field(&self) -> *mut crate::hkMemoryAllocator { unsafe { Self::__member_heap(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_heap(&mut self, value: *mut crate::hkMemoryAllocator) { unsafe { Self::__member_heap(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn heap_ptr(&self) -> *mut *mut crate::hkMemoryAllocator { Self::__member_heap(core::ptr::from_ref(self)) }
 }
 
 impl crate::hkReferencedObject {
@@ -7748,6 +9650,235 @@ impl crate::hkReferencedObject {
     /// `void (const hkReferencedObject* this)`
     #[inline]
     pub fn remove_reference(&self) { unsafe { function!(57011, (*const Self))(core::ptr::from_ref(self)) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_memSizeAndFlags(this: *const Self) -> *mut u16 { unsafe { member!(this, "hkReferencedObject.memSizeAndFlags", 0x8, u16) } }
+    /// `hkReferencedObject::memSizeAndFlags`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn memSizeAndFlags(&self) -> u16 { unsafe { Self::__member_memSizeAndFlags(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_memSizeAndFlags(&mut self, value: u16) { unsafe { Self::__member_memSizeAndFlags(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn memSizeAndFlags_ptr(&self) -> *mut u16 { Self::__member_memSizeAndFlags(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_referenceCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "hkReferencedObject.referenceCount", 0xA, u16) } }
+    /// `hkReferencedObject::referenceCount`, at +0xA on 1.7.104.
+    #[inline]
+    pub fn referenceCount(&self) -> u16 { unsafe { Self::__member_referenceCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_referenceCount(&mut self, value: u16) { unsafe { Self::__member_referenceCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn referenceCount_ptr(&self) -> *mut u16 { Self::__member_referenceCount(core::ptr::from_ref(self)) }
+}
+
+impl crate::hkStridedVertices {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_numVertices(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkStridedVertices.numVertices", 0x8, u32) } }
+    /// `hkStridedVertices::numVertices`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn numVertices(&self) -> u32 { unsafe { Self::__member_numVertices(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_numVertices(&mut self, value: u32) { unsafe { Self::__member_numVertices(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn numVertices_ptr(&self) -> *mut u32 { Self::__member_numVertices(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_striding(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkStridedVertices.striding", 0xC, u32) } }
+    /// `hkStridedVertices::striding`, at +0xC on 1.7.104.
+    #[inline]
+    pub fn striding(&self) -> u32 { unsafe { Self::__member_striding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_striding(&mut self, value: u32) { unsafe { Self::__member_striding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn striding_ptr(&self) -> *mut u32 { Self::__member_striding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_vertices(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "hkStridedVertices.vertices", 0x0, *mut c_void) } }
+    /// `hkStridedVertices::vertices`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn vertices(&self) -> *mut c_void { unsafe { Self::__member_vertices(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_vertices(&mut self, value: *mut c_void) { unsafe { Self::__member_vertices(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn vertices_ptr(&self) -> *mut *mut c_void { Self::__member_vertices(core::ptr::from_ref(self)) }
+}
+
+impl crate::hkbFootIkDriver__InternalLeg {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_ankleTargetMS(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "hkbFootIkDriver::InternalLeg.ankleTargetMS", 0x0, [u8; 16]) } }
+    /// `hkbFootIkDriver::InternalLeg::ankleTargetMS`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn ankleTargetMS(&self) -> [u8; 16] { unsafe { Self::__member_ankleTargetMS(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_ankleTargetMS(&mut self, value: [u8; 16]) { unsafe { Self::__member_ankleTargetMS(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn ankleTargetMS_ptr(&self) -> *mut [u8; 16] { Self::__member_ankleTargetMS(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_groundHeight(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkbFootIkDriver::InternalLeg.groundHeight", 0x28, f32) } }
+    /// `hkbFootIkDriver::InternalLeg::groundHeight`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn groundHeight(&self) -> f32 { unsafe { Self::__member_groundHeight(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_groundHeight(&mut self, value: f32) { unsafe { Self::__member_groundHeight(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn groundHeight_ptr(&self) -> *mut f32 { Self::__member_groundHeight(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_hit(this: *const Self) -> *mut u8 { unsafe { member!(this, "hkbFootIkDriver::InternalLeg.hit", 0x2C, u8) } }
+    /// `hkbFootIkDriver::InternalLeg::hit`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn hit(&self) -> u8 { unsafe { Self::__member_hit(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_hit(&mut self, value: u8) { unsafe { Self::__member_hit(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn hit_ptr(&self) -> *mut u8 { Self::__member_hit(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_legSolver(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "hkbFootIkDriver::InternalLeg.legSolver", 0x20, *mut c_void) } }
+    /// `hkbFootIkDriver::InternalLeg::legSolver`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn legSolver(&self) -> *mut c_void { unsafe { Self::__member_legSolver(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_legSolver(&mut self, value: *mut c_void) { unsafe { Self::__member_legSolver(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn legSolver_ptr(&self) -> *mut *mut c_void { Self::__member_legSolver(core::ptr::from_ref(self)) }
+}
+
+impl crate::hkbFootIkDriverInfoLeg {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_ankleIndex(this: *const Self) -> *mut u16 { unsafe { member!(this, "hkbFootIkDriverInfoLeg.ankleIndex", 0x50, u16) } }
+    /// `hkbFootIkDriverInfoLeg::ankleIndex`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn ankleIndex(&self) -> u16 { unsafe { Self::__member_ankleIndex(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_ankleIndex(&mut self, value: u16) { unsafe { Self::__member_ankleIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn ankleIndex_ptr(&self) -> *mut u16 { Self::__member_ankleIndex(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_footEndLS(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "hkbFootIkDriverInfoLeg.footEndLS", 0x20, [u8; 16]) } }
+    /// `hkbFootIkDriverInfoLeg::footEndLS`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn footEndLS(&self) -> [u8; 16] { unsafe { Self::__member_footEndLS(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_footEndLS(&mut self, value: [u8; 16]) { unsafe { Self::__member_footEndLS(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn footEndLS_ptr(&self) -> *mut [u8; 16] { Self::__member_footEndLS(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_footPlantedAnkleHeightMS(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkbFootIkDriverInfoLeg.footPlantedAnkleHeightMS", 0x30, f32) } }
+    /// `hkbFootIkDriverInfoLeg::footPlantedAnkleHeightMS`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn footPlantedAnkleHeightMS(&self) -> f32 { unsafe { Self::__member_footPlantedAnkleHeightMS(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_footPlantedAnkleHeightMS(&mut self, value: f32) { unsafe { Self::__member_footPlantedAnkleHeightMS(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn footPlantedAnkleHeightMS_ptr(&self) -> *mut f32 { Self::__member_footPlantedAnkleHeightMS(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_footRaisedAnkleHeightMS(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkbFootIkDriverInfoLeg.footRaisedAnkleHeightMS", 0x34, f32) } }
+    /// `hkbFootIkDriverInfoLeg::footRaisedAnkleHeightMS`, at +0x34 on 1.7.104.
+    #[inline]
+    pub fn footRaisedAnkleHeightMS(&self) -> f32 { unsafe { Self::__member_footRaisedAnkleHeightMS(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_footRaisedAnkleHeightMS(&mut self, value: f32) { unsafe { Self::__member_footRaisedAnkleHeightMS(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn footRaisedAnkleHeightMS_ptr(&self) -> *mut f32 { Self::__member_footRaisedAnkleHeightMS(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_hipIndex(this: *const Self) -> *mut u16 { unsafe { member!(this, "hkbFootIkDriverInfoLeg.hipIndex", 0x4C, u16) } }
+    /// `hkbFootIkDriverInfoLeg::hipIndex`, at +0x4C on 1.7.104.
+    #[inline]
+    pub fn hipIndex(&self) -> u16 { unsafe { Self::__member_hipIndex(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_hipIndex(&mut self, value: u16) { unsafe { Self::__member_hipIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn hipIndex_ptr(&self) -> *mut u16 { Self::__member_hipIndex(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_kneeAxisLS(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "hkbFootIkDriverInfoLeg.kneeAxisLS", 0x10, [u8; 16]) } }
+    /// `hkbFootIkDriverInfoLeg::kneeAxisLS`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn kneeAxisLS(&self) -> [u8; 16] { unsafe { Self::__member_kneeAxisLS(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_kneeAxisLS(&mut self, value: [u8; 16]) { unsafe { Self::__member_kneeAxisLS(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn kneeAxisLS_ptr(&self) -> *mut [u8; 16] { Self::__member_kneeAxisLS(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_kneeIndex(this: *const Self) -> *mut u16 { unsafe { member!(this, "hkbFootIkDriverInfoLeg.kneeIndex", 0x4E, u16) } }
+    /// `hkbFootIkDriverInfoLeg::kneeIndex`, at +0x4E on 1.7.104.
+    #[inline]
+    pub fn kneeIndex(&self) -> u16 { unsafe { Self::__member_kneeIndex(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_kneeIndex(&mut self, value: u16) { unsafe { Self::__member_kneeIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn kneeIndex_ptr(&self) -> *mut u16 { Self::__member_kneeIndex(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_maxAnkleAngleDegrees(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkbFootIkDriverInfoLeg.maxAnkleAngleDegrees", 0x48, f32) } }
+    /// `hkbFootIkDriverInfoLeg::maxAnkleAngleDegrees`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn maxAnkleAngleDegrees(&self) -> f32 { unsafe { Self::__member_maxAnkleAngleDegrees(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_maxAnkleAngleDegrees(&mut self, value: f32) { unsafe { Self::__member_maxAnkleAngleDegrees(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn maxAnkleAngleDegrees_ptr(&self) -> *mut f32 { Self::__member_maxAnkleAngleDegrees(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_maxAnkleHeightMS(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkbFootIkDriverInfoLeg.maxAnkleHeightMS", 0x38, f32) } }
+    /// `hkbFootIkDriverInfoLeg::maxAnkleHeightMS`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn maxAnkleHeightMS(&self) -> f32 { unsafe { Self::__member_maxAnkleHeightMS(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_maxAnkleHeightMS(&mut self, value: f32) { unsafe { Self::__member_maxAnkleHeightMS(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn maxAnkleHeightMS_ptr(&self) -> *mut f32 { Self::__member_maxAnkleHeightMS(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_maxKneeAngleDegrees(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkbFootIkDriverInfoLeg.maxKneeAngleDegrees", 0x40, f32) } }
+    /// `hkbFootIkDriverInfoLeg::maxKneeAngleDegrees`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn maxKneeAngleDegrees(&self) -> f32 { unsafe { Self::__member_maxKneeAngleDegrees(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_maxKneeAngleDegrees(&mut self, value: f32) { unsafe { Self::__member_maxKneeAngleDegrees(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn maxKneeAngleDegrees_ptr(&self) -> *mut f32 { Self::__member_maxKneeAngleDegrees(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_minAnkleHeightMS(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkbFootIkDriverInfoLeg.minAnkleHeightMS", 0x3C, f32) } }
+    /// `hkbFootIkDriverInfoLeg::minAnkleHeightMS`, at +0x3C on 1.7.104.
+    #[inline]
+    pub fn minAnkleHeightMS(&self) -> f32 { unsafe { Self::__member_minAnkleHeightMS(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_minAnkleHeightMS(&mut self, value: f32) { unsafe { Self::__member_minAnkleHeightMS(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn minAnkleHeightMS_ptr(&self) -> *mut f32 { Self::__member_minAnkleHeightMS(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_minKneeAngleDegrees(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkbFootIkDriverInfoLeg.minKneeAngleDegrees", 0x44, f32) } }
+    /// `hkbFootIkDriverInfoLeg::minKneeAngleDegrees`, at +0x44 on 1.7.104.
+    #[inline]
+    pub fn minKneeAngleDegrees(&self) -> f32 { unsafe { Self::__member_minKneeAngleDegrees(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_minKneeAngleDegrees(&mut self, value: f32) { unsafe { Self::__member_minKneeAngleDegrees(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn minKneeAngleDegrees_ptr(&self) -> *mut f32 { Self::__member_minKneeAngleDegrees(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_prevAnkleRotLS(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "hkbFootIkDriverInfoLeg.prevAnkleRotLS", 0x0, [u8; 16]) } }
+    /// `hkbFootIkDriverInfoLeg::prevAnkleRotLS`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn prevAnkleRotLS(&self) -> [u8; 16] { unsafe { Self::__member_prevAnkleRotLS(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_prevAnkleRotLS(&mut self, value: [u8; 16]) { unsafe { Self::__member_prevAnkleRotLS(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn prevAnkleRotLS_ptr(&self) -> *mut [u8; 16] { Self::__member_prevAnkleRotLS(core::ptr::from_ref(self)) }
 }
 
 impl crate::hkbFootIkGains {
@@ -7763,6 +9894,26 @@ impl crate::hkbFootIkGains {
     pub fn alignWorldFromModelGain_ptr(&self) -> *mut f32 { Self::__member_alignWorldFromModelGain(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_ankleOrientationGain(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkbFootIkGains.ankleOrientationGain", 0x2C, f32) } }
+    /// `hkbFootIkGains::ankleOrientationGain`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn ankleOrientationGain(&self) -> f32 { unsafe { Self::__member_ankleOrientationGain(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_ankleOrientationGain(&mut self, value: f32) { unsafe { Self::__member_ankleOrientationGain(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn ankleOrientationGain_ptr(&self) -> *mut f32 { Self::__member_ankleOrientationGain(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_errorUpDownBias(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkbFootIkGains.errorUpDownBias", 0x1C, f32) } }
+    /// `hkbFootIkGains::errorUpDownBias`, at +0x1C on 1.7.104.
+    #[inline]
+    pub fn errorUpDownBias(&self) -> f32 { unsafe { Self::__member_errorUpDownBias(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_errorUpDownBias(&mut self, value: f32) { unsafe { Self::__member_errorUpDownBias(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn errorUpDownBias_ptr(&self) -> *mut f32 { Self::__member_errorUpDownBias(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_footPlantedGain(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkbFootIkGains.footPlantedGain", 0xC, f32) } }
     /// `hkbFootIkGains::footPlantedGain`, at +0xC on 1.7.104.
     #[inline]
@@ -7771,6 +9922,16 @@ impl crate::hkbFootIkGains {
     pub fn set_footPlantedGain(&mut self, value: f32) { unsafe { Self::__member_footPlantedGain(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn footPlantedGain_ptr(&self) -> *mut f32 { Self::__member_footPlantedGain(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_footRaisedGain(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkbFootIkGains.footRaisedGain", 0x10, f32) } }
+    /// `hkbFootIkGains::footRaisedGain`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn footRaisedGain(&self) -> f32 { unsafe { Self::__member_footRaisedGain(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_footRaisedGain(&mut self, value: f32) { unsafe { Self::__member_footRaisedGain(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn footRaisedGain_ptr(&self) -> *mut f32 { Self::__member_footRaisedGain(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_footUnlockGain(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkbFootIkGains.footUnlockGain", 0x14, f32) } }
@@ -7821,6 +9982,16 @@ impl crate::hkbFootIkGains {
     pub fn set_maxKneeAngleDifference(&mut self, value: f32) { unsafe { Self::__member_maxKneeAngleDifference(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn maxKneeAngleDifference_ptr(&self) -> *mut f32 { Self::__member_maxKneeAngleDifference(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_onOffGain(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkbFootIkGains.onOffGain", 0x0, f32) } }
+    /// `hkbFootIkGains::onOffGain`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn onOffGain(&self) -> f32 { unsafe { Self::__member_onOffGain(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_onOffGain(&mut self, value: f32) { unsafe { Self::__member_onOffGain(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn onOffGain_ptr(&self) -> *mut f32 { Self::__member_onOffGain(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_worldFromModelFeedbackGain(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkbFootIkGains.worldFromModelFeedbackGain", 0x18, f32) } }
@@ -7958,6 +10129,16 @@ impl crate::hkpCollidable {
     pub fn shape(&self) -> Option<&crate::hkpShape> { unsafe { Self::__member_shape(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_collisionFilterInfo(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkpCollidable.collisionFilterInfo", 0x2C, u32) } }
+    /// `hkpCollidable::collisionFilterInfo`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn collisionFilterInfo(&self) -> u32 { unsafe { Self::__member_collisionFilterInfo(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_collisionFilterInfo(&mut self, value: u32) { unsafe { Self::__member_collisionFilterInfo(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn collisionFilterInfo_ptr(&self) -> *mut u32 { Self::__member_collisionFilterInfo(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_shape(this: *const Self) -> *mut *mut crate::hkpShape { unsafe { member!(this, "hkpCollidable.shape", 0x0, *mut crate::hkpShape) } }
     /// `hkpCollidable::shape`, at +0x0 on 1.7.104.
     #[inline]
@@ -7998,6 +10179,29 @@ impl crate::hkpConvexVerticesShape {
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
     pub fn connectivity(&self) -> Option<&crate::hkpConvexVerticesConnectivity> { unsafe { { self.connectivity }.as_ref() } }
+}
+
+impl crate::hkpConvexVerticesShape__BuildConfig {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_maxVertices(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkpConvexVerticesShape::BuildConfig.maxVertices", 0x8, u32) } }
+    /// `hkpConvexVerticesShape::BuildConfig::maxVertices`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn maxVertices(&self) -> u32 { unsafe { Self::__member_maxVertices(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_maxVertices(&mut self, value: u32) { unsafe { Self::__member_maxVertices(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn maxVertices_ptr(&self) -> *mut u32 { Self::__member_maxVertices(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_shrinkByConvexRadius(this: *const Self) -> *mut u8 { unsafe { member!(this, "hkpConvexVerticesShape::BuildConfig.shrinkByConvexRadius", 0x1, u8) } }
+    /// `hkpConvexVerticesShape::BuildConfig::shrinkByConvexRadius`, at +0x1 on 1.7.104.
+    #[inline]
+    pub fn shrinkByConvexRadius(&self) -> u8 { unsafe { Self::__member_shrinkByConvexRadius(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_shrinkByConvexRadius(&mut self, value: u8) { unsafe { Self::__member_shrinkByConvexRadius(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn shrinkByConvexRadius_ptr(&self) -> *mut u8 { Self::__member_shrinkByConvexRadius(core::ptr::from_ref(self)) }
 }
 
 impl crate::hkpListShape {
@@ -8046,6 +10250,16 @@ impl crate::hkpShape {
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
     pub fn user_data(&self) -> Option<&crate::bhkShape> { unsafe { { self.userData }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_memSizeAndFlags(this: *const Self) -> *mut u16 { unsafe { member!(this, "hkpShape.memSizeAndFlags", 0x8, u16) } }
+    /// `hkpShape::memSizeAndFlags`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn memSizeAndFlags(&self) -> u16 { unsafe { Self::__member_memSizeAndFlags(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_memSizeAndFlags(&mut self, value: u16) { unsafe { Self::__member_memSizeAndFlags(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn memSizeAndFlags_ptr(&self) -> *mut u16 { Self::__member_memSizeAndFlags(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_referenceCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "hkpShape.referenceCount", 0xA, u16) } }

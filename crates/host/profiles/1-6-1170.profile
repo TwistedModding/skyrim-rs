@@ -1846,7 +1846,6 @@ id-unverified 35568
 id-unverified 35574
 id-unverified 35586
 id-unverified 35588
-id-unverified 35600
 id-unverified 35604
 id-unverified 35639
 id-unverified 35642
@@ -1861,9 +1860,6 @@ id-unverified 35714
 id-unverified 35715
 id-unverified 35722
 id-unverified 35724
-id-unverified 35726
-id-unverified 35727
-id-unverified 35728
 id-unverified 35731
 id-unverified 35734
 id-unverified 35744
@@ -1872,7 +1868,6 @@ id-unverified 35762
 id-unverified 35766
 id-unverified 35767
 id-unverified 35768
-id-unverified 35772
 id-unverified 35787
 id-unverified 35794
 id-unverified 35799
@@ -2635,7 +2630,7 @@ id-unverified 52045
 id-unverified 52048
 id-unverified 52113
 id-unverified 52114
-id-unverified 52118
+id-address 52118
 id-unverified 52129
 id-unverified 52137
 id-unverified 52141
@@ -3758,7 +3753,7 @@ id-unverified 81922
 id-unverified 81923
 id-unverified 82030
 id-unverified 82058
-id-unverified 82082
+id-address 82082
 id-unverified 82136
 id-unverified 82137
 id-unverified 82214
@@ -4267,7 +4262,6 @@ id-unverified 107037
 id-unverified 107040
 id-unverified 107060
 id-unverified 107082
-id-unverified 107137
 id-unverified 107206
 id-unverified 107207
 id-unverified 107208
@@ -4307,7 +4301,6 @@ id-unverified 108244
 id-unverified 108306
 id-unverified 108350
 id-unverified 108485
-id-unverified 108496
 id-unverified 108562
 id-unverified 108568
 id-unverified 108587
@@ -9100,14 +9093,14 @@ id-unverified 447453
 id-unverified 447455
 id-unverified 447460
 id-unverified 447465
-id 447481 447517
+id-unverified 447481
 id-unverified 447486
 id-unverified 447487
 id-unverified 447488
 id-unverified 447500
 id-unverified 447503
 id-unverified 447505
-id 447517 447481
+id-unverified 447517
 id-unverified 447523
 id-unverified 447525
 id-unverified 447528
@@ -11094,7 +11087,7 @@ id-unverified 523542
 id-unverified 523543
 id-unverified 523544
 id-unverified 523572
-id 523574 30308
+id-unverified 523574
 id 523582 441613
 id 523583 441614
 id 523585 31418
@@ -11193,13 +11186,13 @@ id-unverified 524157
 id-unverified 524158
 id 524159 82981
 id-unverified 524160
-id 524161 84675
+id-unverified 524161
 id-unverified 524162
 id-unverified 524163
 id 524164 87466
 id 524165 443453
 id 524166 84927
-id 524167 84925
+id-unverified 524167
 id 524168 84687
 id 524169 88302
 id 524170 88303
@@ -11281,14 +11274,14 @@ id-unverified 524327
 id-unverified 524328
 id-unverified 524330
 id 524336 444000
-id 524338 444001
+id-unverified 524338
 id 524339 444002
 id 524340 444003
 id 524341 444004
 id-unverified 524342
-id 524343 444005
+id-unverified 524343
 id 524345 444006
-id 524346 444007
+id-unverified 524346
 id-unverified 524347
 id 524354 444059
 id-unverified 524355
@@ -11347,23 +11340,23 @@ id-unverified 524478
 id 524479 443686
 id-unverified 524482
 id-unverified 524483
-id 524484 450495
+id-unverified 524484
 id-unverified 524485
-id 524486 443719
+id-unverified 524486
 id 524487 443720
 id 524488 443721
-id 524489 443723
-id 524490 443724
-id 524491 443725
-id 524492 443726
+id-unverified 524489
+id-unverified 524490
+id-unverified 524491
+id-unverified 524492
 id 524493 443727
-id 524494 450497
-id 524495 443728
+id-unverified 524494
+id-unverified 524495
 id 524496 443729
-id 524497 443730
-id 524498 443732
-id 524499 443733
-id 524500 443734
+id-unverified 524497
+id-unverified 524498
+id-unverified 524499
+id-unverified 524500
 id-unverified 524501
 id-unverified 524502
 id-unverified 524505
@@ -11419,10 +11412,10 @@ id 524748 96363
 id 524749 446669
 id 524750 94340
 id 524752 446671
-id 524755 444378
-id 524756 449716
+id-unverified 524755
+id-unverified 524756
 id 524757 446678
-id 524759 449718
+id-unverified 524759
 id-unverified 524760
 id 524766 444386
 id-unverified 524767
@@ -11438,7 +11431,7 @@ id-unverified 524783
 id 524784 96874
 id-unverified 524785
 id 524786 444417
-id 524805 445187
+id-unverified 524805
 id 524806 445188
 id-unverified 524814
 id 524816 444481
@@ -11594,7 +11587,7 @@ id 525635 444714
 id-unverified 525643
 id 525649 446661
 id 525653 446663
-id 525656 446628
+id-unverified 525656
 id 525658 446630
 id 525718 96622
 id-unverified 525731
@@ -11615,7 +11608,7 @@ id-unverified 525750
 id-unverified 525751
 id-unverified 525752
 id-unverified 525753
-id-unverified 525754
+id-address 525754 97168
 id-unverified 525771
 id-unverified 525772
 id-unverified 525775
@@ -11693,7 +11686,7 @@ id-unverified 525939
 id-unverified 525951
 id 525954 448049
 id 525957 448117
-id 525958 448118
+id-unverified 525958
 id 525963 448143
 id-unverified 525964
 id-unverified 525965
@@ -12129,7 +12122,7 @@ id-unverified 527474
 id-unverified 527475
 id-unverified 527476
 id 527477 452359
-id 527478 452360
+id-unverified 527478
 id-unverified 527492
 id-unverified 527493
 id-unverified 527494
@@ -12151,7 +12144,7 @@ id-unverified 527518
 id 527524 451601
 id-unverified 527528
 id 527531 100965
-id 527532 100966
+id-unverified 527532
 id 527533 100963
 id 527534 100964
 id-unverified 527538
@@ -12185,7 +12178,7 @@ id-unverified 527605
 id-unverified 527606
 id-unverified 527607
 id-unverified 527608
-id 527610 452331
+id-unverified 527610
 id-unverified 527614
 id 527616 452355
 id-unverified 527617
@@ -12230,8 +12223,8 @@ id-unverified 527673
 id-unverified 527674
 id-unverified 527675
 id-unverified 527676
-id 527678 449071
-id 527679 453099
+id-unverified 527678
+id-unverified 527679
 id-unverified 527683
 id-unverified 527684
 id 527687 453135
@@ -12268,7 +12261,7 @@ id 527786 108747
 id-unverified 527787
 id-unverified 527788
 id-unverified 527789
-id 527791 109087
+id-unverified 527791
 id-unverified 527792
 id 527809 109759
 id-unverified 527811
@@ -23080,6 +23073,7 @@ member-unverified AIProcess.flags
 member-unverified ActivateHandler.activateDisabled
 member-unverified Actor.avStorage
 member-unverified Actor.criticalSection
+member-unverified Actor.healthModifiers
 member-unverified Actor.magickaModifiers
 member-unverified Actor.staminaModifiers
 member-unverified Actor.voicePointsModifiers
@@ -23101,47 +23095,104 @@ member-unverified AutoVanityState.refCount
 member-unverified BGSAddonNode.field_40
 member-unverified BGSApparatus.field_50
 member-unverified BGSArtObject.field_40
+member-unverified BGSBehaviorGraphModel.model
+member-unverified BGSBodyPartData.model
 member-unverified BGSCameraPath.conditions
 member-unverified BGSCameraPath.pad1B
 member-unverified BGSCameraPath.pad39
+member-unverified BGSCameraShot.minTime
 member-unverified BGSCameraShot.pad1B
 member-unverified BGSCameraShot.pad84
 member-unverified BGSCameraShot.pad9C
 member-unverified BGSCameraShot.padB2
+member-unverified BGSCameraShot.projectileCutDistance
+member-unverified BGSCameraShot.target
+member-unverified BGSCameraShot.targetTimeMult
+member-unverified BGSDecalNode.extraDataCapacity
+member-unverified BGSDecalNode.flags2
+member-unverified BGSDecalNode.previousWorldFrame
+member-unverified BGSExplosion.model
+member-unverified BGSHazard.model
 member-unverified BGSHeadPart.field_40
+member-unverified BGSIdleMarker.model
+member-unverified BGSImpactData.model
 member-unverified BGSLoadFormBuffer.position
 member-unverified BGSLoadFormBuffer.record
 member-unverified BGSLoadGameBuffer.position
+member-unverified BGSMaterialObject.model
 member-unverified BGSMovableStatic.field_60
+member-unverified BGSMoviePlayer.source_BSMusicEvent
 member-unverified BGSMusicType.trackSequence
+member-unverified BGSNote.model
 member-unverified BGSPlayerMusicChanger.source_BSMusicEvent
+member-unverified BGSProjectile.model
+member-unverified BGSRagdoll.model
 member-unverified BGSSaveFormBuffer.size
 member-unverified BGSSaveFormBuffer.version
 member-unverified BGSSaveGameBuffer.size
+member-unverified BGSSaveLoadGame.changeFlags
+member-unverified BGSSaveLoadGame.formIdIndexMap
+member-unverified BGSSaveLoadGame.formsToRefresh
+member-unverified BGSSaveLoadGame.history
+member-unverified BGSSaveLoadGame.loadScratchMaps
+member-unverified BGSSaveLoadGame.loadedChangeForms
+member-unverified BGSSaveLoadGame.loadingFormVersion
+member-unverified BGSSaveLoadGame.pluginListMismatch
+member-unverified BGSSaveLoadGame.previousChangeFlags
+member-unverified BGSSaveLoadGame.worldspaceIdMap
 member-unverified BGSSaveLoadManager.characterNames
+member-unverified BGSSaveLoadManager.characters
 member-unverified BGSSaveLoadManager.currentSaveNameCapacity
+member-unverified BGSSaveLoadManager.currentSaveNameLength
 member-unverified BGSSaveLoadManager.pendingLoadReady
+member-unverified BGSSaveLoadManager.playerIdFlags
+member-unverified BGSSaveLoadManager.saveFiles
+member-unverified BGSSaveLoadManager.unk121
 member-unverified BGSSaveLoadManager.unknownMap
+member-unverified BGSSaveLoadManager::Thread.busy
 member-unverified BGSSaveLoadManager::Thread.paused
 member-unverified BGSSaveLoadManager::Thread.running
 member-unverified BGSSoundCategory.attenuation
+member-unverified BGSSoundOutput.outputType
 member-unverified BGSSoundOutput::DynamicAttenuationCharacteristics.curve
+member-unverified BGSSoundOutput::DynamicAttenuationCharacteristics.maxDistance
+member-unverified BGSSoundOutput::DynamicAttenuationCharacteristics.minDistance
 member-unverified BGSStaticCollection.field_40
 member-unverified BGSTalkingActivator.field_50
+member-unverified BGSTextureModel.model
 member-missing BNetUnavailable::ModsNotMountedCallback.__vftable
 member-missing BNetUnavailable::OpenConnectingToNetworkCallback.__vftable
+member-unverified BSAnimationGraphManager.channelOverrides
 member-unverified BSAnimationGraphManager.variableCache
+member-unverified BSAudioManager.callback3
+member-unverified BSAudioManager.flags
+member-unverified BSAudioManager.hwThread
+member-unverified BSAudioManagerThread.parked
+member-unverified BSAudioManagerThread.sleepMs
+member-unverified BSBatchRenderer.buckets
 member-unverified BSBatchRenderer.firstTechnique
 member-unverified BSBatchRenderer.lastTechnique
 member-unverified BSBatchRenderer.techniqueToBucket
+member-unverified BSBlastNode.extraDataCapacity
+member-unverified BSBlastNode.flags2
+member-unverified BSBlastNode.previousWorldFrame
+member-unverified BSBloodSplatterShaderProperty.extraDataCapacity
 member-unverified BSBound.field_28
+member-unverified BSClearZNode.extraDataCapacity
+member-unverified BSClearZNode.flags2
+member-unverified BSClearZNode.previousWorldFrame
+member-unverified BSCubeMapCamera.extraDataCapacity
+member-unverified BSCubeMapCamera.flags2
 member-unverified BSCubeMapCamera.padding0C
 member-unverified BSCubeMapCamera.padding10A
 member-unverified BSCubeMapCamera.padding169
 member-unverified BSCubeMapCamera.padding2C
 member-unverified BSCubeMapCamera.padding3C
 member-unverified BSCubeMapCamera.portBottom
+member-unverified BSCubeMapCamera.previousWorldFrame
 member-unverified BSCullingProcess.acceptFlag12Nodes
+member-unverified BSCullingProcess.cullMode
+member-unverified BSCullingProcess.customPlanes
 member-unverified BSCullingProcess.deferAllAppends
 member-unverified BSCullingProcess.freeRecords
 member-unverified BSCullingProcess.frustum
@@ -23149,13 +23200,56 @@ member-unverified BSCullingProcess.maintainVisibleFlag
 member-unverified BSCullingProcess.narrowPlaneMask
 member-unverified BSCullingProcess.queuedVisible
 member-unverified BSCullingProcess.useCustomPlanes
+member-unverified BSDamageStage.extraDataCapacity
+member-unverified BSDamageStage.flags2
+member-unverified BSDamageStage.previousWorldFrame
+member-unverified BSDebrisNode.extraDataCapacity
+member-unverified BSDebrisNode.flags2
+member-unverified BSDebrisNode.previousWorldFrame
 member-unverified BSDismemberSkinInstance.paletteLock
+member-unverified BSDismemberSkinInstance.paletteRowsPerBone
+member-unverified BSDistantTreeShaderProperty.extraDataCapacity
+member-unverified BSDynamicLines.extraDataCapacity
+member-unverified BSDynamicLines.flags2
+member-unverified BSDynamicLines.previousWorldFrame
+member-unverified BSDynamicTriShape.extraDataCapacity
+member-unverified BSDynamicTriShape.flags2
+member-unverified BSDynamicTriShape.previousWorldFrame
+member-unverified BSEffectShaderData.textures
+member-unverified BSEffectShaderMaterial.texCoordOffset1
+member-unverified BSEffectShaderProperty.extraDataCapacity
+member-unverified BSFaceGenAnimationData.customInput
 member-unverified BSFaceGenAnimationData.customSpeech
+member-unverified BSFaceGenAnimationData.eyeHeadingOffset
+member-unverified BSFaceGenAnimationData.eyePitchOffset
 member-unverified BSFaceGenAnimationData.forceUpdate
+member-unverified BSFaceGenAnimationData.updated
+member-unverified BSFaceGenNiNode.extraDataCapacity
+member-unverified BSFaceGenNiNode.flags2
+member-unverified BSFaceGenNiNode.previousWorldFrame
+member-unverified BSFadeNode.extraDataCapacity
+member-unverified BSFadeNode.flags2
+member-unverified BSFadeNode.lastUpdateTime
+member-unverified BSFadeNode.previousLodDistance
+member-unverified BSFadeNode.previousWorldFrame
+member-unverified BSFadeNode.stippleFade
+member-unverified BSFadeNode.targetFade
+member-unverified BSFadeNode.unknown134
+member-unverified BSFadeNode.unknown14c
+member-unverified BSFadeNode.unknown152
+member-unverified BSFlattenedBoneTree.extraDataCapacity
+member-unverified BSFlattenedBoneTree.flags2
 member-unverified BSFlattenedBoneTree.nameMap
+member-unverified BSFlattenedBoneTree.previousWorldFrame
+member-unverified BSFogProperty.extraDataCapacity
 member-unverified BSGamepadDevice.source_BSGamepadEvent
 member-unverified BSGamerProfile.source_BSGamerProfileEvent
+member-unverified BSGeometry.extraDataCapacity
+member-unverified BSGeometry.flags2
+member-unverified BSGeometry.previousWorldFrame
 member-unverified BSGeometryListCullingProcess.acceptFlag12Nodes
+member-unverified BSGeometryListCullingProcess.cullMode
+member-unverified BSGeometryListCullingProcess.customPlanes
 member-unverified BSGeometryListCullingProcess.deferAllAppends
 member-unverified BSGeometryListCullingProcess.freeRecords
 member-unverified BSGeometryListCullingProcess.frustum
@@ -23164,28 +23258,84 @@ member-unverified BSGeometryListCullingProcess.narrowPlaneMask
 member-unverified BSGeometryListCullingProcess.queuedVisible
 member-unverified BSGeometryListCullingProcess.useCustomPlanes
 member-unverified BSGrassShaderProperty.depthPassLists
+member-unverified BSGrassShaderProperty.extraDataCapacity
 member-unverified BSGrassShaderProperty.lightDataStorage
+member-unverified BSGrassShaderProperty.projectedUVParams
 member-unverified BSInputDevice.idToKey
 member-unverified BSInputDevice.nameToId
+member-unverified BSInstanceTriShape.extraDataCapacity
+member-unverified BSInstanceTriShape.flags2
+member-unverified BSInstanceTriShape.previousWorldFrame
+member-unverified BSLODMultiIndexTriShape.extraDataCapacity
+member-unverified BSLODMultiIndexTriShape.flags2
+member-unverified BSLODMultiIndexTriShape.previousWorldFrame
+member-unverified BSLODTriShape.extraDataCapacity
+member-unverified BSLODTriShape.flags2
+member-unverified BSLODTriShape.previousWorldFrame
+member-unverified BSLeafAnimNode.extraDataCapacity
+member-unverified BSLeafAnimNode.flags2
+member-unverified BSLeafAnimNode.previousWorldFrame
 member-unverified BSLight.portalStrictCull
+member-unverified BSLightingShaderMaterial.texCoordOffset1
 member-unverified BSLightingShaderMaterial.textureLoadLock
+member-unverified BSLightingShaderMaterialBase.texCoordOffset1
 member-unverified BSLightingShaderMaterialBase.textureLoadLock
+member-unverified BSLightingShaderMaterialEnvmap.texCoordOffset1
 member-unverified BSLightingShaderMaterialEnvmap.textureLoadLock
+member-unverified BSLightingShaderMaterialEye.texCoordOffset1
 member-unverified BSLightingShaderMaterialEye.textureLoadLock
+member-unverified BSLightingShaderMaterialFacegen.texCoordOffset1
 member-unverified BSLightingShaderMaterialFacegen.textureLoadLock
+member-unverified BSLightingShaderMaterialFacegenTint.texCoordOffset1
 member-unverified BSLightingShaderMaterialFacegenTint.textureLoadLock
+member-unverified BSLightingShaderMaterialGlowmap.texCoordOffset1
 member-unverified BSLightingShaderMaterialGlowmap.textureLoadLock
+member-unverified BSLightingShaderMaterialHairTint.texCoordOffset1
 member-unverified BSLightingShaderMaterialHairTint.textureLoadLock
+member-unverified BSLightingShaderMaterialLODLandscape.texCoordOffset1
 member-unverified BSLightingShaderMaterialLODLandscape.textureLoadLock
+member-unverified BSLightingShaderMaterialLandscape.texCoordOffset1
 member-unverified BSLightingShaderMaterialLandscape.textureLoadLock
+member-unverified BSLightingShaderMaterialMultiLayerParallax.texCoordOffset1
 member-unverified BSLightingShaderMaterialMultiLayerParallax.textureLoadLock
+member-unverified BSLightingShaderMaterialParallax.texCoordOffset1
 member-unverified BSLightingShaderMaterialParallax.textureLoadLock
+member-unverified BSLightingShaderMaterialParallaxOcc.texCoordOffset1
 member-unverified BSLightingShaderMaterialParallaxOcc.textureLoadLock
+member-unverified BSLightingShaderMaterialSnow.texCoordOffset1
 member-unverified BSLightingShaderMaterialSnow.textureLoadLock
 member-unverified BSLightingShaderProperty.depthPassLists
+member-unverified BSLightingShaderProperty.extraDataCapacity
 member-unverified BSLightingShaderProperty.lightDataStorage
+member-unverified BSLightingShaderProperty.projectedUVParams
+member-unverified BSLines.extraDataCapacity
+member-unverified BSLines.flags2
+member-unverified BSLines.previousWorldFrame
+member-unverified BSMasterParticleSystem.extraDataCapacity
+member-unverified BSMasterParticleSystem.flags2
+member-unverified BSMasterParticleSystem.previousWorldFrame
+member-unverified BSMeshLODTriShape.extraDataCapacity
+member-unverified BSMeshLODTriShape.flags2
+member-unverified BSMeshLODTriShape.previousWorldFrame
+member-unverified BSMultiBoundCapsule.field_18
+member-unverified BSMultiBoundCapsule.field_20
+member-unverified BSMultiBoundCapsule.field_28
+member-unverified BSMultiBoundNode.extraDataCapacity
+member-unverified BSMultiBoundNode.flags2
+member-unverified BSMultiBoundNode.previousWorldFrame
+member-unverified BSMultiBoundRoom.extraDataCapacity
+member-unverified BSMultiBoundRoom.flags2
+member-unverified BSMultiBoundRoom.previousWorldFrame
+member-unverified BSMultiIndexTriShape.extraDataCapacity
+member-unverified BSMultiIndexTriShape.flags2
+member-unverified BSMultiIndexTriShape.previousWorldFrame
+member-unverified BSMultiStreamInstanceTriShape.extraDataCapacity
+member-unverified BSMultiStreamInstanceTriShape.flags2
+member-unverified BSMultiStreamInstanceTriShape.previousWorldFrame
 member-unverified BSNavmeshInfoSearch.field_200
 member-unverified BSNavmeshInfoSearch.field_208
+member-unverified BSNavmeshInfoSearch.field_210
+member-unverified BSNavmeshInfoSearch.field_218
 member-unverified BSNavmeshObstacleData.field_10
 member-unverified BSNavmeshObstacleData.field_20
 member-unverified BSNavmeshObstacleData.field_28
@@ -23195,6 +23345,10 @@ member-unverified BSNavmeshObstacleData.field_74
 member-unverified BSNavmeshSearch.field_178
 member-unverified BSNavmeshSearch.field_190
 member-unverified BSNavmeshSearch.field_198
+member-unverified BSNavmeshSearch.field_1A0
+member-unverified BSNiNode.extraDataCapacity
+member-unverified BSNiNode.flags2
+member-unverified BSNiNode.previousWorldFrame
 member-unverified BSOcclusionBox.field_134
 member-unverified BSOcclusionBox.field_13C
 member-unverified BSOcclusionBox.field_144
@@ -23213,9 +23367,14 @@ member-unverified BSOcclusionPlane.field_D0
 member-unverified BSOcclusionPlane.field_D8
 member-unverified BSOcclusionPlane.field_E0
 member-unverified BSOcclusionPlane.field_E8
+member-unverified BSOrderedNode.extraDataCapacity
+member-unverified BSOrderedNode.flags2
+member-unverified BSOrderedNode.previousWorldFrame
 member-unverified BSPCGamepadDeviceDelegate.source_BSGamepadEvent
 member-unverified BSPCOrbisGamepadDevice.source_BSGamepadEvent
 member-unverified BSParabolicCullingProcess.acceptFlag12Nodes
+member-unverified BSParabolicCullingProcess.cullMode
+member-unverified BSParabolicCullingProcess.customPlanes
 member-unverified BSParabolicCullingProcess.deferAllAppends
 member-unverified BSParabolicCullingProcess.freeRecords
 member-unverified BSParabolicCullingProcess.frustum
@@ -23238,6 +23397,10 @@ member-unverified BSParticleShaderCubeEmitter.field_FC0
 member-unverified BSParticleShaderCubeEmitter.field_FC8
 member-unverified BSParticleShaderCubeEmitter.field_FD0
 member-unverified BSParticleShaderCubeEmitter.field_FD8
+member-unverified BSParticleShaderGeometry.extraDataCapacity
+member-unverified BSParticleShaderGeometry.flags2
+member-unverified BSParticleShaderGeometry.previousWorldFrame
+member-unverified BSParticleShaderProperty.extraDataCapacity
 member-unverified BSParticleShaderProperty.field_100
 member-unverified BSParticleShaderProperty.field_110
 member-unverified BSParticleShaderProperty.field_120
@@ -23272,26 +23435,35 @@ member-unverified BSParticleShaderSnowEmitter.field_FC0
 member-unverified BSParticleShaderSnowEmitter.field_FC8
 member-unverified BSParticleShaderSnowEmitter.field_FD0
 member-unverified BSParticleShaderSnowEmitter.field_FD8
+member-unverified BSParticleSystemManager.extraDataCapacity
+member-unverified BSParticleSystemManager.flags2
+member-unverified BSParticleSystemManager.previousWorldFrame
+member-unverified BSPathEventManager.source_BSPathEvent
+member-unverified BSPathfindingTemporary<PathingRequestCover>.field_100
+member-unverified BSPathfindingTemporary<PathingRequestCover>.field_108
+member-unverified BSPathfindingTemporary<PathingRequestCover>.field_120
 member-unverified BSPathfindingTemporary<PathingRequestCover>.field_134
 member-unverified BSPathingSearchRayCast.field_74
+member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>.field_80
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>.__vftable
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>.field_30
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>.field_38
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>.field_40
-member BSPlatform::BSBNETFile::download.field_58 38
+member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64)>_>.field_80
+member-unverified BSPlatform::BSBNETFile::download.field_58
 member-unverified BSPlatform::BSBNETFile::download.field_60
-member BSPlatform::BSBNETFile::download.field_70 50
+member-unverified BSPlatform::BSBNETFile::download.field_70
 member-unverified BSPlatform::BSBNETFile::download.field_78
-member BSPlatform::BSBNETFile::marketplaceDownload.field_58 38
+member-unverified BSPlatform::BSBNETFile::marketplaceDownload.field_58
 member-unverified BSPlatform::BSBNETFile::marketplaceDownload.field_60
-member BSPlatform::BSBNETFile::marketplaceDownload.field_70 50
+member-unverified BSPlatform::BSBNETFile::marketplaceDownload.field_70
 member-unverified BSPlatform::BSBNETFile::marketplaceDownload.field_78
 member-unverified BSPlatform::BSBNETFile::marketplaceDownload.field_80
-member BSPlatform::BSBNETFile::marketplaceDownload.field_88 68
+member-unverified BSPlatform::BSBNETFile::marketplaceDownload.field_88
 member-unverified BSPlatform::BSBNETFile::marketplaceDownload.field_90
-member BSPlatform::BSBNETFile::marketplaceDownload.field_98 78
-member BSPlatform::BSBNETFile::marketplaceDownload.field_A0 80
-member BSPlatform::BSBNETFile::marketplaceDownload.field_A8 88
+member-unverified BSPlatform::BSBNETFile::marketplaceDownload.field_98
+member-unverified BSPlatform::BSBNETFile::marketplaceDownload.field_A0
+member-unverified BSPlatform::BSBNETFile::marketplaceDownload.field_A8
 member-missing BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModDownload::marketplaceDownloadRequest.__vftable
 member-missing BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModDownload::marketplaceDownloadRequest.field_30
 member-missing BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModDownload::marketplaceDownloadRequest.field_38
@@ -23303,16 +23475,18 @@ member-missing BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModStream
 member-unverified BSPlatform::BSBethesdaPlatform.field_130
 member-unverified BSPlatform::BSBethesdaPlatform.field_50
 member-unverified BSPlatform::BSBethesdaPlatform.field_80
-member BSPlatform::BSBethesdaPlatform.field_88 80
-member BSPlatform::BSBethesdaPlatform.field_90 88
-member BSPlatform::BSBethesdaPlatform.field_C0 b8
+member-unverified BSPlatform::BSBethesdaPlatform.field_88
+member-unverified BSPlatform::BSBethesdaPlatform.field_90
+member-unverified BSPlatform::BSBethesdaPlatform.field_C0
 member-unverified BSPlatform::BSBethesdaPlatform.field_C8
 member-unverified BSPlatform::BSBethesdaPlatform.field_D0
 member-unverified BSPlatform::BSBethesdaPlatform.field_D8
 member-unverified BSPlatform::BSBethesdaPlatform.field_E0
-member BSPlatform::BSBethesdaPlatform.field_E8 e0
-member BSPlatform::BSBethesdaPlatform.field_F0 e8
-member BSPlatform::BSUserContent.field_100 108
+member-unverified BSPlatform::BSBethesdaPlatform.field_E8
+member-unverified BSPlatform::BSBethesdaPlatform.field_F0
+member-unverified BSPlatform::BSUploadRequest.field_80
+member-unverified BSPlatform::BSUploadWithProgressRequest.field_80
+member-unverified BSPlatform::BSUserContent.field_100
 member-unverified BSPlatform::BSUserContent.field_101
 member-unverified BSPlatform::BSUserContent.field_102
 member-unverified BSPlatform::BSUserContent.field_103
@@ -23331,78 +23505,103 @@ member-unverified BSPlatform::BSUserContent.field_10F
 member-unverified BSPlatform::BSUserContent.field_110
 member-unverified BSPlatform::BSUserContent.field_111
 member-unverified BSPlatform::BSUserContent.field_112
-member BSPlatform::BSUserContent.field_114 11c
-member BSPlatform::BSUserContent.field_118 120
-member BSPlatform::BSUserContent.field_120 128
+member-unverified BSPlatform::BSUserContent.field_114
+member-unverified BSPlatform::BSUserContent.field_118
+member-unverified BSPlatform::BSUserContent.field_120
 member-unverified BSPlatform::BSUserContent.field_128
-member BSPlatform::BSUserContent.field_130 138
-member BSPlatform::BSUserContent.field_138 140
-member BSPlatform::BSUserContent.field_140 148
-member BSPlatform::BSUserContent.field_148 150
-member BSPlatform::BSUserContent.field_150 158
-member BSPlatform::BSUserContent.field_154 15c
-member BSPlatform::BSUserContent.field_158 160
-member BSPlatform::BSUserContent.field_160 168
-member BSPlatform::BSUserContent.field_168 170
-member BSPlatform::BSUserContent.field_170 178
-member BSPlatform::BSUserContent.field_178 180
-member BSPlatform::BSUserContent.field_180 188
-member BSPlatform::BSUserContent.field_188 190
-member BSPlatform::BSUserContent.field_190 198
-member BSPlatform::BSUserContent.field_198 1a0
-member BSPlatform::BSUserContent.field_1A0 1a8
-member BSPlatform::BSUserContent.field_1A8 1b0
-member BSPlatform::BSUserContent.field_258 248
-member BSPlatform::BSUserContent.field_260 250
+member-unverified BSPlatform::BSUserContent.field_130
+member-unverified BSPlatform::BSUserContent.field_138
+member-unverified BSPlatform::BSUserContent.field_140
+member-unverified BSPlatform::BSUserContent.field_148
+member-unverified BSPlatform::BSUserContent.field_150
+member-unverified BSPlatform::BSUserContent.field_154
+member-unverified BSPlatform::BSUserContent.field_158
+member-unverified BSPlatform::BSUserContent.field_160
+member-unverified BSPlatform::BSUserContent.field_168
+member-unverified BSPlatform::BSUserContent.field_170
+member-unverified BSPlatform::BSUserContent.field_178
+member-unverified BSPlatform::BSUserContent.field_180
+member-unverified BSPlatform::BSUserContent.field_188
+member-unverified BSPlatform::BSUserContent.field_190
+member-unverified BSPlatform::BSUserContent.field_198
+member-unverified BSPlatform::BSUserContent.field_1A0
+member-unverified BSPlatform::BSUserContent.field_1A8
+member-unverified BSPlatform::BSUserContent.field_258
+member-unverified BSPlatform::BSUserContent.field_260
 member-unverified BSPlatform::BSUserContent.field_268
 member-unverified BSPlatform::BSUserContent.field_270
 member-unverified BSPlatform::BSUserContent.field_278
-member BSPlatform::BSUserContent.field_280 260
-member BSPlatform::BSUserContent.field_288 268
-member BSPlatform::BSUserContent.field_290 270
-member BSPlatform::BSUserContent.field_298 278
-member BSPlatform::BSUserContent.field_2A0 280
-member BSPlatform::BSUserContent.field_F8 100
-member BSPlatform::BSUserContentCollection.field_100 108
-member BSPlatform::BSUserContentCollection.field_108 110
-member BSPlatform::BSUserContentCollection.field_110 118
-member BSPlatform::BSUserContentCollection.field_118 120
-member BSPlatform::BSUserContentCollection.field_D8 e0
-member BSPlatform::BSUserContentCollection.field_D9 e1
-member BSPlatform::BSUserContentCollection.field_DA e2
-member BSPlatform::BSUserContentCollection.field_DB e3
-member BSPlatform::BSUserContentCollection.field_DC e4
-member BSPlatform::BSUserContentCollection.field_DD e5
-member BSPlatform::BSUserContentCollection.field_DE e6
-member BSPlatform::BSUserContentCollection.field_DF e7
-member BSPlatform::BSUserContentCollection.field_E0 e8
-member BSPlatform::BSUserContentCollection.field_E1 e9
-member BSPlatform::BSUserContentCollection.field_E2 ea
-member BSPlatform::BSUserContentCollection.field_E3 eb
-member BSPlatform::BSUserContentCollection.field_E4 ec
-member BSPlatform::BSUserContentCollection.field_E5 ed
-member BSPlatform::BSUserContentCollection.field_E8 f0
-member BSPlatform::BSUserContentCollection.field_EC f4
-member BSPlatform::BSUserContentCollection.field_F0 f8
-member BSPlatform::BSUserContentCollection.field_F8 100
+member-unverified BSPlatform::BSUserContent.field_280
+member-unverified BSPlatform::BSUserContent.field_288
+member-unverified BSPlatform::BSUserContent.field_290
+member-unverified BSPlatform::BSUserContent.field_298
+member-unverified BSPlatform::BSUserContent.field_2A0
+member-unverified BSPlatform::BSUserContent.field_F8
+member-unverified BSPlatform::BSUserContentCollection.field_100
+member-unverified BSPlatform::BSUserContentCollection.field_108
+member-unverified BSPlatform::BSUserContentCollection.field_110
+member-unverified BSPlatform::BSUserContentCollection.field_118
+member-unverified BSPlatform::BSUserContentCollection.field_D8
+member-unverified BSPlatform::BSUserContentCollection.field_D9
+member-unverified BSPlatform::BSUserContentCollection.field_DA
+member-unverified BSPlatform::BSUserContentCollection.field_DB
+member-unverified BSPlatform::BSUserContentCollection.field_DC
+member-unverified BSPlatform::BSUserContentCollection.field_DD
+member-unverified BSPlatform::BSUserContentCollection.field_DE
+member-unverified BSPlatform::BSUserContentCollection.field_DF
+member-unverified BSPlatform::BSUserContentCollection.field_E0
+member-unverified BSPlatform::BSUserContentCollection.field_E1
+member-unverified BSPlatform::BSUserContentCollection.field_E2
+member-unverified BSPlatform::BSUserContentCollection.field_E3
+member-unverified BSPlatform::BSUserContentCollection.field_E4
+member-unverified BSPlatform::BSUserContentCollection.field_E5
+member-unverified BSPlatform::BSUserContentCollection.field_E8
+member-unverified BSPlatform::BSUserContentCollection.field_EC
+member-unverified BSPlatform::BSUserContentCollection.field_F0
+member-unverified BSPlatform::BSUserContentCollection.field_F8
 member-unverified BSPortal.field_C0
 member-unverified BSPortal.field_C8
 member-unverified BSPortal.field_D0
 member-unverified BSPortal.field_D8
 member-unverified BSPortal.field_E0
 member-unverified BSPortal.field_E8
+member-unverified BSPortalSharedNode.extraDataCapacity
+member-unverified BSPortalSharedNode.flags2
+member-unverified BSPortalSharedNode.previousWorldFrame
 member-unverified BSPrecomputedNavmeshInfoSearch.field_200
 member-unverified BSPrecomputedNavmeshInfoSearch.field_208
+member-unverified BSPrecomputedNavmeshInfoSearch.field_210
+member-unverified BSPrecomputedNavmeshInfoSearch.field_218
 member-unverified BSProceduralLightningController.source_BSProceduralGeomEvent
+member-unverified BSRangeNode.extraDataCapacity
+member-unverified BSRangeNode.flags2
+member-unverified BSRangeNode.previousWorldFrame
+member-unverified BSReadWriteLock.lockCount
+member-unverified BSReadWriteLock.writerThread
 member-unverified BSSaveDataSystemUtility.source_BSSaveDataEvent
+member-unverified BSScaleformManager.imageLoader
+member-unverified BSScaleformManager.translator
+member-unverified BSScaleformManager.validNameChars
+member-unverified BSSceneGraph.extraDataCapacity
+member-unverified BSSceneGraph.flags2
+member-unverified BSSceneGraph.previousWorldFrame
 member-unverified BSScript::ErrorLogger.source_BSScript_LogEvent
 member-unverified BSScript::Internal::AutoPropGetFunction.name
 member-unverified BSScript::Internal::AutoPropGetFunction.objectTypeName
+member-unverified BSScript::Internal::AutoPropGetFunction.returnType
 member-unverified BSScript::Internal::AutoPropSetFunction.name
 member-unverified BSScript::Internal::AutoPropSetFunction.objectTypeName
+member-unverified BSScript::Internal::CodeTasklet.code
 member-unverified BSScript::Internal::CodeTasklet.codeBits
+member-unverified BSScript::Internal::CodeTasklet.frame
 member-unverified BSScript::Internal::CodeTasklet.framePage
 member-unverified BSScript::Internal::CodeTasklet.jumpBits
+member-unverified BSScript::Internal::CodeTasklet.operandBitsA
+member-unverified BSScript::Internal::CodeTasklet.operandBitsB
+member-unverified BSScript::Internal::FunctionMessage.kind
+member-unverified BSScript::Internal::FunctionMessage.query
+member-unverified BSScript::Internal::FunctionMessage.stack
+member-unverified BSScript::Internal::NativeFunctionStub.name
 member-unverified BSScript::Internal::NativeFunctionStub.objectTypeName
 member-unverified BSScript::Internal::NativeFunctionStub.stateName
 member-unverified BSScript::Internal::ScriptFunction.docString
@@ -23416,432 +23615,718 @@ member-unverified BSScript::Internal::ScriptFunction.operandBitsTag7
 member-unverified BSScript::Internal::ScriptFunction.sourceFileName
 member-unverified BSScript::Internal::ScriptFunction.stateName
 member-unverified BSScript::Internal::ScriptFunction.variables
+member-unverified BSScript::Internal::SuspendedStack.query
+member-unverified BSScript::Internal::SuspendedStack.stack
 member-unverified BSScript::Internal::VirtualMachine.latentWaits
 member-unverified BSScript::Internal::VirtualMachine.nameToTypeID
 member-unverified BSScript::Internal::VirtualMachine.objectTypeMap
+member-unverified BSScript::Internal::VirtualMachine.runningStacks
 member-unverified BSScript::Internal::VirtualMachine.typeIDToName
+member-unverified BSScript::NF_util::ParamInfo.name
 member-unverified BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>.name
 member-unverified BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<ActiveEffect,EffectSetting*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<ActiveEffect,EffectSetting*___ptr64>.name
 member-unverified BSScript::NativeFunction0<ActiveEffect,EffectSetting*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<ActiveEffect,EffectSetting*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<ActiveEffect,EffectSetting*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<ActiveEffect,void>.docString
+member-unverified BSScript::NativeFunction0<ActiveEffect,void>.name
 member-unverified BSScript::NativeFunction0<ActiveEffect,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<ActiveEffect,void>.paramCount
 member-unverified BSScript::NativeFunction0<ActiveEffect,void>.stateName
 member-unverified BSScript::NativeFunction0<Actor,Actor*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<Actor,Actor*___ptr64>.name
 member-unverified BSScript::NativeFunction0<Actor,Actor*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,Actor*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,Actor*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<Actor,TESFaction*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<Actor,TESFaction*___ptr64>.name
 member-unverified BSScript::NativeFunction0<Actor,TESFaction*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,TESFaction*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,TESFaction*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<Actor,TESNPC*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<Actor,TESNPC*___ptr64>.name
 member-unverified BSScript::NativeFunction0<Actor,TESNPC*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,TESNPC*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,TESNPC*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<Actor,TESObjectARMO*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<Actor,TESObjectARMO*___ptr64>.name
 member-unverified BSScript::NativeFunction0<Actor,TESObjectARMO*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,TESObjectARMO*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,TESObjectARMO*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<Actor,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<Actor,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction0<Actor,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<Actor,TESPackage*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<Actor,TESPackage*___ptr64>.name
 member-unverified BSScript::NativeFunction0<Actor,TESPackage*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,TESPackage*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,TESPackage*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<Actor,TESRace*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<Actor,TESRace*___ptr64>.name
 member-unverified BSScript::NativeFunction0<Actor,TESRace*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,TESRace*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,TESRace*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<Actor,TESShout*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<Actor,TESShout*___ptr64>.name
 member-unverified BSScript::NativeFunction0<Actor,TESShout*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,TESShout*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,TESShout*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<Actor,bool>.docString
+member-unverified BSScript::NativeFunction0<Actor,bool>.name
 member-unverified BSScript::NativeFunction0<Actor,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,bool>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,bool>.stateName
 member-unverified BSScript::NativeFunction0<Actor,float>.docString
+member-unverified BSScript::NativeFunction0<Actor,float>.name
 member-unverified BSScript::NativeFunction0<Actor,float>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,float>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,float>.stateName
 member-unverified BSScript::NativeFunction0<Actor,int>.docString
+member-unverified BSScript::NativeFunction0<Actor,int>.name
 member-unverified BSScript::NativeFunction0<Actor,int>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,int>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,int>.stateName
 member-unverified BSScript::NativeFunction0<Actor,unsigned_int>.docString
+member-unverified BSScript::NativeFunction0<Actor,unsigned_int>.name
 member-unverified BSScript::NativeFunction0<Actor,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction0<Actor,void>.docString
+member-unverified BSScript::NativeFunction0<Actor,void>.name
 member-unverified BSScript::NativeFunction0<Actor,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,void>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,void>.stateName
 member-unverified BSScript::NativeFunction0<AlchemyItem,bool>.docString
+member-unverified BSScript::NativeFunction0<AlchemyItem,bool>.name
 member-unverified BSScript::NativeFunction0<AlchemyItem,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<AlchemyItem,bool>.paramCount
 member-unverified BSScript::NativeFunction0<AlchemyItem,bool>.stateName
 member-unverified BSScript::NativeFunction0<BGSBaseAlias,TESQuest*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<BGSBaseAlias,TESQuest*___ptr64>.name
 member-unverified BSScript::NativeFunction0<BGSBaseAlias,TESQuest*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSBaseAlias,TESQuest*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<BGSBaseAlias,TESQuest*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<BGSBaseAlias,void>.docString
+member-unverified BSScript::NativeFunction0<BGSBaseAlias,void>.name
 member-unverified BSScript::NativeFunction0<BGSBaseAlias,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSBaseAlias,void>.paramCount
 member-unverified BSScript::NativeFunction0<BGSBaseAlias,void>.stateName
 member-unverified BSScript::NativeFunction0<BGSListForm,unsigned_int>.docString
+member-unverified BSScript::NativeFunction0<BGSListForm,unsigned_int>.name
 member-unverified BSScript::NativeFunction0<BGSListForm,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSListForm,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction0<BGSListForm,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction0<BGSListForm,void>.docString
+member-unverified BSScript::NativeFunction0<BGSListForm,void>.name
 member-unverified BSScript::NativeFunction0<BGSListForm,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSListForm,void>.paramCount
 member-unverified BSScript::NativeFunction0<BGSListForm,void>.stateName
 member-unverified BSScript::NativeFunction0<BGSLocAlias,BGSLocation*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<BGSLocAlias,BGSLocation*___ptr64>.name
 member-unverified BSScript::NativeFunction0<BGSLocAlias,BGSLocation*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSLocAlias,BGSLocation*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<BGSLocAlias,BGSLocation*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<BGSLocAlias,void>.docString
+member-unverified BSScript::NativeFunction0<BGSLocAlias,void>.name
 member-unverified BSScript::NativeFunction0<BGSLocAlias,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSLocAlias,void>.paramCount
 member-unverified BSScript::NativeFunction0<BGSLocAlias,void>.stateName
 member-unverified BSScript::NativeFunction0<BGSLocation,bool>.docString
+member-unverified BSScript::NativeFunction0<BGSLocation,bool>.name
 member-unverified BSScript::NativeFunction0<BGSLocation,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSLocation,bool>.paramCount
 member-unverified BSScript::NativeFunction0<BGSLocation,bool>.stateName
 member-unverified BSScript::NativeFunction0<BGSMusicType,void>.docString
+member-unverified BSScript::NativeFunction0<BGSMusicType,void>.name
 member-unverified BSScript::NativeFunction0<BGSMusicType,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSMusicType,void>.paramCount
 member-unverified BSScript::NativeFunction0<BGSMusicType,void>.stateName
 member-unverified BSScript::NativeFunction0<BGSRefAlias,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<BGSRefAlias,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction0<BGSRefAlias,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSRefAlias,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<BGSRefAlias,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<BGSRefAlias,void>.docString
+member-unverified BSScript::NativeFunction0<BGSRefAlias,void>.name
 member-unverified BSScript::NativeFunction0<BGSRefAlias,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSRefAlias,void>.paramCount
 member-unverified BSScript::NativeFunction0<BGSRefAlias,void>.stateName
 member-unverified BSScript::NativeFunction0<BGSScene,TESQuest*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<BGSScene,TESQuest*___ptr64>.name
 member-unverified BSScript::NativeFunction0<BGSScene,TESQuest*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSScene,TESQuest*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<BGSScene,TESQuest*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<BGSScene,bool>.docString
+member-unverified BSScript::NativeFunction0<BGSScene,bool>.name
 member-unverified BSScript::NativeFunction0<BGSScene,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSScene,bool>.paramCount
 member-unverified BSScript::NativeFunction0<BGSScene,bool>.stateName
 member-unverified BSScript::NativeFunction0<BGSScene,void>.docString
+member-unverified BSScript::NativeFunction0<BGSScene,void>.name
 member-unverified BSScript::NativeFunction0<BGSScene,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSScene,void>.paramCount
 member-unverified BSScript::NativeFunction0<BGSScene,void>.stateName
 member-unverified BSScript::NativeFunction0<BGSSoundCategory,void>.docString
+member-unverified BSScript::NativeFunction0<BGSSoundCategory,void>.name
 member-unverified BSScript::NativeFunction0<BGSSoundCategory,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSSoundCategory,void>.paramCount
 member-unverified BSScript::NativeFunction0<BGSSoundCategory,void>.stateName
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,Actor*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,Actor*___ptr64>.name
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,Actor*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,Actor*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,Actor*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESWeather*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESWeather*___ptr64>.name
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESWeather*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESWeather*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESWeather*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,bool>.docString
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,bool>.name
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,bool>.paramCount
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,bool>.stateName
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,float>.docString
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,float>.name
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,float>.objectTypeName
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,float>.paramCount
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,float>.stateName
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,unsigned_int>.docString
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,unsigned_int>.name
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,void>.docString
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,void>.name
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,void>.paramCount
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,void>.stateName
 member-unverified BSScript::NativeFunction0<EffectSetting,bool>.docString
+member-unverified BSScript::NativeFunction0<EffectSetting,bool>.name
 member-unverified BSScript::NativeFunction0<EffectSetting,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<EffectSetting,bool>.paramCount
 member-unverified BSScript::NativeFunction0<EffectSetting,bool>.stateName
 member-unverified BSScript::NativeFunction0<EnchantmentItem,bool>.docString
+member-unverified BSScript::NativeFunction0<EnchantmentItem,bool>.name
 member-unverified BSScript::NativeFunction0<EnchantmentItem,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<EnchantmentItem,bool>.paramCount
 member-unverified BSScript::NativeFunction0<EnchantmentItem,bool>.stateName
 member-unverified BSScript::NativeFunction0<IngredientItem,bool>.docString
+member-unverified BSScript::NativeFunction0<IngredientItem,bool>.name
 member-unverified BSScript::NativeFunction0<IngredientItem,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<IngredientItem,bool>.paramCount
 member-unverified BSScript::NativeFunction0<IngredientItem,bool>.stateName
 member-unverified BSScript::NativeFunction0<IngredientItem,unsigned_int>.docString
+member-unverified BSScript::NativeFunction0<IngredientItem,unsigned_int>.name
 member-unverified BSScript::NativeFunction0<IngredientItem,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction0<IngredientItem,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction0<IngredientItem,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction0<IngredientItem,void>.docString
+member-unverified BSScript::NativeFunction0<IngredientItem,void>.name
 member-unverified BSScript::NativeFunction0<IngredientItem,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<IngredientItem,void>.paramCount
 member-unverified BSScript::NativeFunction0<IngredientItem,void>.stateName
 member-unverified BSScript::NativeFunction0<SpellItem,bool>.docString
+member-unverified BSScript::NativeFunction0<SpellItem,bool>.name
 member-unverified BSScript::NativeFunction0<SpellItem,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<SpellItem,bool>.paramCount
 member-unverified BSScript::NativeFunction0<SpellItem,bool>.stateName
 member-unverified BSScript::NativeFunction0<SpellItem,void>.docString
+member-unverified BSScript::NativeFunction0<SpellItem,void>.name
 member-unverified BSScript::NativeFunction0<SpellItem,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<SpellItem,void>.paramCount
 member-unverified BSScript::NativeFunction0<SpellItem,void>.stateName
 member-unverified BSScript::NativeFunction0<TESFaction,bool>.docString
+member-unverified BSScript::NativeFunction0<TESFaction,bool>.name
 member-unverified BSScript::NativeFunction0<TESFaction,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESFaction,bool>.paramCount
 member-unverified BSScript::NativeFunction0<TESFaction,bool>.stateName
 member-unverified BSScript::NativeFunction0<TESFaction,unsigned_int>.docString
+member-unverified BSScript::NativeFunction0<TESFaction,unsigned_int>.name
 member-unverified BSScript::NativeFunction0<TESFaction,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESFaction,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction0<TESFaction,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction0<TESFaction,void>.docString
+member-unverified BSScript::NativeFunction0<TESFaction,void>.name
 member-unverified BSScript::NativeFunction0<TESFaction,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESFaction,void>.paramCount
 member-unverified BSScript::NativeFunction0<TESFaction,void>.stateName
 member-unverified BSScript::NativeFunction0<TESForm,bool>.docString
+member-unverified BSScript::NativeFunction0<TESForm,bool>.name
 member-unverified BSScript::NativeFunction0<TESForm,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESForm,bool>.paramCount
 member-unverified BSScript::NativeFunction0<TESForm,bool>.stateName
 member-unverified BSScript::NativeFunction0<TESForm,int>.docString
+member-unverified BSScript::NativeFunction0<TESForm,int>.name
 member-unverified BSScript::NativeFunction0<TESForm,int>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESForm,int>.paramCount
 member-unverified BSScript::NativeFunction0<TESForm,int>.stateName
 member-unverified BSScript::NativeFunction0<TESForm,unsigned_int>.docString
+member-unverified BSScript::NativeFunction0<TESForm,unsigned_int>.name
 member-unverified BSScript::NativeFunction0<TESForm,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESForm,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction0<TESForm,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction0<TESForm,void>.docString
+member-unverified BSScript::NativeFunction0<TESForm,void>.name
 member-unverified BSScript::NativeFunction0<TESForm,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESForm,void>.paramCount
 member-unverified BSScript::NativeFunction0<TESForm,void>.stateName
 member-unverified BSScript::NativeFunction0<TESGlobal,float>.docString
+member-unverified BSScript::NativeFunction0<TESGlobal,float>.name
 member-unverified BSScript::NativeFunction0<TESGlobal,float>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESGlobal,float>.paramCount
 member-unverified BSScript::NativeFunction0<TESGlobal,float>.stateName
 member-unverified BSScript::NativeFunction0<TESImageSpaceModifier,void>.docString
+member-unverified BSScript::NativeFunction0<TESImageSpaceModifier,void>.name
 member-unverified BSScript::NativeFunction0<TESImageSpaceModifier,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESImageSpaceModifier,void>.paramCount
 member-unverified BSScript::NativeFunction0<TESImageSpaceModifier,void>.stateName
 member-unverified BSScript::NativeFunction0<TESLevCharacter,void>.docString
+member-unverified BSScript::NativeFunction0<TESLevCharacter,void>.name
 member-unverified BSScript::NativeFunction0<TESLevCharacter,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESLevCharacter,void>.paramCount
 member-unverified BSScript::NativeFunction0<TESLevCharacter,void>.stateName
 member-unverified BSScript::NativeFunction0<TESLevItem,void>.docString
+member-unverified BSScript::NativeFunction0<TESLevItem,void>.name
 member-unverified BSScript::NativeFunction0<TESLevItem,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESLevItem,void>.paramCount
 member-unverified BSScript::NativeFunction0<TESLevItem,void>.stateName
 member-unverified BSScript::NativeFunction0<TESLevSpell,void>.docString
+member-unverified BSScript::NativeFunction0<TESLevSpell,void>.name
 member-unverified BSScript::NativeFunction0<TESLevSpell,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESLevSpell,void>.paramCount
 member-unverified BSScript::NativeFunction0<TESLevSpell,void>.stateName
 member-unverified BSScript::NativeFunction0<TESNPC,BGSListForm*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<TESNPC,BGSListForm*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESNPC,BGSListForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESNPC,BGSListForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESNPC,BGSListForm*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<TESNPC,TESClass*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<TESNPC,TESClass*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESNPC,TESClass*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESNPC,TESClass*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESNPC,TESClass*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<TESNPC,TESRace*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<TESNPC,TESRace*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESNPC,TESRace*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESNPC,TESRace*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESNPC,TESRace*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<TESNPC,bool>.docString
+member-unverified BSScript::NativeFunction0<TESNPC,bool>.name
 member-unverified BSScript::NativeFunction0<TESNPC,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESNPC,bool>.paramCount
 member-unverified BSScript::NativeFunction0<TESNPC,bool>.stateName
 member-unverified BSScript::NativeFunction0<TESNPC,int>.docString
+member-unverified BSScript::NativeFunction0<TESNPC,int>.name
 member-unverified BSScript::NativeFunction0<TESNPC,int>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESNPC,int>.paramCount
 member-unverified BSScript::NativeFunction0<TESNPC,int>.stateName
 member-unverified BSScript::NativeFunction0<TESObjectARMO,float>.docString
+member-unverified BSScript::NativeFunction0<TESObjectARMO,float>.name
 member-unverified BSScript::NativeFunction0<TESObjectARMO,float>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectARMO,float>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectARMO,float>.stateName
 member-unverified BSScript::NativeFunction0<TESObjectCELL,TESFaction*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<TESObjectCELL,TESFaction*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESObjectCELL,TESFaction*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectCELL,TESFaction*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectCELL,TESFaction*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<TESObjectCELL,TESNPC*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<TESObjectCELL,TESNPC*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESObjectCELL,TESNPC*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectCELL,TESNPC*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectCELL,TESNPC*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<TESObjectCELL,bool>.docString
+member-unverified BSScript::NativeFunction0<TESObjectCELL,bool>.name
 member-unverified BSScript::NativeFunction0<TESObjectCELL,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectCELL,bool>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectCELL,bool>.stateName
 member-unverified BSScript::NativeFunction0<TESObjectCELL,void>.docString
+member-unverified BSScript::NativeFunction0<TESObjectCELL,void>.name
 member-unverified BSScript::NativeFunction0<TESObjectCELL,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectCELL,void>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectCELL,void>.stateName
 member-unverified BSScript::NativeFunction0<TESObjectLIGH,float>.docString
+member-unverified BSScript::NativeFunction0<TESObjectLIGH,float>.name
 member-unverified BSScript::NativeFunction0<TESObjectLIGH,float>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectLIGH,float>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectLIGH,float>.stateName
 member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSLocation*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSLocation*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSLocation*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSLocation*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSLocation*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSScene*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSScene*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSScene*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSScene*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSScene*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSVoiceType*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSVoiceType*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSVoiceType*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSVoiceType*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSVoiceType*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESFaction*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESFaction*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESFaction*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESFaction*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESFaction*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESForm*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESForm*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESForm*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESKey*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESKey*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESKey*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESKey*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESKey*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESNPC*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESNPC*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESNPC*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESNPC*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESNPC*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESObjectCELL*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESObjectCELL*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESObjectCELL*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESObjectCELL*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESObjectCELL*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESWorldSpace*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESWorldSpace*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESWorldSpace*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESWorldSpace*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESWorldSpace*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<TESObjectREFR,bool>.docString
+member-unverified BSScript::NativeFunction0<TESObjectREFR,bool>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,bool>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,bool>.stateName
 member-unverified BSScript::NativeFunction0<TESObjectREFR,float>.docString
+member-unverified BSScript::NativeFunction0<TESObjectREFR,float>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,float>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,float>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,float>.stateName
 member-unverified BSScript::NativeFunction0<TESObjectREFR,int>.docString
+member-unverified BSScript::NativeFunction0<TESObjectREFR,int>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,int>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,int>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,int>.stateName
 member-unverified BSScript::NativeFunction0<TESObjectREFR,unsigned_int>.docString
+member-unverified BSScript::NativeFunction0<TESObjectREFR,unsigned_int>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction0<TESObjectREFR,void>.docString
+member-unverified BSScript::NativeFunction0<TESObjectREFR,void>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,void>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,void>.stateName
 member-unverified BSScript::NativeFunction0<TESPackage,TESPackage_const*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<TESPackage,TESPackage_const*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESPackage,TESPackage_const*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESPackage,TESPackage_const*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESPackage,TESPackage_const*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<TESPackage,TESQuest*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<TESPackage,TESQuest*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESPackage,TESQuest*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESPackage,TESQuest*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESPackage,TESQuest*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<TESQuest,bool>.docString
+member-unverified BSScript::NativeFunction0<TESQuest,bool>.name
 member-unverified BSScript::NativeFunction0<TESQuest,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESQuest,bool>.paramCount
 member-unverified BSScript::NativeFunction0<TESQuest,bool>.stateName
 member-unverified BSScript::NativeFunction0<TESQuest,unsigned_int>.docString
+member-unverified BSScript::NativeFunction0<TESQuest,unsigned_int>.name
 member-unverified BSScript::NativeFunction0<TESQuest,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESQuest,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction0<TESQuest,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction0<TESQuest,void>.docString
+member-unverified BSScript::NativeFunction0<TESQuest,void>.name
 member-unverified BSScript::NativeFunction0<TESQuest,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESQuest,void>.paramCount
 member-unverified BSScript::NativeFunction0<TESQuest,void>.stateName
 member-unverified BSScript::NativeFunction0<TESTopic,void>.docString
+member-unverified BSScript::NativeFunction0<TESTopic,void>.name
 member-unverified BSScript::NativeFunction0<TESTopic,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESTopic,void>.paramCount
 member-unverified BSScript::NativeFunction0<TESTopic,void>.stateName
 member-unverified BSScript::NativeFunction0<TESTopicInfo,TESQuest*___ptr64>.docString
+member-unverified BSScript::NativeFunction0<TESTopicInfo,TESQuest*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESTopicInfo,TESQuest*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESTopicInfo,TESQuest*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESTopicInfo,TESQuest*___ptr64>.stateName
 member-unverified BSScript::NativeFunction0<TESWeather,int>.docString
+member-unverified BSScript::NativeFunction0<TESWeather,int>.name
 member-unverified BSScript::NativeFunction0<TESWeather,int>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESWeather,int>.paramCount
 member-unverified BSScript::NativeFunction0<TESWeather,int>.stateName
 member-unverified BSScript::NativeFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.docString
+member-unverified BSScript::NativeFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.name
 member-unverified BSScript::NativeFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.stateName
 member-unverified BSScript::NativeFunction11<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,float,float,float,float,float,int,float>.docString
+member-unverified BSScript::NativeFunction11<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,float,float,float,float,float,int,float>.name
 member-unverified BSScript::NativeFunction11<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,float,float,float,float,float,int,float>.objectTypeName
+member-unverified BSScript::NativeFunction11<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,float,float,float,float,float,int,float>.paramCount
 member-unverified BSScript::NativeFunction11<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,float,float,float,float,float,int,float>.stateName
 member-unverified BSScript::NativeFunction1<ActiveEffect,void,TESForm*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<ActiveEffect,void,TESForm*___ptr64>.name
 member-unverified BSScript::NativeFunction1<ActiveEffect,void,TESForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<ActiveEffect,void,TESForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<ActiveEffect,void,TESForm*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<ActiveEffect,void,float>.docString
+member-unverified BSScript::NativeFunction1<ActiveEffect,void,float>.name
 member-unverified BSScript::NativeFunction1<ActiveEffect,void,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<ActiveEffect,void,float>.paramCount
 member-unverified BSScript::NativeFunction1<ActiveEffect,void,float>.stateName
 member-unverified BSScript::NativeFunction1<Actor,SpellItem*___ptr64,unsigned_int>.docString
+member-unverified BSScript::NativeFunction1<Actor,SpellItem*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<Actor,SpellItem*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,SpellItem*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,SpellItem*___ptr64,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction1<Actor,TESObjectARMO*___ptr64,unsigned_int>.docString
+member-unverified BSScript::NativeFunction1<Actor,TESObjectARMO*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<Actor,TESObjectARMO*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,TESObjectARMO*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,TESObjectARMO*___ptr64,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction1<Actor,TESObjectWEAP*___ptr64,bool>.docString
+member-unverified BSScript::NativeFunction1<Actor,TESObjectWEAP*___ptr64,bool>.name
 member-unverified BSScript::NativeFunction1<Actor,TESObjectWEAP*___ptr64,bool>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,TESObjectWEAP*___ptr64,bool>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,TESObjectWEAP*___ptr64,bool>.stateName
 member-unverified BSScript::NativeFunction1<Actor,bool,Actor*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,bool,Actor*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,bool,Actor*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,bool,Actor*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,bool,Actor*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,bool,BGSKeyword*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,bool,BGSKeyword*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,bool,BGSKeyword*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,bool,BGSKeyword*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,bool,BGSKeyword*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,bool,BGSPerk*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,bool,BGSPerk*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,bool,BGSPerk*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,bool,BGSPerk*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,bool,BGSPerk*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,bool,EffectSetting*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,bool,EffectSetting*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,bool,EffectSetting*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,bool,EffectSetting*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,bool,EffectSetting*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,bool,SpellItem*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,bool,SpellItem*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,bool,SpellItem*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,bool,SpellItem*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,bool,SpellItem*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,bool,TESFaction*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,bool,TESFaction*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,bool,TESFaction*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,bool,TESFaction*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,bool,TESFaction*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,bool,TESForm*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,bool,TESForm*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,bool,TESForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,bool,TESForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,bool,TESForm*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,bool,TESIdleForm*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,bool,TESIdleForm*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,bool,TESIdleForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,bool,TESIdleForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,bool,TESIdleForm*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,bool,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,bool,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,bool,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,bool,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,bool,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,bool,TESShout*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,bool,TESShout*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,bool,TESShout*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,bool,TESShout*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,bool,TESShout*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,float,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,float,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,float,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,float,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,float,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,int,Actor*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,int,Actor*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,int,Actor*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,int,Actor*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,int,Actor*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,int,TESFaction*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,int,TESFaction*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,int,TESFaction*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,int,TESFaction*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,int,TESFaction*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,int,unsigned_int>.docString
+member-unverified BSScript::NativeFunction1<Actor,int,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<Actor,int,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,int,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,int,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction1<Actor,unsigned_int,Actor*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,unsigned_int,Actor*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,unsigned_int,Actor*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,unsigned_int,Actor*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,unsigned_int,Actor*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,void,Actor*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,void,Actor*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,void,Actor*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,Actor*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,Actor*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,void,BGSPerk*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,void,BGSPerk*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,void,BGSPerk*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,BGSPerk*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,BGSPerk*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,void,BGSTextureSet*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,void,BGSTextureSet*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,void,BGSTextureSet*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,BGSTextureSet*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,BGSTextureSet*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,void,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,void,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,void,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,void,TESFaction*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,void,TESFaction*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,void,TESFaction*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,TESFaction*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,TESFaction*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,void,TESForm*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,void,TESForm*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,void,TESForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,TESForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,TESForm*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,void,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,void,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,void,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,void,TESRace*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,void,TESRace*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,void,TESRace*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,TESRace*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,TESRace*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,void,TESShout*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<Actor,void,TESShout*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,void,TESShout*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,TESShout*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,TESShout*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<Actor,void,bool>.docString
+member-unverified BSScript::NativeFunction1<Actor,void,bool>.name
 member-unverified BSScript::NativeFunction1<Actor,void,bool>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,bool>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,bool>.stateName
 member-unverified BSScript::NativeFunction1<Actor,void,float>.docString
+member-unverified BSScript::NativeFunction1<Actor,void,float>.name
 member-unverified BSScript::NativeFunction1<Actor,void,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,float>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,float>.stateName
 member-unverified BSScript::NativeFunction1<Actor,void,unsigned_int>.docString
+member-unverified BSScript::NativeFunction1<Actor,void,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<Actor,void,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction1<BGSBaseAlias,void,float>.docString
+member-unverified BSScript::NativeFunction1<BGSBaseAlias,void,float>.name
 member-unverified BSScript::NativeFunction1<BGSBaseAlias,void,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSBaseAlias,void,float>.paramCount
 member-unverified BSScript::NativeFunction1<BGSBaseAlias,void,float>.stateName
 member-unverified BSScript::NativeFunction1<BGSListForm,TESForm*___ptr64,unsigned_int>.docString
+member-unverified BSScript::NativeFunction1<BGSListForm,TESForm*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<BGSListForm,TESForm*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSListForm,TESForm*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<BGSListForm,TESForm*___ptr64,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction1<BGSListForm,bool,TESForm*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<BGSListForm,bool,TESForm*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BGSListForm,bool,TESForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSListForm,bool,TESForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BGSListForm,bool,TESForm*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<BGSListForm,int,TESForm*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<BGSListForm,int,TESForm*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BGSListForm,int,TESForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSListForm,int,TESForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BGSListForm,int,TESForm*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<BGSListForm,void,TESForm*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<BGSListForm,void,TESForm*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BGSListForm,void,TESForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSListForm,void,TESForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BGSListForm,void,TESForm*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<BGSLocAlias,void,BGSLocation*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<BGSLocAlias,void,BGSLocation*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BGSLocAlias,void,BGSLocation*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSLocAlias,void,BGSLocation*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BGSLocAlias,void,BGSLocation*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocation*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocation*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocation*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocation*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocation*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocationRefType*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocationRefType*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocationRefType*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocationRefType*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocationRefType*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<BGSLocation,float,BGSKeyword*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<BGSLocation,float,BGSKeyword*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BGSLocation,float,BGSKeyword*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSLocation,float,BGSKeyword*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BGSLocation,float,BGSKeyword*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<BGSLocation,unsigned_int,BGSLocationRefType*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<BGSLocation,unsigned_int,BGSLocationRefType*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BGSLocation,unsigned_int,BGSLocationRefType*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSLocation,unsigned_int,BGSLocationRefType*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BGSLocation,unsigned_int,BGSLocationRefType*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<BGSLocation,void,bool>.docString
+member-unverified BSScript::NativeFunction1<BGSLocation,void,bool>.name
 member-unverified BSScript::NativeFunction1<BGSLocation,void,bool>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSLocation,void,bool>.paramCount
 member-unverified BSScript::NativeFunction1<BGSLocation,void,bool>.stateName
 member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESForm*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESForm*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESForm*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<BGSReferenceEffect,void,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<BGSReferenceEffect,void,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BGSReferenceEffect,void,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSReferenceEffect,void,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BGSReferenceEffect,void,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<BGSScene,bool,unsigned_int>.docString
+member-unverified BSScript::NativeFunction1<BGSScene,bool,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<BGSScene,bool,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSScene,bool,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<BGSScene,bool,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction1<BGSShaderParticleGeometryData,void,float>.docString
+member-unverified BSScript::NativeFunction1<BGSShaderParticleGeometryData,void,float>.name
 member-unverified BSScript::NativeFunction1<BGSShaderParticleGeometryData,void,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSShaderParticleGeometryData,void,float>.paramCount
 member-unverified BSScript::NativeFunction1<BGSShaderParticleGeometryData,void,float>.stateName
 member-unverified BSScript::NativeFunction1<BGSSoundCategory,void,float>.docString
+member-unverified BSScript::NativeFunction1<BGSSoundCategory,void,float>.name
 member-unverified BSScript::NativeFunction1<BGSSoundCategory,void,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSSoundCategory,void,float>.paramCount
 member-unverified BSScript::NativeFunction1<BGSSoundCategory,void,float>.stateName
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,unsigned_int>.__vftable
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,unsigned_int>.binding
@@ -23859,19 +24344,29 @@ member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,BSFixedStri
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,unsigned_int>.userFlags
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,unsigned_int>.variableCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int>.docString
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESWeather*___ptr64,unsigned_int>.docString
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESWeather*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESWeather*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESWeather*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESWeather*___ptr64,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,TESWordOfPower*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,TESWordOfPower*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,TESWordOfPower*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,TESWordOfPower*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,TESWordOfPower*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,float>.docString
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,float>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,float>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,float>.stateName
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,unsigned_int>.__vftable
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,unsigned_int>.binding
@@ -23889,16 +24384,24 @@ member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,unsign
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,unsigned_int>.userFlags
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,unsigned_int>.variableCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,float>.docString
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,float>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,float>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,float>.stateName
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,float>.docString
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,float>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,float>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,float>.stateName
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,unsigned_int>.__vftable
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,unsigned_int>.binding
@@ -23916,615 +24419,1078 @@ member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,unsigne
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,unsigned_int>.userFlags
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,unsigned_int>.variableCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,unsigned_int,unsigned_int>.docString
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,unsigned_int,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,unsigned_int,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,unsigned_int,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,unsigned_int,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,Actor*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,Actor*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,Actor*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,Actor*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,Actor*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESImageSpaceModifier*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESImageSpaceModifier*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESImageSpaceModifier*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESImageSpaceModifier*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESImageSpaceModifier*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESQuest*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESQuest*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESQuest*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESQuest*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESQuest*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>.docString
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>.stateName
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>.docString
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>.stateName
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>.docString
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>.stateName
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>.docString
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction1<IngredientItem,void,unsigned_int>.docString
+member-unverified BSScript::NativeFunction1<IngredientItem,void,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<IngredientItem,void,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<IngredientItem,void,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<IngredientItem,void,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESFaction,void,bool>.docString
+member-unverified BSScript::NativeFunction1<TESFaction,void,bool>.name
 member-unverified BSScript::NativeFunction1<TESFaction,void,bool>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESFaction,void,bool>.paramCount
 member-unverified BSScript::NativeFunction1<TESFaction,void,bool>.stateName
 member-unverified BSScript::NativeFunction1<TESFaction,void,unsigned_int>.docString
+member-unverified BSScript::NativeFunction1<TESFaction,void,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<TESFaction,void,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESFaction,void,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<TESFaction,void,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESForm,void,float>.docString
+member-unverified BSScript::NativeFunction1<TESForm,void,float>.name
 member-unverified BSScript::NativeFunction1<TESForm,void,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESForm,void,float>.paramCount
 member-unverified BSScript::NativeFunction1<TESForm,void,float>.stateName
 member-unverified BSScript::NativeFunction1<TESGlobal,void,float>.docString
+member-unverified BSScript::NativeFunction1<TESGlobal,void,float>.name
 member-unverified BSScript::NativeFunction1<TESGlobal,void,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESGlobal,void,float>.paramCount
 member-unverified BSScript::NativeFunction1<TESGlobal,void,float>.stateName
 member-unverified BSScript::NativeFunction1<TESImageSpaceModifier,void,float>.docString
+member-unverified BSScript::NativeFunction1<TESImageSpaceModifier,void,float>.name
 member-unverified BSScript::NativeFunction1<TESImageSpaceModifier,void,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESImageSpaceModifier,void,float>.paramCount
 member-unverified BSScript::NativeFunction1<TESImageSpaceModifier,void,float>.stateName
 member-unverified BSScript::NativeFunction1<TESNPC,void,bool>.docString
+member-unverified BSScript::NativeFunction1<TESNPC,void,bool>.name
 member-unverified BSScript::NativeFunction1<TESNPC,void,bool>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESNPC,void,bool>.paramCount
 member-unverified BSScript::NativeFunction1<TESNPC,void,bool>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,bool>.docString
+member-unverified BSScript::NativeFunction1<TESObjectCELL,void,bool>.name
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,bool>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectCELL,void,bool>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,bool>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,float>.docString
+member-unverified BSScript::NativeFunction1<TESObjectCELL,void,float>.name
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectCELL,void,float>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,float>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>.docString
+member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,bool>.docString
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,bool>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,bool>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,float>.docString
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,float>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,float>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,float>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>.docString
+member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,bool>.docString
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,bool>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,bool>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,bool>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,bool>.stateName
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>.docString
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>.docString
+member-unverified BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESQuest,bool,unsigned_int>.docString
+member-unverified BSScript::NativeFunction1<TESQuest,bool,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<TESQuest,bool,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESQuest,bool,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<TESQuest,bool,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction1<TESQuest,void,bool>.docString
+member-unverified BSScript::NativeFunction1<TESQuest,void,bool>.name
 member-unverified BSScript::NativeFunction1<TESQuest,void,bool>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESQuest,void,bool>.paramCount
 member-unverified BSScript::NativeFunction1<TESQuest,void,bool>.stateName
 member-unverified BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction1<TESWeather,void,bool>.docString
+member-unverified BSScript::NativeFunction1<TESWeather,void,bool>.name
 member-unverified BSScript::NativeFunction1<TESWeather,void,bool>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESWeather,void,bool>.paramCount
 member-unverified BSScript::NativeFunction1<TESWeather,void,bool>.stateName
 member-unverified BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>.docString
+member-unverified BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>.name
 member-unverified BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>.stateName
 member-unverified BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>.docString
+member-unverified BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>.name
 member-unverified BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>.stateName
 member-unverified BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.docString
+member-unverified BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.name
 member-unverified BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.stateName
 member-unverified BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>.docString
+member-unverified BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>.name
 member-unverified BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>.stateName
 member-unverified BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>.docString
+member-unverified BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>.name
 member-unverified BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>.stateName
 member-unverified BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>.docString
+member-unverified BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>.name
 member-unverified BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>.stateName
 member-unverified BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>.docString
+member-unverified BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>.docString
+member-unverified BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>.name
 member-unverified BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>.stateName
 member-unverified BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>.docString
+member-unverified BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>.name
 member-unverified BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>.stateName
 member-unverified BSScript::NativeFunction2<Actor,void,bool,bool>.docString
+member-unverified BSScript::NativeFunction2<Actor,void,bool,bool>.name
 member-unverified BSScript::NativeFunction2<Actor,void,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,void,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,void,bool,bool>.stateName
 member-unverified BSScript::NativeFunction2<Actor,void,float,bool>.docString
+member-unverified BSScript::NativeFunction2<Actor,void,float,bool>.name
 member-unverified BSScript::NativeFunction2<Actor,void,float,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,void,float,bool>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,void,float,bool>.stateName
 member-unverified BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>.docString
+member-unverified BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>.name
 member-unverified BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>.docString
+member-unverified BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>.name
 member-unverified BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>.stateName
 member-unverified BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>.docString
+member-unverified BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>.name
 member-unverified BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>.paramCount
 member-unverified BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>.stateName
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>.docString
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>.name
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>.stateName
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>.docString
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>.name
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>.objectTypeName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>.paramCount
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>.stateName
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>.docString
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>.name
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>.paramCount
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>.stateName
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>.docString
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>.name
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>.paramCount
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>.stateName
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>.docString
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>.name
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>.objectTypeName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>.paramCount
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>.stateName
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>.docString
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>.docString
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>.name
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>.paramCount
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>.stateName
 member-unverified BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>.docString
+member-unverified BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>.name
 member-unverified BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>.paramCount
 member-unverified BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>.stateName
 member-unverified BSScript::NativeFunction2<TESFaction,bool,bool,bool>.docString
+member-unverified BSScript::NativeFunction2<TESFaction,bool,bool,bool>.name
 member-unverified BSScript::NativeFunction2<TESFaction,bool,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESFaction,bool,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction2<TESFaction,bool,bool,bool>.stateName
 member-unverified BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>.docString
+member-unverified BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>.name
 member-unverified BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>.paramCount
 member-unverified BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>.stateName
 member-unverified BSScript::NativeFunction2<TESFaction,void,bool,bool>.docString
+member-unverified BSScript::NativeFunction2<TESFaction,void,bool,bool>.name
 member-unverified BSScript::NativeFunction2<TESFaction,void,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESFaction,void,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction2<TESFaction,void,bool,bool>.stateName
 member-unverified BSScript::NativeFunction2<TESFaction,void,int,bool>.docString
+member-unverified BSScript::NativeFunction2<TESFaction,void,int,bool>.name
 member-unverified BSScript::NativeFunction2<TESFaction,void,int,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESFaction,void,int,bool>.paramCount
 member-unverified BSScript::NativeFunction2<TESFaction,void,int,bool>.stateName
 member-unverified BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>.docString
+member-unverified BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>.name
 member-unverified BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>.paramCount
 member-unverified BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>.stateName
 member-unverified BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>.docString
+member-unverified BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>.docString
+member-unverified BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>.docString
+member-unverified BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>.name
 member-unverified BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>.paramCount
 member-unverified BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>.stateName
 member-unverified BSScript::NativeFunction2<TESObjectCELL,void,float,float>.docString
+member-unverified BSScript::NativeFunction2<TESObjectCELL,void,float,float>.name
 member-unverified BSScript::NativeFunction2<TESObjectCELL,void,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectCELL,void,float,float>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectCELL,void,float,float>.stateName
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>.docString
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>.docString
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>.stateName
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>.docString
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>.stateName
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>.docString
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>.stateName
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>.docString
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>.docString
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>.stateName
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>.docString
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>.stateName
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>.docString
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>.stateName
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>.docString
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>.stateName
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,float,float>.docString
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,float,float>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,float,float>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,float,float>.stateName
 member-unverified BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>.docString
+member-unverified BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>.name
 member-unverified BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>.stateName
 member-unverified BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>.docString
+member-unverified BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>.name
 member-unverified BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>.paramCount
 member-unverified BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>.stateName
 member-unverified BSScript::NativeFunction2<TESWeather,void,bool,bool>.docString
+member-unverified BSScript::NativeFunction2<TESWeather,void,bool,bool>.name
 member-unverified BSScript::NativeFunction2<TESWeather,void,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESWeather,void,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction2<TESWeather,void,bool,bool>.stateName
 member-unverified BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>.docString
+member-unverified BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>.name
 member-unverified BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>.stateName
 member-unverified BSScript::NativeFunction3<Actor,void,bool,bool,bool>.docString
+member-unverified BSScript::NativeFunction3<Actor,void,bool,bool,bool>.name
 member-unverified BSScript::NativeFunction3<Actor,void,bool,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction3<Actor,void,bool,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction3<Actor,void,bool,bool,bool>.stateName
 member-unverified BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>.docString
+member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>.docString
+member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>.name
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>.paramCount
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>.stateName
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>.docString
+member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>.name
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>.stateName
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>.docString
+member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>.name
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>.stateName
 member-unverified BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>.docString
+member-unverified BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>.name
 member-unverified BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>.stateName
 member-unverified BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>.docString
+member-unverified BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>.name
 member-unverified BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>.docString
+member-unverified BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>.name
 member-unverified BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>.stateName
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>.docString
+member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>.name
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>.objectTypeName
+member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>.paramCount
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>.stateName
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>.docString
+member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>.name
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>.objectTypeName
+member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>.paramCount
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>.stateName
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>.docString
+member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>.name
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>.stateName
 member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>.docString
+member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>.name
 member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>.stateName
 member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>.docString
+member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>.name
 member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>.objectTypeName
+member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>.paramCount
 member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>.stateName
 member-unverified BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>.docString
+member-unverified BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>.name
 member-unverified BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>.stateName
 member-unverified BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>.docString
+member-unverified BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>.name
 member-unverified BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>.stateName
 member-unverified BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>.docString
+member-unverified BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>.name
 member-unverified BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>.objectTypeName
+member-unverified BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>.paramCount
 member-unverified BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>.stateName
 member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>.docString
+member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>.name
 member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>.stateName
 member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>.docString
+member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>.name
 member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>.paramCount
 member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>.stateName
 member-unverified BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>.docString
+member-unverified BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>.name
 member-unverified BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>.stateName
 member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>.docString
+member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>.name
 member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>.stateName
 member-unverified BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.docString
+member-unverified BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.name
 member-unverified BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.docString
+member-unverified BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.name
 member-unverified BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>.docString
+member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>.name
 member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>.stateName
 member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>.docString
+member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>.name
 member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>.stateName
 member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>.docString
+member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>.name
 member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>.stateName
 member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>.docString
+member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>.name
 member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>.objectTypeName
+member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>.paramCount
 member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>.stateName
 member-unverified BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>.docString
+member-unverified BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>.name
 member-unverified BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>.stateName
 member-unverified BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>.docString
+member-unverified BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>.name
 member-unverified BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>.docString
+member-unverified BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>.name
 member-unverified BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>.stateName
 member-unverified BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>.docString
+member-unverified BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>.name
 member-unverified BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>.stateName
 member-unverified BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>.docString
+member-unverified BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>.name
 member-unverified BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>.stateName
 member-unverified BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>.docString
+member-unverified BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>.name
 member-unverified BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>.stateName
 member-unverified BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>.docString
+member-unverified BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>.name
 member-unverified BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>.stateName
 member-unverified BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>.docString
+member-unverified BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>.name
 member-unverified BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>.stateName
 member-unverified BSScript::NativeLatentFunction0<Actor,void>.docString
+member-unverified BSScript::NativeLatentFunction0<Actor,void>.name
 member-unverified BSScript::NativeLatentFunction0<Actor,void>.objectTypeName
+member-unverified BSScript::NativeLatentFunction0<Actor,void>.paramCount
 member-unverified BSScript::NativeLatentFunction0<Actor,void>.stateName
 member-unverified BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeLatentFunction0<TESObjectREFR,void>.docString
+member-unverified BSScript::NativeLatentFunction0<TESObjectREFR,void>.name
 member-unverified BSScript::NativeLatentFunction0<TESObjectREFR,void>.objectTypeName
+member-unverified BSScript::NativeLatentFunction0<TESObjectREFR,void>.paramCount
 member-unverified BSScript::NativeLatentFunction0<TESObjectREFR,void>.stateName
 member-unverified BSScript::NativeLatentFunction0<TESQuest,bool>.docString
+member-unverified BSScript::NativeLatentFunction0<TESQuest,bool>.name
 member-unverified BSScript::NativeLatentFunction0<TESQuest,bool>.objectTypeName
+member-unverified BSScript::NativeLatentFunction0<TESQuest,bool>.paramCount
 member-unverified BSScript::NativeLatentFunction0<TESQuest,bool>.stateName
 member-unverified BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.docString
+member-unverified BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.name
 member-unverified BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.paramCount
 member-unverified BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.stateName
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>.docString
+member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>.name
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>.objectTypeName
+member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>.paramCount
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>.stateName
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>.docString
+member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>.name
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>.objectTypeName
+member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>.paramCount
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>.stateName
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>.docString
+member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>.name
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>.objectTypeName
+member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>.paramCount
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>.stateName
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,float>.docString
+member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,float>.name
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,float>.objectTypeName
+member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,float>.paramCount
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,float>.stateName
 member-unverified BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>.docString
+member-unverified BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>.name
 member-unverified BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>.paramCount
 member-unverified BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>.stateName
 member-unverified BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.docString
+member-unverified BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.name
 member-unverified BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.objectTypeName
+member-unverified BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.paramCount
 member-unverified BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.stateName
 member-unverified BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>.docString
+member-unverified BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>.name
 member-unverified BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>.objectTypeName
+member-unverified BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>.paramCount
 member-unverified BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>.stateName
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>.docString
+member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>.stateName
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>.docString
+member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>.name
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>.objectTypeName
+member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>.paramCount
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>.stateName
 member-unverified BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>.docString
+member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>.name
 member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>.objectTypeName
+member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>.paramCount
 member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>.stateName
 member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>.docString
+member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>.name
 member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>.objectTypeName
+member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>.paramCount
 member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>.stateName
 member-unverified BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>.docString
+member-unverified BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>.name
 member-unverified BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>.objectTypeName
+member-unverified BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>.paramCount
 member-unverified BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>.stateName
 member-unverified BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.docString
+member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.stateName
 member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>.docString
+member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>.name
 member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>.paramCount
 member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>.stateName
 member-unverified BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.docString
+member-unverified BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.name
 member-unverified BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.paramCount
 member-unverified BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.stateName
 member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.docString
+member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.stateName
 member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>.docString
+member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>.name
 member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>.objectTypeName
+member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>.paramCount
 member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>.stateName
 member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.docString
+member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.name
 member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.paramCount
 member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.stateName
+member-unverified BSScript::Object.currentStack
+member-unverified BSScript::Object.handle
+member-unverified BSScript::Stack.callback
+member-unverified BSScript::Stack.kind
+member-unverified BSScript::Stack.memoryPagePolicy
+member-unverified BSScript::Stack.profilePolicy
+member-unverified BSScript::Stack.refCount
+member-unverified BSScript::Stack.returnValue
+member-unverified BSScript::Stack.stackID
+member-unverified BSScript::Stack.top
+member-unverified BSScript::StackFrame.owningFunction
+member-unverified BSScript::StackFrame.owningObjectType
+member-unverified BSScript::StackFrame.previousFrame
+member-unverified BSSegmentedTriShape.extraDataCapacity
+member-unverified BSSegmentedTriShape.flags2
+member-unverified BSSegmentedTriShape.previousWorldFrame
 member-unverified BSShaderAccumulator.acceptAlphaDecalsInDepth
+member-unverified BSShaderAccumulator.currentBucket
+member-unverified BSShaderAccumulator.currentTechnique
 member-unverified BSShaderAccumulator.field_129
+member-unverified BSShaderAccumulator.hasMoreBatches
+member-unverified BSShaderAccumulator.shadowMapMask
 member-unverified BSShaderAccumulator.shadowSceneNode
+member-unverified BSShaderMaterial.texCoordOffset1
+member-unverified BSShaderProperty.extraDataCapacity
+member-unverified BSShaderTextureSet.texturePaths
+member-unverified BSShadowDirectionalLight.casterCandidates
 member-unverified BSShadowDirectionalLight.focusShadowMaps
 member-unverified BSShadowDirectionalLight.portalStrictCull
+member-unverified BSShadowDirectionalLight.sceneIndex
+member-unverified BSShadowFrustumLight.casterCandidates
 member-unverified BSShadowFrustumLight.focusShadowMaps
 member-unverified BSShadowFrustumLight.portalStrictCull
+member-unverified BSShadowFrustumLight.sceneIndex
+member-unverified BSShadowLight.casterCandidates
 member-unverified BSShadowLight.portalStrictCull
+member-unverified BSShadowLight.sceneIndex
+member-unverified BSShadowParabolicLight.casterCandidates
 member-unverified BSShadowParabolicLight.focusShadowMaps
 member-unverified BSShadowParabolicLight.portalStrictCull
+member-unverified BSShadowParabolicLight.sceneIndex
+member-unverified BSSkinnedDecalTriShape.extraDataCapacity
+member-unverified BSSkinnedDecalTriShape.flags2
+member-unverified BSSkinnedDecalTriShape.previousWorldFrame
+member-unverified BSSkyShaderProperty.extraDataCapacity
+member-unverified BSStripParticleSystem.extraDataCapacity
+member-unverified BSStripParticleSystem.flags2
+member-unverified BSStripParticleSystem.previousWorldFrame
+member-unverified BSSubIndexLandTriShape.extraDataCapacity
+member-unverified BSSubIndexLandTriShape.flags2
+member-unverified BSSubIndexLandTriShape.previousWorldFrame
+member-unverified BSSubIndexTriShape.extraDataCapacity
+member-unverified BSSubIndexTriShape.flags2
+member-unverified BSSubIndexTriShape.previousWorldFrame
 member-unverified BSSystemUtility.source_BSSystemEvent
+member-unverified BSTArray.capacity
 member-unverified BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>.buffer
 member-unverified BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>.lock
+member-unverified BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>.popIndex
+member-unverified BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>.pushIndex
 member-unverified BSTEventSink.__vftable
 member-missing BSTEventSink<TESAmiiboForcedStopDetectionEvent>.__vftable
 member-missing BSTEventSink<TESAmiiboTouchEvent>.__vftable
 member-unverified BSTEventSource.pendingRegisterCapacity
+member-unverified BSTEventSource.pendingRegisterCount
+member-unverified BSTEventSource.pendingRegisters
 member-unverified BSTEventSource.pendingUnregisterCapacity
+member-unverified BSTEventSource.pendingUnregisters
+member-unverified BSTEventSource.sinkCapacity
 member-unverified BSTaskManager.source_BSTaskManagerWaitAction
 member-unverified BSTempEffectGeometryDecal.field_8C
 member-unverified BSTempEffectGeometryDecal.field_94
 member-unverified BSTempEffectGeometryDecal.field_9C
 member-unverified BSTempEffectParticle.field_B4
 member-unverified BSTempEffectParticle.field_BC
+member-unverified BSTempNode.extraDataCapacity
+member-unverified BSTempNode.flags2
+member-unverified BSTempNode.previousWorldFrame
+member-unverified BSTempNodeManager.extraDataCapacity
+member-unverified BSTempNodeManager.flags2
+member-unverified BSTempNodeManager.previousWorldFrame
 member-unverified BSThreadEvent::_anon_939FB6BB::Source.source_BSThreadEvent_ThreadEvent
+member-unverified BSTreeNode.extraDataCapacity
+member-unverified BSTreeNode.flags2
+member-unverified BSTreeNode.previousWorldFrame
+member-unverified BSTriShape.extraDataCapacity
+member-unverified BSTriShape.flags2
+member-unverified BSTriShape.previousWorldFrame
 member-unverified BSUIMessageData.fixedString
+member-unverified BSUIMessageData.string
 member-unverified BSUIMessageData.value
 member-unverified BSUIScaleformData.scaleformEvent
+member-unverified BSValueNode.extraDataCapacity
+member-unverified BSValueNode.flags2
+member-unverified BSValueNode.previousWorldFrame
+member-unverified BSWaterShaderMaterial.texCoordOffset1
+member-unverified BSWaterShaderProperty.extraDataCapacity
+member-unverified BSWin32GamepadDevice.leftStick
+member-unverified BSWin32GamepadDevice.leftTrigger
+member-unverified BSWin32GamepadDevice.prevState
+member-unverified BSWin32GamepadDevice.rightStick
+member-unverified BSWin32GamepadDevice.rightTrigger
 member-unverified BSWin32GamepadDevice.source_BSGamepadEvent
+member-unverified BSWin32GamepadDevice.xinputState
 member-unverified BSWin32GamerProfile.source_BSGamerProfileEvent
 member-unverified BSWin32KeyboardDevice.bufferedData
+member-unverified BSWin32KeyboardDevice.prevKeyState
 member-unverified BSWin32MouseDevice.lock
+member-unverified BSWin32MouseDevice.reinitializing
+member-unverified BSWin32MouseDevice.state
 member-unverified BSWin32SaveDataSystemUtility.source_BSSaveDataEvent
 member-unverified BSWin32SystemUtility.source_BSSystemEvent
+member-unverified BShkbAnimationGraph.doFootIK
 member-unverified BShkbAnimationGraph.eventsSuppressed
 member-unverified BShkbAnimationGraph.nameMatchList
 member-unverified BarrierProjectile.field_D4
@@ -24533,20 +25499,44 @@ member-unverified BaseExtraList.lock
 member-unverified BeamProjectile.field_D4
 member-unverified BeamProjectile.field_DC
 member-unverified BeamProjectile.source_BeamProjectileImpactEvent
+member-unverified BipedAnim.bufferedObjects
+member-unverified BipedAnim.ownerHandle
+member-unverified BipedAnim.root
+member-unverified BleedoutCameraState.applyThirdPerson
 member-unverified BleedoutCameraState.followHeading
+member-unverified BleedoutCameraState.keepFreeRotation
+member-unverified BleedoutCameraState.orbitDistance
 member-unverified BleedoutCameraState.pad0c
 member-unverified BleedoutCameraState.pad11C
 member-unverified BleedoutCameraState.pad135
 member-unverified BleedoutCameraState.pad1c
 member-unverified BleedoutCameraState.padE3
+member-unverified BleedoutCameraState.pitch
 member-unverified BleedoutCameraState.soundHandle
 member-unverified BleedoutCameraState.soundHandleAssumeState
 member-unverified BleedoutCameraState.soundHandlePad
 member-unverified BleedoutCameraState.soundHandleRequestedState
+member-unverified BleedoutCameraState.toggleToFirstPerson
 member-unverified BleedoutCameraState.useShoulderOffsets
+member-unverified BleedoutCameraState.yaw
 member-unverified BleedoutCameraState.yawOffset
+member-unverified ButtonEvent.field_10
+member-unverified ButtonEvent.field_C
+member-unverified CachedRaycastData.cachingPhantom
+member-unverified CachedRaycastData.collectedBodies
+member-unverified CachedRaycastData.collisionGroup
+member-unverified CachedRaycastData.everHit
+member-unverified CachedRaycastData.handle
 member-unverified CachedRaycastData.useWorldOnly
+member-unverified CachedRaycastData.world
+member-unverified CameraMatrixEntry.eyePosition
+member-unverified CameraMatrixEntry.jittered
+member-unverified CameraMatrixEntry.previousViewProjection
+member-unverified CameraMatrixEntry.projection
+member-unverified CameraMatrixEntry.view
 member-unverified CameraMatrixEntry.viewProjection
+member-unverified CameraMatrixEntry.viewProjectionUnjittered
+member-unverified CameraMatrixEntry.worldRotation
 member-unverified CameraOverrideStartHandler.pad0C
 member-unverified CameraOverrideStartHandler.refCount
 member-unverified CameraOverrideStopHandler.pad0C
@@ -24554,19 +25544,28 @@ member-unverified CameraOverrideStopHandler.refCount
 member-unverified CameraShakeHandler.pad0C
 member-unverified CameraShakeHandler.refCount
 member-unverified ChainExplosion.field_120
+member-unverified ChangeFormMap.lock
+member-unverified ChangeFormMap.map
 member-unverified Character.avStorage
 member-unverified Character.criticalSection
+member-unverified Character.healthModifiers
 member-unverified Character.magickaModifiers
 member-unverified Character.staminaModifiers
 member-unverified Character.voicePointsModifiers
 member-unverified CombatCoverLocation.field_84
 member-unverified CombatCoverSearch.field_7C
 member-unverified CombatCoverSearch.field_84
+member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_1F0
+member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_1F8
+member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_1F8
+member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_200
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_1F8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_200
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_208
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_210
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_213
+member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_1F8
+member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_200
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_208
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_210
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_213
@@ -24576,13 +25575,19 @@ member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathi
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_23B
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_1F8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_200
+member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_1F8
+member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_200
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_208
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_210
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_213
+member-unverified CombatThreat.field_14
 member-unverified CombatThreat.field_1C
 member-unverified CombatThreat.field_24
+member-unverified CombatThreat.field_44
 member-unverified CombatThreat.field_60
+member-unverified CommandTableEntry.pad14
 member-unverified CommandTableEntry.pad24
+member-unverified CommandTableEntry.pad4c
 member-unverified CommandTableEntry.unk21
 member-unverified ConeProjectile.field_1F0
 member-unverified ConeProjectile.field_D4
@@ -24591,36 +25596,103 @@ member-unverified ConsoleData.refHandle
 member-unverified ConsoleData.type
 member-unverified CreditsMenu.field_3C
 member-unverified CreditsMenu.field_7A
+member-unverified CrosshairPickData.grabTargetHandle
+member-unverified CrosshairPickData.hitObject
+member-unverified CrosshairPickData.hitPoint
+member-unverified CrosshairPickData.promptActive
+member-unverified CrosshairPickData.targetHandle
+member-unverified CubeMapRecord.faceRTV
 member-unverified CubeMapRecord.srv
+member-unverified CubeMapRecord.texture
+member-unverified DepthStencilProperties.height
+member-unverified DepthStencilProperties.slices
+member-unverified DepthStencilProperties.width
+member-unverified DepthStencilRecord.dsv
+member-unverified DepthStencilRecord.readOnlyDsv
 member-unverified DepthStencilRecord.srv
 member-unverified DepthStencilRecord.stencilSRV
+member-unverified DepthStencilRecord.texture
 member-unverified DescriptionBox.field_D4
 member-missing DescriptionBox.field_F0
 member-unverified DeviceConnectEvent.connected
+member-unverified DragonCameraState.applyThirdPerson
+member-unverified DragonCameraState.keepFreeRotation
 member-unverified DragonCameraState.pad0c
 member-unverified DragonCameraState.pad1c
 member-unverified DragonCameraState.padE3
 member-unverified DragonCameraState.padF1
 member-unverified DragonCameraState.padF9
+member-unverified DragonCameraState.toggleToFirstPerson
 member-unverified DragonCameraState.useShoulderOffsets
 member-unverified EventSourceHolder_BGSActorCell.source_BGSActorCellEvent
 member-missing EventSourceHolder_Input.device3
 member-missing EventSourceHolder_Input.device4
-member EventSourceHolder_Input.gamepadEnableChanged 81
-member EventSourceHolder_Input.gamepadEnablePending 80
-member EventSourceHolder_Input.remoteGamepadPending e0
+member-unverified EventSourceHolder_Input.gamepadEnableChanged
+member-unverified EventSourceHolder_Input.gamepadEnablePending
+member-unverified EventSourceHolder_Input.remoteGamepadPending
 member-unverified EventSourceHolder_Input.source_BSRemoteGamepadEvent
-member EventSourceHolder_Input.virtualKeyboard 78
+member-unverified EventSourceHolder_Input.virtualKeyboard
+member-unverified EventSourceHolder_MenuOpenClose.lock
+member-unverified EventSourceHolder_MenuOpenClose.numMenus20000
+member-unverified EventSourceHolder_MenuOpenClose.numMenus4000
+member-unverified EventSourceHolder_TES.source_BGSEventProcessedEvent
+member-unverified EventSourceHolder_TES.source_TESActiveEffectApplyRemoveEvent
 member-missing EventSourceHolder_TES.source_TESAmiiboForcedStopDetectionEvent
 member-missing EventSourceHolder_TES.source_TESAmiiboTouchEvent
+member-unverified EventSourceHolder_TES.source_TESBookReadEvent
+member-unverified EventSourceHolder_TES.source_TESCellFullyLoadedEvent
+member-unverified EventSourceHolder_TES.source_TESCellReadyToApplyDecalsEvent
+member-unverified EventSourceHolder_TES.source_TESDeathEvent
+member-unverified EventSourceHolder_TES.source_TESDestructionStageChangedEvent
+member-unverified EventSourceHolder_TES.source_TESEnterBleedoutEvent
+member-unverified EventSourceHolder_TES.source_TESFastTravelEndEvent
+member-unverified EventSourceHolder_TES.source_TESFormDeleteEvent
+member-unverified EventSourceHolder_TES.source_TESGrabReleaseEvent
+member-unverified EventSourceHolder_TES.source_TESMagicEffectApplyEvent
+member-unverified EventSourceHolder_TES.source_TESMagicWardHitEvent
+member-unverified EventSourceHolder_TES.source_TESMoveAttachDetachEvent
+member-unverified EventSourceHolder_TES.source_TESObjectREFRTranslationEvent
+member-unverified EventSourceHolder_TES.source_TESOpenCloseEvent
+member-unverified EventSourceHolder_TES.source_TESPerkEntryRunEvent
+member-unverified EventSourceHolder_TES.source_TESPlayerBowShotEvent
+member-unverified EventSourceHolder_TES.source_TESQuestInitEvent
+member-unverified EventSourceHolder_TES.source_TESQuestStageEvent
+member-unverified EventSourceHolder_TES.source_TESQuestStageItemDoneEvent
+member-unverified EventSourceHolder_TES.source_TESQuestStartStopEvent
+member-unverified EventSourceHolder_TES.source_TESResetEvent
+member-unverified EventSourceHolder_TES.source_TESResolveNPCTemplatesEvent
+member-unverified EventSourceHolder_TES.source_TESSceneActionEvent
+member-unverified EventSourceHolder_TES.source_TESSceneEvent
+member-unverified EventSourceHolder_TES.source_TESScenePhaseEvent
+member-unverified EventSourceHolder_TES.source_TESSellEvent
+member-unverified EventSourceHolder_TES.source_TESSleepStartEvent
+member-unverified EventSourceHolder_TES.source_TESSleepStopEvent
+member-unverified EventSourceHolder_TES.source_TESSpellCastEvent
+member-unverified EventSourceHolder_TES.source_TESSwitchRaceCompleteEvent
+member-unverified EventSourceHolder_TES.source_TESTopicInfoEvent
+member-unverified EventSourceHolder_TES.source_TESTrackedStatsEvent
+member-unverified EventSourceHolder_TES.source_TESTrapHitEvent
+member-unverified EventSourceHolder_TES.source_TESTriggerEnterEvent
+member-unverified EventSourceHolder_TES.source_TESTriggerEvent
+member-unverified EventSourceHolder_TES.source_TESTriggerLeaveEvent
+member-unverified EventSourceHolder_TES.source_TESUniqueIDChangeEvent
+member-unverified EventSourceHolder_TES.source_TESWaitStartEvent
+member-unverified EventSourceHolder_TES.source_TESWaitStopEvent
+member-unverified EventSourceHolder_User.gamepadActive
+member-unverified EventSourceHolder_User.source_UserEventEnabledEvent
+member-unverified EventSourceHolder_User.unk12A
 member-unverified Explosion.field_120
 member-unverified ExtraAliasInstanceArray.capacity
+member-unverified ExtraAliasInstanceArray::Entry.data
 member-unverified ExtraPackageStartLocation.field_8
 member-unverified ExtraStartingPosition.field_20
 member-unverified ExtraStartingPosition.field_8
+member-unverified FirstPersonState.camera
+member-unverified FirstPersonState.cameraControlNode
 member FirstPersonState.cameraOverride 84
 member FirstPersonState.dampingWeight 7c
 member-unverified FirstPersonState.id
+member-unverified FirstPersonState.inputHandler
 member-unverified FirstPersonState.pad0c
 member-unverified FirstPersonState.pad1c
 member-unverified FirstPersonState.pad54
@@ -24634,32 +25706,75 @@ member FirstPersonState.togglePOVPressed 88
 member FirstPersonState.useAltEuler 87
 member-unverified FlameProjectile.field_D4
 member-unverified FlameProjectile.field_DC
+member-unverified FlatBone.name
+member-unverified FlatBone.world
+member-unverified FrameState.backBufferHeight
 member FrameState.cameraMatrices a8
-member FrameState.decreaseRequested 11d
-member FrameState.dynamicResolutionLock 118
-member FrameState.dynamicWidthRatio 104
+member-unverified FrameState.decreaseRequested
+member-unverified FrameState.dynamicHeightRatio
+member-unverified FrameState.dynamicResolutionLock
+member-unverified FrameState.dynamicWidthRatio
 member FrameState.frameCounter 4c
 member FrameState.frameStarted 54
-member FrameState.increaseRequested 11c
-member FrameState.jitterIndex c0
-member FrameState.manualRatio 11e
-member FrameState.previousWidthRatio 10c
-member FrameState.ratioIncreaseCounter 114
+member-unverified FrameState.increaseRequested
+member-unverified FrameState.jitter
+member-unverified FrameState.jitterIndex
+member-unverified FrameState.manualRatio
+member-unverified FrameState.previousHeightRatio
+member-unverified FrameState.previousWidthRatio
+member-unverified FrameState.ratioIncreaseCounter
+member-unverified FrameState.screenHeight
+member-unverified FreeCameraState.camera
 member-unverified FreeCameraState.forwardInputA
+member-unverified FreeCameraState.forwardInputB
 member-unverified FreeCameraState.horizontalMove
 member-unverified FreeCameraState.id
+member-unverified FreeCameraState.inputHandler
 member-unverified FreeCameraState.pad0c
 member-unverified FreeCameraState.pad1c
 member-unverified FreeCameraState.refCount
 member-unverified FreeCameraState.run
+member-unverified FreeCameraState.verticalInput
 member-unverified FurnitureCameraState.id
 member-unverified FurnitureCameraState.pad0c
 member-unverified FurnitureCameraState.pad1c
 member-unverified FurnitureCameraState.pad3F
 member-unverified FurnitureCameraState.refCount
+member-unverified FurnitureCameraState.translate
+member-unverified FurnitureMarker.field_0
 member-missing FxResponseArgs<15>.__vftable
+member-unverified GFxFunctionHandler::Params.argsWithThis
+member-unverified GFxFunctionHandler::Params.userData
+member-unverified GFxMovieView.alignment
+member-unverified GFxMovieView.backgroundColor
+member-unverified GFxMovieView.controllerCount
+member-unverified GFxMovieView.mouseCursorCount
+member-unverified GFxMovieView.movieDef
+member-unverified GFxMovieView.objectInterface
+member-unverified GFxMovieView.safeRect
+member-unverified GFxMovieView.scaleMode
+member-unverified GFxMovieView.userData
+member-unverified GFxMovieView.visibleFrameRect
+member-unverified GFxValue::DisplayInfo.alpha
+member-unverified GFxValue::DisplayInfo.fov
+member-unverified GFxValue::DisplayInfo.matrix3DA
+member-unverified GFxValue::DisplayInfo.matrix3DB
+member-unverified GFxValue::DisplayInfo.rotation
+member-unverified GFxValue::DisplayInfo.visible
+member-unverified GFxValue::DisplayInfo.xRotation
+member-unverified GFxValue::DisplayInfo.xScale
+member-unverified GFxValue::DisplayInfo.y
+member-unverified GFxValue::DisplayInfo.yRotation
+member-unverified GFxValue::DisplayInfo.yScale
+member-unverified GFxValue::DisplayInfo.z
+member-unverified GFxValue::DisplayInfo.zScale
+member-unverified GFxViewport.aspectRatio
 member-unverified GFxViewport.flags
 member-unverified GFxViewport.height
+member-unverified GFxViewport.left
+member-unverified GFxViewport.scale
+member-unverified GFxViewport.scissorRect
+member-unverified GFxViewport.top
 member-unverified GFxViewport.width
 member-unverified GrenadeProjectile.field_D4
 member-unverified GrenadeProjectile.field_DC
@@ -24669,63 +25784,92 @@ member-unverified HUDData.refHandle
 member-unverified HUDData.text
 member-unverified HUDData.type
 member-unverified HUDData.value
+member-unverified HUDNotificationEntry.form
+member-unverified HUDNotificationEntry.form2
+member-unverified HUDNotificationEntry.objectiveTexts
+member-unverified HUDNotificationEntry.readyTime
+member-unverified HUDNotificationEntry.sound
+member-unverified HUDNotificationEntry.status
+member-unverified HUDNotificationEntry.type
+member-unverified HUDNotifications.lastReminderTime
+member-unverified HUDObject.clip
+member-unverified HUDObject.view
 member-unverified HeldStateHandler.releasePending
+member-unverified HorseCameraState.applyThirdPerson
+member-unverified HorseCameraState.keepFreeRotation
 member-unverified HorseCameraState.pad0c
 member-unverified HorseCameraState.pad1c
 member-unverified HorseCameraState.padE3
 member-unverified HorseCameraState.padF1
+member-unverified HorseCameraState.toggleToFirstPerson
 member-unverified HorseCameraState.useShoulderOffsets
-member-unverified IDEvent.userEvent
+member-unverified IMessageBoxCallback.refCount
 member-unverified IOManager.source_BSTaskManagerWaitAction
 member-unverified IUIMessageData.isPooled
 member-unverified ImageScroller.field_78
+member-unverified ImageSpaceState.effects
+member-unverified ImageSpaceState.taaSettings
 member-unverified InfiniteList.field_7C
 member-unverified IngredientItem.field_A0
+member-unverified InputContext.unusedArrays
 member-unverified InputEventQueue.amiiboCount
 member-unverified InputEventQueue.amiiboEvent
+member-unverified InputEventQueue.buttonCount
 member-unverified InputEventQueue.buttonEvents
 member-unverified InputEventQueue.charCount
-member InputEventQueue.charEvents 200
-member InputEventQueue.deviceConnectEvent 330
-member InputEventQueue.head 380
-member InputEventQueue.kinectEvent 350
+member-unverified InputEventQueue.charEvents
+member-unverified InputEventQueue.deviceConnectCount
+member-unverified InputEventQueue.deviceConnectEvent
+member-unverified InputEventQueue.head
+member-unverified InputEventQueue.kinectCount
+member-unverified InputEventQueue.kinectEvent
 member-unverified InputEventQueue.motionGestureCount
 member-unverified InputEventQueue.motionGestureEvents
 member-unverified InputEventQueue.mouseMoveCount
-member InputEventQueue.mouseMoveEvent 2a0
+member-unverified InputEventQueue.mouseMoveEvent
 member-unverified InputEventQueue.sixaxisCount
 member-unverified InputEventQueue.sixaxisEvents
-member InputEventQueue.tail 388
-member InputEventQueue.thumbstickEvents 2d0
+member-unverified InputEventQueue.tail
+member-unverified InputEventQueue.thumbstickCount
+member-unverified InputEventQueue.thumbstickEvents
+member-unverified InputEventQueue.unknown0
+member-unverified InventoryChanges.cachedValue
 member-unverified InventoryChanges.previousCachedValue
+member-unverified IronSightsState.camera
 member-unverified IronSightsState.id
 member-unverified IronSightsState.pad0c
 member-unverified IronSightsState.pad1c
 member-unverified IronSightsState.refCount
+member-unverified ItemList.view
 member-unverified KinectEvent.heard
 member-unverified KinectEvent.idCode
+member-unverified LinkedMapping.linkedUserEvent
 member-unverified LoadOrderArchive.field_80
 member-unverified LoadOrderArchive.field_88
 member-unverified LoadOrderArchive.field_90
-member LoadOrderArchive.field_C0 a8
-member LoadOrderArchive.field_C8 b0
-member LoadOrderArchive.field_D0 b8
-member LoadOrderArchive.field_F8 e0
+member-unverified LoadOrderArchive.field_C0
+member-unverified LoadOrderArchive.field_C8
+member-unverified LoadOrderArchive.field_D0
+member-unverified LoadOrderArchive.field_F8
 member-unverified LocalMapCamera.padding31
 member-unverified LocalMapCamera.padding64
+member-unverified LocalMapCamera::DefaultState.camera
+member-unverified LocalMapCamera::DefaultState.center
 member-unverified LocalMapCamera::DefaultState.id
+member-unverified LocalMapCamera::DefaultState.minHalfHeight
+member-unverified LocalMapCamera::DefaultState.minHalfWidth
 member-unverified LocalMapCamera::DefaultState.padding0C
 member-unverified LocalMapCamera::DefaultState.padding1C
 member-unverified LocalMapCamera::DefaultState.padding44
 member-unverified LocalMapCamera::DefaultState.refCount
-member LockpickingMenu.field_100 ec
-member LockpickingMenu.field_104 f0
-member LockpickingMenu.field_108 f4
-member LockpickingMenu.field_10C f8
-member LockpickingMenu.field_114 100
-member LockpickingMenu.field_11C 108
-member LockpickingMenu.field_120 10c
-member LockpickingMenu.field_122 10e
+member-unverified LockpickingMenu.field_100
+member-unverified LockpickingMenu.field_104
+member-unverified LockpickingMenu.field_108
+member-unverified LockpickingMenu.field_10C
+member-unverified LockpickingMenu.field_114
+member-unverified LockpickingMenu.field_11C
+member-unverified LockpickingMenu.field_120
+member-unverified LockpickingMenu.field_122
 member-unverified LockpickingMenu.field_E8
 member-unverified LockpickingMenu.field_F0
 member-unverified LockpickingMenu.field_F4
@@ -24756,6 +25900,7 @@ member-unverified MapCameraStates::Transition.durationMs
 member-unverified MapCameraStates::Transition.fromPosition
 member-unverified MapCameraStates::Transition.fromRotation
 member-unverified MapCameraStates::Transition.id
+member-unverified MapCameraStates::Transition.mode
 member-unverified MapCameraStates::Transition.padding0C
 member-unverified MapCameraStates::Transition.padding1C
 member-unverified MapCameraStates::Transition.padding7D
@@ -24767,10 +25912,12 @@ member-unverified MapCameraStates::Transition.toPosition
 member-unverified MapCameraStates::Transition.toRotation
 member-unverified MapCameraStates::Transition.transitionHeight
 member-unverified MapCameraStates::World.field_5c
+member-unverified MapCameraStates::World.heightOffset
 member-unverified MapCameraStates::World.padding0C
 member-unverified MapCameraStates::World.padding1C
 member-unverified MapCameraStates::World.padding64
 member-unverified MapCameraStates::World.padding71
+member-unverified MapCameraStates::World.zoomAxis
 member-unverified MarketplaceBundleContent.field_30
 member-unverified MarketplaceBundleContent.field_38
 member-unverified MarketplaceBundleContent.field_40
@@ -24792,17 +25939,17 @@ member-unverified MarketplaceContent.field_30
 member-unverified MarketplaceContent.field_38
 member-unverified MarketplaceContent.field_40
 member-unverified MarketplaceContent.field_48
-member MarketplaceContent.field_68 50
+member-unverified MarketplaceContent.field_68
 member-unverified MarketplaceContent.field_78
 member-unverified MarketplaceContent.field_80
 member-unverified MarketplaceContent.field_82
 member-unverified MarketplaceContent.field_88
 member-unverified MarketplaceContent.field_90
-member MarketplaceContent.field_98 70
+member-unverified MarketplaceContent.field_98
 member-unverified MarketplaceContent.field_A0
-member MarketplaceContent.field_A8 80
+member-unverified MarketplaceContent.field_A8
 member-unverified MarketplaceContent.field_B0
-member MarketplaceContent.field_B8 90
+member-unverified MarketplaceContent.field_B8
 member-unverified MarketplaceContent.field_C0
 member-unverified MarketplaceContentCollection.field_30
 member-unverified MarketplaceContentCollection.field_38
@@ -24824,19 +25971,25 @@ member-unverified MarketplaceContentCollection.field_D8
 member-unverified MarketplaceMenu.field_3C
 member-unverified MarketplaceMenu.field_7A
 member-unverified MenuControls.ignoreInput
+member-unverified MenuControls.pendingHandlerChanges
 member-unverified MenuControls.remapMode
+member-unverified MenuEventHandler.refCount
 member-unverified MenuOpenHandler.tweenMenuAllowed
+member-unverified MenuTableEntry.create
 member-unverified MessageBoxData.buttons
 member-unverified MessageBoxData.isVertical
 member-unverified MiddleHighProcessData.charController
 member-unverified MiddleHighProcessData.headTrackingEnabled
 member-unverified MiddleHighProcessData.lastIdlePlayed
 member-unverified MiddleHighProcessData.lock
+member-unverified MiddleHighProcessData.movementDirection
+member-unverified MiddleHighProcessData.rightHandEquipType
 member-unverified MiddleHighProcessData.speed
 member-unverified MissileProjectile.field_D4
 member-unverified MissileProjectile.field_DC
 member-unverified ModManagerMenu.field_4C
 member-unverified ModManagerMenu.field_7A
+member-unverified ModelReferenceEffect.field_41
 member-missing MotionGestureEvent.__vftable
 member-missing MotionGestureEvent.field_10
 member-missing MotionGestureEvent.field_20
@@ -24848,7 +26001,15 @@ member-missing MotionGestureEvent.unk30
 member-missing MotionGestureEvent.unk34
 member-unverified MouseMoveEvent.idCode
 member-unverified MovementHandlerArbiter.field_2C
+member-unverified MovementHandlerArbiter.field_34
+member-unverified MovementHandlerArbiter.field_3C
+member-unverified MovementHandlerArbiter.field_44
+member-unverified MovementHandlerArbiter.field_70
+member-unverified MovementHandlerArbiter.field_78
 member-unverified MovementPathManagerAgentStaticAvoider.field_B8
+member-unverified MovementTweenerArbiter.field_15C
+member-unverified MovementTweenerArbiter.field_180
+member-unverified MovementTweenerArbiter.field_B4
 member-unverified MovementTweenerArbiter.field_BC
 member-unverified NavMeshSearchClosePoint.field_180
 member-unverified NavMeshSearchClosePoint.field_18C
@@ -24856,15 +26017,22 @@ member-unverified NavMeshSearchClosePoint.field_194
 member-unverified NavMeshSearchClosePoint.field_19C
 member-unverified NavMeshSearchClosePoint.field_1A4
 member-unverified NavMeshSearchClosePoint.field_1AC
+member-unverified NavMeshSearchClosePoint.field_1B8
 member-unverified NavMeshSearchFlee.field_178
 member-unverified NavMeshSearchFlee.field_180
+member-unverified NavMeshSearchFlee.field_188
+member-unverified NavMeshSearchFlee.field_190
+member-unverified NavMeshSearchFlee.field_19C
+member-unverified NavMeshSearchFlee.field_1A4
 member-unverified NavMeshSearchHide.field_178
 member-unverified NavMeshSearchHide.field_190
 member-unverified NavMeshSearchHide.field_198
+member-unverified NavMeshSearchHide.field_1A0
 member-unverified NavMeshSearchHide.field_1D0
 member-unverified NavMeshSearchHide.field_1E0
 member-unverified NavMeshSearchHide.field_1E8
 member-unverified NavMeshSearchHide.field_1F0
+member-unverified NavMeshSearchHide.field_1F8
 member-unverified NavMeshSearchHide.field_200
 member-unverified NavMeshSearchLOS.field_180
 member-unverified NavMeshSearchLOS.field_1A8
@@ -24872,23 +26040,68 @@ member-unverified NavMeshSearchLOS.field_1B0
 member-unverified NavMeshSearchMaxCost.field_178
 member-unverified NavMeshSearchMaxCost.field_190
 member-unverified NavMeshSearchMaxCost.field_198
+member-unverified NavMeshSearchMaxCost.field_1A0
 member-unverified NavMeshSearchMultipleGoals.field_178
 member-unverified NavMeshSearchMultipleGoals.field_190
 member-unverified NavMeshSearchMultipleGoals.field_198
+member-unverified NavMeshSearchMultipleGoals.field_1A0
 member-unverified NavMeshSearchSLPoint.field_178
 member-unverified NavMeshSearchSLPoint.field_190
 member-unverified NavMeshSearchSLPoint.field_198
+member-unverified NavMeshSearchSLPoint.field_1A0
+member-unverified NavMeshSearchSLPoint.field_1B0
+member-unverified NavMeshSearchSLPoint.field_1B8
+member-unverified NavMeshSearchSLPoint.field_1C8
+member-unverified NavMeshSearchSLPoint.field_1D0
+member-unverified NiAVObject.extraDataCapacity
+member-unverified NiAVObject.flags2
+member-unverified NiAVObject.previousWorldFrame
 member-unverified NiAlphaProperty.alphaTestRef
+member-unverified NiAlphaProperty.extraDataCapacity
+member-unverified NiAlphaProperty.flags
+member-unverified NiAmbientLight.extraDataCapacity
+member-unverified NiAmbientLight.flags2
+member-unverified NiAmbientLight.previousWorldFrame
+member-unverified NiBSPNode.extraDataCapacity
+member-unverified NiBSPNode.flags2
+member-unverified NiBSPNode.previousWorldFrame
+member-unverified NiBillboardNode.extraDataCapacity
+member-unverified NiBillboardNode.flags2
+member-unverified NiBillboardNode.previousWorldFrame
 member-unverified NiBoxBV.field_38
+member-unverified NiCamera.extraDataCapacity
+member-unverified NiCamera.flags2
 member-unverified NiCamera.padding0C
 member-unverified NiCamera.padding10A
 member-unverified NiCamera.padding169
 member-unverified NiCamera.padding2C
 member-unverified NiCamera.padding3C
+member-unverified NiCamera.previousWorldFrame
+member-unverified NiCollisionData.field_18
+member-unverified NiCollisionData.field_20
 member-unverified NiCollisionData.field_28
 member-unverified NiColorA.a
+member-unverified NiColorA.b
 member-unverified NiColorA.g
+member-unverified NiColorA.r
+member-unverified NiDirectionalLight.extraDataCapacity
+member-unverified NiDirectionalLight.flags2
+member-unverified NiDirectionalLight.previousWorldFrame
+member-unverified NiFogProperty.extraDataCapacity
 member-unverified NiFrustum.padding19
+member-unverified NiGeometry.extraDataCapacity
+member-unverified NiGeometry.flags2
+member-unverified NiGeometry.previousWorldFrame
+member-unverified NiIntegerExtraData.value
+member-unverified NiLight.extraDataCapacity
+member-unverified NiLight.flags2
+member-unverified NiLight.previousWorldFrame
+member-unverified NiMeshParticleSystem.extraDataCapacity
+member-unverified NiMeshParticleSystem.flags2
+member-unverified NiMeshParticleSystem.previousWorldFrame
+member-unverified NiNode.extraDataCapacity
+member-unverified NiNode.flags2
+member-unverified NiNode.previousWorldFrame
 member-unverified NiOBBLeaf.field_14
 member-unverified NiOBBLeaf.field_1C
 member-unverified NiOBBLeaf.field_24
@@ -24911,276 +26124,413 @@ member-unverified NiOBBNode.field_70
 member-unverified NiOBBNode.field_80
 member-unverified NiOBBRoot.field_4C
 member-unverified NiOBBRoot.field_54
+member-unverified NiObjectNET.extraDataCapacity
+member-unverified NiPSysPlanarCollider.field_108
 member-unverified NiPSysPlanarCollider.field_84
 member-unverified NiPSysPlanarCollider.field_88
+member-unverified NiPSysPlanarCollider.field_D4
 member-unverified NiPSysPlanarCollider.field_DC
+member-unverified NiParticleMeshes.extraDataCapacity
+member-unverified NiParticleMeshes.flags2
+member-unverified NiParticleMeshes.previousWorldFrame
+member-unverified NiParticleSystem.extraDataCapacity
+member-unverified NiParticleSystem.flags2
+member-unverified NiParticleSystem.previousWorldFrame
+member-unverified NiParticles.extraDataCapacity
+member-unverified NiParticles.flags2
+member-unverified NiParticles.previousWorldFrame
+member-unverified NiPlane.normal
+member-unverified NiPoint4.w
+member-unverified NiPoint4.x
+member-unverified NiPoint4.y
+member-unverified NiPoint4.z
+member-unverified NiPointLight.extraDataCapacity
+member-unverified NiPointLight.flags2
+member-unverified NiPointLight.previousWorldFrame
+member-unverified NiPointLight.quadraticAttenuation
+member-unverified NiProperty.extraDataCapacity
+member-unverified NiSequenceStreamHelper.extraDataCapacity
+member-unverified NiShadeProperty.extraDataCapacity
 member-unverified NiSkinData.skinTransform
+member-unverified NiSkinData::BoneData.boundSphere
+member-unverified NiSkinData::BoneData.skinToBone
 member-unverified NiSkinData::BoneData.weightCount
 member-unverified NiSkinData::BoneData.weights
+member-unverified NiSkinInstance.paletteLock
+member-unverified NiSkinInstance.paletteRowsPerBone
+member-unverified NiSkinPartition::Partition.boneIndices
+member-unverified NiSkinPartition::Partition.stripCount
+member-unverified NiSkinPartition::Partition.stripLengths
+member-unverified NiSkinPartition::Partition.triangleCount
+member-unverified NiSkinPartition::Partition.triangles
+member-unverified NiSkinPartition::Partition.vertexMap
+member-unverified NiSkinPartition::Partition.vertexWeights
+member-unverified NiSkinPartition::Partition.weightsPerVertex
+member-unverified NiSpotLight.extraDataCapacity
+member-unverified NiSpotLight.flags2
+member-unverified NiSpotLight.previousWorldFrame
+member-unverified NiSpotLight.quadraticAttenuation
+member-unverified NiSwitchNode.extraDataCapacity
+member-unverified NiSwitchNode.flags2
+member-unverified NiSwitchNode.previousWorldFrame
+member-unverified NiTriBasedGeom.extraDataCapacity
+member-unverified NiTriBasedGeom.flags2
+member-unverified NiTriBasedGeom.previousWorldFrame
+member-unverified NiTriShape.extraDataCapacity
+member-unverified NiTriShape.flags2
+member-unverified NiTriShape.previousWorldFrame
+member-unverified NiTriStrips.extraDataCapacity
+member-unverified NiTriStrips.flags2
+member-unverified NiTriStrips.previousWorldFrame
 member-unverified OwnedCameraEffectController.pad0C
 member-unverified OwnedCameraEffectController.pad24
 member-unverified OwnedCameraEffectController.pad31
+member-unverified PathingCoverLocation.field_38
+member-unverified PathingCoverLocation.field_40
+member-unverified PathingCoverLocation.field_48
+member-unverified PathingCoverLocation.field_50
+member-unverified PathingCoverLocation.field_58
+member-unverified PathingRequestCover.field_100
+member-unverified PathingRequestCover.field_108
+member-unverified PathingRequestCover.field_120
 member-unverified PathingRequestCover.field_134
+member-unverified PlayerCamera.allowFreeRotation
 member-unverified PlayerCamera.pad_166
 member-unverified PlayerCamera.pad_31
 member-unverified PlayerCamera.pad_39
 member-unverified PlayerCamera.pad_b4
+member-unverified PlayerCamera.pitchZeroStart
 member-unverified PlayerCamera.positionLock
 member-unverified PlayerCamera.singletonBase
+member-unverified PlayerCameraTransitionState.easing
 member-unverified PlayerCameraTransitionState.id
+member-unverified PlayerCameraTransitionState.pad0c
 member-unverified PlayerCameraTransitionState.pad1c
 member-unverified PlayerCameraTransitionState.pad3E
+member-unverified PlayerCameraTransitionState.refCount
+member-unverified PlayerCameraTransitionState.startTime
+member-unverified PlayerCameraTransitionState.updateFrom
 member-unverified PlayerCameraTransitionState.updateTo
 member-missing PlayerCharacter.__vftable_2D8
-member PlayerCharacter.aiDriveFlags be2
+member-unverified PlayerCharacter.aiDriveFlags
 member-unverified PlayerCharacter.avStorage
 member-unverified PlayerCharacter.criticalSection
 member PlayerCharacter.currentLocation ad0
-member PlayerCharacter.favorActorHandle 89c
+member-unverified PlayerCharacter.favorActorHandle
 member-unverified PlayerCharacter.field_148
-member PlayerCharacter.field_3E8 3e0
-member PlayerCharacter.field_3FC 3f4
-member PlayerCharacter.field_404 3fc
-member PlayerCharacter.field_408 400
-member PlayerCharacter.field_418 410
-member PlayerCharacter.field_42C 424
-member PlayerCharacter.field_434 42c
-member PlayerCharacter.field_438 430
-member PlayerCharacter.field_448 440
-member PlayerCharacter.field_450 448
-member PlayerCharacter.field_464 45c
-member PlayerCharacter.field_46C 464
-member PlayerCharacter.field_470 468
-member PlayerCharacter.field_480 478
-member PlayerCharacter.field_488 480
-member PlayerCharacter.field_48C 484
-member PlayerCharacter.field_490 488
-member PlayerCharacter.field_494 48c
-member PlayerCharacter.field_498 490
-member PlayerCharacter.field_49C 494
-member PlayerCharacter.field_4A0 498
-member PlayerCharacter.field_4A4 49c
-member PlayerCharacter.field_4A8 4a0
-member PlayerCharacter.field_4B0 4a8
-member PlayerCharacter.field_4B8 4b0
-member PlayerCharacter.field_560 558
-member PlayerCharacter.field_578 570
-member PlayerCharacter.field_580 578
-member PlayerCharacter.field_588 580
-member PlayerCharacter.field_5B4 5ac
-member PlayerCharacter.field_5BC 5b4
-member PlayerCharacter.field_5C0 5b8
-member PlayerCharacter.field_5D0 5c8
-member PlayerCharacter.field_5E4 5dc
-member PlayerCharacter.field_5EC 5e4
-member PlayerCharacter.field_5F0 5e8
-member PlayerCharacter.field_600 5f8
-member PlayerCharacter.field_608 600
-member PlayerCharacter.field_610 608
-member PlayerCharacter.field_620 618
-member PlayerCharacter.field_630 628
-member PlayerCharacter.field_640 638
-member PlayerCharacter.field_644 63c
-member PlayerCharacter.field_648 640
-member PlayerCharacter.field_650 648
-member PlayerCharacter.field_658 650
-member PlayerCharacter.field_660 658
-member PlayerCharacter.field_664 65c
-member PlayerCharacter.field_668 660
-member PlayerCharacter.field_66C 664
-member PlayerCharacter.field_670 668
-member PlayerCharacter.field_674 66c
-member PlayerCharacter.field_678 670
-member PlayerCharacter.field_680 678
-member PlayerCharacter.field_688 680
-member PlayerCharacter.field_68C 684
-member PlayerCharacter.field_690 688
-member PlayerCharacter.field_692 68a
-member PlayerCharacter.field_698 690
-member PlayerCharacter.field_69C 694
-member PlayerCharacter.field_6A0 698
-member PlayerCharacter.field_6A4 69c
-member PlayerCharacter.field_6A8 6a0
-member PlayerCharacter.field_6AC 6a4
-member PlayerCharacter.field_6B0 6a8
-member PlayerCharacter.field_6B4 6ac
-member PlayerCharacter.field_6B8 6b0
-member PlayerCharacter.field_6C0 6b8
-member PlayerCharacter.field_6D0 6c8
-member PlayerCharacter.field_6D8 6d0
-member PlayerCharacter.field_6DC 6d4
-member PlayerCharacter.field_6E0 6d8
-member PlayerCharacter.field_6E4 6dc
-member PlayerCharacter.field_6E8 6e0
-member PlayerCharacter.field_6F0 6e8
-member PlayerCharacter.field_6F8 6f0
-member PlayerCharacter.field_700 6f8
-member PlayerCharacter.field_710 708
-member PlayerCharacter.field_718 710
-member PlayerCharacter.field_720 718
-member PlayerCharacter.field_728 720
-member PlayerCharacter.field_730 728
-member PlayerCharacter.field_738 730
-member PlayerCharacter.field_7E0 7d8
-member PlayerCharacter.field_7E4 7dc
-member PlayerCharacter.field_7EC 7e4
-member PlayerCharacter.field_7F0 7e8
-member PlayerCharacter.field_7F4 7ec
-member PlayerCharacter.field_7F8 7f0
-member PlayerCharacter.field_7FC 7f4
-member PlayerCharacter.field_800 7f8
-member PlayerCharacter.field_804 7fc
-member PlayerCharacter.field_808 800
-member PlayerCharacter.field_80C 804
-member PlayerCharacter.field_810 808
-member PlayerCharacter.field_814 80c
-member PlayerCharacter.field_818 810
-member PlayerCharacter.field_81C 814
-member PlayerCharacter.field_820 818
-member PlayerCharacter.field_824 81c
-member PlayerCharacter.field_828 820
-member PlayerCharacter.field_82C 824
-member PlayerCharacter.field_830 828
-member PlayerCharacter.field_834 82c
-member PlayerCharacter.field_838 830
-member PlayerCharacter.field_83C 834
-member PlayerCharacter.field_840 838
-member PlayerCharacter.field_844 83c
-member PlayerCharacter.field_848 840
-member PlayerCharacter.field_84C 844
-member PlayerCharacter.field_850 848
-member PlayerCharacter.field_854 84c
-member PlayerCharacter.field_858 850
-member PlayerCharacter.field_85C 854
-member PlayerCharacter.field_860 858
-member PlayerCharacter.field_864 85c
-member PlayerCharacter.field_868 860
-member PlayerCharacter.field_86C 864
-member PlayerCharacter.field_870 868
-member PlayerCharacter.field_874 86c
-member PlayerCharacter.field_878 870
-member PlayerCharacter.field_87C 874
-member PlayerCharacter.field_880 878
-member PlayerCharacter.field_884 87c
-member PlayerCharacter.field_888 880
-member PlayerCharacter.field_88C 884
-member PlayerCharacter.field_890 888
-member PlayerCharacter.field_894 88c
-member PlayerCharacter.field_898 890
-member PlayerCharacter.field_89C 894
-member PlayerCharacter.field_8A8 8a0
-member PlayerCharacter.field_8D8 8d0
-member PlayerCharacter.field_8DC 8d4
-member PlayerCharacter.field_8E4 8dc
-member PlayerCharacter.field_8E8 8e0
-member PlayerCharacter.field_8F4 8ec
-member PlayerCharacter.field_910 908
-member PlayerCharacter.field_918 910
-member PlayerCharacter.field_920 918
-member PlayerCharacter.field_928 920
-member PlayerCharacter.field_930 928
-member PlayerCharacter.field_938 930
-member PlayerCharacter.field_940 938
-member PlayerCharacter.field_948 940
-member PlayerCharacter.field_950 948
-member PlayerCharacter.field_958 950
-member PlayerCharacter.field_960 958
-member PlayerCharacter.field_968 960
-member PlayerCharacter.field_970 968
-member PlayerCharacter.field_978 970
-member PlayerCharacter.field_980 978
-member PlayerCharacter.field_988 980
-member PlayerCharacter.field_990 988
-member PlayerCharacter.field_998 990
-member PlayerCharacter.field_9A0 998
-member PlayerCharacter.field_9B8 9b0
-member PlayerCharacter.field_9C0 9b8
-member PlayerCharacter.field_9C8 9c0
-member PlayerCharacter.field_9CC 9c4
-member PlayerCharacter.field_9D0 9c8
-member PlayerCharacter.field_9D8 9d0
-member PlayerCharacter.field_9E0 9d8
-member PlayerCharacter.field_A00 9f8
-member PlayerCharacter.field_A18 a10
-member PlayerCharacter.field_A20 a18
-member PlayerCharacter.field_A28 a20
-member PlayerCharacter.field_AD0 ac8
-member PlayerCharacter.field_AE0 ad8
-member PlayerCharacter.field_AE4 adc
-member PlayerCharacter.field_AE8 ae0
-member PlayerCharacter.field_AEC ae4
-member PlayerCharacter.field_AF0 ae8
-member PlayerCharacter.field_AF8 af0
-member PlayerCharacter.field_AFC af4
-member PlayerCharacter.field_B00 af8
-member PlayerCharacter.field_B04 afc
-member PlayerCharacter.field_B08 b00
-member PlayerCharacter.field_B0C b04
-member PlayerCharacter.field_B10 b08
-member PlayerCharacter.field_B12 b0a
-member PlayerCharacter.field_B18 b10
-member PlayerCharacter.field_B38 b30
-member PlayerCharacter.field_B40 b38
-member PlayerCharacter.field_B48 b40
-member PlayerCharacter.field_B50 b48
-member PlayerCharacter.field_B58 b50
-member PlayerCharacter.field_B78 b70
-member PlayerCharacter.field_B80 b78
-member PlayerCharacter.field_B88 b80
-member PlayerCharacter.field_B90 b88
-member PlayerCharacter.field_B98 b90
-member PlayerCharacter.field_BA0 b98
-member PlayerCharacter.field_BA8 ba0
-member PlayerCharacter.field_BB0 ba8
-member PlayerCharacter.field_BE0 bd8
-member PlayerCharacter.field_BE8 be0
-member PlayerCharacter.field_BE9 be1
-member PlayerCharacter.field_BEC be4
-member PlayerCharacter.firstPersonBiped 8f0
-member PlayerCharacter.firstPersonCameraHeight 900
+member-unverified PlayerCharacter.field_3E8
+member-unverified PlayerCharacter.field_3FC
+member-unverified PlayerCharacter.field_404
+member-unverified PlayerCharacter.field_408
+member-unverified PlayerCharacter.field_418
+member-unverified PlayerCharacter.field_42C
+member-unverified PlayerCharacter.field_434
+member-unverified PlayerCharacter.field_438
+member-unverified PlayerCharacter.field_448
+member-unverified PlayerCharacter.field_450
+member-unverified PlayerCharacter.field_464
+member-unverified PlayerCharacter.field_46C
+member-unverified PlayerCharacter.field_470
+member-unverified PlayerCharacter.field_480
+member-unverified PlayerCharacter.field_488
+member-unverified PlayerCharacter.field_48C
+member-unverified PlayerCharacter.field_490
+member-unverified PlayerCharacter.field_494
+member-unverified PlayerCharacter.field_498
+member-unverified PlayerCharacter.field_49C
+member-unverified PlayerCharacter.field_4A0
+member-unverified PlayerCharacter.field_4A4
+member-unverified PlayerCharacter.field_4A8
+member-unverified PlayerCharacter.field_4B0
+member-unverified PlayerCharacter.field_4B8
+member-unverified PlayerCharacter.field_560
+member-unverified PlayerCharacter.field_578
+member-unverified PlayerCharacter.field_580
+member-unverified PlayerCharacter.field_588
+member-unverified PlayerCharacter.field_5B4
+member-unverified PlayerCharacter.field_5BC
+member-unverified PlayerCharacter.field_5C0
+member-unverified PlayerCharacter.field_5D0
+member-unverified PlayerCharacter.field_5E4
+member-unverified PlayerCharacter.field_5EC
+member-unverified PlayerCharacter.field_5F0
+member-unverified PlayerCharacter.field_600
+member-unverified PlayerCharacter.field_608
+member-unverified PlayerCharacter.field_610
+member-unverified PlayerCharacter.field_620
+member-unverified PlayerCharacter.field_630
+member-unverified PlayerCharacter.field_640
+member-unverified PlayerCharacter.field_644
+member-unverified PlayerCharacter.field_648
+member-unverified PlayerCharacter.field_650
+member-unverified PlayerCharacter.field_658
+member-unverified PlayerCharacter.field_660
+member-unverified PlayerCharacter.field_664
+member-unverified PlayerCharacter.field_668
+member-unverified PlayerCharacter.field_66C
+member-unverified PlayerCharacter.field_670
+member-unverified PlayerCharacter.field_674
+member-unverified PlayerCharacter.field_678
+member-unverified PlayerCharacter.field_680
+member-unverified PlayerCharacter.field_688
+member-unverified PlayerCharacter.field_68C
+member-unverified PlayerCharacter.field_690
+member-unverified PlayerCharacter.field_692
+member-unverified PlayerCharacter.field_698
+member-unverified PlayerCharacter.field_69C
+member-unverified PlayerCharacter.field_6A0
+member-unverified PlayerCharacter.field_6A4
+member-unverified PlayerCharacter.field_6A8
+member-unverified PlayerCharacter.field_6AC
+member-unverified PlayerCharacter.field_6B0
+member-unverified PlayerCharacter.field_6B4
+member-unverified PlayerCharacter.field_6B8
+member-unverified PlayerCharacter.field_6C0
+member-unverified PlayerCharacter.field_6D0
+member-unverified PlayerCharacter.field_6D8
+member-unverified PlayerCharacter.field_6DC
+member-unverified PlayerCharacter.field_6E0
+member-unverified PlayerCharacter.field_6E4
+member-unverified PlayerCharacter.field_6E8
+member-unverified PlayerCharacter.field_6F0
+member-unverified PlayerCharacter.field_6F8
+member-unverified PlayerCharacter.field_700
+member-unverified PlayerCharacter.field_710
+member-unverified PlayerCharacter.field_718
+member-unverified PlayerCharacter.field_720
+member-unverified PlayerCharacter.field_728
+member-unverified PlayerCharacter.field_730
+member-unverified PlayerCharacter.field_738
+member-unverified PlayerCharacter.field_7E0
+member-unverified PlayerCharacter.field_7E4
+member-unverified PlayerCharacter.field_7EC
+member-unverified PlayerCharacter.field_7F0
+member-unverified PlayerCharacter.field_7F4
+member-unverified PlayerCharacter.field_7F8
+member-unverified PlayerCharacter.field_7FC
+member-unverified PlayerCharacter.field_800
+member-unverified PlayerCharacter.field_804
+member-unverified PlayerCharacter.field_808
+member-unverified PlayerCharacter.field_80C
+member-unverified PlayerCharacter.field_810
+member-unverified PlayerCharacter.field_814
+member-unverified PlayerCharacter.field_818
+member-unverified PlayerCharacter.field_81C
+member-unverified PlayerCharacter.field_820
+member-unverified PlayerCharacter.field_824
+member-unverified PlayerCharacter.field_828
+member-unverified PlayerCharacter.field_82C
+member-unverified PlayerCharacter.field_830
+member-unverified PlayerCharacter.field_834
+member-unverified PlayerCharacter.field_838
+member-unverified PlayerCharacter.field_83C
+member-unverified PlayerCharacter.field_840
+member-unverified PlayerCharacter.field_844
+member-unverified PlayerCharacter.field_848
+member-unverified PlayerCharacter.field_84C
+member-unverified PlayerCharacter.field_850
+member-unverified PlayerCharacter.field_854
+member-unverified PlayerCharacter.field_858
+member-unverified PlayerCharacter.field_85C
+member-unverified PlayerCharacter.field_860
+member-unverified PlayerCharacter.field_864
+member-unverified PlayerCharacter.field_868
+member-unverified PlayerCharacter.field_86C
+member-unverified PlayerCharacter.field_870
+member-unverified PlayerCharacter.field_874
+member-unverified PlayerCharacter.field_878
+member-unverified PlayerCharacter.field_87C
+member-unverified PlayerCharacter.field_880
+member-unverified PlayerCharacter.field_884
+member-unverified PlayerCharacter.field_888
+member-unverified PlayerCharacter.field_88C
+member-unverified PlayerCharacter.field_890
+member-unverified PlayerCharacter.field_894
+member-unverified PlayerCharacter.field_898
+member-unverified PlayerCharacter.field_89C
+member-unverified PlayerCharacter.field_8A8
+member-unverified PlayerCharacter.field_8D8
+member-unverified PlayerCharacter.field_8DC
+member-unverified PlayerCharacter.field_8E4
+member-unverified PlayerCharacter.field_8E8
+member-unverified PlayerCharacter.field_8F4
+member-unverified PlayerCharacter.field_910
+member-unverified PlayerCharacter.field_918
+member-unverified PlayerCharacter.field_920
+member-unverified PlayerCharacter.field_928
+member-unverified PlayerCharacter.field_930
+member-unverified PlayerCharacter.field_938
+member-unverified PlayerCharacter.field_940
+member-unverified PlayerCharacter.field_948
+member-unverified PlayerCharacter.field_950
+member-unverified PlayerCharacter.field_958
+member-unverified PlayerCharacter.field_960
+member-unverified PlayerCharacter.field_968
+member-unverified PlayerCharacter.field_970
+member-unverified PlayerCharacter.field_978
+member-unverified PlayerCharacter.field_980
+member-unverified PlayerCharacter.field_988
+member-unverified PlayerCharacter.field_990
+member-unverified PlayerCharacter.field_998
+member-unverified PlayerCharacter.field_9A0
+member-unverified PlayerCharacter.field_9B8
+member-unverified PlayerCharacter.field_9C0
+member-unverified PlayerCharacter.field_9C8
+member-unverified PlayerCharacter.field_9CC
+member-unverified PlayerCharacter.field_9D0
+member-unverified PlayerCharacter.field_9D8
+member-unverified PlayerCharacter.field_9E0
+member-unverified PlayerCharacter.field_A00
+member-unverified PlayerCharacter.field_A18
+member-unverified PlayerCharacter.field_A20
+member-unverified PlayerCharacter.field_A28
+member-unverified PlayerCharacter.field_AD0
+member-unverified PlayerCharacter.field_AE0
+member-unverified PlayerCharacter.field_AE4
+member-unverified PlayerCharacter.field_AE8
+member-unverified PlayerCharacter.field_AEC
+member-unverified PlayerCharacter.field_AF0
+member-unverified PlayerCharacter.field_AF8
+member-unverified PlayerCharacter.field_AFC
+member-unverified PlayerCharacter.field_B00
+member-unverified PlayerCharacter.field_B04
+member-unverified PlayerCharacter.field_B08
+member-unverified PlayerCharacter.field_B0C
+member-unverified PlayerCharacter.field_B10
+member-unverified PlayerCharacter.field_B12
+member-unverified PlayerCharacter.field_B18
+member-unverified PlayerCharacter.field_B38
+member-unverified PlayerCharacter.field_B40
+member-unverified PlayerCharacter.field_B48
+member-unverified PlayerCharacter.field_B50
+member-unverified PlayerCharacter.field_B58
+member-unverified PlayerCharacter.field_B78
+member-unverified PlayerCharacter.field_B80
+member-unverified PlayerCharacter.field_B88
+member-unverified PlayerCharacter.field_B90
+member-unverified PlayerCharacter.field_B98
+member-unverified PlayerCharacter.field_BA0
+member-unverified PlayerCharacter.field_BA8
+member-unverified PlayerCharacter.field_BB0
+member-unverified PlayerCharacter.field_BE0
+member-unverified PlayerCharacter.field_BE8
+member-unverified PlayerCharacter.field_BE9
+member-unverified PlayerCharacter.field_BEC
+member-unverified PlayerCharacter.firstPersonBiped
+member-unverified PlayerCharacter.firstPersonCameraHeight
 member PlayerCharacter.firstPersonRoot 8f8
-member PlayerCharacter.firstPersonTorchLight 9a0
-member PlayerCharacter.m_NiTMapBase_628 620
-member PlayerCharacter.m_NiTMap_618 610
+member-unverified PlayerCharacter.firstPersonTorchLight
+member-unverified PlayerCharacter.m_NiTMapBase_628
+member-unverified PlayerCharacter.m_NiTMap_618
 member-unverified PlayerCharacter.magickaModifiers
 member PlayerCharacter.source_BGSActorCellEvent 2d8
 member PlayerCharacter.source_BGSActorDeathEvent 330
 member PlayerCharacter.source_PositionPlayerEvent 388
 member-unverified PlayerCharacter.staminaModifiers
-member PlayerCharacter.thirdPersonTorchLight 9a8
+member-unverified PlayerCharacter.thirdPersonTorchLight
 member PlayerCharacter.viewFlags be3
 member-unverified PlayerCharacter.voicePointsModifiers
-member PlayerCharacter.worldSpace 630
+member-unverified PlayerCharacter.worldSpace
+member-unverified PlayerControls.bDisablePOVChange
 member-unverified PlayerControls.field_4B
+member-unverified PlayerControls.markHeldForRelease
 member-unverified PlayerControls.releaseHeldPending
 member-unverified PlayerControls.responseGraphs
 member-unverified PlayerInputHandler.pad_9
+member-unverified PositionPlayerEvent.type
 member-unverified Projectile.field_D4
 member-unverified Projectile.field_DC
+member-unverified RaceSexCamera.initialPosition
 member-unverified RaceSexCamera.initialRotation
 member-unverified RaceSexCamera.padding31
 member-unverified RaceSexCamera.padding54
 member-unverified RaceSexMenu.field_120
 member-unverified RaceSexMenu.field_128
 member-unverified RaceSexMenu.mouseLookDrag
+member-unverified ReferenceEffect.field_41
+member-unverified RenderPass.accumulationHint
+member-unverified RenderPass.field_1D
 member-unverified RenderStateCache.cubeMapFace
+member-unverified RenderStateCache.cubeMapMode
+member-unverified RenderStateCache.cubeMapRenderTarget
 member-unverified RenderStateCache.depthStencil
+member-unverified RenderStateCache.depthStencilMode
 member-unverified RenderStateCache.depthStencilSlice
+member-unverified RenderStateCache.dirty
 member-unverified RenderTargetManager.depthStencilProperties
+member-unverified RenderTargetProperties.allowMipGeneration
+member-unverified RenderTargetProperties.format
+member-unverified RenderTargetProperties.height
+member-unverified RenderTargetProperties.parentId
+member-unverified RenderTargetProperties.width
+member-unverified RenderTargetRecord.copySRV
+member-unverified RenderTargetRecord.rtv
+member-unverified RenderTargetRecord.srv
+member-unverified RenderTargetRecord.texture
+member-unverified RenderTargetRecord.uav
+member-unverified RenderWindow.backBufferSRV
+member-unverified RenderWindow.backBufferUAV
+member-unverified RenderWindow.unknown28
+member-unverified RenderWindow.x
+member-unverified RenderWindow.y
+member-unverified Renderer.borderless
+member-unverified Renderer.fullscreen
 member-unverified Renderer.hInstance
+member-unverified Renderer.immediateContext
+member-unverified Renderer.lock
+member-unverified Renderer.pendingHeight
+member-unverified Renderer.pendingWidth
+member-unverified Renderer.refreshRate
+member-unverified Renderer.resizePending
+member-unverified Renderer.scaling
+member-unverified Renderer.scanlineOrdering
 member-unverified Renderer.useReadOnlyDepth
 member-unverified Renderer.windowClassName
+member-unverified SavedChangeFormRecord.flags
+member-unverified SceneGraph.extraDataCapacity
+member-unverified SceneGraph.flags2
+member-unverified SceneGraph.previousWorldFrame
+member-unverified ScreenshotHandler.multiScreenshotRequested
+member-unverified ScreenshotHandler.screenshotRequested
 member-unverified Script.compiled
+member-unverified Script.delayTimer
 member-unverified Script.unk2c
 member-unverified Script.unk31
+member-unverified ScriptLineBuffer.data
+member-unverified ScriptLineBuffer.dataLen
+member-unverified ScriptLineBuffer.length
+member-unverified ScriptLineBuffer.lineNumber
+member-unverified ScriptLineBuffer.offset
+member-unverified ScriptLineBuffer.opcode
+member-unverified ScriptLineBuffer.refIndex
+member-unverified ScriptLineBuffer.text
+member-unverified ScriptParamTypeInfo.numeric
+member-unverified ScriptParamTypeInfo.typeCode
+member-unverified ScriptRunContext.containingObj
+member-unverified ScriptRunContext.ifDepth
+member-unverified ScriptRunContext.script
+member-unverified ScriptRunContext.thisBase
 member-unverified ScrollItem.field_F8
 member-unverified SearchPage.field_E4
+member-unverified Setting.name
+member-unverified ShaderReferenceEffect.applyDelay
+member-unverified ShaderReferenceEffect.field_41
+member-unverified ShadowMapData.culler
+member-unverified ShadowMapData.splitFarPlane
+member-unverified ShadowMapData.splitNearPlane
+member-unverified ShadowMapData.worldToShadow
+member-unverified ShadowSceneNode.extraDataCapacity
 member-unverified ShadowSceneNode.field_2CC
 member-unverified ShadowSceneNode.field_2D4
 member-unverified ShadowSceneNode.field_2E8
 member-unverified ShadowSceneNode.field_2F0
+member-unverified ShadowSceneNode.flags2
 member-unverified ShadowSceneNode.geometryQueueLock
 member-unverified ShadowSceneNode.lightQueueLock
+member-unverified ShadowSceneNode.pendingGeometryDetach
+member-unverified ShadowSceneNode.pendingGeometryRelight
+member-unverified ShadowSceneNode.pendingGeometryRelightActive
+member-unverified ShadowSceneNode.previousWorldFrame
 member-missing SixaxisEvent.__vftable
 member-missing SixaxisEvent.field_10
 member-missing SixaxisEvent.field_18
@@ -25204,81 +26554,82 @@ member-missing SixaxisEvent.field_C
 member-missing SixaxisEvent.orientation
 member-unverified SkyrimScript::HandlePolicy.lock
 member-unverified SkyrimScript::Logger.source_BSScript_LogEvent
+member-unverified SkyrimScript::_anon_0B1D96E2::ScriptMessageBoxCallback.stackId
 member-missing SkyrimVM.__vftable_180
 member-missing SkyrimVM.__vftable_188
-member SkyrimVM.__vftable_190 180
-member SkyrimVM.__vftable_198 188
-member SkyrimVM.__vftable_1A0 190
-member SkyrimVM.__vftable_1A8 198
+member-unverified SkyrimVM.__vftable_190
+member-unverified SkyrimVM.__vftable_198
+member-unverified SkyrimVM.__vftable_1A0
+member-unverified SkyrimVM.__vftable_1A8
 member SkyrimVM.field_210 200
-member SkyrimVM.field_340 330
-member SkyrimVM.field_354 344
-member SkyrimVM.field_35C 34c
-member SkyrimVM.field_360 350
-member SkyrimVM.field_370 360
-member SkyrimVM.field_384 374
-member SkyrimVM.field_38C 37c
-member SkyrimVM.field_390 380
-member SkyrimVM.field_3A0 390
-member SkyrimVM.field_3C0 3b0
-member SkyrimVM.field_3D4 3c4
-member SkyrimVM.field_3DC 3cc
-member SkyrimVM.field_3E0 3d0
-member SkyrimVM.field_3F0 3e0
-member SkyrimVM.field_3F8 3e8
-member SkyrimVM.field_400 3f0
-member SkyrimVM.field_402 3f2
-member SkyrimVM.field_414 404
-member SkyrimVM.field_41C 40c
-member SkyrimVM.field_420 410
-member SkyrimVM.field_430 420
-member SkyrimVM.field_45C 44c
-member SkyrimVM.field_464 454
-member SkyrimVM.field_468 458
-member SkyrimVM.field_478 468
-member SkyrimVM.field_480 470
-member SkyrimVM.field_5A8 598
-member SkyrimVM.field_5BC 5ac
-member SkyrimVM.field_5C4 5b4
-member SkyrimVM.field_5C8 5b8
-member SkyrimVM.field_5D8 5c8
-member SkyrimVM.field_5EC 5dc
-member SkyrimVM.field_5F4 5e4
-member SkyrimVM.field_5F8 5e8
-member SkyrimVM.field_608 5f8
-member SkyrimVM.field_61C 60c
-member SkyrimVM.field_624 614
-member SkyrimVM.field_628 618
-member SkyrimVM.field_638 628
-member SkyrimVM.field_640 630
-member SkyrimVM.field_664 654
-member SkyrimVM.field_678 668
-member SkyrimVM.field_688 678
-member SkyrimVM.field_690 680
-member SkyrimVM.field_694 684
-member SkyrimVM.field_6AC 69c
-member SkyrimVM.field_700 6f0
-member SkyrimVM.field_724 714
-member SkyrimVM.field_760 750
-member SkyrimVM.field_764 754
-member SkyrimVM.field_77C 76c
-member SkyrimVM.field_784 774
-member SkyrimVM.field_788 778
-member SkyrimVM.field_798 788
-member SkyrimVM.field_7A0 790
-member SkyrimVM.field_7B4 7a4
-member SkyrimVM.field_7BC 7ac
-member SkyrimVM.field_7C0 7b0
-member SkyrimVM.field_7D0 7c0
-member SkyrimVM.m_CompiledScriptLoader_250 240
-member SkyrimVM.m_DelayFunctor,BSTSmartPointerIntrusiveRefCount>,512>_7D8 7c8
+member-unverified SkyrimVM.field_340
+member-unverified SkyrimVM.field_354
+member-unverified SkyrimVM.field_35C
+member-unverified SkyrimVM.field_360
+member-unverified SkyrimVM.field_370
+member-unverified SkyrimVM.field_384
+member-unverified SkyrimVM.field_38C
+member-unverified SkyrimVM.field_390
+member-unverified SkyrimVM.field_3A0
+member-unverified SkyrimVM.field_3C0
+member-unverified SkyrimVM.field_3D4
+member-unverified SkyrimVM.field_3DC
+member-unverified SkyrimVM.field_3E0
+member-unverified SkyrimVM.field_3F0
+member-unverified SkyrimVM.field_3F8
+member-unverified SkyrimVM.field_400
+member-unverified SkyrimVM.field_402
+member-unverified SkyrimVM.field_414
+member-unverified SkyrimVM.field_41C
+member-unverified SkyrimVM.field_420
+member-unverified SkyrimVM.field_430
+member-unverified SkyrimVM.field_45C
+member-unverified SkyrimVM.field_464
+member-unverified SkyrimVM.field_468
+member-unverified SkyrimVM.field_478
+member-unverified SkyrimVM.field_480
+member-unverified SkyrimVM.field_5A8
+member-unverified SkyrimVM.field_5BC
+member-unverified SkyrimVM.field_5C4
+member-unverified SkyrimVM.field_5C8
+member-unverified SkyrimVM.field_5D8
+member-unverified SkyrimVM.field_5EC
+member-unverified SkyrimVM.field_5F4
+member-unverified SkyrimVM.field_5F8
+member-unverified SkyrimVM.field_608
+member-unverified SkyrimVM.field_61C
+member-unverified SkyrimVM.field_624
+member-unverified SkyrimVM.field_628
+member-unverified SkyrimVM.field_638
+member-unverified SkyrimVM.field_640
+member-unverified SkyrimVM.field_664
+member-unverified SkyrimVM.field_678
+member-unverified SkyrimVM.field_688
+member-unverified SkyrimVM.field_690
+member-unverified SkyrimVM.field_694
+member-unverified SkyrimVM.field_6AC
+member-unverified SkyrimVM.field_700
+member-unverified SkyrimVM.field_724
+member-unverified SkyrimVM.field_760
+member-unverified SkyrimVM.field_764
+member-unverified SkyrimVM.field_77C
+member-unverified SkyrimVM.field_784
+member-unverified SkyrimVM.field_788
+member-unverified SkyrimVM.field_798
+member-unverified SkyrimVM.field_7A0
+member-unverified SkyrimVM.field_7B4
+member-unverified SkyrimVM.field_7BC
+member-unverified SkyrimVM.field_7C0
+member-unverified SkyrimVM.field_7D0
+member-unverified SkyrimVM.m_CompiledScriptLoader_250
+member-unverified SkyrimVM.m_DelayFunctor,BSTSmartPointerIntrusiveRefCount>,512>_7D8
 member SkyrimVM.m_HandlePolicy_338 328
-member SkyrimVM.m_Logger_288 278
+member-unverified SkyrimVM.m_Logger_288
 member SkyrimVM.m_ObjectBindPolicy_3A8 398
-member SkyrimVM.m_Profiler_5A0 590
-member SkyrimVM.m_SavePatcher_680 670
-member SkyrimVM.m_SimpleAllocMemoryPagePolicy_228 218
-member SkyrimVM.source_SkyrimScript_StatsEvent 1a8
+member-unverified SkyrimVM.m_Profiler_5A0
+member-unverified SkyrimVM.m_SavePatcher_680
+member-unverified SkyrimVM.m_SimpleAllocMemoryPagePolicy_228
+member-unverified SkyrimVM.source_SkyrimScript_StatsEvent
 member-unverified StatsMenu.field_1E0
 member-unverified StatsMenu.field_210
 member-unverified StatsMenu.field_218
@@ -25291,9 +26642,12 @@ member-unverified StatsMenu.field_26C
 member-unverified StatsMenu.field_274
 member-unverified StatsMenu.field_27C
 member-unverified StealthMeter.pad_92
+member-unverified StealthMeter.shown
+member-unverified StealthMeter.updatePending
 member-unverified StopMountCameraHandler.pad0C
 member-unverified StopMountCameraHandler.refCount
 member-unverified SummonCreatureEffect.field_A0
+member-unverified SummonPlacementEffect.field_41
 member-unverified SummonPlacementEffect.field_70
 member-unverified TESActiveEffectApplyRemoveEvent.activeEffectUniqueID
 member-unverified TESActiveEffectApplyRemoveEvent.caster
@@ -25301,24 +26655,72 @@ member-unverified TESActiveEffectApplyRemoveEvent.isApplied
 member-unverified TESActiveEffectApplyRemoveEvent.target
 member-unverified TESAmmo.field_50
 member-unverified TESAnimGroup.field_28
+member-unverified TESAudio::ScriptedMusicState.scriptedTypes
+member-unverified TESBookReadEvent.baseObject
+member-unverified TESBookReadEvent.book
+member-unverified TESBookReadEvent.uniqueID
 member-unverified TESCamera.pad_31
+member-unverified TESCameraState.camera
 member-unverified TESCameraState.pad_1c
+member-unverified TESCameraState.pad_c
+member-unverified TESDataHandler.addonNodes
+member-unverified TESDataHandler.cells
+member-unverified TESDataHandler.regionDataManager
+member-unverified TESDataHandler.regionList
+member-unverified TESDeathEvent.actorDying
+member-unverified TESDeathEvent.actorKiller
+member-unverified TESDeathEvent.dead
+member-unverified TESDestructionStageChangedEvent.newStage
+member-unverified TESDestructionStageChangedEvent.oldStage
+member-unverified TESDestructionStageChangedEvent.target
+member-unverified TESEditorIDMap.capacity
+member-unverified TESEditorIDMap.entries
 member-unverified TESEditorIDMap.free
 member-unverified TESEditorIDMap.freeScan
+member-unverified TESEditorIDMap.sentinel
+member-unverified TESEditorIDMapEntry.editorID
+member-unverified TESEditorIDMapEntry.form
+member-unverified TESEditorIDMapEntry.next
+member-unverified TESEffectShader.field_B4
+member-unverified TESEffectShader.field_BC
 member-unverified TESEffectShader.field_C4
 member-unverified TESEnterBleedoutEvent.actor
+member-unverified TESFastTravelEndEvent.fastTravelEndHours
+member-unverified TESFile.path
+member-unverified TESFile.version
+member-unverified TESFileArray.files
 member-unverified TESFlora.field_50
+member-unverified TESFormIDMap.capacity
+member-unverified TESFormIDMap.entries
+member-unverified TESFormIDMap.free
 member-unverified TESFormIDMap.freeScan
+member-unverified TESFormIDMap.sentinel
 member-unverified TESFormIDMapEntry.form
 member-unverified TESFormIDMapEntry.formID
 member-unverified TESFormIDMapEntry.next
 member-unverified TESFurniture.field_50
+member-unverified TESFurniture.markerEntries
 member-unverified TESFurniture.workbenchSkill
+member-unverified TESGrabReleaseEvent.grabbed
+member-unverified TESGrabReleaseEvent.ref
+member-unverified TESGrass.model
 member-unverified TESIdleForm.animationEvent
 member-unverified TESIdleForm.conditions
 member-unverified TESIdleForm.loopMax
 member-unverified TESKey.field_50
 member-unverified TESLevCharacter.field_68
+member-unverified TESMagicEffectApplyEvent.magicEffect
+member-unverified TESMagicWardHitEvent.caster
+member-unverified TESMagicWardHitEvent.spell
+member-unverified TESMagicWardHitEvent.status
+member-unverified TESMagicWardHitEvent.target
+member-unverified TESModel.model
+member-unverified TESModelPSA.model
+member-unverified TESModelRDT.model
+member-unverified TESModelTextureSwap.model
+member-unverified TESModelTri.model
+member-unverified TESMoveAttachDetachEvent.isCellAttached
+member-unverified TESMoveAttachDetachEvent.reference
 member-unverified TESNPC.fullName
 member-unverified TESObjectACTI.field_50
 member-unverified TESObjectANIO.field_30
@@ -25326,8 +26728,14 @@ member-unverified TESObjectBOOK.field_50
 member-unverified TESObjectCONT.field_68
 member-unverified TESObjectDOOR.field_50
 member-unverified TESObjectLIGH.field_50
+member-unverified TESObjectLIGH.flickerMovementAmplitude
+member-unverified TESObjectLIGH.flickerPeriod
+member-unverified TESObjectLIGH.radius
 member-unverified TESObjectMISC.field_50
+member-unverified TESObjectREFRTranslationEvent.ref
+member-unverified TESObjectREFRTranslationEvent.type
 member-unverified TESObjectSTAT.field_40
+member-unverified TESObjectTREE.model
 member-unverified TESObjectWEAP.field_50
 member-unverified TESOpenCloseEvent.activeRef
 member-unverified TESOpenCloseEvent.opened
@@ -25336,34 +26744,92 @@ member-unverified TESPerkEntryRunEvent.cause
 member-unverified TESPerkEntryRunEvent.flag
 member-unverified TESPerkEntryRunEvent.perkID
 member-unverified TESPerkEntryRunEvent.target
+member-unverified TESPlayerBowShotEvent.ammo
+member-unverified TESPlayerBowShotEvent.isSunGazing
+member-unverified TESPlayerBowShotEvent.power
+member-unverified TESPlayerBowShotEvent.weapon
+member-unverified TESQuestStageEvent.finishedCallback
+member-unverified TESQuestStageEvent.flags
+member-unverified TESQuestStageEvent.stage
+member-unverified TESQuestStageItemDoneEvent.formID
 member-unverified TESQuestStartStopEvent.started
+member-unverified TESRace.field_168
 member-unverified TESRace.field_170
+member-unverified TESRace.field_178
 member-unverified TESRace.field_180
+member-unverified TESRace.field_188
+member-unverified TESRace.leftHandBipedIndex
+member-unverified TESResetEvent.object
+member-unverified TESSceneEvent.finishedCallback
+member-unverified TESSceneEvent.quest
+member-unverified TESSceneEvent.type
+member-unverified TESSellEvent.baseObject
+member-unverified TESSellEvent.seller
+member-unverified TESSellEvent.uniqueID
+member-unverified TESSleepStartEvent.desiredSleepEndTime
+member-unverified TESSleepStartEvent.sleepStartTime
+member-unverified TESSleepStopEvent.interrupted
 member-unverified TESSoulGem.field_50
+member-unverified TESSwitchRaceCompleteEvent.subject
+member-unverified TESTopicInfoEvent.speaker
+member-unverified TESTopicInfoEvent.topicInfo
+member-unverified TESTopicInfoEvent.type
+member-unverified TESTrackedStatsEvent.value
+member-unverified TESTrapHitEvent.target
+member-unverified TESTrapHitEvent.trap
+member-unverified TESTriggerEvent.caster
+member-unverified TESTriggerEvent.target
+member-unverified TESUniqueIDChangeEvent.newBaseID
+member-unverified TESUniqueIDChangeEvent.newUniqueID
+member-unverified TESUniqueIDChangeEvent.objectID
+member-unverified TESUniqueIDChangeEvent.oldBaseID
+member-unverified TESUniqueIDChangeEvent.oldUniqueID
+member-unverified TESWaitStartEvent.waitStartTime
+member-unverified TESWaitStopEvent.interrupted
+member-unverified TESWaterForm.field_200
+member-unverified TESWaterForm.field_208
+member-unverified TESWaterForm.field_210
+member-unverified TESWaterForm.field_218
 member-unverified TESWaterForm.field_44
 member-unverified TESWaterForm.field_4C
 member-unverified TESWaterForm.field_54
 member-unverified TESWaterForm.field_5C
 member-unverified TESWaterForm.field_64
 member-unverified TESWaterForm.field_6C
+member-unverified TESWorldSpace.model
+member-unverified TaskQueueHolder.current
+member-unverified TaskQueueHolder.queueA
+member-unverified TaskQueueHolder.queueB
 member-unverified TempLoadGameBuffer.position
+member-unverified ThirdPersonState.applyThirdPerson
+member-unverified ThirdPersonState.keepFreeRotation
 member-unverified ThirdPersonState.pad0c
 member-unverified ThirdPersonState.pad1c
 member-unverified ThirdPersonState.padE3
+member-unverified ThirdPersonState.toggleToFirstPerson
 member-unverified ThirdPersonState.useShoulderOffsets
 member-unverified TogglePOVHandler.enabled
 member-unverified TogglePOVHandler.heldStateActive
 member-unverified TogglePOVHandler.pad_12
 member-unverified TogglePOVHandler.pad_19
 member-unverified TogglePOVHandler.pad_9
+member-unverified TogglePOVHandler.pressed
 member-unverified TogglePOVHandler.releasePending
+member-unverified TransitionState.fromRotation
 member-unverified TransitionState.id
 member-unverified TransitionState.padding0C
 member-unverified TransitionState.padding1C
+member-unverified TransitionState.progress
 member-unverified TransitionState.refCount
+member-unverified TransitionState.startTimeMs
+member-unverified TransitionState.toPosition
 member-unverified TweenMenuCameraState.pad0c
 member-unverified TweenMenuCameraState.pad1c
 member-unverified TweenMenuCameraState.pad4D
+member-unverified UICursor.y
+member-unverified UIMessage.isStatic
+member-unverified UIMessage.menuName
+member-unverified UIMessageQueue.staticMessages
 member-unverified UISaveLoadManager.field_50
 member-unverified UI_bannerEntry.field_100
 member-unverified UI_bannerEntry.field_108
@@ -25379,33 +26845,33 @@ member-unverified UI_bannerEntry.field_130
 member-unverified UI_bannerEntry.field_134
 member-unverified UI_bannerEntry.field_138
 member-unverified UI_bannerEntry.field_13C
-member UI_bannerEntry.field_148 138
-member UI_bannerEntry.field_150 140
-member UI_bannerEntry.field_158 148
-member UI_bannerEntry.field_160 150
-member UI_bannerEntry.field_168 158
-member UI_bannerEntry.field_170 160
+member-unverified UI_bannerEntry.field_148
+member-unverified UI_bannerEntry.field_150
+member-unverified UI_bannerEntry.field_158
+member-unverified UI_bannerEntry.field_160
+member-unverified UI_bannerEntry.field_168
+member-unverified UI_bannerEntry.field_170
 member-unverified UI_bannerEntry.field_70
 member-unverified UI_bannerEntry.field_88
 member-unverified UI_bannerEntry.field_8C
 member-unverified UI_bannerEntry.field_A8
 member-unverified UI_bannerEntry.field_B0
-member UI_bannerEntry.field_B8 b0
+member-unverified UI_bannerEntry.field_B8
 member-unverified UI_bannerEntry.field_C0
 member-unverified UI_bannerEntry.field_C8
 member-unverified UI_bannerEntry.field_D0
 member-unverified UI_bannerEntry.field_D8
-member UI_bannerEntry.field_E0 d8
+member-unverified UI_bannerEntry.field_E0
 member-unverified UI_bannerEntry.field_E8
 member-unverified UI_bannerEntry.field_F0
 member-unverified UI_bannerEntry.field_F8
 member-unverified UI_detailsPage.field_11C
 member-unverified UI_detailsPage.field_120
-member UI_detailsPage.field_190 188
-member UI_detailsPage.field_198 190
+member-unverified UI_detailsPage.field_190
+member-unverified UI_detailsPage.field_198
 member-unverified UI_detailsPage.field_200
 member-unverified UI_detailsPage.field_208
-member UI_detailsPage.field_220 210
+member-unverified UI_detailsPage.field_220
 member-unverified UI_detailsPage.field_90
 member-unverified UI_detailsPage.field_98
 member-unverified UI_detailsPage.field_A0
@@ -25414,83 +26880,85 @@ member-unverified UI_detailsPage.field_B0
 member-unverified UI_detailsPage.field_B8
 member-unverified UI_detailsPage.field_C0
 member-unverified UI_detailsPage.field_C8
-member UI_detailsPage.field_D0 cc
-member UI_detailsPage.field_D4 d0
+member-unverified UI_detailsPage.field_D0
+member-unverified UI_detailsPage.field_D4
 member-unverified UI_detailsPage.field_F8
 member-unverified UI_detailsPage::OnSale.field_70
 member-unverified UI_detailsPage::OnSale.field_78
-member UI_listEntry.field_100 f0
-member UI_listEntry.field_108 f8
-member UI_listEntry.field_10C fc
-member UI_listEntry.field_110 100
-member UI_listEntry.field_114 104
-member UI_listEntry.field_118 108
-member UI_listEntry.field_11C 10c
-member UI_listEntry.field_120 110
-member UI_listEntry.field_128 118
-member UI_listEntry.field_12C 11c
-member UI_listEntry.field_130 120
-member UI_listEntry.field_134 124
-member UI_listEntry.field_138 128
-member UI_listEntry.field_13C 12c
+member-unverified UI_listEntry.field_100
+member-unverified UI_listEntry.field_108
+member-unverified UI_listEntry.field_10C
+member-unverified UI_listEntry.field_110
+member-unverified UI_listEntry.field_114
+member-unverified UI_listEntry.field_118
+member-unverified UI_listEntry.field_11C
+member-unverified UI_listEntry.field_120
+member-unverified UI_listEntry.field_128
+member-unverified UI_listEntry.field_12C
+member-unverified UI_listEntry.field_130
+member-unverified UI_listEntry.field_134
+member-unverified UI_listEntry.field_138
+member-unverified UI_listEntry.field_13C
 member-unverified UI_listEntry.field_70
 member-unverified UI_listEntry.field_88
 member-unverified UI_listEntry.field_8C
 member-unverified UI_listEntry.field_A8
-member UI_listEntry.field_B0 a8
-member UI_listEntry.field_B8 b0
-member UI_listEntry.field_C0 b8
-member UI_listEntry.field_C8 c0
-member UI_listEntry.field_D0 c8
-member UI_listEntry.field_D8 d0
-member UI_listEntry.field_E0 d8
+member-unverified UI_listEntry.field_B0
+member-unverified UI_listEntry.field_B8
+member-unverified UI_listEntry.field_C0
+member-unverified UI_listEntry.field_C8
+member-unverified UI_listEntry.field_D0
+member-unverified UI_listEntry.field_D8
+member-unverified UI_listEntry.field_E0
 member-unverified UI_listEntry.field_E8
-member UI_listEntry.field_F0 e0
-member UI_listEntry.field_F8 e8
+member-unverified UI_listEntry.field_F0
+member-unverified UI_listEntry.field_F8
 member-unverified UI_listEntry::OnSale.field_58
 member-unverified UI_listEntry::OnSale.field_60
 member-unverified UI_listEntry::OnSale.field_68
 member-unverified UI_listEntry::OnSale.field_70
 member-unverified UI_listEntry::OnSale.field_78
+member-unverified UserEventMapping.groupFlags
+member-unverified UserEventMapping.remappable
 member-unverified VATSCameraState.pad0C
 member-unverified VATSCameraState.pad1C
 member-unverified VATSCameraState.refCount
-member ViewAllEntry.field_100 f0
-member ViewAllEntry.field_108 f8
-member ViewAllEntry.field_10C fc
-member ViewAllEntry.field_110 100
-member ViewAllEntry.field_114 104
-member ViewAllEntry.field_118 108
-member ViewAllEntry.field_11C 10c
-member ViewAllEntry.field_120 110
-member ViewAllEntry.field_128 118
-member ViewAllEntry.field_12C 11c
-member ViewAllEntry.field_130 120
-member ViewAllEntry.field_134 124
-member ViewAllEntry.field_138 128
-member ViewAllEntry.field_13C 12c
-member ViewAllEntry.field_148 138
+member-unverified ViewAllEntry.field_100
+member-unverified ViewAllEntry.field_108
+member-unverified ViewAllEntry.field_10C
+member-unverified ViewAllEntry.field_110
+member-unverified ViewAllEntry.field_114
+member-unverified ViewAllEntry.field_118
+member-unverified ViewAllEntry.field_11C
+member-unverified ViewAllEntry.field_120
+member-unverified ViewAllEntry.field_128
+member-unverified ViewAllEntry.field_12C
+member-unverified ViewAllEntry.field_130
+member-unverified ViewAllEntry.field_134
+member-unverified ViewAllEntry.field_138
+member-unverified ViewAllEntry.field_13C
+member-unverified ViewAllEntry.field_148
 member-unverified ViewAllEntry.field_70
 member-unverified ViewAllEntry.field_88
 member-unverified ViewAllEntry.field_8C
 member-unverified ViewAllEntry.field_A8
-member ViewAllEntry.field_B0 a8
-member ViewAllEntry.field_B8 b0
-member ViewAllEntry.field_C0 b8
-member ViewAllEntry.field_C8 c0
-member ViewAllEntry.field_D0 c8
-member ViewAllEntry.field_D8 d0
-member ViewAllEntry.field_E0 d8
-member ViewAllEntry.field_E8 e0
-member ViewAllEntry.field_F0 e0
-member ViewAllEntry.field_F8 e8
+member-unverified ViewAllEntry.field_B0
+member-unverified ViewAllEntry.field_B8
+member-unverified ViewAllEntry.field_C0
+member-unverified ViewAllEntry.field_C8
+member-unverified ViewAllEntry.field_D0
+member-unverified ViewAllEntry.field_D8
+member-unverified ViewAllEntry.field_E0
+member-unverified ViewAllEntry.field_E8
+member-unverified ViewAllEntry.field_F0
+member-unverified ViewAllEntry.field_F8
 member-missing _anon_025735F6::AmiiboTouchArguments.__vftable
 member-unverified _anon_14F04957::Win32FileType.compression
 member-unverified _anon_14F04957::Win32FileType.headerEnd
 member-unverified _anon_14F04957::Win32FileType.payloadSize
-member-unverified _anon_14F04957::Win32FileType.saveName
 member-unverified _anon_14F04957::Win32FileType.saveNameBuffer
 member-unverified _anon_67C8711B::NoMusic.priority
+member-unverified _anon_7C6875DF::OldMessageBoxCallback.fn
 member-missing `public:_static_void___cdecl_MainMenu::OpenCreationClubMenu(void)'::__l8::errorCallback.__vftable
 member-unverified ahkpCharacterProxy.userData
 member-unverified bgs::saveload::LoadEntryRequest.entry
@@ -25500,26 +26968,38 @@ member-unverified bgs::saveload::SaveOperationRequest.stream
 member-unverified bhkCharProxyController.pointCollector
 member-unverified bhkCharacterController.characterState
 member-unverified bhkCharacterController.hasBumper
+member-unverified bhkCharacterController.shapes
+member-unverified bhkCharacterController.source_bhkCharacterMoveFinishEvent
+member-unverified bhkPickData.allHitsCollector
+member-unverified bhkPickData.allHitsCollector2
+member-unverified bhkPickData.closestCollector
+member-unverified bhkPickData.extraInfo
+member-unverified bhkPickData.from
+member-unverified bhkPickData.ray
+member-unverified bhkPickData.shapeKeyIndex
+member-unverified bhkPickData.shapeKeys
+member-unverified bhkPickData.skipped
+member-unverified bhkPickData.to
 member-unverified bhkRagdollController.field_320
 member-unverified bhkRagdollController.field_328
-member bhkWorld.field_C6E0 c5d8
-member bhkWorld.field_C6E8 c5e0
-member bhkWorld.field_C6F0 c5e8
-member bhkWorld.field_C6F8 c5f0
-member bhkWorld.field_C6FC c5f4
-member bhkWorld.field_C700 c5f8
-member bhkWorld.field_C702 c5fa
+member-unverified bhkWorld.field_C6E0
+member-unverified bhkWorld.field_C6E8
+member-unverified bhkWorld.field_C6F0
+member-unverified bhkWorld.field_C6F8
+member-unverified bhkWorld.field_C6FC
+member-unverified bhkWorld.field_C700
+member-unverified bhkWorld.field_C702
 member-missing bhkWorld.m_bhkWorldCinfo_C5E0
-member bhkWorldM.field_C6E0 c5d8
-member bhkWorldM.field_C6E8 c5e0
-member bhkWorldM.field_C6F0 c5e8
-member bhkWorldM.field_C6F8 c5f0
-member bhkWorldM.field_C6FC c5f4
-member bhkWorldM.field_C700 c5f8
-member bhkWorldM.field_C702 c5fa
-member bhkWorldM.field_C710 c600
-member bhkWorldM.field_C720 c610
-member bhkWorldM.field_C730 c620
+member-unverified bhkWorldM.field_C6E0
+member-unverified bhkWorldM.field_C6E8
+member-unverified bhkWorldM.field_C6F0
+member-unverified bhkWorldM.field_C6F8
+member-unverified bhkWorldM.field_C6FC
+member-unverified bhkWorldM.field_C700
+member-unverified bhkWorldM.field_C702
+member-unverified bhkWorldM.field_C710
+member-unverified bhkWorldM.field_C720
+member-unverified bhkWorldM.field_C730
 member-missing bhkWorldM.m_bhkWorldCinfo_C5E0
 member-unverified bhkWorldM.worldLock
 member-unverified bnet::AsyncOperationProxy.field_20
@@ -25738,14 +27218,50 @@ member-missing bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable
 member-missing bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::CopyableCallable<<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_>.__vftable
 member-missing bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::ICopyableCallable,<lambda_e35940508eec14f4e3ce2fa64956727e>_>.__vftable
 member-missing bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::CopyableCallable<<lambda_e35940508eec14f4e3ce2fa64956727e>_>.__vftable
+member-unverified hkArray.capacityAndFlags
+member-unverified hkArray.data
+member-unverified hkArray.size
+member-unverified hkQuaternion.w
+member-unverified hkReferencedObject.memSizeAndFlags
+member-unverified hkReferencedObject.referenceCount
+member-unverified hkStridedVertices.numVertices
+member-unverified hkStridedVertices.striding
+member-unverified hkStridedVertices.vertices
+member-unverified hkVector4.w
+member-unverified hkbFootIkDriver::InternalLeg.ankleTargetMS
+member-unverified hkbFootIkDriver::InternalLeg.groundHeight
+member-unverified hkbFootIkDriver::InternalLeg.hit
+member-unverified hkbFootIkDriver::InternalLeg.legSolver
+member-unverified hkbFootIkDriverInfoLeg.ankleIndex
+member-unverified hkbFootIkDriverInfoLeg.footEndLS
+member-unverified hkbFootIkDriverInfoLeg.footPlantedAnkleHeightMS
+member-unverified hkbFootIkDriverInfoLeg.footRaisedAnkleHeightMS
+member-unverified hkbFootIkDriverInfoLeg.hipIndex
+member-unverified hkbFootIkDriverInfoLeg.kneeAxisLS
+member-unverified hkbFootIkDriverInfoLeg.kneeIndex
+member-unverified hkbFootIkDriverInfoLeg.maxAnkleAngleDegrees
+member-unverified hkbFootIkDriverInfoLeg.maxAnkleHeightMS
+member-unverified hkbFootIkDriverInfoLeg.maxKneeAngleDegrees
+member-unverified hkbFootIkDriverInfoLeg.minAnkleHeightMS
+member-unverified hkbFootIkDriverInfoLeg.minKneeAngleDegrees
+member-unverified hkbFootIkDriverInfoLeg.prevAnkleRotLS
 member-unverified hkbFootIkGains.alignWorldFromModelGain
+member-unverified hkbFootIkGains.ankleOrientationGain
+member-unverified hkbFootIkGains.errorUpDownBias
 member-unverified hkbFootIkGains.footPlantedGain
+member-unverified hkbFootIkGains.footRaisedGain
 member-unverified hkbFootIkGains.footUnlockGain
 member-unverified hkbFootIkGains.groundAscendingGain
+member-unverified hkbFootIkGains.groundDescendingGain
 member-unverified hkbFootIkGains.hipOrientationGain
 member-unverified hkbFootIkGains.maxKneeAngleDifference
+member-unverified hkbFootIkGains.onOffGain
 member-unverified hkbFootIkGains.worldFromModelFeedbackGain
 member-unverified hkpCharacterProxy.userData
+member-unverified hkpCollidable.shape
+member-unverified hkpConvexVerticesShape::BuildConfig.maxVertices
+member-unverified hkpConvexVerticesShape::BuildConfig.shrinkByConvexRadius
+member-unverified hkpShape.memSizeAndFlags
 member-unverified hkpShape.referenceCount
 member-missing std::_Func_impl_no_alloc<<lambda_011e18ed6303dee988fa3bd3cbcd3f6c>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>.__vftable
 member-missing std::_Func_impl_no_alloc<<lambda_02b6bb394f6fb3644a63315e6f3f7efd>,void,bool>.__vftable
@@ -25867,9 +27383,9 @@ slot-unverified BSGamerProfile[0].7
 slot-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>[0].0
 slot-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>[0].1
 slot-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>[0].2
-slot BSPlatform::BSBNETFile::download[0].4 1
-slot BSPlatform::BSBNETFile::download[0].5 4
-slot BSPlatform::BSBNETFile::download[0].7 1
+slot-unverified BSPlatform::BSBNETFile::download[0].4
+slot-unverified BSPlatform::BSBNETFile::download[0].5
+slot-unverified BSPlatform::BSBNETFile::download[0].7
 slot-unverified BSPlatform::BSBNETFile::marketplaceDownload[0].7
 slot-missing BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModDownload::marketplaceDownloadRequest[0].0
 slot-missing BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModDownload::marketplaceDownloadRequest[0].1
@@ -25878,32 +27394,32 @@ slot-missing BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModStream::
 slot-missing BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModStream::marketplaceStreamRequest[0].1
 slot-missing BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModStream::marketplaceStreamRequest[0].2
 slot-unverified BSPlatform::BSUserContentSearcherAgent[0].6
-slot BSPlatform::BSUserContentSearcherAgent[0].7 6
-slot BSPlatform::BSUserContentSearcherAgent[0].8 7
-slot BSPlatform::BSUserContentSearcherAgent[0].9 8
+slot-unverified BSPlatform::BSUserContentSearcherAgent[0].7
+slot-unverified BSPlatform::BSUserContentSearcherAgent[0].8
+slot-unverified BSPlatform::BSUserContentSearcherAgent[0].9
 slot-unverified BSPlatform::BSUserContentSearcherAgent[0].a
 slot-unverified BSPlatform::BSUserContentSearcherAgent[0].b
-slot BSPlatform::BSUserContentSearcherAgent[0].d a
-slot BSPlatform::BSUserContentSearcherAgent[0].e b
-slot BSPlatform::BSUserContentSearcherAgent[0].f 9
+slot-unverified BSPlatform::BSUserContentSearcherAgent[0].d
+slot-unverified BSPlatform::BSUserContentSearcherAgent[0].e
+slot-unverified BSPlatform::BSUserContentSearcherAgent[0].f
 slot-unverified BSSaveDataSystemUtility[0].5
 slot-unverified BSSaveDataSystemUtility[0].6
 slot-unverified BSSaveDataSystemUtility[0].7
 slot-unverified BSSaveDataSystemUtility[0].8
 slot-unverified BSSaveDataSystemUtility[0].9
 slot-unverified BSSaveDataSystemUtility[0].a
-slot BSSaveDataSystemUtility[0].b 5
-slot BSSaveDataSystemUtility[0].c 1
-slot BSSaveDataSystemUtility[0].d 7
-slot BSSaveDataSystemUtility[0].e 8
-slot BSSaveDataSystemUtility[0].f 9
-slot BSSaveDataSystemUtility[0].10 a
-slot BSSaveDataSystemUtility[0].12 c
-slot BSSaveDataSystemUtility[0].13 d
+slot-unverified BSSaveDataSystemUtility[0].b
+slot-unverified BSSaveDataSystemUtility[0].c
+slot-unverified BSSaveDataSystemUtility[0].d
+slot-unverified BSSaveDataSystemUtility[0].e
+slot-unverified BSSaveDataSystemUtility[0].f
+slot-unverified BSSaveDataSystemUtility[0].10
+slot-unverified BSSaveDataSystemUtility[0].12
+slot-unverified BSSaveDataSystemUtility[0].13
 slot-unverified BSSaveDataSystemUtility[0].14
 slot-unverified BSSaveDataSystemUtility[0].15
 slot-unverified BSSaveDataSystemUtility[0].16
-slot BSSaveDataSystemUtility[0].17 11
+slot-unverified BSSaveDataSystemUtility[0].17
 slot-missing BSScaleformMovieLoadTask[0].9
 slot-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,unsigned_int>[0].0
 slot-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,unsigned_int>[0].1
@@ -25975,14 +27491,14 @@ slot-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,unsigned_
 slot-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,unsigned_int>[0].15
 slot-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,unsigned_int>[0].16
 slot-unverified BSSystemUtility[0].2
-slot BSSystemUtility[0].3 2
-slot BSSystemUtility[0].4 3
-slot BSSystemUtility[0].7 6
-slot BSSystemUtility[0].8 7
-slot BSSystemUtility[0].9 8
-slot BSSystemUtility[0].a 9
-slot BSSystemUtility[0].12 11
-slot BSSystemUtility[0].13 12
+slot-unverified BSSystemUtility[0].3
+slot-unverified BSSystemUtility[0].4
+slot-unverified BSSystemUtility[0].7
+slot-unverified BSSystemUtility[0].8
+slot-unverified BSSystemUtility[0].9
+slot-unverified BSSystemUtility[0].a
+slot-unverified BSSystemUtility[0].12
+slot-unverified BSSystemUtility[0].13
 slot-missing BSTEventSink<TESAmiiboForcedStopDetectionEvent>[0].0
 slot-missing BSTEventSink<TESAmiiboForcedStopDetectionEvent>[0].1
 slot-missing BSTEventSink<TESAmiiboTouchEvent>[0].0
@@ -25995,34 +27511,34 @@ slot-unverified BSWin32SaveDataSystemUtility[0].7
 slot-unverified BSWin32SaveDataSystemUtility[0].8
 slot-unverified BSWin32SaveDataSystemUtility[0].9
 slot-unverified BSWin32SaveDataSystemUtility[0].a
-slot BSWin32SaveDataSystemUtility[0].b 5
-slot BSWin32SaveDataSystemUtility[0].c 6
-slot BSWin32SaveDataSystemUtility[0].d 7
-slot BSWin32SaveDataSystemUtility[0].e 8
-slot BSWin32SaveDataSystemUtility[0].f 9
-slot BSWin32SaveDataSystemUtility[0].10 a
-slot BSWin32SaveDataSystemUtility[0].11 b
-slot BSWin32SaveDataSystemUtility[0].12 c
-slot BSWin32SaveDataSystemUtility[0].13 d
+slot-unverified BSWin32SaveDataSystemUtility[0].b
+slot-unverified BSWin32SaveDataSystemUtility[0].c
+slot-unverified BSWin32SaveDataSystemUtility[0].d
+slot-unverified BSWin32SaveDataSystemUtility[0].e
+slot-unverified BSWin32SaveDataSystemUtility[0].f
+slot-unverified BSWin32SaveDataSystemUtility[0].10
+slot-unverified BSWin32SaveDataSystemUtility[0].11
+slot-unverified BSWin32SaveDataSystemUtility[0].12
+slot-unverified BSWin32SaveDataSystemUtility[0].13
 slot-unverified BSWin32SaveDataSystemUtility[0].14
 slot-unverified BSWin32SaveDataSystemUtility[0].15
 slot-unverified BSWin32SaveDataSystemUtility[0].16
-slot BSWin32SaveDataSystemUtility[0].17 11
+slot-unverified BSWin32SaveDataSystemUtility[0].17
 slot-unverified BSWin32SystemUtility[0].2
-slot BSWin32SystemUtility[0].3 2
-slot BSWin32SystemUtility[0].4 3
-slot BSWin32SystemUtility[0].5 4
-slot BSWin32SystemUtility[0].6 5
-slot BSWin32SystemUtility[0].7 6
-slot BSWin32SystemUtility[0].8 7
-slot BSWin32SystemUtility[0].9 8
-slot BSWin32SystemUtility[0].a 9
-slot BSWin32SystemUtility[0].d c
-slot BSWin32SystemUtility[0].e d
-slot BSWin32SystemUtility[0].10 f
-slot BSWin32SystemUtility[0].11 10
-slot BSWin32SystemUtility[0].12 11
-slot BSWin32SystemUtility[0].13 12
+slot-unverified BSWin32SystemUtility[0].3
+slot-unverified BSWin32SystemUtility[0].4
+slot-unverified BSWin32SystemUtility[0].5
+slot-unverified BSWin32SystemUtility[0].6
+slot-unverified BSWin32SystemUtility[0].7
+slot-unverified BSWin32SystemUtility[0].8
+slot-unverified BSWin32SystemUtility[0].9
+slot-unverified BSWin32SystemUtility[0].a
+slot-unverified BSWin32SystemUtility[0].d
+slot-unverified BSWin32SystemUtility[0].e
+slot-unverified BSWin32SystemUtility[0].10
+slot-unverified BSWin32SystemUtility[0].11
+slot-unverified BSWin32SystemUtility[0].12
+slot-unverified BSWin32SystemUtility[0].13
 slot-missing BleedoutCameraState[20].2
 slot-missing BleedoutCameraState[20].3
 slot BleedoutCameraState[20].4 2
@@ -26143,42 +27659,42 @@ slot MapZoomHandler[0].5 3
 slot MapZoomHandler[0].6 4
 slot MapZoomHandler[0].7 5
 slot-unverified MarketplaceBundleContent[0].1
-slot MarketplaceBundleContent[0].3 1
-slot MarketplaceBundleContent[0].4 3
-slot MarketplaceBundleContent[0].5 4
-slot MarketplaceBundleContent[0].6 5
-slot MarketplaceBundleContent[0].7 6
-slot MarketplaceBundleContent[0].8 7
-slot MarketplaceBundleContent[0].9 8
-slot MarketplaceBundleContent[0].a 9
-slot MarketplaceBundleContent[0].b a
-slot MarketplaceBundleContent[0].c b
+slot-unverified MarketplaceBundleContent[0].3
+slot-unverified MarketplaceBundleContent[0].4
+slot-unverified MarketplaceBundleContent[0].5
+slot-unverified MarketplaceBundleContent[0].6
+slot-unverified MarketplaceBundleContent[0].7
+slot-unverified MarketplaceBundleContent[0].8
+slot-unverified MarketplaceBundleContent[0].9
+slot-unverified MarketplaceBundleContent[0].a
+slot-unverified MarketplaceBundleContent[0].b
+slot-unverified MarketplaceBundleContent[0].c
 slot-unverified MarketplaceBundleContent[0].d
-slot MarketplaceBundleContent[0].e c
+slot-unverified MarketplaceBundleContent[0].e
 slot-unverified MarketplaceContent[0].1
-slot MarketplaceContent[0].3 1
-slot MarketplaceContent[0].4 3
-slot MarketplaceContent[0].5 4
-slot MarketplaceContent[0].6 5
-slot MarketplaceContent[0].7 6
-slot MarketplaceContent[0].8 7
-slot MarketplaceContent[0].9 8
-slot MarketplaceContent[0].a 9
-slot MarketplaceContent[0].b a
-slot MarketplaceContent[0].c b
+slot-unverified MarketplaceContent[0].3
+slot-unverified MarketplaceContent[0].4
+slot-unverified MarketplaceContent[0].5
+slot-unverified MarketplaceContent[0].6
+slot-unverified MarketplaceContent[0].7
+slot-unverified MarketplaceContent[0].8
+slot-unverified MarketplaceContent[0].9
+slot-unverified MarketplaceContent[0].a
+slot-unverified MarketplaceContent[0].b
+slot-unverified MarketplaceContent[0].c
 slot-unverified MarketplaceContent[0].d
-slot MarketplaceContent[0].e c
+slot-unverified MarketplaceContent[0].e
 slot-unverified MarketplaceContentCollection[0].1
-slot MarketplaceContentCollection[0].3 1
-slot MarketplaceContentCollection[0].4 3
-slot MarketplaceContentCollection[0].5 4
-slot MarketplaceContentCollection[0].6 5
-slot MarketplaceContentCollection[0].7 6
-slot MarketplaceContentCollection[0].8 7
-slot MarketplaceContentCollection[0].9 8
-slot MarketplaceContentCollection[0].a 9
+slot-unverified MarketplaceContentCollection[0].3
+slot-unverified MarketplaceContentCollection[0].4
+slot-unverified MarketplaceContentCollection[0].5
+slot-unverified MarketplaceContentCollection[0].6
+slot-unverified MarketplaceContentCollection[0].7
+slot-unverified MarketplaceContentCollection[0].8
+slot-unverified MarketplaceContentCollection[0].9
+slot-unverified MarketplaceContentCollection[0].a
 slot-unverified MarketplaceContentCollection[0].d
-slot MarketplaceContentCollection[0].e c
+slot-unverified MarketplaceContentCollection[0].e
 slot-missing MarketplaceMenu::InputHandler[0].3
 slot-missing MarketplaceMenu::InputHandler[0].4
 slot MarketplaceMenu::InputHandler[0].5 3
@@ -26247,7 +27763,7 @@ slot-missing NoRTTI_1AED4D8[0].10
 slot-unverified NoRTTI_1AF1010[0].d
 slot-unverified NoRTTI_1AF1010[0].e
 slot-unverified NoRTTI_1AF1010[0].f
-slot NoRTTI_1AF1010[0].10 f
+slot-unverified NoRTTI_1AF1010[0].10
 slot-unverified NoRTTI_1AF2038[0].d
 slot-unverified NoRTTI_1AF2038[0].e
 slot-unverified NoRTTI_1AF2038[0].f
@@ -26569,7 +28085,8 @@ slot-missing NoRTTI_1AFA9D8[0].10
 slot-unverified NoRTTI_1AFABA8[0].d
 slot-unverified NoRTTI_1AFABA8[0].e
 slot-unverified NoRTTI_1AFABA8[0].f
-slot NoRTTI_1AFABA8[0].10 f
+slot-unverified NoRTTI_1AFABA8[0].10
+slot-unverified NoRTTI_1AFAD30[0].d
 slot-unverified NoRTTI_1AFB810[0].d
 slot-unverified NoRTTI_1AFB810[0].e
 slot-unverified NoRTTI_1AFB810[0].f
@@ -26592,11 +28109,11 @@ slot-unverified NoRTTI_1AFBB40[0].f
 slot-unverified NoRTTI_1AFBB40[0].10
 slot-unverified NoRTTI_1AFBBC8[0].d
 slot-unverified NoRTTI_1AFBBC8[0].e
-slot NoRTTI_1AFBBC8[0].f 3
+slot-unverified NoRTTI_1AFBBC8[0].f
 slot-unverified NoRTTI_1AFBBC8[0].10
 slot-unverified NoRTTI_1AFBCD8[0].d
 slot-unverified NoRTTI_1AFBCD8[0].e
-slot NoRTTI_1AFBCD8[0].f 3
+slot-unverified NoRTTI_1AFBCD8[0].f
 slot-unverified NoRTTI_1AFBCD8[0].10
 slot-unverified NoRTTI_1AFC710[0].d
 slot-unverified NoRTTI_1AFC710[0].e
@@ -26666,10 +28183,10 @@ slot-unverified NoRTTI_1B032B0[0].d
 slot-unverified NoRTTI_1B032B0[0].e
 slot-unverified NoRTTI_1B032B0[0].f
 slot-unverified NoRTTI_1B032B0[0].10
-slot NoRTTI_1B032B0[0].11 10
-slot NoRTTI_1B032B0[0].12 3
-slot NoRTTI_1B032B0[0].13 12
-slot NoRTTI_1B032B0[0].16 3
+slot-unverified NoRTTI_1B032B0[0].11
+slot-unverified NoRTTI_1B032B0[0].12
+slot-unverified NoRTTI_1B032B0[0].13
+slot-unverified NoRTTI_1B032B0[0].16
 slot-unverified NoRTTI_1B03A58[0].d
 slot-unverified NoRTTI_1B03A58[0].e
 slot-unverified NoRTTI_1B03A58[0].f
@@ -26845,7 +28362,7 @@ slot-unverified NoRTTI_1B0A968[0].10
 slot-unverified NoRTTI_1B0C4B0[0].d
 slot-unverified NoRTTI_1B0C4B0[0].e
 slot-unverified NoRTTI_1B0C4B0[0].f
-slot NoRTTI_1B0C4B0[0].10 f
+slot-unverified NoRTTI_1B0C4B0[0].10
 slot-unverified NoRTTI_1B11150[0].d
 slot-unverified NoRTTI_1B11150[0].e
 slot-unverified NoRTTI_1B11150[0].f
@@ -27089,8 +28606,8 @@ slot-missing bnet::Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal:
 slot-missing bnet::Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>[0].2
 slot-missing bnet::Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>[0].3
 slot-missing bnet::Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>[0].4
-slot bnet::Mods::BaseUpdatePreferenceInfo[0].0 2
-slot bnet::Mods::UpdateContentPreferenceInfo[0].0 2
+slot-unverified bnet::Mods::BaseUpdatePreferenceInfo[0].0
+slot-unverified bnet::Mods::UpdateContentPreferenceInfo[0].0
 slot-missing bnet::detail::CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>[0].0
 slot-missing bnet::detail::CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>[0].1
 slot-missing bnet::detail::CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>[0].2
@@ -28300,12 +29817,14 @@ slot-missing std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_d87e5165e85
 slot-missing std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_d87e5165e8580a06382cfba18d28ca5f>_>[0].1
 slot-missing std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_d87e5165e8580a06382cfba18d28ca5f>_>[0].2
 slot-missing std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_d87e5165e8580a06382cfba18d28ca5f>_>[0].3
+size-unverified AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
 size-unverified AStarSearch<BSFastNavmeshTriLocation,void*___ptr64,3>
 size-unverified AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
 size-unverified AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
 size-unverified AStarSearch<ParentSpaceNode,TeleportLink,1>
 size-unverified AbstractHeap
 size-unverified ActionActivateDoneHandler
+size-unverified ActionInput
 size-unverified ActivateHandler
 size-unverified ActiveEffect::ForEachHitEffectVisitor
 size-unverified ActiveEffectReferenceEffectController
@@ -29753,6 +31272,7 @@ size-unverified BGSReferenceEffect
 size-unverified BGSReverbParameters
 size-unverified BGSSaveFormBuffer
 size-unverified BGSSaveGameBuffer
+size-unverified BGSSaveLoadManager
 size-unverified BGSSaveLoadManager::Thread
 size-unverified BGSSaveLoadManagerEvent
 size-unverified BGSSaveLoadStatsMap
@@ -29885,12 +31405,14 @@ size-unverified BSDiskConstructor
 size-unverified BSDistTriggerModifier
 size-unverified BSDistantObjectLargeRefExtraData
 size-unverified BSDoorHavokController
+size-unverified BSEffectShaderMaterial
 size-unverified BSEffectShaderPropertyColorController
 size-unverified BSEffectShaderPropertyFloatController
 size-unverified BSEventEveryNEventsModifier
 size-unverified BSEventOnDeactivateModifier
 size-unverified BSEventOnFalseToTrueModifier
 size-unverified BSExternalAudioIO::ExternalIOInterface
+size-unverified BSExtraData
 size-unverified BSFaceGenBaseMorphExtraData
 size-unverified BSFaceGenKeyframe
 size-unverified BSFaceGenKeyframeMultiple
@@ -31178,6 +32700,7 @@ size-unverified CameraShakeHandler
 size-unverified CellMopp::HeightFieldWeldingTasklet
 size-unverified ChairEnterHandler
 size-unverified ChairFurnitureExitHandler
+size-unverified ChangeFormMap
 size-unverified CharEvent
 size-unverified CharacterCollisionHandler
 size-unverified CharacterCollisionMessagePlayerAdapter
@@ -31604,6 +33127,7 @@ size-unverified CombatMagicItemData
 size-unverified CombatMagicItemSkillChecker
 size-unverified CombatMeleeAimController
 size-unverified CombatObject
+size-unverified CombatPath
 size-unverified CombatPathBuilder
 size-unverified CombatPathBuilderOpen
 size-unverified CombatPathBuilderStandard
@@ -31639,6 +33163,7 @@ size-unverified CombatTargetSelectorStandard
 size-unverified CombatThreat
 size-unverified CombatTrackTargetAimController
 size-unverified CommandEffect
+size-unverified CommandTableEntry
 size-unverified CompactingStore::MoveCallback
 size-unverified CompactingStore::NoopMoveCallback
 size-unverified CompactingStore::Store
@@ -31914,7 +33439,7 @@ size-unverified DeathStopHandler
 size-unverified DebugText
 size-unverified DecapitateHandler
 size-unverified DepthStencilProperties
-size DescriptionBox f0
+size-unverified DescriptionBox
 size-unverified DetectSignOut
 size-unverified DetectionCollector
 size-unverified DetectionListener
@@ -31937,7 +33462,7 @@ size-unverified EndSummonAnimationHandler
 size-unverified EventSourceHolder_BGSActorCell
 size-unverified EventSourceHolder_Input
 size-unverified EventSourceHolder_MenuOpenClose
-size EventSourceHolder_TES 1290
+size-unverified EventSourceHolder_TES
 size-unverified EventSourceHolder_User
 size-unverified ExitCartBeginHandler
 size-unverified ExitCartEndHandler
@@ -32056,6 +33581,7 @@ size-unverified FindTriangleForLocationFilter
 size-unverified FindTriangleForLocationFilterCheckDeltaZ
 size-unverified FindTriangleForLocationWaterFilter
 size-unverified FinishActiveEffectVisitor
+size-unverified FirstPersonRenderContext
 size-unverified FlightActionEndHandler
 size-unverified FlightActionEntryEndHandler
 size-unverified FlightActionGrabHandler
@@ -32129,6 +33655,7 @@ size-unverified HUDChargeMeter
 size-unverified HUDData
 size-unverified HUDMenu
 size-unverified HUDMeter
+size-unverified HUDNotificationEntry
 size-unverified HUDNotifications
 size-unverified HUDObject
 size-unverified HandleEntry
@@ -32354,7 +33881,7 @@ size-unverified LipSynchAnimDB::LipAudioInterface
 size-unverified LoadGameMagicCasterVisitor
 size-unverified LoadGameMissingContentDownloadCallBack
 size-unverified LoadGameUnrecognizedContentCallBack
-size LoadOrderArchive e8
+size-unverified LoadOrderArchive
 size-unverified LoadStorageWrapper
 size-unverified LoadWaitSpinner
 size-unverified LoadedReferenceData
@@ -32367,7 +33894,7 @@ size-unverified LockpickingMenu
 size-unverified LoginMenu::errorCallback
 size-unverified LoginMenu::loginMenu
 size-unverified LongestDurationFunctor
-size LookHandler 10
+size-unverified LookHandler
 size-unverified MTStateHandler
 size-unverified MagicCaster
 size-unverified MagicCaster::PostCreationCallback
@@ -32393,9 +33920,9 @@ size-unverified MapLookHandler
 size-unverified MapMenu
 size-unverified MapMoveHandler
 size-unverified MapZoomHandler
-size MarketplaceBundleContent d0
+size-unverified MarketplaceBundleContent
 size-unverified MarketplaceContent
-size MarketplaceContentCollection d0
+size-unverified MarketplaceContentCollection
 size-unverified MarketplaceDataProducer
 size-unverified MarketplaceMenu
 size-unverified MarketplaceMenu::InputHandler
@@ -32406,6 +33933,7 @@ size-unverified MenuEventHandler
 size-unverified MenuModeChangeEvent
 size-unverified MenuOpenCloseEvent
 size-unverified MenuOpenHandler
+size-unverified MenuTable
 size-unverified MenuTopicManager
 size-unverified MessageBoxMenu
 size-unverified MessageHandler
@@ -32499,6 +34027,7 @@ size-unverified MovementSelectIdleUtils::SelectFirstIdleFilter
 size-unverified MovementStateFollowPath
 size-unverified MovementStateTweener
 size-unverified MovementTweenerAgent
+size-unverified MovementTweenerAgentAnimationDriven
 size-unverified MovementTweenerAgentNodeFollower
 size-unverified MultiBoundMarkerData
 size-unverified NPCAttachHandler
@@ -32671,6 +34200,7 @@ size-unverified NiSequenceStreamHelper
 size-unverified NiShadeProperty
 size-unverified NiSingleInterpController
 size-unverified NiSkinData
+size-unverified NiSkinData::BoneData
 size-unverified NiSkinPartition
 size-unverified NiSkinPartition::Partition
 size-unverified NiSourceTexture
@@ -32937,6 +34467,7 @@ size-unverified SaveStorageWrapper
 size-unverified ScaleformFile::MemoryFile
 size-unverified ScrapHeap
 size-unverified ScreenshotHandler
+size-unverified ScriptLineBuffer
 size-unverified ScriptedRefEffect
 size-unverified SeenData
 size-unverified Setting
@@ -33108,6 +34639,7 @@ size-unverified TESBookReadEvent
 size-unverified TESBoundAnimObject
 size-unverified TESBoundObject
 size-unverified TESCamera
+size-unverified TESCameraState
 size-unverified TESCellAttachDetachEvent
 size-unverified TESCellFullyLoadedEvent
 size-unverified TESChildCell
@@ -33126,6 +34658,7 @@ size-unverified TESEnterBleedoutEvent
 size-unverified TESEquipEvent
 size-unverified TESEyes
 size-unverified TESFastTravelEndEvent
+size-unverified TESFile
 size-unverified TESFileArray
 size-unverified TESForm
 size-unverified TESFormDeleteEvent
@@ -33152,6 +34685,7 @@ size-unverified TESLoadScreen
 size-unverified TESLockChangedEvent
 size-unverified TESMagicEffectApplyEvent
 size-unverified TESMagicWardHitEvent
+size-unverified TESModel
 size-unverified TESModelDB::_anon_42B16DF0::TESProcessor
 size-unverified TESModelLODList
 size-unverified TESModelPSA
@@ -33161,6 +34695,7 @@ size-unverified TESMoveAttachDetachEvent
 size-unverified TESObject
 size-unverified TESObjectANIO
 size-unverified TESObjectCELL::IDecalRefFunctor
+size-unverified TESObjectLAND
 size-unverified TESObjectLoadedEvent
 size-unverified TESObjectREFRDef::IAliasFunctor
 size-unverified TESObjectREFRDef::ILinkedReferenceFunctor
@@ -33201,7 +34736,9 @@ size-unverified TESSound
 size-unverified TESSpellCastEvent
 size-unverified TESSpellList
 size-unverified TESSwitchRaceCompleteEvent
+size-unverified TESTexture
 size-unverified TESTexture1024
+size-unverified TESTopic
 size-unverified TESTopicInfo
 size-unverified TESTopicInfoEvent
 size-unverified TESTrackedStatsEvent
@@ -33223,6 +34760,7 @@ size-unverified TargetValueModifierEffect
 size-unverified TaskQueueHolder
 size-unverified TeleportDoorSearch
 size-unverified TempLoadGameBuffer
+size-unverified ThirdPersonState
 size-unverified ThumbstickEvent
 size-unverified TitleSequenceMenu
 size-unverified TogglePOVHandler
@@ -33238,18 +34776,19 @@ size-unverified TweenMenuCameraState
 size-unverified TypeNode
 size-unverified UIBlurManager
 size-unverified UICursor
+size-unverified UIMessage
 size-unverified UIMessageDataPtr<Actor>
 size-unverified UIMessageQueue
 size-unverified UISaveLoadManager
 size-unverified UI_Dialog
 size-unverified UI_Text
 size-unverified UI_Text3
-size UI_bannerEntry 168
+size-unverified UI_bannerEntry
 size-unverified UI_bar
-size UI_detailsPage 218
+size-unverified UI_detailsPage
 size-unverified UI_detailsPage::OnSale
 size-unverified UI_element2
-size UI_listEntry 138
+size-unverified UI_listEntry
 size-unverified UI_listEntry::OnSale
 size-unverified UI_page
 size-unverified UI_tag
@@ -33638,6 +35177,7 @@ size-unverified bhkSerializable
 size-unverified bhkShape
 size-unverified bhkShapeCollection
 size-unverified bhkShapePhantom
+size-unverified bhkSimpleShapePhantom
 size-unverified bhkSphereRepShape
 size-unverified bhkSpringAction
 size-unverified bhkSpringDamperConstraintMotor
@@ -33653,9 +35193,9 @@ size-unverified bhkUnaryAction
 size-unverified bhkVelocityConstraintMotor
 size-unverified bhkWheelConstraint
 size-unverified bhkWindListener
-size bhkWorld c600
+size-unverified bhkWorld
 size-unverified bhkWorld::bhkConstraintProjector
-size bhkWorldM c630
+size-unverified bhkWorldM
 size-unverified bhkWorldObject
 size-unverified bnet::AsyncOperationProxy
 size-unverified bnet::BaseCallback
@@ -34170,6 +35710,7 @@ size-unverified hkaQuantizedAnimation
 size-unverified hkaRagdollInstance
 size-unverified hkaRagdollRaycastInterface
 size-unverified hkaRaycastInterface
+size-unverified hkaSkeleton
 size-unverified hkaSkeletonMapper
 size-unverified hkaSplineCompressedAnimation
 size-unverified hkbAnimationBindingSet
@@ -34845,15 +36386,15 @@ size-unverified std::_Func_impl_no_alloc<void_(__cdecl*)(void*___ptr64,bool,char
 size-unverified std::_Ref_count<BSPlatform::BSReleaseNote>
 size-missing std::_Ref_count_obj<BNETRequester::BundlePreviewRequestResponse>
 size-unverified std::_Ref_count_obj<BNETRequester::CollectionListRequestResponse>
-size std::_Ref_count_obj<BNETRequester::CollectionRequestResponse> 1e8
+size-unverified std::_Ref_count_obj<BNETRequester::CollectionRequestResponse>
 size-unverified std::_Ref_count_obj<BNETRequester::CreationListRequestResponse>
-size std::_Ref_count_obj<BNETRequester::CreationRequestResponse> 2d0
+size-unverified std::_Ref_count_obj<BNETRequester::CreationRequestResponse>
 size-unverified std::_Ref_count_obj<BNETRequester::EntitlementListRequestResponse>
 size-unverified std::_Ref_count_obj<BNETRequester::ImageRequestResponse>
 size-unverified std::_Ref_count_obj<BNETRequester::IntRequestResponse>
 size-unverified std::_Ref_count_obj<BNETRequester::LegalDocumentListRequestResponse>
 size-unverified std::_Ref_count_obj<BNETRequester::ModListRequestResponse>
-size std::_Ref_count_obj<BNETRequester::ModRequestResponse> 2d0
+size-unverified std::_Ref_count_obj<BNETRequester::ModRequestResponse>
 size-unverified std::_Ref_count_obj<BNETRequester::RequestResponse>
 size-missing std::_Ref_count_obj<BNETRequester::StreamRequestResponse>
 size-unverified std::_Ref_count_obj<BNETRequester::StringListRequestResponse>
@@ -34861,7 +36402,7 @@ size-unverified std::_Ref_count_obj<BNETRequester::StringRequestResponse>
 size-unverified std::_Ref_count_obj<BNETRequester::StringStringRequestResponse>
 size-unverified std::_Ref_count_obj<BNETRequester::UInt32ListRequestResponse>
 size-unverified std::_Ref_count_obj<BSPlatform::BSMarketplaceImage>
-size std::_Ref_count_obj<BSPlatform::contentFetchHandler> 300
+size-unverified std::_Ref_count_obj<BSPlatform::contentFetchHandler>
 size-missing std::_Ref_count_obj<BSPlatform::pagedAuthorContentSearch>
 size-missing std::_Ref_count_obj<BSPlatform::pagedContentSearch>
 size-missing std::_Ref_count_obj<BSPlatform::pagedPlayerContentSearch>

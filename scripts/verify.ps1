@@ -84,7 +84,7 @@ $Mods = @{
     # Third-party plugins built for 1.7.x on the Address Library, each <name>.dll in $LegacyDir\<name>\SKSE\Plugins
     # (DevBench is the other one; it is installed for every suite).
     legacy = @{ dir = "skyrim-runtime-extender"; legacy = @("CrashLogger") }
-    gui = @{ crate = "example-mod"; dll = "skyrim_rs_example_mod.dll"; log = "skyrim-rs-example.log"; dir = "skyrim-runtime-extender"; report = $true; tags = @(2);
+    gui = @{ crate = "example-mod"; dll = "skyrim_rs_example_mod.dll"; log = "skyrim-rs-example.log"; dir = "skyrim-runtime-extender"; report = $true; readsTestPlugin = $true; tags = @(2);
              crates = @("hooks-test-a", "hooks-test-b"); dlls = @("skyrim_rs_hooks_a.dll", "skyrim_rs_hooks_b.dll")
              # Each session's edit of the host's settings file before its launch.
              sessions = [ordered]@{
@@ -427,16 +427,33 @@ function HalfJpeg($from, $to) {
     $true
 }
 
+# What a plugin's refusal wrote in the run's logs: what this game lacks of its manifest.
+function LackingOf($file) {
+    foreach ($log in @($PluginLog) + $ModLogs) {
+        foreach ($line in @(if (Test-Path "$OutDir\$log") { Get-Content "$OutDir\$log" })) {
+            if ($line -match "$([regex]::Escape($file)): (.*lacks what it uses: .*)$") { return $Matches[1] }
+        }
+    }
+}
+
 # A plugin the loader did not load has nothing to compare: each of its lines in the log is the evidence, and no check ran.
-$Wanted = @(if (-not $Mod.noTestPlugin) { "skyrim_rs_test.dll" }) + @(if ($Mod.dir) { $HostDll } elseif ($Mod.dll) { $Mod.dll }) + @($Mod.plugins | Where-Object { $_ })
+# A suite that reports through its own plugin does not need the test plugin, so its refusal alone stops nothing.
+$Wanted = @(if (-not $Mod.noTestPlugin -and (-not $Mod.report -or $Mod.readsTestPlugin)) { "skyrim_rs_test.dll" }) + @(if ($Mod.dir) { $HostDll } elseif ($Mod.dll) { $Mod.dll }) + @($Mod.plugins | Where-Object { $_ })
 foreach ($f in $Wanted) {
-    if ($LoaderLog -and $null -eq (Loaded $f)) { $RefusedBy += @{ plugin = $f; lines = @($LoaderLog | Where-Object { $_ -match "$([regex]::Escape($f))|nothing loaded|^needs " } | ForEach-Object { "$_" }) } }
+    if ($LoaderLog -and $null -eq (Loaded $f)) { $RefusedBy += @{ plugin = $f; lacking = (LackingOf $f); lines = @($LoaderLog | Where-Object { $_ -match "$([regex]::Escape($f))|nothing loaded|^needs " } | ForEach-Object { "$_" }) } }
+}
+# The host refuses a framework plugin of the suite itself, in its own log.
+if ($Mod.dir) {
+    foreach ($f in @($Mod.dll) + @($Mod.dlls) | Where-Object { $_ }) {
+        $skipped = @($HostLog | Where-Object { $_ -match "^skipped $([regex]::Escape($f)): (.*lacks what it uses: .*)$" })
+        if ($skipped) { $RefusedBy += @{ plugin = $f; lacking = ($skipped[0] -replace '^skipped [^:]+: ', ''); lines = $skipped } }
+    }
 }
 if ($RefusedBy) {
-    foreach ($r in $RefusedBy) { "REFUSED $($r.plugin): $($r.lines -join ' | ')" }
+    foreach ($r in $RefusedBy) { "REFUSED $($r.plugin): $($r.lines -join ' | ')"; if ($r.lacking) { "  $($r.lacking)" } }
     "scenario ok: $scenarioOk"
     "logs in $OutDir"
-    Write-Results "refused" "the loader did not load $(($RefusedBy | ForEach-Object { $_.plugin }) -join ', '); no check ran"
+    Write-Results "refused" "the loader did not load $(($RefusedBy | ForEach-Object { $_.plugin + $(if ($_.lacking) { " ($($_.lacking))" }) }) -join ', '); no check ran"
     Finish 2
 }
 if (-not $Install.canSave) {

@@ -110,7 +110,8 @@ pub struct BSGamepadDevice {
     /// +0xC8 `undefined4`, semantic; XInput user index (PlayStation: pad handle), -1 when none (high)
     pub userIndex: u32,
     /// +0xCC `undefined1`, semantic; set by the detector (high)
-    pub connected: u8,
+    #[doc(hidden)]
+    pub __connected: [u8; 1],
     unknown_CD: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -128,7 +129,7 @@ const _: () = assert!(core::mem::offset_of!(BSGamepadDevice, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSGamepadDevice, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BSGamepadDevice, __source_BSGamepadEvent) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BSGamepadDevice, userIndex) == 0xC8);
-const _: () = assert!(core::mem::offset_of!(BSGamepadDevice, connected) == 0xCC);
+const _: () = assert!(core::mem::offset_of!(BSGamepadDevice, __connected) == 0xCC);
 
 /// `BSInputDevice`: size 0x70 (exact, high); primary base `BSIInputDevice`.
 /// Meaning: base of every input device: device id and the definition-file maps (id <-> name, id -> key record with the held timer) (high, input pass).
@@ -307,7 +308,8 @@ pub struct BSPCOrbisGamepadDevice {
     /// +0xC8 `undefined4`, base BSGamepadDevice, semantic; XInput user index (PlayStation: pad handle), -1 when none (high)
     pub userIndex: u32,
     /// +0xCC `undefined1`, base BSGamepadDevice, semantic; set by the detector (high)
-    pub connected: u8,
+    #[doc(hidden)]
+    pub __connected: [u8; 1],
     unknown_CD: [u8; 299],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -325,7 +327,7 @@ const _: () = assert!(core::mem::offset_of!(BSPCOrbisGamepadDevice, field_58) ==
 const _: () = assert!(core::mem::offset_of!(BSPCOrbisGamepadDevice, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BSPCOrbisGamepadDevice, __source_BSGamepadEvent) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BSPCOrbisGamepadDevice, userIndex) == 0xC8);
-const _: () = assert!(core::mem::offset_of!(BSPCOrbisGamepadDevice, connected) == 0xCC);
+const _: () = assert!(core::mem::offset_of!(BSPCOrbisGamepadDevice, __connected) == 0xCC);
 
 /// `BSWin32GamepadDevice`: size 0x128 (exact, high); primary base `BSPCGamepadDeviceDelegate`.
 /// Meaning: XInput controller: buttons keyed by XInput mask, triggers as analog ids 9/10, sticks as ThumbstickEvents 0xb/0xc (high, input pass).
@@ -365,20 +367,27 @@ pub struct BSWin32GamepadDevice {
     /// +0xC8 `undefined4`, base BSGamepadDevice, semantic; XInput user index (PlayStation: pad handle), -1 when none (high)
     pub userIndex: u32,
     /// +0xCC `undefined1`, base BSGamepadDevice, semantic; set by the detector (high)
-    pub connected: u8,
+    #[doc(hidden)]
+    pub __connected: [u8; 1],
     unknown_CD: [u8; 11],
     /// +0xD8 `undefined1`, semantic; copy of +0x100..+0x127 from the previous frame (+0xdc buttons) (high)
-    pub prevState: [u8; 40],
+    #[doc(hidden)]
+    pub __prevState: [u8; 40],
     /// +0x100 `undefined1`, semantic; XINPUT_STATE: +0x104 buttons, +0x106/+0x107 triggers, +0x108.. thumbs (high)
-    pub xinputState: [u8; 16],
+    #[doc(hidden)]
+    pub __xinputState: [u8; 16],
     /// +0x110 `float`, semantic; 0..1 after fTriggerDeadzone (high)
-    pub leftTrigger: f32,
+    #[doc(hidden)]
+    pub __leftTrigger: [u8; 4],
     /// +0x114 `float`, semantic; 0..1 (high)
-    pub rightTrigger: f32,
+    #[doc(hidden)]
+    pub __rightTrigger: [u8; 4],
     /// +0x118 `undefined8`, semantic; x, y floats after the radial deadzone (high)
-    pub leftStick: u64,
+    #[doc(hidden)]
+    pub __leftStick: [u8; 8],
     /// +0x120 `undefined8`, semantic; x, y floats (high)
-    pub rightStick: u64,
+    #[doc(hidden)]
+    pub __rightStick: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -395,13 +404,13 @@ const _: () = assert!(core::mem::offset_of!(BSWin32GamepadDevice, field_58) == 0
 const _: () = assert!(core::mem::offset_of!(BSWin32GamepadDevice, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BSWin32GamepadDevice, __source_BSGamepadEvent) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BSWin32GamepadDevice, userIndex) == 0xC8);
-const _: () = assert!(core::mem::offset_of!(BSWin32GamepadDevice, connected) == 0xCC);
-const _: () = assert!(core::mem::offset_of!(BSWin32GamepadDevice, prevState) == 0xD8);
-const _: () = assert!(core::mem::offset_of!(BSWin32GamepadDevice, xinputState) == 0x100);
-const _: () = assert!(core::mem::offset_of!(BSWin32GamepadDevice, leftTrigger) == 0x110);
-const _: () = assert!(core::mem::offset_of!(BSWin32GamepadDevice, rightTrigger) == 0x114);
-const _: () = assert!(core::mem::offset_of!(BSWin32GamepadDevice, leftStick) == 0x118);
-const _: () = assert!(core::mem::offset_of!(BSWin32GamepadDevice, rightStick) == 0x120);
+const _: () = assert!(core::mem::offset_of!(BSWin32GamepadDevice, __connected) == 0xCC);
+const _: () = assert!(core::mem::offset_of!(BSWin32GamepadDevice, __prevState) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(BSWin32GamepadDevice, __xinputState) == 0x100);
+const _: () = assert!(core::mem::offset_of!(BSWin32GamepadDevice, __leftTrigger) == 0x110);
+const _: () = assert!(core::mem::offset_of!(BSWin32GamepadDevice, __rightTrigger) == 0x114);
+const _: () = assert!(core::mem::offset_of!(BSWin32GamepadDevice, __leftStick) == 0x118);
+const _: () = assert!(core::mem::offset_of!(BSWin32GamepadDevice, __rightStick) == 0x120);
 
 /// `BSWin32KeyboardDevice`: size 0x370 (exact, medium); primary base `BSKeyboardDevice`.
 /// Meaning: DirectInput8 keyboard: buffered scan-code records, previous and current 256-byte state, ButtonEvents keyed by scan code, CharEvents through ToUnicode (high, input pass).
@@ -441,7 +450,8 @@ pub struct BSWin32KeyboardDevice {
     #[doc(hidden)]
     pub __bufferedData: [u8; 240],
     /// +0x168 `undefined1`, semantic, runtime; previous state per scan code (0x80 = down) (medium)
-    pub prevKeyState: [u8; 256],
+    #[doc(hidden)]
+    pub __prevKeyState: [u8; 256],
     /// +0x268 `undefined1`, semantic, runtime; current state per scan code (0x80 = down) (medium)
     pub keyState: [u8; 256],
     /// +0x368 `undefined1`, semantic; Caps Lock toggle for character translation (high)
@@ -463,7 +473,7 @@ const _: () = assert!(core::mem::offset_of!(BSWin32KeyboardDevice, field_58) == 
 const _: () = assert!(core::mem::offset_of!(BSWin32KeyboardDevice, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BSWin32KeyboardDevice, diDevice) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BSWin32KeyboardDevice, __bufferedData) == 0x78);
-const _: () = assert!(core::mem::offset_of!(BSWin32KeyboardDevice, prevKeyState) == 0x168);
+const _: () = assert!(core::mem::offset_of!(BSWin32KeyboardDevice, __prevKeyState) == 0x168);
 const _: () = assert!(core::mem::offset_of!(BSWin32KeyboardDevice, keyState) == 0x268);
 const _: () = assert!(core::mem::offset_of!(BSWin32KeyboardDevice, capsLockOn) == 0x368);
 
@@ -507,9 +517,11 @@ pub struct BSWin32MouseDevice {
     /// +0x80 `undefined1`, semantic; previous DIMOUSESTATE2: +0x80 dx, +0x84 dy, +0x88 wheel, +0x8c..+0x93 buttons (high)
     pub prevState: [u8; 20],
     /// +0x94 `undefined1`, semantic; current DIMOUSESTATE2: +0x94 dx, +0x98 dy, +0x9c wheel, +0xa0..+0xa7 buttons (high)
-    pub state: [u8; 20],
+    #[doc(hidden)]
+    pub __state: [u8; 20],
     /// +0xA8 `undefined1`, semantic; Poll does nothing while set (high)
-    pub reinitializing: u8,
+    #[doc(hidden)]
+    pub __reinitializing: [u8; 1],
     unknown_A9: [u8; 3],
     /// +0xAC `class:BSSpinLock`, semantic; owner thread +0xac, count +0xb0 (high)
     #[doc(hidden)]
@@ -532,8 +544,8 @@ const _: () = assert!(core::mem::offset_of!(BSWin32MouseDevice, field_68) == 0x6
 const _: () = assert!(core::mem::offset_of!(BSWin32MouseDevice, backgroundMouse) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BSWin32MouseDevice, diDevice) == 0x78);
 const _: () = assert!(core::mem::offset_of!(BSWin32MouseDevice, prevState) == 0x80);
-const _: () = assert!(core::mem::offset_of!(BSWin32MouseDevice, state) == 0x94);
-const _: () = assert!(core::mem::offset_of!(BSWin32MouseDevice, reinitializing) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(BSWin32MouseDevice, __state) == 0x94);
+const _: () = assert!(core::mem::offset_of!(BSWin32MouseDevice, __reinitializing) == 0xA8);
 const _: () = assert!(core::mem::offset_of!(BSWin32MouseDevice, __lock) == 0xAC);
 
 /// `BSWin32VirtualKeyboardDevice`: size 0x70 (exact, medium); primary base `BSVirtualKeyboardDevice`.
@@ -631,7 +643,8 @@ pub struct CommandTableEntry {
     /// +0x10 `undefined4`, semantic; keywords 0x10-0x1f, script functions 0x1000-0x12e1, console 0x100-0x2c1 (high)
     pub opcode: u32,
     /// +0x14 `undefined4`, semantic; padding (high)
-    pub pad14: u32,
+    #[doc(hidden)]
+    pub __pad14: [u8; 4],
     /// +0x18 `pointer`, semantic; help line ("" when none) (high)
     pub helpText: *mut c_void,
     /// +0x20 `undefined1`, semantic; the command runs on a reference (explicit 'x.' ref or the run's this-ref) (high)
@@ -655,7 +668,8 @@ pub struct CommandTableEntry {
     /// +0x48 `undefined4`, semantic; bit 0 on 15 script functions (meaning not established); bit 8 (byte +0x49) makes the run report true; see the flag rows (medium)
     pub flags: u32,
     /// +0x4C `undefined4`, semantic; padding (high)
-    pub pad4c: u32,
+    #[doc(hidden)]
+    pub __pad4c: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -663,7 +677,7 @@ const _: () = assert!(size_of::<CommandTableEntry>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(CommandTableEntry, name) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CommandTableEntry, shortName) == 0x8);
 const _: () = assert!(core::mem::offset_of!(CommandTableEntry, opcode) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CommandTableEntry, pad14) == 0x14);
+const _: () = assert!(core::mem::offset_of!(CommandTableEntry, __pad14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(CommandTableEntry, helpText) == 0x18);
 const _: () = assert!(core::mem::offset_of!(CommandTableEntry, referenceFunction) == 0x20);
 const _: () = assert!(core::mem::offset_of!(CommandTableEntry, __unk21) == 0x21);
@@ -674,26 +688,29 @@ const _: () = assert!(core::mem::offset_of!(CommandTableEntry, execute) == 0x30)
 const _: () = assert!(core::mem::offset_of!(CommandTableEntry, parse) == 0x38);
 const _: () = assert!(core::mem::offset_of!(CommandTableEntry, eval) == 0x40);
 const _: () = assert!(core::mem::offset_of!(CommandTableEntry, flags) == 0x48);
-const _: () = assert!(core::mem::offset_of!(CommandTableEntry, pad4c) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(CommandTableEntry, __pad4c) == 0x4C);
 
 /// `ConsoleCommandTask`: size 0x18 (exact).
 /// Meaning: one typed console line waiting in the thread-safe queue (high, input pass).
 /// Evidence: one typed console line waiting in the thread-safe queue; ; size: Console::ExecuteCommand 0x909e00 AllocateMemory(0x18) -> ctor 0x992640; RunQueuedConsoleCommands 0x9928f0 OperatorDelete(.., 0x18); not RTTI.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct ConsoleCommandTask {
     /// +0x0 `ptr:Script`, semantic; owned Script with the line as text; deleted through slot 0 after running (high)
-    pub script: *mut crate::Script,
+    #[doc(hidden)]
+    pub __script: [u8; 8],
     /// +0x8 `ptr:TESObjectREFR`, semantic; selected reference at submit time (refcount +0x28 held) (medium)
-    pub ref_: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
+    pub __ref_: [u8; 8],
     /// +0x10 `pointer`, semantic; g_ScriptCompiler (high)
-    pub compiler: *mut c_void,
+    #[doc(hidden)]
+    pub __compiler: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ConsoleCommandTask>() == 0x18);
-const _: () = assert!(core::mem::offset_of!(ConsoleCommandTask, script) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ConsoleCommandTask, ref_) == 0x8);
-const _: () = assert!(core::mem::offset_of!(ConsoleCommandTask, compiler) == 0x10);
+const _: () = assert!(core::mem::offset_of!(ConsoleCommandTask, __script) == 0x0);
+const _: () = assert!(core::mem::offset_of!(ConsoleCommandTask, __ref_) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ConsoleCommandTask, __compiler) == 0x10);
 
 /// `ConsoleOpenHandler`: size 0x10 (exact, medium); primary base `MenuEventHandler`.
 /// Meaning: MenuControls handler for user event Console: on the press edge (value != 0, heldDownSecs == 0) toggles the console (0x960e20 -> vfunc_7_sub0) and returns handled; processWhileModal (high, input pass).
@@ -755,7 +772,8 @@ const _: () = assert!(core::mem::offset_of!(DirectionHandler, __vftable) == 0x0)
 pub struct EventSourceHolder_User {
     unknown_0: [u8; 8],
     /// +0x8 `class:BSTEventSource`, semantic; BSTEventSource<UserEventEnabledEvent>; notified by SetControlsEnabled (high)
-    pub source_UserEventEnabledEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_UserEventEnabledEvent: [u8; 88],
     /// +0x60 `undefined1`, semantic; InputContext*[18], indexed by input context id (0..0x11); null until the definition file has a block for it (high)
     pub contexts: [u8; 144],
     /// +0xF0 `class:BSTArray`, semantic; BSTArray<LinkedMapping> (0x20 per record): mappings whose key is copied from another context's user event (high)
@@ -787,7 +805,7 @@ pub struct EventSourceHolder_User {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<EventSourceHolder_User>() == 0x130);
-const _: () = assert!(core::mem::offset_of!(EventSourceHolder_User, source_UserEventEnabledEvent) == 0x8);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_User, __source_UserEventEnabledEvent) == 0x8);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_User, contexts) == 0x60);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_User, __linkedMappings) == 0xF0);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_User, __contextStack) == 0x108);
@@ -825,7 +843,8 @@ pub struct HeldStateHandler {
     pub __vftable: *const crate::raw::vtables::HeldStateHandler_vtable,
     unknown_8: [u8; 8],
     /// +0x10 `undefined1`, semantic; button currently held (high)
-    pub heldStateActive: u8,
+    #[doc(hidden)]
+    pub __heldStateActive: [u8; 1],
     /// +0x11 `undefined1`, semantic; a synthetic ForceRelease must be sent (high)
     #[doc(hidden)]
     pub __releasePending: [u8; 1],
@@ -835,13 +854,13 @@ pub struct HeldStateHandler {
 }
 const _: () = assert!(size_of::<HeldStateHandler>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(HeldStateHandler, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(HeldStateHandler, heldStateActive) == 0x10);
+const _: () = assert!(core::mem::offset_of!(HeldStateHandler, __heldStateActive) == 0x10);
 const _: () = assert!(core::mem::offset_of!(HeldStateHandler, __releasePending) == 0x11);
 
 /// `InputContext`: size 0x90 (exact).
 /// Meaning: one input context's mapping tables: a sorted BSTArray<UserEventMapping> per device (high, input pass).
 /// Evidence: one input context's mapping tables: a sorted BSTArray<UserEventMapping> per device; every reader indexes context + device*0x18 with device < 3 (0xcef3b0, 0xcefbe0, 0xcefd90, 0xcefed0); only arrays 0..2 are read; size: ParseControlMapFile 0xcf17d0 Allocate(0x90) and constructs 6 arrays of 0x18; 0xcf03e0 frees it with OperatorDelete(p, 0x90).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct InputContext {
     /// +0x0 `class:BSTArray`, semantic; BSTArray<UserEventMapping> for device 0, sorted by inputKey (low word, then high word) (high)
     pub keyboardMappings: crate::BSTArray,
@@ -850,7 +869,8 @@ pub struct InputContext {
     /// +0x30 `class:BSTArray`, semantic; device 2 (high)
     pub gamepadMappings: crate::BSTArray,
     /// +0x48 `undefined1`, semantic; three more BSTArrays constructed and destroyed but never read (low)
-    pub unusedArrays: [u8; 72],
+    #[doc(hidden)]
+    pub __unusedArrays: [u8; 72],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -858,7 +878,7 @@ const _: () = assert!(size_of::<InputContext>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(InputContext, keyboardMappings) == 0x0);
 const _: () = assert!(core::mem::offset_of!(InputContext, mouseMappings) == 0x18);
 const _: () = assert!(core::mem::offset_of!(InputContext, gamepadMappings) == 0x30);
-const _: () = assert!(core::mem::offset_of!(InputContext, unusedArrays) == 0x48);
+const _: () = assert!(core::mem::offset_of!(InputContext, __unusedArrays) == 0x48);
 
 /// `InputEventQueue`: size 0x568 (exact).
 /// Meaning: per-frame pools of reusable input events and the singly linked list (head/tail) of this frame's events; devices append, Update dispatches the head and resets (high, input pass).
@@ -866,9 +886,11 @@ const _: () = assert!(core::mem::offset_of!(InputContext, unusedArrays) == 0x48)
 #[repr(C, align(8))]
 pub struct InputEventQueue {
     /// +0x0 `undefined4`, semantic; never written by the ctor or the reset (low)
-    pub unknown0: u32,
+    #[doc(hidden)]
+    pub __unknown0: [u8; 4],
     /// +0x4 `undefined4`, semantic; ButtonEvents used this frame (max 10) (high)
-    pub buttonCount: u32,
+    #[doc(hidden)]
+    pub __buttonCount: [u8; 4],
     /// +0x8 `undefined4`, semantic; CharEvents used (max 5) (high)
     #[doc(hidden)]
     pub __charCount: [u8; 4],
@@ -876,11 +898,14 @@ pub struct InputEventQueue {
     #[doc(hidden)]
     pub __mouseMoveCount: [u8; 4],
     /// +0x10 `undefined4`, semantic; ThumbstickEvents used (max 2) (high)
-    pub thumbstickCount: u32,
+    #[doc(hidden)]
+    pub __thumbstickCount: [u8; 4],
     /// +0x14 `undefined4`, semantic; DeviceConnectEvents used (max 1) (high)
-    pub deviceConnectCount: u32,
+    #[doc(hidden)]
+    pub __deviceConnectCount: [u8; 4],
     /// +0x18 `undefined4`, semantic; KinectEvents used (max 1) (high)
-    pub kinectCount: u32,
+    #[doc(hidden)]
+    pub __kinectCount: [u8; 4],
     /// +0x1C `undefined4`, semantic; SixaxisEvents used (max 2) (low)
     #[doc(hidden)]
     pub __sixaxisCount: [u8; 4],
@@ -927,13 +952,13 @@ pub struct InputEventQueue {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<InputEventQueue>() == 0x568);
-const _: () = assert!(core::mem::offset_of!(InputEventQueue, unknown0) == 0x0);
-const _: () = assert!(core::mem::offset_of!(InputEventQueue, buttonCount) == 0x4);
+const _: () = assert!(core::mem::offset_of!(InputEventQueue, __unknown0) == 0x0);
+const _: () = assert!(core::mem::offset_of!(InputEventQueue, __buttonCount) == 0x4);
 const _: () = assert!(core::mem::offset_of!(InputEventQueue, __charCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(InputEventQueue, __mouseMoveCount) == 0xC);
-const _: () = assert!(core::mem::offset_of!(InputEventQueue, thumbstickCount) == 0x10);
-const _: () = assert!(core::mem::offset_of!(InputEventQueue, deviceConnectCount) == 0x14);
-const _: () = assert!(core::mem::offset_of!(InputEventQueue, kinectCount) == 0x18);
+const _: () = assert!(core::mem::offset_of!(InputEventQueue, __thumbstickCount) == 0x10);
+const _: () = assert!(core::mem::offset_of!(InputEventQueue, __deviceConnectCount) == 0x14);
+const _: () = assert!(core::mem::offset_of!(InputEventQueue, __kinectCount) == 0x18);
 const _: () = assert!(core::mem::offset_of!(InputEventQueue, __sixaxisCount) == 0x1C);
 const _: () = assert!(core::mem::offset_of!(InputEventQueue, __motionGestureCount) == 0x20);
 const _: () = assert!(core::mem::offset_of!(InputEventQueue, __amiiboCount) == 0x24);
@@ -996,13 +1021,17 @@ const _: () = assert!(core::mem::offset_of!(KinectEvent, __heard) == 0x28);
 #[repr(C, align(8))]
 pub struct LinkedMapping {
     /// +0x0 `class:BSFixedString`, semantic; the linked record's own name (high)
-    pub userEvent: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __userEvent: [u8; 8],
     /// +0x8 `undefined4`, semantic; context of the linked record (high)
-    pub context: u32,
+    #[doc(hidden)]
+    pub __context: [u8; 4],
     /// +0xC `undefined4`, semantic; device column (high)
-    pub device: u32,
+    #[doc(hidden)]
+    pub __device: [u8; 4],
     /// +0x10 `undefined4`, semantic; context to copy the key from (high)
-    pub linkedContext: u32,
+    #[doc(hidden)]
+    pub __linkedContext: [u8; 4],
     unknown_14: [u8; 4],
     /// +0x18 `class:BSFixedString`, semantic; user event whose key is copied (high)
     #[doc(hidden)]
@@ -1011,10 +1040,10 @@ pub struct LinkedMapping {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LinkedMapping>() == 0x20);
-const _: () = assert!(core::mem::offset_of!(LinkedMapping, userEvent) == 0x0);
-const _: () = assert!(core::mem::offset_of!(LinkedMapping, context) == 0x8);
-const _: () = assert!(core::mem::offset_of!(LinkedMapping, device) == 0xC);
-const _: () = assert!(core::mem::offset_of!(LinkedMapping, linkedContext) == 0x10);
+const _: () = assert!(core::mem::offset_of!(LinkedMapping, __userEvent) == 0x0);
+const _: () = assert!(core::mem::offset_of!(LinkedMapping, __context) == 0x8);
+const _: () = assert!(core::mem::offset_of!(LinkedMapping, __device) == 0xC);
+const _: () = assert!(core::mem::offset_of!(LinkedMapping, __linkedContext) == 0x10);
 const _: () = assert!(core::mem::offset_of!(LinkedMapping, __linkedUserEvent) == 0x18);
 
 /// `LookHandler`: size 0xB8 (exact, medium); primary base `PlayerInputHandler`.
@@ -1201,11 +1230,13 @@ pub struct PlayerControls {
     pub __vftable_18: *const crate::raw::vtables::PlayerControls_vtable_18,
     unknown_20: [u8; 4],
     /// +0x24 `class:NiPoint2`, semantic; NiPoint2 movement input of the frame (PlayerControlsData starts here; handlers get this+0x24) (high); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2 movement input; ProcessEvent 0x7ad900 resets +0x24/+0x28
-    pub moveInput: crate::NiPoint2,
+    #[doc(hidden)]
+    pub __moveInput: [u8; 8],
     /// +0x2C `class:NiPoint2`, semantic; NiPoint2 look input of the frame (high); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2 look input; ThirdPersonState Update passes &PlayerControls+0x2c to ProcessLookInput(NiPoint2*)
     pub lookInput: crate::NiPoint2,
     /// +0x34 `undefined1`, semantic; copy of moveInput at the end of ProcessEvent (high)
-    pub prevMoveInput: [u8; 8],
+    #[doc(hidden)]
+    pub __prevMoveInput: [u8; 8],
     /// +0x3C `undefined1`, semantic; copy of lookInput (high)
     #[doc(hidden)]
     pub __prevLookInput: [u8; 8],
@@ -1221,7 +1252,8 @@ pub struct PlayerControls {
     #[doc(hidden)]
     pub __field_4B: [u8; 1],
     /// +0x4C `u8[2]`, semantic, runtime; POV switch locks: [0] 'Script' (povScriptMode), [1] 'Werewolf'. Non-zero in either makes CanSwitchPOV false (high)
-    pub bDisablePOVChange: [u8; 2],
+    #[doc(hidden)]
+    pub __bDisablePOVChange: [u8; 2],
     /// +0x4E `undefined1`, semantic; send a synthetic 'ForceRelease' ButtonEvent to every held-state handler marked +0x11 (high)
     #[doc(hidden)]
     pub __releaseHeldPending: [u8; 1],
@@ -1234,7 +1266,8 @@ pub struct PlayerControls {
     /// +0x58 `class:BSTArray`, semantic, runtime; BSTArray<PlayerInputHandler*> in dispatch order (high)
     pub handlers: crate::BSTArray,
     /// +0x70 `class:BSTArray`, semantic; subset that tracks a held button (slots 7/8) (high)
-    pub heldStateHandlers: crate::BSTArray,
+    #[doc(hidden)]
+    pub __heldStateHandlers: [u8; 24],
     /// +0x88 `class:BSTArray`, semantic; {handler, heldState byte +8, add byte +9} entries queued while dispatching (high)
     #[doc(hidden)]
     pub __pendingHandlerChanges: [u8; 24],
@@ -1286,21 +1319,21 @@ const _: () = assert!(core::mem::offset_of!(PlayerControls, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, __vftable_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, __vftable_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, __vftable_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(PlayerControls, moveInput) == 0x24);
+const _: () = assert!(core::mem::offset_of!(PlayerControls, __moveInput) == 0x24);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, lookInput) == 0x2C);
-const _: () = assert!(core::mem::offset_of!(PlayerControls, prevMoveInput) == 0x34);
+const _: () = assert!(core::mem::offset_of!(PlayerControls, __prevMoveInput) == 0x34);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, __prevLookInput) == 0x3C);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, pendingPitchDelta) == 0x44);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, autoMove) == 0x48);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, alwaysRun) == 0x49);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, hadInput) == 0x4A);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, __field_4B) == 0x4B);
-const _: () = assert!(core::mem::offset_of!(PlayerControls, bDisablePOVChange) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(PlayerControls, __bDisablePOVChange) == 0x4C);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, __releaseHeldPending) == 0x4E);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, __markHeldForRelease) == 0x4F);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, ignoreInput) == 0x50);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, handlers) == 0x58);
-const _: () = assert!(core::mem::offset_of!(PlayerControls, heldStateHandlers) == 0x70);
+const _: () = assert!(core::mem::offset_of!(PlayerControls, __heldStateHandlers) == 0x70);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, __pendingHandlerChanges) == 0x88);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, dispatching) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, __responseGraphs) == 0xA4);
@@ -1373,24 +1406,26 @@ const _: () = assert!(core::mem::offset_of!(RunHandler, __vftable) == 0x0);
 /// Meaning: MenuControls handler for Screenshot and Multi-Screenshot: on press sets +0x10 (Screenshot) and +0x11 (Multi-Screenshot), which RenderFrame tests and clears; processWhileModal (high, input pass).
 /// Evidence: runtime: 0x18 at 1 allocation sites.
 /// Bases: `MenuEventHandler`@0x0, `BSIntrusiveRefCounted`@0x8.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct ScreenshotHandler {
     /// +0x0 `vtbl:ScreenshotHandler:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ScreenshotHandler_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined1`, semantic; Screenshot pressed (high)
-    pub screenshotRequested: u8,
+    #[doc(hidden)]
+    pub __screenshotRequested: [u8; 1],
     /// +0x11 `undefined1`, semantic; Multi-Screenshot pressed (high)
-    pub multiScreenshotRequested: u8,
-    pub unknown_12: [u8; 6],
+    #[doc(hidden)]
+    pub __multiScreenshotRequested: [u8; 1],
+    unknown_12: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ScreenshotHandler>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ScreenshotHandler, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ScreenshotHandler, screenshotRequested) == 0x10);
-const _: () = assert!(core::mem::offset_of!(ScreenshotHandler, multiScreenshotRequested) == 0x11);
+const _: () = assert!(core::mem::offset_of!(ScreenshotHandler, __screenshotRequested) == 0x10);
+const _: () = assert!(core::mem::offset_of!(ScreenshotHandler, __multiScreenshotRequested) == 0x11);
 
 /// `Script`: size 0x80 (exact, medium); primary base `TESForm`.
 /// Meaning: TESForm (formType 0x13 SCPT) holding source text and compiled bytecode; each console line is compiled into a temporary Script (high, input pass).
@@ -1434,7 +1469,8 @@ pub struct Script {
     pub data: *mut c_void,
     unknown_48: [u8; 4],
     /// +0x4C `float`, semantic; quest-script delay countdown (medium)
-    pub delayTimer: f32,
+    #[doc(hidden)]
+    pub __delayTimer: [u8; 4],
     /// +0x50 `float`, semantic; time accumulated while delayed (medium)
     pub delayElapsed: f32,
     unknown_54: [u8; 4],
@@ -1462,7 +1498,7 @@ const _: () = assert!(core::mem::offset_of!(Script, __unk31) == 0x31);
 const _: () = assert!(core::mem::offset_of!(Script, __compiled) == 0x32);
 const _: () = assert!(core::mem::offset_of!(Script, text) == 0x38);
 const _: () = assert!(core::mem::offset_of!(Script, data) == 0x40);
-const _: () = assert!(core::mem::offset_of!(Script, delayTimer) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(Script, __delayTimer) == 0x4C);
 const _: () = assert!(core::mem::offset_of!(Script, delayElapsed) == 0x50);
 const _: () = assert!(core::mem::offset_of!(Script, ownerQuest) == 0x58);
 const _: () = assert!(core::mem::offset_of!(Script, refVariables) == 0x60);
@@ -1471,89 +1507,104 @@ const _: () = assert!(core::mem::offset_of!(Script, variables) == 0x70);
 /// `ScriptLineBuffer`: size 0x41C (exact).
 /// Meaning: one source line being compiled; the parse callback appends the parameter bytes to it (high, input pass).
 /// Evidence: one source line being compiled; the parse callback appends the parameter bytes to it; also built on the stack by CompileExpressionTokens 0x34b9f0; size: CompileNextLine 0x34b150 AllocateMemory(0x41c) and OperatorDelete(.., 0x41c); not RTTI.
-#[repr(C)]
+#[repr(C, align(4))]
 pub struct ScriptLineBuffer {
     /// +0x0 `undefined4`, semantic; line number (medium)
-    pub lineNumber: u32,
+    #[doc(hidden)]
+    pub __lineNumber: [u8; 4],
     /// +0x4 `undefined1`, semantic; line text (high)
-    pub text: [u8; 512],
+    #[doc(hidden)]
+    pub __text: [u8; 512],
     /// +0x204 `undefined4`, semantic; text length (high)
-    pub length: u32,
+    #[doc(hidden)]
+    pub __length: [u8; 4],
     /// +0x208 `undefined4`, semantic; parse position in text (high)
-    pub offset: u32,
+    #[doc(hidden)]
+    pub __offset: [u8; 4],
     /// +0x20C `undefined1`, semantic; compiled parameter bytes (high)
-    pub data: [u8; 512],
+    #[doc(hidden)]
+    pub __data: [u8; 512],
     /// +0x40C `undefined4`, semantic; bytes in data (high)
-    pub dataLen: u32,
+    #[doc(hidden)]
+    pub __dataLen: [u8; 4],
     /// +0x410 `undefined4`, semantic; command opcode of the line (high)
-    pub opcode: u32,
+    #[doc(hidden)]
+    pub __opcode: [u8; 4],
     /// +0x414 `undefined4`, semantic; explicit reference variable ('player.' prefix), 0 for none (high)
-    pub refIndex: u32,
-    pub unknown_418: [u8; 4],
+    #[doc(hidden)]
+    pub __refIndex: [u8; 4],
+    unknown_418: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ScriptLineBuffer>() == 0x41C);
-const _: () = assert!(core::mem::offset_of!(ScriptLineBuffer, lineNumber) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ScriptLineBuffer, text) == 0x4);
-const _: () = assert!(core::mem::offset_of!(ScriptLineBuffer, length) == 0x204);
-const _: () = assert!(core::mem::offset_of!(ScriptLineBuffer, offset) == 0x208);
-const _: () = assert!(core::mem::offset_of!(ScriptLineBuffer, data) == 0x20C);
-const _: () = assert!(core::mem::offset_of!(ScriptLineBuffer, dataLen) == 0x40C);
-const _: () = assert!(core::mem::offset_of!(ScriptLineBuffer, opcode) == 0x410);
-const _: () = assert!(core::mem::offset_of!(ScriptLineBuffer, refIndex) == 0x414);
+const _: () = assert!(core::mem::offset_of!(ScriptLineBuffer, __lineNumber) == 0x0);
+const _: () = assert!(core::mem::offset_of!(ScriptLineBuffer, __text) == 0x4);
+const _: () = assert!(core::mem::offset_of!(ScriptLineBuffer, __length) == 0x204);
+const _: () = assert!(core::mem::offset_of!(ScriptLineBuffer, __offset) == 0x208);
+const _: () = assert!(core::mem::offset_of!(ScriptLineBuffer, __data) == 0x20C);
+const _: () = assert!(core::mem::offset_of!(ScriptLineBuffer, __dataLen) == 0x40C);
+const _: () = assert!(core::mem::offset_of!(ScriptLineBuffer, __opcode) == 0x410);
+const _: () = assert!(core::mem::offset_of!(ScriptLineBuffer, __refIndex) == 0x414);
 
 /// `ScriptParamTypeInfo`: size 0x8 (exact).
 /// Meaning: per-type flags of the parameter types (high, input pass).
 /// Evidence: per-type flags of the parameter types; g_ScriptParamTypeInfo 0x2095dd0; size: indexed type*8 at 0x2095dd4/0x2095dd5 by 0x347ac0 and 0x344ca0; 0x54 entries whose +0 equals the index; not RTTI.
-#[repr(C)]
+#[repr(C, align(4))]
 pub struct ScriptParamTypeInfo {
     /// +0x0 `undefined4`, semantic; equals the index (high)
-    pub typeCode: u32,
+    #[doc(hidden)]
+    pub __typeCode: [u8; 4],
     /// +0x4 `undefined1`, semantic; numeric expression (literal or variable allowed); set for 1, 2, 0x17, 0x48 (high)
-    pub numeric: u8,
+    #[doc(hidden)]
+    pub __numeric: [u8; 1],
     /// +0x5 `undefined1`, semantic; form argument, compiled as 'r' + u16 reference-variable index (high)
     pub isForm: u8,
-    pub unknown_6: [u8; 2],
+    unknown_6: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ScriptParamTypeInfo>() == 0x8);
-const _: () = assert!(core::mem::offset_of!(ScriptParamTypeInfo, typeCode) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ScriptParamTypeInfo, numeric) == 0x4);
+const _: () = assert!(core::mem::offset_of!(ScriptParamTypeInfo, __typeCode) == 0x0);
+const _: () = assert!(core::mem::offset_of!(ScriptParamTypeInfo, __numeric) == 0x4);
 const _: () = assert!(core::mem::offset_of!(ScriptParamTypeInfo, isForm) == 0x5);
 
 /// `ScriptRunContext`: size 0x60 (exact).
 /// Meaning: per-run state of the bytecode interpreter (medium, input pass).
 /// Evidence: per-run state of the bytecode interpreter; filled by ScriptRunner::Run 0x385b40; size: RunWithReentrantScriptContext 0x386f20 AllocateMemory(0x60) / OperatorDelete(.., 0x60); not RTTI.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct ScriptRunContext {
     /// +0x0 `ptr:TESObjectREFR`, semantic; passed to execute as arg 3 (0 for console lines) (medium)
-    pub containingObj: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
+    pub __containingObj: [u8; 8],
     /// +0x8 `ptr:TESForm`, semantic; base object of thisRef (ref+0x40) (medium)
-    pub thisBase: *mut crate::TESForm,
+    #[doc(hidden)]
+    pub __thisBase: [u8; 8],
     /// +0x10 `pointer`, semantic; variables; created (0x28 bytes) when the caller passes none (medium)
     pub locals: *mut c_void,
-    pub unknown_18: [u8; 8],
+    unknown_18: [u8; 8],
     /// +0x20 `ptr:Script`, semantic; running script (reentrancy guard) (medium)
-    pub script: *mut crate::Script,
-    pub unknown_28: [u8; 8],
+    #[doc(hidden)]
+    pub __script: [u8; 8],
+    unknown_28: [u8; 8],
     /// +0x30 `undefined4`, semantic; if/else nesting (low)
-    pub ifDepth: u32,
-    pub unknown_34: [u8; 41],
+    #[doc(hidden)]
+    pub __ifDepth: [u8; 4],
+    unknown_34: [u8; 41],
     /// +0x5D `undefined1`, semantic; set when a command with flags byte +0x49 ran; Run's return value (medium)
-    pub reportFlag: u8,
-    pub unknown_5E: [u8; 2],
+    #[doc(hidden)]
+    pub __reportFlag: [u8; 1],
+    unknown_5E: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ScriptRunContext>() == 0x60);
-const _: () = assert!(core::mem::offset_of!(ScriptRunContext, containingObj) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ScriptRunContext, thisBase) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ScriptRunContext, __containingObj) == 0x0);
+const _: () = assert!(core::mem::offset_of!(ScriptRunContext, __thisBase) == 0x8);
 const _: () = assert!(core::mem::offset_of!(ScriptRunContext, locals) == 0x10);
-const _: () = assert!(core::mem::offset_of!(ScriptRunContext, script) == 0x20);
-const _: () = assert!(core::mem::offset_of!(ScriptRunContext, ifDepth) == 0x30);
-const _: () = assert!(core::mem::offset_of!(ScriptRunContext, reportFlag) == 0x5D);
+const _: () = assert!(core::mem::offset_of!(ScriptRunContext, __script) == 0x20);
+const _: () = assert!(core::mem::offset_of!(ScriptRunContext, __ifDepth) == 0x30);
+const _: () = assert!(core::mem::offset_of!(ScriptRunContext, __reportFlag) == 0x5D);
 
 /// `ShoutHandler`: size 0x20 (exact, medium); primary base `PlayerInputHandler`.
 /// Meaning: user events Shout and KinectShout (slot 6 0x7b3960), refused on a non-flying mount (high, input pass).
@@ -1752,7 +1803,8 @@ pub struct TogglePOVHandler {
     #[doc(hidden)]
     pub __pad_12: [u8; 6],
     /// +0x18 `undefined1`, semantic; Toggle POV pressed and not yet released (high)
-    pub pressed: u8,
+    #[doc(hidden)]
+    pub __pressed: [u8; 1],
     /// +0x19 `undefined1`, semantic; tail padding after pressed (+0x18) to 0x20 (high)
     #[doc(hidden)]
     pub __pad_19: [u8; 7],
@@ -1766,7 +1818,7 @@ const _: () = assert!(core::mem::offset_of!(TogglePOVHandler, __pad_9) == 0x9);
 const _: () = assert!(core::mem::offset_of!(TogglePOVHandler, __heldStateActive) == 0x10);
 const _: () = assert!(core::mem::offset_of!(TogglePOVHandler, __releasePending) == 0x11);
 const _: () = assert!(core::mem::offset_of!(TogglePOVHandler, __pad_12) == 0x12);
-const _: () = assert!(core::mem::offset_of!(TogglePOVHandler, pressed) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TogglePOVHandler, __pressed) == 0x18);
 const _: () = assert!(core::mem::offset_of!(TogglePOVHandler, __pad_19) == 0x19);
 
 /// `ToggleRunHandler`: size 0x10 (exact, medium); primary base `PlayerInputHandler`.
@@ -1788,23 +1840,25 @@ const _: () = assert!(core::mem::offset_of!(ToggleRunHandler, __vftable) == 0x0)
 /// `UserEventEnabledEvent`: size 0x8 (exact).
 /// Meaning: event sent through ControlMap+8 after every SetControlsEnabled (high, input pass).
 /// Evidence: event sent through ControlMap+8 after every SetControlsEnabled; 0xcefaa0 builds {new +0x120, old +0x120}; HUDMenu sink 0x936410 reads byte +0 bit 0 and byte +4 bit 0; PlayerCharacter sink 0x75ea90 reads bits 7 and 6 of +0; size: SetControlsEnabled 0xcefaa0 notifies with &local_res8, two adjacent dwords (new at res8, old at resc).
-#[repr(C)]
+#[repr(C, align(4))]
 pub struct UserEventEnabledEvent {
     /// +0x0 `undefined4`, semantic; enabledControls after the change (high)
-    pub newEnabled: u32,
+    #[doc(hidden)]
+    pub __newEnabled: [u8; 4],
     /// +0x4 `undefined4`, semantic; enabledControls before the change (high)
-    pub oldEnabled: u32,
+    #[doc(hidden)]
+    pub __oldEnabled: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UserEventEnabledEvent>() == 0x8);
-const _: () = assert!(core::mem::offset_of!(UserEventEnabledEvent, newEnabled) == 0x0);
-const _: () = assert!(core::mem::offset_of!(UserEventEnabledEvent, oldEnabled) == 0x4);
+const _: () = assert!(core::mem::offset_of!(UserEventEnabledEvent, __newEnabled) == 0x0);
+const _: () = assert!(core::mem::offset_of!(UserEventEnabledEvent, __oldEnabled) == 0x4);
 
 /// `UserEventMapping`: size 0x18 (exact).
 /// Meaning: one line of ControlMap.txt for one device (high, input pass).
 /// Evidence: one line of ControlMap.txt for one device; 0xcf17d0 fills: name, key from the device column, line ordinal, remappable column, linked flag, group flags column; size: array stride 0x18 in every reader (0xcef3b0, 0xcf17d0 inserts 0x18-byte records); run-input: ids are DirectInput scan codes (E 0x12, W 0x11, Tab 0xf); the user event names match context 0's keyboard mappings: E Activate, W Forward, Tab Tween Menu; once the TweenMenu is open Tab maps to Cancel (the first Tab's release frame and every frame of the second).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct UserEventMapping {
     /// +0x0 `class:BSFixedString`, semantic; user event name (first column) (high)
     pub userEvent: crate::BSFixedString,
@@ -1813,13 +1867,16 @@ pub struct UserEventMapping {
     /// +0xC `undefined1`, semantic; ordinal of the line within its context; the key of the remap file entries (high)
     pub lineIndex: u8,
     /// +0xD `undefined1`, semantic; user may rebind it (remap columns of the file) (high)
-    pub remappable: u8,
+    #[doc(hidden)]
+    pub __remappable: [u8; 1],
     /// +0xE `undefined1`, semantic; key column was '!ctx,name': key copied from another context (high)
-    pub linked: u8,
-    pub unknown_F: [u8; 1],
+    #[doc(hidden)]
+    pub __linked: [u8; 1],
+    unknown_F: [u8; 1],
     /// +0x10 `undefined4`, semantic; control-group bits the mapping needs enabled; -1 = always (default when the column is missing) (high)
-    pub groupFlags: u32,
-    pub unknown_14: [u8; 4],
+    #[doc(hidden)]
+    pub __groupFlags: [u8; 4],
+    unknown_14: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1827,9 +1884,9 @@ const _: () = assert!(size_of::<UserEventMapping>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(UserEventMapping, userEvent) == 0x0);
 const _: () = assert!(core::mem::offset_of!(UserEventMapping, inputKey) == 0x8);
 const _: () = assert!(core::mem::offset_of!(UserEventMapping, lineIndex) == 0xC);
-const _: () = assert!(core::mem::offset_of!(UserEventMapping, remappable) == 0xD);
-const _: () = assert!(core::mem::offset_of!(UserEventMapping, linked) == 0xE);
-const _: () = assert!(core::mem::offset_of!(UserEventMapping, groupFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(UserEventMapping, __remappable) == 0xD);
+const _: () = assert!(core::mem::offset_of!(UserEventMapping, __linked) == 0xE);
+const _: () = assert!(core::mem::offset_of!(UserEventMapping, __groupFlags) == 0x10);
 
 /// `UserEventNames`: size 0x340 (exact).
 /// Meaning: table of the user event BSFixedStrings; offsets in enum UserEventNameOffsets. g_UserEventNames 0x32048d0 points at it (high, input pass).

@@ -114,44 +114,47 @@ const _: () = assert!(core::mem::offset_of!(BGSBaseAlias, aliasID) == 0x18);
 /// `BSScrapArray`: size 0x20 (exact).
 /// Meaning: array on the scrap heap; IFunctionArguments fills a BSScrapArray<BSScript::Variable> (high, papyrus pass).
 /// Evidence: array on the scrap heap; IFunctionArguments fills a BSScrapArray<BSScript::Variable>; the resize helper 0x9d5630 (IFunctionArguments implementations call it with the argument count): data at +8, capacity u32 at +0x10, size u32 at +0x18; growth through the scrap-heap allocator functor; shrinking resets the dropped Variables.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSScrapArray {
-    pub unknown_0: [u8; 8],
+    unknown_0: [u8; 8],
     /// +0x8 `pointer`, semantic; the elements (Variables are 0x10 each) (high)
     pub data: *mut c_void,
     /// +0x10 `undefined4`, semantic; allocated element count (high)
-    pub capacity: u32,
-    pub unknown_14: [u8; 4],
+    #[doc(hidden)]
+    pub __capacity: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined4`, semantic; element count (high)
-    pub size: u32,
-    pub unknown_1C: [u8; 4],
+    #[doc(hidden)]
+    pub __size: [u8; 4],
+    unknown_1C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScrapArray>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScrapArray, data) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScrapArray, capacity) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSScrapArray, size) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSScrapArray, __capacity) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScrapArray, __size) == 0x18);
 
 /// `BSScript::Array`: size 0x20 (exact).
 /// Meaning: a Papyrus array: reference count, element type, size, the element Variables inline after the 0x20 header (high, papyrus pass).
 /// Evidence: a Papyrus array: reference count, element type, size, the element Variables inline after the 0x20 header; request 4e: CreateArrayAndTrack 0x14bd670 allocates 0x20 + size * 0x10 bytes from the global heap and InitTypedArrayObject 0x149c290 fills it; the elements are Variables stored inline after the header, element i at +0x20 + i * 0x10, each initialised to {element type, 0} (a None element of a form array holds {the class ObjectTypeInfo* with bit 0 clear, 0}); references are held through BSTSmartPointer (locked add on +0; at zero ResetArrayElementVariables 0x149bce0 resets the elements and FreeMemory frees the block); every element Variable carries its own type (assign replaces it), so the header's element type is what the creator passed: the script extender's natives pass None; run-papyrus-4e: the tracer-created Int[3] read {2, 3, 3, 0, 0, then three {3, 0}}, the arrays DevBench received back from StringUtil.Split, utility.CreateFormArray(2, None) and utility.ResizeIntArray held {2, 0, size} with elements {2, string}, {Form ObjectTypeInfo, 0} and {3, 1}.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSScript__Array {
     /// +0x0 `undefined4`, semantic; BSTSmartPointer count; a new array has 2 (the creator's pointer and the VM's tracking list at +0x9408, pruned in VirtualMachine::Update once only the list holds it) (high)
     pub refCount: u32,
-    pub unknown_4: [u8; 4],
+    unknown_4: [u8; 4],
     /// +0x8 `class:BSScript::TypeInfo`, semantic; the element type the creator passed (raw code, or ObjectTypeInfo* with bit 0 clear); None for the script extender's arrays (high)
-    pub elementType: crate::BSScript__TypeInfo,
+    #[doc(hidden)]
+    pub __elementType: [u8; 8],
     /// +0x10 `undefined4`, semantic; element count (high)
     pub size: u32,
-    pub unknown_14: [u8; 12],
+    unknown_14: [u8; 12],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Array>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__Array, refCount) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSScript__Array, elementType) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSScript__Array, __elementType) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSScript__Array, size) == 0x10);
 
 /// `BSScript::IFunctionArguments`: size 0x8 (exact, low).
@@ -265,17 +268,20 @@ pub struct BSScript__Internal__VirtualMachine {
     pub __field_258: [u8; 8],
     unknown_260: [u8; 32704],
     /// +0x8220 `undefined40`, semantic; the function-message queue object (its vtable here; slot 1 push, slot 4 pop) (medium)
-    pub functionMessageQueue: [u8; 40],
+    #[doc(hidden)]
+    pub __functionMessageQueue: [u8; 40],
     /// +0x8248 `undefined24`, semantic; BSTArray<FunctionMessage> used when the queue is full: data +0, capacity +8, size +0x10; 0x18 per message (high)
     #[doc(hidden)]
     pub __functionMessageOverflow: [u8; 24],
     /// +0x8260 `undefined24`, semantic; BSTArray<CodeTasklet*>: data +0, capacity +8 (0x8268), size +0x10 (0x8270) (high)
-    pub pendingTasklets: [u8; 24],
+    #[doc(hidden)]
+    pub __pendingTasklets: [u8; 24],
     /// +0x8278 `u32`, semantic; function messages queued and not yet popped (high)
     #[doc(hidden)]
     pub __queuedMessageCount: [u8; 4],
     /// +0x827C `undefined2`, ctor store
-    pub field_827C: u16,
+    #[doc(hidden)]
+    pub __field_827C: [u8; 2],
     unknown_827E: [u8; 2],
     /// +0x8280 `undefined8`, member ctor BSTCommonStaticMessageQueue<BSScript::Internal::SuspendedStack,128>
     pub m_SuspendedStack_128__8280: u64,
@@ -411,11 +417,11 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, 
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, __field_218) == 0x218);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, __field_238) == 0x238);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, __field_258) == 0x258);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, functionMessageQueue) == 0x8220);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, __functionMessageQueue) == 0x8220);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, __functionMessageOverflow) == 0x8248);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, pendingTasklets) == 0x8260);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, __pendingTasklets) == 0x8260);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, __queuedMessageCount) == 0x8278);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, field_827C) == 0x827C);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, __field_827C) == 0x827C);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, m_SuspendedStack_128__8280) == 0x8280);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, field_8288) == 0x8288);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, field_8A90) == 0x8A90);
@@ -521,45 +527,49 @@ const _: () = assert!(core::mem::offset_of!(BSScript__NF_util__NativeFunctionBas
 /// `BSScript::NF_util::ParamInfo`: size 0x10 (exact).
 /// Meaning: one parameter of a native: name and type (high, papyrus pass).
 /// Evidence: one parameter of a native: name and type; NativeFunctionBase::ctor allocates count*0x10+8 bytes (count in the first qword, entries after it) and names the entries a0..a10 from statics; GetParam reads +0 and +8 of entry index; run-papyrus natives.csv paramTypes come from +8 of the first three entries.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSScript__NF_util__ParamInfo {
     /// +0x0 `class:BSFixedString`, semantic; parameter name (the script's declared names come from the .pex, natives get a0, a1, ...) (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x8 `class:BSScript::TypeInfo`, semantic; parameter type (high)
     pub type_: crate::BSScript__TypeInfo,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NF_util__ParamInfo>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSScript__NF_util__ParamInfo, name) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSScript__NF_util__ParamInfo, __name) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__NF_util__ParamInfo, type_) == 0x8);
 
 /// `BSScript::Object`: size 0x30 (exact).
 /// Meaning: a script object bound to a handle: type, handle, reference count (bit 31 is the spin lock), variables after the header (high, papyrus pass).
 /// Evidence: a script object bound to a handle: type, handle, reference count (bit 31 is the spin lock), variables after the header; header of a script object; the Variables of its properties and script variables follow at +0x30 (ObjectTypeInfo::GetTotalNumVariables of them, 0x10 each); run-papyrus: the player's Actor object read behind the executor's self Variable: +0 7, +8 the Actor ObjectTypeInfo, +0x18 the running stack, +0x20 handle 0xffff00000014, +0x28 count 0x9e-0x9f.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSScript__Object {
     /// +0x0 `undefined4`, semantic; bit 0 set once the variables are constructed (the destructor only resets them then); 7 on the live player object (medium)
-    pub flags: u32,
-    pub unknown_4: [u8; 4],
+    #[doc(hidden)]
+    pub __flags: [u8; 4],
+    unknown_4: [u8; 4],
     /// +0x8 `ptr:BSScript::ObjectTypeInfo`, semantic; BSTSmartPointer<ObjectTypeInfo> (high)
     pub type_: *mut crate::BSScript__ObjectTypeInfo,
-    pub unknown_10: [u8; 8],
+    unknown_10: [u8; 8],
     /// +0x18 `pointer`, semantic; the stack running on the object (bit 0 used as a flag; the dtor masks it off) (medium)
-    pub currentStack: *mut c_void,
+    #[doc(hidden)]
+    pub __currentStack: [u8; 8],
     /// +0x20 `undefined8`, semantic; the IObjectHandlePolicy handle the object is bound to; GetHandle (0x148e250) reads it under the lock bit (high)
-    pub handle: u64,
+    #[doc(hidden)]
+    pub __handle: [u8; 8],
     /// +0x28 `undefined4`, semantic; reference count in bits 0-30, bit 31 the spin lock IncRef/DecRef/GetHandle take; IncRef calls PersistHandle when the count goes 1 -> 2, DecRef ReleaseHandle on 2 -> 1 (high)
     pub refCountAndLock: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Object>() == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__Object, flags) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSScript__Object, __flags) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__Object, type_) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__Object, currentStack) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSScript__Object, handle) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSScript__Object, __currentStack) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSScript__Object, __handle) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__Object, refCountAndLock) == 0x28);
 
 /// `BSScript::ObjectTypeInfo`: size 0x38 (exact).
@@ -568,7 +578,8 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Object, refCountAndLock) =
 #[repr(C, align(8))]
 pub struct BSScript__ObjectTypeInfo {
     /// +0x0 `undefined4`, semantic; BSTSmartPointer count (high)
-    pub refCount: u32,
+    #[doc(hidden)]
+    pub __refCount: [u8; 4],
     unknown_4: [u8; 4],
     /// +0x8 `class:BSFixedString`, semantic; the class name (high)
     pub name: crate::BSFixedString,
@@ -586,118 +597,142 @@ pub struct BSScript__ObjectTypeInfo {
     pub __counts2: [u8; 4],
     unknown_2C: [u8; 4],
     /// +0x30 `pointer`, semantic; linked: the tables of variables, properties and per-state functions; unlinked: head of the singly linked list {next, IFunction*} of natives bound before the script loaded (high)
-    pub data: *mut c_void,
+    #[doc(hidden)]
+    pub __data: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__ObjectTypeInfo>() == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSScript__ObjectTypeInfo, refCount) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSScript__ObjectTypeInfo, __refCount) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__ObjectTypeInfo, name) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSScript__ObjectTypeInfo, parent) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__ObjectTypeInfo, string18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__ObjectTypeInfo, linkedAndVariables) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__ObjectTypeInfo, __counts) == 0x24);
 const _: () = assert!(core::mem::offset_of!(BSScript__ObjectTypeInfo, __counts2) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSScript__ObjectTypeInfo, data) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSScript__ObjectTypeInfo, __data) == 0x30);
 
 /// `BSScript::Stack`: size 0xA0 (exact).
 /// Meaning: a running script stack: pages of Variables, the frame chain, the return value, the id the VM hands to natives and the completion callback (medium, papyrus pass).
 /// Evidence: a running script stack: pages of Variables, the frame chain, the return value, the id the VM hands to natives and the completion callback; allocated with 0xa0 and constructed by 0x149e2a0 (page policy, profile policy, id, a flag, the callback smart pointer); Call reads the top frame at +0x60, the return Variable at +0x70 and the id at +0x80; GetPageForFrame/GetStackFrameVariable walk the page array at +0x20 (+0x18 negative while the pages are not inline) with the count at +0x50; run-papyrus stack heads behind the frames read +8 = g_SkyrimVM+0x228 (the page policy).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSScript__Stack {
     /// +0x0 `undefined4`, semantic; BSTSmartPointer count (high)
-    pub refCount: u32,
-    pub unknown_4: [u8; 4],
+    #[doc(hidden)]
+    pub __refCount: [u8; 4],
+    unknown_4: [u8; 4],
     /// +0x8 `pointer`, semantic; the VM's page policy (SkyrimVM+0x228) (high)
-    pub memoryPagePolicy: *mut c_void,
+    #[doc(hidden)]
+    pub __memoryPagePolicy: [u8; 8],
     /// +0x10 `pointer`, semantic; the VM's profiler or null (high)
-    pub profilePolicy: *mut c_void,
+    #[doc(hidden)]
+    pub __profilePolicy: [u8; 8],
     /// +0x18 `undefined4`, semantic; 0x80000000 from the ctor: negative while the page array lives at +0x20 itself rather than behind the pointer there (medium)
-    pub pagesInline: u32,
-    pub unknown_1C: [u8; 4],
+    #[doc(hidden)]
+    pub __pagesInline: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `pointer`, semantic; the page array (0x10 per page: data pointer, size) (medium)
-    pub pages: *mut c_void,
-    pub unknown_28: [u8; 40],
+    #[doc(hidden)]
+    pub __pages: [u8; 8],
+    unknown_28: [u8; 40],
     /// +0x50 `undefined4`, semantic; number of pages (medium)
-    pub pageCount: u32,
-    pub unknown_54: [u8; 4],
+    #[doc(hidden)]
+    pub __pageCount: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `undefined4`, semantic; number of frames; the completion runs when it reaches 0 (high)
-    pub frameCount: u32,
-    pub unknown_5C: [u8; 4],
+    #[doc(hidden)]
+    pub __frameCount: [u8; 4],
+    unknown_5C: [u8; 4],
     /// +0x60 `ptr:BSScript::StackFrame`, semantic; the innermost frame (high)
-    pub top: *mut crate::BSScript__StackFrame,
+    #[doc(hidden)]
+    pub __top: [u8; 8],
     /// +0x68 `undefined4`, semantic; 0 running, 1 once the last frame returned, 3 waiting on a latent native, 5-8 queued or suspended states set by CompleteStack and the executor (medium)
-    pub state: u32,
+    #[doc(hidden)]
+    pub __state: [u8; 4],
     /// +0x6C `u32`, semantic; freeze request: see enum StackFreezeMark (high)
-    pub freezeMark: u32,
+    #[doc(hidden)]
+    pub __freezeMark: [u8; 4],
     /// +0x70 `class:BSScript::Variable`, semantic; the value CallBinding produced, copied here by Call (high)
-    pub returnValue: crate::BSScript__Variable,
+    #[doc(hidden)]
+    pub __returnValue: [u8; 16],
     /// +0x80 `undefined4`, semantic; the id natives receive as their second argument and ReturnFromLatent takes back (high)
-    pub stackID: u32,
+    #[doc(hidden)]
+    pub __stackID: [u8; 4],
     /// +0x84 `u32`, semantic; why the stack exists: see enum StackKind (high)
-    pub kind: u32,
+    #[doc(hidden)]
+    pub __kind: [u8; 4],
     /// +0x88 `ptr:BSScript::Internal::CodeTasklet`, semantic; BSTSmartPointer<CodeTasklet> that interprets this stack's script frames (high)
-    pub tasklet: *mut crate::BSScript__Internal__CodeTasklet,
+    #[doc(hidden)]
+    pub __tasklet: [u8; 8],
     /// +0x90 `pointer`, semantic; BSTSmartPointer<IStackCallbackFunctor>: the completion callback of DispatchStaticCall/DispatchMethodCall (null allowed); the ctor 0x149e2a0 takes a reference, DestroyStack 0x149e350 drops it (high)
-    pub callback: *mut c_void,
+    #[doc(hidden)]
+    pub __callback: [u8; 8],
     /// +0x98 `ptr:BSScript::Stack`, semantic; BSTSmartPointer<Stack>: next stack in the VM's frozen list (VM+0x9390) (high)
-    pub frozenNext: *mut crate::BSScript__Stack,
+    #[doc(hidden)]
+    pub __frozenNext: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Stack>() == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BSScript__Stack, refCount) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSScript__Stack, memoryPagePolicy) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__Stack, profilePolicy) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSScript__Stack, pagesInline) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSScript__Stack, pages) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSScript__Stack, pageCount) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BSScript__Stack, frameCount) == 0x58);
-const _: () = assert!(core::mem::offset_of!(BSScript__Stack, top) == 0x60);
-const _: () = assert!(core::mem::offset_of!(BSScript__Stack, state) == 0x68);
-const _: () = assert!(core::mem::offset_of!(BSScript__Stack, freezeMark) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(BSScript__Stack, returnValue) == 0x70);
-const _: () = assert!(core::mem::offset_of!(BSScript__Stack, stackID) == 0x80);
-const _: () = assert!(core::mem::offset_of!(BSScript__Stack, kind) == 0x84);
-const _: () = assert!(core::mem::offset_of!(BSScript__Stack, tasklet) == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSScript__Stack, callback) == 0x90);
-const _: () = assert!(core::mem::offset_of!(BSScript__Stack, frozenNext) == 0x98);
+const _: () = assert!(core::mem::offset_of!(BSScript__Stack, __refCount) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSScript__Stack, __memoryPagePolicy) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSScript__Stack, __profilePolicy) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__Stack, __pagesInline) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSScript__Stack, __pages) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSScript__Stack, __pageCount) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__Stack, __frameCount) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BSScript__Stack, __top) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BSScript__Stack, __state) == 0x68);
+const _: () = assert!(core::mem::offset_of!(BSScript__Stack, __freezeMark) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(BSScript__Stack, __returnValue) == 0x70);
+const _: () = assert!(core::mem::offset_of!(BSScript__Stack, __stackID) == 0x80);
+const _: () = assert!(core::mem::offset_of!(BSScript__Stack, __kind) == 0x84);
+const _: () = assert!(core::mem::offset_of!(BSScript__Stack, __tasklet) == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSScript__Stack, __callback) == 0x90);
+const _: () = assert!(core::mem::offset_of!(BSScript__Stack, __frozenNext) == 0x98);
 
 /// `BSScript::StackFrame`: size 0x40 (exact).
 /// Meaning: one activation record: the arguments live in the stack's pages, located through Stack::GetPageForFrame and Stack::GetStackFrameVariable (medium, papyrus pass).
 /// Evidence: one activation record: the arguments live in the stack's pages, located through Stack::GetPageForFrame and Stack::GetStackFrameVariable; the sixth argument of NativeFunction<N>::CallBinding; run-papyrus dump-2/3/4-events.csv captured 0x80 bytes of it per call: +0 the Stack, +0x10 the IFunction being run (equal to CallBinding's this), +0x18 the ObjectTypeInfo, +0x28 the self Variable (equal to CallBinding's second argument), +0x38 the parameter count; the Stack helpers read +0 (0x149e7f0).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSScript__StackFrame {
     /// +0x0 `ptr:BSScript::Stack`, semantic; the stack the frame belongs to (high)
     pub owningStack: *mut crate::BSScript__Stack,
     /// +0x8 `pointer`, semantic; the calling frame or null (medium)
-    pub previousFrame: *mut c_void,
+    #[doc(hidden)]
+    pub __previousFrame: [u8; 8],
     /// +0x10 `pointer`, semantic; BSTSmartPointer<IFunction>: the function being run (high)
-    pub owningFunction: *mut c_void,
+    #[doc(hidden)]
+    pub __owningFunction: [u8; 8],
     /// +0x18 `ptr:BSScript::ObjectTypeInfo`, semantic; the class the function belongs to (high)
-    pub owningObjectType: *mut crate::BSScript__ObjectTypeInfo,
+    #[doc(hidden)]
+    pub __owningObjectType: [u8; 8],
     /// +0x20 `u32`, semantic; saved bytecode position: bit offset into the function's code stream (high)
-    pub ip: u32,
-    pub unknown_24: [u8; 4],
+    #[doc(hidden)]
+    pub __ip: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `class:BSScript::Variable`, semantic; the object the method runs on (None for a global) (high)
-    pub self_: crate::BSScript__Variable,
+    #[doc(hidden)]
+    pub __self_: [u8; 16],
     /// +0x38 `undefined4`, semantic; the number of Variables in the frame (parameters plus locals; the executors read parameter i below it) (high)
-    pub size: u32,
+    #[doc(hidden)]
+    pub __size: [u8; 4],
     /// +0x3C `u8`, semantic; 1 when the frame's function code may be loaded (medium)
-    pub codeValid: u8,
-    pub unknown_3D: [u8; 3],
+    #[doc(hidden)]
+    pub __codeValid: [u8; 1],
+    unknown_3D: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__StackFrame>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, owningStack) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, previousFrame) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, owningFunction) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, owningObjectType) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, ip) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, self_) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, size) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, codeValid) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, __previousFrame) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, __owningFunction) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, __owningObjectType) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, __ip) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, __self_) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, __size) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, __codeValid) == 0x3C);
 
 /// `BSScript::TypeInfo`: size 0x8 (exact).
 /// Meaning: a Papyrus type: raw code or ObjectTypeInfo pointer (bit 0 = array of it) (high, papyrus pass).
@@ -746,8 +781,7 @@ pub struct ExtraAliasInstanceArray {
     pub __capacity: [u8; 4],
     unknown_1C: [u8; 4],
     /// +0x20 `undefined4`, semantic, runtime; entry count (high)
-    #[doc(hidden)]
-    pub __count: [u8; 4],
+    pub count: u32,
     unknown_24: [u8; 4],
     /// +0x28 `class:BSReadWriteLock`, semantic; taken for read while visiting, for write while adding (high)
     pub lock: crate::BSReadWriteLock,
@@ -759,27 +793,28 @@ const _: () = assert!(core::mem::offset_of!(ExtraAliasInstanceArray, __vftable) 
 const _: () = assert!(core::mem::offset_of!(ExtraAliasInstanceArray, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(ExtraAliasInstanceArray, entries) == 0x10);
 const _: () = assert!(core::mem::offset_of!(ExtraAliasInstanceArray, __capacity) == 0x18);
-const _: () = assert!(core::mem::offset_of!(ExtraAliasInstanceArray, __count) == 0x20);
+const _: () = assert!(core::mem::offset_of!(ExtraAliasInstanceArray, count) == 0x20);
 const _: () = assert!(core::mem::offset_of!(ExtraAliasInstanceArray, lock) == 0x28);
 
 /// `ExtraAliasInstanceArray::Entry`: size 0x18 (exact).
 /// Meaning: one alias a reference fills (high, papyrus pass).
 /// Evidence: one alias a reference fills; request 4f: AddExtraAliasInstanceArrayEntry inserts (quest, alias, third argument); run-papyrus-4f ent0.bin: +0 the quest 0x40179e2, +8 its alias 1, +0x10 null.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct ExtraAliasInstanceArray__Entry {
     /// +0x0 `ptr:TESQuest`, semantic; the quest (high)
     pub quest: *mut crate::TESQuest,
     /// +0x8 `ptr:BGSBaseAlias`, semantic; the alias (BGSRefAlias for a reference alias) (high)
     pub alias: *mut crate::BGSBaseAlias,
     /// +0x10 `pointer`, semantic; the third value the adder stores (null in the run) (low)
-    pub data: *mut c_void,
+    #[doc(hidden)]
+    pub __data: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraAliasInstanceArray__Entry>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraAliasInstanceArray__Entry, quest) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ExtraAliasInstanceArray__Entry, alias) == 0x8);
-const _: () = assert!(core::mem::offset_of!(ExtraAliasInstanceArray__Entry, data) == 0x10);
+const _: () = assert!(core::mem::offset_of!(ExtraAliasInstanceArray__Entry, __data) == 0x10);
 
 /// `SkyrimScript::HandlePolicy`: size 0x70 (exact, high); primary base `BSScript::IObjectHandlePolicy`.
 /// Meaning: Skyrim's BSScript::IObjectHandlePolicy: encodes forms, inventory items, aliases and active effects as 64-bit handles and resolves them back (high, papyrus pass).

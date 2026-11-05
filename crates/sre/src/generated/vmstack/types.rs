@@ -51,7 +51,8 @@ pub struct BSScript__Internal__AutoPropGetFunction {
     #[doc(hidden)]
     pub __name: [u8; 8],
     /// +0x20 `undefined8`, semantic; TypeInfo (high)
-    pub returnType: u64,
+    #[doc(hidden)]
+    pub __returnType: [u8; 8],
     unknown_28: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -60,7 +61,7 @@ const _: () = assert!(size_of::<BSScript__Internal__AutoPropGetFunction>() == 0x
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__AutoPropGetFunction, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__AutoPropGetFunction, __objectTypeName) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__AutoPropGetFunction, __name) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__AutoPropGetFunction, returnType) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__AutoPropGetFunction, __returnType) == 0x20);
 
 /// `BSScript::Internal::AutoPropSetFunction`: size 0x30 (exact, high); primary base `BSScript::IFunction`.
 /// Meaning: the generated setter of an auto property (high, vmstack pass).
@@ -109,7 +110,8 @@ pub struct BSScript__Internal__CodeTasklet {
     pub state: u32,
     unknown_2C: [u8; 4],
     /// +0x30 `ptr:BSScript::StackFrame`, semantic, runtime; the frame being interpreted (the stack's top when loaded) (medium)
-    pub frame: *mut crate::BSScript__StackFrame,
+    #[doc(hidden)]
+    pub __frame: [u8; 8],
     /// +0x38 `u32`, semantic; page index of the frame (high)
     #[doc(hidden)]
     pub __framePage: [u8; 4],
@@ -117,16 +119,19 @@ pub struct BSScript__Internal__CodeTasklet {
     #[doc(hidden)]
     pub __jumpBits: [u8; 1],
     /// +0x3D `u8`, semantic; operand width parameter (medium)
-    pub operandBitsA: u8,
+    #[doc(hidden)]
+    pub __operandBitsA: [u8; 1],
     /// +0x3E `u8`, semantic; operand width parameter (medium)
-    pub operandBitsB: u8,
+    #[doc(hidden)]
+    pub __operandBitsB: [u8; 1],
     unknown_3F: [u8; 1],
     /// +0x40 `u32`, semantic; bytecode length in bits (high)
     #[doc(hidden)]
     pub __codeBits: [u8; 4],
     unknown_44: [u8; 4],
     /// +0x48 `pointer`, semantic; u64 words of the bytecode bit stream (high)
-    pub code: *mut c_void,
+    #[doc(hidden)]
+    pub __code: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -137,33 +142,36 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, sta
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, vm) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, errorLogger) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, state) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, frame) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, __frame) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, __framePage) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, __jumpBits) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, operandBitsA) == 0x3D);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, operandBitsB) == 0x3E);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, __operandBitsA) == 0x3D);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, __operandBitsB) == 0x3E);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, __codeBits) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, code) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, __code) == 0x48);
 
 /// `BSScript::Internal::FunctionMessage`: size 0x18 (exact).
 /// Meaning: a queued VM request: run a call on a stack, or complete a stack (high, vmstack pass).
 /// Evidence: a queued VM request: run a call on a stack, or complete a stack; RTTI name from BSTCommonMessageQueue<BSScript::Internal::FunctionMessage>; the static queue's element may be padded; size: overflow array stride 0x18 (AppendRefCountedEntry24, PopFunctionMessage).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSScript__Internal__FunctionMessage {
     /// +0x0 `u32`, semantic; see enum FunctionMessageKind (high)
-    pub kind: u32,
-    pub unknown_4: [u8; 4],
+    #[doc(hidden)]
+    pub __kind: [u8; 4],
+    unknown_4: [u8; 4],
     /// +0x8 `ptr:BSScript::Stack`, semantic; BSTSmartPointer<Stack> (high)
-    pub stack: *mut crate::BSScript__Stack,
+    #[doc(hidden)]
+    pub __stack: [u8; 8],
     /// +0x10 `pointer`, semantic; BSTSmartPointer<IFuncCallQuery> (null for kind 2) (high)
-    pub query: *mut c_void,
+    #[doc(hidden)]
+    pub __query: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__FunctionMessage>() == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__FunctionMessage, kind) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__FunctionMessage, stack) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__FunctionMessage, query) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__FunctionMessage, __kind) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__FunctionMessage, __stack) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__FunctionMessage, __query) == 0x10);
 
 /// `BSScript::Internal::NativeFunctionStub`: size 0x50 (exact, medium); primary base `BSScript::IFunction`.
 /// Meaning: a native declared in a .pex with no bound implementation; same field offsets as NativeFunctionBase up to +0x48 (medium, vmstack pass).
@@ -176,7 +184,8 @@ pub struct BSScript__Internal__NativeFunctionStub {
     pub __vftable: *const crate::raw::vtables::BSScript__Internal__NativeFunctionStub_vtable,
     unknown_8: [u8; 8],
     /// +0x10 `class:BSFixedString`, semantic; function name (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, semantic; class name (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -189,7 +198,7 @@ pub struct BSScript__Internal__NativeFunctionStub {
 }
 const _: () = assert!(size_of::<BSScript__Internal__NativeFunctionStub>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__NativeFunctionStub, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__NativeFunctionStub, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__NativeFunctionStub, __name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__NativeFunctionStub, __objectTypeName) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__NativeFunctionStub, __stateName) == 0x20);
 
@@ -290,7 +299,8 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, 
 #[repr(C, align(8))]
 pub struct BSScript__Internal__StackMapEntry {
     /// +0x0 `u32`, semantic; key (high)
-    pub stackID: u32,
+    #[doc(hidden)]
+    pub __stackID: [u8; 4],
     unknown_4: [u8; 4],
     /// +0x8 `ptr:BSScript::Stack`, semantic; BSTSmartPointer<Stack> (the map holds a reference) (high)
     #[doc(hidden)]
@@ -302,25 +312,27 @@ pub struct BSScript__Internal__StackMapEntry {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__StackMapEntry>() == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__StackMapEntry, stackID) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__StackMapEntry, __stackID) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__StackMapEntry, __stack) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__StackMapEntry, __next) == 0x10);
 
 /// `BSScript::Internal::SuspendedStack`: size 0x10 (exact).
 /// Meaning: a stack waiting to retry a call or a return, with the call query (high, vmstack pass).
 /// Evidence: a stack waiting to retry a call or a return, with the call query; RTTI name from BSTCommonStaticMessageQueue<BSScript::Internal::SuspendedStack,128>; size: QueueSuspendedStack writes {stack, query} at index * 0x10 (0x14bc7c0).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSScript__Internal__SuspendedStack {
     /// +0x0 `ptr:BSScript::Stack`, semantic; BSTSmartPointer<Stack> (high)
-    pub stack: *mut crate::BSScript__Stack,
+    #[doc(hidden)]
+    pub __stack: [u8; 8],
     /// +0x8 `pointer`, semantic; BSTSmartPointer<IFuncCallQuery> (a CodeTasklet or a RawFuncCallQuery) (high)
-    pub query: *mut c_void,
+    #[doc(hidden)]
+    pub __query: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__SuspendedStack>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__SuspendedStack, stack) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__SuspendedStack, query) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__SuspendedStack, __stack) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__SuspendedStack, __query) == 0x8);
 
 /// Named bits of `BSScript::CompiledScriptLoader.flags` (vmstack pass); unnamed bits pass through `bits`.
 #[repr(transparent)]

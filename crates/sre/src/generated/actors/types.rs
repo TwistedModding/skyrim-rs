@@ -888,19 +888,21 @@ const _: () = assert!(core::mem::offset_of!(ExtraContainerChanges, changes) == 0
 /// `HandleEntry`: size 0x10 (exact).
 /// Meaning: one slot of the reference handle table (high, actors pass).
 /// Evidence: one slot of the reference handle table; 0x10-byte entries of the table at g_HandleTable: u32 at +0 (next free index in bits 0-19 while free, age in bits 20-25, active bit 26) and a smart pointer to the BSHandleRefObject sub-object at +8 (0x17e640 fills it, 0x17ebe0 reads it and subtracts 0x20); a handle is index | age << 20; live: the player's handle is 0x100000 and resolved back to the player (run-actors scratch.bin).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct HandleEntry {
     /// +0x0 `undefined4`, semantic; bits 0-19 next free index, 20-25 age, 26 active (high)
-    pub ageAndNext: u32,
-    pub unknown_4: [u8; 4],
+    #[doc(hidden)]
+    pub __ageAndNext: [u8; 4],
+    unknown_4: [u8; 4],
     /// +0x8 `pointer`, semantic; NiPointer<BSHandleRefObject> (high)
-    pub ref_: *mut c_void,
+    #[doc(hidden)]
+    pub __ref_: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<HandleEntry>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(HandleEntry, ageAndNext) == 0x0);
-const _: () = assert!(core::mem::offset_of!(HandleEntry, ref_) == 0x8);
+const _: () = assert!(core::mem::offset_of!(HandleEntry, __ageAndNext) == 0x0);
+const _: () = assert!(core::mem::offset_of!(HandleEntry, __ref_) == 0x8);
 
 /// `HighProcessData`: size 0x478 (exact).
 /// Meaning: the part of an AI process that exists only at the high process level: the head-track slots and target, the in-dialogue byte, AI timers seeded from game settings by its ctor 0x71b5f0; null at lower levels, every reader tests it (high, actors pass).
@@ -948,7 +950,8 @@ pub struct InventoryChanges {
     /// +0x8 `ptr:TESObjectREFR`, semantic; the reference owning the changes (high)
     pub owner: *mut crate::TESObjectREFR,
     /// +0x10 `float`, semantic; a cached value, -1.0 when stale (medium)
-    pub cachedValue: f32,
+    #[doc(hidden)]
+    pub __cachedValue: [u8; 4],
     /// +0x14 `float`, semantic; the value of +0x10 before its last reset (medium)
     #[doc(hidden)]
     pub __previousCachedValue: [u8; 4],
@@ -959,7 +962,7 @@ pub struct InventoryChanges {
 const _: () = assert!(size_of::<InventoryChanges>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(InventoryChanges, entries) == 0x0);
 const _: () = assert!(core::mem::offset_of!(InventoryChanges, owner) == 0x8);
-const _: () = assert!(core::mem::offset_of!(InventoryChanges, cachedValue) == 0x10);
+const _: () = assert!(core::mem::offset_of!(InventoryChanges, __cachedValue) == 0x10);
 const _: () = assert!(core::mem::offset_of!(InventoryChanges, __previousCachedValue) == 0x14);
 
 /// `InventoryEntry`: size 0x18 (exact).
@@ -1003,21 +1006,25 @@ const _: () = assert!(core::mem::offset_of!(LoadedReferenceData, node3D) == 0x68
 pub struct MiddleHighProcessData {
     unknown_0: [u8; 176],
     /// +0xB0 `float`, semantic; actor pitch, fed to graph variable Pitch (scaled by the constant ID_190186) (high)
-    pub pitch: f32,
+    #[doc(hidden)]
+    pub __pitch: [u8; 4],
     /// +0xB4 `float`, semantic; fed to graph variable Roll (same scale) (high)
-    pub roll: f32,
+    #[doc(hidden)]
+    pub __roll: [u8; 4],
     /// +0xB8 `float`, semantic; movement direction (radians; wrapped and scaled for graph variable Direction) (high)
     #[doc(hidden)]
     pub __movementDirection: [u8; 4],
     /// +0xBC `float`, semantic; fed to graph variable PitchDelta (scaled) (high)
-    pub pitchDelta: f32,
+    #[doc(hidden)]
+    pub __pitchDelta: [u8; 4],
     unknown_C0: [u8; 224],
     /// +0x1A0 `pointer`, semantic; head node of the actor's active-effect list ({item +0, next +8}) (high)
     pub activeEffects: *mut c_void,
     /// +0x1A8 `ptr:BSAnimationGraphManager`, semantic; the actor's graph manager (BSTSmartPointer, ref count at manager+8) (high)
     pub animationGraphManager: *mut crate::BSAnimationGraphManager,
     /// +0x1B0 `pointer`, semantic; manager+0x70 of the current manager, null when none (medium)
-    pub animationGraphManagerData: *mut c_void,
+    #[doc(hidden)]
+    pub __animationGraphManagerData: [u8; 8],
     unknown_1B8: [u8; 48],
     /// +0x1E8 `undefined8`, semantic; spin lock (owner thread, count at +0x1ec) (medium)
     #[doc(hidden)]
@@ -1041,15 +1048,19 @@ pub struct MiddleHighProcessData {
     #[doc(hidden)]
     pub __speed: [u8; 4],
     /// +0x2AC `float`, semantic; fed to graph variable TargetSpeed (high)
-    pub targetSpeed: f32,
+    #[doc(hidden)]
+    pub __targetSpeed: [u8; 4],
     unknown_2B0: [u8; 12],
     /// +0x2BC `float`, semantic; divisor of the ward channel (actor value 0x3f / this) (low)
-    pub wardMagnitude: f32,
+    #[doc(hidden)]
+    pub __wardMagnitude: [u8; 4],
     unknown_2C0: [u8; 68],
     /// +0x304 `undefined2`, semantic; equipped item type of the left hand (high)
-    pub leftHandEquipType: u16,
+    #[doc(hidden)]
+    pub __leftHandEquipType: [u8; 2],
     /// +0x306 `undefined2`, semantic; equipped item type of the right hand (high)
-    pub rightHandEquipType: u16,
+    #[doc(hidden)]
+    pub __rightHandEquipType: [u8; 2],
     unknown_308: [u8; 30],
     /// +0x326 `undefined1`, semantic; head tracking on; graph bool bHeadTracking (high)
     #[doc(hidden)]
@@ -1059,23 +1070,23 @@ pub struct MiddleHighProcessData {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MiddleHighProcessData>() == 0x328);
-const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, pitch) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, roll) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __pitch) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __roll) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __movementDirection) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, pitchDelta) == 0xBC);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __pitchDelta) == 0xBC);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, activeEffects) == 0x1A0);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, animationGraphManager) == 0x1A8);
-const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, animationGraphManagerData) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __animationGraphManagerData) == 0x1B0);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __lock) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, leftHandEntry) == 0x220);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __charController) == 0x250);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, rightHandEntry) == 0x260);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __lastIdlePlayed) == 0x280);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __speed) == 0x2A8);
-const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, targetSpeed) == 0x2AC);
-const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, wardMagnitude) == 0x2BC);
-const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, leftHandEquipType) == 0x304);
-const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, rightHandEquipType) == 0x306);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __targetSpeed) == 0x2AC);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __wardMagnitude) == 0x2BC);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __leftHandEquipType) == 0x304);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __rightHandEquipType) == 0x306);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __headTrackingEnabled) == 0x326);
 
 /// `PlayerCharacter`: size 0xBF0 (exact, medium); primary base `Character`.
@@ -2398,9 +2409,11 @@ pub struct TESNPC {
     pub formType: u8,
     unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
-    pub field_28: u16,
+    #[doc(hidden)]
+    pub __field_28: [u8; 2],
     /// +0x2A `undefined2`, base TESBoundObject
-    pub field_2A: u16,
+    #[doc(hidden)]
+    pub __field_2A: [u8; 2],
     unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESNPC:30`, rtti
     #[doc(hidden)]
@@ -2539,8 +2552,8 @@ const _: () = assert!(core::mem::offset_of!(TESNPC, formFlags) == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESNPC, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(TESNPC, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESNPC, formType) == 0x1A);
-const _: () = assert!(core::mem::offset_of!(TESNPC, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(TESNPC, field_2A) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(TESNPC, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(TESNPC, __field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESNPC, flags) == 0x38);
 const _: () = assert!(core::mem::offset_of!(TESNPC, level) == 0x40);

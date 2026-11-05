@@ -63,6 +63,29 @@ impl crate::BGSBaseAlias {
     pub fn owning_quest(&self) -> Option<&crate::TESQuest> { unsafe { { self.owningQuest }.as_ref() } }
 }
 
+impl crate::BSScrapArray {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_capacity(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScrapArray.capacity", 0x10, u32) } }
+    /// `BSScrapArray::capacity`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn capacity(&self) -> u32 { unsafe { Self::__member_capacity(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_capacity(&mut self, value: u32) { unsafe { Self::__member_capacity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn capacity_ptr(&self) -> *mut u32 { Self::__member_capacity(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_size(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScrapArray.size", 0x18, u32) } }
+    /// `BSScrapArray::size`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn size(&self) -> u32 { unsafe { Self::__member_size(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_size(&mut self, value: u32) { unsafe { Self::__member_size(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn size_ptr(&self) -> *mut u32 { Self::__member_size(core::ptr::from_ref(self)) }
+}
+
 impl crate::BSScript__Array {
     /// `InitTypedArrayObject`: count 0, element type (an array type reduced to its element type), size, +0x14..+0x1b zero, every element {elementType, 0}
     ///
@@ -70,6 +93,14 @@ impl crate::BSScript__Array {
     /// `BSScript::Array* (BSScript::Array* this, const BSScript::TypeInfo* elementType, u32 size)`
     #[inline]
     pub fn init_typed_array_object(&self, elementType: &crate::BSScript__TypeInfo, size: u32) -> Option<&'static Self> { unsafe { function!(104468, (*const Self, *const crate::BSScript__TypeInfo, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), core::ptr::from_ref(elementType), size) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_elementType(this: *const Self) -> *mut crate::BSScript__TypeInfo { unsafe { member!(this, "BSScript::Array.elementType", 0x8, crate::BSScript__TypeInfo) } }
+    /// `BSScript::Array::elementType`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn elementType(&self) -> &crate::BSScript__TypeInfo { unsafe { &*Self::__member_elementType(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn elementType_ptr(&self) -> *mut crate::BSScript__TypeInfo { Self::__member_elementType(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSScript__IFunctionArguments {
@@ -505,6 +536,16 @@ impl crate::BSScript__Internal__VirtualMachine {
     pub fn field_258_ptr(&self) -> *mut u64 { Self::__member_field_258(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_field_827C(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::Internal::VirtualMachine.field_827C", 0x827C, u16) } }
+    /// `BSScript::Internal::VirtualMachine::field_827C`, at +0x827C on 1.7.104.
+    #[inline]
+    pub fn field_827C(&self) -> u16 { unsafe { Self::__member_field_827C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_827C(&mut self, value: u16) { unsafe { Self::__member_field_827C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_827C_ptr(&self) -> *mut u16 { Self::__member_field_827C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_field_93D0(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSScript::Internal::VirtualMachine.field_93D0", 0x93D0, u64) } }
     /// `BSScript::Internal::VirtualMachine::field_93D0`, at +0x93D0 on 1.7.104.
     #[inline]
@@ -555,6 +596,16 @@ impl crate::BSScript__Internal__VirtualMachine {
     pub fn functionMessageOverflow_ptr(&self) -> *mut [u8; 24] { Self::__member_functionMessageOverflow(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_functionMessageQueue(this: *const Self) -> *mut [u8; 40] { unsafe { member!(this, "BSScript::Internal::VirtualMachine.functionMessageQueue", 0x8220, [u8; 40]) } }
+    /// `BSScript::Internal::VirtualMachine::functionMessageQueue`, at +0x8220 on 1.7.104.
+    #[inline]
+    pub fn functionMessageQueue(&self) -> [u8; 40] { unsafe { Self::__member_functionMessageQueue(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_functionMessageQueue(&mut self, value: [u8; 40]) { unsafe { Self::__member_functionMessageQueue(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn functionMessageQueue_ptr(&self) -> *mut [u8; 40] { Self::__member_functionMessageQueue(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_latentWaits(this: *const Self) -> *mut [u8; 40] { unsafe { member!(this, "BSScript::Internal::VirtualMachine.latentWaits", 0x9358, [u8; 40]) } }
     /// `BSScript::Internal::VirtualMachine::latentWaits`, at +0x9358 on 1.7.104.
     #[inline]
@@ -593,6 +644,16 @@ impl crate::BSScript__Internal__VirtualMachine {
     pub fn set_objectTypeMap(&mut self, value: [u8; 48]) { unsafe { Self::__member_objectTypeMap(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn objectTypeMap_ptr(&self) -> *mut [u8; 48] { Self::__member_objectTypeMap(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_pendingTasklets(this: *const Self) -> *mut [u8; 24] { unsafe { member!(this, "BSScript::Internal::VirtualMachine.pendingTasklets", 0x8260, [u8; 24]) } }
+    /// `BSScript::Internal::VirtualMachine::pendingTasklets`, at +0x8260 on 1.7.104.
+    #[inline]
+    pub fn pendingTasklets(&self) -> [u8; 24] { unsafe { Self::__member_pendingTasklets(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_pendingTasklets(&mut self, value: [u8; 24]) { unsafe { Self::__member_pendingTasklets(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn pendingTasklets_ptr(&self) -> *mut [u8; 24] { Self::__member_pendingTasklets(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_queuedMessageCount(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::Internal::VirtualMachine.queuedMessageCount", 0x8278, u32) } }
@@ -811,6 +872,17 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     pub fn params(&self) -> Option<&crate::BSScript__NF_util__ParamInfo> { unsafe { { self.params }.as_ref() } }
 }
 
+impl crate::BSScript__NF_util__ParamInfo {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NF_util::ParamInfo.name", 0x0, crate::BSFixedString) } }
+    /// `BSScript::NF_util::ParamInfo::name`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+}
+
 impl crate::BSScript__Object {
     /// `BSScript::Object::DecRef`: drops a reference and returns the new count; the 2 -> 1 transition calls IObjectHandlePolicy::ReleaseHandle; the caller destroys the object at 0
     ///
@@ -853,6 +925,36 @@ impl crate::BSScript__Object {
     /// Semantic field, papyrus pass, high; `None` while the pointer is null.
     #[inline]
     pub fn type_(&self) -> Option<&crate::BSScript__ObjectTypeInfo> { unsafe { { self.type_ }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_currentStack(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::Object.currentStack", 0x18, *mut c_void) } }
+    /// `BSScript::Object::currentStack`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn currentStack(&self) -> *mut c_void { unsafe { Self::__member_currentStack(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_currentStack(&mut self, value: *mut c_void) { unsafe { Self::__member_currentStack(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn currentStack_ptr(&self) -> *mut *mut c_void { Self::__member_currentStack(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_flags(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::Object.flags", 0x0, u32) } }
+    /// `BSScript::Object::flags`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn flags(&self) -> u32 { unsafe { Self::__member_flags(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_flags(&mut self, value: u32) { unsafe { Self::__member_flags(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn flags_ptr(&self) -> *mut u32 { Self::__member_flags(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_handle(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSScript::Object.handle", 0x20, u64) } }
+    /// `BSScript::Object::handle`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn handle(&self) -> u64 { unsafe { Self::__member_handle(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_handle(&mut self, value: u64) { unsafe { Self::__member_handle(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn handle_ptr(&self) -> *mut u64 { Self::__member_handle(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSScript__ObjectTypeInfo {
@@ -912,6 +1014,26 @@ impl crate::BSScript__ObjectTypeInfo {
     pub fn set_counts2(&mut self, value: u32) { unsafe { Self::__member_counts2(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn counts2_ptr(&self) -> *mut u32 { Self::__member_counts2(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_data(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::ObjectTypeInfo.data", 0x30, *mut c_void) } }
+    /// `BSScript::ObjectTypeInfo::data`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn data(&self) -> *mut c_void { unsafe { Self::__member_data(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_data(&mut self, value: *mut c_void) { unsafe { Self::__member_data(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn data_ptr(&self) -> *mut *mut c_void { Self::__member_data(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_refCount(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::ObjectTypeInfo.refCount", 0x0, u32) } }
+    /// `BSScript::ObjectTypeInfo::refCount`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn refCount(&self) -> u32 { unsafe { Self::__member_refCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_refCount(&mut self, value: u32) { unsafe { Self::__member_refCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn refCount_ptr(&self) -> *mut u32 { Self::__member_refCount(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSScript__Stack {
@@ -940,17 +1062,175 @@ impl crate::BSScript__Stack {
     ///
     /// Semantic field, papyrus pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn frozen_next(&self) -> Option<&crate::BSScript__Stack> { unsafe { { self.frozenNext }.as_ref() } }
+    pub fn frozen_next(&self) -> Option<&crate::BSScript__Stack> { unsafe { Self::__member_frozenNext(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
     /// `BSScript::Stack::tasklet` at +0x88: BSTSmartPointer<CodeTasklet> that interprets this stack's script frames
     ///
     /// Semantic field, papyrus pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn tasklet(&self) -> Option<&crate::BSScript__Internal__CodeTasklet> { unsafe { { self.tasklet }.as_ref() } }
+    pub fn tasklet(&self) -> Option<&crate::BSScript__Internal__CodeTasklet> { unsafe { Self::__member_tasklet(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
     /// `BSScript::Stack::top` at +0x60: the innermost frame
     ///
     /// Semantic field, papyrus pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn top(&self) -> Option<&crate::BSScript__StackFrame> { unsafe { { self.top }.as_ref() } }
+    pub fn top(&self) -> Option<&crate::BSScript__StackFrame> { unsafe { Self::__member_top(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_callback(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::Stack.callback", 0x90, *mut c_void) } }
+    /// `BSScript::Stack::callback`, at +0x90 on 1.7.104.
+    #[inline]
+    pub fn callback(&self) -> *mut c_void { unsafe { Self::__member_callback(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_callback(&mut self, value: *mut c_void) { unsafe { Self::__member_callback(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn callback_ptr(&self) -> *mut *mut c_void { Self::__member_callback(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_frameCount(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::Stack.frameCount", 0x58, u32) } }
+    /// `BSScript::Stack::frameCount`, at +0x58 on 1.7.104.
+    #[inline]
+    pub fn frameCount(&self) -> u32 { unsafe { Self::__member_frameCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_frameCount(&mut self, value: u32) { unsafe { Self::__member_frameCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn frameCount_ptr(&self) -> *mut u32 { Self::__member_frameCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_freezeMark(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::Stack.freezeMark", 0x6C, u32) } }
+    /// `BSScript::Stack::freezeMark`, at +0x6C on 1.7.104.
+    #[inline]
+    pub fn freezeMark(&self) -> u32 { unsafe { Self::__member_freezeMark(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_freezeMark(&mut self, value: u32) { unsafe { Self::__member_freezeMark(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn freezeMark_ptr(&self) -> *mut u32 { Self::__member_freezeMark(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_frozenNext(this: *const Self) -> *mut *mut crate::BSScript__Stack { unsafe { member!(this, "BSScript::Stack.frozenNext", 0x98, *mut crate::BSScript__Stack) } }
+    /// `BSScript::Stack::frozenNext`, at +0x98 on 1.7.104.
+    #[inline]
+    pub fn frozenNext(&self) -> *mut crate::BSScript__Stack { unsafe { Self::__member_frozenNext(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_frozenNext(&mut self, value: *mut crate::BSScript__Stack) { unsafe { Self::__member_frozenNext(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn frozenNext_ptr(&self) -> *mut *mut crate::BSScript__Stack { Self::__member_frozenNext(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_kind(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::Stack.kind", 0x84, u32) } }
+    /// `BSScript::Stack::kind`, at +0x84 on 1.7.104.
+    #[inline]
+    pub fn kind(&self) -> u32 { unsafe { Self::__member_kind(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_kind(&mut self, value: u32) { unsafe { Self::__member_kind(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn kind_ptr(&self) -> *mut u32 { Self::__member_kind(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_memoryPagePolicy(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::Stack.memoryPagePolicy", 0x8, *mut c_void) } }
+    /// `BSScript::Stack::memoryPagePolicy`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn memoryPagePolicy(&self) -> *mut c_void { unsafe { Self::__member_memoryPagePolicy(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_memoryPagePolicy(&mut self, value: *mut c_void) { unsafe { Self::__member_memoryPagePolicy(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn memoryPagePolicy_ptr(&self) -> *mut *mut c_void { Self::__member_memoryPagePolicy(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_pageCount(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::Stack.pageCount", 0x50, u32) } }
+    /// `BSScript::Stack::pageCount`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn pageCount(&self) -> u32 { unsafe { Self::__member_pageCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_pageCount(&mut self, value: u32) { unsafe { Self::__member_pageCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn pageCount_ptr(&self) -> *mut u32 { Self::__member_pageCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_pages(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::Stack.pages", 0x20, *mut c_void) } }
+    /// `BSScript::Stack::pages`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn pages(&self) -> *mut c_void { unsafe { Self::__member_pages(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_pages(&mut self, value: *mut c_void) { unsafe { Self::__member_pages(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn pages_ptr(&self) -> *mut *mut c_void { Self::__member_pages(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_pagesInline(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::Stack.pagesInline", 0x18, u32) } }
+    /// `BSScript::Stack::pagesInline`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn pagesInline(&self) -> u32 { unsafe { Self::__member_pagesInline(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_pagesInline(&mut self, value: u32) { unsafe { Self::__member_pagesInline(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn pagesInline_ptr(&self) -> *mut u32 { Self::__member_pagesInline(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_profilePolicy(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::Stack.profilePolicy", 0x10, *mut c_void) } }
+    /// `BSScript::Stack::profilePolicy`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn profilePolicy(&self) -> *mut c_void { unsafe { Self::__member_profilePolicy(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_profilePolicy(&mut self, value: *mut c_void) { unsafe { Self::__member_profilePolicy(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn profilePolicy_ptr(&self) -> *mut *mut c_void { Self::__member_profilePolicy(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_refCount(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::Stack.refCount", 0x0, u32) } }
+    /// `BSScript::Stack::refCount`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn refCount(&self) -> u32 { unsafe { Self::__member_refCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_refCount(&mut self, value: u32) { unsafe { Self::__member_refCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn refCount_ptr(&self) -> *mut u32 { Self::__member_refCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_returnValue(this: *const Self) -> *mut crate::BSScript__Variable { unsafe { member!(this, "BSScript::Stack.returnValue", 0x70, crate::BSScript__Variable) } }
+    /// `BSScript::Stack::returnValue`, at +0x70 on 1.7.104.
+    #[inline]
+    pub fn returnValue(&self) -> &crate::BSScript__Variable { unsafe { &*Self::__member_returnValue(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn returnValue_ptr(&self) -> *mut crate::BSScript__Variable { Self::__member_returnValue(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stackID(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::Stack.stackID", 0x80, u32) } }
+    /// `BSScript::Stack::stackID`, at +0x80 on 1.7.104.
+    #[inline]
+    pub fn stackID(&self) -> u32 { unsafe { Self::__member_stackID(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_stackID(&mut self, value: u32) { unsafe { Self::__member_stackID(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn stackID_ptr(&self) -> *mut u32 { Self::__member_stackID(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_state(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::Stack.state", 0x68, u32) } }
+    /// `BSScript::Stack::state`, at +0x68 on 1.7.104.
+    #[inline]
+    pub fn state(&self) -> u32 { unsafe { Self::__member_state(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_state(&mut self, value: u32) { unsafe { Self::__member_state(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn state_ptr(&self) -> *mut u32 { Self::__member_state(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_tasklet(this: *const Self) -> *mut *mut crate::BSScript__Internal__CodeTasklet { unsafe { member!(this, "BSScript::Stack.tasklet", 0x88, *mut crate::BSScript__Internal__CodeTasklet) } }
+    /// `BSScript::Stack::tasklet`, at +0x88 on 1.7.104.
+    #[inline]
+    pub fn tasklet_field(&self) -> *mut crate::BSScript__Internal__CodeTasklet { unsafe { Self::__member_tasklet(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_tasklet(&mut self, value: *mut crate::BSScript__Internal__CodeTasklet) { unsafe { Self::__member_tasklet(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn tasklet_ptr(&self) -> *mut *mut crate::BSScript__Internal__CodeTasklet { Self::__member_tasklet(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_top(this: *const Self) -> *mut *mut crate::BSScript__StackFrame { unsafe { member!(this, "BSScript::Stack.top", 0x60, *mut crate::BSScript__StackFrame) } }
+    /// `BSScript::Stack::top`, at +0x60 on 1.7.104.
+    #[inline]
+    pub fn top_field(&self) -> *mut crate::BSScript__StackFrame { unsafe { Self::__member_top(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_top(&mut self, value: *mut crate::BSScript__StackFrame) { unsafe { Self::__member_top(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn top_ptr(&self) -> *mut *mut crate::BSScript__StackFrame { Self::__member_top(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSScript__StackFrame {
@@ -958,12 +1238,80 @@ impl crate::BSScript__StackFrame {
     ///
     /// Semantic field, papyrus pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn owning_object_type(&self) -> Option<&crate::BSScript__ObjectTypeInfo> { unsafe { { self.owningObjectType }.as_ref() } }
+    pub fn owning_object_type(&self) -> Option<&crate::BSScript__ObjectTypeInfo> { unsafe { Self::__member_owningObjectType(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
     /// `BSScript::StackFrame::owningStack` at +0x0: the stack the frame belongs to
     ///
     /// Semantic field, papyrus pass, high; `None` while the pointer is null.
     #[inline]
     pub fn owning_stack(&self) -> Option<&crate::BSScript__Stack> { unsafe { { self.owningStack }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_codeValid(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::StackFrame.codeValid", 0x3C, u8) } }
+    /// `BSScript::StackFrame::codeValid`, at +0x3C on 1.7.104.
+    #[inline]
+    pub fn codeValid(&self) -> u8 { unsafe { Self::__member_codeValid(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_codeValid(&mut self, value: u8) { unsafe { Self::__member_codeValid(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn codeValid_ptr(&self) -> *mut u8 { Self::__member_codeValid(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_ip(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::StackFrame.ip", 0x20, u32) } }
+    /// `BSScript::StackFrame::ip`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn ip(&self) -> u32 { unsafe { Self::__member_ip(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_ip(&mut self, value: u32) { unsafe { Self::__member_ip(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn ip_ptr(&self) -> *mut u32 { Self::__member_ip(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_owningFunction(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::StackFrame.owningFunction", 0x10, *mut c_void) } }
+    /// `BSScript::StackFrame::owningFunction`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn owningFunction(&self) -> *mut c_void { unsafe { Self::__member_owningFunction(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_owningFunction(&mut self, value: *mut c_void) { unsafe { Self::__member_owningFunction(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn owningFunction_ptr(&self) -> *mut *mut c_void { Self::__member_owningFunction(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_owningObjectType(this: *const Self) -> *mut *mut crate::BSScript__ObjectTypeInfo { unsafe { member!(this, "BSScript::StackFrame.owningObjectType", 0x18, *mut crate::BSScript__ObjectTypeInfo) } }
+    /// `BSScript::StackFrame::owningObjectType`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn owningObjectType(&self) -> *mut crate::BSScript__ObjectTypeInfo { unsafe { Self::__member_owningObjectType(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_owningObjectType(&mut self, value: *mut crate::BSScript__ObjectTypeInfo) { unsafe { Self::__member_owningObjectType(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn owningObjectType_ptr(&self) -> *mut *mut crate::BSScript__ObjectTypeInfo { Self::__member_owningObjectType(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_previousFrame(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::StackFrame.previousFrame", 0x8, *mut c_void) } }
+    /// `BSScript::StackFrame::previousFrame`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn previousFrame(&self) -> *mut c_void { unsafe { Self::__member_previousFrame(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_previousFrame(&mut self, value: *mut c_void) { unsafe { Self::__member_previousFrame(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn previousFrame_ptr(&self) -> *mut *mut c_void { Self::__member_previousFrame(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_self_(this: *const Self) -> *mut crate::BSScript__Variable { unsafe { member!(this, "BSScript::StackFrame.self", 0x28, crate::BSScript__Variable) } }
+    /// `BSScript::StackFrame::self`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn self_(&self) -> &crate::BSScript__Variable { unsafe { &*Self::__member_self_(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn self__ptr(&self) -> *mut crate::BSScript__Variable { Self::__member_self_(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_size(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::StackFrame.size", 0x38, u32) } }
+    /// `BSScript::StackFrame::size`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn size(&self) -> u32 { unsafe { Self::__member_size(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_size(&mut self, value: u32) { unsafe { Self::__member_size(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn size_ptr(&self) -> *mut u32 { Self::__member_size(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSScript__Variable {
@@ -1025,16 +1373,6 @@ impl crate::ExtraAliasInstanceArray {
     pub fn set_capacity(&mut self, value: u32) { unsafe { Self::__member_capacity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn capacity_ptr(&self) -> *mut u32 { Self::__member_capacity(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_count(this: *const Self) -> *mut u32 { unsafe { member!(this, "ExtraAliasInstanceArray.count", 0x20, u32) } }
-    /// `ExtraAliasInstanceArray::count`, at +0x20 on 1.7.104.
-    #[inline]
-    pub fn count(&self) -> u32 { unsafe { Self::__member_count(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_count(&mut self, value: u32) { unsafe { Self::__member_count(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn count_ptr(&self) -> *mut u32 { Self::__member_count(core::ptr::from_ref(self)) }
 }
 
 impl crate::ExtraAliasInstanceArray__Entry {
@@ -1048,6 +1386,16 @@ impl crate::ExtraAliasInstanceArray__Entry {
     /// Semantic field, papyrus pass, high; `None` while the pointer is null.
     #[inline]
     pub fn quest(&self) -> Option<&crate::TESQuest> { unsafe { { self.quest }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_data(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "ExtraAliasInstanceArray::Entry.data", 0x10, *mut c_void) } }
+    /// `ExtraAliasInstanceArray::Entry::data`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn data(&self) -> *mut c_void { unsafe { Self::__member_data(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_data(&mut self, value: *mut c_void) { unsafe { Self::__member_data(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn data_ptr(&self) -> *mut *mut c_void { Self::__member_data(core::ptr::from_ref(self)) }
 }
 
 impl crate::SkyrimScript__HandlePolicy {

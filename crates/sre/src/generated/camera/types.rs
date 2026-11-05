@@ -15,7 +15,8 @@ pub struct ActorMagicCaster {
     pub __vftable: *const crate::raw::vtables::ActorMagicCaster_vtable,
     unknown_8: [u8; 16],
     /// +0x18 `undefined4`, base MagicCaster
-    pub field_18: u32,
+    #[doc(hidden)]
+    pub __field_18: [u8; 4],
     unknown_1C: [u8; 4],
     /// +0x20 `undefined4`, base MagicCaster
     pub field_20: u32,
@@ -94,7 +95,7 @@ pub struct ActorMagicCaster {
 }
 const _: () = assert!(size_of::<ActorMagicCaster>() == 0x100);
 const _: () = assert!(core::mem::offset_of!(ActorMagicCaster, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ActorMagicCaster, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(ActorMagicCaster, __field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(ActorMagicCaster, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(ActorMagicCaster, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(ActorMagicCaster, field_30) == 0x30);
@@ -304,26 +305,28 @@ const _: () = assert!(core::mem::offset_of!(BGSBipedObjectForm, field_C) == 0xC)
 /// `BGSBodyPart`: size 0xF0 (exact).
 /// Meaning: one body part of a BGSBodyPartData (high, camera pass).
 /// Evidence: one body part of a BGSBodyPartData; ; size: AllocateMemory(0xf0) and OperatorDelete(.., 0xf0) in 0x38b2f0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSBodyPart {
     /// +0x0 `class:BSFixedString`, semantic; the node looked up in the actor's 3D (LookupNamedObject 0xfddac0(root, &part->nodeName, true)) (high)
-    pub nodeName: crate::BSFixedString,
-    pub unknown_8: [u8; 117],
+    #[doc(hidden)]
+    pub __nodeName: [u8; 8],
+    unknown_8: [u8; 117],
     /// +0x7D `undefined1`, semantic; BodyPartType (0..5); selects the slot in partsByType (high)
-    pub type_: u8,
-    pub unknown_7E: [u8; 114],
+    #[doc(hidden)]
+    pub __type_: [u8; 1],
+    unknown_7E: [u8; 114],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSBodyPart>() == 0xF0);
-const _: () = assert!(core::mem::offset_of!(BGSBodyPart, nodeName) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSBodyPart, type_) == 0x7D);
+const _: () = assert!(core::mem::offset_of!(BGSBodyPart, __nodeName) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BGSBodyPart, __type_) == 0x7D);
 
 /// `BGSBodyPartData`: size 0x88 (exact, high); primary base `TESForm`.
 /// Meaning: race body part data; parts indexed by part type (high, camera pass).
 /// Evidence: runtime: 0x88 at 3 allocation sites; agrees with the static allocation sites.
 /// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0, `TESModel`@0x20, `BaseFormComponent`@0x20, `BGSPreloadable`@0x48, `BaseFormComponent`@0x48.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSBodyPartData {
     /// +0x0 `vtbl:BGSBodyPartData:0`, rtti
     #[doc(hidden)]
@@ -338,13 +341,14 @@ pub struct BGSBodyPartData {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSBodyPartData:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSBodyPartData_vtable_20,
     /// +0x28 `class:BSFixedString`, base TESModel, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
-    pub model: crate::BSFixedString,
-    pub unknown_30: [u8; 24],
+    #[doc(hidden)]
+    pub __model: [u8; 8],
+    unknown_30: [u8; 24],
     /// +0x48 `vtbl:BGSBodyPartData:48`, rtti
     #[doc(hidden)]
     pub __vftable_48: *const crate::raw::vtables::BGSBodyPartData_vtable_48,
@@ -363,7 +367,7 @@ const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, model) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, __model) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, __vftable_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, partsByType) == 0x50);
 const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, field_80) == 0x80);
@@ -458,23 +462,27 @@ pub struct BGSCameraShot {
     /// +0x5C `i32`, semantic; where the camera sits: 0 attacker, 1 projectile, 2 target, 3 target if it is the flagged member of its group (ID_32810 over 0x31df410) else attacker (high)
     pub location: u32,
     /// +0x60 `i32`, semantic; what the camera looks at: same values as location (0 attacker, 1 projectile, 2 target, 3 group-resolved) (high)
-    pub target: u32,
+    #[doc(hidden)]
+    pub __target: [u8; 4],
     /// +0x64 `u32`, semantic; shot flags (bits in the flags table); see the flag rows (high)
     pub flags: u32,
     /// +0x68 `float`, semantic; time multiplier for the player while this shot plays; <= 0 means fVATSPlayerTimeUpdateMult (3.0) (high)
     pub playerTimeMult: f32,
     /// +0x6C `float`, semantic; time multiplier for the VATS target while this shot plays; <= 0 means fVATSTargetTimeUpdateMult (1.0) (high)
-    pub targetTimeMult: f32,
+    #[doc(hidden)]
+    pub __targetTimeMult: [u8; 4],
     /// +0x70 `float`, semantic; global time multiplier (g_FrameTimer) while the shot plays and no dolly runs; default 1.0, InitItem clamps values below 1e-4 to 0.1 (high)
     pub globalTimeMult: f32,
     /// +0x74 `float`, semantic; shot duration: VATS+0x38 countdown; the path's total time is the sum of its shots' maxTime (high)
     pub maxTime: f32,
     /// +0x78 `float`, semantic; minimum time before the phase may advance past this shot (VATS+0x3c = max(VATS+0x3c, minTime)); also the dolly time of an action-3 shot under path mode 2 (high)
-    pub minTime: f32,
+    #[doc(hidden)]
+    pub __minTime: [u8; 4],
     /// +0x7C `float`, semantic; > 0: look-at point = attacker centre + (target centre - attacker centre) * percent / 100 instead of lookAtNode (high)
     pub targetPercent: f32,
     /// +0x80 `float`, semantic; > 0: a VATS projectile closer than this to its target sets its +0x1d4 bit 24, which ends the current shot (high)
-    pub projectileCutDistance: f32,
+    #[doc(hidden)]
+    pub __projectileCutDistance: [u8; 4],
     /// +0x84 `undefined1`, semantic; padding after the 0x2c-byte DATA block (medium)
     #[doc(hidden)]
     pub __pad84: [u8; 4],
@@ -494,7 +502,8 @@ pub struct BGSCameraShot {
     /// +0xB0 `i8`, semantic; -1 unknown, 0 no, 1 the camera NIF animates its rotation (NiSingleInterpController with a NiTransformInterpolator that has rotation keys, or a NiPathInterpolator) (high)
     pub hasAnimatedRotation: u8,
     /// +0xB1 `u8`, semantic; set when the camera came within fVATSCameraCutAwayDistance (25) of the look-at point; next update forces first person (if the player is alive) and skips the shot (high)
-    pub cutAway: u8,
+    #[doc(hidden)]
+    pub __cutAway: [u8; 1],
     /// +0xB2 `undefined1`, semantic; padding (medium)
     #[doc(hidden)]
     pub __padB2: [u8; 6],
@@ -516,15 +525,15 @@ const _: () = assert!(core::mem::offset_of!(BGSCameraShot, imageSpaceModifiableV
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, imageSpaceModifier) == 0x50);
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, action) == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, location) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(BGSCameraShot, target) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BGSCameraShot, __target) == 0x60);
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, flags) == 0x64);
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, playerTimeMult) == 0x68);
-const _: () = assert!(core::mem::offset_of!(BGSCameraShot, targetTimeMult) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(BGSCameraShot, __targetTimeMult) == 0x6C);
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, globalTimeMult) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, maxTime) == 0x74);
-const _: () = assert!(core::mem::offset_of!(BGSCameraShot, minTime) == 0x78);
+const _: () = assert!(core::mem::offset_of!(BGSCameraShot, __minTime) == 0x78);
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, targetPercent) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(BGSCameraShot, projectileCutDistance) == 0x80);
+const _: () = assert!(core::mem::offset_of!(BGSCameraShot, __projectileCutDistance) == 0x80);
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, __pad84) == 0x84);
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, locationNode) == 0x88);
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, lookAtNode) == 0x90);
@@ -533,30 +542,33 @@ const _: () = assert!(core::mem::offset_of!(BGSCameraShot, __pad9C) == 0x9C);
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, cameraRoot) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, focusNode) == 0xA8);
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, hasAnimatedRotation) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(BGSCameraShot, cutAway) == 0xB1);
+const _: () = assert!(core::mem::offset_of!(BGSCameraShot, __cutAway) == 0xB1);
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, __padB2) == 0xB2);
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, modelHandle) == 0xB8);
 
 /// `BSEffectShaderData`: size 0x88 (exact).
 /// Meaning: refcounted effect-shader parameters shared by every property under the effect's root (name from the request; no RTTI in the binary) (medium, camera pass).
 /// Evidence: refcounted effect-shader parameters shared by every property under the effect's root (name from the request; no RTTI in the binary); IC7 C (static-W). Created by 0x26c0f0; parameters filled by 0x26c270 and animated by 0x26c830 (+0x38, +0x48 scaled by the fade; +0x50/+0x54 alpha tests).; size: freed with size 0x88 by 0x26d4e0 on the last release.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSEffectShaderData {
     /// +0x0 `u32`, semantic; intrusive count (lock inc/dec) (high)
-    pub refCount: u32,
-    pub unknown_4: [u8; 4],
+    #[doc(hidden)]
+    pub __refCount: [u8; 4],
+    unknown_4: [u8; 4],
     /// +0x8 `pointer`, semantic; bool (*)(const BSFixedString* nodeName): a node it accepts is skipped by Apply/Remove (high)
-    pub nodeFilter: *mut c_void,
+    #[doc(hidden)]
+    pub __nodeFilter: [u8; 8],
     /// +0x10 `pointer`, semantic; three NiPointers +0x10/+0x18/+0x20 released with the data (high)
-    pub textures: [u8; 24],
-    pub unknown_28: [u8; 96],
+    #[doc(hidden)]
+    pub __textures: [u8; 24],
+    unknown_28: [u8; 96],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSEffectShaderData>() == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSEffectShaderData, refCount) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSEffectShaderData, nodeFilter) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSEffectShaderData, textures) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSEffectShaderData, __refCount) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSEffectShaderData, __nodeFilter) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSEffectShaderData, __textures) == 0x10);
 
 /// `BSFaceGenKeyframeMultiple`: size 0x20 (exact, medium); primary base `BSFaceGenKeyframe`.
 /// Meaning: one face channel group: a type and an array of weights (high, camera pass).
@@ -610,7 +622,8 @@ pub struct BSFlattenedBoneTree {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
     unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
@@ -620,7 +633,8 @@ pub struct BSFlattenedBoneTree {
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
     pub world: crate::NiTransform,
     /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
@@ -634,11 +648,13 @@ pub struct BSFlattenedBoneTree {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
     unknown_10A: [u8; 6],
     /// +0x110 `undefined1`, base NiNode, semantic; NiTObjectArray<NiPointer<NiAVObject>>: vtable +0x110, data +0x118, capacity u16 +0x120, slots in use u16 +0x122, non-null count u16 +0x124, grow step u16 +0x126 (high)
     pub children: [u8; 24],
@@ -660,20 +676,20 @@ const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, __local) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, world) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, previousWorld) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, children) == 0x110);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, boneCount) == 0x128);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, bones) == 0x130);
@@ -1060,59 +1076,69 @@ const _: () = assert!(core::mem::offset_of!(BeamProjectile, __field_240) == 0x24
 /// `BipedAnim`: size 0x2778 (exact).
 /// Meaning: an actor's worn/equipped 3D: 42 biped objects, a buffered copy and the owner handle (high, camera pass).
 /// Evidence: an actor's worn/equipped 3D: 42 biped objects, a buffered copy and the owner handle; IC8 I (static-Z). No RTTI; name from the request. Character+0x268 (third person), PlayerCharacter+0x8f8 (first person). 42 = QueuePlayerSlotMeshLoads loop bound 0x2a.; size: PlayerCharacter::Load3D allocates 0x2778; release paths OperatorDelete(0x2778) (SetupWornItemsAndFaceGen3D 0x3c4dc0, QueuePlayerSlotMeshLoads 0x971ca0).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BipedAnim {
     /// +0x0 `u32`, semantic; reference count (LOCK inc/dec; freed at 0) (high)
-    pub refCount: u32,
-    pub unknown_4: [u8; 4],
+    #[doc(hidden)]
+    pub __refCount: [u8; 4],
+    unknown_4: [u8; 4],
     /// +0x8 `ptr:NiNode`, semantic; a named node of the owner's 3D (ctor LookupNamedObject(root, lazy static name)) (medium)
-    pub root: *mut crate::NiNode,
+    #[doc(hidden)]
+    pub __root: [u8; 8],
     /// +0x10 `undefined1`, semantic; BipedObject[42], 0x78 each: 0..31 = BGSBipedObjectForm bits, 32..40 weapons by type, 41 ammo/quiver; the shield/left hand index is the race's +0x138 (high)
     pub objects: [u8; 5040],
     /// +0x13C0 `undefined1`, semantic; second BipedObject[42] (swapped/queued copies) (medium)
-    pub bufferedObjects: [u8; 5040],
+    #[doc(hidden)]
+    pub __bufferedObjects: [u8; 5040],
     /// +0x2770 `u32`, semantic; the owner reference's handle (high)
-    pub ownerHandle: u32,
-    pub unknown_2774: [u8; 4],
+    #[doc(hidden)]
+    pub __ownerHandle: [u8; 4],
+    unknown_2774: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BipedAnim>() == 0x2778);
-const _: () = assert!(core::mem::offset_of!(BipedAnim, refCount) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BipedAnim, root) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BipedAnim, __refCount) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BipedAnim, __root) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BipedAnim, objects) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BipedAnim, bufferedObjects) == 0x13C0);
-const _: () = assert!(core::mem::offset_of!(BipedAnim, ownerHandle) == 0x2770);
+const _: () = assert!(core::mem::offset_of!(BipedAnim, __bufferedObjects) == 0x13C0);
+const _: () = assert!(core::mem::offset_of!(BipedAnim, __ownerHandle) == 0x2770);
 
 /// `BipedObject`: size 0x78 (exact).
 /// Meaning: one biped slot: the item, its addon and model, and the attached part clone (high, camera pass).
 /// Evidence: one biped slot: the item, its addon and model, and the attached part clone; IC8 I (static-Z). Layout from ResetSlotEntry 0x2178d0, CopyAssignRefCountedRecord 0x217a50 and the Add* functions.; size: stride 0x78 in the ctor loop 0x217c10 and every indexed access (imul 0x78 at 0x21a3ec).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BipedObject {
     /// +0x0 `ptr:TESForm`, semantic; the equipped form (armor 0x1a, weapon 0x29, light 0x1f, ammo 0x2a, or the addon) (high)
-    pub item: *mut crate::TESForm,
+    #[doc(hidden)]
+    pub __item: [u8; 8],
     /// +0x8 `ptr:TESObjectARMA`, semantic; the armor addon (form type 0x66 'f') (high)
-    pub addon: *mut crate::TESObjectARMA,
+    #[doc(hidden)]
+    pub __addon: [u8; 8],
     /// +0x10 `ptr:TESModel`, semantic; the model component used to load the part (slot 4 = path) (high)
-    pub model: *mut crate::TESModel,
+    #[doc(hidden)]
+    pub __model: [u8; 8],
     /// +0x18 `pointer`, semantic; AddArmor's fifth argument (only stored when non-null) (low)
-    pub field_18: *mut c_void,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `ptr:NiAVObject`, semantic; the attached 3D clone of the part (refcounted NiPointer) (high)
-    pub partClone: *mut crate::NiAVObject,
-    pub unknown_28: [u8; 56],
+    #[doc(hidden)]
+    pub __partClone: [u8; 8],
+    unknown_28: [u8; 56],
     /// +0x60 `pointer`, semantic; the part's animation graph holder (refcounted) (medium)
-    pub graphHolder: *mut c_void,
-    pub unknown_68: [u8; 16],
+    #[doc(hidden)]
+    pub __graphHolder: [u8; 8],
+    unknown_68: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BipedObject>() == 0x78);
-const _: () = assert!(core::mem::offset_of!(BipedObject, item) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BipedObject, addon) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BipedObject, model) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BipedObject, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BipedObject, partClone) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BipedObject, graphHolder) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BipedObject, __item) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BipedObject, __addon) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BipedObject, __model) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BipedObject, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BipedObject, __partClone) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BipedObject, __graphHolder) == 0x60);
 
 /// `BleedoutCameraState`: size 0x138 (exact, medium); primary base `ThirdPersonState`.
 /// Meaning: orbit while bleeding out (medium, frame pass).
@@ -1166,7 +1192,8 @@ pub struct BleedoutCameraState {
     #[doc(hidden)]
     pub __zoomSinceTogglePress: [u8; 4],
     /// +0x90 `class:NiPoint3`, base ThirdPersonState, semantic; NiPoint3 position at the last camera collision (medium); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
-    pub recoveryStart: crate::NiPoint3,
+    #[doc(hidden)]
+    pub __recoveryStart: [u8; 12],
     /// +0x9C `float`, base ThirdPersonState, semantic; collision recovery progress 0..1, FLT_MAX when idle (medium)
     pub recoveryBlend: f32,
     /// +0xA0 `ptr:NiAVObject`, base ThirdPersonState, semantic; node of the player's third-person 3D the camera blends to (animated camera) (high)
@@ -1186,11 +1213,14 @@ pub struct BleedoutCameraState {
     /// +0xDC `undefined1`, base ThirdPersonState, semantic; the camera orbits without turning the target (high)
     pub freeRotationEnabled: u8,
     /// +0xDD `undefined1`, base ThirdPersonState, semantic; switch to first person once zoomed in to fMinCurrentZoom (high)
-    pub toggleToFirstPerson: u8,
+    #[doc(hidden)]
+    pub __toggleToFirstPerson: [u8; 1],
     /// +0xDE `undefined1`, base ThirdPersonState, semantic; the next Update calls SetFirstPerson(false) (high)
-    pub applyThirdPerson: u8,
+    #[doc(hidden)]
+    pub __applyThirdPerson: [u8; 1],
     /// +0xDF `undefined1`, base ThirdPersonState, semantic; End keeps freeRotation once (high)
-    pub keepFreeRotation: u8,
+    #[doc(hidden)]
+    pub __keepFreeRotation: [u8; 1],
     /// +0xE0 `undefined1`, base ThirdPersonState, semantic; the 'animator camera' mode: look input orbits (freeRotation) and zooms instead of turning the player; the player's pitch is not driven (high)
     pub animatorCam: u8,
     /// +0xE1 `undefined1`, base ThirdPersonState, semantic; apply eye height, zoom distance, shoulder offsets and actor pitch (high)
@@ -1213,7 +1243,8 @@ pub struct BleedoutCameraState {
     #[doc(hidden)]
     pub __yawOffset: [u8; 4],
     /// +0x118 `float`, semantic; random at Begin; +90 per collision retry (up to 4) (high)
-    pub yaw: f32,
+    #[doc(hidden)]
+    pub __yaw: [u8; 4],
     /// +0x11C `undefined4`, semantic; alignment padding before focusNode (+0x120) (high)
     #[doc(hidden)]
     pub __pad11C: [u8; 4],
@@ -1261,7 +1292,7 @@ const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, currentYaw) == 
 const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, savedZoom) == 0x84);
 const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, pitchZoomOffset) == 0x88);
 const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, __zoomSinceTogglePress) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, recoveryStart) == 0x90);
+const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, __recoveryStart) == 0x90);
 const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, recoveryBlend) == 0x9C);
 const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, animatedNode) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, animatedNodeName) == 0xA8);
@@ -1271,9 +1302,9 @@ const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, animatedBlend) 
 const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, animatedBlendRate) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, freeRotation) == 0xD4);
 const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, freeRotationEnabled) == 0xDC);
-const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, toggleToFirstPerson) == 0xDD);
-const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, applyThirdPerson) == 0xDE);
-const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, keepFreeRotation) == 0xDF);
+const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, __toggleToFirstPerson) == 0xDD);
+const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, __applyThirdPerson) == 0xDE);
+const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, __keepFreeRotation) == 0xDF);
 const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, animatorCam) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, __useShoulderOffsets) == 0xE1);
 const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, togglePOVPressed) == 0xE2);
@@ -1282,7 +1313,7 @@ const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, orbitMatrix) ==
 const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, __orbitDistance) == 0x10C);
 const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, __pitch) == 0x110);
 const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, __yawOffset) == 0x114);
-const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, yaw) == 0x118);
+const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, __yaw) == 0x118);
 const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, __pad11C) == 0x11C);
 const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, focusNode) == 0x120);
 const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, __soundHandle) == 0x128);
@@ -1302,35 +1333,41 @@ pub struct CachedRaycastData {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CachedRaycastData_vtable,
     /// +0x8 `undefined4`, semantic; the actor's reference handle (high)
-    pub handle: u32,
+    #[doc(hidden)]
+    pub __handle: [u8; 4],
     unknown_C: [u8; 4],
     /// +0x10 `pointer`, semantic; char controller's caching shape phantom (when its type slot 6 returns 2) (medium)
-    pub cachingPhantom: *mut c_void,
+    #[doc(hidden)]
+    pub __cachingPhantom: [u8; 8],
     /// +0x18 `pointer`, semantic; char controller's collected bodies (mode 1) (medium)
-    pub collectedBodies: *mut c_void,
+    #[doc(hidden)]
+    pub __collectedBodies: [u8; 8],
     /// +0x20 `ptr:bhkWorld`, semantic; the actor's bhkWorld (fallback cast through slot 51) (high)
-    pub world: *mut crate::bhkWorld,
+    #[doc(hidden)]
+    pub __world: [u8; 8],
     /// +0x28 `undefined4`, semantic; the actor's filter info >> 16, shifted back into the ray's filterInfo (high)
-    pub collisionGroup: u32,
+    #[doc(hidden)]
+    pub __collisionGroup: [u8; 4],
     /// +0x2C `undefined1`, semantic; when set the cast skips the phantom and bodies paths and uses the world (medium)
     #[doc(hidden)]
     pub __useWorldOnly: [u8; 1],
     unknown_2D: [u8; 3],
     /// +0x30 `undefined1`, semantic; sticky: any cast hit (medium)
-    pub everHit: u8,
+    #[doc(hidden)]
+    pub __everHit: [u8; 1],
     unknown_31: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CachedRaycastData>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CachedRaycastData, handle) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CachedRaycastData, cachingPhantom) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CachedRaycastData, collectedBodies) == 0x18);
-const _: () = assert!(core::mem::offset_of!(CachedRaycastData, world) == 0x20);
-const _: () = assert!(core::mem::offset_of!(CachedRaycastData, collisionGroup) == 0x28);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __handle) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __cachingPhantom) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __collectedBodies) == 0x18);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __world) == 0x20);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __collisionGroup) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __useWorldOnly) == 0x2C);
-const _: () = assert!(core::mem::offset_of!(CachedRaycastData, everHit) == 0x30);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __everHit) == 0x30);
 
 /// `Calendar`: size 0x40 (exact).
 /// Meaning: the game calendar (no RTTI): six TESGlobal pointers (medium, camera pass).
@@ -1341,17 +1378,21 @@ pub struct Calendar {
     /// +0x8 `ptr:TESGlobal`, semantic; global 0x35 (medium)
     pub gameYear: *mut crate::TESGlobal,
     /// +0x10 `ptr:TESGlobal`, semantic; global 0x36 (medium)
-    pub gameMonth: *mut crate::TESGlobal,
+    #[doc(hidden)]
+    pub __gameMonth: [u8; 8],
     /// +0x18 `ptr:TESGlobal`, semantic; global 0x37 (medium)
-    pub gameDay: *mut crate::TESGlobal,
+    #[doc(hidden)]
+    pub __gameDay: [u8; 8],
     /// +0x20 `ptr:TESGlobal`, semantic; global 0x38 'GameHour' (value +0x34, 0..24) (high)
     pub gameHour: *mut crate::TESGlobal,
     /// +0x28 `ptr:TESGlobal`, semantic; global 0x39 'GameDaysPassed' (high)
     pub gameDaysPassed: *mut crate::TESGlobal,
     /// +0x30 `ptr:TESGlobal`, semantic; global 0x3a (medium)
-    pub timeScale: *mut crate::TESGlobal,
+    #[doc(hidden)]
+    pub __timeScale: [u8; 8],
     /// +0x38 `u32`, semantic; incremented on each day rollover (medium)
-    pub daysAdvanced: u32,
+    #[doc(hidden)]
+    pub __daysAdvanced: [u8; 4],
     /// +0x3C `float`, semantic; accumulated whole days (low)
     #[doc(hidden)]
     pub __field_3c: [u8; 4],
@@ -1360,29 +1401,31 @@ pub struct Calendar {
 }
 const _: () = assert!(size_of::<Calendar>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(Calendar, gameYear) == 0x8);
-const _: () = assert!(core::mem::offset_of!(Calendar, gameMonth) == 0x10);
-const _: () = assert!(core::mem::offset_of!(Calendar, gameDay) == 0x18);
+const _: () = assert!(core::mem::offset_of!(Calendar, __gameMonth) == 0x10);
+const _: () = assert!(core::mem::offset_of!(Calendar, __gameDay) == 0x18);
 const _: () = assert!(core::mem::offset_of!(Calendar, gameHour) == 0x20);
 const _: () = assert!(core::mem::offset_of!(Calendar, gameDaysPassed) == 0x28);
-const _: () = assert!(core::mem::offset_of!(Calendar, timeScale) == 0x30);
-const _: () = assert!(core::mem::offset_of!(Calendar, daysAdvanced) == 0x38);
+const _: () = assert!(core::mem::offset_of!(Calendar, __timeScale) == 0x30);
+const _: () = assert!(core::mem::offset_of!(Calendar, __daysAdvanced) == 0x38);
 const _: () = assert!(core::mem::offset_of!(Calendar, __field_3c) == 0x3C);
 
 /// `CameraCasterHolder`: size 0x10 (exact).
 /// Meaning: PlayerCamera+0x120: two refcounted bhkSimpleShapePhantoms built by CreateSpherePhantom 0x557e40 around one bhkSphereShape of radius fCameraCasterSize * havok scale (collision layer 0x27 with a fresh group from bhkCollisionFilter+0x4c) (high, camera pass).
 /// Evidence: PlayerCamera+0x120: two refcounted bhkSimpleShapePhantoms built by CreateSpherePhantom 0x557e40 around one bhkSphereShape of radius fCameraCasterSize * havok scale (collision layer 0x27 with a fresh group from bhkCollisionFilter+0x4c); no RTTI; name descriptive. CastCameraLinearAndCollectHits 0x5574f0 reads *holder (+0) as the casting phantom; size: CreateCameraCaster 0x8fa4a0 allocates 0x10; DestroyCameraCaster frees 0x10; run-cam: PlayerCamera+0x120 is null at the main menu and 0x14c275cf200 in play, a 0x10-byte holder of two bhkSimpleShapePhantom and bhkSimpleShapePhantom; every one of 226 third-person frames casts CastCameraLinearAndCollectHits with rcx = that holder (1-1 casts a frame, rets ['8fa963']).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CameraCasterHolder {
     /// +0x0 `pointer`, semantic; bhkSimpleShapePhantom used by the linear cast (high)
-    pub castPhantom: *mut c_void,
+    #[doc(hidden)]
+    pub __castPhantom: [u8; 8],
     /// +0x8 `pointer`, semantic; second bhkSimpleShapePhantom (same sphere) (high)
-    pub overlapPhantom: *mut c_void,
+    #[doc(hidden)]
+    pub __overlapPhantom: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CameraCasterHolder>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(CameraCasterHolder, castPhantom) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CameraCasterHolder, overlapPhantom) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CameraCasterHolder, __castPhantom) == 0x0);
+const _: () = assert!(core::mem::offset_of!(CameraCasterHolder, __overlapPhantom) == 0x8);
 
 /// `CameraOverrideStartHandler`: size 0x10 (exact, medium); primary base `IHandlerFunctor<Actor,BSFixedStringCI>`.
 /// Meaning: animation-graph event handler (IHandlerFunctor<Actor,BSFixedStringCI>) registered under the factory key "CameraOverrideStartHandler" (high, camera pass).
@@ -1456,39 +1499,47 @@ const _: () = assert!(core::mem::offset_of!(CameraShakeHandler, __pad0C) == 0xC)
 /// `CrosshairPickData`: size 0x38 (exact).
 /// Meaning: the player's crosshair pick (high, camera pass).
 /// Evidence: the player's crosshair pick; IC8 (static-X). Corrects targetHandle2 (+0x8) from CrosshairPickData::Pick 0x409fd0.; size: existing class row (static 0x3245340); not re-derived.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CrosshairPickData {
-    pub unknown_0: [u8; 4],
+    unknown_0: [u8; 4],
     /// +0x4 `u32`, semantic; handle of the activation target: the accepted reference of any type within the activate pick length (fFavorRequestPickDistance with a pending favor), or an actor of a race with +0x128 == 3 within fLargeActivatePickLength_G (high)
-    pub targetHandle: u32,
+    #[doc(hidden)]
+    pub __targetHandle: [u8; 4],
     /// +0x8 `u32`, semantic; the actor the pick hit: set to the handle of any ACHR (formType 0x3e) found along the cast; after the target is chosen it is overwritten with targetHandle unless the target's base is CONT, DOOR, TREE, FLOR or FURN (0x1c, 0x1d, 0x26..0x28); cleared when it is the player's mount (high)
-    pub actorHandle: u32,
+    #[doc(hidden)]
+    pub __actorHandle: [u8; 4],
     /// +0xC `u32`, semantic; handle of a target whose 3D has a keyframed or dynamic rigid body (HasBhkRigidBodyWithType4Or5Cached) within the player's +0xae4 reach, or a copy of +4 when the final target has one (medium)
-    pub grabTargetHandle: u32,
+    #[doc(hidden)]
+    pub __grabTargetHandle: [u8; 4],
     /// +0x10 `class:NiPoint3`, semantic; NiPoint3 origin + t * direction of the accepted hit (high); retyped undefined1 -> class:NiPoint3: Pick 0x409fd0 writes t*dir + origin into +0x10..+0x18
-    pub hitPoint: crate::NiPoint3,
-    pub unknown_1C: [u8; 4],
+    #[doc(hidden)]
+    pub __hitPoint: [u8; 12],
+    unknown_1C: [u8; 4],
     /// +0x20 `pointer`, semantic; object of the accepted hit (cleared at each pick) (medium)
-    pub hitObject: *mut c_void,
+    #[doc(hidden)]
+    pub __hitObject: [u8; 8],
     /// +0x28 `pointer`, semantic; refcounted bhkSimpleShapePhantom with a bhkSphereShape of radius fActivatePickRadius:Interface * 0.0142875 (ID_188105) (high)
-    pub phantom: *mut c_void,
+    #[doc(hidden)]
+    pub __phantom: [u8; 8],
     /// +0x30 `u32`, semantic; collision group the phantom filter was last set for (medium)
-    pub collisionGroup: u32,
+    #[doc(hidden)]
+    pub __collisionGroup: [u8; 4],
     /// +0x34 `u8`, semantic; the pick wants a HUD prompt (drives the sWaitHere / clear text messages) (low)
-    pub promptActive: u8,
-    pub unknown_35: [u8; 3],
+    #[doc(hidden)]
+    pub __promptActive: [u8; 1],
+    unknown_35: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CrosshairPickData>() == 0x38);
-const _: () = assert!(core::mem::offset_of!(CrosshairPickData, targetHandle) == 0x4);
-const _: () = assert!(core::mem::offset_of!(CrosshairPickData, actorHandle) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CrosshairPickData, grabTargetHandle) == 0xC);
-const _: () = assert!(core::mem::offset_of!(CrosshairPickData, hitPoint) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CrosshairPickData, hitObject) == 0x20);
-const _: () = assert!(core::mem::offset_of!(CrosshairPickData, phantom) == 0x28);
-const _: () = assert!(core::mem::offset_of!(CrosshairPickData, collisionGroup) == 0x30);
-const _: () = assert!(core::mem::offset_of!(CrosshairPickData, promptActive) == 0x34);
+const _: () = assert!(core::mem::offset_of!(CrosshairPickData, __targetHandle) == 0x4);
+const _: () = assert!(core::mem::offset_of!(CrosshairPickData, __actorHandle) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CrosshairPickData, __grabTargetHandle) == 0xC);
+const _: () = assert!(core::mem::offset_of!(CrosshairPickData, __hitPoint) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CrosshairPickData, __hitObject) == 0x20);
+const _: () = assert!(core::mem::offset_of!(CrosshairPickData, __phantom) == 0x28);
+const _: () = assert!(core::mem::offset_of!(CrosshairPickData, __collisionGroup) == 0x30);
+const _: () = assert!(core::mem::offset_of!(CrosshairPickData, __promptActive) == 0x34);
 
 /// `DragonCameraState`: size 0x110 (exact, medium); primary base `ThirdPersonState`.
 /// Meaning: third person while riding a dragon (medium, frame pass).
@@ -1542,7 +1593,8 @@ pub struct DragonCameraState {
     #[doc(hidden)]
     pub __zoomSinceTogglePress: [u8; 4],
     /// +0x90 `class:NiPoint3`, base ThirdPersonState, semantic; NiPoint3 position at the last camera collision (medium); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
-    pub recoveryStart: crate::NiPoint3,
+    #[doc(hidden)]
+    pub __recoveryStart: [u8; 12],
     /// +0x9C `float`, base ThirdPersonState, semantic; collision recovery progress 0..1, FLT_MAX when idle (medium)
     pub recoveryBlend: f32,
     /// +0xA0 `ptr:NiAVObject`, base ThirdPersonState, semantic; node of the player's third-person 3D the camera blends to (animated camera) (high)
@@ -1562,11 +1614,14 @@ pub struct DragonCameraState {
     /// +0xDC `undefined1`, base ThirdPersonState, semantic; the camera orbits without turning the target (high)
     pub freeRotationEnabled: u8,
     /// +0xDD `undefined1`, base ThirdPersonState, semantic; switch to first person once zoomed in to fMinCurrentZoom (high)
-    pub toggleToFirstPerson: u8,
+    #[doc(hidden)]
+    pub __toggleToFirstPerson: [u8; 1],
     /// +0xDE `undefined1`, base ThirdPersonState, semantic; the next Update calls SetFirstPerson(false) (high)
-    pub applyThirdPerson: u8,
+    #[doc(hidden)]
+    pub __applyThirdPerson: [u8; 1],
     /// +0xDF `undefined1`, base ThirdPersonState, semantic; End keeps freeRotation once (high)
-    pub keepFreeRotation: u8,
+    #[doc(hidden)]
+    pub __keepFreeRotation: [u8; 1],
     /// +0xE0 `undefined1`, base ThirdPersonState, semantic; the 'animator camera' mode: look input orbits (freeRotation) and zooms instead of turning the player; the player's pitch is not driven (high)
     pub animatorCam: u8,
     /// +0xE1 `undefined1`, base ThirdPersonState, semantic; apply eye height, zoom distance, shoulder offsets and actor pitch (high)
@@ -1594,9 +1649,11 @@ pub struct DragonCameraState {
     #[doc(hidden)]
     pub __padF9: [u8; 3],
     /// +0xFC `class:NiPoint2`, semantic; NiPoint2 (yaw, pitch) (medium); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2 (yaw, pitch); ctor 0x55c690 zeroes both dolly NiPoint2
-    pub dollyFrom: crate::NiPoint2,
+    #[doc(hidden)]
+    pub __dollyFrom: [u8; 8],
     /// +0x104 `class:NiPoint2`, semantic; NiPoint2 (yaw, pitch) (medium); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2 (yaw, pitch)
-    pub dollyTo: crate::NiPoint2,
+    #[doc(hidden)]
+    pub __dollyTo: [u8; 8],
     /// +0x10C `undefined4`, semantic; ObjectRefHandle (low)
     pub targetHandle: u32,
     #[doc(hidden)]
@@ -1623,7 +1680,7 @@ const _: () = assert!(core::mem::offset_of!(DragonCameraState, currentYaw) == 0x
 const _: () = assert!(core::mem::offset_of!(DragonCameraState, savedZoom) == 0x84);
 const _: () = assert!(core::mem::offset_of!(DragonCameraState, pitchZoomOffset) == 0x88);
 const _: () = assert!(core::mem::offset_of!(DragonCameraState, __zoomSinceTogglePress) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(DragonCameraState, recoveryStart) == 0x90);
+const _: () = assert!(core::mem::offset_of!(DragonCameraState, __recoveryStart) == 0x90);
 const _: () = assert!(core::mem::offset_of!(DragonCameraState, recoveryBlend) == 0x9C);
 const _: () = assert!(core::mem::offset_of!(DragonCameraState, animatedNode) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(DragonCameraState, animatedNodeName) == 0xA8);
@@ -1633,9 +1690,9 @@ const _: () = assert!(core::mem::offset_of!(DragonCameraState, animatedBlend) ==
 const _: () = assert!(core::mem::offset_of!(DragonCameraState, animatedBlendRate) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(DragonCameraState, freeRotation) == 0xD4);
 const _: () = assert!(core::mem::offset_of!(DragonCameraState, freeRotationEnabled) == 0xDC);
-const _: () = assert!(core::mem::offset_of!(DragonCameraState, toggleToFirstPerson) == 0xDD);
-const _: () = assert!(core::mem::offset_of!(DragonCameraState, applyThirdPerson) == 0xDE);
-const _: () = assert!(core::mem::offset_of!(DragonCameraState, keepFreeRotation) == 0xDF);
+const _: () = assert!(core::mem::offset_of!(DragonCameraState, __toggleToFirstPerson) == 0xDD);
+const _: () = assert!(core::mem::offset_of!(DragonCameraState, __applyThirdPerson) == 0xDE);
+const _: () = assert!(core::mem::offset_of!(DragonCameraState, __keepFreeRotation) == 0xDF);
 const _: () = assert!(core::mem::offset_of!(DragonCameraState, animatorCam) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(DragonCameraState, __useShoulderOffsets) == 0xE1);
 const _: () = assert!(core::mem::offset_of!(DragonCameraState, togglePOVPressed) == 0xE2);
@@ -1647,8 +1704,8 @@ const _: () = assert!(core::mem::offset_of!(DragonCameraState, __padF1) == 0xF1)
 const _: () = assert!(core::mem::offset_of!(DragonCameraState, dollyProgress) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(DragonCameraState, combatTargetMode) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(DragonCameraState, __padF9) == 0xF9);
-const _: () = assert!(core::mem::offset_of!(DragonCameraState, dollyFrom) == 0xFC);
-const _: () = assert!(core::mem::offset_of!(DragonCameraState, dollyTo) == 0x104);
+const _: () = assert!(core::mem::offset_of!(DragonCameraState, __dollyFrom) == 0xFC);
+const _: () = assert!(core::mem::offset_of!(DragonCameraState, __dollyTo) == 0x104);
 const _: () = assert!(core::mem::offset_of!(DragonCameraState, targetHandle) == 0x10C);
 
 /// `EnemyHealth`: size 0x88 (exact, medium); primary base `HUDObject`.
@@ -1673,19 +1730,23 @@ const _: () = assert!(core::mem::offset_of!(EnemyHealth, __vftable) == 0x0);
 #[repr(C, align(8))]
 pub struct FirstPersonRenderContext {
     /// +0x0 `class:NiPoint3`, semantic; FirstPersonState.cameraNode world translation (0x8f8c10), the hands camera's position before the root offset is added (high); retyped undefined1 -> class:NiPoint3: GetFirstPersonCameraNodePosition 0x8f8c10 (NiPoint3* out) writes it via 0x657c90
-    pub eyePosition: crate::NiPoint3,
-    /// +0xC `float`, semantic; PlayerCamera.firstPersonFOV; both first-person projections use g_CameraFOVOffset + this (high)
     #[doc(hidden)]
-    pub __firstPersonFOV: [u8; 4],
+    pub __eyePosition: [u8; 12],
+    /// +0xC `float`, semantic; PlayerCamera.firstPersonFOV; both first-person projections use g_CameraFOVOffset + this (high)
+    pub firstPersonFOV: f32,
     /// +0x10 `float`, semantic; PlayerCamera.worldFOV (high)
-    pub worldFOV: f32,
+    #[doc(hidden)]
+    pub __worldFOV: [u8; 4],
     unknown_14: [u8; 4],
     /// +0x18 `ptr:NiNode`, semantic; player Get3D(true) (ID_415031) (high)
-    pub firstPersonRoot: *mut crate::NiNode,
+    #[doc(hidden)]
+    pub __firstPersonRoot: [u8; 8],
     /// +0x20 `ptr:NiNode`, semantic; player Get3D(false) (high)
-    pub thirdPersonRoot: *mut crate::NiNode,
+    #[doc(hidden)]
+    pub __thirdPersonRoot: [u8; 8],
     /// +0x28 `ptr:SceneGraph`, semantic; g_SceneGraph (also stored by main +0x898); ID_415032 is this field (high)
-    pub sceneGraph: *mut crate::SceneGraph,
+    #[doc(hidden)]
+    pub __sceneGraph: [u8; 8],
     /// +0x30 `ptr:ShadowSceneNode`, semantic; g_ShadowSceneNode (high)
     #[doc(hidden)]
     pub __shadowSceneNode: [u8; 8],
@@ -1694,21 +1755,22 @@ pub struct FirstPersonRenderContext {
     #[doc(hidden)]
     pub __killCam: [u8; 1],
     /// +0x51 `undefined1`, semantic; set from the current worldspace/cell flags; selects the volumetric lighting pass in RenderWorldScene (low)
-    pub unk51: u8,
+    #[doc(hidden)]
+    pub __unk51: [u8; 1],
     unknown_52: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FirstPersonRenderContext>() == 0x58);
-const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, eyePosition) == 0x0);
-const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, __firstPersonFOV) == 0xC);
-const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, worldFOV) == 0x10);
-const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, firstPersonRoot) == 0x18);
-const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, thirdPersonRoot) == 0x20);
-const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, sceneGraph) == 0x28);
+const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, __eyePosition) == 0x0);
+const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, firstPersonFOV) == 0xC);
+const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, __worldFOV) == 0x10);
+const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, __firstPersonRoot) == 0x18);
+const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, __thirdPersonRoot) == 0x20);
+const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, __sceneGraph) == 0x28);
 const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, __shadowSceneNode) == 0x30);
 const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, __killCam) == 0x50);
-const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, unk51) == 0x51);
+const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, __unk51) == 0x51);
 
 /// `FirstPersonState`: size 0x90 (exact, medium); primary base `TESCameraState`.
 /// Meaning: first-person camera at the first-person camera node with spring damping, sitting yaw and the pitch offset fed to the animation graph (high, frame pass).
@@ -1726,7 +1788,8 @@ pub struct FirstPersonState {
     #[doc(hidden)]
     pub __pad0c: [u8; 4],
     /// +0x10 `ptr:PlayerCamera`, semantic; owning camera (high)
-    pub camera: *mut crate::PlayerCamera,
+    #[doc(hidden)]
+    pub __camera: [u8; 8],
     /// +0x18 `u32`, semantic; CameraState id (data/camerastates.json) (high)
     #[doc(hidden)]
     pub __id: [u8; 4],
@@ -1734,7 +1797,8 @@ pub struct FirstPersonState {
     #[doc(hidden)]
     pub __pad1c: [u8; 4],
     /// +0x20 `class:PlayerInputHandler`, semantic; embedded handler (high)
-    pub inputHandler: crate::PlayerInputHandler,
+    #[doc(hidden)]
+    pub __inputHandler: [u8; 16],
     /// +0x30 `class:NiPoint3`, semantic; NiPoint3 player position of the previous frame (FLT_MAX after Revert) (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
     pub lastTargetPosition: crate::NiPoint3,
     /// +0x3C `class:NiPoint3`, semantic; NiPoint3 velocity of the spring (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
@@ -1748,9 +1812,11 @@ pub struct FirstPersonState {
     /// +0x58 `ptr:NiAVObject`, semantic; first-person camera node: world rotation (+0x7c) and translation (+0xa0) are the camera pose (high)
     pub cameraNode: *mut crate::NiAVObject,
     /// +0x60 `ptr:NiNode`, semantic; 'Camera Control' node of the first-person skeleton (FOV offset and image space, as ThirdPersonState+0x38) (high)
-    pub cameraControlNode: *mut crate::NiNode,
+    #[doc(hidden)]
+    pub __cameraControlNode: [u8; 8],
     /// +0x68 `float`, semantic; yaw offset while sitting, clamped to fFirstPersonSittingAngleLimit (high)
-    pub sittingYaw: f32,
+    #[doc(hidden)]
+    pub __sittingYaw: [u8; 4],
     /// +0x6C `float`, semantic; multiplier of the node pitch for the head-look offset, in [f1stPitchOffsetTarget * K, 1.01] (high)
     pub pitchOffsetMult: f32,
     /// +0x70 `float`, semantic; previous pitchOffsetMult (high)
@@ -1795,17 +1861,17 @@ const _: () = assert!(size_of::<FirstPersonState>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(FirstPersonState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(FirstPersonState, __refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(FirstPersonState, __pad0c) == 0xC);
-const _: () = assert!(core::mem::offset_of!(FirstPersonState, camera) == 0x10);
+const _: () = assert!(core::mem::offset_of!(FirstPersonState, __camera) == 0x10);
 const _: () = assert!(core::mem::offset_of!(FirstPersonState, __id) == 0x18);
 const _: () = assert!(core::mem::offset_of!(FirstPersonState, __pad1c) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(FirstPersonState, inputHandler) == 0x20);
+const _: () = assert!(core::mem::offset_of!(FirstPersonState, __inputHandler) == 0x20);
 const _: () = assert!(core::mem::offset_of!(FirstPersonState, lastTargetPosition) == 0x30);
 const _: () = assert!(core::mem::offset_of!(FirstPersonState, dampingVelocity) == 0x3C);
 const _: () = assert!(core::mem::offset_of!(FirstPersonState, __dampingOffset) == 0x48);
 const _: () = assert!(core::mem::offset_of!(FirstPersonState, __pad54) == 0x54);
 const _: () = assert!(core::mem::offset_of!(FirstPersonState, cameraNode) == 0x58);
-const _: () = assert!(core::mem::offset_of!(FirstPersonState, cameraControlNode) == 0x60);
-const _: () = assert!(core::mem::offset_of!(FirstPersonState, sittingYaw) == 0x68);
+const _: () = assert!(core::mem::offset_of!(FirstPersonState, __cameraControlNode) == 0x60);
+const _: () = assert!(core::mem::offset_of!(FirstPersonState, __sittingYaw) == 0x68);
 const _: () = assert!(core::mem::offset_of!(FirstPersonState, pitchOffsetMult) == 0x6C);
 const _: () = assert!(core::mem::offset_of!(FirstPersonState, pitchOffsetMultPrev) == 0x70);
 const _: () = assert!(core::mem::offset_of!(FirstPersonState, __laggedPitchOffset) == 0x74);
@@ -2105,28 +2171,33 @@ const _: () = assert!(core::mem::offset_of!(FlameProjectile, __field_1E0) == 0x1
 /// `FlatBone`: size 0x80 (exact).
 /// Meaning: one bone of a BSFlattenedBoneTree (no RTTI; descriptive name) (high, camera pass).
 /// Evidence: one bone of a BSFlattenedBoneTree (no RTTI; descriptive name); item 9 (request V). UpdateBoneWorldTransforms 0xef4f50 steps 0x80 over BSFlattenedBoneTree+0x130 (count +0x128): 0xef4f87 mov rcx,[rdi+rdx+0x70] (node), 0xef4f95 movzx eax,word [rbx+0x68] (parent), 0xef4fa2 lea rcx,[rdx+0x34] (the parent's world); world = node world, else parent world * local. GetOrCreateNodeForIndex 0xef4af0 names the new node from +0x78 and copies local +0..+0x33 and world +0x34..+0x67 into it.; size: the 0x80 stride.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct FlatBone {
     /// +0x0 `class:NiTransform`, semantic; local transform (high)
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x34 `class:NiTransform`, semantic; world transform (high)
-    pub world: crate::NiTransform,
+    #[doc(hidden)]
+    pub __world: [u8; 52],
     /// +0x68 `i16`, semantic; parent entry index; < 0: the tree node itself (high)
-    pub parentIndex: u16,
-    pub unknown_6A: [u8; 6],
+    #[doc(hidden)]
+    pub __parentIndex: [u8; 2],
+    unknown_6A: [u8; 6],
     /// +0x70 `ptr:NiNode`, semantic; NiNode materialised for the bone, or null (high)
-    pub node: *mut crate::NiNode,
+    #[doc(hidden)]
+    pub __node: [u8; 8],
     /// +0x78 `class:BSFixedString`, semantic; bone name (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FlatBone>() == 0x80);
-const _: () = assert!(core::mem::offset_of!(FlatBone, local) == 0x0);
-const _: () = assert!(core::mem::offset_of!(FlatBone, world) == 0x34);
-const _: () = assert!(core::mem::offset_of!(FlatBone, parentIndex) == 0x68);
-const _: () = assert!(core::mem::offset_of!(FlatBone, node) == 0x70);
-const _: () = assert!(core::mem::offset_of!(FlatBone, name) == 0x78);
+const _: () = assert!(core::mem::offset_of!(FlatBone, __local) == 0x0);
+const _: () = assert!(core::mem::offset_of!(FlatBone, __world) == 0x34);
+const _: () = assert!(core::mem::offset_of!(FlatBone, __parentIndex) == 0x68);
+const _: () = assert!(core::mem::offset_of!(FlatBone, __node) == 0x70);
+const _: () = assert!(core::mem::offset_of!(FlatBone, __name) == 0x78);
 
 /// `FreeCameraState`: size 0x50 (exact, medium); primary base `TESCameraState`.
 /// Meaning: free fly camera (tfc) (high, frame pass).
@@ -2144,7 +2215,8 @@ pub struct FreeCameraState {
     #[doc(hidden)]
     pub __pad0c: [u8; 4],
     /// +0x10 `ptr:PlayerCamera`, semantic; owning camera (high)
-    pub camera: *mut crate::PlayerCamera,
+    #[doc(hidden)]
+    pub __camera: [u8; 8],
     /// +0x18 `u32`, semantic; CameraState id (data/camerastates.json) (high)
     #[doc(hidden)]
     pub __id: [u8; 4],
@@ -2152,7 +2224,8 @@ pub struct FreeCameraState {
     #[doc(hidden)]
     pub __pad1c: [u8; 4],
     /// +0x20 `class:PlayerInputHandler`, semantic; embedded handler (high)
-    pub inputHandler: crate::PlayerInputHandler,
+    #[doc(hidden)]
+    pub __inputHandler: [u8; 16],
     /// +0x30 `class:NiPoint3`, semantic, runtime; NiPoint3 camera position (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3; GetTranslation 0x8f60a0 (NiPoint3* out)
     pub position: crate::NiPoint3,
     /// +0x3C `float`, semantic; pitch, wrapped to [0, 2pi) (high)
@@ -2166,7 +2239,8 @@ pub struct FreeCameraState {
     #[doc(hidden)]
     pub __forwardInputB: [u8; 4],
     /// +0x4C `undefined2`, semantic; +1 / -1 / 0 vertical move (medium)
-    pub verticalInput: u16,
+    #[doc(hidden)]
+    pub __verticalInput: [u8; 2],
     /// +0x4E `undefined1`, semantic; run modifier held: speed * fFreeCameraRunSpeed (high)
     #[doc(hidden)]
     pub __run: [u8; 1],
@@ -2180,16 +2254,16 @@ const _: () = assert!(size_of::<FreeCameraState>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(FreeCameraState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(FreeCameraState, __refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(FreeCameraState, __pad0c) == 0xC);
-const _: () = assert!(core::mem::offset_of!(FreeCameraState, camera) == 0x10);
+const _: () = assert!(core::mem::offset_of!(FreeCameraState, __camera) == 0x10);
 const _: () = assert!(core::mem::offset_of!(FreeCameraState, __id) == 0x18);
 const _: () = assert!(core::mem::offset_of!(FreeCameraState, __pad1c) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(FreeCameraState, inputHandler) == 0x20);
+const _: () = assert!(core::mem::offset_of!(FreeCameraState, __inputHandler) == 0x20);
 const _: () = assert!(core::mem::offset_of!(FreeCameraState, position) == 0x30);
 const _: () = assert!(core::mem::offset_of!(FreeCameraState, pitch) == 0x3C);
 const _: () = assert!(core::mem::offset_of!(FreeCameraState, yaw) == 0x40);
 const _: () = assert!(core::mem::offset_of!(FreeCameraState, __forwardInputA) == 0x44);
 const _: () = assert!(core::mem::offset_of!(FreeCameraState, __forwardInputB) == 0x48);
-const _: () = assert!(core::mem::offset_of!(FreeCameraState, verticalInput) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(FreeCameraState, __verticalInput) == 0x4C);
 const _: () = assert!(core::mem::offset_of!(FreeCameraState, __run) == 0x4E);
 const _: () = assert!(core::mem::offset_of!(FreeCameraState, __horizontalMove) == 0x4F);
 
@@ -2219,7 +2293,8 @@ pub struct FurnitureCameraState {
     /// +0x20 `float`, semantic; target heading at Begin (high)
     pub heading: f32,
     /// +0x24 `class:NiPoint3`, semantic; NiPoint3 offset in the target's heading frame (high); retyped undefined1 -> class:NiPoint3: ComputeFurnitureCameraPosition 0x8f6a70 reads +0x24/+0x28/+0x2c as x, y, z of the heading-frame offset
-    pub translate: crate::NiPoint3,
+    #[doc(hidden)]
+    pub __translate: [u8; 12],
     /// +0x30 `float`, semantic, runtime; distance back along the view (high)
     pub zoom: f32,
     /// +0x34 `float`, semantic (high)
@@ -2246,7 +2321,7 @@ const _: () = assert!(core::mem::offset_of!(FurnitureCameraState, camera) == 0x1
 const _: () = assert!(core::mem::offset_of!(FurnitureCameraState, __id) == 0x18);
 const _: () = assert!(core::mem::offset_of!(FurnitureCameraState, __pad1c) == 0x1C);
 const _: () = assert!(core::mem::offset_of!(FurnitureCameraState, heading) == 0x20);
-const _: () = assert!(core::mem::offset_of!(FurnitureCameraState, translate) == 0x24);
+const _: () = assert!(core::mem::offset_of!(FurnitureCameraState, __translate) == 0x24);
 const _: () = assert!(core::mem::offset_of!(FurnitureCameraState, zoom) == 0x30);
 const _: () = assert!(core::mem::offset_of!(FurnitureCameraState, pitch) == 0x34);
 const _: () = assert!(core::mem::offset_of!(FurnitureCameraState, yawOffset) == 0x38);
@@ -2258,17 +2333,18 @@ const _: () = assert!(core::mem::offset_of!(FurnitureCameraState, __pad3F) == 0x
 /// `FurnitureMarker`: size 0x14 (exact).
 /// Meaning: one furniture marker of the model (medium, camera pass).
 /// Evidence: one furniture marker of the model; IC2 E (static-N): only +0x10 was read; +0x0..+0xf not read in this track.; size: GetMarker 0xff13a0 stride 0x14.
-#[repr(C)]
+#[repr(C, align(4))]
 pub struct FurnitureMarker {
     /// +0x0 `undefined1`, semantic; not read in this track (low)
-    pub field_0: [u8; 16],
+    #[doc(hidden)]
+    pub __field_0: [u8; 16],
     /// +0x10 `u32`, semantic; bit 0 sit, bit 1 sleep (lay), bit 2 lean; see the flag rows (high)
     pub animTypeFlags: u32,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FurnitureMarker>() == 0x14);
-const _: () = assert!(core::mem::offset_of!(FurnitureMarker, field_0) == 0x0);
+const _: () = assert!(core::mem::offset_of!(FurnitureMarker, __field_0) == 0x0);
 const _: () = assert!(core::mem::offset_of!(FurnitureMarker, animTypeFlags) == 0x10);
 
 /// `HorseCameraState`: size 0xF8 (exact, medium); primary base `ThirdPersonState`.
@@ -2323,7 +2399,8 @@ pub struct HorseCameraState {
     #[doc(hidden)]
     pub __zoomSinceTogglePress: [u8; 4],
     /// +0x90 `class:NiPoint3`, base ThirdPersonState, semantic; NiPoint3 position at the last camera collision (medium); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
-    pub recoveryStart: crate::NiPoint3,
+    #[doc(hidden)]
+    pub __recoveryStart: [u8; 12],
     /// +0x9C `float`, base ThirdPersonState, semantic; collision recovery progress 0..1, FLT_MAX when idle (medium)
     pub recoveryBlend: f32,
     /// +0xA0 `ptr:NiAVObject`, base ThirdPersonState, semantic; node of the player's third-person 3D the camera blends to (animated camera) (high)
@@ -2343,11 +2420,14 @@ pub struct HorseCameraState {
     /// +0xDC `undefined1`, base ThirdPersonState, semantic; the camera orbits without turning the target (high)
     pub freeRotationEnabled: u8,
     /// +0xDD `undefined1`, base ThirdPersonState, semantic; switch to first person once zoomed in to fMinCurrentZoom (high)
-    pub toggleToFirstPerson: u8,
+    #[doc(hidden)]
+    pub __toggleToFirstPerson: [u8; 1],
     /// +0xDE `undefined1`, base ThirdPersonState, semantic; the next Update calls SetFirstPerson(false) (high)
-    pub applyThirdPerson: u8,
+    #[doc(hidden)]
+    pub __applyThirdPerson: [u8; 1],
     /// +0xDF `undefined1`, base ThirdPersonState, semantic; End keeps freeRotation once (high)
-    pub keepFreeRotation: u8,
+    #[doc(hidden)]
+    pub __keepFreeRotation: [u8; 1],
     /// +0xE0 `undefined1`, base ThirdPersonState, semantic; the 'animator camera' mode: look input orbits (freeRotation) and zooms instead of turning the player; the player's pitch is not driven (high)
     pub animatorCam: u8,
     /// +0xE1 `undefined1`, base ThirdPersonState, semantic; apply eye height, zoom distance, shoulder offsets and actor pitch (high)
@@ -2391,7 +2471,7 @@ const _: () = assert!(core::mem::offset_of!(HorseCameraState, currentYaw) == 0x8
 const _: () = assert!(core::mem::offset_of!(HorseCameraState, savedZoom) == 0x84);
 const _: () = assert!(core::mem::offset_of!(HorseCameraState, pitchZoomOffset) == 0x88);
 const _: () = assert!(core::mem::offset_of!(HorseCameraState, __zoomSinceTogglePress) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(HorseCameraState, recoveryStart) == 0x90);
+const _: () = assert!(core::mem::offset_of!(HorseCameraState, __recoveryStart) == 0x90);
 const _: () = assert!(core::mem::offset_of!(HorseCameraState, recoveryBlend) == 0x9C);
 const _: () = assert!(core::mem::offset_of!(HorseCameraState, animatedNode) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(HorseCameraState, animatedNodeName) == 0xA8);
@@ -2401,9 +2481,9 @@ const _: () = assert!(core::mem::offset_of!(HorseCameraState, animatedBlend) == 
 const _: () = assert!(core::mem::offset_of!(HorseCameraState, animatedBlendRate) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(HorseCameraState, freeRotation) == 0xD4);
 const _: () = assert!(core::mem::offset_of!(HorseCameraState, freeRotationEnabled) == 0xDC);
-const _: () = assert!(core::mem::offset_of!(HorseCameraState, toggleToFirstPerson) == 0xDD);
-const _: () = assert!(core::mem::offset_of!(HorseCameraState, applyThirdPerson) == 0xDE);
-const _: () = assert!(core::mem::offset_of!(HorseCameraState, keepFreeRotation) == 0xDF);
+const _: () = assert!(core::mem::offset_of!(HorseCameraState, __toggleToFirstPerson) == 0xDD);
+const _: () = assert!(core::mem::offset_of!(HorseCameraState, __applyThirdPerson) == 0xDE);
+const _: () = assert!(core::mem::offset_of!(HorseCameraState, __keepFreeRotation) == 0xDF);
 const _: () = assert!(core::mem::offset_of!(HorseCameraState, animatorCam) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(HorseCameraState, __useShoulderOffsets) == 0xE1);
 const _: () = assert!(core::mem::offset_of!(HorseCameraState, togglePOVPressed) == 0xE2);
@@ -2443,7 +2523,8 @@ pub struct IronSightsState {
     #[doc(hidden)]
     pub __pad0c: [u8; 4],
     /// +0x10 `ptr:PlayerCamera`, semantic; owning camera (high)
-    pub camera: *mut crate::PlayerCamera,
+    #[doc(hidden)]
+    pub __camera: [u8; 8],
     /// +0x18 `u32`, semantic; CameraState id (data/camerastates.json) (high)
     #[doc(hidden)]
     pub __id: [u8; 4],
@@ -2459,7 +2540,7 @@ const _: () = assert!(size_of::<IronSightsState>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(IronSightsState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(IronSightsState, __refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(IronSightsState, __pad0c) == 0xC);
-const _: () = assert!(core::mem::offset_of!(IronSightsState, camera) == 0x10);
+const _: () = assert!(core::mem::offset_of!(IronSightsState, __camera) == 0x10);
 const _: () = assert!(core::mem::offset_of!(IronSightsState, __id) == 0x18);
 const _: () = assert!(core::mem::offset_of!(IronSightsState, __pad1c) == 0x1C);
 const _: () = assert!(core::mem::offset_of!(IronSightsState, sightNode) == 0x20);
@@ -2536,7 +2617,8 @@ pub struct LocalMapCamera__DefaultState {
     #[doc(hidden)]
     pub __padding0C: [u8; 4],
     /// +0x10 `ptr:TESCamera`, semantic; owning camera (high)
-    pub camera: *mut crate::TESCamera,
+    #[doc(hidden)]
+    pub __camera: [u8; 8],
     /// +0x18 `u32`, semantic; CameraState id (data/camerastates.json) (high)
     #[doc(hidden)]
     pub __id: [u8; 4],
@@ -2544,15 +2626,18 @@ pub struct LocalMapCamera__DefaultState {
     #[doc(hidden)]
     pub __padding1C: [u8; 4],
     /// +0x20 `class:NiPoint3`, semantic; NiPoint3 point the view is centred on (z = point z + fMapLocalHeight) (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3; LocalMapCamera::SetCenter 0x248100 takes const NiPoint3*
-    pub center: crate::NiPoint3,
+    #[doc(hidden)]
+    pub __center: [u8; 12],
     /// +0x2C `class:NiPoint3`, semantic; NiPoint3 pan offset from center (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3; SetOffsetToPoint 0x248130
     pub panOffset: crate::NiPoint3,
     /// +0x38 `float`, semantic, runtime; 0 (whole area) .. 1 (minimum view) (high)
     pub zoom: f32,
     /// +0x3C `float`, semantic; half width of the view at zoom 1 (high)
-    pub minHalfWidth: f32,
+    #[doc(hidden)]
+    pub __minHalfWidth: [u8; 4],
     /// +0x40 `float`, semantic; half height of the view at zoom 1; height/width ratio = +0x40 / +0x3c (high)
-    pub minHalfHeight: f32,
+    #[doc(hidden)]
+    pub __minHalfHeight: [u8; 4],
     /// +0x44 `undefined4`, semantic; alignment padding to 0x48 (high)
     #[doc(hidden)]
     pub __padding44: [u8; 4],
@@ -2563,14 +2648,14 @@ const _: () = assert!(size_of::<LocalMapCamera__DefaultState>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, __refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, __padding0C) == 0xC);
-const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, camera) == 0x10);
+const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, __camera) == 0x10);
 const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, __id) == 0x18);
 const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, __padding1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, center) == 0x20);
+const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, __center) == 0x20);
 const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, panOffset) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, zoom) == 0x38);
-const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, minHalfWidth) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, minHalfHeight) == 0x40);
+const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, __minHalfWidth) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, __minHalfHeight) == 0x40);
 const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, __padding44) == 0x44);
 
 /// `MagicTarget`: size 0x18 (exact, medium).
@@ -2763,7 +2848,8 @@ pub struct MapCameraStates__Transition {
     #[doc(hidden)]
     pub __padding7D: [u8; 3],
     /// +0x80 `u32`, semantic; MapTransitionMode: 0 world to world, 1 entering the map, 2 leaving it (high)
-    pub mode: u32,
+    #[doc(hidden)]
+    pub __mode: [u8; 4],
     /// +0x84 `undefined4`, semantic; alignment padding to 0x88 (high)
     #[doc(hidden)]
     pub __padding84: [u8; 4],
@@ -2789,7 +2875,7 @@ const _: () = assert!(core::mem::offset_of!(MapCameraStates__Transition, targetS
 const _: () = assert!(core::mem::offset_of!(MapCameraStates__Transition, __transitionHeight) == 0x78);
 const _: () = assert!(core::mem::offset_of!(MapCameraStates__Transition, heightEventFired) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(MapCameraStates__Transition, __padding7D) == 0x7D);
-const _: () = assert!(core::mem::offset_of!(MapCameraStates__Transition, mode) == 0x80);
+const _: () = assert!(core::mem::offset_of!(MapCameraStates__Transition, __mode) == 0x80);
 const _: () = assert!(core::mem::offset_of!(MapCameraStates__Transition, __padding84) == 0x84);
 
 /// `MapCameraStates::World`: size 0x78 (exact, high); primary base `TESCameraState`.
@@ -2819,9 +2905,11 @@ pub struct MapCameraStates__World {
     #[doc(hidden)]
     pub __panOffset: [u8; 12],
     /// +0x38 `class:NiPoint3`, ctor store, semantic, runtime; NiPoint3 constant offset: (0, 0, map min camera height) (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
-    pub heightOffset: crate::NiPoint3,
+    #[doc(hidden)]
+    pub __heightOffset: [u8; 12],
     /// +0x44 `class:NiPoint3`, semantic, runtime; NiPoint3 zoom direction: (0, 0, max - min camera height) (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
-    pub zoomAxis: crate::NiPoint3,
+    #[doc(hidden)]
+    pub __zoomAxis: [u8; 12],
     /// +0x50 `float`, semantic; heading in radians; the pan input is rotated by it (high)
     pub yaw: f32,
     /// +0x54 `float`, semantic; pitch in radians, clamped to +-pi/2 (high)
@@ -2857,8 +2945,8 @@ const _: () = assert!(core::mem::offset_of!(MapCameraStates__World, id) == 0x18)
 const _: () = assert!(core::mem::offset_of!(MapCameraStates__World, __padding1C) == 0x1C);
 const _: () = assert!(core::mem::offset_of!(MapCameraStates__World, basePosition) == 0x20);
 const _: () = assert!(core::mem::offset_of!(MapCameraStates__World, __panOffset) == 0x2C);
-const _: () = assert!(core::mem::offset_of!(MapCameraStates__World, heightOffset) == 0x38);
-const _: () = assert!(core::mem::offset_of!(MapCameraStates__World, zoomAxis) == 0x44);
+const _: () = assert!(core::mem::offset_of!(MapCameraStates__World, __heightOffset) == 0x38);
+const _: () = assert!(core::mem::offset_of!(MapCameraStates__World, __zoomAxis) == 0x44);
 const _: () = assert!(core::mem::offset_of!(MapCameraStates__World, yaw) == 0x50);
 const _: () = assert!(core::mem::offset_of!(MapCameraStates__World, pitch) == 0x54);
 const _: () = assert!(core::mem::offset_of!(MapCameraStates__World, __zoom) == 0x58);
@@ -2903,7 +2991,8 @@ pub struct ModelReferenceEffect {
     /// +0x40 `u8`, base ReferenceEffect, semantic; set to 1 to end the effect (high)
     pub finished: u8,
     /// +0x41 `u8`, base ReferenceEffect, semantic; set to 1 by InitAndRegisterOrDestroy (low)
-    pub field_41: u8,
+    #[doc(hidden)]
+    pub __field_41: [u8; 1],
     unknown_42: [u8; 6],
     /// +0x48 `vtbl:ModelReferenceEffect:48`, rtti
     #[doc(hidden)]
@@ -2962,7 +3051,7 @@ const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, controller) ==
 const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, target) == 0x38);
 const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_3C) == 0x3C);
 const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, finished) == 0x40);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_41) == 0x41);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, __field_41) == 0x41);
 const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, __vftable_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_50) == 0x50);
 const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, __field_58) == 0x58);
@@ -3102,14 +3191,14 @@ const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, field_1C8) ==
 /// Meaning: base light (high, camera pass).
 /// Evidence: lower bound NiAmbientLight (size 0x140 at 0x0) adds no fields or bases meets upper bound derived NiAmbientLight size 0x140 at 0x0.
 /// Bases: `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiLight {
     /// +0x0 `vtbl:NiLight:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiLight_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -3119,17 +3208,19 @@ pub struct NiLight {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
     pub world: crate::NiTransform,
     /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
@@ -3143,12 +3234,14 @@ pub struct NiLight {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
+    unknown_10A: [u8; 6],
     /// +0x110 `class:NiColor`, semantic; first colour (0 for point lights; the sky's colour for the sun) (medium)
     pub ambient: crate::NiColor,
     /// +0x11C `class:NiColor`, semantic; light colour (high)
@@ -3169,20 +3262,20 @@ const _: () = assert!(core::mem::offset_of!(NiLight, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiLight, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiLight, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiLight, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiLight, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiLight, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(NiLight, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiLight, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiLight, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(NiLight, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiLight, __local) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiLight, world) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(NiLight, previousWorld) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(NiLight, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(NiLight, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(NiLight, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(NiLight, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(NiLight, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(NiLight, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(NiLight, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(NiLight, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(NiLight, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(NiLight, ambient) == 0x110);
 const _: () = assert!(core::mem::offset_of!(NiLight, diffuse) == 0x11C);
 const _: () = assert!(core::mem::offset_of!(NiLight, radius) == 0x128);
@@ -3193,14 +3286,14 @@ const _: () = assert!(core::mem::offset_of!(NiLight, field_138) == 0x138);
 /// Meaning: point light (high, camera pass).
 /// Evidence: runtime: 0x150 at 2 allocation sites; agrees with the static allocation sites.
 /// Bases: `NiLight`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiPointLight {
     /// +0x0 `vtbl:NiPointLight:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPointLight_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -3210,17 +3303,19 @@ pub struct NiPointLight {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
     pub world: crate::NiTransform,
     /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
@@ -3234,12 +3329,14 @@ pub struct NiPointLight {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
+    unknown_10A: [u8; 6],
     /// +0x110 `class:NiColor`, base NiLight, semantic; first colour (0 for point lights; the sky's colour for the sun) (medium)
     pub ambient: crate::NiColor,
     /// +0x11C `class:NiColor`, base NiLight, semantic; light colour (high)
@@ -3255,8 +3352,9 @@ pub struct NiPointLight {
     /// +0x144 `float`, semantic; linear term (ctor 1.0); also flicker phase 1 (high)
     pub linearAttenuation: f32,
     /// +0x148 `float`, semantic; quadratic term (ctor 0); also flicker phase 2 (high)
-    pub quadraticAttenuation: f32,
-    pub unknown_14C: [u8; 4],
+    #[doc(hidden)]
+    pub __quadraticAttenuation: [u8; 4],
+    unknown_14C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3267,20 +3365,20 @@ const _: () = assert!(core::mem::offset_of!(NiPointLight, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPointLight, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(NiPointLight, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, __local) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, world) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, previousWorld) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(NiPointLight, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(NiPointLight, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, ambient) == 0x110);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, diffuse) == 0x11C);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, radius) == 0x128);
@@ -3288,7 +3386,7 @@ const _: () = assert!(core::mem::offset_of!(NiPointLight, fade) == 0x134);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, field_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, constantAttenuation) == 0x140);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, linearAttenuation) == 0x144);
-const _: () = assert!(core::mem::offset_of!(NiPointLight, quadraticAttenuation) == 0x148);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, __quadraticAttenuation) == 0x148);
 
 /// `NiUpdateData`: size 0x8 (exact).
 /// Meaning: argument record of the NiAVObject update slots 44-49 (high, camera pass).
@@ -3407,23 +3505,23 @@ pub struct PlayerCamera {
     /// +0x140 `float`, ctor store, semantic, runtime; first-person (hands) FOV, copied every frame into 0x34362cc by SetupWorldRenderContext (high)
     pub firstPersonFOV: f32,
     /// +0x144 `class:NiPoint3`, ctor store, semantic, runtime; NiPoint3 camera position cached once per frame (cameraRoot world translation, or the first-person camera node / reference position) (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3; GetPosition 0x8f89b0 fills it
-    #[doc(hidden)]
-    pub __cachedPosition: [u8; 12],
+    pub cachedPosition: crate::NiPoint3,
     /// +0x150 `float`, semantic; seconds without input, compared with fAutoVanityModeDelay (high)
     pub idleTimer: f32,
     /// +0x154 `float`, ctor store, semantic, runtime; camera yaw: target heading (actor slot 164) plus FirstPersonState+0x68 or ThirdPersonState+0xd4 (high)
-    #[doc(hidden)]
-    pub __yaw: [u8; 4],
+    pub yaw: f32,
     /// +0x158 `float`, semantic; time into the pitch-to-zero blend (high)
     pub pitchZeroTimer: f32,
     /// +0x15C `float`, semantic; pitch the blend starts from (high)
-    pub pitchZeroStart: f32,
+    #[doc(hidden)]
+    pub __pitchZeroStart: [u8; 4],
     /// +0x160 `undefined1`, semantic; auto vanity may start (high)
     pub autoVanityAllowed: u8,
     /// +0x161 `undefined1`, semantic; bow zoom is active (a perk entry point gave a zoom) (high)
     pub bowZoomActive: u8,
     /// +0x162 `undefined1`, semantic; third-person states may free-rotate (weapon sheathed) (high)
-    pub allowFreeRotation: u8,
+    #[doc(hidden)]
+    pub __allowFreeRotation: [u8; 1],
     /// +0x163 `undefined1`, semantic; cachedPosition is valid for this frame (high)
     pub cachedPositionValid: u8,
     /// +0x164 `undefined1`, semantic; the pitch-to-zero blend runs (high)
@@ -3458,14 +3556,14 @@ const _: () = assert!(core::mem::offset_of!(PlayerCamera, fadedActorHandle) == 0
 const _: () = assert!(core::mem::offset_of!(PlayerCamera, __positionLock) == 0x134);
 const _: () = assert!(core::mem::offset_of!(PlayerCamera, worldFOV) == 0x13C);
 const _: () = assert!(core::mem::offset_of!(PlayerCamera, firstPersonFOV) == 0x140);
-const _: () = assert!(core::mem::offset_of!(PlayerCamera, __cachedPosition) == 0x144);
+const _: () = assert!(core::mem::offset_of!(PlayerCamera, cachedPosition) == 0x144);
 const _: () = assert!(core::mem::offset_of!(PlayerCamera, idleTimer) == 0x150);
-const _: () = assert!(core::mem::offset_of!(PlayerCamera, __yaw) == 0x154);
+const _: () = assert!(core::mem::offset_of!(PlayerCamera, yaw) == 0x154);
 const _: () = assert!(core::mem::offset_of!(PlayerCamera, pitchZeroTimer) == 0x158);
-const _: () = assert!(core::mem::offset_of!(PlayerCamera, pitchZeroStart) == 0x15C);
+const _: () = assert!(core::mem::offset_of!(PlayerCamera, __pitchZeroStart) == 0x15C);
 const _: () = assert!(core::mem::offset_of!(PlayerCamera, autoVanityAllowed) == 0x160);
 const _: () = assert!(core::mem::offset_of!(PlayerCamera, bowZoomActive) == 0x161);
-const _: () = assert!(core::mem::offset_of!(PlayerCamera, allowFreeRotation) == 0x162);
+const _: () = assert!(core::mem::offset_of!(PlayerCamera, __allowFreeRotation) == 0x162);
 const _: () = assert!(core::mem::offset_of!(PlayerCamera, cachedPositionValid) == 0x163);
 const _: () = assert!(core::mem::offset_of!(PlayerCamera, pitchZeroActive) == 0x164);
 const _: () = assert!(core::mem::offset_of!(PlayerCamera, popOnAIDrivenEnd) == 0x165);
@@ -3481,9 +3579,11 @@ pub struct PlayerCameraTransitionState {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::PlayerCameraTransitionState_vtable,
     /// +0x8 `u32`, semantic; BSTSmartPointer reference count (high)
-    pub refCount: u32,
+    #[doc(hidden)]
+    pub __refCount: [u8; 4],
     /// +0xC `undefined4`, semantic; alignment padding before the camera pointer (high)
-    pub pad0c: u32,
+    #[doc(hidden)]
+    pub __pad0c: [u8; 4],
     /// +0x10 `ptr:PlayerCamera`, semantic; owning camera (high)
     pub camera: *mut crate::PlayerCamera,
     /// +0x18 `u32`, semantic; CameraState id (data/camerastates.json) (high)
@@ -3493,7 +3593,8 @@ pub struct PlayerCameraTransitionState {
     #[doc(hidden)]
     pub __pad1c: [u8; 4],
     /// +0x20 `undefined4`, semantic; timer ms (0x3275610) at Begin (high)
-    pub startTime: u32,
+    #[doc(hidden)]
+    pub __startTime: [u8; 4],
     /// +0x24 `undefined4`, semantic; blend length in ms (high)
     pub duration: u32,
     /// +0x28 `ptr:TESCameraState`, semantic; source state (high)
@@ -3501,9 +3602,11 @@ pub struct PlayerCameraTransitionState {
     /// +0x30 `ptr:TESCameraState`, semantic; destination; returned as next at t = 1 (high)
     pub toState: *mut crate::TESCameraState,
     /// +0x38 `undefined4`, semantic; 1 = smoothstep (3t^2 - 2t^3) (high)
-    pub easing: u32,
+    #[doc(hidden)]
+    pub __easing: [u8; 4],
     /// +0x3C `undefined1`, semantic; run fromState's Update during the blend (high)
-    pub updateFrom: u8,
+    #[doc(hidden)]
+    pub __updateFrom: [u8; 1],
     /// +0x3D `undefined1`, semantic; run toState's Update during the blend (high)
     #[doc(hidden)]
     pub __updateTo: [u8; 1],
@@ -3515,17 +3618,17 @@ pub struct PlayerCameraTransitionState {
 }
 const _: () = assert!(size_of::<PlayerCameraTransitionState>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(PlayerCameraTransitionState, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(PlayerCameraTransitionState, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(PlayerCameraTransitionState, pad0c) == 0xC);
+const _: () = assert!(core::mem::offset_of!(PlayerCameraTransitionState, __refCount) == 0x8);
+const _: () = assert!(core::mem::offset_of!(PlayerCameraTransitionState, __pad0c) == 0xC);
 const _: () = assert!(core::mem::offset_of!(PlayerCameraTransitionState, camera) == 0x10);
 const _: () = assert!(core::mem::offset_of!(PlayerCameraTransitionState, __id) == 0x18);
 const _: () = assert!(core::mem::offset_of!(PlayerCameraTransitionState, __pad1c) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(PlayerCameraTransitionState, startTime) == 0x20);
+const _: () = assert!(core::mem::offset_of!(PlayerCameraTransitionState, __startTime) == 0x20);
 const _: () = assert!(core::mem::offset_of!(PlayerCameraTransitionState, duration) == 0x24);
 const _: () = assert!(core::mem::offset_of!(PlayerCameraTransitionState, fromState) == 0x28);
 const _: () = assert!(core::mem::offset_of!(PlayerCameraTransitionState, toState) == 0x30);
-const _: () = assert!(core::mem::offset_of!(PlayerCameraTransitionState, easing) == 0x38);
-const _: () = assert!(core::mem::offset_of!(PlayerCameraTransitionState, updateFrom) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(PlayerCameraTransitionState, __easing) == 0x38);
+const _: () = assert!(core::mem::offset_of!(PlayerCameraTransitionState, __updateFrom) == 0x3C);
 const _: () = assert!(core::mem::offset_of!(PlayerCameraTransitionState, __updateTo) == 0x3D);
 const _: () = assert!(core::mem::offset_of!(PlayerCameraTransitionState, __pad3E) == 0x3E);
 
@@ -3585,7 +3688,8 @@ pub struct RaceSexCamera {
     #[doc(hidden)]
     pub __padding31: [u8; 7],
     /// +0x38 `class:NiPoint3`, semantic; NiPoint3 root world translation at SetCameraRoot (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3 root world translation
-    pub initialPosition: crate::NiPoint3,
+    #[doc(hidden)]
+    pub __initialPosition: [u8; 12],
     /// +0x44 `class:NiQuaternion`, semantic; NiQuaternion of the root's local rotation at SetCameraRoot (high); retyped undefined1 -> class:NiQuaternion: meaning: NiQuaternion of the root's local rotation
     #[doc(hidden)]
     pub __initialRotation: [u8; 16],
@@ -3604,7 +3708,7 @@ const _: () = assert!(core::mem::offset_of!(RaceSexCamera, cameraRoot) == 0x20);
 const _: () = assert!(core::mem::offset_of!(RaceSexCamera, currentState) == 0x28);
 const _: () = assert!(core::mem::offset_of!(RaceSexCamera, enabled) == 0x30);
 const _: () = assert!(core::mem::offset_of!(RaceSexCamera, __padding31) == 0x31);
-const _: () = assert!(core::mem::offset_of!(RaceSexCamera, initialPosition) == 0x38);
+const _: () = assert!(core::mem::offset_of!(RaceSexCamera, __initialPosition) == 0x38);
 const _: () = assert!(core::mem::offset_of!(RaceSexCamera, __initialRotation) == 0x44);
 const _: () = assert!(core::mem::offset_of!(RaceSexCamera, __padding54) == 0x54);
 
@@ -3841,27 +3945,27 @@ const _: () = assert!(core::mem::offset_of!(RaceSexMenu, __mouseLookDrag) == 0x1
 /// Meaning: base of ModelReferenceEffect and ShaderReferenceEffect (high, camera pass).
 /// Evidence: lower bound field field_40 meets upper bound next base of ModelReferenceEffect at 0x48.
 /// Bases: `BSTempEffect`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct ReferenceEffect {
     /// +0x0 `vtbl:ReferenceEffect:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ReferenceEffect_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `float`, base BSTempEffect, semantic; duration passed to the create functions (high)
     pub lifetime: f32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined8`, base BSTempEffect
     pub field_18: u64,
     /// +0x20 `undefined4`, base BSTempEffect
     pub field_20: u32,
     /// +0x24 `undefined1`, base BSTempEffect
     pub field_24: u8,
-    pub unknown_25: [u8; 3],
+    unknown_25: [u8; 3],
     /// +0x28 `undefined4`, base BSTempEffect
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:ReferenceEffectController`, semantic; OwnedController / OwnedCameraEffectController (high)
     pub controller: *mut crate::ReferenceEffectController,
     /// +0x38 `u32`, semantic; target reference handle (high)
@@ -3871,8 +3975,9 @@ pub struct ReferenceEffect {
     /// +0x40 `u8`, semantic; set to 1 to end the effect (high)
     pub finished: u8,
     /// +0x41 `u8`, semantic; set to 1 by InitAndRegisterOrDestroy (low)
-    pub field_41: u8,
-    pub unknown_42: [u8; 6],
+    #[doc(hidden)]
+    pub __field_41: [u8; 1],
+    unknown_42: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3888,33 +3993,33 @@ const _: () = assert!(core::mem::offset_of!(ReferenceEffect, controller) == 0x30
 const _: () = assert!(core::mem::offset_of!(ReferenceEffect, target) == 0x38);
 const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_3C) == 0x3C);
 const _: () = assert!(core::mem::offset_of!(ReferenceEffect, finished) == 0x40);
-const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_41) == 0x41);
+const _: () = assert!(core::mem::offset_of!(ReferenceEffect, __field_41) == 0x41);
 
 /// `ShaderReferenceEffect`: size 0x138 (exact, high); primary base `ReferenceEffect`.
 /// Meaning: a TESEffectShader played on a reference (membrane/particle shader) (high, camera pass).
 /// Evidence: allocation sites (high): {'312': 4}.
 /// Bases: `ReferenceEffect`@0x0, `BSTempEffect`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct ShaderReferenceEffect {
     /// +0x0 `vtbl:ShaderReferenceEffect:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ShaderReferenceEffect_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `float`, base ReferenceEffect, semantic; duration passed to the create functions (high)
     pub lifetime: f32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined8`, base BSTempEffect
     pub field_18: u64,
     /// +0x20 `undefined4`, base BSTempEffect
     pub field_20: u32,
     /// +0x24 `undefined1`, base BSTempEffect
     pub field_24: u8,
-    pub unknown_25: [u8; 3],
+    unknown_25: [u8; 3],
     /// +0x28 `undefined4`, base BSTempEffect
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:ReferenceEffectController`, base ReferenceEffect, semantic; OwnedController / OwnedCameraEffectController (high)
     pub controller: *mut crate::ReferenceEffectController,
     /// +0x38 `u32`, base ReferenceEffect, semantic; target reference handle (high)
@@ -3924,16 +4029,17 @@ pub struct ShaderReferenceEffect {
     /// +0x40 `u8`, base ReferenceEffect, semantic; set to 1 to end the effect (high)
     pub finished: u8,
     /// +0x41 `u8`, base ReferenceEffect, semantic; set to 1 by InitAndRegisterOrDestroy (low)
-    pub field_41: u8,
-    pub unknown_42: [u8; 126],
+    #[doc(hidden)]
+    pub __field_41: [u8; 1],
+    unknown_42: [u8; 126],
     /// +0xC0 `undefined4`, ctor store
     pub field_C0: u32,
     /// +0xC4 `undefined1`, ctor store
     pub field_C4: u8,
-    pub unknown_C5: [u8; 3],
+    unknown_C5: [u8; 3],
     /// +0xC8 `undefined4`, ctor store
     pub field_C8: u32,
-    pub unknown_CC: [u8; 4],
+    unknown_CC: [u8; 4],
     /// +0xD0 `undefined8`, ctor store
     pub field_D0: u64,
     /// +0xD8 `undefined8`, ctor store
@@ -3963,7 +4069,8 @@ pub struct ShaderReferenceEffect {
     /// +0x130 `u32`, semantic; bit 0 target is the player in third person, bit 2 force re-apply, bit 3 models loaded, bit 4 data initialised, bit 5 target root changed/retargeted, bit 6 suspended, bit 7 no fallback root; see the flag rows (medium)
     pub effectFlags: u32,
     /// +0x134 `u32`, semantic; while non-zero the data is not touched; slot 53 0x5dfdd0 counts it down and applies at 0 (high)
-    pub applyDelay: u32,
+    #[doc(hidden)]
+    pub __applyDelay: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3979,7 +4086,7 @@ const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, controller) =
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, target) == 0x38);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_3C) == 0x3C);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, finished) == 0x40);
-const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_41) == 0x41);
+const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, __field_41) == 0x41);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_C0) == 0xC0);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_C4) == 0xC4);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_C8) == 0xC8);
@@ -3997,7 +4104,7 @@ const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_120) ==
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_124) == 0x124);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_128) == 0x128);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, effectFlags) == 0x130);
-const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, applyDelay) == 0x134);
+const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, __applyDelay) == 0x134);
 
 /// `StatsMenu`: size 0x328 (exact, medium); primary base `IMenu`.
 /// Meaning: the skills (constellation) menu (high, camera pass).
@@ -4329,7 +4436,8 @@ pub struct StatsMenu {
     /// +0x31C `undefined8`, ctor store
     pub field_31C: u64,
     /// +0x324 `undefined2`, ctor store
-    pub field_324: u16,
+    #[doc(hidden)]
+    pub __field_324: [u8; 2],
     unknown_326: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -4458,7 +4566,7 @@ const _: () = assert!(core::mem::offset_of!(StatsMenu, field_310) == 0x310);
 const _: () = assert!(core::mem::offset_of!(StatsMenu, field_314) == 0x314);
 const _: () = assert!(core::mem::offset_of!(StatsMenu, field_318) == 0x318);
 const _: () = assert!(core::mem::offset_of!(StatsMenu, field_31C) == 0x31C);
-const _: () = assert!(core::mem::offset_of!(StatsMenu, field_324) == 0x324);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, __field_324) == 0x324);
 
 /// `StealthMeter`: size 0x98 (exact, medium); primary base `HUDObject`.
 /// Meaning: the HUD's stealth (detection) meter element (a HUDObject) (high, camera pass).
@@ -4474,15 +4582,20 @@ pub struct StealthMeter {
     #[doc(hidden)]
     pub __fadeClip: [u8; 24],
     /// +0x40 `class:GFxValue`, semantic; args[5]; GotoFrame(displayed * k) every Update (high)
-    pub meterClip: crate::GFxValue,
+    #[doc(hidden)]
+    pub __meterClip: [u8; 24],
     /// +0x58 `class:GFxValue`, semantic; args[8]; GotoLabeledFrame 'Start' when the meter reaches 0 or 100 (high)
-    pub flashClip: crate::GFxValue,
+    #[doc(hidden)]
+    pub __flashClip: [u8; 24],
     /// +0x70 `class:GFxValue`, semantic; args[9]; SetText '$HIDDEN' (0) / '$DETECTED' (100) (high)
-    pub textField: crate::GFxValue,
+    #[doc(hidden)]
+    pub __textField: [u8; 24],
     /// +0x88 `u32`, semantic; detection level shown, moved toward targetLevel each Update (high)
-    pub displayedLevel: u32,
+    #[doc(hidden)]
+    pub __displayedLevel: [u8; 4],
     /// +0x8C `u32`, semantic; HUDData +0x44 of the last type 0x18 message (0..100) (high)
-    pub targetLevel: u32,
+    #[doc(hidden)]
+    pub __targetLevel: [u8; 4],
     /// +0x90 `u8`, semantic; HUDData +0x40 of the last type 0x18 message; a change runs FadeIn/FadeOut and SetHUDMode('StealthMode', shown) (high)
     #[doc(hidden)]
     pub __shown: [u8; 1],
@@ -4498,11 +4611,11 @@ pub struct StealthMeter {
 const _: () = assert!(size_of::<StealthMeter>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(StealthMeter, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(StealthMeter, __fadeClip) == 0x28);
-const _: () = assert!(core::mem::offset_of!(StealthMeter, meterClip) == 0x40);
-const _: () = assert!(core::mem::offset_of!(StealthMeter, flashClip) == 0x58);
-const _: () = assert!(core::mem::offset_of!(StealthMeter, textField) == 0x70);
-const _: () = assert!(core::mem::offset_of!(StealthMeter, displayedLevel) == 0x88);
-const _: () = assert!(core::mem::offset_of!(StealthMeter, targetLevel) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(StealthMeter, __meterClip) == 0x40);
+const _: () = assert!(core::mem::offset_of!(StealthMeter, __flashClip) == 0x58);
+const _: () = assert!(core::mem::offset_of!(StealthMeter, __textField) == 0x70);
+const _: () = assert!(core::mem::offset_of!(StealthMeter, __displayedLevel) == 0x88);
+const _: () = assert!(core::mem::offset_of!(StealthMeter, __targetLevel) == 0x8C);
 const _: () = assert!(core::mem::offset_of!(StealthMeter, __shown) == 0x90);
 const _: () = assert!(core::mem::offset_of!(StealthMeter, __updatePending) == 0x91);
 const _: () = assert!(core::mem::offset_of!(StealthMeter, __pad_92) == 0x92);
@@ -4578,9 +4691,11 @@ pub struct TESCameraState {
     /// +0x8 `undefined4`, semantic; BSTSmartPointer reference count (high)
     pub refCount: u32,
     /// +0xC `undefined1`, semantic; padding after the 32-bit refCount (+0x8) before the 8-aligned camera pointer (+0x10) (high)
-    pub pad_c: [u8; 4],
+    #[doc(hidden)]
+    pub __pad_c: [u8; 4],
     /// +0x10 `ptr:TESCamera`, semantic; owning camera (high)
-    pub camera: *mut crate::TESCamera,
+    #[doc(hidden)]
+    pub __camera: [u8; 8],
     /// +0x18 `undefined4`, semantic, runtime; CameraState id (data/camerastates.json) (high)
     pub id: u32,
     /// +0x1C `undefined1`, semantic; tail padding after the 32-bit id (+0x18) to 0x20 (high)
@@ -4592,8 +4707,8 @@ pub struct TESCameraState {
 const _: () = assert!(size_of::<TESCameraState>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESCameraState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TESCameraState, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESCameraState, pad_c) == 0xC);
-const _: () = assert!(core::mem::offset_of!(TESCameraState, camera) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESCameraState, __pad_c) == 0xC);
+const _: () = assert!(core::mem::offset_of!(TESCameraState, __camera) == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESCameraState, id) == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESCameraState, __pad_1c) == 0x1C);
 
@@ -4618,9 +4733,11 @@ pub struct TESFurniture {
     pub formType: u8,
     unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
-    pub field_28: u16,
+    #[doc(hidden)]
+    pub __field_28: [u8; 2],
     /// +0x2A `undefined2`, base TESBoundObject
-    pub field_2A: u16,
+    #[doc(hidden)]
+    pub __field_2A: [u8; 2],
     unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESFurniture:30`, rtti
     #[doc(hidden)]
@@ -4665,7 +4782,8 @@ pub struct TESFurniture {
     pub field_C0: u16,
     unknown_C2: [u8; 6],
     /// +0xC8 `class:BSTArray`, semantic; per-marker entries (0x10 each: u32 marker index, u32 NAM0 value, BGSKeyword* FNMK); data +0xc8, size +0xd8 (medium)
-    pub markerEntries: crate::BSTArray,
+    #[doc(hidden)]
+    pub __markerEntries: [u8; 24],
     /// +0xE0 `u8`, semantic; WBDT byte 0: bench type (0 = not a workbench; nonzero takes the state-9 path in EnterFurnitureCamera) (high)
     pub workbenchType: u8,
     /// +0xE1 `u8`, semantic; WBDT byte 1: the workbench's skill as an ActorValue id, 0xff = none (medium)
@@ -4686,8 +4804,8 @@ const _: () = assert!(core::mem::offset_of!(TESFurniture, formFlags) == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, formType) == 0x1A);
-const _: () = assert!(core::mem::offset_of!(TESFurniture, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(TESFurniture, field_2A) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(TESFurniture, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(TESFurniture, __field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, __vftable_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, __field_50) == 0x50);
@@ -4703,7 +4821,7 @@ const _: () = assert!(core::mem::offset_of!(TESFurniture, field_A8) == 0xA8);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, field_B8) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(TESFurniture, markerEntries) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(TESFurniture, __markerEntries) == 0xC8);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, workbenchType) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, __workbenchSkill) == 0xE1);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, activeMarkerFlags) == 0xE4);
@@ -4733,12 +4851,14 @@ pub struct TESIdleForm {
     #[doc(hidden)]
     pub __conditions: [u8; 8],
     /// +0x28 `undefined1`, semantic; DATA byte 0: lower bound of the random fIdleTimer set for 'Action Idle' (medium)
-    pub loopMin: u8,
+    #[doc(hidden)]
+    pub __loopMin: [u8; 1],
     /// +0x29 `undefined1`, semantic; DATA byte 1: upper bound (medium)
     #[doc(hidden)]
     pub __loopMax: [u8; 1],
     /// +0x2A `undefined1`, semantic; DATA byte 2 (flags; not read here) (low)
-    pub field_2A: u8,
+    #[doc(hidden)]
+    pub __field_2A: [u8; 1],
     unknown_2B: [u8; 1],
     /// +0x2C `undefined2`, semantic; DATA u16: when > 0 the performed idle is recorded with this value (float) in an actor-side recent-idle array (medium)
     pub replayDelay: u16,
@@ -4770,9 +4890,9 @@ const _: () = assert!(core::mem::offset_of!(TESIdleForm, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(TESIdleForm, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESIdleForm, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESIdleForm, __conditions) == 0x20);
-const _: () = assert!(core::mem::offset_of!(TESIdleForm, loopMin) == 0x28);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, __loopMin) == 0x28);
 const _: () = assert!(core::mem::offset_of!(TESIdleForm, __loopMax) == 0x29);
-const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_2A) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, __field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(TESIdleForm, replayDelay) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(TESIdleForm, children) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESIdleForm, parent) == 0x38);
@@ -4786,13 +4906,14 @@ const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_60) == 0x60);
 /// Meaning: form component holding a model path (and per-model texture data) (medium, camera pass).
 /// Evidence: camera pass (semantic): IC6 A (static-U). Slots (rtti.json): 0 0x1ec350 vdtor, 1 0x1eaaf0 InitializeData, 2 0x1eabc0 ClearData, 3 0x1eacb0 CopyFromTemplate, 4 0x146780 GetModel, 5 0x1ead10 SetModel, 6 0x1dfd80 (returns 0). Subobject offsets in bound objects (rtti.json mdisp): 0x40 TESFurniture, TESObjectACTI, TESObjectDOOR, TESObjectMISC, TESObjectWEAP, TESObjectLIGH, TESFlora, TESObjectBOOK, TESKey, TESAmmo, TESSoulGem, BGSTalkingActivator, BGSApparatus, BGSExplosion, BGSProjectile, BGSHazard; 0x30 TESObjectSTAT, TESObjectTREE, TESGrass, BGSStaticCollection, BGSArtObject, BGSAddonNode, BGSIdleMarker, BGSNote; 0x50 BGSMovableStatic; 0x58 TESObjectCONT, TESLevCharacter; 0x90 AlchemyItem, IngredientItem; 0xe8 ScrollItem.; size: the ctor and slots 1/2 write +0x18 (qword), +0x20 (dword, u16) and +0x22 (u8); TESModelTextureSwap (0x38, runtime) keeps its own fields from +0x28 (layouts.json field_28/field_30); in TESFurniture and TESObjectACTI that subobject spans +0x40..+0x78. layouts.json's 0x18 (one vote, upper bound 0x28) is a lower bound.
 /// Bases: `BaseFormComponent`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESModel {
     /// +0x0 `vtbl:TESModel:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESModel_vtable,
     /// +0x8 `class:BSFixedString`, semantic, runtime; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
-    pub model: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __model: [u8; 8],
     /// +0x10 `pointer`, semantic
     pub field_10: *mut c_void,
     /// +0x18 `pointer`, semantic
@@ -4800,18 +4921,19 @@ pub struct TESModel {
     /// +0x20 `undefined2`, semantic
     pub field_20: u16,
     /// +0x22 `undefined1`, semantic
-    pub field_22: u8,
-    pub unknown_23: [u8; 5],
+    #[doc(hidden)]
+    pub __field_22: [u8; 1],
+    unknown_23: [u8; 5],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESModel>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(TESModel, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESModel, model) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESModel, __model) == 0x8);
 const _: () = assert!(core::mem::offset_of!(TESModel, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESModel, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESModel, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(TESModel, field_22) == 0x22);
+const _: () = assert!(core::mem::offset_of!(TESModel, __field_22) == 0x22);
 
 /// `TESObjectLIGH`: size 0x130 (exact, medium); primary base `TESBoundAnimObject`.
 /// Meaning: light base form (high, camera pass).
@@ -4834,17 +4956,23 @@ pub struct TESObjectLIGH {
     pub formType: u8,
     unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
-    pub field_20: u16,
+    #[doc(hidden)]
+    pub __field_20: [u8; 2],
     /// +0x22 `undefined2`, base TESBoundObject
-    pub field_22: u16,
+    #[doc(hidden)]
+    pub __field_22: [u8; 2],
     /// +0x24 `undefined2`, base TESBoundObject
-    pub field_24: u16,
+    #[doc(hidden)]
+    pub __field_24: [u8; 2],
     /// +0x26 `undefined2`, base TESBoundObject
-    pub field_26: u16,
+    #[doc(hidden)]
+    pub __field_26: [u8; 2],
     /// +0x28 `undefined2`, base TESBoundObject
-    pub field_28: u16,
+    #[doc(hidden)]
+    pub __field_28: [u8; 2],
     /// +0x2A `undefined2`, base TESBoundObject
-    pub field_2A: u16,
+    #[doc(hidden)]
+    pub __field_2A: [u8; 2],
     unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectLIGH:30`, rtti
     #[doc(hidden)]
@@ -4940,12 +5068,12 @@ const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, formFlags) == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, formType) == 0x1A);
-const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_22) == 0x22);
-const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_24) == 0x24);
-const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_26) == 0x26);
-const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_2A) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __field_22) == 0x22);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __field_24) == 0x24);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __field_26) == 0x26);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __vftable_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __model) == 0x48);
@@ -4997,9 +5125,11 @@ pub struct TESObjectWEAP {
     pub formType: u8,
     unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
-    pub field_28: u16,
+    #[doc(hidden)]
+    pub __field_28: [u8; 2],
     /// +0x2A `undefined2`, base TESBoundObject
-    pub field_2A: u16,
+    #[doc(hidden)]
+    pub __field_2A: [u8; 2],
     unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectWEAP:30`, rtti
     #[doc(hidden)]
@@ -5106,8 +5236,8 @@ const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, formFlags) == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, formType) == 0x1A);
-const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_2A) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __field_50) == 0x50);
@@ -5359,23 +5489,28 @@ pub struct TESRace {
     pub field_90: u64,
     unknown_98: [u8; 160],
     /// +0x138 `i32`, semantic, runtime; the BipedAnim index used for the shield, the left-hand weapon and the left-hand light (race DATA +0x50; -1 before loading) (high)
-    pub leftHandBipedIndex: u32,
+    #[doc(hidden)]
+    pub __leftHandBipedIndex: [u8; 4],
     unknown_13C: [u8; 44],
     /// +0x168 `undefined8`, ctor store
-    pub field_168: u64,
+    #[doc(hidden)]
+    pub __field_168: [u8; 8],
     /// +0x170 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_170: [u8; 8],
     /// +0x178 `undefined8`, ctor store
-    pub field_178: u64,
+    #[doc(hidden)]
+    pub __field_178: [u8; 8],
     /// +0x180 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_180: [u8; 8],
     /// +0x188 `undefined4`, ctor store
-    pub field_188: u32,
+    #[doc(hidden)]
+    pub __field_188: [u8; 4],
     unknown_18C: [u8; 340],
     /// +0x2E0 `undefined8`, ctor store
-    pub field_2E0: u64,
+    #[doc(hidden)]
+    pub __field_2E0: [u8; 8],
     unknown_2E8: [u8; 464],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -5401,13 +5536,13 @@ const _: () = assert!(core::mem::offset_of!(TESRace, keywords) == 0x78);
 const _: () = assert!(core::mem::offset_of!(TESRace, numKeywords) == 0x80);
 const _: () = assert!(core::mem::offset_of!(TESRace, __vftable_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(TESRace, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(TESRace, leftHandBipedIndex) == 0x138);
-const _: () = assert!(core::mem::offset_of!(TESRace, field_168) == 0x168);
+const _: () = assert!(core::mem::offset_of!(TESRace, __leftHandBipedIndex) == 0x138);
+const _: () = assert!(core::mem::offset_of!(TESRace, __field_168) == 0x168);
 const _: () = assert!(core::mem::offset_of!(TESRace, __field_170) == 0x170);
-const _: () = assert!(core::mem::offset_of!(TESRace, field_178) == 0x178);
+const _: () = assert!(core::mem::offset_of!(TESRace, __field_178) == 0x178);
 const _: () = assert!(core::mem::offset_of!(TESRace, __field_180) == 0x180);
-const _: () = assert!(core::mem::offset_of!(TESRace, field_188) == 0x188);
-const _: () = assert!(core::mem::offset_of!(TESRace, field_2E0) == 0x2E0);
+const _: () = assert!(core::mem::offset_of!(TESRace, __field_188) == 0x188);
+const _: () = assert!(core::mem::offset_of!(TESRace, __field_2E0) == 0x2E0);
 
 /// `TESWeather`: size 0x8D8 (exact, high); primary base `TESForm`.
 /// Meaning: a weather form (high, camera pass).
@@ -5433,42 +5568,56 @@ pub struct TESWeather {
     /// +0x220 `undefined8`, ctor store
     pub field_220: u64,
     /// +0x228 `undefined8`, ctor store
-    pub field_228: u64,
+    #[doc(hidden)]
+    pub __field_228: [u8; 8],
     /// +0x230 `undefined8`, ctor store
-    pub field_230: u64,
+    #[doc(hidden)]
+    pub __field_230: [u8; 8],
     /// +0x238 `undefined8`, ctor store
-    pub field_238: u64,
+    #[doc(hidden)]
+    pub __field_238: [u8; 8],
     /// +0x240 `undefined8`, ctor store
-    pub field_240: u64,
+    #[doc(hidden)]
+    pub __field_240: [u8; 8],
     /// +0x248 `undefined8`, ctor store
-    pub field_248: u64,
+    #[doc(hidden)]
+    pub __field_248: [u8; 8],
     /// +0x250 `undefined8`, ctor store
-    pub field_250: u64,
+    #[doc(hidden)]
+    pub __field_250: [u8; 8],
     /// +0x258 `undefined8`, ctor store
-    pub field_258: u64,
+    #[doc(hidden)]
+    pub __field_258: [u8; 8],
     unknown_260: [u8; 512],
     /// +0x460 `undefined4`, ctor store
     pub field_460: u32,
     /// +0x464 `undefined4`, ctor store
-    pub field_464: u32,
+    #[doc(hidden)]
+    pub __field_464: [u8; 4],
     /// +0x468 `undefined4`, ctor store
-    pub field_468: u32,
+    #[doc(hidden)]
+    pub __field_468: [u8; 4],
     /// +0x46C `undefined4`, ctor store
-    pub field_46C: u32,
+    #[doc(hidden)]
+    pub __field_46C: [u8; 4],
     unknown_470: [u8; 496],
     /// +0x660 `undefined4`, ctor store
-    pub field_660: u32,
+    #[doc(hidden)]
+    pub __field_660: [u8; 4],
     /// +0x664 `undefined8`, ctor store
-    pub field_664: u64,
+    #[doc(hidden)]
+    pub __field_664: [u8; 8],
     unknown_66C: [u8; 3],
     /// +0x66F `u8`, semantic; weather classification bits: 0 pleasant, 1 cloudy, 2 rainy, 3 snow; see the flag rows (high)
     #[doc(hidden)]
     pub __dataFlags: [u8; 1],
     unknown_670: [u8; 4],
     /// +0x674 `undefined2`, ctor store
-    pub field_674: u16,
+    #[doc(hidden)]
+    pub __field_674: [u8; 2],
     /// +0x676 `undefined1`, ctor store
-    pub field_676: u8,
+    #[doc(hidden)]
+    pub __field_676: [u8; 1],
     unknown_677: [u8; 1],
     /// +0x678 `undefined8`, ctor store
     #[doc(hidden)]
@@ -5477,13 +5626,17 @@ pub struct TESWeather {
     #[doc(hidden)]
     pub __field_680: [u8; 8],
     /// +0x688 `undefined4`, ctor store (widths [4, 8])
-    pub field_688: u32,
+    #[doc(hidden)]
+    pub __field_688: [u8; 4],
     /// +0x68C `undefined4`, ctor store
-    pub field_68C: u32,
+    #[doc(hidden)]
+    pub __field_68C: [u8; 4],
     /// +0x690 `undefined4`, ctor store (widths [4, 8])
-    pub field_690: u32,
+    #[doc(hidden)]
+    pub __field_690: [u8; 4],
     /// +0x694 `undefined4`, ctor store
-    pub field_694: u32,
+    #[doc(hidden)]
+    pub __field_694: [u8; 4],
     unknown_698: [u8; 224],
     /// +0x778 `undefined4`, ctor store
     #[doc(hidden)]
@@ -5498,7 +5651,8 @@ pub struct TESWeather {
     #[doc(hidden)]
     pub __field_784: [u8; 4],
     /// +0x788 `undefined4`, ctor store
-    pub field_788: u32,
+    #[doc(hidden)]
+    pub __field_788: [u8; 4],
     /// +0x78C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_78C: [u8; 4],
@@ -5509,7 +5663,8 @@ pub struct TESWeather {
     #[doc(hidden)]
     pub __field_794: [u8; 4],
     /// +0x798 `undefined4`, ctor store
-    pub field_798: u32,
+    #[doc(hidden)]
+    pub __field_798: [u8; 4],
     /// +0x79C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_79C: [u8; 4],
@@ -5532,11 +5687,14 @@ pub struct TESWeather {
     /// +0x7D8 `undefined8`, ctor store
     pub field_7D8: u64,
     /// +0x7E0 `undefined8`, ctor store
-    pub field_7E0: u64,
+    #[doc(hidden)]
+    pub __field_7E0: [u8; 8],
     /// +0x7E8 `undefined8`, ctor store
-    pub field_7E8: u64,
+    #[doc(hidden)]
+    pub __field_7E8: [u8; 8],
     /// +0x7F0 `undefined8`, ctor store
-    pub field_7F0: u64,
+    #[doc(hidden)]
+    pub __field_7F0: [u8; 8],
     unknown_7F8: [u8; 128],
     /// +0x878 `class:TESModel`, member ctor TESModel
     #[doc(hidden)]
@@ -5548,11 +5706,14 @@ pub struct TESWeather {
     /// +0x8A8 `undefined8`, ctor store
     pub field_8A8: u64,
     /// +0x8B0 `undefined8`, ctor store
-    pub field_8B0: u64,
+    #[doc(hidden)]
+    pub __field_8B0: [u8; 8],
     /// +0x8B8 `undefined8`, ctor store
-    pub field_8B8: u64,
+    #[doc(hidden)]
+    pub __field_8B8: [u8; 8],
     /// +0x8C0 `undefined8`, ctor store
-    pub field_8C0: u64,
+    #[doc(hidden)]
+    pub __field_8C0: [u8; 8],
     /// +0x8C8 `undefined8`, ctor store
     pub field_8C8: u64,
     /// +0x8D0 `undefined8`, ctor store
@@ -5568,37 +5729,37 @@ const _: () = assert!(core::mem::offset_of!(TESWeather, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(TESWeather, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESWeather, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESWeather, field_220) == 0x220);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_228) == 0x228);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_230) == 0x230);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_238) == 0x238);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_240) == 0x240);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_248) == 0x248);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_250) == 0x250);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_258) == 0x258);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_228) == 0x228);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_230) == 0x230);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_238) == 0x238);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_240) == 0x240);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_248) == 0x248);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_250) == 0x250);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_258) == 0x258);
 const _: () = assert!(core::mem::offset_of!(TESWeather, field_460) == 0x460);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_464) == 0x464);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_468) == 0x468);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_46C) == 0x46C);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_660) == 0x660);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_664) == 0x664);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_464) == 0x464);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_468) == 0x468);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_46C) == 0x46C);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_660) == 0x660);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_664) == 0x664);
 const _: () = assert!(core::mem::offset_of!(TESWeather, __dataFlags) == 0x66F);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_674) == 0x674);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_676) == 0x676);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_674) == 0x674);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_676) == 0x676);
 const _: () = assert!(core::mem::offset_of!(TESWeather, __field_678) == 0x678);
 const _: () = assert!(core::mem::offset_of!(TESWeather, __field_680) == 0x680);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_688) == 0x688);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_68C) == 0x68C);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_690) == 0x690);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_694) == 0x694);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_688) == 0x688);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_68C) == 0x68C);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_690) == 0x690);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_694) == 0x694);
 const _: () = assert!(core::mem::offset_of!(TESWeather, __field_778) == 0x778);
 const _: () = assert!(core::mem::offset_of!(TESWeather, __field_77C) == 0x77C);
 const _: () = assert!(core::mem::offset_of!(TESWeather, __field_780) == 0x780);
 const _: () = assert!(core::mem::offset_of!(TESWeather, __field_784) == 0x784);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_788) == 0x788);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_788) == 0x788);
 const _: () = assert!(core::mem::offset_of!(TESWeather, __field_78C) == 0x78C);
 const _: () = assert!(core::mem::offset_of!(TESWeather, __field_790) == 0x790);
 const _: () = assert!(core::mem::offset_of!(TESWeather, __field_794) == 0x794);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_798) == 0x798);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_798) == 0x798);
 const _: () = assert!(core::mem::offset_of!(TESWeather, __field_79C) == 0x79C);
 const _: () = assert!(core::mem::offset_of!(TESWeather, __field_7A0) == 0x7A0);
 const _: () = assert!(core::mem::offset_of!(TESWeather, __field_7A4) == 0x7A4);
@@ -5606,15 +5767,15 @@ const _: () = assert!(core::mem::offset_of!(TESWeather, __field_7A8) == 0x7A8);
 const _: () = assert!(core::mem::offset_of!(TESWeather, __field_7B0) == 0x7B0);
 const _: () = assert!(core::mem::offset_of!(TESWeather, field_7D0) == 0x7D0);
 const _: () = assert!(core::mem::offset_of!(TESWeather, field_7D8) == 0x7D8);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_7E0) == 0x7E0);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_7E8) == 0x7E8);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_7F0) == 0x7F0);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_7E0) == 0x7E0);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_7E8) == 0x7E8);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_7F0) == 0x7F0);
 const _: () = assert!(core::mem::offset_of!(TESWeather, __m_TESModel_878) == 0x878);
 const _: () = assert!(core::mem::offset_of!(TESWeather, __field_8A0) == 0x8A0);
 const _: () = assert!(core::mem::offset_of!(TESWeather, field_8A8) == 0x8A8);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_8B0) == 0x8B0);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_8B8) == 0x8B8);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_8C0) == 0x8C0);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_8B0) == 0x8B0);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_8B8) == 0x8B8);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __field_8C0) == 0x8C0);
 const _: () = assert!(core::mem::offset_of!(TESWeather, field_8C8) == 0x8C8);
 const _: () = assert!(core::mem::offset_of!(TESWeather, field_8D0) == 0x8D0);
 
@@ -5669,7 +5830,8 @@ pub struct ThirdPersonState {
     #[doc(hidden)]
     pub __zoomSinceTogglePress: [u8; 4],
     /// +0x90 `class:NiPoint3`, semantic; NiPoint3 position at the last camera collision (medium); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
-    pub recoveryStart: crate::NiPoint3,
+    #[doc(hidden)]
+    pub __recoveryStart: [u8; 12],
     /// +0x9C `float`, semantic; collision recovery progress 0..1, FLT_MAX when idle (medium)
     pub recoveryBlend: f32,
     /// +0xA0 `ptr:NiAVObject`, semantic; node of the player's third-person 3D the camera blends to (animated camera) (high)
@@ -5689,11 +5851,14 @@ pub struct ThirdPersonState {
     /// +0xDC `undefined1`, semantic; the camera orbits without turning the target (high)
     pub freeRotationEnabled: u8,
     /// +0xDD `undefined1`, semantic; switch to first person once zoomed in to fMinCurrentZoom (high)
-    pub toggleToFirstPerson: u8,
+    #[doc(hidden)]
+    pub __toggleToFirstPerson: [u8; 1],
     /// +0xDE `undefined1`, semantic; the next Update calls SetFirstPerson(false) (high)
-    pub applyThirdPerson: u8,
+    #[doc(hidden)]
+    pub __applyThirdPerson: [u8; 1],
     /// +0xDF `undefined1`, semantic; End keeps freeRotation once (high)
-    pub keepFreeRotation: u8,
+    #[doc(hidden)]
+    pub __keepFreeRotation: [u8; 1],
     /// +0xE0 `undefined1`, semantic; the 'animator camera' mode: look input orbits (freeRotation) and zooms instead of turning the player; the player's pitch is not driven (high)
     pub animatorCam: u8,
     /// +0xE1 `undefined1`, semantic; apply eye height, zoom distance, shoulder offsets and actor pitch (high)
@@ -5728,7 +5893,7 @@ const _: () = assert!(core::mem::offset_of!(ThirdPersonState, currentYaw) == 0x8
 const _: () = assert!(core::mem::offset_of!(ThirdPersonState, savedZoom) == 0x84);
 const _: () = assert!(core::mem::offset_of!(ThirdPersonState, pitchZoomOffset) == 0x88);
 const _: () = assert!(core::mem::offset_of!(ThirdPersonState, __zoomSinceTogglePress) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(ThirdPersonState, recoveryStart) == 0x90);
+const _: () = assert!(core::mem::offset_of!(ThirdPersonState, __recoveryStart) == 0x90);
 const _: () = assert!(core::mem::offset_of!(ThirdPersonState, recoveryBlend) == 0x9C);
 const _: () = assert!(core::mem::offset_of!(ThirdPersonState, animatedNode) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(ThirdPersonState, animatedNodeName) == 0xA8);
@@ -5738,9 +5903,9 @@ const _: () = assert!(core::mem::offset_of!(ThirdPersonState, animatedBlend) == 
 const _: () = assert!(core::mem::offset_of!(ThirdPersonState, animatedBlendRate) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(ThirdPersonState, freeRotation) == 0xD4);
 const _: () = assert!(core::mem::offset_of!(ThirdPersonState, freeRotationEnabled) == 0xDC);
-const _: () = assert!(core::mem::offset_of!(ThirdPersonState, toggleToFirstPerson) == 0xDD);
-const _: () = assert!(core::mem::offset_of!(ThirdPersonState, applyThirdPerson) == 0xDE);
-const _: () = assert!(core::mem::offset_of!(ThirdPersonState, keepFreeRotation) == 0xDF);
+const _: () = assert!(core::mem::offset_of!(ThirdPersonState, __toggleToFirstPerson) == 0xDD);
+const _: () = assert!(core::mem::offset_of!(ThirdPersonState, __applyThirdPerson) == 0xDE);
+const _: () = assert!(core::mem::offset_of!(ThirdPersonState, __keepFreeRotation) == 0xDF);
 const _: () = assert!(core::mem::offset_of!(ThirdPersonState, animatorCam) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(ThirdPersonState, __useShoulderOffsets) == 0xE1);
 const _: () = assert!(core::mem::offset_of!(ThirdPersonState, togglePOVPressed) == 0xE2);
@@ -5770,22 +5935,26 @@ pub struct TransitionState {
     #[doc(hidden)]
     pub __padding1C: [u8; 4],
     /// +0x20 `class:NiQuaternion`, semantic; NiQuaternion at the start of the transition (high); retyped undefined1 -> class:NiQuaternion: meaning: NiQuaternion
-    pub fromRotation: crate::NiQuaternion,
+    #[doc(hidden)]
+    pub __fromRotation: [u8; 16],
     /// +0x30 `class:NiQuaternion`, semantic; NiQuaternion of the target state (high); retyped undefined1 -> class:NiQuaternion: meaning: NiQuaternion
     pub toRotation: crate::NiQuaternion,
     /// +0x40 `class:NiPoint3`, semantic; NiPoint3 root world translation at Begin (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
-    pub fromPosition: crate::NiPoint3,
+    #[doc(hidden)]
+    pub __fromPosition: [u8; 12],
     /// +0x4C `class:NiPoint3`, semantic; NiPoint3 translation of the target state (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
     #[doc(hidden)]
     pub __toPosition: [u8; 12],
     /// +0x58 `u32`, semantic; g_FrameTimeMs at Begin (high)
-    pub startTimeMs: u32,
+    #[doc(hidden)]
+    pub __startTimeMs: [u8; 4],
     /// +0x5C `float`, semantic; transition length in milliseconds; 0 makes the first Update finish (high)
     pub durationMs: f32,
     /// +0x60 `class:NiPoint3`, semantic; NiPoint3 interpolated translation written each Update (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3; GetTranslation 0x9973f0
     pub currentPosition: crate::NiPoint3,
     /// +0x6C `float`, semantic; 0..1 fraction of the transition (high)
-    pub progress: f32,
+    #[doc(hidden)]
+    pub __progress: [u8; 4],
     /// +0x70 `ptr:TESCameraState`, semantic; BSTSmartPointer to the state the transition ends in (high)
     pub targetState: *mut crate::TESCameraState,
     #[doc(hidden)]
@@ -5798,14 +5967,14 @@ const _: () = assert!(core::mem::offset_of!(TransitionState, __padding0C) == 0xC
 const _: () = assert!(core::mem::offset_of!(TransitionState, camera) == 0x10);
 const _: () = assert!(core::mem::offset_of!(TransitionState, __id) == 0x18);
 const _: () = assert!(core::mem::offset_of!(TransitionState, __padding1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(TransitionState, fromRotation) == 0x20);
+const _: () = assert!(core::mem::offset_of!(TransitionState, __fromRotation) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TransitionState, toRotation) == 0x30);
-const _: () = assert!(core::mem::offset_of!(TransitionState, fromPosition) == 0x40);
+const _: () = assert!(core::mem::offset_of!(TransitionState, __fromPosition) == 0x40);
 const _: () = assert!(core::mem::offset_of!(TransitionState, __toPosition) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(TransitionState, startTimeMs) == 0x58);
+const _: () = assert!(core::mem::offset_of!(TransitionState, __startTimeMs) == 0x58);
 const _: () = assert!(core::mem::offset_of!(TransitionState, durationMs) == 0x5C);
 const _: () = assert!(core::mem::offset_of!(TransitionState, currentPosition) == 0x60);
-const _: () = assert!(core::mem::offset_of!(TransitionState, progress) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(TransitionState, __progress) == 0x6C);
 const _: () = assert!(core::mem::offset_of!(TransitionState, targetState) == 0x70);
 
 /// `TweenMenuCameraState`: size 0x50 (exact, medium); primary base `TESCameraState`.
@@ -5869,30 +6038,35 @@ const _: () = assert!(core::mem::offset_of!(TweenMenuCameraState, __pad4D) == 0x
 /// `UICursor`: size 0x30 (exact).
 /// Meaning: the menu cursor's position and limits (static 0x333b080, pointer 0x3210e38), created by the UI singleton's ctor (high, camera pass).
 /// Evidence: the menu cursor's position and limits (static 0x333b080, pointer 0x3210e38), created by the UI singleton's ctor; IC5 D (static-T). Behavioural name; no RTTI. The race menu, CursorMenu's mouse and stick handlers and the Scaleform cursor event read it.; size: UI ctor 0x1169332..0x1169383 initialises +4..+0x2f of the static 0x333b080.
-#[repr(C)]
+#[repr(C, align(4))]
 pub struct UICursor {
-    pub unknown_0: [u8; 4],
+    unknown_0: [u8; 4],
     /// +0x4 `float`, semantic; cursor x in pixels (client area) (high)
-    pub x: f32,
+    #[doc(hidden)]
+    pub __x: [u8; 4],
     /// +0x8 `float`, semantic; cursor y in pixels (high)
-    pub y: f32,
+    #[doc(hidden)]
+    pub __y: [u8; 4],
     /// +0xC `float[4]`, semantic; min x +0xc, min y +0x10, max x +0x14, max y +0x18 (the clamp) (high)
-    pub bounds: [u8; 16],
+    #[doc(hidden)]
+    pub __bounds: [u8; 16],
     /// +0x1C `float`, semantic; multiplies the cursor speed settings (medium)
-    pub speedScale: f32,
-    pub unknown_20: [u8; 8],
+    #[doc(hidden)]
+    pub __speedScale: [u8; 4],
+    unknown_20: [u8; 8],
     /// +0x28 `float`, semantic; second speed factor (low)
-    pub speedScale2: f32,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __speedScale2: [u8; 4],
+    unknown_2C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UICursor>() == 0x30);
-const _: () = assert!(core::mem::offset_of!(UICursor, x) == 0x4);
-const _: () = assert!(core::mem::offset_of!(UICursor, y) == 0x8);
-const _: () = assert!(core::mem::offset_of!(UICursor, bounds) == 0xC);
-const _: () = assert!(core::mem::offset_of!(UICursor, speedScale) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(UICursor, speedScale2) == 0x28);
+const _: () = assert!(core::mem::offset_of!(UICursor, __x) == 0x4);
+const _: () = assert!(core::mem::offset_of!(UICursor, __y) == 0x8);
+const _: () = assert!(core::mem::offset_of!(UICursor, __bounds) == 0xC);
+const _: () = assert!(core::mem::offset_of!(UICursor, __speedScale) == 0x1C);
+const _: () = assert!(core::mem::offset_of!(UICursor, __speedScale2) == 0x28);
 
 /// `VATSCameraState`: size 0x38 (exact, medium); primary base `TESCameraState`.
 /// Meaning: kill camera / VATS playback camera (medium, frame pass).
@@ -6035,7 +6209,8 @@ pub struct bhkCharacterController {
     pub field_8: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSTEventSource`, RTTI base BSTEventSource<bhkCharacterMoveFinishEvent>
-    pub source_bhkCharacterMoveFinishEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_bhkCharacterMoveFinishEvent: [u8; 88],
     unknown_68: [u8; 8],
     /// +0x70 `undefined1[16]`, ctor store
     pub field_70: [u8; 16],
@@ -6131,7 +6306,8 @@ pub struct bhkCharacterController {
     /// +0x27C `undefined4`, ctor store
     pub field_27C: u32,
     /// +0x280 `undefined16`, semantic; two NiPointer<bhkShape> controller shapes (from cinfo +0x90/+0x98) (high)
-    pub shapes: [u8; 16],
+    #[doc(hidden)]
+    pub __shapes: [u8; 16],
     /// +0x290 `float`, ctor store
     pub field_290: f32,
     /// +0x294 `float`, ctor store
@@ -6188,7 +6364,7 @@ pub struct bhkCharacterController {
 const _: () = assert!(size_of::<bhkCharacterController>() == 0x330);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(bhkCharacterController, source_bhkCharacterMoveFinishEvent) == 0x10);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, __source_bhkCharacterMoveFinishEvent) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_90) == 0x90);
@@ -6228,7 +6404,7 @@ const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_264) =
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_270) == 0x270);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, activeShapeIndex) == 0x278);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_27C) == 0x27C);
-const _: () = assert!(core::mem::offset_of!(bhkCharacterController, shapes) == 0x280);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, __shapes) == 0x280);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_290) == 0x290);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_294) == 0x294);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_298) == 0x298);
@@ -6281,27 +6457,37 @@ const _: () = assert!(core::mem::offset_of!(bhkConvexShape, field_10) == 0x10);
 #[repr(C, align(8))]
 pub struct bhkPickData {
     /// +0x0 `hkVector4`, semantic; ray start, Havok units (w ignored, engine writes 0) (high)
-    pub from: [u8; 16],
+    #[doc(hidden)]
+    pub __from: [u8; 16],
     /// +0x10 `hkVector4`, semantic; ray end, Havok units; overwritten with from + ray when ray (+0x90) is non-zero (high)
-    pub to: [u8; 16],
+    #[doc(hidden)]
+    pub __to: [u8; 16],
     /// +0x20 `undefined1`, semantic; 0 in every engine initialiser; when set, CastRayAgainstCollectedBodies and the phantom cast pass the world's shape collection filter (hkpWorld+0xd0, +0x20) (medium)
-    pub enableShapeCollectionFilter: u8,
+    #[doc(hidden)]
+    pub __enableShapeCollectionFilter: [u8; 1],
     unknown_21: [u8; 3],
     /// +0x24 `undefined4`, semantic; collision filter info of the ray: layer (bits 0..6) | group << 16; see the flags rows (high)
-    pub filterInfo: u32,
+    #[doc(hidden)]
+    pub __filterInfo: [u8; 4],
     /// +0x28 `undefined8`, semantic; not written by the engine initialisers read here (hkpWorldRayCastInput's user data slot by position) (low)
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `hkVector4`, semantic; out: hit normal, world space (high)
-    pub normal: [u8; 16],
+    #[doc(hidden)]
+    pub __normal: [u8; 16],
     /// +0x40 `float`, semantic; out: fraction of from->to at the hit; 1.0 when nothing was hit (high)
-    pub hitFraction: f32,
+    #[doc(hidden)]
+    pub __hitFraction: [u8; 4],
     /// +0x44 `undefined4`, semantic; out: shape extra info, -1 when none (medium)
-    pub extraInfo: u32,
+    #[doc(hidden)]
+    pub __extraInfo: [u8; 4],
     /// +0x48 `undefined4`, semantic; out: hit shape key path; +0x48 and +0x50 reset to -1 (medium)
-    pub shapeKeys: [u8; 32],
+    #[doc(hidden)]
+    pub __shapeKeys: [u8; 32],
     unknown_68: [u8; 8],
     /// +0x70 `undefined4`, semantic; out: reset to 0 (low)
-    pub shapeKeyIndex: u32,
+    #[doc(hidden)]
+    pub __shapeKeyIndex: [u8; 4],
     unknown_74: [u8; 12],
     /// +0x80 `ptr:hkpCollidable`, semantic; out: the hit body's root collidable; null = no hit. owner = collidable + (int8)collidable[+0x20], type collidable[+0x28] (1 = entity), filterInfo collidable[+0x2c] (high)
     pub rootCollidable: *mut crate::hkpCollidable,
@@ -6310,37 +6496,42 @@ pub struct bhkPickData {
     #[doc(hidden)]
     pub __ray: [u8; 16],
     /// +0xA0 `pointer`, semantic; in: optional broadphase cache; non-null selects the cached hkpWorldRayCaster 0xc04b10 (medium)
-    pub rayCache: *mut c_void,
+    #[doc(hidden)]
+    pub __rayCache: [u8; 8],
     /// +0xA8 `ptr:hkpClosestRayHitCollector`, semantic; in: optional single-hit collector (hkpClosestRayHitCollector, or SpecificItemCollector for LOS); PickObject resets it and copies its hit back to +0x30..+0x80 (high)
-    pub closestCollector: *mut crate::hkpClosestRayHitCollector,
+    #[doc(hidden)]
+    pub __closestCollector: [u8; 8],
     /// +0xB0 `pointer`, semantic; in: optional all-hits collector; sorted (SortField10Array_2) and its first hit copied to the output (medium)
-    pub allHitsCollector: *mut c_void,
+    #[doc(hidden)]
+    pub __allHitsCollector: [u8; 8],
     /// +0xB8 `pointer`, semantic; in: second all-hits collector kind (SortField10Array) (medium)
-    pub allHitsCollector2: *mut c_void,
+    #[doc(hidden)]
+    pub __allHitsCollector2: [u8; 8],
     /// +0xC0 `undefined1`, semantic; out: 1 when PickObject refused the pick for the time budget (no cast, result false) (high)
-    pub skipped: u8,
+    #[doc(hidden)]
+    pub __skipped: [u8; 1],
     unknown_C1: [u8; 15],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bhkPickData>() == 0xD0);
-const _: () = assert!(core::mem::offset_of!(bhkPickData, from) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkPickData, to) == 0x10);
-const _: () = assert!(core::mem::offset_of!(bhkPickData, enableShapeCollectionFilter) == 0x20);
-const _: () = assert!(core::mem::offset_of!(bhkPickData, filterInfo) == 0x24);
-const _: () = assert!(core::mem::offset_of!(bhkPickData, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(bhkPickData, normal) == 0x30);
-const _: () = assert!(core::mem::offset_of!(bhkPickData, hitFraction) == 0x40);
-const _: () = assert!(core::mem::offset_of!(bhkPickData, extraInfo) == 0x44);
-const _: () = assert!(core::mem::offset_of!(bhkPickData, shapeKeys) == 0x48);
-const _: () = assert!(core::mem::offset_of!(bhkPickData, shapeKeyIndex) == 0x70);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, __from) == 0x0);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, __to) == 0x10);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, __enableShapeCollectionFilter) == 0x20);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, __filterInfo) == 0x24);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, __normal) == 0x30);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, __hitFraction) == 0x40);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, __extraInfo) == 0x44);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, __shapeKeys) == 0x48);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, __shapeKeyIndex) == 0x70);
 const _: () = assert!(core::mem::offset_of!(bhkPickData, rootCollidable) == 0x80);
 const _: () = assert!(core::mem::offset_of!(bhkPickData, __ray) == 0x90);
-const _: () = assert!(core::mem::offset_of!(bhkPickData, rayCache) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(bhkPickData, closestCollector) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(bhkPickData, allHitsCollector) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(bhkPickData, allHitsCollector2) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(bhkPickData, skipped) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, __rayCache) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, __closestCollector) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, __allHitsCollector) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, __allHitsCollector2) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, __skipped) == 0xC0);
 
 /// `bhkShape`: size 0x28 (exact, high); primary base `bhkSerializable`.
 /// Meaning: the engine's wrapper around an hkpShape (bhkRefObject: NiRefObject count +8, Havok object +0x10) (high, camera pass).
@@ -6528,21 +6719,24 @@ const _: () = assert!(core::mem::offset_of!(bhkWorld, __field_C702) == 0xC702);
 /// `hkArray`: size 0x10 (exact).
 /// Meaning: Havok growable array: data, size, capacity and flags; the element type is given per field (high, camera pass).
 /// Evidence: Havok growable array: data, size, capacity and flags; the element type is given per field; item 9 (request V). GetVertices 0xc3abd0 output and hkpShapeShrinker 0x10c4840's locals: {data +0, i32 size +8, u32 capacityAndFlags +0xc = 0x80000000 when empty}; storage is freed with hkContainerHeapAllocator slot 4 (data, (capacityAndFlags & 0x3fffffff) * element size) when capacityAndFlags >= 0; the same triple sits inline at hkpListShape+0x30 and hkpConvexVerticesShape+0x50/+0x78.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct hkArray {
     /// +0x0 `pointer`, semantic; element array (high)
-    pub data: *mut c_void,
+    #[doc(hidden)]
+    pub __data: [u8; 8],
     /// +0x8 `i32`, semantic; used elements (high)
-    pub size: u32,
+    #[doc(hidden)]
+    pub __size: [u8; 4],
     /// +0xC `u32`, semantic; capacity in bits 0-29; bit 31 set = storage not owned (not freed) (high)
-    pub capacityAndFlags: u32,
+    #[doc(hidden)]
+    pub __capacityAndFlags: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkArray>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkArray, data) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkArray, size) == 0x8);
-const _: () = assert!(core::mem::offset_of!(hkArray, capacityAndFlags) == 0xC);
+const _: () = assert!(core::mem::offset_of!(hkArray, __data) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkArray, __size) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkArray, __capacityAndFlags) == 0xC);
 
 /// `hkContainerHeapAllocator::Allocator`: size 0x8 (exact, high); primary base `hkMemoryAllocator`.
 /// Meaning: the allocator of hkArray storage: a vtable only, forwarding to the thread router's heap (high, camera pass).
@@ -6562,136 +6756,159 @@ const _: () = assert!(core::mem::offset_of!(hkContainerHeapAllocator__Allocator,
 /// `hkMemoryRouter`: size 0x60 (exact).
 /// Meaning: the thread's Havok memory router (TlsGetValue(g_hkMemoryRouterTlsIndex)) (medium, camera pass).
 /// Evidence: the thread's Havok memory router (TlsGetValue(g_hkMemoryRouterTlsIndex)); item 9 (request V). No RTTI; Havok start-up installs one per thread (bhkSystem::Init 0x104b780 through the memory system); every reader takes its heap at +0x58.; size unknown: 0x60 is the extent of the named field.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct hkMemoryRouter {
-    pub unknown_0: [u8; 88],
+    unknown_0: [u8; 88],
     /// +0x58 `ptr:hkMemoryAllocator`, semantic; the thread's Havok heap: vtable +8 allocate(heap, size), +0x10 free(heap, ptr, size), +0x18 allocate a buffer (heap, int* size), +0x20 free a buffer (heap, ptr, size) (high)
-    pub heap: *mut crate::hkMemoryAllocator,
+    #[doc(hidden)]
+    pub __heap: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkMemoryRouter>() == 0x60);
-const _: () = assert!(core::mem::offset_of!(hkMemoryRouter, heap) == 0x58);
+const _: () = assert!(core::mem::offset_of!(hkMemoryRouter, __heap) == 0x58);
 
 /// `hkReferencedObject`: size 0x10 (exact, high); primary base `hkBaseObject`.
 /// Meaning: Havok reference-counted base (high, camera pass).
 /// Evidence: camera pass (semantic): IC7 A10 (static-V). Vtable id 190056. Constructors store dword 0x1ffff at +8 (memSizeAndFlags 0xffff, count 1) after the allocator wrote the u16 size, so the deleting destructors fall back to the class size.; size: types.md upper bound 0x10.
 /// Bases: `hkBaseObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct hkReferencedObject {
     /// +0x0 `vtbl:hkReferencedObject:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkReferencedObject_vtable,
     /// +0x8 `u16`, semantic; 0 = static / not counted (add and remove do nothing) (high)
-    pub memSizeAndFlags: u16,
+    #[doc(hidden)]
+    pub __memSizeAndFlags: [u8; 2],
     /// +0xA `i16`, semantic; reference count (high)
-    pub referenceCount: u16,
-    pub unknown_C: [u8; 4],
+    #[doc(hidden)]
+    pub __referenceCount: [u8; 2],
+    unknown_C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkReferencedObject>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(hkReferencedObject, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkReferencedObject, memSizeAndFlags) == 0x8);
-const _: () = assert!(core::mem::offset_of!(hkReferencedObject, referenceCount) == 0xA);
+const _: () = assert!(core::mem::offset_of!(hkReferencedObject, __memSizeAndFlags) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkReferencedObject, __referenceCount) == 0xA);
 
 /// `hkStridedVertices`: size 0x10 (exact).
 /// Meaning: a vertex array with a stride, the input of the convex shape constructors (high, camera pass).
 /// Evidence: a vertex array with a stride, the input of the convex shape constructors; item 9 (request V). hkpConvexVerticesShape ctor 0xc3a870 reads {+0 vertices, +8 count, +0xc striding} (PackStridedVerticesAndComputeAabb(this, *p, *(int*)(p+0xc), *(int*)(p+8))); hkpShapeShrinker 0x10c4840 builds one on the stack from an hkArray<hkVector4> {data, size, 0x10} for BuildFromPoints 0x10ee650.; size: the three members end at 0x10.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct hkStridedVertices {
     /// +0x0 `pointer`, semantic; first vertex (const float*) (high)
-    pub vertices: *mut c_void,
+    #[doc(hidden)]
+    pub __vertices: [u8; 8],
     /// +0x8 `i32`, semantic; vertex count (high)
-    pub numVertices: u32,
+    #[doc(hidden)]
+    pub __numVertices: [u8; 4],
     /// +0xC `i32`, semantic; bytes between vertices (0x10 for hkVector4) (high)
-    pub striding: u32,
+    #[doc(hidden)]
+    pub __striding: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkStridedVertices>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkStridedVertices, vertices) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkStridedVertices, numVertices) == 0x8);
-const _: () = assert!(core::mem::offset_of!(hkStridedVertices, striding) == 0xC);
+const _: () = assert!(core::mem::offset_of!(hkStridedVertices, __vertices) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkStridedVertices, __numVertices) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkStridedVertices, __striding) == 0xC);
 
 /// `hkbFootIkDriver::InternalLeg`: size 0x30 (exact).
 /// Meaning: per-leg runtime state of the driver (medium, camera pass).
 /// Evidence: per-leg runtime state of the driver; IC7 FS A (static-W); size: stride in 0xad42a0 and the run 0xad2300.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct hkbFootIkDriver__InternalLeg {
     /// +0x0 `undefined16`, semantic; corrected ankle position (written when the pose has world-from-model weight) (medium)
-    pub ankleTargetMS: [u8; 16],
+    #[doc(hidden)]
+    pub __ankleTargetMS: [u8; 16],
     /// +0x10 `undefined16`, semantic; SolveFootIkLeg output (ground hit candidate) (low)
     pub solverOut: [u8; 16],
     /// +0x20 `pointer`, semantic; per-leg solver object (deleted through vtable slot 0 by 0xad42a0); +0x40 up vector written each frame, +0x50 normal-like vector (medium)
-    pub legSolver: *mut c_void,
+    #[doc(hidden)]
+    pub __legSolver: [u8; 8],
     /// +0x28 `float`, semantic; solver output height; + info.verticalOffset (+0x2c) when +0x2c set (medium)
-    pub groundHeight: f32,
+    #[doc(hidden)]
+    pub __groundHeight: [u8; 4],
     /// +0x2C `u8`, semantic; the leg's ray hit (medium)
-    pub hit: u8,
+    #[doc(hidden)]
+    pub __hit: [u8; 1],
     /// +0x2D `u8`, semantic; ankle height below info leg footPlantedAnkleHeightMS (+0x30) (medium)
     pub planted: u8,
-    pub unknown_2E: [u8; 2],
+    unknown_2E: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbFootIkDriver__InternalLeg>() == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, ankleTargetMS) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, __ankleTargetMS) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, solverOut) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, legSolver) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, groundHeight) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, hit) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, __legSolver) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, __groundHeight) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, __hit) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, planted) == 0x2D);
 
 /// `hkbFootIkDriverInfoLeg`: size 0x60 (exact).
 /// Meaning: per-leg foot IK data (toe point = footEndLS) (high, camera pass).
 /// Evidence: per-leg foot IK data (toe point = footEndLS); IC7 FS A (static-W). Reflection member table 0x19c74b0. The run reads ankleIndex (+0x50) and footPlantedAnkleHeightMS (+0x30) every frame from the info, so an edit of footEndLS is seen by the next run once the legs are (re)initialised; when the legs object copies it (0xad42b0) was not read.; size: leg stride 0x60 in the run 0xad2300.
-#[repr(C)]
+#[repr(C, align(4))]
 pub struct hkbFootIkDriverInfoLeg {
     /// +0x0 `undefined16`, semantic; quaternion (high)
-    pub prevAnkleRotLS: [u8; 16],
+    #[doc(hidden)]
+    pub __prevAnkleRotLS: [u8; 16],
     /// +0x10 `undefined16`, semantic; reflection (high)
-    pub kneeAxisLS: [u8; 16],
+    #[doc(hidden)]
+    pub __kneeAxisLS: [u8; 16],
     /// +0x20 `undefined16`, semantic; reflection (the toe/foot end point) (high)
-    pub footEndLS: [u8; 16],
+    #[doc(hidden)]
+    pub __footEndLS: [u8; 16],
     /// +0x30 `float`, semantic; reflection; run compares the ankle height with it (high)
-    pub footPlantedAnkleHeightMS: f32,
+    #[doc(hidden)]
+    pub __footPlantedAnkleHeightMS: [u8; 4],
     /// +0x34 `float`, semantic; reflection (high)
-    pub footRaisedAnkleHeightMS: f32,
+    #[doc(hidden)]
+    pub __footRaisedAnkleHeightMS: [u8; 4],
     /// +0x38 `float`, semantic; reflection (high)
-    pub maxAnkleHeightMS: f32,
+    #[doc(hidden)]
+    pub __maxAnkleHeightMS: [u8; 4],
     /// +0x3C `float`, semantic; reflection (high)
-    pub minAnkleHeightMS: f32,
+    #[doc(hidden)]
+    pub __minAnkleHeightMS: [u8; 4],
     /// +0x40 `float`, semantic; reflection (high)
-    pub maxKneeAngleDegrees: f32,
+    #[doc(hidden)]
+    pub __maxKneeAngleDegrees: [u8; 4],
     /// +0x44 `float`, semantic; reflection (high)
-    pub minKneeAngleDegrees: f32,
+    #[doc(hidden)]
+    pub __minKneeAngleDegrees: [u8; 4],
     /// +0x48 `float`, semantic; reflection (high)
-    pub maxAnkleAngleDegrees: f32,
+    #[doc(hidden)]
+    pub __maxAnkleAngleDegrees: [u8; 4],
     /// +0x4C `i16`, semantic; reflection (high)
-    pub hipIndex: u16,
+    #[doc(hidden)]
+    pub __hipIndex: [u8; 2],
     /// +0x4E `i16`, semantic; reflection (high)
-    pub kneeIndex: u16,
+    #[doc(hidden)]
+    pub __kneeIndex: [u8; 2],
     /// +0x50 `i16`, semantic; reflection; read by the run (high)
-    pub ankleIndex: u16,
-    pub unknown_52: [u8; 14],
+    #[doc(hidden)]
+    pub __ankleIndex: [u8; 2],
+    unknown_52: [u8; 14],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbFootIkDriverInfoLeg>() == 0x60);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, prevAnkleRotLS) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, kneeAxisLS) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, footEndLS) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, footPlantedAnkleHeightMS) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, footRaisedAnkleHeightMS) == 0x34);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, maxAnkleHeightMS) == 0x38);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, minAnkleHeightMS) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, maxKneeAngleDegrees) == 0x40);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, minKneeAngleDegrees) == 0x44);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, maxAnkleAngleDegrees) == 0x48);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, hipIndex) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, kneeIndex) == 0x4E);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, ankleIndex) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __prevAnkleRotLS) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __kneeAxisLS) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __footEndLS) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __footPlantedAnkleHeightMS) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __footRaisedAnkleHeightMS) == 0x34);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __maxAnkleHeightMS) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __minAnkleHeightMS) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __maxKneeAngleDegrees) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __minKneeAngleDegrees) == 0x44);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __maxAnkleAngleDegrees) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __hipIndex) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __kneeIndex) == 0x4E);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __ankleIndex) == 0x50);
 
 /// `hkbFootIkGains`: size 0x30 (exact).
 /// Meaning: foot IK gains (graph data of hkbFootIkControlsModifier); no engine INI feeds them (high, camera pass).
@@ -6699,7 +6916,8 @@ const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, ankleIndex) 
 #[repr(C, align(4))]
 pub struct hkbFootIkGains {
     /// +0x0 `float`, semantic; reflection (high)
-    pub onOffGain: f32,
+    #[doc(hidden)]
+    pub __onOffGain: [u8; 4],
     /// +0x4 `float`, semantic; reflection (high)
     #[doc(hidden)]
     pub __groundAscendingGain: [u8; 4],
@@ -6710,7 +6928,8 @@ pub struct hkbFootIkGains {
     #[doc(hidden)]
     pub __footPlantedGain: [u8; 4],
     /// +0x10 `float`, semantic; reflection (high)
-    pub footRaisedGain: f32,
+    #[doc(hidden)]
+    pub __footRaisedGain: [u8; 4],
     /// +0x14 `float`, semantic; reflection (high)
     #[doc(hidden)]
     pub __footUnlockGain: [u8; 4],
@@ -6718,7 +6937,8 @@ pub struct hkbFootIkGains {
     #[doc(hidden)]
     pub __worldFromModelFeedbackGain: [u8; 4],
     /// +0x1C `float`, semantic; reflection (high)
-    pub errorUpDownBias: f32,
+    #[doc(hidden)]
+    pub __errorUpDownBias: [u8; 4],
     /// +0x20 `float`, semantic; reflection (high)
     #[doc(hidden)]
     pub __alignWorldFromModelGain: [u8; 4],
@@ -6729,23 +6949,24 @@ pub struct hkbFootIkGains {
     #[doc(hidden)]
     pub __maxKneeAngleDifference: [u8; 4],
     /// +0x2C `float`, semantic; reflection (high)
-    pub ankleOrientationGain: f32,
+    #[doc(hidden)]
+    pub __ankleOrientationGain: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbFootIkGains>() == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, onOffGain) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __onOffGain) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __groundAscendingGain) == 0x4);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __groundDescendingGain) == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __footPlantedGain) == 0xC);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, footRaisedGain) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __footRaisedGain) == 0x10);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __footUnlockGain) == 0x14);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __worldFromModelFeedbackGain) == 0x18);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, errorUpDownBias) == 0x1C);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __errorUpDownBias) == 0x1C);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __alignWorldFromModelGain) == 0x20);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __hipOrientationGain) == 0x24);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __maxKneeAngleDifference) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, ankleOrientationGain) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __ankleOrientationGain) == 0x2C);
 
 /// `hkpCapsuleShape`: size 0x50 (exact, high); primary base `hkpConvexShape`.
 /// Meaning: capsule: two end points and a radius (high, camera pass).
@@ -6952,7 +7173,8 @@ pub struct hkpCollidable {
     pub broadPhaseType: u8,
     unknown_29: [u8; 3],
     /// +0x2C `u32`, semantic; collision filter info: layer bits 0-6, group << 16 (see bhkPickData.filterInfo) (high)
-    pub collisionFilterInfo: u32,
+    #[doc(hidden)]
+    pub __collisionFilterInfo: [u8; 4],
     unknown_30: [u8; 80],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -6961,7 +7183,7 @@ const _: () = assert!(size_of::<hkpCollidable>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(hkpCollidable, __shape) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpCollidable, ownerOffset) == 0x20);
 const _: () = assert!(core::mem::offset_of!(hkpCollidable, broadPhaseType) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkpCollidable, collisionFilterInfo) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(hkpCollidable, __collisionFilterInfo) == 0x2C);
 
 /// `hkpConvexVerticesShape`: size 0x90 (exact, high); primary base `hkpConvexShape`.
 /// Meaning: convex hull of vertices (high, camera pass).
@@ -7037,19 +7259,21 @@ const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape, connectivity
 /// `hkpConvexVerticesShape::BuildConfig`: size 0x18 (exact).
 /// Meaning: options of hkpConvexVerticesShape::BuildFromPoints (medium, camera pass).
 /// Evidence: options of hkpConvexVerticesShape::BuildFromPoints; item 9 (request V). InitDefaultParams 0x10ee610 fills +0..+0x17: 0x10ee610 mov word [rcx],0x100; 0x10ee618 mov byte [rcx+2],1; 0x10ee624 movss [rcx+4] = *0x20c288c; 0x10ee629 mov dword [rcx+8],0; +0xc 0.05, +0x10 0.07, +0x14 -0.1; read by BuildFromPoints 0x10ee650; hkpShapeShrinker 0x10c4840 sets word +0 = 1 and +4 = the old radius.; size: the initialiser's extent.
-#[repr(C)]
+#[repr(C, align(4))]
 pub struct hkpConvexVerticesShape__BuildConfig {
     /// +0x0 `u8`, semantic; keep an hkpConvexVerticesConnectivity on the shape (+0x88); default 0 (high)
     pub buildConnectivity: u8,
     /// +0x1 `u8`, semantic; shrink the hull by the convex radius when the radius > 0; default 1 (high)
-    pub shrinkByConvexRadius: u8,
+    #[doc(hidden)]
+    pub __shrinkByConvexRadius: [u8; 1],
     /// +0x2 `u8`, semantic; last argument of the shrink 0x10c3e20; default 1; role not read (low)
     pub shrinkFlag: u8,
-    pub unknown_3: [u8; 1],
+    unknown_3: [u8; 1],
     /// +0x4 `float`, semantic; convex radius of the new shape (high)
     pub convexRadius: f32,
     /// +0x8 `i32`, semantic; above 3: the most vertices the hull keeps; default 0 (no limit) (high)
-    pub maxVertices: u32,
+    #[doc(hidden)]
+    pub __maxVertices: [u8; 4],
     /// +0xC `float`, semantic; second float argument of the shrink 0x10c3e20; default 0.05 (low)
     pub shrinkParam0: f32,
     /// +0x10 `float`, semantic; third float argument of the shrink 0x10c3e20; default 0.07 (low)
@@ -7061,10 +7285,10 @@ pub struct hkpConvexVerticesShape__BuildConfig {
 }
 const _: () = assert!(size_of::<hkpConvexVerticesShape__BuildConfig>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, buildConnectivity) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, shrinkByConvexRadius) == 0x1);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, __shrinkByConvexRadius) == 0x1);
 const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, shrinkFlag) == 0x2);
 const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, convexRadius) == 0x4);
-const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, maxVertices) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, __maxVertices) == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, shrinkParam0) == 0xC);
 const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, shrinkParam1) == 0x10);
 const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, field_14) == 0x14);
@@ -7166,7 +7390,8 @@ pub struct hkpShape {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkpShape_vtable,
     /// +0x8 `u16`, semantic; 0 = static / not counted (add and remove do nothing) (high)
-    pub memSizeAndFlags: u16,
+    #[doc(hidden)]
+    pub __memSizeAndFlags: [u8; 2],
     /// +0xA `i16`, semantic; reference count (high)
     #[doc(hidden)]
     pub __referenceCount: [u8; 2],
@@ -7181,7 +7406,7 @@ pub struct hkpShape {
 }
 const _: () = assert!(size_of::<hkpShape>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(hkpShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkpShape, memSizeAndFlags) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkpShape, __memSizeAndFlags) == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkpShape, __referenceCount) == 0xA);
 const _: () = assert!(core::mem::offset_of!(hkpShape, userData) == 0x10);
 const _: () = assert!(core::mem::offset_of!(hkpShape, type_) == 0x18);

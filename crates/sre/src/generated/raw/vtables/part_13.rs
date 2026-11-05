@@ -579,7 +579,8 @@ pub struct ConsoleOpenHandler_vtable {
     /// `ConsoleOpenHandler::CanProcess` at 0x962030 (semantic, high); signature (untiered): `bool CanProcess(ConsoleOpenHandler * this, longlong * param_1)`; `CanProcess`: Console (high); semantic signature: `bool (ConsoleOpenHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
@@ -1270,7 +1271,8 @@ pub struct CursorMenu_vtable_30 {
     /// `CursorMenu::MenuEventHandler_vfunc_1` at 0x92a1a0 (rtti, high); signature (low): `bool MenuEventHandler_vfunc_1(CursorMenu * this, longlong * param_1)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
@@ -1945,7 +1947,8 @@ pub struct DirectionHandler_vtable {
     /// `DirectionHandler::CanProcess` at 0x962060 (semantic, high); signature (untiered): `undefined8 CanProcess(DirectionHandler * this, longlong * param_1)`; `CanProcess`: Up/Down/Left/Right/Left Stick (high); semantic signature: `bool (DirectionHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
@@ -14556,7 +14559,8 @@ pub struct Inventory3DManager_vtable {
     /// `Inventory3DManager::vfunc_1` at 0x93e530 (rtti, high); signature (low): `undefined8 vfunc_1(Inventory3DManager * this, longlong * param_1)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
@@ -14973,7 +14977,8 @@ pub struct JournalMenu_vtable_30 {
     /// `JournalMenu::MenuEventHandler_vfunc_1` at 0x9acd50 (rtti, high); signature (low): `undefined8 MenuEventHandler_vfunc_1(JournalMenu * this, longlong param_1)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,

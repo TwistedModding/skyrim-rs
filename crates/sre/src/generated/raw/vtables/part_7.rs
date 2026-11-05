@@ -1753,13 +1753,15 @@ pub struct BSResource___anon_5F811FAA__LooseFileAsyncStream_vtable_30 {
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::BSResource_AsyncStream_vfunc_1` at 0xed5df0 (rtti, high); signature (high): `undefined8 BSResource_AsyncStream_vfunc_1(LooseFileAsyncStream * this)`
     pub slot_1: *const c_void,
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::BSResource_AsyncStream_vfunc_2` at 0xed5c80 (rtti, high); signature (high): `undefined BSResource_AsyncStream_vfunc_2(LooseFileAsyncStream * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `BSResource::StreamBase::vfunc_3` at 0xecb9e0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
     pub slot_3: *const c_void,
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::BSResource_AsyncStream_vfunc_4` at 0xed5d50 (rtti, high); signature (high): `undefined BSResource_AsyncStream_vfunc_4(LooseFileAsyncStream * this)`
     pub slot_4: *const c_void,
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::BSResource_AsyncStream_vfunc_5` at 0xed5a00 (rtti, high); signature (low): `undefined BSResource_AsyncStream_vfunc_5(LooseFileAsyncStream * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::BSResource_AsyncStream_vfunc_6` at 0xed6360 (rtti, high); signature (low): `undefined8 BSResource_AsyncStream_vfunc_6(LooseFileAsyncStream * this, LPVOID param_1, DWORD param_2, undefined8 param_3)`
     pub slot_6: *const c_void,
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::BSResource_AsyncStream_vfunc_7` at 0xed6330 (rtti, high); signature (low): `undefined BSResource_AsyncStream_vfunc_7(LooseFileAsyncStream * this, longlong * param_1, longlong param_2, ulonglong param_3)`
@@ -1808,24 +1810,29 @@ pub struct BSResource___anon_5F811FAA__LooseFileStream_vtable_30 {
     #[doc(hidden)]
     pub __slot_1: *const c_void,
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_2` at 0xed5cd0 (rtti, high); signature (low): `undefined BSResource_Stream_vfunc_2(LooseFileStream * this, undefined8 param_1, ulonglong param_2, ulonglong * param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `BSResource::StreamBase::vfunc_3` at 0xecb9e0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
     pub slot_3: *const c_void,
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_4` at 0xed5d60 (rtti, high); signature (high): `undefined BSResource_Stream_vfunc_4(LooseFileStream * this)`
     pub slot_4: *const c_void,
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_5` at 0xed5b40 (rtti, high); signature (low): `undefined BSResource_Stream_vfunc_5(LooseFileStream * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_6` at 0xed6010 (rtti, high); signature (low): `undefined4 BSResource_Stream_vfunc_6(LooseFileStream * this, LPVOID param_1, undefined8 param_2, ulonglong * param_3)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_7` at 0xed6490 (rtti, high); signature (low): `undefined4 BSResource_Stream_vfunc_7(LooseFileStream * this, LPCVOID param_1, undefined8 param_2, ulonglong * param_3)`
     #[doc(hidden)]
     pub __slot_7: *const c_void,
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_8` at 0xed6180 (rtti, high); signature (low): `DWORD BSResource_Stream_vfunc_8(LooseFileStream * this, LARGE_INTEGER param_1, int param_2, LARGE_INTEGER * param_3)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_9` at 0xed62b0 (rtti, high); signature (high): `undefined8 BSResource_Stream_vfunc_9(LooseFileStream * this)`
     pub slot_9: *const c_void,
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_10` at 0xed5d70 (rtti, high); signature (low): `undefined8 BSResource_Stream_vfunc_10(LooseFileStream * this, ulonglong * param_1, undefined8 param_2, ulonglong param_3)`
-    pub slot_10: *const c_void,
+    #[doc(hidden)]
+    pub __slot_10: *const c_void,
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_11` at 0xed5d20 (rtti, high); signature (low): `undefined BSResource_Stream_vfunc_11(LooseFileStream * this, longlong * param_1)`
     pub slot_11: *const c_void,
 }

@@ -2753,7 +2753,8 @@ pub struct StatsMenu_vtable_30 {
     /// `StatsMenu::MenuEventHandler_vfunc_1` at 0x978370 (rtti, high); signature (low): `undefined8 MenuEventHandler_vfunc_1(StatsMenu * this, longlong * param_1)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,

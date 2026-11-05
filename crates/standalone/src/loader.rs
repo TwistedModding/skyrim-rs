@@ -410,7 +410,8 @@ static UI_DRAIN: OnceLock<hook::CallSite<OneArgFn>> = OnceLock::new();
 static REQUESTS: OnceLock<hook::CallSite<OneArgFn>> = OnceLock::new();
 
 /// A `call rel32` the script extender hooks (S1): `caller` + `offset` calls `callee`, as AE ids and a
-/// 1.7.104 offset.
+/// 1.7.104 offset. A site only locates its caller; a callee records `id` where the detour reads its
+/// arguments, `address_id` where it just forwards them.
 #[derive(Clone, Copy)]
 struct Site {
     moment: &'static str,
@@ -420,40 +421,41 @@ struct Site {
 }
 
 macro_rules! sites {
-    ($($name:ident $moment:literal $caller:ident $offset:literal $callee:ident;)*) => {
+    ($($name:ident $moment:literal $caller:ident $offset:literal $callee:ident $record:ident;)*) => {
         $(const $name: Site = Site { moment: $moment, caller: fns::$caller, offset: $offset, callee: fns::$callee };)*
         const SITES: &[Site] = &[$($name),*];
 
         /// Puts every site and callee in the DLL's manifest.
         fn record_sites() {
             $(
-                sre::record_site!(fns::$caller, $offset);
-                sre::id!(fns::$callee);
+                sre::record_site!(located fns::$caller, $offset);
+                sre::$record!(fns::$callee);
             )*
         }
     };
 }
 
 sites! {
-    SITE_LOAD "kinds 2 and 3, the game load" BGSSaveLoadManager__LoadGame 0x34f BGSSaveLoadGame__LoadGame;
-    SITE_SAVE "kind 4, the game save" BGSSaveLoadManager__Save 0x2b3 BGSSaveLoadGame__SaveGame;
-    SITE_DELETE_OVER "kind 5, a save overwritten" SaveOverEntry 0x77 BGSSaveLoadManager__DeleteSaveFile;
-    SITE_DELETE "kind 5, a save deleted" DeleteSaveEntry 0x17 BGSSaveLoadManager__DeleteSaveFile;
-    SITE_CONTROLS "kind 6, the player controls" Main__ctor 0xd7a PlayerControls__ctor;
-    SITE_NEW_GAME "kind 7, a new game" MainMenu__StartNewGame 0x59 TryStartQuest;
-    SITE_INIT_DONE "kind 8, the data load" InitTESThread__vfunc_1_sub0 0x3f7 TESDataHandler__CallSlot19OnArray1D8;
-    SITE_VM "Papyrus registration" SkyrimVM__ctor 0xcfb SkyrimVM__RegisterNatives;
-    SITE_DRAIN_WORLD "the task queue, first drain" SetupWorldRenderContext 0x178e TaskQueue__Drain;
-    SITE_DRAIN_REFS "the task queue, second drain" ProcessReferenceQueuesAndDrainTaskQueue 0x1c TaskQueue__Drain;
-    SITE_UI_DRAIN "the UI tasks" EventSourceHolder_MenuOpenClose__ProcessMessages 0xab5 UIMessageQueue__ReleaseStaticMessages;
-    SITE_REQUESTS "the save and load requests" SetupWorldRenderContext 0xc7a ProcessSaveLoadRequests;
+    // 1.6.353 and 1.5.97 have five parameters to 1.7.104's six; the detour reads the second and only forwards the rest.
+    SITE_LOAD "kinds 2 and 3, the game load" BGSSaveLoadManager__LoadGame 0x34f BGSSaveLoadGame__LoadGame address_id;
+    SITE_SAVE "kind 4, the game save" BGSSaveLoadManager__Save 0x2b3 BGSSaveLoadGame__SaveGame id;
+    SITE_DELETE_OVER "kind 5, a save overwritten" SaveOverEntry 0x77 BGSSaveLoadManager__DeleteSaveFile id;
+    SITE_DELETE "kind 5, a save deleted" DeleteSaveEntry 0x17 BGSSaveLoadManager__DeleteSaveFile id;
+    SITE_CONTROLS "kind 6, the player controls" Main__ctor 0xd7a PlayerControls__ctor address_id;
+    SITE_NEW_GAME "kind 7, a new game" MainMenu__StartNewGame 0x59 TryStartQuest id;
+    SITE_INIT_DONE "kind 8, the data load" InitTESThread__vfunc_1_sub0 0x3f7 TESDataHandler__CallSlot19OnArray1D8 address_id;
+    SITE_VM "Papyrus registration" SkyrimVM__ctor 0xcfb SkyrimVM__RegisterNatives id;
+    SITE_DRAIN_WORLD "the task queue, first drain" SetupWorldRenderContext 0x178e TaskQueue__Drain address_id;
+    SITE_DRAIN_REFS "the task queue, second drain" ProcessReferenceQueuesAndDrainTaskQueue 0x1c TaskQueue__Drain address_id;
+    SITE_UI_DRAIN "the UI tasks" EventSourceHolder_MenuOpenClose__ProcessMessages 0xab5 UIMessageQueue__ReleaseStaticMessages address_id;
+    SITE_REQUESTS "the save and load requests" SetupWorldRenderContext 0xc7a ProcessSaveLoadRequests address_id;
 }
 
 /// Where the running game's profile places `site`, after checking that it calls its callee.
 fn locate(site: Site) -> Result<usize, String> {
     let reloc = RELOC.get().ok_or("no Address Library")?;
     let at = reloc.site(site.caller, site.offset).map_err(|e| e.to_string())?;
-    let target = reloc.address(site.callee).map_err(|e| e.to_string())?;
+    let target = reloc.location(site.callee).map_err(|e| e.to_string())?;
     (hook::find_call(at, 5, target) == Some(at)).then_some(at).ok_or_else(|| format!("no call to {target:#x} at {at:#x}"))
 }
 
@@ -493,7 +495,7 @@ fn send_name(kind: u32, name: *const c_char) {
 }
 
 fn stream_name(stream: *mut c_void) -> *const c_char {
-    if stream.is_null() { core::ptr::null() } else { unsafe { (*stream.cast::<sre::_anon_14F04957__Win32FileType>()).saveName_ptr().cast::<*const c_char>().read_unaligned() } }
+    if stream.is_null() { core::ptr::null() } else { unsafe { (&raw const (*stream.cast::<sre::_anon_14F04957__Win32FileType>()).saveName).cast::<*const c_char>().read_unaligned() } }
 }
 
 unsafe extern "C" fn load_game(this: *mut c_void, stream: *mut c_void, ignore_missing: bool, kind: u32, missing: *mut c_void, skip_match: bool) -> bool {

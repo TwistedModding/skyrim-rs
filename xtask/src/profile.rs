@@ -16,6 +16,8 @@ pub enum Row {
     Id { ae: u32, se: u32 },
     IdMissing(u32),
     IdUnverified(u32),
+    /// The address is good and the signature was not compared; `here` when the library numbers it otherwise.
+    IdAddress { ae: u32, here: Option<u32> },
     Member { member: String, offset: u32 },
     MemberMissing(String),
     MemberUnverified(String),
@@ -61,6 +63,8 @@ impl fmt::Display for Row {
             Self::Id { ae, se } => write!(f, "id {ae} {se}"),
             Self::IdMissing(ae) => write!(f, "id-missing {ae}"),
             Self::IdUnverified(ae) => write!(f, "id-unverified {ae}"),
+            Self::IdAddress { ae, here: Some(here) } => write!(f, "id-address {ae} {here}"),
+            Self::IdAddress { ae, here: None } => write!(f, "id-address {ae}"),
             Self::Member { member, offset } => write!(f, "member {member} {offset:x}"),
             Self::MemberMissing(member) => write!(f, "member-missing {member}"),
             Self::MemberUnverified(member) => write!(f, "member-unverified {member}"),

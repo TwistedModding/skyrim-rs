@@ -169,7 +169,8 @@ impl TESDataHandlerExt for TESDataHandler {
     }
 
     fn compiled_files(&self) -> &[Option<&TESFile>] {
-        unsafe { ptr_slice(self.compiledFiles.data, self.compiledFiles.size) }
+        let files = &self.compiledFiles;
+        unsafe { ptr_slice(files.data, files.size) }
     }
 
     fn light_files(&self) -> &[Option<&TESFile>] {

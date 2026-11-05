@@ -872,7 +872,8 @@ pub struct LocalMapMenu__InputHandler_vtable {
     /// `LocalMapMenu::InputHandler::vfunc_1` at 0x9948a0 (rtti, high); signature (low): `ulonglong vfunc_1(InputHandler * this, longlong * param_1)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
@@ -986,7 +987,8 @@ pub struct LockpickingMenu_vtable_30 {
     /// `LockpickingMenu::MenuEventHandler_vfunc_1` at 0x94d640 (rtti, high); signature (low): `undefined8 MenuEventHandler_vfunc_1(LockpickingMenu * this, longlong * param_1)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `LockpickingMenu::MenuEventHandler_vfunc_3` at 0x94d980 (rtti, high); signature (low): `undefined8 MenuEventHandler_vfunc_3(LockpickingMenu * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
@@ -2040,7 +2042,8 @@ pub struct MapInputHandler_vtable {
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
@@ -2069,7 +2072,8 @@ pub struct MapLookHandler_vtable {
     /// `MapLookHandler::vfunc_1` at 0x998af0 (rtti, high); signature (low): `undefined8 vfunc_1(MapLookHandler * this, longlong * param_1)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
@@ -2150,7 +2154,8 @@ pub struct MapMoveHandler_vtable {
     /// `MapMoveHandler::vfunc_1` at 0x998f30 (rtti, high); signature (low): `bool vfunc_1(MapMoveHandler * this, longlong * param_1)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
@@ -2179,7 +2184,8 @@ pub struct MapZoomHandler_vtable {
     /// `MapZoomHandler::CanProcess` at 0x998f80 (semantic, high); signature (untiered): `undefined8 CanProcess(MapZoomHandler * this, longlong * param_1)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
@@ -2581,7 +2587,8 @@ pub struct MenuEventHandler_vtable {
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`; `Unk2`: returns false in the base; not called by MenuControls::ProcessEvent (low); semantic signature: `bool (MenuEventHandler* this, InputEvent* event)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`; `ProcessSixaxisEvent`: event type 6 (SixaxisEvent); returns handled (medium); semantic signature: `bool (MenuEventHandler* this, InputEvent* event)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
@@ -2606,7 +2613,10 @@ impl MenuEventHandler_vtable {
     pub fn vdtor(&self) -> Option<MenuEventHandler_vtable_vdtor> {
         unsafe { core::mem::transmute::<*const c_void, Option<MenuEventHandler_vtable_vdtor>>(self.slot_0) }
     }
-    pub const SLOT_Unk2: usize = 2;
+    /// The slot's index on the running game; 2 on 1.7.104.
+    #[inline]
+    #[must_use]
+    pub fn SLOT_Unk2() -> usize { slot_at!("MenuEventHandler", 0x0, 2) }
     /// The slot's index on the running game; 3 on 1.7.104.
     #[inline]
     #[must_use]
@@ -3453,7 +3463,8 @@ pub struct MistMenu_vtable_48 {
     /// `MistMenu::MenuEventHandler_vfunc_1` at 0x965250 (rtti, high); signature (low): `longlong MenuEventHandler_vfunc_1(void)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
@@ -3614,7 +3625,8 @@ pub struct ModManagerMenu_vtable_30 {
     /// `ModManagerMenu::MenuEventHandler_vfunc_1` at 0x5b1150 (rtti, high); signature (low): `undefined1 MenuEventHandler_vfunc_1(ModManagerMenu * this, longlong param_1)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,

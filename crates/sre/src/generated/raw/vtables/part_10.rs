@@ -11845,19 +11845,26 @@ pub struct Character_vtable_B8 {
     /// `Character::ActorValueOwner_vdtor` at 0x73aacc (slot_propagation, medium); signature (high): `undefined ActorValueOwner_vdtor(Character * this)`
     pub slot_0: *const c_void,
     /// `Actor::ActorValueOwner_GetActorValue` at 0x6c4cb0 (runtime, high); signature (untiered): `undefined8 ActorValueOwner_GetActorValue(Actor * this, int param_2)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `Actor::ActorValueOwner_GetPermanentActorValue` at 0x6c4e20 (runtime, high); signature (untiered): `float ActorValueOwner_GetPermanentActorValue(Actor * this, int param_1)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `Actor::ActorValueOwner_GetBaseActorValue` at 0x6c4ef0 (runtime, high); signature (untiered): `ulonglong ActorValueOwner_GetBaseActorValue(Actor * this, uint param_2)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `Actor::ActorValueOwner_StoreBaseActorValue` at 0x6c5030 (semantic, high); signature (untiered): `undefined ActorValueOwner_StoreBaseActorValue(Actor * this, int param_1, float param_2)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `Actor::ActorValueOwner_AddBaseActorValue` at 0x6c5100 (semantic, high); signature (untiered): `undefined ActorValueOwner_AddBaseActorValue(Actor * this, int param_1, float param_2)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `Actor::ActorValueOwner_ModActorValue` at 0x6c51f0 (runtime, high); signature (untiered): `undefined ActorValueOwner_ModActorValue(Actor * this, int param_1, undefined8 param_2, float param_3)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `ActorValueOwner::SetActorValue` at 0x3cd850 (semantic, high); signature (untiered): `undefined SetActorValue(ActorValueOwner * this)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `ActorValueOwner::IsPlayer` at 0x447170 (semantic, high); signature (untiered): `undefined1 IsPlayer(void)`
     pub slot_8: *const c_void,
 }
@@ -11923,7 +11930,8 @@ pub struct Character_vtable_D0 {
     /// `Character::BSTEventSink_BSTransformDeltaEvent_vdtor` at 0x73aae4 (slot_propagation, medium); signature (low): `undefined BSTEventSink_BSTransformDeltaEvent_vdtor(Character * this, undefined4 * param_1, ulonglong param_2, ulonglong param_3)`
     pub slot_0: *const c_void,
     /// `Actor::BSTEventSink_BSTransformDeltaEvent_vfunc_1` at 0x6b1ab0 (rtti, medium); signature (low): `undefined8 BSTEventSink_BSTransformDeltaEvent_vfunc_1(Actor * this, uint * param_1)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl Character_vtable_D0 {
     pub const ID: u64 = 207900;
@@ -11935,7 +11943,8 @@ pub struct Character_vtable_D8 {
     /// `Character::BSTEventSink_bhkCharacterMoveFinishEvent_vdtor` at 0x73aaf0 (slot_propagation, medium); signature (low): `undefined BSTEventSink_bhkCharacterMoveFinishEvent_vdtor(Character * this, undefined4 * param_1, ulonglong param_2, ulonglong param_3)`
     pub slot_0: *const c_void,
     /// `Actor::BSTEventSink_bhkCharacterMoveFinishEvent_vfunc_1` at 0x6b21b0 (rtti, medium); signature (low): `undefined8 BSTEventSink_bhkCharacterMoveFinishEvent_vfunc_1(Actor * this, float * param_1, char * param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl Character_vtable_D8 {
     pub const ID: u64 = 207902;
@@ -12071,7 +12080,8 @@ pub struct ClickHandler_vtable {
     /// `ClickHandler::CanProcess` at 0x962000 (semantic, high); signature (untiered): `bool CanProcess(ClickHandler * this, longlong * param_1)`; `CanProcess`: Click (high); semantic signature: `bool (ClickHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,

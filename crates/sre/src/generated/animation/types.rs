@@ -17,11 +17,13 @@ pub struct BSAnimationGraphManager {
     /// +0x10 `class:BSTArray`, semantic; BSTArray<BSTSmartPointer<BSAnimationGraphChannel>> (data +0x10, capacity +0x18, size +0x20) pushed into every graph each update (high)
     pub channels: crate::BSTArray,
     /// +0x28 `class:BSTArray`, semantic; array searched by channel name before each channel update (low)
-    pub channelOverrides: crate::BSTArray,
+    #[doc(hidden)]
+    pub __channelOverrides: [u8; 24],
     /// +0x40 `undefined1`, ctor store, semantic, runtime; BSTSmallArray<BSTSmartPointer<BShkbAnimationGraph>>: +0x40 capacity with bit 31 = inline storage, +0x48 data pointer or inline element, +0x50 count (high)
     pub graphs: [u8; 24],
     /// +0x58 `class:BSTArray`, semantic; BSTArray of tagged (low bit) pointers to managers that receive this manager's events (dependent animated objects) (medium)
-    pub dependentManagers: crate::BSTArray,
+    #[doc(hidden)]
+    pub __dependentManagers: [u8; 24],
     /// +0x70 `undefined1`, semantic; name -> value-pointer cache: +0x70 BSTArray data of {BSFixedString name, int* value} (0x10), +0x78 capacity, +0x80 count, +0x88 pointer to graphsLock (+0xa0), +0x90 BSSpinLock, +0x98 BSTSmartPointer to the active graph (high)
     #[doc(hidden)]
     pub __variableCache: [u8; 48],
@@ -42,9 +44,9 @@ const _: () = assert!(size_of::<BSAnimationGraphManager>() == 0xB8);
 const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, channels) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, channelOverrides) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, __channelOverrides) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, graphs) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, dependentManagers) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, __dependentManagers) == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, __variableCache) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, __graphsLock) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, __dependentsLock) == 0xA8);
@@ -77,7 +79,8 @@ pub struct BSDismemberSkinInstance {
     /// +0x3C `undefined4`, base NiSkinInstance, semantic; bone count of the last build (high)
     pub paletteBoneCount: u32,
     /// +0x40 `undefined4`, base NiSkinInstance, semantic; float4 rows per bone (always 3) (medium)
-    pub paletteRowsPerBone: u32,
+    #[doc(hidden)]
+    pub __paletteRowsPerBone: [u8; 4],
     /// +0x44 `undefined4`, base NiSkinInstance, semantic; byte capacity of the two palette buffers (high)
     pub paletteCapacity: u32,
     /// +0x48 `pointer`, base NiSkinInstance, semantic; bone matrix palette of the current frame (3 rows of 4 floats per bone) (high)
@@ -110,7 +113,7 @@ const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, boneNodes) 
 const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, boneWorldTransforms) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, paletteFrame) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, paletteBoneCount) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, paletteRowsPerBone) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, __paletteRowsPerBone) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, paletteCapacity) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, palette) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, previousPalette) == 0x50);
@@ -155,12 +158,14 @@ pub struct BSFaceGenAnimationData {
     #[doc(hidden)]
     pub __expressionOutput: [u8; 32],
     /// +0xE0 `class:BSFaceGenKeyframeMultiple`, semantic; modifier track sampled from the speech animation +0x228 (17 floats into +0xf0) (medium)
-    pub modifierSpeech: crate::BSFaceGenKeyframeMultiple,
+    #[doc(hidden)]
+    pub __modifierSpeech: [u8; 32],
     /// +0x100 `class:BSFaceGenKeyframeMultiple`, semantic; final modifier weights (values +0x110, count +0x118, changed flag +0x11c); blink writes [0]/[1], eye tracking [8]..[11] (high)
     #[doc(hidden)]
     pub __modifierOutput: [u8; 32],
     /// +0x120 `class:BSFaceGenKeyframeMultiple`, semantic; phoneme track sampled from the speech animation (16 floats into +0x130) (medium)
-    pub phonemeSpeech: crate::BSFaceGenKeyframeMultiple,
+    #[doc(hidden)]
+    pub __phonemeSpeech: [u8; 32],
     /// +0x140 `class:BSFaceGenKeyframeMultiple`, semantic; final phoneme weights (values +0x150, count +0x158) (high)
     #[doc(hidden)]
     pub __phonemeOutput: [u8; 32],
@@ -182,7 +187,8 @@ pub struct BSFaceGenAnimationData {
     #[doc(hidden)]
     pub __eyeHeading: [u8; 4],
     /// +0x1C0 `float`, semantic; current eye pitch (radians), clamped to fTrackEyeZ (high)
-    pub eyePitch: f32,
+    #[doc(hidden)]
+    pub __eyePitch: [u8; 4],
     unknown_1C4: [u8; 4],
     /// +0x1C8 `undefined8`, ctor store
     pub field_1C8: u64,
@@ -192,7 +198,8 @@ pub struct BSFaceGenAnimationData {
     /// +0x1D4 `float`, semantic; base eye heading from the look-at target (high)
     pub eyeHeadingBase: f32,
     /// +0x1D8 `float`, semantic; base eye pitch from the look-at target (high)
-    pub eyePitchBase: f32,
+    #[doc(hidden)]
+    pub __eyePitchBase: [u8; 4],
     /// +0x1DC `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1DC: [u8; 8],
@@ -214,13 +221,16 @@ pub struct BSFaceGenAnimationData {
     /// +0x208 `float`, semantic; time until the emotion eye offset is re-rolled (high)
     pub eyeOffsetTimer: f32,
     /// +0x20C `float`, semantic; emotion eye heading offset added to the base (fEyeHeading{Min,Max}OffsetEmotion*) (high)
-    pub eyeHeadingOffset: f32,
+    #[doc(hidden)]
+    pub __eyeHeadingOffset: [u8; 4],
     /// +0x210 `float`, semantic; emotion eye pitch offset (fEyePitch{Min,Max}OffsetEmotion*) (high)
-    pub eyePitchOffset: f32,
+    #[doc(hidden)]
+    pub __eyePitchOffset: [u8; 4],
     /// +0x214 `u8`, semantic; next ComputeTrackTargetAngles snaps the current eye/head angles to the target (medium)
     pub snapEyes: u8,
     /// +0x215 `undefined1`, semantic; set by every face node update; gates the head-tracking update (low)
-    pub updated: u8,
+    #[doc(hidden)]
+    pub __updated: [u8; 1],
     unknown_216: [u8; 1],
     /// +0x217 `undefined1`, semantic; result of the last keyframe advance (low)
     pub changed: u8,
@@ -229,7 +239,8 @@ pub struct BSFaceGenAnimationData {
     pub __forceUpdate: [u8; 1],
     unknown_219: [u8; 1],
     /// +0x21A `u8`, semantic; eyes-closed state (death/knockout): blocks expression writes and eye tracking, blink stage 4 (medium)
-    pub eyesClosed: u8,
+    #[doc(hidden)]
+    pub __eyesClosed: [u8; 1],
     /// +0x21B `undefined2`, ctor store
     pub field_21B: u16,
     unknown_21D: [u8; 1],
@@ -255,9 +266,9 @@ const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, modifierInpu
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, phonemeInput) == 0x80);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __customInput) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __expressionOutput) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, modifierSpeech) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __modifierSpeech) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __modifierOutput) == 0x100);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, phonemeSpeech) == 0x120);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __phonemeSpeech) == 0x120);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __phonemeOutput) == 0x140);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __customSpeech) == 0x160);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __customOutput) == 0x180);
@@ -265,11 +276,11 @@ const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, lookAtVector
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __field_1AC) == 0x1AC);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __headAngles) == 0x1B4);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __eyeHeading) == 0x1BC);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, eyePitch) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __eyePitch) == 0x1C0);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1C8) == 0x1C8);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1D0) == 0x1D0);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, eyeHeadingBase) == 0x1D4);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, eyePitchBase) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __eyePitchBase) == 0x1D8);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __field_1DC) == 0x1DC);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __field_1E4) == 0x1E4);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __field_1EC) == 0x1EC);
@@ -278,13 +289,13 @@ const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1F8) =
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, blinkStage) == 0x200);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, blinkTimer) == 0x204);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, eyeOffsetTimer) == 0x208);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, eyeHeadingOffset) == 0x20C);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, eyePitchOffset) == 0x210);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __eyeHeadingOffset) == 0x20C);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __eyePitchOffset) == 0x210);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, snapEyes) == 0x214);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, updated) == 0x215);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __updated) == 0x215);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, changed) == 0x217);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __forceUpdate) == 0x218);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, eyesClosed) == 0x21A);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __eyesClosed) == 0x21A);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_21B) == 0x21B);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, expressionOverride) == 0x21E);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, lock) == 0x220);
@@ -294,14 +305,14 @@ const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __phonemeAni
 /// Meaning: the head's NiNode: owns the face animation data, advances it in its downward update and queues itself for the 'Face morphing' step; binds the head skins to the actor's skeleton (high, animation pass).
 /// Evidence: runtime: 0x168 at 2 allocation sites; agrees with the static allocation sites.
 /// Bases: `NiNode`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSFaceGenNiNode {
     /// +0x0 `vtbl:BSFaceGenNiNode:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSFaceGenNiNode_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -311,17 +322,19 @@ pub struct BSFaceGenNiNode {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
     pub world: crate::NiTransform,
     /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
@@ -335,17 +348,19 @@ pub struct BSFaceGenNiNode {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
+    unknown_10A: [u8; 6],
     /// +0x110 `undefined1`, base NiNode, semantic; NiTObjectArray<NiPointer<NiAVObject>>: vtable +0x110, data +0x118, capacity u16 +0x120, slots in use u16 +0x122, non-null count u16 +0x124, grow step u16 +0x126 (high)
     pub children: [u8; 24],
     /// +0x128 `class:NiMatrix3`, semantic; 9 floats initialised from constants ID_388567..ID_388575 (3x3 matrix by shape) (low); retyped undefined1 -> class:NiMatrix3: ctor 0x439500 initialises the nine floats from ID_388567..ID_388575, the identity-matrix constants NiTransform::IsIdentity 0xef5c60 compares rotate against; no matrix reader seen (medium)
     pub field128: crate::NiMatrix3,
-    pub unknown_14C: [u8; 4],
+    unknown_14C: [u8; 4],
     /// +0x150 `ptr:BSFaceGenAnimationData`, semantic; face keyframe channels (high)
     pub animationData: *mut crate::BSFaceGenAnimationData,
     /// +0x158 `float`, semantic; time value of the last update (-1 initially) (medium)
@@ -354,7 +369,7 @@ pub struct BSFaceGenNiNode {
     pub actorHandle: u32,
     /// +0x160 `undefined2`, semantic; face update flags (see flags); see the flag rows (high)
     pub faceFlags: u16,
-    pub unknown_162: [u8; 6],
+    unknown_162: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -365,20 +380,20 @@ const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, __local) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, world) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, previousWorld) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, children) == 0x110);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, field128) == 0x128);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, animationData) == 0x150);
@@ -454,7 +469,8 @@ pub struct BShkbAnimationGraph {
     pub buildNameMatch: u8,
     unknown_248: [u8; 1],
     /// +0x249 `u8`, semantic; foot IK runs in FinalizePose for this graph this frame (high)
-    pub doFootIK: u8,
+    #[doc(hidden)]
+    pub __doFootIK: [u8; 1],
     unknown_24A: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -487,7 +503,7 @@ const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, __eventsSuppres
 const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, activating) == 0x244);
 const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, generatePoseOnWrite) == 0x246);
 const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, buildNameMatch) == 0x247);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, doFootIK) == 0x249);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, __doFootIK) == 0x249);
 
 /// `BoneNodeEntry`: size 0x10 (exact).
 /// Meaning: one entry of BShkbAnimationGraph.boneNodes: the node a skeleton bone is written to (no RTTI; descriptive name) (high, animation pass).
@@ -542,7 +558,8 @@ pub struct NiSkinData {
     /// +0x50 `pointer`, semantic; per-bone records, 0x58 bytes each (high)
     pub boneData: *mut c_void,
     /// +0x58 `undefined4`, semantic; number of bones (high)
-    pub boneCount: u32,
+    #[doc(hidden)]
+    pub __boneCount: [u8; 4],
     unknown_5C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -553,7 +570,7 @@ const _: () = assert!(core::mem::offset_of!(NiSkinData, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiSkinData, __field10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiSkinData, __skinTransform) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiSkinData, boneData) == 0x50);
-const _: () = assert!(core::mem::offset_of!(NiSkinData, boneCount) == 0x58);
+const _: () = assert!(core::mem::offset_of!(NiSkinData, __boneCount) == 0x58);
 
 /// `NiSkinData::BoneData`: size 0x58 (exact).
 /// Meaning: bind data of one bone (high, animation pass).
@@ -561,9 +578,11 @@ const _: () = assert!(core::mem::offset_of!(NiSkinData, boneCount) == 0x58);
 #[repr(C, align(8))]
 pub struct NiSkinData__BoneData {
     /// +0x0 `class:NiTransform`, semantic; bind-pose inverse: skin space to the bone's space (rotation, translation, scale) (high)
-    pub skinToBone: crate::NiTransform,
+    #[doc(hidden)]
+    pub __skinToBone: [u8; 52],
     /// +0x34 `class:NiBound`, semantic; bound sphere of the bone's vertices (center, radius) in bone space (high)
-    pub boundSphere: crate::NiBound,
+    #[doc(hidden)]
+    pub __boundSphere: [u8; 16],
     unknown_44: [u8; 4],
     /// +0x48 `pointer`, semantic; optional vertex weights, 8 bytes each {u16 vertex, pad, float weight} (high)
     #[doc(hidden)]
@@ -576,8 +595,8 @@ pub struct NiSkinData__BoneData {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiSkinData__BoneData>() == 0x58);
-const _: () = assert!(core::mem::offset_of!(NiSkinData__BoneData, skinToBone) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiSkinData__BoneData, boundSphere) == 0x34);
+const _: () = assert!(core::mem::offset_of!(NiSkinData__BoneData, __skinToBone) == 0x0);
+const _: () = assert!(core::mem::offset_of!(NiSkinData__BoneData, __boundSphere) == 0x34);
 const _: () = assert!(core::mem::offset_of!(NiSkinData__BoneData, __weights) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiSkinData__BoneData, __weightCount) == 0x50);
 
@@ -614,58 +633,71 @@ const _: () = assert!(core::mem::offset_of!(NiSkinPartition, vertexCount) == 0x2
 /// `NiSkinPartition::Partition`: size 0x50 (exact).
 /// Meaning: one draw partition (medium, animation pass).
 /// Evidence: one draw partition; field order from the stream reads in 0xf075f0 (+0x38, +0x3a, +0x3c, +0x3e, +0x40, bones, ..., +0x42, +0x43) and the memcmp sizes in IsEqual 0xf07200; size: stride 0x50 in NiSkinPartition LoadBinary, IsEqual and vdtor.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiSkinPartition__Partition {
     /// +0x0 `undefined8`, semantic; vertex descriptor (low nibble * 4 = stride) (medium)
     pub vertexDesc: u64,
     /// +0x8 `pointer`, semantic; bone palette: indices into the skin instance's bones, count +0x3c (medium)
-    pub bones: *mut c_void,
+    #[doc(hidden)]
+    pub __bones: [u8; 8],
     /// +0x10 `pointer`, semantic; vertexCount*weightsPerVertex weights (medium)
-    pub vertexWeights: *mut c_void,
+    #[doc(hidden)]
+    pub __vertexWeights: [u8; 8],
     /// +0x18 `pointer`, semantic; partition vertex -> skin vertex, count +0x38 (medium)
-    pub vertexMap: *mut c_void,
+    #[doc(hidden)]
+    pub __vertexMap: [u8; 8],
     /// +0x20 `pointer`, semantic; per vertex weightsPerVertex palette indices (optional) (medium)
-    pub boneIndices: *mut c_void,
+    #[doc(hidden)]
+    pub __boneIndices: [u8; 8],
     /// +0x28 `pointer`, semantic; triangle indices (triangleCount*3) or strip indices (medium)
-    pub triangles: *mut c_void,
+    #[doc(hidden)]
+    pub __triangles: [u8; 8],
     /// +0x30 `pointer`, semantic; strip lengths, count +0x3e (medium)
-    pub stripLengths: *mut c_void,
+    #[doc(hidden)]
+    pub __stripLengths: [u8; 8],
     /// +0x38 `undefined2`, semantic; vertices in the partition (medium)
-    pub vertexCount: u16,
+    #[doc(hidden)]
+    pub __vertexCount: [u8; 2],
     /// +0x3A `undefined2`, semantic; triangles (medium)
-    pub triangleCount: u16,
+    #[doc(hidden)]
+    pub __triangleCount: [u8; 2],
     /// +0x3C `undefined2`, semantic; bones in the palette (high)
     pub boneCount: u16,
     /// +0x3E `undefined2`, semantic; strips (0 = triangle list) (medium)
-    pub stripCount: u16,
+    #[doc(hidden)]
+    pub __stripCount: [u8; 2],
     /// +0x40 `undefined2`, semantic; bone influences per vertex (medium)
-    pub weightsPerVertex: u16,
+    #[doc(hidden)]
+    pub __weightsPerVertex: [u8; 2],
     /// +0x42 `undefined1`, semantic; byte that, with the draw context, selects whether the partition draws (low)
-    pub lodLevel: u8,
+    #[doc(hidden)]
+    pub __lodLevel: [u8; 1],
     /// +0x43 `undefined1`, semantic; byte read after +0x42 (low)
-    pub field43: u8,
-    pub unknown_44: [u8; 4],
+    #[doc(hidden)]
+    pub __field43: [u8; 1],
+    unknown_44: [u8; 4],
     /// +0x48 `pointer`, semantic; renderer index buffer built from the triangles (low)
-    pub triangleBuffer: *mut c_void,
+    #[doc(hidden)]
+    pub __triangleBuffer: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiSkinPartition__Partition>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, vertexDesc) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, bones) == 0x8);
-const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, vertexWeights) == 0x10);
-const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, vertexMap) == 0x18);
-const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, boneIndices) == 0x20);
-const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, triangles) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, stripLengths) == 0x30);
-const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, vertexCount) == 0x38);
-const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, triangleCount) == 0x3A);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __bones) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __vertexWeights) == 0x10);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __vertexMap) == 0x18);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __boneIndices) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __triangles) == 0x28);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __stripLengths) == 0x30);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __vertexCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __triangleCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, boneCount) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, stripCount) == 0x3E);
-const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, weightsPerVertex) == 0x40);
-const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, lodLevel) == 0x42);
-const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, field43) == 0x43);
-const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, triangleBuffer) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __stripCount) == 0x3E);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __weightsPerVertex) == 0x40);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __lodLevel) == 0x42);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __field43) == 0x43);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __triangleBuffer) == 0x48);
 
 /// `hkaSkeleton`: size 0x78 (exact, high); primary base `hkReferencedObject`.
 /// Meaning: Havok skeleton: parent indices, bones (name + lock-translation flag), reference pose (high, animation pass).

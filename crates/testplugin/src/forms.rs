@@ -207,7 +207,7 @@ fn creation_files(handler: &'static TESDataHandler) -> Result<String, String> {
     check(curios.is_light() && curios.compileIndex == 0xFE, &format!("Curios has compile index {:#x}", { curios.compileIndex }))?;
     let curios_id = curios.runtime_form_id(0x800).ok_or("Curios is not loaded")?;
     let curios_expected = 0xFE00_0800 | u32::from(curios.lightFileIndex) << 12;
-    check(curios_id == curios_expected, &format!("Curios 0x800 resolved to {curios_id:08X}, light index {}", { curios.lightFileIndex }))?;
+    check(curios_id == curios_expected, &format!("Curios 0x800 resolved to {curios_id:08X}, light index {}", curios.lightFileIndex))?;
     let fish = file(handler, "ccBGSSSE001-Fish.esm")?;
     let fish_id = fish.runtime_form_id(0x800).ok_or("Fish is not loaded")?;
     let fish_expected = u32::from(fish.compileIndex) << 24 | 0x800;
@@ -224,7 +224,10 @@ fn get_file() -> Result<String, String> {
     check(handler.file("skyrim.esm").is_some_and(|f| file_name(f) == "Skyrim.esm"), "GetFile is not case-insensitive")?;
     let sword_id = handler.file("Skyrim.esm").and_then(|f| f.runtime_form_id(IRON_SWORD & 0x00FF_FFFF)).ok_or("Skyrim.esm is not loaded")?;
     check(sword_id == IRON_SWORD, &format!("Skyrim.esm 0x12eb7 resolved to {sword_id:08X}"))?;
-    Ok(format!("Skyrim.esm 0x12eb7 -> {sword_id:08X}, {creations}, NoSuchFile.esp -> none, skyrim.esm -> Skyrim.esm"))
+    let dawnguard = file(handler, "Dawnguard.esm")?;
+    let dawnguard_id = dawnguard.runtime_form_id(0x283A).ok_or("Dawnguard.esm is not loaded")?;
+    check(dawnguard_id == u32::from(dawnguard.compileIndex) << 24 | 0x283A, &format!("Dawnguard.esm 0x283a resolved to {dawnguard_id:08X}, compile index {}", { dawnguard.compileIndex }))?;
+    Ok(format!("Skyrim.esm 0x12eb7 -> {sword_id:08X}, Dawnguard.esm 0x283a -> {dawnguard_id:08X}, {creations}, NoSuchFile.esp -> none, skyrim.esm -> Skyrim.esm"))
 }
 
 fn form_list() -> Result<String, String> {

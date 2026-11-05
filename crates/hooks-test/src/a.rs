@@ -12,7 +12,7 @@ use framework::hooks::{Hooks, Options, Outcome, Phase, Validation, validate};
 use framework::Host;
 use sre::raw::fns;
 
-use crate::{A, B, ModArgs, OwnerModArgs, check, log, player_health_damage, run};
+use crate::{A, B, ModArgs, OwnerModArgs, check, log, owner_health_damage, player_health_damage, run};
 
 static HOOKS: OnceLock<&'static Hooks> = OnceLock::new();
 static BEFORE: Mutex<Vec<f32>> = Mutex::new(Vec::new());
@@ -115,7 +115,7 @@ fn subscribe() -> Result<String, String> {
         .map_err(|e| e.to_string())?;
     let replace = hooks
         .replace(Actor__ActorValueOwner_ModActorValue, Options::new(A), |args: OwnerModArgs, original| {
-            if player_health_damage(args.0.cast(), args.1, args.2, args.3) {
+            if owner_health_damage(args.0.cast(), args.1, args.2, args.3) {
                 REPLACED.lock().unwrap().push(args.3);
             }
             unsafe { original.call(args) }
@@ -123,7 +123,7 @@ fn subscribe() -> Result<String, String> {
         .map_err(|e| e.to_string())?;
     let outer_after = hooks
         .after(Actor__ActorValueOwner_ModActorValue, Options::new(A), |args: &OwnerModArgs, (), outcome| {
-            if player_health_damage(args.0.cast(), args.1, args.2, args.3) {
+            if owner_health_damage(args.0.cast(), args.1, args.2, args.3) {
                 OUTER_AFTER.lock().unwrap().push((args.3, outcome));
             }
         })

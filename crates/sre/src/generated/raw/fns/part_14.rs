@@ -4860,7 +4860,7 @@ pub const MenuOpenHandler__vfunc_7_sub0: u64 = 52516;
 /// `MenuTable::Find` at 0x116cda0 (semantic, high); signature (untiered): `undefined8 Find(longlong param_1, ulonglong * param_2, ulonglong * param_3)`; semantic: table lookup: returns 1 and copies {menu, create} when the name is registered; this is the engine's GetMenu / IsMenuRegistered (no dedicated wrappers exist) (high); signature `bool (MenuTable* table /* ui+0x128 */, const BSFixedString* menuName, MenuTableEntryValue* out /* {IMenu* menu (AddRef'd), create} */)`
 pub const MenuTable__Find: u64 = 82135;
 /// `MenuTable::Find` as a function pointer type (high).
-pub type MenuTable__Find_fn = unsafe extern "C" fn(table: *mut c_void, menuName: *const crate::BSFixedString, out: *mut c_void) -> bool;
+pub type MenuTable__Find_fn = unsafe extern "C" fn(table: *mut crate::MenuTable, menuName: *const crate::BSFixedString, out: *mut c_void) -> bool;
 /// `MenuTable::InsertOrAssign` at 0x116bfb0 (runtime, high); signature (untiered): `undefined8 InsertOrAssign(longlong param_1, ulonglong * param_2, ulonglong * param_3)`; semantic: inserts or replaces {menu, create} for the name, growing and rehashing when full (high); signature `bool (BSTHashMapBase* map /* ui+0x130 */, const BSFixedString* menuName, const MenuTableEntryValue* value)`
 pub const MenuTable__InsertOrAssign: u64 = 82100;
 /// `MenuTable::InsertOrAssign` as a function pointer type (high).

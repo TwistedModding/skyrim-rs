@@ -17,6 +17,14 @@ impl crate::CameraMatrixEntry {
     pub fn camera(&self) -> Option<&crate::NiCamera> { unsafe { { self.camera }.as_ref() } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_eyePosition(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "CameraMatrixEntry.eyePosition", 0x260, crate::NiPoint3) } }
+    /// `CameraMatrixEntry::eyePosition`, at +0x260 on 1.7.104.
+    #[inline]
+    pub fn eyePosition(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_eyePosition(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn eyePosition_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_eyePosition(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_jittered(this: *const Self) -> *mut u8 { unsafe { member!(this, "CameraMatrixEntry.jittered", 0x284, u8) } }
     /// `CameraMatrixEntry::jittered`, at +0x284 on 1.7.104.
     #[inline]
@@ -27,6 +35,36 @@ impl crate::CameraMatrixEntry {
     pub fn jittered_ptr(&self) -> *mut u8 { Self::__member_jittered(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_previousViewProjection(this: *const Self) -> *mut [u8; 64] { unsafe { member!(this, "CameraMatrixEntry.previousViewProjection", 0x100, [u8; 64]) } }
+    /// `CameraMatrixEntry::previousViewProjection`, at +0x100 on 1.7.104.
+    #[inline]
+    pub fn previousViewProjection(&self) -> [u8; 64] { unsafe { Self::__member_previousViewProjection(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_previousViewProjection(&mut self, value: [u8; 64]) { unsafe { Self::__member_previousViewProjection(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn previousViewProjection_ptr(&self) -> *mut [u8; 64] { Self::__member_previousViewProjection(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_projection(this: *const Self) -> *mut [u8; 64] { unsafe { member!(this, "CameraMatrixEntry.projection", 0x80, [u8; 64]) } }
+    /// `CameraMatrixEntry::projection`, at +0x80 on 1.7.104.
+    #[inline]
+    pub fn projection(&self) -> [u8; 64] { unsafe { Self::__member_projection(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_projection(&mut self, value: [u8; 64]) { unsafe { Self::__member_projection(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn projection_ptr(&self) -> *mut [u8; 64] { Self::__member_projection(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_view(this: *const Self) -> *mut [u8; 64] { unsafe { member!(this, "CameraMatrixEntry.view", 0x40, [u8; 64]) } }
+    /// `CameraMatrixEntry::view`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn view(&self) -> [u8; 64] { unsafe { Self::__member_view(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_view(&mut self, value: [u8; 64]) { unsafe { Self::__member_view(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn view_ptr(&self) -> *mut [u8; 64] { Self::__member_view(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_viewProjection(this: *const Self) -> *mut [u8; 64] { unsafe { member!(this, "CameraMatrixEntry.viewProjection", 0xC0, [u8; 64]) } }
     /// `CameraMatrixEntry::viewProjection`, at +0xC0 on 1.7.104.
     #[inline]
@@ -35,6 +73,26 @@ impl crate::CameraMatrixEntry {
     pub fn set_viewProjection(&mut self, value: [u8; 64]) { unsafe { Self::__member_viewProjection(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn viewProjection_ptr(&self) -> *mut [u8; 64] { Self::__member_viewProjection(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_viewProjectionUnjittered(this: *const Self) -> *mut [u8; 64] { unsafe { member!(this, "CameraMatrixEntry.viewProjectionUnjittered", 0x140, [u8; 64]) } }
+    /// `CameraMatrixEntry::viewProjectionUnjittered`, at +0x140 on 1.7.104.
+    #[inline]
+    pub fn viewProjectionUnjittered(&self) -> [u8; 64] { unsafe { Self::__member_viewProjectionUnjittered(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_viewProjectionUnjittered(&mut self, value: [u8; 64]) { unsafe { Self::__member_viewProjectionUnjittered(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn viewProjectionUnjittered_ptr(&self) -> *mut [u8; 64] { Self::__member_viewProjectionUnjittered(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_worldRotation(this: *const Self) -> *mut [u8; 48] { unsafe { member!(this, "CameraMatrixEntry.worldRotation", 0x10, [u8; 48]) } }
+    /// `CameraMatrixEntry::worldRotation`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn worldRotation(&self) -> [u8; 48] { unsafe { Self::__member_worldRotation(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_worldRotation(&mut self, value: [u8; 48]) { unsafe { Self::__member_worldRotation(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn worldRotation_ptr(&self) -> *mut [u8; 48] { Self::__member_worldRotation(core::ptr::from_ref(self)) }
 }
 
 impl crate::ImageSpaceModifierInstanceForm {
@@ -55,6 +113,29 @@ impl crate::ImageSpaceModifierInstanceForm {
     /// Semantic field, graphics pass, high; `None` while the pointer is null.
     #[inline]
     pub fn imod(&self) -> Option<&crate::TESImageSpaceModifier> { unsafe { { self.imod }.as_ref() } }
+}
+
+impl crate::SystemTimerRecord {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u64 { unsafe { member!(this, "SystemTimerRecord.field_8", 0x8, u64) } }
+    /// `SystemTimerRecord::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u64 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u64) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u64 { Self::__member_field_8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_lastTotal(this: *const Self) -> *mut f32 { unsafe { member!(this, "SystemTimerRecord.lastTotal", 0x14, f32) } }
+    /// `SystemTimerRecord::lastTotal`, at +0x14 on 1.7.104.
+    #[inline]
+    pub fn lastTotal(&self) -> f32 { unsafe { Self::__member_lastTotal(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_lastTotal(&mut self, value: f32) { unsafe { Self::__member_lastTotal(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn lastTotal_ptr(&self) -> *mut f32 { Self::__member_lastTotal(core::ptr::from_ref(self)) }
 }
 
 /// `AddFocusShadowNode`: appends {key, node} (refcounted) to g_FocusShadowNodes

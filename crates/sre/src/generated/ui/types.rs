@@ -48,32 +48,36 @@ const _: () = assert!(core::mem::offset_of!(ActorValueMeter, actorValue) == 0x48
 /// `BSScaleformManager`: size 0x40 (exact).
 /// Meaning: the engine's Scaleform owner: loads every menu movie and owns the GFx loader, the render config, the font map, the image loader and the translator. No RTTI and no string carries the name; BSScaleformManager is the request's name, kept because the body owns the BSScaleform* RTTI objects (medium, ui pass).
 /// Evidence: the engine's Scaleform owner: loads every menu movie and owns the GFx loader, the render config, the font map, the image loader and the translator. No RTTI and no string carries the name; BSScaleformManager is the request's name, kept because the body owns the BSScaleform* RTTI objects; 0x116f630 stores this into 0x369b060, builds the loader at +8, BSScaleformImageLoader at +0x20, BSScaleformTranslator at +0x38 (Interface\Translate_%s.txt) and registers each with loader->vt[0x10](loader, stateId, obj); every menu ctor passes [0x369b060] as arg0 of 0x116fda0; size: lower bound only: static object at 0x3241bc0 constructed in place (0x65384a LEA RCX,[0x143241bc0]; CALL 0x116f630); highest field touched is +0x38.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSScaleformManager {
-    pub unknown_0: [u8; 8],
+    unknown_0: [u8; 8],
     /// +0x8 `pointer`, semantic; the GFx loader every movie is created through (0x20-byte object built from a BSScaleformFileOpener and a GFxZlibSupport) (medium)
     pub loader: *mut c_void,
     /// +0x10 `pointer`, semantic; 8-byte holder whose qword is the render config (0x38 refcounted object, loader state 1) with the Scaleform renderer at +0x18 (medium)
     pub renderConfig: *mut c_void,
     /// +0x18 `pointer`, semantic; font map built from the fontconfig 'map' lines ($ConsoleFont ...) (low)
-    pub fontMap: *mut c_void,
+    #[doc(hidden)]
+    pub __fontMap: [u8; 8],
     /// +0x20 `ptr:BSScaleformImageLoader`, semantic; image loader, loader state 5 (high)
-    pub imageLoader: *mut crate::BSScaleformImageLoader,
+    #[doc(hidden)]
+    pub __imageLoader: [u8; 8],
     /// +0x28 `undefined8`, semantic; character set from the fontconfig key validNameChars (low)
-    pub validNameChars: u64,
-    pub unknown_30: [u8; 8],
+    #[doc(hidden)]
+    pub __validNameChars: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `ptr:BSScaleformTranslator`, semantic; translator for Interface\Translate_<sLanguage>.txt, loader state 3 (high)
-    pub translator: *mut crate::BSScaleformTranslator,
+    #[doc(hidden)]
+    pub __translator: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScaleformManager>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScaleformManager, loader) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSScaleformManager, renderConfig) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSScaleformManager, fontMap) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSScaleformManager, imageLoader) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSScaleformManager, validNameChars) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSScaleformManager, translator) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScaleformManager, __fontMap) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSScaleformManager, __imageLoader) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSScaleformManager, __validNameChars) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSScaleformManager, __translator) == 0x38);
 
 /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>`: size 0x340 (exact, high); primary base `BSTCommonMessageQueue<UIMessage*___ptr64>`.
 /// Meaning: fixed ring queue of 100 UIMessage* with a spin lock (high, ui pass).
@@ -95,9 +99,11 @@ pub struct BSTCommonStaticMessageQueue_UIMessage____ptr64_100 {
     #[doc(hidden)]
     pub __count: [u8; 4],
     /// +0x334 `undefined4`, semantic; next write index (mod 100) (high)
-    pub pushIndex: u32,
+    #[doc(hidden)]
+    pub __pushIndex: [u8; 4],
     /// +0x338 `undefined4`, semantic; next read index (mod 100) (high)
-    pub popIndex: u32,
+    #[doc(hidden)]
+    pub __popIndex: [u8; 4],
     unknown_33C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -107,8 +113,8 @@ const _: () = assert!(core::mem::offset_of!(BSTCommonStaticMessageQueue_UIMessag
 const _: () = assert!(core::mem::offset_of!(BSTCommonStaticMessageQueue_UIMessage____ptr64_100, __lock) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSTCommonStaticMessageQueue_UIMessage____ptr64_100, __buffer) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSTCommonStaticMessageQueue_UIMessage____ptr64_100, __count) == 0x330);
-const _: () = assert!(core::mem::offset_of!(BSTCommonStaticMessageQueue_UIMessage____ptr64_100, pushIndex) == 0x334);
-const _: () = assert!(core::mem::offset_of!(BSTCommonStaticMessageQueue_UIMessage____ptr64_100, popIndex) == 0x338);
+const _: () = assert!(core::mem::offset_of!(BSTCommonStaticMessageQueue_UIMessage____ptr64_100, __pushIndex) == 0x334);
+const _: () = assert!(core::mem::offset_of!(BSTCommonStaticMessageQueue_UIMessage____ptr64_100, __popIndex) == 0x338);
 
 /// `BSUIMessageData`: size 0x28 (exact, medium); primary base `IUIMessageData`.
 /// Meaning: generic payload: a formatted string, a fixed string and a 32-bit value / bool (high, ui pass).
@@ -241,13 +247,15 @@ pub struct ConsoleData {
     pub __vftable: *const crate::raw::vtables::ConsoleData_vtable,
     unknown_8: [u8; 8],
     /// +0x10 `undefined8`, semantic; owned BSString* (0x10 block) (low)
-    pub text: u64,
+    #[doc(hidden)]
+    pub __text: [u8; 8],
     /// +0x18 `undefined4`, semantic; reference to select (type 1) (high)
     #[doc(hidden)]
     pub __refHandle: [u8; 4],
     unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, semantic; object executed with a ConsoleLogPrinter (type 2); deleted through its vtable (low)
-    pub command: u64,
+    #[doc(hidden)]
+    pub __command: [u8; 8],
     /// +0x28 `undefined4`, semantic; ConsoleDataType (creator default 4) (high)
     #[doc(hidden)]
     pub __type_: [u8; 4],
@@ -257,9 +265,9 @@ pub struct ConsoleData {
 }
 const _: () = assert!(size_of::<ConsoleData>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(ConsoleData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ConsoleData, text) == 0x10);
+const _: () = assert!(core::mem::offset_of!(ConsoleData, __text) == 0x10);
 const _: () = assert!(core::mem::offset_of!(ConsoleData, __refHandle) == 0x18);
-const _: () = assert!(core::mem::offset_of!(ConsoleData, command) == 0x20);
+const _: () = assert!(core::mem::offset_of!(ConsoleData, __command) == 0x20);
 const _: () = assert!(core::mem::offset_of!(ConsoleData, __type_) == 0x28);
 
 /// `ContainerMenu`: size 0xC0 (exact, medium); primary base `IMenu`.
@@ -570,9 +578,11 @@ pub struct GFxFunctionHandler__Params {
     /// +0x0 `ptr:GFxValue`, semantic; return value; converted back when its type is not undefined (high)
     pub retVal: *mut crate::GFxValue,
     /// +0x8 `ptr:GFxMovieView`, semantic; calling movie (medium)
-    pub movie: *mut crate::GFxMovieView,
+    #[doc(hidden)]
+    pub __movie: [u8; 8],
     /// +0x10 `ptr:GFxValue`, semantic; 'this' of the call (medium)
-    pub thisValue: *mut crate::GFxValue,
+    #[doc(hidden)]
+    pub __thisValue: [u8; 8],
     /// +0x18 `ptr:GFxValue`, semantic; array [this, arg0, ...] (medium)
     #[doc(hidden)]
     pub __argsWithThis: [u8; 8],
@@ -582,18 +592,19 @@ pub struct GFxFunctionHandler__Params {
     pub argCount: u32,
     unknown_2C: [u8; 4],
     /// +0x30 `pointer`, semantic; userData given to CreateFunction (high)
-    pub userData: *mut c_void,
+    #[doc(hidden)]
+    pub __userData: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GFxFunctionHandler__Params>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler__Params, retVal) == 0x0);
-const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler__Params, movie) == 0x8);
-const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler__Params, thisValue) == 0x10);
+const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler__Params, __movie) == 0x8);
+const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler__Params, __thisValue) == 0x10);
 const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler__Params, __argsWithThis) == 0x18);
 const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler__Params, args) == 0x20);
 const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler__Params, argCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler__Params, userData) == 0x30);
+const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler__Params, __userData) == 0x30);
 
 /// `GFxMovieView`: size 0x2BF0 (exact).
 /// Meaning: one instantiated Scaleform movie (the object IMenu+0x10 holds). No RTTI: the concrete vtable is the NoRTTI table 0x1a2ade8 (73 slots, 0..72); the base table 0x1a2a6e0 is mostly _purecall. Named after the request; the body is the movie instance (SetVariable error text, Advance/Display, viewport, input) (high, ui pass).
@@ -605,20 +616,25 @@ pub struct GFxMovieView {
     pub refCount: u32,
     unknown_C: [u8; 20],
     /// +0x20 `pointer`, semantic; the ObjectInterface every managed GFxValue of this movie points at (high)
-    pub objectInterface: *mut c_void,
+    #[doc(hidden)]
+    pub __objectInterface: [u8; 8],
     /// +0x28 `pointer`, semantic; the constructor's argument (movie definition instance), AddRef'd (medium)
-    pub movieDefImpl: *mut c_void,
+    #[doc(hidden)]
+    pub __movieDefImpl: [u8; 8],
     unknown_30: [u8; 8],
     /// +0x38 `pointer`, semantic; memory heap of the movie (copied from movieDefImpl+0x10); vt[0x50](size) allocates (high)
-    pub heap: *mut c_void,
+    #[doc(hidden)]
+    pub __heap: [u8; 8],
     unknown_40: [u8; 24],
     /// +0x58 `pointer`, semantic; root (level 0) sprite; every movie API returns false when it is null (high)
     pub level0: *mut c_void,
     /// +0x60 `pointer`, semantic; movie definition; the scale-mode code reads its stage rect through (+0x38)->+0x18->+0x40, rect at +0x58..+0x64 (medium)
-    pub movieDef: *mut c_void,
+    #[doc(hidden)]
+    pub __movieDef: [u8; 8],
     unknown_68: [u8; 16],
     /// +0x78 `class:GFxViewport`, semantic; the viewport last set (high)
-    pub viewport: crate::GFxViewport,
+    #[doc(hidden)]
+    pub __viewport: [u8; 52],
     unknown_AC: [u8; 20],
     /// +0xC0 `undefined4`, semantic; GFxScaleMode (high)
     #[doc(hidden)]
@@ -627,7 +643,8 @@ pub struct GFxMovieView {
     #[doc(hidden)]
     pub __alignment: [u8; 4],
     /// +0xC8 `float`, semantic; visible stage rect in twips (left, top, right, bottom) (high)
-    pub visibleFrameRect: [u8; 16],
+    #[doc(hidden)]
+    pub __visibleFrameRect: [u8; 16],
     /// +0xD8 `float`, semantic; safe rect, 4 floats (high)
     #[doc(hidden)]
     pub __safeRect: [u8; 16],
@@ -637,7 +654,8 @@ pub struct GFxMovieView {
     pub __backgroundColor: [u8; 4],
     unknown_9A4: [u8; 196],
     /// +0xA68 `undefined4`, semantic; number of mouse cursors, clamped to 4 (high)
-    pub mouseCursorCount: u32,
+    #[doc(hidden)]
+    pub __mouseCursorCount: [u8; 4],
     /// +0xA6C `undefined4`, semantic; number of controllers, clamped to 4 (medium)
     #[doc(hidden)]
     pub __controllerCount: [u8; 4],
@@ -653,30 +671,31 @@ pub struct GFxMovieView {
     pub invokeAliasTable: *mut c_void,
     unknown_24D8: [u8; 264],
     /// +0x25E0 `undefined4`, semantic; movie flags: bit 20 paused, bit 0 viewport dirty, bits 2 and 6 set by slots 71/72, bits 10/18 read by slots 55/54; see the flag rows (high)
-    pub flags: u32,
+    #[doc(hidden)]
+    pub __flags: [u8; 4],
     unknown_25E4: [u8; 1548],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GFxMovieView>() == 0x2BF0);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(GFxMovieView, objectInterface) == 0x20);
-const _: () = assert!(core::mem::offset_of!(GFxMovieView, movieDefImpl) == 0x28);
-const _: () = assert!(core::mem::offset_of!(GFxMovieView, heap) == 0x38);
+const _: () = assert!(core::mem::offset_of!(GFxMovieView, __objectInterface) == 0x20);
+const _: () = assert!(core::mem::offset_of!(GFxMovieView, __movieDefImpl) == 0x28);
+const _: () = assert!(core::mem::offset_of!(GFxMovieView, __heap) == 0x38);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, level0) == 0x58);
-const _: () = assert!(core::mem::offset_of!(GFxMovieView, movieDef) == 0x60);
-const _: () = assert!(core::mem::offset_of!(GFxMovieView, viewport) == 0x78);
+const _: () = assert!(core::mem::offset_of!(GFxMovieView, __movieDef) == 0x60);
+const _: () = assert!(core::mem::offset_of!(GFxMovieView, __viewport) == 0x78);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, __scaleMode) == 0xC0);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, __alignment) == 0xC4);
-const _: () = assert!(core::mem::offset_of!(GFxMovieView, visibleFrameRect) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(GFxMovieView, __visibleFrameRect) == 0xC8);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, __safeRect) == 0xD8);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, __backgroundColor) == 0x9A0);
-const _: () = assert!(core::mem::offset_of!(GFxMovieView, mouseCursorCount) == 0xA68);
+const _: () = assert!(core::mem::offset_of!(GFxMovieView, __mouseCursorCount) == 0xA68);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, __controllerCount) == 0xA6C);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, __userData) == 0xA70);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, __invokeResultBuffer) == 0x24A8);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, invokeAliasTable) == 0x24D0);
-const _: () = assert!(core::mem::offset_of!(GFxMovieView, flags) == 0x25E0);
+const _: () = assert!(core::mem::offset_of!(GFxMovieView, __flags) == 0x25E0);
 
 /// `GFxValue`: size 0x18 (exact).
 /// Meaning: the value a plugin passes to and reads from Scaleform: ObjectInterface pointer, type tag, 8-byte union (high, ui pass).
@@ -701,59 +720,74 @@ const _: () = assert!(core::mem::offset_of!(GFxValue, data) == 0x10);
 /// `GFxValue::DisplayInfo`: size 0xE8 (exact).
 /// Meaning: display properties read/written on a display-object value; the ushort at +0xe0 says which fields are valid (medium, ui pass).
 /// Evidence: display properties read/written on a display-object value; the ushort at +0xe0 says which fields are valid; 0xcf5500 fills +0x0..+0x58 and sets mask 0x7ff|0x800, adds 0x1000/0x2000 when the 3D matrices exist; 0xcf7330 applies each field whose bit is set; size: lower bound 0xe2 from the mask word at +0xe0 (0xcf5500 / 0xcf7330); 0xe8 assumes 8-byte alignment.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct GFxValue__DisplayInfo {
     /// +0x0 `undefined8`, semantic; double, pixels (high)
-    pub x: u64,
+    #[doc(hidden)]
+    pub __x: [u8; 8],
     /// +0x8 `undefined8`, semantic; double (high)
-    pub y: u64,
+    #[doc(hidden)]
+    pub __y: [u8; 8],
     /// +0x10 `undefined8`, semantic; double (medium)
-    pub rotation: u64,
+    #[doc(hidden)]
+    pub __rotation: [u8; 8],
     /// +0x18 `undefined8`, semantic; double, percent (medium)
-    pub xScale: u64,
+    #[doc(hidden)]
+    pub __xScale: [u8; 8],
     /// +0x20 `undefined8`, semantic; double, percent (medium)
-    pub yScale: u64,
+    #[doc(hidden)]
+    pub __yScale: [u8; 8],
     /// +0x28 `undefined8`, semantic; double, percent (medium)
-    pub alpha: u64,
+    #[doc(hidden)]
+    pub __alpha: [u8; 8],
     /// +0x30 `undefined1`, semantic; bool (high)
-    pub visible: u8,
-    pub unknown_31: [u8; 7],
+    #[doc(hidden)]
+    pub __visible: [u8; 1],
+    unknown_31: [u8; 7],
     /// +0x38 `undefined8`, semantic; double, 3D (low)
-    pub z: u64,
+    #[doc(hidden)]
+    pub __z: [u8; 8],
     /// +0x40 `undefined8`, semantic; double, 3D (low)
-    pub xRotation: u64,
+    #[doc(hidden)]
+    pub __xRotation: [u8; 8],
     /// +0x48 `undefined8`, semantic; double, 3D (low)
-    pub yRotation: u64,
+    #[doc(hidden)]
+    pub __yRotation: [u8; 8],
     /// +0x50 `undefined8`, semantic; double, 3D (low)
-    pub zScale: u64,
+    #[doc(hidden)]
+    pub __zScale: [u8; 8],
     /// +0x58 `undefined8`, semantic; double, 3D (0xd34010 result) (low)
-    pub fov: u64,
+    #[doc(hidden)]
+    pub __fov: [u8; 8],
     /// +0x60 `undefined1`, semantic; 4x4 doubles (low)
-    pub matrix3DB: [u8; 64],
+    #[doc(hidden)]
+    pub __matrix3DB: [u8; 64],
     /// +0xA0 `undefined1`, semantic; 4x4 doubles (low)
-    pub matrix3DA: [u8; 64],
+    #[doc(hidden)]
+    pub __matrix3DA: [u8; 64],
     /// +0xE0 `undefined2`, semantic; mask of valid fields (GFxDisplayInfoFlags) (high)
-    pub varsSet: u16,
-    pub unknown_E2: [u8; 6],
+    #[doc(hidden)]
+    pub __varsSet: [u8; 2],
+    unknown_E2: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GFxValue__DisplayInfo>() == 0xE8);
-const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, x) == 0x0);
-const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, y) == 0x8);
-const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, rotation) == 0x10);
-const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, xScale) == 0x18);
-const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, yScale) == 0x20);
-const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, alpha) == 0x28);
-const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, visible) == 0x30);
-const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, z) == 0x38);
-const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, xRotation) == 0x40);
-const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, yRotation) == 0x48);
-const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, zScale) == 0x50);
-const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, fov) == 0x58);
-const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, matrix3DB) == 0x60);
-const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, matrix3DA) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, varsSet) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, __x) == 0x0);
+const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, __y) == 0x8);
+const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, __rotation) == 0x10);
+const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, __xScale) == 0x18);
+const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, __yScale) == 0x20);
+const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, __alpha) == 0x28);
+const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, __visible) == 0x30);
+const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, __z) == 0x38);
+const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, __xRotation) == 0x40);
+const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, __yRotation) == 0x48);
+const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, __zScale) == 0x50);
+const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, __fov) == 0x58);
+const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, __matrix3DB) == 0x60);
+const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, __matrix3DA) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, __varsSet) == 0xE0);
 
 /// `GFxViewport`: size 0x34 (exact).
 /// Meaning: viewport passed to SetViewport (medium, ui pass).
@@ -761,7 +795,8 @@ const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, varsSet) == 0
 #[repr(C, align(4))]
 pub struct GFxViewport {
     /// +0x0 `undefined4`, semantic; render target width (medium)
-    pub bufferWidth: u32,
+    #[doc(hidden)]
+    pub __bufferWidth: [u8; 4],
     /// +0x4 `undefined4`, semantic; render target height (letterboxed) (medium)
     #[doc(hidden)]
     pub __bufferHeight: [u8; 4],
@@ -778,7 +813,8 @@ pub struct GFxViewport {
     #[doc(hidden)]
     pub __height: [u8; 4],
     /// +0x18 `undefined1`, semantic; four ints, zero at the engine's call (low)
-    pub scissorRect: [u8; 16],
+    #[doc(hidden)]
+    pub __scissorRect: [u8; 16],
     /// +0x28 `float`, semantic; 1.0 at the engine's call; multiplies the viewport size (movie +0xa0) in 0xd54c00 (medium)
     #[doc(hidden)]
     pub __scale: [u8; 4],
@@ -792,13 +828,13 @@ pub struct GFxViewport {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GFxViewport>() == 0x34);
-const _: () = assert!(core::mem::offset_of!(GFxViewport, bufferWidth) == 0x0);
+const _: () = assert!(core::mem::offset_of!(GFxViewport, __bufferWidth) == 0x0);
 const _: () = assert!(core::mem::offset_of!(GFxViewport, __bufferHeight) == 0x4);
 const _: () = assert!(core::mem::offset_of!(GFxViewport, __left) == 0x8);
 const _: () = assert!(core::mem::offset_of!(GFxViewport, __top) == 0xC);
 const _: () = assert!(core::mem::offset_of!(GFxViewport, __width) == 0x10);
 const _: () = assert!(core::mem::offset_of!(GFxViewport, __height) == 0x14);
-const _: () = assert!(core::mem::offset_of!(GFxViewport, scissorRect) == 0x18);
+const _: () = assert!(core::mem::offset_of!(GFxViewport, __scissorRect) == 0x18);
 const _: () = assert!(core::mem::offset_of!(GFxViewport, __scale) == 0x28);
 const _: () = assert!(core::mem::offset_of!(GFxViewport, __aspectRatio) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(GFxViewport, __flags) == 0x30);
@@ -934,38 +970,46 @@ const _: () = assert!(core::mem::offset_of!(HUDMenu, field_94) == 0x94);
 /// `HUDNotificationEntry`: size 0x60 (exact).
 /// Meaning: one queued HUD notification (medium, ui pass).
 /// Evidence: one queued HUD notification; built on the stack in 0x937570 then copied by HUDNotifications::vfunc_2_sub0; size: array stride 0x60 in 0x937570 (ReserveArraySlot .., 0x60) and 0x936de0 (memmove .., 0x60); no RTTI.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct HUDNotificationEntry {
     /// +0x0 `undefined1`, semantic; notification text (data+0x18) (high)
-    pub text: [u8; 16],
+    #[doc(hidden)]
+    pub __text: [u8; 16],
     /// +0x10 `undefined1`, semantic; sHUDStarted/sHUDCompleted/sHUDFailed (high)
-    pub status: [u8; 16],
+    #[doc(hidden)]
+    pub __status: [u8; 16],
     /// +0x20 `class:BSFixedString`, semantic; sound name passed to AS (medium)
-    pub sound: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __sound: [u8; 8],
     /// +0x28 `class:BSTArray`, semantic; objective string pairs; count at +0x38 (medium)
-    pub objectiveTexts: crate::BSTArray,
+    #[doc(hidden)]
+    pub __objectiveTexts: [u8; 24],
     /// +0x40 `undefined4`, semantic; HUDDataType of the source message (high)
-    pub type_: u32,
-    pub unknown_44: [u8; 4],
+    #[doc(hidden)]
+    pub __type_: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined8`, semantic; data+0x30 (quest/word) (low)
-    pub form: u64,
+    #[doc(hidden)]
+    pub __form: [u8; 8],
     /// +0x50 `undefined8`, semantic; data+0x38 (shout for type 0x15) (low)
-    pub form2: u64,
+    #[doc(hidden)]
+    pub __form2: [u8; 8],
     /// +0x58 `undefined4`, semantic; time from which the entry may be shown (now + iObjectivesWaitTime) (medium)
-    pub readyTime: u32,
-    pub unknown_5C: [u8; 4],
+    #[doc(hidden)]
+    pub __readyTime: [u8; 4],
+    unknown_5C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<HUDNotificationEntry>() == 0x60);
-const _: () = assert!(core::mem::offset_of!(HUDNotificationEntry, text) == 0x0);
-const _: () = assert!(core::mem::offset_of!(HUDNotificationEntry, status) == 0x10);
-const _: () = assert!(core::mem::offset_of!(HUDNotificationEntry, sound) == 0x20);
-const _: () = assert!(core::mem::offset_of!(HUDNotificationEntry, objectiveTexts) == 0x28);
-const _: () = assert!(core::mem::offset_of!(HUDNotificationEntry, type_) == 0x40);
-const _: () = assert!(core::mem::offset_of!(HUDNotificationEntry, form) == 0x48);
-const _: () = assert!(core::mem::offset_of!(HUDNotificationEntry, form2) == 0x50);
-const _: () = assert!(core::mem::offset_of!(HUDNotificationEntry, readyTime) == 0x58);
+const _: () = assert!(core::mem::offset_of!(HUDNotificationEntry, __text) == 0x0);
+const _: () = assert!(core::mem::offset_of!(HUDNotificationEntry, __status) == 0x10);
+const _: () = assert!(core::mem::offset_of!(HUDNotificationEntry, __sound) == 0x20);
+const _: () = assert!(core::mem::offset_of!(HUDNotificationEntry, __objectiveTexts) == 0x28);
+const _: () = assert!(core::mem::offset_of!(HUDNotificationEntry, __type_) == 0x40);
+const _: () = assert!(core::mem::offset_of!(HUDNotificationEntry, __form) == 0x48);
+const _: () = assert!(core::mem::offset_of!(HUDNotificationEntry, __form2) == 0x50);
+const _: () = assert!(core::mem::offset_of!(HUDNotificationEntry, __readyTime) == 0x58);
 
 /// `HUDNotifications`: size 0x78 (exact, medium); primary base `HUDObject`.
 /// Meaning: the HUD's quest/objective/level-up/shout notification queue (not the Debug.Notification path) (high, ui pass).
@@ -985,7 +1029,8 @@ pub struct HUDNotifications {
     /// +0x58 `class:GFxValue`, semantic; the AS array member 'ObjectivesA' of +0x40 (high)
     pub objectives: crate::GFxValue,
     /// +0x70 `undefined4`, semantic; time of the last 'level up available' reminder (medium)
-    pub lastReminderTime: u32,
+    #[doc(hidden)]
+    pub __lastReminderTime: [u8; 4],
     /// +0x74 `float`, semantic; player XP seen at the last update (medium)
     pub lastXP: f32,
     #[doc(hidden)]
@@ -996,28 +1041,30 @@ const _: () = assert!(core::mem::offset_of!(HUDNotifications, __vftable) == 0x0)
 const _: () = assert!(core::mem::offset_of!(HUDNotifications, __queue) == 0x28);
 const _: () = assert!(core::mem::offset_of!(HUDNotifications, panel) == 0x40);
 const _: () = assert!(core::mem::offset_of!(HUDNotifications, objectives) == 0x58);
-const _: () = assert!(core::mem::offset_of!(HUDNotifications, lastReminderTime) == 0x70);
+const _: () = assert!(core::mem::offset_of!(HUDNotifications, __lastReminderTime) == 0x70);
 const _: () = assert!(core::mem::offset_of!(HUDNotifications, lastXP) == 0x74);
 
 /// `HUDObject`: size 0x28 (exact, high).
 /// Meaning: base of the HUD elements HUDMenu keeps in its object list (high, ui pass).
 /// Evidence: ui pass (semantic): ctor inlined in each element; dtor 0x93ba60; size: deleting dtor 0x93c120 frees 0x28.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct HUDObject {
     /// +0x0 `vtbl:HUDObject:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HUDObject_vtable,
     /// +0x8 `ptr:GFxMovieView`, semantic; the HUD movie (ref counted) (high)
-    pub view: *mut crate::GFxMovieView,
+    #[doc(hidden)]
+    pub __view: [u8; 8],
     /// +0x10 `class:GFxValue`, semantic; the element's AS object (high)
-    pub clip: crate::GFxValue,
+    #[doc(hidden)]
+    pub __clip: [u8; 24],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<HUDObject>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(HUDObject, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(HUDObject, view) == 0x8);
-const _: () = assert!(core::mem::offset_of!(HUDObject, clip) == 0x10);
+const _: () = assert!(core::mem::offset_of!(HUDObject, __view) == 0x8);
+const _: () = assert!(core::mem::offset_of!(HUDObject, __clip) == 0x10);
 
 /// `IMenu`: size 0x30 (exact, high); primary base `FxDelegateHandler`.
 /// Meaning: base of every menu (36 RTTI subclasses); derives FxDelegateHandler -> GRefCountBase<FxDelegateHandler,2> -> GRefCountImpl -> GRefCountImplCore (data/rtti.json bases), so +0 is the Scaleform ref-counted object header and slot 1 is the FxDelegateHandler callback slot (high, ui pass).
@@ -1061,20 +1108,21 @@ const _: () = assert!(core::mem::offset_of!(IMenu, fxDelegate) == 0x28);
 /// Meaning: interface for a message box answer (high, ui pass).
 /// Evidence: lower bound NeedToUpdateCreationClubCallback (size 0x10 at 0x0) adds no fields or bases meets upper bound derived NeedToUpdateCreationClubCallback size 0x10 at 0x0.
 /// Bases: `BSIntrusiveRefCounted`@0x8.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct IMessageBoxCallback {
     /// +0x0 `vtbl:IMessageBoxCallback:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMessageBoxCallback_vtable,
     /// +0x8 `undefined4`, semantic; intrusive ref count (high)
-    pub refCount: u32,
-    pub unknown_C: [u8; 4],
+    #[doc(hidden)]
+    pub __refCount: [u8; 4],
+    unknown_C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMessageBoxCallback>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(IMessageBoxCallback, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(IMessageBoxCallback, refCount) == 0x8);
+const _: () = assert!(core::mem::offset_of!(IMessageBoxCallback, __refCount) == 0x8);
 
 /// `IUIMessageData`: size 0x10 (exact, medium).
 /// Meaning: base of UI message payloads (medium, ui pass).
@@ -1204,27 +1252,30 @@ const _: () = assert!(core::mem::offset_of!(InventoryMenu, field_84) == 0x84);
 /// `ItemList`: size 0x58 (exact).
 /// Meaning: the C++ side of a menu's item list: the AS list object, its entryList array and the StandardItemData entries (high, ui pass).
 /// Evidence: the C++ side of a menu's item list: the AS list object, its entryList array and the StandardItemData entries; built inline in the menus' show handlers; size: InventoryMenu 0x942b80 / ContainerMenu 0x90ff70 / MagicMenu 0x952080 Allocate(0x58) and OperatorDelete(.., 0x58); no RTTI.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct ItemList {
     /// +0x0 `ptr:GFxMovieView`, semantic; the menu's movie (ref counted) (high)
-    pub view: *mut crate::GFxMovieView,
+    #[doc(hidden)]
+    pub __view: [u8; 8],
     /// +0x8 `class:GFxValue`, semantic; result of Invoke('_root.GetInventoryItemList') (high)
     pub root: crate::GFxValue,
     /// +0x20 `class:GFxValue`, semantic; AS array member 'entryList' of root (high)
-    pub entryList: crate::GFxValue,
+    #[doc(hidden)]
+    pub __entryList: [u8; 24],
     /// +0x38 `class:BSTArray`, semantic; BSTArray<StandardItemData*>: data +0x38, capacity +0x40, size +0x48 (high)
-    pub items: crate::BSTArray,
+    #[doc(hidden)]
+    pub __items: [u8; 24],
     /// +0x50 `undefined1`, semantic; list needs rebuilding; GetSelectedEntry returns null while set (high)
     pub stale: u8,
-    pub unknown_51: [u8; 7],
+    unknown_51: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ItemList>() == 0x58);
-const _: () = assert!(core::mem::offset_of!(ItemList, view) == 0x0);
+const _: () = assert!(core::mem::offset_of!(ItemList, __view) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ItemList, root) == 0x8);
-const _: () = assert!(core::mem::offset_of!(ItemList, entryList) == 0x20);
-const _: () = assert!(core::mem::offset_of!(ItemList, items) == 0x38);
+const _: () = assert!(core::mem::offset_of!(ItemList, __entryList) == 0x20);
+const _: () = assert!(core::mem::offset_of!(ItemList, __items) == 0x38);
 const _: () = assert!(core::mem::offset_of!(ItemList, stale) == 0x50);
 
 /// `LoadingMenu`: size 0x80 (exact, high); primary base `IMenu`.
@@ -1452,11 +1503,14 @@ pub struct MainMenu {
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `class:BSTEventSink<BSSystemEvent>`, semantic (high)
-    pub systemEventSink: crate::BSTEventSink_BSSystemEvent,
+    #[doc(hidden)]
+    pub __systemEventSink: [u8; 8],
     /// +0x38 `class:BSTEventSink<BSSaveDataEvent>`, semantic (high)
-    pub saveDataEventSink: crate::BSTEventSink_BSSaveDataEvent,
+    #[doc(hidden)]
+    pub __saveDataEventSink: [u8; 8],
     /// +0x40 `class:GFxFunctionHandler`, semantic; GFxFunctionHandler subobject (ref count +0x48 = 1) (high)
-    pub functionHandler: crate::GFxFunctionHandler,
+    #[doc(hidden)]
+    pub __functionHandler: [u8; 16],
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
     /// +0x52 `undefined2`, base GRefCountBaseStatImpl<GRefCountImpl,2>
@@ -1494,9 +1548,9 @@ const _: () = assert!(core::mem::offset_of!(MainMenu, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(MainMenu, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(MainMenu, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(MainMenu, field_2C) == 0x2C);
-const _: () = assert!(core::mem::offset_of!(MainMenu, systemEventSink) == 0x30);
-const _: () = assert!(core::mem::offset_of!(MainMenu, saveDataEventSink) == 0x38);
-const _: () = assert!(core::mem::offset_of!(MainMenu, functionHandler) == 0x40);
+const _: () = assert!(core::mem::offset_of!(MainMenu, __systemEventSink) == 0x30);
+const _: () = assert!(core::mem::offset_of!(MainMenu, __saveDataEventSink) == 0x38);
+const _: () = assert!(core::mem::offset_of!(MainMenu, __functionHandler) == 0x40);
 const _: () = assert!(core::mem::offset_of!(MainMenu, field_50) == 0x50);
 const _: () = assert!(core::mem::offset_of!(MainMenu, __field_52) == 0x52);
 const _: () = assert!(core::mem::offset_of!(MainMenu, field_54) == 0x54);
@@ -1574,24 +1628,25 @@ const _: () = assert!(core::mem::offset_of!(MenuControls, __ignoreInput) == 0x83
 /// Meaning: an input handler of MenuControls (also embedded in menus: CursorMenu +0x30, FavoritesMenu +0x30, StatsMenu +0x30, RaceSexMenu +0x30, ...); derives BSIntrusiveRefCounted (high, ui pass).
 /// Evidence: ui pass (semantic): MenuControls::ProcessEvent 0x95f020 calls slot 1 then the per-type slot (see slots); AddHandler/RemoveHandler 0x95f4b0/0x95f580 write +0xc; size: MenuEventHandler::vdtor 0x582480 OperatorDelete(this, 0x10); MenuControls::CreateHandlers 0x960440 allocates 0x10 for ClickHandler, ConsoleOpenHandler, QuickSaveLoadHandler, FavoritesHandler.
 /// Bases: `BSIntrusiveRefCounted`@0x8.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct MenuEventHandler {
     /// +0x0 `vtbl:MenuEventHandler:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::MenuEventHandler_vtable,
     /// +0x8 `undefined4`, semantic; BSIntrusiveRefCounted count (medium)
-    pub refCount: u32,
+    #[doc(hidden)]
+    pub __refCount: [u8; 4],
     /// +0xC `undefined1`, semantic; the handler receives events only when non-zero (high)
     pub enabled: u8,
     /// +0xD `undefined1`, semantic; the handler still receives events while a modal menu is open (UI+0x17c != 0) (high)
     pub processWhileModal: u8,
-    pub unknown_E: [u8; 2],
+    unknown_E: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MenuEventHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(MenuEventHandler, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(MenuEventHandler, refCount) == 0x8);
+const _: () = assert!(core::mem::offset_of!(MenuEventHandler, __refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(MenuEventHandler, enabled) == 0xC);
 const _: () = assert!(core::mem::offset_of!(MenuEventHandler, processWhileModal) == 0xD);
 
@@ -1615,6 +1670,24 @@ pub struct MenuOpenHandler {
 const _: () = assert!(size_of::<MenuOpenHandler>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(MenuOpenHandler, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MenuOpenHandler, __tweenMenuAllowed) == 0x10);
+
+/// `MenuTable`: size 0x30 (exact).
+/// Meaning: the menu table, a BSTHashMap<BSFixedString, MenuTableEntry>; MenuTable::InsertOrAssign 0x116bfb0 takes it at +8 (UI+0x130), so its +4/+0x20 are these +0xc/+0x28 (high, ui pass).
+/// Evidence: the menu table, a BSTHashMap<BSFixedString, MenuTableEntry>; MenuTable::InsertOrAssign 0x116bfb0 takes it at +8 (UI+0x130), so its +4/+0x20 are these +0xc/+0x28; request V: the object MenuTable::Find 0x116cda0 takes at UI+0x128 (EventSourceHolder_MenuOpenClose::IsMenuOpen 0x116954b add rcx,0x128; 0x1169557 call 0x116cda0); size: the ledger's menuTable width, the spin lock follows at UI+0x158.
+#[repr(C)]
+pub struct MenuTable {
+    pub unknown_0: [u8; 12],
+    /// +0xC `undefined4`, semantic; bucket count, a power of two (high)
+    pub capacity: u32,
+    pub unknown_10: [u8; 24],
+    /// +0x28 `ptr:MenuTableEntry`, semantic; the entry array, stride 0x20, null until the first insert (high)
+    pub entries: *mut crate::MenuTableEntry,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<MenuTable>() == 0x30);
+const _: () = assert!(core::mem::offset_of!(MenuTable, capacity) == 0xC);
+const _: () = assert!(core::mem::offset_of!(MenuTable, entries) == 0x28);
 
 /// `MenuTableEntry`: size 0x20 (exact).
 /// Meaning: one menu table entry: the registered name, the live menu (null until first shown or after unload) and its creator (high, ui pass).
@@ -1761,15 +1834,16 @@ const _: () = assert!(core::mem::offset_of!(MessageBoxMenu, field_35) == 0x35);
 /// Meaning: returns the pressed button to a latent Papyrus Message.Show (high, ui pass).
 /// Evidence: ui pass (semantic): ; size: Papyrus::Message::Show 0xa19850 allocates 0x20.
 /// Bases: `IMessageBoxCallback`@0x0, `BSIntrusiveRefCounted`@0x8.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback {
     /// +0x0 `vtbl:SkyrimScript::_anon_0B1D96E2::ScriptMessageBoxCallback:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined4`, semantic; waiting VM stack (high)
-    pub stackId: u32,
-    pub unknown_14: [u8; 4],
+    #[doc(hidden)]
+    pub __stackId: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `pointer`, semantic; VM (ref counted) (high)
     pub vm: *mut c_void,
     #[doc(hidden)]
@@ -1777,7 +1851,7 @@ pub struct SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback {
 }
 const _: () = assert!(size_of::<SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback, stackId) == 0x10);
+const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback, __stackId) == 0x10);
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback, vm) == 0x18);
 
 /// `StandardItemData`: size 0x40 (exact, medium).
@@ -1808,21 +1882,24 @@ const _: () = assert!(core::mem::offset_of!(StandardItemData, obj) == 0x18);
 /// `TaskQueueHolder`: size 0x18 (exact).
 /// Meaning: the game's deferred-task queue pair (double buffer of BSTCommonScrapHeapMessageQueue<BSPackedTask> inside Main); descriptive name, no RTTI (medium, ui pass).
 /// Evidence: the game's deferred-task queue pair (double buffer of BSTCommonScrapHeapMessageQueue<BSPackedTask> inside Main); descriptive name, no RTTI; Main::ctor 0x6514e0 passes &Main+0xc8 and &Main+0x198 (two BSTCommonScrapHeapMessageQueue<BSPackedTask>, each with a semaphore and executor = ExecuteQueuedTask at queue+0x38); size: Main::ctor_sub7 0x6697c0 AllocateMemory(0x18) and stores it in 0x3242650.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TaskQueueHolder {
     /// +0x0 `undefined8`, semantic; Main+0xc8 queue (medium)
-    pub queueA: u64,
+    #[doc(hidden)]
+    pub __queueA: [u8; 8],
     /// +0x8 `undefined8`, semantic; Main+0x198 queue (medium)
-    pub queueB: u64,
+    #[doc(hidden)]
+    pub __queueB: [u8; 8],
     /// +0x10 `undefined8`, semantic; queue that QueueTask pushes into; the drain swaps it and empties the other (medium)
-    pub current: u64,
+    #[doc(hidden)]
+    pub __current: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TaskQueueHolder>() == 0x18);
-const _: () = assert!(core::mem::offset_of!(TaskQueueHolder, queueA) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TaskQueueHolder, queueB) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TaskQueueHolder, current) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TaskQueueHolder, __queueA) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TaskQueueHolder, __queueB) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TaskQueueHolder, __current) == 0x10);
 
 /// `TweenMenu`: size 0x50 (exact, high); primary base `IMenu`.
 /// Meaning: the tween (character) menu: depth 0, flags 0xcc01, context 1 (high, ui pass).
@@ -1889,26 +1966,28 @@ const _: () = assert!(core::mem::offset_of!(TweenMenu, savedRepeatRateLong) == 0
 /// `UIMessage`: size 0x20 (exact).
 /// Meaning: one queued UI request: menu name, message type, optional data (high, ui pass).
 /// Evidence: one queued UI request: menu name, message type, optional data; QueueMessage fills +0/+8/+0x10/+0x18; ProcessMessages reads them and passes the message to IMenu slot 4; size: QueueMessage 0x1b47f0 heap path AllocateMemory(.., 0x20); ProcessMessages frees it with OperatorDelete(msg, 0x20); the static pool stride is 0x20.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct UIMessage {
     /// +0x0 `class:BSFixedString`, semantic; target menu; the name 'Top Menu' (UI string +0xd0) targets the topmost open menu with depth < 0xe (high)
-    pub menuName: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __menuName: [u8; 8],
     /// +0x8 `undefined4`, semantic; UIMessageType; 0xe until assigned (high)
     pub type_: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `ptr:IUIMessageData`, semantic; optional payload, created by the data factory 0x62e6a0 or acquired from the queue's pool (high)
     pub data: *mut crate::IUIMessageData,
     /// +0x18 `undefined1`, semantic; 1 = one of the queue's 64 static slots (not freed per message), 0 = heap-allocated, freed by ProcessMessages after delivery (high)
-    pub isStatic: u8,
-    pub unknown_19: [u8; 7],
+    #[doc(hidden)]
+    pub __isStatic: [u8; 1],
+    unknown_19: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UIMessage>() == 0x20);
-const _: () = assert!(core::mem::offset_of!(UIMessage, menuName) == 0x0);
+const _: () = assert!(core::mem::offset_of!(UIMessage, __menuName) == 0x0);
 const _: () = assert!(core::mem::offset_of!(UIMessage, type_) == 0x8);
 const _: () = assert!(core::mem::offset_of!(UIMessage, data) == 0x10);
-const _: () = assert!(core::mem::offset_of!(UIMessage, isStatic) == 0x18);
+const _: () = assert!(core::mem::offset_of!(UIMessage, __isStatic) == 0x18);
 
 /// `UIMessageQueue`: size 0xB80 (exact).
 /// Meaning: the UI message queue: a 100-entry ring of UIMessage* behind a spin lock, 64 static UIMessage slots reused every drain, and a pool of reusable message data (high, ui pass).
@@ -1917,7 +1996,8 @@ const _: () = assert!(core::mem::offset_of!(UIMessage, isStatic) == 0x18);
 pub struct UIMessageQueue {
     unknown_0: [u8; 8],
     /// +0x8 `undefined1`, semantic; ring of 100 UIMessage*: vtable +8, spin lock dword +0x10, buffer +0x18..+0x337, count +0x338, push index +0x33c, pop index +0x340 (high)
-    pub queue: [u8; 832],
+    #[doc(hidden)]
+    pub __queue: [u8; 832],
     unknown_348: [u8; 8],
     /// +0x350 `undefined1`, semantic; BSFixedString data-type name -> BSTArray<IUIMessageData*>* of reusable payloads (0x18-byte entries: key, array, next); capacity +0x354, sentinel +0x360, entries +0x370 (medium)
     #[doc(hidden)]
@@ -1926,34 +2006,36 @@ pub struct UIMessageQueue {
     pub staticMessagesUsed: u32,
     unknown_37C: [u8; 4],
     /// +0x380 `undefined1`, semantic; UIMessage[64] reused every drain; after the drain each slot's data is deleted (IUIMessageData+9 == 0) or returned to its pool (+8 = 0) (high)
-    pub staticMessages: [u8; 2048],
+    #[doc(hidden)]
+    pub __staticMessages: [u8; 2048],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UIMessageQueue>() == 0xB80);
-const _: () = assert!(core::mem::offset_of!(UIMessageQueue, queue) == 0x8);
+const _: () = assert!(core::mem::offset_of!(UIMessageQueue, __queue) == 0x8);
 const _: () = assert!(core::mem::offset_of!(UIMessageQueue, __dataPool) == 0x350);
 const _: () = assert!(core::mem::offset_of!(UIMessageQueue, staticMessagesUsed) == 0x378);
-const _: () = assert!(core::mem::offset_of!(UIMessageQueue, staticMessages) == 0x380);
+const _: () = assert!(core::mem::offset_of!(UIMessageQueue, __staticMessages) == 0x380);
 
 /// `_anon_7C6875DF::OldMessageBoxCallback`: size 0x18 (exact, high); primary base `IMessageBoxCallback`.
 /// Meaning: adapter from a plain function pointer to IMessageBoxCallback (high, ui pass).
 /// Evidence: ui pass (semantic): ; size: ShowMessageBox 0x9625f0 allocates 0x18 when a function pointer is passed.
 /// Bases: `IMessageBoxCallback`@0x0, `BSIntrusiveRefCounted`@0x8.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct _anon_7C6875DF__OldMessageBoxCallback {
     /// +0x0 `vtbl:_anon_7C6875DF::OldMessageBoxCallback:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::_anon_7C6875DF__OldMessageBoxCallback_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, semantic; void (*)(u8 button) (high)
-    pub fn_: u64,
+    #[doc(hidden)]
+    pub __fn_: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<_anon_7C6875DF__OldMessageBoxCallback>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(_anon_7C6875DF__OldMessageBoxCallback, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(_anon_7C6875DF__OldMessageBoxCallback, fn_) == 0x10);
+const _: () = assert!(core::mem::offset_of!(_anon_7C6875DF__OldMessageBoxCallback, __fn_) == 0x10);
 
 /// values in data/uimessagetypes.json (ui pass).
 #[repr(u32)]

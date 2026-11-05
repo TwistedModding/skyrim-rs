@@ -5300,7 +5300,7 @@ id 10873 10821
 id 10874 10822
 id 10875 10823
 id 10876 10824
-id 10877 10825
+id-unverified 10877
 id 10878 10826
 id 10879 10827
 id 10880 10830
@@ -5953,19 +5953,19 @@ id 11696 11550
 id-unverified 11697
 id 11699 11553
 id 11701 11555
-id 11711 11565
-id 11712 11566
-id 11713 11567
-id 11714 11568
-id 11715 11569
+id-unverified 11711
+id-unverified 11712
+id-unverified 11713
+id-unverified 11714
+id-unverified 11715
 id-unverified 11716
-id 11731 11585
+id-unverified 11731
 id-unverified 11733
 id-unverified 11734
 id-unverified 11735
 id-unverified 11736
 id-unverified 11737
-id 11738 11592
+id-unverified 11738
 id-unverified 11739
 id-unverified 11740
 id-unverified 11749
@@ -5979,8 +5979,8 @@ id 11757 11611
 id-unverified 11759
 id 11760 11614
 id-unverified 11761
-id 11762 11616
-id 11763 11617
+id-unverified 11762
+id-unverified 11763
 id-unverified 11765
 id-unverified 11767
 id-unverified 11769
@@ -6035,7 +6035,7 @@ id-unverified 11849
 id-unverified 11851
 id 11852 11706
 id-unverified 11853
-id 11854 11708
+id-unverified 11854
 id 11855 11709
 id 11857 11711
 id-unverified 11860
@@ -6145,7 +6145,7 @@ id-unverified 12053
 id-unverified 12058
 id-unverified 12059
 id 12060 11921
-id 12064 11925
+id-unverified 12064
 id-unverified 12065
 id-unverified 12067
 id-unverified 12069
@@ -6155,7 +6155,7 @@ id-unverified 12072
 id 12073 11934
 id 12074 11935
 id-unverified 12075
-id 12076 11937
+id-unverified 12076
 id-unverified 12077
 id-unverified 12078
 id-unverified 12079
@@ -6495,7 +6495,7 @@ id 12478 12344
 id 12479 12345
 id 12480 12346
 id 12482 12348
-id 12483 12349
+id-unverified 12483
 id-unverified 12484
 id 12485 12351
 id-unverified 12486
@@ -6727,7 +6727,7 @@ id-unverified 12715
 id-unverified 12717
 id-unverified 12718
 id-unverified 12719
-id 12720 12585
+id-unverified 12720
 id 12721 12586
 id-unverified 12722
 id-unverified 12723
@@ -6836,7 +6836,7 @@ id-unverified 12841
 id-unverified 12842
 id-unverified 12843
 id-unverified 12844
-id 12845 12703
+id-unverified 12845
 id 12846 12704
 id 12847 12705
 id 12848 12706
@@ -6935,7 +6935,7 @@ id 12976 12844
 id-unverified 12978
 id 12979 12847
 id 12980 12848
-id 12981 12849
+id-unverified 12981
 id 12982 12850
 id-unverified 12983
 id 12984 12852
@@ -7061,7 +7061,7 @@ id 13124 12970
 id-unverified 13125
 id-unverified 13126
 id-unverified 13127
-id 13129 12210
+id-unverified 13129
 id-unverified 13133
 id-unverified 13134
 id 13135 12981
@@ -7075,7 +7075,7 @@ id 13144 528671
 id-unverified 13145
 id-unverified 13146
 id-unverified 13152
-id 13154 11275
+id-unverified 13154
 id 13163 13001
 id 13164 13002
 id 13165 13003
@@ -7144,7 +7144,7 @@ id 13235 13089
 id 13236 13090
 id 13237 13091
 id-unverified 13238
-id 13239 13056
+id-unverified 13239
 id 13240 13092
 id 13241 13095
 id 13242 13096
@@ -7202,7 +7202,7 @@ id-unverified 13299
 id 13306 13161
 id 13307 13162
 id 13308 13163
-id 13309 13164
+id-unverified 13309
 id-unverified 13310
 id 13311 13166
 id-unverified 13312
@@ -7219,7 +7219,7 @@ id-unverified 13322
 id 13323 13178
 id-unverified 13324
 id-unverified 13325
-id 13326 13181
+id-unverified 13326
 id-unverified 13327
 id 13328 13183
 id-unverified 13329
@@ -7261,7 +7261,7 @@ id-unverified 13370
 id 13371 13221
 id 13372 13222
 id-unverified 13373
-id 13375 13224
+id-unverified 13375
 id 13376 13225
 id 13377 13226
 id 13378 13227
@@ -7327,8 +7327,8 @@ id 13443 13289
 id 13444 13290
 id-unverified 13450
 id-unverified 13451
-id 13452 13301
-id 13453 13302
+id-address 13452 13301
+id-unverified 13453
 id-unverified 13459
 id-unverified 13461
 id-unverified 13462
@@ -7451,12 +7451,12 @@ id 13659 13568
 id 13660 13569
 id 13661 13570
 id 13662 13571
-id 13664 13572
-id 13665 13573
+id-unverified 13664
+id-unverified 13665
 id 13666 13574
 id 13667 13575
 id 13668 13551
-id 13670 13577
+id-unverified 13670
 id-unverified 13671
 id 13672 13579
 id-unverified 13675
@@ -7466,8 +7466,8 @@ id 13678 13585
 id 13685 13732
 id 13686 13807
 id 13687 13742
-id 13688 13592
-id 13689 13593
+id-unverified 13688
+id-unverified 13689
 id-unverified 13690
 id 13691 13595
 id-unverified 13692
@@ -7505,8 +7505,8 @@ id-unverified 13730
 id 13731 13632
 id-unverified 13736
 id 13739 13634
-id 13740 13635
-id 13741 13636
+id-unverified 13740
+id-unverified 13741
 id 13742 13637
 id 13743 13638
 id-unverified 13744
@@ -7601,11 +7601,11 @@ id 13891 13808
 id 13892 13809
 id 13893 13810
 id 13895 13811
-id 13903 13707
+id-address 13903 13707
 id 13904 13820
 id-unverified 13905
-id 13907 13833
-id 13908 13834
+id-unverified 13907
+id-unverified 13908
 id-unverified 13909
 id 13911 13838
 id 13925 13988
@@ -7633,7 +7633,7 @@ id 13955 13873
 id-unverified 13956
 id-unverified 13957
 id 13958 13876
-id 13959 13877
+id-unverified 13959
 id-unverified 13960
 id 13961 13879
 id 13962 13880
@@ -7648,7 +7648,7 @@ id-unverified 13974
 id 13975 13891
 id 13977 13892
 id 13978 13893
-id 13979 13894
+id-unverified 13979
 id-unverified 13980
 id-unverified 13981
 id 13982 13897
@@ -7670,7 +7670,7 @@ id 14001 13913
 id 14002 13914
 id 14003 13915
 id 14004 13916
-id 14005 13917
+id-unverified 14005
 id 14006 13918
 id-unverified 14007
 id 14008 13920
@@ -7743,7 +7743,7 @@ id 14094 14003
 id-unverified 14095
 id-unverified 14096
 id 14097 14006
-id 14098 14007
+id-unverified 14098
 id-unverified 14099
 id 14100 14009
 id-unverified 14103
@@ -7866,7 +7866,7 @@ id 14253 14145
 id 14254 14146
 id 14255 14147
 id 14256 14148
-id 14257 14149
+id-unverified 14257
 id 14258 14150
 id-unverified 14259
 id-unverified 14260
@@ -7951,7 +7951,7 @@ id 14350 14236
 id 14352 14237
 id 14353 14238
 id-unverified 14354
-id 14356 14240
+id-unverified 14356
 id 14357 14241
 id 14358 14242
 id-unverified 14359
@@ -8150,7 +8150,7 @@ id 14609 14453
 id 14610 14454
 id 14611 14455
 id 14612 14456
-id 14613 14457
+id-unverified 14613
 id 14614 14458
 id 14615 14459
 id 14616 14460
@@ -8173,7 +8173,7 @@ id-unverified 14632
 id 14633 14476
 id 14634 14477
 id 14635 14478
-id 14636 14479
+id-unverified 14636
 id 14637 14480
 id-unverified 14638
 id 14639 14482
@@ -8202,7 +8202,7 @@ id 14662 14504
 id 14663 14505
 id 14664 14506
 id 14665 14507
-id 14666 14508
+id-unverified 14666
 id 14667 14509
 id 14669 14511
 id 14670 14512
@@ -8279,7 +8279,7 @@ id 14772 14597
 id 14773 14598
 id 14774 13576
 id-unverified 14777
-id 14778 14603
+id-unverified 14778
 id 14779 14604
 id 14780 14605
 id 14781 14606
@@ -8362,11 +8362,11 @@ id-unverified 14867
 id 14869 14696
 id 14871 14697
 id-unverified 14872
-id 14874 14703
-id 14875 14704
+id-unverified 14874
+id-unverified 14875
 id 14876 14705
 id 14877 14706
-id 14878 14707
+id-unverified 14878
 id 14882 14710
 id 14883 14711
 id 14884 14712
@@ -8444,7 +8444,7 @@ id 14974 14795
 id 14975 14796
 id 14976 14797
 id 14977 14798
-id 14978 14799
+id-unverified 14978
 id 14979 14800
 id 14980 14801
 id 14981 14802
@@ -8499,7 +8499,7 @@ id 15044 14873
 id-unverified 15046
 id-unverified 15047
 id 15051 14880
-id 15052 14881
+id-unverified 15052
 id-unverified 15053
 id 15054 14883
 id-unverified 15056
@@ -8675,7 +8675,7 @@ id 15378 15210
 id-unverified 15379
 id 15380 15211
 id-unverified 15381
-id 15382 15213
+id-address 15382 15213
 id-unverified 15383
 id 15387 15224
 id-unverified 15394
@@ -8887,7 +8887,7 @@ id 15661 15496
 id 15664 15497
 id 15665 15498
 id-unverified 15676
-id 15677 15500
+id-unverified 15677
 id 15678 15501
 id-unverified 15679
 id-unverified 15680
@@ -8905,7 +8905,7 @@ id 15691 15514
 id 15692 15515
 id 15693 15516
 id 15694 15517
-id 15695 15518
+id-unverified 15695
 id-unverified 15696
 id-unverified 15697
 id 15698 15521
@@ -9306,16 +9306,16 @@ id 16217 15972
 id 16218 15973
 id 16219 15974
 id 16220 15975
-id 16221 15976
+id-unverified 16221
 id 16222 15977
 id 16223 15978
-id 16224 15979
-id 16225 15980
-id 16226 15981
+id-unverified 16224
+id-unverified 16225
+id-unverified 16226
 id-unverified 16228
 id 16229 15985
 id 16230 15986
-id 16231 15989
+id-unverified 16231
 id-unverified 16232
 id-unverified 16233
 id-unverified 16234
@@ -9367,8 +9367,8 @@ id-unverified 16317
 id-unverified 16319
 id-unverified 16321
 id-unverified 16324
-id 16325 16084
-id 16326 16085
+id-unverified 16325
+id-unverified 16326
 id 16327 16086
 id 16328 16087
 id 16329 16088
@@ -9379,7 +9379,7 @@ id-unverified 16333
 id-unverified 16334
 id-unverified 16335
 id-unverified 16336
-id 16337 16096
+id-unverified 16337
 id 16338 16097
 id-unverified 16339
 id 16340 528795
@@ -9387,7 +9387,7 @@ id 16341 16099
 id-unverified 16343
 id 16344 16101
 id 16345 16102
-id 16346 16103
+id-unverified 16346
 id 16347 16104
 id 16348 16105
 id 16349 16106
@@ -10215,7 +10215,7 @@ id-unverified 17416
 id 17417 17031
 id-unverified 17418
 id-unverified 17419
-id 17420 17034
+id-unverified 17420
 id-unverified 17421
 id-unverified 17424
 id 17425 17038
@@ -10371,7 +10371,7 @@ id 17597 17236
 id 17598 17201
 id 17599 17202
 id 17600 17203
-id 17601 17204
+id-unverified 17601
 id-unverified 17602
 id-unverified 17603
 id 17604 17207
@@ -10379,7 +10379,7 @@ id 17610 17208
 id 17611 17209
 id 17612 17210
 id 17613 17211
-id 17614 17212
+id-unverified 17614
 id 17615 17213
 id-unverified 17616
 id 17617 17215
@@ -10392,7 +10392,7 @@ id 17623 17221
 id-unverified 17624
 id 17625 17223
 id 17626 17224
-id 17627 17225
+id-unverified 17627
 id 17628 17226
 id 17629 17227
 id 17630 17228
@@ -10430,7 +10430,7 @@ id 17663 17270
 id 17664 17271
 id 17665 17272
 id 17666 17273
-id 17667 17274
+id-unverified 17667
 id 17668 17275
 id-unverified 17669
 id-unverified 17670
@@ -10604,12 +10604,12 @@ id 17859 17453
 id 17860 17454
 id-unverified 17861
 id-unverified 17862
-id 17864 17469
-id 17865 17470
+id-unverified 17864
+id-unverified 17865
 id 17866 17471
 id 17867 17472
 id-unverified 17868
-id 17869 17475
+id-unverified 17869
 id-unverified 17873
 id 17874 17503
 id 17875 17502
@@ -10852,7 +10852,7 @@ id-unverified 18145
 id 18146 17735
 id 18147 17739
 id-unverified 18148
-id 18149 17745
+id-unverified 18149
 id-unverified 18153
 id 18154 17771
 id 18155 17770
@@ -11069,14 +11069,14 @@ id 18430 18041
 id 18431 18042
 id 18432 18043
 id 18433 18044
-id 18434 18045
-id 18435 18046
-id 18436 18047
+id-unverified 18434
+id-unverified 18435
+id-unverified 18436
 id-unverified 18441
 id 18442 18053
 id 18443 18054
 id 18444 18055
-id 18447 18063
+id-unverified 18447
 id-unverified 18455
 id 18456 18080
 id 18457 18079
@@ -11176,16 +11176,16 @@ id-unverified 18563
 id 18564 18179
 id 18565 18180
 id 18566 18181
-id 18567 18182
+id-unverified 18567
 id 18568 18183
 id 18569 18184
-id 18570 18185
+id-unverified 18570
 id-unverified 18571
-id 18572 18187
-id 18573 18188
+id-unverified 18572
+id-unverified 18573
 id-unverified 18575
 id 18576 18191
-id 18577 18192
+id-unverified 18577
 id-unverified 18578
 id 18579 18194
 id 18580 18195
@@ -11344,7 +11344,7 @@ id 18787 18364
 id-unverified 18788
 id-unverified 18789
 id-unverified 18790
-id 18791 18368
+id-unverified 18791
 id-unverified 18792
 id 18793 18370
 id 18794 18371
@@ -11371,7 +11371,7 @@ id 18820 18391
 id 18822 18393
 id-unverified 18823
 id 18824 18395
-id 18825 18396
+id-unverified 18825
 id-unverified 18826
 id-unverified 18827
 id 18828 18404
@@ -11508,7 +11508,7 @@ id-unverified 18993
 id 18994 18535
 id 18995 18536
 id 18996 18537
-id 18997 18538
+id-unverified 18997
 id 18998 18539
 id 18999 18540
 id 19000 18541
@@ -11691,7 +11691,7 @@ id-unverified 19230
 id-unverified 19231
 id-unverified 19232
 id-unverified 19235
-id 19236 18781
+id-unverified 19236
 id-unverified 19237
 id 19239 18786
 id-unverified 19240
@@ -11779,10 +11779,10 @@ id 19358 18943
 id 19359 18944
 id-unverified 19361
 id 19362 18947
-id 19363 18948
-id 19364 18949
+id-unverified 19363
+id-unverified 19364
 id-unverified 19366
-id 19367 18953
+id-unverified 19367
 id 19369 18955
 id 19370 18956
 id 19371 18957
@@ -11798,7 +11798,7 @@ id 19382 18970
 id-unverified 19383
 id 19384 18972
 id 19385 18973
-id 19386 18974
+id-unverified 19386
 id-unverified 19387
 id 19401 18989
 id 19402 18990
@@ -12105,7 +12105,7 @@ id 19745 19318
 id 19746 19319
 id 19747 19320
 id 19748 19321
-id 19749 19322
+id-unverified 19749
 id 19750 19323
 id 19751 19324
 id 19752 19325
@@ -12157,7 +12157,7 @@ id-unverified 19797
 id-unverified 19798
 id 19799 19372
 id 19800 19373
-id 19801 19374
+id-unverified 19801
 id-unverified 19802
 id-unverified 19803
 id 19804 19377
@@ -12275,7 +12275,7 @@ id-unverified 19930
 id 19931 19504
 id-unverified 19932
 id 19933 19506
-id 19934 19507
+id-unverified 19934
 id-unverified 19935
 id-unverified 19936
 id-unverified 19937
@@ -12365,14 +12365,14 @@ id 20032 19633
 id 20033 19634
 id-unverified 20034
 id 20035 19636
-id 20036 19637
+id-unverified 20036
 id-unverified 20037
 id 20038 19639
-id 20039 19640
-id 20040 19641
-id 20041 19642
+id-unverified 20039
+id-unverified 20040
+id-unverified 20041
 id 20042 19643
-id 20043 19644
+id-unverified 20043
 id-unverified 20044
 id 20045 19646
 id 20046 19647
@@ -12708,7 +12708,7 @@ id-unverified 20474
 id 20479 20041
 id-unverified 20480
 id-unverified 20481
-id 20482 20044
+id-unverified 20482
 id 20483 20045
 id 20484 20046
 id-unverified 20485
@@ -12834,32 +12834,32 @@ id 20629 20239
 id 20630 20238
 id 20631 20232
 id 20633 20205
-id 20634 20206
+id-unverified 20634
 id 20635 20207
-id 20637 20209
-id 20638 20210
-id 20639 20211
-id 20640 20212
-id 20641 20213
-id 20642 20214
+id-unverified 20637
+id-unverified 20638
+id-unverified 20639
+id-unverified 20640
+id-unverified 20641
+id-unverified 20642
 id 20643 20215
 id-unverified 20644
 id 20645 20217
 id 20646 20218
 id 20647 20219
-id 20648 20220
+id-unverified 20648
 id 20651 20221
-id 20653 20222
+id-unverified 20653
 id 20655 20224
-id 20657 20226
+id-unverified 20657
 id 20658 20227
 id 20659 20228
-id 20669 20229
+id-unverified 20669
 id 20670 20230
 id-unverified 20671
 id 20672 20233
 id 20673 20234
-id 20674 20235
+id-unverified 20674
 id 20675 20236
 id 20676 20240
 id 20677 20241
@@ -12867,7 +12867,7 @@ id 20678 20242
 id 20679 20243
 id 20680 20244
 id 20681 20245
-id 20684 20248
+id-unverified 20684
 id 20685 20249
 id-unverified 20686
 id-unverified 20687
@@ -12885,18 +12885,18 @@ id 20699 20273
 id 20700 20257
 id 20702 20259
 id 20703 20260
-id 20704 20261
-id 20705 20262
+id-unverified 20704
+id-unverified 20705
 id 20706 20263
 id 20707 20264
 id 20708 20265
 id 20709 20266
-id 20710 20267
-id 20711 20268
+id-unverified 20710
+id-unverified 20711
 id 20712 20269
 id 20713 20270
 id 20714 20271
-id 20715 20274
+id-unverified 20715
 id-unverified 20716
 id 20717 20301
 id 20718 20300
@@ -12944,11 +12944,11 @@ id-unverified 20769
 id-unverified 20770
 id-unverified 20777
 id-unverified 20778
-id 20780 20342
+id-unverified 20780
 id 20781 20343
-id 20782 20344
+id-unverified 20782
 id 20783 20345
-id 20784 20346
+id-unverified 20784
 id-unverified 20788
 id 20789 20359
 id 20790 20358
@@ -13193,11 +13193,11 @@ id 21084 20652
 id-unverified 21085
 id 21086 20639
 id 21087 20640
-id 21088 20641
+id-unverified 21088
 id 21089 20642
-id 21090 20643
-id 21091 20644
-id 21092 20645
+id-unverified 21090
+id-unverified 21091
+id-unverified 21092
 id 21093 20646
 id 21094 20647
 id 21095 20648
@@ -13248,8 +13248,8 @@ id 21145 20730
 id 21146 20728
 id 21147 20716
 id-unverified 21148
-id 21149 20697
-id 21150 20698
+id-unverified 21149
+id-unverified 21150
 id 21151 20699
 id-unverified 21152
 id 21153 20701
@@ -13257,14 +13257,14 @@ id 21154 20702
 id 21155 20703
 id 21156 20704
 id 21157 20705
-id 21158 20706
+id-unverified 21158
 id 21160 20708
 id 21161 20709
 id 21163 20712
 id 21164 20713
 id 21166 20714
 id-unverified 21167
-id 21168 20718
+id-unverified 21168
 id 21170 20722
 id 21171 20723
 id 21172 20724
@@ -13303,8 +13303,8 @@ id 21209 20792
 id 21210 20786
 id 21211 20760
 id-unverified 21212
-id 21213 20762
-id 21214 20763
+id-unverified 21213
+id-unverified 21214
 id 21215 20764
 id 21216 20765
 id-unverified 21217
@@ -13325,7 +13325,7 @@ id 21234 20784
 id-unverified 21235
 id 21236 20788
 id 21237 20795
-id 21238 20796
+id-unverified 21238
 id 21239 20797
 id-unverified 21240
 id 21241 20821
@@ -13336,9 +13336,9 @@ id 21245 20824
 id 21246 20822
 id 21247 20815
 id 21248 20798
-id 21250 20800
+id-unverified 21250
 id 21251 20801
-id 21252 20802
+id-unverified 21252
 id 21254 20803
 id 21255 20804
 id 21256 20805
@@ -13363,7 +13363,7 @@ id 21276 20856
 id 21277 20848
 id 21278 20827
 id 21279 20828
-id 21280 20829
+id-unverified 21280
 id 21281 20830
 id 21282 20831
 id 21284 20832
@@ -13374,7 +13374,7 @@ id 21288 20836
 id 21289 20837
 id-unverified 21290
 id 21291 20839
-id 21292 20840
+id-unverified 21292
 id 21293 20841
 id 21294 20842
 id 21295 20843
@@ -13394,18 +13394,18 @@ id 21309 20876
 id 21310 20875
 id 21311 20859
 id 21312 20860
-id 21313 20861
-id 21314 20862
+id-unverified 21313
+id-unverified 21314
 id 21315 20863
 id 21316 20864
 id 21317 20865
 id 21318 20866
 id 21319 20867
 id 21320 20868
-id 21321 20869
+id-unverified 21321
 id 21322 20870
 id 21323 20871
-id 21324 20872
+id-unverified 21324
 id 21325 20873
 id-unverified 21326
 id 21327 528870
@@ -13505,9 +13505,9 @@ id 21426 20976
 id-unverified 21427
 id 21428 20978
 id 21429 20979
-id 21430 20980
-id 21431 20981
-id 21432 20982
+id-unverified 21430
+id-unverified 21431
+id-unverified 21432
 id 21433 20983
 id 21434 20984
 id 21435 20985
@@ -13558,10 +13558,10 @@ id 21479 21029
 id 21480 21030
 id 21481 21031
 id 21482 21032
-id 21483 21033
-id 21484 21034
-id 21485 21035
-id 21486 21036
+id-unverified 21483
+id-unverified 21484
+id-unverified 21485
+id-unverified 21486
 id 21487 21037
 id 21488 21038
 id 21489 21039
@@ -13586,7 +13586,7 @@ id 21507 21057
 id 21508 21058
 id 21509 21059
 id 21510 21060
-id 21511 21061
+id-unverified 21511
 id 21512 21062
 id 21513 21063
 id 21514 21064
@@ -13675,7 +13675,7 @@ id 21596 21143
 id 21597 21144
 id-unverified 21598
 id-unverified 21599
-id 21600 21147
+id-unverified 21600
 id 21601 21148
 id 21602 21149
 id 21603 21150
@@ -13687,7 +13687,7 @@ id-unverified 21608
 id-unverified 21609
 id 21610 21157
 id-unverified 21611
-id 21612 528878
+id-unverified 21612
 id 21614 21159
 id 21615 21160
 id-unverified 21616
@@ -13793,7 +13793,7 @@ id 21715 21258
 id 21716 21259
 id 21717 21260
 id 21718 21261
-id 21719 528881
+id-unverified 21719
 id 21721 21262
 id 21722 21263
 id-unverified 21723
@@ -13822,13 +13822,13 @@ id 21745 21286
 id 21746 21287
 id 21747 21288
 id-unverified 21748
-id 21749 21290
+id-unverified 21749
 id 21750 21291
-id 21751 21292
-id 21752 21293
+id-unverified 21751
+id-unverified 21752
 id 21753 21294
 id 21754 21295
-id 21755 21296
+id-unverified 21755
 id 21756 21297
 id 21757 21298
 id 21758 21299
@@ -13847,7 +13847,7 @@ id 21770 21311
 id 21771 21312
 id 21772 21313
 id-unverified 21773
-id 21774 21315
+id-unverified 21774
 id 21775 21316
 id 21776 21317
 id 21777 21318
@@ -13936,21 +13936,21 @@ id-unverified 21879
 id 21880 21406
 id-unverified 21881
 id-unverified 21882
-id 21883 21409
+id-unverified 21883
 id 21884 21410
 id-unverified 21885
-id 21886 21412
+id-unverified 21886
 id 21887 21413
 id 21888 21414
 id 21889 21415
-id 21891 21417
+id-unverified 21891
 id 21903 21418
 id-unverified 21904
 id-unverified 21905
 id 21906 21421
 id-unverified 21907
 id 21908 21423
-id 21909 21424
+id-unverified 21909
 id 21910 21425
 id 21911 21426
 id 21912 21427
@@ -13984,7 +13984,7 @@ id-unverified 21950
 id-unverified 21951
 id 21952 21473
 id 21953 21474
-id 21954 21475
+id-unverified 21954
 id 21955 21476
 id 21956 21477
 id 21957 21478
@@ -13993,10 +13993,10 @@ id 21959 21480
 id 21960 21481
 id-unverified 21961
 id 21962 21483
-id 21963 21484
+id-unverified 21963
 id 21964 21485
 id 21965 21486
-id 21966 21487
+id-unverified 21966
 id 21967 21488
 id 21968 21489
 id 21969 21490
@@ -14122,7 +14122,7 @@ id 22102 21620
 id 22103 21621
 id-unverified 22104
 id 22105 21623
-id 22106 21624
+id-unverified 22106
 id 22107 21625
 id 22108 21626
 id-unverified 22109
@@ -14277,8 +14277,8 @@ id 22257 21775
 id 22258 21776
 id 22259 21777
 id 22260 21778
-id 22261 21779
-id 22262 21780
+id-unverified 22261
+id-unverified 22262
 id-unverified 22263
 id 22264 21782
 id 22265 21783
@@ -14317,7 +14317,7 @@ id 22297 21815
 id 22298 21816
 id-unverified 22299
 id 22300 21818
-id 22301 21819
+id-unverified 22301
 id 22302 21820
 id 22303 21821
 id-unverified 22304
@@ -14788,7 +14788,7 @@ id-unverified 22784
 id 22786 22314
 id 22787 22315
 id 22788 16195
-id 22789 22316
+id-unverified 22789
 id 22790 22317
 id 22791 22318
 id-unverified 22792
@@ -14827,7 +14827,7 @@ id 22835 22360
 id 22836 22361
 id 22837 22362
 id 22838 22363
-id 22839 22364
+id-unverified 22839
 id 22840 22365
 id 22841 22366
 id-unverified 22842
@@ -14836,12 +14836,12 @@ id 22844 22369
 id 22846 22371
 id 22847 22372
 id 22848 22373
-id 22849 22374
+id-unverified 22849
 id 22850 22375
 id 22851 22376
 id-unverified 22852
 id 22853 22378
-id 22854 22379
+id-unverified 22854
 id 22855 22380
 id 22856 22381
 id 22857 22382
@@ -14875,7 +14875,7 @@ id 22884 22409
 id 22885 22410
 id 22886 22411
 id 22887 22412
-id 22888 22413
+id-unverified 22888
 id 22889 22414
 id 22890 22415
 id-unverified 22891
@@ -14972,7 +14972,7 @@ id 22982 22507
 id 22983 22508
 id 22984 22509
 id 22985 22510
-id 22986 22511
+id-unverified 22986
 id 22987 22512
 id 22988 22513
 id 22989 22514
@@ -15185,7 +15185,7 @@ id 23196 22721
 id 23197 22722
 id 23198 22723
 id 23199 22724
-id 23200 22725
+id-unverified 23200
 id 23201 22726
 id 23202 22727
 id 23203 22728
@@ -15272,7 +15272,7 @@ id-unverified 23337
 id 23340 22889
 id 23341 22890
 id 23342 22891
-id 23343 22892
+id-unverified 23343
 id 23344 22893
 id-unverified 23345
 id 23346 22925
@@ -15373,7 +15373,7 @@ id 23445 22991
 id-unverified 23446
 id-unverified 23447
 id 23449 22994
-id 23450 22995
+id-unverified 23450
 id-unverified 23451
 id-unverified 23452
 id-unverified 23453
@@ -15730,7 +15730,7 @@ id 23894 23426
 id 23895 23427
 id 23897 23429
 id-unverified 23898
-id 23899 23442
+id-unverified 23899
 id-unverified 23907
 id-unverified 23908
 id 23924 23459
@@ -15753,11 +15753,11 @@ id-unverified 23943
 id-unverified 23944
 id-unverified 23946
 id-unverified 23948
-id 23950 23485
-id 23951 23486
+id-unverified 23950
+id-unverified 23951
 id 23952 23487
 id 23953 23488
-id 23954 23489
+id-unverified 23954
 id-unverified 23958
 id 23959 23529
 id 23960 23528
@@ -15910,7 +15910,7 @@ id 24183 23718
 id-unverified 24186
 id-unverified 24187
 id-unverified 24188
-id 24194 23741
+id-unverified 24194
 id 24202 23750
 id-unverified 24203
 id-unverified 24204
@@ -15985,7 +15985,7 @@ id 24277 23815
 id-unverified 24279
 id 24282 23819
 id-unverified 24283
-id 24285 23830
+id-unverified 24285
 id 24289 23847
 id-unverified 24290
 id 24291 23857
@@ -16176,8 +16176,8 @@ id-unverified 24558
 id-unverified 24559
 id 24560 24057
 id-unverified 24562
-id 24563 24060
-id 24564 24061
+id-unverified 24563
+id-unverified 24564
 id 24565 24062
 id-unverified 24566
 id-unverified 24567
@@ -16324,7 +16324,7 @@ id 24728 24224
 id-unverified 24729
 id 24730 24226
 id 24731 24227
-id 24732 24228
+id-unverified 24732
 id 24733 24229
 id-unverified 24734
 id-unverified 24735
@@ -16459,12 +16459,12 @@ id 24917 19632
 id 24918 24407
 id 24919 24408
 id 24920 24409
-id 24924 24413
+id-unverified 24924
 id 24925 24414
 id-unverified 24929
 id-unverified 24930
 id 24931 24420
-id 24932 24421
+id-unverified 24932
 id 24933 24422
 id-unverified 24934
 id 24935 24427
@@ -16472,7 +16472,7 @@ id 24936 24428
 id 24937 24429
 id-unverified 24938
 id-unverified 24939
-id 24940 24432
+id-unverified 24940
 id 24941 24433
 id 24942 24434
 id-unverified 24953
@@ -16504,7 +16504,7 @@ id-unverified 24982
 id-unverified 24983
 id-unverified 24984
 id-unverified 24985
-id 24986 24467
+id-unverified 24986
 id-unverified 24987
 id-unverified 24988
 id-unverified 24989
@@ -16634,13 +16634,13 @@ id 25189 24712
 id 25190 24713
 id 25191 24714
 id 25192 24715
-id 25193 24716
+id-unverified 25193
 id 25194 24717
 id 25195 24718
 id 25196 24719
 id-unverified 25197
 id 25198 24721
-id 25199 24722
+id-unverified 25199
 id-unverified 25201
 id-unverified 25202
 id-unverified 25203
@@ -16652,7 +16652,7 @@ id 25209 24732
 id 25210 24734
 id 25211 24735
 id-unverified 25212
-id 25214 24740
+id-unverified 25214
 id 25234 24783
 id-unverified 25235
 id 25236 24797
@@ -16683,8 +16683,8 @@ id-unverified 25263
 id-unverified 25266
 id-unverified 25267
 id 25270 24798
-id 25271 24800
-id 25272 24801
+id-unverified 25271
+id-unverified 25272
 id 25278 24809
 id 25279 24810
 id-unverified 25280
@@ -16753,7 +16753,7 @@ id-unverified 25391
 id 25392 24869
 id 25393 24870
 id 25394 24871
-id 25411 24917
+id-unverified 25411
 id-unverified 25412
 id 25416 24315
 id 25420 24891
@@ -16908,7 +16908,7 @@ id-unverified 25649
 id 25651 25124
 id 25652 25126
 id 25656 25129
-id 25658 25132
+id-unverified 25658
 id 25659 25049
 id-unverified 25667
 id 25668 25146
@@ -16916,9 +16916,9 @@ id-unverified 25669
 id 25673 25151
 id 25674 25152
 id 25675 25153
-id 25676 25154
-id 25677 25155
-id 25678 25156
+id-unverified 25676
+id-unverified 25677
+id-unverified 25678
 id-unverified 25679
 id 25680 25158
 id-unverified 25683
@@ -17263,9 +17263,9 @@ id 26101 25559
 id 26102 25560
 id 26103 25565
 id 26104 25566
-id 26105 25567
-id 26106 25568
-id 26107 25569
+id-unverified 26105
+id-unverified 26106
+id-unverified 26107
 id-unverified 26108
 id 26118 25581
 id 26119 25582
@@ -17274,9 +17274,9 @@ id 26121 25584
 id 26122 25585
 id 26123 25586
 id-unverified 26124
-id 26125 25589
-id 26126 25590
-id 26127 25591
+id-unverified 26125
+id-unverified 26126
+id-unverified 26127
 id-unverified 26129
 id-unverified 26130
 id 26131 25594
@@ -17354,13 +17354,13 @@ id-unverified 26219
 id-unverified 26220
 id 26221 25678
 id 26222 25679
-id 26227 25680
+id-unverified 26227
 id-unverified 26228
 id 26229 25682
 id-unverified 26230
 id-unverified 26231
 id-unverified 26232
-id 26233 25686
+id-unverified 26233
 id-unverified 26234
 id 26235 25688
 id-unverified 26236
@@ -17370,12 +17370,12 @@ id 26239 25692
 id 26240 25693
 id 26241 25694
 id 26242 25695
-id 26243 25696
+id-unverified 26243
 id 26244 25697
 id 26245 25698
 id 26246 25699
 id-unverified 26247
-id 26248 25701
+id-unverified 26248
 id 26249 25702
 id-unverified 26250
 id 26251 25704
@@ -17401,14 +17401,14 @@ id-unverified 26276
 id 26280 25723
 id 26281 25724
 id-unverified 26282
-id 26285 25726
+id-unverified 26285
 id-unverified 26286
 id-unverified 26287
 id-unverified 26288
 id-unverified 26289
 id-unverified 26290
 id-unverified 26291
-id 26292 25733
+id-unverified 26292
 id-unverified 26293
 id-unverified 26294
 id-unverified 26296
@@ -17425,7 +17425,7 @@ id-unverified 26315
 id-unverified 26316
 id 26317 25762
 id-unverified 26318
-id 26319 25764
+id-unverified 26319
 id 26320 25765
 id 26321 25766
 id 26322 25767
@@ -17450,8 +17450,8 @@ id 26347 25793
 id-unverified 26348
 id-unverified 26349
 id 26350 25796
-id 26351 25797
-id 26352 25798
+id-unverified 26351
+id-unverified 26352
 id-unverified 26353
 id 26354 25800
 id 26355 25801
@@ -17519,7 +17519,7 @@ id 26436 25869
 id-unverified 26437
 id-unverified 26438
 id-unverified 26439
-id 26440 25873
+id-unverified 26440
 id-unverified 26441
 id-unverified 26442
 id 26443 25876
@@ -17528,7 +17528,7 @@ id 26446 25878
 id-unverified 26447
 id 26448 25880
 id-unverified 26450
-id 26452 25882
+id-unverified 26452
 id-unverified 26453
 id 26454 25884
 id-unverified 26455
@@ -17600,7 +17600,7 @@ id 26547 25955
 id-unverified 26550
 id-unverified 26551
 id 26552 25963
-id 26553 25964
+id-unverified 26553
 id-unverified 26555
 id-unverified 26556
 id 26557 25967
@@ -17615,16 +17615,16 @@ id 26565 25975
 id 26585 25976
 id 26586 25977
 id 26591 25978
-id 26593 25979
+id-unverified 26593
 id 26594 25980
-id 26595 25981
-id 26596 26010
+id-unverified 26595
+id-unverified 26596
 id 26597 25982
-id 26598 25983
+id-unverified 26598
 id-unverified 26599
 id-unverified 26600
-id 26601 25986
-id 26603 25987
+id-unverified 26601
+id-unverified 26603
 id-unverified 26604
 id-unverified 26606
 id-unverified 26607
@@ -17743,10 +17743,10 @@ id-unverified 26798
 id-unverified 26799
 id-unverified 26800
 id 26801 26222
-id 26802 26223
+id-unverified 26802
 id 26803 26224
 id 26804 26225
-id 26805 26226
+id-unverified 26805
 id 26806 26227
 id-unverified 26807
 id 26808 26229
@@ -17892,7 +17892,7 @@ id 26982 26402
 id 26983 26403
 id 26985 26404
 id 26987 26406
-id 26988 26407
+id-unverified 26988
 id 26989 26408
 id 26990 26409
 id 26991 26410
@@ -17900,10 +17900,10 @@ id 26992 26411
 id-unverified 26993
 id 26994 26413
 id-unverified 26995
-id 26996 26415
+id-unverified 26996
 id 26997 26416
-id 26998 26417
-id 26999 26418
+id-unverified 26998
+id-unverified 26999
 id-unverified 27000
 id-unverified 27002
 id-unverified 27003
@@ -18022,7 +18022,7 @@ id 27232 26574
 id 27233 26575
 id 27244 26576
 id 27245 26577
-id 27246 26578
+id-unverified 27246
 id-unverified 27248
 id 27249 26581
 id 27250 26582
@@ -18032,7 +18032,7 @@ id 27258 26587
 id-unverified 27259
 id-unverified 27260
 id-unverified 27261
-id 27262 26591
+id-unverified 27262
 id 27263 26592
 id 27264 26593
 id-unverified 27265
@@ -19638,7 +19638,7 @@ id 29113 28363
 id 29114 28364
 id 29115 28365
 id 29116 28366
-id 29117 28367
+id-unverified 29117
 id 29118 28368
 id 29119 28369
 id-unverified 29120
@@ -20059,7 +20059,7 @@ id-unverified 29620
 id 29621 28819
 id 29622 28820
 id 29623 28821
-id 29624 28822
+id-unverified 29624
 id-unverified 29625
 id 29626 28824
 id 29627 28825
@@ -20532,10 +20532,10 @@ id-unverified 30200
 id 30201 29353
 id-unverified 30202
 id 30205 29360
-id 30206 29361
+id-unverified 30206
 id 30207 29362
 id 30208 29363
-id 30209 29366
+id-unverified 30209
 id-unverified 30213
 id 30214 29451
 id 30215 29450
@@ -20552,7 +20552,7 @@ id 30225 29377
 id-unverified 30226
 id 30227 29379
 id-unverified 30228
-id 30229 29381
+id-unverified 30229
 id-unverified 30230
 id-unverified 30231
 id-unverified 30232
@@ -20732,7 +20732,7 @@ id-unverified 30502
 id 30504 29664
 id 30510 29720
 id-unverified 30513
-id 30514 29711
+id-unverified 30514
 id 30515 29677
 id-unverified 30516
 id-unverified 30517
@@ -20940,7 +20940,7 @@ id 30787 29973
 id 30788 29974
 id 30789 29975
 id-unverified 30790
-id 30791 29977
+id-unverified 30791
 id 30792 529164
 id-unverified 30793
 id 30796 29983
@@ -20974,7 +20974,7 @@ id-unverified 30825
 id 30826 30011
 id-unverified 30827
 id 30828 30013
-id 30829 30014
+id-unverified 30829
 id 30830 529166
 id 30831 30015
 id 30833 529167
@@ -21160,7 +21160,7 @@ id 31120 30289
 id-unverified 31121
 id-unverified 31122
 id-unverified 31123
-id 31124 27844
+id-unverified 31124
 id-unverified 31126
 id-unverified 31127
 id-unverified 31128
@@ -21569,7 +21569,7 @@ id-unverified 31634
 id-unverified 31635
 id-unverified 31637
 id-unverified 31638
-id 31639 30819
+id-unverified 31639
 id-unverified 31641
 id-unverified 31642
 id 31643 30822
@@ -21667,7 +21667,7 @@ id-unverified 31798
 id-unverified 31799
 id-unverified 31800
 id-unverified 31801
-id 31802 31017
+id-unverified 31802
 id 31803 31018
 id-unverified 31804
 id 31805 31020
@@ -21842,7 +21842,7 @@ id-unverified 32057
 id-unverified 32058
 id-unverified 32059
 id 32060 31273
-id 32061 31274
+id-unverified 32061
 id 32067 31281
 id 32068 31282
 id 32069 31283
@@ -21911,7 +21911,7 @@ id 32155 31447
 id-unverified 32156
 id-unverified 32158
 id-unverified 32159
-id 32160 31373
+id-unverified 32160
 id-unverified 32164
 id-unverified 32165
 id-unverified 32166
@@ -21934,9 +21934,9 @@ id-unverified 32183
 id 32184 31393
 id 32186 31395
 id 32187 31396
-id 32188 31397
+id-unverified 32188
 id-unverified 32189
-id 32190 31399
+id-unverified 32190
 id-unverified 32202
 id-unverified 32203
 id 32204 31403
@@ -21952,7 +21952,7 @@ id 32219 31412
 id-unverified 32222
 id-unverified 32223
 id 32224 31416
-id 32225 31417
+id-unverified 32225
 id-unverified 32226
 id-unverified 32229
 id-unverified 32230
@@ -21995,7 +21995,7 @@ id-unverified 32278
 id 32279 31481
 id 32282 31484
 id 32283 31485
-id 32284 31487
+id-unverified 32284
 id 32287 31488
 id 32288 31489
 id 32289 31490
@@ -22026,13 +22026,13 @@ id 32313 31514
 id 32314 31515
 id 32315 31516
 id 32316 31517
-id 32317 31519
-id 32318 31521
+id-unverified 32317
+id-unverified 32318
 id-unverified 32319
-id 32320 31538
-id 32321 31541
-id 32322 31544
-id 32323 31546
+id-unverified 32320
+id-unverified 32321
+id-unverified 32322
+id-unverified 32323
 id 32324 31518
 id 32325 31524
 id 32326 31542
@@ -22135,7 +22135,7 @@ id-unverified 32450
 id-unverified 32451
 id-unverified 32452
 id 32453 31676
-id 32454 31677
+id-unverified 32454
 id-unverified 32455
 id-unverified 32456
 id 32457 31680
@@ -22180,14 +22180,14 @@ id-unverified 32524
 id 32525 31751
 id 32530 31767
 id 32531 31768
-id 32532 31769
-id 32533 31770
+id-unverified 32532
+id-unverified 32533
 id 32534 31771
 id-unverified 32536
 id-unverified 32537
 id 32538 31775
 id 32539 31776
-id 32541 31779
+id-unverified 32541
 id 32549 31786
 id-unverified 32550
 id-unverified 32551
@@ -22199,7 +22199,7 @@ id 32567 31795
 id 32569 31796
 id 32571 31797
 id-unverified 32572
-id 32573 31799
+id-unverified 32573
 id-unverified 32574
 id 32575 31801
 id 32576 31802
@@ -22225,7 +22225,7 @@ id-unverified 32607
 id-unverified 32608
 id 32613 31849
 id 32614 31850
-id 32615 31851
+id-unverified 32615
 id 32622 31861
 id 32623 31862
 id-unverified 32624
@@ -22310,7 +22310,7 @@ id-unverified 32739
 id 32740 31986
 id 32741 31987
 id 32743 31989
-id 32744 31990
+id-unverified 32744
 id 32745 31991
 id-unverified 32747
 id-unverified 32749
@@ -22318,7 +22318,7 @@ id-unverified 32750
 id-unverified 32751
 id-unverified 32752
 id-unverified 32753
-id 32754 31999
+id-unverified 32754
 id-unverified 32755
 id 32756 529246
 id-unverified 32757
@@ -22422,7 +22422,7 @@ id 32889 32145
 id 32890 32146
 id 32891 32147
 id-unverified 32892
-id 32893 32149
+id-unverified 32893
 id-unverified 32894
 id-unverified 32895
 id 32896 32152
@@ -22430,7 +22430,7 @@ id-unverified 32897
 id-unverified 32898
 id 32899 32155
 id-unverified 32900
-id 32901 32157
+id-unverified 32901
 id 32902 32158
 id 32903 32159
 id 32904 32160
@@ -22505,27 +22505,27 @@ id-unverified 33000
 id 33005 32268
 id 33006 32269
 id 33007 32270
-id 33008 32271
-id 33009 32272
-id 33010 32280
+id-unverified 33008
+id-unverified 33009
+id-unverified 33010
 id 33012 32275
 id 33014 32277
 id 33015 32278
 id 33016 32279
 id 33018 32282
-id 33019 32283
+id-unverified 33019
 id 33020 32284
 id 33021 32285
 id 33022 32286
 id-unverified 33023
 id 33024 32288
 id 33025 32289
-id 33026 32290
+id-unverified 33026
 id 33028 529256
 id 33030 32292
 id 33031 32293
-id 33032 32294
-id 33033 32295
+id-unverified 33032
+id-unverified 33033
 id-unverified 33034
 id-unverified 33035
 id-unverified 33036
@@ -22567,31 +22567,31 @@ id-unverified 33094
 id 33096 529260
 id-unverified 33097
 id 33101 32352
-id 33107 32358
+id-unverified 33107
 id 33108 32359
 id 33109 32360
-id 33110 32361
+id-unverified 33110
 id 33111 32362
 id 33112 32363
-id 33113 32364
-id 33114 32365
-id 33115 32366
-id 33116 32367
+id-unverified 33113
+id-unverified 33114
+id-unverified 33115
+id-unverified 33116
 id 33117 32368
 id-unverified 33118
-id 33119 32370
-id 33120 32371
+id-unverified 33119
+id-unverified 33120
 id 33122 32372
 id 33123 32373
 id 33124 32374
-id 33125 32375
+id-unverified 33125
 id 33126 32376
-id 33127 32377
+id-unverified 33127
 id 33128 32378
 id 33129 32379
 id-unverified 33130
 id 33131 32381
-id 33132 32382
+id-unverified 33132
 id 33133 32383
 id 33134 32384
 id-unverified 33135
@@ -22623,7 +22623,7 @@ id 33167 529261
 id 33168 529262
 id 33169 529263
 id 33170 529264
-id 33171 32426
+id-unverified 33171
 id 33172 32427
 id 33173 32428
 id-unverified 33174
@@ -22688,7 +22688,7 @@ id-unverified 33234
 id 33235 32488
 id-unverified 33236
 id-unverified 33237
-id 33238 32491
+id-unverified 33238
 id-unverified 33239
 id 33241 32494
 id 33242 32495
@@ -22720,7 +22720,7 @@ id-unverified 33288
 id-unverified 33294
 id-unverified 33298
 id 33304 32549
-id 33305 32550
+id-unverified 33305
 id 33306 32551
 id-unverified 33308
 id 33309 32554
@@ -22805,7 +22805,7 @@ id-unverified 33422
 id 33423 32675
 id 33582 32808
 id-unverified 33593
-id 33604 32827
+id-unverified 33604
 id-unverified 33605
 id-unverified 33606
 id 33609 32832
@@ -22814,7 +22814,7 @@ id 33611 32834
 id-unverified 33612
 id 33615 32838
 id 33632 32867
-id 33636 32872
+id-unverified 33636
 id 33639 32875
 id 33640 32876
 id 33751 32967
@@ -22884,11 +22884,11 @@ id-unverified 34007
 id 34008 33235
 id 34009 33236
 id 34011 33238
-id 34012 33239
+id-unverified 34012
 id 34013 33240
 id 34014 33241
-id 34015 33242
-id 34016 33243
+id-unverified 34015
+id-unverified 34016
 id 34017 33244
 id 34018 33245
 id-unverified 34019
@@ -22933,7 +22933,7 @@ id-unverified 34058
 id-unverified 34059
 id-unverified 34060
 id 34062 33287
-id 34063 33288
+id-unverified 34063
 id 34064 33289
 id 34065 33290
 id 34066 33291
@@ -22962,7 +22962,7 @@ id 34088 33313
 id-unverified 34089
 id 34090 33315
 id 34091 33316
-id 34092 33317
+id-unverified 34092
 id-unverified 34093
 id 34100 33321
 id 34101 33322
@@ -23287,7 +23287,7 @@ id-unverified 34448
 id-unverified 34449
 id-unverified 34450
 id 34451 33671
-id 34452 33672
+id-unverified 34452
 id 34453 33673
 id 34454 33674
 id 34455 33675
@@ -23350,7 +23350,7 @@ id 34523 33739
 id 34524 33740
 id 34525 33741
 id-unverified 34526
-id 34527 33743
+id-unverified 34527
 id-unverified 34528
 id 34529 33745
 id 34530 33746
@@ -23450,7 +23450,7 @@ id 34638 33841
 id 34639 33842
 id-unverified 34640
 id-unverified 34642
-id 34643 33849
+id-unverified 34643
 id-unverified 34644
 id-unverified 34645
 id 34646 33852
@@ -23630,7 +23630,7 @@ id 34826 34029
 id 34827 34030
 id 34828 34031
 id 34829 34032
-id 34830 34033
+id-unverified 34830
 id-unverified 34831
 id 34832 34035
 id 34833 34036
@@ -23707,11 +23707,11 @@ id 34909 34107
 id 34910 34108
 id-unverified 34911
 id-unverified 34912
-id 34913 34111
-id 34914 34112
-id 34915 34113
-id 34916 34114
-id 34917 34115
+id-unverified 34913
+id-unverified 34914
+id-unverified 34915
+id-unverified 34916
+id-unverified 34917
 id 34918 34116
 id 34919 34117
 id 34920 34118
@@ -23727,7 +23727,7 @@ id 34929 34127
 id 34930 34128
 id 34931 34129
 id 34932 34130
-id 34933 34131
+id-unverified 34933
 id 34934 34132
 id-unverified 34935
 id 34936 34134
@@ -23778,7 +23778,7 @@ id-unverified 34991
 id-unverified 34992
 id-unverified 34993
 id 34994 34198
-id 34996 34199
+id-unverified 34996
 id-unverified 34997
 id-unverified 34998
 id-unverified 34999
@@ -23793,7 +23793,7 @@ id-unverified 35007
 id-unverified 35008
 id 35009 34212
 id-unverified 35010
-id 35011 34214
+id-unverified 35011
 id-unverified 35012
 id 35013 34216
 id 35014 529317
@@ -23874,7 +23874,7 @@ id-unverified 35099
 id-unverified 35100
 id 35101 34350
 id 35102 34348
-id 35103 34377
+id-unverified 35103
 id 35104 34353
 id-unverified 35105
 id 35106 34352
@@ -23911,10 +23911,10 @@ id 35138 34315
 id-unverified 35139
 id 35140 34317
 id 35142 34319
-id 35143 34320
+id-unverified 35143
 id 35144 34321
-id 35145 34322
-id 35146 34323
+id-unverified 35145
+id-unverified 35146
 id-unverified 35147
 id-unverified 35148
 id-unverified 35149
@@ -23943,7 +23943,7 @@ id 35182 34381
 id-unverified 35184
 id 35185 34386
 id 35186 34387
-id 35188 34396
+id-unverified 35188
 id 35189 34397
 id 35197 34405
 id 35214 34407
@@ -23982,9 +23982,9 @@ id-unverified 35267
 id 35268 34443
 id-unverified 35269
 id 35270 34445
-id 35272 34446
+id-unverified 35272
 id 35273 34447
-id 35274 34448
+id-unverified 35274
 id 35275 34449
 id-unverified 35276
 id-unverified 35277
@@ -24020,12 +24020,12 @@ id 35321 25125
 id-unverified 35325
 id-unverified 35326
 id-unverified 35327
-id 35338 51284
+id-unverified 35338
 id 35360 34507
 id-unverified 35361
 id-unverified 35362
 id-unverified 35363
-id 35364 34511
+id-unverified 35364
 id-unverified 35365
 id 35366 34513
 id 35368 34514
@@ -24036,14 +24036,14 @@ id-unverified 35390
 id-unverified 35392
 id 35393 34537
 id 35394 34538
-id 35402 34547
+id-unverified 35402
 id 35403 34548
 id 35404 34549
 id 35405 34550
 id 35406 34551
 id 35407 34552
 id 35408 34553
-id 35409 34554
+id-unverified 35409
 id 35410 34555
 id-unverified 35411
 id-unverified 35412
@@ -24053,7 +24053,7 @@ id 35418 529330
 id 35419 34562
 id-unverified 35420
 id 35422 34566
-id 35423 34567
+id-unverified 35423
 id 35488 34570
 id-unverified 35493
 id 35494 34572
@@ -24070,7 +24070,7 @@ id-unverified 35506
 id 35507 34586
 id-unverified 35508
 id-unverified 35509
-id 35510 34589
+id-unverified 35510
 id-unverified 35511
 id-unverified 35515
 id 35519 34599
@@ -24116,8 +24116,8 @@ id 35561 34639
 id-unverified 35562
 id 35563 34641
 id 35564 34642
-id 35566 34644
-id 35567 34645
+id-unverified 35566
+id-unverified 35567
 id-unverified 35568
 id 35569 34647
 id 35570 34648
@@ -24129,7 +24129,7 @@ id 35577 34655
 id-unverified 35578
 id 35579 34657
 id 35580 34658
-id 35581 34659
+id-unverified 35581
 id 35584 34661
 id 35585 34662
 id 35586 34663
@@ -24146,7 +24146,7 @@ id 35596 34673
 id 35597 34674
 id 35598 34675
 id 35599 34676
-id 35600 34677
+id-address 35600 34677
 id 35601 34678
 id 35602 34679
 id 35604 34681
@@ -24171,14 +24171,14 @@ id 35637 34730
 id 35638 34732
 id 35640 34734
 id 35641 34735
-id 35642 34736
+id-unverified 35642
 id 35643 34737
 id 35644 34738
 id 35645 34739
 id 35646 34740
-id 35647 34741
+id-unverified 35647
 id 35648 34742
-id 35649 34743
+id-unverified 35649
 id 35651 34744
 id 35652 34745
 id-unverified 35654
@@ -24241,7 +24241,7 @@ id 35728 34819
 id 35729 34820
 id-unverified 35731
 id 35732 34822
-id 35734 34824
+id-unverified 35734
 id 35735 34825
 id-unverified 35736
 id 35737 34827
@@ -24275,22 +24275,22 @@ id 35768 34858
 id 35769 34859
 id 35770 34860
 id 35772 34862
-id 35773 34863
+id-unverified 35773
 id-unverified 35774
 id-unverified 35775
 id 35777 34867
 id 35778 34868
 id 35779 34869
-id 35780 34870
+id-unverified 35780
 id 35782 34871
 id-unverified 35784
 id-unverified 35786
 id-unverified 35787
 id 35788 34877
-id 35790 34879
+id-unverified 35790
 id 35791 34880
 id-unverified 35793
-id 35794 34882
+id-unverified 35794
 id 35795 34883
 id-unverified 35799
 id-unverified 35800
@@ -24313,10 +24313,10 @@ id 35839 34923
 id 35840 34924
 id 35841 34925
 id-unverified 35842
-id 35843 34927
-id 35845 34929
+id-unverified 35843
+id-unverified 35845
 id 35846 34930
-id 35847 34931
+id-unverified 35847
 id-unverified 35848
 id-unverified 35849
 id 35854 34938
@@ -24332,7 +24332,7 @@ id 35869 34962
 id 35870 34963
 id-unverified 35871
 id-unverified 35872
-id 35877 34968
+id-unverified 35877
 id 35881 52643
 id 35884 34974
 id 35885 34975
@@ -24342,7 +24342,7 @@ id-unverified 35888
 id-unverified 35889
 id-unverified 35890
 id-unverified 35891
-id 35892 34986
+id-unverified 35892
 id 35901 34995
 id-unverified 35902
 id-unverified 35903
@@ -24412,7 +24412,7 @@ id 35987 35095
 id-unverified 35988
 id 35989 35097
 id 35990 35098
-id 35991 35099
+id-unverified 35991
 id 35993 35100
 id 35994 35101
 id 35996 35103
@@ -24490,7 +24490,7 @@ id 36073 35183
 id 36074 35184
 id-unverified 36075
 id-unverified 36076
-id 36077 35188
+id-unverified 36077
 id-unverified 36078
 id 36079 35190
 id-unverified 36080
@@ -24544,9 +24544,9 @@ id 36145 35240
 id-unverified 36146
 id-unverified 36147
 id 36148 35243
-id 36149 35245
+id-unverified 36149
 id 36153 35249
-id 36154 35253
+id-unverified 36154
 id-unverified 36155
 id 36156 35255
 id 36158 35256
@@ -24617,17 +24617,17 @@ id 36263 529353
 id 36264 35373
 id 36265 35374
 id 36266 35375
-id-unverified 36267
+id 36267 35376
 id 36270 35382
 id 36271 35383
 id 36272 35384
 id 36273 35385
 id 36274 35386
-id 36275 35387
+id-unverified 36275
 id-unverified 36279
-id 36280 35391
+id-unverified 36280
 id-unverified 36281
-id 36282 35393
+id-unverified 36282
 id-unverified 36283
 id-unverified 36284
 id 36285 35396
@@ -24658,11 +24658,11 @@ id 36321 35421
 id-unverified 36323
 id 36325 529355
 id-unverified 36326
-id 36328 35428
-id 36329 35429
+id-unverified 36328
+id-unverified 36329
 id 36330 35430
 id 36331 35431
-id 36332 35432
+id-unverified 36332
 id-unverified 36345
 id-unverified 36402
 id-unverified 36403
@@ -24788,16 +24788,16 @@ id 36540 35715
 id 36541 35721
 id 36542 35722
 id 36543 35723
-id 36544 35545
-id 36545 35546
+id-unverified 36544
+id-address 36545 35546
 id-unverified 36546
 id 36547 35548
 id-unverified 36548
-id 36549 35550
+id-unverified 36549
 id 36550 35551
 id 36551 35552
 id 36552 35553
-id 36553 35554
+id-address 36553 35554
 id 36554 35555
 id 36555 35556
 id 36556 35557
@@ -24807,7 +24807,7 @@ id 36559 35560
 id-unverified 36560
 id 36561 35562
 id-unverified 36562
-id 36563 35564
+id-unverified 36563
 id 36564 35565
 id 36565 35566
 id 36566 35567
@@ -24817,7 +24817,7 @@ id 36573 35570
 id 36574 35571
 id 36575 35572
 id 36576 35573
-id 36577 35574
+id-unverified 36577
 id 36578 35575
 id 36579 35576
 id 36580 35577
@@ -24834,11 +24834,11 @@ id 36593 35587
 id 36597 35590
 id 36598 35591
 id-unverified 36600
-id 36601 35593
+id-unverified 36601
 id 36602 35594
 id 36603 35595
 id 36604 35596
-id 36605 35597
+id-unverified 36605
 id 36606 35598
 id 36607 35599
 id 36608 35600
@@ -24853,7 +24853,7 @@ id-unverified 36618
 id 36619 35609
 id 36620 35610
 id 36621 35611
-id 36622 35612
+id-unverified 36622
 id 36623 35613
 id-unverified 36624
 id 36625 35615
@@ -24875,10 +24875,10 @@ id-unverified 36644
 id 36645 35632
 id 36646 35633
 id 36647 35634
-id 36649 35635
+id-unverified 36649
 id 36650 35636
 id 36651 35637
-id 36653 35639
+id-unverified 36653
 id 36655 35641
 id-unverified 36656
 id-unverified 36657
@@ -24905,7 +24905,7 @@ id-unverified 36720
 id 36721 529377
 id 36722 529378
 id 36723 35702
-id 36725 35652
+id-unverified 36725
 id 36726 35705
 id 36727 35706
 id 36728 35707
@@ -24935,7 +24935,7 @@ id-unverified 36751
 id-unverified 36752
 id-unverified 36753
 id-unverified 36754
-id 36755 35754
+id-unverified 36755
 id 36769 35776
 id 36770 35777
 id 36771 35778
@@ -24954,9 +24954,9 @@ id-unverified 36783
 id-unverified 36784
 id-unverified 36785
 id-unverified 36786
-id 36787 35812
-id 36788 35813
-id 36789 35814
+id-unverified 36787
+id-unverified 36788
+id-unverified 36789
 id 36790 35815
 id 36791 35816
 id 36794 35822
@@ -24966,7 +24966,7 @@ id 36797 35826
 id-unverified 36798
 id-unverified 36799
 id-unverified 36800
-id 36801 35830
+id-unverified 36801
 id 36802 35831
 id-unverified 36803
 id 36811 35840
@@ -25001,7 +25001,7 @@ id 36841 35870
 id 36842 35871
 id 36843 35872
 id 36844 35873
-id 36845 35874
+id-unverified 36845
 id-unverified 36846
 id 36847 35876
 id 36848 35877
@@ -25038,7 +25038,7 @@ id-unverified 36884
 id 36885 35909
 id 36886 35911
 id 36887 35912
-id 36888 35913
+id-unverified 36888
 id-unverified 36889
 id-unverified 36890
 id 36891 35916
@@ -25207,7 +25207,7 @@ id 37143 36170
 id 37144 36171
 id 37145 36172
 id 37146 36173
-id 37147 36174
+id-unverified 37147
 id-unverified 37148
 id 37149 37238
 id 37150 37501
@@ -25228,13 +25228,13 @@ id 37164 36187
 id 37165 36188
 id 37168 36189
 id 37169 36190
-id 37171 36192
+id-unverified 37171
 id-unverified 37172
 id-unverified 37173
 id-unverified 37174
 id-unverified 37175
 id-unverified 37176
-id 37177 36198
+id-unverified 37177
 id-unverified 37178
 id-unverified 37179
 id-unverified 37180
@@ -25271,7 +25271,7 @@ id-unverified 37214
 id 37215 36233
 id-unverified 37216
 id 37217 36235
-id 37218 36236
+id-unverified 37218
 id-unverified 37219
 id 37220 36238
 id 37221 36239
@@ -25283,7 +25283,7 @@ id-unverified 37226
 id-unverified 37227
 id 37228 36246
 id-unverified 37229
-id 37230 36248
+id-unverified 37230
 id 37231 36249
 id 37232 36250
 id-unverified 37233
@@ -25293,7 +25293,7 @@ id 37239 36255
 id 37240 36256
 id-unverified 37241
 id-unverified 37242
-id 37243 36259
+id-unverified 37243
 id-unverified 37244
 id-unverified 37245
 id 37246 36262
@@ -25321,8 +25321,8 @@ id 37274 36285
 id 37275 36286
 id 37276 36287
 id-unverified 37277
-id 37279 36289
-id 37280 36290
+id-unverified 37279
+id-unverified 37280
 id 37281 36291
 id 37282 36292
 id-unverified 37283
@@ -25388,21 +25388,21 @@ id 37343 36353
 id 37345 36354
 id 37346 36355
 id-unverified 37347
-id 37348 36357
+id-unverified 37348
 id 37349 36358
-id 37350 36359
+id-unverified 37350
 id-unverified 37351
 id-unverified 37353
 id-unverified 37354
-id 37355 36364
-id 37356 36365
+id-unverified 37355
+id-unverified 37356
 id-unverified 37357
 id-unverified 37358
 id-unverified 37359
 id-unverified 37360
 id-unverified 37361
 id 37362 36371
-id 37363 36372
+id-unverified 37363
 id-unverified 37364
 id 37365 36374
 id 37366 36375
@@ -25411,7 +25411,7 @@ id-unverified 37368
 id 37369 36378
 id-unverified 37371
 id-unverified 37372
-id 37373 36382
+id-unverified 37373
 id 37374 36383
 id 37375 36384
 id 37376 36385
@@ -25475,10 +25475,10 @@ id-unverified 37440
 id-unverified 37441
 id 37443 36447
 id 37444 36448
-id 37445 36449
+id-unverified 37445
 id-unverified 37446
 id 37447 36451
-id 37448 36452
+id-unverified 37448
 id-unverified 37449
 id-unverified 37450
 id-unverified 37451
@@ -25505,7 +25505,7 @@ id 37475 36476
 id 37476 36477
 id 37477 36478
 id 37478 36479
-id 37479 36480
+id-unverified 37479
 id 37480 36481
 id 37481 36482
 id-unverified 37482
@@ -25528,7 +25528,7 @@ id-unverified 37500
 id 37501 36501
 id 37502 36502
 id 37503 36503
-id 37504 36504
+id-unverified 37504
 id 37505 36505
 id 37506 36506
 id-unverified 37507
@@ -25564,7 +25564,7 @@ id-unverified 37537
 id 37539 36538
 id-unverified 37540
 id-unverified 37541
-id 37542 36541
+id-unverified 37542
 id 37543 36542
 id-unverified 37544
 id-unverified 37545
@@ -25597,7 +25597,7 @@ id 37571 36570
 id-unverified 37572
 id 37573 36572
 id 37574 36573
-id 37575 36574
+id-unverified 37575
 id 37577 36575
 id-unverified 37578
 id-unverified 37579
@@ -25606,9 +25606,9 @@ id-unverified 37583
 id 37584 36580
 id-unverified 37585
 id 37586 36582
-id 37587 36583
-id 37588 37329
-id 37591 37330
+id-unverified 37587
+id-unverified 37588
+id-unverified 37591
 id 37592 36585
 id-unverified 37593
 id-unverified 37594
@@ -25671,7 +25671,7 @@ id-unverified 37651
 id-unverified 37652
 id-unverified 37653
 id-unverified 37654
-id 37655 36647
+id-unverified 37655
 id 37656 36648
 id 37657 36649
 id 37658 36650
@@ -25725,7 +25725,7 @@ id 37705 36696
 id 37706 36697
 id-unverified 37707
 id 37708 36699
-id 37710 36700
+id-unverified 37710
 id-unverified 37711
 id 37712 36702
 id 37713 36703
@@ -25744,7 +25744,7 @@ id 37726 36716
 id 37727 36717
 id 37730 36718
 id 37731 36719
-id 37732 36720
+id-unverified 37732
 id-unverified 37733
 id-unverified 37734
 id 37735 36723
@@ -25778,7 +25778,7 @@ id-unverified 37766
 id 37767 36751
 id-unverified 37768
 id 37769 36753
-id 37770 36754
+id-unverified 37770
 id-unverified 37771
 id 37772 36756
 id 37773 36757
@@ -25801,12 +25801,12 @@ id 37789 36773
 id 37790 36774
 id-unverified 37791
 id 37792 36776
-id 37793 36777
+id-unverified 37793
 id-unverified 37794
 id 37795 36779
 id 37796 36780
 id-unverified 37797
-id 37798 36782
+id-unverified 37798
 id 37799 36783
 id-unverified 37800
 id 37801 36785
@@ -25848,7 +25848,7 @@ id 37836 36820
 id-unverified 37837
 id-unverified 37838
 id 37839 36823
-id 37841 36825
+id-unverified 37841
 id 37842 36826
 id 37843 36827
 id 37844 36828
@@ -25892,7 +25892,7 @@ id-unverified 37891
 id-unverified 37893
 id-unverified 37894
 id 37895 36871
-id 37896 36872
+id-unverified 37896
 id 37897 36873
 id 37898 36874
 id-unverified 37899
@@ -25953,7 +25953,7 @@ id 37956 36931
 id 37957 36932
 id 37958 36933
 id-unverified 37959
-id 37960 36935
+id-unverified 37960
 id-unverified 37961
 id-unverified 37962
 id-unverified 37963
@@ -25972,14 +25972,14 @@ id-unverified 37975
 id-unverified 37976
 id 37977 36952
 id-unverified 37978
-id 37979 36954
+id-unverified 37979
 id-unverified 37980
 id 37981 36956
 id-unverified 37982
 id-unverified 37983
-id 37984 36959
-id 37985 36960
-id 37986 36961
+id-unverified 37984
+id-unverified 37985
+id-unverified 37986
 id-unverified 37987
 id-unverified 37988
 id 37989 36964
@@ -25990,7 +25990,7 @@ id-unverified 37993
 id-unverified 37994
 id-unverified 37995
 id-unverified 37996
-id 37997 36972
+id-unverified 37997
 id-unverified 37998
 id 38000 36975
 id 38001 36976
@@ -26001,7 +26001,7 @@ id-unverified 38005
 id 38006 36981
 id 38007 36982
 id 38008 36983
-id 38009 36984
+id-unverified 38009
 id-unverified 38010
 id-unverified 38011
 id-unverified 38012
@@ -26035,7 +26035,7 @@ id 38042 37014
 id-unverified 38043
 id-unverified 38044
 id-unverified 38045
-id 38046 37018
+id-unverified 38046
 id-unverified 38047
 id 38048 37020
 id 38049 37021
@@ -26217,7 +26217,7 @@ id-unverified 38276
 id 38278 37298
 id-unverified 38279
 id 38280 37322
-id 38281 37323
+id-unverified 38281
 id 38282 37325
 id 38283 37326
 id 38284 37331
@@ -26246,17 +26246,17 @@ id 38307 37358
 id-unverified 38308
 id 38309 37361
 id 38310 37362
-id 38311 37363
-id 38312 37364
-id 38313 37365
-id 38314 37366
-id 38315 37367
+id-unverified 38311
+id-unverified 38312
+id-unverified 38313
+id-unverified 38314
+id-unverified 38315
 id-unverified 38316
-id 38317 37369
-id 38318 37370
+id-unverified 38317
+id-unverified 38318
 id 38319 37371
-id 38320 37372
-id 38321 37373
+id-unverified 38320
+id-unverified 38321
 id 38322 37374
 id 38323 37375
 id 38324 37376
@@ -26272,25 +26272,25 @@ id 38333 37385
 id 38334 37386
 id 38335 37387
 id 38336 12794
-id 38337 37389
-id 38338 37390
-id 38339 37391
-id 38340 37392
+id-unverified 38337
+id-unverified 38338
+id-unverified 38339
+id-unverified 38340
 id-unverified 38341
-id 38342 37394
-id 38343 37395
+id-unverified 38342
+id-unverified 38343
 id 38344 37396
 id-unverified 38345
 id-unverified 38346
 id 38347 37398
-id 38348 37399
-id 38349 37400
-id 38350 37401
-id 38351 37402
+id-unverified 38348
+id-unverified 38349
+id-unverified 38350
+id-unverified 38351
 id-unverified 38352
-id 38353 37404
-id 38354 37405
-id 38355 37406
+id-unverified 38353
+id-unverified 38354
+id-unverified 38355
 id-unverified 38356
 id-unverified 38359
 id-unverified 38360
@@ -26332,16 +26332,16 @@ id-unverified 38397
 id-unverified 38398
 id 38399 37452
 id 38400 37453
-id 38401 30664
+id-unverified 38401
 id 38402 37455
-id 38403 37456
-id 38404 37457
-id 38405 37458
-id 38406 37459
+id-unverified 38403
+id-unverified 38404
+id-unverified 38405
+id-unverified 38406
 id 38407 37460
-id 38408 37461
-id 38409 37462
-id 38410 37463
+id-unverified 38408
+id-unverified 38409
+id-unverified 38410
 id-unverified 38411
 id-unverified 38412
 id-unverified 38413
@@ -26350,15 +26350,15 @@ id 38448 37506
 id 38449 37507
 id-unverified 38450
 id 38451 37509
-id 38452 37510
+id-unverified 38452
 id-unverified 38453
 id-unverified 38454
 id-unverified 38455
 id-unverified 38460
 id-unverified 38461
 id 38462 37517
-id 38463 37518
-id 38464 37519
+id-unverified 38463
+id-unverified 38464
 id 38465 37520
 id 38466 37521
 id 38467 37522
@@ -26373,7 +26373,7 @@ id 38480 37531
 id-unverified 38481
 id-unverified 38482
 id-unverified 38483
-id 38484 37535
+id-unverified 38484
 id-unverified 38485
 id-unverified 38486
 id 38487 37538
@@ -26396,11 +26396,11 @@ id 38514 529414
 id 38515 37563
 id 38516 37564
 id-unverified 38517
-id 38519 37570
-id 38520 37571
+id-unverified 38519
+id-unverified 38520
 id 38521 37572
 id 38522 37573
-id 38523 37574
+id-unverified 38523
 id-unverified 38527
 id-unverified 38528
 id 38529 37579
@@ -26433,7 +26433,7 @@ id 38558 37605
 id 38559 37606
 id-unverified 38560
 id-unverified 38561
-id 38562 37609
+id-unverified 38562
 id-unverified 38563
 id 38564 37611
 id-unverified 38565
@@ -26459,9 +26459,9 @@ id 38585 37632
 id 38586 37633
 id 38587 37634
 id 38589 37636
-id 38590 37637
+id-unverified 38590
 id 38591 37638
-id 38592 37639
+id-unverified 38592
 id 38593 37640
 id 38595 37642
 id 38596 37643
@@ -26483,7 +26483,7 @@ id 38613 37659
 id-unverified 38614
 id-unverified 38615
 id-unverified 38616
-id 38617 37663
+id-unverified 38617
 id 38618 37664
 id-unverified 38619
 id 38620 37666
@@ -26523,23 +26523,23 @@ id-unverified 38658
 id-unverified 38659
 id 38664 37335
 id-unverified 38665
-id 38666 37721
+id-unverified 38666
 id-unverified 38667
 id 38668 37723
 id-unverified 38669
-id 38670 37725
+id-unverified 38670
 id-unverified 38671
 id-unverified 38672
-id 38673 37728
-id 38674 37729
+id-unverified 38673
+id-unverified 38674
 id-unverified 38675
 id 38676 37731
 id 38677 37732
 id 38678 37733
 id 38679 37734
 id-unverified 38681
-id 38682 37737
-id 38683 37738
+id-unverified 38682
+id-unverified 38683
 id 38695 37749
 id 38696 37751
 id 38697 37752
@@ -26564,14 +26564,14 @@ id 38716 37771
 id 38717 37772
 id-unverified 38718
 id 38720 37775
-id 38721 37776
-id 38722 37777
-id 38723 37778
+id-unverified 38721
+id-unverified 38722
+id-unverified 38723
 id-unverified 38724
 id-unverified 38725
 id 38726 37781
 id 38727 37782
-id 38732 37783
+id-unverified 38732
 id-unverified 38733
 id 38735 37786
 id 38736 37787
@@ -26650,7 +26650,7 @@ id-unverified 38817
 id 38818 37863
 id 38819 37864
 id 38820 37865
-id 38821 37866
+id-unverified 38821
 id-unverified 38822
 id 38823 37868
 id 38824 37869
@@ -26679,18 +26679,18 @@ id 38862 37895
 id-unverified 38863
 id-unverified 38864
 id-unverified 38865
-id 38869 37912
-id 38870 37913
+id-unverified 38869
+id-unverified 38870
 id 38871 37914
 id 38872 37915
-id 38873 37916
-id 38874 37917
-id 38875 37918
-id 38876 37919
+id-unverified 38873
+id-unverified 38874
+id-unverified 38875
+id-unverified 38876
 id 38877 37920
 id 38878 37921
-id 38879 37925
-id 38880 37926
+id-unverified 38879
+id-unverified 38880
 id 38890 37935
 id 38891 37936
 id 38893 37937
@@ -26763,7 +26763,7 @@ id-unverified 38973
 id 38974 38019
 id-unverified 38976
 id 38978 38022
-id 38979 38023
+id-unverified 38979
 id-unverified 38980
 id 38981 38025
 id 38982 38026
@@ -27023,7 +27023,7 @@ id 39274 38304
 id 39275 38305
 id 39279 38306
 id 39280 38307
-id 39281 38308
+id-unverified 39281
 id 39284 38309
 id 39285 38310
 id-unverified 39286
@@ -27038,7 +27038,7 @@ id-unverified 39294
 id-unverified 39295
 id-unverified 39296
 id 39297 38322
-id 39298 38323
+id-unverified 39298
 id-unverified 39299
 id 39300 38325
 id 39301 38326
@@ -27173,7 +27173,7 @@ id 39453 38455
 id 39454 38456
 id 39455 38457
 id-unverified 39456
-id 39457 38459
+id-unverified 39457
 id 39458 38460
 id 39459 38461
 id 39460 38462
@@ -27225,7 +27225,7 @@ id 39518 38508
 id-unverified 39519
 id-unverified 39520
 id 39521 38511
-id 39522 38512
+id-unverified 39522
 id 39523 38513
 id 39524 38514
 id 39525 38515
@@ -27369,7 +27369,7 @@ id 39683 38652
 id 39684 38653
 id-unverified 39685
 id 39686 38655
-id 39687 38656
+id-unverified 39687
 id 39688 38657
 id-unverified 39689
 id 39690 38659
@@ -27431,11 +27431,11 @@ id 39763 38737
 id 39764 38738
 id-unverified 39765
 id-unverified 39767
-id 39769 38744
+id-unverified 39769
 id 39770 38745
 id-unverified 39771
 id-unverified 39772
-id 39773 38749
+id-unverified 39773
 id 39774 38750
 id-unverified 39775
 id-unverified 39776
@@ -27490,13 +27490,13 @@ id 39836 38806
 id 39837 38807
 id-unverified 39838
 id 39839 38809
-id 39840 38810
+id-unverified 39840
 id 39841 38811
 id 39842 38812
 id 39843 38813
 id 39844 38814
 id 39845 38815
-id 39846 38816
+id-unverified 39846
 id 39847 38817
 id 39848 38818
 id 39849 38819
@@ -27538,9 +27538,9 @@ id 39892 38855
 id 39893 38856
 id-unverified 39894
 id 39895 38858
-id 39896 38859
-id 39897 38860
-id 39899 38862
+id-unverified 39896
+id-unverified 39897
+id-unverified 39899
 id-unverified 39902
 id-unverified 39903
 id 39904 38865
@@ -27575,7 +27575,7 @@ id 39934 38893
 id 39935 529457
 id 39940 38894
 id 39941 38895
-id 39942 38896
+id-unverified 39942
 id 39943 38897
 id 39944 38898
 id 39945 38899
@@ -27743,12 +27743,12 @@ id 40143 39070
 id 40144 39071
 id 40145 39072
 id-unverified 40146
-id 40150 39085
+id-unverified 40150
 id 40151 39087
 id 40152 39090
 id-unverified 40153
 id 40154 39091
-id 40155 39092
+id-unverified 40155
 id 40156 39093
 id 40160 39098
 id 40167 39105
@@ -27758,8 +27758,8 @@ id 40170 39108
 id-unverified 40171
 id 40172 39110
 id-unverified 40173
-id 40175 39119
-id 40176 39120
+id-unverified 40175
+id-unverified 40176
 id-unverified 40177
 id 40178 39122
 id 40179 39123
@@ -27824,11 +27824,11 @@ id-unverified 40255
 id-unverified 40256
 id-unverified 40257
 id-unverified 40258
-id 40259 39185
+id-unverified 40259
 id 40260 39186
 id-unverified 40261
 id-unverified 40262
-id 40263 39189
+id-unverified 40263
 id-unverified 40264
 id-unverified 40265
 id 40266 39192
@@ -27878,16 +27878,16 @@ id-unverified 40310
 id-unverified 40311
 id-unverified 40313
 id-unverified 40314
-id 40317 39245
-id 40318 39246
-id 40319 39247
-id 40320 39248
-id 40321 39249
-id 40322 39250
+id-unverified 40317
+id-unverified 40318
+id-unverified 40319
+id-unverified 40320
+id-unverified 40321
+id-unverified 40322
 id 40323 39251
 id 40324 39252
-id 40325 39253
-id 40326 39254
+id-unverified 40325
+id-unverified 40326
 id 40332 39259
 id-unverified 40333
 id-unverified 40334
@@ -27963,8 +27963,8 @@ id-unverified 40407
 id-unverified 40408
 id 40409 39338
 id 40410 39339
-id 40411 39340
-id 40412 39341
+id-unverified 40411
+id-unverified 40412
 id 40413 39342
 id-unverified 40414
 id 40415 39344
@@ -27982,7 +27982,7 @@ id-unverified 40427
 id-unverified 40428
 id-unverified 40429
 id-unverified 40430
-id 40431 39359
+id-unverified 40431
 id-unverified 40432
 id-unverified 40434
 id-unverified 40435
@@ -27997,30 +27997,30 @@ id 40443 39371
 id 40444 39372
 id 40445 39373
 id-unverified 40446
-id 40447 39375
-id 40449 39377
+id-unverified 40447
+id-unverified 40449
 id 40450 39378
 id-unverified 40451
 id 40452 39380
-id 40453 39381
+id-unverified 40453
 id-unverified 40454
 id 40455 39383
 id 40456 39384
 id 40457 39385
-id 40458 39386
-id 40462 39387
-id 40463 39388
-id 40464 39389
-id 40465 39390
-id 40466 39391
+id-unverified 40458
+id-unverified 40462
+id-unverified 40463
+id-unverified 40464
+id-unverified 40465
+id-unverified 40466
 id 40467 39392
 id-unverified 40468
 id-unverified 40469
 id-unverified 40470
 id-unverified 40471
-id 40472 39397
+id-unverified 40472
 id 40473 39398
-id 40474 39399
+id-unverified 40474
 id 40475 39400
 id 40476 39401
 id 40477 39402
@@ -28037,20 +28037,20 @@ id-unverified 40487
 id-unverified 40488
 id 40489 39414
 id-unverified 40490
-id 40491 39416
+id-unverified 40491
 id 40492 39417
 id-unverified 40493
 id 40494 39419
 id-unverified 40495
-id 40496 39421
-id 40497 39422
-id 40498 39423
+id-unverified 40496
+id-unverified 40497
+id-unverified 40498
 id 40500 39424
 id 40501 39425
 id 40502 39426
 id 40503 39427
 id-unverified 40504
-id 40505 39429
+id-unverified 40505
 id 40506 39430
 id 40507 39431
 id 40508 39432
@@ -28065,15 +28065,15 @@ id 40516 39440
 id-unverified 40517
 id 40518 39442
 id-unverified 40519
-id 40520 39444
+id-unverified 40520
 id 40521 39445
 id 40522 39446
-id 40523 39447
+id-unverified 40523
 id-unverified 40524
 id-unverified 40527
-id 40528 39451
+id-unverified 40528
 id-unverified 40529
-id 40530 39453
+id-unverified 40530
 id-unverified 40531
 id-unverified 40532
 id-unverified 40533
@@ -28081,12 +28081,12 @@ id-unverified 40534
 id-unverified 40535
 id-unverified 40536
 id 40537 39460
-id 40538 39461
+id-unverified 40538
 id-unverified 40539
-id 40540 39463
+id-unverified 40540
 id-unverified 40541
-id 40542 39465
-id 40543 39466
+id-unverified 40542
+id-unverified 40543
 id-unverified 40544
 id-unverified 40546
 id-unverified 40548
@@ -28123,7 +28123,7 @@ id-unverified 40582
 id-unverified 40583
 id-unverified 40584
 id-unverified 40585
-id 40586 39507
+id-unverified 40586
 id 40587 39508
 id 40588 39509
 id 40589 39510
@@ -28151,7 +28151,7 @@ id 40613 39531
 id-unverified 40614
 id-unverified 40619
 id 40620 39534
-id 40621 39535
+id-unverified 40621
 id 40622 39536
 id-unverified 40623
 id-unverified 40624
@@ -28164,7 +28164,7 @@ id-unverified 40632
 id-unverified 40633
 id-unverified 40634
 id-unverified 40635
-id 40636 39550
+id-unverified 40636
 id-unverified 40637
 id-unverified 40638
 id 40639 39553
@@ -28184,13 +28184,13 @@ id 40654 39568
 id-unverified 40655
 id-unverified 40656
 id-unverified 40657
-id 40658 39572
+id-unverified 40658
 id-unverified 40659
 id 40660 39574
 id 40661 39575
 id 40662 39576
 id-unverified 40663
-id 40664 39578
+id-unverified 40664
 id 40665 39579
 id 40666 39580
 id-unverified 40667
@@ -28247,19 +28247,19 @@ id 40719 39633
 id 40720 39634
 id-unverified 40721
 id 40724 39637
-id 40725 39638
-id 40726 39639
+id-unverified 40725
+id-unverified 40726
 id 40727 39640
 id 40728 39641
-id 40729 39642
+id-unverified 40729
 id 40730 39643
 id-unverified 40731
 id-unverified 40732
 id-unverified 40733
 id 40734 39647
-id 40735 39648
+id-unverified 40735
 id 40736 39649
-id 40737 39650
+id-unverified 40737
 id-unverified 40738
 id-unverified 40739
 id-unverified 40741
@@ -28269,10 +28269,10 @@ id 40746 39659
 id 40748 39661
 id 40749 39662
 id-unverified 40750
-id 40751 39664
+id-unverified 40751
 id 40752 39665
 id-unverified 40753
-id 40754 39667
+id-unverified 40754
 id-unverified 40755
 id-unverified 40756
 id 40757 39670
@@ -28336,10 +28336,10 @@ id 40836 39729
 id 40837 39730
 id-unverified 40844
 id-unverified 40845
-id 40846 39744
+id-unverified 40846
 id-unverified 40847
 id-unverified 40848
-id 40849 39746
+id-unverified 40849
 id 40850 39747
 id-unverified 40851
 id-unverified 40854
@@ -28440,7 +28440,7 @@ id-unverified 41019
 id-unverified 41020
 id 41021 40010
 id 41022 40011
-id 41023 40012
+id-unverified 41023
 id-unverified 41024
 id 41025 40014
 id 41026 40015
@@ -28452,67 +28452,67 @@ id 41031 40020
 id 41032 40021
 id 41033 40022
 id 41034 40023
-id 41035 40024
+id-unverified 41035
 id 41036 40025
 id 41037 40026
-id 41038 40027
-id 41039 40028
-id 41040 40029
-id 41041 40030
-id 41042 40031
-id 41043 40032
-id 41044 40033
+id-unverified 41038
+id-unverified 41039
+id-unverified 41040
+id-unverified 41041
+id-unverified 41042
+id-unverified 41043
+id-unverified 41044
 id-unverified 41045
-id 41046 40035
-id 41047 40036
-id 41048 40037
-id 41049 40038
-id 41050 40039
+id-unverified 41046
+id-unverified 41047
+id-unverified 41048
+id-unverified 41049
+id-unverified 41050
 id 41051 40040
-id 41052 40041
-id 41053 40042
-id 41054 40043
-id 41055 40044
+id-unverified 41052
+id-unverified 41053
+id-unverified 41054
+id-unverified 41055
 id 41056 40045
-id 41057 40046
+id-unverified 41057
 id 41058 40047
 id-unverified 41059
 id 41060 40049
-id 41061 40050
-id 41062 40051
-id 41063 40052
-id 41064 40053
-id 41065 40054
-id 41066 40055
-id 41067 40056
-id 41068 40057
-id 41069 40058
+id-unverified 41061
+id-unverified 41062
+id-unverified 41063
+id-unverified 41064
+id-unverified 41065
+id-unverified 41066
+id-unverified 41067
+id-unverified 41068
+id-unverified 41069
 id-unverified 41070
-id 41071 40060
-id 41072 40061
-id 41073 40062
-id 41074 40063
-id 41075 40064
+id-unverified 41071
+id-unverified 41072
+id-unverified 41073
+id-unverified 41074
+id-unverified 41075
 id-unverified 41076
 id-unverified 41077
 id 41078 40067
-id 41079 40068
-id 41080 40069
-id 41081 40070
-id 41082 40071
-id 41083 40072
-id 41084 40073
-id 41085 40074
-id 41086 40075
-id 41087 40076
+id-unverified 41079
+id-unverified 41080
+id-unverified 41081
+id-unverified 41082
+id-unverified 41083
+id-unverified 41084
+id-unverified 41085
+id-unverified 41086
+id-unverified 41087
 id-unverified 41088
-id 41089 40078
+id-unverified 41089
 id 41090 40079
-id 41091 40080
-id 41092 40081
-id 41093 40082
-id 41094 40083
-id 41095 40084
+id-unverified 41091
+id-unverified 41092
+id-unverified 41093
+id-unverified 41094
+id-unverified 41095
 id-unverified 41106
 id 41107 40095
 id 41109 40099
@@ -28553,30 +28553,30 @@ id 41144 40142
 id-unverified 41145
 id 41146 40144
 id 41147 40145
-id 41148 40146
-id 41149 40147
-id 41150 40148
-id 41151 40149
-id 41152 40150
-id 41153 40151
-id 41154 40152
-id 41155 40153
-id 41156 40154
+id-unverified 41148
+id-unverified 41149
+id-unverified 41150
+id-unverified 41151
+id-unverified 41152
+id-unverified 41153
+id-unverified 41154
+id-unverified 41155
+id-unverified 41156
 id 41157 40155
-id 41158 40156
-id 41159 40157
-id 41160 40158
-id 41161 40159
-id 41162 40160
-id 41163 40161
-id 41164 40162
+id-unverified 41158
+id-unverified 41159
+id-unverified 41160
+id-unverified 41161
+id-unverified 41162
+id-unverified 41163
+id-unverified 41164
 id 41165 40163
 id 41166 40164
 id 41167 40165
 id 41168 40166
 id-unverified 41233
 id-unverified 41234
-id 41235 40232
+id-unverified 41235
 id-unverified 41236
 id-unverified 41237
 id-unverified 41238
@@ -28586,10 +28586,10 @@ id 41242 40239
 id-unverified 41243
 id 41244 40241
 id-unverified 41245
-id 41246 40243
+id-unverified 41246
 id-unverified 41247
-id 41248 40245
-id 41249 40246
+id-unverified 41248
+id-unverified 41249
 id-unverified 41250
 id-unverified 41251
 id-unverified 41252
@@ -28599,7 +28599,7 @@ id-unverified 41255
 id 41256 40253
 id 41257 40254
 id-unverified 41258
-id 41259 40256
+id-unverified 41259
 id 41260 40257
 id-unverified 41261
 id-unverified 41262
@@ -28626,7 +28626,7 @@ id 41292 40283
 id-unverified 41293
 id 41294 40285
 id-unverified 41295
-id 41296 40287
+id-unverified 41296
 id 41297 40288
 id 41298 40289
 id 41300 40506
@@ -28637,7 +28637,7 @@ id 41304 40294
 id 41305 40295
 id-unverified 41306
 id-unverified 41307
-id 41308 40298
+id-unverified 41308
 id 41309 40299
 id 41310 40300
 id 41311 40301
@@ -28769,7 +28769,7 @@ id 41446 40430
 id 41448 40432
 id 41449 40433
 id 41452 40435
-id 41453 40436
+id-unverified 41453
 id-unverified 41454
 id-unverified 41455
 id-unverified 41456
@@ -28808,7 +28808,7 @@ id-unverified 41499
 id-unverified 41500
 id-unverified 41502
 id-unverified 41504
-id 41505 40489
+id-unverified 41505
 id 41507 40499
 id-unverified 41508
 id-unverified 41509
@@ -28858,7 +28858,7 @@ id 41557 40551
 id-unverified 41558
 id 41559 40552
 id 41560 40553
-id 41561 40554
+id-unverified 41561
 id-unverified 41562
 id 41563 40556
 id 41564 40557
@@ -28972,7 +28972,7 @@ id 41699 40688
 id 41700 40689
 id-unverified 41701
 id-unverified 41702
-id 41703 40692
+id-unverified 41703
 id 41704 40693
 id 41705 40694
 id 41706 40695
@@ -29005,7 +29005,7 @@ id-unverified 41732
 id-unverified 41735
 id 41736 40725
 id 41737 40726
-id 41738 40727
+id-unverified 41738
 id 41739 40728
 id 41740 40729
 id 41741 40730
@@ -29189,7 +29189,7 @@ id 41992 40933
 id 41993 40934
 id 41994 40935
 id 41995 40936
-id 41996 40937
+id-unverified 41996
 id 41997 40938
 id 41998 40939
 id 41999 40940
@@ -29501,7 +29501,7 @@ id-unverified 42337
 id-unverified 42339
 id-unverified 42340
 id 42341 41262
-id 42342 41263
+id-unverified 42342
 id 42343 41264
 id 42344 41265
 id 42345 41266
@@ -29513,25 +29513,25 @@ id 42350 41271
 id 42351 41272
 id-unverified 42352
 id-unverified 42353
-id 42354 41275
+id-unverified 42354
 id 42355 41276
-id 42356 41277
-id 42357 41278
-id 42359 41280
+id-unverified 42356
+id-unverified 42357
+id-unverified 42359
 id-unverified 42360
 id-unverified 42361
 id 42362 41283
-id 42363 41284
-id 42365 41286
+id-unverified 42363
+id-unverified 42365
 id 42366 41287
 id-unverified 42367
 id-unverified 42369
-id 42371 41291
+id-unverified 42371
 id 42372 41292
-id 42373 41293
+id-unverified 42373
 id-unverified 42374
 id-unverified 42375
-id 42376 41296
+id-unverified 42376
 id 42377 41297
 id 42378 41298
 id 42386 529585
@@ -29562,9 +29562,9 @@ id-unverified 42418
 id-unverified 42419
 id 42420 41346
 id-unverified 42421
-id 42423 41349
+id-unverified 42423
 id 42424 41350
-id 42426 41352
+id-unverified 42426
 id 42427 41353
 id-unverified 42428
 id 42429 41355
@@ -29579,29 +29579,29 @@ id-unverified 42437
 id-unverified 42438
 id 42439 41365
 id 42440 41366
-id 42441 41367
-id 42442 41369
+id-unverified 42441
+id-unverified 42442
 id 42443 41370
 id 42444 41371
-id 42445 41372
+id-unverified 42445
 id 42446 41373
 id-unverified 42447
 id-unverified 42448
 id 42449 41376
 id 42450 41377
 id 42453 41380
-id 42454 41381
+id-unverified 42454
 id 42455 41382
 id 42456 41383
-id 42458 41385
+id-unverified 42458
 id 42459 41386
 id 42460 41387
-id 42461 41388
+id-unverified 42461
 id 42462 41389
 id 42463 41390
 id 42464 41391
 id 42465 41392
-id 42467 41393
+id-unverified 42467
 id 42468 41394
 id-unverified 42469
 id-unverified 42478
@@ -29680,7 +29680,7 @@ id-unverified 42567
 id 42568 41499
 id 42569 41500
 id-unverified 42570
-id 42571 41502
+id-unverified 42571
 id 42572 41503
 id-unverified 42573
 id-unverified 42574
@@ -29781,11 +29781,11 @@ id 42684 41605
 id 42686 41606
 id-unverified 42687
 id 42689 41612
-id 42690 41613
-id 42691 41614
+id-unverified 42690
+id-unverified 42691
 id 42692 41615
 id 42693 41616
-id 42694 41617
+id-unverified 42694
 id 42698 41620
 id 42699 41621
 id-unverified 42700
@@ -29837,7 +29837,7 @@ id 42769 41684
 id 42770 41685
 id 42771 41686
 id 42772 41687
-id 42773 41688
+id-unverified 42773
 id 42774 41689
 id 42775 41690
 id 42776 41691
@@ -29859,37 +29859,37 @@ id-unverified 42800
 id 42801 41716
 id 42804 41722
 id 42809 41728
-id 42810 41729
+id-unverified 42810
 id-unverified 42811
 id-unverified 42812
 id-unverified 42813
-id 42814 41733
-id 42815 41734
+id-unverified 42814
+id-unverified 42815
 id 42816 41735
 id 42817 41736
 id-unverified 42818
 id 42819 41738
 id 42820 41739
 id-unverified 42821
-id 42822 41741
+id-unverified 42822
 id-unverified 42823
-id 42824 41743
+id-unverified 42824
 id 42825 41744
 id 42826 41745
 id 42827 41746
-id 42828 41747
+id-unverified 42828
 id 42829 41748
-id 42830 41749
+id-unverified 42830
 id-unverified 42831
-id 42832 41751
+id-unverified 42832
 id-unverified 42833
 id-unverified 42834
 id-unverified 42835
 id-unverified 42836
-id 42837 41756
+id-unverified 42837
 id-unverified 42838
 id 42839 41758
-id 42840 41759
+id-unverified 42840
 id 42841 41760
 id 42842 41761
 id 42843 41762
@@ -29904,21 +29904,21 @@ id 42851 41770
 id 42852 41771
 id 42853 41772
 id-unverified 42854
-id 42855 41774
-id 42856 41775
-id 42857 41776
-id 42858 41777
-id 42859 41778
-id 42860 41779
-id 42861 41780
+id-unverified 42855
+id-unverified 42856
+id-unverified 42857
+id-unverified 42858
+id-unverified 42859
+id-unverified 42860
+id-unverified 42861
 id-unverified 42862
 id 42863 41782
-id 42864 41783
+id-unverified 42864
 id 42865 41784
 id-unverified 42866
-id 42867 41786
+id-unverified 42867
 id-unverified 42868
-id 42869 41788
+id-unverified 42869
 id 42870 41789
 id 42871 41790
 id-unverified 42872
@@ -29943,7 +29943,7 @@ id 42890 41809
 id 42891 41810
 id-unverified 42892
 id 42893 41812
-id 42894 41813
+id-unverified 42894
 id 42895 41814
 id 42896 41815
 id 42897 41816
@@ -30534,7 +30534,7 @@ id 43578 42422
 id 43579 42423
 id 43580 42424
 id-unverified 43581
-id 43585 42412
+id-unverified 43585
 id 43586 42429
 id 43587 42430
 id 43588 42431
@@ -30601,11 +30601,11 @@ id 43651 42490
 id 43652 42489
 id 43653 42488
 id-unverified 43655
-id 43657 42496
+id-unverified 43657
 id-unverified 43658
 id 43659 42498
 id-unverified 43661
-id 43662 42500
+id-unverified 43662
 id-unverified 43663
 id-unverified 43664
 id-unverified 43665
@@ -30628,7 +30628,7 @@ id-unverified 43685
 id 43686 42522
 id 43688 42523
 id 43689 42525
-id 43690 42527
+id-unverified 43690
 id 43691 42528
 id-unverified 43692
 id-unverified 43693
@@ -30686,7 +30686,7 @@ id-unverified 43745
 id 43746 42583
 id 43747 42584
 id-unverified 43748
-id 43749 42586
+id-unverified 43749
 id-unverified 43750
 id-unverified 43751
 id 43752 42589
@@ -30711,7 +30711,7 @@ id 43774 42608
 id 43775 42609
 id-unverified 43776
 id-unverified 43777
-id 43779 42615
+id-unverified 43779
 id-unverified 43780
 id-unverified 43784
 id-unverified 43785
@@ -30776,7 +30776,7 @@ id-unverified 43849
 id-unverified 43850
 id-unverified 43851
 id-unverified 43852
-id 43853 42681
+id-unverified 43853
 id-unverified 43854
 id 43855 42683
 id-unverified 43856
@@ -30807,7 +30807,7 @@ id-unverified 43890
 id-unverified 43891
 id 43892 42725
 id-unverified 43893
-id 43894 42727
+id-unverified 43894
 id-unverified 43895
 id-unverified 43897
 id-unverified 43898
@@ -30994,7 +30994,7 @@ id 44104 42924
 id 44105 42925
 id 44106 42926
 id 44107 42927
-id 44108 42928
+id-unverified 44108
 id 44109 42929
 id 44110 42930
 id 44111 42931
@@ -31010,7 +31010,7 @@ id-unverified 44120
 id-unverified 44121
 id-unverified 44122
 id-unverified 44123
-id 44124 42944
+id-unverified 44124
 id-unverified 44125
 id 44126 42946
 id 44128 42947
@@ -31033,7 +31033,7 @@ id-unverified 44144
 id 44145 42964
 id-unverified 44146
 id-unverified 44149
-id 44150 42967
+id-unverified 44150
 id 44151 42968
 id 44152 42969
 id-unverified 44153
@@ -31134,7 +31134,7 @@ id 44277 43084
 id 44278 529696
 id 44279 43085
 id 44280 43086
-id 44282 43087
+id-unverified 44282
 id-unverified 44283
 id 44284 43089
 id 44285 43090
@@ -31146,23 +31146,23 @@ id 44291 43095
 id 44292 43096
 id-unverified 44294
 id 44295 43098
-id 44296 43099
+id-unverified 44296
 id-unverified 44297
-id 44298 43101
+id-unverified 44298
 id 44299 43102
 id 44300 43103
 id-unverified 44301
 id-unverified 44302
-id 44303 43106
+id-unverified 44303
 id-unverified 44304
 id-unverified 44305
 id-unverified 44309
-id 44310 43110
+id-unverified 44310
 id 44311 43111
 id-unverified 44312
 id 44313 43113
 id-unverified 44314
-id 44315 43115
+id-unverified 44315
 id-unverified 44316
 id 44320 43119
 id-unverified 44329
@@ -33492,7 +33492,7 @@ id-unverified 46866
 id-unverified 46867
 id 46868 45568
 id 46869 45569
-id 46870 45570
+id-unverified 46870
 id-unverified 46871
 id-unverified 46873
 id 46874 45574
@@ -33931,7 +33931,7 @@ id 47448 46194
 id 47453 46198
 id 47454 46199
 id-unverified 47455
-id 47456 46201
+id-unverified 47456
 id 47457 46202
 id-unverified 47458
 id-unverified 47459
@@ -36799,75 +36799,75 @@ id 50704 49776
 id 50705 49777
 id 50706 49778
 id 50707 49779
-id 50708 49780
-id 50709 49781
+id-unverified 50708
+id-unverified 50709
 id 50710 49782
 id 50711 49783
 id 50712 49784
 id 50713 49785
 id-unverified 50714
-id 50715 49787
+id-unverified 50715
 id-unverified 50716
 id-unverified 50718
 id-unverified 50719
 id 50721 49792
-id 50722 49793
+id-unverified 50722
 id 50723 49794
-id 50724 49795
-id 50725 49796
+id-unverified 50724
+id-unverified 50725
 id 50726 49797
 id 50727 49798
-id 50729 49799
+id-unverified 50729
 id 50730 49800
 id 50731 49801
-id 50732 49802
-id 50733 49803
-id 50734 49804
+id-unverified 50732
+id-unverified 50733
+id-unverified 50734
 id 50735 49805
 id 50736 49806
 id 50737 49807
 id 50740 49810
-id 50741 49811
-id 50742 49812
-id 50743 49813
+id-unverified 50741
+id-unverified 50742
+id-unverified 50743
 id 50744 49814
 id 50745 49815
 id 50746 49816
 id 50747 49817
 id 50748 49818
-id 50749 49819
+id-unverified 50749
 id 50750 49820
-id 50751 49821
-id 50752 49822
-id 50753 49823
-id 50754 49824
+id-unverified 50751
+id-unverified 50752
+id-unverified 50753
+id-unverified 50754
 id 50755 49825
-id 50756 49826
+id-unverified 50756
 id 50757 49827
 id 50759 49828
 id-unverified 50760
 id 50761 49830
 id 50762 49831
 id 50763 49832
-id 50764 49833
-id 50765 49834
+id-unverified 50764
+id-unverified 50765
 id 50766 49835
-id 50767 49836
+id-unverified 50767
 id 50768 49837
-id 50769 49838
-id 50770 49839
-id 50771 49840
+id-unverified 50769
+id-unverified 50770
+id-unverified 50771
 id 50773 49841
-id 50774 49842
+id-unverified 50774
 id 50775 49843
 id 50776 49844
 id 50777 49845
 id-unverified 50778
 id 50779 49847
 id 50780 49848
-id 50781 49849
-id 50782 49850
-id 50783 49851
+id-unverified 50781
+id-unverified 50782
+id-unverified 50783
 id 50784 49852
 id 50785 49853
 id 50786 49854
@@ -36878,99 +36878,99 @@ id 50790 49858
 id 50791 49859
 id 50792 49860
 id 50794 49861
-id 50795 49862
-id 50796 49863
+id-unverified 50795
+id-unverified 50796
 id 50797 49864
 id 50798 49865
 id 50799 49866
-id 50800 49867
+id-unverified 50800
 id 50801 49868
-id 50802 49869
+id-unverified 50802
 id 50803 49870
-id 50804 49871
+id-unverified 50804
 id 50805 49872
 id 50806 49873
 id 50807 49874
 id 50808 49875
-id 50809 49876
-id 50810 49877
+id-unverified 50809
+id-unverified 50810
 id 50811 49878
 id 50812 49879
-id 50813 49880
+id-unverified 50813
 id 50814 49881
 id 50815 49882
-id 50816 49883
+id-unverified 50816
 id 50817 49884
 id 50818 49885
-id 50819 49886
+id-unverified 50819
 id 50820 49887
 id 50821 49888
-id 50822 49889
-id 50823 49890
-id 50824 49891
+id-unverified 50822
+id-unverified 50823
+id-unverified 50824
 id 50825 49892
-id 50826 49893
-id 50827 49894
+id-unverified 50826
+id-unverified 50827
 id 50828 49895
 id 50830 49897
 id 50831 49898
 id 50832 49899
-id 50833 49900
-id 50834 49901
+id-unverified 50833
+id-unverified 50834
 id 50835 49902
 id 50836 49903
 id 50837 49904
 id 50838 49905
 id 50839 49906
-id 50840 49907
+id-unverified 50840
 id 50841 49908
 id 50842 49909
 id 50843 49910
-id 50844 49911
+id-unverified 50844
 id-unverified 50845
-id 50846 49913
-id 50847 49914
-id 50848 49915
-id 50849 49916
+id-unverified 50846
+id-unverified 50847
+id-unverified 50848
+id-unverified 50849
 id 50850 49917
 id 50851 49918
 id 50852 49919
 id 50853 49920
-id 50856 49924
+id-unverified 50856
 id 50857 530149
 id 50858 530150
 id 50859 49925
-id 50860 49926
+id-unverified 50860
 id 50862 49927
 id 50863 49928
 id 50864 49929
 id 50865 49930
-id 50866 49931
-id 50867 49932
-id 50868 49933
-id 50869 49934
-id 50870 49935
-id 50871 49936
-id 50872 49937
-id 50873 49938
+id-unverified 50866
+id-unverified 50867
+id-unverified 50868
+id-unverified 50869
+id-unverified 50870
+id-unverified 50871
+id-unverified 50872
+id-unverified 50873
 id 50874 49939
 id 50875 49940
 id 50876 49941
 id 50877 49943
 id-unverified 50878
-id 50879 49946
+id-unverified 50879
 id 50880 49947
 id 50881 49948
 id-unverified 50882
 id 50888 49952
-id 50889 49953
-id 50890 49954
-id 50891 49955
+id-unverified 50889
+id-unverified 50890
+id-unverified 50891
 id 50892 49956
 id 50893 49957
-id 50894 49958
-id 50895 49959
-id 50896 49960
+id-unverified 50894
+id-unverified 50895
+id-unverified 50896
 id 50897 49961
 id 50898 49962
 id-unverified 50899
@@ -36978,30 +36978,30 @@ id 50900 49964
 id-unverified 50901
 id 50902 49966
 id 50903 49967
-id 50904 49968
-id 50905 49969
-id 50906 49970
+id-unverified 50904
+id-unverified 50905
+id-unverified 50906
 id 50907 49971
 id 50908 49972
 id 50909 49973
-id 50910 49974
-id 50911 49975
-id 50912 49976
+id-unverified 50910
+id-unverified 50911
+id-unverified 50912
 id 50913 49977
-id 50914 49978
-id 50920 49980
-id 50922 49982
-id 50923 49983
+id-unverified 50914
+id-unverified 50920
+id-unverified 50922
+id-unverified 50923
 id 50924 49984
 id-unverified 50926
-id 50927 49987
-id 50928 530151
+id-unverified 50927
+id-unverified 50928
 id 50930 49988
 id 50932 49989
-id 50933 49990
+id-unverified 50933
 id 50934 49991
 id-unverified 50935
-id 50936 49993
+id-unverified 50936
 id 50937 49994
 id 50938 530152
 id 50939 49995
@@ -37027,7 +37027,7 @@ id 50961 50017
 id 50962 50018
 id-unverified 50973
 id-unverified 50974
-id 50975 50034
+id-unverified 50975
 id-unverified 50976
 id-unverified 50977
 id-unverified 50979
@@ -37051,9 +37051,9 @@ id 51007 50067
 id-unverified 51008
 id 51009 50069
 id-unverified 51010
-id 51011 50071
-id 51014 50053
-id 51016 50050
+id-unverified 51011
+id-unverified 51014
+id-unverified 51016
 id 51017 50086
 id 51018 50087
 id 51019 50088
@@ -37069,11 +37069,11 @@ id-unverified 51028
 id 51029 51595
 id 51030 50098
 id 51031 50099
-id 51032 50100
+id-unverified 51032
 id-unverified 51033
 id-unverified 51034
 id 51035 50103
-id 51039 50108
+id-unverified 51039
 id-unverified 51048
 id-unverified 51049
 id 51050 50119
@@ -37082,7 +37082,7 @@ id 51052 50121
 id-unverified 51053
 id 51054 50123
 id-unverified 51055
-id 51056 50125
+id-unverified 51056
 id 51057 50126
 id 51058 50127
 id 51059 50128
@@ -37100,15 +37100,15 @@ id 51074 50145
 id 51075 50146
 id 51076 50147
 id 51077 50149
-id 51083 50156
-id 51084 50157
+id-unverified 51083
+id-unverified 51084
 id 51085 50158
 id 51087 50160
 id-unverified 51088
-id 51089 50162
+id-unverified 51089
 id 51090 50163
 id 51093 50164
-id 51094 50165
+id-unverified 51094
 id 51101 50171
 id 51102 50172
 id 51105 50174
@@ -37170,17 +37170,17 @@ id-unverified 51174
 id 51177 50247
 id 51178 50253
 id 51179 50254
-id 51180 50255
-id 51181 50256
-id 51182 50257
-id 51183 50258
-id 51184 50259
-id 51185 50260
+id-unverified 51180
+id-unverified 51181
+id-unverified 51182
+id-unverified 51183
+id-unverified 51184
+id-unverified 51185
 id-unverified 51186
 id 51187 50262
 id 51188 50263
-id 51189 50264
-id 51190 50265
+id-unverified 51189
+id-unverified 51190
 id 51196 50270
 id 51197 50271
 id-unverified 51198
@@ -37358,14 +37358,14 @@ id-unverified 51393
 id 51394 50503
 id-unverified 51395
 id 51396 50505
-id 51397 50506
+id-unverified 51397
 id 51398 50507
 id 51399 50508
 id-unverified 51401
 id 51402 50514
-id 51403 50515
+id-unverified 51403
 id 51404 50516
-id 51405 50517
+id-unverified 51405
 id-unverified 51407
 id 51408 50520
 id 51409 50523
@@ -37376,7 +37376,7 @@ id-unverified 51414
 id-unverified 51415
 id 51417 50533
 id 51418 50534
-id 51419 50535
+id-unverified 51419
 id 51422 50538
 id 51423 50539
 id 51424 50541
@@ -37385,7 +37385,7 @@ id 51426 50543
 id 51427 50544
 id 51443 50550
 id 51444 50551
-id 51445 50552
+id-unverified 51445
 id 51446 50553
 id 51447 50555
 id-unverified 51448
@@ -37411,7 +37411,7 @@ id 51490 50596
 id 51492 50598
 id-unverified 51493
 id 51495 50601
-id 51496 50602
+id-unverified 51496
 id 51497 50603
 id 51498 50604
 id 51499 50605
@@ -37476,13 +37476,13 @@ id-unverified 51569
 id-unverified 51571
 id-unverified 51573
 id 51574 50679
-id 51576 50680
+id-unverified 51576
 id-unverified 51577
 id-unverified 51578
 id-unverified 51584
 id-unverified 51585
 id-unverified 51587
-id 51589 50693
+id-unverified 51589
 id 51591 50695
 id-unverified 51592
 id 51594 50698
@@ -37494,10 +37494,10 @@ id 51599 50703
 id 51605 50711
 id 51610 50716
 id 51611 50717
-id 51612 50718
-id 51613 50719
+id-unverified 51612
+id-unverified 51613
 id 51614 50720
-id 51615 50721
+id-unverified 51615
 id 51619 50724
 id 51620 50725
 id 51621 50726
@@ -37529,9 +37529,9 @@ id 51647 50752
 id 51648 50753
 id 51649 50754
 id 51650 50755
-id 51651 50756
-id 51652 50757
-id 51653 50758
+id-unverified 51651
+id-unverified 51652
+id-unverified 51653
 id 51654 50759
 id 51655 50760
 id 51656 50761
@@ -37549,7 +37549,7 @@ id 51667 50772
 id-unverified 51668
 id 51669 50774
 id 51670 50775
-id 51671 50776
+id-unverified 51671
 id-unverified 51672
 id 51673 50778
 id 51674 50779
@@ -37559,7 +37559,7 @@ id 51677 50782
 id 51678 50783
 id-unverified 51681
 id 51682 50786
-id 51684 50788
+id-unverified 51684
 id 51685 50789
 id 51687 50798
 id-unverified 51691
@@ -37591,7 +37591,7 @@ id 51726 50847
 id 51728 50851
 id-unverified 51731
 id 51732 50858
-id 51733 50859
+id-unverified 51733
 id 51734 50860
 id-unverified 51735
 id-unverified 51737
@@ -37599,7 +37599,7 @@ id 51738 50864
 id-unverified 51739
 id 51740 50866
 id 51741 50867
-id 51742 50868
+id-unverified 51742
 id 51743 50869
 id-unverified 51744
 id-unverified 51752
@@ -37623,8 +37623,8 @@ id-unverified 51772
 id 51773 50897
 id 51774 50898
 id 51775 50899
-id 51776 50900
-id 51777 50901
+id-unverified 51776
+id-unverified 51777
 id-unverified 51779
 id 51785 50907
 id 51786 50908
@@ -37639,7 +37639,7 @@ id-unverified 51794
 id 51795 50920
 id 51803 50926
 id 51804 50927
-id 51805 50928
+id-unverified 51805
 id-unverified 51806
 id 51807 50930
 id-unverified 51808
@@ -37708,11 +37708,11 @@ id-unverified 51878
 id-unverified 51880
 id-unverified 51881
 id-unverified 51884
-id 51887 51010
-id 51888 51011
+id-unverified 51887
+id-unverified 51888
 id 51889 51012
 id 51890 51013
-id 51891 51014
+id-unverified 51891
 id-unverified 51895
 id 51897 51019
 id 51898 51020
@@ -37751,7 +37751,7 @@ id 51949 51070
 id-unverified 51950
 id-unverified 51951
 id-unverified 51952
-id 51954 51075
+id-unverified 51954
 id-unverified 51955
 id 51957 51078
 id-unverified 51958
@@ -37782,11 +37782,11 @@ id 51990 51105
 id-unverified 51991
 id-unverified 51992
 id 51995 51113
-id 51996 51114
-id 51997 51115
+id-unverified 51996
+id-unverified 51997
 id 51998 51116
 id 51999 51117
-id 52000 51118
+id-unverified 52000
 id-unverified 52005
 id 52006 51123
 id-unverified 52007
@@ -37866,7 +37866,7 @@ id 52112 51240
 id-unverified 52113
 id-unverified 52115
 id 52117 51245
-id 52118 51246
+id-address 52118 51246
 id 52123 51251
 id 52125 51253
 id 52127 51255
@@ -37892,13 +37892,13 @@ id 52176 51321
 id-unverified 52177
 id 52178 51323
 id-unverified 52179
-id 52183 51236
+id-unverified 52183
 id 52185 51328
 id 52198 51354
-id 52200 51356
+id-unverified 52200
 id 52201 51357
 id 52202 51358
-id 52203 51359
+id-unverified 52203
 id 52207 51360
 id 52208 51361
 id 52209 51362
@@ -37919,11 +37919,11 @@ id 52233 51382
 id 52234 51383
 id 52235 51384
 id 52236 51385
-id 52237 51386
+id-unverified 52237
 id 52238 51387
 id 52239 51388
 id 52240 51389
-id 52243 51394
+id-unverified 52243
 id 52244 51395
 id 52245 51396
 id-unverified 52246
@@ -37931,40 +37931,40 @@ id-unverified 52247
 id-unverified 52248
 id 52249 51400
 id 52250 51401
-id 52251 51402
+id-unverified 52251
 id 52252 51403
 id 52253 51404
 id 52254 51405
 id 52255 51406
 id 52256 51407
-id 52257 51408
+id-unverified 52257
 id 52258 51409
 id 52259 51410
-id 52260 51411
-id 52261 51412
+id-unverified 52260
+id-unverified 52261
 id-unverified 52262
-id 52268 51419
+id-unverified 52268
 id 52269 51420
 id 52271 51422
-id 52278 51423
+id-unverified 52278
 id 52279 51424
 id 52280 51425
-id 52284 51426
+id-unverified 52284
 id 52285 51427
-id 52286 51428
+id-unverified 52286
 id-unverified 52287
 id-unverified 52288
 id-unverified 52289
 id 52294 51434
 id 52296 51436
-id 52297 51418
+id-unverified 52297
 id 52304 51445
 id-unverified 52305
 id 52306 51447
-id 52307 51448
+id-unverified 52307
 id-unverified 52308
 id 52309 51450
-id 52310 51451
+id-unverified 52310
 id-unverified 52311
 id 52312 51453
 id-unverified 52313
@@ -37973,7 +37973,7 @@ id-unverified 52317
 id 52318 51457
 id-unverified 52321
 id-unverified 52322
-id 52323 51460
+id-unverified 52323
 id 52324 51461
 id 52325 51462
 id 52326 51463
@@ -37988,12 +37988,12 @@ id 52335 51473
 id 52336 51474
 id 52337 51475
 id 52338 51476
-id 52339 51477
-id 52340 51478
+id-unverified 52339
+id-unverified 52340
 id-unverified 52342
 id 52343 51481
 id-unverified 52344
-id 52345 51483
+id-unverified 52345
 id-unverified 52346
 id-unverified 52347
 id-unverified 52350
@@ -38017,10 +38017,10 @@ id-unverified 52369
 id-unverified 52381
 id-unverified 52382
 id 52383 51511
-id 52384 51512
+id-unverified 52384
 id 52386 51514
-id 52387 51515
-id 52388 51516
+id-unverified 52387
+id-unverified 52388
 id 52389 51517
 id 52390 51518
 id 52391 51519
@@ -38063,7 +38063,7 @@ id 52445 51572
 id 52446 51573
 id 52447 51574
 id 52448 51575
-id 52449 51576
+id-unverified 52449
 id-unverified 52450
 id-unverified 52451
 id-unverified 52452
@@ -38076,9 +38076,9 @@ id 52462 51589
 id 52464 24402
 id 52465 51546
 id 52466 51594
-id 52467 51596
+id-unverified 52467
 id 52468 51597
-id 52469 51598
+id-unverified 52469
 id-unverified 52470
 id-unverified 52478
 id-unverified 52480
@@ -38099,17 +38099,17 @@ id 52500 51629
 id 52501 51630
 id 52502 51631
 id 52503 51632
-id 52504 51633
+id-unverified 52504
 id 52508 51636
 id-unverified 52509
-id 52510 51638
+id-unverified 52510
 id 52511 51639
 id-unverified 52512
 id 52516 51643
 id 52517 51644
 id 52518 51645
 id 52519 51646
-id 52520 51647
+id-unverified 52520
 id 52521 51648
 id 52522 51649
 id 52523 51650
@@ -38171,7 +38171,7 @@ id 52583 51706
 id-unverified 52584
 id-unverified 52585
 id-unverified 52586
-id 52587 51709
+id-unverified 52587
 id-unverified 52588
 id 52590 51712
 id-unverified 52591
@@ -38233,11 +38233,11 @@ id-unverified 52672
 id 52674 51798
 id-unverified 52675
 id-unverified 52676
-id 52679 51806
-id 52680 51807
+id-unverified 52679
+id-unverified 52680
 id 52681 51808
 id 52682 51809
-id 52683 51810
+id-unverified 52683
 id-unverified 52687
 id 52688 51814
 id-unverified 52689
@@ -38250,7 +38250,7 @@ id-unverified 52699
 id-unverified 52702
 id-unverified 52703
 id 52704 51832
-id 52705 51833
+id-unverified 52705
 id 52706 51834
 id-unverified 52707
 id 52712 51840
@@ -38265,10 +38265,10 @@ id-unverified 52721
 id 52722 51850
 id-unverified 52724
 id 52725 51853
-id 52726 51854
+id-unverified 52726
 id 52727 51855
-id 52728 51856
-id 52729 51857
+id-unverified 52728
+id-unverified 52729
 id-unverified 52731
 id 52732 51860
 id 52734 51862
@@ -38437,10 +38437,10 @@ id-unverified 52942
 id 52944 52058
 id 52945 52059
 id-unverified 52947
-id 52948 52061
+id-unverified 52948
 id-unverified 52949
-id 52950 52063
-id 52951 52064
+id-unverified 52950
+id-unverified 52951
 id-unverified 52952
 id-unverified 52958
 id-unverified 52960
@@ -38458,7 +38458,7 @@ id 52974 52084
 id-unverified 52975
 id-unverified 52976
 id-unverified 52977
-id 52978 52088
+id-unverified 52978
 id 52979 52089
 id 52980 52090
 id 52985 52098
@@ -38475,15 +38475,15 @@ id 53004 52118
 id 53005 52119
 id 53006 52120
 id 53008 52123
-id 53011 52126
+id-unverified 53011
 id 53012 52127
-id 53013 52128
-id 53014 52129
-id 53015 52130
+id-unverified 53013
+id-unverified 53014
+id-unverified 53015
 id 53016 52131
-id 53017 52132
-id 53018 52133
-id 53019 52134
+id-unverified 53017
+id-unverified 53018
+id-unverified 53019
 id-unverified 53020
 id-unverified 53021
 id 53022 52137
@@ -38493,37 +38493,37 @@ id 53027 530213
 id 53028 52140
 id 53029 52141
 id 53031 52143
-id 53032 52144
-id 53033 52145
+id-unverified 53032
+id-unverified 53033
 id 53034 52146
 id 53035 52147
 id 53036 52148
 id 53038 52151
 id 53039 52152
 id 53040 52153
-id 53041 52154
+id-unverified 53041
 id-unverified 53042
-id 53043 52156
-id 53044 52157
+id-unverified 53043
+id-unverified 53044
 id 53045 52158
 id-unverified 53046
 id 53047 52160
-id 53048 52150
+id-unverified 53048
 id 53049 52162
-id 53050 52163
+id-unverified 53050
 id 53051 52164
 id 53052 52165
-id 53053 52166
+id-unverified 53053
 id 53054 52167
 id 53055 52168
 id 53061 52169
-id 53062 52170
+id-unverified 53062
 id 53063 52171
 id 53064 52172
 id 53065 52173
 id 53066 52174
-id 53067 52175
-id 53068 52176
+id-unverified 53067
+id-unverified 53068
 id-unverified 53069
 id 53070 52178
 id 53071 52179
@@ -38543,12 +38543,12 @@ id-unverified 53086
 id-unverified 53087
 id 53089 52200
 id 53093 52206
-id 53094 52207
+id-unverified 53094
 id 53095 52208
 id 53097 52210
 id 53100 52213
-id 53101 52214
-id 53102 52215
+id-unverified 53101
+id-unverified 53102
 id 53103 52216
 id 53104 52217
 id-unverified 53105
@@ -38565,7 +38565,7 @@ id 53115 52228
 id 53116 52229
 id 53117 52230
 id 53118 52231
-id 53119 52232
+id-unverified 53119
 id 53120 52233
 id-unverified 53121
 id-unverified 53126
@@ -38586,7 +38586,7 @@ id 53140 52249
 id-unverified 53141
 id 53142 52252
 id 53145 52255
-id 53146 52256
+id-unverified 53146
 id 53147 52257
 id-unverified 53148
 id 53149 52259
@@ -38701,7 +38701,7 @@ id 53306 52409
 id-unverified 53307
 id-unverified 53308
 id-unverified 53309
-id 53310 52413
+id-unverified 53310
 id 53311 52414
 id 53312 52415
 id 53313 52416
@@ -38762,7 +38762,7 @@ id 53383 52487
 id-unverified 53387
 id-unverified 53393
 id-unverified 53394
-id 53402 52518
+id-unverified 53402
 id 53403 52522
 id 53405 52524
 id 53416 52540
@@ -38811,16 +38811,16 @@ id-unverified 53467
 id 53476 52613
 id-unverified 53502
 id-unverified 53503
-id 53505 52652
-id 53506 52653
+id-unverified 53505
+id-unverified 53506
 id 53507 52654
 id 53508 52655
 id 53509 52656
 id 53511 52658
-id 53512 52659
-id 53513 52660
-id 53514 52661
-id 53515 52662
+id-unverified 53512
+id-unverified 53513
+id-unverified 53514
+id-unverified 53515
 id 53516 52663
 id 53517 52664
 id 53518 52665
@@ -38913,9 +38913,9 @@ id 53648 52812
 id-unverified 53649
 id-unverified 53650
 id 53652 52819
-id 53653 52820
+id-unverified 53653
 id 53655 52822
-id 53656 52824
+id-unverified 53656
 id 53657 52825
 id-unverified 53658
 id 53659 52827
@@ -38977,7 +38977,7 @@ id-unverified 53730
 id-unverified 53731
 id-unverified 53732
 id-unverified 53733
-id 53734 52912
+id-unverified 53734
 id-unverified 53735
 id-unverified 53736
 id 53737 52916
@@ -38992,12 +38992,12 @@ id-unverified 53760
 id-unverified 53764
 id 53765 52954
 id 53768 52957
-id 53769 52958
+id-unverified 53769
 id-unverified 53774
 id 53777 52966
 id 53778 52967
-id 53779 52974
-id 53780 52975
+id-unverified 53779
+id-unverified 53780
 id 53781 52978
 id-unverified 53782
 id 53783 530241
@@ -39127,7 +39127,7 @@ id-unverified 53923
 id-unverified 53924
 id-unverified 53925
 id 53926 53115
-id 53927 53116
+id-unverified 53927
 id-unverified 53928
 id-unverified 53929
 id 53931 53120
@@ -39164,11 +39164,11 @@ id-unverified 53962
 id-unverified 53963
 id-unverified 53964
 id-unverified 53965
-id 53966 53155
+id-unverified 53966
 id-unverified 53967
 id-unverified 53968
 id-unverified 53969
-id 53970 53159
+id-unverified 53970
 id-unverified 53971
 id-unverified 53972
 id-unverified 53973
@@ -39212,8 +39212,8 @@ id 54011 53200
 id 54012 53201
 id 54013 53202
 id 54014 53203
-id 54015 53204
-id 54016 53205
+id-unverified 54015
+id-unverified 54016
 id 54017 53206
 id 54018 53207
 id 54019 53208
@@ -39224,10 +39224,10 @@ id 54023 53212
 id-unverified 54024
 id 54025 53214
 id 54027 53215
-id 54028 53216
-id 54029 53217
-id 54030 53218
-id 54031 53219
+id-unverified 54028
+id-unverified 54029
+id-unverified 54030
+id-unverified 54031
 id-unverified 54032
 id 54033 53221
 id 54034 53222
@@ -39236,7 +39236,7 @@ id 54036 53224
 id 54037 53225
 id 54038 53226
 id-unverified 54039
-id 54040 53228
+id-unverified 54040
 id 54041 53229
 id-unverified 54042
 id 54043 53231
@@ -39529,7 +39529,7 @@ id 54372 53515
 id 54373 53516
 id-unverified 54374
 id-unverified 54375
-id 54376 53519
+id-unverified 54376
 id-unverified 54377
 id-unverified 54378
 id-unverified 54379
@@ -39567,45 +39567,45 @@ id-unverified 54421
 id-unverified 54423
 id 54424 53100
 id 54425 53604
-id 54426 53605
+id-unverified 54426
 id 54427 53606
-id 54428 53607
+id-unverified 54428
 id 54429 53608
-id 54430 53609
+id-unverified 54430
 id 54431 53610
 id 54432 53611
-id 54433 53612
-id 54434 53613
-id 54435 53614
+id-unverified 54433
+id-unverified 54434
+id-unverified 54435
 id 54436 53615
 id 54437 53616
-id 54438 53617
-id 54439 53618
+id-unverified 54438
+id-unverified 54439
 id 54440 53619
 id 54441 53620
 id 54443 53622
-id 54444 53623
-id 54445 53624
-id 54446 53625
+id-unverified 54444
+id-unverified 54445
+id-unverified 54446
 id 54447 53626
-id 54448 53627
+id-unverified 54448
 id 54449 53628
-id 54450 53629
-id 54452 53631
-id 54453 53632
-id 54454 53633
-id 54455 53634
-id 54456 53635
-id 54457 53636
-id 54458 53637
-id 54459 53638
-id 54460 53639
-id 54461 53640
-id 54462 53641
-id 54463 53642
-id 54464 53643
-id 54465 53644
-id 54466 53645
+id-unverified 54450
+id-unverified 54452
+id-unverified 54453
+id-unverified 54454
+id-unverified 54455
+id-unverified 54456
+id-unverified 54457
+id-unverified 54458
+id-unverified 54459
+id-unverified 54460
+id-unverified 54461
+id-unverified 54462
+id-unverified 54463
+id-unverified 54464
+id-unverified 54465
+id-unverified 54466
 id-unverified 54469
 id-unverified 54470
 id-unverified 54471
@@ -39657,50 +39657,50 @@ id 54516 53692
 id 54519 53701
 id-unverified 54520
 id-unverified 54521
-id 54522 53705
-id 54523 53706
-id 54524 53707
-id 54525 53708
-id 54526 53709
-id 54527 53710
-id 54528 53711
+id-unverified 54522
+id-unverified 54523
+id-unverified 54524
+id-unverified 54525
+id-unverified 54526
+id-unverified 54527
+id-unverified 54528
 id 54529 53712
-id 54530 53713
-id 54531 53714
-id 54532 53715
+id-unverified 54530
+id-unverified 54531
+id-unverified 54532
 id 54533 53716
-id 54534 53717
-id 54535 53718
-id 54536 53719
-id 54537 53720
-id 54538 53721
-id 54540 53723
-id 54541 53724
-id 54542 53725
-id 54543 53726
-id 54544 53727
-id 54545 53728
-id 54546 53729
-id 54547 53730
-id 54548 53731
-id 54549 53732
-id 54550 53733
-id 54551 53734
-id 54552 53735
-id 54553 53736
-id 54554 53737
-id 54555 53738
-id 54556 53739
-id 54557 53740
-id 54558 53741
-id 54559 53742
-id 54560 53743
-id 54561 53744
-id 54562 53745
-id 54563 53746
-id 54564 53747
-id 54565 53748
-id 54566 53749
+id-unverified 54534
+id-unverified 54535
+id-unverified 54536
+id-unverified 54537
+id-unverified 54538
+id-unverified 54540
+id-unverified 54541
+id-unverified 54542
+id-unverified 54543
+id-unverified 54544
+id-unverified 54545
+id-unverified 54546
+id-unverified 54547
+id-unverified 54548
+id-unverified 54549
+id-unverified 54550
+id-unverified 54551
+id-unverified 54552
+id-unverified 54553
+id-unverified 54554
+id-unverified 54555
+id-unverified 54556
+id-unverified 54557
+id-unverified 54558
+id-unverified 54559
+id-unverified 54560
+id-unverified 54561
+id-unverified 54562
+id-unverified 54563
+id-unverified 54564
+id-unverified 54565
+id-unverified 54566
 id 54567 53750
 id 54576 53760
 id 54577 53761
@@ -39738,7 +39738,7 @@ id-unverified 54612
 id-unverified 54613
 id 54614 53800
 id 54615 53801
-id 54617 53813
+id-unverified 54617
 id-unverified 54618
 id-unverified 54619
 id-unverified 54620
@@ -39778,7 +39778,7 @@ id 54655 53855
 id-unverified 54656
 id 54657 53857
 id 54658 53858
-id 54659 53859
+id-unverified 54659
 id 54660 53860
 id 54661 53861
 id 54662 53862
@@ -39814,15 +39814,15 @@ id 54699 53888
 id 54700 53889
 id 54701 53890
 id 54702 53891
-id 54703 53892
+id-unverified 54703
 id 54705 53893
 id 54706 53894
 id 54707 53895
 id 54708 53896
 id 54709 53897
 id 54710 53898
-id 54711 53899
-id 54715 53900
+id-unverified 54711
+id-unverified 54715
 id 54719 53901
 id 54720 53902
 id-unverified 54721
@@ -39831,7 +39831,7 @@ id-unverified 54724
 id-unverified 54725
 id-unverified 54726
 id-unverified 54727
-id 54728 53909
+id-unverified 54728
 id 54731 53910
 id 54732 53911
 id 54733 53912
@@ -39841,7 +39841,7 @@ id 54736 53915
 id 54737 53916
 id-unverified 54738
 id 54739 53918
-id 54740 53919
+id-unverified 54740
 id 54742 53920
 id 54743 53921
 id-unverified 54744
@@ -39851,7 +39851,7 @@ id 54747 53925
 id 54748 53926
 id 54749 53927
 id 54750 530329
-id 54752 53928
+id-unverified 54752
 id 54753 53929
 id 54754 53930
 id-unverified 54755
@@ -39995,11 +39995,11 @@ id-unverified 54909
 id-unverified 54910
 id-unverified 54911
 id 54912 54116
-id 54913 54119
+id-unverified 54913
 id 54914 54120
 id 54915 54121
 id 54916 54122
-id 54917 54123
+id-unverified 54917
 id 54918 54124
 id 54919 54125
 id 54920 54126
@@ -40007,24 +40007,24 @@ id 54921 54127
 id 54922 54128
 id 54923 227781
 id 54924 530331
-id 54925 54129
+id-unverified 54925
 id 54926 54130
 id 54927 54131
 id 54928 54132
-id 54929 54133
-id 54930 54134
+id-unverified 54929
+id-unverified 54930
 id 54931 54135
 id 54932 54136
 id 54933 54137
-id 54934 54138
+id-unverified 54934
 id 54935 54139
 id 54936 54140
-id 54937 54141
+id-unverified 54937
 id 54938 54142
-id 54939 54143
-id 54940 54144
+id-unverified 54939
+id-unverified 54940
 id 54942 54145
-id 54943 54146
+id-unverified 54943
 id 54944 54147
 id 54945 54148
 id 54946 54149
@@ -40032,13 +40032,13 @@ id 54947 54150
 id 54948 54151
 id 54949 54152
 id 54950 54153
-id 54951 54154
+id-unverified 54951
 id 54952 54155
 id 54953 54156
-id 54954 54157
-id 54955 54158
-id 54956 54159
-id 54957 54160
+id-unverified 54954
+id-unverified 54955
+id-unverified 54956
+id-unverified 54957
 id 54958 54161
 id 54959 54162
 id 54960 54163
@@ -40055,9 +40055,9 @@ id 54970 54173
 id 54971 54174
 id 54972 54175
 id-unverified 54975
-id 54976 54257
+id-unverified 54976
 id-unverified 54977
-id 54978 53812
+id-unverified 54978
 id-unverified 54979
 id-unverified 54980
 id-unverified 54981
@@ -40196,7 +40196,7 @@ id 55119 54434
 id-unverified 55120
 id-unverified 55121
 id-unverified 55122
-id 55123 54439
+id-unverified 55123
 id 55124 54441
 id 55125 54442
 id 55126 54443
@@ -40252,7 +40252,7 @@ id 55177 54506
 id-unverified 55178
 id-unverified 55179
 id-unverified 55180
-id 55182 54514
+id-unverified 55182
 id-unverified 55183
 id-unverified 55184
 id-unverified 55185
@@ -40300,7 +40300,7 @@ id-unverified 55236
 id 55237 54576
 id 55238 54577
 id 55239 54578
-id 55240 54579
+id-unverified 55240
 id 55241 54580
 id-unverified 55242
 id-unverified 55243
@@ -40401,11 +40401,11 @@ id-unverified 55345
 id-unverified 55347
 id-unverified 55348
 id 55349 54708
-id 55350 54709
-id 55351 54710
-id 55352 54711
-id 55353 54712
-id 55354 54713
+id-unverified 55350
+id-unverified 55351
+id-unverified 55352
+id-unverified 55353
+id-unverified 55354
 id 55355 54714
 id 55356 54715
 id-unverified 55357
@@ -40423,7 +40423,7 @@ id-unverified 55369
 id 55370 54731
 id 55371 54732
 id 55372 54733
-id 55373 54734
+id-unverified 55373
 id-unverified 55374
 id-unverified 55375
 id 55376 54737
@@ -40491,7 +40491,7 @@ id-unverified 55437
 id 55438 54804
 id 55439 54805
 id-unverified 55440
-id 55441 54808
+id-unverified 55441
 id-unverified 55442
 id-unverified 55443
 id-unverified 55444
@@ -40501,7 +40501,7 @@ id 55447 54815
 id 55448 54816
 id 55449 54817
 id 55450 54818
-id 55451 54819
+id-unverified 55451
 id-unverified 55453
 id-unverified 55454
 id 55455 54822
@@ -40528,14 +40528,14 @@ id 55476 54843
 id 55477 54844
 id 55478 54845
 id 55479 54846
-id 55480 54847
+id-unverified 55480
 id 55481 54848
-id 55482 54849
-id 55483 54850
-id 55484 54851
-id 55485 54852
-id 55486 54853
-id 55487 54854
+id-unverified 55482
+id-unverified 55483
+id-unverified 55484
+id-unverified 55485
+id-unverified 55486
+id-unverified 55487
 id 55488 54855
 id 55489 54856
 id 55490 54857
@@ -40544,7 +40544,7 @@ id 55492 54859
 id 55493 54860
 id 55494 54861
 id 55495 54862
-id 55496 54863
+id-unverified 55496
 id 55497 54864
 id 55498 54865
 id 55499 54866
@@ -40606,20 +40606,20 @@ id-unverified 55559
 id 55560 54940
 id 55561 54944
 id 55562 54945
-id 55563 54946
+id-unverified 55563
 id 55564 54947
 id 55565 54948
 id 55566 54949
 id 55567 54950
 id 55568 54951
-id 55569 54952
+id-unverified 55569
 id 55570 54953
 id 55571 54954
 id 55572 54955
 id 55573 54956
 id 55574 54957
 id 55575 54958
-id 55576 54959
+id-unverified 55576
 id 55577 54960
 id 55578 54961
 id 55579 54962
@@ -40701,7 +40701,7 @@ id-unverified 55656
 id-unverified 55657
 id-unverified 55658
 id-unverified 55659
-id 55660 55054
+id-unverified 55660
 id 55661 55055
 id 55662 55056
 id 55663 55057
@@ -40809,7 +40809,7 @@ id-unverified 55769
 id-unverified 55770
 id-unverified 55771
 id-unverified 55772
-id 55773 55181
+id-unverified 55773
 id 55774 55182
 id 55775 55183
 id 55776 55184
@@ -41136,10 +41136,10 @@ id-unverified 56115
 id-unverified 56116
 id-unverified 56117
 id-unverified 56118
-id 56119 55590
+id-unverified 56119
 id-unverified 56120
 id-unverified 56121
-id 56122 55593
+id-unverified 56122
 id-unverified 56123
 id-unverified 56124
 id-unverified 56125
@@ -41351,7 +41351,7 @@ id-unverified 56335
 id-unverified 56336
 id 56337 56058
 id 56338 55843
-id 56339 55827
+id-unverified 56339
 id 56340 56161
 id 56341 56079
 id-unverified 56342
@@ -41492,7 +41492,7 @@ id 56490 55946
 id 56491 56037
 id 56492 56038
 id 56494 56040
-id 56495 53811
+id-unverified 56495
 id-unverified 56496
 id 56497 56062
 id-unverified 56498
@@ -41714,7 +41714,7 @@ id 56722 56363
 id 56723 56364
 id 56724 56365
 id 56725 56366
-id 56726 56367
+id-unverified 56726
 id 56727 56368
 id 56729 56369
 id 56732 56370
@@ -41756,7 +41756,7 @@ id-unverified 56771
 id-unverified 56772
 id 56773 56414
 id 56774 56415
-id 56775 56416
+id-unverified 56775
 id 56779 56417
 id 56780 56418
 id-unverified 56782
@@ -41848,7 +41848,7 @@ id 56903 56528
 id 56904 56529
 id 56917 56530
 id 56918 56531
-id 56919 56532
+id-unverified 56919
 id 56920 56533
 id-unverified 56921
 id-unverified 56926
@@ -47033,12 +47033,12 @@ id-unverified 63354
 id-unverified 63355
 id-unverified 63356
 id-unverified 63357
-id 63358 62416
+id-unverified 63358
 id 63359 62417
 id-unverified 63360
 id-unverified 63361
-id 63362 62420
-id 63363 62421
+id-unverified 63362
+id-unverified 63363
 id 63364 62422
 id-unverified 63365
 id 63366 62424
@@ -47070,7 +47070,7 @@ id 63407 12040
 id 63408 62462
 id 63409 62463
 id 63410 62464
-id 63411 62465
+id-unverified 63411
 id-unverified 63412
 id-unverified 63413
 id 63416 62476
@@ -47151,7 +47151,6 @@ id 63527 62594
 id 63528 62595
 id-unverified 63529
 id-unverified 63530
-id 63531 62598
 id-unverified 63532
 id-unverified 63533
 id 63534 62603
@@ -47186,31 +47185,31 @@ id 63564 62623
 id-unverified 63565
 id-unverified 63566
 id 63567 62626
-id 63568 62627
+id-unverified 63568
 id-unverified 63570
 id 63571 62630
 id 63572 62631
 id-unverified 63574
 id-unverified 63575
 id-unverified 63576
-id 63581 62636
+id-unverified 63581
 id 63582 62637
-id 63583 62638
+id-unverified 63583
 id-unverified 63584
-id 63585 62640
+id-unverified 63585
 id 63586 62641
-id 63587 62642
-id 63588 62643
-id 63589 62644
+id-unverified 63587
+id-unverified 63588
+id-unverified 63589
 id 63590 62645
 id 63591 62646
 id-unverified 63592
 id-unverified 63593
 id-unverified 63594
 id-unverified 63595
-id 63596 62651
+id-unverified 63596
 id 63597 62652
-id 63598 62653
+id-unverified 63598
 id 63599 62654
 id 63600 62655
 id-unverified 63601
@@ -47230,9 +47229,9 @@ id 63615 62669
 id 63616 62670
 id 63617 62671
 id 63619 62672
-id 63620 62673
-id 63621 62674
-id 63622 62675
+id-unverified 63620
+id-unverified 63621
+id-unverified 63622
 id 63623 62676
 id 63624 62677
 id-unverified 63625
@@ -47324,7 +47323,7 @@ id-unverified 63753
 id-unverified 63754
 id-unverified 63756
 id 63757 62796
-id 63758 62797
+id-unverified 63758
 id-unverified 63759
 id-unverified 63760
 id-unverified 63761
@@ -50466,9 +50465,9 @@ id 67623 66362
 id 67624 66363
 id 67625 66364
 id 67626 66365
-id 67627 66366
-id 67628 66367
-id 67629 66368
+id-unverified 67627
+id-unverified 67628
+id-unverified 67629
 id 67630 66369
 id 67631 66370
 id 67632 66371
@@ -50495,9 +50494,9 @@ id 67652 66391
 id 67653 66392
 id 67654 66393
 id 67655 66394
-id 67657 66396
+id-unverified 67657
 id 67658 66397
-id 67659 66398
+id-unverified 67659
 id 67660 66399
 id 67661 66400
 id 67663 66401
@@ -50535,32 +50534,32 @@ id 67696 66433
 id 67697 66434
 id-unverified 67698
 id 67699 66436
-id 67700 66437
+id-unverified 67700
 id 67701 66438
 id 67702 66439
 id 67703 66440
 id 67704 66441
 id 67705 66442
 id 67706 66443
-id 67707 66444
+id-unverified 67707
 id 67708 66445
 id 67709 66446
 id 67710 66447
 id 67711 66448
 id-unverified 67714
-id 67715 66451
+id-unverified 67715
 id 67716 66452
 id 67717 66453
 id 67718 66454
 id 67719 66455
-id 67720 66456
+id-unverified 67720
 id-unverified 67721
 id 67722 66458
-id 67723 66459
+id-unverified 67723
 id 67724 66460
 id 67725 66461
 id 67726 66462
-id 67727 66463
+id-unverified 67727
 id-unverified 67728
 id-unverified 67729
 id-unverified 67730
@@ -50578,7 +50577,7 @@ id 67742 66478
 id 67743 66479
 id 67744 66480
 id 67745 66481
-id 67746 66482
+id-unverified 67746
 id-unverified 67747
 id-unverified 67748
 id-unverified 67749
@@ -50782,7 +50781,7 @@ id 68015 66774
 id-unverified 68016
 id-unverified 68017
 id-unverified 68018
-id 68019 66778
+id-unverified 68019
 id 68020 66779
 id-unverified 68021
 id 68022 66781
@@ -50954,7 +50953,7 @@ id 68238 66981
 id 68239 66982
 id 68240 66983
 id-unverified 68243
-id 68244 66987
+id-unverified 68244
 id 68245 66988
 id 68246 66989
 id-unverified 68247
@@ -51025,7 +51024,7 @@ id-unverified 68324
 id 68325 67057
 id-unverified 68330
 id 68331 67059
-id 68333 67060
+id-unverified 68333
 id 68334 67061
 id-unverified 68335
 id 68337 67063
@@ -51113,9 +51112,9 @@ id-unverified 68458
 id-unverified 68459
 id 68460 67160
 id 68462 67164
-id 68463 67165
+id-unverified 68463
 id 68464 67166
-id 68465 67167
+id-unverified 68465
 id 68469 67170
 id 68470 67171
 id 68471 67172
@@ -51168,37 +51167,37 @@ id 68529 67221
 id 68531 67222
 id-unverified 68532
 id 68533 67224
-id 68534 67234
+id-unverified 68534
 id 68535 67235
 id 68536 67236
 id 68537 67237
 id 68538 67238
-id 68539 67239
+id-unverified 68539
 id 68540 67240
 id 68541 67241
-id 68542 67242
+id-unverified 68542
 id 68543 67243
 id 68544 67244
 id 68545 67245
 id 68546 67246
 id 68547 67247
-id 68548 67248
+id-unverified 68548
 id 68549 67249
-id 68550 67250
-id 68551 67251
-id 68552 51293
+id-unverified 68550
+id-unverified 68551
+id-unverified 68552
 id 68553 67253
-id 68554 67254
+id-unverified 68554
 id-unverified 68555
-id 68556 67256
-id 68557 67257
+id-unverified 68556
+id-unverified 68557
 id-unverified 68567
 id-unverified 68568
 id-unverified 68569
-id 68570 67261
+id-unverified 68570
 id-unverified 68571
 id 68572 67263
-id 68573 67264
+id-unverified 68573
 id-unverified 68576
 id-unverified 68585
 id-unverified 68586
@@ -51211,21 +51210,21 @@ id 68598 67296
 id 68599 67297
 id-unverified 68600
 id 68601 67299
-id 68617 67315
+id-unverified 68617
 id 68618 67316
 id 68619 67317
 id 68620 67318
 id 68621 67319
 id 68625 67322
 id 68626 67323
-id 68628 67325
+id-unverified 68628
 id-unverified 68629
-id 68630 67327
+id-unverified 68630
 id 68651 67347
 id 68652 67348
 id-unverified 68653
 id-unverified 68654
-id 68655 67355
+id-unverified 68655
 id-unverified 68656
 id 68662 67361
 id 68663 67362
@@ -51242,17 +51241,17 @@ id 68675 67373
 id 68676 67374
 id 68677 67375
 id 68678 67376
-id 68679 67377
+id-unverified 68679
 id 68680 67378
 id 68681 67379
 id 68682 67380
 id 68685 67382
 id 68686 67383
-id 68687 67384
+id-unverified 68687
 id 68688 67385
 id 68689 67386
-id 68690 67387
-id 68691 67388
+id-unverified 68690
+id-unverified 68691
 id 68695 67390
 id-unverified 68696
 id 68697 67392
@@ -51281,24 +51280,24 @@ id-unverified 68721
 id-unverified 68722
 id-unverified 68728
 id 68730 67422
-id 68731 67425
+id-unverified 68731
 id 68735 67429
 id 68736 67430
 id 68738 67431
 id-unverified 68739
 id 68741 67434
-id 68742 67435
-id 68743 67436
-id 68744 67437
+id-unverified 68742
+id-unverified 68743
+id-unverified 68744
 id 68745 67438
-id 68746 67439
+id-unverified 68746
 id 68747 67440
 id 68748 67441
 id 68749 67442
 id 68752 67447
 id 68753 67448
 id 68754 67449
-id 68755 67450
+id-unverified 68755
 id 68756 67451
 id 68757 67452
 id-unverified 68758
@@ -51320,7 +51319,7 @@ id 68778 67468
 id 68779 67469
 id 68780 67470
 id 68781 67471
-id 68782 67472
+id-unverified 68782
 id 68783 67473
 id 68784 67474
 id 68785 67475
@@ -51335,8 +51334,8 @@ id-unverified 68797
 id 68798 67487
 id 68799 67488
 id 68800 67489
-id 68801 67490
-id 68802 67491
+id-unverified 68801
+id-unverified 68802
 id 68803 67492
 id 68804 67493
 id-unverified 68805
@@ -51421,9 +51420,9 @@ id 68893 67576
 id 68894 67577
 id-unverified 68895
 id-unverified 68896
-id 68897 67580
+id-unverified 68897
 id 68898 67581
-id 68900 67608
+id-unverified 68900
 id-unverified 68905
 id-unverified 68907
 id 68910 67595
@@ -51485,8 +51484,8 @@ id 68994 67673
 id-unverified 68995
 id-unverified 68996
 id-unverified 68997
-id 68998 67677
-id 68999 67678
+id-unverified 68998
+id-unverified 68999
 id 69000 67679
 id-unverified 69001
 id 69002 67681
@@ -51643,7 +51642,7 @@ id 69197 67852
 id 69198 67853
 id 69199 67854
 id 69200 67855
-id 69201 67856
+id-unverified 69201
 id 69202 67857
 id 69203 67860
 id 69205 67861
@@ -51760,14 +51759,14 @@ id 69354 67993
 id 69355 67994
 id 69360 67997
 id 69361 67998
-id 69362 68057
+id-unverified 69362
 id 69371 68003
 id 69372 68004
 id 69373 68005
 id 69374 68006
 id-unverified 69375
 id-unverified 69377
-id 69378 68010
+id-unverified 69378
 id-unverified 69379
 id-unverified 69380
 id-unverified 69393
@@ -51859,7 +51858,7 @@ id 69510 68163
 id 69511 68164
 id 69514 68165
 id 69515 68166
-id 69516 68167
+id-unverified 69516
 id 69517 68168
 id 69518 68169
 id 69519 68170
@@ -51951,7 +51950,7 @@ id-unverified 69625
 id 69626 68273
 id 69627 68274
 id 69628 68275
-id 69629 68415
+id-unverified 69629
 id-unverified 69630
 id-unverified 69631
 id 69632 68279
@@ -52015,7 +52014,7 @@ id 69705 68342
 id-unverified 69706
 id-unverified 69708
 id-unverified 69709
-id 69710 68354
+id-unverified 69710
 id 69711 68355
 id-unverified 69713
 id-unverified 69716
@@ -52036,7 +52035,7 @@ id-unverified 69734
 id 69737 68378
 id 69738 15241
 id-unverified 69739
-id 69740 68369
+id-unverified 69740
 id-unverified 69741
 id-unverified 69742
 id-unverified 69743
@@ -52199,21 +52198,21 @@ id-unverified 69941
 id 69942 68601
 id-unverified 69943
 id 69944 68603
-id 69945 68604
+id-unverified 69945
 id 69946 68605
-id 69947 68606
+id-unverified 69947
 id 69948 68607
 id-unverified 69949
 id-unverified 69950
-id 69951 68610
+id-unverified 69951
 id-unverified 69952
-id 69953 68612
+id-unverified 69953
 id 69955 68613
 id 69956 68614
 id 69957 68615
-id 69958 68619
+id-unverified 69958
 id-unverified 69959
-id 69960 68621
+id-unverified 69960
 id-unverified 69968
 id 69969 68629
 id 69970 68630
@@ -52310,8 +52309,8 @@ id-unverified 70078
 id-unverified 70079
 id 70086 68736
 id 70089 68739
-id 70090 68740
-id 70091 68741
+id-unverified 70090
+id-unverified 70091
 id 70092 68742
 id 70093 68743
 id 70094 68744
@@ -52433,10 +52432,10 @@ id 70254 68903
 id 70255 68904
 id 70256 68905
 id 70257 68906
-id 70258 68907
+id-unverified 70258
 id 70259 68908
-id 70260 68909
-id 70261 68910
+id-unverified 70260
+id-unverified 70261
 id 70262 68911
 id 70263 68912
 id 70264 68913
@@ -52461,15 +52460,15 @@ id 70283 68932
 id 70284 68933
 id-unverified 70285
 id 70287 68936
-id 70289 68938
-id 70290 68939
+id-unverified 70289
+id-unverified 70290
 id-unverified 70291
-id 70292 68941
+id-unverified 70292
 id-unverified 70293
-id 70294 68943
+id-unverified 70294
 id 70295 68944
 id-unverified 70296
-id 70297 68946
+id-unverified 70297
 id-unverified 70298
 id 70299 68948
 id-unverified 70300
@@ -52479,7 +52478,7 @@ id 70303 68952
 id 70304 68953
 id-unverified 70305
 id-unverified 70306
-id 70307 68956
+id-unverified 70307
 id 70308 68957
 id-unverified 70309
 id-unverified 70310
@@ -52560,7 +52559,7 @@ id-unverified 70402
 id-unverified 70403
 id 70404 69039
 id-unverified 70405
-id 70406 69130
+id-unverified 70406
 id-unverified 70409
 id-unverified 70410
 id-unverified 70411
@@ -52651,10 +52650,10 @@ id-unverified 70498
 id-unverified 70499
 id 70500 69139
 id 70501 69140
-id 70502 69141
-id 70503 69142
+id-unverified 70502
+id-unverified 70503
 id 70504 69143
-id 70505 69144
+id-unverified 70505
 id 70506 69145
 id 70507 69146
 id-unverified 70508
@@ -52662,16 +52661,16 @@ id 70509 69148
 id 70510 69149
 id 70511 69150
 id 70512 69151
-id 70513 69152
-id 70514 69153
+id-unverified 70513
+id-unverified 70514
 id-unverified 70515
 id-unverified 70516
 id 70517 69156
 id-unverified 70518
 id 70519 69158
-id 70520 69159
+id-unverified 70520
 id 70521 69160
-id 70522 69161
+id-unverified 70522
 id 70523 69162
 id 70524 69163
 id 70525 69164
@@ -52685,7 +52684,7 @@ id-unverified 70532
 id 70533 69172
 id 70534 69173
 id 70535 69174
-id 70536 69176
+id-unverified 70536
 id-unverified 70537
 id 70538 69177
 id-unverified 70539
@@ -52754,12 +52753,12 @@ id-unverified 70610
 id-unverified 70613
 id-unverified 70614
 id 70615 69249
-id 70616 69250
+id-unverified 70616
 id 70618 69252
-id 70619 69253
+id-unverified 70619
 id 70620 69254
 id 70621 69255
-id 70622 69256
+id-unverified 70622
 id 70623 69257
 id 70624 69258
 id 70625 69259
@@ -52772,11 +52771,11 @@ id-unverified 70633
 id-unverified 70638
 id 70639 69269
 id 70640 69270
-id 70641 69271
+id-unverified 70641
 id 70642 69272
 id 70643 69273
 id 70644 69274
-id 70646 69275
+id-unverified 70646
 id 70647 69276
 id-unverified 70648
 id 70649 69278
@@ -52871,16 +52870,16 @@ id 70757 69382
 id-unverified 70759
 id 70760 69386
 id 70761 69387
-id 70762 69388
+id-unverified 70762
 id 70763 69389
 id 70764 69390
-id 70765 69391
+id-unverified 70765
 id 70766 69392
 id 70767 69393
 id 70768 69394
 id 70769 69395
-id 70770 69396
-id 70771 69397
+id-unverified 70770
+id-unverified 70771
 id-unverified 70772
 id-unverified 70774
 id-unverified 70775
@@ -52911,7 +52910,7 @@ id-unverified 70804
 id 70805 69428
 id 70806 69429
 id 70807 69430
-id 70808 69431
+id-unverified 70808
 id 70809 69432
 id 70810 69433
 id-unverified 70811
@@ -53016,7 +53015,7 @@ id-unverified 70921
 id-unverified 70922
 id-unverified 70923
 id 70924 69540
-id 70925 69541
+id-unverified 70925
 id 70926 69542
 id-unverified 70927
 id 70928 69544
@@ -53151,7 +53150,7 @@ id-unverified 71079
 id 71080 69698
 id 71081 69699
 id 71082 69700
-id 71083 69701
+id-unverified 71083
 id-unverified 71084
 id 71085 69703
 id 71086 69704
@@ -53186,11 +53185,11 @@ id 71122 69733
 id 71123 69734
 id-unverified 71124
 id 71125 69738
-id 71126 69739
+id-unverified 71126
 id 71127 69740
 id 71128 69741
 id 71129 69742
-id 71130 69743
+id-unverified 71130
 id 71131 69744
 id 71132 69745
 id 71133 69746
@@ -53227,10 +53226,10 @@ id-unverified 71198
 id 71199 69783
 id-unverified 71201
 id 71202 69786
-id 71203 69787
-id 71204 69788
+id-unverified 71203
+id-unverified 71204
 id 71205 69789
-id 71206 69790
+id-unverified 71206
 id 71207 69791
 id 71208 69792
 id 71209 69793
@@ -53292,11 +53291,11 @@ id 71274 69856
 id 71275 69857
 id 71276 69858
 id 71277 69859
-id 71278 69860
+id-unverified 71278
 id 71279 69861
 id 71280 69862
 id 71281 69863
-id 71282 69864
+id-unverified 71282
 id-unverified 71283
 id-unverified 71286
 id-unverified 71287
@@ -55608,8 +55607,8 @@ id 74129 72457
 id 74130 72458
 id-unverified 74131
 id 74132 72460
-id 74133 72461
-id 74135 72463
+id-unverified 74133
+id-unverified 74135
 id 74136 72464
 id 74138 72466
 id 74139 72467
@@ -56796,7 +56795,7 @@ id-unverified 75615
 id 75616 73879
 id 75617 73880
 id 75618 73881
-id 75619 73882
+id-unverified 75619
 id 75620 73883
 id 75621 73884
 id 75622 73885
@@ -56806,7 +56805,7 @@ id 75625 73888
 id 75626 73889
 id 75627 73890
 id 75628 73891
-id 75629 73892
+id-unverified 75629
 id 75630 73893
 id 75631 73894
 id 75632 73895
@@ -56852,7 +56851,7 @@ id 75677 73940
 id-unverified 75678
 id 75679 73943
 id 75680 73944
-id 75681 73929
+id-unverified 75681
 id 75683 73947
 id 75684 73948
 id 75685 73949
@@ -56959,7 +56958,7 @@ id-unverified 75817
 id-unverified 75819
 id-unverified 75822
 id-unverified 75823
-id 75824 74091
+id-unverified 75824
 id 75825 74092
 id 75826 74093
 id 75827 74094
@@ -57272,7 +57271,7 @@ id 76214 74488
 id 76215 74489
 id 76216 74490
 id 76219 74493
-id 76220 74494
+id-unverified 76220
 id 76221 74495
 id 76222 74496
 id 76223 74497
@@ -57553,13 +57552,13 @@ id 76547 74798
 id 76548 74799
 id 76549 74800
 id 76550 74801
-id 76553 74804
+id-unverified 76553
 id-unverified 76554
-id 76555 74806
+id-unverified 76555
 id 76556 74807
 id-unverified 76557
-id 76558 74809
-id 76559 74810
+id-unverified 76558
+id-unverified 76559
 id 76561 74811
 id 76562 74812
 id-unverified 76563
@@ -57618,7 +57617,7 @@ id 76643 74885
 id 76644 74886
 id 76645 74887
 id 76646 74888
-id 76647 74889
+id-unverified 76647
 id-unverified 76650
 id-unverified 76651
 id 76652 74895
@@ -57808,7 +57807,7 @@ id-unverified 76861
 id-unverified 76863
 id-unverified 76864
 id-unverified 76866
-id 76867 75096
+id-unverified 76867
 id 76869 75107
 id-unverified 76870
 id-unverified 76871
@@ -58100,25 +58099,25 @@ id-unverified 77228
 id 77233 75448
 id 77234 75449
 id 77236 75451
-id 77238 75453
+id-unverified 77238
 id 77239 75454
 id 77240 75455
 id 77241 75456
 id 77242 75457
 id 77243 75458
 id 77244 75459
-id 77245 75460
+id-unverified 77245
 id 77246 75461
 id 77247 75462
 id 77249 75463
 id 77250 75464
 id 77251 75465
 id-unverified 77252
-id 77253 75467
+id-unverified 77253
 id 77254 75468
-id 77255 75469
+id-unverified 77255
 id 77256 75470
-id 77257 75471
+id-unverified 77257
 id 77258 75472
 id 77259 75473
 id 77260 75474
@@ -58163,7 +58162,7 @@ id-unverified 77301
 id 77302 75510
 id 77303 75511
 id 77304 75512
-id 77305 75513
+id-unverified 77305
 id 77306 75514
 id 77307 75515
 id 77308 75516
@@ -58200,8 +58199,8 @@ id 77343 75543
 id 77344 75544
 id 77345 75545
 id-unverified 77346
-id 77348 75547
-id 77349 75548
+id-unverified 77348
+id-unverified 77349
 id 77350 75549
 id 77351 75550
 id 77352 75551
@@ -58238,7 +58237,7 @@ id-unverified 77390
 id-unverified 77391
 id-unverified 77392
 id-unverified 77394
-id 77396 75589
+id-unverified 77396
 id 77397 75590
 id 77399 75591
 id 77400 75592
@@ -58272,7 +58271,7 @@ id 77457 75650
 id 77458 75651
 id 77459 75652
 id 77460 75653
-id 77461 75655
+id-unverified 77461
 id 77462 75656
 id-unverified 77463
 id-unverified 77464
@@ -58308,19 +58307,19 @@ id 77500 75690
 id-unverified 77501
 id 77502 75693
 id 77503 75694
-id 77505 75696
+id-unverified 77505
 id 77508 75699
-id 77510 75701
+id-unverified 77510
 id 77511 75702
 id 77512 75703
 id 77513 75704
 id 77514 75705
-id 77515 75706
+id-unverified 77515
 id 77516 75707
-id 77518 75709
+id-unverified 77518
 id-unverified 77519
-id 77520 75711
-id 77521 75712
+id-unverified 77520
+id-unverified 77521
 id 77529 75717
 id-unverified 77533
 id 77534 75722
@@ -58345,7 +58344,7 @@ id 77553 75739
 id 77554 75740
 id-unverified 77555
 id-unverified 77556
-id 77557 75743
+id-unverified 77557
 id-unverified 77558
 id-unverified 77559
 id-unverified 77560
@@ -58367,7 +58366,7 @@ id 77576 75762
 id 77577 75763
 id 77578 530722
 id-unverified 77580
-id 77581 75766
+id-unverified 77581
 id-unverified 77582
 id-unverified 77583
 id-unverified 77584
@@ -58428,7 +58427,7 @@ id 77648 75826
 id-unverified 77649
 id-unverified 77650
 id 77651 75829
-id 77652 75830
+id-unverified 77652
 id-unverified 77653
 id 77654 75832
 id-unverified 77655
@@ -58437,8 +58436,8 @@ id-unverified 77657
 id-unverified 77658
 id-unverified 77659
 id-unverified 77660
-id 77661 75839
-id 77662 75840
+id-unverified 77661
+id-unverified 77662
 id-unverified 77665
 id-unverified 77666
 id-unverified 77667
@@ -58493,7 +58492,7 @@ id-unverified 77759
 id-unverified 77760
 id-unverified 77763
 id-unverified 77764
-id 77765 75939
+id-unverified 77765
 id-unverified 77766
 id 77769 75943
 id 77772 75946
@@ -58558,7 +58557,7 @@ id-unverified 77847
 id 77848 76015
 id 77849 76016
 id-unverified 77850
-id 77851 76018
+id-unverified 77851
 id 77852 76019
 id 77853 76020
 id-unverified 77854
@@ -58567,7 +58566,7 @@ id 77856 76023
 id 77857 76024
 id 77858 76025
 id 77859 76026
-id 77860 76027
+id-unverified 77860
 id 77861 76028
 id-unverified 77862
 id-unverified 77863
@@ -58865,7 +58864,7 @@ id 78244 76407
 id 78245 76408
 id-unverified 78251
 id 78252 76413
-id 78253 76414
+id-unverified 78253
 id 78254 76415
 id 78255 76416
 id-unverified 78256
@@ -58886,7 +58885,7 @@ id 78270 76431
 id 78271 76432
 id 78272 76433
 id 78273 76434
-id 78274 76435
+id-unverified 78274
 id 78275 76436
 id 78276 76437
 id 78278 76438
@@ -58915,8 +58914,8 @@ id 78302 76460
 id 78303 76461
 id-unverified 78304
 id-unverified 78305
-id 78306 76464
-id 78308 76465
+id-unverified 78306
+id-unverified 78308
 id 78309 76466
 id 78310 76467
 id 78311 76468
@@ -58946,7 +58945,7 @@ id-unverified 78337
 id-unverified 78338
 id-unverified 78339
 id-unverified 78340
-id 78341 76498
+id-unverified 78341
 id-unverified 78342
 id-unverified 78343
 id-unverified 78344
@@ -59018,7 +59017,7 @@ id-unverified 78430
 id-unverified 78431
 id-unverified 78434
 id-unverified 78435
-id 78436 76575
+id-unverified 78436
 id 78437 76576
 id 78440 76577
 id 78441 76578
@@ -59061,7 +59060,7 @@ id-unverified 78494
 id-unverified 78496
 id-unverified 78497
 id 78498 76619
-id 78501 76620
+id-unverified 78501
 id-unverified 78502
 id-unverified 78503
 id-unverified 78507
@@ -59268,7 +59267,7 @@ id-unverified 78737
 id 78738 76862
 id 78739 76863
 id 78740 76864
-id 78741 76866
+id-unverified 78741
 id-unverified 78742
 id 78743 76868
 id 78744 76869
@@ -59592,7 +59591,7 @@ id 79098 77210
 id-unverified 79099
 id-unverified 79100
 id 79102 77214
-id 79103 77215
+id-unverified 79103
 id-unverified 79105
 id 79106 77219
 id-unverified 79107
@@ -59634,7 +59633,7 @@ id-unverified 79143
 id 79144 77258
 id-unverified 79145
 id 79146 77260
-id 79147 77261
+id-unverified 79147
 id-unverified 79148
 id-unverified 79149
 id-unverified 79150
@@ -59671,11 +59670,11 @@ id 79184 77304
 id-unverified 79185
 id-unverified 79186
 id-unverified 79187
-id 79188 77308
+id-unverified 79188
 id 79190 77310
 id 79191 77311
 id-unverified 79192
-id 79193 77313
+id-unverified 79193
 id-unverified 79194
 id-unverified 79195
 id 79196 77316
@@ -62124,20 +62123,20 @@ id 82071 79992
 id-unverified 82073
 id 82074 79937
 id 82075 79938
-id 82076 79939
+id-unverified 82076
 id 82081 79944
-id 82082 79945
-id 82083 79946
+id-address 82082 79945
+id-unverified 82083
 id 82084 79947
 id-unverified 82085
 id 82086 79949
-id 82087 79950
+id-unverified 82087
 id-unverified 82089
 id-unverified 82090
 id-unverified 82091
 id-unverified 82093
 id 82094 79956
-id 82096 79958
+id-unverified 82096
 id 82097 79959
 id-unverified 82100
 id 82109 530783
@@ -62169,7 +62168,7 @@ id-unverified 82151
 id-unverified 82152
 id-unverified 82166
 id 82167 80059
-id 82169 80061
+id-unverified 82169
 id 82170 80062
 id-unverified 82171
 id 82179 80076
@@ -62199,20 +62198,20 @@ id 82210 80189
 id 82211 80190
 id 82212 80191
 id 82213 80192
-id 82214 80193
+id-unverified 82214
 id-unverified 82216
 id-unverified 82219
 id-unverified 82221
 id-unverified 82222
 id 82223 80200
-id 82224 80201
+id-unverified 82224
 id 82225 80202
-id 82227 80204
+id-unverified 82227
 id 82228 80205
 id 82229 80206
 id 82230 80207
 id 82232 80209
-id 82233 80210
+id-unverified 82233
 id 82234 80211
 id 82237 80214
 id 82238 80215
@@ -62271,8 +62270,8 @@ id 82308 80285
 id 82310 80287
 id 82311 80288
 id 82312 80289
-id 82313 80290
-id 82314 80291
+id-unverified 82313
+id-unverified 82314
 id 82318 80295
 id 82319 80296
 id 82320 80297
@@ -62428,7 +62427,7 @@ id 82534 80421
 id 82535 80422
 id 82536 80423
 id 82537 80425
-id 82539 80427
+id-unverified 82539
 id-unverified 82540
 id 82541 80429
 id 82546 80433
@@ -62526,7 +62525,7 @@ id 82656 80537
 id-unverified 82659
 id-unverified 82660
 id-unverified 82663
-id 82664 80546
+id-unverified 82664
 id 82665 80547
 id 82666 80548
 id 82667 80549
@@ -62546,10 +62545,10 @@ id-unverified 82684
 id-unverified 82685
 id-unverified 82686
 id-unverified 82687
-id 82688 80566
+id-unverified 82688
 id-unverified 82689
 id-unverified 82690
-id 82691 80569
+id-unverified 82691
 id-unverified 82693
 id-unverified 82694
 id-unverified 82695
@@ -62597,8 +62596,8 @@ id 82746 80643
 id-unverified 82747
 id 82748 80645
 id-unverified 82749
-id 82750 80649
-id 82751 80650
+id-unverified 82750
+id-unverified 82751
 id-unverified 82752
 id-unverified 82753
 id 82756 80652
@@ -62642,11 +62641,11 @@ id-unverified 82799
 id 82800 80697
 id-unverified 82801
 id 82803 80700
-id 82804 80701
+id-unverified 82804
 id-unverified 82805
 id-unverified 82806
 id-unverified 82807
-id 82808 80706
+id-unverified 82808
 id-unverified 82809
 id 82810 80708
 id-unverified 82811
@@ -62744,7 +62743,7 @@ id 82918 80812
 id 82919 80813
 id 82920 80814
 id 82921 80815
-id 82922 80816
+id-unverified 82922
 id 82923 80817
 id 82924 80826
 id-unverified 82925
@@ -62763,10 +62762,10 @@ id-unverified 82939
 id-unverified 82940
 id 82941 80838
 id-unverified 82942
-id 82943 80840
-id 82944 80841
-id 82945 80842
-id 82946 80843
+id-unverified 82943
+id-unverified 82944
+id-unverified 82945
+id-unverified 82946
 id 82948 80849
 id 82950 80851
 id 82951 80852
@@ -62906,7 +62905,7 @@ id-unverified 83156
 id-unverified 83157
 id-unverified 83158
 id 83160 81096
-id 83161 81097
+id-unverified 83161
 id-unverified 83162
 id-unverified 83163
 id-unverified 83164
@@ -62990,7 +62989,7 @@ id-unverified 83262
 id-unverified 83263
 id-unverified 83264
 id 83265 81202
-id 83266 81203
+id-unverified 83266
 id-unverified 83267
 id 83268 81205
 id 83269 81206
@@ -63097,7 +63096,7 @@ id-unverified 83398
 id-unverified 83399
 id-unverified 83400
 id-unverified 83401
-id 83402 81371
+id-unverified 83402
 id 83403 81346
 id 83404 81347
 id 83405 81348
@@ -63262,7 +63261,7 @@ id-unverified 83666
 id 83667 81616
 id 83668 81617
 id-unverified 83670
-id 83671 81609
+id-unverified 83671
 id 83672 81620
 id 83673 81622
 id-unverified 83677
@@ -63309,7 +63308,7 @@ id-unverified 83762
 id-unverified 83763
 id-unverified 83764
 id-unverified 83765
-id 83766 81705
+id-unverified 83766
 id-unverified 83767
 id 83768 81707
 id 83769 81708
@@ -63388,7 +63387,7 @@ id-unverified 83879
 id-unverified 83880
 id-unverified 83881
 id 83882 81812
-id 83883 81813
+id-unverified 83883
 id 83884 81814
 id 83885 81815
 id-unverified 83886
@@ -63441,7 +63440,7 @@ id-unverified 83945
 id-unverified 83946
 id 83947 81873
 id 83948 81874
-id 83953 81876
+id-unverified 83953
 id-unverified 83954
 id 83955 81881
 id-unverified 83956
@@ -63454,8 +63453,8 @@ id 83968 81895
 id 83969 81896
 id-unverified 83970
 id-unverified 83971
-id 83973 81900
-id 83974 81901
+id-unverified 83973
+id-unverified 83974
 id 83975 81902
 id 83978 80636
 id 83979 81905
@@ -63463,8 +63462,8 @@ id 83980 81906
 id 83982 81908
 id 83983 81909
 id 83984 81910
-id 83986 81912
-id 83989 81915
+id-unverified 83986
+id-unverified 83989
 id-unverified 83991
 id-unverified 83992
 id 83993 81919
@@ -63512,7 +63511,7 @@ id-unverified 84051
 id-unverified 84052
 id-unverified 84053
 id 84054 81940
-id 84069 81997
+id-unverified 84069
 id 84070 81999
 id 84071 82000
 id 84072 82001
@@ -63617,7 +63616,7 @@ id 84238 82159
 id-unverified 84239
 id-unverified 84240
 id 84242 82163
-id 84243 82165
+id-unverified 84243
 id-unverified 84244
 id-unverified 84246
 id-unverified 84247
@@ -64049,7 +64048,7 @@ id 84932 82810
 id 84933 82811
 id 84934 82812
 id 84935 82813
-id 84936 82814
+id-unverified 84936
 id 84940 82817
 id 84941 82818
 id-unverified 84942
@@ -64068,7 +64067,7 @@ id-unverified 84959
 id-unverified 84960
 id 84961 82840
 id 84962 82841
-id 84963 82842
+id-unverified 84963
 id 84965 82844
 id-unverified 84967
 id-unverified 84980
@@ -64082,7 +64081,7 @@ id 84989 82868
 id-unverified 84990
 id 84994 82874
 id-unverified 84996
-id 84997 82877
+id-unverified 84997
 id-unverified 85002
 id 85007 82890
 id 85008 82891
@@ -64101,7 +64100,7 @@ id 85030 82915
 id-unverified 85033
 id 85041 82925
 id 85042 82926
-id 85049 82931
+id-unverified 85049
 id 85054 82936
 id 85055 82937
 id 85056 82938
@@ -64162,7 +64161,7 @@ id-unverified 85151
 id-unverified 85154
 id-unverified 85155
 id 85159 83213
-id 85161 83214
+id-unverified 85161
 id 85162 83215
 id 85163 83216
 id-unverified 85164
@@ -64263,7 +64262,7 @@ id 85297 83344
 id 85298 83345
 id 85300 83352
 id 85301 83353
-id 85302 83354
+id-unverified 85302
 id-unverified 85303
 id-unverified 85304
 id 85305 83357
@@ -64406,7 +64405,7 @@ id-unverified 85545
 id 85546 83623
 id 85547 83624
 id 85548 83625
-id 85549 83626
+id-unverified 85549
 id-unverified 85550
 id 85551 83628
 id 85552 83629
@@ -64501,7 +64500,7 @@ id-unverified 85703
 id 85704 83782
 id-unverified 85706
 id 85707 83785
-id 85708 83786
+id-unverified 85708
 id 85709 83787
 id 85710 83788
 id-unverified 85711
@@ -64636,7 +64635,7 @@ id-unverified 85929
 id-unverified 85930
 id 85931 84021
 id-unverified 85932
-id 85933 84025
+id-unverified 85933
 id 85934 84026
 id 85941 84033
 id 85942 84034
@@ -65146,7 +65145,7 @@ id 86832 84942
 id-unverified 86833
 id 86836 84945
 id-unverified 86837
-id 86849 84958
+id-unverified 86849
 id-unverified 86850
 id 86851 84960
 id-unverified 86863
@@ -65658,7 +65657,7 @@ id 87630 83072
 id 87631 83073
 id 87632 83074
 id 87633 83075
-id 87634 83076
+id-unverified 87634
 id 87635 83043
 id 87637 83045
 id 87639 83047
@@ -65903,7 +65902,7 @@ id-unverified 88071
 id-unverified 88072
 id-unverified 88073
 id-unverified 88074
-id 88075 85939
+id-unverified 88075
 id-unverified 88076
 id-unverified 88077
 id-unverified 88079
@@ -65962,7 +65961,7 @@ id 88169 86036
 id 88170 86037
 id 88171 86038
 id-unverified 88175
-id 88176 86040
+id-unverified 88176
 id 88178 86041
 id 88179 86042
 id 88180 86043
@@ -65973,8 +65972,8 @@ id 88187 86048
 id 88194 86055
 id-unverified 88200
 id 88201 86062
-id 88203 86064
-id 88204 86065
+id-unverified 88203
+id-unverified 88204
 id 88205 86066
 id-unverified 88206
 id 88207 86068
@@ -66089,7 +66088,7 @@ id 88401 86246
 id-unverified 88402
 id 88403 86248
 id-unverified 88404
-id 88405 86250
+id-unverified 88405
 id-unverified 88406
 id-unverified 88407
 id 88408 86252
@@ -66382,7 +66381,7 @@ id 88860 86769
 id 88861 86770
 id 88862 86771
 id 88864 86775
-id 88865 86776
+id-unverified 88865
 id-unverified 88866
 id-unverified 88867
 id 88872 86782
@@ -66931,7 +66930,7 @@ id 89695 87381
 id 89696 87382
 id 89697 87383
 id-unverified 89698
-id 89699 87385
+id-unverified 89699
 id 89700 87386
 id 89701 87387
 id-unverified 89702
@@ -66997,7 +66996,7 @@ id-unverified 89794
 id 89795 87676
 id-unverified 89797
 id 89798 87679
-id 89799 87680
+id-unverified 89799
 id 89800 87681
 id 89802 87682
 id-unverified 89803
@@ -67178,7 +67177,7 @@ id 90071 87632
 id-unverified 90072
 id 90073 87634
 id-unverified 90074
-id 90075 87636
+id-unverified 90075
 id 90076 87637
 id-unverified 90077
 id-unverified 90078
@@ -68048,7 +68047,7 @@ id-unverified 91145
 id 91146 88702
 id-unverified 91147
 id 91148 88704
-id 91149 88705
+id-unverified 91149
 id 91150 88706
 id-unverified 91151
 id-unverified 91152
@@ -68260,7 +68259,7 @@ id-unverified 91456
 id 91457 88999
 id 91458 89000
 id 91460 530920
-id 91462 88993
+id-unverified 91462
 id 91466 89002
 id 91467 89003
 id 91468 89004
@@ -68313,7 +68312,7 @@ id-unverified 91541
 id-unverified 91542
 id-unverified 91543
 id-unverified 91544
-id 91545 89074
+id-unverified 91545
 id-unverified 91550
 id-unverified 91551
 id 91552 89077
@@ -68514,7 +68513,7 @@ id-unverified 91785
 id 91786 89320
 id 91788 89323
 id 91789 89324
-id 91790 89325
+id-unverified 91790
 id 91791 89326
 id 91792 89327
 id 91793 89328
@@ -68544,8 +68543,8 @@ id-unverified 91819
 id-unverified 91820
 id-unverified 91821
 id 91822 89356
-id 91823 89357
-id 91824 89358
+id-unverified 91823
+id-unverified 91824
 id-unverified 91826
 id 91827 89360
 id-unverified 91828
@@ -69665,7 +69664,7 @@ id-unverified 93095
 id 93096 90569
 id 93099 90570
 id-unverified 93100
-id 93101 90572
+id-unverified 93101
 id 93103 90574
 id-unverified 93104
 id 93105 90576
@@ -69878,7 +69877,7 @@ id-unverified 94638
 id-unverified 94867
 id-unverified 94868
 id 94970 91936
-id 95003 91960
+id-unverified 95003
 id-unverified 95214
 id 95527 92398
 id 95528 92399
@@ -69902,6 +69901,8 @@ id 97393 92799
 id 98373 93882
 id-unverified 98389
 id-unverified 98771
+id 99889 94609
+id 99890 94612
 id 99927 94637
 id 101082 95231
 id-unverified 101099
@@ -69965,7 +69966,7 @@ id-unverified 104208
 id-unverified 104209
 id-unverified 104210
 id-unverified 104211
-id 104212 97412
+id-unverified 104212
 id-unverified 104213
 id-unverified 104214
 id-unverified 104216
@@ -69986,7 +69987,7 @@ id 104247 97463
 id 104248 97464
 id 104249 97465
 id 104250 97466
-id 104251 97467
+id-unverified 104251
 id 104252 97468
 id 104253 97469
 id 104254 97470
@@ -70035,14 +70036,14 @@ id-unverified 104304
 id-unverified 104305
 id-unverified 104306
 id-unverified 104308
-id 104309 97524
+id-unverified 104309
 id 104310 97525
 id 104311 97526
-id 104312 97527
+id-unverified 104312
 id 104313 97528
 id 104314 97529
 id 104315 97530
-id 104316 97531
+id-unverified 104316
 id 104317 97532
 id-unverified 104318
 id-unverified 104319
@@ -70168,21 +70169,21 @@ id-unverified 104464
 id 104465 97726
 id 104466 97727
 id 104467 97728
-id 104468 97729
+id-unverified 104468
 id 104469 97730
 id 104470 97731
 id 104471 97733
 id 104472 97734
 id 104473 97735
 id 104474 97736
-id 104475 97737
+id-unverified 104475
 id 104476 97738
 id 104477 97739
 id 104478 97740
 id 104479 97741
 id 104480 97742
 id 104481 97743
-id 104482 97744
+id-unverified 104482
 id 104483 97745
 id 104484 97746
 id 104485 97747
@@ -70193,10 +70194,10 @@ id 104490 97752
 id 104491 97753
 id 104492 97754
 id-unverified 104494
-id 104495 97756
+id-unverified 104495
 id 104496 97757
 id-unverified 104498
-id 104499 97759
+id-unverified 104499
 id 104500 97760
 id-unverified 104502
 id-unverified 104503
@@ -70261,14 +70262,14 @@ id 104571 97827
 id 104572 97828
 id-unverified 104573
 id-unverified 104574
-id 104575 97831
+id-unverified 104575
 id-unverified 104577
 id 104578 97834
 id 104579 97835
 id 104580 97836
 id 104581 97837
 id 104582 97838
-id 104583 97839
+id-unverified 104583
 id 104584 97840
 id 104585 97841
 id 104586 97842
@@ -70318,7 +70319,7 @@ id 104644 97916
 id 104645 97917
 id 104646 97918
 id 104647 97919
-id-unverified 104648
+id 104648 97920
 id 104649 97921
 id 104650 97922
 id 104651 97923
@@ -70328,7 +70329,7 @@ id 104654 97926
 id 104655 97927
 id 104656 531159
 id 104657 97928
-id-unverified 104658
+id 104658 97929
 id 104659 97776
 id 104660 97930
 id-unverified 104662
@@ -70354,7 +70355,7 @@ id-unverified 104684
 id 104687 97953
 id 104688 97954
 id 104689 97955
-id 104690 97956
+id-unverified 104690
 id-unverified 104691
 id-unverified 104692
 id 104693 97959
@@ -70380,7 +70381,7 @@ id 104712 97978
 id 104713 97979
 id 104714 97980
 id-unverified 104715
-id 104716 97982
+id-unverified 104716
 id 104717 97983
 id-unverified 104718
 id 104719 97985
@@ -70415,28 +70416,28 @@ id-unverified 104763
 id-unverified 104764
 id 104765 98042
 id 104766 98043
-id 104767 98044
+id-unverified 104767
 id-unverified 104768
 id 104769 98046
 id-unverified 104770
 id 104771 98048
-id 104772 98049
-id 104773 98050
-id 104774 98051
+id-unverified 104772
+id-unverified 104773
+id-unverified 104774
 id 104775 98052
-id 104776 98053
-id 104778 98055
+id-unverified 104776
+id-unverified 104778
 id-unverified 104780
 id-unverified 104781
-id 104782 98059
+id-unverified 104782
 id-unverified 104783
 id 104784 98061
 id-unverified 104785
-id 104786 98063
-id 104787 98064
-id 104788 98065
+id-unverified 104786
+id-unverified 104787
+id-unverified 104788
 id 104789 98066
-id 104790 98067
+id-unverified 104790
 id-unverified 104791
 id 104792 98069
 id-unverified 104793
@@ -70446,13 +70447,13 @@ id-unverified 104796
 id-unverified 104797
 id 104798 98075
 id-unverified 104799
-id 104800 98077
+id-unverified 104800
 id-unverified 104801
-id 104802 98079
+id-unverified 104802
 id 104803 98080
-id 104804 98081
+id-unverified 104804
 id-unverified 104805
-id 104806 98083
+id-unverified 104806
 id-unverified 104807
 id 104808 98085
 id 104809 98086
@@ -70490,15 +70491,15 @@ id-unverified 104840
 id-unverified 104841
 id-unverified 104842
 id-unverified 104843
-id 104844 98121
+id-unverified 104844
 id 104845 98122
 id 104846 98123
 id-unverified 104847
 id 104848 98125
-id 104849 98126
+id-unverified 104849
 id 104850 98127
 id 104851 98128
-id 104852 98129
+id-unverified 104852
 id 104853 98130
 id 104854 98131
 id-unverified 104855
@@ -70512,8 +70513,8 @@ id 104865 98142
 id 104866 98143
 id 104867 98144
 id 104868 98145
-id 104870 98146
-id 104871 98147
+id-unverified 104870
+id-unverified 104871
 id 104872 98148
 id 104873 98149
 id 104874 98150
@@ -70526,7 +70527,7 @@ id-unverified 104880
 id 104881 98157
 id-unverified 104882
 id 104883 98159
-id 104884 98160
+id-unverified 104884
 id 104885 98161
 id 104886 98162
 id 104887 98163
@@ -70555,15 +70556,15 @@ id-unverified 104913
 id 104914 98197
 id 104915 98198
 id-unverified 104917
-id 104921 98296
-id 104922 98297
+id-unverified 104921
+id-unverified 104922
 id-unverified 104923
 id-unverified 104924
 id-unverified 104926
 id-unverified 104928
 id-unverified 104929
 id-unverified 104931
-id 104932 98220
+id-unverified 104932
 id-unverified 104933
 id-unverified 104934
 id-unverified 104935
@@ -70622,7 +70623,7 @@ id 105036 98317
 id 105037 98318
 id-unverified 105038
 id-unverified 105039
-id 105040 98479
+id-unverified 105040
 id-unverified 105043
 id-unverified 105045
 id-unverified 105050
@@ -70656,13 +70657,13 @@ id 105095 98423
 id 105096 98424
 id 105098 98426
 id 105099 98427
-id 105105 98433
+id-unverified 105105
 id-unverified 105106
 id-unverified 105107
 id 105108 98436
 id-unverified 105109
 id-unverified 105110
-id 105111 98439
+id-unverified 105111
 id 105112 98441
 id-unverified 105113
 id-unverified 105114
@@ -70687,11 +70688,11 @@ id-unverified 105146
 id-unverified 105147
 id 105148 98492
 id 105149 98493
-id 105175 98519
+id-unverified 105175
 id 105176 98520
 id-unverified 105177
 id 105178 98522
-id 105179 98523
+id-unverified 105179
 id 105180 98524
 id 105181 98525
 id 105182 98526
@@ -70716,14 +70717,14 @@ id-unverified 105200
 id 105201 98545
 id-unverified 105202
 id-unverified 105203
-id 105204 98548
+id-unverified 105204
 id-unverified 105205
 id 105206 98550
 id 105207 98551
 id 105208 98552
 id-unverified 105209
 id-unverified 105210
-id 105211 98555
+id-unverified 105211
 id 105212 98556
 id 105213 98557
 id-unverified 105214
@@ -70935,9 +70936,9 @@ id 105462 98825
 id 105463 98826
 id 105464 98827
 id 105465 98828
-id 105466 98829
+id-unverified 105466
 id 105467 98830
-id 105468 98831
+id-unverified 105468
 id-unverified 105469
 id 105470 98833
 id 105471 98834
@@ -70953,8 +70954,8 @@ id 105481 98844
 id 105482 98845
 id 105483 98846
 id 105484 98847
-id 105485 98848
-id 105486 98849
+id-unverified 105485
+id-unverified 105486
 id-unverified 105487
 id 105488 98851
 id 105489 98852
@@ -70975,7 +70976,7 @@ id 105510 98866
 id 105511 98867
 id 105512 98868
 id 105513 98869
-id 105514 98870
+id-unverified 105514
 id 105515 98871
 id 105516 98872
 id 105517 98873
@@ -71087,7 +71088,7 @@ id 105635 98982
 id 105636 98983
 id 105637 98984
 id 105640 98986
-id 105641 98987
+id-unverified 105641
 id 105643 98989
 id-unverified 105644
 id 105645 98991
@@ -71100,7 +71101,7 @@ id 105651 98997
 id 105652 98998
 id 105653 98999
 id 105654 99000
-id 105655 99001
+id-unverified 105655
 id 105656 99002
 id-unverified 105658
 id-unverified 105662
@@ -71548,8 +71549,8 @@ id-unverified 106115
 id-unverified 106116
 id-unverified 106117
 id-unverified 106118
-id 106119 99489
-id 106120 99490
+id-unverified 106119
+id-unverified 106120
 id-unverified 106121
 id-unverified 106122
 id-unverified 106123
@@ -71754,12 +71755,12 @@ id-unverified 106322
 id 106323 99689
 id-unverified 106324
 id 106325 99691
-id 106326 99692
+id-unverified 106326
 id 106327 99693
 id 106328 99694
 id-unverified 106329
 id-unverified 106331
-id 106332 99698
+id-unverified 106332
 id 106333 99699
 id 106334 99700
 id 106335 99701
@@ -71772,7 +71773,7 @@ id 106341 99707
 id 106342 99708
 id 106343 99709
 id-unverified 106345
-id 106349 99712
+id-unverified 106349
 id-unverified 106350
 id 106351 99714
 id 106352 99715
@@ -71894,11 +71895,11 @@ id-unverified 106512
 id 106513 99868
 id-unverified 106514
 id-unverified 106515
-id 106516 99871
+id-unverified 106516
 id 106517 99872
 id-unverified 106518
-id 106519 99874
-id 106520 99875
+id-unverified 106519
+id-unverified 106520
 id 106521 99876
 id 106522 99877
 id-unverified 106523
@@ -71955,11 +71956,11 @@ id-unverified 106578
 id 106580 99935
 id 106581 99936
 id 106582 99937
-id 106583 99938
-id 106584 99939
+id-unverified 106583
+id-unverified 106584
 id 106585 99940
-id 106586 99941
-id 106587 99942
+id-unverified 106586
+id-unverified 106587
 id 106588 99943
 id 106589 99944
 id 106592 99947
@@ -71988,7 +71989,7 @@ id-unverified 106616
 id 106617 99970
 id-unverified 106619
 id 106622 99973
-id 106623 99974
+id-unverified 106623
 id-unverified 106624
 id 106625 99976
 id-unverified 106626
@@ -72021,13 +72022,13 @@ id-unverified 106713
 id 106714 100007
 id-unverified 106715
 id 106716 100009
-id 106717 100010
-id 106718 100011
+id-unverified 106717
+id-unverified 106718
 id-unverified 106719
 id 106720 100013
 id 106721 100014
 id 106722 100015
-id 106723 100016
+id-unverified 106723
 id-unverified 106724
 id 106725 100018
 id 106726 100019
@@ -72179,7 +72180,7 @@ id 106872 100165
 id 106873 100166
 id 106874 100167
 id-unverified 106875
-id 106876 100169
+id-unverified 106876
 id-unverified 106877
 id 106878 100171
 id 106879 100172
@@ -72227,7 +72228,7 @@ id 106925 100217
 id 106927 100219
 id 106928 100220
 id 106929 100221
-id 106930 100222
+id-unverified 106930
 id 106931 100223
 id-unverified 106932
 id-unverified 106933
@@ -72307,7 +72308,7 @@ id 107023 100306
 id 107024 100307
 id 107025 100308
 id 107026 100309
-id 107027 100310
+id-unverified 107027
 id 107028 100311
 id 107029 100312
 id 107030 100313
@@ -72382,7 +72383,7 @@ id 107125 100407
 id 107126 100408
 id 107127 100409
 id 107128 100410
-id 107129 100411
+id-unverified 107129
 id 107130 100412
 id 107131 100413
 id 107132 100414
@@ -72394,14 +72395,14 @@ id 107137 100419
 id 107138 100420
 id 107139 100421
 id 107140 100422
-id 107141 100423
+id-unverified 107141
 id 107142 100424
 id 107143 100425
 id 107144 100426
 id 107145 100427
-id 107146 100428
+id-unverified 107146
 id 107147 100429
-id 107148 100430
+id-unverified 107148
 id 107150 100431
 id-unverified 107156
 id 107157 100440
@@ -72417,18 +72418,18 @@ id 107166 100449
 id 107167 100450
 id 107168 100451
 id 107169 100452
-id 107170 100453
+id-unverified 107170
 id 107171 100454
 id-unverified 107173
 id-unverified 107174
-id 107175 100458
+id-unverified 107175
 id 107176 100459
 id 107177 100460
 id-unverified 107179
 id 107180 100462
 id 107181 100463
 id-unverified 107182
-id 107183 100465
+id-unverified 107183
 id 107184 100466
 id-unverified 107185
 id-unverified 107186
@@ -72438,7 +72439,7 @@ id 107189 100471
 id-unverified 107190
 id 107191 100473
 id 107192 100474
-id 107193 100475
+id-unverified 107193
 id 107194 100476
 id 107195 100477
 id 107196 100478
@@ -72449,14 +72450,14 @@ id 107200 100482
 id 107202 100483
 id 107203 100484
 id 107204 100485
-id 107206 100486
+id-unverified 107206
 id-unverified 107207
 id-unverified 107208
 id-unverified 107209
 id-unverified 107210
-id 107211 100491
+id-unverified 107211
 id 107212 100492
-id 107213 100493
+id-unverified 107213
 id 107214 100494
 id 107216 100495
 id 107217 100496
@@ -72488,7 +72489,7 @@ id 107247 100522
 id 107248 100523
 id-unverified 107249
 id 107250 100525
-id 107252 100526
+id-unverified 107252
 id 107255 100527
 id-unverified 107256
 id 107257 100529
@@ -72504,7 +72505,7 @@ id 107268 100538
 id-unverified 107269
 id 107271 100541
 id-unverified 107273
-id 107276 100543
+id-unverified 107276
 id-unverified 107277
 id-unverified 107278
 id 107279 100546
@@ -72525,7 +72526,7 @@ id 107296 100561
 id-unverified 107297
 id-unverified 107298
 id 107299 100564
-id 107300 100565
+id-unverified 107300
 id-unverified 107301
 id 107302 100567
 id 107303 100568
@@ -72555,7 +72556,7 @@ id 107357 100597
 id 107358 100598
 id-unverified 107360
 id 107361 100600
-id 107362 100601
+id-unverified 107362
 id-unverified 107363
 id 107364 100603
 id-unverified 107365
@@ -72570,14 +72571,14 @@ id-unverified 107374
 id-unverified 107376
 id-unverified 107377
 id 107378 100616
-id 107379 100617
+id-unverified 107379
 id-unverified 107381
 id 107382 100619
 id-unverified 107384
 id-unverified 107385
 id-unverified 107386
 id-unverified 107387
-id 107388 100625
+id-unverified 107388
 id-unverified 107389
 id-unverified 107390
 id-unverified 107391
@@ -72662,7 +72663,7 @@ id 107495 100716
 id 107497 100717
 id 107498 100718
 id 107499 100719
-id 107500 100720
+id-unverified 107500
 id 107501 100721
 id 107502 100722
 id 107504 100724
@@ -72715,11 +72716,11 @@ id 107552 100772
 id 107553 100773
 id 107558 100774
 id 107559 100775
-id 107560 100776
+id-unverified 107560
 id 107561 100777
 id 107562 100778
-id 107563 100779
-id 107564 100780
+id-unverified 107563
+id-unverified 107564
 id 107566 100782
 id 107567 100783
 id 107568 100784
@@ -72751,9 +72752,9 @@ id 107595 100811
 id 107596 100812
 id-unverified 107597
 id-unverified 107598
-id 107599 100815
+id-unverified 107599
 id 107600 100816
-id 107601 100817
+id-unverified 107601
 id 107602 100818
 id 107603 100819
 id 107604 100820
@@ -72774,7 +72775,7 @@ id 107622 100834
 id 107623 100835
 id 107624 100836
 id 107625 100837
-id 107626 100838
+id-unverified 107626
 id 107629 100839
 id-unverified 107631
 id 107632 100842
@@ -72783,7 +72784,7 @@ id 107634 100844
 id 107635 100845
 id 107636 100846
 id 107637 100847
-id 107638 100848
+id-unverified 107638
 id 107639 100849
 id-unverified 107640
 id-unverified 107641
@@ -72807,7 +72808,7 @@ id-unverified 107665
 id-unverified 107666
 id-unverified 107667
 id 107668 100872
-id 107669 100873
+id-unverified 107669
 id-unverified 107670
 id 107671 100875
 id 107672 100876
@@ -72877,17 +72878,17 @@ id-unverified 107754
 id 107755 100973
 id-unverified 107757
 id 107758 100975
-id 107759 100976
+id-unverified 107759
 id-unverified 107760
 id 107761 100978
 id-unverified 107762
 id-unverified 107763
-id 107764 100981
+id-unverified 107764
 id-unverified 107768
 id 107769 100983
 id 107771 100984
 id-unverified 107772
-id 107773 100986
+id-unverified 107773
 id 107774 100987
 id 107775 100988
 id-unverified 107776
@@ -73148,7 +73149,7 @@ id 108266 101279
 id 108267 101280
 id 108268 101281
 id 108269 101282
-id 108270 101283
+id-unverified 108270
 id 108271 101284
 id 108272 101285
 id 108273 101286
@@ -73343,7 +73344,7 @@ id 108490 101496
 id 108491 101497
 id 108492 101498
 id 108496 101499
-id 108497 101500
+id-unverified 108497
 id-unverified 108498
 id 108499 101502
 id 108500 101503
@@ -73451,17 +73452,17 @@ id 108611 101608
 id-unverified 108612
 id-unverified 108613
 id 108614 101611
-id 108615 101612
-id 108616 101613
+id-unverified 108615
+id-unverified 108616
 id 108617 101614
-id 108618 101615
+id-unverified 108618
 id-unverified 108619
 id 108620 101617
 id 108621 101618
 id 108622 101621
-id 108625 101622
-id 108626 101623
-id 108627 101624
+id-unverified 108625
+id-unverified 108626
+id-unverified 108627
 id 108628 101625
 id 108630 531268
 id 108631 101626
@@ -73607,10 +73608,10 @@ id 109130 101775
 id-unverified 109131
 id-unverified 109132
 id-unverified 109133
-id 109134 101779
+id-unverified 109134
 id 109135 101780
 id 109136 101781
-id 109137 101782
+id-unverified 109137
 id-unverified 109139
 id 109140 101784
 id 109141 101785
@@ -73725,7 +73726,7 @@ id 109329 101936
 id 109330 101937
 id 109331 101938
 id-unverified 109332
-id 109333 101940
+id-unverified 109333
 id 109334 101941
 id 109336 101942
 id 109337 101943
@@ -73742,13 +73743,13 @@ id-unverified 109348
 id 109349 101956
 id 109350 101957
 id 109351 101958
-id 109352 101959
-id 109353 101960
+id-unverified 109352
+id-unverified 109353
 id 109354 101961
-id 109355 101962
+id-unverified 109355
 id 109356 101963
 id 109357 101964
-id 109358 101965
+id-unverified 109358
 id-unverified 109359
 id 109361 101968
 id 109362 101969
@@ -73757,7 +73758,7 @@ id-unverified 109365
 id-unverified 109367
 id 109368 101976
 id 109369 101977
-id 109370 101978
+id-unverified 109370
 id 109371 101979
 id 109372 101980
 id-unverified 109373
@@ -73935,7 +73936,7 @@ id 109680 102229
 id 109681 102230
 id 109682 102231
 id-unverified 109683
-id-unverified 109686
+id 109686 102235
 id 109687 102236
 id 109688 102237
 id 109689 102238
@@ -74571,7 +74572,7 @@ id 110459 103107
 id 110474 105227
 id 110674 103531
 id 110773 103970
-id 110774 103971
+id-unverified 110774
 id-unverified 110911
 id-unverified 110915
 id-unverified 111004
@@ -75319,7 +75320,7 @@ id 112793 108165
 id 112794 108166
 id 112795 108167
 id 112801 108169
-id 112802 108170
+id-unverified 112802
 id-unverified 112808
 id 112812 108197
 id-unverified 112815
@@ -76479,9 +76480,9 @@ id 115003 111184
 id 115004 111185
 id 115005 111186
 id 115011 111203
-id 115012 111204
+id-unverified 115012
 id 115013 111205
-id 115014 111206
+id-unverified 115014
 id 115021 111216
 id 115022 111217
 id 115026 111221
@@ -76734,7 +76735,7 @@ id 115662 112264
 id 115663 112265
 id 115665 107313
 id 115666 107314
-id 115667 107315
+id-unverified 115667
 id 115673 112273
 id 115674 112277
 id 115677 112276
@@ -77619,7 +77620,7 @@ id 117965 115746
 id 117966 115747
 id 117980 115762
 id 117981 115763
-id 117982 115764
+id-unverified 117982
 id 117991 115771
 id 117992 115772
 id 117993 115773
@@ -77732,8 +77733,8 @@ id 118130 115995
 id 118131 115996
 id 118132 115997
 id 118133 115998
-id 118154 116025
-id 118155 116026
+id-unverified 118154
+id-unverified 118155
 id 118156 116039
 id 118157 116040
 id 118158 116041
@@ -77756,11 +77757,11 @@ id 118285 116233
 id 118294 116251
 id 118305 116289
 id 118320 116303
-id 118321 116304
-id 118322 116305
+id-unverified 118321
+id-unverified 118322
 id 118323 116306
-id 118324 116307
-id 118325 116308
+id-unverified 118324
+id-unverified 118325
 id 118326 116309
 id 118327 116310
 id 118329 116311
@@ -77979,7 +77980,7 @@ id 118934 117287
 id 118935 117288
 id 118936 117289
 id 118937 117290
-id 118942 117300
+id-unverified 118942
 id 118943 117301
 id 118946 117304
 id 118947 117305
@@ -77992,7 +77993,7 @@ id-unverified 118955
 id-unverified 118959
 id-unverified 118960
 id 118964 117328
-id 118965 117329
+id-unverified 118965
 id 118970 117344
 id 118971 117345
 id 118972 117346
@@ -79016,7 +79017,7 @@ id 127385 129805
 id 127386 129807
 id 127388 129808
 id 127389 129828
-id 127457 129896
+id-unverified 127457
 id 127458 129897
 id 127459 129898
 id 127460 129899
@@ -79823,8 +79824,8 @@ id 130673 134885
 id-unverified 130675
 id 130677 134892
 id 130678 134895
-id 130679 134896
-id 130680 134897
+id-unverified 130679
+id-unverified 130680
 id 130686 134905
 id-unverified 130687
 id 130690 134907
@@ -80035,8 +80036,8 @@ id 131258 135793
 id 131259 135794
 id 131260 135795
 id 131261 135796
-id 131262 135797
-id 131263 135798
+id-unverified 131262
+id-unverified 131263
 id-unverified 131275
 id 131280 531463
 id-unverified 131281
@@ -80240,14 +80241,14 @@ id 131995 136720
 id 131996 136721
 id 131997 136722
 id 131998 136723
-id 131999 136724
+id-unverified 131999
 id 132000 136725
 id-unverified 132001
 id 132008 136730
 id 132010 136735
-id 132011 136736
+id-unverified 132011
 id 132013 136738
-id 132017 136744
+id-unverified 132017
 id 132020 136747
 id-unverified 132021
 id 132022 136749
@@ -80352,7 +80353,7 @@ id 132451 137200
 id 132457 137204
 id 132458 137205
 id 132459 137206
-id 132460 137207
+id-unverified 132460
 id 132464 137214
 id 132465 137215
 id 132466 137216
@@ -80846,8 +80847,8 @@ id-unverified 134098
 id 134121 139721
 id 134138 139773
 id 134141 139774
-id 134142 139775
-id 134143 139776
+id-unverified 134142
+id-unverified 134143
 id-unverified 134154
 id 134184 139863
 id 134186 139877
@@ -80939,7 +80940,7 @@ id 134398 140148
 id 134399 140149
 id 134400 140150
 id 134403 140153
-id 134404 140154
+id-unverified 134404
 id 134405 140155
 id 134406 140157
 id 134407 140158
@@ -80980,7 +80981,7 @@ id 134655 140579
 id 134656 140580
 id 134657 140581
 id-unverified 134658
-id 134660 140583
+id-unverified 134660
 id 134661 140584
 id 134662 140585
 id 134663 140586
@@ -81977,7 +81978,7 @@ id 137582 145064
 id 137583 145065
 id 137584 145066
 id 137585 145080
-id 137586 145081
+id-unverified 137586
 id 137609 145136
 id 137610 145137
 id 137611 145138
@@ -82156,8 +82157,8 @@ id 138285 146274
 id 138310 146306
 id 138311 146307
 id 138315 146319
-id 138316 146320
-id 138317 146321
+id-unverified 138316
+id-unverified 138317
 id 138367 146390
 id 138368 146391
 id 138369 146392
@@ -82207,7 +82208,7 @@ id 138471 146510
 id 138483 146540
 id 138492 146553
 id 138496 146562
-id 138497 146563
+id-unverified 138497
 id 138507 146586
 id 138508 146587
 id 138509 146588
@@ -82842,8 +82843,8 @@ id 140153 149190
 id 140163 149227
 id 140166 149229
 id 140168 149231
-id 140174 149250
-id 140175 149251
+id-unverified 140174
+id-unverified 140175
 id 140180 149257
 id 140181 149258
 id 140182 149259
@@ -83387,7 +83388,7 @@ id 142834 152911
 id 142835 152912
 id 142836 152913
 id 142837 152914
-id 142838 152915
+id-unverified 142838
 id 142845 152927
 id 142846 152928
 id-unverified 142847
@@ -83498,7 +83499,7 @@ id-unverified 143072
 id 143082 153332
 id 143092 153349
 id 143093 153350
-id 143094 153351
+id-unverified 143094
 id 143095 153352
 id 143108 153373
 id 143109 153374
@@ -83675,7 +83676,7 @@ id-unverified 144066
 id-unverified 144067
 id 144073 154855
 id 144074 154856
-id 144075 154857
+id-unverified 144075
 id 144110 154912
 id 144122 154999
 id 144123 155000
@@ -85083,7 +85084,7 @@ id 147645 160306
 id 147646 160307
 id 147647 160308
 id 147648 160309
-id 147654 160323
+id-unverified 147654
 id 147655 160324
 id 147656 160325
 id 147919 160639
@@ -85491,7 +85492,7 @@ id 149054 162114
 id 149055 162115
 id 149056 162116
 id 149057 162119
-id 149058 162120
+id-unverified 149058
 id 149059 162121
 id 149060 162122
 id 149061 162123
@@ -86828,10 +86829,10 @@ id 152656 166943
 id 152657 166944
 id 152658 166945
 id 152659 166946
-id 152660 166947
+id-unverified 152660
 id 152661 166948
 id 152666 166957
-id 152667 166958
+id-unverified 152667
 id-unverified 152669
 id 152671 166960
 id 152674 531665
@@ -86940,8 +86941,8 @@ id 152902 167089
 id-unverified 152904
 id-unverified 152905
 id-unverified 152906
-id 152909 167118
-id 152910 167119
+id-unverified 152909
+id-unverified 152910
 id 152911 531698
 id-unverified 152912
 id 152914 167135
@@ -87085,7 +87086,7 @@ id 153207 167431
 id 153208 167432
 id 153209 167433
 id 153210 167439
-id 153211 167440
+id-unverified 153211
 id 153216 167449
 id 153217 167450
 id 153218 167451
@@ -87369,14 +87370,14 @@ id 153886 168328
 id 153887 168329
 id 153888 168331
 id 153893 168336
-id 153894 168337
+id-unverified 153894
 id 153896 168338
 id 153914 168367
 id 153927 168390
 id 153928 168391
-id 153929 168392
+id-unverified 153929
 id 153932 168397
-id 153933 168398
+id-unverified 153933
 id 153949 168427
 id 153959 168440
 id 153962 168444
@@ -87652,7 +87653,7 @@ id 154551 531731
 id 154552 169486
 id 154554 169487
 id 154556 169488
-id 154557 169489
+id-unverified 154557
 id 154558 531732
 id 154559 169490
 id 154560 169495
@@ -87785,7 +87786,7 @@ id 154806 169763
 id 154807 169764
 id 154808 169765
 id 154813 169768
-id 154814 169769
+id-unverified 154814
 id 154839 169818
 id 154841 169824
 id 154842 169825
@@ -88179,8 +88180,8 @@ id 155741 170899
 id 155742 170900
 id-unverified 155743
 id-unverified 155744
-id 155745 170911
-id 155746 170912
+id-unverified 155745
+id-unverified 155746
 id 155747 170913
 id 155750 170920
 id 155751 170921
@@ -88372,7 +88373,7 @@ id 156181 171414
 id-unverified 156195
 id-unverified 156196
 id 156197 171449
-id 156198 171450
+id-unverified 156198
 id 156199 171451
 id 156203 171458
 id 156204 171459
@@ -88546,7 +88547,7 @@ id 156571 171969
 id 156574 171976
 id 156579 171983
 id 156580 171984
-id 156581 171985
+id-unverified 156581
 id 156584 171987
 id 156585 171988
 id 156592 171993
@@ -88692,7 +88693,7 @@ id 156878 172375
 id 156879 172376
 id 156880 172377
 id 156885 172390
-id 156886 172391
+id-unverified 156886
 id 156923 172443
 id 156924 172444
 id 156926 172450
@@ -89004,6 +89005,10 @@ id 157592 173264
 id 157615 173332
 id-unverified 157879
 id-unverified 157880
+id 159698 176088
+id 159699 176089
+id 159700 176090
+id 159701 176092
 id 159704 176093
 id 159705 176091
 id 160539 176648
@@ -90495,7 +90500,7 @@ id-unverified 163870
 id 163871 180890
 id-unverified 163872
 id 163875 180891
-id 163876 180892
+id-unverified 163876
 id 163879 180899
 id 163880 180900
 id 163881 180901
@@ -91293,9 +91298,9 @@ id 165207 182646
 id 165208 182647
 id 165209 182648
 id 165210 182649
-id 165211 182650
-id 165212 182651
-id 165213 182652
+id-unverified 165211
+id-unverified 165212
+id-unverified 165213
 id 165228 182672
 id 165229 182676
 id 165230 182677
@@ -100183,7 +100188,7 @@ id 361071 501775
 id 361075 501778
 id 361078 501780
 id 361087 668141
-id-unverified 361120
+id 361120 501789
 id 365650 501797
 id 365995 673036
 id 368071 501801
@@ -104919,7 +104924,7 @@ id-unverified 390206
 id 390232 512661
 id 390235 512663
 id 390238 512665
-id-unverified 390241
+id 390241 512667
 id 390248 512674
 id 390251 512676
 id 390254 512678
@@ -105373,7 +105378,7 @@ id-unverified 401567
 id-unverified 401568
 id 401579 515440
 id 401585 515446
-id-unverified 401652
+id 401652 515512
 id-unverified 401676
 id-unverified 401677
 id-unverified 401733
@@ -106083,7 +106088,7 @@ id-unverified 411942
 id-unverified 411962
 id-unverified 412031
 id-unverified 412032
-id-unverified 412033
+id 412033 525557
 id-unverified 412035
 id 412047 525571
 id 412058 525584
@@ -106115,7 +106120,7 @@ id 412360 525883
 id 412363 525886
 id 412366 525889
 id 412369 525892
-id-unverified 414391
+id 414391 527437
 id 414404 527450
 id-unverified 414559
 id-unverified 414561
@@ -106164,7 +106169,7 @@ id 414942 527997
 id-unverified 414943
 id 414946 528001
 id-unverified 414948
-id-unverified 414949
+id 414949 528004
 id 414950 528005
 id 415007 528062
 id 415008 528063
@@ -106177,7 +106182,7 @@ id 415016 528071
 id 415017 528072
 id 415022 528077
 id-unverified 415025
-id-unverified 415027
+id 415027 528082
 id-unverified 415035
 id 415036 528091
 id-unverified 415037
@@ -106201,8 +106206,8 @@ id-unverified 415170
 id 415171 528221
 id-unverified 415229
 id-unverified 415262
-id-unverified 415263
-id-unverified 415264
+id 415263 528314
+id 415264 528316
 id-unverified 415267
 id 415268 528318
 id-unverified 415272
@@ -106259,7 +106264,7 @@ id 418626 26545
 id 418634 26557
 id-unverified 418635
 id 418636 32502
-id 418637 32503
+id-unverified 418637
 id-unverified 418639
 id-unverified 418640
 id-unverified 418641
@@ -106295,12 +106300,12 @@ id 419349 66984
 id 419350 82688
 id 419351 82689
 id-unverified 419354
-id 419708 91021
+id-unverified 419708
 id-unverified 419709
-id 419710 91023
-id 419712 91011
+id-unverified 419710
+id-address 419712 91011
 id-unverified 419714
-id 419715 91037
+id-unverified 419715
 id-unverified 419716
 id-unverified 419795
 id 419808 127225
@@ -106315,7 +106320,6 @@ id 433163 508570
 id 433165 508572
 id 433167 508576
 id 433168 508584
-id 439855 26031
 id 439866 26032
 id 439876 10979
 id-unverified 439883
@@ -106340,13 +106344,13 @@ id 441528 13647
 id 441529 13648
 id 441531 13649
 id 441535 528697
-id 441548 13852
+id-unverified 441548
 id-unverified 441549
 id 441556 13942
 id-unverified 441565
 id-unverified 441566
 id 441580 21401
-id 441582 21416
+id-unverified 441582
 id 441585 528889
 id 441586 21554
 id 441588 21561
@@ -106373,16 +106377,16 @@ id-unverified 442218
 id 442219 33020
 id-unverified 442220
 id 442222 33042
-id 442226 33063
+id-unverified 442226
 id-unverified 442230
 id-unverified 442231
 id 442486 53621
-id 442488 53722
+id-unverified 442488
 id-unverified 442499
 id-unverified 442522
-id 442571 34680
-id 442575 34861
-id 442580 34872
+id-unverified 442571
+id-unverified 442575
+id-address 442580 34872
 id-unverified 442584
 id 442585 26087
 id-unverified 442601
@@ -106392,7 +106396,7 @@ id-unverified 442623
 id 442624 32980
 id-unverified 442626
 id 442661 35623
-id 442669 50155
+id-unverified 442669
 id 442687 530158
 id 442712 50704
 id 442717 51266
@@ -106408,7 +106412,7 @@ id-unverified 443170
 id 443172 101873
 id 443362 74238
 id 443396 67320
-id 443397 67324
+id-unverified 443397
 id 443399 67484
 id 443400 67485
 id 443402 67702
@@ -106465,11 +106469,11 @@ id-unverified 445146
 id 445176 91568
 id 445177 91569
 id-unverified 445218
-id 445323 91696
-id 445325 91698
+id-unverified 445323
+id-unverified 445325
 id 445328 91703
 id-unverified 445330
-id 445331 91707
+id-unverified 445331
 id 445332 91708
 id 445333 91709
 id-unverified 445336
@@ -106514,9 +106518,9 @@ id-unverified 447412
 id-unverified 447413
 id 448114 93005
 id-unverified 448635
-id 448870 92004
-id-unverified 448989
-id-unverified 448992
+id 448988 94607
+id 448989 94608
+id 448992 94611
 id 449029 93968
 id-unverified 449032
 id-unverified 449033
@@ -106548,15 +106552,14 @@ id-unverified 449890
 id 449906 95229
 id 449907 95230
 id 449912 95984
-id 450513 95161
 id-unverified 450672
-id 450784 94420
+id-unverified 450784
 id 450802 94279
-id 450811 94430
+id-unverified 450811
 id-unverified 450862
 id-unverified 450904
-id 451167 94491
-id 451188 94527
+id-unverified 451167
+id-unverified 451188
 id-unverified 451470
 id 451539 94100
 id-unverified 451540
@@ -106896,7 +106899,7 @@ id-unverified 523537
 id-unverified 523541
 id-unverified 523542
 id 523543 20105
-id 523544 20106
+id-unverified 523544
 id 523545 22744
 id 523572 26358
 id-unverified 523574
@@ -106914,7 +106917,7 @@ id-unverified 523938
 id-unverified 523939
 id 523940 37785
 id 523948 40434
-id 523956 41289
+id-unverified 523956
 id-unverified 523963
 id 523966 41348
 id 523968 41351
@@ -106928,7 +106931,7 @@ id 523985 46063
 id-unverified 523986
 id-unverified 523987
 id-unverified 523988
-id 523993 49808
+id-unverified 523993
 id 523997 50148
 id-unverified 524000
 id-unverified 524006
@@ -106938,10 +106941,10 @@ id-unverified 524028
 id-unverified 524029
 id-unverified 524032
 id-unverified 524033
-id 524047 53630
+id-unverified 524047
 id 524054 54882
 id-unverified 524055
-id 524121 67265
+id-unverified 524121
 id 524132 67321
 id-unverified 524133
 id 524136 67345
@@ -106990,7 +106993,7 @@ id-unverified 524250
 id 524251 75260
 id-unverified 524252
 id 524253 75289
-id 524254 75450
+id-unverified 524254
 id-unverified 524257
 id-unverified 524262
 id 524263 76841
@@ -107027,8 +107030,8 @@ id-unverified 524937
 id-unverified 524991
 id-unverified 524999
 id-unverified 525027
-id-unverified 525825
-id-unverified 525828
+id-unverified 525818
+id 525821 94619
 id 525829 94630
 id-unverified 525877
 id-unverified 525956
@@ -107046,7 +107049,7 @@ id 527471 95232
 id-unverified 527758
 id-unverified 527782
 id-unverified 527783
-id 527784 100540
+id-unverified 527784
 id-unverified 527785
 id-unverified 527787
 id-unverified 527788
@@ -107055,7 +107058,6 @@ id 527794 101886
 id 527795 101887
 id 527796 101888
 id 527809 102302
-id 527877 32718
 id 528000 108142
 id 528046 106965
 id 528160 106208
@@ -107083,7 +107085,7 @@ id 528251 111861
 id 528252 111862
 id-unverified 528254
 id 528255 111983
-id 528256 111984
+id-unverified 528256
 id 528260 111867
 id 528261 111868
 id 528297 112064
@@ -107224,12 +107226,12 @@ id 529898 153476
 id 529908 531500
 id 529909 153480
 id 529910 153481
-id 529911 153482
+id-unverified 529911
 id 529937 155183
 id 529939 155184
 id 530007 155694
 id 530008 155695
-id 530009 155696
+id-unverified 530009
 id 530034 156698
 id 530070 157533
 id 530128 157913
@@ -107467,49 +107469,51 @@ member-unverified AStarSearch<ParentSpaceNode,TeleportLink,1>.field_20
 member-unverified AStarSearch<ParentSpaceNode,TeleportLink,1>.field_28
 member-unverified AStarSearch<ParentSpaceNode,TeleportLink,1>.field_8
 member-unverified ActivateHandler.activateDisabled
-member Actor.__vftable_A0 98
-member Actor.__vftable_B8 b0
-member Actor.__vftable_C0 b8
-member Actor.__vftable_D0 c8
-member Actor.__vftable_D8 d0
-member Actor.__vftable_E0 d8
+member-unverified Actor.__vftable_A0
+member-unverified Actor.__vftable_B8
+member-unverified Actor.__vftable_C0
+member-unverified Actor.__vftable_D0
+member-unverified Actor.__vftable_D8
+member-unverified Actor.__vftable_E0
 member-unverified Actor.avStorage
-member Actor.boolFlags e0
-member Actor.boolFlags2 1fc
-member Actor.combatController 158
-member Actor.combatTargetHandle fc
+member-unverified Actor.boolFlags
+member-unverified Actor.boolFlags2
+member-unverified Actor.combatController
+member-unverified Actor.combatTargetHandle
 member-unverified Actor.criticalSection
 member Actor.currentProcess f0
 member-unverified Actor.dialogueTargetHandle
-member Actor.field_108 100
+member-unverified Actor.field_108
 member-unverified Actor.field_128
-member Actor.field_130 128
+member-unverified Actor.field_130
 member-unverified Actor.field_170
-member Actor.field_190 188
-member Actor.field_1F0 1e8
-member Actor.field_268 260
-member Actor.field_280 278
-member Actor.field_288 280
+member-unverified Actor.field_190
+member-unverified Actor.field_1F0
+member-unverified Actor.field_268
+member-unverified Actor.field_280
+member-unverified Actor.field_288
 member-unverified Actor.field_90
-member Actor.field_9A 92
-member Actor.field_9B 93
+member-unverified Actor.field_9A
+member-unverified Actor.field_9B
 member-unverified Actor.field_A8
 member-unverified Actor.field_B0
-member Actor.flags1 c0
-member Actor.flags2 c4
-member Actor.healthModifiers 228
-member Actor.magicCasters 1a0
+member-unverified Actor.flags1
+member-unverified Actor.flags2
+member-unverified Actor.healthModifiers
+member-unverified Actor.magicCasters
 member-unverified Actor.magickaModifiers
-member Actor.movementController 148
+member-unverified Actor.movementController
 member Actor.race 1f0
 member Actor.refScale 90
-member Actor.selectedSpells 1c0
+member-unverified Actor.selectedSpells
 member-unverified Actor.staminaModifiers
 member-unverified Actor.voicePointsModifiers
+member-unverified ActorMagicCaster.field_18
 member-unverified ActorMagicCaster.field_58
 member-unverified ActorMagicCaster.field_78
 member-unverified ActorMagicCaster.field_98
 member-unverified ActorMagicCaster.field_C8
+member-unverified ActorMediator.field_10
 member-unverified ActorValueInfo.field_74
 member-unverified ActorValueInfo.field_78
 member-unverified ActorValueInfo.field_7C
@@ -107527,8 +107531,11 @@ member-unverified ActorValueInfo.field_A8
 member-unverified ActorValueInfo.field_AC
 member-unverified AddCellGrassTask.field_20
 member-unverified AlarmPackage.field_48
+member-unverified AlarmPackage.field_D8
 member-unverified AlarmPackage.field_DC
 member-unverified AlarmPackage.field_F0
+member-unverified AlchemyItem.field_28
+member-unverified AlchemyItem.field_2A
 member-unverified AlchemyItem.field_A0
 member-missing AmiiboEvent.__vftable
 member-unverified AnimatedCameraDeltaStartHandler.pad0C
@@ -107539,57 +107546,57 @@ member-unverified AnimatedCameraStartHandler.pad0C
 member-unverified AnimatedCameraStartHandler.refCount
 member-unverified AnimationSystemUtils::QueuedReferenceAnimationTask.field_20
 member-unverified AnimationSystemUtils::TESModelAndAnimationHandles.field_20
-member ArrowProjectile.field_100 f8
-member ArrowProjectile.field_104 fc
-member ArrowProjectile.field_108 100
-member ArrowProjectile.field_10C 104
-member ArrowProjectile.field_110 108
-member ArrowProjectile.field_118 110
-member ArrowProjectile.field_120 118
-member ArrowProjectile.field_128 120
-member ArrowProjectile.field_130 128
-member ArrowProjectile.field_134 12c
-member ArrowProjectile.field_138 130
-member ArrowProjectile.field_13C 134
-member ArrowProjectile.field_140 138
-member ArrowProjectile.field_144 13c
-member ArrowProjectile.field_148 140
-member ArrowProjectile.field_150 148
-member ArrowProjectile.field_158 150
-member ArrowProjectile.field_160 158
-member ArrowProjectile.field_168 160
-member ArrowProjectile.field_170 168
+member-unverified ArrowProjectile.field_100
+member-unverified ArrowProjectile.field_104
+member-unverified ArrowProjectile.field_108
+member-unverified ArrowProjectile.field_10C
+member-unverified ArrowProjectile.field_110
+member-unverified ArrowProjectile.field_118
+member-unverified ArrowProjectile.field_120
+member-unverified ArrowProjectile.field_128
+member-unverified ArrowProjectile.field_130
+member-unverified ArrowProjectile.field_134
+member-unverified ArrowProjectile.field_138
+member-unverified ArrowProjectile.field_13C
+member-unverified ArrowProjectile.field_140
+member-unverified ArrowProjectile.field_144
+member-unverified ArrowProjectile.field_148
+member-unverified ArrowProjectile.field_150
+member-unverified ArrowProjectile.field_158
+member-unverified ArrowProjectile.field_160
+member-unverified ArrowProjectile.field_168
+member-unverified ArrowProjectile.field_170
 member-unverified ArrowProjectile.field_178
-member ArrowProjectile.field_180 178
-member ArrowProjectile.field_188 180
-member ArrowProjectile.field_190 188
-member ArrowProjectile.field_194 18c
-member ArrowProjectile.field_198 190
-member ArrowProjectile.field_19C 194
-member ArrowProjectile.field_1A4 19c
-member ArrowProjectile.field_1A8 1a0
-member ArrowProjectile.field_1B0 1a8
-member ArrowProjectile.field_1B8 1b0
-member ArrowProjectile.field_1C0 1b8
-member ArrowProjectile.field_1C8 1c0
-member ArrowProjectile.field_1D0 1c8
-member ArrowProjectile.field_1D4 1cc
-member ArrowProjectile.field_1D8 1d0
-member ArrowProjectile.field_1E0 1d8
-member ArrowProjectile.field_1E4 1dc
-member ArrowProjectile.field_1E8 1e0
-member ArrowProjectile.field_1F0 1e8
+member-unverified ArrowProjectile.field_180
+member-unverified ArrowProjectile.field_188
+member-unverified ArrowProjectile.field_190
+member-unverified ArrowProjectile.field_194
+member-unverified ArrowProjectile.field_198
+member-unverified ArrowProjectile.field_19C
+member-unverified ArrowProjectile.field_1A4
+member-unverified ArrowProjectile.field_1A8
+member-unverified ArrowProjectile.field_1B0
+member-unverified ArrowProjectile.field_1B8
+member-unverified ArrowProjectile.field_1C0
+member-unverified ArrowProjectile.field_1C8
+member-unverified ArrowProjectile.field_1D0
+member-unverified ArrowProjectile.field_1D4
+member-unverified ArrowProjectile.field_1D8
+member-unverified ArrowProjectile.field_1E0
+member-unverified ArrowProjectile.field_1E4
+member-unverified ArrowProjectile.field_1E8
+member-unverified ArrowProjectile.field_1F0
 member-unverified ArrowProjectile.field_90
-member ArrowProjectile.field_9A 92
-member ArrowProjectile.field_9B 93
-member ArrowProjectile.field_A0 98
-member ArrowProjectile.field_A8 a0
+member-unverified ArrowProjectile.field_9A
+member-unverified ArrowProjectile.field_9B
+member-unverified ArrowProjectile.field_A0
+member-unverified ArrowProjectile.field_A8
 member-unverified ArrowProjectile.field_D4
 member-unverified ArrowProjectile.field_DC
-member ArrowProjectile.field_E8 e0
-member ArrowProjectile.field_F0 e8
-member ArrowProjectile.field_F8 f0
-member ArrowProjectile.field_FC f4
+member-unverified ArrowProjectile.field_E8
+member-unverified ArrowProjectile.field_F0
+member-unverified ArrowProjectile.field_F8
+member-unverified ArrowProjectile.field_FC
 member ArrowProjectile.refScale 90
 member-missing ArrowScroller.__vftable
 member-missing ArrowScroller.field_10
@@ -107621,20 +107628,66 @@ member-unverified AutoVanityState.refCount
 member-unverified BGSAIWorldLocationPointRadius.field_10
 member-unverified BGSAIWorldLocationPointRadius.field_8
 member-unverified BGSAIWorldLocationPointRadius.field_C
+member-unverified BGSAcousticSpace.field_20
+member-unverified BGSAcousticSpace.field_22
+member-unverified BGSAcousticSpace.field_24
+member-unverified BGSAcousticSpace.field_26
+member-unverified BGSAcousticSpace.field_28
+member-unverified BGSAcousticSpace.field_2A
 member-unverified BGSActorCellEvent.actorHandleAndCell
 member-unverified BGSActorCellEvent.attached
+member-unverified BGSAddonNode.field_20
+member-unverified BGSAddonNode.field_22
+member-unverified BGSAddonNode.field_24
+member-unverified BGSAddonNode.field_26
+member-unverified BGSAddonNode.field_28
+member-unverified BGSAddonNode.field_2A
 member-unverified BGSAddonNode.field_40
+member-unverified BGSApparatus.field_28
+member-unverified BGSApparatus.field_2A
 member-unverified BGSApparatus.field_50
+member-unverified BGSArtObject.field_20
+member-unverified BGSArtObject.field_22
+member-unverified BGSArtObject.field_24
+member-unverified BGSArtObject.field_26
+member-unverified BGSArtObject.field_28
+member-unverified BGSArtObject.field_2A
 member-unverified BGSArtObject.field_40
 member-unverified BGSArtObjectCloneTask.field_20
+member-unverified BGSBehaviorGraphModel.model
+member-unverified BGSBodyPart.nodeName
+member-unverified BGSBodyPart.type
+member-unverified BGSBodyPartData.model
 member-unverified BGSCameraPath.conditions
 member-unverified BGSCameraPath.pad1B
 member-unverified BGSCameraPath.pad39
+member-unverified BGSCameraShot.cutAway
+member-unverified BGSCameraShot.minTime
 member-unverified BGSCameraShot.pad1B
 member-unverified BGSCameraShot.pad84
 member-unverified BGSCameraShot.pad9C
 member-unverified BGSCameraShot.padB2
+member-unverified BGSCameraShot.projectileCutDistance
+member-unverified BGSCameraShot.target
+member-unverified BGSCameraShot.targetTimeMult
 member-unverified BGSCollisionLayer.field_58
+member-unverified BGSDecalNode.extraDataCapacity
+member-unverified BGSDecalNode.flags2
+member-unverified BGSDecalNode.local
+member-unverified BGSDecalNode.previousWorldFrame
+member-unverified BGSDualCastData.field_20
+member-unverified BGSDualCastData.field_22
+member-unverified BGSDualCastData.field_24
+member-unverified BGSDualCastData.field_26
+member-unverified BGSDualCastData.field_28
+member-unverified BGSDualCastData.field_2A
+member-unverified BGSExplosion.field_20
+member-unverified BGSExplosion.field_22
+member-unverified BGSExplosion.field_24
+member-unverified BGSExplosion.field_26
+member-unverified BGSExplosion.field_28
+member-unverified BGSExplosion.field_2A
+member-unverified BGSExplosion.model
 member-unverified BGSGamebryoSequenceGenerator.field_108
 member-unverified BGSGamebryoSequenceGenerator.field_110
 member-unverified BGSGamebryoSequenceGenerator.field_114
@@ -107645,55 +107698,117 @@ member-unverified BGSGamebryoSequenceGenerator.field_B4
 member-unverified BGSGamebryoSequenceGenerator.field_B8
 member-unverified BGSGamebryoSequenceGenerator.field_C0
 member-unverified BGSGamebryoSequenceGenerator.field_C4
+member-unverified BGSHazard.field_20
+member-unverified BGSHazard.field_22
+member-unverified BGSHazard.field_24
+member-unverified BGSHazard.field_26
+member-unverified BGSHazard.field_28
+member-unverified BGSHazard.field_2A
+member-unverified BGSHazard.model
+member-unverified BGSHeadPart.field_118
 member-unverified BGSHeadPart.field_40
+member-unverified BGSHeadPart.field_6C
+member-unverified BGSIdleMarker.field_20
+member-unverified BGSIdleMarker.field_22
+member-unverified BGSIdleMarker.field_24
+member-unverified BGSIdleMarker.field_26
+member-unverified BGSIdleMarker.field_28
+member-unverified BGSIdleMarker.field_2A
+member-unverified BGSIdleMarker.model
+member-unverified BGSImpactData.model
 member-unverified BGSLensFlare.field_20
+member-unverified BGSLensFlare.field_24
+member-unverified BGSLensFlare.field_38
 member-unverified BGSLoadFormBuffer.position
 member-unverified BGSLoadFormBuffer.record
 member-unverified BGSLoadGameBuffer.position
 member-unverified BGSLocAlias.field_40
-member BGSMaterialObject.field_50 8
-member BGSMaterialObject.field_54 c
-member BGSMaterialObject.field_58 10
-member BGSMaterialObject.field_5C 14
-member BGSMaterialObject.field_64 1c
-member BGSMaterialObject.field_68 20
-member BGSMaterialObject.field_6C 24
-member BGSMaterialObject.field_74 2c
-member BGSMaterialObject.field_7C 34
+member-unverified BGSMaterialObject.model
 member-unverified BGSMessage.field_58
+member-unverified BGSMovableStatic.field_40
+member-unverified BGSMovableStatic.field_42
+member-unverified BGSMovableStatic.field_44
+member-unverified BGSMovableStatic.field_46
+member-unverified BGSMovableStatic.field_48
+member-unverified BGSMovableStatic.field_4A
 member-unverified BGSMovableStatic.field_60
+member-unverified BGSMoviePlayer.source_BSMusicEvent
 member-unverified BGSMusicPaletteTrack.field_80
 member-unverified BGSMusicType.currentTrackIndex
+member-unverified BGSMusicType.editorID
 member-unverified BGSMusicType.state
 member-unverified BGSMusicType.trackSequence
+member-unverified BGSNote.field_20
+member-unverified BGSNote.field_22
+member-unverified BGSNote.field_24
+member-unverified BGSNote.field_26
+member-unverified BGSNote.field_28
+member-unverified BGSNote.field_2A
+member-unverified BGSNote.model
 member-unverified BGSPlayerMusicChanger.source_BSMusicEvent
 member-unverified BGSProcedureAcquireExecState.field_30
-member BGSProcedureAcquireExecState.field_38 28
-member BGSProcedureAcquireExecState.m_BGSPackageDataRef_28 30
+member-unverified BGSProcedureAcquireExecState.field_38
+member-unverified BGSProcedureAcquireExecState.field_40
+member-unverified BGSProcedureAcquireExecState.m_BGSPackageDataRef_28
 member-unverified BGSProcedureFollowExecState.field_34
 member-unverified BGSProcedureFollowExecState.field_38
 member-unverified BGSProcedurePatrolExecState.field_30
-member BGSProcedurePatrolExecState.field_38 10
+member-unverified BGSProcedurePatrolExecState.field_38
 member-unverified BGSProcedurePatrolExecState.field_40
 member-unverified BGSProcedurePatrolExecState.field_50
+member-unverified BGSProcedurePatrolExecState.field_52
 member-unverified BGSProcedurePatrolExecState.m_BGSPackageDataRef_28
+member-unverified BGSProcedureSandboxExecState.field_30
 member-unverified BGSProcedureSandboxExecState.field_58
 member-unverified BGSProcedureSandboxExecState.field_60
 member-unverified BGSProcedureSandboxExecState.field_A4
 member-unverified BGSProcedureSandboxExecState.field_B1
 member-unverified BGSProcedureUseWeaponExecState.field_2C
+member-unverified BGSProjectile.field_20
+member-unverified BGSProjectile.field_22
+member-unverified BGSProjectile.field_24
+member-unverified BGSProjectile.field_26
+member-unverified BGSProjectile.field_28
+member-unverified BGSProjectile.field_2A
+member-unverified BGSProjectile.model
 member-unverified BGSQueuedGrassModelHandles.field_20
 member-unverified BGSRagdoll.field_178
 member-unverified BGSRagdoll.field_180
+member-unverified BGSRagdoll.field_188
 member-unverified BGSRagdoll.field_58
+member-unverified BGSRagdoll.field_5C
+member-unverified BGSRagdoll.field_60
+member-unverified BGSRagdoll.field_64
+member-unverified BGSRagdoll.field_68
+member-unverified BGSRagdoll.field_6C
+member-unverified BGSRagdoll.field_70
+member-unverified BGSRagdoll.field_78
+member-unverified BGSRagdoll.field_7C
+member-unverified BGSRagdoll.field_80
+member-unverified BGSRagdoll.field_84
+member-unverified BGSRagdoll.field_88
+member-unverified BGSRagdoll.field_8C
 member-unverified BGSRagdoll.field_90
 member-unverified BGSRagdoll.field_94
-member BGSRagdoll.field_C4 178
-member BGSRagdoll.field_CC 180
+member-unverified BGSRagdoll.field_B4
+member-unverified BGSRagdoll.field_BC
+member-unverified BGSRagdoll.field_C4
+member-unverified BGSRagdoll.field_CC
+member-unverified BGSRagdoll.model
 member-unverified BGSSaveFormBuffer.size
 member-unverified BGSSaveFormBuffer.version
 member-unverified BGSSaveGameBuffer.size
+member-unverified BGSSaveLoadGame.changeFlags
+member-unverified BGSSaveLoadGame.formIdIndexMap
+member-unverified BGSSaveLoadGame.formsToRefresh
+member-unverified BGSSaveLoadGame.history
+member-unverified BGSSaveLoadGame.loadScratchMaps
+member-unverified BGSSaveLoadGame.loadedChangeForms
+member-unverified BGSSaveLoadGame.loadingFormVersion
 member-unverified BGSSaveLoadGame.pluginListMismatch
+member-unverified BGSSaveLoadGame.previousChangeFlags
+member-unverified BGSSaveLoadGame.stateFlags
+member-unverified BGSSaveLoadGame.worldspaceIdMap
 member-unverified BGSSaveLoadManager.cachedHeader
 member-unverified BGSSaveLoadManager.characterNames
 member-unverified BGSSaveLoadManager.characters
@@ -107701,30 +107816,55 @@ member-unverified BGSSaveLoadManager.currentSaveNameCapacity
 member-unverified BGSSaveLoadManager.displayPlayerId
 member-unverified BGSSaveLoadManager.field_2B2
 member-unverified BGSSaveLoadManager.field_2F0
-member BGSSaveLoadManager.field_408 3c0
+member-unverified BGSSaveLoadManager.field_408
 member-unverified BGSSaveLoadManager.field_410
-member BGSSaveLoadManager.mainQueue 370
+member-unverified BGSSaveLoadManager.mainQueue
 member-unverified BGSSaveLoadManager.pendingLoadReady
+member-unverified BGSSaveLoadManager.playerIdFlags
 member-unverified BGSSaveLoadManager.saveFiles
 member-unverified BGSSaveLoadManager.suppressLoadOrderMessage
 member-unverified BGSSaveLoadManager.thread
+member-unverified BGSSaveLoadManager.unk121
 member-unverified BGSSaveLoadManager.unknownMap
 member-unverified BGSSaveLoadManager::Thread.busy
 member-unverified BGSSaveLoadManager::Thread.paused
+member-unverified BGSSaveLoadManager::Thread.queue
 member-unverified BGSSaveLoadManager::Thread.running
 member-unverified BGSScene.field_60
-member BGSScene.field_78 30
+member-unverified BGSScene.field_78
 member-unverified BGSShaderParticleGeometryData.m_TESTexture_38
 member-unverified BGSSoundCategory.attenuation
+member-unverified BGSSoundCategory.defaultMenuVolume
 member-unverified BGSSoundCategory.fullName
+member-unverified BGSSoundOutput.outputType
 member-unverified BGSSoundOutput::DynamicAttenuationCharacteristics.curve
+member-unverified BGSSoundOutput::DynamicAttenuationCharacteristics.maxDistance
+member-unverified BGSSoundOutput::DynamicAttenuationCharacteristics.minDistance
+member-unverified BGSStandardSoundDef.soundFiles
+member-unverified BGSStaticCollection.field_20
+member-unverified BGSStaticCollection.field_22
+member-unverified BGSStaticCollection.field_24
+member-unverified BGSStaticCollection.field_26
+member-unverified BGSStaticCollection.field_28
+member-unverified BGSStaticCollection.field_2A
 member-unverified BGSStaticCollection.field_40
+member-unverified BGSStoryManagerQuestFinder.field_30
+member-unverified BGSStoryManagerTreeVisitor.field_30
+member-unverified BGSTalkingActivator.field_28
+member-unverified BGSTalkingActivator.field_2A
 member-unverified BGSTalkingActivator.field_50
+member-unverified BGSTextureModel.model
 member-unverified BGSTextureSet.field_104
 member-unverified BGSTextureSet.field_10C
 member-unverified BGSTextureSet.field_114
 member-unverified BGSTextureSet.field_11C
 member-unverified BGSTextureSet.field_124
+member-unverified BGSTextureSet.field_20
+member-unverified BGSTextureSet.field_22
+member-unverified BGSTextureSet.field_24
+member-unverified BGSTextureSet.field_26
+member-unverified BGSTextureSet.field_28
+member-unverified BGSTextureSet.field_2A
 member-unverified BGSTextureSet.field_D4
 member-unverified BGSTextureSet.field_DC
 member-unverified BGSTextureSet.field_E4
@@ -107765,20 +107905,50 @@ member-missing BNetUnavailable::OpenConnectingToNetworkCallback.__vftable
 member-missing BNetUnavailable::OpenMarketplaceCallback.__vftable
 member-unverified BSAnimationGraphEvent.payload
 member BSAnimationGraphManager.activeGraph a8
-member BSAnimationGraphManager.dependentsLock a0
-member BSAnimationGraphManager.graphsLock 98
+member-unverified BSAnimationGraphManager.channelOverrides
+member-unverified BSAnimationGraphManager.dependentManagers
+member-unverified BSAnimationGraphManager.dependentsLock
+member-unverified BSAnimationGraphManager.graphsLock
 member-unverified BSAnimationGraphManager.variableCache
+member-unverified BSAudioListener.field_10
+member-unverified BSAudioListener.field_14
+member-unverified BSAudioListener.field_18
+member-unverified BSAudioListener.field_1C
+member-unverified BSAudioListener.field_20
+member-unverified BSAudioListener.field_24
+member-unverified BSAudioListener.field_28
+member-unverified BSAudioListener.field_2C
+member-unverified BSAudioListener.field_30
+member-unverified BSAudioListener.field_34
+member-unverified BSAudioListener.field_38
 member-unverified BSAudioListener.field_70
+member-unverified BSAudioListener.field_8
+member-unverified BSAudioListener.field_C
 member-unverified BSAudioManager.cacheCount
 member-unverified BSAudioManager.cacheList
+member-unverified BSAudioManager.callback3
+member-unverified BSAudioManager.commandLists
+member-unverified BSAudioManager.flags
+member-unverified BSAudioManager.followedNodes
+member-unverified BSAudioManager.hwThread
+member-unverified BSAudioManager.nodeOutputModels
+member-unverified BSAudioManager.settings
 member-unverified BSAudioManager.threadId
+member-unverified BSAudioManagerThread.parked
+member-unverified BSAudioManagerThread.sleepMs
 member-unverified BSBatchRenderer.alphaGroup
+member-unverified BSBatchRenderer.buckets
 member-unverified BSBatchRenderer.firstTechnique
 member-unverified BSBatchRenderer.groups
 member-unverified BSBatchRenderer.lastTechnique
 member-unverified BSBatchRenderer.techniqueToBucket
+member-unverified BSBlastNode.extraDataCapacity
+member-unverified BSBlastNode.flags2
+member-unverified BSBlastNode.local
+member-unverified BSBlastNode.previousWorldFrame
 member-unverified BSBlendTreadTransfInterpolator.field_1A
 member-unverified BSBlendTreadTransfInterpolator.field_48
+member-unverified BSBloodSplatterShaderProperty.extraDataCapacity
 member-unverified BSBoneSwitchGenerator.field_108
 member-unverified BSBoneSwitchGenerator.field_110
 member-unverified BSBoneSwitchGenerator.field_114
@@ -107805,6 +107975,10 @@ member-unverified BSBound.field_20
 member-unverified BSBound.field_24
 member-unverified BSBound.field_28
 member-unverified BSBound.field_2C
+member-unverified BSClearZNode.extraDataCapacity
+member-unverified BSClearZNode.flags2
+member-unverified BSClearZNode.local
+member-unverified BSClearZNode.previousWorldFrame
 member-unverified BSComputeAddBoneAnimModifier.field_108
 member-unverified BSComputeAddBoneAnimModifier.field_110
 member-unverified BSComputeAddBoneAnimModifier.field_114
@@ -107815,18 +107989,24 @@ member-unverified BSComputeAddBoneAnimModifier.field_B4
 member-unverified BSComputeAddBoneAnimModifier.field_B8
 member-unverified BSComputeAddBoneAnimModifier.field_C0
 member-unverified BSComputeAddBoneAnimModifier.field_C4
+member-unverified BSCubeMapCamera.extraDataCapacity
+member-unverified BSCubeMapCamera.flags2
 member-unverified BSCubeMapCamera.frustumBottom
 member-unverified BSCubeMapCamera.frustumFar
 member-unverified BSCubeMapCamera.frustumRight
 member-unverified BSCubeMapCamera.frustumTop
+member-unverified BSCubeMapCamera.local
 member-unverified BSCubeMapCamera.padding0C
 member-unverified BSCubeMapCamera.padding10A
 member-unverified BSCubeMapCamera.padding169
 member-unverified BSCubeMapCamera.padding2C
 member-unverified BSCubeMapCamera.padding3C
 member-unverified BSCubeMapCamera.portBottom
-member BSCubeMapCamera.worldToCam 11c
+member-unverified BSCubeMapCamera.previousWorldFrame
+member-unverified BSCubeMapCamera.worldToCam
 member-unverified BSCullingProcess.acceptFlag12Nodes
+member-unverified BSCullingProcess.appendTag
+member-unverified BSCullingProcess.cullMode
 member-unverified BSCullingProcess.customPlanes
 member-unverified BSCullingProcess.deferAllAppends
 member-unverified BSCullingProcess.descendIntoNodes
@@ -107841,10 +108021,11 @@ member-unverified BSCullingProcess.frustum
 member-unverified BSCullingProcess.lastGroupIndex
 member-unverified BSCullingProcess.maintainVisibleFlag
 member-unverified BSCullingProcess.narrowPlaneMask
-member BSCullingProcess.planes 40
+member-unverified BSCullingProcess.planes
 member-unverified BSCullingProcess.portalPlaneTree
 member-unverified BSCullingProcess.queuedVisible
 member-unverified BSCullingProcess.useCustomPlanes
+member-unverified BSCullingProcess.visibleGeometry
 member-unverified BSCyclicBlendTransitionGenerator.field_108
 member-unverified BSCyclicBlendTransitionGenerator.field_110
 member-unverified BSCyclicBlendTransitionGenerator.field_114
@@ -107855,6 +108036,14 @@ member-unverified BSCyclicBlendTransitionGenerator.field_B4
 member-unverified BSCyclicBlendTransitionGenerator.field_B8
 member-unverified BSCyclicBlendTransitionGenerator.field_C0
 member-unverified BSCyclicBlendTransitionGenerator.field_C4
+member-unverified BSDamageStage.extraDataCapacity
+member-unverified BSDamageStage.flags2
+member-unverified BSDamageStage.local
+member-unverified BSDamageStage.previousWorldFrame
+member-unverified BSDebrisNode.extraDataCapacity
+member-unverified BSDebrisNode.flags2
+member-unverified BSDebrisNode.local
+member-unverified BSDebrisNode.previousWorldFrame
 member-unverified BSDecomposeVectorModifier.field_108
 member-unverified BSDecomposeVectorModifier.field_110
 member-unverified BSDecomposeVectorModifier.field_114
@@ -107876,6 +108065,7 @@ member-unverified BSDirectAtModifier.field_B8
 member-unverified BSDirectAtModifier.field_C0
 member-unverified BSDirectAtModifier.field_C4
 member-unverified BSDismemberSkinInstance.paletteLock
+member-unverified BSDismemberSkinInstance.paletteRowsPerBone
 member-unverified BSDistTriggerModifier.field_108
 member-unverified BSDistTriggerModifier.field_110
 member-unverified BSDistTriggerModifier.field_114
@@ -107886,8 +108076,23 @@ member-unverified BSDistTriggerModifier.field_B4
 member-unverified BSDistTriggerModifier.field_B8
 member-unverified BSDistTriggerModifier.field_C0
 member-unverified BSDistTriggerModifier.field_C4
+member-unverified BSDistantTreeShaderProperty.extraDataCapacity
 member-unverified BSDoorHavokController.field_20
 member-unverified BSDoorHavokController.field_2C
+member-unverified BSDynamicLines.extraDataCapacity
+member-unverified BSDynamicLines.flags2
+member-unverified BSDynamicLines.local
+member-unverified BSDynamicLines.previousWorldFrame
+member-unverified BSDynamicTriShape.extraDataCapacity
+member-unverified BSDynamicTriShape.flags2
+member-unverified BSDynamicTriShape.local
+member-unverified BSDynamicTriShape.previousWorldFrame
+member-unverified BSEffectShaderData.nodeFilter
+member-unverified BSEffectShaderData.refCount
+member-unverified BSEffectShaderData.textures
+member-unverified BSEffectShaderMaterial.texCoordOffset
+member-unverified BSEffectShaderMaterial.texCoordOffset1
+member-unverified BSEffectShaderProperty.extraDataCapacity
 member-unverified BSEffectShaderPropertyColorController.field_20
 member-unverified BSEffectShaderPropertyColorController.field_2C
 member-unverified BSEffectShaderPropertyFloatController.field_20
@@ -107930,6 +108135,11 @@ member-unverified BSFaceGenAnimationData.expressionInput
 member-unverified BSFaceGenAnimationData.expressionOutput
 member-unverified BSFaceGenAnimationData.expressionTarget
 member-unverified BSFaceGenAnimationData.eyeHeading
+member-unverified BSFaceGenAnimationData.eyeHeadingOffset
+member-unverified BSFaceGenAnimationData.eyePitch
+member-unverified BSFaceGenAnimationData.eyePitchBase
+member-unverified BSFaceGenAnimationData.eyePitchOffset
+member-unverified BSFaceGenAnimationData.eyesClosed
 member-unverified BSFaceGenAnimationData.field_1AC
 member-unverified BSFaceGenAnimationData.field_1DC
 member-unverified BSFaceGenAnimationData.field_1E4
@@ -107938,13 +108148,35 @@ member-unverified BSFaceGenAnimationData.field_1F4
 member-unverified BSFaceGenAnimationData.forceUpdate
 member-unverified BSFaceGenAnimationData.headAngles
 member-unverified BSFaceGenAnimationData.modifierOutput
+member-unverified BSFaceGenAnimationData.modifierSpeech
 member-unverified BSFaceGenAnimationData.phonemeAnim
-member BSFaceGenAnimationData.phonemeOutput 100
+member-unverified BSFaceGenAnimationData.phonemeOutput
+member-unverified BSFaceGenAnimationData.phonemeSpeech
+member-unverified BSFaceGenAnimationData.updated
 member-unverified BSFaceGenDB::TRI::QueuedHandles.field_20
+member-unverified BSFaceGenNiNode.extraDataCapacity
+member-unverified BSFaceGenNiNode.flags2
+member-unverified BSFaceGenNiNode.local
+member-unverified BSFaceGenNiNode.previousWorldFrame
+member-unverified BSFadeNode.extraDataCapacity
 member-unverified BSFadeNode.fadeFrame
+member-unverified BSFadeNode.flags2
+member-unverified BSFadeNode.lastUpdateTime
+member-unverified BSFadeNode.local
+member-unverified BSFadeNode.lodDistance
+member-unverified BSFadeNode.previousLodDistance
+member-unverified BSFadeNode.previousWorldFrame
+member-unverified BSFadeNode.stippleFade
+member-unverified BSFadeNode.targetFade
 member-unverified BSFadeNode.unknown134
-member BSFadeNode.unknown14c 130
+member-unverified BSFadeNode.unknown14c
+member-unverified BSFadeNode.unknown152
+member-unverified BSFlattenedBoneTree.extraDataCapacity
+member-unverified BSFlattenedBoneTree.flags2
+member-unverified BSFlattenedBoneTree.local
 member-unverified BSFlattenedBoneTree.nameMap
+member-unverified BSFlattenedBoneTree.previousWorldFrame
+member-unverified BSFogProperty.extraDataCapacity
 member-unverified BSFrustumFOVController.field_20
 member-unverified BSFrustumFOVController.field_2C
 member-unverified BSGameDataSystemUtility.field_10
@@ -107957,10 +108189,8 @@ member-unverified BSGameSound.field_40
 member-unverified BSGameSound.field_44
 member-unverified BSGameSound.field_48
 member-unverified BSGameSound.field_54
+member-unverified BSGamepadDevice.connected
 member-unverified BSGamepadDevice.source_BSGamepadEvent
-member BSGamerProfile.field_78 90
-member BSGamerProfile.field_80 98
-member BSGamerProfile.field_88 a0
 member-unverified BSGamerProfile.field_90
 member-unverified BSGamerProfile.field_98
 member-unverified BSGamerProfile.field_A0
@@ -107968,7 +108198,13 @@ member-unverified BSGamerProfile.field_A8
 member-unverified BSGamerProfile.field_B0
 member-unverified BSGamerProfile.field_B8
 member-unverified BSGamerProfile.source_BSGamerProfileEvent
+member-unverified BSGeometry.extraDataCapacity
+member-unverified BSGeometry.flags2
+member-unverified BSGeometry.local
+member-unverified BSGeometry.previousWorldFrame
 member-unverified BSGeometryListCullingProcess.acceptFlag12Nodes
+member-unverified BSGeometryListCullingProcess.appendTag
+member-unverified BSGeometryListCullingProcess.cullMode
 member-unverified BSGeometryListCullingProcess.customPlanes
 member-unverified BSGeometryListCullingProcess.deferAllAppends
 member-unverified BSGeometryListCullingProcess.descendIntoNodes
@@ -107983,10 +108219,11 @@ member-unverified BSGeometryListCullingProcess.frustum
 member-unverified BSGeometryListCullingProcess.lastGroupIndex
 member-unverified BSGeometryListCullingProcess.maintainVisibleFlag
 member-unverified BSGeometryListCullingProcess.narrowPlaneMask
-member BSGeometryListCullingProcess.planes 40
+member-unverified BSGeometryListCullingProcess.planes
 member-unverified BSGeometryListCullingProcess.portalPlaneTree
 member-unverified BSGeometryListCullingProcess.queuedVisible
 member-unverified BSGeometryListCullingProcess.useCustomPlanes
+member-unverified BSGeometryListCullingProcess.visibleGeometry
 member-unverified BSGetTimeStepModifier.field_108
 member-unverified BSGetTimeStepModifier.field_110
 member-unverified BSGetTimeStepModifier.field_114
@@ -107998,6 +108235,7 @@ member-unverified BSGetTimeStepModifier.field_B8
 member-unverified BSGetTimeStepModifier.field_C0
 member-unverified BSGetTimeStepModifier.field_C4
 member-unverified BSGrassShaderProperty.depthPassLists
+member-unverified BSGrassShaderProperty.extraDataCapacity
 member-unverified BSGrassShaderProperty.lightDataStorage
 member-unverified BSGrassShaderProperty.projectedUVParams
 member-unverified BSGrassShaderProperty.shadowMaskPasses
@@ -108023,6 +108261,10 @@ member-unverified BSIStateManagerModifier::BSIStateManagerStateListener.field_C0
 member-unverified BSIStateManagerModifier::BSIStateManagerStateListener.field_C4
 member-unverified BSInputDevice.idToKey
 member-unverified BSInputDevice.nameToId
+member-unverified BSInstanceTriShape.extraDataCapacity
+member-unverified BSInstanceTriShape.flags2
+member-unverified BSInstanceTriShape.local
+member-unverified BSInstanceTriShape.previousWorldFrame
 member-unverified BSInterpValueModifier.field_108
 member-unverified BSInterpValueModifier.field_110
 member-unverified BSInterpValueModifier.field_114
@@ -108321,6 +108563,7 @@ member-unverified BSJobs::JobThread.field_A60
 member-unverified BSJobs::JobThread.field_A68
 member-unverified BSJobs::JobThread.field_A6C
 member-unverified BSJobs::JobThread.field_A70
+member-unverified BSJobs::JobThread.field_A74
 member-unverified BSJobs::JobThread.field_A8
 member-unverified BSJobs::JobThread.field_B0
 member-unverified BSJobs::JobThread.field_B8
@@ -108335,29 +108578,78 @@ member-unverified BSJobs::JobThread.field_E8
 member-unverified BSJobs::JobThread.field_F0
 member-unverified BSJobs::JobThread.field_F8
 member-unverified BSJobs::JobThread.field_FC
+member-unverified BSLODMultiIndexTriShape.extraDataCapacity
+member-unverified BSLODMultiIndexTriShape.flags2
+member-unverified BSLODMultiIndexTriShape.local
+member-unverified BSLODMultiIndexTriShape.previousWorldFrame
+member-unverified BSLODTriShape.extraDataCapacity
+member-unverified BSLODTriShape.flags2
+member-unverified BSLODTriShape.local
+member-unverified BSLODTriShape.previousWorldFrame
 member-unverified BSLagBoneController.field_20
 member-unverified BSLagBoneController.field_2C
+member-unverified BSLeafAnimNode.extraDataCapacity
+member-unverified BSLeafAnimNode.flags2
+member-unverified BSLeafAnimNode.local
+member-unverified BSLeafAnimNode.previousWorldFrame
 member-unverified BSLight.field_130
 member-unverified BSLight.field_18
-member BSLight.field_28 44
+member-unverified BSLight.field_20
+member-unverified BSLight.field_28
 member-unverified BSLight.field_30
 member-unverified BSLight.portalStrictCull
 member-unverified BSLight.sphereCuller
+member-unverified BSLightingShaderMaterial.texCoordOffset
+member-unverified BSLightingShaderMaterial.texCoordOffset1
 member-unverified BSLightingShaderMaterial.textureLoadLock
+member-unverified BSLightingShaderMaterialBase.texCoordOffset
+member-unverified BSLightingShaderMaterialBase.texCoordOffset1
 member-unverified BSLightingShaderMaterialBase.textureLoadLock
+member-unverified BSLightingShaderMaterialEnvmap.texCoordOffset
+member-unverified BSLightingShaderMaterialEnvmap.texCoordOffset1
 member-unverified BSLightingShaderMaterialEnvmap.textureLoadLock
+member-unverified BSLightingShaderMaterialEye.texCoordOffset
+member-unverified BSLightingShaderMaterialEye.texCoordOffset1
 member-unverified BSLightingShaderMaterialEye.textureLoadLock
+member-unverified BSLightingShaderMaterialFacegen.texCoordOffset
+member-unverified BSLightingShaderMaterialFacegen.texCoordOffset1
 member-unverified BSLightingShaderMaterialFacegen.textureLoadLock
+member-unverified BSLightingShaderMaterialFacegenTint.texCoordOffset
+member-unverified BSLightingShaderMaterialFacegenTint.texCoordOffset1
 member-unverified BSLightingShaderMaterialFacegenTint.textureLoadLock
+member-unverified BSLightingShaderMaterialGlowmap.texCoordOffset
+member-unverified BSLightingShaderMaterialGlowmap.texCoordOffset1
 member-unverified BSLightingShaderMaterialGlowmap.textureLoadLock
+member-unverified BSLightingShaderMaterialHairTint.texCoordOffset
+member-unverified BSLightingShaderMaterialHairTint.texCoordOffset1
 member-unverified BSLightingShaderMaterialHairTint.textureLoadLock
+member-unverified BSLightingShaderMaterialLODLandscape.texCoordOffset
+member-unverified BSLightingShaderMaterialLODLandscape.texCoordOffset1
 member-unverified BSLightingShaderMaterialLODLandscape.textureLoadLock
+member-unverified BSLightingShaderMaterialLandscape.field_118
+member-unverified BSLightingShaderMaterialLandscape.field_128
+member-unverified BSLightingShaderMaterialLandscape.field_134
+member-unverified BSLightingShaderMaterialLandscape.field_138
+member-unverified BSLightingShaderMaterialLandscape.field_13C
+member-unverified BSLightingShaderMaterialLandscape.field_140
+member-unverified BSLightingShaderMaterialLandscape.field_144
+member-unverified BSLightingShaderMaterialLandscape.texCoordOffset
+member-unverified BSLightingShaderMaterialLandscape.texCoordOffset1
 member-unverified BSLightingShaderMaterialLandscape.textureLoadLock
+member-unverified BSLightingShaderMaterialMultiLayerParallax.texCoordOffset
+member-unverified BSLightingShaderMaterialMultiLayerParallax.texCoordOffset1
 member-unverified BSLightingShaderMaterialMultiLayerParallax.textureLoadLock
+member-unverified BSLightingShaderMaterialParallax.texCoordOffset
+member-unverified BSLightingShaderMaterialParallax.texCoordOffset1
 member-unverified BSLightingShaderMaterialParallax.textureLoadLock
+member-unverified BSLightingShaderMaterialParallaxOcc.texCoordOffset
+member-unverified BSLightingShaderMaterialParallaxOcc.texCoordOffset1
 member-unverified BSLightingShaderMaterialParallaxOcc.textureLoadLock
+member-unverified BSLightingShaderMaterialSnow.texCoordOffset
+member-unverified BSLightingShaderMaterialSnow.texCoordOffset1
 member-unverified BSLightingShaderMaterialSnow.textureLoadLock
 member-unverified BSLightingShaderProperty.depthPassLists
+member-unverified BSLightingShaderProperty.extraDataCapacity
 member-unverified BSLightingShaderProperty.lightDataStorage
 member-unverified BSLightingShaderProperty.projectedUVParams
 member-unverified BSLightingShaderProperty.shadowMaskPasses
@@ -108377,6 +108669,10 @@ member-unverified BSLimbIKModifier.field_B4
 member-unverified BSLimbIKModifier.field_B8
 member-unverified BSLimbIKModifier.field_C0
 member-unverified BSLimbIKModifier.field_C4
+member-unverified BSLines.extraDataCapacity
+member-unverified BSLines.flags2
+member-unverified BSLines.local
+member-unverified BSLines.previousWorldFrame
 member-unverified BSLookAtModifier.field_108
 member-unverified BSLookAtModifier.field_110
 member-unverified BSLookAtModifier.field_114
@@ -108387,6 +108683,14 @@ member-unverified BSLookAtModifier.field_B4
 member-unverified BSLookAtModifier.field_B8
 member-unverified BSLookAtModifier.field_C0
 member-unverified BSLookAtModifier.field_C4
+member-unverified BSMasterParticleSystem.extraDataCapacity
+member-unverified BSMasterParticleSystem.flags2
+member-unverified BSMasterParticleSystem.local
+member-unverified BSMasterParticleSystem.previousWorldFrame
+member-unverified BSMeshLODTriShape.extraDataCapacity
+member-unverified BSMeshLODTriShape.flags2
+member-unverified BSMeshLODTriShape.local
+member-unverified BSMeshLODTriShape.previousWorldFrame
 member-unverified BSModelDB::QueuedHandles.field_20
 member-unverified BSModifyOnceModifier.field_108
 member-unverified BSModifyOnceModifier.field_110
@@ -108398,6 +108702,25 @@ member-unverified BSModifyOnceModifier.field_B4
 member-unverified BSModifyOnceModifier.field_B8
 member-unverified BSModifyOnceModifier.field_C0
 member-unverified BSModifyOnceModifier.field_C4
+member-unverified BSMultiBoundCapsule.field_18
+member-unverified BSMultiBoundCapsule.field_20
+member-unverified BSMultiBoundCapsule.field_28
+member-unverified BSMultiBoundNode.extraDataCapacity
+member-unverified BSMultiBoundNode.flags2
+member-unverified BSMultiBoundNode.local
+member-unverified BSMultiBoundNode.previousWorldFrame
+member-unverified BSMultiBoundRoom.extraDataCapacity
+member-unverified BSMultiBoundRoom.flags2
+member-unverified BSMultiBoundRoom.local
+member-unverified BSMultiBoundRoom.previousWorldFrame
+member-unverified BSMultiIndexTriShape.extraDataCapacity
+member-unverified BSMultiIndexTriShape.flags2
+member-unverified BSMultiIndexTriShape.local
+member-unverified BSMultiIndexTriShape.previousWorldFrame
+member-unverified BSMultiStreamInstanceTriShape.extraDataCapacity
+member-unverified BSMultiStreamInstanceTriShape.flags2
+member-unverified BSMultiStreamInstanceTriShape.local
+member-unverified BSMultiStreamInstanceTriShape.previousWorldFrame
 member-unverified BSMultiTargetTreadTransfController.field_20
 member-unverified BSMultiTargetTreadTransfController.field_2C
 member-unverified BSNavmeshInfoSearch.field_10
@@ -108406,38 +108729,60 @@ member-unverified BSNavmeshInfoSearch.field_1F8
 member-unverified BSNavmeshInfoSearch.field_20
 member-unverified BSNavmeshInfoSearch.field_200
 member-unverified BSNavmeshInfoSearch.field_208
+member-unverified BSNavmeshInfoSearch.field_210
 member-unverified BSNavmeshInfoSearch.field_218
+member-unverified BSNavmeshInfoSearch.field_220
+member-unverified BSNavmeshInfoSearch.field_228
 member-unverified BSNavmeshInfoSearch.field_234
 member-unverified BSNavmeshInfoSearch.field_28
 member-unverified BSNavmeshInfoSearch.field_8
 member-unverified BSNavmeshObstacleData.field_10
+member-unverified BSNavmeshObstacleData.field_18
 member-unverified BSNavmeshObstacleData.field_20
 member-unverified BSNavmeshObstacleData.field_28
 member-unverified BSNavmeshObstacleData.field_64
 member-unverified BSNavmeshObstacleData.field_6C
 member-unverified BSNavmeshObstacleData.field_74
-member BSNavmeshObstacleData.field_7C 0
-member BSNavmeshObstacleData.field_84 10
-member BSNavmeshObstacleData.field_8C 18
+member-unverified BSNavmeshObstacleData.field_7C
+member-unverified BSNavmeshObstacleData.field_84
+member-unverified BSNavmeshObstacleData.field_8C
 member-unverified BSNavmeshSearch.field_10
 member-unverified BSNavmeshSearch.field_170
 member-unverified BSNavmeshSearch.field_178
 member-unverified BSNavmeshSearch.field_18
 member-unverified BSNavmeshSearch.field_190
 member-unverified BSNavmeshSearch.field_198
+member-unverified BSNavmeshSearch.field_1A0
 member-unverified BSNavmeshSearch.field_1A8
 member-unverified BSNavmeshSearch.field_20
 member-unverified BSNavmeshSearch.field_28
 member-unverified BSNavmeshSearch.field_8
 member-unverified BSNavmeshSearchFilters.field_158
-member BSNavmeshSearchFilters.field_1A8 130
+member-unverified BSNavmeshSearchFilters.field_1A8
 member-unverified BSNavmeshSearchHideFilter.field_158
-member BSNavmeshSearchHideFilter.field_1A8 130
+member-unverified BSNavmeshSearchHideFilter.field_1A8
 member-unverified BSNavmeshSearchMaxCostFilters.field_158
-member BSNavmeshSearchMaxCostFilters.field_1A8 130
+member-unverified BSNavmeshSearchMaxCostFilters.field_1A8
 member-unverified BSNiAlphaPropertyTestRefController.field_20
 member-unverified BSNiAlphaPropertyTestRefController.field_2C
+member-unverified BSNiNode.extraDataCapacity
+member-unverified BSNiNode.flags2
+member-unverified BSNiNode.local
+member-unverified BSNiNode.previousWorldFrame
+member-unverified BSNullImplAudioListener.field_10
+member-unverified BSNullImplAudioListener.field_14
+member-unverified BSNullImplAudioListener.field_18
+member-unverified BSNullImplAudioListener.field_1C
+member-unverified BSNullImplAudioListener.field_20
+member-unverified BSNullImplAudioListener.field_24
+member-unverified BSNullImplAudioListener.field_28
+member-unverified BSNullImplAudioListener.field_2C
+member-unverified BSNullImplAudioListener.field_30
+member-unverified BSNullImplAudioListener.field_34
+member-unverified BSNullImplAudioListener.field_38
 member-unverified BSNullImplAudioListener.field_70
+member-unverified BSNullImplAudioListener.field_8
+member-unverified BSNullImplAudioListener.field_C
 member-unverified BSNullImplGameSound.field_40
 member-unverified BSNullImplGameSound.field_44
 member-unverified BSNullImplGameSound.field_48
@@ -108471,7 +108816,13 @@ member-unverified BSOffsetAnimationGenerator.field_B4
 member-unverified BSOffsetAnimationGenerator.field_B8
 member-unverified BSOffsetAnimationGenerator.field_C0
 member-unverified BSOffsetAnimationGenerator.field_C4
+member-unverified BSOrderedNode.extraDataCapacity
+member-unverified BSOrderedNode.flags2
+member-unverified BSOrderedNode.local
+member-unverified BSOrderedNode.previousWorldFrame
+member-unverified BSPCGamepadDeviceDelegate.connected
 member-unverified BSPCGamepadDeviceDelegate.source_BSGamepadEvent
+member-unverified BSPCOrbisGamepadDevice.connected
 member-unverified BSPCOrbisGamepadDevice.source_BSGamepadEvent
 member-unverified BSPSysMultiTargetEmitterCtlr.field_20
 member-unverified BSPSysMultiTargetEmitterCtlr.field_2C
@@ -108479,6 +108830,8 @@ member-unverified BSPSysMultiTargetEmitterCtlr.field_88
 member-unverified BSPSysSimpleColorModifier.field_48
 member-unverified BSPSysSimpleColorModifier.field_58
 member-unverified BSParabolicCullingProcess.acceptFlag12Nodes
+member-unverified BSParabolicCullingProcess.appendTag
+member-unverified BSParabolicCullingProcess.cullMode
 member-unverified BSParabolicCullingProcess.customPlanes
 member-unverified BSParabolicCullingProcess.deferAllAppends
 member-unverified BSParabolicCullingProcess.descendIntoNodes
@@ -108493,10 +108846,11 @@ member-unverified BSParabolicCullingProcess.frustum
 member-unverified BSParabolicCullingProcess.lastGroupIndex
 member-unverified BSParabolicCullingProcess.maintainVisibleFlag
 member-unverified BSParabolicCullingProcess.narrowPlaneMask
-member BSParabolicCullingProcess.planes 40
+member-unverified BSParabolicCullingProcess.planes
 member-unverified BSParabolicCullingProcess.portalPlaneTree
 member-unverified BSParabolicCullingProcess.queuedVisible
 member-unverified BSParabolicCullingProcess.useCustomPlanes
+member-unverified BSParabolicCullingProcess.visibleGeometry
 member-unverified BSParticleShaderCubeEmitter.field_F68
 member-unverified BSParticleShaderCubeEmitter.field_F70
 member-unverified BSParticleShaderCubeEmitter.field_F78
@@ -108512,10 +108866,15 @@ member-unverified BSParticleShaderCubeEmitter.field_FC0
 member-unverified BSParticleShaderCubeEmitter.field_FC8
 member-unverified BSParticleShaderCubeEmitter.field_FD0
 member-unverified BSParticleShaderCubeEmitter.field_FD8
+member-unverified BSParticleShaderGeometry.extraDataCapacity
+member-unverified BSParticleShaderGeometry.flags2
+member-unverified BSParticleShaderGeometry.local
+member-unverified BSParticleShaderGeometry.previousWorldFrame
+member-unverified BSParticleShaderProperty.extraDataCapacity
 member-unverified BSParticleShaderProperty.field_100
-member BSParticleShaderProperty.field_108 120
+member-unverified BSParticleShaderProperty.field_108
 member-unverified BSParticleShaderProperty.field_110
-member BSParticleShaderProperty.field_118 140
+member-unverified BSParticleShaderProperty.field_118
 member-unverified BSParticleShaderProperty.field_120
 member-unverified BSParticleShaderProperty.field_128
 member-unverified BSParticleShaderRainEmitter.field_F68
@@ -108548,6 +108907,10 @@ member-unverified BSParticleShaderSnowEmitter.field_FC0
 member-unverified BSParticleShaderSnowEmitter.field_FC8
 member-unverified BSParticleShaderSnowEmitter.field_FD0
 member-unverified BSParticleShaderSnowEmitter.field_FD8
+member-unverified BSParticleSystemManager.extraDataCapacity
+member-unverified BSParticleSystemManager.flags2
+member-unverified BSParticleSystemManager.local
+member-unverified BSParticleSystemManager.previousWorldFrame
 member-unverified BSPassByTargetTriggerModifier.field_108
 member-unverified BSPassByTargetTriggerModifier.field_110
 member-unverified BSPassByTargetTriggerModifier.field_114
@@ -108565,10 +108928,13 @@ member-unverified BSPathSmootherPOVSearch.field_18
 member-unverified BSPathSmootherPOVSearch.field_20
 member-unverified BSPathSmootherPOVSearch.field_28
 member-unverified BSPathSmootherPOVSearch.field_8
-member BSPathfindingTemporary<PathingDoor>.field_10 14
+member-unverified BSPathfindingTemporary<PathingDoor>.field_10
 member-unverified BSPathfindingTemporary<PathingDoor>.field_14
 member-unverified BSPathfindingTemporary<PathingRequest>.field_C8
 member-unverified BSPathfindingTemporary<PathingRequestClosePoint>.field_C8
+member-unverified BSPathfindingTemporary<PathingRequestCover>.field_100
+member-unverified BSPathfindingTemporary<PathingRequestCover>.field_108
+member-unverified BSPathfindingTemporary<PathingRequestCover>.field_120
 member-unverified BSPathfindingTemporary<PathingRequestCover>.field_134
 member-unverified BSPathfindingTemporary<PathingRequestCover>.field_C8
 member-unverified BSPathfindingTemporary<PathingRequestSafeStraightLine>.field_C8
@@ -108577,11 +108943,11 @@ member-unverified BSPathingLOSGridMap.field_38
 member-unverified BSPathingLOSGridMap.field_70
 member-unverified BSPathingRequest.field_C8
 member-unverified BSPathingSearchRayCast.field_74
-member BSPathingSearchRayCast.field_7C 0
-member BSPathingSearchRayCast.field_84 68
-member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>.field_30 28
+member-unverified BSPathingSearchRayCast.field_7C
+member-unverified BSPathingSearchRayCast.field_84
+member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>.field_30
 member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>.field_38
-member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>.field_40 38
+member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>.field_40
 member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>.field_80
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>.__vftable
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>.field_30
@@ -108596,20 +108962,20 @@ member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform:
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_>.field_38
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_>.field_40
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_>.field_80
-member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64)>_>.field_30 28
+member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64)>_>.field_30
 member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64)>_>.field_38
-member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64)>_>.field_40 38
+member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64)>_>.field_40
 member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64)>_>.field_80
-member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSEntitlement,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_30 28
+member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSEntitlement,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_30
 member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSEntitlement,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_38
-member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSEntitlement,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_40 38
-member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_30 28
+member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSEntitlement,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_40
+member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_30
 member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_38
-member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_40 38
+member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_40
 member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_80
-member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_30 28
+member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_30
 member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_38
-member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_40 38
+member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_40
 member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_80
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContentCollection,BSTArrayHeapAllocator>_const&___ptr64)>_>.__vftable
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContentCollection,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_30
@@ -108623,24 +108989,24 @@ member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform:
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<unsigned___int64,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_30
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<unsigned___int64,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_38
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<unsigned___int64,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_40
-member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>.field_30 28
+member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>.field_30
 member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>.field_38
-member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>.field_40 38
+member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>.field_40
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64,char_const*___ptr64)>_>.__vftable
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64,char_const*___ptr64)>_>.field_30
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64,char_const*___ptr64)>_>.field_38
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64,char_const*___ptr64)>_>.field_40
-member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,int)>_>.field_30 28
+member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,int)>_>.field_30
 member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,int)>_>.field_38
-member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,int)>_>.field_40 38
+member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,int)>_>.field_40
 member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,int)>_>.field_80
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,std::shared_ptr<void>,unsigned___int64)>_>.__vftable
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,std::shared_ptr<void>,unsigned___int64)>_>.field_30
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,std::shared_ptr<void>,unsigned___int64)>_>.field_38
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,std::shared_ptr<void>,unsigned___int64)>_>.field_40
-member BSPlatform::BSAsyncRequestBase.field_30 28
+member-unverified BSPlatform::BSAsyncRequestBase.field_30
 member-unverified BSPlatform::BSAsyncRequestBase.field_38
-member BSPlatform::BSAsyncRequestBase.field_40 38
+member-unverified BSPlatform::BSAsyncRequestBase.field_40
 member-missing BSPlatform::BSBNETFile::download.__vftable
 member-missing BSPlatform::BSBNETFile::download.field_10
 member-missing BSPlatform::BSBNETFile::download.field_58
@@ -108672,31 +109038,31 @@ member-missing BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModStream
 member-missing BSPlatform::BSBNETImage.__vftable
 member-missing BSPlatform::BSBNETImage.field_20
 member-missing BSPlatform::BSBNETImage.field_28
-member BSPlatform::BSBethesdaPlatform.field_130 170
+member-unverified BSPlatform::BSBethesdaPlatform.field_130
 member-unverified BSPlatform::BSBethesdaPlatform.field_28
-member BSPlatform::BSBethesdaPlatform.field_30 88
+member-unverified BSPlatform::BSBethesdaPlatform.field_30
 member-unverified BSPlatform::BSBethesdaPlatform.field_32
-member BSPlatform::BSBethesdaPlatform.field_38 a0
-member BSPlatform::BSBethesdaPlatform.field_40 a8
+member-unverified BSPlatform::BSBethesdaPlatform.field_38
+member-unverified BSPlatform::BSBethesdaPlatform.field_40
 member-unverified BSPlatform::BSBethesdaPlatform.field_48
-member BSPlatform::BSBethesdaPlatform.field_50 b8
-member BSPlatform::BSBethesdaPlatform.field_80 e8
-member BSPlatform::BSBethesdaPlatform.field_88 140
-member BSPlatform::BSBethesdaPlatform.field_90 144
+member-unverified BSPlatform::BSBethesdaPlatform.field_50
+member-unverified BSPlatform::BSBethesdaPlatform.field_80
+member-unverified BSPlatform::BSBethesdaPlatform.field_88
+member-unverified BSPlatform::BSBethesdaPlatform.field_90
 member-unverified BSPlatform::BSBethesdaPlatform.field_B
 member-unverified BSPlatform::BSBethesdaPlatform.field_C
-member BSPlatform::BSBethesdaPlatform.field_C0 170
-member BSPlatform::BSBethesdaPlatform.field_C8 178
+member-unverified BSPlatform::BSBethesdaPlatform.field_C0
+member-unverified BSPlatform::BSBethesdaPlatform.field_C8
 member-unverified BSPlatform::BSBethesdaPlatform.field_D
-member BSPlatform::BSBethesdaPlatform.field_D0 170
-member BSPlatform::BSBethesdaPlatform.field_D8 1a8
-member BSPlatform::BSBethesdaPlatform.field_E0 1a8
+member-unverified BSPlatform::BSBethesdaPlatform.field_D0
+member-unverified BSPlatform::BSBethesdaPlatform.field_D8
+member-unverified BSPlatform::BSBethesdaPlatform.field_E0
 member-unverified BSPlatform::BSBethesdaPlatform.field_E8
 member-unverified BSPlatform::BSBethesdaPlatform.field_F0
-member BSPlatform::BSDownloadRequest.field_30 28
+member-unverified BSPlatform::BSDownloadRequest.field_30
 member-unverified BSPlatform::BSDownloadRequest.field_38
-member BSPlatform::BSDownloadRequest.field_40 38
-member BSPlatform::BSDownloadRequest.field_80 78
+member-unverified BSPlatform::BSDownloadRequest.field_40
+member-unverified BSPlatform::BSDownloadRequest.field_80
 member-unverified BSPlatform::BSDownloadRequest.field_88
 member-unverified BSPlatform::BSDownloadRequest.field_90
 member-unverified BSPlatform::BSDownloadRequest.field_98
@@ -108710,9 +109076,9 @@ member-missing BSPlatform::BSMarketplaceImage.field_20
 member-missing BSPlatform::BSMarketplaceImage.field_28
 member-missing BSPlatform::BSMarketplaceUploader.__vftable
 member-missing BSPlatform::BSMarketplaceUploader.field_8
-member BSPlatform::BSUploadRequest.field_30 28
+member-unverified BSPlatform::BSUploadRequest.field_30
 member-unverified BSPlatform::BSUploadRequest.field_38
-member BSPlatform::BSUploadRequest.field_40 38
+member-unverified BSPlatform::BSUploadRequest.field_40
 member-unverified BSPlatform::BSUploadRequest.field_80
 member-unverified BSPlatform::BSUploadRequest.field_88
 member-unverified BSPlatform::BSUploadRequest.field_90
@@ -108857,13 +109223,20 @@ member-unverified BSPortal.field_D0
 member-unverified BSPortal.field_D8
 member-unverified BSPortal.field_E0
 member-unverified BSPortal.field_E8
+member-unverified BSPortalSharedNode.extraDataCapacity
+member-unverified BSPortalSharedNode.flags2
+member-unverified BSPortalSharedNode.local
+member-unverified BSPortalSharedNode.previousWorldFrame
 member-unverified BSPrecomputedNavmeshInfoSearch.field_10
 member-unverified BSPrecomputedNavmeshInfoSearch.field_18
 member-unverified BSPrecomputedNavmeshInfoSearch.field_1F8
 member-unverified BSPrecomputedNavmeshInfoSearch.field_20
 member-unverified BSPrecomputedNavmeshInfoSearch.field_200
 member-unverified BSPrecomputedNavmeshInfoSearch.field_208
+member-unverified BSPrecomputedNavmeshInfoSearch.field_210
 member-unverified BSPrecomputedNavmeshInfoSearch.field_218
+member-unverified BSPrecomputedNavmeshInfoSearch.field_220
+member-unverified BSPrecomputedNavmeshInfoSearch.field_228
 member-unverified BSPrecomputedNavmeshInfoSearch.field_234
 member-unverified BSPrecomputedNavmeshInfoSearch.field_28
 member-unverified BSPrecomputedNavmeshInfoSearch.field_8
@@ -108888,27 +109261,35 @@ member-unverified BSRagdollContactListenerModifier.field_B4
 member-unverified BSRagdollContactListenerModifier.field_B8
 member-unverified BSRagdollContactListenerModifier.field_C0
 member-unverified BSRagdollContactListenerModifier.field_C4
-member BSResource::ArchiveStream.field_10 c
-member BSResource::ArchiveStream.field_18 10
-member BSResource::ArchiveStream.field_20 18
-member BSResource::ArchiveStream.field_24 1c
+member-unverified BSRangeNode.extraDataCapacity
+member-unverified BSRangeNode.flags2
+member-unverified BSRangeNode.local
+member-unverified BSRangeNode.previousWorldFrame
+member-unverified BSReadWriteLock.lockCount
+member-unverified BSReadWriteLock.writerThread
+member-unverified BSResource::ArchiveStream.field_10
+member-unverified BSResource::ArchiveStream.field_18
+member-unverified BSResource::ArchiveStream.field_20
+member-unverified BSResource::ArchiveStream.field_24
+member-unverified BSResource::ArchiveStream.field_8
 member-unverified BSResource::CacheDrive::Task.field_28
 member-unverified BSResource::CacheDrive::Task.field_30
 member-unverified BSResource::CacheDrive::Task.field_38
 member-unverified BSResource::CacheDrive::Task.field_8
-member BSResource::CompressedArchiveStream.field_10 c
-member BSResource::CompressedArchiveStream.field_18 10
-member BSResource::CompressedArchiveStream.field_20 18
-member BSResource::CompressedArchiveStream.field_24 1c
-member BSResource::CompressedArchiveStream.field_30 28
-member BSResource::_anon_30629CF1::AsyncArchiveStream.field_10 c
-member BSResource::_anon_30629CF1::AsyncArchiveStream.field_18 10
-member BSResource::_anon_30629CF1::AsyncArchiveStream.field_20 18
-member BSResource::_anon_30629CF1::AsyncArchiveStream.field_28 20
-member BSResource::_anon_30629CF1::AsyncArchiveStream.field_30 28
+member-unverified BSResource::CompressedArchiveStream.field_10
+member-unverified BSResource::CompressedArchiveStream.field_18
+member-unverified BSResource::CompressedArchiveStream.field_20
+member-unverified BSResource::CompressedArchiveStream.field_24
+member-unverified BSResource::CompressedArchiveStream.field_30
+member-unverified BSResource::CompressedArchiveStream.field_8
+member-unverified BSResource::_anon_30629CF1::AsyncArchiveStream.field_10
+member-unverified BSResource::_anon_30629CF1::AsyncArchiveStream.field_18
+member-unverified BSResource::_anon_30629CF1::AsyncArchiveStream.field_20
+member-unverified BSResource::_anon_30629CF1::AsyncArchiveStream.field_28
+member-unverified BSResource::_anon_30629CF1::AsyncArchiveStream.field_30
 member-unverified BSResource::_anon_30629CF1::AsyncArchiveStream.field_8
-member BSResource::_anon_5F811FAA::LooseFileAsyncStream.__vftable_30 0
-member BSResource::_anon_5F811FAA::LooseFileStream.__vftable_30 0
+member-unverified BSResource::_anon_5F811FAA::LooseFileAsyncStream.__vftable_30
+member-unverified BSResource::_anon_5F811FAA::LooseFileStream.__vftable_30
 member-missing BSResource::_anon_5F811FAA::LooseFileStreamBase.__vftable
 member-unverified BSResource::_anon_AC99F91C::EventSources.field_108
 member-unverified BSResource::_anon_AC99F91C::EventSources.field_110
@@ -108931,9 +109312,21 @@ member-unverified BSScaleformFileOpener.field_BC
 member-unverified BSScaleformImageLoader.field_11
 member-unverified BSScaleformImageLoader.field_12
 member-unverified BSScaleformImageLoader.field_BC
+member-unverified BSScaleformManager.fontMap
+member-unverified BSScaleformManager.imageLoader
+member-unverified BSScaleformManager.translator
+member-unverified BSScaleformManager.validNameChars
 member-unverified BSScaleformTranslator.field_11
 member-unverified BSScaleformTranslator.field_12
 member-unverified BSScaleformTranslator.field_BC
+member-unverified BSSceneGraph.extraDataCapacity
+member-unverified BSSceneGraph.field_130
+member-unverified BSSceneGraph.flags2
+member-unverified BSSceneGraph.local
+member-unverified BSSceneGraph.previousWorldFrame
+member-unverified BSScrapArray.capacity
+member-unverified BSScrapArray.size
+member-unverified BSScript::Array.elementType
 member-unverified BSScript::ErrorLogger.field_60
 member-unverified BSScript::ErrorLogger.field_74
 member-unverified BSScript::ErrorLogger.field_7C
@@ -108942,13 +109335,23 @@ member-unverified BSScript::ErrorLogger.field_90
 member-unverified BSScript::ErrorLogger.source_BSScript_LogEvent
 member-unverified BSScript::Internal::AutoPropGetFunction.name
 member-unverified BSScript::Internal::AutoPropGetFunction.objectTypeName
+member-unverified BSScript::Internal::AutoPropGetFunction.returnType
 member-unverified BSScript::Internal::AutoPropSetFunction.name
 member-unverified BSScript::Internal::AutoPropSetFunction.objectTypeName
+member-unverified BSScript::Internal::CodeTasklet.code
 member-unverified BSScript::Internal::CodeTasklet.codeBits
+member-unverified BSScript::Internal::CodeTasklet.frame
 member-unverified BSScript::Internal::CodeTasklet.framePage
 member-unverified BSScript::Internal::CodeTasklet.jumpBits
+member-unverified BSScript::Internal::CodeTasklet.operandBitsA
+member-unverified BSScript::Internal::CodeTasklet.operandBitsB
+member-unverified BSScript::Internal::FunctionMessage.kind
+member-unverified BSScript::Internal::FunctionMessage.query
+member-unverified BSScript::Internal::FunctionMessage.stack
+member-unverified BSScript::Internal::NativeFunctionStub.name
 member-unverified BSScript::Internal::NativeFunctionStub.objectTypeName
 member-unverified BSScript::Internal::NativeFunctionStub.stateName
+member-unverified BSScript::Internal::RawFuncCallQuery.field_18
 member-unverified BSScript::Internal::RawFuncCallQuery.field_28
 member-unverified BSScript::Internal::RawFuncCallQuery.field_30
 member-unverified BSScript::Internal::RawFuncCallQuery.field_8
@@ -108965,585 +109368,1015 @@ member-unverified BSScript::Internal::ScriptFunction.stateName
 member-unverified BSScript::Internal::ScriptFunction.variables
 member-unverified BSScript::Internal::StackMapEntry.next
 member-unverified BSScript::Internal::StackMapEntry.stack
+member-unverified BSScript::Internal::StackMapEntry.stackID
+member-unverified BSScript::Internal::SuspendedStack.query
+member-unverified BSScript::Internal::SuspendedStack.stack
 member-unverified BSScript::Internal::VirtualMachine.field_210
 member-unverified BSScript::Internal::VirtualMachine.field_218
-member BSScript::Internal::VirtualMachine.field_238 8240
+member-unverified BSScript::Internal::VirtualMachine.field_238
 member-unverified BSScript::Internal::VirtualMachine.field_258
+member-unverified BSScript::Internal::VirtualMachine.field_827C
 member-unverified BSScript::Internal::VirtualMachine.field_93D0
 member-unverified BSScript::Internal::VirtualMachine.field_9490
 member-unverified BSScript::Internal::VirtualMachine.freezeQuery
 member-unverified BSScript::Internal::VirtualMachine.freezeState
 member-unverified BSScript::Internal::VirtualMachine.functionMessageOverflow
+member-unverified BSScript::Internal::VirtualMachine.functionMessageQueue
 member-unverified BSScript::Internal::VirtualMachine.latentWaits
 member-unverified BSScript::Internal::VirtualMachine.m_FunctionMessage,1024>_208
 member-unverified BSScript::Internal::VirtualMachine.nameToTypeID
 member-unverified BSScript::Internal::VirtualMachine.objectTypeMap
+member-unverified BSScript::Internal::VirtualMachine.pendingTasklets
 member-unverified BSScript::Internal::VirtualMachine.queuedMessageCount
 member-unverified BSScript::Internal::VirtualMachine.runningStacks
 member-unverified BSScript::Internal::VirtualMachine.typeIDToName
+member-unverified BSScript::NF_util::ParamInfo.name
+member-unverified BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>.name
 member-unverified BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<ActiveEffect,EffectSetting*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<ActiveEffect,EffectSetting*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<ActiveEffect,EffectSetting*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<ActiveEffect,EffectSetting*___ptr64>.name
 member-unverified BSScript::NativeFunction0<ActiveEffect,EffectSetting*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<ActiveEffect,EffectSetting*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<ActiveEffect,EffectSetting*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<ActiveEffect,void>.binding
 member-unverified BSScript::NativeFunction0<ActiveEffect,void>.docString
 member-unverified BSScript::NativeFunction0<ActiveEffect,void>.isLatent
+member-unverified BSScript::NativeFunction0<ActiveEffect,void>.name
 member-unverified BSScript::NativeFunction0<ActiveEffect,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<ActiveEffect,void>.paramCount
 member-unverified BSScript::NativeFunction0<ActiveEffect,void>.stateName
+member-unverified BSScript::NativeFunction0<Actor,Actor*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<Actor,Actor*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<Actor,Actor*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<Actor,Actor*___ptr64>.name
 member-unverified BSScript::NativeFunction0<Actor,Actor*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,Actor*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,Actor*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<Actor,TESFaction*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<Actor,TESFaction*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<Actor,TESFaction*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<Actor,TESFaction*___ptr64>.name
 member-unverified BSScript::NativeFunction0<Actor,TESFaction*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,TESFaction*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,TESFaction*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<Actor,TESNPC*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<Actor,TESNPC*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<Actor,TESNPC*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<Actor,TESNPC*___ptr64>.name
 member-unverified BSScript::NativeFunction0<Actor,TESNPC*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,TESNPC*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,TESNPC*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<Actor,TESObjectARMO*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<Actor,TESObjectARMO*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<Actor,TESObjectARMO*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<Actor,TESObjectARMO*___ptr64>.name
 member-unverified BSScript::NativeFunction0<Actor,TESObjectARMO*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,TESObjectARMO*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,TESObjectARMO*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<Actor,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<Actor,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<Actor,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<Actor,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction0<Actor,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<Actor,TESPackage*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<Actor,TESPackage*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<Actor,TESPackage*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<Actor,TESPackage*___ptr64>.name
 member-unverified BSScript::NativeFunction0<Actor,TESPackage*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,TESPackage*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,TESPackage*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<Actor,TESRace*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<Actor,TESRace*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<Actor,TESRace*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<Actor,TESRace*___ptr64>.name
 member-unverified BSScript::NativeFunction0<Actor,TESRace*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,TESRace*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,TESRace*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<Actor,TESShout*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<Actor,TESShout*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<Actor,TESShout*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<Actor,TESShout*___ptr64>.name
 member-unverified BSScript::NativeFunction0<Actor,TESShout*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,TESShout*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,TESShout*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<Actor,bool>.binding
 member-unverified BSScript::NativeFunction0<Actor,bool>.docString
 member-unverified BSScript::NativeFunction0<Actor,bool>.isLatent
+member-unverified BSScript::NativeFunction0<Actor,bool>.name
 member-unverified BSScript::NativeFunction0<Actor,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,bool>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,bool>.stateName
+member-unverified BSScript::NativeFunction0<Actor,float>.binding
 member-unverified BSScript::NativeFunction0<Actor,float>.docString
 member-unverified BSScript::NativeFunction0<Actor,float>.isLatent
+member-unverified BSScript::NativeFunction0<Actor,float>.name
 member-unverified BSScript::NativeFunction0<Actor,float>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,float>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,float>.stateName
+member-unverified BSScript::NativeFunction0<Actor,int>.binding
 member-unverified BSScript::NativeFunction0<Actor,int>.docString
 member-unverified BSScript::NativeFunction0<Actor,int>.isLatent
+member-unverified BSScript::NativeFunction0<Actor,int>.name
 member-unverified BSScript::NativeFunction0<Actor,int>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,int>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,int>.stateName
+member-unverified BSScript::NativeFunction0<Actor,unsigned_int>.binding
 member-unverified BSScript::NativeFunction0<Actor,unsigned_int>.docString
 member-unverified BSScript::NativeFunction0<Actor,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction0<Actor,unsigned_int>.name
 member-unverified BSScript::NativeFunction0<Actor,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction0<Actor,void>.binding
 member-unverified BSScript::NativeFunction0<Actor,void>.docString
 member-unverified BSScript::NativeFunction0<Actor,void>.isLatent
+member-unverified BSScript::NativeFunction0<Actor,void>.name
 member-unverified BSScript::NativeFunction0<Actor,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<Actor,void>.paramCount
 member-unverified BSScript::NativeFunction0<Actor,void>.stateName
+member-unverified BSScript::NativeFunction0<AlchemyItem,bool>.binding
 member-unverified BSScript::NativeFunction0<AlchemyItem,bool>.docString
 member-unverified BSScript::NativeFunction0<AlchemyItem,bool>.isLatent
+member-unverified BSScript::NativeFunction0<AlchemyItem,bool>.name
 member-unverified BSScript::NativeFunction0<AlchemyItem,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<AlchemyItem,bool>.paramCount
 member-unverified BSScript::NativeFunction0<AlchemyItem,bool>.stateName
+member-unverified BSScript::NativeFunction0<BGSBaseAlias,TESQuest*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<BGSBaseAlias,TESQuest*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<BGSBaseAlias,TESQuest*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<BGSBaseAlias,TESQuest*___ptr64>.name
 member-unverified BSScript::NativeFunction0<BGSBaseAlias,TESQuest*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSBaseAlias,TESQuest*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<BGSBaseAlias,TESQuest*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<BGSBaseAlias,void>.binding
 member-unverified BSScript::NativeFunction0<BGSBaseAlias,void>.docString
 member-unverified BSScript::NativeFunction0<BGSBaseAlias,void>.isLatent
+member-unverified BSScript::NativeFunction0<BGSBaseAlias,void>.name
 member-unverified BSScript::NativeFunction0<BGSBaseAlias,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSBaseAlias,void>.paramCount
 member-unverified BSScript::NativeFunction0<BGSBaseAlias,void>.stateName
+member-unverified BSScript::NativeFunction0<BGSListForm,unsigned_int>.binding
 member-unverified BSScript::NativeFunction0<BGSListForm,unsigned_int>.docString
 member-unverified BSScript::NativeFunction0<BGSListForm,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction0<BGSListForm,unsigned_int>.name
 member-unverified BSScript::NativeFunction0<BGSListForm,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSListForm,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction0<BGSListForm,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction0<BGSListForm,void>.binding
 member-unverified BSScript::NativeFunction0<BGSListForm,void>.docString
 member-unverified BSScript::NativeFunction0<BGSListForm,void>.isLatent
+member-unverified BSScript::NativeFunction0<BGSListForm,void>.name
 member-unverified BSScript::NativeFunction0<BGSListForm,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSListForm,void>.paramCount
 member-unverified BSScript::NativeFunction0<BGSListForm,void>.stateName
+member-unverified BSScript::NativeFunction0<BGSLocAlias,BGSLocation*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<BGSLocAlias,BGSLocation*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<BGSLocAlias,BGSLocation*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<BGSLocAlias,BGSLocation*___ptr64>.name
 member-unverified BSScript::NativeFunction0<BGSLocAlias,BGSLocation*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSLocAlias,BGSLocation*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<BGSLocAlias,BGSLocation*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<BGSLocAlias,void>.binding
 member-unverified BSScript::NativeFunction0<BGSLocAlias,void>.docString
 member-unverified BSScript::NativeFunction0<BGSLocAlias,void>.isLatent
+member-unverified BSScript::NativeFunction0<BGSLocAlias,void>.name
 member-unverified BSScript::NativeFunction0<BGSLocAlias,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSLocAlias,void>.paramCount
 member-unverified BSScript::NativeFunction0<BGSLocAlias,void>.stateName
+member-unverified BSScript::NativeFunction0<BGSLocation,bool>.binding
 member-unverified BSScript::NativeFunction0<BGSLocation,bool>.docString
 member-unverified BSScript::NativeFunction0<BGSLocation,bool>.isLatent
+member-unverified BSScript::NativeFunction0<BGSLocation,bool>.name
 member-unverified BSScript::NativeFunction0<BGSLocation,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSLocation,bool>.paramCount
 member-unverified BSScript::NativeFunction0<BGSLocation,bool>.stateName
+member-unverified BSScript::NativeFunction0<BGSMusicType,void>.binding
 member-unverified BSScript::NativeFunction0<BGSMusicType,void>.docString
 member-unverified BSScript::NativeFunction0<BGSMusicType,void>.isLatent
+member-unverified BSScript::NativeFunction0<BGSMusicType,void>.name
 member-unverified BSScript::NativeFunction0<BGSMusicType,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSMusicType,void>.paramCount
 member-unverified BSScript::NativeFunction0<BGSMusicType,void>.stateName
+member-unverified BSScript::NativeFunction0<BGSRefAlias,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<BGSRefAlias,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<BGSRefAlias,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<BGSRefAlias,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction0<BGSRefAlias,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSRefAlias,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<BGSRefAlias,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<BGSRefAlias,void>.binding
 member-unverified BSScript::NativeFunction0<BGSRefAlias,void>.docString
 member-unverified BSScript::NativeFunction0<BGSRefAlias,void>.isLatent
+member-unverified BSScript::NativeFunction0<BGSRefAlias,void>.name
 member-unverified BSScript::NativeFunction0<BGSRefAlias,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSRefAlias,void>.paramCount
 member-unverified BSScript::NativeFunction0<BGSRefAlias,void>.stateName
+member-unverified BSScript::NativeFunction0<BGSScene,TESQuest*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<BGSScene,TESQuest*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<BGSScene,TESQuest*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<BGSScene,TESQuest*___ptr64>.name
 member-unverified BSScript::NativeFunction0<BGSScene,TESQuest*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSScene,TESQuest*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<BGSScene,TESQuest*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<BGSScene,bool>.binding
 member-unverified BSScript::NativeFunction0<BGSScene,bool>.docString
 member-unverified BSScript::NativeFunction0<BGSScene,bool>.isLatent
+member-unverified BSScript::NativeFunction0<BGSScene,bool>.name
 member-unverified BSScript::NativeFunction0<BGSScene,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSScene,bool>.paramCount
 member-unverified BSScript::NativeFunction0<BGSScene,bool>.stateName
+member-unverified BSScript::NativeFunction0<BGSScene,void>.binding
 member-unverified BSScript::NativeFunction0<BGSScene,void>.docString
 member-unverified BSScript::NativeFunction0<BGSScene,void>.isLatent
+member-unverified BSScript::NativeFunction0<BGSScene,void>.name
 member-unverified BSScript::NativeFunction0<BGSScene,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSScene,void>.paramCount
 member-unverified BSScript::NativeFunction0<BGSScene,void>.stateName
+member-unverified BSScript::NativeFunction0<BGSSoundCategory,void>.binding
 member-unverified BSScript::NativeFunction0<BGSSoundCategory,void>.docString
 member-unverified BSScript::NativeFunction0<BGSSoundCategory,void>.isLatent
+member-unverified BSScript::NativeFunction0<BGSSoundCategory,void>.name
 member-unverified BSScript::NativeFunction0<BGSSoundCategory,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<BGSSoundCategory,void>.paramCount
 member-unverified BSScript::NativeFunction0<BGSSoundCategory,void>.stateName
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,Actor*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,Actor*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,Actor*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,Actor*___ptr64>.name
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,Actor*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,Actor*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,Actor*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESWeather*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESWeather*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESWeather*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESWeather*___ptr64>.name
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESWeather*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESWeather*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,TESWeather*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,bool>.binding
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,bool>.docString
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,bool>.isLatent
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,bool>.name
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,bool>.paramCount
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,bool>.stateName
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,float>.binding
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,float>.docString
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,float>.isLatent
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,float>.name
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,float>.objectTypeName
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,float>.paramCount
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,float>.stateName
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,unsigned_int>.binding
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,unsigned_int>.docString
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,unsigned_int>.name
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,void>.binding
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,void>.docString
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,void>.isLatent
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,void>.name
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,void>.paramCount
 member-unverified BSScript::NativeFunction0<BSScript::StaticFunctionTag,void>.stateName
+member-unverified BSScript::NativeFunction0<EffectSetting,bool>.binding
 member-unverified BSScript::NativeFunction0<EffectSetting,bool>.docString
 member-unverified BSScript::NativeFunction0<EffectSetting,bool>.isLatent
+member-unverified BSScript::NativeFunction0<EffectSetting,bool>.name
 member-unverified BSScript::NativeFunction0<EffectSetting,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<EffectSetting,bool>.paramCount
 member-unverified BSScript::NativeFunction0<EffectSetting,bool>.stateName
+member-unverified BSScript::NativeFunction0<EnchantmentItem,bool>.binding
 member-unverified BSScript::NativeFunction0<EnchantmentItem,bool>.docString
 member-unverified BSScript::NativeFunction0<EnchantmentItem,bool>.isLatent
+member-unverified BSScript::NativeFunction0<EnchantmentItem,bool>.name
 member-unverified BSScript::NativeFunction0<EnchantmentItem,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<EnchantmentItem,bool>.paramCount
 member-unverified BSScript::NativeFunction0<EnchantmentItem,bool>.stateName
+member-unverified BSScript::NativeFunction0<IngredientItem,bool>.binding
 member-unverified BSScript::NativeFunction0<IngredientItem,bool>.docString
 member-unverified BSScript::NativeFunction0<IngredientItem,bool>.isLatent
+member-unverified BSScript::NativeFunction0<IngredientItem,bool>.name
 member-unverified BSScript::NativeFunction0<IngredientItem,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<IngredientItem,bool>.paramCount
 member-unverified BSScript::NativeFunction0<IngredientItem,bool>.stateName
+member-unverified BSScript::NativeFunction0<IngredientItem,unsigned_int>.binding
 member-unverified BSScript::NativeFunction0<IngredientItem,unsigned_int>.docString
 member-unverified BSScript::NativeFunction0<IngredientItem,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction0<IngredientItem,unsigned_int>.name
 member-unverified BSScript::NativeFunction0<IngredientItem,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction0<IngredientItem,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction0<IngredientItem,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction0<IngredientItem,void>.binding
 member-unverified BSScript::NativeFunction0<IngredientItem,void>.docString
 member-unverified BSScript::NativeFunction0<IngredientItem,void>.isLatent
+member-unverified BSScript::NativeFunction0<IngredientItem,void>.name
 member-unverified BSScript::NativeFunction0<IngredientItem,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<IngredientItem,void>.paramCount
 member-unverified BSScript::NativeFunction0<IngredientItem,void>.stateName
+member-unverified BSScript::NativeFunction0<SpellItem,bool>.binding
 member-unverified BSScript::NativeFunction0<SpellItem,bool>.docString
 member-unverified BSScript::NativeFunction0<SpellItem,bool>.isLatent
+member-unverified BSScript::NativeFunction0<SpellItem,bool>.name
 member-unverified BSScript::NativeFunction0<SpellItem,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<SpellItem,bool>.paramCount
 member-unverified BSScript::NativeFunction0<SpellItem,bool>.stateName
+member-unverified BSScript::NativeFunction0<SpellItem,void>.binding
 member-unverified BSScript::NativeFunction0<SpellItem,void>.docString
 member-unverified BSScript::NativeFunction0<SpellItem,void>.isLatent
+member-unverified BSScript::NativeFunction0<SpellItem,void>.name
 member-unverified BSScript::NativeFunction0<SpellItem,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<SpellItem,void>.paramCount
 member-unverified BSScript::NativeFunction0<SpellItem,void>.stateName
+member-unverified BSScript::NativeFunction0<TESFaction,bool>.binding
 member-unverified BSScript::NativeFunction0<TESFaction,bool>.docString
 member-unverified BSScript::NativeFunction0<TESFaction,bool>.isLatent
+member-unverified BSScript::NativeFunction0<TESFaction,bool>.name
 member-unverified BSScript::NativeFunction0<TESFaction,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESFaction,bool>.paramCount
 member-unverified BSScript::NativeFunction0<TESFaction,bool>.stateName
+member-unverified BSScript::NativeFunction0<TESFaction,unsigned_int>.binding
 member-unverified BSScript::NativeFunction0<TESFaction,unsigned_int>.docString
 member-unverified BSScript::NativeFunction0<TESFaction,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction0<TESFaction,unsigned_int>.name
 member-unverified BSScript::NativeFunction0<TESFaction,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESFaction,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction0<TESFaction,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction0<TESFaction,void>.binding
 member-unverified BSScript::NativeFunction0<TESFaction,void>.docString
 member-unverified BSScript::NativeFunction0<TESFaction,void>.isLatent
+member-unverified BSScript::NativeFunction0<TESFaction,void>.name
 member-unverified BSScript::NativeFunction0<TESFaction,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESFaction,void>.paramCount
 member-unverified BSScript::NativeFunction0<TESFaction,void>.stateName
+member-unverified BSScript::NativeFunction0<TESForm,bool>.binding
 member-unverified BSScript::NativeFunction0<TESForm,bool>.docString
 member-unverified BSScript::NativeFunction0<TESForm,bool>.isLatent
+member-unverified BSScript::NativeFunction0<TESForm,bool>.name
 member-unverified BSScript::NativeFunction0<TESForm,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESForm,bool>.paramCount
 member-unverified BSScript::NativeFunction0<TESForm,bool>.stateName
+member-unverified BSScript::NativeFunction0<TESForm,int>.binding
 member-unverified BSScript::NativeFunction0<TESForm,int>.docString
 member-unverified BSScript::NativeFunction0<TESForm,int>.isLatent
+member-unverified BSScript::NativeFunction0<TESForm,int>.name
 member-unverified BSScript::NativeFunction0<TESForm,int>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESForm,int>.paramCount
 member-unverified BSScript::NativeFunction0<TESForm,int>.stateName
+member-unverified BSScript::NativeFunction0<TESForm,unsigned_int>.binding
 member-unverified BSScript::NativeFunction0<TESForm,unsigned_int>.docString
 member-unverified BSScript::NativeFunction0<TESForm,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction0<TESForm,unsigned_int>.name
 member-unverified BSScript::NativeFunction0<TESForm,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESForm,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction0<TESForm,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction0<TESForm,void>.binding
 member-unverified BSScript::NativeFunction0<TESForm,void>.docString
 member-unverified BSScript::NativeFunction0<TESForm,void>.isLatent
+member-unverified BSScript::NativeFunction0<TESForm,void>.name
 member-unverified BSScript::NativeFunction0<TESForm,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESForm,void>.paramCount
 member-unverified BSScript::NativeFunction0<TESForm,void>.stateName
+member-unverified BSScript::NativeFunction0<TESGlobal,float>.binding
 member-unverified BSScript::NativeFunction0<TESGlobal,float>.docString
 member-unverified BSScript::NativeFunction0<TESGlobal,float>.isLatent
+member-unverified BSScript::NativeFunction0<TESGlobal,float>.name
 member-unverified BSScript::NativeFunction0<TESGlobal,float>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESGlobal,float>.paramCount
 member-unverified BSScript::NativeFunction0<TESGlobal,float>.stateName
+member-unverified BSScript::NativeFunction0<TESImageSpaceModifier,void>.binding
 member-unverified BSScript::NativeFunction0<TESImageSpaceModifier,void>.docString
 member-unverified BSScript::NativeFunction0<TESImageSpaceModifier,void>.isLatent
+member-unverified BSScript::NativeFunction0<TESImageSpaceModifier,void>.name
 member-unverified BSScript::NativeFunction0<TESImageSpaceModifier,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESImageSpaceModifier,void>.paramCount
 member-unverified BSScript::NativeFunction0<TESImageSpaceModifier,void>.stateName
+member-unverified BSScript::NativeFunction0<TESLevCharacter,void>.binding
 member-unverified BSScript::NativeFunction0<TESLevCharacter,void>.docString
 member-unverified BSScript::NativeFunction0<TESLevCharacter,void>.isLatent
+member-unverified BSScript::NativeFunction0<TESLevCharacter,void>.name
 member-unverified BSScript::NativeFunction0<TESLevCharacter,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESLevCharacter,void>.paramCount
 member-unverified BSScript::NativeFunction0<TESLevCharacter,void>.stateName
+member-unverified BSScript::NativeFunction0<TESLevItem,void>.binding
 member-unverified BSScript::NativeFunction0<TESLevItem,void>.docString
 member-unverified BSScript::NativeFunction0<TESLevItem,void>.isLatent
+member-unverified BSScript::NativeFunction0<TESLevItem,void>.name
 member-unverified BSScript::NativeFunction0<TESLevItem,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESLevItem,void>.paramCount
 member-unverified BSScript::NativeFunction0<TESLevItem,void>.stateName
+member-unverified BSScript::NativeFunction0<TESLevSpell,void>.binding
 member-unverified BSScript::NativeFunction0<TESLevSpell,void>.docString
 member-unverified BSScript::NativeFunction0<TESLevSpell,void>.isLatent
+member-unverified BSScript::NativeFunction0<TESLevSpell,void>.name
 member-unverified BSScript::NativeFunction0<TESLevSpell,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESLevSpell,void>.paramCount
 member-unverified BSScript::NativeFunction0<TESLevSpell,void>.stateName
+member-unverified BSScript::NativeFunction0<TESNPC,BGSListForm*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<TESNPC,BGSListForm*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<TESNPC,BGSListForm*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<TESNPC,BGSListForm*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESNPC,BGSListForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESNPC,BGSListForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESNPC,BGSListForm*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<TESNPC,TESClass*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<TESNPC,TESClass*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<TESNPC,TESClass*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<TESNPC,TESClass*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESNPC,TESClass*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESNPC,TESClass*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESNPC,TESClass*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<TESNPC,TESRace*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<TESNPC,TESRace*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<TESNPC,TESRace*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<TESNPC,TESRace*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESNPC,TESRace*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESNPC,TESRace*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESNPC,TESRace*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<TESNPC,bool>.binding
 member-unverified BSScript::NativeFunction0<TESNPC,bool>.docString
 member-unverified BSScript::NativeFunction0<TESNPC,bool>.isLatent
+member-unverified BSScript::NativeFunction0<TESNPC,bool>.name
 member-unverified BSScript::NativeFunction0<TESNPC,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESNPC,bool>.paramCount
 member-unverified BSScript::NativeFunction0<TESNPC,bool>.stateName
+member-unverified BSScript::NativeFunction0<TESNPC,int>.binding
 member-unverified BSScript::NativeFunction0<TESNPC,int>.docString
 member-unverified BSScript::NativeFunction0<TESNPC,int>.isLatent
+member-unverified BSScript::NativeFunction0<TESNPC,int>.name
 member-unverified BSScript::NativeFunction0<TESNPC,int>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESNPC,int>.paramCount
 member-unverified BSScript::NativeFunction0<TESNPC,int>.stateName
+member-unverified BSScript::NativeFunction0<TESObjectARMO,float>.binding
 member-unverified BSScript::NativeFunction0<TESObjectARMO,float>.docString
 member-unverified BSScript::NativeFunction0<TESObjectARMO,float>.isLatent
+member-unverified BSScript::NativeFunction0<TESObjectARMO,float>.name
 member-unverified BSScript::NativeFunction0<TESObjectARMO,float>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectARMO,float>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectARMO,float>.stateName
+member-unverified BSScript::NativeFunction0<TESObjectCELL,TESFaction*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<TESObjectCELL,TESFaction*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<TESObjectCELL,TESFaction*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<TESObjectCELL,TESFaction*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESObjectCELL,TESFaction*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectCELL,TESFaction*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectCELL,TESFaction*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<TESObjectCELL,TESNPC*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<TESObjectCELL,TESNPC*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<TESObjectCELL,TESNPC*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<TESObjectCELL,TESNPC*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESObjectCELL,TESNPC*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectCELL,TESNPC*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectCELL,TESNPC*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<TESObjectCELL,bool>.binding
 member-unverified BSScript::NativeFunction0<TESObjectCELL,bool>.docString
 member-unverified BSScript::NativeFunction0<TESObjectCELL,bool>.isLatent
+member-unverified BSScript::NativeFunction0<TESObjectCELL,bool>.name
 member-unverified BSScript::NativeFunction0<TESObjectCELL,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectCELL,bool>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectCELL,bool>.stateName
+member-unverified BSScript::NativeFunction0<TESObjectCELL,void>.binding
 member-unverified BSScript::NativeFunction0<TESObjectCELL,void>.docString
 member-unverified BSScript::NativeFunction0<TESObjectCELL,void>.isLatent
+member-unverified BSScript::NativeFunction0<TESObjectCELL,void>.name
 member-unverified BSScript::NativeFunction0<TESObjectCELL,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectCELL,void>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectCELL,void>.stateName
+member-unverified BSScript::NativeFunction0<TESObjectLIGH,float>.binding
 member-unverified BSScript::NativeFunction0<TESObjectLIGH,float>.docString
 member-unverified BSScript::NativeFunction0<TESObjectLIGH,float>.isLatent
+member-unverified BSScript::NativeFunction0<TESObjectLIGH,float>.name
 member-unverified BSScript::NativeFunction0<TESObjectLIGH,float>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectLIGH,float>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectLIGH,float>.stateName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSLocation*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSLocation*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSLocation*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSLocation*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSLocation*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSLocation*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSLocation*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSScene*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSScene*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSScene*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSScene*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSScene*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSScene*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSScene*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSVoiceType*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSVoiceType*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSVoiceType*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSVoiceType*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSVoiceType*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSVoiceType*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,BGSVoiceType*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESFaction*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESFaction*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESFaction*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESFaction*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESFaction*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESFaction*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESFaction*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESForm*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESForm*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESForm*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESForm*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESForm*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESKey*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESKey*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESKey*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESKey*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESKey*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESKey*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESKey*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESNPC*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESNPC*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESNPC*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESNPC*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESNPC*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESNPC*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESNPC*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESObjectCELL*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESObjectCELL*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESObjectCELL*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESObjectCELL*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESObjectCELL*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESObjectCELL*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESObjectCELL*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESWorldSpace*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESWorldSpace*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESWorldSpace*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESWorldSpace*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESWorldSpace*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,TESWorldSpace*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,TESWorldSpace*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,bool>.binding
 member-unverified BSScript::NativeFunction0<TESObjectREFR,bool>.docString
 member-unverified BSScript::NativeFunction0<TESObjectREFR,bool>.isLatent
+member-unverified BSScript::NativeFunction0<TESObjectREFR,bool>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,bool>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,bool>.stateName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,float>.binding
 member-unverified BSScript::NativeFunction0<TESObjectREFR,float>.docString
 member-unverified BSScript::NativeFunction0<TESObjectREFR,float>.isLatent
+member-unverified BSScript::NativeFunction0<TESObjectREFR,float>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,float>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,float>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,float>.stateName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,int>.binding
 member-unverified BSScript::NativeFunction0<TESObjectREFR,int>.docString
 member-unverified BSScript::NativeFunction0<TESObjectREFR,int>.isLatent
+member-unverified BSScript::NativeFunction0<TESObjectREFR,int>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,int>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,int>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,int>.stateName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,unsigned_int>.binding
 member-unverified BSScript::NativeFunction0<TESObjectREFR,unsigned_int>.docString
 member-unverified BSScript::NativeFunction0<TESObjectREFR,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction0<TESObjectREFR,unsigned_int>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,void>.binding
 member-unverified BSScript::NativeFunction0<TESObjectREFR,void>.docString
 member-unverified BSScript::NativeFunction0<TESObjectREFR,void>.isLatent
+member-unverified BSScript::NativeFunction0<TESObjectREFR,void>.name
 member-unverified BSScript::NativeFunction0<TESObjectREFR,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESObjectREFR,void>.paramCount
 member-unverified BSScript::NativeFunction0<TESObjectREFR,void>.stateName
+member-unverified BSScript::NativeFunction0<TESPackage,TESPackage_const*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<TESPackage,TESPackage_const*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<TESPackage,TESPackage_const*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<TESPackage,TESPackage_const*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESPackage,TESPackage_const*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESPackage,TESPackage_const*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESPackage,TESPackage_const*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<TESPackage,TESQuest*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<TESPackage,TESQuest*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<TESPackage,TESQuest*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<TESPackage,TESQuest*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESPackage,TESQuest*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESPackage,TESQuest*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESPackage,TESQuest*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<TESQuest,bool>.binding
 member-unverified BSScript::NativeFunction0<TESQuest,bool>.docString
 member-unverified BSScript::NativeFunction0<TESQuest,bool>.isLatent
+member-unverified BSScript::NativeFunction0<TESQuest,bool>.name
 member-unverified BSScript::NativeFunction0<TESQuest,bool>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESQuest,bool>.paramCount
 member-unverified BSScript::NativeFunction0<TESQuest,bool>.stateName
+member-unverified BSScript::NativeFunction0<TESQuest,unsigned_int>.binding
 member-unverified BSScript::NativeFunction0<TESQuest,unsigned_int>.docString
 member-unverified BSScript::NativeFunction0<TESQuest,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction0<TESQuest,unsigned_int>.name
 member-unverified BSScript::NativeFunction0<TESQuest,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESQuest,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction0<TESQuest,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction0<TESQuest,void>.binding
 member-unverified BSScript::NativeFunction0<TESQuest,void>.docString
 member-unverified BSScript::NativeFunction0<TESQuest,void>.isLatent
+member-unverified BSScript::NativeFunction0<TESQuest,void>.name
 member-unverified BSScript::NativeFunction0<TESQuest,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESQuest,void>.paramCount
 member-unverified BSScript::NativeFunction0<TESQuest,void>.stateName
+member-unverified BSScript::NativeFunction0<TESTopic,void>.binding
 member-unverified BSScript::NativeFunction0<TESTopic,void>.docString
 member-unverified BSScript::NativeFunction0<TESTopic,void>.isLatent
+member-unverified BSScript::NativeFunction0<TESTopic,void>.name
 member-unverified BSScript::NativeFunction0<TESTopic,void>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESTopic,void>.paramCount
 member-unverified BSScript::NativeFunction0<TESTopic,void>.stateName
+member-unverified BSScript::NativeFunction0<TESTopicInfo,TESQuest*___ptr64>.binding
 member-unverified BSScript::NativeFunction0<TESTopicInfo,TESQuest*___ptr64>.docString
 member-unverified BSScript::NativeFunction0<TESTopicInfo,TESQuest*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction0<TESTopicInfo,TESQuest*___ptr64>.name
 member-unverified BSScript::NativeFunction0<TESTopicInfo,TESQuest*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESTopicInfo,TESQuest*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction0<TESTopicInfo,TESQuest*___ptr64>.stateName
+member-unverified BSScript::NativeFunction0<TESWeather,int>.binding
 member-unverified BSScript::NativeFunction0<TESWeather,int>.docString
 member-unverified BSScript::NativeFunction0<TESWeather,int>.isLatent
+member-unverified BSScript::NativeFunction0<TESWeather,int>.name
 member-unverified BSScript::NativeFunction0<TESWeather,int>.objectTypeName
+member-unverified BSScript::NativeFunction0<TESWeather,int>.paramCount
 member-unverified BSScript::NativeFunction0<TESWeather,int>.stateName
+member-unverified BSScript::NativeFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.binding
 member-unverified BSScript::NativeFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.docString
 member-unverified BSScript::NativeFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.isLatent
+member-unverified BSScript::NativeFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.name
 member-unverified BSScript::NativeFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.stateName
+member-unverified BSScript::NativeFunction11<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,float,float,float,float,float,int,float>.binding
 member-unverified BSScript::NativeFunction11<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,float,float,float,float,float,int,float>.docString
 member-unverified BSScript::NativeFunction11<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,float,float,float,float,float,int,float>.isLatent
+member-unverified BSScript::NativeFunction11<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,float,float,float,float,float,int,float>.name
 member-unverified BSScript::NativeFunction11<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,float,float,float,float,float,int,float>.objectTypeName
+member-unverified BSScript::NativeFunction11<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,float,float,float,float,float,int,float>.paramCount
 member-unverified BSScript::NativeFunction11<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,float,float,float,float,float,int,float>.stateName
+member-unverified BSScript::NativeFunction1<ActiveEffect,void,TESForm*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<ActiveEffect,void,TESForm*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<ActiveEffect,void,TESForm*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<ActiveEffect,void,TESForm*___ptr64>.name
 member-unverified BSScript::NativeFunction1<ActiveEffect,void,TESForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<ActiveEffect,void,TESForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<ActiveEffect,void,TESForm*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<ActiveEffect,void,float>.binding
 member-unverified BSScript::NativeFunction1<ActiveEffect,void,float>.docString
 member-unverified BSScript::NativeFunction1<ActiveEffect,void,float>.isLatent
+member-unverified BSScript::NativeFunction1<ActiveEffect,void,float>.name
 member-unverified BSScript::NativeFunction1<ActiveEffect,void,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<ActiveEffect,void,float>.paramCount
 member-unverified BSScript::NativeFunction1<ActiveEffect,void,float>.stateName
+member-unverified BSScript::NativeFunction1<Actor,SpellItem*___ptr64,unsigned_int>.binding
 member-unverified BSScript::NativeFunction1<Actor,SpellItem*___ptr64,unsigned_int>.docString
 member-unverified BSScript::NativeFunction1<Actor,SpellItem*___ptr64,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,SpellItem*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<Actor,SpellItem*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,SpellItem*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,SpellItem*___ptr64,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction1<Actor,TESObjectARMO*___ptr64,unsigned_int>.binding
 member-unverified BSScript::NativeFunction1<Actor,TESObjectARMO*___ptr64,unsigned_int>.docString
 member-unverified BSScript::NativeFunction1<Actor,TESObjectARMO*___ptr64,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,TESObjectARMO*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<Actor,TESObjectARMO*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,TESObjectARMO*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,TESObjectARMO*___ptr64,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction1<Actor,TESObjectWEAP*___ptr64,bool>.binding
 member-unverified BSScript::NativeFunction1<Actor,TESObjectWEAP*___ptr64,bool>.docString
 member-unverified BSScript::NativeFunction1<Actor,TESObjectWEAP*___ptr64,bool>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,TESObjectWEAP*___ptr64,bool>.name
 member-unverified BSScript::NativeFunction1<Actor,TESObjectWEAP*___ptr64,bool>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,TESObjectWEAP*___ptr64,bool>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,TESObjectWEAP*___ptr64,bool>.stateName
+member-unverified BSScript::NativeFunction1<Actor,bool,Actor*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,bool,Actor*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,bool,Actor*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,bool,Actor*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,bool,Actor*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,bool,Actor*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,bool,Actor*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,bool,BGSKeyword*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,bool,BGSKeyword*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,bool,BGSKeyword*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,bool,BGSKeyword*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,bool,BGSKeyword*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,bool,BGSKeyword*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,bool,BGSKeyword*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,bool,BGSPerk*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,bool,BGSPerk*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,bool,BGSPerk*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,bool,BGSPerk*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,bool,BGSPerk*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,bool,BGSPerk*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,bool,BGSPerk*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,bool,EffectSetting*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,bool,EffectSetting*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,bool,EffectSetting*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,bool,EffectSetting*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,bool,EffectSetting*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,bool,EffectSetting*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,bool,EffectSetting*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,bool,SpellItem*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,bool,SpellItem*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,bool,SpellItem*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,bool,SpellItem*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,bool,SpellItem*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,bool,SpellItem*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,bool,SpellItem*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,bool,TESFaction*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,bool,TESFaction*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,bool,TESFaction*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,bool,TESFaction*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,bool,TESFaction*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,bool,TESFaction*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,bool,TESFaction*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,bool,TESForm*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,bool,TESForm*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,bool,TESForm*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,bool,TESForm*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,bool,TESForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,bool,TESForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,bool,TESForm*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,bool,TESIdleForm*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,bool,TESIdleForm*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,bool,TESIdleForm*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,bool,TESIdleForm*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,bool,TESIdleForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,bool,TESIdleForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,bool,TESIdleForm*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,bool,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,bool,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,bool,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,bool,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,bool,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,bool,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,bool,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,bool,TESShout*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,bool,TESShout*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,bool,TESShout*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,bool,TESShout*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,bool,TESShout*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,bool,TESShout*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,bool,TESShout*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,float,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,float,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,float,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,float,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,float,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,float,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,float,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,int,Actor*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,int,Actor*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,int,Actor*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,int,Actor*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,int,Actor*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,int,Actor*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,int,Actor*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,int,TESFaction*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,int,TESFaction*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,int,TESFaction*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,int,TESFaction*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,int,TESFaction*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,int,TESFaction*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,int,TESFaction*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,int,unsigned_int>.binding
 member-unverified BSScript::NativeFunction1<Actor,int,unsigned_int>.docString
 member-unverified BSScript::NativeFunction1<Actor,int,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,int,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<Actor,int,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,int,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,int,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction1<Actor,unsigned_int,Actor*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,unsigned_int,Actor*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,unsigned_int,Actor*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,unsigned_int,Actor*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,unsigned_int,Actor*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,unsigned_int,Actor*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,unsigned_int,Actor*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,void,Actor*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,void,Actor*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,void,Actor*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,void,Actor*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,void,Actor*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,Actor*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,Actor*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,void,BGSPerk*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,void,BGSPerk*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,void,BGSPerk*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,void,BGSPerk*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,void,BGSPerk*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,BGSPerk*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,BGSPerk*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,void,BGSTextureSet*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,void,BGSTextureSet*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,void,BGSTextureSet*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,void,BGSTextureSet*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,void,BGSTextureSet*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,BGSTextureSet*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,BGSTextureSet*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,void,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,void,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,void,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,void,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,void,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,void,TESFaction*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,void,TESFaction*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,void,TESFaction*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,void,TESFaction*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,void,TESFaction*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,TESFaction*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,TESFaction*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,void,TESForm*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,void,TESForm*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,void,TESForm*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,void,TESForm*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,void,TESForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,TESForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,TESForm*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,void,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,void,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,void,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,void,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,void,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,void,TESRace*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,void,TESRace*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,void,TESRace*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,void,TESRace*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,void,TESRace*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,TESRace*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,TESRace*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,void,TESShout*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<Actor,void,TESShout*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<Actor,void,TESShout*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,void,TESShout*___ptr64>.name
 member-unverified BSScript::NativeFunction1<Actor,void,TESShout*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,TESShout*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,TESShout*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<Actor,void,bool>.binding
 member-unverified BSScript::NativeFunction1<Actor,void,bool>.docString
 member-unverified BSScript::NativeFunction1<Actor,void,bool>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,void,bool>.name
 member-unverified BSScript::NativeFunction1<Actor,void,bool>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,bool>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,bool>.stateName
+member-unverified BSScript::NativeFunction1<Actor,void,float>.binding
 member-unverified BSScript::NativeFunction1<Actor,void,float>.docString
 member-unverified BSScript::NativeFunction1<Actor,void,float>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,void,float>.name
 member-unverified BSScript::NativeFunction1<Actor,void,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,float>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,float>.stateName
+member-unverified BSScript::NativeFunction1<Actor,void,unsigned_int>.binding
 member-unverified BSScript::NativeFunction1<Actor,void,unsigned_int>.docString
 member-unverified BSScript::NativeFunction1<Actor,void,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction1<Actor,void,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<Actor,void,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<Actor,void,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<Actor,void,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction1<BGSBaseAlias,void,float>.binding
 member-unverified BSScript::NativeFunction1<BGSBaseAlias,void,float>.docString
 member-unverified BSScript::NativeFunction1<BGSBaseAlias,void,float>.isLatent
+member-unverified BSScript::NativeFunction1<BGSBaseAlias,void,float>.name
 member-unverified BSScript::NativeFunction1<BGSBaseAlias,void,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSBaseAlias,void,float>.paramCount
 member-unverified BSScript::NativeFunction1<BGSBaseAlias,void,float>.stateName
+member-unverified BSScript::NativeFunction1<BGSListForm,TESForm*___ptr64,unsigned_int>.binding
 member-unverified BSScript::NativeFunction1<BGSListForm,TESForm*___ptr64,unsigned_int>.docString
 member-unverified BSScript::NativeFunction1<BGSListForm,TESForm*___ptr64,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction1<BGSListForm,TESForm*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<BGSListForm,TESForm*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSListForm,TESForm*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<BGSListForm,TESForm*___ptr64,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction1<BGSListForm,bool,TESForm*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<BGSListForm,bool,TESForm*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<BGSListForm,bool,TESForm*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<BGSListForm,bool,TESForm*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BGSListForm,bool,TESForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSListForm,bool,TESForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BGSListForm,bool,TESForm*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<BGSListForm,int,TESForm*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<BGSListForm,int,TESForm*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<BGSListForm,int,TESForm*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<BGSListForm,int,TESForm*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BGSListForm,int,TESForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSListForm,int,TESForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BGSListForm,int,TESForm*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<BGSListForm,void,TESForm*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<BGSListForm,void,TESForm*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<BGSListForm,void,TESForm*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<BGSListForm,void,TESForm*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BGSListForm,void,TESForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSListForm,void,TESForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BGSListForm,void,TESForm*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<BGSLocAlias,void,BGSLocation*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<BGSLocAlias,void,BGSLocation*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<BGSLocAlias,void,BGSLocation*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<BGSLocAlias,void,BGSLocation*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BGSLocAlias,void,BGSLocation*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSLocAlias,void,BGSLocation*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BGSLocAlias,void,BGSLocation*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocation*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocation*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocation*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocation*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocation*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocation*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocation*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocationRefType*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocationRefType*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocationRefType*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocationRefType*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocationRefType*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocationRefType*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BGSLocation,bool,BGSLocationRefType*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<BGSLocation,float,BGSKeyword*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<BGSLocation,float,BGSKeyword*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<BGSLocation,float,BGSKeyword*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<BGSLocation,float,BGSKeyword*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BGSLocation,float,BGSKeyword*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSLocation,float,BGSKeyword*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BGSLocation,float,BGSKeyword*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<BGSLocation,unsigned_int,BGSLocationRefType*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<BGSLocation,unsigned_int,BGSLocationRefType*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<BGSLocation,unsigned_int,BGSLocationRefType*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<BGSLocation,unsigned_int,BGSLocationRefType*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BGSLocation,unsigned_int,BGSLocationRefType*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSLocation,unsigned_int,BGSLocationRefType*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BGSLocation,unsigned_int,BGSLocationRefType*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<BGSLocation,void,bool>.binding
 member-unverified BSScript::NativeFunction1<BGSLocation,void,bool>.docString
 member-unverified BSScript::NativeFunction1<BGSLocation,void,bool>.isLatent
+member-unverified BSScript::NativeFunction1<BGSLocation,void,bool>.name
 member-unverified BSScript::NativeFunction1<BGSLocation,void,bool>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSLocation,void,bool>.paramCount
 member-unverified BSScript::NativeFunction1<BGSLocation,void,bool>.stateName
+member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESForm*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESForm*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESForm*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESForm*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESForm*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BGSRefAlias,void,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<BGSReferenceEffect,void,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<BGSReferenceEffect,void,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<BGSReferenceEffect,void,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<BGSReferenceEffect,void,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BGSReferenceEffect,void,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSReferenceEffect,void,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BGSReferenceEffect,void,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<BGSScene,bool,unsigned_int>.binding
 member-unverified BSScript::NativeFunction1<BGSScene,bool,unsigned_int>.docString
 member-unverified BSScript::NativeFunction1<BGSScene,bool,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction1<BGSScene,bool,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<BGSScene,bool,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSScene,bool,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<BGSScene,bool,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction1<BGSShaderParticleGeometryData,void,float>.binding
 member-unverified BSScript::NativeFunction1<BGSShaderParticleGeometryData,void,float>.docString
 member-unverified BSScript::NativeFunction1<BGSShaderParticleGeometryData,void,float>.isLatent
+member-unverified BSScript::NativeFunction1<BGSShaderParticleGeometryData,void,float>.name
 member-unverified BSScript::NativeFunction1<BGSShaderParticleGeometryData,void,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSShaderParticleGeometryData,void,float>.paramCount
 member-unverified BSScript::NativeFunction1<BGSShaderParticleGeometryData,void,float>.stateName
+member-unverified BSScript::NativeFunction1<BGSSoundCategory,void,float>.binding
 member-unverified BSScript::NativeFunction1<BGSSoundCategory,void,float>.docString
 member-unverified BSScript::NativeFunction1<BGSSoundCategory,void,float>.isLatent
+member-unverified BSScript::NativeFunction1<BGSSoundCategory,void,float>.name
 member-unverified BSScript::NativeFunction1<BGSSoundCategory,void,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<BGSSoundCategory,void,float>.paramCount
 member-unverified BSScript::NativeFunction1<BGSSoundCategory,void,float>.stateName
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,unsigned_int>.__vftable
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,unsigned_int>.binding
@@ -109560,25 +110393,40 @@ member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,BSFixedStri
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,unsigned_int>.stateName
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,unsigned_int>.userFlags
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,unsigned_int>.variableCount
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int>.binding
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int>.docString
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESWeather*___ptr64,unsigned_int>.binding
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESWeather*___ptr64,unsigned_int>.docString
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESWeather*___ptr64,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESWeather*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESWeather*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESWeather*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESWeather*___ptr64,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,TESWordOfPower*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,TESWordOfPower*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,TESWordOfPower*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,TESWordOfPower*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,TESWordOfPower*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,TESWordOfPower*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,TESWordOfPower*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,float>.binding
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,float>.docString
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,float>.isLatent
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,float>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,float>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,float>.stateName
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,unsigned_int>.__vftable
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,unsigned_int>.binding
@@ -109595,21 +110443,33 @@ member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,unsign
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,unsigned_int>.stateName
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,unsigned_int>.userFlags
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,unsigned_int>.variableCount
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,float>.binding
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,float>.docString
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,float>.isLatent
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,float>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,float>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,float>.stateName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,float>.binding
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,float>.docString
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,float>.isLatent
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,float>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,float>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,float>.stateName
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,unsigned_int>.__vftable
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,unsigned_int>.binding
@@ -109626,816 +110486,1453 @@ member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,unsigne
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,unsigned_int>.stateName
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,unsigned_int>.userFlags
 member-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,unsigned_int>.variableCount
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,unsigned_int,unsigned_int>.binding
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,unsigned_int,unsigned_int>.docString
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,unsigned_int,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,unsigned_int,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,unsigned_int,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,unsigned_int,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,unsigned_int,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,Actor*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,Actor*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,Actor*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,Actor*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,Actor*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,Actor*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,Actor*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESImageSpaceModifier*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESImageSpaceModifier*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESImageSpaceModifier*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESImageSpaceModifier*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESImageSpaceModifier*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESImageSpaceModifier*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESImageSpaceModifier*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESQuest*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESQuest*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESQuest*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESQuest*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESQuest*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESQuest*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESQuest*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>.binding
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>.docString
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>.isLatent
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>.stateName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>.binding
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>.docString
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>.isLatent
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>.stateName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>.binding
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>.docString
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>.isLatent
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>.stateName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>.binding
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>.docString
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction1<IngredientItem,void,unsigned_int>.binding
 member-unverified BSScript::NativeFunction1<IngredientItem,void,unsigned_int>.docString
 member-unverified BSScript::NativeFunction1<IngredientItem,void,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction1<IngredientItem,void,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<IngredientItem,void,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<IngredientItem,void,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<IngredientItem,void,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESFaction,void,bool>.binding
 member-unverified BSScript::NativeFunction1<TESFaction,void,bool>.docString
 member-unverified BSScript::NativeFunction1<TESFaction,void,bool>.isLatent
+member-unverified BSScript::NativeFunction1<TESFaction,void,bool>.name
 member-unverified BSScript::NativeFunction1<TESFaction,void,bool>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESFaction,void,bool>.paramCount
 member-unverified BSScript::NativeFunction1<TESFaction,void,bool>.stateName
+member-unverified BSScript::NativeFunction1<TESFaction,void,unsigned_int>.binding
 member-unverified BSScript::NativeFunction1<TESFaction,void,unsigned_int>.docString
 member-unverified BSScript::NativeFunction1<TESFaction,void,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction1<TESFaction,void,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<TESFaction,void,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESFaction,void,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<TESFaction,void,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESForm,void,float>.binding
 member-unverified BSScript::NativeFunction1<TESForm,void,float>.docString
 member-unverified BSScript::NativeFunction1<TESForm,void,float>.isLatent
+member-unverified BSScript::NativeFunction1<TESForm,void,float>.name
 member-unverified BSScript::NativeFunction1<TESForm,void,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESForm,void,float>.paramCount
 member-unverified BSScript::NativeFunction1<TESForm,void,float>.stateName
+member-unverified BSScript::NativeFunction1<TESGlobal,void,float>.binding
 member-unverified BSScript::NativeFunction1<TESGlobal,void,float>.docString
 member-unverified BSScript::NativeFunction1<TESGlobal,void,float>.isLatent
+member-unverified BSScript::NativeFunction1<TESGlobal,void,float>.name
 member-unverified BSScript::NativeFunction1<TESGlobal,void,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESGlobal,void,float>.paramCount
 member-unverified BSScript::NativeFunction1<TESGlobal,void,float>.stateName
+member-unverified BSScript::NativeFunction1<TESImageSpaceModifier,void,float>.binding
 member-unverified BSScript::NativeFunction1<TESImageSpaceModifier,void,float>.docString
 member-unverified BSScript::NativeFunction1<TESImageSpaceModifier,void,float>.isLatent
+member-unverified BSScript::NativeFunction1<TESImageSpaceModifier,void,float>.name
 member-unverified BSScript::NativeFunction1<TESImageSpaceModifier,void,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESImageSpaceModifier,void,float>.paramCount
 member-unverified BSScript::NativeFunction1<TESImageSpaceModifier,void,float>.stateName
+member-unverified BSScript::NativeFunction1<TESNPC,void,bool>.binding
 member-unverified BSScript::NativeFunction1<TESNPC,void,bool>.docString
 member-unverified BSScript::NativeFunction1<TESNPC,void,bool>.isLatent
+member-unverified BSScript::NativeFunction1<TESNPC,void,bool>.name
 member-unverified BSScript::NativeFunction1<TESNPC,void,bool>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESNPC,void,bool>.paramCount
 member-unverified BSScript::NativeFunction1<TESNPC,void,bool>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectCELL,void,bool>.binding
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,bool>.docString
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,bool>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectCELL,void,bool>.name
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,bool>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectCELL,void,bool>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,bool>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectCELL,void,float>.binding
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,float>.docString
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,float>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectCELL,void,float>.name
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectCELL,void,float>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectCELL,void,float>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>.binding
 member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>.docString
 member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,bool>.binding
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,bool>.docString
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,bool>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,bool>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,bool>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,float>.binding
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,float>.docString
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,float>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,float>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,float>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,float>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,bool,float>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>.binding
 member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>.docString
 member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,bool>.binding
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,bool>.docString
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,bool>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,bool>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,bool>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,bool>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,bool>.stateName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>.binding
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>.docString
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>.binding
 member-unverified BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>.docString
 member-unverified BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESQuest,bool,unsigned_int>.binding
 member-unverified BSScript::NativeFunction1<TESQuest,bool,unsigned_int>.docString
 member-unverified BSScript::NativeFunction1<TESQuest,bool,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction1<TESQuest,bool,unsigned_int>.name
 member-unverified BSScript::NativeFunction1<TESQuest,bool,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESQuest,bool,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction1<TESQuest,bool,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction1<TESQuest,void,bool>.binding
 member-unverified BSScript::NativeFunction1<TESQuest,void,bool>.docString
 member-unverified BSScript::NativeFunction1<TESQuest,void,bool>.isLatent
+member-unverified BSScript::NativeFunction1<TESQuest,void,bool>.name
 member-unverified BSScript::NativeFunction1<TESQuest,void,bool>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESQuest,void,bool>.paramCount
 member-unverified BSScript::NativeFunction1<TESQuest,void,bool>.stateName
+member-unverified BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction1<TESWeather,void,bool>.binding
 member-unverified BSScript::NativeFunction1<TESWeather,void,bool>.docString
 member-unverified BSScript::NativeFunction1<TESWeather,void,bool>.isLatent
+member-unverified BSScript::NativeFunction1<TESWeather,void,bool>.name
 member-unverified BSScript::NativeFunction1<TESWeather,void,bool>.objectTypeName
+member-unverified BSScript::NativeFunction1<TESWeather,void,bool>.paramCount
 member-unverified BSScript::NativeFunction1<TESWeather,void,bool>.stateName
+member-unverified BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>.binding
 member-unverified BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>.docString
 member-unverified BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>.name
 member-unverified BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>.stateName
+member-unverified BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>.binding
 member-unverified BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>.docString
 member-unverified BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>.isLatent
+member-unverified BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>.name
 member-unverified BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>.stateName
+member-unverified BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.binding
 member-unverified BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.docString
 member-unverified BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.isLatent
+member-unverified BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.name
 member-unverified BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.stateName
+member-unverified BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>.binding
 member-unverified BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>.docString
 member-unverified BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>.isLatent
+member-unverified BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>.name
 member-unverified BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>.stateName
+member-unverified BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>.binding
 member-unverified BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>.docString
 member-unverified BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>.isLatent
+member-unverified BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>.name
 member-unverified BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>.stateName
+member-unverified BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>.binding
 member-unverified BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>.docString
 member-unverified BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>.isLatent
+member-unverified BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>.name
 member-unverified BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>.stateName
+member-unverified BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>.binding
 member-unverified BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>.docString
 member-unverified BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>.binding
 member-unverified BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>.docString
 member-unverified BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>.isLatent
+member-unverified BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>.name
 member-unverified BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>.stateName
+member-unverified BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>.binding
 member-unverified BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>.docString
 member-unverified BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>.isLatent
+member-unverified BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>.name
 member-unverified BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>.stateName
+member-unverified BSScript::NativeFunction2<Actor,void,bool,bool>.binding
 member-unverified BSScript::NativeFunction2<Actor,void,bool,bool>.docString
 member-unverified BSScript::NativeFunction2<Actor,void,bool,bool>.isLatent
+member-unverified BSScript::NativeFunction2<Actor,void,bool,bool>.name
 member-unverified BSScript::NativeFunction2<Actor,void,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,void,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,void,bool,bool>.stateName
+member-unverified BSScript::NativeFunction2<Actor,void,float,bool>.binding
 member-unverified BSScript::NativeFunction2<Actor,void,float,bool>.docString
 member-unverified BSScript::NativeFunction2<Actor,void,float,bool>.isLatent
+member-unverified BSScript::NativeFunction2<Actor,void,float,bool>.name
 member-unverified BSScript::NativeFunction2<Actor,void,float,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,void,float,bool>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,void,float,bool>.stateName
+member-unverified BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>.binding
 member-unverified BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>.docString
 member-unverified BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>.name
 member-unverified BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>.binding
 member-unverified BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>.docString
 member-unverified BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>.name
 member-unverified BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>.stateName
+member-unverified BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>.binding
 member-unverified BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>.docString
 member-unverified BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>.isLatent
+member-unverified BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>.name
 member-unverified BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>.paramCount
 member-unverified BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>.stateName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>.binding
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>.docString
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>.isLatent
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>.name
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>.stateName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>.binding
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>.docString
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>.isLatent
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>.name
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>.objectTypeName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>.paramCount
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>.stateName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>.binding
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>.docString
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>.isLatent
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>.name
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>.paramCount
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>.stateName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>.binding
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>.docString
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>.isLatent
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>.name
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>.paramCount
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>.stateName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>.binding
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>.docString
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>.isLatent
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>.name
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>.objectTypeName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>.paramCount
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>.stateName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>.binding
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>.docString
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>.binding
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>.docString
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>.isLatent
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>.name
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>.paramCount
 member-unverified BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>.stateName
+member-unverified BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>.binding
 member-unverified BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>.docString
 member-unverified BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>.isLatent
+member-unverified BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>.name
 member-unverified BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>.paramCount
 member-unverified BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>.stateName
+member-unverified BSScript::NativeFunction2<TESFaction,bool,bool,bool>.binding
 member-unverified BSScript::NativeFunction2<TESFaction,bool,bool,bool>.docString
 member-unverified BSScript::NativeFunction2<TESFaction,bool,bool,bool>.isLatent
+member-unverified BSScript::NativeFunction2<TESFaction,bool,bool,bool>.name
 member-unverified BSScript::NativeFunction2<TESFaction,bool,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESFaction,bool,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction2<TESFaction,bool,bool,bool>.stateName
+member-unverified BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>.binding
 member-unverified BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>.docString
 member-unverified BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>.isLatent
+member-unverified BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>.name
 member-unverified BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>.paramCount
 member-unverified BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>.stateName
+member-unverified BSScript::NativeFunction2<TESFaction,void,bool,bool>.binding
 member-unverified BSScript::NativeFunction2<TESFaction,void,bool,bool>.docString
 member-unverified BSScript::NativeFunction2<TESFaction,void,bool,bool>.isLatent
+member-unverified BSScript::NativeFunction2<TESFaction,void,bool,bool>.name
 member-unverified BSScript::NativeFunction2<TESFaction,void,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESFaction,void,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction2<TESFaction,void,bool,bool>.stateName
+member-unverified BSScript::NativeFunction2<TESFaction,void,int,bool>.binding
 member-unverified BSScript::NativeFunction2<TESFaction,void,int,bool>.docString
 member-unverified BSScript::NativeFunction2<TESFaction,void,int,bool>.isLatent
+member-unverified BSScript::NativeFunction2<TESFaction,void,int,bool>.name
 member-unverified BSScript::NativeFunction2<TESFaction,void,int,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESFaction,void,int,bool>.paramCount
 member-unverified BSScript::NativeFunction2<TESFaction,void,int,bool>.stateName
+member-unverified BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>.binding
 member-unverified BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>.docString
 member-unverified BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>.isLatent
+member-unverified BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>.name
 member-unverified BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>.paramCount
 member-unverified BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>.stateName
+member-unverified BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>.binding
 member-unverified BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>.docString
 member-unverified BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>.binding
 member-unverified BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>.docString
 member-unverified BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>.binding
 member-unverified BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>.docString
 member-unverified BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>.isLatent
+member-unverified BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>.name
 member-unverified BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>.paramCount
 member-unverified BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>.stateName
+member-unverified BSScript::NativeFunction2<TESObjectCELL,void,float,float>.binding
 member-unverified BSScript::NativeFunction2<TESObjectCELL,void,float,float>.docString
 member-unverified BSScript::NativeFunction2<TESObjectCELL,void,float,float>.isLatent
+member-unverified BSScript::NativeFunction2<TESObjectCELL,void,float,float>.name
 member-unverified BSScript::NativeFunction2<TESObjectCELL,void,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectCELL,void,float,float>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectCELL,void,float,float>.stateName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>.binding
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>.docString
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>.binding
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>.docString
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>.isLatent
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>.stateName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>.binding
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>.docString
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>.isLatent
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>.stateName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>.binding
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>.docString
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>.isLatent
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>.stateName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>.binding
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>.docString
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>.binding
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>.docString
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>.isLatent
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>.stateName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>.binding
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>.docString
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>.isLatent
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>.stateName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>.binding
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>.docString
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>.isLatent
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>.stateName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>.binding
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>.docString
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>.isLatent
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>.stateName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,float,float>.binding
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,float,float>.docString
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,float,float>.isLatent
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,float,float>.name
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectREFR,void,float,float>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectREFR,void,float,float>.stateName
+member-unverified BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>.binding
 member-unverified BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>.docString
 member-unverified BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>.name
 member-unverified BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>.stateName
+member-unverified BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>.binding
 member-unverified BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>.docString
 member-unverified BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>.isLatent
+member-unverified BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>.name
 member-unverified BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>.paramCount
 member-unverified BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>.stateName
+member-unverified BSScript::NativeFunction2<TESWeather,void,bool,bool>.binding
 member-unverified BSScript::NativeFunction2<TESWeather,void,bool,bool>.docString
 member-unverified BSScript::NativeFunction2<TESWeather,void,bool,bool>.isLatent
+member-unverified BSScript::NativeFunction2<TESWeather,void,bool,bool>.name
 member-unverified BSScript::NativeFunction2<TESWeather,void,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction2<TESWeather,void,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction2<TESWeather,void,bool,bool>.stateName
+member-unverified BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>.binding
 member-unverified BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>.docString
 member-unverified BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>.isLatent
+member-unverified BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>.name
 member-unverified BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>.stateName
+member-unverified BSScript::NativeFunction3<Actor,void,bool,bool,bool>.binding
 member-unverified BSScript::NativeFunction3<Actor,void,bool,bool,bool>.docString
 member-unverified BSScript::NativeFunction3<Actor,void,bool,bool,bool>.isLatent
+member-unverified BSScript::NativeFunction3<Actor,void,bool,bool,bool>.name
 member-unverified BSScript::NativeFunction3<Actor,void,bool,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction3<Actor,void,bool,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction3<Actor,void,bool,bool,bool>.stateName
+member-unverified BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>.binding
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>.docString
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>.binding
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>.docString
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>.isLatent
+member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>.name
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>.paramCount
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>.stateName
+member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>.binding
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>.docString
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>.isLatent
+member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>.name
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>.stateName
+member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>.binding
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>.docString
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>.isLatent
+member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>.name
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>.stateName
+member-unverified BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>.binding
 member-unverified BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>.docString
 member-unverified BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>.isLatent
+member-unverified BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>.name
 member-unverified BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>.stateName
+member-unverified BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>.binding
 member-unverified BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>.docString
 member-unverified BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>.name
 member-unverified BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>.binding
 member-unverified BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>.docString
 member-unverified BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>.name
 member-unverified BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>.stateName
+member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>.binding
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>.docString
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>.isLatent
+member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>.name
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>.objectTypeName
+member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>.paramCount
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>.stateName
+member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>.binding
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>.docString
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>.isLatent
+member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>.name
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>.objectTypeName
+member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>.paramCount
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>.stateName
+member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>.binding
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>.docString
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>.isLatent
+member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>.name
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>.stateName
+member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>.binding
 member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>.docString
 member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>.isLatent
+member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>.name
 member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>.stateName
+member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>.binding
 member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>.docString
 member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>.isLatent
+member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>.name
 member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>.objectTypeName
+member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>.paramCount
 member-unverified BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>.stateName
+member-unverified BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>.binding
 member-unverified BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>.docString
 member-unverified BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>.isLatent
+member-unverified BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>.name
 member-unverified BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>.stateName
+member-unverified BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>.binding
 member-unverified BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>.docString
 member-unverified BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>.isLatent
+member-unverified BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>.name
 member-unverified BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>.stateName
+member-unverified BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>.binding
 member-unverified BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>.docString
 member-unverified BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>.isLatent
+member-unverified BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>.name
 member-unverified BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>.objectTypeName
+member-unverified BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>.paramCount
 member-unverified BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>.stateName
+member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>.binding
 member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>.docString
 member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>.isLatent
+member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>.name
 member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>.stateName
+member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>.binding
 member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>.docString
 member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>.isLatent
+member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>.name
 member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>.paramCount
 member-unverified BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>.stateName
+member-unverified BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>.binding
 member-unverified BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>.docString
 member-unverified BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>.isLatent
+member-unverified BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>.name
 member-unverified BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>.stateName
+member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>.binding
 member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>.docString
 member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>.isLatent
+member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>.name
 member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>.stateName
+member-unverified BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.binding
 member-unverified BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.docString
 member-unverified BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.name
 member-unverified BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.binding
 member-unverified BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.docString
 member-unverified BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.name
 member-unverified BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>.binding
 member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>.docString
 member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>.isLatent
+member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>.name
 member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>.stateName
+member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>.binding
 member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>.docString
 member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>.isLatent
+member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>.name
 member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>.stateName
+member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>.binding
 member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>.docString
 member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>.isLatent
+member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>.name
 member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>.stateName
+member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>.binding
 member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>.docString
 member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>.isLatent
+member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>.name
 member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>.objectTypeName
+member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>.paramCount
 member-unverified BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>.stateName
+member-unverified BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>.binding
 member-unverified BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>.docString
 member-unverified BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>.isLatent
+member-unverified BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>.name
 member-unverified BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>.stateName
+member-unverified BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>.binding
 member-unverified BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>.docString
 member-unverified BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>.name
 member-unverified BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>.binding
 member-unverified BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>.docString
 member-unverified BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>.isLatent
+member-unverified BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>.name
 member-unverified BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>.objectTypeName
+member-unverified BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>.paramCount
 member-unverified BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>.stateName
+member-unverified BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>.binding
 member-unverified BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>.docString
 member-unverified BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>.isLatent
+member-unverified BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>.name
 member-unverified BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>.stateName
+member-unverified BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>.binding
 member-unverified BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>.docString
 member-unverified BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>.isLatent
+member-unverified BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>.name
 member-unverified BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>.stateName
+member-unverified BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>.binding
 member-unverified BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>.docString
 member-unverified BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>.isLatent
+member-unverified BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>.name
 member-unverified BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>.stateName
+member-unverified BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>.binding
 member-unverified BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>.docString
 member-unverified BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>.isLatent
+member-unverified BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>.name
 member-unverified BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>.paramCount
 member-unverified BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>.stateName
+member-unverified BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>.binding
 member-unverified BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>.docString
 member-unverified BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>.isLatent
+member-unverified BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>.name
 member-unverified BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>.paramCount
 member-unverified BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>.stateName
+member-unverified BSScript::NativeLatentFunction0<Actor,void>.binding
 member-unverified BSScript::NativeLatentFunction0<Actor,void>.docString
 member-unverified BSScript::NativeLatentFunction0<Actor,void>.isLatent
+member-unverified BSScript::NativeLatentFunction0<Actor,void>.name
 member-unverified BSScript::NativeLatentFunction0<Actor,void>.objectTypeName
+member-unverified BSScript::NativeLatentFunction0<Actor,void>.paramCount
 member-unverified BSScript::NativeLatentFunction0<Actor,void>.stateName
+member-unverified BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeLatentFunction0<TESObjectREFR,void>.binding
 member-unverified BSScript::NativeLatentFunction0<TESObjectREFR,void>.docString
 member-unverified BSScript::NativeLatentFunction0<TESObjectREFR,void>.isLatent
+member-unverified BSScript::NativeLatentFunction0<TESObjectREFR,void>.name
 member-unverified BSScript::NativeLatentFunction0<TESObjectREFR,void>.objectTypeName
+member-unverified BSScript::NativeLatentFunction0<TESObjectREFR,void>.paramCount
 member-unverified BSScript::NativeLatentFunction0<TESObjectREFR,void>.stateName
+member-unverified BSScript::NativeLatentFunction0<TESQuest,bool>.binding
 member-unverified BSScript::NativeLatentFunction0<TESQuest,bool>.docString
 member-unverified BSScript::NativeLatentFunction0<TESQuest,bool>.isLatent
+member-unverified BSScript::NativeLatentFunction0<TESQuest,bool>.name
 member-unverified BSScript::NativeLatentFunction0<TESQuest,bool>.objectTypeName
+member-unverified BSScript::NativeLatentFunction0<TESQuest,bool>.paramCount
 member-unverified BSScript::NativeLatentFunction0<TESQuest,bool>.stateName
+member-unverified BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.binding
 member-unverified BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.docString
 member-unverified BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.isLatent
+member-unverified BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.name
 member-unverified BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.paramCount
 member-unverified BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.stateName
+member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>.binding
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>.docString
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>.isLatent
+member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>.name
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>.objectTypeName
+member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>.paramCount
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>.stateName
+member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>.binding
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>.docString
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>.isLatent
+member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>.name
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>.objectTypeName
+member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>.paramCount
 member-unverified BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>.stateName
+member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>.binding
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>.docString
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>.isLatent
+member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>.name
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>.objectTypeName
+member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>.paramCount
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>.stateName
+member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,float>.binding
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,float>.docString
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,float>.isLatent
+member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,float>.name
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,float>.objectTypeName
+member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,float>.paramCount
 member-unverified BSScript::NativeLatentFunction1<TESObjectREFR,void,float>.stateName
+member-unverified BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>.binding
 member-unverified BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>.docString
 member-unverified BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>.isLatent
+member-unverified BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>.name
 member-unverified BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>.paramCount
 member-unverified BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>.stateName
+member-unverified BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.binding
 member-unverified BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.docString
 member-unverified BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.isLatent
+member-unverified BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.name
 member-unverified BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.objectTypeName
+member-unverified BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.paramCount
 member-unverified BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.stateName
+member-unverified BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>.binding
 member-unverified BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>.docString
 member-unverified BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>.isLatent
+member-unverified BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>.name
 member-unverified BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>.objectTypeName
+member-unverified BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>.paramCount
 member-unverified BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>.stateName
+member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>.binding
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>.docString
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>.isLatent
+member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>.name
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>.paramCount
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>.stateName
+member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>.binding
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>.docString
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>.isLatent
+member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>.name
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>.objectTypeName
+member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>.paramCount
 member-unverified BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>.stateName
+member-unverified BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>.binding
 member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>.docString
 member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>.isLatent
+member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>.name
 member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>.objectTypeName
+member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>.paramCount
 member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>.stateName
+member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>.binding
 member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>.docString
 member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>.isLatent
+member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>.name
 member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>.objectTypeName
+member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>.paramCount
 member-unverified BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>.stateName
+member-unverified BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>.binding
 member-unverified BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>.docString
 member-unverified BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>.isLatent
+member-unverified BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>.name
 member-unverified BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>.objectTypeName
+member-unverified BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>.paramCount
 member-unverified BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>.stateName
+member-unverified BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.binding
 member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.docString
 member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.isLatent
+member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.name
 member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.stateName
+member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>.binding
 member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>.docString
 member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>.isLatent
+member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>.name
 member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>.paramCount
 member-unverified BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>.stateName
+member-unverified BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.binding
 member-unverified BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.docString
 member-unverified BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.isLatent
+member-unverified BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.name
 member-unverified BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.objectTypeName
+member-unverified BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.paramCount
 member-unverified BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.stateName
+member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.binding
 member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.docString
 member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.isLatent
+member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.name
 member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.objectTypeName
+member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.paramCount
 member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.stateName
+member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>.binding
 member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>.docString
 member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>.isLatent
+member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>.name
 member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>.objectTypeName
+member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>.paramCount
 member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>.stateName
+member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.binding
 member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.docString
 member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.isLatent
+member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.name
 member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.objectTypeName
+member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.paramCount
 member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.stateName
+member-unverified BSScript::Object.currentStack
+member-unverified BSScript::Object.flags
+member-unverified BSScript::Object.handle
 member-unverified BSScript::ObjectTypeInfo.counts
 member-unverified BSScript::ObjectTypeInfo.counts2
+member-unverified BSScript::ObjectTypeInfo.data
+member-unverified BSScript::ObjectTypeInfo.refCount
+member-unverified BSScript::Stack.callback
+member-unverified BSScript::Stack.frameCount
+member-unverified BSScript::Stack.freezeMark
+member-unverified BSScript::Stack.frozenNext
+member-unverified BSScript::Stack.kind
+member-unverified BSScript::Stack.memoryPagePolicy
+member-unverified BSScript::Stack.pageCount
+member-unverified BSScript::Stack.pages
+member-unverified BSScript::Stack.pagesInline
+member-unverified BSScript::Stack.profilePolicy
+member-unverified BSScript::Stack.refCount
+member-unverified BSScript::Stack.returnValue
+member-unverified BSScript::Stack.stackID
+member-unverified BSScript::Stack.state
+member-unverified BSScript::Stack.tasklet
+member-unverified BSScript::Stack.top
+member-unverified BSScript::StackFrame.codeValid
+member-unverified BSScript::StackFrame.ip
+member-unverified BSScript::StackFrame.owningFunction
+member-unverified BSScript::StackFrame.owningObjectType
+member-unverified BSScript::StackFrame.previousFrame
+member-unverified BSScript::StackFrame.self
+member-unverified BSScript::StackFrame.size
+member-unverified BSSegmentedTriShape.extraDataCapacity
+member-unverified BSSegmentedTriShape.flags2
+member-unverified BSSegmentedTriShape.local
+member-unverified BSSegmentedTriShape.previousWorldFrame
 member-unverified BSShaderAccumulator.acceptAlphaDecalsInDepth
+member-unverified BSShaderAccumulator.currentBucket
+member-unverified BSShaderAccumulator.currentTechnique
 member-unverified BSShaderAccumulator.field_129
 member-unverified BSShaderAccumulator.field_A0
 member-unverified BSShaderAccumulator.field_A8
 member-unverified BSShaderAccumulator.field_B0
 member-unverified BSShaderAccumulator.field_B4
+member-unverified BSShaderAccumulator.hasMoreBatches
+member-unverified BSShaderAccumulator.shadowMapMask
 member-unverified BSShaderAccumulator.shadowSceneNode
+member-unverified BSShaderMaterial.texCoordOffset
+member-unverified BSShaderMaterial.texCoordOffset1
+member-unverified BSShaderProperty.extraDataCapacity
+member-unverified BSShaderTextureSet.texturePaths
+member-unverified BSShadowDirectionalLight.casterCandidateCount
+member-unverified BSShadowDirectionalLight.casterCandidates
 member-unverified BSShadowDirectionalLight.directionBlend
 member-unverified BSShadowDirectionalLight.field_130
 member-unverified BSShadowDirectionalLight.field_18
-member BSShadowDirectionalLight.field_28 44
+member-unverified BSShadowDirectionalLight.field_20
+member-unverified BSShadowDirectionalLight.field_28
 member-unverified BSShadowDirectionalLight.field_30
 member-unverified BSShadowDirectionalLight.focusShadowMaps
 member-unverified BSShadowDirectionalLight.portalStrictCull
 member-unverified BSShadowDirectionalLight.previousLightDirection
+member-unverified BSShadowDirectionalLight.sceneIndex
 member-unverified BSShadowDirectionalLight.sphereCuller
+member-unverified BSShadowFrustumLight.casterCandidateCount
+member-unverified BSShadowFrustumLight.casterCandidates
 member-unverified BSShadowFrustumLight.field_130
 member-unverified BSShadowFrustumLight.field_18
-member BSShadowFrustumLight.field_28 44
+member-unverified BSShadowFrustumLight.field_20
+member-unverified BSShadowFrustumLight.field_28
 member-unverified BSShadowFrustumLight.field_30
 member-unverified BSShadowFrustumLight.focusShadowMaps
 member-unverified BSShadowFrustumLight.portalStrictCull
+member-unverified BSShadowFrustumLight.sceneIndex
 member-unverified BSShadowFrustumLight.sphereCuller
 member-unverified BSShadowFrustumLight.tanHalfFovX
 member-unverified BSShadowFrustumLight.tanHalfFovY
+member-unverified BSShadowLight.casterCandidateCount
+member-unverified BSShadowLight.casterCandidates
 member-unverified BSShadowLight.field_130
 member-unverified BSShadowLight.field_18
-member BSShadowLight.field_28 44
+member-unverified BSShadowLight.field_20
+member-unverified BSShadowLight.field_28
 member-unverified BSShadowLight.field_30
 member-unverified BSShadowLight.portalStrictCull
+member-unverified BSShadowLight.sceneIndex
 member-unverified BSShadowLight.sphereCuller
+member-unverified BSShadowParabolicLight.casterCandidateCount
+member-unverified BSShadowParabolicLight.casterCandidates
 member-unverified BSShadowParabolicLight.field_130
 member-unverified BSShadowParabolicLight.field_18
-member BSShadowParabolicLight.field_28 44
+member-unverified BSShadowParabolicLight.field_20
+member-unverified BSShadowParabolicLight.field_28
 member-unverified BSShadowParabolicLight.field_30
 member-unverified BSShadowParabolicLight.focusShadowMaps
 member-unverified BSShadowParabolicLight.portalStrictCull
+member-unverified BSShadowParabolicLight.sceneIndex
 member-unverified BSShadowParabolicLight.sphereCuller
 member-unverified BSSimpleScaleController.field_20
 member-unverified BSSimpleScaleController.field_2C
+member-unverified BSSkinnedDecalTriShape.extraDataCapacity
+member-unverified BSSkinnedDecalTriShape.flags2
+member-unverified BSSkinnedDecalTriShape.local
+member-unverified BSSkinnedDecalTriShape.previousWorldFrame
+member-unverified BSSkyShaderProperty.extraDataCapacity
 member-unverified BSSmallBlockAllocator.field_102C
 member-unverified BSSmallBlockAllocator.field_1074
 member-unverified BSSmallBlockAllocator.field_10BC
@@ -110443,10 +111940,13 @@ member-unverified BSSmallBlockAllocator.field_1104
 member-unverified BSSmallBlockAllocator.field_114C
 member-unverified BSSmallBlockAllocator.field_1194
 member-unverified BSSmallBlockAllocator.field_11DC
+member-unverified BSSmallBlockAllocator.field_1230
 member-unverified BSSmallBlockAllocator.field_1240
+member-unverified BSSmallBlockAllocator.field_1248
 member-unverified BSSmallBlockAllocator.field_1250
 member-unverified BSSmallBlockAllocator.field_1258
 member-unverified BSSmallBlockAllocator.field_1260
+member-unverified BSSmallBlockAllocator.field_1264
 member-unverified BSSmallBlockAllocator.field_144
 member-unverified BSSmallBlockAllocator.field_18C
 member-unverified BSSmallBlockAllocator.field_1D4
@@ -110522,6 +112022,18 @@ member-unverified BSSpeedSamplerModifier.field_C0
 member-unverified BSSpeedSamplerModifier.field_C4
 member-unverified BSStream.field_234
 member-unverified BSStripPSysData.field_A0
+member-unverified BSStripParticleSystem.extraDataCapacity
+member-unverified BSStripParticleSystem.flags2
+member-unverified BSStripParticleSystem.local
+member-unverified BSStripParticleSystem.previousWorldFrame
+member-unverified BSSubIndexLandTriShape.extraDataCapacity
+member-unverified BSSubIndexLandTriShape.flags2
+member-unverified BSSubIndexLandTriShape.local
+member-unverified BSSubIndexLandTriShape.previousWorldFrame
+member-unverified BSSubIndexTriShape.extraDataCapacity
+member-unverified BSSubIndexTriShape.flags2
+member-unverified BSSubIndexTriShape.local
+member-unverified BSSubIndexTriShape.previousWorldFrame
 member-unverified BSSynchronizedClipGenerator.field_110
 member-unverified BSSynchronizedClipGenerator.field_114
 member-unverified BSSynchronizedClipGenerator.field_A4
@@ -110557,21 +112069,25 @@ member-unverified BSTArray.capacity
 member-unverified BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>.buffer
 member-unverified BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>.count
 member-unverified BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>.lock
+member-unverified BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>.popIndex
+member-unverified BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>.pushIndex
 member-unverified BSTEventSink.__vftable
 member-missing BSTEventSink<TESAmiiboForcedStopDetectionEvent>.__vftable
 member-missing BSTEventSink<TESAmiiboTouchEvent>.__vftable
 member-unverified BSTEventSource.pendingRegisterCapacity
 member-unverified BSTEventSource.pendingRegisterCount
+member-unverified BSTEventSource.pendingRegisters
 member-unverified BSTEventSource.pendingUnregisterCapacity
+member-unverified BSTEventSource.pendingUnregisters
 member-unverified BSTEventSource.sinkCapacity
 member-unverified BSTStaticFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType,16>.field_110
 member-unverified BSTStaticFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType,16>.field_130
-member BSTStaticFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType,16>.field_150 148
+member-unverified BSTStaticFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType,16>.field_150
 member-unverified BSTStaticFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType,16>.field_170
 member-unverified BSTStaticFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType,16>.field_190
 member-unverified BSTStaticFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType,16>.field_1B0
 member-unverified BSTStaticFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType,16>.field_1D0
-member BSTStaticFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType,16>.field_1F0 1e8
+member-unverified BSTStaticFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType,16>.field_1F0
 member-unverified BSTStaticFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType,16>.field_210
 member-unverified BSTStaticFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType,16>.field_220
 member-unverified BSTStaticFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType,16>.field_224
@@ -110586,12 +112102,13 @@ member-unverified BSTStaticFreeList<ActorMovementMessageMap<16>::RawMessageHandl
 member-unverified BSTStaticFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType,16>.field_B0
 member-unverified BSTStaticFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType,16>.field_D0
 member-unverified BSTStaticFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType,16>.field_F0
-member BSTaskManager.field_A0 a8
+member-unverified BSTaskManager.field_A0
 member-unverified BSTaskManager.field_A4
 member-unverified BSTaskManager.field_B8
 member-unverified BSTaskManager.source_BSTaskManagerWaitAction
-member BSTempEffectGeometryDecal.field_58 40
-member BSTempEffectGeometryDecal.field_60 48
+member-unverified BSTempEffectDebris.field_30
+member-unverified BSTempEffectGeometryDecal.field_58
+member-unverified BSTempEffectGeometryDecal.field_60
 member-unverified BSTempEffectGeometryDecal.field_68
 member-unverified BSTempEffectGeometryDecal.field_70
 member-unverified BSTempEffectGeometryDecal.field_7C
@@ -110619,6 +112136,14 @@ member-unverified BSTempEffectParticle.field_DC
 member-unverified BSTempEffectParticle.field_E0
 member-unverified BSTempEffectParticle.field_E4
 member-unverified BSTempEffectParticle.field_E8
+member-unverified BSTempNode.extraDataCapacity
+member-unverified BSTempNode.flags2
+member-unverified BSTempNode.local
+member-unverified BSTempNode.previousWorldFrame
+member-unverified BSTempNodeManager.extraDataCapacity
+member-unverified BSTempNodeManager.flags2
+member-unverified BSTempNodeManager.local
+member-unverified BSTempNodeManager.previousWorldFrame
 member-unverified BSTextureDB::QueuedHandles.field_20
 member-unverified BSThreadEvent::_anon_939FB6BB::Source.source_BSThreadEvent_ThreadEvent
 member-unverified BSTimerModifier.field_108
@@ -110631,6 +112156,14 @@ member-unverified BSTimerModifier.field_B4
 member-unverified BSTimerModifier.field_B8
 member-unverified BSTimerModifier.field_C0
 member-unverified BSTimerModifier.field_C4
+member-unverified BSTreeNode.extraDataCapacity
+member-unverified BSTreeNode.flags2
+member-unverified BSTreeNode.local
+member-unverified BSTreeNode.previousWorldFrame
+member-unverified BSTriShape.extraDataCapacity
+member-unverified BSTriShape.flags2
+member-unverified BSTriShape.local
+member-unverified BSTriShape.previousWorldFrame
 member-unverified BSTweenerModifier.field_108
 member-unverified BSTweenerModifier.field_110
 member-unverified BSTweenerModifier.field_114
@@ -110645,6 +112178,10 @@ member-unverified BSUIMessageData.fixedString
 member-unverified BSUIMessageData.string
 member-unverified BSUIMessageData.value
 member-unverified BSUIScaleformData.scaleformEvent
+member-unverified BSValueNode.extraDataCapacity
+member-unverified BSValueNode.flags2
+member-unverified BSValueNode.local
+member-unverified BSValueNode.previousWorldFrame
 member-unverified BSWaterShaderMaterial.field_100
 member-unverified BSWaterShaderMaterial.field_110
 member-unverified BSWaterShaderMaterial.field_120
@@ -110655,6 +112192,9 @@ member-unverified BSWaterShaderMaterial.field_C0
 member-unverified BSWaterShaderMaterial.field_D0
 member-unverified BSWaterShaderMaterial.field_E0
 member-unverified BSWaterShaderMaterial.field_F0
+member-unverified BSWaterShaderMaterial.texCoordOffset
+member-unverified BSWaterShaderMaterial.texCoordOffset1
+member-unverified BSWaterShaderProperty.extraDataCapacity
 member-unverified BSWin32AwardsSystemUtility.field_8
 member-missing BSWin32GameDataSystemUtility.__vftable
 member-missing BSWin32GameDataSystemUtility.field_10
@@ -110671,10 +112211,14 @@ member-missing BSWin32GameDataSystemUtility.field_6D0
 member-missing BSWin32GameDataSystemUtility.field_8
 member-missing BSWin32GameDataSystemUtility.field_A
 member-missing BSWin32GameDataSystemUtility.field_C
+member-unverified BSWin32GamepadDevice.connected
+member-unverified BSWin32GamepadDevice.leftStick
+member-unverified BSWin32GamepadDevice.leftTrigger
+member-unverified BSWin32GamepadDevice.prevState
+member-unverified BSWin32GamepadDevice.rightStick
+member-unverified BSWin32GamepadDevice.rightTrigger
 member-unverified BSWin32GamepadDevice.source_BSGamepadEvent
-member BSWin32GamerProfile.field_78 90
-member BSWin32GamerProfile.field_80 98
-member BSWin32GamerProfile.field_88 a0
+member-unverified BSWin32GamepadDevice.xinputState
 member-unverified BSWin32GamerProfile.field_90
 member-unverified BSWin32GamerProfile.field_98
 member-unverified BSWin32GamerProfile.field_A0
@@ -110683,7 +112227,10 @@ member-unverified BSWin32GamerProfile.field_B0
 member-unverified BSWin32GamerProfile.field_B8
 member-unverified BSWin32GamerProfile.source_BSGamerProfileEvent
 member-unverified BSWin32KeyboardDevice.bufferedData
+member-unverified BSWin32KeyboardDevice.prevKeyState
 member-unverified BSWin32MouseDevice.lock
+member-unverified BSWin32MouseDevice.reinitializing
+member-unverified BSWin32MouseDevice.state
 member-unverified BSWin32SaveDataSystemUtility.field_1EC
 member-unverified BSWin32SaveDataSystemUtility.field_60
 member-unverified BSWin32SaveDataSystemUtility.field_68
@@ -110697,19 +112244,19 @@ member-unverified BSWin32SystemUtility.field_11C
 member-unverified BSWin32SystemUtility.field_121
 member BSWin32SystemUtility.field_130 120
 member BSWin32SystemUtility.field_134 124
-member-unverified BSWin32SystemUtility.field_138
-member-unverified BSWin32SystemUtility.field_140
+member BSWin32SystemUtility.field_138 128
+member BSWin32SystemUtility.field_140 130
 member-unverified BSWin32SystemUtility.field_158
 member-unverified BSWin32SystemUtility.field_15C
-member BSWin32SystemUtility.field_160 128
-member BSWin32SystemUtility.field_168 130
-member BSWin32SystemUtility.field_180 140
+member-unverified BSWin32SystemUtility.field_160
+member-unverified BSWin32SystemUtility.field_168
+member-unverified BSWin32SystemUtility.field_180
 member-unverified BSWin32SystemUtility.field_184
-member BSWin32SystemUtility.field_188 158
-member BSWin32SystemUtility.field_190 168
+member-unverified BSWin32SystemUtility.field_188
+member-unverified BSWin32SystemUtility.field_190
 member-unverified BSWin32SystemUtility.field_1A8
 member BSWin32SystemUtility.field_1AC 154
-member-unverified BSWin32SystemUtility.field_1B0
+member BSWin32SystemUtility.field_1B0 158
 member BSWin32SystemUtility.field_1B8 160
 member-unverified BSWin32SystemUtility.field_1C0
 member-unverified BSWin32SystemUtility.field_1E8
@@ -110723,8 +112270,8 @@ member-unverified BSWin32SystemUtility.field_F0
 member-unverified BSWin32SystemUtility.field_F8
 member-unverified BSWin32SystemUtility.m_CCallResult_1A0
 member BSWin32SystemUtility.m_CCallback_128 118
-member BSWin32SystemUtility.m_CCallback_150 128
-member BSWin32SystemUtility.m_CCallback_178 148
+member-unverified BSWin32SystemUtility.m_CCallback_150
+member-unverified BSWin32SystemUtility.m_CCallback_178
 member-unverified BSWin32SystemUtility.source_BSSystemEvent
 member-unverified BSWin32TaskletManager.field_10
 member-unverified BSWin32TaskletManager.field_100
@@ -110761,6 +112308,7 @@ member-unverified BSWin32TaskletManager.field_1E0
 member-unverified BSWin32TaskletManager.field_1E8
 member-unverified BSWin32TaskletManager.field_1F0
 member-unverified BSWin32TaskletManager.field_1F8
+member-unverified BSWin32TaskletManager.field_20
 member-unverified BSWin32TaskletManager.field_200
 member-unverified BSWin32TaskletManager.field_208
 member-unverified BSWin32TaskletManager.field_210
@@ -110783,6 +112331,7 @@ member-unverified BSWin32TaskletManager.field_288
 member-unverified BSWin32TaskletManager.field_290
 member-unverified BSWin32TaskletManager.field_298
 member-unverified BSWin32TaskletManager.field_2A0
+member-unverified BSWin32TaskletManager.field_2C
 member-unverified BSWin32TaskletManager.field_30
 member-unverified BSWin32TaskletManager.field_38
 member-unverified BSWin32TaskletManager.field_40
@@ -110792,7 +112341,9 @@ member-unverified BSWin32TaskletManager.field_58
 member-unverified BSWin32TaskletManager.field_60
 member-unverified BSWin32TaskletManager.field_68
 member-unverified BSWin32TaskletManager.field_70
+member-unverified BSWin32TaskletManager.field_78
 member-unverified BSWin32TaskletManager.field_8
+member-unverified BSWin32TaskletManager.field_A8
 member-unverified BSWin32TaskletManager.field_B0
 member-unverified BSWin32TaskletManager.field_B8
 member-unverified BSWin32TaskletManager.field_C0
@@ -110804,11 +112355,25 @@ member-unverified BSWin32TaskletManager.field_E8
 member-unverified BSWin32TaskletManager.field_F0
 member-unverified BSWin32TaskletManager.field_F8
 member-unverified BSXAudio2Audio.field_74
+member-unverified BSXAudio2AudioListener.field_10
+member-unverified BSXAudio2AudioListener.field_14
+member-unverified BSXAudio2AudioListener.field_18
+member-unverified BSXAudio2AudioListener.field_1C
+member-unverified BSXAudio2AudioListener.field_20
+member-unverified BSXAudio2AudioListener.field_24
+member-unverified BSXAudio2AudioListener.field_28
+member-unverified BSXAudio2AudioListener.field_2C
+member-unverified BSXAudio2AudioListener.field_30
+member-unverified BSXAudio2AudioListener.field_34
+member-unverified BSXAudio2AudioListener.field_38
 member-unverified BSXAudio2AudioListener.field_70
+member-unverified BSXAudio2AudioListener.field_8
+member-unverified BSXAudio2AudioListener.field_C
 member-unverified BSXAudio2GameSound.field_40
 member-unverified BSXAudio2GameSound.field_44
 member-unverified BSXAudio2GameSound.field_48
 member-unverified BSXAudio2GameSound.field_54
+member-unverified BShkbAnimationGraph.doFootIK
 member-unverified BShkbAnimationGraph.eventsSuppressed
 member-unverified BShkbAnimationGraph.nameMatchList
 member-unverified BShkbAnimationGraph.ownedNodeData
@@ -110853,54 +112418,54 @@ member-unverified BarrierPhantomCallbackShape.field_B4
 member-unverified BarrierPhantomCallbackShape.field_B8
 member-unverified BarrierPhantomCallbackShape.field_C0
 member-unverified BarrierPhantomCallbackShape.field_C4
-member BarrierProjectile.field_100 f8
-member BarrierProjectile.field_104 fc
-member BarrierProjectile.field_108 100
-member BarrierProjectile.field_10C 104
-member BarrierProjectile.field_110 108
-member BarrierProjectile.field_118 110
-member BarrierProjectile.field_120 118
-member BarrierProjectile.field_128 120
-member BarrierProjectile.field_130 128
-member BarrierProjectile.field_134 12c
-member BarrierProjectile.field_138 130
-member BarrierProjectile.field_13C 134
-member BarrierProjectile.field_140 138
-member BarrierProjectile.field_144 13c
-member BarrierProjectile.field_148 140
-member BarrierProjectile.field_150 148
-member BarrierProjectile.field_158 150
-member BarrierProjectile.field_160 158
-member BarrierProjectile.field_168 160
-member BarrierProjectile.field_170 168
+member-unverified BarrierProjectile.field_100
+member-unverified BarrierProjectile.field_104
+member-unverified BarrierProjectile.field_108
+member-unverified BarrierProjectile.field_10C
+member-unverified BarrierProjectile.field_110
+member-unverified BarrierProjectile.field_118
+member-unverified BarrierProjectile.field_120
+member-unverified BarrierProjectile.field_128
+member-unverified BarrierProjectile.field_130
+member-unverified BarrierProjectile.field_134
+member-unverified BarrierProjectile.field_138
+member-unverified BarrierProjectile.field_13C
+member-unverified BarrierProjectile.field_140
+member-unverified BarrierProjectile.field_144
+member-unverified BarrierProjectile.field_148
+member-unverified BarrierProjectile.field_150
+member-unverified BarrierProjectile.field_158
+member-unverified BarrierProjectile.field_160
+member-unverified BarrierProjectile.field_168
+member-unverified BarrierProjectile.field_170
 member-unverified BarrierProjectile.field_178
-member BarrierProjectile.field_180 178
-member BarrierProjectile.field_188 180
-member BarrierProjectile.field_190 188
-member BarrierProjectile.field_194 18c
-member BarrierProjectile.field_198 190
-member BarrierProjectile.field_19C 194
-member BarrierProjectile.field_1A4 19c
-member BarrierProjectile.field_1A8 1a0
-member BarrierProjectile.field_1B0 1a8
-member BarrierProjectile.field_1B8 1b0
-member BarrierProjectile.field_1C0 1b8
-member BarrierProjectile.field_1C8 1c0
-member BarrierProjectile.field_1D0 1c8
-member BarrierProjectile.field_1D4 1cc
-member BarrierProjectile.field_1D8 1d0
-member BarrierProjectile.field_1E0 1d8
+member-unverified BarrierProjectile.field_180
+member-unverified BarrierProjectile.field_188
+member-unverified BarrierProjectile.field_190
+member-unverified BarrierProjectile.field_194
+member-unverified BarrierProjectile.field_198
+member-unverified BarrierProjectile.field_19C
+member-unverified BarrierProjectile.field_1A4
+member-unverified BarrierProjectile.field_1A8
+member-unverified BarrierProjectile.field_1B0
+member-unverified BarrierProjectile.field_1B8
+member-unverified BarrierProjectile.field_1C0
+member-unverified BarrierProjectile.field_1C8
+member-unverified BarrierProjectile.field_1D0
+member-unverified BarrierProjectile.field_1D4
+member-unverified BarrierProjectile.field_1D8
+member-unverified BarrierProjectile.field_1E0
 member-unverified BarrierProjectile.field_90
-member BarrierProjectile.field_9A 92
-member BarrierProjectile.field_9B 93
-member BarrierProjectile.field_A0 98
-member BarrierProjectile.field_A8 a0
+member-unverified BarrierProjectile.field_9A
+member-unverified BarrierProjectile.field_9B
+member-unverified BarrierProjectile.field_A0
+member-unverified BarrierProjectile.field_A8
 member-unverified BarrierProjectile.field_D4
 member-unverified BarrierProjectile.field_DC
-member BarrierProjectile.field_E8 e0
-member BarrierProjectile.field_F0 e8
-member BarrierProjectile.field_F8 f0
-member BarrierProjectile.field_FC f4
+member-unverified BarrierProjectile.field_E8
+member-unverified BarrierProjectile.field_F0
+member-unverified BarrierProjectile.field_F8
+member-unverified BarrierProjectile.field_FC
 member BarrierProjectile.refScale 90
 member-unverified BarterMenu.field_11
 member-unverified BarterMenu.field_12
@@ -110908,58 +112473,70 @@ member-missing BaseExtraList.__vftable
 member-missing BaseExtraList.head
 member-missing BaseExtraList.lock
 member-missing BaseExtraList.presence
-member BeamProjectile.__vftable_1E0 1d8
-member BeamProjectile.field_100 f8
-member BeamProjectile.field_104 fc
-member BeamProjectile.field_108 100
-member BeamProjectile.field_10C 104
-member BeamProjectile.field_110 108
-member BeamProjectile.field_118 110
-member BeamProjectile.field_120 118
-member BeamProjectile.field_128 120
-member BeamProjectile.field_130 128
-member BeamProjectile.field_134 12c
-member BeamProjectile.field_138 130
-member BeamProjectile.field_13C 134
-member BeamProjectile.field_140 138
-member BeamProjectile.field_144 13c
-member BeamProjectile.field_148 140
-member BeamProjectile.field_150 148
-member BeamProjectile.field_158 150
-member BeamProjectile.field_160 158
-member BeamProjectile.field_168 160
-member BeamProjectile.field_170 168
+member-unverified BeamProjectile.__vftable_1E0
+member-unverified BeamProjectile.field_100
+member-unverified BeamProjectile.field_104
+member-unverified BeamProjectile.field_108
+member-unverified BeamProjectile.field_10C
+member-unverified BeamProjectile.field_110
+member-unverified BeamProjectile.field_118
+member-unverified BeamProjectile.field_120
+member-unverified BeamProjectile.field_128
+member-unverified BeamProjectile.field_130
+member-unverified BeamProjectile.field_134
+member-unverified BeamProjectile.field_138
+member-unverified BeamProjectile.field_13C
+member-unverified BeamProjectile.field_140
+member-unverified BeamProjectile.field_144
+member-unverified BeamProjectile.field_148
+member-unverified BeamProjectile.field_150
+member-unverified BeamProjectile.field_158
+member-unverified BeamProjectile.field_160
+member-unverified BeamProjectile.field_168
+member-unverified BeamProjectile.field_170
 member-unverified BeamProjectile.field_178
-member BeamProjectile.field_180 178
-member BeamProjectile.field_188 180
-member BeamProjectile.field_190 188
-member BeamProjectile.field_194 18c
-member BeamProjectile.field_198 190
-member BeamProjectile.field_19C 194
-member BeamProjectile.field_1A4 19c
-member BeamProjectile.field_1A8 1a0
-member BeamProjectile.field_1B0 1a8
-member BeamProjectile.field_1B8 1b0
-member BeamProjectile.field_1C0 1b8
-member BeamProjectile.field_1C8 1c0
-member BeamProjectile.field_1D0 1c8
-member BeamProjectile.field_1D4 1cc
-member BeamProjectile.field_1D8 1d0
-member BeamProjectile.field_240 238
+member-unverified BeamProjectile.field_180
+member-unverified BeamProjectile.field_188
+member-unverified BeamProjectile.field_190
+member-unverified BeamProjectile.field_194
+member-unverified BeamProjectile.field_198
+member-unverified BeamProjectile.field_19C
+member-unverified BeamProjectile.field_1A4
+member-unverified BeamProjectile.field_1A8
+member-unverified BeamProjectile.field_1B0
+member-unverified BeamProjectile.field_1B8
+member-unverified BeamProjectile.field_1C0
+member-unverified BeamProjectile.field_1C8
+member-unverified BeamProjectile.field_1D0
+member-unverified BeamProjectile.field_1D4
+member-unverified BeamProjectile.field_1D8
+member-unverified BeamProjectile.field_240
 member-unverified BeamProjectile.field_90
-member BeamProjectile.field_9A 92
-member BeamProjectile.field_9B 93
-member BeamProjectile.field_A0 98
-member BeamProjectile.field_A8 a0
+member-unverified BeamProjectile.field_9A
+member-unverified BeamProjectile.field_9B
+member-unverified BeamProjectile.field_A0
+member-unverified BeamProjectile.field_A8
 member-unverified BeamProjectile.field_D4
 member-unverified BeamProjectile.field_DC
-member BeamProjectile.field_E8 e0
-member BeamProjectile.field_F0 e8
-member BeamProjectile.field_F8 f0
-member BeamProjectile.field_FC f4
+member-unverified BeamProjectile.field_E8
+member-unverified BeamProjectile.field_F0
+member-unverified BeamProjectile.field_F8
+member-unverified BeamProjectile.field_FC
 member BeamProjectile.refScale 90
 member-unverified BeamProjectile.source_BeamProjectileImpactEvent
+member-unverified BipedAnim.bufferedObjects
+member-unverified BipedAnim.ownerHandle
+member-unverified BipedAnim.refCount
+member-unverified BipedAnim.root
+member-unverified BipedObject.addon
+member-unverified BipedObject.field_18
+member-unverified BipedObject.graphHolder
+member-unverified BipedObject.item
+member-unverified BipedObject.model
+member-unverified BipedObject.partClone
+member-unverified BleedoutCameraState.applyThirdPerson
 member-unverified BleedoutCameraState.followHeading
+member-unverified BleedoutCameraState.keepFreeRotation
 member-unverified BleedoutCameraState.orbitDistance
 member-unverified BleedoutCameraState.pad0c
 member-unverified BleedoutCameraState.pad11C
@@ -110967,115 +112544,140 @@ member-unverified BleedoutCameraState.pad135
 member-unverified BleedoutCameraState.pad1c
 member-unverified BleedoutCameraState.padE3
 member-unverified BleedoutCameraState.pitch
+member-unverified BleedoutCameraState.recoveryStart
 member-unverified BleedoutCameraState.soundHandle
 member-unverified BleedoutCameraState.soundHandleAssumeState
 member-unverified BleedoutCameraState.soundHandlePad
 member-unverified BleedoutCameraState.soundHandleRequestedState
 member-unverified BleedoutCameraState.targetOffset
+member-unverified BleedoutCameraState.toggleToFirstPerson
 member-unverified BleedoutCameraState.useShoulderOffsets
+member-unverified BleedoutCameraState.yaw
 member-unverified BleedoutCameraState.yawOffset
 member-unverified BleedoutCameraState.zoomSinceTogglePress
 member-unverified BookMenu.field_11
 member-unverified BookMenu.field_12
+member-unverified ButtonEvent.field_10
+member-unverified ButtonEvent.field_C
 member-missing CCallback<BSWin32SystemUtility,FloatingGamepadTextInputDismissed_t,0>.__vftable
 member-missing CCallback<BSWin32SystemUtility,GamepadTextInputDismissed_t,0>.__vftable
 member-missing CCallbackImpl<1>.__vftable
 member-missing CCallbackImpl<8>.__vftable
+member-unverified CachedRaycastData.cachingPhantom
+member-unverified CachedRaycastData.collectedBodies
+member-unverified CachedRaycastData.collisionGroup
+member-unverified CachedRaycastData.everHit
+member-unverified CachedRaycastData.handle
 member-unverified CachedRaycastData.useWorldOnly
+member-unverified CachedRaycastData.world
+member-unverified Calendar.daysAdvanced
 member-unverified Calendar.field_3c
-member-unverified CameraMatrixEntry.jittered
+member-unverified Calendar.gameDay
+member-unverified Calendar.gameMonth
+member-unverified Calendar.timeScale
+member-unverified CameraCasterHolder.castPhantom
+member-unverified CameraCasterHolder.overlapPhantom
+member-unverified CameraMatrixEntry.eyePosition
+member-unverified CameraMatrixEntry.previousViewProjection
+member-unverified CameraMatrixEntry.projection
+member-unverified CameraMatrixEntry.view
+member-unverified CameraMatrixEntry.viewProjection
+member-unverified CameraMatrixEntry.viewProjectionUnjittered
+member-unverified CameraMatrixEntry.worldRotation
 member-unverified CameraOverrideStartHandler.pad0C
 member-unverified CameraOverrideStartHandler.refCount
 member-unverified CameraOverrideStopHandler.pad0C
 member-unverified CameraOverrideStopHandler.refCount
 member-unverified CameraShakeHandler.pad0C
 member-unverified CameraShakeHandler.refCount
-member ChainExplosion.__vftable_148 140
-member ChainExplosion.field_100 f8
-member ChainExplosion.field_108 100
-member ChainExplosion.field_110 108
-member ChainExplosion.field_118 110
+member-unverified ChainExplosion.__vftable_148
+member-unverified ChainExplosion.field_100
+member-unverified ChainExplosion.field_108
+member-unverified ChainExplosion.field_110
+member-unverified ChainExplosion.field_118
 member-unverified ChainExplosion.field_120
-member ChainExplosion.field_128 120
-member ChainExplosion.field_12C 124
-member ChainExplosion.field_130 128
-member ChainExplosion.field_134 12c
+member-unverified ChainExplosion.field_128
+member-unverified ChainExplosion.field_12C
+member-unverified ChainExplosion.field_130
+member-unverified ChainExplosion.field_134
 member-unverified ChainExplosion.field_138
-member ChainExplosion.field_13C 134
-member ChainExplosion.field_140 138
-member ChainExplosion.field_150 148
-member ChainExplosion.field_154 14c
-member ChainExplosion.field_158 150
-member ChainExplosion.field_170 168
-member ChainExplosion.field_178 170
-member ChainExplosion.field_180 178
-member ChainExplosion.field_188 180
-member ChainExplosion.field_190 188
-member ChainExplosion.field_198 190
-member ChainExplosion.field_19C 194
-member ChainExplosion.field_1A0 198
+member-unverified ChainExplosion.field_13C
+member-unverified ChainExplosion.field_140
+member-unverified ChainExplosion.field_150
+member-unverified ChainExplosion.field_154
+member-unverified ChainExplosion.field_158
+member-unverified ChainExplosion.field_170
+member-unverified ChainExplosion.field_178
+member-unverified ChainExplosion.field_180
+member-unverified ChainExplosion.field_188
+member-unverified ChainExplosion.field_190
+member-unverified ChainExplosion.field_198
+member-unverified ChainExplosion.field_19C
+member-unverified ChainExplosion.field_1A0
 member-unverified ChainExplosion.field_90
-member ChainExplosion.field_9A 92
-member ChainExplosion.field_9B 93
-member ChainExplosion.field_A0 98
-member ChainExplosion.field_A8 a0
-member ChainExplosion.field_AC a4
-member ChainExplosion.field_B4 ac
-member ChainExplosion.field_B8 b0
-member ChainExplosion.field_BC b4
-member ChainExplosion.field_C0 b8
-member ChainExplosion.field_C8 c0
-member ChainExplosion.field_D0 c8
-member ChainExplosion.field_D8 d0
-member ChainExplosion.field_DC d4
-member ChainExplosion.field_E0 d8
-member ChainExplosion.field_E4 dc
-member ChainExplosion.field_E8 e0
-member ChainExplosion.field_EC e4
-member ChainExplosion.field_F0 e8
-member ChainExplosion.field_F8 f0
+member-unverified ChainExplosion.field_9A
+member-unverified ChainExplosion.field_9B
+member-unverified ChainExplosion.field_A0
+member-unverified ChainExplosion.field_A8
+member-unverified ChainExplosion.field_AC
+member-unverified ChainExplosion.field_B4
+member-unverified ChainExplosion.field_B8
+member-unverified ChainExplosion.field_BC
+member-unverified ChainExplosion.field_C0
+member-unverified ChainExplosion.field_C8
+member-unverified ChainExplosion.field_D0
+member-unverified ChainExplosion.field_D8
+member-unverified ChainExplosion.field_DC
+member-unverified ChainExplosion.field_E0
+member-unverified ChainExplosion.field_E4
+member-unverified ChainExplosion.field_E8
+member-unverified ChainExplosion.field_EC
+member-unverified ChainExplosion.field_F0
+member-unverified ChainExplosion.field_F8
 member ChainExplosion.refScale 90
-member Character.__vftable_A0 98
-member Character.__vftable_B8 b0
-member Character.__vftable_C0 b8
-member Character.__vftable_D0 c8
-member Character.__vftable_D8 d0
-member Character.__vftable_E0 d8
+member-unverified ChangeFormMap.lock
+member-unverified ChangeFormMap.map
+member-unverified Character.__vftable_A0
+member-unverified Character.__vftable_B8
+member-unverified Character.__vftable_C0
+member-unverified Character.__vftable_D0
+member-unverified Character.__vftable_D8
+member-unverified Character.__vftable_E0
 member-unverified Character.avStorage
-member Character.boolFlags e0
-member Character.boolFlags2 1fc
-member Character.combatController 158
-member Character.combatTargetHandle fc
+member-unverified Character.boolFlags
+member-unverified Character.boolFlags2
+member-unverified Character.combatController
+member-unverified Character.combatTargetHandle
 member-unverified Character.criticalSection
-member Character.currentProcess f0
+member-unverified Character.currentProcess
 member-unverified Character.dialogueTargetHandle
-member Character.field_108 100
-member Character.field_118 110
+member-unverified Character.field_108
+member-unverified Character.field_118
 member-unverified Character.field_128
-member Character.field_130 128
+member-unverified Character.field_130
 member-unverified Character.field_170
-member Character.field_190 188
-member Character.field_1F0 1e8
-member Character.field_268 260
-member Character.field_270 268
-member Character.field_274 26c
-member Character.field_279 271
-member Character.field_280 278
-member Character.field_288 280
+member-unverified Character.field_190
+member-unverified Character.field_1F0
+member-unverified Character.field_268
+member-unverified Character.field_270
+member-unverified Character.field_274
+member-unverified Character.field_279
+member-unverified Character.field_280
+member-unverified Character.field_288
 member-unverified Character.field_90
-member Character.field_9A 92
-member Character.field_9B 93
+member-unverified Character.field_9A
+member-unverified Character.field_9B
 member-unverified Character.field_A8
 member-unverified Character.field_B0
-member Character.flags1 c0
-member Character.flags2 c4
-member Character.healthModifiers 228
-member Character.magicCasters 1a0
+member-unverified Character.flags1
+member-unverified Character.flags2
+member-unverified Character.healthModifiers
+member-unverified Character.magicCasters
 member-unverified Character.magickaModifiers
-member Character.movementController 148
-member Character.race 1f0
+member-unverified Character.movementController
+member-unverified Character.race
 member Character.refScale 90
-member Character.selectedSpells 1c0
+member-unverified Character.selectedSpells
 member-unverified Character.staminaModifiers
 member-unverified Character.voicePointsModifiers
 member-unverified Clouds.field_310
@@ -111126,6 +112728,8 @@ member-unverified Clouds.field_470
 member-unverified Clouds.field_478
 member-unverified Clouds.field_480
 member-unverified Clouds.field_488
+member-unverified Clouds.field_512
+member-unverified Clouds.field_518
 member-unverified CombatCoverLocation.field_10
 member-unverified CombatCoverLocation.field_18
 member-unverified CombatCoverLocation.field_20
@@ -111139,12 +112743,15 @@ member-unverified CombatCoverLocation.field_44
 member-unverified CombatCoverLocation.field_48
 member-unverified CombatCoverLocation.field_4C
 member-unverified CombatCoverLocation.field_50
+member-unverified CombatCoverLocation.field_54
+member-unverified CombatCoverLocation.field_58
 member-unverified CombatCoverLocation.field_5C
+member-unverified CombatCoverLocation.field_60
 member-unverified CombatCoverLocation.field_64
 member-unverified CombatCoverLocation.field_68
 member-unverified CombatCoverLocation.field_84
 member-unverified CombatCoverLocation.field_94
-member CombatCoverSearch.field_74 80
+member-unverified CombatCoverSearch.field_74
 member-unverified CombatCoverSearch.field_7C
 member-unverified CombatCoverSearch.field_84
 member-unverified CombatInventoryItemMagic.field_48
@@ -111229,34 +112836,16 @@ member-unverified CombatInventoryItemShout.field_48
 member-unverified CombatInventoryItemStaff.field_48
 member-unverified CombatNavmeshSearch.field_10
 member-unverified CombatNavmeshSearch.field_18
-member CombatNavmeshSearch.field_1B0 170
-member CombatNavmeshSearch.field_1B8 178
-member CombatNavmeshSearch.field_1C0 180
-member CombatNavmeshSearch.field_1D0 190
-member CombatNavmeshSearch.field_1D8 198
-member CombatNavmeshSearch.field_1E0 1a0
 member-unverified CombatNavmeshSearch.field_20
 member-unverified CombatNavmeshSearch.field_28
 member-unverified CombatNavmeshSearch.field_8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_10
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_18
-member CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_1B0 170
-member CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_1B8 178
-member CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_1C0 180
-member CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_1D0 190
-member CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_1D8 198
-member CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_1E0 1a0
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_20
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_28
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_10
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_18
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_1B0 170
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_1B8 178
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_1C0 180
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_1D0 190
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_1D8 198
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_1E0 1a0
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_1F0
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_1F8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_20
@@ -111264,35 +112853,20 @@ member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_10
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_18
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_1B0 170
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_1B8 178
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_1C0 180
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_1D0 190
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_1D8 198
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_1E0 1a0
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_20
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_28
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_10
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_18
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_1B0 170
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_1B8 178
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_1C0 180
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_1D0 190
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_1D8 198
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_1E0 1a0
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_20
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_28
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_10
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_18
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_1B0 170
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_1B8 178
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_1C0 180
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_1D0 190
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_1D8 198
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_1E0 1a0
+member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_1F8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_20
+member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_200
+member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_210
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_218
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_220
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_223
@@ -111300,12 +112874,6 @@ member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_10
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_18
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_1B0 170
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_1B8 178
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_1C0 180
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_1D0 190
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_1D8 198
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_1E0 1a0
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_1F8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_20
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_200
@@ -111313,12 +112881,6 @@ member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathin
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_10
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_18
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_1B0 170
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_1B8 178
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_1C0 180
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_1D0 190
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_1D8 198
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_1E0 1a0
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_20
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_208
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_210
@@ -111327,24 +112889,14 @@ member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,Comba
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_10
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_18
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_1B0 170
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_1B8 178
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_1C0 180
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_1D0 190
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_1D8 198
-member CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_1E0 1a0
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_20
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_28
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_10
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_18
-member CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_1B0 170
-member CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_1B8 178
-member CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_1C0 180
-member CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_1D0 190
-member CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_1D8 198
-member CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_1E0 1a0
+member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_1F8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_20
+member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_200
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_208
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_210
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_213
@@ -111352,36 +112904,21 @@ member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPat
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_10
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_18
-member CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_1B0 170
-member CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_1B8 178
-member CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_1C0 180
-member CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_1D0 190
-member CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_1D8 198
-member CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_1E0 1a0
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_20
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_28
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_10
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_18
-member CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_1B0 170
-member CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_1B8 178
-member CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_1C0 180
-member CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_1D0 190
-member CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_1D8 198
-member CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_1E0 1a0
-member CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_1F8 208
+member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_1F8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_20
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_200
+member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_208
+member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_210
+member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_218
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_28
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_10
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_18
-member CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_1B0 170
-member CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_1B8 178
-member CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_1C0 180
-member CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_1D0 190
-member CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_1D8 198
-member CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_1E0 1a0
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_20
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_230
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_238
@@ -111390,12 +112927,6 @@ member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathi
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_10
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_18
-member CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_1B0 170
-member CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_1B8 178
-member CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_1C0 180
-member CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_1D0 190
-member CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_1D8 198
-member CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_1E0 1a0
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_1F8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_20
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_200
@@ -111403,17 +112934,12 @@ member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,Comba
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_10
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_18
-member CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_1B0 170
-member CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_1B8 178
-member CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_1C0 180
-member CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_1D0 190
-member CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_1D8 198
-member CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_1E0 1a0
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_1F8
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_20
-member CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_208 218
-member CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_210 220
-member CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_213 223
+member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_200
+member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_208
+member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_210
+member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_213
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_28
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_8
 member-unverified CombatPathingRequest.field_C8
@@ -111433,72 +112959,81 @@ member-unverified CombatPathingRequestGeneric<CombatPathingGoalPolicySearchWande
 member-unverified CombatPathingRequestMultiGoal.field_C8
 member-unverified CombatPathingRequestStandard.field_C8
 member-unverified CombatProjectileAimController.field_B8
+member-unverified CombatThreat.field_14
 member-unverified CombatThreat.field_1C
 member-unverified CombatThreat.field_24
-member CombatThreat.field_2C 14
+member-unverified CombatThreat.field_2C
+member-unverified CombatThreat.field_44
 member-unverified CombatThreat.field_60
+member-unverified CommandTableEntry.pad14
 member-unverified CommandTableEntry.pad24
+member-unverified CommandTableEntry.pad4c
 member-unverified CommandTableEntry.unk21
-member ConeProjectile.field_100 f8
-member ConeProjectile.field_104 fc
-member ConeProjectile.field_108 100
-member ConeProjectile.field_10C 104
-member ConeProjectile.field_110 108
-member ConeProjectile.field_118 110
-member ConeProjectile.field_120 118
-member ConeProjectile.field_128 120
-member ConeProjectile.field_130 128
-member ConeProjectile.field_134 12c
-member ConeProjectile.field_138 130
-member ConeProjectile.field_13C 134
-member ConeProjectile.field_140 138
-member ConeProjectile.field_144 13c
-member ConeProjectile.field_148 140
-member ConeProjectile.field_150 148
-member ConeProjectile.field_158 150
-member ConeProjectile.field_160 158
-member ConeProjectile.field_168 160
-member ConeProjectile.field_170 168
+member-unverified ConeProjectile.field_100
+member-unverified ConeProjectile.field_104
+member-unverified ConeProjectile.field_108
+member-unverified ConeProjectile.field_10C
+member-unverified ConeProjectile.field_110
+member-unverified ConeProjectile.field_118
+member-unverified ConeProjectile.field_120
+member-unverified ConeProjectile.field_128
+member-unverified ConeProjectile.field_130
+member-unverified ConeProjectile.field_134
+member-unverified ConeProjectile.field_138
+member-unverified ConeProjectile.field_13C
+member-unverified ConeProjectile.field_140
+member-unverified ConeProjectile.field_144
+member-unverified ConeProjectile.field_148
+member-unverified ConeProjectile.field_150
+member-unverified ConeProjectile.field_158
+member-unverified ConeProjectile.field_160
+member-unverified ConeProjectile.field_168
+member-unverified ConeProjectile.field_170
 member-unverified ConeProjectile.field_178
-member ConeProjectile.field_180 178
-member ConeProjectile.field_188 180
-member ConeProjectile.field_190 188
-member ConeProjectile.field_194 18c
-member ConeProjectile.field_198 190
-member ConeProjectile.field_19C 194
-member ConeProjectile.field_1A4 19c
-member ConeProjectile.field_1A8 1a0
-member ConeProjectile.field_1B0 1a8
-member ConeProjectile.field_1B8 1b0
-member ConeProjectile.field_1C0 1b8
-member ConeProjectile.field_1C8 1c0
-member ConeProjectile.field_1D0 1c8
-member ConeProjectile.field_1D4 1cc
-member ConeProjectile.field_1D8 1d0
-member ConeProjectile.field_1E0 1d8
-member ConeProjectile.field_1E8 1e0
+member-unverified ConeProjectile.field_180
+member-unverified ConeProjectile.field_188
+member-unverified ConeProjectile.field_190
+member-unverified ConeProjectile.field_194
+member-unverified ConeProjectile.field_198
+member-unverified ConeProjectile.field_19C
+member-unverified ConeProjectile.field_1A4
+member-unverified ConeProjectile.field_1A8
+member-unverified ConeProjectile.field_1B0
+member-unverified ConeProjectile.field_1B8
+member-unverified ConeProjectile.field_1C0
+member-unverified ConeProjectile.field_1C8
+member-unverified ConeProjectile.field_1D0
+member-unverified ConeProjectile.field_1D4
+member-unverified ConeProjectile.field_1D8
+member-unverified ConeProjectile.field_1E0
+member-unverified ConeProjectile.field_1E8
 member-unverified ConeProjectile.field_1F0
 member-unverified ConeProjectile.field_1F4
 member-unverified ConeProjectile.field_1F8
-member ConeProjectile.field_200 1f8
+member-unverified ConeProjectile.field_200
 member-unverified ConeProjectile.field_90
-member ConeProjectile.field_9A 92
-member ConeProjectile.field_9B 93
-member ConeProjectile.field_A0 98
-member ConeProjectile.field_A8 a0
+member-unverified ConeProjectile.field_9A
+member-unverified ConeProjectile.field_9B
+member-unverified ConeProjectile.field_A0
+member-unverified ConeProjectile.field_A8
 member-unverified ConeProjectile.field_D4
 member-unverified ConeProjectile.field_DC
-member ConeProjectile.field_E8 e0
-member ConeProjectile.field_F0 e8
-member ConeProjectile.field_F8 f0
-member ConeProjectile.field_FC f4
+member-unverified ConeProjectile.field_E8
+member-unverified ConeProjectile.field_F0
+member-unverified ConeProjectile.field_F8
+member-unverified ConeProjectile.field_FC
 member ConeProjectile.refScale 90
 member-missing ConfirmResetCallback.__vftable
-member Console.ctrlDown 54
+member-unverified Console.ctrlDown
 member-unverified Console.field_11
 member-unverified Console.field_12
 member-unverified Console.showAchievementWarning
+member-unverified ConsoleCommandTask.compiler
+member-unverified ConsoleCommandTask.ref
+member-unverified ConsoleCommandTask.script
+member-unverified ConsoleData.command
 member-unverified ConsoleData.refHandle
+member-unverified ConsoleData.text
 member-unverified ConsoleData.type
 member-unverified ConsoleNativeUIMenu.field_11
 member-unverified ConsoleNativeUIMenu.field_12
@@ -111559,11 +113094,29 @@ member-unverified CreditsMenu.field_41
 member-unverified CreditsMenu.field_42
 member-unverified CreditsMenu.field_7A
 member-unverified CreditsMenu.field_EC
+member-unverified CrosshairPickData.actorHandle
+member-unverified CrosshairPickData.collisionGroup
+member-unverified CrosshairPickData.grabTargetHandle
+member-unverified CrosshairPickData.hitObject
+member-unverified CrosshairPickData.hitPoint
+member-unverified CrosshairPickData.phantom
+member-unverified CrosshairPickData.promptActive
+member-unverified CrosshairPickData.targetHandle
+member-unverified CubeMapRecord.faceRTV
 member-unverified CubeMapRecord.srv
+member-unverified CubeMapRecord.texture
 member-unverified CursorMenu.field_11
 member-unverified CursorMenu.field_12
 member-missing DLCPurchased::OpenVisitCreationClubCallback.__vftable
 member-missing DLCPurchased::PurchasedDLCDialogCallback.__vftable
+member-unverified DebugText.field_48
+member-unverified DebugText.field_54
+member-unverified DepthStencilProperties.height
+member-unverified DepthStencilProperties.slices
+member-unverified DepthStencilProperties.stencil
+member-unverified DepthStencilProperties.unknownC
+member-unverified DepthStencilProperties.use16BitDepth
+member-unverified DepthStencilProperties.width
 member-unverified DepthStencilRecord.dsv
 member-unverified DepthStencilRecord.readOnlyDsv
 member-unverified DepthStencilRecord.srv
@@ -111609,6 +113162,7 @@ member-unverified DeviceConnectEvent.connected
 member-unverified DialogueMenu.field_11
 member-unverified DialogueMenu.field_12
 member-unverified DialoguePackage.field_48
+member-unverified DialoguePackage.field_D8
 member-unverified DialoguePackage.field_DC
 member-unverified DisguiseEffect::DetectionChecker.field_2C
 member-missing DownloadAll::uiCallback.__vftable
@@ -111635,12 +113189,18 @@ member-missing DownloadProgressBar.field_9
 member-missing DownloadProgressBar.field_98
 member-missing DownloadProgressBar.field_A
 member-missing DownloadProgressBar.field_C
+member-unverified DragonCameraState.applyThirdPerson
+member-unverified DragonCameraState.dollyFrom
+member-unverified DragonCameraState.dollyTo
+member-unverified DragonCameraState.keepFreeRotation
 member-unverified DragonCameraState.pad0c
 member-unverified DragonCameraState.pad1c
 member-unverified DragonCameraState.padE3
 member-unverified DragonCameraState.padF1
 member-unverified DragonCameraState.padF9
+member-unverified DragonCameraState.recoveryStart
 member-unverified DragonCameraState.targetOffset
+member-unverified DragonCameraState.toggleToFirstPerson
 member-unverified DragonCameraState.useShoulderOffsets
 member-unverified DragonCameraState.zoomSinceTogglePress
 member-unverified EffectSetting.field_100
@@ -111652,82 +113212,126 @@ member-unverified EffectSetting.field_128
 member-unverified EffectSetting.field_130
 member-unverified EffectSetting.field_138
 member-unverified EffectSetting.field_140
-member EffectSetting.field_148 b0
+member-unverified EffectSetting.field_148
 member-unverified EffectSetting.field_150
 member-unverified EffectSetting.field_158
 member-unverified EffectSetting.field_160
 member-unverified EffectSetting.field_188
 member-unverified EffectSetting.field_68
+member-unverified EffectSetting.field_B0
+member-unverified EffectSetting.field_DC
 member-unverified EffectSetting.field_F0
 member-unverified EffectSetting.field_F8
 member-missing EffectSettingCollection.__vftable
+member-unverified EnchantmentItem.field_28
+member-unverified EnchantmentItem.field_2A
 member-unverified EventSourceHolder_BGSActorCell.source_BGSActorCellEvent
 member-missing EventSourceHolder_Input.device3
 member-missing EventSourceHolder_Input.device4
-member EventSourceHolder_Input.gamepadEnableChanged 81
-member EventSourceHolder_Input.gamepadEnablePending 80
-member EventSourceHolder_Input.remoteGamepadPending e0
+member-unverified EventSourceHolder_Input.gamepadEnableChanged
+member-unverified EventSourceHolder_Input.gamepadEnablePending
+member-unverified EventSourceHolder_Input.remoteGamepadPending
 member-unverified EventSourceHolder_Input.source_BSRemoteGamepadEvent
-member EventSourceHolder_Input.virtualKeyboard 78
+member-unverified EventSourceHolder_Input.virtualKeyboard
 member-unverified EventSourceHolder_MenuOpenClose.lock
+member-unverified EventSourceHolder_MenuOpenClose.numMenus20000
+member-unverified EventSourceHolder_MenuOpenClose.numMenus4000
+member-unverified EventSourceHolder_MenuOpenClose.numMenus80
+member-unverified EventSourceHolder_MenuOpenClose.numMenus8000
+member-unverified EventSourceHolder_MenuOpenClose.timer
 member-unverified EventSourceHolder_TES.source_BGSEventProcessedEvent
+member-unverified EventSourceHolder_TES.source_TESActiveEffectApplyRemoveEvent
 member-unverified EventSourceHolder_TES.source_TESAmiiboForcedStopDetectionEvent
 member-unverified EventSourceHolder_TES.source_TESAmiiboTouchEvent
+member-unverified EventSourceHolder_TES.source_TESBookReadEvent
+member-unverified EventSourceHolder_TES.source_TESCellFullyLoadedEvent
 member-unverified EventSourceHolder_TES.source_TESCellReadyToApplyDecalsEvent
+member-unverified EventSourceHolder_TES.source_TESDeathEvent
+member-unverified EventSourceHolder_TES.source_TESDestructionStageChangedEvent
+member-unverified EventSourceHolder_TES.source_TESEnterBleedoutEvent
 member-unverified EventSourceHolder_TES.source_TESFastTravelEndEvent
+member-unverified EventSourceHolder_TES.source_TESFormDeleteEvent
+member-unverified EventSourceHolder_TES.source_TESGrabReleaseEvent
+member-unverified EventSourceHolder_TES.source_TESMagicEffectApplyEvent
+member-unverified EventSourceHolder_TES.source_TESMagicWardHitEvent
+member-unverified EventSourceHolder_TES.source_TESMoveAttachDetachEvent
+member-unverified EventSourceHolder_TES.source_TESObjectREFRTranslationEvent
+member-unverified EventSourceHolder_TES.source_TESOpenCloseEvent
+member-unverified EventSourceHolder_TES.source_TESPerkEntryRunEvent
 member-unverified EventSourceHolder_TES.source_TESPlayerBowShotEvent
+member-unverified EventSourceHolder_TES.source_TESQuestInitEvent
+member-unverified EventSourceHolder_TES.source_TESQuestStageEvent
 member-unverified EventSourceHolder_TES.source_TESQuestStageItemDoneEvent
 member-unverified EventSourceHolder_TES.source_TESQuestStartStopEvent
+member-unverified EventSourceHolder_TES.source_TESResetEvent
+member-unverified EventSourceHolder_TES.source_TESResolveNPCTemplatesEvent
+member-unverified EventSourceHolder_TES.source_TESSceneActionEvent
+member-unverified EventSourceHolder_TES.source_TESSceneEvent
+member-unverified EventSourceHolder_TES.source_TESScenePhaseEvent
+member-unverified EventSourceHolder_TES.source_TESSellEvent
+member-unverified EventSourceHolder_TES.source_TESSleepStartEvent
+member-unverified EventSourceHolder_TES.source_TESSleepStopEvent
+member-unverified EventSourceHolder_TES.source_TESSpellCastEvent
+member-unverified EventSourceHolder_TES.source_TESSwitchRaceCompleteEvent
+member-unverified EventSourceHolder_TES.source_TESTopicInfoEvent
+member-unverified EventSourceHolder_TES.source_TESTrackedStatsEvent
+member-unverified EventSourceHolder_TES.source_TESTrapHitEvent
+member-unverified EventSourceHolder_TES.source_TESTriggerEnterEvent
+member-unverified EventSourceHolder_TES.source_TESTriggerEvent
+member-unverified EventSourceHolder_TES.source_TESTriggerLeaveEvent
+member-unverified EventSourceHolder_TES.source_TESUniqueIDChangeEvent
 member-unverified EventSourceHolder_TES.source_TESWaitStartEvent
 member-unverified EventSourceHolder_TES.source_TESWaitStopEvent
 member EventSourceHolder_User.contextStack 100
 member EventSourceHolder_User.enabledControls 118
-member EventSourceHolder_User.gamepadActive 121
+member-unverified EventSourceHolder_User.gamepadActive
 member-unverified EventSourceHolder_User.gamepadLayout
 member-unverified EventSourceHolder_User.linkedMappings
-member EventSourceHolder_User.savedControls 11c
-member EventSourceHolder_User.textEntryCount 120
-member EventSourceHolder_User.unk12A 122
-member Explosion.field_100 f8
-member Explosion.field_108 100
-member Explosion.field_110 108
-member Explosion.field_118 110
+member-unverified EventSourceHolder_User.savedControls
+member-unverified EventSourceHolder_User.source_UserEventEnabledEvent
+member-unverified EventSourceHolder_User.textEntryCount
+member-unverified EventSourceHolder_User.unk12A
+member-unverified Explosion.field_100
+member-unverified Explosion.field_108
+member-unverified Explosion.field_110
+member-unverified Explosion.field_118
 member-unverified Explosion.field_120
-member Explosion.field_128 120
-member Explosion.field_12C 124
-member Explosion.field_130 128
-member Explosion.field_134 12c
+member-unverified Explosion.field_128
+member-unverified Explosion.field_12C
+member-unverified Explosion.field_130
+member-unverified Explosion.field_134
 member-unverified Explosion.field_138
-member Explosion.field_13C 134
-member Explosion.field_140 138
+member-unverified Explosion.field_13C
+member-unverified Explosion.field_140
 member-unverified Explosion.field_90
-member Explosion.field_9A 92
-member Explosion.field_9B 93
-member Explosion.field_A0 98
-member Explosion.field_A8 a0
-member Explosion.field_AC a4
-member Explosion.field_B4 ac
-member Explosion.field_B8 b0
-member Explosion.field_BC b4
-member Explosion.field_C0 b8
-member Explosion.field_C8 c0
-member Explosion.field_D0 c8
-member Explosion.field_D8 d0
-member Explosion.field_DC d4
-member Explosion.field_E0 d8
-member Explosion.field_E4 dc
-member Explosion.field_E8 e0
-member Explosion.field_EC e4
-member Explosion.field_F0 e8
-member Explosion.field_F8 f0
+member-unverified Explosion.field_9A
+member-unverified Explosion.field_9B
+member-unverified Explosion.field_A0
+member-unverified Explosion.field_A8
+member-unverified Explosion.field_AC
+member-unverified Explosion.field_B4
+member-unverified Explosion.field_B8
+member-unverified Explosion.field_BC
+member-unverified Explosion.field_C0
+member-unverified Explosion.field_C8
+member-unverified Explosion.field_D0
+member-unverified Explosion.field_D8
+member-unverified Explosion.field_DC
+member-unverified Explosion.field_E0
+member-unverified Explosion.field_E4
+member-unverified Explosion.field_E8
+member-unverified Explosion.field_EC
+member-unverified Explosion.field_F0
+member-unverified Explosion.field_F8
 member Explosion.refScale 90
 member-unverified ExtraAliasInstanceArray.capacity
-member-unverified ExtraAliasInstanceArray.count
+member-unverified ExtraAliasInstanceArray::Entry.data
 member-unverified ExtraAttachedArrows3D.field_20
 member-unverified ExtraAttachedArrows3D.field_28
 member-unverified ExtraAttachedArrows3D.field_8
 member-unverified ExtraGroupConstraint.field_18
 member-unverified ExtraGroupConstraint.field_20
+member-unverified ExtraMagicCaster.field_28
 member-unverified ExtraPackage.field_20
 member-unverified ExtraPackage.field_8
 member-unverified ExtraPackageStartLocation.field_8
@@ -111762,100 +113366,128 @@ member-missing FilterSideBar.field_90
 member-missing FilterSideBar.field_98
 member-missing FilterSideBar.field_A
 member-missing FilterSideBar.field_C
-member-unverified FirstPersonRenderContext.firstPersonFOV
+member-unverified FirstPersonRenderContext.eyePosition
+member-unverified FirstPersonRenderContext.firstPersonRoot
 member-unverified FirstPersonRenderContext.killCam
+member-unverified FirstPersonRenderContext.sceneGraph
 member-unverified FirstPersonRenderContext.shadowSceneNode
-member FirstPersonState.cameraOverride 84
-member FirstPersonState.dampingWeight 7c
+member-unverified FirstPersonRenderContext.thirdPersonRoot
+member-unverified FirstPersonRenderContext.unk51
+member-unverified FirstPersonRenderContext.worldFOV
+member-unverified FirstPersonState.camera
+member-unverified FirstPersonState.cameraControlNode
+member-unverified FirstPersonState.cameraOverride
+member-unverified FirstPersonState.dampingOffset
+member-unverified FirstPersonState.dampingWeight
 member-unverified FirstPersonState.id
+member-unverified FirstPersonState.inputHandler
 member-unverified FirstPersonState.laggedPitchOffset
 member-unverified FirstPersonState.pad0c
 member-unverified FirstPersonState.pad1c
 member-unverified FirstPersonState.pad54
 member-unverified FirstPersonState.pad8D
 member-unverified FirstPersonState.pitchOffset
-member FirstPersonState.pitchOffsetActive 86
+member-unverified FirstPersonState.pitchOffsetActive
 member-unverified FirstPersonState.pitchOverride
 member-unverified FirstPersonState.pitchSnap
 member-unverified FirstPersonState.refCount
-member FirstPersonState.skipFrames 80
+member-unverified FirstPersonState.sittingYaw
+member-unverified FirstPersonState.skipFrames
 member-unverified FirstPersonState.togglePOVPressed
 member-unverified FirstPersonState.useAltEuler
-member FlameProjectile.field_100 f8
-member FlameProjectile.field_104 fc
-member FlameProjectile.field_108 100
-member FlameProjectile.field_10C 104
-member FlameProjectile.field_110 108
-member FlameProjectile.field_118 110
-member FlameProjectile.field_120 118
-member FlameProjectile.field_128 120
-member FlameProjectile.field_130 128
-member FlameProjectile.field_134 12c
-member FlameProjectile.field_138 130
-member FlameProjectile.field_13C 134
-member FlameProjectile.field_140 138
-member FlameProjectile.field_144 13c
-member FlameProjectile.field_148 140
-member FlameProjectile.field_150 148
-member FlameProjectile.field_158 150
-member FlameProjectile.field_160 158
-member FlameProjectile.field_168 160
-member FlameProjectile.field_170 168
+member-unverified FlameProjectile.field_100
+member-unverified FlameProjectile.field_104
+member-unverified FlameProjectile.field_108
+member-unverified FlameProjectile.field_10C
+member-unverified FlameProjectile.field_110
+member-unverified FlameProjectile.field_118
+member-unverified FlameProjectile.field_120
+member-unverified FlameProjectile.field_128
+member-unverified FlameProjectile.field_130
+member-unverified FlameProjectile.field_134
+member-unverified FlameProjectile.field_138
+member-unverified FlameProjectile.field_13C
+member-unverified FlameProjectile.field_140
+member-unverified FlameProjectile.field_144
+member-unverified FlameProjectile.field_148
+member-unverified FlameProjectile.field_150
+member-unverified FlameProjectile.field_158
+member-unverified FlameProjectile.field_160
+member-unverified FlameProjectile.field_168
+member-unverified FlameProjectile.field_170
 member-unverified FlameProjectile.field_178
-member FlameProjectile.field_180 178
-member FlameProjectile.field_188 180
-member FlameProjectile.field_190 188
-member FlameProjectile.field_194 18c
-member FlameProjectile.field_198 190
-member FlameProjectile.field_19C 194
-member FlameProjectile.field_1A4 19c
-member FlameProjectile.field_1A8 1a0
-member FlameProjectile.field_1B0 1a8
-member FlameProjectile.field_1B8 1b0
-member FlameProjectile.field_1C0 1b8
-member FlameProjectile.field_1C8 1c0
-member FlameProjectile.field_1D0 1c8
-member FlameProjectile.field_1D4 1cc
-member FlameProjectile.field_1D8 1d0
-member FlameProjectile.field_1E0 1d8
+member-unverified FlameProjectile.field_180
+member-unverified FlameProjectile.field_188
+member-unverified FlameProjectile.field_190
+member-unverified FlameProjectile.field_194
+member-unverified FlameProjectile.field_198
+member-unverified FlameProjectile.field_19C
+member-unverified FlameProjectile.field_1A4
+member-unverified FlameProjectile.field_1A8
+member-unverified FlameProjectile.field_1B0
+member-unverified FlameProjectile.field_1B8
+member-unverified FlameProjectile.field_1C0
+member-unverified FlameProjectile.field_1C8
+member-unverified FlameProjectile.field_1D0
+member-unverified FlameProjectile.field_1D4
+member-unverified FlameProjectile.field_1D8
+member-unverified FlameProjectile.field_1E0
 member-unverified FlameProjectile.field_90
-member FlameProjectile.field_9A 92
-member FlameProjectile.field_9B 93
-member FlameProjectile.field_A0 98
-member FlameProjectile.field_A8 a0
+member-unverified FlameProjectile.field_9A
+member-unverified FlameProjectile.field_9B
+member-unverified FlameProjectile.field_A0
+member-unverified FlameProjectile.field_A8
 member-unverified FlameProjectile.field_D4
 member-unverified FlameProjectile.field_DC
-member FlameProjectile.field_E8 e0
-member FlameProjectile.field_F0 e8
-member FlameProjectile.field_F8 f0
-member FlameProjectile.field_FC f4
+member-unverified FlameProjectile.field_E8
+member-unverified FlameProjectile.field_F0
+member-unverified FlameProjectile.field_F8
+member-unverified FlameProjectile.field_FC
 member FlameProjectile.refScale 90
+member-unverified FlatBone.local
+member-unverified FlatBone.name
+member-unverified FlatBone.node
+member-unverified FlatBone.parentIndex
+member-unverified FlatBone.world
 member-unverified FleePackage.field_48
+member-unverified FleePackage.field_D8
 member-unverified FleePackage.field_DC
-member-unverified FrameState.cameraMatrices
+member-unverified FrameState.backBufferHeight
+member-unverified FrameState.backBufferWidth
+member FrameState.cameraMatrices a0
 member-unverified FrameState.decreaseRequested
 member-unverified FrameState.dynamicHeightRatio
-member FrameState.dynamicResolutionLock 110
+member-unverified FrameState.dynamicResolutionLock
+member-unverified FrameState.dynamicWidthRatio
 member FrameState.frameCounter 4c
 member FrameState.frameStarted 50
 member-unverified FrameState.increaseRequested
-member FrameState.jitterIndex b8
+member-unverified FrameState.jitter
+member-unverified FrameState.jitterIndex
 member-unverified FrameState.manualRatio
 member-unverified FrameState.previousHeightRatio
-member FrameState.ratioIncreaseCounter 10c
+member-unverified FrameState.previousWidthRatio
+member-unverified FrameState.ratioIncreaseCounter
+member-unverified FrameState.screenHeight
+member-unverified FrameState.screenWidth
+member-unverified FreeCameraState.camera
 member-unverified FreeCameraState.forwardInputA
-member FreeCameraState.forwardInputB 3c
+member-unverified FreeCameraState.forwardInputB
 member-unverified FreeCameraState.horizontalMove
 member-unverified FreeCameraState.id
+member-unverified FreeCameraState.inputHandler
 member-unverified FreeCameraState.pad0c
 member-unverified FreeCameraState.pad1c
 member-unverified FreeCameraState.refCount
 member-unverified FreeCameraState.run
+member-unverified FreeCameraState.verticalInput
 member-unverified FurnitureCameraState.id
 member-unverified FurnitureCameraState.pad0c
 member-unverified FurnitureCameraState.pad1c
 member-unverified FurnitureCameraState.pad3F
 member-unverified FurnitureCameraState.refCount
+member-unverified FurnitureCameraState.translate
+member-unverified FurnitureMarker.field_0
 member-unverified FutBinaryFileC.field_20
 member-unverified FutBinaryFileC.field_28
 member-unverified FutBinaryFileC.field_38
@@ -111878,6 +113510,9 @@ member-unverified GFxFileOpenerBase.field_11
 member-unverified GFxFileOpenerBase.field_12
 member-unverified GFxFileOpenerBase.field_BC
 member-unverified GFxFunctionHandler::Params.argsWithThis
+member-unverified GFxFunctionHandler::Params.movie
+member-unverified GFxFunctionHandler::Params.thisValue
+member-unverified GFxFunctionHandler::Params.userData
 member-unverified GFxImageLoader.field_11
 member-unverified GFxImageLoader.field_12
 member-unverified GFxImageLoader.field_BC
@@ -111887,22 +113522,47 @@ member-unverified GFxLog.field_BC
 member-unverified GFxMovieView.alignment
 member-unverified GFxMovieView.backgroundColor
 member-unverified GFxMovieView.controllerCount
+member-unverified GFxMovieView.flags
+member-unverified GFxMovieView.heap
 member-unverified GFxMovieView.invokeResultBuffer
+member-unverified GFxMovieView.mouseCursorCount
+member-unverified GFxMovieView.movieDef
+member-unverified GFxMovieView.movieDefImpl
+member-unverified GFxMovieView.objectInterface
 member-unverified GFxMovieView.safeRect
 member-unverified GFxMovieView.scaleMode
 member-unverified GFxMovieView.userData
+member-unverified GFxMovieView.viewport
+member-unverified GFxMovieView.visibleFrameRect
 member-unverified GFxState.field_11
 member-unverified GFxState.field_12
 member-unverified GFxState.field_BC
 member-unverified GFxTranslator.field_11
 member-unverified GFxTranslator.field_12
 member-unverified GFxTranslator.field_BC
+member-unverified GFxValue::DisplayInfo.alpha
+member-unverified GFxValue::DisplayInfo.fov
+member-unverified GFxValue::DisplayInfo.matrix3DA
+member-unverified GFxValue::DisplayInfo.matrix3DB
+member-unverified GFxValue::DisplayInfo.rotation
+member-unverified GFxValue::DisplayInfo.varsSet
+member-unverified GFxValue::DisplayInfo.visible
+member-unverified GFxValue::DisplayInfo.x
+member-unverified GFxValue::DisplayInfo.xRotation
+member-unverified GFxValue::DisplayInfo.xScale
+member-unverified GFxValue::DisplayInfo.y
+member-unverified GFxValue::DisplayInfo.yRotation
+member-unverified GFxValue::DisplayInfo.yScale
+member-unverified GFxValue::DisplayInfo.z
+member-unverified GFxValue::DisplayInfo.zScale
 member-unverified GFxViewport.aspectRatio
 member-unverified GFxViewport.bufferHeight
+member-unverified GFxViewport.bufferWidth
 member-unverified GFxViewport.flags
 member-unverified GFxViewport.height
 member-unverified GFxViewport.left
 member-unverified GFxViewport.scale
+member-unverified GFxViewport.scissorRect
 member-unverified GFxViewport.top
 member-unverified GFxViewport.width
 member-unverified GFxZlibSupport.field_11
@@ -111937,55 +113597,55 @@ member-unverified GRefCountImplCore.field_12
 member-unverified GRefCountImplCore.field_BC
 member-unverified GiftMenu.field_11
 member-unverified GiftMenu.field_12
-member GrenadeProjectile.field_100 f8
-member GrenadeProjectile.field_104 fc
-member GrenadeProjectile.field_108 100
-member GrenadeProjectile.field_10C 104
-member GrenadeProjectile.field_110 108
-member GrenadeProjectile.field_118 110
-member GrenadeProjectile.field_120 118
-member GrenadeProjectile.field_128 120
-member GrenadeProjectile.field_130 128
-member GrenadeProjectile.field_134 12c
-member GrenadeProjectile.field_138 130
-member GrenadeProjectile.field_13C 134
-member GrenadeProjectile.field_140 138
-member GrenadeProjectile.field_144 13c
-member GrenadeProjectile.field_148 140
-member GrenadeProjectile.field_150 148
-member GrenadeProjectile.field_158 150
-member GrenadeProjectile.field_160 158
-member GrenadeProjectile.field_168 160
-member GrenadeProjectile.field_170 168
+member-unverified GrenadeProjectile.field_100
+member-unverified GrenadeProjectile.field_104
+member-unverified GrenadeProjectile.field_108
+member-unverified GrenadeProjectile.field_10C
+member-unverified GrenadeProjectile.field_110
+member-unverified GrenadeProjectile.field_118
+member-unverified GrenadeProjectile.field_120
+member-unverified GrenadeProjectile.field_128
+member-unverified GrenadeProjectile.field_130
+member-unverified GrenadeProjectile.field_134
+member-unverified GrenadeProjectile.field_138
+member-unverified GrenadeProjectile.field_13C
+member-unverified GrenadeProjectile.field_140
+member-unverified GrenadeProjectile.field_144
+member-unverified GrenadeProjectile.field_148
+member-unverified GrenadeProjectile.field_150
+member-unverified GrenadeProjectile.field_158
+member-unverified GrenadeProjectile.field_160
+member-unverified GrenadeProjectile.field_168
+member-unverified GrenadeProjectile.field_170
 member-unverified GrenadeProjectile.field_178
-member GrenadeProjectile.field_180 178
-member GrenadeProjectile.field_188 180
-member GrenadeProjectile.field_190 188
-member GrenadeProjectile.field_194 18c
-member GrenadeProjectile.field_198 190
-member GrenadeProjectile.field_19C 194
-member GrenadeProjectile.field_1A4 19c
-member GrenadeProjectile.field_1A8 1a0
-member GrenadeProjectile.field_1B0 1a8
-member GrenadeProjectile.field_1B8 1b0
-member GrenadeProjectile.field_1C0 1b8
-member GrenadeProjectile.field_1C8 1c0
-member GrenadeProjectile.field_1D0 1c8
-member GrenadeProjectile.field_1D4 1cc
-member GrenadeProjectile.field_1D8 1d0
-member GrenadeProjectile.field_1E0 1d8
-member GrenadeProjectile.field_1E8 1e0
+member-unverified GrenadeProjectile.field_180
+member-unverified GrenadeProjectile.field_188
+member-unverified GrenadeProjectile.field_190
+member-unverified GrenadeProjectile.field_194
+member-unverified GrenadeProjectile.field_198
+member-unverified GrenadeProjectile.field_19C
+member-unverified GrenadeProjectile.field_1A4
+member-unverified GrenadeProjectile.field_1A8
+member-unverified GrenadeProjectile.field_1B0
+member-unverified GrenadeProjectile.field_1B8
+member-unverified GrenadeProjectile.field_1C0
+member-unverified GrenadeProjectile.field_1C8
+member-unverified GrenadeProjectile.field_1D0
+member-unverified GrenadeProjectile.field_1D4
+member-unverified GrenadeProjectile.field_1D8
+member-unverified GrenadeProjectile.field_1E0
+member-unverified GrenadeProjectile.field_1E8
 member-unverified GrenadeProjectile.field_90
-member GrenadeProjectile.field_9A 92
-member GrenadeProjectile.field_9B 93
-member GrenadeProjectile.field_A0 98
-member GrenadeProjectile.field_A8 a0
+member-unverified GrenadeProjectile.field_9A
+member-unverified GrenadeProjectile.field_9B
+member-unverified GrenadeProjectile.field_A0
+member-unverified GrenadeProjectile.field_A8
 member-unverified GrenadeProjectile.field_D4
 member-unverified GrenadeProjectile.field_DC
-member GrenadeProjectile.field_E8 e0
-member GrenadeProjectile.field_F0 e8
-member GrenadeProjectile.field_F8 f0
-member GrenadeProjectile.field_FC f4
+member-unverified GrenadeProjectile.field_E8
+member-unverified GrenadeProjectile.field_F0
+member-unverified GrenadeProjectile.field_F8
+member-unverified GrenadeProjectile.field_FC
 member GrenadeProjectile.refScale 90
 member-unverified HUDData.flag
 member-unverified HUDData.form
@@ -111995,7 +113655,20 @@ member-unverified HUDData.type
 member-unverified HUDData.value
 member-unverified HUDMenu.field_11
 member-unverified HUDMenu.field_12
+member-unverified HUDNotificationEntry.form
+member-unverified HUDNotificationEntry.form2
+member-unverified HUDNotificationEntry.objectiveTexts
+member-unverified HUDNotificationEntry.readyTime
+member-unverified HUDNotificationEntry.sound
+member-unverified HUDNotificationEntry.status
+member-unverified HUDNotificationEntry.text
+member-unverified HUDNotificationEntry.type
+member-unverified HUDNotifications.lastReminderTime
 member-unverified HUDNotifications.queue
+member-unverified HUDObject.clip
+member-unverified HUDObject.view
+member-unverified HandleEntry.ageAndNext
+member-unverified HandleEntry.ref
 member-unverified HavokError.field_108
 member-unverified HavokError.field_110
 member-unverified HavokError.field_114
@@ -112037,30 +113710,35 @@ member-unverified HavokStreambufWriter.field_B8
 member-unverified HavokStreambufWriter.field_C0
 member-unverified HavokStreambufWriter.field_C4
 member-unverified Hazard.field_90
-member Hazard.field_9A 92
-member Hazard.field_9B 93
-member Hazard.field_A0 98
-member Hazard.field_A8 a0
-member Hazard.field_B0 a8
-member Hazard.field_B8 b0
-member Hazard.field_C0 b8
-member Hazard.field_C8 c0
-member Hazard.field_D0 c8
-member Hazard.field_D4 cc
-member Hazard.field_D8 d0
+member-unverified Hazard.field_9A
+member-unverified Hazard.field_9B
+member-unverified Hazard.field_A0
+member-unverified Hazard.field_A8
+member-unverified Hazard.field_B0
+member-unverified Hazard.field_B8
+member-unverified Hazard.field_C0
+member-unverified Hazard.field_C8
+member-unverified Hazard.field_D0
+member-unverified Hazard.field_D4
+member-unverified Hazard.field_D8
 member Hazard.refScale 90
+member-unverified HeldStateHandler.heldStateActive
 member-unverified HeldStateHandler.releasePending
+member-unverified HorseCameraState.applyThirdPerson
+member-unverified HorseCameraState.keepFreeRotation
 member-unverified HorseCameraState.pad0c
 member-unverified HorseCameraState.pad1c
 member-unverified HorseCameraState.padE3
 member-unverified HorseCameraState.padF1
+member-unverified HorseCameraState.recoveryStart
 member-unverified HorseCameraState.targetOffset
+member-unverified HorseCameraState.toggleToFirstPerson
 member-unverified HorseCameraState.useShoulderOffsets
 member-unverified HorseCameraState.zoomSinceTogglePress
 member-unverified IAnimationGraphManagerLoadingTask.field_20
-member ICellAttachDetachEventSource.source_CellAttachDetachEvent 10
-member-unverified IDEvent.userEvent
-member IOManager.field_A0 a8
+member-unverified ICellAttachDetachEventSource.source_CellAttachDetachEvent
+member-unverified IMessageBoxCallback.refCount
+member-unverified IOManager.field_A0
 member-unverified IOManager.field_A4
 member-unverified IOManager.field_B8
 member-unverified IOManager.source_BSTaskManagerWaitAction
@@ -112143,6 +113821,10 @@ member-unverified ImageSpaceShaderParam.field_30
 member-unverified ImageSpaceShaderParam.field_40
 member-unverified ImageSpaceShaderParam.m_NiTObjectArray_50
 member-unverified ImageSpaceShaderParam.m_TextureFilterMode>_68
+member-unverified ImageSpaceState.baseData
+member-unverified ImageSpaceState.effects
+member-unverified ImageSpaceState.taaSettings
+member-unverified ImageSpaceState.unknown118
 member-missing InfiniteList.__vftable
 member-missing InfiniteList.field_10
 member-missing InfiniteList.field_14
@@ -112165,39 +113847,53 @@ member-missing InfiniteList.field_80
 member-missing InfiniteList.field_9
 member-missing InfiniteList.field_A
 member-missing InfiniteList.field_C
+member-unverified IngredientItem.field_28
+member-unverified IngredientItem.field_2A
 member-unverified IngredientItem.field_A0
+member-unverified InputContext.unusedArrays
 member-unverified InputEventQueue.amiiboCount
 member-unverified InputEventQueue.amiiboEvent
-member InputEventQueue.buttonEvents 20
-member InputEventQueue.charEvents 200
-member InputEventQueue.deviceConnectEvent 330
-member InputEventQueue.head 380
-member InputEventQueue.kinectEvent 350
+member-unverified InputEventQueue.buttonCount
+member-unverified InputEventQueue.buttonEvents
+member-unverified InputEventQueue.charCount
+member-unverified InputEventQueue.charEvents
+member-unverified InputEventQueue.deviceConnectCount
+member-unverified InputEventQueue.deviceConnectEvent
+member-unverified InputEventQueue.head
+member-unverified InputEventQueue.kinectCount
+member-unverified InputEventQueue.kinectEvent
 member-unverified InputEventQueue.motionGestureCount
 member-unverified InputEventQueue.motionGestureEvents
 member-unverified InputEventQueue.mouseMoveCount
-member InputEventQueue.mouseMoveEvent 2a0
+member-unverified InputEventQueue.mouseMoveEvent
 member-unverified InputEventQueue.sixaxisCount
 member-unverified InputEventQueue.sixaxisEvents
-member InputEventQueue.tail 388
-member InputEventQueue.thumbstickEvents 2d0
+member-unverified InputEventQueue.tail
+member-unverified InputEventQueue.thumbstickCount
+member-unverified InputEventQueue.thumbstickEvents
+member-unverified InputEventQueue.unknown0
 member-missing InstalledContent.__vftable
 member-missing InstalledContent.field_10
 member-missing InstalledContent.field_20
-member Inventory3DManager.field_150 148
-member Inventory3DManager.field_158 150
-member Inventory3DManager.field_160 158
-member Inventory3DManager.field_162 15a
+member-unverified Inventory3DManager.field_150
+member-unverified Inventory3DManager.field_158
+member-unverified Inventory3DManager.field_160
+member-unverified Inventory3DManager.field_162
 member-unverified Inventory3DManager.field_24
 member-unverified Inventory3DManager.field_28
-member Inventory3DManager.field_60 58
+member-unverified Inventory3DManager.field_60
+member-unverified InventoryChanges.cachedValue
 member-unverified InventoryChanges.previousCachedValue
 member-unverified InventoryMenu.field_11
 member-unverified InventoryMenu.field_12
+member-unverified IronSightsState.camera
 member-unverified IronSightsState.id
 member-unverified IronSightsState.pad0c
 member-unverified IronSightsState.pad1c
 member-unverified IronSightsState.refCount
+member-unverified ItemList.entryList
+member-unverified ItemList.items
+member-unverified ItemList.view
 member-unverified JournalMenu.field_11
 member-unverified JournalMenu.field_12
 member-unverified JournalMenu.field_BC
@@ -112299,7 +113995,11 @@ member-missing Likes.field_9
 member-missing Likes.field_A
 member-missing Likes.field_C
 member-unverified LineNode.field_10
+member-unverified LinkedMapping.context
+member-unverified LinkedMapping.device
+member-unverified LinkedMapping.linkedContext
 member-unverified LinkedMapping.linkedUserEvent
+member-unverified LinkedMapping.userEvent
 member-missing LoadGameDifferentLoadOrderCallBack.__vftable
 member-missing LoadGameInactiveContentCallBack.__vftable
 member-missing LoadGameMissingContentCallBack.__vftable
@@ -112463,24 +114163,28 @@ member-unverified LoadingMenu.field_11
 member-unverified LoadingMenu.field_12
 member-unverified LocalMapCamera.padding31
 member-unverified LocalMapCamera.padding64
+member-unverified LocalMapCamera::DefaultState.camera
+member-unverified LocalMapCamera::DefaultState.center
 member-unverified LocalMapCamera::DefaultState.id
+member-unverified LocalMapCamera::DefaultState.minHalfHeight
+member-unverified LocalMapCamera::DefaultState.minHalfWidth
 member-unverified LocalMapCamera::DefaultState.padding0C
 member-unverified LocalMapCamera::DefaultState.padding1C
 member-unverified LocalMapCamera::DefaultState.padding44
 member-unverified LocalMapCamera::DefaultState.refCount
-member LockpickingMenu.field_100 ec
-member LockpickingMenu.field_104 f0
-member LockpickingMenu.field_108 f4
-member LockpickingMenu.field_10C f8
+member-unverified LockpickingMenu.field_100
+member-unverified LockpickingMenu.field_104
+member-unverified LockpickingMenu.field_108
+member-unverified LockpickingMenu.field_10C
 member-unverified LockpickingMenu.field_11
-member LockpickingMenu.field_114 100
-member LockpickingMenu.field_11C 108
+member-unverified LockpickingMenu.field_114
+member-unverified LockpickingMenu.field_11C
 member-unverified LockpickingMenu.field_12
-member LockpickingMenu.field_120 10c
-member LockpickingMenu.field_122 10e
+member-unverified LockpickingMenu.field_120
+member-unverified LockpickingMenu.field_122
 member-unverified LockpickingMenu.field_BC
 member-unverified LockpickingMenu.field_E8
-member LockpickingMenu.field_F0 e8
+member-unverified LockpickingMenu.field_F0
 member-unverified LockpickingMenu.field_F4
 member-unverified LockpickingMenu.field_F6
 member-unverified LockpickingMenu.field_F8
@@ -112558,13 +114262,16 @@ member-unverified LookHandler.motionPitchDelta
 member-unverified LookHandler.motionSampleCount
 member-unverified LookHandler.pad_14
 member-unverified LookHandler.pad_9
+member-unverified MagicCaster.field_18
 member-unverified MagicFavorites.field_20
 member-unverified MagicFavorites.field_38
+member-unverified MagicItem.field_28
+member-unverified MagicItem.field_2A
 member-unverified MagicMenu.field_11
 member-unverified MagicMenu.field_12
-member Main.field_1F8 228
-member Main.field_200 230
-member Main.field_208 238
+member-unverified Main.field_1F8
+member-unverified Main.field_200
+member-unverified Main.field_208
 member-unverified Main.field_210
 member-unverified Main.field_218
 member-unverified Main.field_220
@@ -112582,6 +114289,9 @@ member-unverified Main.m_BSTCommonScrapHeapMessageQueue_C8
 member-unverified MainMenu.field_11
 member-unverified MainMenu.field_12
 member-unverified MainMenu.field_52
+member-unverified MainMenu.functionHandler
+member-unverified MainMenu.saveDataEventSink
+member-unverified MainMenu.systemEventSink
 member-unverified MapCamera.padding31
 member-unverified MapCamera.padding64
 member-unverified MapCamera.padding89
@@ -112596,6 +114306,7 @@ member-unverified MapCameraStates::Transition.durationMs
 member-unverified MapCameraStates::Transition.fromPosition
 member-unverified MapCameraStates::Transition.fromRotation
 member-unverified MapCameraStates::Transition.id
+member-unverified MapCameraStates::Transition.mode
 member-unverified MapCameraStates::Transition.padding0C
 member-unverified MapCameraStates::Transition.padding1C
 member-unverified MapCameraStates::Transition.padding7D
@@ -112607,6 +114318,7 @@ member-unverified MapCameraStates::Transition.toPosition
 member-unverified MapCameraStates::Transition.toRotation
 member-unverified MapCameraStates::Transition.transitionHeight
 member-unverified MapCameraStates::World.field_5c
+member-unverified MapCameraStates::World.heightOffset
 member-unverified MapCameraStates::World.padding0C
 member-unverified MapCameraStates::World.padding1C
 member-unverified MapCameraStates::World.padding64
@@ -112614,6 +114326,7 @@ member-unverified MapCameraStates::World.padding71
 member-unverified MapCameraStates::World.panOffset
 member-unverified MapCameraStates::World.terrainHeight
 member-unverified MapCameraStates::World.zoom
+member-unverified MapCameraStates::World.zoomAxis
 member-unverified MapMenu.field_11
 member-unverified MapMenu.field_12
 member-unverified MapMenu.field_BC
@@ -112743,7 +114456,7 @@ member-missing MarketplaceMenu::InputHandler.__vftable
 member-missing MarketplaceMenu::errorCallback.__vftable
 member-unverified MenuControls.ignoreInput
 member-unverified MenuControls.menuHotkeysDisabled
-member MenuControls.pendingHandlerChanges 50
+member-unverified MenuControls.pendingHandlerChanges
 member-unverified MenuControls.remapMode
 member-unverified MenuOpenHandler.tweenMenuAllowed
 member-unverified MenuTableEntry.create
@@ -112754,61 +114467,69 @@ member-unverified MessageBoxData.isVertical
 member-unverified MessageBoxData.textFlag
 member-unverified MessageBoxMenu.field_11
 member-unverified MessageBoxMenu.field_12
+member-unverified MiddleHighProcessData.animationGraphManagerData
 member-unverified MiddleHighProcessData.charController
 member-unverified MiddleHighProcessData.headTrackingEnabled
 member-unverified MiddleHighProcessData.lastIdlePlayed
+member-unverified MiddleHighProcessData.leftHandEquipType
 member-unverified MiddleHighProcessData.lock
-member MiddleHighProcessData.movementDirection b0
+member-unverified MiddleHighProcessData.movementDirection
+member-unverified MiddleHighProcessData.pitch
+member-unverified MiddleHighProcessData.pitchDelta
+member-unverified MiddleHighProcessData.rightHandEquipType
+member-unverified MiddleHighProcessData.roll
 member-unverified MiddleHighProcessData.speed
-member MissileProjectile.field_100 f8
-member MissileProjectile.field_104 fc
-member MissileProjectile.field_108 100
-member MissileProjectile.field_10C 104
-member MissileProjectile.field_110 108
-member MissileProjectile.field_118 110
-member MissileProjectile.field_120 118
-member MissileProjectile.field_128 120
-member MissileProjectile.field_130 128
-member MissileProjectile.field_134 12c
-member MissileProjectile.field_138 130
-member MissileProjectile.field_13C 134
-member MissileProjectile.field_140 138
-member MissileProjectile.field_144 13c
-member MissileProjectile.field_148 140
-member MissileProjectile.field_150 148
-member MissileProjectile.field_158 150
-member MissileProjectile.field_160 158
-member MissileProjectile.field_168 160
-member MissileProjectile.field_170 168
+member-unverified MiddleHighProcessData.targetSpeed
+member-unverified MiddleHighProcessData.wardMagnitude
+member-unverified MissileProjectile.field_100
+member-unverified MissileProjectile.field_104
+member-unverified MissileProjectile.field_108
+member-unverified MissileProjectile.field_10C
+member-unverified MissileProjectile.field_110
+member-unverified MissileProjectile.field_118
+member-unverified MissileProjectile.field_120
+member-unverified MissileProjectile.field_128
+member-unverified MissileProjectile.field_130
+member-unverified MissileProjectile.field_134
+member-unverified MissileProjectile.field_138
+member-unverified MissileProjectile.field_13C
+member-unverified MissileProjectile.field_140
+member-unverified MissileProjectile.field_144
+member-unverified MissileProjectile.field_148
+member-unverified MissileProjectile.field_150
+member-unverified MissileProjectile.field_158
+member-unverified MissileProjectile.field_160
+member-unverified MissileProjectile.field_168
+member-unverified MissileProjectile.field_170
 member-unverified MissileProjectile.field_178
-member MissileProjectile.field_180 178
-member MissileProjectile.field_188 180
-member MissileProjectile.field_190 188
-member MissileProjectile.field_194 18c
-member MissileProjectile.field_198 190
-member MissileProjectile.field_19C 194
-member MissileProjectile.field_1A4 19c
-member MissileProjectile.field_1A8 1a0
-member MissileProjectile.field_1B0 1a8
-member MissileProjectile.field_1B8 1b0
-member MissileProjectile.field_1C0 1b8
-member MissileProjectile.field_1C8 1c0
-member MissileProjectile.field_1D0 1c8
-member MissileProjectile.field_1D4 1cc
-member MissileProjectile.field_1D8 1d0
-member MissileProjectile.field_1E0 1d8
-member MissileProjectile.field_1E4 1dc
+member-unverified MissileProjectile.field_180
+member-unverified MissileProjectile.field_188
+member-unverified MissileProjectile.field_190
+member-unverified MissileProjectile.field_194
+member-unverified MissileProjectile.field_198
+member-unverified MissileProjectile.field_19C
+member-unverified MissileProjectile.field_1A4
+member-unverified MissileProjectile.field_1A8
+member-unverified MissileProjectile.field_1B0
+member-unverified MissileProjectile.field_1B8
+member-unverified MissileProjectile.field_1C0
+member-unverified MissileProjectile.field_1C8
+member-unverified MissileProjectile.field_1D0
+member-unverified MissileProjectile.field_1D4
+member-unverified MissileProjectile.field_1D8
+member-unverified MissileProjectile.field_1E0
+member-unverified MissileProjectile.field_1E4
 member-unverified MissileProjectile.field_90
-member MissileProjectile.field_9A 92
-member MissileProjectile.field_9B 93
-member MissileProjectile.field_A0 98
-member MissileProjectile.field_A8 a0
+member-unverified MissileProjectile.field_9A
+member-unverified MissileProjectile.field_9B
+member-unverified MissileProjectile.field_A0
+member-unverified MissileProjectile.field_A8
 member-unverified MissileProjectile.field_D4
 member-unverified MissileProjectile.field_DC
-member MissileProjectile.field_E8 e0
-member MissileProjectile.field_F0 e8
-member MissileProjectile.field_F8 f0
-member MissileProjectile.field_FC f4
+member-unverified MissileProjectile.field_E8
+member-unverified MissileProjectile.field_F0
+member-unverified MissileProjectile.field_F8
+member-unverified MissileProjectile.field_FC
 member MissileProjectile.refScale 90
 member-missing MissingContent.__vftable
 member-missing MissingContent.field_10
@@ -112854,9 +114575,11 @@ member-unverified ModManagerMenu.field_4C
 member-unverified ModManagerMenu.field_52
 member-unverified ModManagerMenu.field_7A
 member-unverified ModManagerMenu.field_FC
+member-unverified ModelReferenceEffect.field_41
 member-unverified ModelReferenceEffect.field_58
 member-unverified Moon.field_B0
 member-unverified Moon.field_B4
+member-unverified Moon.field_D0
 member-missing MotionGestureEvent.__vftable
 member-missing MotionGestureEvent.field_10
 member-missing MotionGestureEvent.field_20
@@ -112867,61 +114590,80 @@ member-missing MotionGestureEvent.unk2C
 member-missing MotionGestureEvent.unk30
 member-missing MotionGestureEvent.unk34
 member-unverified MouseMoveEvent.idCode
-member MovementAgent.field_8 4
-member MovementAgentActorAvoider.field_8 4
-member MovementAgentActorState.field_8 4
-member MovementAgentPathFollowerFlight.field_8 4
-member MovementAgentPathFollowerStandard.field_8 4
-member MovementAgentPathFollowerVirtual.field_8 4
+member-unverified MovementAgent.field_8
+member-unverified MovementAgentActorAvoider.field_8
+member-unverified MovementAgentActorState.field_8
+member-unverified MovementAgentPathFollowerFlight.field_8
+member-unverified MovementAgentPathFollowerStandard.field_8
+member-unverified MovementAgentPathFollowerVirtual.field_8
+member-unverified MovementArbiter.field_8
 member-unverified MovementControllerAI.field_118
 member-unverified MovementControllerNPC.field_118
 member-unverified MovementControllerNPC.field_1A8
-member MovementHandlerAgent.field_8 4
-member MovementHandlerAgentAngleController.field_8 4
-member MovementHandlerAgentAngleGain.field_8 4
-member MovementHandlerAgentAnglePassThrough.field_8 4
-member MovementHandlerAgentDirectControl.field_8 4
-member MovementHandlerAgentDirectionPassThrough.field_8 4
-member MovementHandlerAgentLargeDeltaIdle.field_8 4
-member MovementHandlerAgentPlayerControls.field_8 4
-member MovementHandlerAgentPlayerControlsActionTrigger.field_8 4
-member MovementHandlerAgentSpeedPassThrough.field_8 4
-member MovementHandlerAgentSprintActionTrigger.field_8 4
-member MovementHandlerAgentStairsHelper.field_8 4
-member MovementHandlerAgentStrafing.field_8 4
-member MovementHandlerAgentTranslationController.field_8 4
+member-unverified MovementHandlerAgent.field_8
+member-unverified MovementHandlerAgentAngleController.field_8
+member-unverified MovementHandlerAgentAngleGain.field_8
+member-unverified MovementHandlerAgentAnglePassThrough.field_8
+member-unverified MovementHandlerAgentDirectControl.field_8
+member-unverified MovementHandlerAgentDirectionPassThrough.field_8
+member-unverified MovementHandlerAgentLargeDeltaIdle.field_8
+member-unverified MovementHandlerAgentPlayerControls.field_8
+member-unverified MovementHandlerAgentPlayerControlsActionTrigger.field_8
+member-unverified MovementHandlerAgentSpeedPassThrough.field_8
+member-unverified MovementHandlerAgentSprintActionTrigger.field_8
+member-unverified MovementHandlerAgentStairsHelper.field_8
+member-unverified MovementHandlerAgentStrafing.field_8
+member-unverified MovementHandlerAgentTranslationController.field_8
 member-unverified MovementHandlerArbiter.field_2C
 member-unverified MovementHandlerArbiter.field_34
 member-unverified MovementHandlerArbiter.field_3C
+member-unverified MovementHandlerArbiter.field_44
 member-unverified MovementHandlerArbiter.field_70
 member-unverified MovementHandlerArbiter.field_78
+member-unverified MovementHandlerArbiter.field_8
 member-unverified MovementMessageMovementTypeChange.field_8
-member MovementPathManagerAgent.field_8 4
-member MovementPathManagerAgentAvoidBox.field_8 4
-member MovementPathManagerAgentLoadedAreaMonitor.field_8 4
-member MovementPathManagerAgentStaticAvoider.field_8 4
+member-unverified MovementPathManagerAgent.field_8
+member-unverified MovementPathManagerAgentAvoidBox.field_8
+member-unverified MovementPathManagerAgentLoadedAreaMonitor.field_8
+member-unverified MovementPathManagerAgentStaticAvoider.field_8
 member-unverified MovementPathManagerArbiter.field_48
-member MovementPlannerAgent.field_8 4
-member MovementPlannerAgentDirectControl.field_8 4
-member MovementPlannerAgentHorseControls.field_8 4
-member MovementPlannerAgentKeepOffset.field_8 4
+member-unverified MovementPathManagerArbiter.field_8
+member-unverified MovementPlannerAgent.field_8
+member-unverified MovementPlannerAgentDirectControl.field_8
+member-unverified MovementPlannerAgentHorseControls.field_8
+member-unverified MovementPlannerAgentKeepOffset.field_8
 member-unverified MovementPlannerAgentNavmeshBounds.field_308
 member-unverified MovementPlannerAgentNavmeshBounds.field_58
-member MovementPlannerAgentNavmeshBounds.field_8 4
-member MovementPlannerAgentWarp.field_8 4
-member MovementStateFollowPath.field_8 4
-member MovementStateTweener.field_8 4
-member MovementTweenerAgent.field_8 4
-member MovementTweenerAgentAnimationDriven.field_8 4
-member MovementTweenerAgentFixedDelta.field_8 4
-member MovementTweenerAgentNodeFollower.field_8 4
-member MovementTweenerArbiter.field_B4 a0
+member-unverified MovementPlannerAgentNavmeshBounds.field_8
+member-unverified MovementPlannerAgentWarp.field_8
+member-unverified MovementPlannerArbiter.field_28
+member-unverified MovementPlannerArbiter.field_68
+member-unverified MovementPlannerArbiter.field_8
+member-unverified MovementPostUpdateArbiter.field_40
+member-unverified MovementPostUpdateArbiter.field_44
+member-unverified MovementPostUpdateArbiter.field_48
+member-unverified MovementPostUpdateArbiter.field_4C
+member-unverified MovementPostUpdateArbiter.field_50
+member-unverified MovementPostUpdateArbiter.field_8
+member-unverified MovementStateFollowPath.field_8
+member-unverified MovementStateTweener.field_8
+member-unverified MovementTweenerAgent.field_8
+member-unverified MovementTweenerAgentAnimationDriven.field_8
+member-unverified MovementTweenerAgentFixedDelta.field_8
+member-unverified MovementTweenerAgentNodeFollower.field_8
+member-unverified MovementTweenerArbiter.field_15C
+member-unverified MovementTweenerArbiter.field_180
+member-unverified MovementTweenerArbiter.field_4C
+member-unverified MovementTweenerArbiter.field_54
+member-unverified MovementTweenerArbiter.field_8
+member-unverified MovementTweenerArbiter.field_88
+member-unverified MovementTweenerArbiter.field_B4
 member-unverified MovementTweenerArbiter.field_BC
 member-unverified MovementTweenerArbiter.field_C4
 member-unverified MovementTweenerArbiter.field_C8
 member-unverified MovementTweenerArbiter.field_CC
 member-unverified MovementTweenerArbiter.field_D0
-member MultiBoundMarkerData.field_8 0
+member-unverified MultiBoundMarkerData.field_8
 member-unverified NavMeshInfoMap.field_A8
 member-unverified NavMeshSearchClosePoint.field_10
 member-unverified NavMeshSearchClosePoint.field_178
@@ -112932,12 +114674,14 @@ member-unverified NavMeshSearchClosePoint.field_194
 member-unverified NavMeshSearchClosePoint.field_19C
 member-unverified NavMeshSearchClosePoint.field_1A4
 member-unverified NavMeshSearchClosePoint.field_1AC
+member-unverified NavMeshSearchClosePoint.field_1B8
 member-unverified NavMeshSearchClosePoint.field_20
 member-unverified NavMeshSearchClosePoint.field_28
 member-unverified NavMeshSearchClosePoint.field_8
 member-unverified NavMeshSearchFitSphere.field_10
 member-unverified NavMeshSearchFitSphere.field_16C
 member-unverified NavMeshSearchFitSphere.field_18
+member-unverified NavMeshSearchFitSphere.field_190
 member-unverified NavMeshSearchFitSphere.field_20
 member-unverified NavMeshSearchFitSphere.field_28
 member-unverified NavMeshSearchFitSphere.field_8
@@ -112945,7 +114689,11 @@ member-unverified NavMeshSearchFlee.field_10
 member-unverified NavMeshSearchFlee.field_178
 member-unverified NavMeshSearchFlee.field_18
 member-unverified NavMeshSearchFlee.field_180
+member-unverified NavMeshSearchFlee.field_188
+member-unverified NavMeshSearchFlee.field_190
 member-unverified NavMeshSearchFlee.field_198
+member-unverified NavMeshSearchFlee.field_19C
+member-unverified NavMeshSearchFlee.field_1A4
 member-unverified NavMeshSearchFlee.field_20
 member-unverified NavMeshSearchFlee.field_28
 member-unverified NavMeshSearchFlee.field_8
@@ -112955,13 +114703,15 @@ member-unverified NavMeshSearchHide.field_178
 member-unverified NavMeshSearchHide.field_18
 member-unverified NavMeshSearchHide.field_190
 member-unverified NavMeshSearchHide.field_198
+member-unverified NavMeshSearchHide.field_1A0
 member-unverified NavMeshSearchHide.field_1A8
-member NavMeshSearchHide.field_1C8 1d8
+member-unverified NavMeshSearchHide.field_1C8
 member-unverified NavMeshSearchHide.field_1D0
-member NavMeshSearchHide.field_1D8 1e0
+member-unverified NavMeshSearchHide.field_1D8
 member-unverified NavMeshSearchHide.field_1E0
 member-unverified NavMeshSearchHide.field_1E8
 member-unverified NavMeshSearchHide.field_1F0
+member-unverified NavMeshSearchHide.field_1F8
 member-unverified NavMeshSearchHide.field_20
 member-unverified NavMeshSearchHide.field_200
 member-unverified NavMeshSearchHide.field_28
@@ -112976,6 +114726,8 @@ member-unverified NavMeshSearchLOS.field_1B0
 member-unverified NavMeshSearchLOS.field_1B8
 member-unverified NavMeshSearchLOS.field_1C0
 member-unverified NavMeshSearchLOS.field_1C8
+member-unverified NavMeshSearchLOS.field_1D0
+member-unverified NavMeshSearchLOS.field_1D8
 member-unverified NavMeshSearchLOS.field_20
 member-unverified NavMeshSearchLOS.field_28
 member-unverified NavMeshSearchLOS.field_8
@@ -112985,6 +114737,7 @@ member-unverified NavMeshSearchMaxCost.field_178
 member-unverified NavMeshSearchMaxCost.field_18
 member-unverified NavMeshSearchMaxCost.field_190
 member-unverified NavMeshSearchMaxCost.field_198
+member-unverified NavMeshSearchMaxCost.field_1A0
 member-unverified NavMeshSearchMaxCost.field_1A8
 member-unverified NavMeshSearchMaxCost.field_20
 member-unverified NavMeshSearchMaxCost.field_28
@@ -112995,6 +114748,7 @@ member-unverified NavMeshSearchMultipleGoals.field_178
 member-unverified NavMeshSearchMultipleGoals.field_18
 member-unverified NavMeshSearchMultipleGoals.field_190
 member-unverified NavMeshSearchMultipleGoals.field_198
+member-unverified NavMeshSearchMultipleGoals.field_1A0
 member-unverified NavMeshSearchMultipleGoals.field_1A8
 member-unverified NavMeshSearchMultipleGoals.field_20
 member-unverified NavMeshSearchMultipleGoals.field_28
@@ -113005,16 +114759,45 @@ member-unverified NavMeshSearchSLPoint.field_178
 member-unverified NavMeshSearchSLPoint.field_18
 member-unverified NavMeshSearchSLPoint.field_190
 member-unverified NavMeshSearchSLPoint.field_198
+member-unverified NavMeshSearchSLPoint.field_1A0
 member-unverified NavMeshSearchSLPoint.field_1A8
+member-unverified NavMeshSearchSLPoint.field_1B0
+member-unverified NavMeshSearchSLPoint.field_1B8
+member-unverified NavMeshSearchSLPoint.field_1C0
+member-unverified NavMeshSearchSLPoint.field_1C8
+member-unverified NavMeshSearchSLPoint.field_1D0
 member-unverified NavMeshSearchSLPoint.field_20
 member-unverified NavMeshSearchSLPoint.field_28
 member-unverified NavMeshSearchSLPoint.field_8
 member-missing NeedToUpdateCreationClubCallback.__vftable
 member-unverified NewInventoryMenuItemLoadTask.field_20
+member-unverified NiAVObject.extraDataCapacity
+member-unverified NiAVObject.flags2
+member-unverified NiAVObject.previousWorldFrame
 member-unverified NiAlphaProperty.alphaTestRef
+member-unverified NiAlphaProperty.extraDataCapacity
+member-unverified NiAlphaProperty.flags
+member-unverified NiAmbientLight.extraDataCapacity
+member-unverified NiAmbientLight.flags2
+member-unverified NiAmbientLight.local
+member-unverified NiAmbientLight.previousWorldFrame
 member-unverified NiBSBoneLODController.field_20
 member-unverified NiBSBoneLODController.field_2C
+member-unverified NiBSBoneLODController.field_4C
+member-unverified NiBSBoneLODController.field_60
 member-unverified NiBSBoneLODController.field_64
+member-unverified NiBSPNode.extraDataCapacity
+member-unverified NiBSPNode.flags2
+member-unverified NiBSPNode.local
+member-unverified NiBSPNode.previousWorldFrame
+member-unverified NiBSplineCompTransformInterpolator.field_68
+member-unverified NiBSplineCompTransformInterpolator.field_6C
+member-unverified NiBSplineCompTransformInterpolator.field_70
+member-unverified NiBSplineCompTransformInterpolator.field_74
+member-unverified NiBillboardNode.extraDataCapacity
+member-unverified NiBillboardNode.flags2
+member-unverified NiBillboardNode.local
+member-unverified NiBillboardNode.previousWorldFrame
 member-unverified NiBlendAccumTransformInterpolator.field_1A
 member-unverified NiBlendBoolInterpolator.field_1A
 member-unverified NiBlendColorInterpolator.field_1A
@@ -113040,17 +114823,28 @@ member-unverified NiBoxBV.field_3C
 member-unverified NiBoxBV.field_40
 member-unverified NiBoxCapsuleIntersector.field_54
 member-unverified NiBoxCapsuleIntersector.field_58
+member-unverified NiCamera.extraDataCapacity
+member-unverified NiCamera.flags2
+member-unverified NiCamera.local
 member-unverified NiCamera.padding0C
 member-unverified NiCamera.padding10A
 member-unverified NiCamera.padding169
 member-unverified NiCamera.padding2C
 member-unverified NiCamera.padding3C
-member NiCamera.worldToCam 11c
+member-unverified NiCamera.previousWorldFrame
+member-unverified NiCamera.worldToCam
 member-unverified NiCapsuleTriIntersector.field_60
+member-unverified NiCollisionData.field_18
+member-unverified NiCollisionData.field_20
 member-unverified NiCollisionData.field_28
+member-unverified NiColor.b
+member-unverified NiColor.g
+member-unverified NiColor.r
 member-unverified NiColorA.a
+member-unverified NiColorA.b
 member-unverified NiColorA.g
 member-unverified NiColorA.r
+member-unverified NiColorExtraData.field_18
 member-unverified NiColorExtraData.field_1C
 member-unverified NiColorExtraData.field_20
 member-unverified NiColorExtraData.field_24
@@ -113058,6 +114852,10 @@ member-unverified NiColorExtraDataController.field_20
 member-unverified NiColorExtraDataController.field_2C
 member-unverified NiControllerManager.field_20
 member-unverified NiControllerManager.field_2C
+member-unverified NiDirectionalLight.extraDataCapacity
+member-unverified NiDirectionalLight.flags2
+member-unverified NiDirectionalLight.local
+member-unverified NiDirectionalLight.previousWorldFrame
 member-unverified NiExtraDataController.field_20
 member-unverified NiExtraDataController.field_2C
 member-unverified NiFloatController.field_20
@@ -113070,11 +114868,28 @@ member-unverified NiFloatsExtraDataController.field_20
 member-unverified NiFloatsExtraDataController.field_2C
 member-unverified NiFloatsExtraDataPoint3Controller.field_20
 member-unverified NiFloatsExtraDataPoint3Controller.field_2C
+member-unverified NiFogProperty.extraDataCapacity
+member-unverified NiFrustum.bottom
+member-unverified NiFrustum.far
+member-unverified NiFrustum.left
+member-unverified NiFrustum.near
+member-unverified NiFrustum.ortho
 member-unverified NiFrustum.padding19
+member-unverified NiFrustum.right
+member-unverified NiFrustum.top
+member-unverified NiGeometry.extraDataCapacity
+member-unverified NiGeometry.flags2
+member-unverified NiGeometry.local
+member-unverified NiGeometry.previousWorldFrame
+member-unverified NiIntegerExtraData.value
 member-unverified NiInterpController.field_20
 member-unverified NiInterpController.field_2C
 member-unverified NiKeyframeManager.field_20
 member-unverified NiKeyframeManager.field_2C
+member-unverified NiLight.extraDataCapacity
+member-unverified NiLight.flags2
+member-unverified NiLight.local
+member-unverified NiLight.previousWorldFrame
 member-unverified NiLightColorController.field_20
 member-unverified NiLightColorController.field_2C
 member-unverified NiLightDimmerController.field_20
@@ -113082,14 +114897,22 @@ member-unverified NiLightDimmerController.field_2C
 member-unverified NiLookAtController.field_20
 member-unverified NiLookAtController.field_2C
 member-unverified NiMeshPSysData.field_A0
+member-unverified NiMeshParticleSystem.extraDataCapacity
+member-unverified NiMeshParticleSystem.flags2
+member-unverified NiMeshParticleSystem.local
+member-unverified NiMeshParticleSystem.previousWorldFrame
 member-unverified NiMultiTargetTransformController.field_20
 member-unverified NiMultiTargetTransformController.field_2C
+member-unverified NiNode.extraDataCapacity
+member-unverified NiNode.flags2
+member-unverified NiNode.local
+member-unverified NiNode.previousWorldFrame
 member-unverified NiOBBLeaf.field_10
 member-unverified NiOBBLeaf.field_14
 member-unverified NiOBBLeaf.field_1C
 member-unverified NiOBBLeaf.field_24
 member-unverified NiOBBLeaf.field_2C
-member NiOBBLeaf.field_34 70
+member-unverified NiOBBLeaf.field_34
 member-unverified NiOBBLeaf.field_38
 member-unverified NiOBBLeaf.field_40
 member-unverified NiOBBLeaf.field_50
@@ -113098,7 +114921,7 @@ member-unverified NiOBBLeaf.field_68
 member-unverified NiOBBLeaf.field_70
 member-unverified NiOBBLeaf.field_8
 member-unverified NiOBBLeaf.field_80
-member NiOBBLeaf.field_A0 b0
+member-unverified NiOBBLeaf.field_A0
 member-unverified NiOBBLeaf.field_A8
 member-unverified NiOBBLeaf.field_B0
 member-unverified NiOBBNode.field_10
@@ -113106,7 +114929,7 @@ member-unverified NiOBBNode.field_14
 member-unverified NiOBBNode.field_1C
 member-unverified NiOBBNode.field_24
 member-unverified NiOBBNode.field_2C
-member NiOBBNode.field_34 70
+member-unverified NiOBBNode.field_34
 member-unverified NiOBBNode.field_38
 member-unverified NiOBBNode.field_40
 member-unverified NiOBBNode.field_50
@@ -113117,6 +114940,7 @@ member-unverified NiOBBNode.field_8
 member-unverified NiOBBNode.field_80
 member-unverified NiOBBRoot.field_4C
 member-unverified NiOBBRoot.field_54
+member-unverified NiObjectNET.extraDataCapacity
 member-unverified NiPSysAirFieldAirFrictionCtlr.field_20
 member-unverified NiPSysAirFieldAirFrictionCtlr.field_2C
 member-unverified NiPSysAirFieldInheritVelocityCtlr.field_20
@@ -113175,8 +114999,8 @@ member-unverified NiPSysModifierCtlr.field_20
 member-unverified NiPSysModifierCtlr.field_2C
 member-unverified NiPSysModifierFloatCtlr.field_20
 member-unverified NiPSysModifierFloatCtlr.field_2C
-member NiPSysPlanarCollider.field_108 dc
-member NiPSysPlanarCollider.field_110 d8
+member-unverified NiPSysPlanarCollider.field_108
+member-unverified NiPSysPlanarCollider.field_110
 member-unverified NiPSysPlanarCollider.field_64
 member-unverified NiPSysPlanarCollider.field_84
 member-unverified NiPSysPlanarCollider.field_88
@@ -113193,38 +115017,111 @@ member-unverified NiPSysSphericalCollider.field_C0
 member-unverified NiPSysSphericalCollider.field_C4
 member-unverified NiPSysUpdateCtlr.field_20
 member-unverified NiPSysUpdateCtlr.field_2C
+member-unverified NiParticleMeshes.extraDataCapacity
+member-unverified NiParticleMeshes.flags2
+member-unverified NiParticleMeshes.local
+member-unverified NiParticleMeshes.previousWorldFrame
+member-unverified NiParticleSystem.extraDataCapacity
+member-unverified NiParticleSystem.flags2
+member-unverified NiParticleSystem.local
+member-unverified NiParticleSystem.previousWorldFrame
+member-unverified NiParticles.extraDataCapacity
+member-unverified NiParticles.flags2
+member-unverified NiParticles.local
+member-unverified NiParticles.previousWorldFrame
 member-unverified NiPathController.field_20
 member-unverified NiPathController.field_2C
 member-unverified NiPathController.field_4C
 member-unverified NiPathController.field_80
 member-unverified NiPathInterpolator.field_50
+member-unverified NiPlane.constant
+member-unverified NiPlane.normal
+member-unverified NiPoint2.x
+member-unverified NiPoint2.y
 member-unverified NiPoint3InterpController.field_20
 member-unverified NiPoint3InterpController.field_2C
 member-unverified NiPoint4.w
+member-unverified NiPoint4.x
+member-unverified NiPoint4.y
+member-unverified NiPoint4.z
+member-unverified NiPointLight.extraDataCapacity
+member-unverified NiPointLight.flags2
+member-unverified NiPointLight.local
+member-unverified NiPointLight.previousWorldFrame
+member-unverified NiPointLight.quadraticAttenuation
+member-unverified NiProperty.extraDataCapacity
+member-unverified NiQuaternion.x
+member-unverified NiQuaternion.y
+member-unverified NiQuaternion.z
 member-unverified NiRollController.field_20
 member-unverified NiRollController.field_2C
+member-unverified NiSequenceStreamHelper.extraDataCapacity
+member-unverified NiShadeProperty.extraDataCapacity
 member-unverified NiSingleInterpController.field_20
 member-unverified NiSingleInterpController.field_2C
+member-unverified NiSkinData.boneCount
 member-unverified NiSkinData.field10
 member-unverified NiSkinData.skinTransform
+member-unverified NiSkinData::BoneData.boundSphere
+member-unverified NiSkinData::BoneData.skinToBone
 member-unverified NiSkinData::BoneData.weightCount
 member-unverified NiSkinData::BoneData.weights
+member-unverified NiSkinInstance.paletteLock
+member-unverified NiSkinInstance.paletteRowsPerBone
+member-unverified NiSkinPartition::Partition.boneIndices
+member-unverified NiSkinPartition::Partition.bones
+member-unverified NiSkinPartition::Partition.field43
+member-unverified NiSkinPartition::Partition.lodLevel
+member-unverified NiSkinPartition::Partition.stripCount
+member-unverified NiSkinPartition::Partition.stripLengths
+member-unverified NiSkinPartition::Partition.triangleBuffer
+member-unverified NiSkinPartition::Partition.triangleCount
+member-unverified NiSkinPartition::Partition.triangles
+member-unverified NiSkinPartition::Partition.vertexCount
+member-unverified NiSkinPartition::Partition.vertexMap
+member-unverified NiSkinPartition::Partition.vertexWeights
+member-unverified NiSkinPartition::Partition.weightsPerVertex
 member-unverified NiSourceTexture.field_20
-member NiSourceTexture.field_30 0
+member-unverified NiSourceTexture.field_30
 member-unverified NiSourceTexture.field_38
 member-unverified NiSourceTexture.field_40
 member-unverified NiSphereTriIntersector.field_64
 member-unverified NiSphereTriIntersector.field_68
 member-unverified NiSphereTriIntersector.field_70
 member-unverified NiSphereTriIntersector.field_74
+member-unverified NiSpotLight.extraDataCapacity
+member-unverified NiSpotLight.flags2
+member-unverified NiSpotLight.local
+member-unverified NiSpotLight.previousWorldFrame
+member-unverified NiSpotLight.quadraticAttenuation
 member-unverified NiStream.field_234
+member-unverified NiSwitchNode.extraDataCapacity
+member-unverified NiSwitchNode.flags2
+member-unverified NiSwitchNode.local
+member-unverified NiSwitchNode.previousWorldFrame
 member-unverified NiSwitchStringExtraData.field_28
 member-unverified NiTimeController.field_20
 member-unverified NiTimeController.field_2C
+member-unverified NiTransform.rotate
+member-unverified NiTransform.scale
+member-unverified NiTransform.translate
 member-unverified NiTransformController.field_20
 member-unverified NiTransformController.field_2C
+member-unverified NiTriBasedGeom.extraDataCapacity
+member-unverified NiTriBasedGeom.flags2
+member-unverified NiTriBasedGeom.local
+member-unverified NiTriBasedGeom.previousWorldFrame
+member-unverified NiTriShape.extraDataCapacity
+member-unverified NiTriShape.flags2
+member-unverified NiTriShape.local
+member-unverified NiTriShape.previousWorldFrame
+member-unverified NiTriStrips.extraDataCapacity
+member-unverified NiTriStrips.flags2
+member-unverified NiTriStrips.local
+member-unverified NiTriStrips.previousWorldFrame
 member-unverified NiVisController.field_20
 member-unverified NiVisController.field_2C
+member-unverified NonActorMagicCaster.field_28
 member-unverified ObstacleTaskData.field_28
 member-unverified ObstacleTaskData.field_38
 member-missing OfflineLoadOrder.__vftable
@@ -113283,11 +115180,19 @@ member-unverified PathSmootherRayCastUseTrianglePath.field_38
 member-unverified PathSmootherRayCastUseTrianglePath.field_40
 member-unverified PathSmootherRayCastUseTrianglePath.field_8
 member-unverified Pathing.field_68
-member PathingDoor.field_10 14
+member-unverified PathingCoverLocation.field_38
+member-unverified PathingCoverLocation.field_40
+member-unverified PathingCoverLocation.field_48
+member-unverified PathingCoverLocation.field_50
+member-unverified PathingCoverLocation.field_58
+member-unverified PathingDoor.field_10
 member-unverified PathingDoor.field_14
 member-unverified PathingRequest.field_C8
 member-unverified PathingRequestClosePoint.field_C8
 member-unverified PathingRequestClosestGoal.field_C8
+member-unverified PathingRequestCover.field_100
+member-unverified PathingRequestCover.field_108
+member-unverified PathingRequestCover.field_120
 member-unverified PathingRequestCover.field_134
 member-unverified PathingRequestCover.field_C8
 member-unverified PathingRequestFlee.field_C8
@@ -113298,144 +115203,153 @@ member-unverified PathingRequestFlyLand.field_C8
 member-unverified PathingRequestFlyOrbit.field_C8
 member-unverified PathingRequestFlyTakeOff.field_C8
 member-unverified PathingRequestHide.field_C8
+member-unverified PathingRequestLOS.field_124
+member-unverified PathingRequestLOS.field_128
+member-unverified PathingRequestLOS.field_12C
+member-unverified PathingRequestLOS.field_130
 member-unverified PathingRequestLOS.field_C8
 member-unverified PathingRequestOptimalLocation.field_C8
 member-unverified PathingRequestRotate.field_C8
 member-unverified PathingRequestSafeStraightLine.field_C8
 member-unverified PathingRequestStopMoving.field_C8
-member-unverified PlayerCamera.cachedPosition
+member-unverified PlayerCamera.allowFreeRotation
 member-unverified PlayerCamera.pad_166
 member-unverified PlayerCamera.pad_31
 member-unverified PlayerCamera.pad_39
 member-unverified PlayerCamera.pad_b4
+member-unverified PlayerCamera.pitchZeroStart
 member-unverified PlayerCamera.positionLock
 member-unverified PlayerCamera.singletonBase
-member-unverified PlayerCamera.yaw
+member-unverified PlayerCameraTransitionState.easing
 member-unverified PlayerCameraTransitionState.id
+member-unverified PlayerCameraTransitionState.pad0c
 member-unverified PlayerCameraTransitionState.pad1c
 member-unverified PlayerCameraTransitionState.pad3E
+member-unverified PlayerCameraTransitionState.refCount
+member-unverified PlayerCameraTransitionState.startTime
+member-unverified PlayerCameraTransitionState.updateFrom
 member-unverified PlayerCameraTransitionState.updateTo
-member PlayerCharacter.__vftable_2B8 2b0
-member PlayerCharacter.__vftable_2C0 2b8
-member PlayerCharacter.__vftable_2C8 2c0
-member PlayerCharacter.__vftable_2D0 2c8
+member-unverified PlayerCharacter.__vftable_2B8
+member-unverified PlayerCharacter.__vftable_2C0
+member-unverified PlayerCharacter.__vftable_2C8
+member-unverified PlayerCharacter.__vftable_2D0
 member-unverified PlayerCharacter.__vftable_2D8
-member PlayerCharacter.__vftable_A0 98
-member PlayerCharacter.__vftable_B8 b0
-member PlayerCharacter.__vftable_C0 b8
-member PlayerCharacter.__vftable_D0 c8
-member PlayerCharacter.__vftable_D8 d0
-member PlayerCharacter.__vftable_E0 d8
-member PlayerCharacter.aiDriveFlags bda
+member-unverified PlayerCharacter.__vftable_A0
+member-unverified PlayerCharacter.__vftable_B8
+member-unverified PlayerCharacter.__vftable_C0
+member-unverified PlayerCharacter.__vftable_D0
+member-unverified PlayerCharacter.__vftable_D8
+member-unverified PlayerCharacter.__vftable_E0
+member-unverified PlayerCharacter.aiDriveFlags
 member-unverified PlayerCharacter.avStorage
 member PlayerCharacter.boolFlags e0
-member PlayerCharacter.boolFlags2 1fc
-member PlayerCharacter.combatController 158
-member PlayerCharacter.combatTargetHandle fc
+member-unverified PlayerCharacter.boolFlags2
+member-unverified PlayerCharacter.combatController
+member-unverified PlayerCharacter.combatTargetHandle
 member-unverified PlayerCharacter.criticalSection
 member PlayerCharacter.currentLocation ac8
-member PlayerCharacter.currentProcess f0
+member-unverified PlayerCharacter.currentProcess
 member-unverified PlayerCharacter.dialogueTargetHandle
-member PlayerCharacter.favorActorHandle 894
-member PlayerCharacter.field_108 100
-member PlayerCharacter.field_118 110
+member-unverified PlayerCharacter.favorActorHandle
+member-unverified PlayerCharacter.field_108
+member-unverified PlayerCharacter.field_118
 member-unverified PlayerCharacter.field_128
-member PlayerCharacter.field_130 128
+member-unverified PlayerCharacter.field_130
 member-unverified PlayerCharacter.field_148
 member-unverified PlayerCharacter.field_170
-member PlayerCharacter.field_190 188
-member PlayerCharacter.field_1F0 1e8
-member PlayerCharacter.field_268 260
-member PlayerCharacter.field_270 268
-member PlayerCharacter.field_274 26c
-member PlayerCharacter.field_279 271
-member PlayerCharacter.field_280 278
-member PlayerCharacter.field_288 280
-member PlayerCharacter.field_3E8 3d8
-member PlayerCharacter.field_3FC 3ec
-member PlayerCharacter.field_404 3f4
-member PlayerCharacter.field_408 3f8
-member PlayerCharacter.field_418 408
-member PlayerCharacter.field_42C 41c
-member PlayerCharacter.field_434 424
-member PlayerCharacter.field_438 428
-member PlayerCharacter.field_448 438
-member PlayerCharacter.field_450 440
-member PlayerCharacter.field_464 454
-member PlayerCharacter.field_46C 45c
-member PlayerCharacter.field_470 460
-member PlayerCharacter.field_480 470
-member PlayerCharacter.field_488 478
-member PlayerCharacter.field_48C 47c
-member PlayerCharacter.field_490 480
-member PlayerCharacter.field_494 484
-member PlayerCharacter.field_498 488
-member PlayerCharacter.field_49C 48c
-member PlayerCharacter.field_4A0 490
-member PlayerCharacter.field_4A4 494
-member PlayerCharacter.field_4A8 498
-member PlayerCharacter.field_4B0 4a0
-member PlayerCharacter.field_4B8 4a8
-member PlayerCharacter.field_560 550
+member-unverified PlayerCharacter.field_190
+member-unverified PlayerCharacter.field_1F0
+member-unverified PlayerCharacter.field_268
+member-unverified PlayerCharacter.field_270
+member-unverified PlayerCharacter.field_274
+member-unverified PlayerCharacter.field_279
+member-unverified PlayerCharacter.field_280
+member-unverified PlayerCharacter.field_288
+member-unverified PlayerCharacter.field_3E8
+member-unverified PlayerCharacter.field_3FC
+member-unverified PlayerCharacter.field_404
+member-unverified PlayerCharacter.field_408
+member-unverified PlayerCharacter.field_418
+member-unverified PlayerCharacter.field_42C
+member-unverified PlayerCharacter.field_434
+member-unverified PlayerCharacter.field_438
+member-unverified PlayerCharacter.field_448
+member-unverified PlayerCharacter.field_450
+member-unverified PlayerCharacter.field_464
+member-unverified PlayerCharacter.field_46C
+member-unverified PlayerCharacter.field_470
+member-unverified PlayerCharacter.field_480
+member-unverified PlayerCharacter.field_488
+member-unverified PlayerCharacter.field_48C
+member-unverified PlayerCharacter.field_490
+member-unverified PlayerCharacter.field_494
+member-unverified PlayerCharacter.field_498
+member-unverified PlayerCharacter.field_49C
+member-unverified PlayerCharacter.field_4A0
+member-unverified PlayerCharacter.field_4A4
+member-unverified PlayerCharacter.field_4A8
+member-unverified PlayerCharacter.field_4B0
+member-unverified PlayerCharacter.field_4B8
+member-unverified PlayerCharacter.field_560
 member-unverified PlayerCharacter.field_578
-member PlayerCharacter.field_580 570
-member PlayerCharacter.field_588 578
-member PlayerCharacter.field_5B4 5a4
+member-unverified PlayerCharacter.field_580
+member-unverified PlayerCharacter.field_588
+member-unverified PlayerCharacter.field_5B4
 member-unverified PlayerCharacter.field_5BC
-member PlayerCharacter.field_5C0 5b0
-member PlayerCharacter.field_5D0 5c0
-member PlayerCharacter.field_5E4 5d4
-member PlayerCharacter.field_5EC 5dc
-member PlayerCharacter.field_5F0 5e0
-member PlayerCharacter.field_600 5f0
-member PlayerCharacter.field_608 5f8
-member PlayerCharacter.field_610 600
-member PlayerCharacter.field_620 610
-member PlayerCharacter.field_630 620
-member PlayerCharacter.field_640 630
-member PlayerCharacter.field_644 634
-member PlayerCharacter.field_648 638
-member PlayerCharacter.field_650 640
-member PlayerCharacter.field_658 648
-member PlayerCharacter.field_660 650
-member PlayerCharacter.field_664 654
-member PlayerCharacter.field_668 658
-member PlayerCharacter.field_66C 65c
-member PlayerCharacter.field_670 660
-member PlayerCharacter.field_674 664
-member PlayerCharacter.field_678 668
-member PlayerCharacter.field_680 670
-member PlayerCharacter.field_688 678
-member PlayerCharacter.field_68C 67c
-member PlayerCharacter.field_690 680
-member PlayerCharacter.field_692 682
-member PlayerCharacter.field_698 688
-member PlayerCharacter.field_69C 68c
-member PlayerCharacter.field_6A0 690
-member PlayerCharacter.field_6A4 694
-member PlayerCharacter.field_6A8 698
-member PlayerCharacter.field_6AC 69c
-member PlayerCharacter.field_6B0 6a0
-member PlayerCharacter.field_6B4 6a4
-member PlayerCharacter.field_6B8 6a8
-member PlayerCharacter.field_6C0 6b0
-member PlayerCharacter.field_6D0 6c0
-member PlayerCharacter.field_6D8 6c8
-member PlayerCharacter.field_6DC 6cc
-member PlayerCharacter.field_6E0 6d0
-member PlayerCharacter.field_6E4 6d4
-member PlayerCharacter.field_6E8 6d8
-member PlayerCharacter.field_6F0 6e0
-member PlayerCharacter.field_6F8 6e8
-member PlayerCharacter.field_700 6f0
+member-unverified PlayerCharacter.field_5C0
+member-unverified PlayerCharacter.field_5D0
+member-unverified PlayerCharacter.field_5E4
+member-unverified PlayerCharacter.field_5EC
+member-unverified PlayerCharacter.field_5F0
+member-unverified PlayerCharacter.field_600
+member-unverified PlayerCharacter.field_608
+member-unverified PlayerCharacter.field_610
+member-unverified PlayerCharacter.field_620
+member-unverified PlayerCharacter.field_630
+member-unverified PlayerCharacter.field_640
+member-unverified PlayerCharacter.field_644
+member-unverified PlayerCharacter.field_648
+member-unverified PlayerCharacter.field_650
+member-unverified PlayerCharacter.field_658
+member-unverified PlayerCharacter.field_660
+member-unverified PlayerCharacter.field_664
+member-unverified PlayerCharacter.field_668
+member-unverified PlayerCharacter.field_66C
+member-unverified PlayerCharacter.field_670
+member-unverified PlayerCharacter.field_674
+member-unverified PlayerCharacter.field_678
+member-unverified PlayerCharacter.field_680
+member-unverified PlayerCharacter.field_688
+member-unverified PlayerCharacter.field_68C
+member-unverified PlayerCharacter.field_690
+member-unverified PlayerCharacter.field_692
+member-unverified PlayerCharacter.field_698
+member-unverified PlayerCharacter.field_69C
+member-unverified PlayerCharacter.field_6A0
+member-unverified PlayerCharacter.field_6A4
+member-unverified PlayerCharacter.field_6A8
+member-unverified PlayerCharacter.field_6AC
+member-unverified PlayerCharacter.field_6B0
+member-unverified PlayerCharacter.field_6B4
+member-unverified PlayerCharacter.field_6B8
+member-unverified PlayerCharacter.field_6C0
+member-unverified PlayerCharacter.field_6D0
+member-unverified PlayerCharacter.field_6D8
+member-unverified PlayerCharacter.field_6DC
+member-unverified PlayerCharacter.field_6E0
+member-unverified PlayerCharacter.field_6E4
+member-unverified PlayerCharacter.field_6E8
+member-unverified PlayerCharacter.field_6F0
+member-unverified PlayerCharacter.field_6F8
+member-unverified PlayerCharacter.field_700
 member-unverified PlayerCharacter.field_710
-member PlayerCharacter.field_718 708
-member PlayerCharacter.field_720 714
-member PlayerCharacter.field_728 718
-member PlayerCharacter.field_730 720
-member PlayerCharacter.field_738 728
-member PlayerCharacter.field_7E0 7d0
-member PlayerCharacter.field_7E4 7d4
+member-unverified PlayerCharacter.field_718
+member-unverified PlayerCharacter.field_720
+member-unverified PlayerCharacter.field_728
+member-unverified PlayerCharacter.field_730
+member-unverified PlayerCharacter.field_738
+member-unverified PlayerCharacter.field_7E0
+member-unverified PlayerCharacter.field_7E4
 member-unverified PlayerCharacter.field_7EC
 member-unverified PlayerCharacter.field_7F0
 member-unverified PlayerCharacter.field_7F4
@@ -113481,156 +115395,164 @@ member-unverified PlayerCharacter.field_890
 member-unverified PlayerCharacter.field_894
 member-unverified PlayerCharacter.field_898
 member-unverified PlayerCharacter.field_89C
-member PlayerCharacter.field_8A8 898
-member PlayerCharacter.field_8D8 8c8
-member PlayerCharacter.field_8DC 8cc
-member PlayerCharacter.field_8E4 8d4
-member PlayerCharacter.field_8E8 8d8
-member PlayerCharacter.field_8F4 8e4
+member-unverified PlayerCharacter.field_8A8
+member-unverified PlayerCharacter.field_8D8
+member-unverified PlayerCharacter.field_8DC
+member-unverified PlayerCharacter.field_8E4
+member-unverified PlayerCharacter.field_8E8
+member-unverified PlayerCharacter.field_8F4
 member-unverified PlayerCharacter.field_90
 member-unverified PlayerCharacter.field_910
-member PlayerCharacter.field_918 908
-member PlayerCharacter.field_920 910
-member PlayerCharacter.field_928 918
-member PlayerCharacter.field_930 920
-member PlayerCharacter.field_938 928
-member PlayerCharacter.field_940 930
-member PlayerCharacter.field_948 938
-member PlayerCharacter.field_950 940
-member PlayerCharacter.field_958 948
-member PlayerCharacter.field_960 950
+member-unverified PlayerCharacter.field_918
+member-unverified PlayerCharacter.field_920
+member-unverified PlayerCharacter.field_928
+member-unverified PlayerCharacter.field_930
+member-unverified PlayerCharacter.field_938
+member-unverified PlayerCharacter.field_940
+member-unverified PlayerCharacter.field_948
+member-unverified PlayerCharacter.field_950
+member-unverified PlayerCharacter.field_958
+member-unverified PlayerCharacter.field_960
 member-unverified PlayerCharacter.field_968
-member PlayerCharacter.field_970 960
-member PlayerCharacter.field_978 968
-member PlayerCharacter.field_980 970
-member PlayerCharacter.field_988 978
-member PlayerCharacter.field_990 980
-member PlayerCharacter.field_998 988
-member PlayerCharacter.field_9A 92
-member PlayerCharacter.field_9A0 990
-member PlayerCharacter.field_9B 93
-member PlayerCharacter.field_9B8 9a8
-member PlayerCharacter.field_9C0 9b0
+member-unverified PlayerCharacter.field_970
+member-unverified PlayerCharacter.field_978
+member-unverified PlayerCharacter.field_980
+member-unverified PlayerCharacter.field_988
+member-unverified PlayerCharacter.field_990
+member-unverified PlayerCharacter.field_998
+member-unverified PlayerCharacter.field_9A
+member-unverified PlayerCharacter.field_9A0
+member-unverified PlayerCharacter.field_9B
+member-unverified PlayerCharacter.field_9B8
+member-unverified PlayerCharacter.field_9C0
 member-unverified PlayerCharacter.field_9C8
-member PlayerCharacter.field_9CC 9bc
-member PlayerCharacter.field_9D0 9c0
-member PlayerCharacter.field_9D8 9c8
-member PlayerCharacter.field_9E0 9d0
-member PlayerCharacter.field_A00 9f0
-member PlayerCharacter.field_A18 a08
-member PlayerCharacter.field_A20 a10
-member PlayerCharacter.field_A28 a18
+member-unverified PlayerCharacter.field_9CC
+member-unverified PlayerCharacter.field_9D0
+member-unverified PlayerCharacter.field_9D8
+member-unverified PlayerCharacter.field_9E0
+member-unverified PlayerCharacter.field_A00
+member-unverified PlayerCharacter.field_A18
+member-unverified PlayerCharacter.field_A20
+member-unverified PlayerCharacter.field_A28
 member-unverified PlayerCharacter.field_A8
-member PlayerCharacter.field_AD0 ac0
-member PlayerCharacter.field_AE0 ad0
-member PlayerCharacter.field_AE4 ad4
-member PlayerCharacter.field_AE8 ad8
-member PlayerCharacter.field_AEC adc
-member PlayerCharacter.field_AF0 ae0
-member PlayerCharacter.field_AF8 ae8
-member PlayerCharacter.field_AFC aec
+member-unverified PlayerCharacter.field_AD0
+member-unverified PlayerCharacter.field_AE0
+member-unverified PlayerCharacter.field_AE4
+member-unverified PlayerCharacter.field_AE8
+member-unverified PlayerCharacter.field_AEC
+member-unverified PlayerCharacter.field_AF0
+member-unverified PlayerCharacter.field_AF8
+member-unverified PlayerCharacter.field_AFC
 member-unverified PlayerCharacter.field_B0
-member PlayerCharacter.field_B00 af0
-member PlayerCharacter.field_B04 af4
-member PlayerCharacter.field_B08 af8
-member PlayerCharacter.field_B0C afc
-member PlayerCharacter.field_B10 b00
-member PlayerCharacter.field_B12 b02
-member PlayerCharacter.field_B18 b08
-member PlayerCharacter.field_B38 b28
-member PlayerCharacter.field_B40 b30
-member PlayerCharacter.field_B48 b38
-member PlayerCharacter.field_B50 b40
-member PlayerCharacter.field_B58 b48
-member PlayerCharacter.field_B78 b68
-member PlayerCharacter.field_B80 b70
-member PlayerCharacter.field_B88 b78
-member PlayerCharacter.field_B90 b80
-member PlayerCharacter.field_B98 b88
-member PlayerCharacter.field_BA0 b90
-member PlayerCharacter.field_BA8 b98
-member PlayerCharacter.field_BB0 ba0
-member PlayerCharacter.field_BE0 bd0
-member PlayerCharacter.field_BE8 bd8
-member PlayerCharacter.field_BE9 bd9
-member PlayerCharacter.field_BEC bdc
-member PlayerCharacter.firstPersonBiped 8e8
-member PlayerCharacter.firstPersonCameraHeight 8f8
+member-unverified PlayerCharacter.field_B00
+member-unverified PlayerCharacter.field_B04
+member-unverified PlayerCharacter.field_B08
+member-unverified PlayerCharacter.field_B0C
+member-unverified PlayerCharacter.field_B10
+member-unverified PlayerCharacter.field_B12
+member-unverified PlayerCharacter.field_B18
+member-unverified PlayerCharacter.field_B38
+member-unverified PlayerCharacter.field_B40
+member-unverified PlayerCharacter.field_B48
+member-unverified PlayerCharacter.field_B50
+member-unverified PlayerCharacter.field_B58
+member-unverified PlayerCharacter.field_B78
+member-unverified PlayerCharacter.field_B80
+member-unverified PlayerCharacter.field_B88
+member-unverified PlayerCharacter.field_B90
+member-unverified PlayerCharacter.field_B98
+member-unverified PlayerCharacter.field_BA0
+member-unverified PlayerCharacter.field_BA8
+member-unverified PlayerCharacter.field_BB0
+member-unverified PlayerCharacter.field_BE0
+member-unverified PlayerCharacter.field_BE8
+member-unverified PlayerCharacter.field_BE9
+member-unverified PlayerCharacter.field_BEC
+member-unverified PlayerCharacter.firstPersonBiped
+member-unverified PlayerCharacter.firstPersonCameraHeight
 member PlayerCharacter.firstPersonRoot 8f0
-member PlayerCharacter.firstPersonTorchLight 998
-member PlayerCharacter.flags1 c0
-member PlayerCharacter.flags2 c4
+member-unverified PlayerCharacter.firstPersonTorchLight
+member-unverified PlayerCharacter.flags1
+member-unverified PlayerCharacter.flags2
 member PlayerCharacter.healthModifiers 228
-member PlayerCharacter.m_NiTMapBase_628 618
-member PlayerCharacter.m_NiTMap_618 608
-member PlayerCharacter.magicCasters 1a0
+member-unverified PlayerCharacter.m_NiTMapBase_628
+member-unverified PlayerCharacter.m_NiTMap_618
+member-unverified PlayerCharacter.magicCasters
 member-unverified PlayerCharacter.magickaModifiers
-member PlayerCharacter.movementController 148
-member PlayerCharacter.race 1f0
+member-unverified PlayerCharacter.movementController
+member-unverified PlayerCharacter.race
 member PlayerCharacter.refScale 90
-member PlayerCharacter.selectedSpells 1c0
+member-unverified PlayerCharacter.selectedSpells
 member PlayerCharacter.source_BGSActorCellEvent 2d0
 member-unverified PlayerCharacter.source_BGSActorDeathEvent
-member PlayerCharacter.source_PositionPlayerEvent 380
+member-unverified PlayerCharacter.source_PositionPlayerEvent
 member-unverified PlayerCharacter.staminaModifiers
-member PlayerCharacter.thirdPersonTorchLight 9a0
+member-unverified PlayerCharacter.thirdPersonTorchLight
 member PlayerCharacter.viewFlags bdb
 member-unverified PlayerCharacter.voicePointsModifiers
-member PlayerCharacter.worldSpace 628
+member-unverified PlayerCharacter.worldSpace
+member-unverified PlayerControls.bDisablePOVChange
 member-unverified PlayerControls.field_4B
+member-unverified PlayerControls.heldStateHandlers
 member-unverified PlayerControls.markHeldForRelease
+member-unverified PlayerControls.moveInput
 member-unverified PlayerControls.pendingHandlerChanges
 member-unverified PlayerControls.prevLookInput
+member-unverified PlayerControls.prevMoveInput
 member-unverified PlayerControls.responseGraphs
 member-unverified PlayerInputHandler.pad_9
 member-unverified PlayerRegionState.field_40
-member Projectile.field_100 f8
-member Projectile.field_104 fc
-member Projectile.field_108 100
-member Projectile.field_10C 104
-member Projectile.field_110 108
-member Projectile.field_118 110
-member Projectile.field_120 118
-member Projectile.field_128 120
-member Projectile.field_130 128
-member Projectile.field_134 12c
-member Projectile.field_138 130
-member Projectile.field_13C 134
-member Projectile.field_140 138
-member Projectile.field_144 13c
-member Projectile.field_148 140
-member Projectile.field_150 148
-member Projectile.field_158 150
-member Projectile.field_160 158
-member Projectile.field_168 160
-member Projectile.field_170 168
+member-unverified PlayerRegionState.field_48
+member-unverified PlayerRegionState.field_50
+member-unverified PlayerRegionState.field_58
+member-unverified PositionPlayerEvent.type
+member-unverified Projectile.field_100
+member-unverified Projectile.field_104
+member-unverified Projectile.field_108
+member-unverified Projectile.field_10C
+member-unverified Projectile.field_110
+member-unverified Projectile.field_118
+member-unverified Projectile.field_120
+member-unverified Projectile.field_128
+member-unverified Projectile.field_130
+member-unverified Projectile.field_134
+member-unverified Projectile.field_138
+member-unverified Projectile.field_13C
+member-unverified Projectile.field_140
+member-unverified Projectile.field_144
+member-unverified Projectile.field_148
+member-unverified Projectile.field_150
+member-unverified Projectile.field_158
+member-unverified Projectile.field_160
+member-unverified Projectile.field_168
+member-unverified Projectile.field_170
 member-unverified Projectile.field_178
-member Projectile.field_180 178
-member Projectile.field_188 180
-member Projectile.field_190 188
-member Projectile.field_194 18c
-member Projectile.field_198 190
-member Projectile.field_19C 194
-member Projectile.field_1A4 19c
-member Projectile.field_1A8 1a0
-member Projectile.field_1B0 1a8
-member Projectile.field_1B8 1b0
-member Projectile.field_1C0 1b8
-member Projectile.field_1C8 1c0
-member Projectile.field_1D0 1c8
-member Projectile.field_1D4 1cc
-member Projectile.field_1D8 1d0
+member-unverified Projectile.field_180
+member-unverified Projectile.field_188
+member-unverified Projectile.field_190
+member-unverified Projectile.field_194
+member-unverified Projectile.field_198
+member-unverified Projectile.field_19C
+member-unverified Projectile.field_1A4
+member-unverified Projectile.field_1A8
+member-unverified Projectile.field_1B0
+member-unverified Projectile.field_1B8
+member-unverified Projectile.field_1C0
+member-unverified Projectile.field_1C8
+member-unverified Projectile.field_1D0
+member-unverified Projectile.field_1D4
+member-unverified Projectile.field_1D8
 member-unverified Projectile.field_90
-member Projectile.field_9A 92
-member Projectile.field_9B 93
-member Projectile.field_A0 98
-member Projectile.field_A8 a0
+member-unverified Projectile.field_9A
+member-unverified Projectile.field_9B
+member-unverified Projectile.field_A0
+member-unverified Projectile.field_A8
 member-unverified Projectile.field_D4
 member-unverified Projectile.field_DC
-member Projectile.field_E8 e0
-member Projectile.field_F0 e8
-member Projectile.field_F8 f0
-member Projectile.field_FC f4
+member-unverified Projectile.field_E8
+member-unverified Projectile.field_F0
+member-unverified Projectile.field_F8
+member-unverified Projectile.field_FC
 member Projectile.refScale 90
 member-unverified QueuedActor.field_20
 member-unverified QueuedAnimationObject.field_20
@@ -113642,10 +115564,12 @@ member-unverified QueuedModel.field_20
 member-unverified QueuedNamedFile.field_20
 member-unverified QueuedPlayer.field_20
 member-unverified QueuedPromoteLargeReferencesTask.field_10
+member-unverified QueuedPromoteLargeReferencesTask.field_50
 member-unverified QueuedPromoteLargeReferencesTask.field_8
 member-unverified QueuedPromoteLargeReferencesTask.field_C
 member-unverified QueuedReference.field_20
 member-unverified QueuedTree.field_20
+member-unverified RaceSexCamera.initialPosition
 member-unverified RaceSexCamera.initialRotation
 member-unverified RaceSexCamera.padding31
 member-unverified RaceSexCamera.padding54
@@ -113655,26 +115579,71 @@ member-unverified RaceSexMenu.field_120
 member-unverified RaceSexMenu.field_128
 member-unverified RaceSexMenu.field_BC
 member-unverified RaceSexMenu.mouseLookDrag
+member-unverified ReferenceEffect.field_41
+member-unverified RenderPass.accumulationHint
+member-unverified RenderPass.field_1D
+member-unverified RenderPass.field_20
+member-unverified RenderPass.lodMode
 member-unverified RenderPass.poolIndex
+member-unverified RenderPass.property
+member-unverified RenderPass.sceneLights
+member-unverified RenderPass.shader
 member-unverified RenderStateCache.cubeMapFace
 member-unverified RenderStateCache.cubeMapMode
 member-unverified RenderStateCache.cubeMapRenderTarget
 member-unverified RenderStateCache.depthStencil
 member-unverified RenderStateCache.depthStencilMode
 member-unverified RenderStateCache.depthStencilSlice
+member-unverified RenderStateCache.dirty
+member-unverified RenderStateCache.dirtySamplers
+member-unverified RenderStateCache.dirtyShaderResources
+member-unverified RenderStateCache.renderTargetModes
+member-unverified RenderStateCache.renderTargets
 member-unverified RenderStateCache.viewport
 member-unverified RenderTargetManager.cubeMapProperties
 member-unverified RenderTargetManager.depthStencilProperties
+member-unverified RenderTargetProperties.allowMipGeneration
+member-unverified RenderTargetProperties.copyable
+member-unverified RenderTargetProperties.format
+member-unverified RenderTargetProperties.height
+member-unverified RenderTargetProperties.mipLevel
+member-unverified RenderTargetProperties.parentId
+member-unverified RenderTargetProperties.supportUnorderedAccess
+member-unverified RenderTargetProperties.unknown18
+member-unverified RenderTargetProperties.width
 member-unverified RenderTargetRecord.copySRV
+member-unverified RenderTargetRecord.copyTexture
 member-unverified RenderTargetRecord.rtv
+member-unverified RenderTargetRecord.srv
+member-unverified RenderTargetRecord.texture
 member-unverified RenderTargetRecord.uav
-member Renderer.clearColor 2778
-member Renderer.cubeMapTargets 26d8
+member-unverified RenderWindow.backBufferSRV
+member-unverified RenderWindow.backBufferUAV
+member-unverified RenderWindow.unknown28
+member-unverified RenderWindow.x
+member-unverified RenderWindow.y
+member-unverified Renderer.adapterIndex
+member-unverified Renderer.borderless
+member-unverified Renderer.clearColor
+member-unverified Renderer.cubeMapTargets
 member-unverified Renderer.depthStencilTargets
+member-unverified Renderer.device
+member-unverified Renderer.fullscreen
 member-unverified Renderer.hInstance
+member-unverified Renderer.immediateContext
 member-unverified Renderer.initialized
 member-unverified Renderer.isFullscreenState
-member Renderer.lock 2790
+member-unverified Renderer.lock
+member-unverified Renderer.onResizeCallback
+member-unverified Renderer.pendingHeight
+member-unverified Renderer.pendingWidth
+member-unverified Renderer.refreshRate
+member-unverified Renderer.renderTargets
+member-unverified Renderer.requestedRefreshRate
+member-unverified Renderer.requestedRefreshRateDenominator
+member-unverified Renderer.resizePending
+member-unverified Renderer.scaling
+member-unverified Renderer.scanlineOrdering
 member-unverified Renderer.useReadOnlyDepth
 member-unverified Renderer.windowClassName
 member-unverified RunActionAnimationLoadedCallback.field_38
@@ -113687,12 +115656,39 @@ member-unverified SandBoxActorPackageData.field_6C
 member-unverified SandBoxActorPackageData.field_70
 member-unverified SandBoxActorPackageData.field_72
 member-unverified SaveStorageWrapper.field_8
+member-unverified SavedChangeFormRecord.flags
+member-unverified SavedChangeFormRecord.state
 member-unverified ScaleformFile::MemoryFile.field_11
 member-unverified ScaleformFile::MemoryFile.field_12
 member-unverified ScaleformFile::MemoryFile.field_BC
+member-unverified SceneGraph.extraDataCapacity
+member-unverified SceneGraph.field_130
+member-unverified SceneGraph.flags2
+member-unverified SceneGraph.local
+member-unverified SceneGraph.previousWorldFrame
+member-unverified ScreenshotHandler.multiScreenshotRequested
+member-unverified ScreenshotHandler.screenshotRequested
 member-unverified Script.compiled
+member-unverified Script.delayTimer
 member-unverified Script.unk2c
 member-unverified Script.unk31
+member-unverified ScriptLineBuffer.data
+member-unverified ScriptLineBuffer.dataLen
+member-unverified ScriptLineBuffer.length
+member-unverified ScriptLineBuffer.lineNumber
+member-unverified ScriptLineBuffer.offset
+member-unverified ScriptLineBuffer.opcode
+member-unverified ScriptLineBuffer.refIndex
+member-unverified ScriptLineBuffer.text
+member-unverified ScriptParamTypeInfo.numeric
+member-unverified ScriptParamTypeInfo.typeCode
+member-unverified ScriptRunContext.containingObj
+member-unverified ScriptRunContext.ifDepth
+member-unverified ScriptRunContext.reportFlag
+member-unverified ScriptRunContext.script
+member-unverified ScriptRunContext.thisBase
+member-unverified ScrollItem.field_28
+member-unverified ScrollItem.field_2A
 member-unverified ScrollItem.field_F8
 member-missing SearchPage.__vftable
 member-missing SearchPage.field_10
@@ -113741,20 +115737,37 @@ member-missing SearchResultsPage.field_A
 member-missing SearchResultsPage.field_B8
 member-missing SearchResultsPage.field_C
 member-missing SearchResultsPage.field_C0
+member-unverified Setting.name
 member-unverified SettingT<INIPrefSettingCollection>.field_10
 member-unverified SettingT<INIPrefSettingCollection>.field_18
 member-unverified SettingT<INIPrefSettingCollection>.field_20
 member-unverified SettingT<INIPrefSettingCollection>.field_28
 member-unverified SettingT<INIPrefSettingCollection>.field_8
+member-unverified ShaderReferenceEffect.applyDelay
+member-unverified ShaderReferenceEffect.field_41
+member-unverified ShadowMapData.clearBeforeRender
+member-unverified ShadowMapData.culler
+member-unverified ShadowMapData.slice
+member-unverified ShadowMapData.splitFarPlane
+member-unverified ShadowMapData.splitNearPlane
+member-unverified ShadowMapData.texelScale
+member-unverified ShadowMapData.worldToShadow
+member-unverified ShadowSceneNode.extraDataCapacity
 member-unverified ShadowSceneNode.field_2CC
 member-unverified ShadowSceneNode.field_2D4
-member ShadowSceneNode.field_2DC 0
+member-unverified ShadowSceneNode.field_2DC
 member-unverified ShadowSceneNode.field_2E8
 member-unverified ShadowSceneNode.field_2F0
-member ShadowSceneNode.frameShadowLights 130
+member-unverified ShadowSceneNode.flags2
+member-unverified ShadowSceneNode.frameShadowLights
 member-unverified ShadowSceneNode.geometryQueueLock
 member-unverified ShadowSceneNode.lightQueueLock
+member-unverified ShadowSceneNode.local
+member-unverified ShadowSceneNode.pendingGeometryDetach
+member-unverified ShadowSceneNode.pendingGeometryRelight
+member-unverified ShadowSceneNode.pendingGeometryRelightActive
 member-unverified ShadowSceneNode.pendingLightAdds
+member-unverified ShadowSceneNode.previousWorldFrame
 member-missing SideBar.__vftable
 member-missing SideBar.field_10
 member-missing SideBar.field_14
@@ -113842,6 +115855,8 @@ member-missing Sizing::mpSizer.field_A
 member-missing Sizing::mpSizer.field_C
 member-unverified Sky.defaultWeather
 member-unverified Sky.field_104
+member-unverified Sky.field_108
+member-unverified Sky.field_110
 member-unverified Sky.field_114
 member-unverified Sky.field_11C
 member-unverified Sky.field_120
@@ -113852,11 +115867,11 @@ member-unverified Sky.field_138
 member-unverified Sky.field_140
 member-unverified Sky.field_144
 member-unverified Sky.field_14C
-member Sky.field_150 0
-member Sky.field_158 8
+member-unverified Sky.field_150
+member-unverified Sky.field_158
 member-unverified Sky.field_15C
 member-unverified Sky.field_164
-member Sky.field_168 18
+member-unverified Sky.field_168
 member-unverified Sky.field_170
 member-unverified Sky.field_178
 member-unverified Sky.field_180
@@ -113864,7 +115879,7 @@ member-unverified Sky.field_188
 member-unverified Sky.field_190
 member-unverified Sky.field_1C8
 member-unverified Sky.field_1D0
-member Sky.field_20 10
+member-unverified Sky.field_20
 member-unverified Sky.field_200
 member-unverified Sky.field_208
 member-unverified Sky.field_210
@@ -113880,6 +115895,8 @@ member-unverified Sky.field_2A8
 member-unverified Sky.field_2C0
 member-unverified Sky.field_90
 member-unverified Sky.field_98
+member-unverified Sky.field_A8
+member-unverified Sky.field_B0
 member-unverified Sky.field_B4
 member-unverified Sky.field_BC
 member-unverified Sky.field_C0
@@ -113901,59 +115918,60 @@ member-unverified SkyrimScript::Logger.field_7C
 member-unverified SkyrimScript::Logger.field_80
 member-unverified SkyrimScript::Logger.field_90
 member-unverified SkyrimScript::Logger.source_BSScript_LogEvent
+member-unverified SkyrimScript::_anon_0B1D96E2::ScriptMessageBoxCallback.stackId
 member-unverified SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>.field_20
-member SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>.field_28 20
+member-unverified SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>.field_28
 member-unverified SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>.field_30
 member-unverified SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>.field_20
-member SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>.field_28 20
+member-unverified SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>.field_28
 member-unverified SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>.field_30
 member-unverified SkyrimSpeechRecognition.field_29
 member-unverified SkyrimVM.__vftable_180
 member-unverified SkyrimVM.__vftable_188
-member SkyrimVM.__vftable_190 180
-member SkyrimVM.__vftable_198 188
-member SkyrimVM.__vftable_1A0 190
-member SkyrimVM.__vftable_1A8 198
+member-unverified SkyrimVM.__vftable_190
+member-unverified SkyrimVM.__vftable_198
+member-unverified SkyrimVM.__vftable_1A0
+member-unverified SkyrimVM.__vftable_1A8
 member SkyrimVM.field_210 200
-member SkyrimVM.field_340 330
-member SkyrimVM.field_354 344
-member SkyrimVM.field_35C 34c
-member SkyrimVM.field_360 350
-member SkyrimVM.field_370 360
-member SkyrimVM.field_384 374
-member SkyrimVM.field_38C 37c
-member SkyrimVM.field_390 380
-member SkyrimVM.field_3A0 390
-member SkyrimVM.field_3C0 470
-member SkyrimVM.field_3D4 670
-member-unverified SkyrimVM.field_3DC
-member SkyrimVM.field_3E0 684
-member SkyrimVM.field_3F0 69c
-member SkyrimVM.field_3F8 714
-member-unverified SkyrimVM.field_400
-member-unverified SkyrimVM.field_402
-member-unverified SkyrimVM.field_414
-member-unverified SkyrimVM.field_41C
-member-unverified SkyrimVM.field_420
-member-unverified SkyrimVM.field_430
-member-unverified SkyrimVM.field_45C
-member-unverified SkyrimVM.field_464
-member-unverified SkyrimVM.field_468
-member-unverified SkyrimVM.field_478
+member-unverified SkyrimVM.field_340
+member-unverified SkyrimVM.field_354
+member-unverified SkyrimVM.field_35C
+member-unverified SkyrimVM.field_360
+member-unverified SkyrimVM.field_370
+member-unverified SkyrimVM.field_384
+member-unverified SkyrimVM.field_38C
+member-unverified SkyrimVM.field_390
+member-unverified SkyrimVM.field_3A0
+member SkyrimVM.field_3C0 3b0
+member SkyrimVM.field_3D4 3c4
+member SkyrimVM.field_3DC 3cc
+member SkyrimVM.field_3E0 3d0
+member SkyrimVM.field_3F0 3e0
+member SkyrimVM.field_3F8 3e8
+member SkyrimVM.field_400 3f0
+member SkyrimVM.field_402 3f2
+member SkyrimVM.field_414 404
+member SkyrimVM.field_41C 40c
+member SkyrimVM.field_420 410
+member SkyrimVM.field_430 420
+member SkyrimVM.field_45C 44c
+member SkyrimVM.field_464 454
+member SkyrimVM.field_468 458
+member SkyrimVM.field_478 468
 member SkyrimVM.field_480 470
-member-unverified SkyrimVM.field_5A8
-member-unverified SkyrimVM.field_5BC
-member-unverified SkyrimVM.field_5C4
-member-unverified SkyrimVM.field_5C8
+member SkyrimVM.field_5A8 598
+member SkyrimVM.field_5BC 5ac
+member SkyrimVM.field_5C4 5b4
+member SkyrimVM.field_5C8 5b8
 member SkyrimVM.field_5D8 5c8
-member-unverified SkyrimVM.field_5EC
-member-unverified SkyrimVM.field_5F4
-member-unverified SkyrimVM.field_5F8
-member-unverified SkyrimVM.field_608
-member-unverified SkyrimVM.field_61C
-member-unverified SkyrimVM.field_624
-member-unverified SkyrimVM.field_628
-member-unverified SkyrimVM.field_638
+member SkyrimVM.field_5EC 5dc
+member SkyrimVM.field_5F4 5e4
+member SkyrimVM.field_5F8 5e8
+member SkyrimVM.field_608 5f8
+member SkyrimVM.field_61C 60c
+member SkyrimVM.field_624 614
+member SkyrimVM.field_628 618
+member SkyrimVM.field_638 628
 member-unverified SkyrimVM.field_640
 member-unverified SkyrimVM.field_664
 member-unverified SkyrimVM.field_678
@@ -113961,8 +115979,8 @@ member SkyrimVM.field_688 678
 member SkyrimVM.field_690 680
 member SkyrimVM.field_694 684
 member SkyrimVM.field_6AC 69c
-member-unverified SkyrimVM.field_700
-member-unverified SkyrimVM.field_724
+member SkyrimVM.field_700 6f0
+member SkyrimVM.field_724 714
 member SkyrimVM.field_760 750
 member SkyrimVM.field_764 754
 member SkyrimVM.field_77C 76c
@@ -113974,22 +115992,29 @@ member SkyrimVM.field_7B4 7a4
 member SkyrimVM.field_7BC 7ac
 member SkyrimVM.field_7C0 7b0
 member SkyrimVM.field_7D0 7c0
-member SkyrimVM.m_CompiledScriptLoader_250 240
-member SkyrimVM.m_DelayFunctor,BSTSmartPointerIntrusiveRefCount>,512>_7D8 7c8
+member-unverified SkyrimVM.m_CompiledScriptLoader_250
+member-unverified SkyrimVM.m_DelayFunctor,BSTSmartPointerIntrusiveRefCount>,512>_7D8
 member SkyrimVM.m_HandlePolicy_338 328
-member SkyrimVM.m_Logger_288 278
-member SkyrimVM.m_ObjectBindPolicy_3A8 6f0
-member-unverified SkyrimVM.m_Profiler_5A0
-member-unverified SkyrimVM.m_SavePatcher_680
-member SkyrimVM.m_SimpleAllocMemoryPagePolicy_228 218
-member SkyrimVM.source_SkyrimScript_StatsEvent 1a8
+member-unverified SkyrimVM.m_Logger_288
+member SkyrimVM.m_ObjectBindPolicy_3A8 398
+member SkyrimVM.m_Profiler_5A0 590
+member SkyrimVM.m_SavePatcher_680 670
+member-unverified SkyrimVM.m_SimpleAllocMemoryPagePolicy_228
+member-unverified SkyrimVM.source_SkyrimScript_StatsEvent
 member-unverified SleepWaitMenu.field_11
 member-unverified SleepWaitMenu.field_12
 member-unverified SleepWaitMenu.field_BC
 member-unverified SoundHandleStatus.flags
 member-unverified SoundHandleStatus.frequency
+member-unverified SoundHandleStatus.nextFree
+member-unverified SoundHandleStatus.positionMs
+member-unverified SoundHandleStatus.unk10
+member-unverified SoundHandleStatus.volume
 member-unverified SpectatorPackage.field_48
+member-unverified SpectatorPackage.field_D8
 member-unverified SpectatorPackage.field_DC
+member-unverified SpellItem.field_28
+member-unverified SpellItem.field_2A
 member-unverified StatsMenu.field_100
 member-unverified StatsMenu.field_108
 member-unverified StatsMenu.field_11
@@ -114009,10 +116034,10 @@ member-unverified StatsMenu.field_168
 member-unverified StatsMenu.field_170
 member-unverified StatsMenu.field_178
 member-unverified StatsMenu.field_180
-member StatsMenu.field_188 190
+member-unverified StatsMenu.field_188
 member-unverified StatsMenu.field_190
-member StatsMenu.field_198 88
-member StatsMenu.field_1A0 90
+member-unverified StatsMenu.field_198
+member-unverified StatsMenu.field_1A0
 member-unverified StatsMenu.field_1A8
 member-unverified StatsMenu.field_1B0
 member-unverified StatsMenu.field_1C8
@@ -114031,6 +116056,7 @@ member-unverified StatsMenu.field_258
 member-unverified StatsMenu.field_26C
 member-unverified StatsMenu.field_274
 member-unverified StatsMenu.field_27C
+member-unverified StatsMenu.field_324
 member-unverified StatsMenu.field_BC
 member-unverified StatsMenu.field_C0
 member-unverified StatsMenu.field_C8
@@ -114041,9 +116067,14 @@ member-unverified StatsMenu.field_E8
 member-unverified StatsMenu.field_F0
 member-unverified StatsMenu.field_F8
 member-unverified StatsNode.field_10
+member-unverified StealthMeter.displayedLevel
 member-unverified StealthMeter.fadeClip
+member-unverified StealthMeter.flashClip
+member-unverified StealthMeter.meterClip
 member-unverified StealthMeter.pad_92
 member-unverified StealthMeter.shown
+member-unverified StealthMeter.targetLevel
+member-unverified StealthMeter.textField
 member-unverified StealthMeter.updatePending
 member-unverified StopMountCameraHandler.pad0C
 member-unverified StopMountCameraHandler.refCount
@@ -114076,10 +116107,16 @@ member-missing StorageSpaceBar.field_B0
 member-missing StorageSpaceBar.field_B8
 member-missing StorageSpaceBar.field_C
 member-missing StorageSpaceBar.field_D0
+member-unverified SummonCreatureEffect.field_9C
+member-unverified SummonCreatureEffect.field_A0
+member-unverified SummonCreatureEffect.field_A4
 member-unverified SummonCreatureEffect.field_B8
+member-unverified SummonCreatureEffect.field_BA
+member-unverified SummonPlacementEffect.field_41
 member-unverified SummonPlacementEffect.field_58
 member-unverified SummonPlacementEffect.field_70
 member-unverified SynchronizedPriorityQueue<NiPointer<IOTask>_>.field_10
+member-unverified SynchronizedPriorityQueue<NiPointer<IOTask>_>.field_14
 member-missing SynchronizedQueue<TextureCreator::createTask*___ptr64>.__vftable
 member-missing SynchronizedQueue<TextureCreator::createTask*___ptr64>.field_10
 member-missing SynchronizedQueue<TextureCreator::createTask*___ptr64>.field_18
@@ -114088,92 +116125,194 @@ member-missing SynchronizedQueue<TextureCreator::createTask*___ptr64>.field_28
 member-missing SynchronizedQueue<TextureCreator::createTask*___ptr64>.field_30
 member-missing SynchronizedQueue<TextureCreator::createTask*___ptr64>.field_34
 member-missing SynchronizedQueue<TextureCreator::createTask*___ptr64>.field_8
+member-unverified SystemTimerRecord.field_8
+member-unverified SystemTimerRecord.lastTotal
 member-unverified TES.field_108
 member-unverified TES.field_110
 member-unverified TES.field_128
 member-unverified TES.field_12C
-member-unverified TES.field_134
-member TES.field_137 12d
-member TES.field_13C 132
-member TES.field_140 134
-member TES.field_148 140
-member TES.field_150 148
-member TES.field_158 150
+member TES.field_134 12a
+member-unverified TES.field_137
+member-unverified TES.field_13C
+member-unverified TES.field_140
+member-unverified TES.field_148
+member-unverified TES.field_150
+member-unverified TES.field_158
 member-unverified TES.field_160
 member-unverified TES.field_168
 member-unverified TES.field_170
 member-unverified TES.field_178
-member TES.field_284 27c
-member TES.field_28C 284
+member-unverified TES.field_284
+member-unverified TES.field_28C
 member-unverified TES.field_290
-member TES.field_2A0 298
-member TES.field_2A8 2a0
-member TES.field_2B0 2a8
+member-unverified TES.field_2A0
+member-unverified TES.field_2A8
+member-unverified TES.field_2B0
 member-unverified TES.field_2B8
 member-unverified TES.m_SystemEventAdapter_298
-member TES.source_CellAttachDetachEvent 10
+member-unverified TES.source_CellAttachDetachEvent
 member-unverified TESActiveEffectApplyRemoveEvent.activeEffectUniqueID
 member-unverified TESActiveEffectApplyRemoveEvent.caster
 member-unverified TESActiveEffectApplyRemoveEvent.isApplied
 member-unverified TESActiveEffectApplyRemoveEvent.target
+member-unverified TESActorBase.field_28
+member-unverified TESActorBase.field_2A
 member-unverified TESActorBase.field_9C
+member-unverified TESAmmo.field_28
+member-unverified TESAmmo.field_2A
 member-unverified TESAmmo.field_50
 member-unverified TESAnimGroup.field_28
+member-unverified TESAudio::ScriptedMusicState.scriptedTypes
+member-unverified TESBookReadEvent.baseObject
+member-unverified TESBookReadEvent.book
 member-unverified TESBookReadEvent.uniqueID
+member-unverified TESBoundAnimObject.field_20
+member-unverified TESBoundAnimObject.field_22
+member-unverified TESBoundAnimObject.field_24
+member-unverified TESBoundAnimObject.field_26
+member-unverified TESBoundAnimObject.field_28
+member-unverified TESBoundAnimObject.field_2A
+member-unverified TESBoundObject.field_20
+member-unverified TESBoundObject.field_22
+member-unverified TESBoundObject.field_24
+member-unverified TESBoundObject.field_26
+member-unverified TESBoundObject.field_28
+member-unverified TESBoundObject.field_2A
 member-unverified TESCamera.pad_31
+member-unverified TESCameraState.camera
 member-unverified TESCameraState.pad_1c
+member-unverified TESCameraState.pad_c
+member-unverified TESCellFullyLoadedEvent.cell
 member-unverified TESClimate.m_TESModel_20
 member-unverified TESContainer.field_14
+member-unverified TESDataHandler.activeFile
+member-unverified TESDataHandler.addonNodes
+member-unverified TESDataHandler.cells
+member-unverified TESDataHandler.regionDataManager
+member-unverified TESDataHandler.regionList
 member-missing TESDataHandler.selectedFiles
+member-unverified TESDataHandler.skipFormRegistration
+member-unverified TESDeathEvent.actorDying
+member-unverified TESDeathEvent.actorKiller
+member-unverified TESDeathEvent.dead
 member-unverified TESDestructionStageChangedEvent.newStage
+member-unverified TESDestructionStageChangedEvent.oldStage
+member-unverified TESDestructionStageChangedEvent.target
+member-unverified TESEditorIDMap.capacity
 member-unverified TESEditorIDMap.entries
 member-unverified TESEditorIDMap.free
 member-unverified TESEditorIDMap.freeScan
+member-unverified TESEditorIDMap.sentinel
 member-unverified TESEditorIDMapEntry.editorID
 member-unverified TESEditorIDMapEntry.form
 member-unverified TESEditorIDMapEntry.next
+member-unverified TESEffectShader.field_B4
+member-unverified TESEffectShader.field_BC
 member-unverified TESEffectShader.field_C4
 member-unverified TESEnterBleedoutEvent.actor
 member-unverified TESFaction.field_E0
 member-unverified TESFaction.field_E8
+member-unverified TESFastTravelEndEvent.fastTravelEndHours
+member-unverified TESFile.path
 member-unverified TESFile.version
+member-unverified TESFileArray.files
+member-unverified TESFlora.field_28
+member-unverified TESFlora.field_2A
 member-unverified TESFlora.field_50
+member-unverified TESFormDeleteEvent.formID
+member-unverified TESFormIDMap.capacity
 member-unverified TESFormIDMap.entries
 member-unverified TESFormIDMap.free
 member-unverified TESFormIDMap.freeScan
+member-unverified TESFormIDMap.sentinel
 member-unverified TESFormIDMapEntry.form
 member-unverified TESFormIDMapEntry.formID
 member-unverified TESFormIDMapEntry.next
+member-unverified TESFurniture.field_28
+member-unverified TESFurniture.field_2A
 member-unverified TESFurniture.field_50
+member-unverified TESFurniture.markerEntries
 member-unverified TESFurniture.workbenchSkill
-member-unverified TESFurnitureEvent.type
+member-unverified TESGrabReleaseEvent.grabbed
+member-unverified TESGrabReleaseEvent.ref
+member-unverified TESGrass.field_20
+member-unverified TESGrass.field_22
+member-unverified TESGrass.field_24
+member-unverified TESGrass.field_26
+member-unverified TESGrass.field_28
+member-unverified TESGrass.field_2A
+member-unverified TESGrass.model
 member-unverified TESIdleForm.animationEvent
 member-unverified TESIdleForm.conditions
+member-unverified TESIdleForm.field_2A
 member-unverified TESIdleForm.loopMax
+member-unverified TESIdleForm.loopMin
+member-unverified TESImageSpaceModifier.field_EC
+member-unverified TESImageSpaceModifier.field_F0
+member-unverified TESKey.field_28
+member-unverified TESKey.field_2A
 member-unverified TESKey.field_50
+member-unverified TESLevCharacter.field_20
+member-unverified TESLevCharacter.field_22
+member-unverified TESLevCharacter.field_24
+member-unverified TESLevCharacter.field_26
+member-unverified TESLevCharacter.field_28
+member-unverified TESLevCharacter.field_2A
 member-unverified TESLevCharacter.field_68
+member-unverified TESLevItem.field_20
+member-unverified TESLevItem.field_22
+member-unverified TESLevItem.field_24
+member-unverified TESLevItem.field_26
+member-unverified TESLevItem.field_28
+member-unverified TESLevItem.field_2A
+member-unverified TESLevSpell.field_20
+member-unverified TESLevSpell.field_22
+member-unverified TESLevSpell.field_24
+member-unverified TESLevSpell.field_26
+member-unverified TESLevSpell.field_28
+member-unverified TESLevSpell.field_2A
+member-unverified TESMagicEffectApplyEvent.caster
+member-unverified TESMagicEffectApplyEvent.magicEffect
+member-unverified TESMagicEffectApplyEvent.target
+member-unverified TESMagicWardHitEvent.caster
 member-unverified TESMagicWardHitEvent.spell
+member-unverified TESMagicWardHitEvent.status
+member-unverified TESMagicWardHitEvent.target
+member-unverified TESModel.field_22
+member-unverified TESModel.model
 member-unverified TESModelDB::TESQueuedHandles.field_20
+member-unverified TESModelPSA.model
+member-unverified TESModelRDT.model
+member-unverified TESModelTextureSwap.model
+member-unverified TESModelTri.model
 member-unverified TESMoveAttachDetachEvent.isCellAttached
 member-unverified TESMoveAttachDetachEvent.reference
+member-unverified TESNPC.field_28
+member-unverified TESNPC.field_2A
 member-unverified TESNPC.field_9C
 member-unverified TESNPC.fullName
+member-unverified TESObjectACTI.field_28
+member-unverified TESObjectACTI.field_2A
 member-unverified TESObjectACTI.field_50
 member-unverified TESObjectANIO.field_30
 member-unverified TESObjectARMA.field_48
+member-unverified TESObjectARMO.field_28
+member-unverified TESObjectARMO.field_2A
+member-unverified TESObjectBOOK.field_28
+member-unverified TESObjectBOOK.field_2A
 member-unverified TESObjectBOOK.field_50
 member TESObjectCELL.field_118 110
 member-unverified TESObjectCELL.field_120
-member TESObjectCELL.field_128 120
-member TESObjectCELL.field_130 128
+member-unverified TESObjectCELL.field_128
+member-unverified TESObjectCELL.field_130
 member-unverified TESObjectCELL.field_138
 member-unverified TESObjectCELL.field_140
-member TESObjectCELL.field_38 138
+member-unverified TESObjectCELL.field_38
 member-unverified TESObjectCELL.field_44
 member-unverified TESObjectCELL.field_46
-member TESObjectCELL.field_68 60
+member-unverified TESObjectCELL.field_68
 member-unverified TESObjectCELL.field_70
-member TESObjectCELL.field_78 70
+member-unverified TESObjectCELL.field_78
 member-unverified TESObjectCELL.field_80
 member-unverified TESObjectCELL.field_94
 member-unverified TESObjectCELL.field_98
@@ -114182,11 +116321,29 @@ member-unverified TESObjectCELL.field_A0
 member-unverified TESObjectCELL.field_B0
 member-unverified TESObjectCELL.field_B8
 member TESObjectCELL.field_E8 e0
+member-unverified TESObjectCONT.field_20
+member-unverified TESObjectCONT.field_22
+member-unverified TESObjectCONT.field_24
+member-unverified TESObjectCONT.field_26
+member-unverified TESObjectCONT.field_28
+member-unverified TESObjectCONT.field_2A
 member-unverified TESObjectCONT.field_44
 member-unverified TESObjectCONT.field_68
+member-unverified TESObjectDOOR.field_20
+member-unverified TESObjectDOOR.field_22
+member-unverified TESObjectDOOR.field_24
+member-unverified TESObjectDOOR.field_26
+member-unverified TESObjectDOOR.field_28
+member-unverified TESObjectDOOR.field_2A
 member-unverified TESObjectDOOR.field_50
 member-unverified TESObjectLIGH.color
 member-unverified TESObjectLIGH.fade
+member-unverified TESObjectLIGH.field_20
+member-unverified TESObjectLIGH.field_22
+member-unverified TESObjectLIGH.field_24
+member-unverified TESObjectLIGH.field_26
+member-unverified TESObjectLIGH.field_28
+member-unverified TESObjectLIGH.field_2A
 member-unverified TESObjectLIGH.field_50
 member-unverified TESObjectLIGH.field_e0
 member-unverified TESObjectLIGH.flickerIntensityAmplitude
@@ -114194,35 +116351,75 @@ member-unverified TESObjectLIGH.flickerMovementAmplitude
 member-unverified TESObjectLIGH.flickerPeriod
 member-unverified TESObjectLIGH.model
 member-unverified TESObjectLIGH.radius
+member-unverified TESObjectMISC.field_28
+member-unverified TESObjectMISC.field_2A
 member-unverified TESObjectMISC.field_50
 member-unverified TESObjectREFR.field_90
-member TESObjectREFR.field_9A 92
-member TESObjectREFR.field_9B 93
+member-unverified TESObjectREFR.field_9A
+member-unverified TESObjectREFR.field_9B
 member TESObjectREFR.refScale 90
 member-unverified TESObjectREFRSync::REFRSyncController.field_20
 member-unverified TESObjectREFRSync::REFRSyncController.field_2C
+member-unverified TESObjectREFRTranslationEvent.ref
+member-unverified TESObjectREFRTranslationEvent.type
+member-unverified TESObjectSTAT.field_20
+member-unverified TESObjectSTAT.field_22
+member-unverified TESObjectSTAT.field_24
+member-unverified TESObjectSTAT.field_26
+member-unverified TESObjectSTAT.field_28
+member-unverified TESObjectSTAT.field_2A
 member-unverified TESObjectSTAT.field_40
+member-unverified TESObjectTREE.field_20
+member-unverified TESObjectTREE.field_22
+member-unverified TESObjectTREE.field_24
+member-unverified TESObjectTREE.field_26
+member-unverified TESObjectTREE.field_28
+member-unverified TESObjectTREE.field_2A
+member-unverified TESObjectTREE.model
+member-unverified TESObjectWEAP.field_28
+member-unverified TESObjectWEAP.field_2A
 member-unverified TESObjectWEAP.field_50
 member-unverified TESOpenCloseEvent.activeRef
 member-unverified TESOpenCloseEvent.opened
 member-unverified TESOpenCloseEvent.ref
 member-unverified TESPackage.field_48
+member-unverified TESPackage.field_D8
 member-unverified TESPackage.field_DC
 member-unverified TESPerkEntryRunEvent.cause
 member-unverified TESPerkEntryRunEvent.flag
 member-unverified TESPerkEntryRunEvent.perkID
 member-unverified TESPerkEntryRunEvent.target
+member-unverified TESPlayerBowShotEvent.ammo
 member-unverified TESPlayerBowShotEvent.isSunGazing
+member-unverified TESPlayerBowShotEvent.power
+member-unverified TESPlayerBowShotEvent.weapon
 member-unverified TESQuest.field_124
 member-unverified TESQuest.field_128
 member-unverified TESQuest.field_12C
 member-unverified TESQuest.field_218
 member-unverified TESQuest.field_260
 member-unverified TESQuest.field_88
+member-unverified TESQuestStageEvent.finishedCallback
+member-unverified TESQuestStageEvent.flags
+member-unverified TESQuestStageEvent.formID
+member-unverified TESQuestStageEvent.stage
+member-unverified TESQuestStageItemDoneEvent.formID
+member-unverified TESQuestStartStopEvent.formID
 member-unverified TESQuestStartStopEvent.started
+member-unverified TESRace.field_168
 member-unverified TESRace.field_170
+member-unverified TESRace.field_178
 member-unverified TESRace.field_180
+member-unverified TESRace.field_188
+member-unverified TESRace.field_2E0
+member-unverified TESRace.leftHandBipedIndex
 member-unverified TESRegionDataSound.field_28
+member-unverified TESResetEvent.object
+member-unverified TESSceneEvent.finishedCallback
+member-unverified TESSceneEvent.quest
+member-unverified TESSceneEvent.type
+member-unverified TESSellEvent.baseObject
+member-unverified TESSellEvent.seller
 member-unverified TESSellEvent.uniqueID
 member-unverified TESShout.field_78
 member-unverified TESShout.field_80
@@ -114232,8 +116429,42 @@ member-unverified TESShout.field_98
 member-unverified TESShout.field_A0
 member-unverified TESSleepStartEvent.desiredSleepEndTime
 member-unverified TESSleepStartEvent.sleepStartTime
+member-unverified TESSleepStopEvent.interrupted
+member-unverified TESSoulGem.field_28
+member-unverified TESSoulGem.field_2A
 member-unverified TESSoulGem.field_50
+member-unverified TESSound.field_20
+member-unverified TESSound.field_22
+member-unverified TESSound.field_24
+member-unverified TESSound.field_26
+member-unverified TESSound.field_28
+member-unverified TESSound.field_2A
+member-unverified TESSpellCastEvent.object
+member-unverified TESSpellCastEvent.spell
+member-unverified TESSwitchRaceCompleteEvent.subject
+member-unverified TESTopicInfo.field_38
 member-unverified TESTopicInfo.field_44
+member-unverified TESTopicInfoEvent.speaker
+member-unverified TESTopicInfoEvent.topicInfo
+member-unverified TESTopicInfoEvent.type
+member-unverified TESTrackedStatsEvent.value
+member-unverified TESTrapHitEvent.target
+member-unverified TESTrapHitEvent.trap
+member-unverified TESTriggerEvent.caster
+member-unverified TESTriggerEvent.target
+member-unverified TESUniqueIDChangeEvent.newBaseID
+member-unverified TESUniqueIDChangeEvent.newUniqueID
+member-unverified TESUniqueIDChangeEvent.objectID
+member-unverified TESUniqueIDChangeEvent.oldBaseID
+member-unverified TESUniqueIDChangeEvent.oldUniqueID
+member-unverified TESWaitStartEvent.waitStartTime
+member-unverified TESWaitStopEvent.interrupted
+member-unverified TESWaterForm.field_1C0
+member-unverified TESWaterForm.field_1C8
+member-unverified TESWaterForm.field_200
+member-unverified TESWaterForm.field_208
+member-unverified TESWaterForm.field_210
+member-unverified TESWaterForm.field_218
 member-unverified TESWaterForm.field_248
 member-unverified TESWaterForm.field_250
 member-unverified TESWaterForm.field_44
@@ -114242,28 +116473,64 @@ member-unverified TESWaterForm.field_54
 member-unverified TESWaterForm.field_5C
 member-unverified TESWaterForm.field_64
 member-unverified TESWaterForm.field_6C
+member-unverified TESWaterForm.m_TESTexture_78
 member-unverified TESWeather.dataFlags
+member-unverified TESWeather.field_228
+member-unverified TESWeather.field_230
+member-unverified TESWeather.field_238
+member-unverified TESWeather.field_240
+member-unverified TESWeather.field_248
+member-unverified TESWeather.field_250
+member-unverified TESWeather.field_258
+member-unverified TESWeather.field_464
+member-unverified TESWeather.field_468
+member-unverified TESWeather.field_46C
+member-unverified TESWeather.field_660
+member-unverified TESWeather.field_664
+member-unverified TESWeather.field_674
+member-unverified TESWeather.field_676
 member-unverified TESWeather.field_678
-member TESWeather.field_680 690
+member-unverified TESWeather.field_680
+member-unverified TESWeather.field_688
+member-unverified TESWeather.field_68C
+member-unverified TESWeather.field_690
+member-unverified TESWeather.field_694
 member-unverified TESWeather.field_778
 member-unverified TESWeather.field_77C
 member-unverified TESWeather.field_780
 member-unverified TESWeather.field_784
+member-unverified TESWeather.field_788
 member-unverified TESWeather.field_78C
 member-unverified TESWeather.field_790
 member-unverified TESWeather.field_794
+member-unverified TESWeather.field_798
 member-unverified TESWeather.field_79C
 member-unverified TESWeather.field_7A0
 member-unverified TESWeather.field_7A4
 member-unverified TESWeather.field_7A8
 member-unverified TESWeather.field_7B0
+member-unverified TESWeather.field_7E0
+member-unverified TESWeather.field_7E8
+member-unverified TESWeather.field_7F0
 member-unverified TESWeather.field_8A0
+member-unverified TESWeather.field_8B0
+member-unverified TESWeather.field_8B8
+member-unverified TESWeather.field_8C0
 member-unverified TESWeather.m_TESModel_878
 member-unverified TESWorldSpace.field_138
 member-unverified TESWorldSpace.field_168
-member TESWorldSpace.field_180 98
+member-unverified TESWorldSpace.field_180
+member-unverified TESWorldSpace.field_188
+member-unverified TESWorldSpace.field_190
+member-unverified TESWorldSpace.field_198
+member-unverified TESWorldSpace.field_19C
+member-unverified TESWorldSpace.field_1A4
+member-unverified TESWorldSpace.field_1AC
+member-unverified TESWorldSpace.field_348
 member-unverified TESWorldSpace.field_64
 member-unverified TESWorldSpace.field_80
+member-unverified TESWorldSpace.m_TESTexture_230
+member-unverified TESWorldSpace.model
 member-missing TagField.__vftable
 member-missing TagField.field_10
 member-missing TagField.field_14
@@ -114282,15 +116549,22 @@ member-missing TagField.field_8
 member-missing TagField.field_9
 member-missing TagField.field_A
 member-missing TagField.field_C
+member-unverified TaskQueueHolder.current
+member-unverified TaskQueueHolder.queueA
+member-unverified TaskQueueHolder.queueB
 member-unverified TeleportDoorSearch.field_10
 member-unverified TeleportDoorSearch.field_18
 member-unverified TeleportDoorSearch.field_20
 member-unverified TeleportDoorSearch.field_28
 member-unverified TeleportDoorSearch.field_8
 member-unverified TempLoadGameBuffer.position
+member-unverified ThirdPersonState.applyThirdPerson
+member-unverified ThirdPersonState.keepFreeRotation
 member-unverified ThirdPersonState.pad0c
 member-unverified ThirdPersonState.pad1c
 member-unverified ThirdPersonState.padE3
+member-unverified ThirdPersonState.recoveryStart
+member-unverified ThirdPersonState.toggleToFirstPerson
 member-unverified ThirdPersonState.useShoulderOffsets
 member-unverified ThirdPersonState.zoomSinceTogglePress
 member-unverified TitleSequenceMenu.field_11
@@ -114301,16 +116575,22 @@ member-unverified TogglePOVHandler.heldStateActive
 member-unverified TogglePOVHandler.pad_12
 member-unverified TogglePOVHandler.pad_19
 member-unverified TogglePOVHandler.pad_9
+member-unverified TogglePOVHandler.pressed
 member-unverified TogglePOVHandler.releasePending
 member-unverified TrainingMenu.field_11
 member-unverified TrainingMenu.field_12
 member-unverified TrainingMenu.field_BC
+member-unverified TransitionState.fromPosition
+member-unverified TransitionState.fromRotation
 member-unverified TransitionState.id
 member-unverified TransitionState.padding0C
 member-unverified TransitionState.padding1C
+member-unverified TransitionState.progress
 member-unverified TransitionState.refCount
+member-unverified TransitionState.startTimeMs
 member-unverified TransitionState.toPosition
 member-unverified TrespassPackage.field_48
+member-unverified TrespassPackage.field_D8
 member-unverified TrespassPackage.field_DC
 member-unverified TutorialMenu.field_11
 member-unverified TutorialMenu.field_12
@@ -114321,7 +116601,17 @@ member-unverified TweenMenuCameraState.currentAngles
 member-unverified TweenMenuCameraState.pad0c
 member-unverified TweenMenuCameraState.pad1c
 member-unverified TweenMenuCameraState.pad4D
+member-unverified TypeNode.name
+member-unverified UICursor.bounds
+member-unverified UICursor.speedScale
+member-unverified UICursor.speedScale2
+member-unverified UICursor.x
+member-unverified UICursor.y
+member-unverified UIMessage.isStatic
+member-unverified UIMessage.menuName
 member-unverified UIMessageQueue.dataPool
+member-unverified UIMessageQueue.queue
+member-unverified UIMessageQueue.staticMessages
 member-unverified UISaveLoadManager.field_50
 member-missing UI_Button3.__vftable
 member-missing UI_Button3.field_10
@@ -115065,6 +117355,11 @@ member-missing UI_topBar.field_8
 member-missing UI_topBar.field_9
 member-missing UI_topBar.field_A
 member-missing UI_topBar.field_C
+member-unverified UserEventEnabledEvent.newEnabled
+member-unverified UserEventEnabledEvent.oldEnabled
+member-unverified UserEventMapping.groupFlags
+member-unverified UserEventMapping.linked
+member-unverified UserEventMapping.remappable
 member-unverified VATSCameraState.pad0C
 member-unverified VATSCameraState.pad1C
 member-unverified VATSCameraState.refCount
@@ -115125,7 +117420,6 @@ member-missing _anon_025735F6::AmiiboTouchArguments.__vftable
 member-unverified _anon_14F04957::Win32FileType.compression
 member-unverified _anon_14F04957::Win32FileType.headerEnd
 member-unverified _anon_14F04957::Win32FileType.payloadSize
-member-unverified _anon_14F04957::Win32FileType.saveName
 member-unverified _anon_14F04957::Win32FileType.saveNameBuffer
 member-missing _anon_1613A816::ConsoleHotkeyManager.__vftable
 member-unverified _anon_207FFA87::AudioLoadTask.field_20
@@ -115251,14 +117545,18 @@ member-unverified _anon_57720BD5::hkpTiltPreventAction.field_C0
 member-unverified _anon_57720BD5::hkpTiltPreventAction.field_C4
 member-unverified _anon_67C8711B::NoMusic.priority
 member-unverified _anon_705FD51E::MagicMenuAddActiveEffectVisitor.field_10
+member-unverified _anon_705FD51E::MagicMenuAddActiveEffectVisitor.field_12
+member-unverified _anon_705FD51E::MagicMenuAddActiveEffectVisitor.field_18
+member-unverified _anon_705FD51E::MagicMenuAddActiveEffectVisitor.field_2C
 member-unverified _anon_705FD51E::MagicMenuAddActiveEffectVisitor.field_34
 member-unverified _anon_705FD51E::MagicMenuAddActiveEffectVisitor.field_38
 member-unverified _anon_705FD51E::MagicMenuAddActiveEffectVisitor.field_5C
 member-unverified _anon_705FD51E::MagicMenuAddActiveEffectVisitor.field_64
 member-unverified _anon_705FD51E::MagicMenuAddActiveEffectVisitor.field_68
 member-unverified _anon_705FD51E::MagicMenuAddActiveEffectVisitor.field_78
-member _anon_705FD51E::MagicMenuAddActiveEffectVisitor.field_80 78
+member-unverified _anon_705FD51E::MagicMenuAddActiveEffectVisitor.field_80
 member-unverified _anon_71CE6E17::DeepCopyStream.field_234
+member-unverified _anon_7C6875DF::OldMessageBoxCallback.fn
 member-unverified _anon_860CB2AF::InternedStringRefCounted.field_108
 member-unverified _anon_860CB2AF::InternedStringRefCounted.field_110
 member-unverified _anon_860CB2AF::InternedStringRefCounted.field_114
@@ -115269,11 +117567,11 @@ member-unverified _anon_860CB2AF::InternedStringRefCounted.field_B4
 member-unverified _anon_860CB2AF::InternedStringRefCounted.field_B8
 member-unverified _anon_860CB2AF::InternedStringRefCounted.field_C0
 member-unverified _anon_860CB2AF::InternedStringRefCounted.field_C4
-member _anon_D9AF04FF::StatsStarSelector.field_38 3c
-member _anon_D9AF04FF::StatsStarSelector.field_3C 38
-member _anon_D9AF04FF::StatsStarSelector.field_44 48
-member _anon_D9AF04FF::StatsStarSelector.field_48 4c
-member _anon_D9AF04FF::StatsStarSelector.field_4C 44
+member-unverified _anon_D9AF04FF::StatsStarSelector.field_38
+member-unverified _anon_D9AF04FF::StatsStarSelector.field_3C
+member-unverified _anon_D9AF04FF::StatsStarSelector.field_44
+member-unverified _anon_D9AF04FF::StatsStarSelector.field_48
+member-unverified _anon_D9AF04FF::StatsStarSelector.field_4C
 member-unverified _anon_D9AF04FF::UpdateStarText.field_38
 member-unverified _anon_D9AF04FF::UpdateStarText.field_48
 member-unverified _anon_FB16BEF9::hkNativeResource.field_108
@@ -115328,7 +117626,7 @@ member-unverified ahkpWorld.field_C0
 member-unverified ahkpWorld.field_C4
 member-missing allCreationsDownloadedCallback.__vftable
 member-unverified bgs::saveload::LoadEntryRequest.entry
-member bgs::saveload::LoadRequest.flag25 24
+member-unverified bgs::saveload::LoadRequest.flag25
 member-unverified bgs::saveload::LoadRequest.ignoreMissingContent
 member-unverified bgs::saveload::SaveOperationRequest.info
 member-unverified bgs::saveload::SaveOperationRequest.name
@@ -115352,7 +117650,10 @@ member-unverified bhkCharacterController.characterState
 member-unverified bhkCharacterController.hasBumper
 member-unverified bhkCharacterController.m_BSBound_120
 member-unverified bhkCharacterController.m_BSBound_150
+member-unverified bhkCharacterController.shapes
+member-unverified bhkCharacterController.source_bhkCharacterMoveFinishEvent
 member-unverified bhkCharacterControllerCinfo.field_74
+member-unverified bhkCharacterPointCollector.field_228
 member-unverified bhkCharacterState.field_108
 member-unverified bhkCharacterState.field_110
 member-unverified bhkCharacterState.field_114
@@ -115441,7 +117742,22 @@ member-unverified bhkLiquidAction.field_3C
 member-unverified bhkLiquidAction.field_48
 member-unverified bhkLiquidAction.field_4C
 member-unverified bhkMoppBvTreeShape.field_20
+member-unverified bhkPickData.allHitsCollector
+member-unverified bhkPickData.allHitsCollector2
+member-unverified bhkPickData.closestCollector
+member-unverified bhkPickData.enableShapeCollectionFilter
+member-unverified bhkPickData.extraInfo
+member-unverified bhkPickData.field_28
+member-unverified bhkPickData.filterInfo
+member-unverified bhkPickData.from
+member-unverified bhkPickData.hitFraction
+member-unverified bhkPickData.normal
 member-unverified bhkPickData.ray
+member-unverified bhkPickData.rayCache
+member-unverified bhkPickData.shapeKeyIndex
+member-unverified bhkPickData.shapeKeys
+member-unverified bhkPickData.skipped
+member-unverified bhkPickData.to
 member-unverified bhkRagdollController.field_10
 member-unverified bhkRagdollController.field_100
 member-unverified bhkRagdollController.field_110
@@ -115449,13 +117765,13 @@ member-unverified bhkRagdollController.field_120
 member-unverified bhkRagdollController.field_130
 member-unverified bhkRagdollController.field_138
 member-unverified bhkRagdollController.field_13C
-member bhkRagdollController.field_148 f8
-member bhkRagdollController.field_150 100
-member bhkRagdollController.field_160 110
-member bhkRagdollController.field_170 120
-member bhkRagdollController.field_180 130
+member-unverified bhkRagdollController.field_148
+member-unverified bhkRagdollController.field_150
+member-unverified bhkRagdollController.field_160
+member-unverified bhkRagdollController.field_170
+member-unverified bhkRagdollController.field_180
 member-unverified bhkRagdollController.field_188
-member bhkRagdollController.field_18C 13c
+member-unverified bhkRagdollController.field_18C
 member-unverified bhkRagdollController.field_20
 member-unverified bhkRagdollController.field_30
 member-unverified bhkRagdollController.field_320
@@ -115465,10 +117781,10 @@ member-unverified bhkWorld.field_C560
 member-unverified bhkWorld.field_C568
 member-unverified bhkWorld.field_C56C
 member bhkWorld.field_C6E0 c5d8
-member bhkWorld.field_C6E8 c5e0
-member bhkWorld.field_C6F0 c5e8
+member-unverified bhkWorld.field_C6E8
+member-unverified bhkWorld.field_C6F0
 member-unverified bhkWorld.field_C6F8
-member bhkWorld.field_C6FC c5f4
+member-unverified bhkWorld.field_C6FC
 member-unverified bhkWorld.field_C700
 member-unverified bhkWorld.field_C702
 member-unverified bhkWorld.m_bhkWorldCinfo_C5E0
@@ -115483,11 +117799,11 @@ member-unverified bhkWorldM.field_C560
 member-unverified bhkWorldM.field_C568
 member-unverified bhkWorldM.field_C56C
 member bhkWorldM.field_C6E0 c5d8
-member bhkWorldM.field_C6E8 c5e0
-member bhkWorldM.field_C6F0 c5e8
-member bhkWorldM.field_C6F8 c5f0
-member bhkWorldM.field_C6FC c5f4
-member bhkWorldM.field_C700 c5f8
+member-unverified bhkWorldM.field_C6E8
+member-unverified bhkWorldM.field_C6F0
+member-unverified bhkWorldM.field_C6F8
+member-unverified bhkWorldM.field_C6FC
+member-unverified bhkWorldM.field_C700
 member-unverified bhkWorldM.field_C702
 member bhkWorldM.field_C710 c600
 member bhkWorldM.field_C720 c610
@@ -115854,6 +118170,9 @@ member-unverified hkAlignSceneToNodeOptions.field_B4
 member-unverified hkAlignSceneToNodeOptions.field_B8
 member-unverified hkAlignSceneToNodeOptions.field_C0
 member-unverified hkAlignSceneToNodeOptions.field_C4
+member-unverified hkArray.capacityAndFlags
+member-unverified hkArray.data
+member-unverified hkArray.size
 member-unverified hkArrayStreamWriter.field_108
 member-unverified hkArrayStreamWriter.field_110
 member-unverified hkArrayStreamWriter.field_114
@@ -116183,6 +118502,7 @@ member-unverified hkMemoryResourceHandle.field_B4
 member-unverified hkMemoryResourceHandle.field_B8
 member-unverified hkMemoryResourceHandle.field_C0
 member-unverified hkMemoryResourceHandle.field_C4
+member-unverified hkMemoryRouter.heap
 member-unverified hkMemoryStreamReader.field_108
 member-unverified hkMemoryStreamReader.field_110
 member-unverified hkMemoryStreamReader.field_114
@@ -116410,9 +118730,13 @@ member-unverified hkProductFeatures.field_B4
 member-unverified hkProductFeatures.field_B8
 member-unverified hkProductFeatures.field_C0
 member-unverified hkProductFeatures.field_C4
+member-unverified hkQsTransform.translation
 member-unverified hkQuaternion.w
+member-unverified hkQuaternion.x
 member-unverified hkQuaternion.y
 member-unverified hkQuaternion.z
+member-unverified hkReferencedObject.memSizeAndFlags
+member-unverified hkReferencedObject.referenceCount
 member-unverified hkReferencedObjectLock.field_108
 member-unverified hkReferencedObjectLock.field_110
 member-unverified hkReferencedObjectLock.field_114
@@ -116613,6 +118937,9 @@ member-unverified hkStreamWriter.field_B4
 member-unverified hkStreamWriter.field_B8
 member-unverified hkStreamWriter.field_C0
 member-unverified hkStreamWriter.field_C4
+member-unverified hkStridedVertices.numVertices
+member-unverified hkStridedVertices.striding
+member-unverified hkStridedVertices.vertices
 member-unverified hkSubStreamWriter.field_108
 member-unverified hkSubStreamWriter.field_110
 member-unverified hkSubStreamWriter.field_114
@@ -116714,6 +119041,7 @@ member-unverified hkTrackerTypeTreeTextCache.field_B8
 member-unverified hkTrackerTypeTreeTextCache.field_C0
 member-unverified hkTrackerTypeTreeTextCache.field_C4
 member-unverified hkVector4.w
+member-unverified hkVector4.x
 member-unverified hkVector4.y
 member-unverified hkVector4.z
 member-unverified hkVersionPatchManager.field_108
@@ -117561,6 +119889,10 @@ member-unverified hkbFootIkDriver.field_B4
 member-unverified hkbFootIkDriver.field_B8
 member-unverified hkbFootIkDriver.field_C0
 member-unverified hkbFootIkDriver.field_C4
+member-unverified hkbFootIkDriver::InternalLeg.ankleTargetMS
+member-unverified hkbFootIkDriver::InternalLeg.groundHeight
+member-unverified hkbFootIkDriver::InternalLeg.hit
+member-unverified hkbFootIkDriver::InternalLeg.legSolver
 member-unverified hkbFootIkDriverInfo.field_108
 member-unverified hkbFootIkDriverInfo.field_110
 member-unverified hkbFootIkDriverInfo.field_114
@@ -117571,13 +119903,30 @@ member-unverified hkbFootIkDriverInfo.field_B4
 member-unverified hkbFootIkDriverInfo.field_B8
 member-unverified hkbFootIkDriverInfo.field_C0
 member-unverified hkbFootIkDriverInfo.field_C4
+member-unverified hkbFootIkDriverInfoLeg.ankleIndex
+member-unverified hkbFootIkDriverInfoLeg.footEndLS
+member-unverified hkbFootIkDriverInfoLeg.footPlantedAnkleHeightMS
+member-unverified hkbFootIkDriverInfoLeg.footRaisedAnkleHeightMS
+member-unverified hkbFootIkDriverInfoLeg.hipIndex
+member-unverified hkbFootIkDriverInfoLeg.kneeAxisLS
+member-unverified hkbFootIkDriverInfoLeg.kneeIndex
+member-unverified hkbFootIkDriverInfoLeg.maxAnkleAngleDegrees
+member-unverified hkbFootIkDriverInfoLeg.maxAnkleHeightMS
+member-unverified hkbFootIkDriverInfoLeg.maxKneeAngleDegrees
+member-unverified hkbFootIkDriverInfoLeg.minAnkleHeightMS
+member-unverified hkbFootIkDriverInfoLeg.minKneeAngleDegrees
+member-unverified hkbFootIkDriverInfoLeg.prevAnkleRotLS
 member-unverified hkbFootIkGains.alignWorldFromModelGain
+member-unverified hkbFootIkGains.ankleOrientationGain
+member-unverified hkbFootIkGains.errorUpDownBias
 member-unverified hkbFootIkGains.footPlantedGain
+member-unverified hkbFootIkGains.footRaisedGain
 member-unverified hkbFootIkGains.footUnlockGain
 member-unverified hkbFootIkGains.groundAscendingGain
 member-unverified hkbFootIkGains.groundDescendingGain
 member-unverified hkbFootIkGains.hipOrientationGain
 member-unverified hkbFootIkGains.maxKneeAngleDifference
+member-unverified hkbFootIkGains.onOffGain
 member-unverified hkbFootIkGains.worldFromModelFeedbackGain
 member-unverified hkbFootIkModifier.field_108
 member-unverified hkbFootIkModifier.field_110
@@ -118374,6 +120723,8 @@ member-unverified hkpAction.field_B4
 member-unverified hkpAction.field_B8
 member-unverified hkpAction.field_C0
 member-unverified hkpAction.field_C4
+member-unverified hkpAllCdPointCollector.field_228
+member-unverified hkpAllRayHitTempCollector.field_10
 member-unverified hkpAllRayHitTempCollector.field_100
 member-unverified hkpAllRayHitTempCollector.field_120
 member-unverified hkpAllRayHitTempCollector.field_130
@@ -118691,6 +121042,7 @@ member-unverified hkpCogWheelConstraintData.field_B4
 member-unverified hkpCogWheelConstraintData.field_B8
 member-unverified hkpCogWheelConstraintData.field_C0
 member-unverified hkpCogWheelConstraintData.field_C4
+member-unverified hkpCollidable.collisionFilterInfo
 member-unverified hkpCollidable.shape
 member-unverified hkpCollidableMediator.field_108
 member-unverified hkpCollidableMediator.field_110
@@ -118962,6 +121314,8 @@ member-unverified hkpConvexTransformShapeBase.field_B4
 member-unverified hkpConvexTransformShapeBase.field_B8
 member-unverified hkpConvexTransformShapeBase.field_C0
 member-unverified hkpConvexTransformShapeBase.field_C4
+member-unverified hkpConvexVerticesShape::BuildConfig.maxVertices
+member-unverified hkpConvexVerticesShape::BuildConfig.shrinkByConvexRadius
 member-unverified hkpCylinderShape.field_108
 member-unverified hkpCylinderShape.field_110
 member-unverified hkpCylinderShape.field_114
@@ -119958,6 +122312,7 @@ member-unverified hkpSerializedDisplayRbTransforms.field_B4
 member-unverified hkpSerializedDisplayRbTransforms.field_B8
 member-unverified hkpSerializedDisplayRbTransforms.field_C0
 member-unverified hkpSerializedDisplayRbTransforms.field_C4
+member-unverified hkpShape.memSizeAndFlags
 member-unverified hkpShape.referenceCount
 member-unverified hkpShapeCollection.field_108
 member-unverified hkpShapeCollection.field_110
@@ -121027,10 +123382,22 @@ member-missing std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_dc2c6e289
 member-missing std::basic_filebuf<char,std::char_traits<char>_>.__vftable
 member-missing std::basic_ifstream<char,std::char_traits<char>_>.__vftable_B0
 member-missing std::basic_ostringstream<char,std::char_traits<char>,std::allocator<char>_>.__vftable_88
+member-unverified std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_>.field_70
+slot-unverified ActivateHandler[0].2
 slot-unverified ActivateHandler[0].4
-slot ActivateHandler[0].6 4
+slot-unverified ActivateHandler[0].5
+slot-unverified ActivateHandler[0].6
 slot-unverified ActivateHandler[0].7
 slot-unverified ActivateHandler[0].8
+slot-unverified Actor[b8].1
+slot-unverified Actor[b8].2
+slot-unverified Actor[b8].3
+slot-unverified Actor[b8].4
+slot-unverified Actor[b8].5
+slot-unverified Actor[b8].6
+slot-unverified Actor[b8].7
+slot-unverified Actor[d0].1
+slot-unverified Actor[d8].1
 slot-missing AmiiboEvent[0].0
 slot-missing AmiiboEvent[0].1
 slot-missing AmiiboEvent[0].2
@@ -121051,7 +123418,7 @@ slot-missing ArrowScroller[0].d
 slot-unverified AttackBlockHandler[0].2
 slot-unverified AttackBlockHandler[0].4
 slot-missing AttackBlockHandler[0].5
-slot AttackBlockHandler[0].7 5
+slot-unverified AttackBlockHandler[0].7
 slot-unverified AttackBlockHandler[0].8
 slot-missing AutoMoveHandler[0].2
 slot-missing AutoMoveHandler[0].3
@@ -121173,10 +123540,17 @@ slot-missing BSPlatform::BSUserContentSearcherAgent[0].d
 slot-missing BSPlatform::BSUserContentSearcherAgent[0].e
 slot-missing BSPlatform::BSUserContentSearcherAgent[0].f
 slot-unverified BSResource::_anon_5F811FAA::LooseFileAsyncStream[30].0
+slot-unverified BSResource::_anon_5F811FAA::LooseFileAsyncStream[30].2
+slot-unverified BSResource::_anon_5F811FAA::LooseFileAsyncStream[30].5
 slot-unverified BSResource::_anon_5F811FAA::LooseFileAsyncStream[30].a
 slot-unverified BSResource::_anon_5F811FAA::LooseFileStream[30].0
 slot-unverified BSResource::_anon_5F811FAA::LooseFileStream[30].1
+slot-unverified BSResource::_anon_5F811FAA::LooseFileStream[30].2
+slot-unverified BSResource::_anon_5F811FAA::LooseFileStream[30].5
+slot-unverified BSResource::_anon_5F811FAA::LooseFileStream[30].6
 slot-unverified BSResource::_anon_5F811FAA::LooseFileStream[30].7
+slot-unverified BSResource::_anon_5F811FAA::LooseFileStream[30].8
+slot-unverified BSResource::_anon_5F811FAA::LooseFileStream[30].a
 slot-missing BSResource::_anon_5F811FAA::LooseFileStreamBase[0].0
 slot-unverified BSSaveDataSystemUtility[0].5
 slot-unverified BSSaveDataSystemUtility[0].6
@@ -121184,18 +123558,18 @@ slot-unverified BSSaveDataSystemUtility[0].7
 slot-unverified BSSaveDataSystemUtility[0].8
 slot-unverified BSSaveDataSystemUtility[0].9
 slot-unverified BSSaveDataSystemUtility[0].a
-slot BSSaveDataSystemUtility[0].b 5
-slot BSSaveDataSystemUtility[0].c 1
-slot BSSaveDataSystemUtility[0].d 7
-slot BSSaveDataSystemUtility[0].e 8
+slot-unverified BSSaveDataSystemUtility[0].b
+slot-unverified BSSaveDataSystemUtility[0].c
+slot-unverified BSSaveDataSystemUtility[0].d
+slot-unverified BSSaveDataSystemUtility[0].e
 slot-unverified BSSaveDataSystemUtility[0].f
-slot BSSaveDataSystemUtility[0].10 a
-slot BSSaveDataSystemUtility[0].11 b
-slot BSSaveDataSystemUtility[0].12 c
-slot BSSaveDataSystemUtility[0].13 d
-slot BSSaveDataSystemUtility[0].14 e
-slot BSSaveDataSystemUtility[0].15 f
-slot BSSaveDataSystemUtility[0].16 10
+slot-unverified BSSaveDataSystemUtility[0].10
+slot-unverified BSSaveDataSystemUtility[0].11
+slot-unverified BSSaveDataSystemUtility[0].12
+slot-unverified BSSaveDataSystemUtility[0].13
+slot-unverified BSSaveDataSystemUtility[0].14
+slot-unverified BSSaveDataSystemUtility[0].15
+slot-unverified BSSaveDataSystemUtility[0].16
 slot-unverified BSSaveDataSystemUtility[0].17
 slot-missing BSScaleformMovieLoadTask[0].9
 slot-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,unsigned_int>[0].0
@@ -121295,21 +123669,21 @@ slot-unverified BSWin32SaveDataSystemUtility[0].7
 slot-unverified BSWin32SaveDataSystemUtility[0].8
 slot-unverified BSWin32SaveDataSystemUtility[0].9
 slot-unverified BSWin32SaveDataSystemUtility[0].a
-slot BSWin32SaveDataSystemUtility[0].b 5
-slot BSWin32SaveDataSystemUtility[0].c 6
-slot BSWin32SaveDataSystemUtility[0].d 7
-slot BSWin32SaveDataSystemUtility[0].e 8
-slot BSWin32SaveDataSystemUtility[0].f 9
-slot BSWin32SaveDataSystemUtility[0].10 a
-slot BSWin32SaveDataSystemUtility[0].11 b
-slot BSWin32SaveDataSystemUtility[0].12 c
-slot BSWin32SaveDataSystemUtility[0].13 d
-slot BSWin32SaveDataSystemUtility[0].14 e
-slot BSWin32SaveDataSystemUtility[0].15 f
-slot BSWin32SaveDataSystemUtility[0].16 10
-slot BSWin32SaveDataSystemUtility[0].17 11
+slot-unverified BSWin32SaveDataSystemUtility[0].b
+slot-unverified BSWin32SaveDataSystemUtility[0].c
+slot-unverified BSWin32SaveDataSystemUtility[0].d
+slot-unverified BSWin32SaveDataSystemUtility[0].e
+slot-unverified BSWin32SaveDataSystemUtility[0].f
+slot-unverified BSWin32SaveDataSystemUtility[0].10
+slot-unverified BSWin32SaveDataSystemUtility[0].11
+slot-unverified BSWin32SaveDataSystemUtility[0].12
+slot-unverified BSWin32SaveDataSystemUtility[0].13
+slot-unverified BSWin32SaveDataSystemUtility[0].14
+slot-unverified BSWin32SaveDataSystemUtility[0].15
+slot-unverified BSWin32SaveDataSystemUtility[0].16
+slot-unverified BSWin32SaveDataSystemUtility[0].17
 slot-unverified BSWin32SystemUtility[0].2
-slot BSWin32SystemUtility[0].3 4
+slot-unverified BSWin32SystemUtility[0].3
 slot-unverified BSWin32SystemUtility[0].4
 slot-unverified BSWin32SystemUtility[0].7
 slot-unverified BSWin32SystemUtility[0].9
@@ -121343,6 +123717,16 @@ slot-missing CCallbackImpl<8>[0].0
 slot-missing CCallbackImpl<8>[0].1
 slot-missing CCallbackImpl<8>[0].2
 slot-missing CCallbackImpl<8>[0].3
+slot-unverified Character[b8].1
+slot-unverified Character[b8].2
+slot-unverified Character[b8].3
+slot-unverified Character[b8].4
+slot-unverified Character[b8].5
+slot-unverified Character[b8].6
+slot-unverified Character[b8].7
+slot-unverified Character[d0].1
+slot-unverified Character[d8].1
+slot-unverified ClickHandler[0].2
 slot-missing ClickHandler[0].3
 slot-missing ClickHandler[0].4
 slot ClickHandler[0].5 3
@@ -121350,6 +123734,7 @@ slot ClickHandler[0].6 4
 slot ClickHandler[0].7 5
 slot-missing ConfirmResetCallback[0].0
 slot-missing ConfirmResetCallback[0].1
+slot-unverified ConsoleOpenHandler[0].2
 slot-missing ConsoleOpenHandler[0].3
 slot-missing ConsoleOpenHandler[0].4
 slot ConsoleOpenHandler[0].5 3
@@ -121358,6 +123743,7 @@ slot ConsoleOpenHandler[0].7 5
 slot-missing ContentMenu[0].0
 slot-missing ContentMenu::errorCallback[0].0
 slot-missing ContentMenu::errorCallback[0].1
+slot-unverified CursorMenu[30].2
 slot-missing CursorMenu[30].3
 slot-missing CursorMenu[30].4
 slot CursorMenu[30].5 3
@@ -121381,6 +123767,7 @@ slot-missing DescriptionBox[0].a
 slot-missing DescriptionBox[0].b
 slot-missing DescriptionBox[0].c
 slot-missing DescriptionBox[0].d
+slot-unverified DirectionHandler[0].2
 slot-missing DirectionHandler[0].3
 slot-missing DirectionHandler[0].4
 slot DirectionHandler[0].5 3
@@ -121453,7 +123840,9 @@ slot FreeCameraState[20].5 3
 slot FreeCameraState[20].6 4
 slot-missing FxResponseArgs<15>[0].0
 slot-missing FxResponseArgs<15>[0].1
+slot-unverified HeldStateHandler[0].2
 slot-unverified HeldStateHandler[0].4
+slot-unverified HeldStateHandler[0].5
 slot-unverified HeldStateHandler[0].7
 slot-unverified HeldStateHandler[0].8
 slot-missing HorseCameraState[20].2
@@ -121508,11 +123897,13 @@ slot-missing InfiniteList[0].c
 slot-missing InfiniteList[0].d
 slot-missing InstalledContent[0].0
 slot-missing InstalledContent[0].1
+slot-unverified Inventory3DManager[0].2
 slot-missing Inventory3DManager[0].3
 slot-missing Inventory3DManager[0].4
 slot Inventory3DManager[0].5 3
 slot Inventory3DManager[0].6 4
 slot Inventory3DManager[0].7 5
+slot-unverified JournalMenu[30].2
 slot-missing JournalMenu[30].3
 slot-missing JournalMenu[30].4
 slot JournalMenu[30].5 3
@@ -121668,12 +124059,14 @@ slot-missing LoadOrder_SSB[0].b
 slot-missing LoadOrder_SSB[0].c
 slot-missing LoadOrder_SSB[0].d
 slot-missing LoadOrder_SSB[0].e
+slot-unverified LocalMapMenu::InputHandler[0].2
 slot-missing LocalMapMenu::InputHandler[0].3
 slot-missing LocalMapMenu::InputHandler[0].4
 slot LocalMapMenu::InputHandler[0].5 3
 slot LocalMapMenu::InputHandler[0].6 4
 slot LocalMapMenu::InputHandler[0].7 5
 slot-unverified LockpickingMenu[0].8
+slot-unverified LockpickingMenu[30].2
 slot-missing LockpickingMenu[30].3
 slot-missing LockpickingMenu[30].4
 slot LockpickingMenu[30].5 3
@@ -121697,21 +124090,25 @@ slot-missing LookHandler[0].3
 slot LookHandler[0].4 2
 slot LookHandler[0].5 3
 slot LookHandler[0].6 4
+slot-unverified MapInputHandler[0].2
 slot-missing MapInputHandler[0].3
 slot-missing MapInputHandler[0].4
 slot MapInputHandler[0].5 3
 slot MapInputHandler[0].6 4
 slot MapInputHandler[0].7 5
+slot-unverified MapLookHandler[0].2
 slot-missing MapLookHandler[0].3
 slot-missing MapLookHandler[0].4
 slot MapLookHandler[0].5 3
 slot MapLookHandler[0].6 4
 slot MapLookHandler[0].7 5
+slot-unverified MapMoveHandler[0].2
 slot-missing MapMoveHandler[0].3
 slot-missing MapMoveHandler[0].4
 slot MapMoveHandler[0].5 3
 slot MapMoveHandler[0].6 4
 slot MapMoveHandler[0].7 5
+slot-unverified MapZoomHandler[0].2
 slot-missing MapZoomHandler[0].3
 slot-missing MapZoomHandler[0].4
 slot MapZoomHandler[0].5 3
@@ -121784,6 +124181,7 @@ slot-missing MarketplaceMenu::InputHandler[0].6
 slot-missing MarketplaceMenu::InputHandler[0].7
 slot-missing MarketplaceMenu::errorCallback[0].0
 slot-missing MarketplaceMenu::errorCallback[0].1
+slot-unverified MenuEventHandler[0].2
 slot-missing MenuEventHandler[0].3
 slot-missing MenuEventHandler[0].4
 slot MenuEventHandler[0].5 3
@@ -121816,11 +124214,13 @@ slot-missing MissingContent[0].11
 slot-missing MissingContent[0].12
 slot-missing MissingContent[0].13
 slot-missing MissingContent[0].14
+slot-unverified MistMenu[48].2
 slot-missing MistMenu[48].3
 slot-missing MistMenu[48].4
 slot MistMenu[48].5 3
 slot MistMenu[48].6 4
 slot MistMenu[48].7 5
+slot-unverified ModManagerMenu[30].2
 slot-missing ModManagerMenu[30].3
 slot-missing ModManagerMenu[30].4
 slot ModManagerMenu[30].5 3
@@ -126774,10 +129174,19 @@ slot-missing Options[0].13
 slot-missing Options[0].14
 slot-unverified PlayerCharacter[a0].0
 slot-missing PlayerCharacter[b8].0
+slot-unverified PlayerCharacter[b8].1
+slot-unverified PlayerCharacter[b8].2
+slot-unverified PlayerCharacter[b8].3
+slot-unverified PlayerCharacter[b8].4
+slot-unverified PlayerCharacter[b8].5
+slot-unverified PlayerCharacter[b8].6
+slot-unverified PlayerCharacter[b8].7
 slot-missing PlayerCharacter[c0].0
 slot-unverified PlayerCharacter[c0].4
 slot-missing PlayerCharacter[d0].0
+slot-unverified PlayerCharacter[d0].1
 slot-missing PlayerCharacter[d8].0
+slot-unverified PlayerCharacter[d8].1
 slot-unverified PlayerCharacter[e0].0
 slot-missing PlayerCharacter[2b8].0
 slot-missing PlayerCharacter[2b8].1
@@ -126800,6 +129209,7 @@ slot-missing QuickSaveLoadHandler[0].4
 slot QuickSaveLoadHandler[0].5 3
 slot QuickSaveLoadHandler[0].6 4
 slot QuickSaveLoadHandler[0].7 5
+slot-unverified RaceSexMenu[30].2
 slot-missing RaceSexMenu[30].3
 slot-missing RaceSexMenu[30].4
 slot RaceSexMenu[30].5 3
@@ -126810,10 +129220,13 @@ slot-missing ReadyWeaponHandler[0].3
 slot ReadyWeaponHandler[0].4 2
 slot ReadyWeaponHandler[0].5 3
 slot ReadyWeaponHandler[0].6 4
+slot-unverified RunHandler[0].2
 slot-unverified RunHandler[0].4
-slot RunHandler[0].6 4
+slot-unverified RunHandler[0].5
+slot-unverified RunHandler[0].6
 slot-unverified RunHandler[0].7
 slot-unverified RunHandler[0].8
+slot-unverified ScreenshotHandler[0].2
 slot-missing ScreenshotHandler[0].3
 slot-missing ScreenshotHandler[0].4
 slot ScreenshotHandler[0].5 3
@@ -126965,10 +129378,13 @@ slot-missing SneakHandler[0].3
 slot SneakHandler[0].4 2
 slot SneakHandler[0].5 3
 slot SneakHandler[0].6 4
+slot-unverified SprintHandler[0].2
 slot-unverified SprintHandler[0].4
-slot SprintHandler[0].6 4
+slot-unverified SprintHandler[0].5
+slot-unverified SprintHandler[0].6
 slot-unverified SprintHandler[0].7
 slot-unverified SprintHandler[0].8
+slot-unverified StatsMenu[30].2
 slot-missing StatsMenu[30].3
 slot-missing StatsMenu[30].4
 slot StatsMenu[30].5 3
@@ -127013,8 +129429,10 @@ slot-missing ThirdPersonState[20].3
 slot ThirdPersonState[20].4 2
 slot ThirdPersonState[20].5 3
 slot ThirdPersonState[20].6 4
+slot-unverified TogglePOVHandler[0].2
 slot-unverified TogglePOVHandler[0].4
-slot TogglePOVHandler[0].6 4
+slot-unverified TogglePOVHandler[0].5
+slot-unverified TogglePOVHandler[0].6
 slot-unverified TogglePOVHandler[0].7
 slot-unverified TogglePOVHandler[0].8
 slot-missing ToggleRunHandler[0].2
@@ -129689,6 +132107,8 @@ slot-missing std::basic_filebuf<char,std::char_traits<char>_>[0].d
 slot-missing std::basic_filebuf<char,std::char_traits<char>_>[0].e
 slot-missing std::basic_ifstream<char,std::char_traits<char>_>[b0].0
 slot-missing std::basic_ostringstream<char,std::char_traits<char>,std::allocator<char>_>[88].0
+size-unverified AIProcess
+size-unverified AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
 size-unverified AStarSearch<BSFastNavmeshTriLocation,void*___ptr64,3>
 size-unverified AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
 size-unverified AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
@@ -129748,7 +132168,7 @@ size-unverified ArrayOfTuplesImplementation
 size-unverified ArrayOfTuplesImplementation::View
 size-unverified ArrowAttachHandler
 size-unverified ArrowDetachHandler
-size ArrowProjectile 1f0
+size-unverified ArrowProjectile
 size-unverified ArrowReleaseHandler
 size-missing ArrowScroller
 size-unverified Atmosphere
@@ -130924,6 +133344,7 @@ size-unverified BGSBehaviorGraphModel
 size-unverified BGSBipedModelList
 size-unverified BGSBipedObjectForm
 size-unverified BGSBlockBashData
+size-unverified BGSBodyPart
 size-unverified BGSCameraPath
 size-unverified BGSCollisionLayer
 size-unverified BGSColorForm
@@ -131145,7 +133566,7 @@ size-unverified BGSReferenceEffect
 size-unverified BGSReverbParameters
 size-unverified BGSSaveFormBuffer
 size-unverified BGSSaveGameBuffer
-size BGSSaveLoadManager 3d0
+size-unverified BGSSaveLoadManager
 size-unverified BGSSaveLoadManager::Thread
 size-unverified BGSSaveLoadManagerEvent
 size-unverified BGSSaveLoadStatsMap
@@ -131158,6 +133579,7 @@ size-unverified BGSSceneInfo::TextureUse
 size-unverified BGSShaderParticleGeometryData
 size-unverified BGSSkillPerkTreeNode
 size-unverified BGSSkinForm
+size-unverified BGSSoundCategory
 size-unverified BGSSoundDescriptor
 size-unverified BGSSoundDescriptorForm
 size-unverified BGSSoundOutput
@@ -131240,7 +133662,7 @@ size-unverified BSAnimNotes
 size-unverified BSAnimationGraphChannel
 size-unverified BSAnimationGraphEvent
 size-unverified BSAnimationGraphLoadScrapper
-size BSAnimationGraphManager b0
+size-unverified BSAnimationGraphManager
 size-unverified BSArrowConstructor
 size-unverified BSAttachTechniques::AttachTechniqueInput
 size-unverified BSAttachTechniques::BSAttachTechnique
@@ -131281,12 +133703,15 @@ size-unverified BSDiskConstructor
 size-unverified BSDistTriggerModifier
 size-unverified BSDistantObjectLargeRefExtraData
 size-unverified BSDoorHavokController
+size-unverified BSEffectShaderMaterial
 size-unverified BSEffectShaderPropertyColorController
 size-unverified BSEffectShaderPropertyFloatController
 size-unverified BSEventEveryNEventsModifier
 size-unverified BSEventOnDeactivateModifier
 size-unverified BSEventOnFalseToTrueModifier
 size-unverified BSExternalAudioIO::ExternalIOInterface
+size-unverified BSExtraData
+size-unverified BSFaceGenAnimationData
 size-unverified BSFaceGenBaseMorphExtraData
 size-unverified BSFaceGenDB::TRI::QueuedHandles
 size-unverified BSFaceGenKeyframe
@@ -131452,20 +133877,20 @@ size-unverified BSPathingStreamRead
 size-unverified BSPathingStreamSimpleBufferRead
 size-unverified BSPathingStreamSimpleBufferWrite
 size-unverified BSPathingStreamWrite
-size BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_> 80
+size-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>
 size-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>
 size-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId)>_>
 size-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_>
-size BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64)>_> 80
+size-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64)>_>
 size-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSEntitlement,BSTArrayHeapAllocator>_const&___ptr64)>_>
-size BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_> 80
-size BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_> 80
+size-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_>
+size-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_>
 size-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContentCollection,BSTArrayHeapAllocator>_const&___ptr64)>_>
 size-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::ContentIdResolution,BSTArrayHeapAllocator>_const&___ptr64)>_>
 size-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<unsigned___int64,BSTArrayHeapAllocator>_const&___ptr64)>_>
 size-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>
 size-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64,char_const*___ptr64)>_>
-size BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,int)>_> 80
+size-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,int)>_>
 size-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,std::shared_ptr<void>,unsigned___int64)>_>
 size-unverified BSPlatform::BSAsyncRequestBase
 size-missing BSPlatform::BSBNETFile::download
@@ -131531,7 +133956,7 @@ size-unverified BSResource::Stream
 size-unverified BSResource::StreamBase
 size-unverified BSResource::_anon_5F811FAA::LooseFileAsyncBase::FunctorType
 size-unverified BSResource::_anon_5F811FAA::LooseFileAsyncChild
-size BSResource::_anon_5F811FAA::LooseFileAsyncStream 88
+size-unverified BSResource::_anon_5F811FAA::LooseFileAsyncStream
 size-unverified BSResource::_anon_5F811FAA::LooseFileSBTraits::AsyncFunctor
 size-unverified BSResource::_anon_5F811FAA::LooseFileStream
 size-missing BSResource::_anon_5F811FAA::LooseFileStreamBase
@@ -131568,7 +133993,6 @@ size-unverified BSScrapMap<int,TEX_SWAP*___ptr64>
 size-unverified BSScrapMap<unsigned_int,CombatBehaviorThread*___ptr64>
 size-unverified BSScrapMap<unsigned_int,bool>
 size-unverified BSScrapMap<unsigned_int,unsigned_int>
-size-unverified BSScript::Array
 size-unverified BSScript::ByteCode::PackedInstructionStream::InstructionFunctor
 size-unverified BSScript::CompiledScriptLoader
 size-unverified BSScript::ErrorLogger
@@ -131601,7 +134025,6 @@ size-unverified BSScript::Internal::StackMapEntry
 size-unverified BSScript::Internal::SuspendedStack
 size-unverified BSScript::Internal::_anon_16AAB8A9::OneVariableArgument
 size-unverified BSScript::Internal::_anon_16AAB8A9::ZeroArguments
-size-unverified BSScript::NF_util::ParamInfo
 size-unverified BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>
 size-unverified BSScript::NativeFunction0<ActiveEffect,EffectSetting*___ptr64>
 size-unverified BSScript::NativeFunction0<ActiveEffect,void>
@@ -131893,7 +134316,6 @@ size-unverified BSScript::UnlinkedTypes::_anon_E61FEF15::CollectStringsFunctor
 size-unverified BSScript::UnlinkedTypes::_anon_E61FEF15::CountInstructionInfo
 size-unverified BSScript::UnlinkedTypes::_anon_E61FEF15::UnpackInstructionsFunctor
 size-unverified BSScript::UnlinkedTypes::_anon_E61FEF15::WriteInstructionsFunctor
-size-unverified BSScript::Variable
 size-unverified BSScript::ZeroFunctionArguments
 size-unverified BSScript::_anon_5199D9EE::VMTypeResolveFunctor
 size-unverified BSScript::_anon_D7688862::LinkerConvertTypeFunctor
@@ -131922,7 +134344,6 @@ size-unverified BSStorage
 size-unverified BSStream
 size-unverified BSStreamParserData
 size-unverified BSStreamSystemUtility
-size-unverified BSStringPool::Entry
 size-unverified BSStringPool::IterationCallback
 size-unverified BSSynchronizedClipGenerator
 size-unverified BSSynchronizedClipGenerator::hkbDefaultSynchronizedScene
@@ -132633,6 +135054,7 @@ size-unverified BSXFlags
 size-unverified BShkFloatController
 size-unverified BShkNonTransformController
 size-unverified BShkVisibilityController
+size-unverified BShkbAnimationGraph
 size-unverified BShkbHkxDB::DBData
 size-unverified BShkbHkxDB::ProjectDBData
 size-unverified BShkbHkxDB::StreamAdaptor
@@ -132643,7 +135065,7 @@ size-unverified BSiStateTaggingGenerator
 size-unverified BSiStateTaggingUtils::BSiStateTaggingStateListener
 size-unverified BackgroundProcessThread
 size-unverified BarrierPhantomCallbackShape
-size BarrierProjectile 1f8
+size-unverified BarrierProjectile
 size-unverified BarterMenu
 size-missing BaseExtraList
 size-unverified BaseFormComponent
@@ -132651,9 +135073,10 @@ size-unverified BasicArrayImplementation<char*___ptr64,10>
 size-unverified BasicArrayImplementation<float,3>
 size-unverified BasicArrayImplementation<hkDataObjectImpl*___ptr64,8>
 size-unverified BasicArrayImplementation<unsigned_char,1>
-size BeamProjectile 240
+size-unverified BeamProjectile
 size-unverified BedEnterHandler
 size-unverified BedFurnitureExitHandler
+size-unverified BipedAnim
 size-unverified BookMenu
 size-unverified BowDrawnHandler
 size-unverified BowReleaseHandler
@@ -132671,17 +135094,16 @@ size-missing CCallbackImpl<8>
 size-unverified CachedRaycastData
 size-unverified Calendar
 size-unverified CameraCasterHolder
-size-unverified CameraMatrixEntry
 size-unverified CameraOverrideStartHandler
 size-unverified CameraOverrideStopHandler
 size-unverified CameraShakeHandler
 size-unverified CellMopp::HeightFieldWeldingTasklet
-size ChainExplosion 1a0
+size-unverified ChainExplosion
 size-unverified ChairEnterHandler
 size-unverified ChairFurnitureExitHandler
 size-unverified ChangeFormMap
 size-unverified CharEvent
-size Character 2b0
+size-unverified Character
 size-unverified CharacterCollisionHandler
 size-unverified CharacterCollisionMessagePlayerAdapter
 size-unverified CheckGoalReachedFunctor
@@ -133109,7 +135531,7 @@ size-unverified CombatMagicItemSkillChecker
 size-unverified CombatMeleeAimController
 size-unverified CombatNavmeshSearch
 size-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>
-size CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard> 228
+size-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>
 size-unverified CombatObject
 size-unverified CombatPath
 size-unverified CombatPathBuilder
@@ -133388,7 +135810,7 @@ size-unverified ConcreteTempEffectFactory<ModelReferenceEffect,9>
 size-unverified ConcreteTempEffectFactory<ReferenceEffect,8>
 size-unverified ConcreteTempEffectFactory<ShaderReferenceEffect,10>
 size-unverified ConcreteTempEffectFactory<SummonPlacementEffect,11>
-size ConeProjectile 218
+size-unverified ConeProjectile
 size-missing ConfirmResetCallback
 size-unverified Console
 size-unverified ConsoleCommandTask
@@ -133430,6 +135852,7 @@ size-unverified DeathStopHandler
 size-unverified DebugText
 size-unverified DecapitateHandler
 size-unverified DepthStencilProperties
+size-unverified DepthStencilRecord
 size-missing DescriptionBox
 size-unverified DetectSignOut
 size-unverified DetectionCollector
@@ -133459,7 +135882,7 @@ size-unverified EventSourceHolder_TES
 size-unverified EventSourceHolder_User
 size-unverified ExitCartBeginHandler
 size-unverified ExitCartEndHandler
-size Explosion 140
+size-unverified Explosion
 size-unverified ExtraAction
 size-unverified ExtraActivateLoopSound
 size-unverified ExtraActivateRef
@@ -133548,7 +135971,7 @@ size-unverified ExtraRoom
 size-unverified ExtraRoomRefData
 size-unverified ExtraSavedAnimation
 size-unverified ExtraSavedHavokData
-size ExtraScriptedAnimDependence 48
+size-unverified ExtraScriptedAnimDependence
 size-unverified ExtraSeenData
 size-unverified ExtraSound
 size-unverified ExtraSpawnContainer
@@ -133580,7 +136003,7 @@ size-unverified FindTriangleForLocationFilterCheckDeltaZ
 size-unverified FindTriangleForLocationWaterFilter
 size-unverified FinishActiveEffectVisitor
 size-unverified FirstPersonRenderContext
-size FlameProjectile 1e0
+size-unverified FlameProjectile
 size-unverified FlightActionEndHandler
 size-unverified FlightActionEntryEndHandler
 size-unverified FlightActionGrabHandler
@@ -133596,6 +136019,7 @@ size-unverified FlightPerchingHandler
 size-unverified FlightTakeOffHandler
 size-unverified FrameState
 size-unverified FreeCameraState
+size-unverified FurnitureCameraState
 size-unverified FurnitureMarker
 size-unverified FutBinaryFileC
 size-unverified FxDelegate
@@ -133624,7 +136048,6 @@ size-unverified GFxLogBase<GFxLog>
 size-unverified GFxMovieView
 size-unverified GFxState
 size-unverified GFxTranslator
-size-unverified GFxValue
 size-unverified GFxValue::DisplayInfo
 size-unverified GFxViewport
 size-unverified GFxZlibSupport
@@ -133648,7 +136071,7 @@ size-unverified GetMagicItemDescriptionFunctor
 size-unverified GetUpEndHandler
 size-unverified GetUpStartHandler
 size-unverified GiftMenu
-size GrenadeProjectile 1e8
+size-unverified GrenadeProjectile
 size-unverified GridArray
 size-unverified GridCellArray
 size-unverified GuardPackageData
@@ -133656,6 +136079,7 @@ size-unverified HUDChargeMeter
 size-unverified HUDData
 size-unverified HUDMenu
 size-unverified HUDMeter
+size-unverified HUDNotificationEntry
 size-unverified HUDNotifications
 size-unverified HUDObject
 size-unverified HandleEntry
@@ -133667,7 +136091,7 @@ size-unverified HavokFileStreambufWriter
 size-unverified HavokStreambufFactory
 size-unverified HavokStreambufReader
 size-unverified HavokStreambufWriter
-size Hazard d8
+size-unverified Hazard
 size-unverified HeadTrackingOffHandler
 size-unverified HeadTrackingOnHandler
 size-unverified HealthDamageFunctor
@@ -133846,6 +136270,7 @@ size-unverified InventoryUtils::_anon_3F954FDF::WornHasKeywordVisitor
 size-unverified IronSightsState
 size-unverified IsSpellTargetFunctor
 size-unverified IsSpellTypeTargetFunctor
+size-unverified ItemList
 size-unverified JobListManager::ServingThread
 size-unverified JournalInputMapping::RemapHandler
 size-unverified JournalMenu
@@ -133884,6 +136309,7 @@ size-unverified LevelUpMenu
 size-unverified LightEffect::AttachBestLightVisitor
 size-missing Likes
 size-unverified LineNode
+size-unverified LinkedMapping
 size-unverified LipSynchAnimDB::LipAudioInterface
 size-missing LoadGameDifferentLoadOrderCallBack
 size-missing LoadGameInactiveContentCallBack
@@ -133948,6 +136374,7 @@ size-unverified MenuEventHandler
 size-unverified MenuModeChangeEvent
 size-unverified MenuOpenCloseEvent
 size-unverified MenuOpenHandler
+size-unverified MenuTable
 size-unverified MenuTopicManager
 size-unverified MessageBoxMenu
 size-unverified MessageHandler
@@ -133956,7 +136383,7 @@ size-unverified MiscStatManager::FindStatByCRC
 size-unverified MiscStatManager::IMiscStatVisitor
 size-unverified MiscStatManager::_anon_9E4AB784::RevertStatVisitor
 size-unverified MiscStatManager::_anon_9E4AB784::SaveStatVisitor
-size MissileProjectile 1e0
+size-unverified MissileProjectile
 size-missing MissingContent
 size-unverified MistMenu
 size-unverified MobIterOperator
@@ -134042,6 +136469,7 @@ size-unverified MovementSelectIdleUtils::SelectFirstIdleFilter
 size-unverified MovementStateFollowPath
 size-unverified MovementStateTweener
 size-unverified MovementTweenerAgent
+size-unverified MovementTweenerAgentAnimationDriven
 size-unverified MovementTweenerAgentNodeFollower
 size-unverified MoviePlayer
 size-unverified MultiBoundMarkerData
@@ -134097,6 +136525,7 @@ size-unverified NiBoundingVolume
 size-unverified NiBoxBV
 size-unverified NiBoxCapsuleIntersector
 size-unverified NiBoxSphereIntersector
+size-unverified NiCamera
 size-unverified NiCapsuleBV
 size-unverified NiCapsuleCapsuleIntersector
 size-unverified NiCapsuleSphereIntersector
@@ -134216,6 +136645,7 @@ size-unverified NiSequenceStreamHelper
 size-unverified NiShadeProperty
 size-unverified NiSingleInterpController
 size-unverified NiSkinData
+size-unverified NiSkinData::BoneData
 size-unverified NiSkinPartition
 size-unverified NiSkinPartition::Partition
 size-unverified NiSourceTexture
@@ -134413,9 +136843,10 @@ size-unverified PickNewIdleHandler
 size-unverified PitchOverrideEndHandler
 size-unverified PitchOverrideStartHandler
 size-unverified PlayerBedEnterHandler
+size-unverified PlayerCamera
 size-unverified PlayerCameraTransitionState
 size-unverified PlayerChairEnterHandler
-size PlayerCharacter be0
+size-unverified PlayerCharacter
 size-unverified PlayerControls
 size-unverified PlayerFurnitureExitHandler
 size-unverified PlayerInputHandler
@@ -134467,6 +136898,8 @@ size-unverified RenderPass
 size-unverified RenderStateCache
 size-unverified RenderTargetManager
 size-unverified RenderTargetProperties
+size-unverified RenderTargetRecord
+size-unverified RenderWindow
 size-unverified Renderer
 size-unverified Reset3DMobIterator
 size-unverified ResponseDefinitionMissPolicy<BSTSmartPointer<BSResponse<BSFixedStringCI,Actor,BSFixedStringCI,DoNothingUnhandledPolicy>,BSTSmartPointerIntrusiveRefCount>,BSFixedStringCI>
@@ -134481,9 +136914,12 @@ size-unverified SafeZoneMenu
 size-unverified SaveGameMagicCasterVisitor
 size-unverified SaveLoadMagicCasterVisitor
 size-unverified SaveStorageWrapper
+size-unverified SavedChangeFormRecord
 size-unverified ScaleformFile::MemoryFile
 size-unverified ScrapHeap
 size-unverified ScreenshotHandler
+size-unverified ScriptLineBuffer
+size-unverified ScriptRunContext
 size-unverified ScriptedRefEffect
 size-missing SearchPage
 size-missing SearchResultsPage
@@ -134497,7 +136933,6 @@ size-unverified SettingT<INIPrefSettingCollection>
 size-unverified SettingT<INISettingCollection>
 size-unverified SettingT<RegSettingCollection>
 size-unverified ShaderPropertyLightData
-size-unverified ShadowMapData
 size-unverified ShoutHandler
 size-unverified ShoutMeter
 size-missing SideBar
@@ -134620,7 +137055,7 @@ size-unverified SoundHandle
 size-unverified SoundHandleStatus
 size-unverified SpawnHazardEffect
 size-unverified SpecificItemCollector
-size SpellItem 2a08
+size-unverified SpellItem
 size-unverified SprintHandler
 size-unverified StaggeredStopHandler
 size-unverified StandardItemData
@@ -134648,7 +137083,7 @@ size-unverified SynchronizedQueue<NiPointer<IOTask>_>
 size-missing SynchronizedQueue<TextureCreator::createTask*___ptr64>
 size-unverified SystemEventAdapter
 size-unverified SystemTimerRecord
-size TES 2b8
+size-unverified TES
 size-unverified TES::SystemEventAdapter
 size-unverified TESAIForm
 size-unverified TESActionData
@@ -134665,6 +137100,7 @@ size-unverified TESBookReadEvent
 size-unverified TESBoundAnimObject
 size-unverified TESBoundObject
 size-unverified TESCamera
+size-unverified TESCameraState
 size-unverified TESCellAttachDetachEvent
 size-unverified TESCellFullyLoadedEvent
 size-unverified TESChildCell
@@ -134683,6 +137119,7 @@ size-unverified TESEnterBleedoutEvent
 size-unverified TESEquipEvent
 size-unverified TESEyes
 size-unverified TESFastTravelEndEvent
+size-unverified TESFile
 size-unverified TESFileArray
 size-unverified TESForm
 size-unverified TESFormDeleteEvent
@@ -134718,10 +137155,11 @@ size-unverified TESModelTri
 size-unverified TESMoveAttachDetachEvent
 size-unverified TESObject
 size-unverified TESObjectANIO
-size TESObjectCELL 140
+size-unverified TESObjectCELL
 size-unverified TESObjectCELL::IDecalRefFunctor
+size-unverified TESObjectLAND
 size-unverified TESObjectLoadedEvent
-size TESObjectREFR 98
+size-unverified TESObjectREFR
 size-unverified TESObjectREFRDef::IAliasFunctor
 size-unverified TESObjectREFRDef::ILinkedReferenceFunctor
 size-unverified TESObjectREFRTranslationEvent
@@ -134786,6 +137224,7 @@ size-unverified TargetValueModifierEffect
 size-unverified TaskQueueHolder
 size-unverified TeleportDoorSearch
 size-unverified TempLoadGameBuffer
+size-unverified ThirdPersonState
 size-unverified ThumbstickEvent
 size-unverified TitleSequenceMenu
 size-unverified TogglePOVHandler
@@ -134802,6 +137241,7 @@ size-unverified TweenMenuCameraState
 size-unverified TypeNode
 size-unverified UIBlurManager
 size-unverified UICursor
+size-unverified UIMessage
 size-unverified UIMessageDataPtr<Actor>
 size-unverified UIMessageQueue
 size-unverified UISaveLoadManager
@@ -135233,9 +137673,9 @@ size-unverified bhkUnaryAction
 size-unverified bhkVelocityConstraintMotor
 size-unverified bhkWheelConstraint
 size-unverified bhkWindListener
-size bhkWorld c600
+size-unverified bhkWorld
 size-unverified bhkWorld::bhkConstraintProjector
-size bhkWorldM c630
+size-unverified bhkWorldM
 size-unverified bhkWorldObject
 size-missing bnet::AsyncOperationProxy
 size-unverified bnet::BaseCallback
@@ -137501,8 +139941,8 @@ base-unverified std::basic_stringstream<char,std::char_traits<char>,std::allocat
 base-unverified std::basic_stringstream<char,std::char_traits<char>,std::allocator<char>_>:std::ios_base
 site 19165 7a 7c ff9068040000
 site 26229 0 0 4c8bdc5556
-site-unverified 33007 4ba
-site-unverified 33007 4ca
+site-missing 33007 4ba
+site-missing 33007 4ca
 site 34142 51 51 ff9088030000
 site 34913 e1 e1 e82a1b0000
 site 34913 1f5 18a ff90d8010000
@@ -137524,7 +139964,7 @@ site 37610 78 77 7710
 site-missing 37611 7f
 site 40450 69 69 e8d265e5ff
 site 40476 0 0 4055564883ec78
-site-unverified 40476 bc
+site-missing 40476 bc
 site 40476 c5 123 41838ef400000001 0f1f840000000000
 site 40522 94 94 e8171c5b00
 site 40522 d7 d7 e8d41b5b00
@@ -137542,11 +139982,11 @@ site 55564 0 0 488b0d21c55402e9641dedff
 site 55565 0 0 488b0d11c55402e9a41eedff
 site 68542 3cc 3d8 8b8018010000 8b801801000080e1df
 site 68617 7b 7b e8d00c0000
-site-unverified 77226 275
+site-missing 77226 275
 site 77246 9 9 e8f2045d00
 site 82082 ab5 a14 e8a7400000
 site 107123 106 106 e8d54f98ff
-site-unverified 107139 7fd
+site-missing 107139 7fd
 site-unverified 400445 0
 site-unverified 403340 0
 site 442580 34f 26c e8ff20ffff

@@ -5046,6 +5046,19 @@ impl crate::bhkCharacterControllerCinfo {
     pub fn field_74_ptr(&self) -> *mut u32 { Self::__member_field_74(core::ptr::from_ref(self)) }
 }
 
+impl crate::bhkCharacterPointCollector {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_228(this: *const Self) -> *mut u8 { unsafe { member!(this, "bhkCharacterPointCollector.field_228", 0x228, u8) } }
+    /// `bhkCharacterPointCollector::field_228`, at +0x228 on 1.7.104.
+    #[inline]
+    pub fn field_228(&self) -> u8 { unsafe { Self::__member_field_228(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_228(&mut self, value: u8) { unsafe { Self::__member_field_228(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_228_ptr(&self) -> *mut u8 { Self::__member_field_228(core::ptr::from_ref(self)) }
+}
+
 impl crate::bhkCharacterState {
     #[doc(hidden)]
     #[inline]

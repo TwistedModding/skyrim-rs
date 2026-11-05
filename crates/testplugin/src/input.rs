@@ -47,7 +47,7 @@ struct Keys;
 
 impl EventSink<InputEventList> for Keys {
     fn process(&self, list: &InputEventList, _: &BSTEventSource<InputEventList>) -> BSEventNotifyControl {
-        let keyboard = InputManager::singleton().and_then(InputManager::keyboard);
+        let keyboard = InputManager::singleton().and_then(InputManagerExt::keyboard);
         let mut keys = KEYS.lock().unwrap();
         for button in list.iter().filter(|e| InputDevice::from_engine(e.device) == Some(InputDevice::Keyboard)).filter_map(InputEventExt::as_button) {
             let stats = keys.entry(button.idCode).or_default();
@@ -139,7 +139,7 @@ fn devices() -> Result<String, String> {
     let keyboard = class_at(input.keyboard.cast());
     let mouse = class_at(input.mouse.cast());
     check(keyboard == "BSWin32KeyboardDevice" && mouse == "BSWin32MouseDevice", &format!("keyboard's class {keyboard}, mouse's {mouse}"))?;
-    check(input.keyboard().is_some(), "keyboard() is None")?;
+    check(InputManagerExt::keyboard(input).is_some(), "keyboard() is None")?;
     let name = input.key_name(InputDevice::Keyboard, KEY_E);
     let code = input.key_code(InputDevice::Keyboard, KEY_E);
     check(name.as_deref() == Some("E") && code == Some(0x45), &format!("scan code 0x12: name {name:?}, virtual key {code:?}"))?;
@@ -229,7 +229,11 @@ fn keys() -> Result<String, String> {
 fn contexts() -> Result<String, String> {
     let stacks = STACKS.lock().unwrap().clone();
     check(stacks.contains(&vec![0]) && stacks.contains(&vec![0, 1, 9]), &format!("context stacks seen {stacks:?}"))?;
-    Ok(format!("context stacks seen at key events: {stacks:?}"))
+    let map = ControlMap::singleton().ok_or("no control map")?;
+    let count = sre::InputContextEnum::count.to_engine().ok_or("no context count on this runtime")? as usize;
+    let filled = map.contexts.as_chunks::<8>().0.iter().take(count).filter(|pointer| usize::from_ne_bytes(**pointer) != 0).count();
+    check(filled == count, &format!("{filled} of {count} control map contexts are set"))?;
+    Ok(format!("context stacks seen at key events: {stacks:?}; {count} control map contexts, all set"))
 }
 
 fn polling() -> Result<String, String> {

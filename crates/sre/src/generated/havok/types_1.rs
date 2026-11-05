@@ -1557,26 +1557,27 @@ const _: () = assert!(core::mem::offset_of!(bhkCharacterControllerCinfo, field_A
 /// `bhkCharacterPointCollector`: size >= 0x230 (lower bound); partial, the struct stops at the lower bound; primary base `hkpAllCdPointCollector`.
 /// Evidence: field field_22C.
 /// Bases: `hkpAllCdPointCollector`@0x0, `hkpCdPointCollector`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct bhkCharacterPointCollector {
     /// +0x0 `vtbl:bhkCharacterPointCollector:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkCharacterPointCollector_vtable,
     /// +0x8 `undefined4`, base hkpAllCdPointCollector
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkpAllCdPointCollector
     pub field_10: u64,
     /// +0x18 `undefined4`, base hkpAllCdPointCollector
     pub field_18: u32,
     /// +0x1C `undefined4`, base hkpAllCdPointCollector
     pub field_1C: u32,
-    pub unknown_20: [u8; 512],
+    unknown_20: [u8; 512],
     /// +0x220 `undefined8`, base hkpAllCdPointCollector
     pub field_220: u64,
     /// +0x228 `undefined1`, base hkpAllCdPointCollector
-    pub field_228: u8,
-    pub unknown_229: [u8; 3],
+    #[doc(hidden)]
+    pub __field_228: [u8; 1],
+    unknown_229: [u8; 3],
     /// +0x22C `undefined4`, base hkpAllCdPointCollector
     pub field_22C: u32,
     #[doc(hidden)]
@@ -1588,7 +1589,7 @@ const _: () = assert!(core::mem::offset_of!(bhkCharacterPointCollector, field_10
 const _: () = assert!(core::mem::offset_of!(bhkCharacterPointCollector, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterPointCollector, field_1C) == 0x1C);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterPointCollector, field_220) == 0x220);
-const _: () = assert!(core::mem::offset_of!(bhkCharacterPointCollector, field_228) == 0x228);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterPointCollector, __field_228) == 0x228);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterPointCollector, field_22C) == 0x22C);
 
 /// `bhkCharacterProxy`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `bhkSerializable`.

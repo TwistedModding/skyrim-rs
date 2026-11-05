@@ -3,7 +3,7557 @@
 
 use core::ffi::{c_char, c_void};
 
+impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_TESWordOfPower____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,float>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_unsigned_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_IngredientItem_void_unsigned_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<IngredientItem,void,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<IngredientItem,void,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<IngredientItem,void,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<IngredientItem,void,unsigned_int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<IngredientItem,void,unsigned_int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<IngredientItem,void,unsigned_int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<IngredientItem,void,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<IngredientItem,void,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<IngredientItem,void,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<IngredientItem,void,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<IngredientItem,void,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<IngredientItem,void,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<IngredientItem,void,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<IngredientItem,void,unsigned_int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESEffectShader_void_TESObjectREFR____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESEffectShader,void,TESObjectREFR*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESFaction_bool_TESFaction____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESFaction,bool,TESFaction*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESFaction_int_TESFaction____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESFaction,int,TESFaction*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESFaction_void_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,void,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESFaction,void,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,void,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESFaction,void,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,void,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESFaction,void,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,void,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESFaction,void,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,void,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESFaction,void,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,void,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESFaction,void,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,void,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESFaction,void,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESFaction_void_unsigned_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,void,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESFaction,void,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,void,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESFaction,void,unsigned_int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,void,unsigned_int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESFaction,void,unsigned_int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,void,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESFaction,void,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,void,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESFaction,void,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,void,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESFaction,void,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESFaction,void,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESFaction,void,unsigned_int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESForm,bool,BGSKeyword*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESForm_void_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESForm,void,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESForm,void,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESForm,void,float>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESForm,void,float>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESForm,void,float>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESForm,void,float>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESForm,void,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESForm,void,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESForm,void,float>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESForm,void,float>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESForm,void,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESForm,void,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESForm,void,float>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESForm,void,float>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESGlobal_void_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESGlobal,void,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESGlobal,void,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESGlobal,void,float>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESGlobal,void,float>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESGlobal,void,float>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESGlobal,void,float>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESGlobal,void,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESGlobal,void,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESGlobal,void,float>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESGlobal,void,float>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESGlobal,void,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESGlobal,void,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESGlobal,void,float>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESGlobal,void,float>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESImageSpaceModifier_void_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESImageSpaceModifier,void,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESImageSpaceModifier,void,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESImageSpaceModifier,void,float>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESImageSpaceModifier,void,float>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESImageSpaceModifier,void,float>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESImageSpaceModifier,void,float>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESImageSpaceModifier,void,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESImageSpaceModifier,void,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESImageSpaceModifier,void,float>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESImageSpaceModifier,void,float>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESImageSpaceModifier,void,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESImageSpaceModifier,void,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESImageSpaceModifier,void,float>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESImageSpaceModifier,void,float>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESNPC_void_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESNPC,void,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESNPC,void,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESNPC,void,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESNPC,void,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESNPC,void,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESNPC,void,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESNPC,void,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESNPC,void,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESNPC,void,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESNPC,void,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESNPC,void,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESNPC,void,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESNPC,void,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESNPC,void,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,TESFaction*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,TESNPC*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectCELL_void_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectCELL_void_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,float>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,float>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,float>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,float>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,float>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,float>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectCELL,void,float>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectCELL,void,float>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKeyword____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,BGSKeyword*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,TESObjectREFR*___ptr64,int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,BGSKeyword*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,BGSLocationRefType*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectREFR_bool_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectREFR_bool_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,float>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,float>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,float>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,float>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,float>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,float>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,bool,float>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,bool,float>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,float,BSFixedString_const&___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,int,BSFixedString_const&___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,unsigned_int,TESForm*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,unsigned_int,unsigned_int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESFaction*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESNPC*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectREFR_void_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESObjectREFR,void,unsigned_int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESQuest,BGSBaseAlias*___ptr64,unsigned_int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESQuest,bool,TESGlobal*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESQuest_bool_unsigned_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,bool,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESQuest,bool,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,bool,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESQuest,bool,unsigned_int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,bool,unsigned_int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESQuest,bool,unsigned_int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,bool,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESQuest,bool,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,bool,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESQuest,bool,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,bool,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESQuest,bool,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,bool,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESQuest,bool,unsigned_int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESQuest_void_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,void,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESQuest,void,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,void,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESQuest,void,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,void,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESQuest,void,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,void,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESQuest,void,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,void,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESQuest,void,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,void,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESQuest,void,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESQuest,void,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESQuest,void,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESSound,unsigned_int,TESObjectREFR*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction1_TESWeather_void_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction1<TESWeather,void,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction1<TESWeather,void,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESWeather,void,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESWeather,void,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction1<TESWeather,void,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction1<TESWeather,void,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESWeather,void,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESWeather,void,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESWeather,void,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESWeather,void,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction1<TESWeather,void,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction1<TESWeather,void,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction1<TESWeather,void,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction1<TESWeather,void,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<ActiveEffect,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectREFR____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<ActiveEffect,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Actor____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,bool,BGSAssociationType*___ptr64,Actor*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,bool,SpellItem*___ptr64,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectREFR____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,bool,TESIdleForm*___ptr64,TESObjectREFR*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_Actor_void_Actor____ptr64_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,Actor*___ptr64,int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,BGSOutfit*___ptr64,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,SpellItem&___ptr64,TESObjectREFR*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,TESObjectREFR*___ptr64,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_Actor_void_bool_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,bool,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<Actor,void,bool,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,bool,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,bool,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,bool,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<Actor,void,bool,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,bool,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,bool,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,bool,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,bool,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,bool,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<Actor,void,bool,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,bool,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,bool,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_Actor_void_float_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,float,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<Actor,void,float,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,float,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,float,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,float,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<Actor,void,float,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,float,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,float,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,float,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,float,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,float,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<Actor,void,float,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,float,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,float,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<Actor,void,unsigned_int,unsigned_int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BGSBaseAlias,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectREFR____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BGSBaseAlias,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKeyword____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BGSLocation,bool,BGSLocation*___ptr64,BGSKeyword*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BGSLocation,void,BGSKeyword*___ptr64,float>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int_BSFixedString_const____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int,BSFixedString_const&___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,float,float,float>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,int,int,int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,float>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_unsigned_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,unsigned_int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_int_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<BSScript::StaticFunctionTag,void,unsigned_int,float>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESEffectShader,void,TESObjectREFR*___ptr64,float>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESFaction_bool_bool_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,bool,bool,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESFaction,bool,bool,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,bool,bool,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESFaction,bool,bool,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,bool,bool,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESFaction,bool,bool,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,bool,bool,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESFaction,bool,bool,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,bool,bool,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESFaction,bool,bool,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,bool,bool,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESFaction,bool,bool,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,bool,bool,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESFaction,bool,bool,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESFaction_void_bool_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,void,bool,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESFaction,void,bool,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,void,bool,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESFaction,void,bool,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,void,bool,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESFaction,void,bool,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,void,bool,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESFaction,void,bool,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,void,bool,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESFaction,void,bool,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,void,bool,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESFaction,void,bool,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,void,bool,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESFaction,void,bool,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESFaction_void_int_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,void,int,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESFaction,void,int,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,void,int,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESFaction,void,int,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,void,int,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESFaction,void,int,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,void,int,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESFaction,void,int,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,void,int,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESFaction,void,int,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,void,int,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESFaction,void,int,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESFaction,void,int,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESFaction,void,int,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESForm,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESForm,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceModifier____ptr64_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESImageSpaceModifier,void,TESImageSpaceModifier*___ptr64,float>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsigned_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESLevCharacter,void,TESForm*___ptr64,unsigned_int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESLevSpell,void,TESForm*___ptr64,unsigned_int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESNPC,void,BGSOutfit*___ptr64,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESObjectCELL_void_float_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectCELL,void,float,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESObjectCELL,void,float,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectCELL,void,float,float>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectCELL,void,float,float>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectCELL,void,float,float>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESObjectCELL,void,float,float>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectCELL,void,float,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectCELL,void,float,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectCELL,void,float,float>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectCELL,void,float,float>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectCELL,void,float,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESObjectCELL,void,float,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectCELL,void,float,float>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectCELL,void,float,float>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigned_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,float>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,Actor*___ptr64,unsigned_int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,float>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,BSFixedString_const&___ptr64,int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESObjectREFR_void_bool_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,bool,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESObjectREFR_void_float_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,float,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,float,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,float,float>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,float,float>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,float,float>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,float,float>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,float,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,float,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,float,float>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,float,float>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,float,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,float,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectREFR,void,float,float>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectREFR,void,float,float>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_TESAmmo____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESQuest,void,unsigned_int,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction2_TESWeather_void_bool_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction2<TESWeather,void,bool,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction2<TESWeather,void,bool,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESWeather,void,bool,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESWeather,void,bool,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction2<TESWeather,void,bool,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction2<TESWeather,void,bool,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESWeather,void,bool,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESWeather,void,bool,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESWeather,void,bool,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESWeather,void,bool,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction2<TESWeather,void,bool,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction2<TESWeather,void,bool,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction2<TESWeather,void,bool,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction2<TESWeather,void,bool,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction3_Actor_void_bool_bool_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction3<Actor,void,bool,bool,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction3<Actor,void,bool,bool,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<Actor,void,bool,bool,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<Actor,void,bool,bool,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction3<Actor,void,bool,bool,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction3<Actor,void,bool,bool,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<Actor,void,bool,bool,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<Actor,void,bool,bool,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<Actor,void,bool,bool,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<Actor,void,bool,bool,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction3<Actor,void,bool,bool,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction3<Actor,void,bool,bool,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<Actor,void,bool,bool,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<Actor,void,bool,bool,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____ptr64_float_TESObjectREFR____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<BGSReferenceEffect,void,TESObjectREFR*___ptr64,float,TESObjectREFR*___ptr64>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64_BSFixedS_cebe0cb5d35d {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,unsigned_int>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_float_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,TESObjectREFR*___ptr64,float,float>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>.docString", 0x48, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>::docString`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn docString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_docString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn docString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_docString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isLatent(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>.isLatent", 0x42, u8) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>::isLatent`, at +0x42 on 1.7.104.
+    #[inline]
+    pub fn isLatent(&self) -> u8 { unsafe { Self::__member_isLatent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isLatent(&mut self, value: u8) { unsafe { Self::__member_isLatent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>::objectTypeName`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>.stateName", 0x20, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,bool,bool,bool>::stateName`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn stateName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_stateName(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn stateName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_stateName(core::ptr::from_ref(self)) }
+}
+
 impl crate::BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_float_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>.docString", 0x48, crate::BSFixedString) } }
@@ -24,12 +7574,30 @@ impl crate::BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_flo
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<BSScript::StaticFunctionTag,void,float,float,float>.stateName", 0x20, crate::BSFixedString) } }
@@ -41,6 +7609,16 @@ impl crate::BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_flo
 }
 
 impl crate::BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.docString", 0x48, crate::BSFixedString) } }
@@ -61,12 +7639,30 @@ impl crate::BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Acto
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
@@ -78,6 +7674,16 @@ impl crate::BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Acto
 }
 
 impl crate::BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>.docString", 0x48, crate::BSFixedString) } }
@@ -98,12 +7704,30 @@ impl crate::BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_b
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>.stateName", 0x20, crate::BSFixedString) } }
@@ -115,6 +7739,16 @@ impl crate::BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_b
 }
 
 impl crate::BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_int_unsigned_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
@@ -135,12 +7769,30 @@ impl crate::BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESLevItem,void,TESForm*___ptr64,unsigned_int,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
@@ -152,6 +7804,16 @@ impl crate::BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_
 }
 
 impl crate::BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr64_unsigned_int_BGSEncounterZone____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>.docString", 0x48, crate::BSFixedString) } }
@@ -172,12 +7834,30 @@ impl crate::BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,Actor*___ptr64,TESNPC*___ptr64,unsigned_int,BGSEncounterZone*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
@@ -189,6 +7869,16 @@ impl crate::BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr
 }
 
 impl crate::BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_TESObjectREFR____ptr64_53c46d626bbe {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
@@ -209,12 +7899,30 @@ impl crate::BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
@@ -226,6 +7934,16 @@ impl crate::BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____
 }
 
 impl crate::BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_bool_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>.docString", 0x48, crate::BSFixedString) } }
@@ -246,12 +7964,30 @@ impl crate::BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,BSFixedString_const&___ptr64,bool,float>.stateName", 0x20, crate::BSFixedString) } }
@@ -263,6 +7999,16 @@ impl crate::BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____
 }
 
 impl crate::BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>.docString", 0x48, crate::BSFixedString) } }
@@ -283,12 +8029,30 @@ impl crate::BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsign
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>.stateName", 0x20, crate::BSFixedString) } }
@@ -300,6 +8064,16 @@ impl crate::BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsign
 }
 
 impl crate::BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>.docString", 0x48, crate::BSFixedString) } }
@@ -320,12 +8094,30 @@ impl crate::BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float {
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>.stateName", 0x20, crate::BSFixedString) } }
@@ -337,6 +8129,16 @@ impl crate::BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float {
 }
 
 impl crate::BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_bool_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>.docString", 0x48, crate::BSFixedString) } }
@@ -357,12 +8159,30 @@ impl crate::BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,void,TESObjectREFR*___ptr64,bool,bool>.stateName", 0x20, crate::BSFixedString) } }
@@ -374,6 +8194,16 @@ impl crate::BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_
 }
 
 impl crate::BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor____ptr64_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>.docString", 0x48, crate::BSFixedString) } }
@@ -394,12 +8224,30 @@ impl crate::BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESObjectREFR,void,TESTopic*___ptr64,Actor*___ptr64,bool>.stateName", 0x20, crate::BSFixedString) } }
@@ -411,6 +8259,16 @@ impl crate::BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor
 }
 
 impl crate::BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>.docString", 0x48, crate::BSFixedString) } }
@@ -431,12 +8289,30 @@ impl crate::BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool {
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction3<TESQuest,void,unsigned_int,bool,bool>.stateName", 0x20, crate::BSFixedString) } }
@@ -448,6 +8324,16 @@ impl crate::BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool {
 }
 
 impl crate::BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>.docString", 0x48, crate::BSFixedString) } }
@@ -468,12 +8354,30 @@ impl crate::BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>.stateName", 0x20, crate::BSFixedString) } }
@@ -485,6 +8389,16 @@ impl crate::BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_
 }
 
 impl crate::BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr64_float_float_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>.docString", 0x48, crate::BSFixedString) } }
@@ -505,12 +8419,30 @@ impl crate::BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<BGSMessage,void,BSFixedString_const&___ptr64,float,float,int>.stateName", 0x20, crate::BSFixedString) } }
@@ -522,6 +8454,16 @@ impl crate::BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr
 }
 
 impl crate::BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>.docString", 0x48, crate::BSFixedString) } }
@@ -542,12 +8484,30 @@ impl crate::BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>.stateName", 0x20, crate::BSFixedString) } }
@@ -559,6 +8519,16 @@ impl crate::BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64
 }
 
 impl crate::BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
@@ -579,12 +8549,30 @@ impl crate::BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObject
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
@@ -596,6 +8584,16 @@ impl crate::BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObject
 }
 
 impl crate::BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>.docString", 0x48, crate::BSFixedString) } }
@@ -616,12 +8614,30 @@ impl crate::BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>.stateName", 0x20, crate::BSFixedString) } }
@@ -633,6 +8649,16 @@ impl crate::BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool
 }
 
 impl crate::BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>.docString", 0x48, crate::BSFixedString) } }
@@ -653,12 +8679,30 @@ impl crate::BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESFo
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>.stateName", 0x20, crate::BSFixedString) } }
@@ -670,6 +8714,16 @@ impl crate::BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESFo
 }
 
 impl crate::BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.docString", 0x48, crate::BSFixedString) } }
@@ -690,12 +8744,30 @@ impl crate::BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsign
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
@@ -707,6 +8779,16 @@ impl crate::BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsign
 }
 
 impl crate::BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>.docString", 0x48, crate::BSFixedString) } }
@@ -727,12 +8809,30 @@ impl crate::BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>.stateName", 0x20, crate::BSFixedString) } }
@@ -744,6 +8844,16 @@ impl crate::BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float
 }
 
 impl crate::BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
@@ -764,12 +8874,30 @@ impl crate::BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESOb
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
@@ -781,6 +8909,16 @@ impl crate::BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESOb
 }
 
 impl crate::BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
@@ -801,12 +8939,30 @@ impl crate::BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESOb
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
@@ -818,6 +8974,16 @@ impl crate::BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESOb
 }
 
 impl crate::BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>.docString", 0x48, crate::BSFixedString) } }
@@ -838,12 +9004,30 @@ impl crate::BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR_
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>.stateName", 0x20, crate::BSFixedString) } }
@@ -855,6 +9039,16 @@ impl crate::BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR_
 }
 
 impl crate::BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_TESForm____ptr64_float_float_float_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>.docString", 0x48, crate::BSFixedString) } }
@@ -875,12 +9069,30 @@ impl crate::BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR_
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>.stateName", 0x20, crate::BSFixedString) } }
@@ -892,6 +9104,16 @@ impl crate::BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR_
 }
 
 impl crate::BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool_bool_bool_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>.docString", 0x48, crate::BSFixedString) } }
@@ -912,12 +9134,30 @@ impl crate::BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedSt
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>.stateName", 0x20, crate::BSFixedString) } }
@@ -929,6 +9169,16 @@ impl crate::BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedSt
 }
 
 impl crate::BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____d65118ed5622 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
@@ -949,12 +9199,30 @@ impl crate::BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
@@ -966,6 +9234,16 @@ impl crate::BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____
 }
 
 impl crate::BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_float_float_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>.docString", 0x48, crate::BSFixedString) } }
@@ -986,12 +9264,30 @@ impl crate::BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>.stateName", 0x20, crate::BSFixedString) } }
@@ -1003,6 +9299,16 @@ impl crate::BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_
 }
 
 impl crate::BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_float_float_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>.docString", 0x48, crate::BSFixedString) } }
@@ -1023,12 +9329,30 @@ impl crate::BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>.stateName", 0x20, crate::BSFixedString) } }
@@ -1040,6 +9364,16 @@ impl crate::BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_
 }
 
 impl crate::BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsigned_int_unsigned_int_4cf828fffc9c {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
@@ -1060,12 +9394,30 @@ impl crate::BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_i
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
@@ -1077,6 +9429,16 @@ impl crate::BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_i
 }
 
 impl crate::BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFixedString_const____pt_5d9a4796be0a {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>.docString", 0x48, crate::BSFixedString) } }
@@ -1097,12 +9459,30 @@ impl crate::BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>.stateName", 0x20, crate::BSFixedString) } }
@@ -1114,6 +9494,16 @@ impl crate::BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr
 }
 
 impl crate::BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_float_float_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>.docString", 0x48, crate::BSFixedString) } }
@@ -1134,12 +9524,30 @@ impl crate::BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>.stateName", 0x20, crate::BSFixedString) } }
@@ -1151,6 +9559,16 @@ impl crate::BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float
 }
 
 impl crate::BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float_float_float_float_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>.docString", 0x48, crate::BSFixedString) } }
@@ -1171,12 +9589,30 @@ impl crate::BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_floa
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>.stateName", 0x20, crate::BSFixedString) } }
@@ -1188,6 +9624,16 @@ impl crate::BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_floa
 }
 
 impl crate::BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_float_float_float_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>.docString", 0x48, crate::BSFixedString) } }
@@ -1208,12 +9654,30 @@ impl crate::BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_fl
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>.stateName", 0x20, crate::BSFixedString) } }
@@ -1225,6 +9689,16 @@ impl crate::BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_fl
 }
 
 impl crate::BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_bool_bool_bool_bool_bool_unsigned_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
@@ -1245,12 +9719,30 @@ impl crate::BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
@@ -1262,6 +9754,16 @@ impl crate::BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool
 }
 
 impl crate::BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_float_float_float_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>.docString", 0x48, crate::BSFixedString) } }
@@ -1282,12 +9784,30 @@ impl crate::BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>.stateName", 0x20, crate::BSFixedString) } }
@@ -1299,6 +9819,16 @@ impl crate::BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float
 }
 
 impl crate::BSScript__NativeLatentFunction0_Actor_void {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction0<Actor,void>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction0<Actor,void>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction0<Actor,void>.docString", 0x48, crate::BSFixedString) } }
@@ -1319,12 +9849,30 @@ impl crate::BSScript__NativeLatentFunction0_Actor_void {
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction0<Actor,void>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction0<Actor,void>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction0<Actor,void>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction0<Actor,void>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction0<Actor,void>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction0<Actor,void>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction0<Actor,void>.stateName", 0x20, crate::BSFixedString) } }
@@ -1336,6 +9884,16 @@ impl crate::BSScript__NativeLatentFunction0_Actor_void {
 }
 
 impl crate::BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_const____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
@@ -1356,12 +9914,30 @@ impl crate::BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedS
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
@@ -1373,6 +9949,16 @@ impl crate::BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedS
 }
 
 impl crate::BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
@@ -1393,12 +9979,30 @@ impl crate::BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const___
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
@@ -1410,6 +10014,16 @@ impl crate::BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const___
 }
 
 impl crate::BSScript__NativeLatentFunction0_TESObjectREFR_void {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction0<TESObjectREFR,void>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction0<TESObjectREFR,void>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction0<TESObjectREFR,void>.docString", 0x48, crate::BSFixedString) } }
@@ -1430,12 +10044,30 @@ impl crate::BSScript__NativeLatentFunction0_TESObjectREFR_void {
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction0<TESObjectREFR,void>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction0<TESObjectREFR,void>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction0<TESObjectREFR,void>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction0<TESObjectREFR,void>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction0<TESObjectREFR,void>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction0<TESObjectREFR,void>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction0<TESObjectREFR,void>.stateName", 0x20, crate::BSFixedString) } }
@@ -1447,6 +10079,16 @@ impl crate::BSScript__NativeLatentFunction0_TESObjectREFR_void {
 }
 
 impl crate::BSScript__NativeLatentFunction0_TESQuest_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction0<TESQuest,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction0<TESQuest,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction0<TESQuest,bool>.docString", 0x48, crate::BSFixedString) } }
@@ -1467,12 +10109,30 @@ impl crate::BSScript__NativeLatentFunction0_TESQuest_bool {
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction0<TESQuest,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction0<TESQuest,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction0<TESQuest,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction0<TESQuest,bool>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction0<TESQuest,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction0<TESQuest,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction0<TESQuest,bool>.stateName", 0x20, crate::BSFixedString) } }
@@ -1484,6 +10144,16 @@ impl crate::BSScript__NativeLatentFunction0_TESQuest_bool {
 }
 
 impl crate::BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixed_05afeaf1fbe1 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.docString", 0x48, crate::BSFixedString) } }
@@ -1504,12 +10174,30 @@ impl crate::BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TE
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>.stateName", 0x20, crate::BSFixedString) } }
@@ -1521,6 +10209,16 @@ impl crate::BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TE
 }
 
 impl crate::BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_BSFixedString_const____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
@@ -1541,12 +10239,30 @@ impl crate::BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedS
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
@@ -1558,6 +10274,16 @@ impl crate::BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedS
 }
 
 impl crate::BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>.docString", 0x48, crate::BSFixedString) } }
@@ -1578,12 +10304,30 @@ impl crate::BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedS
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>.stateName", 0x20, crate::BSFixedString) } }
@@ -1595,6 +10339,16 @@ impl crate::BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedS
 }
 
 impl crate::BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
@@ -1615,12 +10369,30 @@ impl crate::BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BS
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
@@ -1632,6 +10404,16 @@ impl crate::BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BS
 }
 
 impl crate::BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>.docString", 0x48, crate::BSFixedString) } }
@@ -1652,12 +10434,30 @@ impl crate::BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_flo
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>.stateName", 0x20, crate::BSFixedString) } }
@@ -1669,6 +10469,16 @@ impl crate::BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_flo
 }
 
 impl crate::BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
@@ -1689,12 +10499,30 @@ impl crate::BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_con
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
@@ -1706,6 +10534,16 @@ impl crate::BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_con
 }
 
 impl crate::BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.docString", 0x48, crate::BSFixedString) } }
@@ -1726,12 +10564,30 @@ impl crate::BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
@@ -1743,6 +10599,16 @@ impl crate::BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____
 }
 
 impl crate::BSScript__NativeLatentFunction1_TESObjectREFR_void_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>.docString", 0x48, crate::BSFixedString) } }
@@ -1763,12 +10629,30 @@ impl crate::BSScript__NativeLatentFunction1_TESObjectREFR_void_bool {
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>.stateName", 0x20, crate::BSFixedString) } }
@@ -1780,6 +10664,16 @@ impl crate::BSScript__NativeLatentFunction1_TESObjectREFR_void_bool {
 }
 
 impl crate::BSScript__NativeLatentFunction1_TESObjectREFR_void_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,void,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction1<TESObjectREFR,void,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,void,float>.docString", 0x48, crate::BSFixedString) } }
@@ -1800,12 +10694,30 @@ impl crate::BSScript__NativeLatentFunction1_TESObjectREFR_void_float {
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,void,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction1<TESObjectREFR,void,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,void,float>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction1<TESObjectREFR,void,float>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,void,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction1<TESObjectREFR,void,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESObjectREFR,void,float>.stateName", 0x20, crate::BSFixedString) } }
@@ -1817,6 +10729,16 @@ impl crate::BSScript__NativeLatentFunction1_TESObjectREFR_void_float {
 }
 
 impl crate::BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
@@ -1837,12 +10759,30 @@ impl crate::BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int {
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
@@ -1854,6 +10794,16 @@ impl crate::BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int {
 }
 
 impl crate::BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>.docString", 0x48, crate::BSFixedString) } }
@@ -1874,12 +10824,30 @@ impl crate::BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
@@ -1891,6 +10859,16 @@ impl crate::BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64
 }
 
 impl crate::BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.docString", 0x48, crate::BSFixedString) } }
@@ -1911,12 +10889,30 @@ impl crate::BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_fl
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>.stateName", 0x20, crate::BSFixedString) } }
@@ -1928,6 +10924,16 @@ impl crate::BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_fl
 }
 
 impl crate::BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.docString", 0x48, crate::BSFixedString) } }
@@ -1948,12 +10954,30 @@ impl crate::BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
@@ -1965,6 +10989,16 @@ impl crate::BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr
 }
 
 impl crate::BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.docString", 0x48, crate::BSFixedString) } }
@@ -1985,12 +11019,30 @@ impl crate::BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr6
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
@@ -2002,6 +11054,16 @@ impl crate::BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr6
 }
 
 impl crate::BSScript__NativeLatentFunction2_TESFaction_void_bool_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>.docString", 0x48, crate::BSFixedString) } }
@@ -2022,12 +11084,30 @@ impl crate::BSScript__NativeLatentFunction2_TESFaction_void_bool_bool {
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>.stateName", 0x20, crate::BSFixedString) } }
@@ -2039,6 +11119,16 @@ impl crate::BSScript__NativeLatentFunction2_TESFaction_void_bool_bool {
 }
 
 impl crate::BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
@@ -2059,12 +11149,30 @@ impl crate::BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
@@ -2076,6 +11184,16 @@ impl crate::BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64
 }
 
 impl crate::BSScript__NativeLatentFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
@@ -2096,12 +11214,30 @@ impl crate::BSScript__NativeLatentFunction2_TESObjectREFR_bool_BSFixedString_con
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
@@ -2113,6 +11249,16 @@ impl crate::BSScript__NativeLatentFunction2_TESObjectREFR_bool_BSFixedString_con
 }
 
 impl crate::BSScript__NativeLatentFunction2_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
@@ -2133,12 +11279,30 @@ impl crate::BSScript__NativeLatentFunction2_TESObjectREFR_void_TESObjectREFR____
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
@@ -2150,6 +11314,16 @@ impl crate::BSScript__NativeLatentFunction2_TESObjectREFR_void_TESObjectREFR____
 }
 
 impl crate::BSScript__NativeLatentFunction2_TESObjectREFR_void_unsigned_int_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>.docString", 0x48, crate::BSFixedString) } }
@@ -2170,12 +11344,30 @@ impl crate::BSScript__NativeLatentFunction2_TESObjectREFR_void_unsigned_int_bool
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>.stateName", 0x20, crate::BSFixedString) } }
@@ -2187,6 +11379,16 @@ impl crate::BSScript__NativeLatentFunction2_TESObjectREFR_void_unsigned_int_bool
 }
 
 impl crate::BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.docString", 0x48, crate::BSFixedString) } }
@@ -2207,12 +11409,30 @@ impl crate::BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr6
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
@@ -2224,6 +11444,16 @@ impl crate::BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr6
 }
 
 impl crate::BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>.docString", 0x48, crate::BSFixedString) } }
@@ -2244,12 +11474,30 @@ impl crate::BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>.stateName", 0x20, crate::BSFixedString) } }
@@ -2261,6 +11509,16 @@ impl crate::BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_
 }
 
 impl crate::BSScript__NativeLatentFunction3_TESObjectREFR_void_float_float_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>.docString", 0x48, crate::BSFixedString) } }
@@ -2281,12 +11539,30 @@ impl crate::BSScript__NativeLatentFunction3_TESObjectREFR_void_float_float_float
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>.stateName", 0x20, crate::BSFixedString) } }
@@ -2298,6 +11574,16 @@ impl crate::BSScript__NativeLatentFunction3_TESObjectREFR_void_float_float_float
 }
 
 impl crate::BSScript__NativeLatentFunction4_Actor_int_bool_BGSListForm____ptr64_bool_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>.docString", 0x48, crate::BSFixedString) } }
@@ -2318,12 +11604,30 @@ impl crate::BSScript__NativeLatentFunction4_Actor_int_bool_BGSListForm____ptr64_
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>.stateName", 0x20, crate::BSFixedString) } }
@@ -2335,6 +11639,16 @@ impl crate::BSScript__NativeLatentFunction4_Actor_int_bool_BGSListForm____ptr64_
 }
 
 impl crate::BSScript__NativeLatentFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedS_d8b5dbe1c137 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
@@ -2355,12 +11669,30 @@ impl crate::BSScript__NativeLatentFunction4_BSScript__StaticFunctionTag_bool_TES
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
@@ -2372,6 +11704,16 @@ impl crate::BSScript__NativeLatentFunction4_BSScript__StaticFunctionTag_bool_TES
 }
 
 impl crate::BSScript__NativeLatentFunction4_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.docString", 0x48, crate::BSFixedString) } }
@@ -2392,12 +11734,30 @@ impl crate::BSScript__NativeLatentFunction4_TESObjectREFR_void_TESForm____ptr64_
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>.stateName", 0x20, crate::BSFixedString) } }
@@ -2409,6 +11769,16 @@ impl crate::BSScript__NativeLatentFunction4_TESObjectREFR_void_TESForm____ptr64_
 }
 
 impl crate::BSScript__NativeLatentFunction4_TESObjectREFR_void_float_float_float_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>.docString", 0x48, crate::BSFixedString) } }
@@ -2429,12 +11799,30 @@ impl crate::BSScript__NativeLatentFunction4_TESObjectREFR_void_float_float_float
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>.stateName", 0x20, crate::BSFixedString) } }
@@ -2446,6 +11834,16 @@ impl crate::BSScript__NativeLatentFunction4_TESObjectREFR_void_float_float_float
 }
 
 impl crate::BSScript__NativeLatentFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESO_34fa37a7470b {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.docString", 0x48, crate::BSFixedString) } }
@@ -2466,12 +11864,30 @@ impl crate::BSScript__NativeLatentFunction5_BGSKeyword_bool_BGSLocation____ptr64
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>.stateName", 0x20, crate::BSFixedString) } }
@@ -2483,6 +11899,16 @@ impl crate::BSScript__NativeLatentFunction5_BGSKeyword_bool_BGSLocation____ptr64
 }
 
 impl crate::BSScript__NativeLatentFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_co_3dc1935df090 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.docString", 0x48, crate::BSFixedString) } }
@@ -2503,12 +11929,30 @@ impl crate::BSScript__NativeLatentFunction5_TESObjectREFR_bool_BSFixedString_con
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>.stateName", 0x20, crate::BSFixedString) } }
@@ -2520,6 +11964,16 @@ impl crate::BSScript__NativeLatentFunction5_TESObjectREFR_bool_BSFixedString_con
 }
 
 impl crate::BSScript__NativeLatentFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_float_float_float_bool {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>.docString", 0x48, crate::BSFixedString) } }
@@ -2540,12 +11994,30 @@ impl crate::BSScript__NativeLatentFunction5_TESObjectREFR_void_TESObjectREFR____
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>.stateName", 0x20, crate::BSFixedString) } }
@@ -2557,6 +12029,16 @@ impl crate::BSScript__NativeLatentFunction5_TESObjectREFR_void_TESObjectREFR____
 }
 
 impl crate::BSScript__NativeLatentFunction9_BGSMessage_int_float_float_float_float_float_float_float_float_float {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_binding(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.binding", 0x50, *mut c_void) } }
+    /// `BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>::binding`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn binding(&self) -> *mut c_void { unsafe { Self::__member_binding(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_binding(&mut self, value: *mut c_void) { unsafe { Self::__member_binding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn binding_ptr(&self) -> *mut *mut c_void { Self::__member_binding(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_docString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.docString", 0x48, crate::BSFixedString) } }
@@ -2577,12 +12059,30 @@ impl crate::BSScript__NativeLatentFunction9_BGSMessage_int_float_float_float_flo
     pub fn isLatent_ptr(&self) -> *mut u8 { Self::__member_isLatent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.name", 0x10, crate::BSFixedString) } }
+    /// `BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_objectTypeName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.objectTypeName", 0x18, crate::BSFixedString) } }
     /// `BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>::objectTypeName`, at +0x18 on 1.7.104.
     #[inline]
     pub fn objectTypeName(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_objectTypeName(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn objectTypeName_ptr(&self) -> *mut crate::BSFixedString { Self::__member_objectTypeName(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paramCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.paramCount", 0x38, u16) } }
+    /// `BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>::paramCount`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn paramCount(&self) -> u16 { unsafe { Self::__member_paramCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paramCount(&mut self, value: u16) { unsafe { Self::__member_paramCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paramCount_ptr(&self) -> *mut u16 { Self::__member_paramCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_stateName(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.stateName", 0x20, crate::BSFixedString) } }
@@ -2741,1122 +12241,3 @@ impl crate::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___ano
     pub fn field_30_ptr(&self) -> *mut u32 { Self::__member_field_30(core::ptr::from_ref(self)) }
 }
 
-impl crate::SkyrimVM {
-    /// The `BSScript::IStackCallbackSaveInterface` base at +0x8.
-    #[inline]
-    pub fn as_bs_script__i_stack_callback_save_interface(&self) -> &crate::BSScript__IStackCallbackSaveInterface { unsafe { &*core::ptr::from_ref(self).byte_add(0x8).cast() } }
-    /// The `BSTEventSink<BSScript::StatsEvent>` base at +0x1A8.
-    #[inline]
-    pub fn as_bst_event_sink_bs_script__stats_event(&self) -> &crate::BSTEventSink_BSScript__StatsEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<BSScript::StatsEvent>", 0x1A8)).cast() } }
-    /// The `BSTEventSink<PositionPlayerEvent>` base at +0x1A0.
-    #[inline]
-    pub fn as_bst_event_sink_position_player_event(&self) -> &crate::BSTEventSink_PositionPlayerEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<PositionPlayerEvent>", 0x1A0)).cast() } }
-    /// The `BSTEventSink<TESActivateEvent>` base at +0x10.
-    #[inline]
-    pub fn as_bst_event_sink_tes_activate_event(&self) -> &crate::BSTEventSink_TESActivateEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x10).cast() } }
-    /// The `BSTEventSink<TESActiveEffectApplyRemoveEvent>` base at +0x18.
-    #[inline]
-    pub fn as_bst_event_sink_tes_active_effect_apply_remove_event(&self) -> &crate::BSTEventSink_TESActiveEffectApplyRemoveEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x18).cast() } }
-    /// The `BSTEventSink<TESActorLocationChangeEvent>` base at +0x20.
-    #[inline]
-    pub fn as_bst_event_sink_tes_actor_location_change_event(&self) -> &crate::BSTEventSink_TESActorLocationChangeEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
-    /// The `BSTEventSink<TESAmiiboForcedStopDetectionEvent>` base at +0x188.
-    #[inline]
-    pub fn as_bst_event_sink_tes_amiibo_forced_stop_detection_event(&self) -> &crate::BSTEventSink_TESAmiiboForcedStopDetectionEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<TESAmiiboForcedStopDetectionEvent>", 0x188)).cast() } }
-    /// The `BSTEventSink<TESAmiiboTouchEvent>` base at +0x180.
-    #[inline]
-    pub fn as_bst_event_sink_tes_amiibo_touch_event(&self) -> &crate::BSTEventSink_TESAmiiboTouchEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<TESAmiiboTouchEvent>", 0x180)).cast() } }
-    /// The `BSTEventSink<TESBookReadEvent>` base at +0x28.
-    #[inline]
-    pub fn as_bst_event_sink_tes_book_read_event(&self) -> &crate::BSTEventSink_TESBookReadEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x28).cast() } }
-    /// The `BSTEventSink<TESCellAttachDetachEvent>` base at +0x30.
-    #[inline]
-    pub fn as_bst_event_sink_tes_cell_attach_detach_event(&self) -> &crate::BSTEventSink_TESCellAttachDetachEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
-    /// The `BSTEventSink<TESCellFullyLoadedEvent>` base at +0x38.
-    #[inline]
-    pub fn as_bst_event_sink_tes_cell_fully_loaded_event(&self) -> &crate::BSTEventSink_TESCellFullyLoadedEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x38).cast() } }
-    /// The `BSTEventSink<TESCombatEvent>` base at +0x40.
-    #[inline]
-    pub fn as_bst_event_sink_tes_combat_event(&self) -> &crate::BSTEventSink_TESCombatEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x40).cast() } }
-    /// The `BSTEventSink<TESContainerChangedEvent>` base at +0x48.
-    #[inline]
-    pub fn as_bst_event_sink_tes_container_changed_event(&self) -> &crate::BSTEventSink_TESContainerChangedEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x48).cast() } }
-    /// The `BSTEventSink<TESDeathEvent>` base at +0x50.
-    #[inline]
-    pub fn as_bst_event_sink_tes_death_event(&self) -> &crate::BSTEventSink_TESDeathEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x50).cast() } }
-    /// The `BSTEventSink<TESDestructionStageChangedEvent>` base at +0x58.
-    #[inline]
-    pub fn as_bst_event_sink_tes_destruction_stage_changed_event(&self) -> &crate::BSTEventSink_TESDestructionStageChangedEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x58).cast() } }
-    /// The `BSTEventSink<TESEnterBleedoutEvent>` base at +0x60.
-    #[inline]
-    pub fn as_bst_event_sink_tes_enter_bleedout_event(&self) -> &crate::BSTEventSink_TESEnterBleedoutEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x60).cast() } }
-    /// The `BSTEventSink<TESEquipEvent>` base at +0x68.
-    #[inline]
-    pub fn as_bst_event_sink_tes_equip_event(&self) -> &crate::BSTEventSink_TESEquipEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x68).cast() } }
-    /// The `BSTEventSink<TESFastTravelEndEvent>` base at +0x198.
-    #[inline]
-    pub fn as_bst_event_sink_tes_fast_travel_end_event(&self) -> &crate::BSTEventSink_TESFastTravelEndEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<TESFastTravelEndEvent>", 0x198)).cast() } }
-    /// The `BSTEventSink<TESFormDeleteEvent>` base at +0x70.
-    #[inline]
-    pub fn as_bst_event_sink_tes_form_delete_event(&self) -> &crate::BSTEventSink_TESFormDeleteEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x70).cast() } }
-    /// The `BSTEventSink<TESFurnitureEvent>` base at +0x78.
-    #[inline]
-    pub fn as_bst_event_sink_tes_furniture_event(&self) -> &crate::BSTEventSink_TESFurnitureEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x78).cast() } }
-    /// The `BSTEventSink<TESGrabReleaseEvent>` base at +0x80.
-    #[inline]
-    pub fn as_bst_event_sink_tes_grab_release_event(&self) -> &crate::BSTEventSink_TESGrabReleaseEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x80).cast() } }
-    /// The `BSTEventSink<TESHitEvent>` base at +0x88.
-    #[inline]
-    pub fn as_bst_event_sink_tes_hit_event(&self) -> &crate::BSTEventSink_TESHitEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x88).cast() } }
-    /// The `BSTEventSink<TESInitScriptEvent>` base at +0x90.
-    #[inline]
-    pub fn as_bst_event_sink_tes_init_script_event(&self) -> &crate::BSTEventSink_TESInitScriptEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x90).cast() } }
-    /// The `BSTEventSink<TESLoadGameEvent>` base at +0x98.
-    #[inline]
-    pub fn as_bst_event_sink_tes_load_game_event(&self) -> &crate::BSTEventSink_TESLoadGameEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x98).cast() } }
-    /// The `BSTEventSink<TESLockChangedEvent>` base at +0xA0.
-    #[inline]
-    pub fn as_bst_event_sink_tes_lock_changed_event(&self) -> &crate::BSTEventSink_TESLockChangedEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0xA0).cast() } }
-    /// The `BSTEventSink<TESMagicEffectApplyEvent>` base at +0xA8.
-    #[inline]
-    pub fn as_bst_event_sink_tes_magic_effect_apply_event(&self) -> &crate::BSTEventSink_TESMagicEffectApplyEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0xA8).cast() } }
-    /// The `BSTEventSink<TESMagicWardHitEvent>` base at +0xB0.
-    #[inline]
-    pub fn as_bst_event_sink_tes_magic_ward_hit_event(&self) -> &crate::BSTEventSink_TESMagicWardHitEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0xB0).cast() } }
-    /// The `BSTEventSink<TESMoveAttachDetachEvent>` base at +0xB8.
-    #[inline]
-    pub fn as_bst_event_sink_tes_move_attach_detach_event(&self) -> &crate::BSTEventSink_TESMoveAttachDetachEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0xB8).cast() } }
-    /// The `BSTEventSink<TESObjectLoadedEvent>` base at +0xC0.
-    #[inline]
-    pub fn as_bst_event_sink_tes_object_loaded_event(&self) -> &crate::BSTEventSink_TESObjectLoadedEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0xC0).cast() } }
-    /// The `BSTEventSink<TESObjectREFRTranslationEvent>` base at +0xC8.
-    #[inline]
-    pub fn as_bst_event_sink_tes_object_refr_translation_event(&self) -> &crate::BSTEventSink_TESObjectREFRTranslationEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0xC8).cast() } }
-    /// The `BSTEventSink<TESOpenCloseEvent>` base at +0xD0.
-    #[inline]
-    pub fn as_bst_event_sink_tes_open_close_event(&self) -> &crate::BSTEventSink_TESOpenCloseEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0xD0).cast() } }
-    /// The `BSTEventSink<TESPackageEvent>` base at +0xD8.
-    #[inline]
-    pub fn as_bst_event_sink_tes_package_event(&self) -> &crate::BSTEventSink_TESPackageEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0xD8).cast() } }
-    /// The `BSTEventSink<TESPerkEntryRunEvent>` base at +0xE0.
-    #[inline]
-    pub fn as_bst_event_sink_tes_perk_entry_run_event(&self) -> &crate::BSTEventSink_TESPerkEntryRunEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0xE0).cast() } }
-    /// The `BSTEventSink<TESPlayerBowShotEvent>` base at +0x190.
-    #[inline]
-    pub fn as_bst_event_sink_tes_player_bow_shot_event(&self) -> &crate::BSTEventSink_TESPlayerBowShotEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<TESPlayerBowShotEvent>", 0x190)).cast() } }
-    /// The `BSTEventSink<TESQuestInitEvent>` base at +0xE8.
-    #[inline]
-    pub fn as_bst_event_sink_tes_quest_init_event(&self) -> &crate::BSTEventSink_TESQuestInitEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0xE8).cast() } }
-    /// The `BSTEventSink<TESQuestStageEvent>` base at +0xF0.
-    #[inline]
-    pub fn as_bst_event_sink_tes_quest_stage_event(&self) -> &crate::BSTEventSink_TESQuestStageEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0xF0).cast() } }
-    /// The `BSTEventSink<TESResetEvent>` base at +0xF8.
-    #[inline]
-    pub fn as_bst_event_sink_tes_reset_event(&self) -> &crate::BSTEventSink_TESResetEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0xF8).cast() } }
-    /// The `BSTEventSink<TESResolveNPCTemplatesEvent>` base at +0x100.
-    #[inline]
-    pub fn as_bst_event_sink_tes_resolve_npc_templates_event(&self) -> &crate::BSTEventSink_TESResolveNPCTemplatesEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x100).cast() } }
-    /// The `BSTEventSink<TESSceneActionEvent>` base at +0x110.
-    #[inline]
-    pub fn as_bst_event_sink_tes_scene_action_event(&self) -> &crate::BSTEventSink_TESSceneActionEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x110).cast() } }
-    /// The `BSTEventSink<TESSceneEvent>` base at +0x108.
-    #[inline]
-    pub fn as_bst_event_sink_tes_scene_event(&self) -> &crate::BSTEventSink_TESSceneEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x108).cast() } }
-    /// The `BSTEventSink<TESScenePhaseEvent>` base at +0x118.
-    #[inline]
-    pub fn as_bst_event_sink_tes_scene_phase_event(&self) -> &crate::BSTEventSink_TESScenePhaseEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x118).cast() } }
-    /// The `BSTEventSink<TESSellEvent>` base at +0x120.
-    #[inline]
-    pub fn as_bst_event_sink_tes_sell_event(&self) -> &crate::BSTEventSink_TESSellEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x120).cast() } }
-    /// The `BSTEventSink<TESSleepStartEvent>` base at +0x128.
-    #[inline]
-    pub fn as_bst_event_sink_tes_sleep_start_event(&self) -> &crate::BSTEventSink_TESSleepStartEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x128).cast() } }
-    /// The `BSTEventSink<TESSleepStopEvent>` base at +0x130.
-    #[inline]
-    pub fn as_bst_event_sink_tes_sleep_stop_event(&self) -> &crate::BSTEventSink_TESSleepStopEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x130).cast() } }
-    /// The `BSTEventSink<TESSpellCastEvent>` base at +0x138.
-    #[inline]
-    pub fn as_bst_event_sink_tes_spell_cast_event(&self) -> &crate::BSTEventSink_TESSpellCastEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x138).cast() } }
-    /// The `BSTEventSink<TESSwitchRaceCompleteEvent>` base at +0x178.
-    #[inline]
-    pub fn as_bst_event_sink_tes_switch_race_complete_event(&self) -> &crate::BSTEventSink_TESSwitchRaceCompleteEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x178).cast() } }
-    /// The `BSTEventSink<TESTopicInfoEvent>` base at +0x140.
-    #[inline]
-    pub fn as_bst_event_sink_tes_topic_info_event(&self) -> &crate::BSTEventSink_TESTopicInfoEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x140).cast() } }
-    /// The `BSTEventSink<TESTrackedStatsEvent>` base at +0x148.
-    #[inline]
-    pub fn as_bst_event_sink_tes_tracked_stats_event(&self) -> &crate::BSTEventSink_TESTrackedStatsEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x148).cast() } }
-    /// The `BSTEventSink<TESTrapHitEvent>` base at +0x150.
-    #[inline]
-    pub fn as_bst_event_sink_tes_trap_hit_event(&self) -> &crate::BSTEventSink_TESTrapHitEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x150).cast() } }
-    /// The `BSTEventSink<TESTriggerEnterEvent>` base at +0x160.
-    #[inline]
-    pub fn as_bst_event_sink_tes_trigger_enter_event(&self) -> &crate::BSTEventSink_TESTriggerEnterEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x160).cast() } }
-    /// The `BSTEventSink<TESTriggerEvent>` base at +0x158.
-    #[inline]
-    pub fn as_bst_event_sink_tes_trigger_event(&self) -> &crate::BSTEventSink_TESTriggerEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x158).cast() } }
-    /// The `BSTEventSink<TESTriggerLeaveEvent>` base at +0x168.
-    #[inline]
-    pub fn as_bst_event_sink_tes_trigger_leave_event(&self) -> &crate::BSTEventSink_TESTriggerLeaveEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x168).cast() } }
-    /// The `BSTEventSink<TESUniqueIDChangeEvent>` base at +0x170.
-    #[inline]
-    pub fn as_bst_event_sink_tes_unique_id_change_event(&self) -> &crate::BSTEventSink_TESUniqueIDChangeEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x170).cast() } }
-    /// `SkyrimVM::FreezeForSave`: sets the freeze flag, runs VM updates until frozen ('VM timed out while waiting to freeze! Save will be bad.'), unregisters the VM's event sinks
-    ///
-    /// Semantic, save pass, high; ledger semantic evidence, name high; id 54015, rva 0x9e19e0.
-    /// `void (SkyrimVM*)`
-    #[inline]
-    pub fn freeze_for_save(&self) { unsafe { function!(54015, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `SkyrimVM::LoadGame`: reads the VM; corrupt-save message box on failure
-    ///
-    /// Semantic, save pass, high; ledger runtime evidence, name high; id 54018, rva 0x9e1c00.
-    /// `void (SkyrimVM*, LoadStorageWrapper*)`
-    #[inline]
-    pub fn load_game(&self, a1: &crate::LoadStorageWrapper) { unsafe { function!(54018, (*const Self, *const crate::LoadStorageWrapper))(core::ptr::from_ref(self), core::ptr::from_ref(a1)) } }
-    /// `SkyrimVM::ProcessActivateEvent`: sends Papyrus OnActivate(actionRef) to objectActivated
-    ///
-    /// Semantic, events pass, high; ledger runtime evidence, name high; id 53959, rva 0x9db090.
-    /// `BSEventNotifyControl (SkyrimVM::sink_10* this, const TESActivateEvent* event, BSTEventSource<TESActivateEvent>* source)`
-    ///
-    /// # Safety
-    /// `source` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn process_activate_event(&self, event: *const crate::TESActivateEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = function!(53959, (*const Self, *const crate::TESActivateEvent, *mut c_void) -> u32)(core::ptr::from_ref(self).byte_add(0x10), event, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
-    /// `SkyrimVM::ProcessContainerChangedEvent`: sends OnContainerChanged to the item, OnItemRemoved to the old container and OnItemAdded to the new one
-    ///
-    /// Semantic, events pass, high; ledger runtime evidence, name high; id 53966, rva 0x9dbac0.
-    /// `BSEventNotifyControl (SkyrimVM::sink_48* this, const TESContainerChangedEvent* event, BSTEventSource<TESContainerChangedEvent>* source)`
-    ///
-    /// # Safety
-    /// `source` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn process_container_changed_event(&self, event: *const crate::TESContainerChangedEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = function!(53966, (*const Self, *const crate::TESContainerChangedEvent, *mut c_void) -> u32)(core::ptr::from_ref(self).byte_add(0x48), event, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
-    /// `SkyrimVM::ProcessEquipEvent`: sends OnObjectEquipped / OnObjectUnequipped to the actor and OnEquipped / OnUnequipped to the item; returns 0
-    ///
-    /// Semantic, events pass, high; ledger runtime evidence, name high; id 53970, rva 0x9dc4a0.
-    /// `BSEventNotifyControl (SkyrimVM::sink_68* this, const TESEquipEvent* event, BSTEventSource<TESEquipEvent>* source)`
-    ///
-    /// # Safety
-    /// `source` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn process_equip_event(&self, event: *const crate::TESEquipEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = function!(53970, (*const Self, *const crate::TESEquipEvent, *mut c_void) -> u32)(core::ptr::from_ref(self).byte_add(0x68), event, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
-    /// `SkyrimVM::ProcessHitEvent`: sends OnHit(aggressor, source, projectile, powerAttack, sneakAttack, bash, blocked) to the target through HitArguments
-    ///
-    /// Semantic, events pass, high; ledger runtime evidence, name high; id 53974, rva 0x9dce00.
-    /// `BSEventNotifyControl (SkyrimVM::sink_88* this, const TESHitEvent* event, BSTEventSource<TESHitEvent>* source)`
-    ///
-    /// # Safety
-    /// `source` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn process_hit_event(&self, event: *const crate::TESHitEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = function!(53974, (*const Self, *const crate::TESHitEvent, *mut c_void) -> u32)(core::ptr::from_ref(self).byte_add(0x88), event, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
-    /// `SkyrimVM::RegisterEventSinks`: registers the VM's 49 holder sinks (every SkyrimVM+0x10+8*i except InitScript, which the ctor registers)
-    ///
-    /// Semantic, events pass, high; ledger runtime evidence, name high; id 54028, rva 0x9e27f0.
-    /// `void (SkyrimVM* vm)`
-    #[inline]
-    pub fn register_event_sinks(&self) { unsafe { function!(54028, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `SkyrimVM::RegisterNatives`: registers the engine's native functions (every Papyrus::<class>::RegisterFuncs, passing the same pointer on); the script extender's Papyrus moment hooks its one call, at 0x9d645b in SkyrimVM::ctor, where rcx is &g_SkyrimVM+0x210, so *vm is the BSScript::Internal::VirtualMachine that g_SkyrimVM+0x210 holds from then on; rdx, r8 and r9 are passed through untouched to the RegisterFuncs, so a call-site detour should forward all four registers
-    ///
-    /// Semantic, moments pass, high; ledger runtime evidence, name high; id 55739, rva 0xa325a0.
-    /// `void (BSTSmartPointer<BSScript::IVirtualMachine>* vm)`
-    ///
-    /// # Safety
-    /// `vm` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn register_natives(vm: *mut c_void) { unsafe { function!(55739, (*mut c_void))(vm) } }
-    /// `SkyrimVM::RelayEventToRefAndEffects`: the second half of an engine event, called after SendEvent to the reference's own handle (it does not send to that handle itself): the reference behind the handle (GetObjectForHandle 0x3d) gets one SendEvent per alias instance (ForEachAliasInstanceOfRef: handle typeID 0x8c) and, when it is an actor (formType 0x3e), one per active effect with a non-zero uniqueID in its MagicTarget list (handle 0x8e); every effect in the list is visited, whatever its state; a non-null filter is an object whose vtable slot 0, bool (filter*, u64 handle), is asked per handle and false skips it; the engine passes null; runs on the caller's thread
-    ///
-    /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 54033, rva 0x9e3580.
-    /// `void (SkyrimVM* this, u64 handle, const BSFixedString* eventName, BSScript::IFunctionArguments* args, void* filter)`
-    /// May be null: `filter`.
-    ///
-    /// # Safety
-    /// `filter` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn relay_event_to_ref_and_effects(&self, handle: u64, eventName: *const crate::BSFixedString, args: *mut crate::BSScript__IFunctionArguments, filter: *mut c_void) { unsafe { function!(54033, (*const Self, u64, *const crate::BSFixedString, *mut crate::BSScript__IFunctionArguments, *mut c_void))(core::ptr::from_ref(self), handle, eventName, args, filter) } }
-    /// `SkyrimVM::Revert`: 'Reverting game...' log, ClearPendingArraysLocked 0x9e3fb0, ObjectBindPolicy (+0x3a8) reset
-    ///
-    /// Semantic, save pass, high; ledger semantic evidence, name high; id 54019, rva 0x9e1ca0.
-    /// `void (SkyrimVM*)`
-    #[inline]
-    pub fn revert(&self) { unsafe { function!(54019, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `SkyrimVM::Revert`: clears the VM's pending lists, calls IVMSaveLoadInterface slot 7 (+0x38) and the handle policy's 0x9ba710
-    ///
-    /// Semantic, save pass, high; ledger runtime evidence, name high; id 54040, rva 0x9e3fb0.
-    /// `void (SkyrimVM* this)`
-    #[inline]
-    pub fn revert_2(&self) { unsafe { function!(54040, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `SkyrimVM::RunExtraTasklets`: when +0x210 is set: its slot 5 (+0x28) with budgetMs, or fExtraTaskletBudgetMS:Papyrus when budgetMs <= 0
-    ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53927, rva 0x9d8410.
-    /// `void (SkyrimVM* this, float budgetMs)`
-    #[inline]
-    pub fn run_extra_tasklets(&self, budgetMs: f32) { unsafe { function!(53927, (*const Self, f32))(core::ptr::from_ref(self), budgetMs) } }
-    /// `SkyrimVM::SaveGame`: writes the VM through +0x218; error string when not frozen
-    ///
-    /// Semantic, save pass, high; ledger runtime evidence, name high; id 54017, rva 0x9e1b20.
-    /// `void (SkyrimVM*, SaveStorageWrapper*)`
-    #[inline]
-    pub fn save_game(&self, a1: &crate::SaveStorageWrapper) { unsafe { function!(54017, (*const Self, *const crate::SaveStorageWrapper))(core::ptr::from_ref(self), core::ptr::from_ref(a1)) } }
-    /// `SkyrimVM::SaveVMData`: IVMSaveLoadInterface slot 1 with a SaveFileHandleReaderWriter, then u16 5 and the SkyrimVM registration lists
-    ///
-    /// Semantic, save pass, high; ledger semantic evidence, name high; id 54041, rva 0x9e4760.
-    /// `bool (SkyrimVM* this, SaveStorageWrapper* storage, bool sizeOnly)`
-    #[inline]
-    pub fn save_vm_data(&self, storage: &crate::SaveStorageWrapper, sizeOnly: bool) -> bool { unsafe { function!(54041, (*const Self, *const crate::SaveStorageWrapper, bool) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(storage), sizeOnly) } }
-    /// `SkyrimVM::Unfreeze`: IVMSaveLoadInterface (+0x218) slots 6 and 5, re-register sinks, clear the freeze flag
-    ///
-    /// Semantic, save pass, high; ledger semantic evidence, name high; id 54016, rva 0x9e1ac0.
-    /// `void (SkyrimVM*)`
-    #[inline]
-    pub fn unfreeze(&self) { unsafe { function!(54016, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `SkyrimVM::UnregisterEventSinks`: the matching RemoveEventSink calls
-    ///
-    /// Semantic, events pass, high; ledger runtime evidence, name high; id 54029, rva 0x9e2e30.
-    /// `void (SkyrimVM* vm)`
-    #[inline]
-    pub fn unregister_event_sinks(&self) { unsafe { function!(54029, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `SkyrimVM::Update`: the game's per-frame script update: calls VirtualMachine::Update (slot 4) with the frame's budget
-    ///
-    /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 53926, rva 0x9d7450.
-    /// `void (SkyrimVM* this, float elapsed)`
-    #[inline]
-    pub fn update(&self, elapsed: f32) { unsafe { function!(53926, (*const Self, f32))(core::ptr::from_ref(self), elapsed) } }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member___vftable_180(this: *const Self) -> *mut *const crate::raw::vtables::SkyrimVM_vtable_180 { unsafe { member!(this, "SkyrimVM.__vftable_180", 0x180, *const crate::raw::vtables::SkyrimVM_vtable_180) } }
-    /// `SkyrimVM::__vftable_180`, at +0x180 on 1.7.104.
-    #[inline]
-    pub fn __vftable_180(&self) -> *const crate::raw::vtables::SkyrimVM_vtable_180 { unsafe { Self::__member___vftable_180(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set___vftable_180(&mut self, value: *const crate::raw::vtables::SkyrimVM_vtable_180) { unsafe { Self::__member___vftable_180(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn __vftable_180_ptr(&self) -> *mut *const crate::raw::vtables::SkyrimVM_vtable_180 { Self::__member___vftable_180(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member___vftable_188(this: *const Self) -> *mut *const crate::raw::vtables::SkyrimVM_vtable_188 { unsafe { member!(this, "SkyrimVM.__vftable_188", 0x188, *const crate::raw::vtables::SkyrimVM_vtable_188) } }
-    /// `SkyrimVM::__vftable_188`, at +0x188 on 1.7.104.
-    #[inline]
-    pub fn __vftable_188(&self) -> *const crate::raw::vtables::SkyrimVM_vtable_188 { unsafe { Self::__member___vftable_188(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set___vftable_188(&mut self, value: *const crate::raw::vtables::SkyrimVM_vtable_188) { unsafe { Self::__member___vftable_188(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn __vftable_188_ptr(&self) -> *mut *const crate::raw::vtables::SkyrimVM_vtable_188 { Self::__member___vftable_188(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member___vftable_190(this: *const Self) -> *mut *const crate::raw::vtables::SkyrimVM_vtable_190 { unsafe { member!(this, "SkyrimVM.__vftable_190", 0x190, *const crate::raw::vtables::SkyrimVM_vtable_190) } }
-    /// `SkyrimVM::__vftable_190`, at +0x190 on 1.7.104.
-    #[inline]
-    pub fn __vftable_190(&self) -> *const crate::raw::vtables::SkyrimVM_vtable_190 { unsafe { Self::__member___vftable_190(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set___vftable_190(&mut self, value: *const crate::raw::vtables::SkyrimVM_vtable_190) { unsafe { Self::__member___vftable_190(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn __vftable_190_ptr(&self) -> *mut *const crate::raw::vtables::SkyrimVM_vtable_190 { Self::__member___vftable_190(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member___vftable_198(this: *const Self) -> *mut *const crate::raw::vtables::SkyrimVM_vtable_198 { unsafe { member!(this, "SkyrimVM.__vftable_198", 0x198, *const crate::raw::vtables::SkyrimVM_vtable_198) } }
-    /// `SkyrimVM::__vftable_198`, at +0x198 on 1.7.104.
-    #[inline]
-    pub fn __vftable_198(&self) -> *const crate::raw::vtables::SkyrimVM_vtable_198 { unsafe { Self::__member___vftable_198(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set___vftable_198(&mut self, value: *const crate::raw::vtables::SkyrimVM_vtable_198) { unsafe { Self::__member___vftable_198(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn __vftable_198_ptr(&self) -> *mut *const crate::raw::vtables::SkyrimVM_vtable_198 { Self::__member___vftable_198(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member___vftable_1A0(this: *const Self) -> *mut *const crate::raw::vtables::SkyrimVM_vtable_1A0 { unsafe { member!(this, "SkyrimVM.__vftable_1A0", 0x1A0, *const crate::raw::vtables::SkyrimVM_vtable_1A0) } }
-    /// `SkyrimVM::__vftable_1A0`, at +0x1A0 on 1.7.104.
-    #[inline]
-    pub fn __vftable_1A0(&self) -> *const crate::raw::vtables::SkyrimVM_vtable_1A0 { unsafe { Self::__member___vftable_1A0(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set___vftable_1A0(&mut self, value: *const crate::raw::vtables::SkyrimVM_vtable_1A0) { unsafe { Self::__member___vftable_1A0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn __vftable_1A0_ptr(&self) -> *mut *const crate::raw::vtables::SkyrimVM_vtable_1A0 { Self::__member___vftable_1A0(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member___vftable_1A8(this: *const Self) -> *mut *const crate::raw::vtables::SkyrimVM_vtable_1A8 { unsafe { member!(this, "SkyrimVM.__vftable_1A8", 0x1A8, *const crate::raw::vtables::SkyrimVM_vtable_1A8) } }
-    /// `SkyrimVM::__vftable_1A8`, at +0x1A8 on 1.7.104.
-    #[inline]
-    pub fn __vftable_1A8(&self) -> *const crate::raw::vtables::SkyrimVM_vtable_1A8 { unsafe { Self::__member___vftable_1A8(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set___vftable_1A8(&mut self, value: *const crate::raw::vtables::SkyrimVM_vtable_1A8) { unsafe { Self::__member___vftable_1A8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn __vftable_1A8_ptr(&self) -> *mut *const crate::raw::vtables::SkyrimVM_vtable_1A8 { Self::__member___vftable_1A8(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_210(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_210", 0x210, u64) } }
-    /// `SkyrimVM::field_210`, at +0x210 on 1.7.104.
-    #[inline]
-    pub fn field_210(&self) -> u64 { unsafe { Self::__member_field_210(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_210(&mut self, value: u64) { unsafe { Self::__member_field_210(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_210_ptr(&self) -> *mut u64 { Self::__member_field_210(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_340(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_340", 0x340, u64) } }
-    /// `SkyrimVM::field_340`, at +0x340 on 1.7.104.
-    #[inline]
-    pub fn field_340(&self) -> u64 { unsafe { Self::__member_field_340(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_340(&mut self, value: u64) { unsafe { Self::__member_field_340(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_340_ptr(&self) -> *mut u64 { Self::__member_field_340(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_354(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_354", 0x354, u64) } }
-    /// `SkyrimVM::field_354`, at +0x354 on 1.7.104.
-    #[inline]
-    pub fn field_354(&self) -> u64 { unsafe { Self::__member_field_354(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_354(&mut self, value: u64) { unsafe { Self::__member_field_354(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_354_ptr(&self) -> *mut u64 { Self::__member_field_354(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_35C(this: *const Self) -> *mut u32 { unsafe { member!(this, "SkyrimVM.field_35C", 0x35C, u32) } }
-    /// `SkyrimVM::field_35C`, at +0x35C on 1.7.104.
-    #[inline]
-    pub fn field_35C(&self) -> u32 { unsafe { Self::__member_field_35C(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_35C(&mut self, value: u32) { unsafe { Self::__member_field_35C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_35C_ptr(&self) -> *mut u32 { Self::__member_field_35C(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_360(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_360", 0x360, u64) } }
-    /// `SkyrimVM::field_360`, at +0x360 on 1.7.104.
-    #[inline]
-    pub fn field_360(&self) -> u64 { unsafe { Self::__member_field_360(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_360(&mut self, value: u64) { unsafe { Self::__member_field_360(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_360_ptr(&self) -> *mut u64 { Self::__member_field_360(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_370(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_370", 0x370, u64) } }
-    /// `SkyrimVM::field_370`, at +0x370 on 1.7.104.
-    #[inline]
-    pub fn field_370(&self) -> u64 { unsafe { Self::__member_field_370(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_370(&mut self, value: u64) { unsafe { Self::__member_field_370(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_370_ptr(&self) -> *mut u64 { Self::__member_field_370(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_384(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_384", 0x384, u64) } }
-    /// `SkyrimVM::field_384`, at +0x384 on 1.7.104.
-    #[inline]
-    pub fn field_384(&self) -> u64 { unsafe { Self::__member_field_384(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_384(&mut self, value: u64) { unsafe { Self::__member_field_384(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_384_ptr(&self) -> *mut u64 { Self::__member_field_384(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_38C(this: *const Self) -> *mut u32 { unsafe { member!(this, "SkyrimVM.field_38C", 0x38C, u32) } }
-    /// `SkyrimVM::field_38C`, at +0x38C on 1.7.104.
-    #[inline]
-    pub fn field_38C(&self) -> u32 { unsafe { Self::__member_field_38C(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_38C(&mut self, value: u32) { unsafe { Self::__member_field_38C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_38C_ptr(&self) -> *mut u32 { Self::__member_field_38C(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_390(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_390", 0x390, u64) } }
-    /// `SkyrimVM::field_390`, at +0x390 on 1.7.104.
-    #[inline]
-    pub fn field_390(&self) -> u64 { unsafe { Self::__member_field_390(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_390(&mut self, value: u64) { unsafe { Self::__member_field_390(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_390_ptr(&self) -> *mut u64 { Self::__member_field_390(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_3A0(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_3A0", 0x3A0, u64) } }
-    /// `SkyrimVM::field_3A0`, at +0x3A0 on 1.7.104.
-    #[inline]
-    pub fn field_3A0(&self) -> u64 { unsafe { Self::__member_field_3A0(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_3A0(&mut self, value: u64) { unsafe { Self::__member_field_3A0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_3A0_ptr(&self) -> *mut u64 { Self::__member_field_3A0(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_3C0(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_3C0", 0x3C0, u64) } }
-    /// `SkyrimVM::field_3C0`, at +0x3C0 on 1.7.104.
-    #[inline]
-    pub fn field_3C0(&self) -> u64 { unsafe { Self::__member_field_3C0(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_3C0(&mut self, value: u64) { unsafe { Self::__member_field_3C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_3C0_ptr(&self) -> *mut u64 { Self::__member_field_3C0(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_3D4(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_3D4", 0x3D4, u64) } }
-    /// `SkyrimVM::field_3D4`, at +0x3D4 on 1.7.104.
-    #[inline]
-    pub fn field_3D4(&self) -> u64 { unsafe { Self::__member_field_3D4(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_3D4(&mut self, value: u64) { unsafe { Self::__member_field_3D4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_3D4_ptr(&self) -> *mut u64 { Self::__member_field_3D4(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_3DC(this: *const Self) -> *mut u32 { unsafe { member!(this, "SkyrimVM.field_3DC", 0x3DC, u32) } }
-    /// `SkyrimVM::field_3DC`, at +0x3DC on 1.7.104.
-    #[inline]
-    pub fn field_3DC(&self) -> u32 { unsafe { Self::__member_field_3DC(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_3DC(&mut self, value: u32) { unsafe { Self::__member_field_3DC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_3DC_ptr(&self) -> *mut u32 { Self::__member_field_3DC(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_3E0(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_3E0", 0x3E0, u64) } }
-    /// `SkyrimVM::field_3E0`, at +0x3E0 on 1.7.104.
-    #[inline]
-    pub fn field_3E0(&self) -> u64 { unsafe { Self::__member_field_3E0(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_3E0(&mut self, value: u64) { unsafe { Self::__member_field_3E0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_3E0_ptr(&self) -> *mut u64 { Self::__member_field_3E0(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_3F0(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_3F0", 0x3F0, u64) } }
-    /// `SkyrimVM::field_3F0`, at +0x3F0 on 1.7.104.
-    #[inline]
-    pub fn field_3F0(&self) -> u64 { unsafe { Self::__member_field_3F0(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_3F0(&mut self, value: u64) { unsafe { Self::__member_field_3F0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_3F0_ptr(&self) -> *mut u64 { Self::__member_field_3F0(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_3F8(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_3F8", 0x3F8, u64) } }
-    /// `SkyrimVM::field_3F8`, at +0x3F8 on 1.7.104.
-    #[inline]
-    pub fn field_3F8(&self) -> u64 { unsafe { Self::__member_field_3F8(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_3F8(&mut self, value: u64) { unsafe { Self::__member_field_3F8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_3F8_ptr(&self) -> *mut u64 { Self::__member_field_3F8(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_400(this: *const Self) -> *mut u16 { unsafe { member!(this, "SkyrimVM.field_400", 0x400, u16) } }
-    /// `SkyrimVM::field_400`, at +0x400 on 1.7.104.
-    #[inline]
-    pub fn field_400(&self) -> u16 { unsafe { Self::__member_field_400(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_400(&mut self, value: u16) { unsafe { Self::__member_field_400(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_400_ptr(&self) -> *mut u16 { Self::__member_field_400(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_402(this: *const Self) -> *mut u8 { unsafe { member!(this, "SkyrimVM.field_402", 0x402, u8) } }
-    /// `SkyrimVM::field_402`, at +0x402 on 1.7.104.
-    #[inline]
-    pub fn field_402(&self) -> u8 { unsafe { Self::__member_field_402(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_402(&mut self, value: u8) { unsafe { Self::__member_field_402(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_402_ptr(&self) -> *mut u8 { Self::__member_field_402(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_414(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_414", 0x414, u64) } }
-    /// `SkyrimVM::field_414`, at +0x414 on 1.7.104.
-    #[inline]
-    pub fn field_414(&self) -> u64 { unsafe { Self::__member_field_414(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_414(&mut self, value: u64) { unsafe { Self::__member_field_414(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_414_ptr(&self) -> *mut u64 { Self::__member_field_414(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_41C(this: *const Self) -> *mut u32 { unsafe { member!(this, "SkyrimVM.field_41C", 0x41C, u32) } }
-    /// `SkyrimVM::field_41C`, at +0x41C on 1.7.104.
-    #[inline]
-    pub fn field_41C(&self) -> u32 { unsafe { Self::__member_field_41C(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_41C(&mut self, value: u32) { unsafe { Self::__member_field_41C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_41C_ptr(&self) -> *mut u32 { Self::__member_field_41C(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_420(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_420", 0x420, u64) } }
-    /// `SkyrimVM::field_420`, at +0x420 on 1.7.104.
-    #[inline]
-    pub fn field_420(&self) -> u64 { unsafe { Self::__member_field_420(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_420(&mut self, value: u64) { unsafe { Self::__member_field_420(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_420_ptr(&self) -> *mut u64 { Self::__member_field_420(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_430(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_430", 0x430, u64) } }
-    /// `SkyrimVM::field_430`, at +0x430 on 1.7.104.
-    #[inline]
-    pub fn field_430(&self) -> u64 { unsafe { Self::__member_field_430(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_430(&mut self, value: u64) { unsafe { Self::__member_field_430(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_430_ptr(&self) -> *mut u64 { Self::__member_field_430(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_45C(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_45C", 0x45C, u64) } }
-    /// `SkyrimVM::field_45C`, at +0x45C on 1.7.104.
-    #[inline]
-    pub fn field_45C(&self) -> u64 { unsafe { Self::__member_field_45C(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_45C(&mut self, value: u64) { unsafe { Self::__member_field_45C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_45C_ptr(&self) -> *mut u64 { Self::__member_field_45C(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_464(this: *const Self) -> *mut u32 { unsafe { member!(this, "SkyrimVM.field_464", 0x464, u32) } }
-    /// `SkyrimVM::field_464`, at +0x464 on 1.7.104.
-    #[inline]
-    pub fn field_464(&self) -> u32 { unsafe { Self::__member_field_464(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_464(&mut self, value: u32) { unsafe { Self::__member_field_464(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_464_ptr(&self) -> *mut u32 { Self::__member_field_464(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_468(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_468", 0x468, u64) } }
-    /// `SkyrimVM::field_468`, at +0x468 on 1.7.104.
-    #[inline]
-    pub fn field_468(&self) -> u64 { unsafe { Self::__member_field_468(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_468(&mut self, value: u64) { unsafe { Self::__member_field_468(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_468_ptr(&self) -> *mut u64 { Self::__member_field_468(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_478(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_478", 0x478, u64) } }
-    /// `SkyrimVM::field_478`, at +0x478 on 1.7.104.
-    #[inline]
-    pub fn field_478(&self) -> u64 { unsafe { Self::__member_field_478(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_478(&mut self, value: u64) { unsafe { Self::__member_field_478(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_478_ptr(&self) -> *mut u64 { Self::__member_field_478(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_480(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_480", 0x480, u64) } }
-    /// `SkyrimVM::field_480`, at +0x480 on 1.7.104.
-    #[inline]
-    pub fn field_480(&self) -> u64 { unsafe { Self::__member_field_480(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_480(&mut self, value: u64) { unsafe { Self::__member_field_480(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_480_ptr(&self) -> *mut u64 { Self::__member_field_480(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_5A8(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_5A8", 0x5A8, u64) } }
-    /// `SkyrimVM::field_5A8`, at +0x5A8 on 1.7.104.
-    #[inline]
-    pub fn field_5A8(&self) -> u64 { unsafe { Self::__member_field_5A8(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_5A8(&mut self, value: u64) { unsafe { Self::__member_field_5A8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_5A8_ptr(&self) -> *mut u64 { Self::__member_field_5A8(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_5BC(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_5BC", 0x5BC, u64) } }
-    /// `SkyrimVM::field_5BC`, at +0x5BC on 1.7.104.
-    #[inline]
-    pub fn field_5BC(&self) -> u64 { unsafe { Self::__member_field_5BC(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_5BC(&mut self, value: u64) { unsafe { Self::__member_field_5BC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_5BC_ptr(&self) -> *mut u64 { Self::__member_field_5BC(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_5C4(this: *const Self) -> *mut u32 { unsafe { member!(this, "SkyrimVM.field_5C4", 0x5C4, u32) } }
-    /// `SkyrimVM::field_5C4`, at +0x5C4 on 1.7.104.
-    #[inline]
-    pub fn field_5C4(&self) -> u32 { unsafe { Self::__member_field_5C4(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_5C4(&mut self, value: u32) { unsafe { Self::__member_field_5C4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_5C4_ptr(&self) -> *mut u32 { Self::__member_field_5C4(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_5C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_5C8", 0x5C8, u64) } }
-    /// `SkyrimVM::field_5C8`, at +0x5C8 on 1.7.104.
-    #[inline]
-    pub fn field_5C8(&self) -> u64 { unsafe { Self::__member_field_5C8(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_5C8(&mut self, value: u64) { unsafe { Self::__member_field_5C8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_5C8_ptr(&self) -> *mut u64 { Self::__member_field_5C8(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_5D8(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_5D8", 0x5D8, u64) } }
-    /// `SkyrimVM::field_5D8`, at +0x5D8 on 1.7.104.
-    #[inline]
-    pub fn field_5D8(&self) -> u64 { unsafe { Self::__member_field_5D8(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_5D8(&mut self, value: u64) { unsafe { Self::__member_field_5D8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_5D8_ptr(&self) -> *mut u64 { Self::__member_field_5D8(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_5EC(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_5EC", 0x5EC, u64) } }
-    /// `SkyrimVM::field_5EC`, at +0x5EC on 1.7.104.
-    #[inline]
-    pub fn field_5EC(&self) -> u64 { unsafe { Self::__member_field_5EC(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_5EC(&mut self, value: u64) { unsafe { Self::__member_field_5EC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_5EC_ptr(&self) -> *mut u64 { Self::__member_field_5EC(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_5F4(this: *const Self) -> *mut u32 { unsafe { member!(this, "SkyrimVM.field_5F4", 0x5F4, u32) } }
-    /// `SkyrimVM::field_5F4`, at +0x5F4 on 1.7.104.
-    #[inline]
-    pub fn field_5F4(&self) -> u32 { unsafe { Self::__member_field_5F4(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_5F4(&mut self, value: u32) { unsafe { Self::__member_field_5F4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_5F4_ptr(&self) -> *mut u32 { Self::__member_field_5F4(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_5F8(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_5F8", 0x5F8, u64) } }
-    /// `SkyrimVM::field_5F8`, at +0x5F8 on 1.7.104.
-    #[inline]
-    pub fn field_5F8(&self) -> u64 { unsafe { Self::__member_field_5F8(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_5F8(&mut self, value: u64) { unsafe { Self::__member_field_5F8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_5F8_ptr(&self) -> *mut u64 { Self::__member_field_5F8(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_608(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_608", 0x608, u64) } }
-    /// `SkyrimVM::field_608`, at +0x608 on 1.7.104.
-    #[inline]
-    pub fn field_608(&self) -> u64 { unsafe { Self::__member_field_608(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_608(&mut self, value: u64) { unsafe { Self::__member_field_608(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_608_ptr(&self) -> *mut u64 { Self::__member_field_608(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_61C(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_61C", 0x61C, u64) } }
-    /// `SkyrimVM::field_61C`, at +0x61C on 1.7.104.
-    #[inline]
-    pub fn field_61C(&self) -> u64 { unsafe { Self::__member_field_61C(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_61C(&mut self, value: u64) { unsafe { Self::__member_field_61C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_61C_ptr(&self) -> *mut u64 { Self::__member_field_61C(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_624(this: *const Self) -> *mut u32 { unsafe { member!(this, "SkyrimVM.field_624", 0x624, u32) } }
-    /// `SkyrimVM::field_624`, at +0x624 on 1.7.104.
-    #[inline]
-    pub fn field_624(&self) -> u32 { unsafe { Self::__member_field_624(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_624(&mut self, value: u32) { unsafe { Self::__member_field_624(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_624_ptr(&self) -> *mut u32 { Self::__member_field_624(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_628(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_628", 0x628, u64) } }
-    /// `SkyrimVM::field_628`, at +0x628 on 1.7.104.
-    #[inline]
-    pub fn field_628(&self) -> u64 { unsafe { Self::__member_field_628(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_628(&mut self, value: u64) { unsafe { Self::__member_field_628(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_628_ptr(&self) -> *mut u64 { Self::__member_field_628(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_638(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_638", 0x638, u64) } }
-    /// `SkyrimVM::field_638`, at +0x638 on 1.7.104.
-    #[inline]
-    pub fn field_638(&self) -> u64 { unsafe { Self::__member_field_638(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_638(&mut self, value: u64) { unsafe { Self::__member_field_638(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_638_ptr(&self) -> *mut u64 { Self::__member_field_638(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_640(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_640", 0x640, u64) } }
-    /// `SkyrimVM::field_640`, at +0x640 on 1.7.104.
-    #[inline]
-    pub fn field_640(&self) -> u64 { unsafe { Self::__member_field_640(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_640(&mut self, value: u64) { unsafe { Self::__member_field_640(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_640_ptr(&self) -> *mut u64 { Self::__member_field_640(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_664(this: *const Self) -> *mut u32 { unsafe { member!(this, "SkyrimVM.field_664", 0x664, u32) } }
-    /// `SkyrimVM::field_664`, at +0x664 on 1.7.104.
-    #[inline]
-    pub fn field_664(&self) -> u32 { unsafe { Self::__member_field_664(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_664(&mut self, value: u32) { unsafe { Self::__member_field_664(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_664_ptr(&self) -> *mut u32 { Self::__member_field_664(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_678(this: *const Self) -> *mut u16 { unsafe { member!(this, "SkyrimVM.field_678", 0x678, u16) } }
-    /// `SkyrimVM::field_678`, at +0x678 on 1.7.104.
-    #[inline]
-    pub fn field_678(&self) -> u16 { unsafe { Self::__member_field_678(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_678(&mut self, value: u16) { unsafe { Self::__member_field_678(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_678_ptr(&self) -> *mut u16 { Self::__member_field_678(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_688(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_688", 0x688, u64) } }
-    /// `SkyrimVM::field_688`, at +0x688 on 1.7.104.
-    #[inline]
-    pub fn field_688(&self) -> u64 { unsafe { Self::__member_field_688(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_688(&mut self, value: u64) { unsafe { Self::__member_field_688(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_688_ptr(&self) -> *mut u64 { Self::__member_field_688(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_690(this: *const Self) -> *mut u8 { unsafe { member!(this, "SkyrimVM.field_690", 0x690, u8) } }
-    /// `SkyrimVM::field_690`, at +0x690 on 1.7.104.
-    #[inline]
-    pub fn field_690(&self) -> u8 { unsafe { Self::__member_field_690(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_690(&mut self, value: u8) { unsafe { Self::__member_field_690(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_690_ptr(&self) -> *mut u8 { Self::__member_field_690(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_694(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_694", 0x694, u64) } }
-    /// `SkyrimVM::field_694`, at +0x694 on 1.7.104.
-    #[inline]
-    pub fn field_694(&self) -> u64 { unsafe { Self::__member_field_694(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_694(&mut self, value: u64) { unsafe { Self::__member_field_694(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_694_ptr(&self) -> *mut u64 { Self::__member_field_694(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_6AC(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_6AC", 0x6AC, u64) } }
-    /// `SkyrimVM::field_6AC`, at +0x6AC on 1.7.104.
-    #[inline]
-    pub fn field_6AC(&self) -> u64 { unsafe { Self::__member_field_6AC(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_6AC(&mut self, value: u64) { unsafe { Self::__member_field_6AC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_6AC_ptr(&self) -> *mut u64 { Self::__member_field_6AC(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_700(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_700", 0x700, u64) } }
-    /// `SkyrimVM::field_700`, at +0x700 on 1.7.104.
-    #[inline]
-    pub fn field_700(&self) -> u64 { unsafe { Self::__member_field_700(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_700(&mut self, value: u64) { unsafe { Self::__member_field_700(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_700_ptr(&self) -> *mut u64 { Self::__member_field_700(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_724(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_724", 0x724, u64) } }
-    /// `SkyrimVM::field_724`, at +0x724 on 1.7.104.
-    #[inline]
-    pub fn field_724(&self) -> u64 { unsafe { Self::__member_field_724(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_724(&mut self, value: u64) { unsafe { Self::__member_field_724(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_724_ptr(&self) -> *mut u64 { Self::__member_field_724(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_760(this: *const Self) -> *mut u8 { unsafe { member!(this, "SkyrimVM.field_760", 0x760, u8) } }
-    /// `SkyrimVM::field_760`, at +0x760 on 1.7.104.
-    #[inline]
-    pub fn field_760(&self) -> u8 { unsafe { Self::__member_field_760(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_760(&mut self, value: u8) { unsafe { Self::__member_field_760(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_760_ptr(&self) -> *mut u8 { Self::__member_field_760(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_764(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_764", 0x764, u64) } }
-    /// `SkyrimVM::field_764`, at +0x764 on 1.7.104.
-    #[inline]
-    pub fn field_764(&self) -> u64 { unsafe { Self::__member_field_764(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_764(&mut self, value: u64) { unsafe { Self::__member_field_764(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_764_ptr(&self) -> *mut u64 { Self::__member_field_764(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_77C(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_77C", 0x77C, u64) } }
-    /// `SkyrimVM::field_77C`, at +0x77C on 1.7.104.
-    #[inline]
-    pub fn field_77C(&self) -> u64 { unsafe { Self::__member_field_77C(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_77C(&mut self, value: u64) { unsafe { Self::__member_field_77C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_77C_ptr(&self) -> *mut u64 { Self::__member_field_77C(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_784(this: *const Self) -> *mut u32 { unsafe { member!(this, "SkyrimVM.field_784", 0x784, u32) } }
-    /// `SkyrimVM::field_784`, at +0x784 on 1.7.104.
-    #[inline]
-    pub fn field_784(&self) -> u32 { unsafe { Self::__member_field_784(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_784(&mut self, value: u32) { unsafe { Self::__member_field_784(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_784_ptr(&self) -> *mut u32 { Self::__member_field_784(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_788(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_788", 0x788, u64) } }
-    /// `SkyrimVM::field_788`, at +0x788 on 1.7.104.
-    #[inline]
-    pub fn field_788(&self) -> u64 { unsafe { Self::__member_field_788(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_788(&mut self, value: u64) { unsafe { Self::__member_field_788(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_788_ptr(&self) -> *mut u64 { Self::__member_field_788(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_798(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_798", 0x798, u64) } }
-    /// `SkyrimVM::field_798`, at +0x798 on 1.7.104.
-    #[inline]
-    pub fn field_798(&self) -> u64 { unsafe { Self::__member_field_798(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_798(&mut self, value: u64) { unsafe { Self::__member_field_798(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_798_ptr(&self) -> *mut u64 { Self::__member_field_798(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_7A0(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_7A0", 0x7A0, u64) } }
-    /// `SkyrimVM::field_7A0`, at +0x7A0 on 1.7.104.
-    #[inline]
-    pub fn field_7A0(&self) -> u64 { unsafe { Self::__member_field_7A0(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_7A0(&mut self, value: u64) { unsafe { Self::__member_field_7A0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_7A0_ptr(&self) -> *mut u64 { Self::__member_field_7A0(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_7B4(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_7B4", 0x7B4, u64) } }
-    /// `SkyrimVM::field_7B4`, at +0x7B4 on 1.7.104.
-    #[inline]
-    pub fn field_7B4(&self) -> u64 { unsafe { Self::__member_field_7B4(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_7B4(&mut self, value: u64) { unsafe { Self::__member_field_7B4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_7B4_ptr(&self) -> *mut u64 { Self::__member_field_7B4(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_7BC(this: *const Self) -> *mut u32 { unsafe { member!(this, "SkyrimVM.field_7BC", 0x7BC, u32) } }
-    /// `SkyrimVM::field_7BC`, at +0x7BC on 1.7.104.
-    #[inline]
-    pub fn field_7BC(&self) -> u32 { unsafe { Self::__member_field_7BC(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_7BC(&mut self, value: u32) { unsafe { Self::__member_field_7BC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_7BC_ptr(&self) -> *mut u32 { Self::__member_field_7BC(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_7C0(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_7C0", 0x7C0, u64) } }
-    /// `SkyrimVM::field_7C0`, at +0x7C0 on 1.7.104.
-    #[inline]
-    pub fn field_7C0(&self) -> u64 { unsafe { Self::__member_field_7C0(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_7C0(&mut self, value: u64) { unsafe { Self::__member_field_7C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_7C0_ptr(&self) -> *mut u64 { Self::__member_field_7C0(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_7D0(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.field_7D0", 0x7D0, u64) } }
-    /// `SkyrimVM::field_7D0`, at +0x7D0 on 1.7.104.
-    #[inline]
-    pub fn field_7D0(&self) -> u64 { unsafe { Self::__member_field_7D0(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_7D0(&mut self, value: u64) { unsafe { Self::__member_field_7D0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_7D0_ptr(&self) -> *mut u64 { Self::__member_field_7D0(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_m_CompiledScriptLoader_250(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.m_CompiledScriptLoader_250", 0x250, u64) } }
-    /// `SkyrimVM::m_CompiledScriptLoader_250`, at +0x250 on 1.7.104.
-    #[inline]
-    pub fn m_CompiledScriptLoader_250(&self) -> u64 { unsafe { Self::__member_m_CompiledScriptLoader_250(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_m_CompiledScriptLoader_250(&mut self, value: u64) { unsafe { Self::__member_m_CompiledScriptLoader_250(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn m_CompiledScriptLoader_250_ptr(&self) -> *mut u64 { Self::__member_m_CompiledScriptLoader_250(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_m_DelayFunctor_BSTSmartPointerIntrusiveRefCount_512__7D8(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.m_DelayFunctor,BSTSmartPointerIntrusiveRefCount>,512>_7D8", 0x7D8, u64) } }
-    /// `SkyrimVM::m_DelayFunctor,BSTSmartPointerIntrusiveRefCount>,512>_7D8`, at +0x7D8 on 1.7.104.
-    #[inline]
-    pub fn m_DelayFunctor_BSTSmartPointerIntrusiveRefCount_512__7D8(&self) -> u64 { unsafe { Self::__member_m_DelayFunctor_BSTSmartPointerIntrusiveRefCount_512__7D8(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_m_DelayFunctor_BSTSmartPointerIntrusiveRefCount_512__7D8(&mut self, value: u64) { unsafe { Self::__member_m_DelayFunctor_BSTSmartPointerIntrusiveRefCount_512__7D8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn m_DelayFunctor_BSTSmartPointerIntrusiveRefCount_512__7D8_ptr(&self) -> *mut u64 { Self::__member_m_DelayFunctor_BSTSmartPointerIntrusiveRefCount_512__7D8(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_m_HandlePolicy_338(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.m_HandlePolicy_338", 0x338, u64) } }
-    /// `SkyrimVM::m_HandlePolicy_338`, at +0x338 on 1.7.104.
-    #[inline]
-    pub fn m_HandlePolicy_338(&self) -> u64 { unsafe { Self::__member_m_HandlePolicy_338(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_m_HandlePolicy_338(&mut self, value: u64) { unsafe { Self::__member_m_HandlePolicy_338(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn m_HandlePolicy_338_ptr(&self) -> *mut u64 { Self::__member_m_HandlePolicy_338(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_m_Logger_288(this: *const Self) -> *mut crate::SkyrimScript__Logger { unsafe { member!(this, "SkyrimVM.m_Logger_288", 0x288, crate::SkyrimScript__Logger) } }
-    /// `SkyrimVM::m_Logger_288`, at +0x288 on 1.7.104.
-    #[inline]
-    pub fn m_Logger_288(&self) -> &crate::SkyrimScript__Logger { unsafe { &*Self::__member_m_Logger_288(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn m_Logger_288_ptr(&self) -> *mut crate::SkyrimScript__Logger { Self::__member_m_Logger_288(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_m_ObjectBindPolicy_3A8(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.m_ObjectBindPolicy_3A8", 0x3A8, u64) } }
-    /// `SkyrimVM::m_ObjectBindPolicy_3A8`, at +0x3A8 on 1.7.104.
-    #[inline]
-    pub fn m_ObjectBindPolicy_3A8(&self) -> u64 { unsafe { Self::__member_m_ObjectBindPolicy_3A8(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_m_ObjectBindPolicy_3A8(&mut self, value: u64) { unsafe { Self::__member_m_ObjectBindPolicy_3A8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn m_ObjectBindPolicy_3A8_ptr(&self) -> *mut u64 { Self::__member_m_ObjectBindPolicy_3A8(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_m_Profiler_5A0(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.m_Profiler_5A0", 0x5A0, u64) } }
-    /// `SkyrimVM::m_Profiler_5A0`, at +0x5A0 on 1.7.104.
-    #[inline]
-    pub fn m_Profiler_5A0(&self) -> u64 { unsafe { Self::__member_m_Profiler_5A0(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_m_Profiler_5A0(&mut self, value: u64) { unsafe { Self::__member_m_Profiler_5A0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn m_Profiler_5A0_ptr(&self) -> *mut u64 { Self::__member_m_Profiler_5A0(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_m_SavePatcher_680(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.m_SavePatcher_680", 0x680, u64) } }
-    /// `SkyrimVM::m_SavePatcher_680`, at +0x680 on 1.7.104.
-    #[inline]
-    pub fn m_SavePatcher_680(&self) -> u64 { unsafe { Self::__member_m_SavePatcher_680(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_m_SavePatcher_680(&mut self, value: u64) { unsafe { Self::__member_m_SavePatcher_680(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn m_SavePatcher_680_ptr(&self) -> *mut u64 { Self::__member_m_SavePatcher_680(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_m_SimpleAllocMemoryPagePolicy_228(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimVM.m_SimpleAllocMemoryPagePolicy_228", 0x228, u64) } }
-    /// `SkyrimVM::m_SimpleAllocMemoryPagePolicy_228`, at +0x228 on 1.7.104.
-    #[inline]
-    pub fn m_SimpleAllocMemoryPagePolicy_228(&self) -> u64 { unsafe { Self::__member_m_SimpleAllocMemoryPagePolicy_228(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_m_SimpleAllocMemoryPagePolicy_228(&mut self, value: u64) { unsafe { Self::__member_m_SimpleAllocMemoryPagePolicy_228(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn m_SimpleAllocMemoryPagePolicy_228_ptr(&self) -> *mut u64 { Self::__member_m_SimpleAllocMemoryPagePolicy_228(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_source_SkyrimScript_StatsEvent(this: *const Self) -> *mut crate::BSTEventSource { unsafe { member!(this, "SkyrimVM.source_SkyrimScript_StatsEvent", 0x1B8, crate::BSTEventSource) } }
-    /// `SkyrimVM::source_SkyrimScript_StatsEvent`, at +0x1B8 on 1.7.104.
-    #[inline]
-    pub fn source_SkyrimScript_StatsEvent(&self) -> &crate::BSTEventSource { unsafe { &*Self::__member_source_SkyrimScript_StatsEvent(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn source_SkyrimScript_StatsEvent_ptr(&self) -> *mut crate::BSTEventSource { Self::__member_source_SkyrimScript_StatsEvent(core::ptr::from_ref(self)) }
-}
-
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_0D8D4B7E_AttachAshPileFunctor_14` at 0x20bcb70, id 383759 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_0_d8_d4_b7_e_attach_ash_pile_functor_14() -> *mut c_void { address!(383759) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_0D8D4B7E_MoveToPackLocFunctor_10` at 0x20bcb80, id 383761 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_0_d8_d4_b7_e_move_to_pack_loc_functor_10() -> *mut c_void { address!(383761) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_0D8D4B7E_ResurrectFunctor_21` at 0x20bcb78, id 383760 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_0_d8_d4_b7_e_resurrect_functor_21() -> *mut c_void { address!(383760) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_A72C052E_AddItemFunctor_20` at 0x20bcc20, id 383774 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_a72_c052_e_add_item_functor_20() -> *mut c_void { address!(383774) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_A72C052E_ApplyHavokImpulseFunctor_17` at 0x20bcc88, id 383787 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_a72_c052_e_apply_havok_impulse_functor_17() -> *mut c_void { address!(383787) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_A72C052E_DamageObjectFunctor_2` at 0x20bcc40, id 383778 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_a72_c052_e_damage_object_functor_2() -> *mut c_void { address!(383778) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_A72C052E_DeleteFunctor_5` at 0x20bcc58, id 383781 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_a72_c052_e_delete_functor_5() -> *mut c_void { address!(383781) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_A72C052E_DisableFunctor_4` at 0x20bcc50, id 383780 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_a72_c052_e_disable_functor_4() -> *mut c_void { address!(383780) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_A72C052E_DropObjectFunctor_12` at 0x20bcc78, id 383785 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_a72_c052_e_drop_object_functor_12() -> *mut c_void { address!(383785) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_A72C052E_EnableFunctor_3` at 0x20bcc48, id 383779 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_a72_c052_e_enable_functor_3() -> *mut c_void { address!(383779) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_A72C052E_ForceAddRemoveRagdollFunctor_16` at 0x20bcc80, id 383786 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_a72_c052_e_force_add_remove_ragdoll_functor_16() -> *mut c_void { address!(383786) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_A72C052E_MoveToFunctor_0` at 0x20bcc30, id 383776 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_a72_c052_e_move_to_functor_0() -> *mut c_void { address!(383776) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_A72C052E_MoveToOwnEditorLocFunctor_1` at 0x20bcc38, id 383777 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_a72_c052_e_move_to_own_editor_loc_functor_1() -> *mut c_void { address!(383777) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_A72C052E_NonLatentDeleteFunctor_9` at 0x20bcc60, id 383782 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_a72_c052_e_non_latent_delete_functor_9() -> *mut c_void { address!(383782) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_A72C052E_RemoveItemFunctor_24` at 0x20bcc28, id 383775 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_a72_c052_e_remove_item_functor_24() -> *mut c_void { address!(383775) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_A72C052E_ResetFunctor_18` at 0x20bcc90, id 383788 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_a72_c052_e_reset_functor_18() -> *mut c_void { address!(383788) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_A72C052E_SetAngleFunctor_7` at 0x20bcc70, id 383784 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_a72_c052_e_set_angle_functor_7() -> *mut c_void { address!(383784) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_A72C052E_SetMotionTypeFunctor_8` at 0x20bcca0, id 383790 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_a72_c052_e_set_motion_type_functor_8() -> *mut c_void { address!(383790) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_A72C052E_SetPositionFunctor_6` at 0x20bcc68, id 383783 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_a72_c052_e_set_position_functor_6() -> *mut c_void { address!(383783) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_A72C052E_SetScaleFunctor_11` at 0x20bcca8, id 383791 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_a72_c052_e_set_scale_functor_11() -> *mut c_void { address!(383791) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_A72C052E_TetherFunctor_13` at 0x20bcc98, id 383789 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_a72_c052_e_tether_functor_13() -> *mut c_void { address!(383789) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_BCEAF3CE_ScrollCastFunctor_23` at 0x20bcc08, id 383771 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_bceaf3_ce_scroll_cast_functor_23() -> *mut c_void { address!(383771) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_BDD43BCC_AddRemoveConstraintFunctor_15` at 0x20bcc00, id 383770 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_bdd43_bcc_add_remove_constraint_functor_15() -> *mut c_void { address!(383770) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_C56CCD02_CastFunctor_22` at 0x20bcc10, id 383772 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_c56_ccd02_cast_functor_22() -> *mut c_void { address!(383772) as *mut c_void }
-/// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_EF7C75B8_SendPlayerToJailFunctor_19` at 0x20bcc18, id 383773 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_ef7_c75_b8_send_player_to_jail_functor_19() -> *mut c_void { address!(383773) as *mut c_void }
-/// `g_SkyrimScript_PathingCallbackMgr_ptr` at 0x3259048, id 406722 (xref_inference, medium)
-#[inline]
-pub fn g_skyrim_script_pathing_callback_mgr_ptr() -> *mut c_void { address!(406722) as *mut c_void }
-/// `g_SkyrimScript_QuestCallbackMgr_ptr` at 0x32590b0, id 406735 (xref_inference, medium)
-#[inline]
-pub fn g_skyrim_script_quest_callback_mgr_ptr() -> *mut c_void { address!(406735) as *mut c_void }
-/// `g_SkyrimScript_SoundCallbackMgr_ptr` at 0x3259130, id 406751 (xref_inference, medium)
-#[inline]
-pub fn g_skyrim_script_sound_callback_mgr_ptr() -> *mut c_void { address!(406751) as *mut c_void }
-/// `g_SkyrimScript__anon_3A897AB3_LatentPlayerMover` at 0x20bcbd8, id 383768 (layout_inference, medium)
-#[inline]
-pub fn g_skyrim_script__anon_3_a897_ab3_latent_player_mover() -> *mut c_void { address!(383768) as *mut c_void }
-/// `g_SkyrimVM_ptr_2` at 0x21a36e0, id 400475 (xref_inference, medium)
-#[inline]
-pub fn g_skyrim_vm_ptr_2() -> *mut c_void { address!(400475) as *mut c_void }

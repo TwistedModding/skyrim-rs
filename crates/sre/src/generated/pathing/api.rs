@@ -870,6 +870,19 @@ impl crate::MovementAgentPathFollowerVirtual {
     pub fn field_8_ptr(&self) -> *mut u32 { Self::__member_field_8(core::ptr::from_ref(self)) }
 }
 
+impl crate::MovementArbiter {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u32 { unsafe { member!(this, "MovementArbiter.field_8", 0x8, u32) } }
+    /// `MovementArbiter::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u32 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u32) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u32 { Self::__member_field_8(core::ptr::from_ref(self)) }
+}
+
 impl crate::MovementControllerAI {
     #[doc(hidden)]
     #[inline]
@@ -1131,6 +1144,16 @@ impl crate::MovementHandlerArbiter {
     pub fn field_3C_ptr(&self) -> *mut u64 { Self::__member_field_3C(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_field_44(this: *const Self) -> *mut u32 { unsafe { member!(this, "MovementHandlerArbiter.field_44", 0x44, u32) } }
+    /// `MovementHandlerArbiter::field_44`, at +0x44 on 1.7.104.
+    #[inline]
+    pub fn field_44(&self) -> u32 { unsafe { Self::__member_field_44(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_44(&mut self, value: u32) { unsafe { Self::__member_field_44(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_44_ptr(&self) -> *mut u32 { Self::__member_field_44(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_field_70(this: *const Self) -> *mut u64 { unsafe { member!(this, "MovementHandlerArbiter.field_70", 0x70, u64) } }
     /// `MovementHandlerArbiter::field_70`, at +0x70 on 1.7.104.
     #[inline]
@@ -1149,6 +1172,16 @@ impl crate::MovementHandlerArbiter {
     pub fn set_field_78(&mut self, value: u64) { unsafe { Self::__member_field_78(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_78_ptr(&self) -> *mut u64 { Self::__member_field_78(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u32 { unsafe { member!(this, "MovementHandlerArbiter.field_8", 0x8, u32) } }
+    /// `MovementHandlerArbiter::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u32 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u32) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u32 { Self::__member_field_8(core::ptr::from_ref(self)) }
 }
 
 impl crate::MovementMessageActivateDoor {
@@ -1279,6 +1312,16 @@ impl crate::MovementPathManagerArbiter {
     pub fn set_field_48(&mut self, value: u32) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_48_ptr(&self) -> *mut u32 { Self::__member_field_48(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u32 { unsafe { member!(this, "MovementPathManagerArbiter.field_8", 0x8, u32) } }
+    /// `MovementPathManagerArbiter::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u32 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u32) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u32 { Self::__member_field_8(core::ptr::from_ref(self)) }
 }
 
 impl crate::MovementPlannerAgent {
@@ -1425,6 +1468,36 @@ impl crate::MovementPlannerArbiter {
     /// The `IMovementPlannerSetArbitration` base at +0x18.
     #[inline]
     pub fn as_i_movement_planner_set_arbitration(&self) -> &crate::IMovementPlannerSetArbitration { unsafe { &*core::ptr::from_ref(self).byte_add(0x18).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u32 { unsafe { member!(this, "MovementPlannerArbiter.field_28", 0x28, u32) } }
+    /// `MovementPlannerArbiter::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u32 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u32) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u32 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_68(this: *const Self) -> *mut u64 { unsafe { member!(this, "MovementPlannerArbiter.field_68", 0x68, u64) } }
+    /// `MovementPlannerArbiter::field_68`, at +0x68 on 1.7.104.
+    #[inline]
+    pub fn field_68(&self) -> u64 { unsafe { Self::__member_field_68(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_68(&mut self, value: u64) { unsafe { Self::__member_field_68(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_68_ptr(&self) -> *mut u64 { Self::__member_field_68(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u32 { unsafe { member!(this, "MovementPlannerArbiter.field_8", 0x8, u32) } }
+    /// `MovementPlannerArbiter::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u32 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u32) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u32 { Self::__member_field_8(core::ptr::from_ref(self)) }
 }
 
 impl crate::MovementPostUpdateArbiter {
@@ -1434,6 +1507,66 @@ impl crate::MovementPostUpdateArbiter {
     /// The `IMovementQueryDeltas` base at +0x18.
     #[inline]
     pub fn as_i_movement_query_deltas(&self) -> &crate::IMovementQueryDeltas { unsafe { &*core::ptr::from_ref(self).byte_add(0x18).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_40(this: *const Self) -> *mut f32 { unsafe { member!(this, "MovementPostUpdateArbiter.field_40", 0x40, f32) } }
+    /// `MovementPostUpdateArbiter::field_40`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn field_40(&self) -> f32 { unsafe { Self::__member_field_40(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_40(&mut self, value: f32) { unsafe { Self::__member_field_40(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_40_ptr(&self) -> *mut f32 { Self::__member_field_40(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_44(this: *const Self) -> *mut f32 { unsafe { member!(this, "MovementPostUpdateArbiter.field_44", 0x44, f32) } }
+    /// `MovementPostUpdateArbiter::field_44`, at +0x44 on 1.7.104.
+    #[inline]
+    pub fn field_44(&self) -> f32 { unsafe { Self::__member_field_44(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_44(&mut self, value: f32) { unsafe { Self::__member_field_44(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_44_ptr(&self) -> *mut f32 { Self::__member_field_44(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut f32 { unsafe { member!(this, "MovementPostUpdateArbiter.field_48", 0x48, f32) } }
+    /// `MovementPostUpdateArbiter::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> f32 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: f32) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut f32 { Self::__member_field_48(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_4C(this: *const Self) -> *mut f32 { unsafe { member!(this, "MovementPostUpdateArbiter.field_4C", 0x4C, f32) } }
+    /// `MovementPostUpdateArbiter::field_4C`, at +0x4C on 1.7.104.
+    #[inline]
+    pub fn field_4C(&self) -> f32 { unsafe { Self::__member_field_4C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_4C(&mut self, value: f32) { unsafe { Self::__member_field_4C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_4C_ptr(&self) -> *mut f32 { Self::__member_field_4C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_50(this: *const Self) -> *mut f32 { unsafe { member!(this, "MovementPostUpdateArbiter.field_50", 0x50, f32) } }
+    /// `MovementPostUpdateArbiter::field_50`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn field_50(&self) -> f32 { unsafe { Self::__member_field_50(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_50(&mut self, value: f32) { unsafe { Self::__member_field_50(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_50_ptr(&self) -> *mut f32 { Self::__member_field_50(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u32 { unsafe { member!(this, "MovementPostUpdateArbiter.field_8", 0x8, u32) } }
+    /// `MovementPostUpdateArbiter::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u32 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u32) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u32 { Self::__member_field_8(core::ptr::from_ref(self)) }
 }
 
 impl crate::MovementStateFollowPath {
@@ -1557,6 +1690,66 @@ impl crate::MovementTweenerArbiter {
     /// The `IMovementSetTweener` base at +0x18.
     #[inline]
     pub fn as_i_movement_set_tweener(&self) -> &crate::IMovementSetTweener { unsafe { &*core::ptr::from_ref(self).byte_add(0x18).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_15C(this: *const Self) -> *mut u32 { unsafe { member!(this, "MovementTweenerArbiter.field_15C", 0x15C, u32) } }
+    /// `MovementTweenerArbiter::field_15C`, at +0x15C on 1.7.104.
+    #[inline]
+    pub fn field_15C(&self) -> u32 { unsafe { Self::__member_field_15C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_15C(&mut self, value: u32) { unsafe { Self::__member_field_15C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_15C_ptr(&self) -> *mut u32 { Self::__member_field_15C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_180(this: *const Self) -> *mut u64 { unsafe { member!(this, "MovementTweenerArbiter.field_180", 0x180, u64) } }
+    /// `MovementTweenerArbiter::field_180`, at +0x180 on 1.7.104.
+    #[inline]
+    pub fn field_180(&self) -> u64 { unsafe { Self::__member_field_180(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_180(&mut self, value: u64) { unsafe { Self::__member_field_180(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_180_ptr(&self) -> *mut u64 { Self::__member_field_180(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_4C(this: *const Self) -> *mut u64 { unsafe { member!(this, "MovementTweenerArbiter.field_4C", 0x4C, u64) } }
+    /// `MovementTweenerArbiter::field_4C`, at +0x4C on 1.7.104.
+    #[inline]
+    pub fn field_4C(&self) -> u64 { unsafe { Self::__member_field_4C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_4C(&mut self, value: u64) { unsafe { Self::__member_field_4C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_4C_ptr(&self) -> *mut u64 { Self::__member_field_4C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_54(this: *const Self) -> *mut u32 { unsafe { member!(this, "MovementTweenerArbiter.field_54", 0x54, u32) } }
+    /// `MovementTweenerArbiter::field_54`, at +0x54 on 1.7.104.
+    #[inline]
+    pub fn field_54(&self) -> u32 { unsafe { Self::__member_field_54(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_54(&mut self, value: u32) { unsafe { Self::__member_field_54(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_54_ptr(&self) -> *mut u32 { Self::__member_field_54(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u32 { unsafe { member!(this, "MovementTweenerArbiter.field_8", 0x8, u32) } }
+    /// `MovementTweenerArbiter::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u32 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u32) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u32 { Self::__member_field_8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_88(this: *const Self) -> *mut u32 { unsafe { member!(this, "MovementTweenerArbiter.field_88", 0x88, u32) } }
+    /// `MovementTweenerArbiter::field_88`, at +0x88 on 1.7.104.
+    #[inline]
+    pub fn field_88(&self) -> u32 { unsafe { Self::__member_field_88(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_88(&mut self, value: u32) { unsafe { Self::__member_field_88(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_88_ptr(&self) -> *mut u32 { Self::__member_field_88(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_B4(this: *const Self) -> *mut u64 { unsafe { member!(this, "MovementTweenerArbiter.field_B4", 0xB4, u64) } }
@@ -1729,6 +1922,59 @@ impl crate::Pathing {
     pub fn field_68_ptr(&self) -> *mut u64 { Self::__member_field_68(core::ptr::from_ref(self)) }
 }
 
+impl crate::PathingCoverLocation {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_38(this: *const Self) -> *mut u64 { unsafe { member!(this, "PathingCoverLocation.field_38", 0x38, u64) } }
+    /// `PathingCoverLocation::field_38`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn field_38(&self) -> u64 { unsafe { Self::__member_field_38(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_38(&mut self, value: u64) { unsafe { Self::__member_field_38(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_38_ptr(&self) -> *mut u64 { Self::__member_field_38(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_40(this: *const Self) -> *mut u64 { unsafe { member!(this, "PathingCoverLocation.field_40", 0x40, u64) } }
+    /// `PathingCoverLocation::field_40`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn field_40(&self) -> u64 { unsafe { Self::__member_field_40(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_40(&mut self, value: u64) { unsafe { Self::__member_field_40(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_40_ptr(&self) -> *mut u64 { Self::__member_field_40(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "PathingCoverLocation.field_48", 0x48, u64) } }
+    /// `PathingCoverLocation::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_50(this: *const Self) -> *mut u64 { unsafe { member!(this, "PathingCoverLocation.field_50", 0x50, u64) } }
+    /// `PathingCoverLocation::field_50`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn field_50(&self) -> u64 { unsafe { Self::__member_field_50(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_50(&mut self, value: u64) { unsafe { Self::__member_field_50(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_50_ptr(&self) -> *mut u64 { Self::__member_field_50(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_58(this: *const Self) -> *mut u32 { unsafe { member!(this, "PathingCoverLocation.field_58", 0x58, u32) } }
+    /// `PathingCoverLocation::field_58`, at +0x58 on 1.7.104.
+    #[inline]
+    pub fn field_58(&self) -> u32 { unsafe { Self::__member_field_58(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_58(&mut self, value: u32) { unsafe { Self::__member_field_58(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_58_ptr(&self) -> *mut u32 { Self::__member_field_58(core::ptr::from_ref(self)) }
+}
+
 impl crate::PathingDoor {
     #[doc(hidden)]
     #[inline]
@@ -1792,6 +2038,36 @@ impl crate::PathingRequestClosestGoal {
 }
 
 impl crate::PathingRequestCover {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_100(this: *const Self) -> *mut u64 { unsafe { member!(this, "PathingRequestCover.field_100", 0x100, u64) } }
+    /// `PathingRequestCover::field_100`, at +0x100 on 1.7.104.
+    #[inline]
+    pub fn field_100(&self) -> u64 { unsafe { Self::__member_field_100(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_100(&mut self, value: u64) { unsafe { Self::__member_field_100(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_100_ptr(&self) -> *mut u64 { Self::__member_field_100(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_108(this: *const Self) -> *mut u32 { unsafe { member!(this, "PathingRequestCover.field_108", 0x108, u32) } }
+    /// `PathingRequestCover::field_108`, at +0x108 on 1.7.104.
+    #[inline]
+    pub fn field_108(&self) -> u32 { unsafe { Self::__member_field_108(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_108(&mut self, value: u32) { unsafe { Self::__member_field_108(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_108_ptr(&self) -> *mut u32 { Self::__member_field_108(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_120(this: *const Self) -> *mut u16 { unsafe { member!(this, "PathingRequestCover.field_120", 0x120, u16) } }
+    /// `PathingRequestCover::field_120`, at +0x120 on 1.7.104.
+    #[inline]
+    pub fn field_120(&self) -> u16 { unsafe { Self::__member_field_120(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_120(&mut self, value: u16) { unsafe { Self::__member_field_120(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_120_ptr(&self) -> *mut u16 { Self::__member_field_120(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_134(this: *const Self) -> *mut f32 { unsafe { member!(this, "PathingRequestCover.field_134", 0x134, f32) } }
@@ -1919,6 +2195,46 @@ impl crate::PathingRequestHide {
 }
 
 impl crate::PathingRequestLOS {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_124(this: *const Self) -> *mut u32 { unsafe { member!(this, "PathingRequestLOS.field_124", 0x124, u32) } }
+    /// `PathingRequestLOS::field_124`, at +0x124 on 1.7.104.
+    #[inline]
+    pub fn field_124(&self) -> u32 { unsafe { Self::__member_field_124(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_124(&mut self, value: u32) { unsafe { Self::__member_field_124(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_124_ptr(&self) -> *mut u32 { Self::__member_field_124(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_128(this: *const Self) -> *mut f32 { unsafe { member!(this, "PathingRequestLOS.field_128", 0x128, f32) } }
+    /// `PathingRequestLOS::field_128`, at +0x128 on 1.7.104.
+    #[inline]
+    pub fn field_128(&self) -> f32 { unsafe { Self::__member_field_128(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_128(&mut self, value: f32) { unsafe { Self::__member_field_128(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_128_ptr(&self) -> *mut f32 { Self::__member_field_128(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_12C(this: *const Self) -> *mut f32 { unsafe { member!(this, "PathingRequestLOS.field_12C", 0x12C, f32) } }
+    /// `PathingRequestLOS::field_12C`, at +0x12C on 1.7.104.
+    #[inline]
+    pub fn field_12C(&self) -> f32 { unsafe { Self::__member_field_12C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_12C(&mut self, value: f32) { unsafe { Self::__member_field_12C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_12C_ptr(&self) -> *mut f32 { Self::__member_field_12C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_130(this: *const Self) -> *mut f32 { unsafe { member!(this, "PathingRequestLOS.field_130", 0x130, f32) } }
+    /// `PathingRequestLOS::field_130`, at +0x130 on 1.7.104.
+    #[inline]
+    pub fn field_130(&self) -> f32 { unsafe { Self::__member_field_130(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_130(&mut self, value: f32) { unsafe { Self::__member_field_130(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_130_ptr(&self) -> *mut f32 { Self::__member_field_130(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "PathingRequestLOS.field_C8", 0xC8, u64) } }

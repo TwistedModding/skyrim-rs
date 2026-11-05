@@ -118,8 +118,7 @@ impl Detail for TESInitScriptEvent {
 
 impl Detail for TESFurnitureEvent {
     fn detail(&self) -> String {
-        let kind = if crate::lacks("member TESFurnitureEvent.type") { "?".to_owned() } else { self.type_().to_string() };
-        format!("TESFurnitureEvent {{ actor: {}, targetFurniture: {}, type: {kind} }}", refr(self.actor()), refr(self.target_furniture()))
+        format!("TESFurnitureEvent {{ actor: {}, targetFurniture: {}, type: {} }}", refr(self.actor()), refr(self.target_furniture()), self.type_)
     }
 }
 
@@ -363,7 +362,6 @@ fn add_remove() -> Result<String, String> {
 }
 
 fn fixed_string() -> Result<String, String> {
-    crate::needs(&["size BSStringPool::Entry"])?;
     let keyword = form_by_editor_id("VendorItemWeapon").and_then(|f| f.cast::<BGSKeyword>()).ok_or("VendorItemWeapon did not resolve")?;
     let name = keyword_field(keyword);
     let before = name.ref_count();

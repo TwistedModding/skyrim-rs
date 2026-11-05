@@ -72,26 +72,26 @@ fn file(runtime: &str, library: &str, database: &str, changes: &str) -> String {
         format!(r#""{name}": {{"columns": {columns}, "rows": [{}]}}"#, rows.join(","))
     };
     let tables = [
-        table("fields", r#"["class","name","offset","status","a_later_column"]"#, fields),
-        table("classes", r#"["name","status","size","size_status"]"#, classes),
-        table("bases", r#"["class","base","offset","status"]"#, bases.to_vec()),
-        table("slots", r#"["class","displacement","index_canonical","index","status"]"#, slots.to_vec()),
-        table("functions", r#"["id","status","signature_status","review"]"#, Vec::new()),
+        table("fields", r#"["class","name","offset","status","confidence","review","review_basis","evidence"]"#, fields),
+        table("classes", r#"["name","status","size","size_status","confidence","review","review_basis","evidence"]"#, classes),
+        table("bases", r#"["class","base","offset","status","confidence","review","review_basis"]"#, bases.to_vec()),
+        table("slots", r#"["class","displacement","index_canonical","index","status","confidence","review","review_basis"]"#, slots.to_vec()),
+        table("functions", r#"["id","status","signature_status","review","review_basis"]"#, Vec::new()),
         table("globals", r#"["id","status"]"#, Vec::new()),
         table("vtables", r#"["id_canonical","id","status"]"#, Vec::new()),
         table("sites", r#"["id","offset_canonical","offset","bytes","status"]"#, Vec::new()),
-        table("id_map", r#"["ae","se","confidence","review"]"#, Vec::new()),
+        table("id_map", r#"["ae","se","confidence","review","review_basis"]"#, Vec::new()),
         table("enums", r#"["enum","name","value","status"]"#, Vec::new()),
     ];
     format!(r#"{{"schema": 1, "runtime": "{runtime}", "address_library": {{"file": "{library}", "database": "{database}"}}, {}}}"#, tables.join(", "))
 }
 
 const MOVES: &str = r#"{
-    "fields": [["Actor","health","0x1c","moved"], ["Actor","process",null,"unverified"], ["Actor","inner",null,"absent"]],
-    "classes": [["Actor","changed","0x48","changed"]],
-    "bases": [["Actor","ActorValueOwner","0x18","moved"]],
-    "slots": [["Actor",0,1,2,"moved"]],
-    "functions": [[300,"same","same",null], [301,"changed","same",null], [302,"changed","changed",null], [303,"changed","changed","accepted"], [304,"unverified","same",null], [305,"same","same","rejected"], [306,"absent",null,null], [307,"same","unverified",null], [308,"changed","unverified",null]],
+    "fields": [["Actor","health","0x1c","moved","high","accepted","read"], ["Actor","process",null,"unverified"], ["Actor","inner",null,"absent"]],
+    "classes": [["Actor","changed","0x48","changed","high","accepted","read"]],
+    "bases": [["Actor","ActorValueOwner","0x18","moved","high","accepted","read"]],
+    "slots": [["Actor",0,1,2,"moved","high","accepted","read"]],
+    "functions": [[300,"same","same",null], [301,"changed","same",null], [302,"changed","changed",null], [303,"changed","changed","accepted","read"], [304,"unverified","same",null], [305,"same","same","rejected"], [306,"absent",null,null], [307,"same","unverified",null], [308,"changed","unverified",null]],
     "vtables": [[100,100,"same"], [101,101,"same"], [102,102,"same"], [103,103,"same"]],
     "sites": [[300,"0x10","0x14","e8 01 02 03 04","differs"], [300,"0x20",null,null,"absent"], [300,"0x30","0x30","e8","same"]],
     "enums": [["Stage","First",0,"same"], ["Stage","Gone",null,"absent"], ["Stage","Last",1,"moved"], ["Steady","One",null,"unverified"]]
@@ -178,7 +178,7 @@ fn profile_rows_follow_the_contract() {
     assert_eq!(
         profiles[&format!("{PROFILE_DIR}/1-6-1170.profile")],
         "skyrim-rs-profile 1\nruntime 1.6.1170\naddress-library versionlib-1-6-1170-0.bin\ndatabase ae\n\
-         id-unverified 302\nid-unverified 303\nid-unverified 305\nid-unverified 308\n\
+         id-unverified 302\nid-address 303\nid-unverified 305\nid-unverified 308\n\
          member Actor.health 1c\nmember-missing Actor.inner\nmember-unverified Actor.process\n\
          slot Actor[0].1 2\n\
          size Actor 48\n\
@@ -189,6 +189,14 @@ fn profile_rows_follow_the_contract() {
     let parsed = versionlib::profile::parse(&profiles[&format!("{PROFILE_DIR}/1-6-1170.profile")]).unwrap();
     assert_eq!(parsed.site(300, 0x30), versionlib::profile::Row::Here(&versionlib::profile::Site { offset: 0x30, expected: vec![0xE8], replacement: None }), "a compared site has a row, same or not");
     assert_eq!(parsed.site(300, 0x40), versionlib::profile::Row::Unverified, "a site with no row was never compared");
+}
+
+#[test]
+fn a_site_that_differs_with_no_offset_is_missing() {
+    let inp = ledger();
+    let other = runtime(&file("1.5.97", "version-1-5-97-0.bin", "SE", r#"{"sites": [[300,"0x10",null,null,"differs"], [300,"0x20",null,null,"unverified"]]}"#));
+    let text = &profiles(&inp, std::slice::from_ref(&other))[&format!("{PROFILE_DIR}/1-5-97.profile")];
+    assert!(text.contains("site-missing 300 10\n") && text.contains("site-unverified 300 20\n"), "{text}");
 }
 
 #[test]
@@ -212,19 +220,181 @@ fn a_site_only_another_file_lists_is_unverified_here() {
     assert!(text.contains("site-unverified 300 40\n"), "{text}");
 }
 
+/// A file for 1.6.1170 with `changes`, and the member, slot, size and base rows of its profile.
+fn layout_rows(changes: &str) -> Vec<String> {
+    let inp = ledger();
+    let other = runtime(&file("1.6.1170", "versionlib-1-6-1170-0.bin", "AE", changes));
+    let text = &profiles(&inp, std::slice::from_ref(&other))[&format!("{PROFILE_DIR}/1-6-1170.profile")];
+    text.lines().filter(|l| ["member", "slot", "size", "base"].iter().any(|kind| l.starts_with(kind))).map(str::to_owned).collect()
+}
+
+#[test]
+fn an_unreviewed_value_is_unverified_at_any_confidence() {
+    let changes = r#"{
+        "fields": [["Actor","health","0x1c","moved","medium"], ["Actor","stable","0x34","moved","high"], ["Actor","process","0x28","moved",null], ["Actor","inner","0x30","moved","high","accepted","read"]],
+        "classes": [["Actor","changed","0x48","changed","high"], ["TESForm","changed","0x18","changed","high","accepted","read"]],
+        "bases": [["Actor","ActorValueOwner","0x18","moved","high"], ["Actor","TESForm","0x8","moved","high","accepted","live"]],
+        "slots": [["Actor",0,1,2,"moved","high"], ["Actor",16,0,1,"moved","high","accepted","read"]]
+    }"#;
+    assert_eq!(
+        layout_rows(changes),
+        [
+            "member-unverified Actor.health", "member Actor.inner 30", "member-unverified Actor.process", "member-unverified Actor.stable",
+            "slot-unverified Actor[0].1", "slot Actor[10].0 1",
+            "size-unverified Actor", "size TESForm 18",
+            "base-unverified Actor:ActorValueOwner", "base Actor:TESForm 8",
+        ]
+    );
+}
+
+#[test]
+fn an_accepted_row_with_no_basis_counts_as_unreviewed() {
+    let changes = r#"{"fields": [["Actor","health","0x1c","moved","high","accepted",null]]}"#;
+    assert_eq!(layout_rows(changes), ["member-unverified Actor.health"]);
+    let functions = r#""functions": {"columns": ["id","status","signature_status","review","review_basis"], "rows": [[1,"changed","unverified","accepted",null],[2,"changed","unverified","accepted","read"],[3,"changed","changed","accepted",null]]}"#;
+    let id_map = r#""id_map": {"columns": ["ae","se","confidence","review","review_basis"], "rows": [[1,11,"medium","accepted","read"],[2,12,"medium","accepted",null],[4,14,"medium","accepted",null]]}"#;
+    let se = runtime(&format!(r#"{{"schema": 1, "runtime": "1.5.97", "address_library": {{"file": "version-1-5-97-0.bin", "database": "SE"}}, {functions}, {id_map}}}"#));
+    let text = &profiles(&ledger(), std::slice::from_ref(&se))[&format!("{PROFILE_DIR}/1-5-97.profile")];
+    for row in ["id-unverified 1\n", "id-unverified 2\n", "id-unverified 4\n"] {
+        assert!(text.contains(row), "{row} in {text}");
+    }
+}
+
+#[test]
+fn any_row_at_low_confidence_is_unverified() {
+    let changes = r#"{
+        "fields": [["Actor","health","0x18","same","low"], ["Actor","inner",null,"absent","low"]],
+        "classes": [["Actor","same","0x40","same","low"], ["TESForm","absent",null,"unverified","low"]],
+        "bases": [["Actor","TESForm","0x0","same","low"]],
+        "slots": [["Actor",0,1,1,"same","low"], ["Actor",16,0,null,"absent","low"]]
+    }"#;
+    assert_eq!(
+        layout_rows(changes),
+        [
+            "member-unverified Actor.health", "member-unverified Actor.inner",
+            "slot-unverified Actor[0].1", "slot-unverified Actor[10].0",
+            "size-unverified Actor", "size-unverified TESForm",
+            "base-unverified Actor:TESForm",
+        ]
+    );
+}
+
+#[test]
+fn same_and_absent_at_medium_stay_usable() {
+    let changes = r#"{
+        "fields": [["Actor","health","0x18","same","medium"], ["Actor","inner",null,"absent","medium"]],
+        "classes": [["Actor","same","0x40","same","medium"], ["TESForm","absent",null,"unverified","medium"]],
+        "bases": [["Actor","TESForm","0x0","same","medium"]],
+        "slots": [["Actor",0,1,1,"same","medium"], ["Actor",16,0,null,"absent","medium"]]
+    }"#;
+    assert_eq!(layout_rows(changes), ["member-missing Actor.inner", "slot-missing Actor[10].0", "size-missing TESForm"]);
+}
+
+#[test]
+fn an_accepted_row_is_usable_at_any_confidence() {
+    let changes = r#"{
+        "fields": [["Actor","health","0x1c","moved","medium","accepted","read"], ["Actor","stable","0x34","moved","low","accepted","read"], ["Actor","process","0x20","same","low","accepted","read"], ["Actor","inner",null,"absent","low","accepted","read"]],
+        "classes": [["Actor","changed","0x48","changed","medium","accepted","read"], ["TESForm","same","0x10","same","low","accepted","read"]],
+        "bases": [["Actor","ActorValueOwner","0x18","moved","low","accepted","read"]],
+        "slots": [["Actor",0,1,2,"moved","medium","accepted","read"], ["Actor",16,0,null,"absent","low","accepted","read"]]
+    }"#;
+    assert_eq!(layout_rows(changes), ["member Actor.health 1c", "member-missing Actor.inner", "member Actor.stable 34", "slot Actor[0].1 2", "slot-missing Actor[10].0", "size Actor 48", "base Actor:ActorValueOwner 18"]);
+}
+
+#[test]
+fn a_rejected_row_is_never_usable() {
+    let changes = r#"{
+        "fields": [["Actor","health","0x1c","moved","high","rejected"], ["Actor","stable","0x30","same","high","rejected"], ["Actor","inner",null,"absent","high","rejected"]],
+        "classes": [["Actor","same","0x40","same","high","rejected"]],
+        "bases": [["Actor","TESForm","0x0","same","high","rejected"]],
+        "slots": [["Actor",0,1,1,"same","high","rejected"]]
+    }"#;
+    assert_eq!(
+        layout_rows(changes),
+        ["member-unverified Actor.health", "member-unverified Actor.inner", "member-unverified Actor.stable", "slot-unverified Actor[0].1", "size-unverified Actor", "base-unverified Actor:TESForm"]
+    );
+}
+
+#[test]
+fn status_comes_before_confidence_and_review() {
+    let changes = r#"{
+        "fields": [["Actor","health",null,"unverified","high","accepted","read"], ["Actor","inner",null,"absent","high"]],
+        "slots": [["Actor",0,1,null,"unverified","high"], ["Actor",16,0,null,"absent","high"]]
+    }"#;
+    assert_eq!(layout_rows(changes), ["member-unverified Actor.health", "member-missing Actor.inner", "slot-unverified Actor[0].1", "slot-missing Actor[10].0"]);
+}
+
+#[test]
+fn a_scripted_same_at_medium_is_unverified_unless_accepted() {
+    let changes = r#"{
+        "fields": [["Actor","health","0x18","same","medium",null,null,"hand: statics: class-level citation"], ["Actor","stable","0x30","same","medium","accepted","read","hand: statics: body changed"], ["Actor","process","0x20","same","medium",null,"load Actor::Kill"], ["Actor","inner","0x28","same","high",null,null,"hand: statics: body same"]],
+        "classes": [["Actor","same","0x40","same","medium",null,null,"hand: statics: the ctor"], ["TESForm","changed","0x18","changed","high",null,null,"hand: statics: the ctor"]]
+    }"#;
+    assert_eq!(layout_rows(changes), ["member-unverified Actor.health", "size-unverified Actor", "size-unverified TESForm"]);
+}
+
+#[test]
+fn evidence_is_no_review() {
+    let changes = r#"{"fields": [["Actor","health","0x1c","moved","medium",null,null,"hand: Actor::ctor stores at +0x1c"]]}"#;
+    assert_eq!(layout_rows(changes), ["member-unverified Actor.health"]);
+}
+
+#[test]
+fn the_canonical_file_writes_no_row_whatever_it_says() {
+    let inp = ledger();
+    let changes = r#"{
+        "fields": [["Actor","health","0x1c","moved","medium"], ["Actor","stable","0x30","same","low"]],
+        "slots": [["Actor",0,1,1,"same","low"]]
+    }"#;
+    let canonical = runtime(&file(CANONICAL, "versionlib-1-7-104-0.bin", "AE", changes));
+    assert_eq!(canonical.members[&("Actor".to_owned(), "stable".to_owned())], Diff::Same, "the rule is for the other runtimes");
+    let made = profiles(&inp, std::slice::from_ref(&canonical));
+    assert_eq!(made[&format!("{PROFILE_DIR}/1-7-104.profile")], "skyrim-rs-profile 1\nruntime 1.7.104\naddress-library versionlib-1-7-104-0.bin\ndatabase ae\n");
+    assert_eq!(generated(&inp, &[]), generated(&inp, &[canonical]), "nor does it make an accessor");
+}
+
+#[test]
+fn a_demoted_row_makes_an_accessor_and_medium_same_stays_plain() {
+    let inp = ledger();
+    let changes = r#"{"fields": [["Actor","health","0x18","same","low"], ["Actor","stable","0x30","same","medium"]], "slots": [["Actor",0,1,1,"same","low"]], "bases": [["Actor","ActorValueOwner","0x10","same","low"]]}"#;
+    let variance = Variance::of(&inp, &[runtime(&file("1.6.1170", "versionlib-1-6-1170-0.bin", "AE", changes))]);
+    assert!(variance.member("Actor", "health") && variance.slot("Actor", 0, 1) && variance.base("Actor", "ActorValueOwner"));
+    assert!(!variance.member("Actor", "stable"));
+    let text = generated(&inp, &[runtime(&file("1.6.1170", "versionlib-1-6-1170-0.bin", "AE", changes))]);
+    assert!(text.contains("pub fn health(&self) -> f32") && !text.contains("pub health: f32,"));
+    assert!(text.contains("pub stable: u32,"));
+}
+
 #[test]
 fn se_ids_follow_confidence_and_review() {
     let inp = ledger();
     let changes = r#"{
-        "id_map": [[1,11,"high",null], [2,12,"medium",null], [3,13,"low","accepted"], [4,14,"high","rejected"], [5,15,"medium","rejected"], [6,16,"high",null], [7,17,"high",null], [11,21,"high",null], [12,22,"high","accepted"], [13,23,"high",null], [14,24,"medium",null]],
-        "functions": [[6,"changed","changed",null], [7,"same","same","rejected"], [11,"changed","unverified",null], [12,"changed","changed","accepted"], [13,"unverified","unverified",null], [14,"same","same","accepted"]],
+        "id_map": [[1,11,"high",null], [2,12,"medium",null], [3,13,"low","accepted","read"], [4,14,"high","rejected"], [5,15,"medium","rejected"], [6,16,"high",null], [7,17,"high",null], [11,21,"high",null], [15,25,"high",null], [12,22,"high","accepted","read"], [13,23,"high",null], [14,24,"medium",null]],
+        "functions": [[6,"changed","changed",null], [7,"same","same","rejected"], [11,"changed","same",null], [15,"changed","unverified",null], [12,"changed","changed","accepted","read"], [13,"unverified","unverified",null], [14,"same","same","accepted","read"]],
         "vtables": [[8,18,"same"], [9,null,"same"], [10,20,"absent"]]
     }"#;
     let se = runtime(&file("1.5.97", "version-1-5-97-0.bin", "SE", changes));
     let text = &profiles(&inp, &[se])[&format!("{PROFILE_DIR}/1-5-97.profile")];
     let ids: Vec<&str> = text.lines().filter(|l| l.starts_with("id")).collect();
-    assert_eq!(ids, ["id 1 11", "id-unverified 2", "id 3 13", "id-unverified 6", "id 8 18", "id 11 21", "id-unverified 12", "id-unverified 13", "id-unverified 14"]);
+    assert_eq!(ids, ["id 1 11", "id-unverified 2", "id 3 13", "id-unverified 6", "id 8 18", "id 11 21", "id-address 12 22", "id-unverified 13", "id-unverified 14", "id-unverified 15"]);
     assert!(text.contains("database se\n"));
+}
+
+#[test]
+fn an_address_only_row_writes_id_address() {
+    let functions = r#""functions": {"columns": ["id","status","signature_status","review","review_basis","note"], "rows": [[1,"changed","unverified","accepted","read","hand: the address is right, the verdict covers the address only: same calls"],[2,"changed","changed","accepted","read","hand: a real parameter change"],[3,"changed","unverified","accepted","read","hand: read"],[4,"changed","unverified",null,null,"hand: the address is right, the verdict covers the address only"],[5,"changed","unverified","rejected",null,"hand: the address is right, the verdict covers the address only"],[6,"changed","unverified","accepted","read","hand: the verdict covers the address only"]]}"#;
+    let id_map = r#""id_map": {"columns": ["ae","se","confidence","review","review_basis"], "rows": [[6,66,"high","accepted","read"]]}"#;
+    let other = runtime(&format!(r#"{{"schema": 1, "runtime": "1.6.353", "address_library": {{"file": "versionlib-1-6-353-0.bin", "database": "AE"}}, {functions}, {id_map}}}"#));
+    let text = &profiles(&ledger(), std::slice::from_ref(&other))[&format!("{PROFILE_DIR}/1-6-353.profile")];
+    for row in ["id-address 1\n", "id-address 2\n", "id-unverified 4\n", "id-unverified 5\n", "id-address 6 66\n"] {
+        assert!(text.contains(row), "{row} in {text}");
+    }
+    assert!(!text.lines().any(|l| l.ends_with(" 3")), "{text}");
+    let parsed = versionlib::profile::parse(text).unwrap();
+    assert_eq!(parsed.id(1), versionlib::profile::Row::Unverified, "an ordinary use is not served");
+    assert_eq!(parsed.address_id(1), versionlib::profile::Row::Same);
+    assert_eq!(parsed.address_id(6), versionlib::profile::Row::Here(66));
+    assert_eq!(parsed.address_id(4), versionlib::profile::Row::Unverified);
 }
 
 #[test]
@@ -316,12 +486,12 @@ fn a_site_patch_fills_or_answers_the_compared_row_and_refuses_to_contradict_it()
 
 #[test]
 fn an_ae_profile_maps_the_ids_its_library_holds_under_another_number() {
-    let functions = r#""functions": {"columns": ["id","status","signature_status","review"], "rows": [[1,"same",null,null],[2,"same",null,null],[3,"same",null,null],[4,"same",null,null],[5,"same",null,null],[6,"changed","unverified",null],[9,"changed","unverified","accepted"],[10,"changed","changed","accepted"],[300,"same",null,null]]}"#;
-    let id_map = r#""id_map": {"columns": ["ae","se","confidence","review"], "rows": [[1,11,"high",null],[2,12,"low","accepted"],[3,13,"medium",null],[4,14,"high","rejected"],[5,null,"high",null],[6,16,"high",null],[9,19,"high","accepted"],[10,20,"high","accepted"],[300,null,"high","accepted"]]}"#;
+    let functions = r#""functions": {"columns": ["id","status","signature_status","review","review_basis"], "rows": [[1,"same",null,null],[2,"same",null,null],[3,"same",null,null],[4,"same",null,null],[5,"same",null,null],[6,"changed","unverified",null],[9,"changed","unverified","accepted","read"],[10,"changed","changed","accepted","read"],[300,"same",null,null]]}"#;
+    let id_map = r#""id_map": {"columns": ["ae","se","confidence","review","review_basis"], "rows": [[1,11,"high",null],[2,12,"low","accepted","read"],[3,13,"medium",null],[4,14,"high","rejected"],[5,null,"high",null],[6,16,"high",null],[9,19,"high","accepted","read"],[10,20,"high","accepted","read"],[300,null,"high","accepted","read"]]}"#;
     let vtables = r#""vtables": {"columns": ["id_canonical","id","status"], "rows": [[7,7,"same"],[8,18,"same"]]}"#;
     let other = runtime(&format!(r#"{{"schema": 1, "runtime": "1.6.353", "address_library": {{"file": "versionlib-1-6-353-0.bin", "database": "AE"}}, {functions}, {id_map}, {vtables}}}"#));
     let text = &profiles(&ledger(), std::slice::from_ref(&other))[&format!("{PROFILE_DIR}/1-6-353.profile")];
-    for row in ["id 1 11\n", "id 2 12\n", "id-unverified 3\n", "id-unverified 4\n", "id-missing 5\n", "id-unverified 6\n", "id 8 18\n", "id 9 19\n", "id-unverified 10\n", "id-missing 300\n"] {
+    for row in ["id 1 11\n", "id 2 12\n", "id-unverified 3\n", "id-unverified 4\n", "id-missing 5\n", "id-unverified 6\n", "id 8 18\n", "id 9 19\n", "id-address 10 20\n", "id-missing 300\n"] {
         assert!(text.contains(row), "{row} in {text}");
     }
     assert!(!text.contains("id 4 ") && !text.contains("id 7 "), "{text}");

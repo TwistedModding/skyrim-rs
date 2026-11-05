@@ -224,6 +224,25 @@ impl Running {
         Some(self.base + usize::try_from(self.offset(ae_id)?).ok()?)
     }
 
+    /// The live address of an AE id for code that only locates a call site or compares an address,
+    /// which an `id-address` row also serves; `None` otherwise as for [`Self::offset`].
+    #[must_use]
+    pub fn location(&self, ae_id: u64) -> Option<usize> {
+        let id = match self.profile.address_id(u32::try_from(ae_id).ok()?) {
+            Row::Same => ae_id,
+            Row::Here(id) => u64::from(id),
+            Row::Missing | Row::Unverified => return None,
+        };
+        Some(self.base + usize::try_from(self.db.offset(id)?).ok()?)
+    }
+
+    /// Whether the profile says the site `offset` bytes into the function at an AE id on 1.7.104
+    /// does not exist on this runtime.
+    #[must_use]
+    pub fn site_missing(&self, ae_id: u64, offset: u32) -> bool {
+        u32::try_from(ae_id).is_ok_and(|id| matches!(self.profile.site(id, offset), Row::Missing))
+    }
+
     /// The live address of the site `offset` bytes into the function at an AE id on 1.7.104,
     /// wherever the profile places it; `None` when the profile has no place for it or no usable id.
     #[must_use]
@@ -233,7 +252,7 @@ impl Running {
             Row::Here(site) => site.offset,
             Row::Missing | Row::Unverified => return None,
         };
-        Some(self.address(ae_id)? + usize::try_from(here).ok()?)
+        Some(self.location(ae_id)? + usize::try_from(here).ok()?)
     }
 }
 

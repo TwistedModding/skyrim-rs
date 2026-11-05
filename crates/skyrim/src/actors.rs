@@ -360,6 +360,7 @@ mod tests {
 
     #[test]
     fn the_high_array_is_read_from_its_data_and_size() {
+        versionlib::profile::assume_canonical();
         let handles = [0x0010_0001u32, 0x0020_0002, 0x0030_0003];
         let mut array = [0usize; 3];
         array[0] = handles.as_ptr() as usize;

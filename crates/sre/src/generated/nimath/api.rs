@@ -15,6 +15,39 @@ impl crate::NiBound {
     pub unsafe fn merge(&self, other: *const Self) { unsafe { function!(70973, (*const Self, *const Self))(core::ptr::from_ref(self), other) } }
 }
 
+impl crate::NiColor {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_b(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiColor.b", 0x8, f32) } }
+    /// `NiColor::b`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn b(&self) -> f32 { unsafe { Self::__member_b(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_b(&mut self, value: f32) { unsafe { Self::__member_b(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn b_ptr(&self) -> *mut f32 { Self::__member_b(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_g(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiColor.g", 0x4, f32) } }
+    /// `NiColor::g`, at +0x4 on 1.7.104.
+    #[inline]
+    pub fn g(&self) -> f32 { unsafe { Self::__member_g(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_g(&mut self, value: f32) { unsafe { Self::__member_g(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn g_ptr(&self) -> *mut f32 { Self::__member_g(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_r(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiColor.r", 0x0, f32) } }
+    /// `NiColor::r`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn r(&self) -> f32 { unsafe { Self::__member_r(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_r(&mut self, value: f32) { unsafe { Self::__member_r(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn r_ptr(&self) -> *mut f32 { Self::__member_r(core::ptr::from_ref(self)) }
+}
+
 impl crate::NiColorA {
     #[doc(hidden)]
     #[inline]
@@ -26,6 +59,16 @@ impl crate::NiColorA {
     pub fn set_a(&mut self, value: f32) { unsafe { Self::__member_a(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn a_ptr(&self) -> *mut f32 { Self::__member_a(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_b(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiColorA.b", 0x8, f32) } }
+    /// `NiColorA::b`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn b(&self) -> f32 { unsafe { Self::__member_b(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_b(&mut self, value: f32) { unsafe { Self::__member_b(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn b_ptr(&self) -> *mut f32 { Self::__member_b(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_g(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiColorA.g", 0x4, f32) } }
@@ -51,6 +94,56 @@ impl crate::NiColorA {
 impl crate::NiFrustum {
     #[doc(hidden)]
     #[inline]
+    pub fn __member_bottom(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiFrustum.bottom", 0xC, f32) } }
+    /// `NiFrustum::bottom`, at +0xC on 1.7.104.
+    #[inline]
+    pub fn bottom(&self) -> f32 { unsafe { Self::__member_bottom(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_bottom(&mut self, value: f32) { unsafe { Self::__member_bottom(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn bottom_ptr(&self) -> *mut f32 { Self::__member_bottom(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_far(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiFrustum.far", 0x14, f32) } }
+    /// `NiFrustum::far`, at +0x14 on 1.7.104.
+    #[inline]
+    pub fn far(&self) -> f32 { unsafe { Self::__member_far(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_far(&mut self, value: f32) { unsafe { Self::__member_far(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn far_ptr(&self) -> *mut f32 { Self::__member_far(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_left(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiFrustum.left", 0x0, f32) } }
+    /// `NiFrustum::left`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn left(&self) -> f32 { unsafe { Self::__member_left(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_left(&mut self, value: f32) { unsafe { Self::__member_left(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn left_ptr(&self) -> *mut f32 { Self::__member_left(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_near(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiFrustum.near", 0x10, f32) } }
+    /// `NiFrustum::near`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn near(&self) -> f32 { unsafe { Self::__member_near(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_near(&mut self, value: f32) { unsafe { Self::__member_near(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn near_ptr(&self) -> *mut f32 { Self::__member_near(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_ortho(this: *const Self) -> *mut u8 { unsafe { member!(this, "NiFrustum.ortho", 0x18, u8) } }
+    /// `NiFrustum::ortho`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn ortho(&self) -> u8 { unsafe { Self::__member_ortho(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_ortho(&mut self, value: u8) { unsafe { Self::__member_ortho(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn ortho_ptr(&self) -> *mut u8 { Self::__member_ortho(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_padding19(this: *const Self) -> *mut [u8; 3] { unsafe { member!(this, "NiFrustum.padding19", 0x19, [u8; 3]) } }
     /// `NiFrustum::padding19`, at +0x19 on 1.7.104.
     #[inline]
@@ -59,6 +152,26 @@ impl crate::NiFrustum {
     pub fn set_padding19(&mut self, value: [u8; 3]) { unsafe { Self::__member_padding19(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn padding19_ptr(&self) -> *mut [u8; 3] { Self::__member_padding19(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_right(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiFrustum.right", 0x4, f32) } }
+    /// `NiFrustum::right`, at +0x4 on 1.7.104.
+    #[inline]
+    pub fn right(&self) -> f32 { unsafe { Self::__member_right(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_right(&mut self, value: f32) { unsafe { Self::__member_right(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn right_ptr(&self) -> *mut f32 { Self::__member_right(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_top(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiFrustum.top", 0x8, f32) } }
+    /// `NiFrustum::top`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn top(&self) -> f32 { unsafe { Self::__member_top(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_top(&mut self, value: f32) { unsafe { Self::__member_top(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn top_ptr(&self) -> *mut f32 { Self::__member_top(core::ptr::from_ref(self)) }
 }
 
 impl crate::NiMatrix3 {
@@ -100,6 +213,50 @@ impl crate::NiMatrix3 {
     pub unsafe fn to_euler_angles_zxy(&self, z: *mut f32, x: *mut f32, y: *mut f32) -> bool { unsafe { function!(70232, (*const Self, *mut f32, *mut f32, *mut f32) -> bool)(core::ptr::from_ref(self), z, x, y) } }
 }
 
+impl crate::NiPlane {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_constant(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPlane.constant", 0xC, f32) } }
+    /// `NiPlane::constant`, at +0xC on 1.7.104.
+    #[inline]
+    pub fn constant(&self) -> f32 { unsafe { Self::__member_constant(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_constant(&mut self, value: f32) { unsafe { Self::__member_constant(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn constant_ptr(&self) -> *mut f32 { Self::__member_constant(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_normal(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "NiPlane.normal", 0x0, crate::NiPoint3) } }
+    /// `NiPlane::normal`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn normal(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_normal(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn normal_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_normal(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPoint2 {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_x(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPoint2.x", 0x0, f32) } }
+    /// `NiPoint2::x`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn x(&self) -> f32 { unsafe { Self::__member_x(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_x(&mut self, value: f32) { unsafe { Self::__member_x(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn x_ptr(&self) -> *mut f32 { Self::__member_x(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_y(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPoint2.y", 0x4, f32) } }
+    /// `NiPoint2::y`, at +0x4 on 1.7.104.
+    #[inline]
+    pub fn y(&self) -> f32 { unsafe { Self::__member_y(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_y(&mut self, value: f32) { unsafe { Self::__member_y(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn y_ptr(&self) -> *mut f32 { Self::__member_y(core::ptr::from_ref(self)) }
+}
+
 impl crate::NiPoint4 {
     #[doc(hidden)]
     #[inline]
@@ -111,6 +268,69 @@ impl crate::NiPoint4 {
     pub fn set_w(&mut self, value: f32) { unsafe { Self::__member_w(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn w_ptr(&self) -> *mut f32 { Self::__member_w(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_x(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPoint4.x", 0x0, f32) } }
+    /// `NiPoint4::x`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn x(&self) -> f32 { unsafe { Self::__member_x(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_x(&mut self, value: f32) { unsafe { Self::__member_x(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn x_ptr(&self) -> *mut f32 { Self::__member_x(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_y(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPoint4.y", 0x4, f32) } }
+    /// `NiPoint4::y`, at +0x4 on 1.7.104.
+    #[inline]
+    pub fn y(&self) -> f32 { unsafe { Self::__member_y(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_y(&mut self, value: f32) { unsafe { Self::__member_y(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn y_ptr(&self) -> *mut f32 { Self::__member_y(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_z(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPoint4.z", 0x8, f32) } }
+    /// `NiPoint4::z`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn z(&self) -> f32 { unsafe { Self::__member_z(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_z(&mut self, value: f32) { unsafe { Self::__member_z(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn z_ptr(&self) -> *mut f32 { Self::__member_z(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiQuaternion {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_x(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiQuaternion.x", 0x4, f32) } }
+    /// `NiQuaternion::x`, at +0x4 on 1.7.104.
+    #[inline]
+    pub fn x(&self) -> f32 { unsafe { Self::__member_x(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_x(&mut self, value: f32) { unsafe { Self::__member_x(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn x_ptr(&self) -> *mut f32 { Self::__member_x(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_y(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiQuaternion.y", 0x8, f32) } }
+    /// `NiQuaternion::y`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn y(&self) -> f32 { unsafe { Self::__member_y(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_y(&mut self, value: f32) { unsafe { Self::__member_y(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn y_ptr(&self) -> *mut f32 { Self::__member_y(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_z(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiQuaternion.z", 0xC, f32) } }
+    /// `NiQuaternion::z`, at +0xC on 1.7.104.
+    #[inline]
+    pub fn z(&self) -> f32 { unsafe { Self::__member_z(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_z(&mut self, value: f32) { unsafe { Self::__member_z(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn z_ptr(&self) -> *mut f32 { Self::__member_z(core::ptr::from_ref(self)) }
 }
 
 impl crate::NiTransform {
@@ -150,6 +370,43 @@ impl crate::NiTransform {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn set_identity(&self) { unsafe { function!(70760, (*const Self))(core::ptr::from_ref(self)) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_rotate(this: *const Self) -> *mut crate::NiMatrix3 { unsafe { member!(this, "NiTransform.rotate", 0x0, crate::NiMatrix3) } }
+    /// `NiTransform::rotate`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn rotate(&self) -> &crate::NiMatrix3 { unsafe { &*Self::__member_rotate(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn rotate_ptr(&self) -> *mut crate::NiMatrix3 { Self::__member_rotate(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_scale(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiTransform.scale", 0x30, f32) } }
+    /// `NiTransform::scale`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn scale(&self) -> f32 { unsafe { Self::__member_scale(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_scale(&mut self, value: f32) { unsafe { Self::__member_scale(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn scale_ptr(&self) -> *mut f32 { Self::__member_scale(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_translate(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "NiTransform.translate", 0x24, crate::NiPoint3) } }
+    /// `NiTransform::translate`, at +0x24 on 1.7.104.
+    #[inline]
+    pub fn translate(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_translate(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn translate_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_translate(core::ptr::from_ref(self)) }
+}
+
+impl crate::hkQsTransform {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_translation(this: *const Self) -> *mut crate::hkVector4 { unsafe { member!(this, "hkQsTransform.translation", 0x0, crate::hkVector4) } }
+    /// `hkQsTransform::translation`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn translation(&self) -> &crate::hkVector4 { unsafe { &*Self::__member_translation(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn translation_ptr(&self) -> *mut crate::hkVector4 { Self::__member_translation(core::ptr::from_ref(self)) }
 }
 
 impl crate::hkQuaternion {
@@ -163,6 +420,16 @@ impl crate::hkQuaternion {
     pub fn set_w(&mut self, value: f32) { unsafe { Self::__member_w(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn w_ptr(&self) -> *mut f32 { Self::__member_w(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_x(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkQuaternion.x", 0x0, f32) } }
+    /// `hkQuaternion::x`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn x(&self) -> f32 { unsafe { Self::__member_x(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_x(&mut self, value: f32) { unsafe { Self::__member_x(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn x_ptr(&self) -> *mut f32 { Self::__member_x(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_y(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkQuaternion.y", 0x4, f32) } }
@@ -196,6 +463,16 @@ impl crate::hkVector4 {
     pub fn set_w(&mut self, value: f32) { unsafe { Self::__member_w(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn w_ptr(&self) -> *mut f32 { Self::__member_w(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_x(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkVector4.x", 0x0, f32) } }
+    /// `hkVector4::x`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn x(&self) -> f32 { unsafe { Self::__member_x(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_x(&mut self, value: f32) { unsafe { Self::__member_x(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn x_ptr(&self) -> *mut f32 { Self::__member_x(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_y(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkVector4.y", 0x4, f32) } }

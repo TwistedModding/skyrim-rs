@@ -130,6 +130,14 @@ impl crate::BGSMusicType {
     pub fn currentTrackIndex_ptr(&self) -> *mut u32 { Self::__member_currentTrackIndex(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_editorID(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BGSMusicType.editorID", 0x70, crate::BSFixedString) } }
+    /// `BGSMusicType::editorID`, at +0x70 on 1.7.104.
+    #[inline]
+    pub fn editorID(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_editorID(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn editorID_ptr(&self) -> *mut crate::BSFixedString { Self::__member_editorID(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_state(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSMusicType.state", 0x68, u32) } }
     /// `BGSMusicType::state`, at +0x68 on 1.7.104.
     #[inline]
@@ -193,6 +201,16 @@ impl crate::BGSSoundCategory {
     pub fn set_attenuation(&mut self, value: u16) { unsafe { Self::__member_attenuation(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn attenuation_ptr(&self) -> *mut u16 { Self::__member_attenuation(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_defaultMenuVolume(this: *const Self) -> *mut u16 { unsafe { member!(this, "BGSSoundCategory.defaultMenuVolume", 0x4E, u16) } }
+    /// `BGSSoundCategory::defaultMenuVolume`, at +0x4E on 1.7.104.
+    #[inline]
+    pub fn defaultMenuVolume(&self) -> u16 { unsafe { Self::__member_defaultMenuVolume(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_defaultMenuVolume(&mut self, value: u16) { unsafe { Self::__member_defaultMenuVolume(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn defaultMenuVolume_ptr(&self) -> *mut u16 { Self::__member_defaultMenuVolume(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_fullName(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "BGSSoundCategory.fullName", 0x20, [u8; 16]) } }
@@ -306,6 +324,16 @@ impl crate::BGSSoundOutput {
     /// Semantic field, audio pass, high; `None` while the pointer is null.
     #[inline]
     pub fn attenuation(&self) -> Option<&crate::BGSSoundOutput__DynamicAttenuationCharacteristics> { unsafe { { self.attenuation }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_outputType(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSSoundOutput.outputType", 0x2C, u32) } }
+    /// `BGSSoundOutput::outputType`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn outputType(&self) -> u32 { unsafe { Self::__member_outputType(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_outputType(&mut self, value: u32) { unsafe { Self::__member_outputType(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn outputType_ptr(&self) -> *mut u32 { Self::__member_outputType(core::ptr::from_ref(self)) }
 }
 
 impl crate::BGSSoundOutput__DynamicAttenuationCharacteristics {
@@ -340,6 +368,26 @@ impl crate::BGSSoundOutput__DynamicAttenuationCharacteristics {
     pub fn set_curve(&mut self, value: [u8; 5]) { unsafe { Self::__member_curve(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn curve_ptr(&self) -> *mut [u8; 5] { Self::__member_curve(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_maxDistance(this: *const Self) -> *mut f32 { unsafe { member!(this, "BGSSoundOutput::DynamicAttenuationCharacteristics.maxDistance", 0xC, f32) } }
+    /// `BGSSoundOutput::DynamicAttenuationCharacteristics::maxDistance`, at +0xC on 1.7.104.
+    #[inline]
+    pub fn maxDistance(&self) -> f32 { unsafe { Self::__member_maxDistance(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_maxDistance(&mut self, value: f32) { unsafe { Self::__member_maxDistance(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn maxDistance_ptr(&self) -> *mut f32 { Self::__member_maxDistance(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_minDistance(this: *const Self) -> *mut f32 { unsafe { member!(this, "BGSSoundOutput::DynamicAttenuationCharacteristics.minDistance", 0x8, f32) } }
+    /// `BGSSoundOutput::DynamicAttenuationCharacteristics::minDistance`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn minDistance(&self) -> f32 { unsafe { Self::__member_minDistance(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_minDistance(&mut self, value: f32) { unsafe { Self::__member_minDistance(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn minDistance_ptr(&self) -> *mut f32 { Self::__member_minDistance(core::ptr::from_ref(self)) }
 }
 
 impl crate::BGSStandardSoundDef {
@@ -354,6 +402,14 @@ impl crate::BGSStandardSoundDef {
     /// Semantic field, audio pass, high; `None` while the pointer is null.
     #[inline]
     pub fn output_model(&self) -> Option<&crate::BGSSoundOutput> { unsafe { { self.outputModel }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_soundFiles(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "BGSStandardSoundDef.soundFiles", 0x18, crate::BSTArray) } }
+    /// `BGSStandardSoundDef::soundFiles`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn soundFiles(&self) -> &crate::BSTArray { unsafe { &*Self::__member_soundFiles(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn soundFiles_ptr(&self) -> *mut crate::BSTArray { Self::__member_soundFiles(core::ptr::from_ref(self)) }
 }
 
 impl crate::BGSStandardSoundDef__SoundPlaybackCharacteristics {
@@ -614,6 +670,76 @@ impl crate::BSAudioManager {
     pub fn cacheList_ptr(&self) -> *mut [u8; 8] { Self::__member_cacheList(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_callback3(this: *const Self) -> *mut [u8; 8] { unsafe { member!(this, "BSAudioManager.callback3", 0x188, [u8; 8]) } }
+    /// `BSAudioManager::callback3`, at +0x188 on 1.7.104.
+    #[inline]
+    pub fn callback3(&self) -> [u8; 8] { unsafe { Self::__member_callback3(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_callback3(&mut self, value: [u8; 8]) { unsafe { Self::__member_callback3(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn callback3_ptr(&self) -> *mut [u8; 8] { Self::__member_callback3(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_commandLists(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "BSAudioManager.commandLists", 0x8, [u8; 16]) } }
+    /// `BSAudioManager::commandLists`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn commandLists(&self) -> [u8; 16] { unsafe { Self::__member_commandLists(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_commandLists(&mut self, value: [u8; 16]) { unsafe { Self::__member_commandLists(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn commandLists_ptr(&self) -> *mut [u8; 16] { Self::__member_commandLists(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_flags(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSAudioManager.flags", 0x16C, u32) } }
+    /// `BSAudioManager::flags`, at +0x16C on 1.7.104.
+    #[inline]
+    pub fn flags(&self) -> u32 { unsafe { Self::__member_flags(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_flags(&mut self, value: u32) { unsafe { Self::__member_flags(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn flags_ptr(&self) -> *mut u32 { Self::__member_flags(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_followedNodes(this: *const Self) -> *mut [u8; 48] { unsafe { member!(this, "BSAudioManager.followedNodes", 0x88, [u8; 48]) } }
+    /// `BSAudioManager::followedNodes`, at +0x88 on 1.7.104.
+    #[inline]
+    pub fn followedNodes(&self) -> [u8; 48] { unsafe { Self::__member_followedNodes(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_followedNodes(&mut self, value: [u8; 48]) { unsafe { Self::__member_followedNodes(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn followedNodes_ptr(&self) -> *mut [u8; 48] { Self::__member_followedNodes(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_hwThread(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSAudioManager.hwThread", 0x104, u32) } }
+    /// `BSAudioManager::hwThread`, at +0x104 on 1.7.104.
+    #[inline]
+    pub fn hwThread(&self) -> u32 { unsafe { Self::__member_hwThread(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_hwThread(&mut self, value: u32) { unsafe { Self::__member_hwThread(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn hwThread_ptr(&self) -> *mut u32 { Self::__member_hwThread(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_nodeOutputModels(this: *const Self) -> *mut [u8; 48] { unsafe { member!(this, "BSAudioManager.nodeOutputModels", 0xB8, [u8; 48]) } }
+    /// `BSAudioManager::nodeOutputModels`, at +0xB8 on 1.7.104.
+    #[inline]
+    pub fn nodeOutputModels(&self) -> [u8; 48] { unsafe { Self::__member_nodeOutputModels(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_nodeOutputModels(&mut self, value: [u8; 48]) { unsafe { Self::__member_nodeOutputModels(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn nodeOutputModels_ptr(&self) -> *mut [u8; 48] { Self::__member_nodeOutputModels(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_settings(this: *const Self) -> *mut [u8; 88] { unsafe { member!(this, "BSAudioManager.settings", 0x108, [u8; 88]) } }
+    /// `BSAudioManager::settings`, at +0x108 on 1.7.104.
+    #[inline]
+    pub fn settings(&self) -> [u8; 88] { unsafe { Self::__member_settings(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_settings(&mut self, value: [u8; 88]) { unsafe { Self::__member_settings(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn settings_ptr(&self) -> *mut [u8; 88] { Self::__member_settings(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_threadId(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSAudioManager.threadId", 0xF4, u32) } }
     /// `BSAudioManager::threadId`, at +0xF4 on 1.7.104.
     #[inline]
@@ -631,6 +757,26 @@ impl crate::BSAudioManagerThread {
     /// `uint32 (BSAudioManagerThread* this)`
     #[inline]
     pub fn run(&self) -> u32 { unsafe { virtual_function!(self, 1, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_parked(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSAudioManagerThread.parked", 0x61, u8) } }
+    /// `BSAudioManagerThread::parked`, at +0x61 on 1.7.104.
+    #[inline]
+    pub fn parked(&self) -> u8 { unsafe { Self::__member_parked(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_parked(&mut self, value: u8) { unsafe { Self::__member_parked(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn parked_ptr(&self) -> *mut u8 { Self::__member_parked(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_sleepMs(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSAudioManagerThread.sleepMs", 0x64, u32) } }
+    /// `BSAudioManagerThread::sleepMs`, at +0x64 on 1.7.104.
+    #[inline]
+    pub fn sleepMs(&self) -> u32 { unsafe { Self::__member_sleepMs(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_sleepMs(&mut self, value: u32) { unsafe { Self::__member_sleepMs(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn sleepMs_ptr(&self) -> *mut u32 { Self::__member_sleepMs(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSIMusicTrack {
@@ -1367,6 +1513,46 @@ impl crate::SoundHandleStatus {
     pub fn set_frequency(&mut self, value: f32) { unsafe { Self::__member_frequency(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn frequency_ptr(&self) -> *mut f32 { Self::__member_frequency(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_nextFree(this: *const Self) -> *mut [u8; 8] { unsafe { member!(this, "SoundHandleStatus.nextFree", 0x20, [u8; 8]) } }
+    /// `SoundHandleStatus::nextFree`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn nextFree(&self) -> [u8; 8] { unsafe { Self::__member_nextFree(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_nextFree(&mut self, value: [u8; 8]) { unsafe { Self::__member_nextFree(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn nextFree_ptr(&self) -> *mut [u8; 8] { Self::__member_nextFree(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_positionMs(this: *const Self) -> *mut u32 { unsafe { member!(this, "SoundHandleStatus.positionMs", 0x18, u32) } }
+    /// `SoundHandleStatus::positionMs`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn positionMs(&self) -> u32 { unsafe { Self::__member_positionMs(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_positionMs(&mut self, value: u32) { unsafe { Self::__member_positionMs(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn positionMs_ptr(&self) -> *mut u32 { Self::__member_positionMs(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_unk10(this: *const Self) -> *mut u32 { unsafe { member!(this, "SoundHandleStatus.unk10", 0x10, u32) } }
+    /// `SoundHandleStatus::unk10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn unk10(&self) -> u32 { unsafe { Self::__member_unk10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_unk10(&mut self, value: u32) { unsafe { Self::__member_unk10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn unk10_ptr(&self) -> *mut u32 { Self::__member_unk10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_volume(this: *const Self) -> *mut f32 { unsafe { member!(this, "SoundHandleStatus.volume", 0x8, f32) } }
+    /// `SoundHandleStatus::volume`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn volume(&self) -> f32 { unsafe { Self::__member_volume(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_volume(&mut self, value: f32) { unsafe { Self::__member_volume(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn volume_ptr(&self) -> *mut f32 { Self::__member_volume(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESAudio__ScriptedMusicState {
@@ -1382,6 +1568,16 @@ impl crate::TESAudio__ScriptedMusicState {
     /// `void (ScriptedMusicState* this, BGSMusicType* type)`
     #[inline]
     pub fn remove(&self, type_: &crate::BGSMusicType) { unsafe { function!(35146, (*const Self, *const crate::BGSMusicType))(core::ptr::from_ref(self), core::ptr::from_ref(type_)) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_scriptedTypes(this: *const Self) -> *mut [u8; 28] { unsafe { member!(this, "TESAudio::ScriptedMusicState.scriptedTypes", 0x10, [u8; 28]) } }
+    /// `TESAudio::ScriptedMusicState::scriptedTypes`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn scriptedTypes(&self) -> [u8; 28] { unsafe { Self::__member_scriptedTypes(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_scriptedTypes(&mut self, value: [u8; 28]) { unsafe { Self::__member_scriptedTypes(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn scriptedTypes_ptr(&self) -> *mut [u8; 28] { Self::__member_scriptedTypes(core::ptr::from_ref(self)) }
 }
 
 impl crate::_anon_67C8711B__NoMusic {

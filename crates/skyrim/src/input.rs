@@ -159,7 +159,8 @@ impl ControlMapExt for EventSourceHolder_User {
 /// Every line of the parsed control map for `device`, with its context; linked lines left out.
 fn mappings(map: &EventSourceHolder_User, device: InputDevice) -> impl Iterator<Item = (u32, &sre::UserEventMapping)> {
     const LINKED: u32 = 0x7FFF_FFFF;
-    (0u32..).zip(map.contexts.as_chunks::<8>().0).flat_map(move |(index, pointer)| {
+    let count = InputContextEnum::count.to_engine().map_or(0, |count| count as usize);
+    (0u32..).zip(map.contexts.as_chunks::<8>().0.iter().take(count)).flat_map(move |(index, pointer)| {
         let context = unsafe { (usize::from_le_bytes(*pointer) as *const sre::InputContext).as_ref() };
         let lines = context.and_then(|c| match device {
             InputDevice::Keyboard => Some(&c.keyboardMappings),
@@ -197,16 +198,21 @@ pub fn print(text: &str) {
     unsafe { print(log, c"%s".as_ptr(), text.as_ptr()) }
 }
 
-/// One parameter of a console command.
-#[repr(transparent)]
-pub struct Param(sre::ParamInfo);
+/// One parameter of a console command, laid out as the engine's `ParamInfo`, because a `static` of
+/// them cannot go through the profile; `check_param_layout` holds the layout to the running game.
+#[repr(C)]
+pub struct Param {
+    name: *mut c_void,
+    type_code: u32,
+    optional: u8,
+}
 
 unsafe impl Sync for Param {}
 
 impl Param {
     #[must_use]
     pub const fn new(name: &'static CStr, kind: ScriptParamType, optional: bool) -> Self {
-        Self(sre::ParamInfo { name: name.as_ptr().cast_mut().cast(), typeCode: kind as u32, optional: optional as u8, unknown_D: [0; 3], __engine: sre::Engine::new() })
+        Self { name: name.as_ptr().cast_mut().cast(), type_code: kind as u32, optional: optional as u8 }
     }
 }
 
@@ -404,7 +410,7 @@ pub fn register_erased(name: &CStr, help: &CStr, params: &[Param], needs_referen
     let _serialized = REGISTER.lock().unwrap_or_else(PoisonError::into_inner);
     let index = ERASED.iter().position(|s| s.params.get().is_none()).ok_or(CommandError::NoFreeEntry)?;
     let leak = |s: &CStr| -> &'static CStr { Box::leak(s.to_owned().into_boxed_c_str()) };
-    let params: &'static [Param] = Box::leak(params.iter().map(|p| Param(sre::ParamInfo { name: leak(text_c(p.0.name)).as_ptr().cast_mut().cast(), typeCode: p.0.typeCode, optional: p.0.optional, unknown_D: p.0.unknown_D, __engine: sre::Engine::new() })).collect());
+    let params: &'static [Param] = Box::leak(params.iter().map(|p| Param { name: leak(text_c(p.name)).as_ptr().cast_mut().cast(), type_code: p.type_code, optional: p.optional }).collect());
     let slot = take_entry(leak(name), leak(help), params, needs_reference, EXECUTES[index])?;
     *ERASED[index].execute.write().unwrap_or_else(PoisonError::into_inner) = Some(execute);
     let _ = ERASED[index].params.set(params);
@@ -474,7 +480,9 @@ fn replace_entry(entry: &'static mut sre::CommandTableEntry, execute: ErasedExec
 }
 
 fn check_param_layout() {
-    assert!(sre::member_offset!("ParamInfo.optional") == 0xc, "ParamInfo's optional flag moved");
+    sre::fixed_size!("ParamInfo", Param);
+    let same = sre::member_offset!("ParamInfo.name") == core::mem::offset_of!(Param, name) && sre::member_offset!("ParamInfo.typeCode") == core::mem::offset_of!(Param, type_code) && sre::member_offset!("ParamInfo.optional") == core::mem::offset_of!(Param, optional);
+    assert!(same, "ParamInfo moved");
 }
 
 fn take_entry(name: &'static CStr, help: &'static CStr, params: &'static [Param], needs_reference: bool, execute: ExecuteFn) -> Result<CommandSlot, CommandError> {
@@ -482,10 +490,7 @@ fn take_entry(name: &'static CStr, help: &'static CStr, params: &'static [Param]
     if params.len() > MAX_ARGS {
         return Err(CommandError::TooManyParams);
     }
-    let keywords = table(sre::g_script_keyword_table(), FIRST_KEYWORD);
-    // The script functions start where the keywords end.
-    let functions = table(keywords.as_mut_ptr_range().end.cast(), FIRST_SCRIPT_FUNCTION);
-    let tables = [keywords, functions, table(sre::g_console_command_table(), FIRST_CONSOLE_COMMAND)];
+    let tables = [table(sre::g_script_keyword_table(), FIRST_KEYWORD), table(sre::g_script_command_table(), FIRST_SCRIPT_FUNCTION), table(sre::g_console_command_table(), FIRST_CONSOLE_COMMAND)];
     if tables.iter().any(|t| t.iter().any(|e| answers_to(e, name))) {
         return Err(CommandError::NameTaken);
     }
@@ -542,7 +547,7 @@ unsafe fn run(declared: &[Param], params: *const sre::ParamInfo, data: *const c_
             return false;
         }
     }
-    let args: Vec<Arg<'_>> = declared.iter().zip(&slots).enumerate().map(|(i, (param, slot))| if i < given { decode(param.0.typeCode, slot) } else { Arg::Missing }).collect();
+    let args: Vec<Arg<'_>> = declared.iter().zip(&slots).enumerate().map(|(i, (param, slot))| if i < given { decode(param.type_code, slot) } else { Arg::Missing }).collect();
     execute(&mut CommandContext { this_ref, args: &args, result })
 }
 
@@ -572,6 +577,7 @@ mod tests {
 
     #[test]
     fn a_replaced_command_runs_the_replacement_until_restored() {
+        versionlib::profile::assume_canonical();
         let entry: &'static mut sre::CommandTableEntry = Box::leak(Box::new(unsafe { core::mem::zeroed() }));
         entry.name = c"SetCameraFOV".as_ptr().cast_mut().cast();
         entry.opcode = 0x13e;

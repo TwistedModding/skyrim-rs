@@ -151,7 +151,7 @@ pub trait BShkbAnimationGraphExt {
 impl BShkbAnimationGraphExt for BShkbAnimationGraph {
     #[allow(clippy::cast_ptr_alignment)]
     unsafe fn from_bone_array<'a>(nodes: *mut c_void) -> Option<&'a Self> {
-        let graph = nodes.cast::<u8>().wrapping_sub(core::mem::offset_of!(BShkbAnimationGraph, boneNodes)).cast::<Self>();
+        let graph = nodes.cast::<u8>().wrapping_sub(sre::member_offset!("BShkbAnimationGraph.boneNodes")).cast::<Self>();
         unsafe { graph.as_ref() }
     }
 
@@ -289,9 +289,9 @@ impl BSFaceGenAnimationDataExt for BSFaceGenAnimationData {
 
     fn hold_eyes(&self, heading: f32, pitch: f32) {
         put(&raw const self.eyeHeadingBase, heading);
-        put(&raw const self.eyePitchBase, pitch);
-        put(&raw const self.eyeHeadingOffset, 0.0);
-        put(&raw const self.eyePitchOffset, 0.0);
+        put(self.eyePitchBase_ptr(), pitch);
+        put(self.eyeHeadingOffset_ptr(), 0.0);
+        put(self.eyePitchOffset_ptr(), 0.0);
     }
 
     fn hold_blink(&self) {

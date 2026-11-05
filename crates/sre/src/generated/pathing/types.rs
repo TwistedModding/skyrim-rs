@@ -454,14 +454,15 @@ const _: () = assert!(core::mem::offset_of!(MovementAgentPathFollowerVirtual, fi
 /// `MovementArbiter`: size 0x18 (exact, medium).
 /// Evidence: lower bound field field_10 meets upper bound next base of MovementPathManagerArbiter at 0x18.
 /// Bases: `BSIntrusiveRefCounted`@0x8.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct MovementArbiter {
     /// +0x0 `vtbl:MovementArbiter:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::MovementArbiter_vtable,
     /// +0x8 `undefined4`, ctor store
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    #[doc(hidden)]
+    pub __field_8: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
     #[doc(hidden)]
@@ -469,7 +470,7 @@ pub struct MovementArbiter {
 }
 const _: () = assert!(size_of::<MovementArbiter>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(MovementArbiter, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(MovementArbiter, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(MovementArbiter, __field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(MovementArbiter, field_10) == 0x10);
 
 /// `MovementArbitrationAverage<float>`: size 0x10 (exact, medium); primary base `MovementArbitrationScheme<float>`.
@@ -1214,7 +1215,8 @@ pub struct MovementHandlerArbiter {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::MovementHandlerArbiter_vtable,
     /// +0x8 `undefined4`, base MovementArbiter
-    pub field_8: u32,
+    #[doc(hidden)]
+    pub __field_8: [u8; 4],
     unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementArbiter
     pub field_10: u64,
@@ -1229,7 +1231,8 @@ pub struct MovementHandlerArbiter {
     #[doc(hidden)]
     pub __field_3C: [u8; 8],
     /// +0x44 `undefined4`, ctor store
-    pub field_44: u32,
+    #[doc(hidden)]
+    pub __field_44: [u8; 4],
     unknown_48: [u8; 16],
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
@@ -1249,12 +1252,12 @@ pub struct MovementHandlerArbiter {
 }
 const _: () = assert!(size_of::<MovementHandlerArbiter>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerArbiter, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(MovementHandlerArbiter, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(MovementHandlerArbiter, __field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerArbiter, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerArbiter, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerArbiter, __field_34) == 0x34);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerArbiter, __field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(MovementHandlerArbiter, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(MovementHandlerArbiter, __field_44) == 0x44);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerArbiter, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerArbiter, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerArbiter, field_68) == 0x68);
@@ -1850,7 +1853,8 @@ pub struct MovementPathManagerArbiter {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::MovementPathManagerArbiter_vtable,
     /// +0x8 `undefined4`, base MovementArbiter
-    pub field_8: u32,
+    #[doc(hidden)]
+    pub __field_8: [u8; 4],
     unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementArbiter
     pub field_10: u64,
@@ -1884,7 +1888,7 @@ pub struct MovementPathManagerArbiter {
 }
 const _: () = assert!(size_of::<MovementPathManagerArbiter>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(MovementPathManagerArbiter, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(MovementPathManagerArbiter, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(MovementPathManagerArbiter, __field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(MovementPathManagerArbiter, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(MovementPathManagerArbiter, __vftable_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(MovementPathManagerArbiter, __vftable_20) == 0x20);
@@ -2194,14 +2198,15 @@ const _: () = assert!(core::mem::offset_of!(MovementPlannerAgentWarp, field_B8) 
 /// `MovementPlannerArbiter`: size 0x70 (exact, medium); primary base `MovementArbiter`.
 /// Evidence: runtime: 0x70 at 1 allocation sites.
 /// Bases: `MovementArbiter`@0x0, `BSIntrusiveRefCounted`@0x8, `IMovementPlannerSetArbitration`@0x18, `IMovementInterface`@0x18.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct MovementPlannerArbiter {
     /// +0x0 `vtbl:MovementPlannerArbiter:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::MovementPlannerArbiter_vtable,
     /// +0x8 `undefined4`, base MovementArbiter
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    #[doc(hidden)]
+    pub __field_8: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementArbiter
     pub field_10: u64,
     /// +0x18 `vtbl:MovementPlannerArbiter:18`, rtti
@@ -2211,10 +2216,11 @@ pub struct MovementPlannerArbiter {
     pub field_20: u32,
     /// +0x24 `undefined1`, ctor store
     pub field_24: u8,
-    pub unknown_25: [u8; 3],
+    unknown_25: [u8; 3],
     /// +0x28 `undefined4`, ctor store
-    pub field_28: u32,
-    pub unknown_2C: [u8; 28],
+    #[doc(hidden)]
+    pub __field_28: [u8; 4],
+    unknown_2C: [u8; 28],
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
     /// +0x50 `undefined8`, ctor store
@@ -2224,35 +2230,37 @@ pub struct MovementPlannerArbiter {
     /// +0x60 `undefined8`, ctor store
     pub field_60: u64,
     /// +0x68 `undefined8`, ctor store
-    pub field_68: u64,
+    #[doc(hidden)]
+    pub __field_68: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementPlannerArbiter>() == 0x70);
 const _: () = assert!(core::mem::offset_of!(MovementPlannerArbiter, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(MovementPlannerArbiter, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(MovementPlannerArbiter, __field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(MovementPlannerArbiter, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(MovementPlannerArbiter, __vftable_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(MovementPlannerArbiter, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(MovementPlannerArbiter, field_24) == 0x24);
-const _: () = assert!(core::mem::offset_of!(MovementPlannerArbiter, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(MovementPlannerArbiter, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(MovementPlannerArbiter, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(MovementPlannerArbiter, field_50) == 0x50);
 const _: () = assert!(core::mem::offset_of!(MovementPlannerArbiter, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(MovementPlannerArbiter, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(MovementPlannerArbiter, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(MovementPlannerArbiter, __field_68) == 0x68);
 
 /// `MovementPostUpdateArbiter`: size 0x60 (exact, medium); primary base `MovementArbiter`.
 /// Evidence: runtime: 0x60 at 1 allocation sites.
 /// Bases: `MovementArbiter`@0x0, `BSIntrusiveRefCounted`@0x8, `IMovementQueryDeltas`@0x18, `IMovementInterface`@0x18.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct MovementPostUpdateArbiter {
     /// +0x0 `vtbl:MovementPostUpdateArbiter:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::MovementPostUpdateArbiter_vtable,
     /// +0x8 `undefined4`, base MovementArbiter
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    #[doc(hidden)]
+    pub __field_8: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementArbiter
     pub field_10: u64,
     /// +0x18 `vtbl:MovementPostUpdateArbiter:18`, rtti
@@ -2275,15 +2283,20 @@ pub struct MovementPostUpdateArbiter {
     /// +0x3C `float`, ctor store
     pub field_3C: f32,
     /// +0x40 `float`, ctor store
-    pub field_40: f32,
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
     /// +0x44 `float`, ctor store
-    pub field_44: f32,
+    #[doc(hidden)]
+    pub __field_44: [u8; 4],
     /// +0x48 `float`, ctor store
-    pub field_48: f32,
+    #[doc(hidden)]
+    pub __field_48: [u8; 4],
     /// +0x4C `float`, ctor store
-    pub field_4C: f32,
+    #[doc(hidden)]
+    pub __field_4C: [u8; 4],
     /// +0x50 `float`, ctor store
-    pub field_50: f32,
+    #[doc(hidden)]
+    pub __field_50: [u8; 4],
     /// +0x54 `undefined4`, ctor store
     pub field_54: u32,
     /// +0x58 `undefined8`, ctor store
@@ -2293,7 +2306,7 @@ pub struct MovementPostUpdateArbiter {
 }
 const _: () = assert!(size_of::<MovementPostUpdateArbiter>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, __field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, __vftable_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, field_20) == 0x20);
@@ -2304,11 +2317,11 @@ const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, field_30)
 const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, field_34) == 0x34);
 const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, __field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, __field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, __field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, __field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, __field_50) == 0x50);
 const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, field_54) == 0x54);
 const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, field_58) == 0x58);
 
@@ -2623,7 +2636,8 @@ pub struct MovementTweenerArbiter {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::MovementTweenerArbiter_vtable,
     /// +0x8 `undefined4`, base MovementArbiter
-    pub field_8: u32,
+    #[doc(hidden)]
+    pub __field_8: [u8; 4],
     unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementArbiter
     pub field_10: u64,
@@ -2635,14 +2649,17 @@ pub struct MovementTweenerArbiter {
     pub __vftable_20: *const crate::raw::vtables::MovementTweenerArbiter_vtable_20,
     unknown_28: [u8; 36],
     /// +0x4C `undefined8`, ctor store
-    pub field_4C: u64,
+    #[doc(hidden)]
+    pub __field_4C: [u8; 8],
     /// +0x54 `undefined4`, ctor store
-    pub field_54: u32,
+    #[doc(hidden)]
+    pub __field_54: [u8; 4],
     unknown_58: [u8; 40],
     /// +0x80 `undefined8`, ctor store
     pub field_80: u64,
     /// +0x88 `undefined4`, ctor store
-    pub field_88: u32,
+    #[doc(hidden)]
+    pub __field_88: [u8; 4],
     unknown_8C: [u8; 40],
     /// +0xB4 `undefined8`, ctor store
     #[doc(hidden)]
@@ -2665,34 +2682,36 @@ pub struct MovementTweenerArbiter {
     pub __field_D0: [u8; 4],
     unknown_D4: [u8; 136],
     /// +0x15C `undefined4`, ctor store
-    pub field_15C: u32,
+    #[doc(hidden)]
+    pub __field_15C: [u8; 4],
     unknown_160: [u8; 24],
     /// +0x178 `undefined8`, ctor store
     pub field_178: u64,
     /// +0x180 `undefined8`, ctor store
-    pub field_180: u64,
+    #[doc(hidden)]
+    pub __field_180: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementTweenerArbiter>() == 0x188);
 const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __vftable_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __field_54) == 0x54);
 const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __field_B4) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __field_BC) == 0xBC);
 const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __field_C4) == 0xC4);
 const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __field_C8) == 0xC8);
 const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __field_CC) == 0xCC);
 const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __field_D0) == 0xD0);
-const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, field_15C) == 0x15C);
+const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __field_15C) == 0x15C);
 const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, field_178) == 0x178);
-const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, field_180) == 0x180);
+const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __field_180) == 0x180);
 
 /// `PathFollowerStateFollowPathToParameter`: size >= 0x20 (lower bound); partial, the struct stops at the lower bound; primary base `IPathFollowerState`.
 /// Evidence: field field_18.
@@ -2963,32 +2982,37 @@ const _: () = assert!(core::mem::offset_of!(PathingCell, field_14) == 0x14);
 /// `PathingCoverLocation`: size >= 0x60 (lower bound); partial, the struct stops at the lower bound.
 /// Evidence: field field_58.
 /// Bases: `BSPathingLocation`@0x8.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct PathingCoverLocation {
     /// +0x0 `vtbl:PathingCoverLocation:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::PathingCoverLocation_vtable,
-    pub unknown_8: [u8; 48],
+    unknown_8: [u8; 48],
     /// +0x38 `undefined8`, ctor store
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     /// +0x40 `undefined8`, ctor store
-    pub field_40: u64,
+    #[doc(hidden)]
+    pub __field_40: [u8; 8],
     /// +0x48 `undefined8`, ctor store
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     /// +0x50 `undefined8`, ctor store
-    pub field_50: u64,
+    #[doc(hidden)]
+    pub __field_50: [u8; 8],
     /// +0x58 `undefined4`, ctor store
-    pub field_58: u32,
-    pub unknown_5C: [u8; 4],
+    #[doc(hidden)]
+    pub __field_58: [u8; 4],
+    unknown_5C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PathingCoverLocation, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(PathingCoverLocation, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(PathingCoverLocation, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(PathingCoverLocation, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(PathingCoverLocation, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(PathingCoverLocation, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(PathingCoverLocation, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(PathingCoverLocation, __field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(PathingCoverLocation, __field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(PathingCoverLocation, __field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(PathingCoverLocation, __field_58) == 0x58);
 
 /// `PathingDoor`: size 0x78 (exact, high); primary base `BSPathingDoor`.
 /// Evidence: runtime: 0x78 at 2 allocation sites.
@@ -3385,9 +3409,11 @@ pub struct PathingRequestCover {
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined8`, ctor store
-    pub field_100: u64,
+    #[doc(hidden)]
+    pub __field_100: [u8; 8],
     /// +0x108 `undefined4`, ctor store
-    pub field_108: u32,
+    #[doc(hidden)]
+    pub __field_108: [u8; 4],
     /// +0x10C `undefined4`, ctor store
     pub field_10C: u32,
     /// +0x110 `undefined4`, ctor store
@@ -3399,7 +3425,8 @@ pub struct PathingRequestCover {
     /// +0x11C `undefined4`, ctor store
     pub field_11C: u32,
     /// +0x120 `undefined2`, ctor store
-    pub field_120: u16,
+    #[doc(hidden)]
+    pub __field_120: [u8; 2],
     unknown_122: [u8; 2],
     /// +0x124 `float`, ctor store (widths [4, 8])
     pub field_124: f32,
@@ -3440,14 +3467,14 @@ const _: () = assert!(core::mem::offset_of!(PathingRequestCover, field_C4) == 0x
 const _: () = assert!(core::mem::offset_of!(PathingRequestCover, __field_C8) == 0xC8);
 const _: () = assert!(core::mem::offset_of!(PathingRequestCover, field_D0) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(PathingRequestCover, field_F8) == 0xF8);
-const _: () = assert!(core::mem::offset_of!(PathingRequestCover, field_100) == 0x100);
-const _: () = assert!(core::mem::offset_of!(PathingRequestCover, field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(PathingRequestCover, __field_100) == 0x100);
+const _: () = assert!(core::mem::offset_of!(PathingRequestCover, __field_108) == 0x108);
 const _: () = assert!(core::mem::offset_of!(PathingRequestCover, field_10C) == 0x10C);
 const _: () = assert!(core::mem::offset_of!(PathingRequestCover, field_110) == 0x110);
 const _: () = assert!(core::mem::offset_of!(PathingRequestCover, field_114) == 0x114);
 const _: () = assert!(core::mem::offset_of!(PathingRequestCover, field_118) == 0x118);
 const _: () = assert!(core::mem::offset_of!(PathingRequestCover, field_11C) == 0x11C);
-const _: () = assert!(core::mem::offset_of!(PathingRequestCover, field_120) == 0x120);
+const _: () = assert!(core::mem::offset_of!(PathingRequestCover, __field_120) == 0x120);
 const _: () = assert!(core::mem::offset_of!(PathingRequestCover, field_124) == 0x124);
 const _: () = assert!(core::mem::offset_of!(PathingRequestCover, field_128) == 0x128);
 const _: () = assert!(core::mem::offset_of!(PathingRequestCover, field_12C) == 0x12C);
@@ -4415,13 +4442,17 @@ pub struct PathingRequestLOS {
     /// +0x120 `undefined4`, ctor store (widths [4, 8])
     pub field_120: u32,
     /// +0x124 `undefined4`, ctor store (widths [4, 8])
-    pub field_124: u32,
+    #[doc(hidden)]
+    pub __field_124: [u8; 4],
     /// +0x128 `float`, ctor store (widths [4, 8])
-    pub field_128: f32,
+    #[doc(hidden)]
+    pub __field_128: [u8; 4],
     /// +0x12C `float`, ctor store (widths [4, 4])
-    pub field_12C: f32,
+    #[doc(hidden)]
+    pub __field_12C: [u8; 4],
     /// +0x130 `float`, ctor store (widths [4, 4])
-    pub field_130: f32,
+    #[doc(hidden)]
+    pub __field_130: [u8; 4],
     unknown_134: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -4450,10 +4481,10 @@ const _: () = assert!(core::mem::offset_of!(PathingRequestLOS, field_D0) == 0xD0
 const _: () = assert!(core::mem::offset_of!(PathingRequestLOS, field_F8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(PathingRequestLOS, field_100) == 0x100);
 const _: () = assert!(core::mem::offset_of!(PathingRequestLOS, field_120) == 0x120);
-const _: () = assert!(core::mem::offset_of!(PathingRequestLOS, field_124) == 0x124);
-const _: () = assert!(core::mem::offset_of!(PathingRequestLOS, field_128) == 0x128);
-const _: () = assert!(core::mem::offset_of!(PathingRequestLOS, field_12C) == 0x12C);
-const _: () = assert!(core::mem::offset_of!(PathingRequestLOS, field_130) == 0x130);
+const _: () = assert!(core::mem::offset_of!(PathingRequestLOS, __field_124) == 0x124);
+const _: () = assert!(core::mem::offset_of!(PathingRequestLOS, __field_128) == 0x128);
+const _: () = assert!(core::mem::offset_of!(PathingRequestLOS, __field_12C) == 0x12C);
+const _: () = assert!(core::mem::offset_of!(PathingRequestLOS, __field_130) == 0x130);
 
 /// `PathingRequestOptimalLocation`: size 0x110 (exact, medium); primary base `PathingRequest`.
 /// Evidence: allocation sites (medium): {'272': 1}.

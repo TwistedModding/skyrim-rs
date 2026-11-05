@@ -150,6 +150,11 @@ impl Reloc {
         self.running.address(id).ok_or(Error::UnknownId(id))
     }
 
+    /// The live address of an AE id for code that only locates a call site or compares an address.
+    pub fn location(&self, id: u64) -> Result<usize, Error> {
+        self.running.location(id).ok_or(Error::UnknownId(id))
+    }
+
     /// The live address of the site `offset` bytes into the function at an AE id on 1.7.104,
     /// wherever the running game's profile places it.
     pub fn site(&self, id: u64, offset: usize) -> Result<usize, Error> {

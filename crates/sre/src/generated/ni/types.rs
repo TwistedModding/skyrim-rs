@@ -124,14 +124,14 @@ const _: () = assert!(core::mem::offset_of!(NiAlphaAccumulator, field_52) == 0x5
 /// `NiAmbientLight`: size 0x140 (exact, high); primary base `NiLight`.
 /// Evidence: allocation sites (high): {'320': 3}.
 /// Bases: `NiLight`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiAmbientLight {
     /// +0x0 `vtbl:NiAmbientLight:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiAmbientLight_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -141,17 +141,19 @@ pub struct NiAmbientLight {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
     pub world: crate::NiTransform,
     /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
@@ -165,12 +167,14 @@ pub struct NiAmbientLight {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
+    unknown_10A: [u8; 6],
     /// +0x110 `class:NiColor`, base NiLight, semantic; first colour (0 for point lights; the sky's colour for the sun) (medium)
     pub ambient: crate::NiColor,
     /// +0x11C `class:NiColor`, base NiLight, semantic; light colour (high)
@@ -191,20 +195,20 @@ const _: () = assert!(core::mem::offset_of!(NiAmbientLight, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiAmbientLight, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiAmbientLight, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiAmbientLight, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiAmbientLight, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiAmbientLight, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(NiAmbientLight, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiAmbientLight, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiAmbientLight, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(NiAmbientLight, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiAmbientLight, __local) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiAmbientLight, world) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(NiAmbientLight, previousWorld) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(NiAmbientLight, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(NiAmbientLight, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(NiAmbientLight, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(NiAmbientLight, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(NiAmbientLight, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(NiAmbientLight, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(NiAmbientLight, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(NiAmbientLight, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(NiAmbientLight, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(NiAmbientLight, ambient) == 0x110);
 const _: () = assert!(core::mem::offset_of!(NiAmbientLight, diffuse) == 0x11C);
 const _: () = assert!(core::mem::offset_of!(NiAmbientLight, radius) == 0x128);
@@ -250,13 +254,15 @@ pub struct NiBSBoneLODController {
     /// +0x48 `undefined4`, ctor store
     pub field_48: u32,
     /// +0x4C `undefined4`, ctor store
-    pub field_4C: u32,
+    #[doc(hidden)]
+    pub __field_4C: [u8; 4],
     /// +0x50 `undefined8`, member ctor NiTPrimitiveArray<NiTPrimitiveSet<NiNode*___ptr64>*___ptr64>
     pub m_NiTPrimitiveArray_50: u64,
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
     /// +0x60 `undefined4`, ctor store
-    pub field_60: u32,
+    #[doc(hidden)]
+    pub __field_60: [u8; 4],
     /// +0x64 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_64: [u8; 4],
@@ -276,23 +282,23 @@ const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_30) == 
 const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, __field_4C) == 0x4C);
 const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, m_NiTPrimitiveArray_50) == 0x50);
 const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, __field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, __field_64) == 0x64);
 
 /// `NiBSPNode`: size 0x148 (exact, high); primary base `NiNode`.
 /// Evidence: allocation sites (high): {'328': 3}.
 /// Bases: `NiNode`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiBSPNode {
     /// +0x0 `vtbl:NiBSPNode:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSPNode_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -302,17 +308,19 @@ pub struct NiBSPNode {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
     pub world: crate::NiTransform,
     /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
@@ -326,15 +334,17 @@ pub struct NiBSPNode {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
+    unknown_10A: [u8; 6],
     /// +0x110 `undefined1`, base NiNode, semantic; NiTObjectArray<NiPointer<NiAVObject>>: vtable +0x110, data +0x118, capacity u16 +0x120, slots in use u16 +0x122, non-null count u16 +0x124, grow step u16 +0x126 (high)
     pub children: [u8; 24],
-    pub unknown_128: [u8; 32],
+    unknown_128: [u8; 32],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -345,20 +355,20 @@ const _: () = assert!(core::mem::offset_of!(NiBSPNode, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBSPNode, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBSPNode, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiBSPNode, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiBSPNode, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiBSPNode, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(NiBSPNode, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiBSPNode, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiBSPNode, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(NiBSPNode, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiBSPNode, __local) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiBSPNode, world) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(NiBSPNode, previousWorld) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(NiBSPNode, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(NiBSPNode, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(NiBSPNode, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(NiBSPNode, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(NiBSPNode, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(NiBSPNode, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(NiBSPNode, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(NiBSPNode, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(NiBSPNode, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(NiBSPNode, children) == 0x110);
 
 /// `NiBSplineBasisData`: size >= 0x30 (lower bound); partial, the struct stops at the lower bound; primary base `NiObject`.
@@ -583,17 +593,17 @@ const _: () = assert!(core::mem::offset_of!(NiBSplineCompPoint3Interpolator, fie
 /// `NiBSplineCompTransformInterpolator`: size >= 0x78 (lower bound); partial, the struct stops at the lower bound; primary base `NiBSplineTransformInterpolator`.
 /// Evidence: field field_74.
 /// Bases: `NiBSplineTransformInterpolator`@0x0, `NiBSplineInterpolator`@0x0, `NiInterpolator`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiBSplineCompTransformInterpolator {
     /// +0x0 `vtbl:NiBSplineCompTransformInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplineCompTransformInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined4`, base NiBSplineInterpolator
     pub field_18: u32,
     /// +0x1C `undefined4`, base NiBSplineInterpolator
@@ -618,19 +628,23 @@ pub struct NiBSplineCompTransformInterpolator {
     pub field_54: u32,
     /// +0x58 `undefined4`, base NiBSplineTransformInterpolator
     pub field_58: u32,
-    pub unknown_5C: [u8; 4],
+    unknown_5C: [u8; 4],
     /// +0x60 `undefined4`, ctor store
     pub field_60: u32,
     /// +0x64 `undefined4`, ctor store
     pub field_64: u32,
     /// +0x68 `undefined4`, ctor store
-    pub field_68: u32,
+    #[doc(hidden)]
+    pub __field_68: [u8; 4],
     /// +0x6C `undefined4`, ctor store
-    pub field_6C: u32,
+    #[doc(hidden)]
+    pub __field_6C: [u8; 4],
     /// +0x70 `undefined4`, ctor store
-    pub field_70: u32,
+    #[doc(hidden)]
+    pub __field_70: [u8; 4],
     /// +0x74 `undefined4`, ctor store
-    pub field_74: u32,
+    #[doc(hidden)]
+    pub __field_74: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -651,10 +665,10 @@ const _: () = assert!(core::mem::offset_of!(NiBSplineCompTransformInterpolator, 
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompTransformInterpolator, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompTransformInterpolator, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompTransformInterpolator, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(NiBSplineCompTransformInterpolator, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(NiBSplineCompTransformInterpolator, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(NiBSplineCompTransformInterpolator, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(NiBSplineCompTransformInterpolator, field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(NiBSplineCompTransformInterpolator, __field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(NiBSplineCompTransformInterpolator, __field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(NiBSplineCompTransformInterpolator, __field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(NiBSplineCompTransformInterpolator, __field_74) == 0x74);
 
 /// `NiBSplineData`: size >= 0x28 (lower bound); partial, the struct stops at the lower bound; primary base `NiObject`.
 /// Evidence: field field_20.
@@ -908,14 +922,14 @@ const _: () = assert!(core::mem::offset_of!(NiBackToFrontAccumulator, field_48) 
 /// `NiBillboardNode`: size 0x130 (exact, high); primary base `NiNode`.
 /// Evidence: runtime: 0x130 at 4 allocation sites; agrees with the static allocation sites.
 /// Bases: `NiNode`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiBillboardNode {
     /// +0x0 `vtbl:NiBillboardNode:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBillboardNode_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -925,17 +939,19 @@ pub struct NiBillboardNode {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
     pub world: crate::NiTransform,
     /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
@@ -949,15 +965,17 @@ pub struct NiBillboardNode {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
+    unknown_10A: [u8; 6],
     /// +0x110 `undefined1`, base NiNode, semantic; NiTObjectArray<NiPointer<NiAVObject>>: vtable +0x110, data +0x118, capacity u16 +0x120, slots in use u16 +0x122, non-null count u16 +0x124, grow step u16 +0x126 (high)
     pub children: [u8; 24],
-    pub unknown_128: [u8; 8],
+    unknown_128: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -968,20 +986,20 @@ const _: () = assert!(core::mem::offset_of!(NiBillboardNode, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBillboardNode, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBillboardNode, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiBillboardNode, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiBillboardNode, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiBillboardNode, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(NiBillboardNode, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiBillboardNode, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiBillboardNode, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(NiBillboardNode, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiBillboardNode, __local) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiBillboardNode, world) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(NiBillboardNode, previousWorld) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(NiBillboardNode, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(NiBillboardNode, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(NiBillboardNode, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(NiBillboardNode, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(NiBillboardNode, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(NiBillboardNode, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(NiBillboardNode, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(NiBillboardNode, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(NiBillboardNode, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(NiBillboardNode, children) == 0x110);
 
 /// `NiBinaryExtraData`: size 0x28 (exact, high); primary base `NiExtraData`.
@@ -2234,11 +2252,13 @@ pub struct NiCollisionData {
     /// +0x10 `undefined8`, base NiCollisionObject
     pub field_10: u64,
     /// +0x18 `float`, ctor store (widths [4, 8])
-    pub field_18: f32,
+    #[doc(hidden)]
+    pub __field_18: [u8; 4],
     /// +0x1C `float`, ctor store
     pub field_1C: f32,
     /// +0x20 `float`, ctor store (widths [4, 8])
-    pub field_20: f32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `float`, ctor store
     pub field_24: f32,
     /// +0x28 `float`, ctor store (widths [4, 8])
@@ -2277,9 +2297,9 @@ pub struct NiCollisionData {
 const _: () = assert!(core::mem::offset_of!(NiCollisionData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(NiCollisionData, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiCollisionData, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(NiCollisionData, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(NiCollisionData, __field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiCollisionData, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiCollisionData, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiCollisionData, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiCollisionData, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiCollisionData, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiCollisionData, field_2C) == 0x2C);
@@ -2376,7 +2396,8 @@ pub struct NiColorExtraData {
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
     /// +0x18 `float`, ctor store (widths [4, 8, 16])
-    pub field_18: f32,
+    #[doc(hidden)]
+    pub __field_18: [u8; 4],
     /// +0x1C `float`, ctor store
     #[doc(hidden)]
     pub __field_1C: [u8; 4],
@@ -2392,7 +2413,7 @@ pub struct NiColorExtraData {
 const _: () = assert!(core::mem::offset_of!(NiColorExtraData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(NiColorExtraData, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiColorExtraData, name) == 0x10);
-const _: () = assert!(core::mem::offset_of!(NiColorExtraData, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(NiColorExtraData, __field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiColorExtraData, __field_1C) == 0x1C);
 const _: () = assert!(core::mem::offset_of!(NiColorExtraData, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiColorExtraData, __field_24) == 0x24);
@@ -2772,7 +2793,7 @@ pub struct NiDirectionalLight {
     pub __vftable: *const crate::raw::vtables::NiDirectionalLight_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -2782,17 +2803,19 @@ pub struct NiDirectionalLight {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
     pub world: crate::NiTransform,
     /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
@@ -2806,12 +2829,14 @@ pub struct NiDirectionalLight {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
+    unknown_10A: [u8; 6],
     /// +0x110 `class:NiColor`, base NiLight, semantic; first colour (0 for point lights; the sky's colour for the sun) (medium)
     pub ambient: crate::NiColor,
     /// +0x11C `class:NiColor`, base NiLight, semantic; light colour (high)
@@ -2840,20 +2865,20 @@ const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, __local) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, world) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, previousWorld) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, ambient) == 0x110);
 const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, diffuse) == 0x11C);
 const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, radius) == 0x128);
@@ -3405,7 +3430,7 @@ pub struct NiFogProperty {
     pub __vftable: *const crate::raw::vtables::NiFogProperty_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -3415,11 +3440,12 @@ pub struct NiFogProperty {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined2`, ctor store
     pub field_30: u16,
-    pub unknown_32: [u8; 2],
+    unknown_32: [u8; 2],
     /// +0x34 `undefined4`, ctor store
     pub field_34: u32,
     /// +0x38 `double`, ctor store (widths [8, 8])
@@ -3440,7 +3466,7 @@ const _: () = assert!(core::mem::offset_of!(NiFogProperty, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiFogProperty, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiFogProperty, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiFogProperty, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiFogProperty, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiFogProperty, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(NiFogProperty, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiFogProperty, field_34) == 0x34);
 const _: () = assert!(core::mem::offset_of!(NiFogProperty, field_38) == 0x38);
@@ -3494,14 +3520,14 @@ const _: () = assert!(core::mem::offset_of!(NiFormArray, field_3C) == 0x3C);
 /// `NiGeometry`: size 0x138 (exact, medium); primary base `NiAVObject`.
 /// Evidence: lower bound NiTriShape (size 0x138 at 0x0) adds no fields or bases meets upper bound derived NiTriShape size 0x138 at 0x0.
 /// Bases: `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiGeometry {
     /// +0x0 `vtbl:NiGeometry:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiGeometry_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -3511,17 +3537,19 @@ pub struct NiGeometry {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
     pub world: crate::NiTransform,
     /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
@@ -3535,12 +3563,14 @@ pub struct NiGeometry {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
+    unknown_10A: [u8; 6],
     /// +0x110 `undefined8`, ctor store
     pub field_110: u64,
     /// +0x118 `undefined8`, ctor store
@@ -3561,20 +3591,20 @@ const _: () = assert!(core::mem::offset_of!(NiGeometry, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiGeometry, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiGeometry, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiGeometry, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiGeometry, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiGeometry, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(NiGeometry, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiGeometry, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiGeometry, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(NiGeometry, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiGeometry, __local) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiGeometry, world) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(NiGeometry, previousWorld) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(NiGeometry, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(NiGeometry, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(NiGeometry, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(NiGeometry, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(NiGeometry, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(NiGeometry, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(NiGeometry, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(NiGeometry, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(NiGeometry, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(NiGeometry, field_110) == 0x110);
 const _: () = assert!(core::mem::offset_of!(NiGeometry, field_118) == 0x118);
 const _: () = assert!(core::mem::offset_of!(NiGeometry, field_120) == 0x120);
@@ -4311,14 +4341,14 @@ const _: () = assert!(core::mem::offset_of!(NiMeshPSysData, field_CC) == 0xCC);
 /// `NiMeshParticleSystem`: size 0x1A0 (exact, high); primary base `NiParticleSystem`.
 /// Evidence: allocation sites (high): {'416': 3}.
 /// Bases: `NiParticleSystem`@0x0, `NiParticles`@0x0, `BSGeometry`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiMeshParticleSystem {
     /// +0x0 `vtbl:NiMeshParticleSystem:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiMeshParticleSystem_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -4328,17 +4358,19 @@ pub struct NiMeshParticleSystem {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
     pub world: crate::NiTransform,
     /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
@@ -4352,12 +4384,14 @@ pub struct NiMeshParticleSystem {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
+    unknown_10A: [u8; 6],
     /// +0x110 `float`, base BSGeometry
     pub field_110: f32,
     /// +0x114 `float`, base BSGeometry
@@ -4380,7 +4414,7 @@ pub struct NiMeshParticleSystem {
     pub field_148: u64,
     /// +0x150 `undefined1`, base BSGeometry, semantic; geometry type byte (3 for BSTriShape) (high)
     pub type_: u8,
-    pub unknown_151: [u8; 7],
+    unknown_151: [u8; 7],
     /// +0x158 `undefined8`, base NiParticles
     pub field_158: u64,
     /// +0x160 `undefined8`, base NiParticles
@@ -4391,7 +4425,7 @@ pub struct NiMeshParticleSystem {
     pub field_170: u64,
     /// +0x178 `undefined4`, base NiParticleSystem
     pub field_178: u32,
-    pub unknown_17C: [u8; 4],
+    unknown_17C: [u8; 4],
     /// +0x180 `undefined4`, base NiParticleSystem
     pub field_180: u32,
     /// +0x184 `undefined4`, base NiParticleSystem
@@ -4404,12 +4438,12 @@ pub struct NiMeshParticleSystem {
     pub field_190: u16,
     /// +0x192 `undefined1`, base NiParticleSystem
     pub field_192: u8,
-    pub unknown_193: [u8; 5],
+    unknown_193: [u8; 5],
     /// +0x198 `undefined4`, ctor store
     pub field_198: u32,
     /// +0x19C `undefined1`, ctor store
     pub field_19C: u8,
-    pub unknown_19D: [u8; 3],
+    unknown_19D: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4420,20 +4454,20 @@ const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, name) == 0x10)
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, __local) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, world) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, previousWorld) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, field_110) == 0x110);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, field_114) == 0x114);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, field_118) == 0x118);
@@ -8372,14 +8406,14 @@ const _: () = assert!(core::mem::offset_of!(NiPSysVortexFieldModifier, field_58)
 /// `NiParticleMeshes`: size 0x170 (exact, high); primary base `NiParticles`.
 /// Evidence: allocation sites (high): {'368': 3}.
 /// Bases: `NiParticles`@0x0, `BSGeometry`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiParticleMeshes {
     /// +0x0 `vtbl:NiParticleMeshes:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiParticleMeshes_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -8389,17 +8423,19 @@ pub struct NiParticleMeshes {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
     pub world: crate::NiTransform,
     /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
@@ -8413,12 +8449,14 @@ pub struct NiParticleMeshes {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
+    unknown_10A: [u8; 6],
     /// +0x110 `float`, base BSGeometry
     pub field_110: f32,
     /// +0x114 `float`, base BSGeometry
@@ -8441,7 +8479,7 @@ pub struct NiParticleMeshes {
     pub field_148: u64,
     /// +0x150 `undefined1`, base BSGeometry, semantic; geometry type byte (3 for BSTriShape) (high)
     pub type_: u8,
-    pub unknown_151: [u8; 7],
+    unknown_151: [u8; 7],
     /// +0x158 `undefined8`, base NiParticles
     pub field_158: u64,
     /// +0x160 `undefined8`, base NiParticles
@@ -8450,7 +8488,7 @@ pub struct NiParticleMeshes {
     pub field_168: u32,
     /// +0x16C `undefined1`, ctor store
     pub field_16C: u8,
-    pub unknown_16D: [u8; 3],
+    unknown_16D: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8461,20 +8499,20 @@ const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, __local) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, world) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, previousWorld) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, field_110) == 0x110);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, field_114) == 0x114);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, field_118) == 0x118);
@@ -8585,14 +8623,14 @@ const _: () = assert!(core::mem::offset_of!(NiParticleMeshesData, field_90) == 0
 /// `NiParticleSystem`: size 0x198 (exact, high); primary base `NiParticles`.
 /// Evidence: runtime: 0x198 at 2 allocation sites; agrees with the static allocation sites.
 /// Bases: `NiParticles`@0x0, `BSGeometry`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiParticleSystem {
     /// +0x0 `vtbl:NiParticleSystem:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiParticleSystem_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -8602,17 +8640,19 @@ pub struct NiParticleSystem {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
     pub world: crate::NiTransform,
     /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
@@ -8626,12 +8666,14 @@ pub struct NiParticleSystem {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
+    unknown_10A: [u8; 6],
     /// +0x110 `float`, base BSGeometry
     pub field_110: f32,
     /// +0x114 `float`, base BSGeometry
@@ -8654,7 +8696,7 @@ pub struct NiParticleSystem {
     pub field_148: u64,
     /// +0x150 `undefined1`, base BSGeometry, semantic; geometry type byte (3 for BSTriShape) (high)
     pub type_: u8,
-    pub unknown_151: [u8; 7],
+    unknown_151: [u8; 7],
     /// +0x158 `undefined8`, base NiParticles
     pub field_158: u64,
     /// +0x160 `undefined8`, base NiParticles
@@ -8665,7 +8707,7 @@ pub struct NiParticleSystem {
     pub field_170: u64,
     /// +0x178 `undefined4`, ctor store
     pub field_178: u32,
-    pub unknown_17C: [u8; 4],
+    unknown_17C: [u8; 4],
     /// +0x180 `undefined4`, ctor store
     pub field_180: u32,
     /// +0x184 `undefined4`, ctor store
@@ -8678,7 +8720,7 @@ pub struct NiParticleSystem {
     pub field_190: u16,
     /// +0x192 `undefined1`, ctor store
     pub field_192: u8,
-    pub unknown_193: [u8; 5],
+    unknown_193: [u8; 5],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8689,20 +8731,20 @@ const _: () = assert!(core::mem::offset_of!(NiParticleSystem, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiParticleSystem, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiParticleSystem, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(NiParticleSystem, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiParticleSystem, __local) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, world) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, previousWorld) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(NiParticleSystem, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(NiParticleSystem, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(NiParticleSystem, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(NiParticleSystem, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, field_110) == 0x110);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, field_114) == 0x114);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, field_118) == 0x118);
@@ -8729,14 +8771,14 @@ const _: () = assert!(core::mem::offset_of!(NiParticleSystem, field_192) == 0x19
 /// `NiParticles`: size 0x168 (exact, low); primary base `BSGeometry`.
 /// Evidence: allocation sites (low): {'360': 3, '24': 1}.
 /// Bases: `BSGeometry`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiParticles {
     /// +0x0 `vtbl:NiParticles:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiParticles_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -8746,17 +8788,19 @@ pub struct NiParticles {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
     pub world: crate::NiTransform,
     /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
@@ -8770,12 +8814,14 @@ pub struct NiParticles {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
+    unknown_10A: [u8; 6],
     /// +0x110 `float`, base BSGeometry
     pub field_110: f32,
     /// +0x114 `float`, base BSGeometry
@@ -8798,7 +8844,7 @@ pub struct NiParticles {
     pub field_148: u64,
     /// +0x150 `undefined1`, base BSGeometry, semantic; geometry type byte (3 for BSTriShape) (high)
     pub type_: u8,
-    pub unknown_151: [u8; 7],
+    unknown_151: [u8; 7],
     /// +0x158 `undefined8`, ctor store
     pub field_158: u64,
     /// +0x160 `undefined8`, ctor store
@@ -8813,20 +8859,20 @@ const _: () = assert!(core::mem::offset_of!(NiParticles, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiParticles, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiParticles, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiParticles, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiParticles, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiParticles, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(NiParticles, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiParticles, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiParticles, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(NiParticles, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiParticles, __local) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiParticles, world) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(NiParticles, previousWorld) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(NiParticles, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(NiParticles, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(NiParticles, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(NiParticles, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(NiParticles, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(NiParticles, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(NiParticles, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(NiParticles, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(NiParticles, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(NiParticles, field_110) == 0x110);
 const _: () = assert!(core::mem::offset_of!(NiParticles, field_114) == 0x114);
 const _: () = assert!(core::mem::offset_of!(NiParticles, field_118) == 0x118);
@@ -9218,14 +9264,14 @@ const _: () = assert!(core::mem::offset_of!(NiPosData, field_8) == 0x8);
 /// `NiProperty`: size 0x30 (exact, medium); primary base `NiObjectNET`.
 /// Evidence: lower bound NiShadeProperty (size 0x30 at 0x0) adds no fields or bases meets upper bound derived NiShadeProperty size 0x30 at 0x0.
 /// Bases: `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiProperty {
     /// +0x0 `vtbl:NiProperty:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiProperty_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -9235,8 +9281,9 @@ pub struct NiProperty {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9247,7 +9294,7 @@ const _: () = assert!(core::mem::offset_of!(NiProperty, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiProperty, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiProperty, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiProperty, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiProperty, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiProperty, __extraDataCapacity) == 0x2A);
 
 /// `NiQuaternionInterpolator`: size >= 0x38 (lower bound); partial, the struct stops at the lower bound; primary base `NiKeyBasedInterpolator`.
 /// Evidence: field field_30.
@@ -9458,14 +9505,14 @@ const _: () = assert!(core::mem::offset_of!(NiSequence, field_50) == 0x50);
 /// `NiSequenceStreamHelper`: size >= 0x30 (lower bound); partial, the struct stops at the lower bound; primary base `NiObjectNET`.
 /// Evidence: base NiObjectNET at 0x0.
 /// Bases: `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiSequenceStreamHelper {
     /// +0x0 `vtbl:NiSequenceStreamHelper:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSequenceStreamHelper_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -9475,8 +9522,9 @@ pub struct NiSequenceStreamHelper {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9486,19 +9534,19 @@ const _: () = assert!(core::mem::offset_of!(NiSequenceStreamHelper, name) == 0x1
 const _: () = assert!(core::mem::offset_of!(NiSequenceStreamHelper, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiSequenceStreamHelper, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiSequenceStreamHelper, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiSequenceStreamHelper, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiSequenceStreamHelper, __extraDataCapacity) == 0x2A);
 
 /// `NiShadeProperty`: size 0x30 (exact, medium); primary base `NiProperty`.
 /// Evidence: runtime: 0x30 at 1 allocation sites.
 /// Bases: `NiProperty`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiShadeProperty {
     /// +0x0 `vtbl:NiShadeProperty:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiShadeProperty_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -9508,8 +9556,9 @@ pub struct NiShadeProperty {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9520,7 +9569,7 @@ const _: () = assert!(core::mem::offset_of!(NiShadeProperty, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiShadeProperty, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiShadeProperty, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiShadeProperty, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiShadeProperty, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiShadeProperty, __extraDataCapacity) == 0x2A);
 
 /// `NiSingleInterpController`: size 0x50 (exact, medium); primary base `NiInterpController`.
 /// Evidence: lower bound BSFrustumFOVController (size 0x50 at 0x0) adds no fields or bases meets upper bound derived BSFrustumFOVController size 0x50 at 0x0.
@@ -9757,14 +9806,14 @@ const _: () = assert!(core::mem::offset_of!(NiSphereTriIntersector, __field_74) 
 /// `NiSpotLight`: size 0x168 (exact, high); primary base `NiPointLight`.
 /// Evidence: allocation sites (high): {'360': 3}.
 /// Bases: `NiPointLight`@0x0, `NiLight`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiSpotLight {
     /// +0x0 `vtbl:NiSpotLight:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSpotLight_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -9774,17 +9823,19 @@ pub struct NiSpotLight {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
     pub world: crate::NiTransform,
     /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
@@ -9798,12 +9849,14 @@ pub struct NiSpotLight {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
+    unknown_10A: [u8; 6],
     /// +0x110 `class:NiColor`, base NiLight, semantic; first colour (0 for point lights; the sky's colour for the sun) (medium)
     pub ambient: crate::NiColor,
     /// +0x11C `class:NiColor`, base NiLight, semantic; light colour (high)
@@ -9819,8 +9872,9 @@ pub struct NiSpotLight {
     /// +0x144 `float`, base NiPointLight, semantic; linear term (ctor 1.0); also flicker phase 1 (high)
     pub linearAttenuation: f32,
     /// +0x148 `float`, base NiPointLight, semantic; quadratic term (ctor 0); also flicker phase 2 (high)
-    pub quadraticAttenuation: f32,
-    pub unknown_14C: [u8; 4],
+    #[doc(hidden)]
+    pub __quadraticAttenuation: [u8; 4],
+    unknown_14C: [u8; 4],
     /// +0x150 `undefined8`, ctor store
     pub field_150: u64,
     /// +0x158 `undefined8`, ctor store
@@ -9839,20 +9893,20 @@ const _: () = assert!(core::mem::offset_of!(NiSpotLight, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiSpotLight, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiSpotLight, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(NiSpotLight, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiSpotLight, __local) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, world) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, previousWorld) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(NiSpotLight, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(NiSpotLight, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(NiSpotLight, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(NiSpotLight, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, ambient) == 0x110);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, diffuse) == 0x11C);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, radius) == 0x128);
@@ -9860,7 +9914,7 @@ const _: () = assert!(core::mem::offset_of!(NiSpotLight, fade) == 0x134);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, field_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, constantAttenuation) == 0x140);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, linearAttenuation) == 0x144);
-const _: () = assert!(core::mem::offset_of!(NiSpotLight, quadraticAttenuation) == 0x148);
+const _: () = assert!(core::mem::offset_of!(NiSpotLight, __quadraticAttenuation) == 0x148);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, field_150) == 0x150);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, field_160) == 0x160);
@@ -10114,14 +10168,14 @@ const _: () = assert!(core::mem::offset_of!(NiStringsExtraData, field_20) == 0x2
 /// `NiSwitchNode`: size 0x150 (exact, high); primary base `NiNode`.
 /// Evidence: runtime: 0x150 at 2 allocation sites; agrees with the static allocation sites.
 /// Bases: `NiNode`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiSwitchNode {
     /// +0x0 `vtbl:NiSwitchNode:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSwitchNode_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -10131,17 +10185,19 @@ pub struct NiSwitchNode {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
     pub world: crate::NiTransform,
     /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
@@ -10155,17 +10211,19 @@ pub struct NiSwitchNode {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
+    unknown_10A: [u8; 6],
     /// +0x110 `undefined1`, base NiNode, semantic; NiTObjectArray<NiPointer<NiAVObject>>: vtable +0x110, data +0x118, capacity u16 +0x120, slots in use u16 +0x122, non-null count u16 +0x124, grow step u16 +0x126 (high)
     pub children: [u8; 24],
     /// +0x128 `undefined2`, ctor store
     pub field_128: u16,
-    pub unknown_12A: [u8; 2],
+    unknown_12A: [u8; 2],
     /// +0x12C `undefined4`, ctor store
     pub field_12C: u32,
     /// +0x130 `undefined4`, ctor store
@@ -10190,20 +10248,20 @@ const _: () = assert!(core::mem::offset_of!(NiSwitchNode, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiSwitchNode, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiSwitchNode, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(NiSwitchNode, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiSwitchNode, __local) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, world) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, previousWorld) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(NiSwitchNode, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(NiSwitchNode, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(NiSwitchNode, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(NiSwitchNode, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, children) == 0x110);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, field_128) == 0x128);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, field_12C) == 0x12C);
@@ -12314,14 +12372,14 @@ const _: () = assert!(core::mem::offset_of!(NiTransformInterpolator, field_46) =
 /// `NiTriBasedGeom`: size 0x138 (exact, medium); primary base `NiGeometry`.
 /// Evidence: lower bound NiTriShape (size 0x138 at 0x0) adds no fields or bases meets upper bound derived NiTriShape size 0x138 at 0x0.
 /// Bases: `NiGeometry`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiTriBasedGeom {
     /// +0x0 `vtbl:NiTriBasedGeom:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTriBasedGeom_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -12331,17 +12389,19 @@ pub struct NiTriBasedGeom {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
     pub world: crate::NiTransform,
     /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
@@ -12355,12 +12415,14 @@ pub struct NiTriBasedGeom {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
+    unknown_10A: [u8; 6],
     /// +0x110 `undefined8`, base NiGeometry
     pub field_110: u64,
     /// +0x118 `undefined8`, base NiGeometry
@@ -12381,20 +12443,20 @@ const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, __local) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, world) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, previousWorld) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, field_110) == 0x110);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, field_118) == 0x118);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, field_120) == 0x120);
@@ -12471,14 +12533,14 @@ const _: () = assert!(core::mem::offset_of!(NiTriBasedGeomData, field_68) == 0x6
 /// `NiTriShape`: size 0x138 (exact, medium); primary base `NiTriBasedGeom`.
 /// Evidence: runtime: 0x138 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `NiTriBasedGeom`@0x0, `NiGeometry`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiTriShape {
     /// +0x0 `vtbl:NiTriShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTriShape_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -12488,17 +12550,19 @@ pub struct NiTriShape {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
     pub world: crate::NiTransform,
     /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
@@ -12512,12 +12576,14 @@ pub struct NiTriShape {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
+    unknown_10A: [u8; 6],
     /// +0x110 `undefined8`, base NiGeometry
     pub field_110: u64,
     /// +0x118 `undefined8`, base NiGeometry
@@ -12538,20 +12604,20 @@ const _: () = assert!(core::mem::offset_of!(NiTriShape, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiTriShape, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiTriShape, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiTriShape, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiTriShape, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiTriShape, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(NiTriShape, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiTriShape, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiTriShape, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(NiTriShape, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiTriShape, __local) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiTriShape, world) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(NiTriShape, previousWorld) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(NiTriShape, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(NiTriShape, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(NiTriShape, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(NiTriShape, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(NiTriShape, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(NiTriShape, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(NiTriShape, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(NiTriShape, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(NiTriShape, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(NiTriShape, field_110) == 0x110);
 const _: () = assert!(core::mem::offset_of!(NiTriShape, field_118) == 0x118);
 const _: () = assert!(core::mem::offset_of!(NiTriShape, field_120) == 0x120);
@@ -12635,14 +12701,14 @@ const _: () = assert!(core::mem::offset_of!(NiTriShapeData, field_78) == 0x78);
 /// `NiTriStrips`: size 0x138 (exact, high); primary base `NiTriBasedGeom`.
 /// Evidence: allocation sites (high): {'312': 3}.
 /// Bases: `NiTriBasedGeom`@0x0, `NiGeometry`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiTriStrips {
     /// +0x0 `vtbl:NiTriStrips:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTriStrips_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -12652,17 +12718,19 @@ pub struct NiTriStrips {
     /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __extraDataCapacity: [u8; 2],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
+    #[doc(hidden)]
+    pub __local: [u8; 52],
     /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
     pub world: crate::NiTransform,
     /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
@@ -12676,12 +12744,14 @@ pub struct NiTriStrips {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
+    #[doc(hidden)]
+    pub __previousWorldFrame: [u8; 4],
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    #[doc(hidden)]
+    pub __flags2: [u8; 1],
+    unknown_10A: [u8; 6],
     /// +0x110 `undefined8`, base NiGeometry
     pub field_110: u64,
     /// +0x118 `undefined8`, base NiGeometry
@@ -12702,20 +12772,20 @@ const _: () = assert!(core::mem::offset_of!(NiTriStrips, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiTriStrips, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiTriStrips, extraData) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiTriStrips, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiTriStrips, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiTriStrips, __extraDataCapacity) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(NiTriStrips, parent) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiTriStrips, parentIndex) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiTriStrips, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(NiTriStrips, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiTriStrips, __local) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiTriStrips, world) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(NiTriStrips, previousWorld) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(NiTriStrips, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(NiTriStrips, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(NiTriStrips, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(NiTriStrips, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(NiTriStrips, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(NiTriStrips, __previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(NiTriStrips, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(NiTriStrips, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(NiTriStrips, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(NiTriStrips, field_110) == 0x110);
 const _: () = assert!(core::mem::offset_of!(NiTriStrips, field_118) == 0x118);
 const _: () = assert!(core::mem::offset_of!(NiTriStrips, field_120) == 0x120);
