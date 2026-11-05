@@ -17,7 +17,7 @@ use crate::ui::{RawFamily, RawFont, UiCallback};
 use crate::{CommandRequest, Error, FrameFn, Host, LoadFn, MessageFn, Method, NativeRequest, PapyrusFn};
 
 /// The host API revision, including its table and record semantics; entries are only ever appended.
-pub const API: u32 = 5;
+pub const API: u32 = 6;
 
 /// Bytes borrowed for the call, UTF-8 where they are text.
 #[repr(C)]
@@ -804,6 +804,15 @@ pub struct HostApi {
     pub add_hud: Option<unsafe extern "C" fn(*const Self, UiCallback)>,
     /// Puts every font file the overlay draws with, then every family with its fonts in fallback order.
     pub fonts: Option<unsafe extern "C" fn(*const Self, Sink<'_, *const RawFont>, Sink<'_, *const RawFamily>)>,
+    /// Leaves the plugin's action out of the Settings tab; false for another plugin's.
+    pub bind_in_tab: Option<unsafe extern "C" fn(*const Self, usize) -> bool>,
+    /// Arms or disarms the capture of the next key for the plugin's action; false for another plugin's.
+    pub capture_key: Option<unsafe extern "C" fn(*const Self, usize, bool) -> bool>,
+    pub capturing_key: Option<unsafe extern "C" fn(*const Self, usize) -> bool>,
+    /// Leaves the plugin's action without a key; false for another plugin's.
+    pub unbind_key: Option<unsafe extern "C" fn(*const Self, usize) -> bool>,
+    /// Puts the last assignment, refusal or unbinding when it was about the action.
+    pub key_message: Option<unsafe extern "C" fn(*const Self, usize, Sink<'_, Str>)>,
 }
 
 /// A plugin's [`HostApi`], read only through [`entry!`] past the header.

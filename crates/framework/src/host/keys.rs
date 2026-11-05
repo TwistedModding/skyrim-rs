@@ -27,6 +27,8 @@ pub(super) struct Binding {
     pub scope: Scope,
     /// What the game's control map does with the key, once the control map is loaded.
     pub game: String,
+    /// The owner's tab binds the key, so the Settings tab leaves it out.
+    pub in_tab: bool,
 }
 
 impl Binding {
@@ -36,8 +38,9 @@ impl Binding {
 }
 
 static BINDINGS: Mutex<Vec<Binding>> = Mutex::new(Vec::new());
-/// The last assignment or refusal, for the Settings tab and `SkyrimRs keys`.
-static LAST: Mutex<String> = Mutex::new(String::new());
+/// The last assignment or refusal and the binding it is about, for the Settings tab, the owner's
+/// tab and `SkyrimRs keys`.
+static LAST: Mutex<(usize, String)> = Mutex::new((usize::MAX, String::new()));
 /// The binding a capture is armed for, `usize::MAX` for none.
 static CAPTURE_FOR: AtomicUsize = AtomicUsize::new(usize::MAX);
 
@@ -69,16 +72,18 @@ pub(super) fn declare_host() {
 /// Declares `<owner>.<action>`, or finds it again for a reloaded plugin, and returns its index.
 pub(super) fn declare(owner: &str, action: &str, default: &str, scope: Scope) -> usize {
     let name = format!("{owner}.{action}");
+    let mut list = bindings();
+    let found = list.iter().position(|b| b.name == name);
+    let index = found.unwrap_or(list.len());
     let default_key = match default.parse::<Hotkey>() {
         _ if default.is_empty() => None,
         Ok(key) => Some(key),
         Err(e) => {
-            report(format!("{name}: the default {default:?} is not a key: {e}"));
+            report(index, format!("{name}: the default {default:?} is not a key: {e}"));
             None
         }
     };
-    let mut list = bindings();
-    if let Some(i) = list.iter().position(|b| b.name == name) {
+    if let Some(i) = found {
         list[i].default = default_key;
         list[i].scope = scope;
         drop(list);
@@ -93,12 +98,12 @@ pub(super) fn declare(owner: &str, action: &str, default: &str, scope: Scope) ->
         Some(other) => u32::from_setting(other).filter(|code| (1..0x100).contains(code)).map(|code| Some(Hotkey::new(code))).ok_or_else(|| format!("{other:?} is not a key name or scan code")),
     };
     let wanted = read.unwrap_or_else(|e| {
-        report(format!("{} in the settings: {e}; {name} keeps its default {}", setting_key(&name), show(default_key)));
+        report(index, format!("{} in the settings: {e}; {name} keeps its default {}", setting_key(&name), show(default_key)));
         default_key
     });
     let key = match wanted.and_then(|k| holder(&list, k, usize::MAX).map(|other| (k, other.to_owned()))) {
         Some((k, other)) => {
-            report(format!("{name}: {k} is bound to {other}; {name} stays unbound until a key is set"));
+            report(index, format!("{name}: {k} is bound to {other}; {name} stays unbound until a key is set"));
             None
         }
         None => wanted,
@@ -108,8 +113,7 @@ pub(super) fn declare(owner: &str, action: &str, default: &str, scope: Scope) ->
     {
         settings::set(NAME, &setting_key(&name), Setting::Text(k.to_string()));
     }
-    list.push(Binding { name, owner: owner.to_owned(), default: default_key, key, scope, game: String::new() });
-    let index = list.len() - 1;
+    list.push(Binding { name, owner: owner.to_owned(), default: default_key, key, scope, game: String::new(), in_tab: false });
     drop(list);
     describe_game_use(index);
     apply();
@@ -133,7 +137,7 @@ pub(super) fn set(index: usize, key: Hotkey) -> Result<String, String> {
         apply();
     }
     match &result {
-        Ok(line) | Err(line) => report(line.clone()),
+        Ok(line) | Err(line) => report(index, line.clone()),
     }
     result
 }
@@ -148,13 +152,26 @@ pub(super) fn unbind(index: usize) {
     drop(list);
     describe_game_use(index);
     apply();
-    report(format!("{name} unbound"));
+    report(index, format!("{name} unbound"));
 }
 
-/// Logs `line` and keeps it as the last message.
-fn report(line: String) {
+/// Whether the action at `index` was declared by `owner`.
+pub(super) fn owned_by(index: usize, owner: &str) -> bool {
+    bindings().get(index).is_some_and(|b| b.owner == owner)
+}
+
+/// Leaves `owner`'s action at `index` out of the Settings tab; false for another owner's.
+pub(super) fn bind_in_tab(index: usize, owner: &str) -> bool {
+    let mut list = bindings();
+    let Some(binding) = list.get_mut(index).filter(|b| b.owner == owner) else { return false };
+    binding.in_tab = true;
+    true
+}
+
+/// Logs `line` and keeps it as the last message, about the action at `index`.
+fn report(index: usize, line: String) {
     log!("keys: {line}");
-    *LAST.lock().unwrap_or_else(PoisonError::into_inner) = line;
+    *LAST.lock().unwrap_or_else(PoisonError::into_inner) = (index, line);
 }
 
 /// Hands the toggle, the close key and the overlay actions' keys to the overlay.
@@ -170,7 +187,13 @@ pub(super) fn list() -> Vec<Binding> {
 }
 
 pub(super) fn last_message() -> String {
-    LAST.lock().unwrap_or_else(PoisonError::into_inner).clone()
+    LAST.lock().unwrap_or_else(PoisonError::into_inner).1.clone()
+}
+
+/// The last message when it is about the action at `index`.
+pub(super) fn message(index: usize) -> Option<String> {
+    let last = LAST.lock().unwrap_or_else(PoisonError::into_inner);
+    (last.0 == index).then(|| last.1.clone())
 }
 
 pub(super) fn fired(index: usize) -> bool {
@@ -312,6 +335,10 @@ mod tests {
         assert_eq!(last_message(), "skyrim-runtime-extender.toggle unbound");
         assert_eq!(settings::get(NAME, "key.skyrim-runtime-extender.toggle"), Some(Setting::Text(String::new())));
         assert_eq!(set(d, f10), Ok("test.d set to F10".to_owned()), "unbinding frees the key");
+        assert_eq!((message(d), message(c)), (Some("test.d set to F10".to_owned()), None));
+        assert!(owned_by(d, "test") && !owned_by(d, "other") && !owned_by(usize::MAX, "test"));
+        assert!(bind_in_tab(d, "test") && !bind_in_tab(c, "other"));
+        assert!(list()[d].in_tab && !list()[c].in_tab);
         let _ = std::fs::remove_dir_all(&dir);
     }
 }

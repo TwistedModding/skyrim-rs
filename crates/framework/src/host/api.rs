@@ -74,6 +74,11 @@ pub(super) fn build(name: &'static str, skse: *const skse::Interface) -> &'stati
         add_section: Some(add_section),
         add_hud: Some(add_hud),
         fonts: Some(fonts),
+        bind_in_tab: Some(bind_in_tab),
+        capture_key: Some(capture_key),
+        capturing_key: Some(capturing_key),
+        unbind_key: Some(unbind_key),
+        key_message: Some(key_message),
     }))
 }
 
@@ -154,6 +159,40 @@ unsafe extern "C" fn held(_: *const HostApi, index: usize) -> bool {
 
 unsafe extern "C" fn released(_: *const HostApi, index: usize, secs: *mut f32) -> bool {
     put(keys::released(index), secs)
+}
+
+unsafe extern "C" fn bind_in_tab(api: *const HostApi, index: usize) -> bool {
+    keys::bind_in_tab(index, owner(api))
+}
+
+unsafe extern "C" fn capture_key(api: *const HostApi, index: usize, armed: bool) -> bool {
+    if !keys::owned_by(index, owner(api)) {
+        return false;
+    }
+    if armed {
+        keys::capture(Some(index));
+    } else if keys::capturing() == Some(index) {
+        keys::capture(None);
+    }
+    true
+}
+
+unsafe extern "C" fn capturing_key(_: *const HostApi, index: usize) -> bool {
+    keys::capturing() == Some(index)
+}
+
+unsafe extern "C" fn unbind_key(api: *const HostApi, index: usize) -> bool {
+    let owned = keys::owned_by(index, owner(api));
+    if owned {
+        keys::unbind(index);
+    }
+    owned
+}
+
+unsafe extern "C" fn key_message(_: *const HostApi, index: usize, message: Sink<'_, Str>) {
+    if let Some(line) = keys::message(index) {
+        message.put(Str::from(line.as_str()));
+    }
 }
 
 unsafe extern "C" fn key_held(_: *const HostApi, scan_code: u32) -> bool {
@@ -474,13 +513,13 @@ mod tests {
         assert_eq!(*RESTORED.lock().unwrap(), [1, 2, 3]);
     }
 
-    /// The first entry and the last of api 1 to 4: a plugin built against any of them finds its
+    /// The first entry and the last of api 1 to 4 and 6: a plugin built against any of them finds its
     /// entries at the offsets it was built with on every later loader.
     #[test]
     fn the_table_keeps_every_versions_offsets() {
         use core::mem::offset_of;
-        let offsets = [offset_of!(HostApi, on_message), offset_of!(HostApi, plugins), offset_of!(HostApi, replace_command), offset_of!(HostApi, hook_patches), offset_of!(HostApi, fonts), size_of::<HostApi>()];
-        assert_eq!(offsets, [32, 248, 296, 400, 424, 432]);
+        let offsets = [offset_of!(HostApi, on_message), offset_of!(HostApi, plugins), offset_of!(HostApi, replace_command), offset_of!(HostApi, hook_patches), offset_of!(HostApi, fonts), offset_of!(HostApi, key_message), size_of::<HostApi>()];
+        assert_eq!(offsets, [32, 248, 296, 400, 424, 464, 472]);
     }
 
     #[test]
@@ -504,7 +543,10 @@ mod tests {
 
         let action = Action { index: 0, api: older };
         assert!(!action.fired() && !action.held());
-        assert_eq!((action.key(), action.released()), (None, None));
+        assert_eq!((action.key(), action.released(), action.message()), (None, None, None));
+        action.capture(true);
+        action.unbind();
+        assert!(!action.bind_in_tab() && !action.capturing());
         let mut slot = 0;
         let refused = status("serving a name", |error| call!(older, serve_alias(Str::from("Name"), crate::abi::message(|_| {}), &raw mut slot, error)));
         assert!(matches!(refused, Err(Error::Unsupported { .. })));

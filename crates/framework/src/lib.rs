@@ -274,7 +274,8 @@ impl Host {
 
     /// Declares a hotkey named `<plugin>.<name>` in the host's binding table, bound to `default`
     /// (`"F10"`, `"Ctrl+Shift+K"`, as [`Hotkey`] reads it; `""` for none) until the player binds
-    /// another key or none in the host file (`key.<plugin>.<name>`) or the host window's Settings tab. `scope` says
+    /// another key or none in the host file (`key.<plugin>.<name>`) or the host window's Settings tab
+    /// (the plugin's own tab after [`Action::bind_in_tab`]). `scope` says
     /// who must have the key: [`Scope::Overlay`] fires while the overlay is open with no widget
     /// focused and keeps the key from the game while it is open; [`Scope::Game`] fires when the
     /// press reached the game, which acts on it too. A key another action holds is refused, and
@@ -666,6 +667,41 @@ impl Action {
     pub fn key(&self) -> Option<Hotkey> {
         let mut key = Hotkey::new(0);
         call!(self.api, key(self.index, &raw mut key)).unwrap_or(false).then_some(key)
+    }
+
+    /// Leaves the action out of the host window's Settings tab, for the plugin's own tab to bind
+    /// it with [`capture`](Self::capture) and [`unbind`](Self::unbind). False on a loader without
+    /// it, which keeps the action in the Settings tab.
+    #[must_use]
+    pub fn bind_in_tab(&self) -> bool {
+        call!(self.api, bind_in_tab(self.index)).unwrap_or(false)
+    }
+
+    /// Arms the capture of the next key pressed in the overlay for this action, or disarms it;
+    /// the key is bound as the Settings tab binds it.
+    pub fn capture(&self, armed: bool) {
+        call!(self.api, capture_key(self.index, armed));
+    }
+
+    /// Whether a capture is armed for this action.
+    #[must_use]
+    pub fn capturing(&self) -> bool {
+        call!(self.api, capturing_key(self.index)).unwrap_or(false)
+    }
+
+    /// Leaves the action without a key, also on later runs.
+    pub fn unbind(&self) {
+        call!(self.api, unbind_key(self.index));
+    }
+
+    /// The host's last assignment, refusal or unbinding when it was about this action
+    /// (`"F10 for <plugin>.<name> refused: F10 is bound to ..."`).
+    #[must_use]
+    pub fn message(&self) -> Option<String> {
+        let mut message = None;
+        let mut keep = |line: Str| message = Some(unsafe { line.as_str() }.to_owned());
+        call!(self.api, key_message(self.index, Sink::new(&mut keep)));
+        message
     }
 }
 

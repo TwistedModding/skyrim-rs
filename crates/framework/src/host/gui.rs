@@ -569,7 +569,7 @@ fn settings_tab(ui: &mut egui::Ui) {
     heading(ui, "Keys");
     let capturing = keys::capturing();
     egui::Grid::new("keys").striped(true).spacing([40.0, 10.0]).min_col_width(90.0).show(ui, |ui| {
-        for (i, b) in keys::list().iter().enumerate() {
+        for (i, b) in keys::list().iter().enumerate().filter(|(_, b)| !b.in_tab) {
             ui.label(binding_label(i, b)).on_hover_text(format!("Default: {}", keys::show(b.default)));
             let key = ui.label(if b.key.is_some() { RichText::new(keys::show(b.key)) } else { warn(ui, "Unbound") });
             if !b.game.is_empty() {
