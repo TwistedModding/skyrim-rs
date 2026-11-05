@@ -104,12 +104,12 @@ fn pick_data(from: [f32; 3], to: [f32; 3], filter_info: u32) -> Aligned {
     shape_keys[..4].copy_from_slice(&u32::MAX.to_le_bytes());
     shape_keys[8..12].copy_from_slice(&u32::MAX.to_le_bytes());
     let mut data: bhkPickData = unsafe { core::mem::zeroed() };
-    unsafe { data.from_ptr().write(havok_vector(from)) };
-    unsafe { data.to_ptr().write(havok_vector(to)) };
-    data.set_hitFraction(1.0);
-    data.set_filterInfo(filter_info);
-    data.set_extraInfo(u32::MAX);
-    data.set_shapeKeys(shape_keys);
+    data.from = havok_vector(from);
+    data.to = havok_vector(to);
+    data.hitFraction = 1.0;
+    data.filterInfo = filter_info;
+    data.extraInfo = u32::MAX;
+    data.shapeKeys = shape_keys;
     Aligned(data)
 }
 
@@ -133,7 +133,7 @@ pub fn pick_in(cell: &TESObjectCELL, from: [f32; 3], to: [f32; 3], filter_info: 
         let find: fns::FindReferenceFromNode_fn = unsafe { crate::engine_fn(sre::id!(fns::FindReferenceFromNode)) };
         unsafe { find(node).as_ref() }.map(TESObjectREFRExt::handle)
     };
-    Some(Hit { position: lerp(from, to, pick.hitFraction()), normal: vector(&pick.normal()), fraction: pick.hitFraction(), layer, reference })
+    Some(Hit { position: lerp(from, to, pick.hitFraction), normal: vector(&pick.normal), fraction: pick.hitFraction, layer, reference })
 }
 
 /// [`pick_in`] the player's cell.
@@ -181,11 +181,7 @@ pub fn move_reference(reference: &TESObjectREFR, position: [f32; 3]) {
     if let Some(controller) = reference.cast::<sre::Actor>().and_then(sre::Actor::get_char_controller) {
         type SetPositionFn = unsafe extern "C" fn(*const sre::bhkCharacterController, *const sre::hkVector4, bool, bool);
         let set: SetPositionFn = unsafe { core::mem::transmute(sre::vtable_entry(controller, sre::slot_index!("bhkCharacterController", 0x0, 3))) };
-        let mut havok = sre::hkVector4::default();
-        havok.set_x(x * HAVOK_SCALE);
-        havok.set_y(y * HAVOK_SCALE);
-        havok.set_z(z * HAVOK_SCALE);
-        havok.set_w(0.0);
+        let havok = sre::hkVector4 { x: x * HAVOK_SCALE, y: y * HAVOK_SCALE, z: z * HAVOK_SCALE, w: 0.0, ..Default::default() };
         unsafe { set(controller, &raw const havok, true, false) };
     }
     sync_3d(reference);
@@ -246,8 +242,8 @@ mod tests {
         let data = pick_data([0.0; 3], [0.0, 0.0, -100.0], 0x10_0027);
         let pick = &data.0;
         assert_eq!(core::ptr::from_ref(pick).addr() % 16, 0);
-        assert_eq!((pick.hitFraction(), pick.extraInfo(), pick.filterInfo()), (1.0, u32::MAX, 0x10_0027));
-        assert_eq!((&pick.shapeKeys()[..4], &pick.shapeKeys()[8..12]), (&[0xff; 4][..], &[0xff; 4][..]));
+        assert_eq!((pick.hitFraction, pick.extraInfo, pick.filterInfo), (1.0, u32::MAX, 0x10_0027));
+        assert_eq!((&pick.shapeKeys[..4], &pick.shapeKeys[8..12]), (&[0xff; 4][..], &[0xff; 4][..]));
         assert!(pick.rootCollidable.is_null());
     }
 }

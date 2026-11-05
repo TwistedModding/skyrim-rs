@@ -421,10 +421,14 @@ fn the_fixture_compiles_and_records_what_it_uses() {
     let dir = root.join("target").join("fixture-sre");
     let _ = fs::remove_dir_all(dir.join("sre"));
     let inp = ledger();
-    let variance = Variance::of(&inp, &moved());
-    let (files, _) = emit::all(&inp, &variance, "test");
+    let runtimes = moved();
+    let variance = Variance::of(&inp, &runtimes);
+    let (mut files, _) = emit::all(&inp, &variance, "test");
+    files.insert("src/generated/ledger_tables.rs".to_owned(), ledger_tables(&inp, &runtimes));
     write_tree(&dir.join("sre"), &files);
-    fs::copy(root.join("crates/sre/src/lib.rs"), dir.join("sre/src/lib.rs")).unwrap();
+    for source in ["lib.rs", "ledger.rs"] {
+        fs::copy(root.join("crates/sre/src").join(source), dir.join("sre/src").join(source)).unwrap();
+    }
     let skse = root.join("crates/skse").display().to_string().replace('\\', "/");
     let versionlib = root.join("crates/versionlib").display().to_string().replace('\\', "/");
     let user = r#"

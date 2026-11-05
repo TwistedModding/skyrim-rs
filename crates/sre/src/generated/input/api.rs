@@ -1832,16 +1832,6 @@ impl crate::PlayerControls {
     pub fn toggle_run_handler(&self) -> Option<&crate::ToggleRunHandler> { unsafe { { self.toggleRunHandler }.as_ref() } }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_bDisablePOVChange(this: *const Self) -> *mut [u8; 2] { unsafe { member!(this, "PlayerControls.bDisablePOVChange", 0x4C, [u8; 2]) } }
-    /// `PlayerControls::bDisablePOVChange`, at +0x4C on 1.7.104.
-    #[inline]
-    pub fn bDisablePOVChange(&self) -> [u8; 2] { unsafe { Self::__member_bDisablePOVChange(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_bDisablePOVChange(&mut self, value: [u8; 2]) { unsafe { Self::__member_bDisablePOVChange(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn bDisablePOVChange_ptr(&self) -> *mut [u8; 2] { Self::__member_bDisablePOVChange(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_field_4B(this: *const Self) -> *mut u8 { unsafe { member!(this, "PlayerControls.field_4B", 0x4B, u8) } }
     /// `PlayerControls::field_4B`, at +0x4B on 1.7.104.
     #[inline]
@@ -1868,14 +1858,6 @@ impl crate::PlayerControls {
     pub fn set_markHeldForRelease(&mut self, value: u8) { unsafe { Self::__member_markHeldForRelease(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn markHeldForRelease_ptr(&self) -> *mut u8 { Self::__member_markHeldForRelease(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_moveInput(this: *const Self) -> *mut crate::NiPoint2 { unsafe { member!(this, "PlayerControls.moveInput", 0x24, crate::NiPoint2) } }
-    /// `PlayerControls::moveInput`, at +0x24 on 1.7.104.
-    #[inline]
-    pub fn moveInput(&self) -> &crate::NiPoint2 { unsafe { &*Self::__member_moveInput(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn moveInput_ptr(&self) -> *mut crate::NiPoint2 { Self::__member_moveInput(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_pendingHandlerChanges(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "PlayerControls.pendingHandlerChanges", 0x88, crate::BSTArray) } }
@@ -2521,16 +2503,6 @@ impl crate::TogglePOVHandler {
     pub fn set_pad_9(&mut self, value: [u8; 7]) { unsafe { Self::__member_pad_9(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn pad_9_ptr(&self) -> *mut [u8; 7] { Self::__member_pad_9(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_pressed(this: *const Self) -> *mut u8 { unsafe { member!(this, "TogglePOVHandler.pressed", 0x18, u8) } }
-    /// `TogglePOVHandler::pressed`, at +0x18 on 1.7.104.
-    #[inline]
-    pub fn pressed(&self) -> u8 { unsafe { Self::__member_pressed(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_pressed(&mut self, value: u8) { unsafe { Self::__member_pressed(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn pressed_ptr(&self) -> *mut u8 { Self::__member_pressed(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_releasePending(this: *const Self) -> *mut u8 { unsafe { member!(this, "TogglePOVHandler.releasePending", 0x11, u8) } }

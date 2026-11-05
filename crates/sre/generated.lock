@@ -1,6 +1,6 @@
 # Inputs of crates/sre/src/generated, recorded by `cargo xtask gen`.
 repo SkyrimRE-1.7.104
-commit 78ff213306637e56186a3652ff53896399df693e
+commit e6e341d1190cfa3e36f3be18c69e0d9cac51e9d5
 sha256 421d1a2ad896ef597fc7de71d5469b35ff211246349770f630021358959b7684 export/symbols.csv
 sha256 c2798cb8ff6d558ff29570c47b6e4def15cf550101a227bb98839c8b1e791cbd data/layouts.json
 sha256 1338f793c4f68fce0f536f60e237541ccd3969238b2030c61ded8cb37fe8acc6 data/class_structs.json
@@ -22,7 +22,7 @@ sha256 e0b6377c1f87de59a0e8c9a72404ec19560b0f0b872e3c00d03e08b6863bf3c9 export/s
 sha256 9f523bd8e3182800b1bd795f0f8a1a80457a06a0696dd236943ffcf75d7631af export/semantic/save.json
 sha256 4ab26fb96518dd170a3ddb9fe9cdb34a097a3da89a64d92e1565693cee52b498 export/semantic/ui.json
 sha256 6ae7f34d2e510f2f3ba275baab456975e898de10c8c98f7113bb26068e0446c0 export/semantic/vmstack.json
-sha256 27bc995a41002d80a3dbb3b1bd97921d5dc2b6e273cb932acc95c11a3e8df781 export/versions/1.5.97.json
-sha256 3d5a81576961319086dc740a37529708ced3b14f03b0f68393b85038add7fa2e export/versions/1.6.353.json
-sha256 6a0d3cb4e55ddbf18b0d122ec2a122bd327d9e2f845ae4816eed766b5edb7c2b export/versions/1.6.1170.json
+sha256 f1d6ba2b6f850aa0a10ec480051a78351c904eaa3b9932e777fa59d6baa1305a export/versions/1.5.97.json
+sha256 2b50df3e16c672e32530f963086843b9526437fdd1152f934c1ed36e00fc44da export/versions/1.6.353.json
+sha256 21d8610539e695f233ee29268d872cc7d8cf167aef08860e8fb169eea3eeb896 export/versions/1.6.1170.json
 sha256 98ae99d1d2dff3ad28a4a2c0ecf609d2498132141df299819029be5848c71b3d export/versions/1.7.104.json

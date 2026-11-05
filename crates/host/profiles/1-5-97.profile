@@ -11179,10 +11179,10 @@ id 18566 18181
 id-unverified 18567
 id 18568 18183
 id 18569 18184
-id-unverified 18570
+id 18570 18185
 id-unverified 18571
 id-unverified 18572
-id-unverified 18573
+id 18573 18188
 id-unverified 18575
 id 18576 18191
 id-unverified 18577
@@ -11508,7 +11508,7 @@ id-unverified 18993
 id 18994 18535
 id 18995 18536
 id 18996 18537
-id-unverified 18997
+id 18997 18538
 id 18998 18539
 id 18999 18540
 id 19000 18541
@@ -11559,7 +11559,7 @@ id-unverified 19064
 id 19065 18596
 id-unverified 19066
 id-unverified 19067
-id-unverified 19068
+id 19068 18599
 id 19069 18600
 id 19070 18601
 id-unverified 19071
@@ -17370,7 +17370,7 @@ id 26239 25692
 id 26240 25693
 id 26241 25694
 id 26242 25695
-id-unverified 26243
+id 26243 25696
 id 26244 25697
 id 26245 25698
 id 26246 25699
@@ -22430,7 +22430,7 @@ id-unverified 32897
 id-unverified 32898
 id 32899 32155
 id-unverified 32900
-id-unverified 32901
+id 32901 32157
 id 32902 32158
 id 32903 32159
 id 32904 32160
@@ -23707,7 +23707,7 @@ id 34909 34107
 id 34910 34108
 id-unverified 34911
 id-unverified 34912
-id-unverified 34913
+id 34913 34111
 id-unverified 34914
 id-unverified 34915
 id-unverified 34916
@@ -25283,7 +25283,7 @@ id-unverified 37226
 id-unverified 37227
 id 37228 36246
 id-unverified 37229
-id-unverified 37230
+id 37230 36248
 id 37231 36249
 id 37232 36250
 id-unverified 37233
@@ -25293,7 +25293,7 @@ id 37239 36255
 id 37240 36256
 id-unverified 37241
 id-unverified 37242
-id-unverified 37243
+id 37243 36259
 id-unverified 37244
 id-unverified 37245
 id 37246 36262
@@ -25528,7 +25528,7 @@ id-unverified 37500
 id 37501 36501
 id 37502 36502
 id 37503 36503
-id-unverified 37504
+id 37504 36504
 id 37505 36505
 id 37506 36506
 id-unverified 37507
@@ -26459,9 +26459,9 @@ id 38585 37632
 id 38586 37633
 id 38587 37634
 id 38589 37636
-id-unverified 38590
+id 38590 37637
 id 38591 37638
-id-unverified 38592
+id 38592 37639
 id 38593 37640
 id 38595 37642
 id 38596 37643
@@ -28123,7 +28123,7 @@ id-unverified 40582
 id-unverified 40583
 id-unverified 40584
 id-unverified 40585
-id-unverified 40586
+id 40586 39507
 id 40587 39508
 id 40588 39509
 id 40589 39510
@@ -28336,7 +28336,7 @@ id 40836 39729
 id 40837 39730
 id-unverified 40844
 id-unverified 40845
-id-unverified 40846
+id 40846 39744
 id-unverified 40847
 id-unverified 40848
 id-unverified 40849
@@ -29189,7 +29189,7 @@ id 41992 40933
 id 41993 40934
 id 41994 40935
 id 41995 40936
-id-unverified 41996
+id 41996 40937
 id 41997 40938
 id 41998 40939
 id 41999 40940
@@ -29837,7 +29837,7 @@ id 42769 41684
 id 42770 41685
 id 42771 41686
 id 42772 41687
-id-unverified 42773
+id 42773 41688
 id 42774 41689
 id 42775 41690
 id 42776 41691
@@ -36879,7 +36879,7 @@ id 50791 49859
 id 50792 49860
 id 50794 49861
 id-unverified 50795
-id-unverified 50796
+id 50796 49863
 id 50797 49864
 id 50798 49865
 id 50799 49866
@@ -36892,7 +36892,7 @@ id 50805 49872
 id 50806 49873
 id 50807 49874
 id 50808 49875
-id-unverified 50809
+id 50809 49876
 id-unverified 50810
 id 50811 49878
 id 50812 49879
@@ -36991,7 +36991,7 @@ id 50913 49977
 id-unverified 50914
 id-unverified 50920
 id-unverified 50922
-id-unverified 50923
+id 50923 49983
 id 50924 49984
 id-unverified 50926
 id-unverified 50927
@@ -51175,7 +51175,7 @@ id 68538 67238
 id-unverified 68539
 id 68540 67240
 id 68541 67241
-id-unverified 68542
+id 68542 67242
 id 68543 67243
 id 68544 67244
 id 68545 67245
@@ -58915,7 +58915,7 @@ id 78303 76461
 id-unverified 78304
 id-unverified 78305
 id-unverified 78306
-id-unverified 78308
+id 78308 76465
 id 78309 76466
 id 78310 76467
 id 78311 76468
@@ -99430,8 +99430,8 @@ id 254809 304647
 id 254811 304648
 id 254813 304649
 id 254891 304799
-id-unverified 254902
-id-unverified 254903
+id 254902 304859
+id 254903 304860
 id 254935 304934
 id 255053 305261
 id 255055 305262
@@ -103385,9 +103385,9 @@ id 378646 507582
 id 378648 507583
 id 378652 507586
 id-unverified 378655
-id-unverified 378660
-id-unverified 378677
-id-unverified 378694
+id 378660 507590
+id 378677 507591
+id 378694 507592
 id 378710 507593
 id 378713 507595
 id 378716 507597
@@ -105296,7 +105296,7 @@ id 400327 514178
 id 400329 514180
 id 400331 514182
 id 400333 514188
-id-unverified 400334
+id 400334 514184
 id 400420 514271
 id 400440 514280
 id 400442 514282
@@ -105420,10 +105420,10 @@ id-unverified 402767
 id 402775 516573
 id 402776 516574
 id 402858 516657
-id-unverified 402943
+id 402943 516697
 id-unverified 402950
 id-unverified 402952
-id-unverified 402958
+id 402958 516712
 id-unverified 402966
 id 402984 516741
 id-unverified 402987
@@ -105970,7 +105970,7 @@ id-unverified 411342
 id 411347 524728
 id 411348 524729
 id-unverified 411349
-id-unverified 411359
+id 411359 524744
 id-unverified 411384
 id-unverified 411386
 id 411391 524771
@@ -107477,7 +107477,7 @@ member-unverified Actor.__vftable_D8
 member-unverified Actor.__vftable_E0
 member-unverified Actor.avStorage
 member-unverified Actor.boolFlags
-member-unverified Actor.boolFlags2
+member Actor.boolFlags2 1fc
 member-unverified Actor.combatController
 member-unverified Actor.combatTargetHandle
 member-unverified Actor.criticalSection
@@ -107489,7 +107489,7 @@ member-unverified Actor.field_130
 member-unverified Actor.field_170
 member-unverified Actor.field_190
 member-unverified Actor.field_1F0
-member-unverified Actor.field_268
+member Actor.field_268 260
 member-unverified Actor.field_280
 member-unverified Actor.field_288
 member-unverified Actor.field_90
@@ -107500,9 +107500,9 @@ member-unverified Actor.field_B0
 member-unverified Actor.flags1
 member-unverified Actor.flags2
 member-unverified Actor.healthModifiers
-member-unverified Actor.magicCasters
+member Actor.magicCasters 1a0
 member-unverified Actor.magickaModifiers
-member-unverified Actor.movementController
+member Actor.movementController 148
 member Actor.race 1f0
 member Actor.refScale 90
 member-unverified Actor.selectedSpells
@@ -108135,10 +108135,7 @@ member-unverified BSFaceGenAnimationData.expressionInput
 member-unverified BSFaceGenAnimationData.expressionOutput
 member-unverified BSFaceGenAnimationData.expressionTarget
 member-unverified BSFaceGenAnimationData.eyeHeading
-member-unverified BSFaceGenAnimationData.eyeHeadingOffset
 member-unverified BSFaceGenAnimationData.eyePitch
-member-unverified BSFaceGenAnimationData.eyePitchBase
-member-unverified BSFaceGenAnimationData.eyePitchOffset
 member-unverified BSFaceGenAnimationData.eyesClosed
 member-unverified BSFaceGenAnimationData.field_1AC
 member-unverified BSFaceGenAnimationData.field_1DC
@@ -112373,7 +112370,6 @@ member-unverified BSXAudio2GameSound.field_40
 member-unverified BSXAudio2GameSound.field_44
 member-unverified BSXAudio2GameSound.field_48
 member-unverified BSXAudio2GameSound.field_54
-member-unverified BShkbAnimationGraph.doFootIK
 member-unverified BShkbAnimationGraph.eventsSuppressed
 member-unverified BShkbAnimationGraph.nameMatchList
 member-unverified BShkbAnimationGraph.ownedNodeData
@@ -112533,7 +112529,6 @@ member-unverified BipedObject.field_18
 member-unverified BipedObject.graphHolder
 member-unverified BipedObject.item
 member-unverified BipedObject.model
-member-unverified BipedObject.partClone
 member-unverified BleedoutCameraState.applyThirdPerson
 member-unverified BleedoutCameraState.followHeading
 member-unverified BleedoutCameraState.keepFreeRotation
@@ -113094,14 +113089,12 @@ member-unverified CreditsMenu.field_41
 member-unverified CreditsMenu.field_42
 member-unverified CreditsMenu.field_7A
 member-unverified CreditsMenu.field_EC
-member-unverified CrosshairPickData.actorHandle
 member-unverified CrosshairPickData.collisionGroup
 member-unverified CrosshairPickData.grabTargetHandle
 member-unverified CrosshairPickData.hitObject
 member-unverified CrosshairPickData.hitPoint
 member-unverified CrosshairPickData.phantom
 member-unverified CrosshairPickData.promptActive
-member-unverified CrosshairPickData.targetHandle
 member-unverified CubeMapRecord.faceRTV
 member-unverified CubeMapRecord.srv
 member-unverified CubeMapRecord.texture
@@ -113375,7 +113368,6 @@ member-unverified FirstPersonRenderContext.thirdPersonRoot
 member-unverified FirstPersonRenderContext.unk51
 member-unverified FirstPersonRenderContext.worldFOV
 member-unverified FirstPersonState.camera
-member-unverified FirstPersonState.cameraControlNode
 member-unverified FirstPersonState.cameraOverride
 member-unverified FirstPersonState.dampingOffset
 member-unverified FirstPersonState.dampingWeight
@@ -113444,11 +113436,7 @@ member-unverified FlameProjectile.field_F0
 member-unverified FlameProjectile.field_F8
 member-unverified FlameProjectile.field_FC
 member FlameProjectile.refScale 90
-member-unverified FlatBone.local
 member-unverified FlatBone.name
-member-unverified FlatBone.node
-member-unverified FlatBone.parentIndex
-member-unverified FlatBone.world
 member-unverified FleePackage.field_48
 member-unverified FleePackage.field_D8
 member-unverified FleePackage.field_DC
@@ -114455,7 +114443,6 @@ member-missing MarketplaceMenu.field_EC
 member-missing MarketplaceMenu::InputHandler.__vftable
 member-missing MarketplaceMenu::errorCallback.__vftable
 member-unverified MenuControls.ignoreInput
-member-unverified MenuControls.menuHotkeysDisabled
 member-unverified MenuControls.pendingHandlerChanges
 member-unverified MenuControls.remapMode
 member-unverified MenuOpenHandler.tweenMenuAllowed
@@ -114837,9 +114824,6 @@ member-unverified NiCapsuleTriIntersector.field_60
 member-unverified NiCollisionData.field_18
 member-unverified NiCollisionData.field_20
 member-unverified NiCollisionData.field_28
-member-unverified NiColor.b
-member-unverified NiColor.g
-member-unverified NiColor.r
 member-unverified NiColorA.a
 member-unverified NiColorA.b
 member-unverified NiColorA.g
@@ -114906,7 +114890,6 @@ member-unverified NiMultiTargetTransformController.field_2C
 member-unverified NiNode.extraDataCapacity
 member-unverified NiNode.flags2
 member-unverified NiNode.local
-member-unverified NiNode.previousWorldFrame
 member-unverified NiOBBLeaf.field_10
 member-unverified NiOBBLeaf.field_14
 member-unverified NiOBBLeaf.field_1C
@@ -115036,8 +115019,6 @@ member-unverified NiPathController.field_80
 member-unverified NiPathInterpolator.field_50
 member-unverified NiPlane.constant
 member-unverified NiPlane.normal
-member-unverified NiPoint2.x
-member-unverified NiPoint2.y
 member-unverified NiPoint3InterpController.field_20
 member-unverified NiPoint3InterpController.field_2C
 member-unverified NiPoint4.w
@@ -115059,14 +115040,12 @@ member-unverified NiSequenceStreamHelper.extraDataCapacity
 member-unverified NiShadeProperty.extraDataCapacity
 member-unverified NiSingleInterpController.field_20
 member-unverified NiSingleInterpController.field_2C
-member-unverified NiSkinData.boneCount
 member-unverified NiSkinData.field10
 member-unverified NiSkinData.skinTransform
 member-unverified NiSkinData::BoneData.boundSphere
 member-unverified NiSkinData::BoneData.skinToBone
 member-unverified NiSkinData::BoneData.weightCount
 member-unverified NiSkinData::BoneData.weights
-member-unverified NiSkinInstance.paletteLock
 member-unverified NiSkinInstance.paletteRowsPerBone
 member-unverified NiSkinPartition::Partition.boneIndices
 member-unverified NiSkinPartition::Partition.bones
@@ -115103,8 +115082,6 @@ member-unverified NiSwitchStringExtraData.field_28
 member-unverified NiTimeController.field_20
 member-unverified NiTimeController.field_2C
 member-unverified NiTransform.rotate
-member-unverified NiTransform.scale
-member-unverified NiTransform.translate
 member-unverified NiTransformController.field_20
 member-unverified NiTransformController.field_2C
 member-unverified NiTriBasedGeom.extraDataCapacity
@@ -115248,7 +115225,7 @@ member-unverified PlayerCharacter.combatController
 member-unverified PlayerCharacter.combatTargetHandle
 member-unverified PlayerCharacter.criticalSection
 member PlayerCharacter.currentLocation ac8
-member-unverified PlayerCharacter.currentProcess
+member PlayerCharacter.currentProcess f0
 member-unverified PlayerCharacter.dialogueTargetHandle
 member-unverified PlayerCharacter.favorActorHandle
 member-unverified PlayerCharacter.field_108
@@ -115491,11 +115468,9 @@ member-unverified PlayerCharacter.thirdPersonTorchLight
 member PlayerCharacter.viewFlags bdb
 member-unverified PlayerCharacter.voicePointsModifiers
 member-unverified PlayerCharacter.worldSpace
-member-unverified PlayerControls.bDisablePOVChange
 member-unverified PlayerControls.field_4B
 member-unverified PlayerControls.heldStateHandlers
 member-unverified PlayerControls.markHeldForRelease
-member-unverified PlayerControls.moveInput
 member-unverified PlayerControls.pendingHandlerChanges
 member-unverified PlayerControls.prevLookInput
 member-unverified PlayerControls.prevMoveInput
@@ -116349,8 +116324,6 @@ member-unverified TESObjectLIGH.field_e0
 member-unverified TESObjectLIGH.flickerIntensityAmplitude
 member-unverified TESObjectLIGH.flickerMovementAmplitude
 member-unverified TESObjectLIGH.flickerPeriod
-member-unverified TESObjectLIGH.model
-member-unverified TESObjectLIGH.radius
 member-unverified TESObjectMISC.field_28
 member-unverified TESObjectMISC.field_2A
 member-unverified TESObjectMISC.field_50
@@ -116412,7 +116385,6 @@ member-unverified TESRace.field_178
 member-unverified TESRace.field_180
 member-unverified TESRace.field_188
 member-unverified TESRace.field_2E0
-member-unverified TESRace.leftHandBipedIndex
 member-unverified TESRegionDataSound.field_28
 member-unverified TESResetEvent.object
 member-unverified TESSceneEvent.finishedCallback
@@ -116474,7 +116446,6 @@ member-unverified TESWaterForm.field_5C
 member-unverified TESWaterForm.field_64
 member-unverified TESWaterForm.field_6C
 member-unverified TESWaterForm.m_TESTexture_78
-member-unverified TESWeather.dataFlags
 member-unverified TESWeather.field_228
 member-unverified TESWeather.field_230
 member-unverified TESWeather.field_238
@@ -116575,7 +116546,6 @@ member-unverified TogglePOVHandler.heldStateActive
 member-unverified TogglePOVHandler.pad_12
 member-unverified TogglePOVHandler.pad_19
 member-unverified TogglePOVHandler.pad_9
-member-unverified TogglePOVHandler.pressed
 member-unverified TogglePOVHandler.releasePending
 member-unverified TrainingMenu.field_11
 member-unverified TrainingMenu.field_12
@@ -116605,7 +116575,6 @@ member-unverified TypeNode.name
 member-unverified UICursor.bounds
 member-unverified UICursor.speedScale
 member-unverified UICursor.speedScale2
-member-unverified UICursor.x
 member-unverified UICursor.y
 member-unverified UIMessage.isStatic
 member-unverified UIMessage.menuName
@@ -117746,18 +117715,11 @@ member-unverified bhkPickData.allHitsCollector
 member-unverified bhkPickData.allHitsCollector2
 member-unverified bhkPickData.closestCollector
 member-unverified bhkPickData.enableShapeCollectionFilter
-member-unverified bhkPickData.extraInfo
 member-unverified bhkPickData.field_28
-member-unverified bhkPickData.filterInfo
-member-unverified bhkPickData.from
-member-unverified bhkPickData.hitFraction
-member-unverified bhkPickData.normal
 member-unverified bhkPickData.ray
 member-unverified bhkPickData.rayCache
 member-unverified bhkPickData.shapeKeyIndex
-member-unverified bhkPickData.shapeKeys
 member-unverified bhkPickData.skipped
-member-unverified bhkPickData.to
 member-unverified bhkRagdollController.field_10
 member-unverified bhkRagdollController.field_100
 member-unverified bhkRagdollController.field_110
@@ -118170,9 +118132,6 @@ member-unverified hkAlignSceneToNodeOptions.field_B4
 member-unverified hkAlignSceneToNodeOptions.field_B8
 member-unverified hkAlignSceneToNodeOptions.field_C0
 member-unverified hkAlignSceneToNodeOptions.field_C4
-member-unverified hkArray.capacityAndFlags
-member-unverified hkArray.data
-member-unverified hkArray.size
 member-unverified hkArrayStreamWriter.field_108
 member-unverified hkArrayStreamWriter.field_110
 member-unverified hkArrayStreamWriter.field_114
@@ -118502,7 +118461,6 @@ member-unverified hkMemoryResourceHandle.field_B4
 member-unverified hkMemoryResourceHandle.field_B8
 member-unverified hkMemoryResourceHandle.field_C0
 member-unverified hkMemoryResourceHandle.field_C4
-member-unverified hkMemoryRouter.heap
 member-unverified hkMemoryStreamReader.field_108
 member-unverified hkMemoryStreamReader.field_110
 member-unverified hkMemoryStreamReader.field_114
@@ -118735,8 +118693,6 @@ member-unverified hkQuaternion.w
 member-unverified hkQuaternion.x
 member-unverified hkQuaternion.y
 member-unverified hkQuaternion.z
-member-unverified hkReferencedObject.memSizeAndFlags
-member-unverified hkReferencedObject.referenceCount
 member-unverified hkReferencedObjectLock.field_108
 member-unverified hkReferencedObjectLock.field_110
 member-unverified hkReferencedObjectLock.field_114
@@ -118937,9 +118893,6 @@ member-unverified hkStreamWriter.field_B4
 member-unverified hkStreamWriter.field_B8
 member-unverified hkStreamWriter.field_C0
 member-unverified hkStreamWriter.field_C4
-member-unverified hkStridedVertices.numVertices
-member-unverified hkStridedVertices.striding
-member-unverified hkStridedVertices.vertices
 member-unverified hkSubStreamWriter.field_108
 member-unverified hkSubStreamWriter.field_110
 member-unverified hkSubStreamWriter.field_114
@@ -119040,10 +118993,6 @@ member-unverified hkTrackerTypeTreeTextCache.field_B4
 member-unverified hkTrackerTypeTreeTextCache.field_B8
 member-unverified hkTrackerTypeTreeTextCache.field_C0
 member-unverified hkTrackerTypeTreeTextCache.field_C4
-member-unverified hkVector4.w
-member-unverified hkVector4.x
-member-unverified hkVector4.y
-member-unverified hkVector4.z
 member-unverified hkVersionPatchManager.field_108
 member-unverified hkVersionPatchManager.field_110
 member-unverified hkVersionPatchManager.field_114
@@ -121042,7 +120991,6 @@ member-unverified hkpCogWheelConstraintData.field_B4
 member-unverified hkpCogWheelConstraintData.field_B8
 member-unverified hkpCogWheelConstraintData.field_C0
 member-unverified hkpCogWheelConstraintData.field_C4
-member-unverified hkpCollidable.collisionFilterInfo
 member-unverified hkpCollidable.shape
 member-unverified hkpCollidableMediator.field_108
 member-unverified hkpCollidableMediator.field_110
@@ -121314,8 +121262,6 @@ member-unverified hkpConvexTransformShapeBase.field_B4
 member-unverified hkpConvexTransformShapeBase.field_B8
 member-unverified hkpConvexTransformShapeBase.field_C0
 member-unverified hkpConvexTransformShapeBase.field_C4
-member-unverified hkpConvexVerticesShape::BuildConfig.maxVertices
-member-unverified hkpConvexVerticesShape::BuildConfig.shrinkByConvexRadius
 member-unverified hkpCylinderShape.field_108
 member-unverified hkpCylinderShape.field_110
 member-unverified hkpCylinderShape.field_114
@@ -129432,7 +129378,7 @@ slot ThirdPersonState[20].6 4
 slot-unverified TogglePOVHandler[0].2
 slot-unverified TogglePOVHandler[0].4
 slot-unverified TogglePOVHandler[0].5
-slot-unverified TogglePOVHandler[0].6
+slot TogglePOVHandler[0].6 4
 slot-unverified TogglePOVHandler[0].7
 slot-unverified TogglePOVHandler[0].8
 slot-missing ToggleRunHandler[0].2
@@ -137639,7 +137585,6 @@ size-unverified bhkOnStartupCallback
 size-unverified bhkOrientHingedBodyAction
 size-unverified bhkPackedNiTriStripsShape
 size-unverified bhkPhantom
-size-unverified bhkPickData
 size-unverified bhkPlaneShape
 size-unverified bhkPointToPathConstraint
 size-unverified bhkPoseArray
@@ -138470,7 +138415,6 @@ size-unverified hkpConvexTransformShape
 size-unverified hkpConvexTransformShapeBase
 size-unverified hkpConvexTranslateShape
 size-unverified hkpConvexVerticesConnectivity
-size-unverified hkpConvexVerticesShape
 size-unverified hkpConvexVerticesShape::BuildConfig
 size-unverified hkpCylinderShape
 size-unverified hkpDashpotAction
@@ -138519,7 +138463,6 @@ size-unverified hkpLimitedForceConstraintMotor
 size-unverified hkpLimitedHingeConstraintData
 size-unverified hkpLinearParametricCurve
 size-unverified hkpListAgent
-size-unverified hkpListShape
 size-unverified hkpMalleableConstraintData
 size-unverified hkpMapPointsToSubShapeContactMgr
 size-unverified hkpMaxSizeMotion

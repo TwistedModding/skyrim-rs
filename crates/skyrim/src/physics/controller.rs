@@ -125,7 +125,7 @@ impl ShapeExt for hkpShape {
     fn capsule(&self) -> Option<Capsule> {
         (self.shape_type()? == hkpShapeType::Capsule).then(|| {
             let c = unsafe { &*core::ptr::from_ref(self).cast::<sre::hkpCapsuleShape>() };
-            Capsule { a: [c.vertexA.x(), c.vertexA.y(), c.vertexA.z()], b: [c.vertexB.x(), c.vertexB.y(), c.vertexB.z()], radius: c.radius }
+            Capsule { a: [c.vertexA.x, c.vertexA.y, c.vertexA.z], b: [c.vertexB.x, c.vertexB.y, c.vertexB.z], radius: c.radius }
         })
     }
 
@@ -142,9 +142,9 @@ impl ShapeExt for hkpShape {
         }
         let convex = unsafe { &*core::ptr::from_ref(self).cast::<sre::hkpConvexVerticesShape>() };
         let mut out: sre::hkArray = unsafe { core::mem::zeroed() };
-        out.set_capacityAndFlags(HK_ARRAY_DONT_FREE);
+        out.capacityAndFlags = HK_ARRAY_DONT_FREE;
         unsafe { convex.get_vertices((&raw mut out).cast()) };
-        let vertices = if out.data().is_null() { Vec::new() } else { unsafe { core::slice::from_raw_parts(out.data().cast::<[f32; 4]>(), out.size() as usize) }.to_vec() };
+        let vertices = if out.data.is_null() { Vec::new() } else { unsafe { core::slice::from_raw_parts(out.data.cast::<[f32; 4]>(), out.size as usize) }.to_vec() };
         free_array(&out);
         vertices
     }
@@ -160,13 +160,13 @@ const HK_ARRAY_DONT_FREE: u32 = 0x8000_0000;
 /// Gives an array's storage back to the container heap allocator the engine grew it from.
 fn free_array(array: &sre::hkArray) {
     type Free = unsafe extern "C" fn(*const c_void, *mut c_void, i32);
-    if array.data().is_null() || array.capacityAndFlags() & HK_ARRAY_DONT_FREE != 0 {
+    if array.data.is_null() || array.capacityAndFlags & HK_ARRAY_DONT_FREE != 0 {
         return;
     }
     let Ok(allocator) = crate::reloc().address(sre::id!(globals::g_hkContainerHeapAllocator)) else { return };
     let free: Free = unsafe { core::mem::transmute::<usize, Free>(read_ptr::<usize>(allocator as *const u8).add(sre::slot_index!("hkContainerHeapAllocator::Allocator", 0x0, 4)).read()) };
-    let bytes = (array.capacityAndFlags() & 0x3fff_ffff).cast_signed() * 16;
-    unsafe { free(allocator as *const c_void, array.data(), bytes) };
+    let bytes = (array.capacityAndFlags & 0x3fff_ffff).cast_signed() * 16;
+    unsafe { free(allocator as *const c_void, array.data, bytes) };
 }
 
 /// One Havok reference on a shape, removed on drop (`hkReferencedObject::RemoveReference`, which
@@ -223,10 +223,10 @@ impl ConvexBuild {
     fn engine(&self) -> sre::hkpConvexVerticesShape__BuildConfig {
         let mut out: sre::hkpConvexVerticesShape__BuildConfig = unsafe { core::mem::zeroed() };
         out.buildConnectivity = u8::from(self.connectivity);
-        out.set_shrinkByConvexRadius(u8::from(self.shrink_by_radius));
+        out.shrinkByConvexRadius = u8::from(self.shrink_by_radius);
         out.shrinkFlag = u8::from(self.optimized_shrinking);
         out.convexRadius = self.convex_radius;
-        out.set_maxVertices(self.max_vertices.cast_unsigned());
+        out.maxVertices = self.max_vertices.cast_unsigned();
         out.shrinkParam0 = self.max_relative_shrink;
         out.shrinkParam1 = self.max_shrink_displacement;
         out.field_14 = self.max_cos_bevel_angle;
@@ -279,14 +279,14 @@ pub fn build_convex(points: &[[f32; 4]], config: &ConvexBuild) -> Option<Shape> 
     let count = i32::try_from(points.len()).ok()?;
     let block = alloc(heap, convex_size())?;
     let mut strided: sre::hkStridedVertices = unsafe { core::mem::zeroed() };
-    strided.set_vertices(points.as_ptr().cast_mut().cast());
-    strided.set_numVertices(count.cast_unsigned());
-    strided.set_striding(16);
+    strided.vertices = points.as_ptr().cast_mut().cast();
+    strided.numVertices = count.cast_unsigned();
+    strided.striding = 16;
     let config = config.engine();
     let shape = unsafe { block.cast::<sre::hkpConvexVerticesShape>().as_ref() };
     shape.build_from_points(&strided, &config);
     let built = Shape(block.cast());
-    if referenced(built.get()).referenceCount().cast_signed() <= 0 {
+    if referenced(built.get()).referenceCount.cast_signed() <= 0 {
         core::mem::forget(built);
         free(heap, block, convex_size());
         return None;
@@ -397,10 +397,10 @@ impl Replacement {
 }
 
 fn set_vector(vector: &mut sre::hkVector4, x: f32, y: f32, z: f32, w: f32) {
-    vector.set_x(x);
-    vector.set_y(y);
-    vector.set_z(z);
-    vector.set_w(w);
+    vector.x = x;
+    vector.y = y;
+    vector.z = z;
+    vector.w = w;
 }
 
 /// Writes `capsule` into a capsule shape the controller collides with, as the engine's own

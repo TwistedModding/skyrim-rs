@@ -1595,8 +1595,7 @@ pub struct MenuControls {
     /// +0x80 `undefined1`, semantic; set while the handler list is iterated; Add/RemoveHandler defer while set (high)
     pub dispatching: u8,
     /// +0x81 `undefined1`, semantic; when set MenuOpenHandler refuses the tween menu (shows sTweenDisabledMessage); also read by FavoritesHandler, TryStartVATS and the speech-recognition sink (low)
-    #[doc(hidden)]
-    pub __menuHotkeysDisabled: [u8; 1],
+    pub menuHotkeysDisabled: u8,
     /// +0x82 `undefined1`, semantic; skips handler dispatch and the user-event messages (only the Scaleform translation runs) (medium)
     #[doc(hidden)]
     pub __remapMode: [u8; 1],
@@ -1620,7 +1619,7 @@ const _: () = assert!(core::mem::offset_of!(MenuControls, menuOpenHandler) == 0x
 const _: () = assert!(core::mem::offset_of!(MenuControls, favoritesHandler) == 0x70);
 const _: () = assert!(core::mem::offset_of!(MenuControls, screenshotHandler) == 0x78);
 const _: () = assert!(core::mem::offset_of!(MenuControls, dispatching) == 0x80);
-const _: () = assert!(core::mem::offset_of!(MenuControls, __menuHotkeysDisabled) == 0x81);
+const _: () = assert!(core::mem::offset_of!(MenuControls, menuHotkeysDisabled) == 0x81);
 const _: () = assert!(core::mem::offset_of!(MenuControls, __remapMode) == 0x82);
 const _: () = assert!(core::mem::offset_of!(MenuControls, __ignoreInput) == 0x83);
 

@@ -2056,16 +2056,6 @@ impl crate::MenuControls {
     pub fn ignoreInput_ptr(&self) -> *mut u8 { Self::__member_ignoreInput(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_menuHotkeysDisabled(this: *const Self) -> *mut u8 { unsafe { member!(this, "MenuControls.menuHotkeysDisabled", 0x81, u8) } }
-    /// `MenuControls::menuHotkeysDisabled`, at +0x81 on 1.7.104.
-    #[inline]
-    pub fn menuHotkeysDisabled(&self) -> u8 { unsafe { Self::__member_menuHotkeysDisabled(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_menuHotkeysDisabled(&mut self, value: u8) { unsafe { Self::__member_menuHotkeysDisabled(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn menuHotkeysDisabled_ptr(&self) -> *mut u8 { Self::__member_menuHotkeysDisabled(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_pendingHandlerChanges(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "MenuControls.pendingHandlerChanges", 0x30, crate::BSTArray) } }
     /// `MenuControls::pendingHandlerChanges`, at +0x30 on 1.7.104.
     #[inline]

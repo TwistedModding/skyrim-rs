@@ -289,9 +289,9 @@ impl BSFaceGenAnimationDataExt for BSFaceGenAnimationData {
 
     fn hold_eyes(&self, heading: f32, pitch: f32) {
         put(&raw const self.eyeHeadingBase, heading);
-        put(self.eyePitchBase_ptr(), pitch);
-        put(self.eyeHeadingOffset_ptr(), 0.0);
-        put(self.eyePitchOffset_ptr(), 0.0);
+        put(&raw const self.eyePitchBase, pitch);
+        put(&raw const self.eyeHeadingOffset, 0.0);
+        put(&raw const self.eyePitchOffset, 0.0);
     }
 
     fn hold_blink(&self) {

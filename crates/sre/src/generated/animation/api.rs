@@ -377,16 +377,6 @@ impl crate::BSFaceGenAnimationData {
     pub fn eyeHeading_ptr(&self) -> *mut f32 { Self::__member_eyeHeading(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_eyeHeadingOffset(this: *const Self) -> *mut f32 { unsafe { member!(this, "BSFaceGenAnimationData.eyeHeadingOffset", 0x20C, f32) } }
-    /// `BSFaceGenAnimationData::eyeHeadingOffset`, at +0x20C on 1.7.104.
-    #[inline]
-    pub fn eyeHeadingOffset(&self) -> f32 { unsafe { Self::__member_eyeHeadingOffset(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_eyeHeadingOffset(&mut self, value: f32) { unsafe { Self::__member_eyeHeadingOffset(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn eyeHeadingOffset_ptr(&self) -> *mut f32 { Self::__member_eyeHeadingOffset(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_eyePitch(this: *const Self) -> *mut f32 { unsafe { member!(this, "BSFaceGenAnimationData.eyePitch", 0x1C0, f32) } }
     /// `BSFaceGenAnimationData::eyePitch`, at +0x1C0 on 1.7.104.
     #[inline]
@@ -395,26 +385,6 @@ impl crate::BSFaceGenAnimationData {
     pub fn set_eyePitch(&mut self, value: f32) { unsafe { Self::__member_eyePitch(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn eyePitch_ptr(&self) -> *mut f32 { Self::__member_eyePitch(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_eyePitchBase(this: *const Self) -> *mut f32 { unsafe { member!(this, "BSFaceGenAnimationData.eyePitchBase", 0x1D8, f32) } }
-    /// `BSFaceGenAnimationData::eyePitchBase`, at +0x1D8 on 1.7.104.
-    #[inline]
-    pub fn eyePitchBase(&self) -> f32 { unsafe { Self::__member_eyePitchBase(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_eyePitchBase(&mut self, value: f32) { unsafe { Self::__member_eyePitchBase(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn eyePitchBase_ptr(&self) -> *mut f32 { Self::__member_eyePitchBase(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_eyePitchOffset(this: *const Self) -> *mut f32 { unsafe { member!(this, "BSFaceGenAnimationData.eyePitchOffset", 0x210, f32) } }
-    /// `BSFaceGenAnimationData::eyePitchOffset`, at +0x210 on 1.7.104.
-    #[inline]
-    pub fn eyePitchOffset(&self) -> f32 { unsafe { Self::__member_eyePitchOffset(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_eyePitchOffset(&mut self, value: f32) { unsafe { Self::__member_eyePitchOffset(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn eyePitchOffset_ptr(&self) -> *mut f32 { Self::__member_eyePitchOffset(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_eyesClosed(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSFaceGenAnimationData.eyesClosed", 0x21A, u8) } }
@@ -827,16 +797,6 @@ impl crate::BShkbAnimationGraph {
     pub fn root_node(&self) -> Option<&crate::NiNode> { unsafe { { self.rootNode }.as_ref() } }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_doFootIK(this: *const Self) -> *mut u8 { unsafe { member!(this, "BShkbAnimationGraph.doFootIK", 0x249, u8) } }
-    /// `BShkbAnimationGraph::doFootIK`, at +0x249 on 1.7.104.
-    #[inline]
-    pub fn doFootIK(&self) -> u8 { unsafe { Self::__member_doFootIK(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_doFootIK(&mut self, value: u8) { unsafe { Self::__member_doFootIK(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn doFootIK_ptr(&self) -> *mut u8 { Self::__member_doFootIK(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_eventsSuppressed(this: *const Self) -> *mut u8 { unsafe { member!(this, "BShkbAnimationGraph.eventsSuppressed", 0x243, u8) } }
     /// `BShkbAnimationGraph::eventsSuppressed`, at +0x243 on 1.7.104.
     #[inline]
@@ -1119,16 +1079,6 @@ impl crate::NiSkinData {
     /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn save_binary(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 27, (*const Self, *const crate::NiStream))(core::ptr::from_ref(self), core::ptr::from_ref(s)) } }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_boneCount(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiSkinData.boneCount", 0x58, u32) } }
-    /// `NiSkinData::boneCount`, at +0x58 on 1.7.104.
-    #[inline]
-    pub fn boneCount(&self) -> u32 { unsafe { Self::__member_boneCount(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_boneCount(&mut self, value: u32) { unsafe { Self::__member_boneCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn boneCount_ptr(&self) -> *mut u32 { Self::__member_boneCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field10(this: *const Self) -> *mut *mut crate::NiObject { unsafe { member!(this, "NiSkinData.field10", 0x10, *mut crate::NiObject) } }

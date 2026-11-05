@@ -2084,16 +2084,6 @@ impl crate::NiNode {
     pub fn local(&self) -> &crate::NiTransform { unsafe { &*Self::__member_local(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn local_ptr(&self) -> *mut crate::NiTransform { Self::__member_local(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_previousWorldFrame(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiNode.previousWorldFrame", 0x104, u32) } }
-    /// `NiNode::previousWorldFrame`, at +0x104 on 1.7.104.
-    #[inline]
-    pub fn previousWorldFrame(&self) -> u32 { unsafe { Self::__member_previousWorldFrame(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_previousWorldFrame(&mut self, value: u32) { unsafe { Self::__member_previousWorldFrame(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn previousWorldFrame_ptr(&self) -> *mut u32 { Self::__member_previousWorldFrame(core::ptr::from_ref(self)) }
 }
 
 impl crate::NiSkinInstance {
@@ -2180,16 +2170,6 @@ impl crate::NiSkinInstance {
     /// Semantic field, render pass, high; `None` while the pointer is null.
     #[inline]
     pub fn skin_partition(&self) -> Option<&crate::NiSkinPartition> { unsafe { { self.skinPartition }.as_ref() } }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_paletteLock(this: *const Self) -> *mut [u8; 40] { unsafe { member!(this, "NiSkinInstance.paletteLock", 0x60, [u8; 40]) } }
-    /// `NiSkinInstance::paletteLock`, at +0x60 on 1.7.104.
-    #[inline]
-    pub fn paletteLock(&self) -> [u8; 40] { unsafe { Self::__member_paletteLock(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_paletteLock(&mut self, value: [u8; 40]) { unsafe { Self::__member_paletteLock(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn paletteLock_ptr(&self) -> *mut [u8; 40] { Self::__member_paletteLock(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_paletteRowsPerBone(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiSkinInstance.paletteRowsPerBone", 0x40, u32) } }

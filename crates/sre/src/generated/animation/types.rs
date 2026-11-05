@@ -198,8 +198,7 @@ pub struct BSFaceGenAnimationData {
     /// +0x1D4 `float`, semantic; base eye heading from the look-at target (high)
     pub eyeHeadingBase: f32,
     /// +0x1D8 `float`, semantic; base eye pitch from the look-at target (high)
-    #[doc(hidden)]
-    pub __eyePitchBase: [u8; 4],
+    pub eyePitchBase: f32,
     /// +0x1DC `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1DC: [u8; 8],
@@ -221,11 +220,9 @@ pub struct BSFaceGenAnimationData {
     /// +0x208 `float`, semantic; time until the emotion eye offset is re-rolled (high)
     pub eyeOffsetTimer: f32,
     /// +0x20C `float`, semantic; emotion eye heading offset added to the base (fEyeHeading{Min,Max}OffsetEmotion*) (high)
-    #[doc(hidden)]
-    pub __eyeHeadingOffset: [u8; 4],
+    pub eyeHeadingOffset: f32,
     /// +0x210 `float`, semantic; emotion eye pitch offset (fEyePitch{Min,Max}OffsetEmotion*) (high)
-    #[doc(hidden)]
-    pub __eyePitchOffset: [u8; 4],
+    pub eyePitchOffset: f32,
     /// +0x214 `u8`, semantic; next ComputeTrackTargetAngles snaps the current eye/head angles to the target (medium)
     pub snapEyes: u8,
     /// +0x215 `undefined1`, semantic; set by every face node update; gates the head-tracking update (low)
@@ -280,7 +277,7 @@ const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __eyePitch) 
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1C8) == 0x1C8);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1D0) == 0x1D0);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, eyeHeadingBase) == 0x1D4);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __eyePitchBase) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, eyePitchBase) == 0x1D8);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __field_1DC) == 0x1DC);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __field_1E4) == 0x1E4);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __field_1EC) == 0x1EC);
@@ -289,8 +286,8 @@ const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1F8) =
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, blinkStage) == 0x200);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, blinkTimer) == 0x204);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, eyeOffsetTimer) == 0x208);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __eyeHeadingOffset) == 0x20C);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __eyePitchOffset) == 0x210);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, eyeHeadingOffset) == 0x20C);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, eyePitchOffset) == 0x210);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, snapEyes) == 0x214);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __updated) == 0x215);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, changed) == 0x217);
@@ -469,8 +466,7 @@ pub struct BShkbAnimationGraph {
     pub buildNameMatch: u8,
     unknown_248: [u8; 1],
     /// +0x249 `u8`, semantic; foot IK runs in FinalizePose for this graph this frame (high)
-    #[doc(hidden)]
-    pub __doFootIK: [u8; 1],
+    pub doFootIK: u8,
     unknown_24A: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -503,7 +499,7 @@ const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, __eventsSuppres
 const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, activating) == 0x244);
 const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, generatePoseOnWrite) == 0x246);
 const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, buildNameMatch) == 0x247);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, __doFootIK) == 0x249);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, doFootIK) == 0x249);
 
 /// `BoneNodeEntry`: size 0x10 (exact).
 /// Meaning: one entry of BShkbAnimationGraph.boneNodes: the node a skeleton bone is written to (no RTTI; descriptive name) (high, animation pass).
@@ -558,8 +554,7 @@ pub struct NiSkinData {
     /// +0x50 `pointer`, semantic; per-bone records, 0x58 bytes each (high)
     pub boneData: *mut c_void,
     /// +0x58 `undefined4`, semantic; number of bones (high)
-    #[doc(hidden)]
-    pub __boneCount: [u8; 4],
+    pub boneCount: u32,
     unknown_5C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -570,7 +565,7 @@ const _: () = assert!(core::mem::offset_of!(NiSkinData, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiSkinData, __field10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiSkinData, __skinTransform) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiSkinData, boneData) == 0x50);
-const _: () = assert!(core::mem::offset_of!(NiSkinData, __boneCount) == 0x58);
+const _: () = assert!(core::mem::offset_of!(NiSkinData, boneCount) == 0x58);
 
 /// `NiSkinData::BoneData`: size 0x58 (exact).
 /// Meaning: bind data of one bone (high, animation pass).

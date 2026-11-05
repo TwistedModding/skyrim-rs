@@ -15,39 +15,6 @@ impl crate::NiBound {
     pub unsafe fn merge(&self, other: *const Self) { unsafe { function!(70973, (*const Self, *const Self))(core::ptr::from_ref(self), other) } }
 }
 
-impl crate::NiColor {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_b(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiColor.b", 0x8, f32) } }
-    /// `NiColor::b`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn b(&self) -> f32 { unsafe { Self::__member_b(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_b(&mut self, value: f32) { unsafe { Self::__member_b(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn b_ptr(&self) -> *mut f32 { Self::__member_b(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_g(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiColor.g", 0x4, f32) } }
-    /// `NiColor::g`, at +0x4 on 1.7.104.
-    #[inline]
-    pub fn g(&self) -> f32 { unsafe { Self::__member_g(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_g(&mut self, value: f32) { unsafe { Self::__member_g(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn g_ptr(&self) -> *mut f32 { Self::__member_g(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_r(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiColor.r", 0x0, f32) } }
-    /// `NiColor::r`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn r(&self) -> f32 { unsafe { Self::__member_r(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_r(&mut self, value: f32) { unsafe { Self::__member_r(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn r_ptr(&self) -> *mut f32 { Self::__member_r(core::ptr::from_ref(self)) }
-}
-
 impl crate::NiColorA {
     #[doc(hidden)]
     #[inline]
@@ -234,29 +201,6 @@ impl crate::NiPlane {
     pub fn normal_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_normal(core::ptr::from_ref(self)) }
 }
 
-impl crate::NiPoint2 {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_x(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPoint2.x", 0x0, f32) } }
-    /// `NiPoint2::x`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn x(&self) -> f32 { unsafe { Self::__member_x(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_x(&mut self, value: f32) { unsafe { Self::__member_x(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn x_ptr(&self) -> *mut f32 { Self::__member_x(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_y(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPoint2.y", 0x4, f32) } }
-    /// `NiPoint2::y`, at +0x4 on 1.7.104.
-    #[inline]
-    pub fn y(&self) -> f32 { unsafe { Self::__member_y(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_y(&mut self, value: f32) { unsafe { Self::__member_y(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn y_ptr(&self) -> *mut f32 { Self::__member_y(core::ptr::from_ref(self)) }
-}
-
 impl crate::NiPoint4 {
     #[doc(hidden)]
     #[inline]
@@ -378,24 +322,6 @@ impl crate::NiTransform {
     pub fn rotate(&self) -> &crate::NiMatrix3 { unsafe { &*Self::__member_rotate(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn rotate_ptr(&self) -> *mut crate::NiMatrix3 { Self::__member_rotate(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_scale(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiTransform.scale", 0x30, f32) } }
-    /// `NiTransform::scale`, at +0x30 on 1.7.104.
-    #[inline]
-    pub fn scale(&self) -> f32 { unsafe { Self::__member_scale(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_scale(&mut self, value: f32) { unsafe { Self::__member_scale(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn scale_ptr(&self) -> *mut f32 { Self::__member_scale(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_translate(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "NiTransform.translate", 0x24, crate::NiPoint3) } }
-    /// `NiTransform::translate`, at +0x24 on 1.7.104.
-    #[inline]
-    pub fn translate(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_translate(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn translate_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_translate(core::ptr::from_ref(self)) }
 }
 
 impl crate::hkQsTransform {
@@ -444,49 +370,6 @@ impl crate::hkQuaternion {
     #[inline]
     pub fn __member_z(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkQuaternion.z", 0x8, f32) } }
     /// `hkQuaternion::z`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn z(&self) -> f32 { unsafe { Self::__member_z(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_z(&mut self, value: f32) { unsafe { Self::__member_z(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn z_ptr(&self) -> *mut f32 { Self::__member_z(core::ptr::from_ref(self)) }
-}
-
-impl crate::hkVector4 {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_w(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkVector4.w", 0xC, f32) } }
-    /// `hkVector4::w`, at +0xC on 1.7.104.
-    #[inline]
-    pub fn w(&self) -> f32 { unsafe { Self::__member_w(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_w(&mut self, value: f32) { unsafe { Self::__member_w(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn w_ptr(&self) -> *mut f32 { Self::__member_w(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_x(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkVector4.x", 0x0, f32) } }
-    /// `hkVector4::x`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn x(&self) -> f32 { unsafe { Self::__member_x(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_x(&mut self, value: f32) { unsafe { Self::__member_x(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn x_ptr(&self) -> *mut f32 { Self::__member_x(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_y(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkVector4.y", 0x4, f32) } }
-    /// `hkVector4::y`, at +0x4 on 1.7.104.
-    #[inline]
-    pub fn y(&self) -> f32 { unsafe { Self::__member_y(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_y(&mut self, value: f32) { unsafe { Self::__member_y(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn y_ptr(&self) -> *mut f32 { Self::__member_y(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_z(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkVector4.z", 0x8, f32) } }
-    /// `hkVector4::z`, at +0x8 on 1.7.104.
     #[inline]
     pub fn z(&self) -> f32 { unsafe { Self::__member_z(core::ptr::from_ref(self)).read_unaligned() } }
     #[inline]

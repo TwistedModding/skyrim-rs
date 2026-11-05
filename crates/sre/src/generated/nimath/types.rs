@@ -27,21 +27,18 @@ const _: () = assert!(core::mem::offset_of!(NiBound, radius) == 0xC);
 #[derive(Default)]
 pub struct NiColor {
     /// +0x0 `float`, semantic; red (medium)
-    #[doc(hidden)]
-    pub __r: [u8; 4],
+    pub r: f32,
     /// +0x4 `float`, semantic; green (medium)
-    #[doc(hidden)]
-    pub __g: [u8; 4],
+    pub g: f32,
     /// +0x8 `float`, semantic; blue (medium)
-    #[doc(hidden)]
-    pub __b: [u8; 4],
+    pub b: f32,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiColor>() == 0xC);
-const _: () = assert!(core::mem::offset_of!(NiColor, __r) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiColor, __g) == 0x4);
-const _: () = assert!(core::mem::offset_of!(NiColor, __b) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiColor, r) == 0x0);
+const _: () = assert!(core::mem::offset_of!(NiColor, g) == 0x4);
+const _: () = assert!(core::mem::offset_of!(NiColor, b) == 0x8);
 
 /// `NiColorA`: size 0x10 (exact).
 /// Meaning: RGBA colour, four floats (high, nimath pass).
@@ -173,21 +170,19 @@ const _: () = assert!(core::mem::offset_of!(NiPlane, __constant) == 0xC);
 /// `NiPoint2`: size 0x8 (exact).
 /// Meaning: 2D float vector (x, y) (high, nimath pass).
 /// Evidence: 2D float vector (x, y); ApplyLookInputSensitivity 0x7aeba0: [0] is scaled by fMouseHeadingXScale/fGamepadHeadingXScale (heading), [1] by the Y scales and negated by bInvertYValues (pitch); AddFreeRotation adds [0]/[1] to ThirdPersonState +0xd4/+0xd8 (yaw, pitch); the layout and names match the Gamebryo math type as I remember it, derived here from the code only; size: TESCamera::Update 0x558e70 resets +0x8/+0xc from the 8-byte zero constant 0x20ccb20; ThirdPersonState::ProcessLookInput (slot 15) and PlayerCamera::AddFreeRotation 0x8f9070 read exactly [0] and [1]; NormalizeVector2AndGetLength 0x7b5480 touches two floats.
-#[repr(C, align(4))]
+#[repr(C)]
 #[derive(Default)]
 pub struct NiPoint2 {
     /// +0x0 `float`, semantic; x (heading/yaw for look input) (high)
-    #[doc(hidden)]
-    pub __x: [u8; 4],
+    pub x: f32,
     /// +0x4 `float`, semantic; y (pitch for look input) (high)
-    #[doc(hidden)]
-    pub __y: [u8; 4],
+    pub y: f32,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPoint2>() == 0x8);
-const _: () = assert!(core::mem::offset_of!(NiPoint2, __x) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPoint2, __y) == 0x4);
+const _: () = assert!(core::mem::offset_of!(NiPoint2, x) == 0x0);
+const _: () = assert!(core::mem::offset_of!(NiPoint2, y) == 0x4);
 
 /// `NiPoint3`: size 0xC (exact).
 /// Meaning: 3D float vector/point (x, y, z), z up (high, nimath pass).
@@ -271,18 +266,16 @@ pub struct NiTransform {
     #[doc(hidden)]
     pub __rotate: [u8; 36],
     /// +0x24 `class:NiPoint3`, semantic; translation (high)
-    #[doc(hidden)]
-    pub __translate: [u8; 12],
+    pub translate: crate::NiPoint3,
     /// +0x30 `float`, semantic; uniform scale (high)
-    #[doc(hidden)]
-    pub __scale: [u8; 4],
+    pub scale: f32,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTransform>() == 0x34);
 const _: () = assert!(core::mem::offset_of!(NiTransform, __rotate) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiTransform, __translate) == 0x24);
-const _: () = assert!(core::mem::offset_of!(NiTransform, __scale) == 0x30);
+const _: () = assert!(core::mem::offset_of!(NiTransform, translate) == 0x24);
+const _: () = assert!(core::mem::offset_of!(NiTransform, scale) == 0x30);
 
 /// `hkQsTransform`: size 0x30 (exact).
 /// Meaning: Havok translation/rotation/scale transform (high, nimath pass).
@@ -335,29 +328,25 @@ const _: () = assert!(core::mem::offset_of!(hkQuaternion, __w) == 0xC);
 /// `hkVector4`: size 0x10 (exact).
 /// Meaning: Havok 4-float SIMD vector (x, y, z, w) (high, nimath pass).
 /// Evidence: Havok 4-float SIMD vector (x, y, z, w); 0xbf17b0 scale' = scale_parent * scale_local component-wise over four lanes; ApplyPoseToBoneNodes 0xbdfa20 copies [0..2] of the translation into NiTransform::translate; matches the Havok type as I remember it, derived here from the code only; size: TransformLocalPosesToModelSpace 0xbf17b0 reads/writes four floats per vector at +0x0 and +0x20 of each 0x30 hkQsTransform.
-#[repr(C, align(4))]
+#[repr(C)]
 #[derive(Default)]
 pub struct hkVector4 {
     /// +0x0 `float`, semantic; x (high)
-    #[doc(hidden)]
-    pub __x: [u8; 4],
+    pub x: f32,
     /// +0x4 `float`, semantic; y (high)
-    #[doc(hidden)]
-    pub __y: [u8; 4],
+    pub y: f32,
     /// +0x8 `float`, semantic; z (high)
-    #[doc(hidden)]
-    pub __z: [u8; 4],
+    pub z: f32,
     /// +0xC `float`, semantic; w (SIMD lane 3) (high)
-    #[doc(hidden)]
-    pub __w: [u8; 4],
+    pub w: f32,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkVector4>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkVector4, __x) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkVector4, __y) == 0x4);
-const _: () = assert!(core::mem::offset_of!(hkVector4, __z) == 0x8);
-const _: () = assert!(core::mem::offset_of!(hkVector4, __w) == 0xC);
+const _: () = assert!(core::mem::offset_of!(hkVector4, x) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkVector4, y) == 0x4);
+const _: () = assert!(core::mem::offset_of!(hkVector4, z) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkVector4, w) == 0xC);
 
 /// values in data/uimessageresults.json (nimath pass).
 #[repr(u32)]

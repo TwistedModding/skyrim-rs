@@ -1230,8 +1230,7 @@ pub struct PlayerControls {
     pub __vftable_18: *const crate::raw::vtables::PlayerControls_vtable_18,
     unknown_20: [u8; 4],
     /// +0x24 `class:NiPoint2`, semantic; NiPoint2 movement input of the frame (PlayerControlsData starts here; handlers get this+0x24) (high); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2 movement input; ProcessEvent 0x7ad900 resets +0x24/+0x28
-    #[doc(hidden)]
-    pub __moveInput: [u8; 8],
+    pub moveInput: crate::NiPoint2,
     /// +0x2C `class:NiPoint2`, semantic; NiPoint2 look input of the frame (high); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2 look input; ThirdPersonState Update passes &PlayerControls+0x2c to ProcessLookInput(NiPoint2*)
     pub lookInput: crate::NiPoint2,
     /// +0x34 `undefined1`, semantic; copy of moveInput at the end of ProcessEvent (high)
@@ -1252,8 +1251,7 @@ pub struct PlayerControls {
     #[doc(hidden)]
     pub __field_4B: [u8; 1],
     /// +0x4C `u8[2]`, semantic, runtime; POV switch locks: [0] 'Script' (povScriptMode), [1] 'Werewolf'. Non-zero in either makes CanSwitchPOV false (high)
-    #[doc(hidden)]
-    pub __bDisablePOVChange: [u8; 2],
+    pub bDisablePOVChange: [u8; 2],
     /// +0x4E `undefined1`, semantic; send a synthetic 'ForceRelease' ButtonEvent to every held-state handler marked +0x11 (high)
     #[doc(hidden)]
     pub __releaseHeldPending: [u8; 1],
@@ -1319,7 +1317,7 @@ const _: () = assert!(core::mem::offset_of!(PlayerControls, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, __vftable_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, __vftable_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, __vftable_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(PlayerControls, __moveInput) == 0x24);
+const _: () = assert!(core::mem::offset_of!(PlayerControls, moveInput) == 0x24);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, lookInput) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, __prevMoveInput) == 0x34);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, __prevLookInput) == 0x3C);
@@ -1328,7 +1326,7 @@ const _: () = assert!(core::mem::offset_of!(PlayerControls, autoMove) == 0x48);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, alwaysRun) == 0x49);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, hadInput) == 0x4A);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, __field_4B) == 0x4B);
-const _: () = assert!(core::mem::offset_of!(PlayerControls, __bDisablePOVChange) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(PlayerControls, bDisablePOVChange) == 0x4C);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, __releaseHeldPending) == 0x4E);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, __markHeldForRelease) == 0x4F);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, ignoreInput) == 0x50);
@@ -1803,8 +1801,7 @@ pub struct TogglePOVHandler {
     #[doc(hidden)]
     pub __pad_12: [u8; 6],
     /// +0x18 `undefined1`, semantic; Toggle POV pressed and not yet released (high)
-    #[doc(hidden)]
-    pub __pressed: [u8; 1],
+    pub pressed: u8,
     /// +0x19 `undefined1`, semantic; tail padding after pressed (+0x18) to 0x20 (high)
     #[doc(hidden)]
     pub __pad_19: [u8; 7],
@@ -1818,7 +1815,7 @@ const _: () = assert!(core::mem::offset_of!(TogglePOVHandler, __pad_9) == 0x9);
 const _: () = assert!(core::mem::offset_of!(TogglePOVHandler, __heldStateActive) == 0x10);
 const _: () = assert!(core::mem::offset_of!(TogglePOVHandler, __releasePending) == 0x11);
 const _: () = assert!(core::mem::offset_of!(TogglePOVHandler, __pad_12) == 0x12);
-const _: () = assert!(core::mem::offset_of!(TogglePOVHandler, __pressed) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TogglePOVHandler, pressed) == 0x18);
 const _: () = assert!(core::mem::offset_of!(TogglePOVHandler, __pad_19) == 0x19);
 
 /// `ToggleRunHandler`: size 0x10 (exact, medium); primary base `PlayerInputHandler`.

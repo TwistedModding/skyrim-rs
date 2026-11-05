@@ -1395,8 +1395,7 @@ pub struct NiNode {
     /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
     pub fadeAmount: f32,
     /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    #[doc(hidden)]
-    pub __previousWorldFrame: [u8; 4],
+    pub previousWorldFrame: u32,
     /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
@@ -1426,7 +1425,7 @@ const _: () = assert!(core::mem::offset_of!(NiNode, worldBound) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(NiNode, flags) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(NiNode, unknownF8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(NiNode, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(NiNode, __previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(NiNode, previousWorldFrame) == 0x104);
 const _: () = assert!(core::mem::offset_of!(NiNode, unknown108) == 0x108);
 const _: () = assert!(core::mem::offset_of!(NiNode, __flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(NiNode, children) == 0x110);
@@ -1469,8 +1468,7 @@ pub struct NiSkinInstance {
     /// +0x58 `undefined8`, semantic; unknown, zeroed by both ctors (low)
     pub field58: u64,
     /// +0x60 `undefined1`, semantic; serialises palette builds (the skin can be drawn from several threads) (high)
-    #[doc(hidden)]
-    pub __paletteLock: [u8; 40],
+    pub paletteLock: [u8; 40],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1489,7 +1487,7 @@ const _: () = assert!(core::mem::offset_of!(NiSkinInstance, paletteCapacity) == 
 const _: () = assert!(core::mem::offset_of!(NiSkinInstance, palette) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiSkinInstance, previousPalette) == 0x50);
 const _: () = assert!(core::mem::offset_of!(NiSkinInstance, field58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(NiSkinInstance, __paletteLock) == 0x60);
+const _: () = assert!(core::mem::offset_of!(NiSkinInstance, paletteLock) == 0x60);
 
 /// `ShaderPropertyLightData`: size 0x28 (exact).
 /// Meaning: the light record BSShaderProperty+0x70 points at (medium, render pass).

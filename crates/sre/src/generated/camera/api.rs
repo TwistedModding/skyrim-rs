@@ -2096,7 +2096,7 @@ impl crate::BipedObject {
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn part_clone(&self) -> Option<&crate::NiAVObject> { unsafe { Self::__member_partClone(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    pub fn part_clone(&self) -> Option<&crate::NiAVObject> { unsafe { { self.partClone }.as_ref() } }
     #[doc(hidden)]
     #[inline]
     pub fn __member_addon(this: *const Self) -> *mut *mut crate::TESObjectARMA { unsafe { member!(this, "BipedObject.addon", 0x8, *mut crate::TESObjectARMA) } }
@@ -2147,16 +2147,6 @@ impl crate::BipedObject {
     pub fn set_model(&mut self, value: *mut crate::TESModel) { unsafe { Self::__member_model(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn model_ptr(&self) -> *mut *mut crate::TESModel { Self::__member_model(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_partClone(this: *const Self) -> *mut *mut crate::NiAVObject { unsafe { member!(this, "BipedObject.partClone", 0x20, *mut crate::NiAVObject) } }
-    /// `BipedObject::partClone`, at +0x20 on 1.7.104.
-    #[inline]
-    pub fn partClone(&self) -> *mut crate::NiAVObject { unsafe { Self::__member_partClone(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_partClone(&mut self, value: *mut crate::NiAVObject) { unsafe { Self::__member_partClone(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn partClone_ptr(&self) -> *mut *mut crate::NiAVObject { Self::__member_partClone(core::ptr::from_ref(self)) }
 }
 
 impl crate::BleedoutCameraState {
@@ -2753,16 +2743,6 @@ impl crate::CrosshairPickData {
     pub unsafe fn dtor(&self) { unsafe { function!(26126, (*const Self))(core::ptr::from_ref(self)) } }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_actorHandle(this: *const Self) -> *mut u32 { unsafe { member!(this, "CrosshairPickData.actorHandle", 0x8, u32) } }
-    /// `CrosshairPickData::actorHandle`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn actorHandle(&self) -> u32 { unsafe { Self::__member_actorHandle(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_actorHandle(&mut self, value: u32) { unsafe { Self::__member_actorHandle(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn actorHandle_ptr(&self) -> *mut u32 { Self::__member_actorHandle(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_collisionGroup(this: *const Self) -> *mut u32 { unsafe { member!(this, "CrosshairPickData.collisionGroup", 0x30, u32) } }
     /// `CrosshairPickData::collisionGroup`, at +0x30 on 1.7.104.
     #[inline]
@@ -2819,16 +2799,6 @@ impl crate::CrosshairPickData {
     pub fn set_promptActive(&mut self, value: u8) { unsafe { Self::__member_promptActive(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn promptActive_ptr(&self) -> *mut u8 { Self::__member_promptActive(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_targetHandle(this: *const Self) -> *mut u32 { unsafe { member!(this, "CrosshairPickData.targetHandle", 0x4, u32) } }
-    /// `CrosshairPickData::targetHandle`, at +0x4 on 1.7.104.
-    #[inline]
-    pub fn targetHandle(&self) -> u32 { unsafe { Self::__member_targetHandle(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_targetHandle(&mut self, value: u32) { unsafe { Self::__member_targetHandle(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn targetHandle_ptr(&self) -> *mut u32 { Self::__member_targetHandle(core::ptr::from_ref(self)) }
 }
 
 impl crate::DragonCameraState {
@@ -3159,7 +3129,7 @@ impl crate::FirstPersonState {
     ///
     /// Semantic field, frame pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn camera_control_node(&self) -> Option<&crate::NiNode> { unsafe { Self::__member_cameraControlNode(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    pub fn camera_control_node(&self) -> Option<&crate::NiNode> { unsafe { { self.cameraControlNode }.as_ref() } }
     /// `FirstPersonState::cameraNode` at +0x58: first-person camera node: world rotation (+0x7c) and translation (+0xa0) are the camera pose
     ///
     /// Semantic field, frame pass, high; `None` while the pointer is null.
@@ -3175,16 +3145,6 @@ impl crate::FirstPersonState {
     pub fn set_camera(&mut self, value: *mut crate::PlayerCamera) { unsafe { Self::__member_camera(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn camera_ptr(&self) -> *mut *mut crate::PlayerCamera { Self::__member_camera(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_cameraControlNode(this: *const Self) -> *mut *mut crate::NiNode { unsafe { member!(this, "FirstPersonState.cameraControlNode", 0x60, *mut crate::NiNode) } }
-    /// `FirstPersonState::cameraControlNode`, at +0x60 on 1.7.104.
-    #[inline]
-    pub fn cameraControlNode(&self) -> *mut crate::NiNode { unsafe { Self::__member_cameraControlNode(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_cameraControlNode(&mut self, value: *mut crate::NiNode) { unsafe { Self::__member_cameraControlNode(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn cameraControlNode_ptr(&self) -> *mut *mut crate::NiNode { Self::__member_cameraControlNode(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_cameraOverride(this: *const Self) -> *mut u8 { unsafe { member!(this, "FirstPersonState.cameraOverride", 0x88, u8) } }
@@ -3877,15 +3837,7 @@ impl crate::FlatBone {
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn node(&self) -> Option<&crate::NiNode> { unsafe { Self::__member_node(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_local(this: *const Self) -> *mut crate::NiTransform { unsafe { member!(this, "FlatBone.local", 0x0, crate::NiTransform) } }
-    /// `FlatBone::local`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn local(&self) -> &crate::NiTransform { unsafe { &*Self::__member_local(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn local_ptr(&self) -> *mut crate::NiTransform { Self::__member_local(core::ptr::from_ref(self)) }
+    pub fn node(&self) -> Option<&crate::NiNode> { unsafe { { self.node }.as_ref() } }
     #[doc(hidden)]
     #[inline]
     pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "FlatBone.name", 0x78, crate::BSFixedString) } }
@@ -3894,34 +3846,6 @@ impl crate::FlatBone {
     pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_node(this: *const Self) -> *mut *mut crate::NiNode { unsafe { member!(this, "FlatBone.node", 0x70, *mut crate::NiNode) } }
-    /// `FlatBone::node`, at +0x70 on 1.7.104.
-    #[inline]
-    pub fn node_field(&self) -> *mut crate::NiNode { unsafe { Self::__member_node(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_node(&mut self, value: *mut crate::NiNode) { unsafe { Self::__member_node(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn node_ptr(&self) -> *mut *mut crate::NiNode { Self::__member_node(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_parentIndex(this: *const Self) -> *mut u16 { unsafe { member!(this, "FlatBone.parentIndex", 0x68, u16) } }
-    /// `FlatBone::parentIndex`, at +0x68 on 1.7.104.
-    #[inline]
-    pub fn parentIndex(&self) -> u16 { unsafe { Self::__member_parentIndex(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_parentIndex(&mut self, value: u16) { unsafe { Self::__member_parentIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn parentIndex_ptr(&self) -> *mut u16 { Self::__member_parentIndex(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_world(this: *const Self) -> *mut crate::NiTransform { unsafe { member!(this, "FlatBone.world", 0x34, crate::NiTransform) } }
-    /// `FlatBone::world`, at +0x34 on 1.7.104.
-    #[inline]
-    pub fn world(&self) -> &crate::NiTransform { unsafe { &*Self::__member_world(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn world_ptr(&self) -> *mut crate::NiTransform { Self::__member_world(core::ptr::from_ref(self)) }
 }
 
 impl crate::FreeCameraState {
@@ -7735,24 +7659,6 @@ impl crate::TESObjectLIGH {
     pub fn set_flickerPeriod(&mut self, value: f32) { unsafe { Self::__member_flickerPeriod(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn flickerPeriod_ptr(&self) -> *mut f32 { Self::__member_flickerPeriod(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_model(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "TESObjectLIGH.model", 0x48, crate::BSFixedString) } }
-    /// `TESObjectLIGH::model`, at +0x48 on 1.7.104.
-    #[inline]
-    pub fn model(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_model(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn model_ptr(&self) -> *mut crate::BSFixedString { Self::__member_model(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_radius(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESObjectLIGH.radius", 0xE4, u32) } }
-    /// `TESObjectLIGH::radius`, at +0xE4 on 1.7.104.
-    #[inline]
-    pub fn radius(&self) -> u32 { unsafe { Self::__member_radius(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_radius(&mut self, value: u32) { unsafe { Self::__member_radius(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn radius_ptr(&self) -> *mut u32 { Self::__member_radius(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESObjectWEAP {
@@ -8086,29 +7992,9 @@ impl crate::TESRace {
     pub fn set_field_2E0(&mut self, value: u64) { unsafe { Self::__member_field_2E0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_2E0_ptr(&self) -> *mut u64 { Self::__member_field_2E0(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_leftHandBipedIndex(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESRace.leftHandBipedIndex", 0x138, u32) } }
-    /// `TESRace::leftHandBipedIndex`, at +0x138 on 1.7.104.
-    #[inline]
-    pub fn leftHandBipedIndex(&self) -> u32 { unsafe { Self::__member_leftHandBipedIndex(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_leftHandBipedIndex(&mut self, value: u32) { unsafe { Self::__member_leftHandBipedIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn leftHandBipedIndex_ptr(&self) -> *mut u32 { Self::__member_leftHandBipedIndex(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESWeather {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_dataFlags(this: *const Self) -> *mut u8 { unsafe { member!(this, "TESWeather.dataFlags", 0x66F, u8) } }
-    /// `TESWeather::dataFlags`, at +0x66F on 1.7.104.
-    #[inline]
-    pub fn dataFlags(&self) -> u8 { unsafe { Self::__member_dataFlags(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_dataFlags(&mut self, value: u8) { unsafe { Self::__member_dataFlags(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn dataFlags_ptr(&self) -> *mut u8 { Self::__member_dataFlags(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_228(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWeather.field_228", 0x228, u64) } }
@@ -8964,16 +8850,6 @@ impl crate::UICursor {
     pub fn speedScale2_ptr(&self) -> *mut f32 { Self::__member_speedScale2(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_x(this: *const Self) -> *mut f32 { unsafe { member!(this, "UICursor.x", 0x4, f32) } }
-    /// `UICursor::x`, at +0x4 on 1.7.104.
-    #[inline]
-    pub fn x(&self) -> f32 { unsafe { Self::__member_x(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_x(&mut self, value: f32) { unsafe { Self::__member_x(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn x_ptr(&self) -> *mut f32 { Self::__member_x(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_y(this: *const Self) -> *mut f32 { unsafe { member!(this, "UICursor.y", 0x8, f32) } }
     /// `UICursor::y`, at +0x8 on 1.7.104.
     #[inline]
@@ -9302,16 +9178,6 @@ impl crate::bhkPickData {
     pub fn enableShapeCollectionFilter_ptr(&self) -> *mut u8 { Self::__member_enableShapeCollectionFilter(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_extraInfo(this: *const Self) -> *mut u32 { unsafe { member!(this, "bhkPickData.extraInfo", 0x44, u32) } }
-    /// `bhkPickData::extraInfo`, at +0x44 on 1.7.104.
-    #[inline]
-    pub fn extraInfo(&self) -> u32 { unsafe { Self::__member_extraInfo(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_extraInfo(&mut self, value: u32) { unsafe { Self::__member_extraInfo(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn extraInfo_ptr(&self) -> *mut u32 { Self::__member_extraInfo(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_field_28(this: *const Self) -> *mut u64 { unsafe { member!(this, "bhkPickData.field_28", 0x28, u64) } }
     /// `bhkPickData::field_28`, at +0x28 on 1.7.104.
     #[inline]
@@ -9320,46 +9186,6 @@ impl crate::bhkPickData {
     pub fn set_field_28(&mut self, value: u64) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_28_ptr(&self) -> *mut u64 { Self::__member_field_28(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_filterInfo(this: *const Self) -> *mut u32 { unsafe { member!(this, "bhkPickData.filterInfo", 0x24, u32) } }
-    /// `bhkPickData::filterInfo`, at +0x24 on 1.7.104.
-    #[inline]
-    pub fn filterInfo(&self) -> u32 { unsafe { Self::__member_filterInfo(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_filterInfo(&mut self, value: u32) { unsafe { Self::__member_filterInfo(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn filterInfo_ptr(&self) -> *mut u32 { Self::__member_filterInfo(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_from(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "bhkPickData.from", 0x0, [u8; 16]) } }
-    /// `bhkPickData::from`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn from(&self) -> [u8; 16] { unsafe { Self::__member_from(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_from(&mut self, value: [u8; 16]) { unsafe { Self::__member_from(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn from_ptr(&self) -> *mut [u8; 16] { Self::__member_from(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_hitFraction(this: *const Self) -> *mut f32 { unsafe { member!(this, "bhkPickData.hitFraction", 0x40, f32) } }
-    /// `bhkPickData::hitFraction`, at +0x40 on 1.7.104.
-    #[inline]
-    pub fn hitFraction(&self) -> f32 { unsafe { Self::__member_hitFraction(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_hitFraction(&mut self, value: f32) { unsafe { Self::__member_hitFraction(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn hitFraction_ptr(&self) -> *mut f32 { Self::__member_hitFraction(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_normal(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "bhkPickData.normal", 0x30, [u8; 16]) } }
-    /// `bhkPickData::normal`, at +0x30 on 1.7.104.
-    #[inline]
-    pub fn normal(&self) -> [u8; 16] { unsafe { Self::__member_normal(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_normal(&mut self, value: [u8; 16]) { unsafe { Self::__member_normal(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn normal_ptr(&self) -> *mut [u8; 16] { Self::__member_normal(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_ray(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "bhkPickData.ray", 0x90, [u8; 16]) } }
@@ -9392,16 +9218,6 @@ impl crate::bhkPickData {
     pub fn shapeKeyIndex_ptr(&self) -> *mut u32 { Self::__member_shapeKeyIndex(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_shapeKeys(this: *const Self) -> *mut [u8; 32] { unsafe { member!(this, "bhkPickData.shapeKeys", 0x48, [u8; 32]) } }
-    /// `bhkPickData::shapeKeys`, at +0x48 on 1.7.104.
-    #[inline]
-    pub fn shapeKeys(&self) -> [u8; 32] { unsafe { Self::__member_shapeKeys(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_shapeKeys(&mut self, value: [u8; 32]) { unsafe { Self::__member_shapeKeys(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn shapeKeys_ptr(&self) -> *mut [u8; 32] { Self::__member_shapeKeys(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_skipped(this: *const Self) -> *mut u8 { unsafe { member!(this, "bhkPickData.skipped", 0xC0, u8) } }
     /// `bhkPickData::skipped`, at +0xC0 on 1.7.104.
     #[inline]
@@ -9410,16 +9226,6 @@ impl crate::bhkPickData {
     pub fn set_skipped(&mut self, value: u8) { unsafe { Self::__member_skipped(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn skipped_ptr(&self) -> *mut u8 { Self::__member_skipped(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_to(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "bhkPickData.to", 0x10, [u8; 16]) } }
-    /// `bhkPickData::to`, at +0x10 on 1.7.104.
-    #[inline]
-    pub fn to(&self) -> [u8; 16] { unsafe { Self::__member_to(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_to(&mut self, value: [u8; 16]) { unsafe { Self::__member_to(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn to_ptr(&self) -> *mut [u8; 16] { Self::__member_to(core::ptr::from_ref(self)) }
 }
 
 impl crate::bhkShape {
@@ -9565,39 +9371,6 @@ impl crate::bhkWorld {
     pub fn m_bhkWorldCinfo_C5E0_ptr(&self) -> *mut crate::bhkWorldCinfo { Self::__member_m_bhkWorldCinfo_C5E0(core::ptr::from_ref(self)) }
 }
 
-impl crate::hkArray {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_capacityAndFlags(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkArray.capacityAndFlags", 0xC, u32) } }
-    /// `hkArray::capacityAndFlags`, at +0xC on 1.7.104.
-    #[inline]
-    pub fn capacityAndFlags(&self) -> u32 { unsafe { Self::__member_capacityAndFlags(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_capacityAndFlags(&mut self, value: u32) { unsafe { Self::__member_capacityAndFlags(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn capacityAndFlags_ptr(&self) -> *mut u32 { Self::__member_capacityAndFlags(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_data(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "hkArray.data", 0x0, *mut c_void) } }
-    /// `hkArray::data`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn data(&self) -> *mut c_void { unsafe { Self::__member_data(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_data(&mut self, value: *mut c_void) { unsafe { Self::__member_data(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn data_ptr(&self) -> *mut *mut c_void { Self::__member_data(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_size(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkArray.size", 0x8, u32) } }
-    /// `hkArray::size`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn size(&self) -> u32 { unsafe { Self::__member_size(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_size(&mut self, value: u32) { unsafe { Self::__member_size(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn size_ptr(&self) -> *mut u32 { Self::__member_size(core::ptr::from_ref(self)) }
-}
-
 impl crate::hkContainerHeapAllocator__Allocator {
     /// `hkContainerHeapAllocator::Allocator::AllocateBuffer`, vtable slot 3: allocates a buffer from the thread's Havok heap (heap slot 3 with the same arguments)
     ///
@@ -9624,17 +9397,7 @@ impl crate::hkMemoryRouter {
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn heap(&self) -> Option<&crate::hkMemoryAllocator> { unsafe { Self::__member_heap(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_heap(this: *const Self) -> *mut *mut crate::hkMemoryAllocator { unsafe { member!(this, "hkMemoryRouter.heap", 0x58, *mut crate::hkMemoryAllocator) } }
-    /// `hkMemoryRouter::heap`, at +0x58 on 1.7.104.
-    #[inline]
-    pub fn heap_field(&self) -> *mut crate::hkMemoryAllocator { unsafe { Self::__member_heap(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_heap(&mut self, value: *mut crate::hkMemoryAllocator) { unsafe { Self::__member_heap(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn heap_ptr(&self) -> *mut *mut crate::hkMemoryAllocator { Self::__member_heap(core::ptr::from_ref(self)) }
+    pub fn heap(&self) -> Option<&crate::hkMemoryAllocator> { unsafe { { self.heap }.as_ref() } }
 }
 
 impl crate::hkReferencedObject {
@@ -9650,59 +9413,6 @@ impl crate::hkReferencedObject {
     /// `void (const hkReferencedObject* this)`
     #[inline]
     pub fn remove_reference(&self) { unsafe { function!(57011, (*const Self))(core::ptr::from_ref(self)) } }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_memSizeAndFlags(this: *const Self) -> *mut u16 { unsafe { member!(this, "hkReferencedObject.memSizeAndFlags", 0x8, u16) } }
-    /// `hkReferencedObject::memSizeAndFlags`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn memSizeAndFlags(&self) -> u16 { unsafe { Self::__member_memSizeAndFlags(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_memSizeAndFlags(&mut self, value: u16) { unsafe { Self::__member_memSizeAndFlags(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn memSizeAndFlags_ptr(&self) -> *mut u16 { Self::__member_memSizeAndFlags(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_referenceCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "hkReferencedObject.referenceCount", 0xA, u16) } }
-    /// `hkReferencedObject::referenceCount`, at +0xA on 1.7.104.
-    #[inline]
-    pub fn referenceCount(&self) -> u16 { unsafe { Self::__member_referenceCount(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_referenceCount(&mut self, value: u16) { unsafe { Self::__member_referenceCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn referenceCount_ptr(&self) -> *mut u16 { Self::__member_referenceCount(core::ptr::from_ref(self)) }
-}
-
-impl crate::hkStridedVertices {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_numVertices(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkStridedVertices.numVertices", 0x8, u32) } }
-    /// `hkStridedVertices::numVertices`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn numVertices(&self) -> u32 { unsafe { Self::__member_numVertices(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_numVertices(&mut self, value: u32) { unsafe { Self::__member_numVertices(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn numVertices_ptr(&self) -> *mut u32 { Self::__member_numVertices(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_striding(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkStridedVertices.striding", 0xC, u32) } }
-    /// `hkStridedVertices::striding`, at +0xC on 1.7.104.
-    #[inline]
-    pub fn striding(&self) -> u32 { unsafe { Self::__member_striding(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_striding(&mut self, value: u32) { unsafe { Self::__member_striding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn striding_ptr(&self) -> *mut u32 { Self::__member_striding(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_vertices(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "hkStridedVertices.vertices", 0x0, *mut c_void) } }
-    /// `hkStridedVertices::vertices`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn vertices(&self) -> *mut c_void { unsafe { Self::__member_vertices(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_vertices(&mut self, value: *mut c_void) { unsafe { Self::__member_vertices(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn vertices_ptr(&self) -> *mut *mut c_void { Self::__member_vertices(core::ptr::from_ref(self)) }
 }
 
 impl crate::hkbFootIkDriver__InternalLeg {
@@ -10129,16 +9839,6 @@ impl crate::hkpCollidable {
     pub fn shape(&self) -> Option<&crate::hkpShape> { unsafe { Self::__member_shape(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_collisionFilterInfo(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkpCollidable.collisionFilterInfo", 0x2C, u32) } }
-    /// `hkpCollidable::collisionFilterInfo`, at +0x2C on 1.7.104.
-    #[inline]
-    pub fn collisionFilterInfo(&self) -> u32 { unsafe { Self::__member_collisionFilterInfo(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_collisionFilterInfo(&mut self, value: u32) { unsafe { Self::__member_collisionFilterInfo(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn collisionFilterInfo_ptr(&self) -> *mut u32 { Self::__member_collisionFilterInfo(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_shape(this: *const Self) -> *mut *mut crate::hkpShape { unsafe { member!(this, "hkpCollidable.shape", 0x0, *mut crate::hkpShape) } }
     /// `hkpCollidable::shape`, at +0x0 on 1.7.104.
     #[inline]
@@ -10179,29 +9879,6 @@ impl crate::hkpConvexVerticesShape {
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
     pub fn connectivity(&self) -> Option<&crate::hkpConvexVerticesConnectivity> { unsafe { { self.connectivity }.as_ref() } }
-}
-
-impl crate::hkpConvexVerticesShape__BuildConfig {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_maxVertices(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkpConvexVerticesShape::BuildConfig.maxVertices", 0x8, u32) } }
-    /// `hkpConvexVerticesShape::BuildConfig::maxVertices`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn maxVertices(&self) -> u32 { unsafe { Self::__member_maxVertices(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_maxVertices(&mut self, value: u32) { unsafe { Self::__member_maxVertices(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn maxVertices_ptr(&self) -> *mut u32 { Self::__member_maxVertices(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_shrinkByConvexRadius(this: *const Self) -> *mut u8 { unsafe { member!(this, "hkpConvexVerticesShape::BuildConfig.shrinkByConvexRadius", 0x1, u8) } }
-    /// `hkpConvexVerticesShape::BuildConfig::shrinkByConvexRadius`, at +0x1 on 1.7.104.
-    #[inline]
-    pub fn shrinkByConvexRadius(&self) -> u8 { unsafe { Self::__member_shrinkByConvexRadius(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_shrinkByConvexRadius(&mut self, value: u8) { unsafe { Self::__member_shrinkByConvexRadius(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn shrinkByConvexRadius_ptr(&self) -> *mut u8 { Self::__member_shrinkByConvexRadius(core::ptr::from_ref(self)) }
 }
 
 impl crate::hkpListShape {

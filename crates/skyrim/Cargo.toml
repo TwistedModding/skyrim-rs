@@ -16,7 +16,7 @@ windows-sys = { workspace = true, features = ["Win32_System_Kernel", "Win32_Syst
 [features]
 default = []
 actors = ["forms", "sre/actors", "sre/render", "sre/tes"]
-animation = ["events", "forms", "sre/actors", "sre/animation"]
+animation = ["events", "forms", "sre/actors", "sre/animation", "sre/camera"]
 audio = ["sre/audio"]
 camera = ["sre/camera", "sre/frame"]
 events = ["sre/actors", "sre/events"]

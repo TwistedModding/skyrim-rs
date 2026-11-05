@@ -23220,8 +23220,6 @@ member-unverified BSEffectShaderMaterial.texCoordOffset1
 member-unverified BSEffectShaderProperty.extraDataCapacity
 member-unverified BSFaceGenAnimationData.customInput
 member-unverified BSFaceGenAnimationData.customSpeech
-member-unverified BSFaceGenAnimationData.eyeHeadingOffset
-member-unverified BSFaceGenAnimationData.eyePitchOffset
 member-unverified BSFaceGenAnimationData.forceUpdate
 member-unverified BSFaceGenAnimationData.updated
 member-unverified BSFaceGenNiNode.extraDataCapacity
@@ -25490,7 +25488,6 @@ member-unverified BSWin32MouseDevice.reinitializing
 member-unverified BSWin32MouseDevice.state
 member-unverified BSWin32SaveDataSystemUtility.source_BSSaveDataEvent
 member-unverified BSWin32SystemUtility.source_BSSystemEvent
-member-unverified BShkbAnimationGraph.doFootIK
 member-unverified BShkbAnimationGraph.eventsSuppressed
 member-unverified BShkbAnimationGraph.nameMatchList
 member-unverified BarrierProjectile.field_D4
@@ -25600,7 +25597,6 @@ member-unverified CrosshairPickData.grabTargetHandle
 member-unverified CrosshairPickData.hitObject
 member-unverified CrosshairPickData.hitPoint
 member-unverified CrosshairPickData.promptActive
-member-unverified CrosshairPickData.targetHandle
 member-unverified CubeMapRecord.faceRTV
 member-unverified CubeMapRecord.srv
 member-unverified CubeMapRecord.texture
@@ -25688,7 +25684,6 @@ member-unverified ExtraPackageStartLocation.field_8
 member-unverified ExtraStartingPosition.field_20
 member-unverified ExtraStartingPosition.field_8
 member-unverified FirstPersonState.camera
-member-unverified FirstPersonState.cameraControlNode
 member FirstPersonState.cameraOverride 84
 member FirstPersonState.dampingWeight 7c
 member-unverified FirstPersonState.id
@@ -25707,7 +25702,6 @@ member FirstPersonState.useAltEuler 87
 member-unverified FlameProjectile.field_D4
 member-unverified FlameProjectile.field_DC
 member-unverified FlatBone.name
-member-unverified FlatBone.world
 member-unverified FrameState.backBufferHeight
 member FrameState.cameraMatrices a8
 member-unverified FrameState.decreaseRequested
@@ -26101,7 +26095,6 @@ member-unverified NiMeshParticleSystem.flags2
 member-unverified NiMeshParticleSystem.previousWorldFrame
 member-unverified NiNode.extraDataCapacity
 member-unverified NiNode.flags2
-member-unverified NiNode.previousWorldFrame
 member-unverified NiOBBLeaf.field_14
 member-unverified NiOBBLeaf.field_1C
 member-unverified NiOBBLeaf.field_24
@@ -26156,7 +26149,6 @@ member-unverified NiSkinData::BoneData.boundSphere
 member-unverified NiSkinData::BoneData.skinToBone
 member-unverified NiSkinData::BoneData.weightCount
 member-unverified NiSkinData::BoneData.weights
-member-unverified NiSkinInstance.paletteLock
 member-unverified NiSkinInstance.paletteRowsPerBone
 member-unverified NiSkinPartition::Partition.boneIndices
 member-unverified NiSkinPartition::Partition.stripCount
@@ -26431,7 +26423,6 @@ member-unverified PlayerCharacter.thirdPersonTorchLight
 member PlayerCharacter.viewFlags be3
 member-unverified PlayerCharacter.voicePointsModifiers
 member-unverified PlayerCharacter.worldSpace
-member-unverified PlayerControls.bDisablePOVChange
 member-unverified PlayerControls.field_4B
 member-unverified PlayerControls.markHeldForRelease
 member-unverified PlayerControls.releaseHeldPending
@@ -26730,7 +26721,6 @@ member-unverified TESObjectDOOR.field_50
 member-unverified TESObjectLIGH.field_50
 member-unverified TESObjectLIGH.flickerMovementAmplitude
 member-unverified TESObjectLIGH.flickerPeriod
-member-unverified TESObjectLIGH.radius
 member-unverified TESObjectMISC.field_50
 member-unverified TESObjectREFRTranslationEvent.ref
 member-unverified TESObjectREFRTranslationEvent.type
@@ -26758,7 +26748,6 @@ member-unverified TESRace.field_170
 member-unverified TESRace.field_178
 member-unverified TESRace.field_180
 member-unverified TESRace.field_188
-member-unverified TESRace.leftHandBipedIndex
 member-unverified TESResetEvent.object
 member-unverified TESSceneEvent.finishedCallback
 member-unverified TESSceneEvent.quest
@@ -26813,7 +26802,6 @@ member-unverified TogglePOVHandler.heldStateActive
 member-unverified TogglePOVHandler.pad_12
 member-unverified TogglePOVHandler.pad_19
 member-unverified TogglePOVHandler.pad_9
-member-unverified TogglePOVHandler.pressed
 member-unverified TogglePOVHandler.releasePending
 member-unverified TransitionState.fromRotation
 member-unverified TransitionState.id
@@ -26973,13 +26961,9 @@ member-unverified bhkCharacterController.source_bhkCharacterMoveFinishEvent
 member-unverified bhkPickData.allHitsCollector
 member-unverified bhkPickData.allHitsCollector2
 member-unverified bhkPickData.closestCollector
-member-unverified bhkPickData.extraInfo
-member-unverified bhkPickData.from
 member-unverified bhkPickData.ray
 member-unverified bhkPickData.shapeKeyIndex
-member-unverified bhkPickData.shapeKeys
 member-unverified bhkPickData.skipped
-member-unverified bhkPickData.to
 member-unverified bhkRagdollController.field_320
 member-unverified bhkRagdollController.field_328
 member-unverified bhkWorld.field_C6E0
@@ -27218,16 +27202,7 @@ member-missing bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable
 member-missing bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::CopyableCallable<<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_>.__vftable
 member-missing bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::ICopyableCallable,<lambda_e35940508eec14f4e3ce2fa64956727e>_>.__vftable
 member-missing bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::CopyableCallable<<lambda_e35940508eec14f4e3ce2fa64956727e>_>.__vftable
-member-unverified hkArray.capacityAndFlags
-member-unverified hkArray.data
-member-unverified hkArray.size
 member-unverified hkQuaternion.w
-member-unverified hkReferencedObject.memSizeAndFlags
-member-unverified hkReferencedObject.referenceCount
-member-unverified hkStridedVertices.numVertices
-member-unverified hkStridedVertices.striding
-member-unverified hkStridedVertices.vertices
-member-unverified hkVector4.w
 member-unverified hkbFootIkDriver::InternalLeg.ankleTargetMS
 member-unverified hkbFootIkDriver::InternalLeg.groundHeight
 member-unverified hkbFootIkDriver::InternalLeg.hit
@@ -27259,8 +27234,6 @@ member-unverified hkbFootIkGains.onOffGain
 member-unverified hkbFootIkGains.worldFromModelFeedbackGain
 member-unverified hkpCharacterProxy.userData
 member-unverified hkpCollidable.shape
-member-unverified hkpConvexVerticesShape::BuildConfig.maxVertices
-member-unverified hkpConvexVerticesShape::BuildConfig.shrinkByConvexRadius
 member-unverified hkpShape.memSizeAndFlags
 member-unverified hkpShape.referenceCount
 member-missing std::_Func_impl_no_alloc<<lambda_011e18ed6303dee988fa3bd3cbcd3f6c>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>.__vftable
@@ -35159,7 +35132,6 @@ size-unverified bhkOnStartupCallback
 size-unverified bhkOrientHingedBodyAction
 size-unverified bhkPackedNiTriStripsShape
 size-unverified bhkPhantom
-size-unverified bhkPickData
 size-unverified bhkPlaneShape
 size-unverified bhkPointToPathConstraint
 size-unverified bhkPoseArray
