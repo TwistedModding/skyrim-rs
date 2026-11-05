@@ -8830,26 +8830,6 @@ impl crate::UICursor {
     pub fn bounds_ptr(&self) -> *mut [u8; 16] { Self::__member_bounds(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_speedScale(this: *const Self) -> *mut f32 { unsafe { member!(this, "UICursor.speedScale", 0x1C, f32) } }
-    /// `UICursor::speedScale`, at +0x1C on 1.7.104.
-    #[inline]
-    pub fn speedScale(&self) -> f32 { unsafe { Self::__member_speedScale(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_speedScale(&mut self, value: f32) { unsafe { Self::__member_speedScale(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn speedScale_ptr(&self) -> *mut f32 { Self::__member_speedScale(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_speedScale2(this: *const Self) -> *mut f32 { unsafe { member!(this, "UICursor.speedScale2", 0x28, f32) } }
-    /// `UICursor::speedScale2`, at +0x28 on 1.7.104.
-    #[inline]
-    pub fn speedScale2(&self) -> f32 { unsafe { Self::__member_speedScale2(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_speedScale2(&mut self, value: f32) { unsafe { Self::__member_speedScale2(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn speedScale2_ptr(&self) -> *mut f32 { Self::__member_speedScale2(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_y(this: *const Self) -> *mut f32 { unsafe { member!(this, "UICursor.y", 0x8, f32) } }
     /// `UICursor::y`, at +0x8 on 1.7.104.
     #[inline]

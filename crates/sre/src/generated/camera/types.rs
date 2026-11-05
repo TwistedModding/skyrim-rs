@@ -6038,12 +6038,10 @@ pub struct UICursor {
     #[doc(hidden)]
     pub __bounds: [u8; 16],
     /// +0x1C `float`, semantic; multiplies the cursor speed settings (medium)
-    #[doc(hidden)]
-    pub __speedScale: [u8; 4],
+    pub speedScale: f32,
     unknown_20: [u8; 8],
     /// +0x28 `float`, semantic; second speed factor (low)
-    #[doc(hidden)]
-    pub __speedScale2: [u8; 4],
+    pub speedScale2: f32,
     unknown_2C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -6052,8 +6050,8 @@ const _: () = assert!(size_of::<UICursor>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(UICursor, x) == 0x4);
 const _: () = assert!(core::mem::offset_of!(UICursor, __y) == 0x8);
 const _: () = assert!(core::mem::offset_of!(UICursor, __bounds) == 0xC);
-const _: () = assert!(core::mem::offset_of!(UICursor, __speedScale) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(UICursor, __speedScale2) == 0x28);
+const _: () = assert!(core::mem::offset_of!(UICursor, speedScale) == 0x1C);
+const _: () = assert!(core::mem::offset_of!(UICursor, speedScale2) == 0x28);
 
 /// `VATSCameraState`: size 0x38 (exact, medium); primary base `TESCameraState`.
 /// Meaning: kill camera / VATS playback camera (medium, frame pass).

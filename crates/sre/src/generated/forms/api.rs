@@ -238,16 +238,6 @@ impl crate::TESDataHandler {
     pub fn region_list(&self) -> Option<&crate::TESRegionList> { unsafe { Self::__member_regionList(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_activeFile(this: *const Self) -> *mut *mut crate::TESFile { unsafe { member!(this, "TESDataHandler.activeFile", 0xD58, *mut crate::TESFile) } }
-    /// `TESDataHandler::activeFile`, at +0xD58 on 1.7.104.
-    #[inline]
-    pub fn activeFile(&self) -> *mut crate::TESFile { unsafe { Self::__member_activeFile(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_activeFile(&mut self, value: *mut crate::TESFile) { unsafe { Self::__member_activeFile(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn activeFile_ptr(&self) -> *mut *mut crate::TESFile { Self::__member_activeFile(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_addonNodes(this: *const Self) -> *mut [u8; 24] { unsafe { member!(this, "TESDataHandler.addonNodes", 0xD20, [u8; 24]) } }
     /// `TESDataHandler::addonNodes`, at +0xD20 on 1.7.104.
     #[inline]

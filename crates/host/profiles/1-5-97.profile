@@ -116158,7 +116158,6 @@ member-unverified TESCameraState.pad_c
 member-unverified TESCellFullyLoadedEvent.cell
 member-unverified TESClimate.m_TESModel_20
 member-unverified TESContainer.field_14
-member-unverified TESDataHandler.activeFile
 member-unverified TESDataHandler.addonNodes
 member-unverified TESDataHandler.cells
 member-unverified TESDataHandler.regionDataManager
@@ -116571,8 +116570,6 @@ member-unverified TweenMenuCameraState.pad1c
 member-unverified TweenMenuCameraState.pad4D
 member-unverified TypeNode.name
 member-unverified UICursor.bounds
-member-unverified UICursor.speedScale
-member-unverified UICursor.speedScale2
 member-unverified UICursor.y
 member-unverified UIMessage.isStatic
 member-unverified UIMessage.menuName

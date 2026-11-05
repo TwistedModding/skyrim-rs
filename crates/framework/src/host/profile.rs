@@ -303,7 +303,7 @@ fn sample() -> Sampled {
         None => times.push((file, took)),
     };
     while SAMPLING.load(Ordering::Acquire) {
-        let file = sre::TESDataHandler::singleton().map_or(0, |h| unsafe { h.activeFile_ptr().read_volatile() } as usize);
+        let file = sre::TESDataHandler::singleton().map_or(0, |h| unsafe { core::ptr::addr_of!(h.activeFile).read_volatile() } as usize);
         if file != current {
             let now = Instant::now();
             if current != 0 {

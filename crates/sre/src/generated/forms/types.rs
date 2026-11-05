@@ -199,8 +199,7 @@ pub struct TESDataHandler {
     pub nextFormID: u32,
     unknown_D54: [u8; 4],
     /// +0xD58 `ptr:TESFile`, semantic; file currently being loaded, null outside loading (medium)
-    #[doc(hidden)]
-    pub __activeFile: [u8; 8],
+    pub activeFile: *mut crate::TESFile,
     /// +0xD60 `class:BSSimpleListNode`, semantic; head node of the list of every TESFile found in Data, masters first (high)
     pub files: crate::BSSimpleListNode,
     /// +0xD70 `class:BSTArray`, semantic; BSTArray<TESFile*> of regular files; the index is the file's compile index (high)
@@ -230,7 +229,7 @@ const _: () = assert!(core::mem::offset_of!(TESDataHandler, __regionList) == 0xD
 const _: () = assert!(core::mem::offset_of!(TESDataHandler, __cells) == 0xD08);
 const _: () = assert!(core::mem::offset_of!(TESDataHandler, __addonNodes) == 0xD20);
 const _: () = assert!(core::mem::offset_of!(TESDataHandler, nextFormID) == 0xD50);
-const _: () = assert!(core::mem::offset_of!(TESDataHandler, __activeFile) == 0xD58);
+const _: () = assert!(core::mem::offset_of!(TESDataHandler, activeFile) == 0xD58);
 const _: () = assert!(core::mem::offset_of!(TESDataHandler, files) == 0xD60);
 const _: () = assert!(core::mem::offset_of!(TESDataHandler, compiledFiles) == 0xD70);
 const _: () = assert!(core::mem::offset_of!(TESDataHandler, lightFiles) == 0xD88);

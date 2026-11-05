@@ -645,7 +645,7 @@ impl Pending {
 fn menu_cursor_speed() -> f32 {
     let Some(cursor) = sre::UICursor::singleton() else { return 1.0 };
     let setting = unsafe { skyrim::render::setting_value::<f32>(sre::ini_pref_setting_f_mouse_cursor_speed_interface()).read_volatile() };
-    let speed = cursor.speedScale2() * cursor.speedScale() * setting;
+    let speed = cursor.speedScale2 * cursor.speedScale * setting;
     if speed.is_finite() && speed > 0.0 { speed } else { 1.0 }
 }
 
