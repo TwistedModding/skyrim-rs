@@ -602,7 +602,8 @@ impl Pending {
         let modifiers = self.modifiers;
         if let Some(m) = event.as_mouse_move() {
             let (dx, dy) = (m.dx.cast_signed(), m.dy.cast_signed());
-            self.pointer = (self.pointer + egui::vec2(dx as f32, dy as f32) / self.pixels_per_point).clamp(Pos2::ZERO, self.screen.to_pos2());
+            let scale = menu_cursor_speed() / self.pixels_per_point;
+            self.pointer = (self.pointer + egui::vec2(dx as f32, dy as f32) * scale).clamp(Pos2::ZERO, self.screen.to_pos2());
             self.events.push(Event::PointerMoved(self.pointer));
         } else if let Some(c) = event.as_char() {
             if let Some(c) = char::from_u32(c.charCode).filter(|c| !c.is_control()) {
@@ -637,6 +638,15 @@ impl Pending {
             }
         }
     }
+}
+
+/// Client pixels per mouse count, the factor `CursorMenu::MoveCursorByMouse` moves the game's menu
+/// cursor by, so the overlay's pointer keeps the menus' speed; 1 before the UI exists.
+fn menu_cursor_speed() -> f32 {
+    let Some(cursor) = sre::UICursor::singleton() else { return 1.0 };
+    let setting = unsafe { skyrim::render::setting_value::<f32>(sre::ini_pref_setting_f_mouse_cursor_speed_interface()).read_volatile() };
+    let speed = cursor.speedScale2() * cursor.speedScale() * setting;
+    if speed.is_finite() && speed > 0.0 { speed } else { 1.0 }
 }
 
 fn is_modifier(scan_code: u32) -> bool {
