@@ -11,7 +11,7 @@ $ErrorActionPreference = "Stop"
 $Root = "$env:LOCALAPPDATA\skyrim-rs\stash-multiruntime"
 $Items = @(
     "Data\SKSE\Plugins\skyrim-runtime-extender", "Data\SKSE\Plugins\skyrim_runtime_extender.dll",
-    "Data\SKSE\Plugins\skyrim-rs", "Data\SKSE\Plugins\skyrim_rs.dll", "Data\SKSE\Plugins\skyrim_rs_improved_camera_stub.dll",
+    "Data\SKSE\Plugins\skyrim-rs", "Data\SKSE\Plugins\skyrim_rs.dll", "Data\SKSE\Plugins\skyrim_rs_improved_camera_stub.dll", "Data\SKSE\Plugins\improved_camera_stub.dll",
     "Data\Scripts\SkyrimRsExample.pex", "dinput8.dll", "steam_appid.txt"
 )
 if ($Restore) {
