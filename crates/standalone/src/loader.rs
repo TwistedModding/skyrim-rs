@@ -134,9 +134,12 @@ pub fn run(runtime: u32) {
             load_queried(interface, &path);
         }
     } else {
-        for (handle, (file, module, data)) in (1..).zip(scan(loader)) {
-            start(interface, loader, handle, &file, module, data);
-        }
+        let preloads = loader.calls_preload();
+        in_two_passes(
+            (1..).zip(scan(loader)).collect(),
+            |(handle, (file, module, _))| !preloads || preload(interface, *handle, file, *module),
+            |(handle, (file, module, data))| start(interface, loader, handle, &file, module, data),
+        );
     }
     LOADED.store(1, Ordering::Release);
     let names: Vec<String> = PLUGINS.lock().unwrap().iter().map(|p| format!("{} ({})", p.file, p.name.to_string_lossy())).collect();
@@ -190,17 +193,13 @@ fn scan(loader: &Loader) -> Vec<(String, HMODULE, &'static PluginVersionData)> {
         let file = file_name(&path);
         let Some(module) = load_library(&path) else { continue };
         let Some(data) = export(module, c"SKSEPlugin_Version").map(|p| unsafe { &*(p as *const PluginVersionData) }) else {
-            log!("{file}: disabled, no version data");
-            unsafe { FreeLibrary(module) };
+            refuse(&file, module, "disabled, no version data");
             continue;
         };
         let versionlib = || Path::new(PLUGIN_DIR).join(skse::runtime::versionlib_name(loader.runtime)).exists();
         match loader.accepts(data, versionlib, timestamp(module)) {
             Ok(()) => accepted.push((file, module, data)),
-            Err(reason) => {
-                log!("{file}: {reason}");
-                unsafe { FreeLibrary(module) };
-            }
+            Err(reason) => refuse(&file, module, reason),
         }
     }
     accepted
@@ -220,25 +219,46 @@ type LoadFn = unsafe extern "C" fn(*const Interface) -> bool;
 type QueryFn = unsafe extern "C" fn(*const Interface, *mut PluginInfo) -> bool;
 type RawExport = unsafe extern "system" fn() -> isize;
 
+/// SKSE 2.3.1's order: every plugin's `SKSEPlugin_Preload`, then the `SKSEPlugin_Load` of each one
+/// whose Preload did not fail.
+fn in_two_passes<T>(mut plugins: Vec<T>, mut preload: impl FnMut(&T) -> bool, load: impl FnMut(T)) {
+    plugins.retain(|p| preload(p));
+    plugins.into_iter().for_each(load);
+}
+
+/// Calls the plugin's `SKSEPlugin_Preload` if it has one; on failure it is refused and unloaded.
+fn preload(interface: &Interface, handle: PluginHandle, file: &str, module: HMODULE) -> bool {
+    let Some(f) = export(module, c"SKSEPlugin_Preload") else { return true };
+    CURRENT.store(handle, Ordering::Relaxed);
+    let ok = unsafe { core::mem::transmute::<RawExport, PreloadFn>(f)(interface) };
+    CURRENT.store(skse::INVALID_HANDLE, Ordering::Relaxed);
+    if !ok {
+        refuse(file, module, "disabled, reported as incompatible during load");
+    }
+    ok
+}
+
 fn start(interface: &Interface, loader: &Loader, handle: PluginHandle, file: &str, module: HMODULE, data: &PluginVersionData) {
     CURRENT.store(handle, Ordering::Relaxed);
-    let preload = if loader.calls_preload() { export(module, c"SKSEPlugin_Preload") } else { None };
     let load = export(module, c"SKSEPlugin_Load");
     let verdict = if load.is_none() && loader.requires_load() {
         Err("does not appear to be an SKSE plugin")
-    } else if preload.is_none_or(|f| unsafe { core::mem::transmute::<RawExport, PreloadFn>(f)(interface) }) && load.is_none_or(|f| unsafe { core::mem::transmute::<RawExport, LoadFn>(f)(interface) }) {
+    } else if load.is_none_or(|f| unsafe { core::mem::transmute::<RawExport, LoadFn>(f)(interface) }) {
         Ok(())
     } else {
         Err("disabled, reported as incompatible during load")
     };
     CURRENT.store(skse::INVALID_HANDLE, Ordering::Relaxed);
     if let Err(reason) = verdict {
-        log!("{file}: {reason}");
-        unsafe { FreeLibrary(module) };
-        return;
+        return refuse(file, module, reason);
     }
     let name = CStr::from_bytes_until_nul(&data.name).map(CStr::to_owned).unwrap_or_default();
     keep(handle, file, module, name, data.plugin_version);
+}
+
+fn refuse(file: &str, module: HMODULE, reason: &str) {
+    log!("{file}: {reason}");
+    unsafe { FreeLibrary(module) };
 }
 
 /// SKSE 2.0.19's pass over one DLL: `SKSEPlugin_Query`, its checks, then `SKSEPlugin_Load`, the next
@@ -246,12 +266,8 @@ fn start(interface: &Interface, loader: &Loader, handle: PluginHandle, file: &st
 fn load_queried(interface: &Interface, path: &Path) {
     let file = file_name(path);
     let Some(module) = load_library(path) else { return };
-    let refuse = |reason: &str| {
-        log!("{file}: {reason}");
-        unsafe { FreeLibrary(module) };
-    };
     let (Some(query), Some(load)) = (export(module, c"SKSEPlugin_Query"), export(module, c"SKSEPlugin_Load")) else {
-        return refuse("does not appear to be an SKSE plugin");
+        return refuse(&file, module, "does not appear to be an SKSE plugin");
     };
     let handle = u32::try_from(PLUGINS.lock().unwrap().len()).unwrap_or(u32::MAX - 1) + 1;
     let mut info = PluginInfo { info_version: 0, name: core::ptr::null(), version: 0 };
@@ -262,7 +278,7 @@ fn load_queried(interface: &Interface, path: &Path) {
     CURRENT.store(skse::INVALID_HANDLE, Ordering::Relaxed);
     match loaded {
         Ok(()) => keep(handle, &file, module, unsafe { CStr::from_ptr(info.name) }.to_owned(), info.version),
-        Err(reason) => refuse(reason),
+        Err(reason) => refuse(&file, module, reason),
     }
 }
 
@@ -580,4 +596,23 @@ unsafe extern "C" fn drain_ui_tasks(queue: *mut c_void) -> u64 {
     let out = unsafe { UI_DRAIN.get().expect("set before patching").original()(queue) };
     drain(&UI_TASKS);
     out
+}
+
+#[cfg(test)]
+mod tests {
+    use std::cell::RefCell;
+
+    #[test]
+    fn preloads_all_before_any_load() {
+        let calls = RefCell::new(Vec::new());
+        super::in_two_passes(
+            vec!["a", "b", "c"],
+            |p| {
+                calls.borrow_mut().push(format!("preload {p}"));
+                *p != "b"
+            },
+            |p| calls.borrow_mut().push(format!("load {p}")),
+        );
+        assert_eq!(calls.into_inner(), ["preload a", "preload b", "preload c", "load a", "load c"]);
+    }
 }
