@@ -4,7 +4,7 @@ Only for a game without SKSE. If you run SKSE, skip this folder: with the script
 
 `dinput8.dll` is a proxy for the system's DirectInput DLL that loads the SKSE plugins in `Data\SKSE\Plugins` itself (`skyrim_runtime_extender.dll`, its plugins and other SKSE plugins alike) and gives them the plugin interface the script extender for that game version gives, except Scaleform, serialization (co-saves) and the object table, which it does not implement. Plugins that need those will not work under it.
 
-It hosts plugins on 1.7.104 only so far. On another version it starts with the game, loads nothing and lists in its log the game call sites it is missing.
+It hosts plugins on the game versions the main package supports. On another version it starts with the game, loads nothing and lists in its log the game call sites it is missing.
 
 1. Install the main package as its README says. The Address Library file is still required.
 2. Copy `dinput8.dll` next to `SkyrimSE.exe`.

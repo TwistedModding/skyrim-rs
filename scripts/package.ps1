@@ -2,7 +2,7 @@
 # The version is <major.minor>.<commits on HEAD>, with -dirty for a tree with uncommitted changes.
 $ErrorActionPreference = "Stop"
 $Root = Split-Path $PSScriptRoot -Parent
-$Release = "0.4"
+$Release = "0.6"
 $commits = git -C $Root rev-list --count HEAD
 if ($LASTEXITCODE -ne 0) { throw "git rev-list failed" }
 $version = "$Release.$commits"
@@ -18,7 +18,7 @@ $entries = [ordered]@{
     "README.md" = "$Root\crates\host\README.md"
 }
 # The only profiles a release carries. A runtime goes on this list once its suites have passed there; verify.ps1 installs from crates\host\profiles whatever this says.
-$ShippedProfiles = @("1-7-104")
+$ShippedProfiles = @("1-7-104", "1-6-1170", "1-6-353", "1-5-97")
 foreach ($name in $ShippedProfiles) { $entries["SKSE/Plugins/skyrim-runtime-extender/profiles/$name.profile"] = "$Root\crates\host\profiles\$name.profile" }
 New-Item -ItemType Directory -Force "$Root\dist" | Out-Null
 $out = "$Root\dist\skyrim-runtime-extender-$version.zip"
