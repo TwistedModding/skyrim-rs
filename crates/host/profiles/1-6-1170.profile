@@ -25529,11 +25529,9 @@ member-unverified CachedRaycastData.world
 member-unverified CameraMatrixEntry.eyePosition
 member-unverified CameraMatrixEntry.jittered
 member-unverified CameraMatrixEntry.previousViewProjection
-member-unverified CameraMatrixEntry.projection
 member-unverified CameraMatrixEntry.view
 member-unverified CameraMatrixEntry.viewProjection
 member-unverified CameraMatrixEntry.viewProjectionUnjittered
-member-unverified CameraMatrixEntry.worldRotation
 member-unverified CameraOverrideStartHandler.pad0C
 member-unverified CameraOverrideStartHandler.refCount
 member-unverified CameraOverrideStopHandler.pad0C
@@ -25603,11 +25601,9 @@ member-unverified CubeMapRecord.texture
 member-unverified DepthStencilProperties.height
 member-unverified DepthStencilProperties.slices
 member-unverified DepthStencilProperties.width
-member-unverified DepthStencilRecord.dsv
 member-unverified DepthStencilRecord.readOnlyDsv
 member-unverified DepthStencilRecord.srv
 member-unverified DepthStencilRecord.stencilSRV
-member-unverified DepthStencilRecord.texture
 member-unverified DescriptionBox.field_D4
 member-missing DescriptionBox.field_F0
 member-unverified DeviceConnectEvent.connected
@@ -27518,23 +27514,27 @@ slot BleedoutCameraState[20].4 2
 slot BleedoutCameraState[20].5 3
 slot BleedoutCameraState[20].6 4
 slot-unverified BookMenu[0].8
+slot-missing ClickHandler[0].2
 slot-missing ClickHandler[0].3
-slot-missing ClickHandler[0].4
+slot ClickHandler[0].4 2
 slot ClickHandler[0].5 3
 slot ClickHandler[0].6 4
 slot ClickHandler[0].7 5
+slot-missing ConsoleOpenHandler[0].2
 slot-missing ConsoleOpenHandler[0].3
-slot-missing ConsoleOpenHandler[0].4
+slot ConsoleOpenHandler[0].4 2
 slot ConsoleOpenHandler[0].5 3
 slot ConsoleOpenHandler[0].6 4
 slot ConsoleOpenHandler[0].7 5
+slot-missing CursorMenu[30].2
 slot-missing CursorMenu[30].3
-slot-missing CursorMenu[30].4
+slot CursorMenu[30].4 2
 slot CursorMenu[30].5 3
 slot CursorMenu[30].6 4
 slot CursorMenu[30].7 5
+slot-missing DirectionHandler[0].2
 slot-missing DirectionHandler[0].3
-slot-missing DirectionHandler[0].4
+slot DirectionHandler[0].4 2
 slot DirectionHandler[0].5 3
 slot DirectionHandler[0].6 4
 slot DirectionHandler[0].7 5
@@ -27545,13 +27545,13 @@ slot DragonCameraState[20].5 3
 slot DragonCameraState[20].6 4
 slot-missing FavoritesHandler[0].2
 slot-missing FavoritesHandler[0].3
-slot-missing FavoritesHandler[0].4
+slot FavoritesHandler[0].4 2
 slot FavoritesHandler[0].5 3
 slot FavoritesHandler[0].6 4
 slot FavoritesHandler[0].7 5
 slot-missing FavoritesMenu[30].2
 slot-missing FavoritesMenu[30].3
-slot-missing FavoritesMenu[30].4
+slot FavoritesMenu[30].4 2
 slot FavoritesMenu[30].5 3
 slot FavoritesMenu[30].6 4
 slot FavoritesMenu[30].7 5
@@ -27579,13 +27579,15 @@ slot-missing HorseCameraState[20].3
 slot HorseCameraState[20].4 2
 slot HorseCameraState[20].5 3
 slot HorseCameraState[20].6 4
+slot-missing Inventory3DManager[0].2
 slot-missing Inventory3DManager[0].3
-slot-missing Inventory3DManager[0].4
+slot Inventory3DManager[0].4 2
 slot Inventory3DManager[0].5 3
 slot Inventory3DManager[0].6 4
 slot Inventory3DManager[0].7 5
+slot-missing JournalMenu[30].2
 slot-missing JournalMenu[30].3
-slot-missing JournalMenu[30].4
+slot JournalMenu[30].4 2
 slot JournalMenu[30].5 3
 slot JournalMenu[30].6 4
 slot JournalMenu[30].7 5
@@ -27595,14 +27597,16 @@ slot JumpHandler[0].4 2
 slot JumpHandler[0].5 3
 slot JumpHandler[0].6 4
 slot-unverified LevelUpMenu[0].8
+slot-missing LocalMapMenu::InputHandler[0].2
 slot-missing LocalMapMenu::InputHandler[0].3
-slot-missing LocalMapMenu::InputHandler[0].4
+slot LocalMapMenu::InputHandler[0].4 2
 slot LocalMapMenu::InputHandler[0].5 3
 slot LocalMapMenu::InputHandler[0].6 4
 slot LocalMapMenu::InputHandler[0].7 5
 slot-unverified LockpickingMenu[0].8
+slot-missing LockpickingMenu[30].2
 slot-missing LockpickingMenu[30].3
-slot-missing LockpickingMenu[30].4
+slot LockpickingMenu[30].4 2
 slot LockpickingMenu[30].5 3
 slot LockpickingMenu[30].6 4
 slot LockpickingMenu[30].7 5
@@ -27611,23 +27615,27 @@ slot-missing LookHandler[0].3
 slot LookHandler[0].4 2
 slot LookHandler[0].5 3
 slot LookHandler[0].6 4
+slot-missing MapInputHandler[0].2
 slot-missing MapInputHandler[0].3
-slot-missing MapInputHandler[0].4
+slot MapInputHandler[0].4 2
 slot MapInputHandler[0].5 3
 slot MapInputHandler[0].6 4
 slot MapInputHandler[0].7 5
+slot-missing MapLookHandler[0].2
 slot-missing MapLookHandler[0].3
-slot-missing MapLookHandler[0].4
+slot MapLookHandler[0].4 2
 slot MapLookHandler[0].5 3
 slot MapLookHandler[0].6 4
 slot MapLookHandler[0].7 5
+slot-missing MapMoveHandler[0].2
 slot-missing MapMoveHandler[0].3
-slot-missing MapMoveHandler[0].4
+slot MapMoveHandler[0].4 2
 slot MapMoveHandler[0].5 3
 slot MapMoveHandler[0].6 4
 slot MapMoveHandler[0].7 5
+slot-missing MapZoomHandler[0].2
 slot-missing MapZoomHandler[0].3
-slot-missing MapZoomHandler[0].4
+slot MapZoomHandler[0].4 2
 slot MapZoomHandler[0].5 3
 slot MapZoomHandler[0].6 4
 slot MapZoomHandler[0].7 5
@@ -27668,29 +27676,33 @@ slot-unverified MarketplaceContentCollection[0].9
 slot-unverified MarketplaceContentCollection[0].a
 slot-unverified MarketplaceContentCollection[0].d
 slot-unverified MarketplaceContentCollection[0].e
+slot-missing MarketplaceMenu::InputHandler[0].2
 slot-missing MarketplaceMenu::InputHandler[0].3
-slot-missing MarketplaceMenu::InputHandler[0].4
+slot MarketplaceMenu::InputHandler[0].4 2
 slot MarketplaceMenu::InputHandler[0].5 3
 slot MarketplaceMenu::InputHandler[0].6 4
 slot MarketplaceMenu::InputHandler[0].7 5
+slot-missing MenuEventHandler[0].2
 slot-missing MenuEventHandler[0].3
-slot-missing MenuEventHandler[0].4
+slot MenuEventHandler[0].4 2
 slot MenuEventHandler[0].5 3
 slot MenuEventHandler[0].6 4
 slot MenuEventHandler[0].7 5
 slot-missing MenuOpenHandler[0].2
 slot-missing MenuOpenHandler[0].3
-slot-missing MenuOpenHandler[0].4
+slot MenuOpenHandler[0].4 2
 slot MenuOpenHandler[0].5 3
 slot MenuOpenHandler[0].6 4
 slot MenuOpenHandler[0].7 5
+slot-missing MistMenu[48].2
 slot-missing MistMenu[48].3
-slot-missing MistMenu[48].4
+slot MistMenu[48].4 2
 slot MistMenu[48].5 3
 slot MistMenu[48].6 4
 slot MistMenu[48].7 5
+slot-missing ModManagerMenu[30].2
 slot-missing ModManagerMenu[30].3
-slot-missing ModManagerMenu[30].4
+slot ModManagerMenu[30].4 2
 slot ModManagerMenu[30].5 3
 slot ModManagerMenu[30].6 4
 slot ModManagerMenu[30].7 5
@@ -28468,12 +28480,13 @@ slot PlayerInputHandler[0].5 3
 slot PlayerInputHandler[0].6 4
 slot-missing QuickSaveLoadHandler[0].2
 slot-missing QuickSaveLoadHandler[0].3
-slot-missing QuickSaveLoadHandler[0].4
+slot QuickSaveLoadHandler[0].4 2
 slot QuickSaveLoadHandler[0].5 3
 slot QuickSaveLoadHandler[0].6 4
 slot QuickSaveLoadHandler[0].7 5
+slot-missing RaceSexMenu[30].2
 slot-missing RaceSexMenu[30].3
-slot-missing RaceSexMenu[30].4
+slot RaceSexMenu[30].4 2
 slot RaceSexMenu[30].5 3
 slot RaceSexMenu[30].6 4
 slot RaceSexMenu[30].7 5
@@ -28489,8 +28502,9 @@ slot RunHandler[0].5 3
 slot RunHandler[0].6 4
 slot RunHandler[0].7 5
 slot RunHandler[0].8 6
+slot-missing ScreenshotHandler[0].2
 slot-missing ScreenshotHandler[0].3
-slot-missing ScreenshotHandler[0].4
+slot ScreenshotHandler[0].4 2
 slot ScreenshotHandler[0].5 3
 slot ScreenshotHandler[0].6 4
 slot ScreenshotHandler[0].7 5
@@ -28518,8 +28532,9 @@ slot SprintHandler[0].5 3
 slot SprintHandler[0].6 4
 slot SprintHandler[0].7 5
 slot SprintHandler[0].8 6
+slot-missing StatsMenu[30].2
 slot-missing StatsMenu[30].3
-slot-missing StatsMenu[30].4
+slot StatsMenu[30].4 2
 slot StatsMenu[30].5 3
 slot StatsMenu[30].6 4
 slot StatsMenu[30].7 5
@@ -37000,6 +37015,12 @@ site 68542 3cc 3c8 8b8020010000 8b802001000080e1df
 site 68617 7b 7b e8400e0000
 site 77226 275 275 e8d6a10000
 site 77246 9 9 e892396e00
+site 77255 32 32 2d 14
+site 77255 42 42 08 21
+site 77255 45 45 0a 23
+site 77255 48 48 0b 24
+site 77255 75 75 2e 15
+site 77255 1fa 1fa 2f 16
 site 82082 ab5 ab5 e856380000
 site 107123 106 106 e8751c86ff
 site 107139 7fd 7fd e86efa85ff

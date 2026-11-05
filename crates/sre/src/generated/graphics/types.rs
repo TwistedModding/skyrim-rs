@@ -12,14 +12,12 @@ pub struct CameraMatrixEntry {
     pub camera: *mut crate::NiCamera,
     unknown_8: [u8; 8],
     /// +0x10 `undefined1`, semantic; camera world rotation rows (medium)
-    #[doc(hidden)]
-    pub __worldRotation: [u8; 48],
+    pub worldRotation: [u8; 48],
     /// +0x40 `undefined1`, semantic; view matrix without translation (rows right, up, forward); rendering is camera-relative, the eye is subtracted through g_CurrentCameraState's eye position (medium)
     #[doc(hidden)]
     pub __view: [u8; 64],
     /// +0x80 `undefined1`, semantic; projection (jittered when TAA is on and the entry's jitter flag is set) (high)
-    #[doc(hidden)]
-    pub __projection: [u8; 64],
+    pub projection: [u8; 64],
     /// +0xC0 `undefined1`, semantic; view * projection (jittered) (medium)
     #[doc(hidden)]
     pub __viewProjection: [u8; 64],
@@ -46,15 +44,38 @@ pub struct CameraMatrixEntry {
 }
 const _: () = assert!(size_of::<CameraMatrixEntry>() == 0x290);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, camera) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __worldRotation) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, worldRotation) == 0x10);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __view) == 0x40);
-const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __projection) == 0x80);
+const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, projection) == 0x80);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __viewProjection) == 0xC0);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __previousViewProjection) == 0x100);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __viewProjectionUnjittered) == 0x140);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, projectionUnjittered) == 0x1C0);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __eyePosition) == 0x260);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __jittered) == 0x284);
+
+/// `CurrentCameraState`: size 0x250 (exact).
+/// Meaning: the bound camera's matrices, viewport and depth range, uploaded by UploadPerFrameConstants (high, graphics pass).
+/// Evidence: the bound camera's matrices, viewport and depth range, uploaded by UploadPerFrameConstants; request V-rs: the static object g_CurrentCameraState 0x20cff80. SetCurrentCameraState 0x101e7f0 copies it to a stack copy at rsp+0x20, overwrites parts from the CameraMatrixEntry in rdx and copies it back, 4 x 0x80 + 0x50 bytes; run-cam2b third: +0..+0xef equals the cached entry's +0x10..+0xff; size: the copy's extent.
+#[repr(C)]
+pub struct CurrentCameraState {
+    /// +0x0 `undefined1`, semantic; CameraMatrixEntry.worldRotation (high)
+    pub worldRotation: [u8; 48],
+    /// +0x30 `undefined1`, semantic; CameraMatrixEntry.view (high)
+    pub view: [u8; 64],
+    /// +0x70 `undefined1`, semantic; CameraMatrixEntry.projection, the bound camera's projection (high)
+    pub projection: [u8; 64],
+    /// +0xB0 `undefined1`, semantic; CameraMatrixEntry.viewProjection (high)
+    pub viewProjection: [u8; 64],
+    pub unknown_F0: [u8; 352],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<CurrentCameraState>() == 0x250);
+const _: () = assert!(core::mem::offset_of!(CurrentCameraState, worldRotation) == 0x0);
+const _: () = assert!(core::mem::offset_of!(CurrentCameraState, view) == 0x30);
+const _: () = assert!(core::mem::offset_of!(CurrentCameraState, projection) == 0x70);
+const _: () = assert!(core::mem::offset_of!(CurrentCameraState, viewProjection) == 0xB0);
 
 /// `ImageSpaceModifierInstanceForm`: size 0x50 (exact, medium); primary base `ImageSpaceModifierInstance`.
 /// Meaning: a running TESImageSpaceModifier on the instance list g_TES+0x108 (high, graphics pass).
@@ -131,6 +152,27 @@ const _: () = assert!(core::mem::offset_of!(SystemTimerRecord, startTicks) == 0x
 const _: () = assert!(core::mem::offset_of!(SystemTimerRecord, __field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(SystemTimerRecord, accumulatedSeconds) == 0x10);
 const _: () = assert!(core::mem::offset_of!(SystemTimerRecord, __lastTotal) == 0x14);
+
+/// `VertexShaderRecord`: size 0x70 (exact).
+/// Meaning: one engine vertex shader: fixed part 0x68 bytes, then the DXBC container (high, graphics pass).
+/// Evidence: one engine vertex shader: fixed part 0x68 bytes, then the DXBC container; request V-rs: the record g_CurrentVertexShaderRecord 0x20cff48 points to. CreateVertexShaderRecord 0x100fdd0 and ReadVertexShaderFromStream 0x100fc10 allocate 0x68 + bytecode size; run-ic12-proof: twins made from g_CurrentVertexShaderRecord when its +0x8 is the ID3D11VertexShader being bound, from its +0x10 size and +0x68 bytecode, all accepted by the device; size: the fixed part is 0x68 and the bytecode follows it, 0x70 here only so the bytecode has a member.
+#[repr(C)]
+pub struct VertexShaderRecord {
+    pub unknown_0: [u8; 8],
+    /// +0x8 `pointer`, semantic; the ID3D11VertexShader (high)
+    pub shader: *mut c_void,
+    /// +0x10 `undefined4`, semantic; size of the DXBC container in bytes (high)
+    pub bytecodeSize: u32,
+    pub unknown_14: [u8; 84],
+    /// +0x68 `undefined1`, semantic; the DXBC container, bytecodeSize bytes (high)
+    pub bytecode: [u8; 8],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<VertexShaderRecord>() == 0x70);
+const _: () = assert!(core::mem::offset_of!(VertexShaderRecord, shader) == 0x8);
+const _: () = assert!(core::mem::offset_of!(VertexShaderRecord, bytecodeSize) == 0x10);
+const _: () = assert!(core::mem::offset_of!(VertexShaderRecord, bytecode) == 0x68);
 
 /// `VolumetricLightingParams`: size 0x90 (exact).
 /// Meaning: the volumetric lighting state; one static instance, g_VolumetricLighting (high, graphics pass).

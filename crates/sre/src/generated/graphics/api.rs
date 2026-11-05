@@ -45,16 +45,6 @@ impl crate::CameraMatrixEntry {
     pub fn previousViewProjection_ptr(&self) -> *mut [u8; 64] { Self::__member_previousViewProjection(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_projection(this: *const Self) -> *mut [u8; 64] { unsafe { member!(this, "CameraMatrixEntry.projection", 0x80, [u8; 64]) } }
-    /// `CameraMatrixEntry::projection`, at +0x80 on 1.7.104.
-    #[inline]
-    pub fn projection(&self) -> [u8; 64] { unsafe { Self::__member_projection(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_projection(&mut self, value: [u8; 64]) { unsafe { Self::__member_projection(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn projection_ptr(&self) -> *mut [u8; 64] { Self::__member_projection(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_view(this: *const Self) -> *mut [u8; 64] { unsafe { member!(this, "CameraMatrixEntry.view", 0x40, [u8; 64]) } }
     /// `CameraMatrixEntry::view`, at +0x40 on 1.7.104.
     #[inline]
@@ -83,16 +73,6 @@ impl crate::CameraMatrixEntry {
     pub fn set_viewProjectionUnjittered(&mut self, value: [u8; 64]) { unsafe { Self::__member_viewProjectionUnjittered(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn viewProjectionUnjittered_ptr(&self) -> *mut [u8; 64] { Self::__member_viewProjectionUnjittered(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_worldRotation(this: *const Self) -> *mut [u8; 48] { unsafe { member!(this, "CameraMatrixEntry.worldRotation", 0x10, [u8; 48]) } }
-    /// `CameraMatrixEntry::worldRotation`, at +0x10 on 1.7.104.
-    #[inline]
-    pub fn worldRotation(&self) -> [u8; 48] { unsafe { Self::__member_worldRotation(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_worldRotation(&mut self, value: [u8; 48]) { unsafe { Self::__member_worldRotation(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn worldRotation_ptr(&self) -> *mut [u8; 48] { Self::__member_worldRotation(core::ptr::from_ref(self)) }
 }
 
 impl crate::ImageSpaceModifierInstanceForm {
@@ -636,15 +616,15 @@ pub fn g_camera_inside_light_mask() -> *mut u32 { address!(415038) as *mut u32 }
 /// `g_CullRootLists` at 0x3436270, id 415017 (semantic, high); BSTArray of 0x18-byte root lists walked by the main and the sun's cullers (high, graphics pass), type `pointer`
 #[inline]
 pub fn g_cull_root_lists() -> *mut *mut c_void { address!(415017) as *mut *mut c_void }
-/// `g_CurrentCameraState` at 0x20cff80, id 388915 (runtime, medium); the bound camera's matrices (copied from a CameraMatrixEntry), viewport, depth range +0x240/+0x244 (0x20d01c0/0x20d01c4), eye position 0x20cff5c.. (medium, graphics pass), type `undefined1`
+/// `g_CurrentCameraState` at 0x20cff80, id 388915 (runtime, medium); the bound camera's matrices (copied from a CameraMatrixEntry), viewport, depth range +0x240/+0x244 (0x20d01c0/0x20d01c4), eye position 0x20cff5c.. (medium, graphics pass), type `class:CurrentCameraState`
 #[inline]
-pub fn g_current_camera_state() -> *mut u8 { address!(388915) as *mut u8 }
+pub fn g_current_camera_state() -> &'static crate::CurrentCameraState { unsafe { &*(address!(388915) as *const crate::CurrentCameraState) } }
 /// `g_CurrentRenderCamera` at 0x33d3d28, id 414580 (runtime, high); pointer to `NiCamera`: camera of the draw in progress; every draw-time near/far constant reads +0x160/+0x164 through it; camera of the draw in progress; every draw-time near/far constant reads +0x160/+0x164 through it (high, graphics pass), type `ptr:NiCamera`
 #[inline]
 pub fn g_current_render_camera() -> Option<&'static crate::NiCamera> { unsafe { *(address!(414580) as *const Option<&'static crate::NiCamera>) } }
-/// `g_CurrentVertexShaderRecord` at 0x20cff48, id 388906 (runtime, high); the engine vertex shader record last bound by SetCurrentVertexShader 0x100fee0 (+0x8 its ID3D11VertexShader, +0x10 bytecode size, +0x68 the DXBC container) (high, graphics pass), type `ptr`
+/// `g_CurrentVertexShaderRecord` at 0x20cff48, id 388906 (runtime, high); pointer to `VertexShaderRecord`: the engine vertex shader record last bound by SetCurrentVertexShader 0x100fee0 (+0x8 its ID3D11VertexShader, +0x10 bytecode size, +0x68 the DXBC container); the engine vertex shader record last bound by SetCurrentVertexShader 0x100fee0 (+0x8 its ID3D11VertexShader, +0x10 bytecode size, +0x68 the DXBC container) (high, graphics pass), type `ptr:VertexShaderRecord`
 #[inline]
-pub fn g_current_vertex_shader_record() -> *mut *mut c_void { address!(388906) as *mut *mut c_void }
+pub fn g_current_vertex_shader_record() -> Option<&'static crate::VertexShaderRecord> { unsafe { *(address!(388906) as *const Option<&'static crate::VertexShaderRecord>) } }
 /// `g_DOFOverrideMode` at 0x20d69d8, id 391008 (semantic, medium); 2: the depth of field takes its four parameters from g_ImageSpaceState+0xb8 (+0x40..+0x4c) instead of the current params +0x14c..+0x158; 1 disables the dynamic DOF path (medium, graphics pass), type `i32`
 #[inline]
 pub fn g_dof_override_mode() -> *mut i32 { address!(391008) as *mut i32 }

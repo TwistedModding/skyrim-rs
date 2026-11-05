@@ -12073,7 +12073,7 @@ pub const g_CullRootLists: u64 = 415017;
 pub const g_CurrentCameraEyePosition: u64 = 388909;
 /// `g_CurrentCameraEyePositionOlder` at 0x20cff68 (semantic, medium); entry+0x278: the older of the two previous eye positions (medium); type `class:NiPoint3`
 pub const g_CurrentCameraEyePositionOlder: u64 = 388912;
-/// `g_CurrentCameraState` at 0x20cff80 (runtime, medium); the bound camera's matrices (copied from a CameraMatrixEntry), viewport, depth range +0x240/+0x244 (0x20d01c0/0x20d01c4), eye position 0x20cff5c.. (medium); type `undefined1`
+/// `g_CurrentCameraState` at 0x20cff80 (runtime, medium); the bound camera's matrices (copied from a CameraMatrixEntry), viewport, depth range +0x240/+0x244 (0x20d01c0/0x20d01c4), eye position 0x20cff5c.. (medium); type `class:CurrentCameraState`
 pub const g_CurrentCameraState: u64 = 388915;
 /// `g_CurrentMaterial` at 0x36939e0 (semantic, high); pointer to `BSShaderMaterial`: material last handed to SetupMaterial; material last handed to SetupMaterial (high); type `ptr:BSShaderMaterial`
 pub const g_CurrentMaterial: u64 = 415274;
@@ -12085,7 +12085,7 @@ pub const g_CurrentRenderWindow: u64 = 411349;
 pub const g_CurrentShader: u64 = 415273;
 /// `g_CurrentTechnique` at 0x36939d4 (semantic, high); technique id currently set up (high); type `undefined4`
 pub const g_CurrentTechnique: u64 = 415272;
-/// `g_CurrentVertexShaderRecord` at 0x20cff48 (runtime, high); the engine vertex shader record last bound by SetCurrentVertexShader 0x100fee0 (+0x8 its ID3D11VertexShader, +0x10 bytecode size, +0x68 the DXBC container) (high); type `ptr`
+/// `g_CurrentVertexShaderRecord` at 0x20cff48 (runtime, high); pointer to `VertexShaderRecord`: the engine vertex shader record last bound by SetCurrentVertexShader 0x100fee0 (+0x8 its ID3D11VertexShader, +0x10 bytecode size, +0x68 the DXBC container); the engine vertex shader record last bound by SetCurrentVertexShader 0x100fee0 (+0x8 its ID3D11VertexShader, +0x10 bytecode size, +0x68 the DXBC container) (high); type `ptr:VertexShaderRecord`
 pub const g_CurrentVertexShaderRecord: u64 = 388906;
 /// `g_D3D11Context` at 0x3331f30 (semantic, high); the immediate context (high); type `pointer`
 pub const g_D3D11Context: u64 = 411391;
@@ -13535,7 +13535,3 @@ pub const g_TypeNode_bhkMalleableConstraint: u64 = 411629;
 pub const g_TypeNode_bhkMoppBvTreeShape: u64 = 411693;
 /// `g_TypeNode_bhkMotorAction` at 0x3338a98 (string, high)
 pub const g_TypeNode_bhkMotorAction: u64 = 411726;
-/// `g_TypeNode_bhkMouseSpringAction` at 0x3338798 (string, high)
-pub const g_TypeNode_bhkMouseSpringAction: u64 = 411661;
-/// `g_TypeNode_bhkMultiSphereShape` at 0x33388c8 (string, high)
-pub const g_TypeNode_bhkMultiSphereShape: u64 = 411687;

@@ -14,3 +14,21 @@
 1.6.1170 37334 4 4 4883 4883 hooks suite fixture, a patch writing back what is there: `add rcx, 0x30` at +4 of the 13-byte Actor::GetLevel, RE `same` body, and these bytes read live from the 1.6.1170 entry on 2026-11-04
 1.6.353 37334 4 4 4883 4883 hooks suite fixture, a patch writing back what is there: `add rcx, 0x30` at +4 of the 13-byte Actor::GetLevel, RE `same` body; not read live here
 1.5.97 37334 4 4 4883 4883 hooks suite fixture, a patch writing back what is there: `add rcx, 0x30` at +4 of the 13-byte Actor::GetLevel, RE `same` body; not read live here
+1.6.1170 77255 32 32 2d 14 reversed-z depth format, `mov ecx, 0x2d` D24_UNORM_S8_UINT, to D32_FLOAT_S8X24_UINT; RE `same` body (SkyrimSE-1.6.1170 disassembled 2026-11-05)
+1.6.1170 77255 42 42 08 21 reversed-z depth format, `lea r8d, [rcx+8]` R16_TYPELESS, kept when ecx is 0x14; RE `same` body (SkyrimSE-1.6.1170 disassembled 2026-11-05)
+1.6.1170 77255 45 45 0a 23 reversed-z depth format, `lea ebx, [rcx+0xa]` D16_UNORM, kept when ecx is 0x14; RE `same` body (SkyrimSE-1.6.1170 disassembled 2026-11-05)
+1.6.1170 77255 48 48 0b 24 reversed-z depth format, `lea edi, [rcx+0xb]` R16_UNORM, kept when ecx is 0x14; RE `same` body (SkyrimSE-1.6.1170 disassembled 2026-11-05)
+1.6.1170 77255 75 75 2e 15 reversed-z depth format, `mov ecx, 0x2e` R24_UNORM_X8_TYPELESS, to R32_FLOAT_X8X24_TYPELESS; RE `same` body (SkyrimSE-1.6.1170 disassembled 2026-11-05)
+1.6.1170 77255 1fa 1fa 2f 16 reversed-z depth format, `mov dword ptr [rbp-0x49], 0x2f` X24_TYPELESS_G8_UINT, to X32_TYPELESS_G8X24_UINT; RE `same` body (SkyrimSE-1.6.1170 disassembled 2026-11-05)
+1.6.353 77255 32 32 2d 14 reversed-z depth format, `mov ecx, 0x2d` D24_UNORM_S8_UINT, to D32_FLOAT_S8X24_UINT; same instructions as 1.7.104 up to +0x204, only displacements differ (SkyrimSE-1.6.353 disassembled 2026-11-05)
+1.6.353 77255 42 42 08 21 reversed-z depth format, `lea r8d, [rcx+8]` R16_TYPELESS, kept when ecx is 0x14; same instructions as 1.7.104 up to +0x204, only displacements differ (SkyrimSE-1.6.353 disassembled 2026-11-05)
+1.6.353 77255 45 45 0a 23 reversed-z depth format, `lea ebx, [rcx+0xa]` D16_UNORM, kept when ecx is 0x14; same instructions as 1.7.104 up to +0x204, only displacements differ (SkyrimSE-1.6.353 disassembled 2026-11-05)
+1.6.353 77255 48 48 0b 24 reversed-z depth format, `lea edi, [rcx+0xb]` R16_UNORM, kept when ecx is 0x14; same instructions as 1.7.104 up to +0x204, only displacements differ (SkyrimSE-1.6.353 disassembled 2026-11-05)
+1.6.353 77255 75 75 2e 15 reversed-z depth format, `mov ecx, 0x2e` R24_UNORM_X8_TYPELESS, to R32_FLOAT_X8X24_TYPELESS; same instructions as 1.7.104 up to +0x204, only displacements differ (SkyrimSE-1.6.353 disassembled 2026-11-05)
+1.6.353 77255 1fa 1fa 2f 16 reversed-z depth format, `mov dword ptr [rbp-0x49], 0x2f` X24_TYPELESS_G8_UINT, to X32_TYPELESS_G8X24_UINT; same instructions as 1.7.104 up to +0x204, only displacements differ (SkyrimSE-1.6.353 disassembled 2026-11-05)
+1.5.97 77255 32 32 2c 13 reversed-z depth format, `mov ecx, 0x2c` here holds R24G8_TYPELESS and `cmovne r8d, ecx` takes it, to R32G8X24_TYPELESS (SkyrimSE-1.5.97 disassembled 2026-11-05)
+1.5.97 77255 42 3e 09 22 reversed-z depth format, `lea r8d, [rcx+9]` R16_TYPELESS at +0x3b, kept when ecx is 0x13 (SkyrimSE-1.5.97 disassembled 2026-11-05)
+1.5.97 77255 45 41 0b 24 reversed-z depth format, `lea ebx, [rcx+0xb]` D16_UNORM at +0x3f, kept when ecx is 0x13 (SkyrimSE-1.5.97 disassembled 2026-11-05)
+1.5.97 77255 48 44 0c 25 reversed-z depth format, `lea edi, [rcx+0xc]` R16_UNORM at +0x42, kept when ecx is 0x13 (SkyrimSE-1.5.97 disassembled 2026-11-05)
+1.5.97 77255 75 6c 2d0000000f45d9894503418b4108b92e 140000000f45d9894503418b4108b915 reversed-z depth format, the depth view's format is its own `mov ecx, 0x2d` at +0x6b here, not +0x32's register, so one window from it to `mov ecx, 0x2e` at +0x7a, to 0x14 and 0x15, the instructions between written back unchanged (SkyrimSE-1.5.97 disassembled 2026-11-05)
+1.5.97 77255 1fa 216 2f 16 reversed-z depth format, `mov dword ptr [rbp-0x49], 0x2f` X24_TYPELESS_G8_UINT at +0x213, to X32_TYPELESS_G8X24_UINT (SkyrimSE-1.5.97 disassembled 2026-11-05)

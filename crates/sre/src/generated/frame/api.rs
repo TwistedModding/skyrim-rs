@@ -818,16 +818,6 @@ impl crate::DepthStencilProperties {
 impl crate::DepthStencilRecord {
     #[doc(hidden)]
     #[inline]
-    pub fn __member_dsv(this: *const Self) -> *mut [u8; 64] { unsafe { member!(this, "DepthStencilRecord.dsv", 0x8, [u8; 64]) } }
-    /// `DepthStencilRecord::dsv`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn dsv(&self) -> [u8; 64] { unsafe { Self::__member_dsv(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_dsv(&mut self, value: [u8; 64]) { unsafe { Self::__member_dsv(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn dsv_ptr(&self) -> *mut [u8; 64] { Self::__member_dsv(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_readOnlyDsv(this: *const Self) -> *mut [u8; 64] { unsafe { member!(this, "DepthStencilRecord.readOnlyDsv", 0x48, [u8; 64]) } }
     /// `DepthStencilRecord::readOnlyDsv`, at +0x48 on 1.7.104.
     #[inline]
@@ -856,16 +846,6 @@ impl crate::DepthStencilRecord {
     pub fn set_stencilSRV(&mut self, value: *mut c_void) { unsafe { Self::__member_stencilSRV(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn stencilSRV_ptr(&self) -> *mut *mut c_void { Self::__member_stencilSRV(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_texture(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "DepthStencilRecord.texture", 0x0, *mut c_void) } }
-    /// `DepthStencilRecord::texture`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn texture(&self) -> *mut c_void { unsafe { Self::__member_texture(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_texture(&mut self, value: *mut c_void) { unsafe { Self::__member_texture(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn texture_ptr(&self) -> *mut *mut c_void { Self::__member_texture(core::ptr::from_ref(self)) }
 }
 
 impl crate::FrameState {

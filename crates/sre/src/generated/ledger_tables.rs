@@ -28484,6 +28484,10 @@ CureEffect.magnitude	78
 CureEffect.spell	40
 CureEffect.target	50
 CureEffect.uniqueID	84
+CurrentCameraState.projection	70
+CurrentCameraState.view	30
+CurrentCameraState.viewProjection	b0
+CurrentCameraState.worldRotation	0
 CursorMenu.__vftable	0
 CursorMenu.field_10	10
 CursorMenu.field_11	11
@@ -44516,6 +44520,9 @@ VampireLordEffect.uniqueID	84
 VariableIntArrayImplementation.__vftable	0
 VecArrayImplementation.__vftable	0
 VelocityObstacle::Utilities::BuildOpenEdgeListsVisitor.__vftable	0
+VertexShaderRecord.bytecode	68
+VertexShaderRecord.bytecodeSize	10
+VertexShaderRecord.shader	8
 ViewAllEntry.__vftable	0
 ViewAllEntry.field_10	10
 ViewAllEntry.field_100	100
@@ -93655,6 +93662,7 @@ CrosshairPickData
 CstringArrayImplementation	
 CubeMapRecord	
 CureEffect	
+CurrentCameraState	
 CursorMenu	
 CustomActorPackageData	
 CustomUtils::HasForceGreetVisitor	
@@ -95390,6 +95398,7 @@ VampireLordEffect
 VariableIntArrayImplementation	
 VecArrayImplementation	
 VelocityObstacle::Utilities::BuildOpenEdgeListsVisitor	
+VertexShaderRecord	
 ViewAllEntry	
 VisitReturnData<BSTSmartPointer<IMovementParameters,BSTSmartPointerIntrusiveRefCount>,BSScrapArrayAllocator>	
 VisitReturnData<MovementVector,BSScrapArrayAllocator>	

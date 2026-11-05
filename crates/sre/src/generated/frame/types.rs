@@ -729,11 +729,9 @@ const _: () = assert!(core::mem::offset_of!(DepthStencilProperties, __use16BitDe
 #[repr(C, align(8))]
 pub struct DepthStencilRecord {
     /// +0x0 `pointer`, semantic; depth texture (array of properties.slices) (high)
-    #[doc(hidden)]
-    pub __texture: [u8; 8],
+    pub texture: *mut c_void,
     /// +0x8 `pointer`, semantic; 8 writable DSVs, one per slice (high)
-    #[doc(hidden)]
-    pub __dsv: [u8; 64],
+    pub dsv: [u8; 64],
     /// +0x48 `pointer`, semantic; 8 read-only DSVs (high)
     #[doc(hidden)]
     pub __readOnlyDsv: [u8; 64],
@@ -747,8 +745,8 @@ pub struct DepthStencilRecord {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DepthStencilRecord>() == 0x98);
-const _: () = assert!(core::mem::offset_of!(DepthStencilRecord, __texture) == 0x0);
-const _: () = assert!(core::mem::offset_of!(DepthStencilRecord, __dsv) == 0x8);
+const _: () = assert!(core::mem::offset_of!(DepthStencilRecord, texture) == 0x0);
+const _: () = assert!(core::mem::offset_of!(DepthStencilRecord, dsv) == 0x8);
 const _: () = assert!(core::mem::offset_of!(DepthStencilRecord, __readOnlyDsv) == 0x48);
 const _: () = assert!(core::mem::offset_of!(DepthStencilRecord, __srv) == 0x88);
 const _: () = assert!(core::mem::offset_of!(DepthStencilRecord, __stencilSRV) == 0x90);
