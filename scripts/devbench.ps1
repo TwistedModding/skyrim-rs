@@ -22,6 +22,7 @@ $Install = & "$PSScriptRoot\runtimes.ps1" -Runtime $Runtime -GameDir $GameDir
 $GameDir = $Install.dir
 $SkseLogs = "$env:USERPROFILE\Documents\My Games\Skyrim Special Edition\SKSE"
 $RuntimeJson = "$GameDir\Data\SKSE\Plugins\devbench\runtime.json"
+$HostLog = "$SkseLogs\skyrim-runtime-extender-standalone.log"
 $Base = $null
 
 # Every request opens its own connection: DevBench drops idle keep-alive connections, and a reused one fails with
@@ -126,12 +127,14 @@ try {
     }
     $exe = if ($Launch -eq "standalone") { "SkyrimSE.exe" } else { "skse64_loader.exe" }
     if ($Launch -eq "skse" -and -not (Test-Path "$GameDir\$exe")) { throw "$GameDir has no $exe" }
+    $Launched = Get-Date
     Start-Process "$GameDir\$exe" -WorkingDirectory $GameDir
     Wait-Until { Get-Process -Name SkyrimSE -ErrorAction SilentlyContinue } 60 "the SkyrimSE process"
     $Game = Get-Process -Name SkyrimSE | Select-Object -First 1
     Wait-Until {
         if (Test-Path $RuntimeJson) { $script:Base = "http://127.0.0.1:$((Get-Content $RuntimeJson -Raw | ConvertFrom-Json).port)" }
         if ($Launch -eq "skse" -and -not (Get-Process -Id $Game.Id -ErrorAction SilentlyContinue)) { throw "the game ended before the main menu" }
+        if ($Launch -eq "standalone" -and (Get-Item $HostLog -ErrorAction SilentlyContinue).LastWriteTime -gt $Launched -and (Select-String -Path $HostLog -SimpleMatch "nothing loaded" -Quiet)) { throw "the standalone loader loaded nothing; see $HostLog" }
         Yield-Focus
         $h = Get-Health
         # Started directly, SkyrimSE.exe may hand itself to Steam and come back as a new process.

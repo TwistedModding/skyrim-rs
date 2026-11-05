@@ -6,8 +6,9 @@
 //! their `SKSEPlugin_Version` or, on 1.5.97, their `SKSEPlugin_Query`; `SKSEPlugin_Load` runs for the
 //! accepted ones, kinds 0 and 1 are sent, and the hooks below send the others. `QueryInterface`
 //! answers the Papyrus (2), task (4), messaging (5) and trampoline (7) tables; Scaleform (1),
-//! serialization (3) and the object table (6) are not implemented and answer null. The hooks are
-//! 1.7.104 call sites: on another runtime nothing is loaded and the log lists the sites it lacks.
+//! serialization (3) and the object table (6) are not implemented and answer null. The running
+//! game's profile places each hook's call site; nothing is loaded when one has no usable row or calls
+//! anything but its callee there, and the log lists them.
 //!
 //! Plugins also call two Papyrus natives the script extender adds and declares in its `Game.pex`,
 //! `Game.SaveGame(name)` and `Game.LoadGame(name)` (request S3: `DevBench` saves through the first).
@@ -95,14 +96,7 @@ pub fn run(runtime: u32) {
     };
     let _ = LOADER.set(loader);
     log!("skyrim-runtime-extender standalone host, plugin interface {:08x}, runtime {runtime:08x}", loader.version);
-    let missing = missing_sites(runtime);
-    if !missing.is_empty() {
-        log!("{} of {} call sites are not known on this runtime; nothing loaded", missing.len(), SITES.len());
-        for site in missing {
-            log!("needs {}: the call at id {} + {:#x} to id {}", site.moment, site.caller, site.offset, site.callee);
-        }
-        return;
-    }
+    record_sites();
     match hook::Reloc::open() {
         Ok(reloc) => {
             let _ = RELOC.set(reloc);
@@ -121,8 +115,18 @@ pub fn run(runtime: u32) {
         get_release_index,
         get_plugin_info,
     });
-    if let Err(e) = skyrim::init(interface) {
+    let unusable: Vec<(Site, String)> = SITES.iter().filter_map(|&site| locate(site).err().map(|why| (site, why))).collect();
+    if !unusable.is_empty() {
+        log!("{} of {} call sites cannot be used on this runtime; nothing loaded", unusable.len(), SITES.len());
+        for (site, why) in &unusable {
+            log!("needs {}: the call at id {} + {:#x} to id {}: {why}", site.moment, site.caller, site.offset, site.callee);
+        }
+    }
+    let game_layer = skyrim::init(interface);
+    if let Err(e) = &game_layer {
         log!("game layer: {e}; nothing loaded");
+    }
+    if !unusable.is_empty() || game_layer.is_err() {
         return;
     }
     if loader.calls_query() {
@@ -219,11 +223,18 @@ type RawExport = unsafe extern "system" fn() -> isize;
 fn start(interface: &Interface, loader: &Loader, handle: PluginHandle, file: &str, module: HMODULE, data: &PluginVersionData) {
     CURRENT.store(handle, Ordering::Relaxed);
     let preload = if loader.calls_preload() { export(module, c"SKSEPlugin_Preload") } else { None };
-    let preloaded = preload.is_none_or(|f| unsafe { core::mem::transmute::<RawExport, PreloadFn>(f)(interface) });
-    let ran = preloaded && export(module, c"SKSEPlugin_Load").is_some_and(|f| unsafe { core::mem::transmute::<RawExport, LoadFn>(f)(interface) });
+    let load = export(module, c"SKSEPlugin_Load");
+    let verdict = if load.is_none() && loader.requires_load() {
+        Err("does not appear to be an SKSE plugin")
+    } else if preload.is_none_or(|f| unsafe { core::mem::transmute::<RawExport, PreloadFn>(f)(interface) }) && load.is_none_or(|f| unsafe { core::mem::transmute::<RawExport, LoadFn>(f)(interface) }) {
+        Ok(())
+    } else {
+        Err("disabled, reported as incompatible during load")
+    };
     CURRENT.store(skse::INVALID_HANDLE, Ordering::Relaxed);
-    if !ran {
-        log!("{file}: disabled, reported as incompatible during load");
+    if let Err(reason) = verdict {
+        log!("{file}: {reason}");
+        unsafe { FreeLibrary(module) };
         return;
     }
     let name = CStr::from_bytes_until_nul(&data.name).map(CStr::to_owned).unwrap_or_default();
@@ -438,12 +449,7 @@ sites! {
     SITE_REQUESTS "the save and load requests" SetupWorldRenderContext 0xc7a ProcessSaveLoadRequests;
 }
 
-/// The sites a runtime has no offset for: all of them until its profile gives the offsets.
-fn missing_sites(runtime: u32) -> &'static [Site] {
-    if skse::runtime::is_canonical(runtime) { &[] } else { SITES }
-}
-
-/// Where `site` is, after checking that it calls its callee.
+/// Where the running game's profile places `site`, after checking that it calls its callee.
 fn locate(site: Site) -> Result<usize, String> {
     let reloc = RELOC.get().ok_or("no Address Library")?;
     let at = reloc.site(site.caller, site.offset).map_err(|e| e.to_string())?;
@@ -460,7 +466,6 @@ fn patch<F: Copy>(cell: &OnceLock<hook::CallSite<F>>, at: usize, detour: F) -> R
 }
 
 fn install_moments() -> Result<(), String> {
-    record_sites();
     patch(&LOAD_GAME, locate(SITE_LOAD)?, load_game as LoadGameFn)?;
     patch(&SAVE_GAME, locate(SITE_SAVE)?, save_game as SaveGameFn)?;
     let delete = [locate(SITE_DELETE_OVER)?, locate(SITE_DELETE)?];

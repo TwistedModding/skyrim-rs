@@ -26,7 +26,7 @@ impl fmt::Display for Error {
             Self::MinHook(s) => write!(f, "minhook: {s:?}"),
             Self::VersionLib(e) => e.fmt(f),
             Self::Io(e) => write!(f, "hook: {e}"),
-            Self::UnknownId(id) => write!(f, "address library has no id {id}"),
+            Self::UnknownId(id) => write!(f, "no usable id {id} on this runtime"),
             Self::UnknownSite(id, offset) => write!(f, "no site {id}+{offset:#x} on this runtime"),
             Self::NotRel32(site) => write!(f, "no call rel32, jump rel32 or virtual call on the first argument at {site:#x}"),
         }

@@ -18,7 +18,7 @@ $rows = @(
        ok = ($command -ne "" -and (Lines 4) -eq ($command -replace '^command: ', '')) }
     @{ name = "player";   plugin = $command; devbench = "inspect player: name $($player.name), race $($player.race.formId) $($player.race.editorId), health $($player.actorValues.health.current)";
        ok = ($player -and $command -match "player `"$([regex]::Escape($player.name))`"" -and $command -match 'race "NordRace" 00013746' -and $player.race.formId -eq "0x00013746" -and (Near (Captured $command 'health ([-0-9.]+)') $player.actorValues.health.current 0.01)) }
-    @{ name = "keywords"; plugin = "$keywordCount`: $keywords"; devbench = "NordRace GetNumKeywords = $(Returned 6)";
+    @{ name = "keywords"; notRun = $(if ($Launch -eq "standalone") { "DevBench asks through Form.GetNumKeywords, a script extender native the standalone loader does not provide" }); plugin = "$keywordCount`: $keywords"; devbench = "NordRace GetNumKeywords = $(Returned 6)";
        ok = ($keywordCount -gt 0 -and $keywordCount -eq (Returned 6)) }
     @{ name = "form";     plugin = $form; devbench = "help VendorItemWeapon 4: $(Lines 7)";
        ok = ($form -match '"VendorItemWeapon"' -and $form -match 'Ok\(KYWD\)' -and (Lines 7) -match 'KYWD: VendorItemWeapon \(0008F958\)') }

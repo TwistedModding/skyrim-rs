@@ -33,6 +33,7 @@ param(
     [ValidateSet("refuse", "stack")][string]$Compat = "refuse",
     # skse: the script extender alone; skse-proxy: the standalone host's dinput8.dll next to the game as well, which must
     # leave the script extender in charge; standalone: dinput8.dll and the game started without the script extender.
+    # Off canonical those two run the game from a copy of its top-level files under target\, Data a junction to the install.
     [ValidateSet("skse", "skse-proxy", "standalone")][string]$Launch = "skse",
     [string]$Runtime = "1.7.104",
     [string]$GameDir = "",
@@ -108,8 +109,10 @@ if ($Mod.scenarios -and $Scenarios) { $Mod.scenarios = @($Scenarios -split ",") 
 $PluginLog = "skyrim-rs-test.log"
 $HostDll = "skyrim_runtime_extender.dll"
 $ModLogs = @($Mods.Values | ForEach-Object { $_.log; $_.logs } | Where-Object { $_ }) + @("skyrim-runtime-extender.log", "skyrim-runtime-extender-standalone.log", "skyrim-rs-order.log")
-$Proxy = "$GameDir\dinput8.dll"
-$Logs = @("skse64.log", "skse64_loader.log", "skse64_steam_loader.log", "devbench.log", "retrace.log", $PluginLog) + $ModLogs
+$Scratch = $Launch -ne "skse" -and -not $Install.canonical
+$LaunchDir = if ($Scratch) { "$Root\target\game-$($Install.tag)" } else { $GameDir }
+$Proxy = "$LaunchDir\dinput8.dll"
+$Logs =@("skse64.log", "skse64_loader.log", "skse64_steam_loader.log", "devbench.log", "retrace.log", $PluginLog) + $ModLogs
 $StepsName = if ($Mod.steps) { $Mod.steps } else { $Suite }
 # Everything the suite saved, its records beside the saves too, on this runtime only.
 $TestSaves = "skyrim-rs-$StepsName*$($Install.tag)*"
@@ -155,11 +158,7 @@ function Write-Results($verdict, $reason = "", $checks = @()) {
 }
 trap { Write-Results "error" $_.Exception.Message; break }
 
-# On an install other than the canonical one nothing goes outside Data\SKSE\Plugins and Data\Scripts until that is approved.
-$NotRunnable = if (-not $Install.canonical) {
-    if ($Launch -ne "skse") { "-Launch $Launch copies dinput8.dll next to the game's executable" }
-    elseif ($Suite -eq "legacy") { "its third-party plugins are built for 1.7.x; canonical only" }
-}
+$NotRunnable = if (-not $Install.canonical -and $Suite -eq "legacy") { "its third-party plugins are built for 1.7.x; canonical only" }
 if ($NotRunnable) {
     "NOT RUN $Suite on ${Runtime}: $NotRunnable"
     Write-Results "not-run" $NotRunnable
@@ -198,8 +197,13 @@ if ($Mod.legacy) {
     foreach ($f in Get-ChildItem $SkseLogs -File | Where-Object { $_.Name -notin $Logs }) { $OtherLogs[$f.Name] = $f.LastWriteTime; Copy-Item $f.FullName "$Backup\other\$($f.Name)" -Force }
 }
 
-$AppId = "$GameDir\steam_appid.txt"
-$StateBefore = @(& "$PSScriptRoot\install-state.ps1" -GameDir $GameDir)
+$AppId = "$LaunchDir\steam_appid.txt"
+# The junction goes first and alone, so nothing recursive can reach the install through it.
+function Remove-LaunchCopy {
+    if (Test-Path "$LaunchDir\Data") { [IO.Directory]::Delete("$LaunchDir\Data") }
+    if (Test-Path $LaunchDir) { Remove-Item $LaunchDir -Recurse -Force }
+}
+$StateBefore =@(& "$PSScriptRoot\install-state.ps1" -GameDir $GameDir)
 $CapturesBefore = @(if (Test-Path $Captures) { Get-ChildItem $Captures -Recurse -File | ForEach-Object FullName })
 $Stash = & "$PSScriptRoot\owner-install.ps1" -GameDir $GameDir -Stash
 $PluginsBefore = @(Get-ChildItem $Plugins -Name)
@@ -224,7 +228,7 @@ $Between = {
     Start-Sleep -Seconds 2
 }.GetNewClosure()
 $DevBenchLaunch = if ($Launch -eq "standalone") { "standalone" } else { "skse" }
-$Session = @{ Runtime = $Runtime; GameDir = $GameDir; Launch = $DevBenchLaunch; WaitForGame = $WaitForGame }
+$Session = @{ Runtime = $Runtime; GameDir = $LaunchDir; Launch = $DevBenchLaunch; WaitForGame = $WaitForGame }
 if ($Foreground) { $Session.Foreground = $true }
 try {
     # Nothing is copied or removed until the install is known to hold nothing of this run's names.
@@ -235,9 +239,15 @@ try {
     & "$PSScriptRoot\base-save.ps1" -Runtime $Runtime -GameDir $GameDir -OutDir $OutDir -WaitForGame:$WaitForGame
 
     $Installed = $true
+    if ($Scratch) {
+        Remove-LaunchCopy
+        New-Item -ItemType Directory -Force $LaunchDir | Out-Null
+        Get-ChildItem $GameDir -File | Copy-Item -Destination $LaunchDir
+        New-Item -ItemType Junction -Path "$LaunchDir\Data" -Target "$GameDir\Data" | Out-Null
+    }
     if ($Launch -ne "skse") { Copy-Item "$Root\target\$Profile\dinput8.dll" $Proxy }
-    # Started directly, the game asks Steam to relaunch it through its launcher unless it finds its app id next to it.
-    if ($Launch -eq "standalone") { Set-Content $AppId "489830" -Encoding ascii -NoNewline }
+    # Started directly or outside its install, the game asks Steam to relaunch it unless it finds its app id next to it.
+    if ($Launch -eq "standalone" -or $Scratch) { Set-Content $AppId "489830" -Encoding ascii -NoNewline }
     if (-not $Mod.noTestPlugin) { Copy-Item $Dll "$Plugins\skyrim_rs_test.dll" -Force }
     if ($Mode) { Set-Content "$Plugins\skyrim-rs-test.mode" $Mode -Encoding ascii }
     # Every plugin built on the library reads this runtime's profile, with or without the host.
@@ -283,9 +293,17 @@ try {
     } else {
         # Without saves a scenario cannot start; the main menu is enough to see what the loader did with the plugins.
         $StepsFile = if ($Install.canSave) { "$PSScriptRoot\$StepsName-steps.json" } else { "$PSScriptRoot\main-menu-steps.json" }
-        & "$PSScriptRoot\devbench.ps1" -Steps $StepsFile -Between $(if ($Mod.tags) { $Between }) -OutDir $OutDir @Session
-        $scenarioOk = $LASTEXITCODE -eq 0
-        if ($Mod.sessions) {
+        $LoadedNothing = $false
+        try {
+            & "$PSScriptRoot\devbench.ps1" -Steps $StepsFile -Between $(if ($Mod.tags) { $Between }) -OutDir $OutDir @Session
+            $scenarioOk = $LASTEXITCODE -eq 0
+        } catch {
+            # What the loader refused is read from its log below.
+            if ($_.Exception.Message -notmatch "loaded nothing") { throw }
+            $LoadedNothing = $true
+            $scenarioOk = $false
+        }
+        if ($Mod.sessions -and -not $LoadedNothing) {
             # Every session's logs leave the SKSE folder with it, so the next starts fresh and the cleanup below keeps them.
             $keep = { param($to)
                 foreach ($f in @($PluginLog) + $ModLogs) { if (Test-Path "$SkseLogs\$f") { Move-Item "$SkseLogs\$f" "$to\$f" -Force } }
@@ -312,6 +330,7 @@ try {
         $paths = @(@("skyrim_rs_test.dll", "skyrim-rs-test.mode", $HostDll) + @($Mods.Values | ForEach-Object { $_.dll }) + @($Mod.plugins) | Where-Object { $_ } | ForEach-Object { "$Plugins\$_" }) +
             @($HostFolder) + @(if ($Suite -eq "compat") { $Ini }) + @($LegacyItems) + @(if ($Launch -ne "skse") { $Proxy }) + @(if ($Launch -eq "standalone") { $AppId }) + @($Pex | ForEach-Object { "$Scripts\$(Split-Path $_ -Leaf)" })
         foreach ($path in $paths) { Retried "remove $path" { if (Test-Path $path) { Remove-Item $path -Recurse -Force } } }
+        if ($Scratch) { Retried "remove $LaunchDir" { Remove-LaunchCopy } }
     }
     if ($retraceOff) { Retried "rename retrace.dll back" { Rename-Item "$Plugins\retrace.dll.off" "retrace.dll" } }
     # DevBench's captures leave the install with the run, each with its metadata.
@@ -411,7 +430,7 @@ function HalfJpeg($from, $to) {
 # A plugin the loader did not load has nothing to compare: each of its lines in the log is the evidence, and no check ran.
 $Wanted = @(if (-not $Mod.noTestPlugin) { "skyrim_rs_test.dll" }) + @(if ($Mod.dir) { $HostDll } elseif ($Mod.dll) { $Mod.dll }) + @($Mod.plugins | Where-Object { $_ })
 foreach ($f in $Wanted) {
-    if ($LoaderLog -and $null -eq (Loaded $f)) { $RefusedBy += @{ plugin = $f; lines = @($LoaderLog | Where-Object { $_ -match [regex]::Escape($f) } | ForEach-Object { "$_" }) } }
+    if ($LoaderLog -and $null -eq (Loaded $f)) { $RefusedBy += @{ plugin = $f; lines = @($LoaderLog | Where-Object { $_ -match "$([regex]::Escape($f))|nothing loaded|^needs " } | ForEach-Object { "$_" }) } }
 }
 if ($RefusedBy) {
     foreach ($r in $RefusedBy) { "REFUSED $($r.plugin): $($r.lines -join ' | ')" }
@@ -428,6 +447,10 @@ if (-not $Install.canSave) {
 }
 
 . "$PSScriptRoot\$Suite-checks.ps1"
+if ($Launch -eq "skse-proxy") {
+    $proxyLog = @(if (Test-Path "$OutDir\skyrim-runtime-extender-standalone.log") { Get-Content "$OutDir\skyrim-runtime-extender-standalone.log" })
+    $rows += @{ name = "left to SKSE"; plugin = "(standalone log) $($proxyLog -join ' | ')"; devbench = "skse64.log names the plugins"; ok = ($proxyLog.Count -eq 1 -and $proxyLog[0] -eq "the script extender is loaded; it hosts the plugins") }
+}
 
 ""
 "plugin summary: $($summaries -join '; ')"

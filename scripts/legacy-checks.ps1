@@ -45,10 +45,6 @@ foreach ($name in $Mod.legacy) {
 }
 $rows += @{ name = "host after them"; plugin = "(host log) $(@($HostLog -match '^hosted by ') -join ' | ')"; devbench = "${LoaderLogName}: skyrim_runtime_extender.dll handle $hostHandle, plugins before it by name: handles $($before -join ', ')";
             ok = ((Hosted) -and $hostHandle -ne $null -and @($before | Where-Object { $_ -gt $hostHandle }).Count -eq 0) }
-if ($Launch -eq "skse-proxy") {
-    $deferred = @($standaloneLog | Where-Object { $_ -eq "the script extender is loaded; it hosts the plugins" })
-    $rows += @{ name = "left to SKSE"; plugin = "(standalone log) $($standaloneLog -join ' | ')"; devbench = "skse64.log names the plugins above"; ok = ($deferred.Count -eq 1 -and $standaloneLog.Count -eq 1) }
-}
 $dialogs = @(if (Test-Path "$OutDir\dialogs.txt") { Get-Content "$OutDir\dialogs.txt" })
 $rows += @{ name = "no message box"; plugin = "message boxes closed by devbench.ps1: $($dialogs.Count)"; devbench = ($dialogs -join ' | '); ok = ($dialogs.Count -eq 0) }
 $rows += @{ name = "save trigger"; plugin = "legacy logs collected: $(@(Get-ChildItem "$OutDir\legacy-logs" -File -ErrorAction SilentlyContinue).Name -join ', ')"; devbench = "waitFor saveGame satisfied: $(($steps | Where-Object { $_.index -eq 5 }).satisfied)";

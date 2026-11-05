@@ -70,6 +70,12 @@ impl Loader {
         self.version >= V2_3
     }
 
+    /// Refuses a DLL with no `SKSEPlugin_Load`, which 2.3.1 keeps.
+    #[must_use]
+    pub const fn requires_load(&self) -> bool {
+        self.version < V2_3
+    }
+
     /// The build's checks on the version data in its order, each refusal in its log's wording.
     /// `versionlib` says whether the runtime's Address Library file opens; `timestamp` is the DLL's
     /// PE `TimeDateStamp`.
