@@ -1,7 +1,8 @@
 //! The overlay's one window, in the look of the game's journal: a row of tabs across the top, Mods,
 //! Plugins (the framework plugins with their version, file and state, buttons that reload, unload
 //! and load each, the files the host did not load and a rescan of the folder), Legacy plugins (the SKSE plugins in `Data\SKSE\Plugins`) and Settings (every hotkey,
-//! set by capturing the next key pressed or unbound, and the capture rule). Mods has a sidebar of every plugin
+//! set by capturing the next key pressed or unbound, and the capture rule) and Debug (`debug`: load times, the data files, the logs
+//! and the machine). Mods has a sidebar of every plugin
 //! that added a tab ([`crate::Host::add_tab`], in load order), each one's sections under it when
 //! it has two or more, collapsible for the game session, and the selected section beside it. A plugin's sections and HUD
 //! painters draw with the plugin's own `egui` contexts ([`crate::ui`]): the window leaves the
@@ -20,6 +21,8 @@ use super::{HOSTED_BY, NAME, keys, plugins, refused, skse_plugins, support};
 use crate::abi::{Record, Sink, read_sized, size};
 use crate::settings::{self, Setting, Value};
 use crate::ui::{RawEvent, RawFrameInput, RawFrameOutput, RawMesh, RawPlatformOutput, RawTexture, RawView, UiCallback, corners, raw_modifiers};
+
+mod debug;
 
 /// The host setting holding the capture rule: `focus` (the default) or `all`.
 const CAPTURE: &str = "overlay.capture";
@@ -116,9 +119,10 @@ enum Tab {
     Plugins,
     Legacy,
     Settings,
+    Debug,
 }
 
-const TABS: [(Tab, &str); 4] = [(Tab::Mods, "Mods"), (Tab::Plugins, "Plugins"), (Tab::Legacy, "Legacy plugins"), (Tab::Settings, "Settings")];
+const TABS: [(Tab, &str); 5] = [(Tab::Mods, "Mods"), (Tab::Plugins, "Plugins"), (Tab::Legacy, "Legacy plugins"), (Tab::Settings, "Settings"), (Tab::Debug, "Debug")];
 
 /// The selected tab, the selected mod (the first while `None`), each mod's selected section, by
 /// name, so a reloaded generation finds its own again, the mods collapsed in the sidebar and the window's size.
@@ -377,12 +381,16 @@ fn heading(ui: &mut egui::Ui, text: &str) {
     ui.add_space(4.0);
 }
 
-/// The row of tab names, centred, the selected one white between the journal's arrows. Returns the one clicked.
+/// The row of tab names, centred, the selected one white between the journal's arrows; the gaps
+/// narrow when the window is. Returns the one clicked.
 #[allow(clippy::cast_precision_loss)]
 fn tab_row(ui: &mut egui::Ui, selected: Tab) -> Option<Tab> {
     let galleys: Vec<_> = TABS.iter().map(|(_, n)| WidgetText::from(n.to_uppercase()).into_galley(ui, Some(TextWrapMode::Extend), f32::INFINITY, TextStyle::Heading)).collect();
-    let (pad, gap) = (vec2(26.0, 4.0), 30.0);
-    let total = galleys.iter().map(|g| g.size().x + 2.0 * pad.x).sum::<f32>() + gap * (TABS.len() - 1) as f32;
+    let pad = vec2(26.0, 4.0);
+    let names = galleys.iter().map(|g| g.size().x + 2.0 * pad.x).sum::<f32>();
+    let gaps = (TABS.len() - 1) as f32;
+    let gap = ((ui.available_width() - names) / gaps).clamp(4.0, 30.0);
+    let total = names + gap * gaps;
     let mut clicked = None;
     ui.horizontal(|ui| {
         ui.spacing_mut().item_spacing.x = gap;
@@ -655,6 +663,7 @@ fn draw(ctx: &egui::Context) {
         egui::Panel::bottom("footer").frame(egui::Frame::NONE).show_separator_line(false).show(ui, footer);
         egui::CentralPanel::no_frame().show(ui, |ui| match tab {
             Tab::Mods => mods_tab(ui, &mods, selected),
+            Tab::Debug => debug::tab(ui),
             _ => {
                 egui::ScrollArea::vertical().id_salt(TABS.iter().position(|(t, _)| *t == tab)).auto_shrink(false).show(ui, |ui| match tab {
                     Tab::Plugins => plugins_tab(ui),

@@ -6,13 +6,13 @@ publish.workspace = true
 
 [dependencies]
 skse.workspace = true
-skyrim = { workspace = true, features = ["animation", "events", "input", "papyrus"] }
+skyrim = { workspace = true, features = ["animation", "events", "forms", "input", "papyrus"] }
 hook.workspace = true
 versionlib.workspace = true
 sre = { workspace = true, default-features = false }
 overlay.workspace = true
 crash.workspace = true
-windows-sys = { workspace = true, features = ["Win32_Foundation", "Win32_System_LibraryLoader", "Win32_System_Memory", "Win32_System_SystemInformation", "Win32_System_Threading"] }
+windows-sys = { workspace = true, features = ["Win32_Foundation", "Win32_System_LibraryLoader", "Win32_System_Memory", "Win32_System_ProcessStatus", "Win32_System_Registry", "Win32_System_SystemInformation", "Win32_System_Threading"] }
 
 [lints]
 workspace = true

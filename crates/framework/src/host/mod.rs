@@ -5,6 +5,7 @@
 //! can detach a plugin and unload its DLL. It keeps every plugin's settings, its own in
 //! `skyrim-runtime-extender.settings.json` (the capture rule and every hotkey of the binding table `keys`),
 //! draws the overlay's one window (`gui`) and answers the console command `SkyrimRs` (`console`).
+//! From its Preload ([`preload`]) it times the startup for the window's Debug tab (`profile`).
 
 use core::ffi::{CStr, c_void};
 use core::sync::atomic::{AtomicU32, AtomicU64, AtomicUsize, Ordering};
@@ -62,8 +63,10 @@ mod gui;
 mod interface;
 mod keys;
 mod owned;
+mod profile;
 mod reload;
 mod support;
+mod system;
 
 use owned::Owned;
 
@@ -178,10 +181,29 @@ struct EngineCommand {
     replaced: ReplacedCommand,
 }
 
+/// `skyrim_runtime_extender.dll`'s `SKSEPlugin_Preload`, which SKSE 2.3.1 calls before any plugin's
+/// Load: starts timing the SKSE plugins' loads and listeners.
+#[must_use]
+pub fn preload(skse: &skse::Interface) -> bool {
+    profile::step("SKSE plugins preloaded");
+    profile::install(skse);
+    true
+}
+
 /// Initializes the game layer, installs the overlay, registers the host's message listener and
 /// Papyrus callback, then loads every plugin in `Data\SKSE\Plugins\skyrim-runtime-extender\` from a shadow copy
-/// in the order their descriptors resolve to, and watches their files from then on.
+/// in the order their descriptors resolve to, and watches their files from then on. When it fails
+/// the loader unloads the host, so the load profile's hooks go first.
+#[must_use]
 pub fn load(skse: &skse::Interface) -> bool {
+    let started = start(skse);
+    if !started {
+        profile::uninstall();
+    }
+    started
+}
+
+fn start(skse: &skse::Interface) -> bool {
     // The loader hands every plugin the same object in its read-only data, alive for the whole game.
     let skse: &'static skse::Interface = SKSE.get_or_init(|| unsafe { &*core::ptr::from_ref(skse) });
     if let Ok(dir) = skse::log::dir(skse.runtime_version) {
@@ -191,6 +213,8 @@ pub fn load(skse: &skse::Interface) -> bool {
         *LOG.lock().unwrap() = Some(file);
     }
     log!("framework {VERSION}, abi {ABI}, api {API}");
+    profile::step("host loaded");
+    log!("{}", profile::install(skse));
     let old_dll: Vec<u16> = OLD_DLL.encode_utf16().chain(Some(0)).collect();
     if !unsafe { GetModuleHandleW(old_dll.as_ptr()) }.is_null() {
         log!("{OLD_DLL} is the old name of this loader and is loaded too; remove it. This one does not start.");
@@ -206,6 +230,7 @@ pub fn load(skse: &skse::Interface) -> bool {
         log!("nothing was patched and no plugin was loaded");
         return false;
     }
+    profile::sample_data_files();
     let symbol_path = [plugins_dir(), plugins_dir().join(PLUGIN_DIR), plugins_dir().join(PLUGIN_DIR).join(reload::SHADOW_DIR)].iter().map(|p| p.to_string_lossy().into_owned()).collect::<Vec<_>>().join(";");
     match crash::install(&crash::Options { name: NAME, runtime_version: skse.runtime_version, build: VERSION, facts: Some(crash_facts), symbol_path: Some(symbol_path) }) {
         Ok(crash::Installed::Here { watchdog, symbols, symbol_mismatches }) => log!("crash handler installed, watchdog thread {watchdog}, game symbols {symbols:?} ({} functions, {symbol_mismatches} offsets differ from the ledger)", crash::symbols::count()),
@@ -304,7 +329,7 @@ fn start_plugin(skse: &'static skse::Interface, dir: &Path, (module, descriptor,
         log!("{name}: could not clear plugin log: {e}");
     }
     crash::note_image(&plugin.name, 1, module as usize, true);
-    let live = (descriptor.load)(api);
+    let live = profile::framework_load(&plugin.file, || (descriptor.load)(api));
     if live {
         log!("loaded {}: {}", plugin.file, plugin.name);
         log!("{}: generation 1 loaded, image at {:#x}", plugin.name, module as usize);
@@ -334,6 +359,8 @@ fn rescan(loaded: &mut Vec<reload::Loaded>) {
 
 /// The overlay's frame callback: reloads first, then every plugin's [`Host::on_frame`].
 fn frame() {
+    static FIRST: std::sync::Once = std::sync::Once::new();
+    FIRST.call_once(|| profile::step("first frame drawn"));
     reload::tick();
     follow_player_graph();
     FRAMES.each(|f| {
@@ -657,11 +684,17 @@ unsafe extern "C" fn on_skse_message(msg: *mut skse::Message) {
     LAST_MESSAGE_AT.store(unsafe { GetTickCount64() }, Ordering::Relaxed);
     match msg.kind {
         skse::MessagingInterface::PLUGINS_LOADED => {
+            profile::step("all SKSE plugins loaded");
             snapshot_skse_plugins();
             alias::resolve_waiting();
         }
         skse::MessagingInterface::PLUGINS_LOADED_2 => Hooks::revalidate("PLUGINS_LOADED_2"),
-        skse::MessagingInterface::DATA_LOADED => Hooks::revalidate("DATA_LOADED"),
+        skse::MessagingInterface::DATA_LOADED => {
+            profile::step("data files loaded");
+            profile::finish_data_files();
+            Hooks::revalidate("DATA_LOADED");
+        }
+        skse::MessagingInterface::CONTROLS_READY => profile::step("controls ready"),
         _ => {}
     }
     if msg.kind == skse::MessagingInterface::DATA_LOADED {

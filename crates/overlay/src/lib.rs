@@ -34,6 +34,7 @@ use sre::raw::{fns, globals};
 use skyrim::render::PresentFn;
 use windows::core::Interface;
 
+mod adapter;
 mod frame;
 mod hud;
 mod input;
@@ -41,6 +42,7 @@ mod paint;
 pub mod theme;
 mod vanilla;
 
+pub use adapter::{Adapter, VideoMemory, adapter, video_memory};
 pub use frame::{Frame, read_back, save_next_frame};
 pub use hud::View;
 pub use input::{Capture, DEFAULT_CLOSE, DEFAULT_TOGGLE, GameMouse, GamePad, Hotkey, KeyUse, Scope, capture, capture_next_key, capturing, filter_game_buttons, game_key_held, game_key_released, game_mouse, game_pad, on_key, pressed, set_capture, set_close, set_overlay_keys, set_toggle};
