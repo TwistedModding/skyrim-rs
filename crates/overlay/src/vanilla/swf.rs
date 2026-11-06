@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! What the overlay reads from the game's SWF files: the embedded fonts, `DefineFont3` tags (code
 //! 75), whose glyphs are shapes of straight and quadratic edges on a 1024 em square in twips (20480
 //! units per em, y down), with the layout block (ascent, descent, leading, advances, kerning pairs

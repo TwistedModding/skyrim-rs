@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! The audio suite through `skyrim::audio` and the generated `SoundHandle`, against the RE repo's `docs/subsystems/audio-verify.md`.
 //! After a load `start` runs the suite's sequence on a thread of its own, since audio answers on
 //! the audio thread with no frame guarantee: the `UISkillIncrease` marker played on the player

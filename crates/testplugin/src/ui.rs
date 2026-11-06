@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! The ui suite through `skyrim::ui` and the generated UI classes, against the RE repo's `docs/subsystems/ui-verify.md`. `install`
 //! registers the suite's own menu and detours `RenderMenuStack`, `UIMessageQueue::AddMessage` and
 //! `ShowHUDMessage` at `DataLoaded`; the draw detour keeps the latest stack sample per set of open

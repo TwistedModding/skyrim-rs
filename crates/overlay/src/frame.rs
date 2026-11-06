@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! The back buffer read back as it will be presented: before the overlay draws (a frame callback,
 //! for a mod's screenshot) or after it (overlay included; the game's own screenshot is taken inside
 //! `RenderFrame`, before the overlay draws, so it never shows the overlay), and written as a bitmap

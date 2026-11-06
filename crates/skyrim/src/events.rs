@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! Events (subsystem pass 3): `BSTEventSource<E>` with sink registration, the [`EventSink`] trait a
 //! mod implements, and the [`Event`] impls that tie each event to the source the engine notifies
 //! (the TES holder's 56, the UI's two, the input manager's, the player's, the global footstep

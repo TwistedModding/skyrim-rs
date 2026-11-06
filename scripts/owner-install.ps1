@@ -1,3 +1,7 @@
+# Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+# This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+# distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+# This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 # The owner's permanent install in a game folder, which no suite may run next to. Called under the game lock: -Stash moves
 # what is there to a fresh folder and returns the folder, -Restore <folder> moves it back; nothing is ever overwritten.
 # The folder holds at least game-dir.txt for the whole run, so one with a file in it means a run died before restoring,

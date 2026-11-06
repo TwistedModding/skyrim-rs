@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! `dinput8.dll`, the framework's standalone host. Placed next to `SkyrimSE.exe`, it is the
 //! `DirectInput` the game imports: every export forwards to the system's `dinput8.dll`. When the
 //! process starts it points the game's import of the C runtime's `_get_narrow_winmain_command_line`,

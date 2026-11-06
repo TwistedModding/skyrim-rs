@@ -1,3 +1,7 @@
+# Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+# This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+# distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+# This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 # Runs every suite of scripts/verify.ps1 under one launch mode on one runtime and writes one line per suite to
 # <OutRoot>\summary.txt, keeping each run's logs and results.json in <OutRoot>\<suite>. A suite that fails is retried
 # once (focus loss can stall a scenario); one that cannot run on the runtime or whose plugins the loader refused is not.

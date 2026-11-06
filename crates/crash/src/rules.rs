@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! The rules file: a signature (exception code, what the access address was, names on the top
 //! frames, what the probes saw) matched to a plain explanation and who is likely at fault, and
 //! the hash that makes one crash recognizable across reports. Seeded with the crashes this

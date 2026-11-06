@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! The events suite through `skyrim::events` and the generated event structs. `SETUP` runs at `DataLoaded`: the holder and UI structure,
 //! add/remove on a scratch sink, the `BSFixedString` round trip, then the registration of the
 //! recorders. `TESTS` runs at the save that ends the scenario of the RE repo's

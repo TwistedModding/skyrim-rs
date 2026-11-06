@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! Camera demo: one console command, `CameraDemo <mode> [value]`, exercises the pass 12 wrappers
 //! of `skyrim::camera` and `skyrim::render` and reads every result back from the engine. `orbit`
 //! and `offset` place the camera from the state-step hook (the two `call`s to `TESCamera::Update`)

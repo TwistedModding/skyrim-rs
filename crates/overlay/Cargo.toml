@@ -3,6 +3,7 @@ name = "overlay"
 version.workspace = true
 edition.workspace = true
 publish.workspace = true
+license.workspace = true
 
 [dependencies]
 skyrim = { workspace = true, features = ["events", "input", "render"] }

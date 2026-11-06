@@ -3,6 +3,7 @@ name = "order-head"
 version.workspace = true
 edition.workspace = true
 publish.workspace = true
+license.workspace = true
 
 [lib]
 name = "skyrim_rs_order_head"

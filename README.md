@@ -54,3 +54,7 @@ fn load(host: &'static framework::Host) -> bool {
 ```
 
 Copy `.cargo/config.toml` and `rust-toolchain.toml` from this repository. `crates/example-mod` is a complete example: a hook, a setting, a Papyrus native and a menu tab. Its DLL goes in `Data\SKSE\Plugins\skyrim-runtime-extender\`.
+
+## License
+
+Copyright (c) 2026 TwistedModding, under the Mozilla Public License 2.0 (`LICENSE`), marked "Incompatible With Secondary Licenses" (Exhibit B): no part of it may be relicensed under the GPL, LGPL or AGPL. A mod may compile it in and ship under any terms, open or closed, free or paid; the skyrim-rs files it uses, and any changes to them, stay under the MPL, and whoever ships a mod's binaries tells its users where that source is. Third-party components keep their own licenses.

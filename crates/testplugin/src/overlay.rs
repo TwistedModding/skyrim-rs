@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! The overlay suite, run in mode `overlay`: `install` installs the overlay on `RenderFrame`'s call
 //! to `PresentFrame` and a probe on `PresentFrame`'s entry (the frame suite's detour there is not
 //! installed in this mode), so every frame the overlay draws first and the probe reads the back

@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! The render suite through `skyrim::render` and the generated scene graph, against the RE repo's `docs/subsystems/render-verify.md`.
 //! `install` detours `NiAVObject::Cull` and `PlayerCharacter::SetFirstPerson` at `DataLoaded`;
 //! `TESTS` reads the scene, the sun, the player's roots and the camera after a load and at every

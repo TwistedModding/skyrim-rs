@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! Generates `crates/sre` from the SkyrimRE-1.7.104 ledgers, and the runtime profiles the host ships.
 
 mod api;
@@ -25,6 +29,13 @@ pub const MODULE_DIR: &str = "crates/sre/src/generated";
 pub const LOCK: &str = "crates/sre/generated.lock";
 /// Everything under it is generated too; the package ships it next to the host.
 pub const PROFILE_DIR: &str = "crates/host/profiles";
+/// The first lines of every Rust file in the workspace: copyright, MPL-2.0 Exhibit A and Exhibit B.
+pub const NOTICE: &str = "\
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is \"Incompatible With Secondary Licenses\", as defined by the Mozilla Public License, v. 2.0.
+";
 
 #[must_use]
 pub fn workspace_root() -> PathBuf {
@@ -64,6 +75,9 @@ pub fn generate(re_dir: &Path, commit: &str) -> Result<(BTreeMap<String, String>
         writeln!(lock, "sha256 {hash} {path}").unwrap();
     }
     files.insert(LOCK.to_owned(), lock);
+    for (_, text) in files.iter_mut().filter(|(path, _)| Path::new(path).extension().is_some_and(|e| e == "rs")) {
+        text.insert_str(0, NOTICE);
+    }
     Ok((files, stats))
 }
 

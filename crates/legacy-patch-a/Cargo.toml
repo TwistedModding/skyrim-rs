@@ -3,6 +3,7 @@ name = "legacy-patch-a"
 version.workspace = true
 edition.workspace = true
 publish.workspace = true
+license.workspace = true
 
 [lib]
 name = "skyrim_legacy_patch_a"

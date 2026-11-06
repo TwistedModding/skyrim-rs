@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! `!!!skyrim-runtime-extender-timing.dll`: times every SKSE plugin's `SKSEPlugin_Load` and message
 //! listeners for the host's Debug tab ([`skse::timing`]). Its name sorts before every other plugin,
 //! so every loader (SKSE 2.0.19 to 2.3.1, and the standalone `dinput8.dll`) maps it first.

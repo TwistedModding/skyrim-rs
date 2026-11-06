@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! C++ interface objects a framework plugin hands to other SKSE plugins (`Host::export_interface`).
 //! The object and its virtual table belong to the host; each slot is a thunk that jumps through an
 //! address the host re-points: at the plugin's function while it is loaded, at a stand-in that

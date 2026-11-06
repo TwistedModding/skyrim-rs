@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! The frame suite through `skyrim::camera`, `skyrim::render` and the generated camera and scene classes, against the RE repo's
 //! `docs/subsystems/frame-verify.md`. `install` detours `TESCamera::Update` and `PresentFrame` at
 //! `DataLoaded`; the camera detour keeps one sample per camera state (and one for the orbit, a

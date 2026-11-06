@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! The load profile the Debug tab shows: when the game reached each startup step, how long each
 //! framework plugin took to load, and how long the engine spent reading each data file. The SKSE
 //! plugins' Loads and listeners are timed by the timing plugin (`crates/timing`), which every loader

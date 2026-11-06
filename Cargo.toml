@@ -6,6 +6,7 @@ members = ["crates/*", "xtask"]
 edition = "2024"
 version = "0.1.0"
 publish = false
+license = "MPL-2.0-no-copyleft-exception"
 
 [workspace.dependencies]
 skse = { path = "crates/skse", version = "0.1.0" }

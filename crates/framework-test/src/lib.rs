@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! The framework suite's plugin, loaded by the host from `Data\SKSE\Plugins\skyrim-runtime-extender\`: it checks
 //! the forwarded SKSE interface and the resolved load order in `load` and appends its name to
 //! `skyrim-rs-order.log` like the `order-*` plugins, records the loader messages the host fans out,

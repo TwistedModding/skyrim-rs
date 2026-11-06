@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! The dispatcher's crossings (`docs/subsystems/abi.md`, "Hooks"): arguments and results as slots,
 //! the slot shape a subscription is checked by, targets, requests, patches, reports and errors as
 //! `#[repr(C)]` records, and the plugin's side of each subscriber's `Callback`.

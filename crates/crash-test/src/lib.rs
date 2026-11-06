@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! The crash suite's plugin: the console command `SkyrimRsCrash <what>` arms one crash, which
 //! then happens where the scenario triggers it. `null`, `overflow` and `write` fire in the
 //! plugin's `SAVE_GAME` handler, on the main thread, at the next console `save`; `hook` fires

@@ -1,3 +1,7 @@
+# Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+# This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+# distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+# This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 # Compiles every .psc under the given source folders with the Creation Kit's Papyrus compiler against the game's
 # Data\Scripts\Source (SKSE's extended declarations) and the base sources shipped in Scripts.zip, into $OutDir.
 # Prints the .pex paths. The flags file and base sources are extracted from Scripts.zip into $OutDir\base on first use.

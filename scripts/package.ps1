@@ -1,3 +1,7 @@
+# Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+# This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+# distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+# This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 # Builds release and writes the loader's package dist\skyrim-runtime-extender-<version>.zip: its files at their paths under Data and its README.
 # The version is <major.minor>.<commits on HEAD>, with -dirty for a tree with uncommitted changes.
 $ErrorActionPreference = "Stop"
@@ -17,6 +21,7 @@ $entries = [ordered]@{
     "optional-standalone/dinput8.dll" = "$release\dinput8.dll"
     "optional-standalone/README.md" = "$Root\crates\standalone\README.md"
     "README.md" = "$Root\crates\host\README.md"
+    "LICENSE.txt" = "$Root\LICENSE"
 }
 # The only profiles a release carries. A runtime goes on this list once its suites have passed there; verify.ps1 installs from crates\host\profiles whatever this says.
 $ShippedProfiles = @("1-7-104", "1-6-1170", "1-6-353", "1-5-97")

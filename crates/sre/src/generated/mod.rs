@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! SkyrimSE.exe 1.7.104 as the SkyrimRE-1.7.104 ledgers describe it at commit 3a5b1e1cbd853315c9e487fad23b6aa5e186f533.
 //! Semantic passes folded in: actors, animation, audio, camera, events, forms, frame, graphics, input, moments, nimath, papyrus, render, save, ui, vmstack.
 //! Plain fields and accessors compared against 1.5.97, 1.6.353, 1.6.1170.

@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! The host's side: [`load`] is `skyrim_runtime_extender.dll`'s `SKSEPlugin_Load`. The host owns what the
 //! engine and the loader keep for every plugin (one message listener and one Papyrus callback,
 //! the plugins' tabs in its window, one sink per event source, the native function objects, the

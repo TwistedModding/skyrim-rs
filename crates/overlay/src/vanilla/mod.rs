@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! The game's own menu font and cursor, read at startup from its interface files (loose under
 //! `Data\Interface`, or in `Skyrim - Interface.bsa`): Futura Condensed Light, the font
 //! `fontconfig.txt` maps to `$EverywhereFont`, and Futura Condensed for headings, from

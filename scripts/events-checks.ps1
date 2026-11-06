@@ -1,3 +1,7 @@
+# Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+# This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+# distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+# This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 # DevBench comparisons for the events suite (step indices of events-steps.json); dot-sourced by verify.ps1.
 # The plugin registers its sinks at DataLoaded and checks what they received at the save that ends the scenario.
 # Spell.Cast fires along the caster's heading whatever target it is given, so step 19 turns the player onto the pine

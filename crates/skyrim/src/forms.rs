@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! Forms (subsystem pass 1): what the generated `TESForm`, `TESDataHandler` and `TESFile` methods
 //! leave `unsafe`. Editor ids come back as `&CStr`, the engine's pointer arrays as slices, a lookup
 //! takes a `&str`, and [`TESFormExt::cast`] checks a form's class before viewing it as one.

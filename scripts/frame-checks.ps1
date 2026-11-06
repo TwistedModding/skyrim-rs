@@ -1,3 +1,7 @@
+# Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+# This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+# distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+# This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 # DevBench comparisons for the frame suite (step indices of frame-steps.json); dot-sourced by verify.ps1.
 # The plugin samples the player camera after every TESCamera::Update; the scenario goes third person, orbits 180
 # degrees, goes first person, toggles the free camera and saves; the save reports the samples and the scene reads.

@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! What Papyrus code the crashing thread runs (RE request CR, `SkyrimRE-1.7.104/docs/subsystems/papyrus.md`):
 //! the VM keeps no per-thread record, so the stack is found from the frozen thread's own frames
 //! through four return-address anchors inside the executor, `NativeFunctionBase::Call`, the

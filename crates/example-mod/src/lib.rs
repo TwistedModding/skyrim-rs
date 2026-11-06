@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! The example mod of `docs/MODS.md`: a framework plugin that scales the health damage the player
 //! takes. The factor is a setting that persists, shown as a slider in the plugin's tab of the
 //! host's window, applied by a hook on `Actor::ModActorValueImpl` and settable from Papyrus through

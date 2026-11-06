@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! Names for addresses in DLLs through `DbgHelp`: a PDB next to the DLL or on the symbol path gives
 //! the function, file and line; without one `DbgHelp` still names the nearest export. Loaded lazily,
 //! on the watchdog after the dump is written (`DbgHelp` allocates), or by the offline decoder.

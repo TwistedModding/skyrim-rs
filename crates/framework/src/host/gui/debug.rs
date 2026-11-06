@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! The Debug tab: a sidebar of four pages. Load times (the startup steps, each SKSE plugin's Load and
 //! listeners, each framework plugin's load), Data files (every loaded plugin file with its type and
 //! read time, and the counts against the engine's limits), Logs (the files of the SKSE log folder,

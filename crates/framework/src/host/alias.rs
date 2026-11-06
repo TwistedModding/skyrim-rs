@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! Plugin names a framework plugin serves (`Host::serve_alias`). The stub DLL `skse::alias_stub!`
 //! builds gives the name a record and a messaging index in SKSE 2.3.1 and never runs; once every
 //! `Load` has run (`PLUGINS_LOADED`) the host finds the index through `GetPluginInfo`, checks that

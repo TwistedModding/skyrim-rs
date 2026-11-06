@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! The save suite through `skyrim::save` and the generated save classes, against the RE repo's `docs/subsystems/save-verify.md`.
 //! `install` adds a sink on the save/load manager's event at `DataLoaded`: a finished save writes
 //! the suite's record (the player's gold and three form ids: a regular plugin's, a light

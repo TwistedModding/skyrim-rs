@@ -1,3 +1,7 @@
+# Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+# This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+# distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+# This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 # A plugin that refuses the runtime may stop the game with a message box (class #32770) until someone clicks it, and so
 # does the script extender after refusing a plugin (Exit game? Yes/No). Close every such box of the game, answering No
 # where there is one, keeping its title and text in $OutDir\dialogs.txt, so an unattended run goes on. Dot-sourced.

@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! A character controller's collision shape (RE `camera.md` request IC7 A): the controller's kind
 //! and root shape, the shapes' types, a list's children, a capsule's end points, a convex hull's
 //! vertices, new hulls from the Havok heap, and a shape swapped in through the engine's own

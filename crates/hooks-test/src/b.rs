@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! Plugin b: runs its `Before` after a's and doubles the damage, halves it back in an `Around`
 //! that skips the original when the damage is 12, has a cycle and an exclusive conflict refused,
 //! and removes all its subscriptions at the first save.

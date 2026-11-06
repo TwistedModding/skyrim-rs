@@ -1,3 +1,7 @@
+# Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+# This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+# distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+# This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 # DevBench comparisons for the framework suite (step indices of framework-steps.json); dot-sourced by verify.ps1.
 # The host (skyrim_runtime_extender.dll) loads the suite's plugins from Data\SKSE\Plugins\skyrim-runtime-extender in the order their descriptors
 # resolve to (order-head by priority, then the test plugin, order-tail after all; the order-cycle pair refused, the decoy

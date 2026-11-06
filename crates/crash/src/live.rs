@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! What the watchdog reads from the live process into the record: the module list from the
 //! loader's own list in the PEB (no loader lock, which the crashing thread may hold), the
 //! crashing thread's frames through the unwinder, every other thread's top frames from a paused

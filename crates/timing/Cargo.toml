@@ -3,6 +3,7 @@ name = "timing"
 version.workspace = true
 edition.workspace = true
 publish.workspace = true
+license.workspace = true
 
 [lib]
 name = "skyrim_runtime_extender_timing"

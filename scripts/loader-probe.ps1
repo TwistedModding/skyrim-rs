@@ -1,3 +1,7 @@
+# Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+# This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+# distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+# This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 # Runs the loader-probe plugin and copies of it with patched version data under one script extender, up to the
 # data-loaded message, and keeps that loader's log and the probe's. See docs/subsystems/skse-loaders.md. Each copy's
 # name is its variant's, so a line of skse64.log says what was refused. The install only gains files in Data\SKSE\Plugins

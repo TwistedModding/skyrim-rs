@@ -1,3 +1,7 @@
+# Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+# This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+# distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+# This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 # Throws unless the shared Steam install is free, and takes the modding toolchain's game lock for this process:
 # %TEMP%\modding-toolchain\game.lock holds the holder's PID, created only if absent; only a dead holder's lock is stale.
 # Every session takes this lock before touching an install, the RE side included; a running SkyrimSE also counts as busy. Returns whether the lock was taken now;

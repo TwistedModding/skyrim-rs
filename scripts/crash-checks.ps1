@@ -1,3 +1,7 @@
+# Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+# This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+# distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+# This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 # Checks for the crash suite, one game session per scenario (the folders $OutDir\<scenario>); dot-sourced by verify.ps1.
 # Each session arms one crash through the test plugin's console command and triggers it: null, overflow and write fire in
 # the plugin's SAVE_GAME handler on the main thread at a console save, hook fires inside its Before subscriber on

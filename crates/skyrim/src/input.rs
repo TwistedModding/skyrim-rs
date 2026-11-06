@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! Input and console (subsystem pass 9): console output and console commands of a mod's own, and
 //! what the generated input classes leave `unsafe`: the typed events of the frame's list as checked
 //! casts, the key and button names an engine call writes into an out-parameter, the keyboard and

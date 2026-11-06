@@ -1,3 +1,7 @@
+# Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+# This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+# distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+# This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 # Comparisons for the legacy suite (legacy-steps.json: load, wait, save); dot-sourced by verify.ps1. Third-party SKSE
 # plugins built for 1.7.x on the Address Library run next to the host for one load and one save, with their own logs
 # collected into legacy-logs. Each listed plugin is either loaded (by the standalone loader under -Launch standalone, by

@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! Bone driver: the phase D acceptance for the animation path. After every pose write of the
 //! player's third-person graph it turns the head bone ("NPC Head [Head]") by a fixed angle about
 //! its local vertical axis and calls nothing. The world update after the draws picks the edit up

@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! Phase 1: the per-frame memo across the sun's cascade views. `GetDepthRenderPasses` answers the
 //! same for every cascade within a frame (RE `graphics.md` DC.2: same mode, same accumulator flags,
 //! fades not advanced by the map culls), and a geometry it drops in cascade 0 is dropped again in

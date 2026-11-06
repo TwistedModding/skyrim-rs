@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! A crafted plugin on the `skse` crate alone: `scripts/loader-probe.ps1` runs it and copies of it
 //! with patched version data under each script extender, and it logs what every entry point and
 //! message hands it to `skyrim-rs-loader-probe.log`. See `docs/subsystems/skse-loaders.md`.

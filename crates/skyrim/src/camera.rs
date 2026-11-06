@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! The player camera (subsystem passes 6 and 12): the two per-frame hook points a camera mod
 //! places the camera from, the frame time and the field of view the engine keeps as raw globals,
 //! and what the generated `PlayerCamera` and `TESCameraState` methods leave `unsafe`: the 13 state

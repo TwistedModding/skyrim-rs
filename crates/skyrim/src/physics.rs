@@ -1,3 +1,7 @@
+// Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+// distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+// This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! Ray picks against the Havok world (RE `camera.md` request IC5 A): a `bhkPickData` filled as the
 //! engine fills its own, cast by `TESObjectCELL::Pick` (`bhkWorld::PickObject` on the cell's world,
 //! which takes the world's read lock itself), and the hit's position, normal, fraction, collision

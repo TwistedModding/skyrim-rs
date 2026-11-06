@@ -1,3 +1,7 @@
+# Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+# This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+# distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+# This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 # DevBench comparisons for the overlay suite (step indices of overlay-steps.json); dot-sourced by verify.ps1, which runs
 # the plugin in mode overlay. F11 opens the overlay, W is held for 2 s while it is open, Tab and Enter, Space and the
 # left mouse button click the suite's button, the plugin types "skyrim" into its field with SendInput (only while the

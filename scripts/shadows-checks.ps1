@@ -1,3 +1,7 @@
+# Copyright (c) 2026 TwistedModding. SPDX-License-Identifier: MPL-2.0-no-copyleft-exception
+# This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+# distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+# This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 # DevBench comparisons for the shadows suite (step indices of shadows-steps.json); dot-sourced by verify.ps1.
 # The first-person-shadows mod runs next to the test plugin: the test plugin's render tests still describe the scene,
 # the mod's own log at the save is the acceptance evidence, and the two captures are archived for a human check.
