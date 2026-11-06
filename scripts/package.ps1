@@ -12,6 +12,7 @@ if ($LASTEXITCODE -ne 0) { throw "git rev-list failed" }
 $version = "$Release.$commits"
 if (git -C $Root status --porcelain) { $version += "-dirty" }
 $env:SKYRIM_RS_VERSION = $version
+& "$PSScriptRoot\notices.ps1" -Check
 cargo build --release --manifest-path "$Root\Cargo.toml" -p host -p timing -p standalone
 if ($LASTEXITCODE -ne 0) { throw "cargo build failed" }
 $release = "$Root\target\release"
@@ -22,6 +23,7 @@ $entries = [ordered]@{
     "optional-standalone/README.md" = "$Root\crates\standalone\README.md"
     "README.md" = "$Root\crates\host\README.md"
     "LICENSE.txt" = "$Root\LICENSE"
+    "THIRD-PARTY-NOTICES.txt" = "$Root\THIRD-PARTY-NOTICES.txt"
 }
 # The only profiles a release carries. A runtime goes on this list once its suites have passed there; verify.ps1 installs from crates\host\profiles whatever this says.
 $ShippedProfiles = @("1-7-104", "1-6-1170", "1-6-353", "1-5-97")

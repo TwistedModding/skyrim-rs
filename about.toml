@@ -1,0 +1,95 @@
+# cargo-about configuration for scripts/notices.ps1. MIT comes first so dual-licensed crates are noticed with
+# their MIT text, which carries the copyright line.
+accepted = ["MIT", "Apache-2.0", "BSD-2-Clause", "Zlib", "Unicode-3.0"]
+targets = ["x86_64-pc-windows-msvc"]
+ignore-build-dependencies = true
+ignore-dev-dependencies = true
+private = { ignore = true }
+
+# The crate wraps the MinHook C library, compiled in by its build script; MinHook's notice also covers the bundled
+# Hacker Disassembler Engine.
+[minhook.clarify]
+license = "MIT AND BSD-2-Clause"
+files = [
+    { path = "LICENSE", license = "MIT", checksum = "81053d86dc61a9744c0bab79674e6864ef206c0084caf1cf7f8a9db7c12efd24" },
+    { path = "minhook/LICENSE.txt", license = "BSD-2-Clause", checksum = "4f21f857550d7be854da6ea5f2da4e6775ca4e3fbb535e4f3d961c47d0bf3335" },
+]
+
+# Published without license files, so the text comes from the repository. egui's crates were published from a
+# commit that is not on GitHub, so the 0.37.0 tag's commit stands in for it.
+[ecolor.clarify]
+license = "MIT OR Apache-2.0"
+override-git-commit = "841a328ba2dd8f6996beb7189ebb7fc00e668a2a"
+git = [{ path = "LICENSE-MIT", license = "MIT", checksum = "95ca92f5f8ea5231f1580b3a2a799e8260af3114b900e1def5355a7f44bcf60c" }]
+
+[egui.clarify]
+license = "MIT OR Apache-2.0"
+override-git-commit = "841a328ba2dd8f6996beb7189ebb7fc00e668a2a"
+git = [{ path = "LICENSE-MIT", license = "MIT", checksum = "95ca92f5f8ea5231f1580b3a2a799e8260af3114b900e1def5355a7f44bcf60c" }]
+
+[emath.clarify]
+license = "MIT OR Apache-2.0"
+override-git-commit = "841a328ba2dd8f6996beb7189ebb7fc00e668a2a"
+git = [{ path = "LICENSE-MIT", license = "MIT", checksum = "95ca92f5f8ea5231f1580b3a2a799e8260af3114b900e1def5355a7f44bcf60c" }]
+
+[epaint.clarify]
+license = "MIT OR Apache-2.0"
+override-git-commit = "841a328ba2dd8f6996beb7189ebb7fc00e668a2a"
+git = [{ path = "LICENSE-MIT", license = "MIT", checksum = "95ca92f5f8ea5231f1580b3a2a799e8260af3114b900e1def5355a7f44bcf60c" }]
+
+[accesskit.clarify]
+license = "MIT OR Apache-2.0"
+git = [{ path = "LICENSE-MIT", license = "MIT", checksum = "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3" }]
+
+[profiling.clarify]
+license = "MIT OR Apache-2.0"
+git = [{ path = "LICENSE-MIT", license = "MIT", checksum = "c8167fdeeed46d3f244d3f85c5bf998ce889343691c32be2c61a8bc4b5c08333" }]
+
+# The windows crates ship license-mit, which cargo-about does not pick up on its own.
+[windows.clarify]
+license = "MIT OR Apache-2.0"
+files = [{ path = "license-mit", license = "MIT", checksum = "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383" }]
+
+[windows-collections.clarify]
+license = "MIT OR Apache-2.0"
+files = [{ path = "license-mit", license = "MIT", checksum = "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383" }]
+
+[windows-core.clarify]
+license = "MIT OR Apache-2.0"
+files = [{ path = "license-mit", license = "MIT", checksum = "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383" }]
+
+[windows-future.clarify]
+license = "MIT OR Apache-2.0"
+files = [{ path = "license-mit", license = "MIT", checksum = "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383" }]
+
+[windows-implement.clarify]
+license = "MIT OR Apache-2.0"
+files = [{ path = "license-mit", license = "MIT", checksum = "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383" }]
+
+[windows-interface.clarify]
+license = "MIT OR Apache-2.0"
+files = [{ path = "license-mit", license = "MIT", checksum = "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383" }]
+
+[windows-link.clarify]
+license = "MIT OR Apache-2.0"
+files = [{ path = "license-mit", license = "MIT", checksum = "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383" }]
+
+[windows-numerics.clarify]
+license = "MIT OR Apache-2.0"
+files = [{ path = "license-mit", license = "MIT", checksum = "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383" }]
+
+[windows-result.clarify]
+license = "MIT OR Apache-2.0"
+files = [{ path = "license-mit", license = "MIT", checksum = "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383" }]
+
+[windows-strings.clarify]
+license = "MIT OR Apache-2.0"
+files = [{ path = "license-mit", license = "MIT", checksum = "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383" }]
+
+[windows-sys.clarify]
+license = "MIT OR Apache-2.0"
+files = [{ path = "license-mit", license = "MIT", checksum = "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383" }]
+
+[windows-threading.clarify]
+license = "MIT OR Apache-2.0"
+files = [{ path = "license-mit", license = "MIT", checksum = "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383" }]
