@@ -198,7 +198,7 @@ pub struct TESDataHandler {
     /// +0xD50 `undefined4`, semantic; next form id for runtime-created forms, in the 0xFF load index (high)
     pub nextFormID: u32,
     unknown_D54: [u8; 4],
-    /// +0xD58 `ptr:TESFile`, semantic; file currently being loaded, null outside loading (medium)
+    /// +0xD58 `ptr:TESFile`, semantic; the active plugin of an editing session; null in a game, so not the file being read (medium)
     pub activeFile: *mut crate::TESFile,
     /// +0xD60 `class:BSSimpleListNode`, semantic; head node of the list of every TESFile found in Data, masters first (high)
     pub files: crate::BSSimpleListNode,

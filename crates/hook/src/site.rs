@@ -244,6 +244,41 @@ pub unsafe fn write_code(address: usize, bytes: &[u8]) -> Result<(), Error> {
     unsafe { writable(address, bytes.len(), || core::ptr::copy_nonoverlapping(bytes.as_ptr(), address as *mut u8, bytes.len())) }
 }
 
+/// The import address table slot through which the module at `base` calls `symbol` of `dll` (matched
+/// case-insensitively), imported by name. The offsets are the PE format's: `e_lfanew` at 0x3c, the
+/// import directory 0x90 bytes into the 64-bit NT headers, 20-byte descriptors, 8-byte thunks.
+///
+/// # Safety
+/// `base` must be the base of a mapped 64-bit image.
+#[must_use]
+pub unsafe fn import_slot(base: usize, dll: &str, symbol: &core::ffi::CStr) -> Option<usize> {
+    let at = |offset: usize| unsafe { ((base + offset) as *const u32).read_unaligned() } as usize;
+    let directory = at(at(0x3c) + 0x90);
+    if directory == 0 {
+        return None;
+    }
+    let mut descriptor = base + directory;
+    loop {
+        let [names, _, _, name, iat] = core::array::from_fn(|i| unsafe { ((descriptor + 4 * i) as *const u32).read_unaligned() } as usize);
+        if name == 0 {
+            return None;
+        }
+        let names = if names == 0 { iat } else { names };
+        if unsafe { core::ffi::CStr::from_ptr((base + name) as *const core::ffi::c_char) }.to_bytes().eq_ignore_ascii_case(dll.as_bytes()) {
+            for i in 0.. {
+                let thunk = unsafe { ((base + names + 8 * i) as *const u64).read_unaligned() };
+                if thunk == 0 {
+                    break;
+                }
+                if thunk >> 63 == 0 && unsafe { core::ffi::CStr::from_ptr((base + usize::try_from(thunk).ok()? + 2) as *const core::ffi::c_char) } == symbol {
+                    return Some(base + iat + 8 * i);
+                }
+            }
+        }
+        descriptor += 20;
+    }
+}
+
 /// Stores `value` in the pointer at `address` (a vtable slot) in one write and returns the previous value.
 ///
 /// # Safety

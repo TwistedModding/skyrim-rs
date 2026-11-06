@@ -8,7 +8,7 @@ use minhook::{MH_STATUS, MinHook};
 
 mod site;
 
-pub use site::{CallSite, Trampoline, alloc_near, call_length, cave, find_call, restore_call, retarget, write_branch, write_call, write_code, write_pointer};
+pub use site::{CallSite, Trampoline, alloc_near, call_length, cave, find_call, import_slot, restore_call, retarget, write_branch, write_call, write_code, write_pointer};
 
 #[derive(Debug)]
 pub enum Error {

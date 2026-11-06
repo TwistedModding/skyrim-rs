@@ -14,7 +14,6 @@ use std::sync::{Once, OnceLock};
 
 use windows_sys::Win32::Foundation::{HMODULE, TRUE};
 use windows_sys::Win32::System::LibraryLoader::{GetModuleHandleW, GetProcAddress, LoadLibraryW};
-use windows_sys::Win32::System::Memory::{PAGE_READWRITE, VirtualProtect};
 use windows_sys::Win32::System::SystemInformation::GetSystemDirectoryW;
 use windows_sys::Win32::System::SystemServices::DLL_PROCESS_ATTACH;
 use windows_sys::core::BOOL;
@@ -41,39 +40,13 @@ fn wide(s: &str) -> Vec<u16> {
     s.encode_utf16().chain([0]).collect()
 }
 
-/// Walks the executable's import directory for `CRT_RUNTIME`'s `BEFORE_WINMAIN` and points its IAT
-/// slot at [`before_winmain`]. Header offsets are the PE format's: `e_lfanew` at 0x3c, the import
-/// directory entry 0x90 bytes into the 64-bit NT headers, 20-byte descriptors.
+/// Points the executable's import of `CRT_RUNTIME`'s `BEFORE_WINMAIN` at [`before_winmain`].
 unsafe fn patch_import() {
     let base = unsafe { GetModuleHandleW(core::ptr::null()) } as usize;
-    let at = |offset: usize| unsafe { ((base + offset) as *const u32).read_unaligned() } as usize;
-    let nt = at(0x3c);
-    let mut descriptor = base + at(nt + 0x90);
-    loop {
-        let [names, _, _, dll, iat] = core::array::from_fn(|i| unsafe { ((descriptor + 4 * i) as *const u32).read_unaligned() } as usize);
-        if dll == 0 {
-            return;
-        }
-        let dll = unsafe { CStr::from_ptr((base + dll) as *const c_char) };
-        if dll.to_bytes().eq_ignore_ascii_case(CRT_RUNTIME.as_bytes()) {
-            for i in 0.. {
-                let thunk = unsafe { ((base + names + 8 * i) as *const u64).read_unaligned() };
-                if thunk == 0 {
-                    return;
-                }
-                if thunk >> 63 == 0 && unsafe { CStr::from_ptr((base + usize::try_from(thunk).unwrap_or(0) + 2) as *const c_char) } == BEFORE_WINMAIN {
-                    let slot = (base + iat + 8 * i) as *mut usize;
-                    let _ = COMMAND_LINE.set(unsafe { core::mem::transmute::<usize, CommandLineFn>(slot.read()) });
-                    let mut old = 0;
-                    unsafe { VirtualProtect(slot.cast(), 8, PAGE_READWRITE, &raw mut old) };
-                    unsafe { slot.write(before_winmain as CommandLineFn as usize) };
-                    unsafe { VirtualProtect(slot.cast(), 8, old, &raw mut old) };
-                    return;
-                }
-            }
-        }
-        descriptor += 20;
-    }
+    let Some(slot) = (unsafe { hook::import_slot(base, CRT_RUNTIME, BEFORE_WINMAIN) }) else { return };
+    let original = unsafe { (slot as *const usize).read() };
+    let _ = COMMAND_LINE.set(unsafe { core::mem::transmute::<usize, CommandLineFn>(original) });
+    let _ = unsafe { hook::write_pointer(slot, before_winmain as CommandLineFn as usize) };
 }
 
 unsafe extern "C" fn before_winmain() -> *mut c_char {

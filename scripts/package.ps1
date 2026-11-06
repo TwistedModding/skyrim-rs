@@ -8,11 +8,12 @@ if ($LASTEXITCODE -ne 0) { throw "git rev-list failed" }
 $version = "$Release.$commits"
 if (git -C $Root status --porcelain) { $version += "-dirty" }
 $env:SKYRIM_RS_VERSION = $version
-cargo build --release --manifest-path "$Root\Cargo.toml" -p host -p standalone
+cargo build --release --manifest-path "$Root\Cargo.toml" -p host -p timing -p standalone
 if ($LASTEXITCODE -ne 0) { throw "cargo build failed" }
 $release = "$Root\target\release"
 $entries = [ordered]@{
     "SKSE/Plugins/skyrim_runtime_extender.dll" = "$release\skyrim_runtime_extender.dll"
+    "SKSE/Plugins/!!!skyrim-runtime-extender-timing.dll" = "$release\skyrim_runtime_extender_timing.dll"
     "optional-standalone/dinput8.dll" = "$release\dinput8.dll"
     "optional-standalone/README.md" = "$Root\crates\standalone\README.md"
     "README.md" = "$Root\crates\host\README.md"

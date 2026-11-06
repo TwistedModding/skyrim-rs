@@ -5,6 +5,7 @@ use core::ffi::{c_char, c_void};
 pub mod loader;
 pub mod log;
 pub mod runtime;
+pub mod timing;
 
 pub type PluginHandle = u32;
 pub const INVALID_HANDLE: PluginHandle = u32::MAX;

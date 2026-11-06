@@ -11,6 +11,7 @@ use std::time::{Duration, Instant, SystemTime};
 use overlay::egui::{self, Align, Layout, RichText, Sense, TextStyle, vec2};
 use overlay::theme;
 
+use super::super::profile::time;
 use super::super::{LOG_DIR, SKSE, message_name, plugins, profile, skse_plugins, system};
 use super::{RULE_SPACE, dim, heading, hosted_by, sidebar_row, table, version_text, warn};
 
@@ -69,18 +70,6 @@ pub(super) fn tab(ui: &mut egui::Ui) {
     });
 }
 
-/// `0.4 ms`, `12 ms`, `1.24 s`.
-fn time(d: Duration) -> String {
-    let ms = d.as_secs_f64() * 1000.0;
-    if ms >= 1000.0 {
-        format!("{:.2} s", ms / 1000.0)
-    } else if ms >= 10.0 {
-        format!("{ms:.0} ms")
-    } else {
-        format!("{ms:.1} ms")
-    }
-}
-
 fn cell(text: impl Into<RichText>) -> (RichText, String) {
     (text.into(), String::new())
 }
@@ -105,34 +94,7 @@ fn loads(ui: &mut egui::Ui) {
     ui.add_space(2.0 * RULE_SPACE);
 
     heading(ui, "SKSE plugins");
-    let listeners = profile::listeners();
-    let mut loads = profile::skse_loads();
-    loads.sort_by_key(|l| core::cmp::Reverse(l.took));
-    let total: Duration = loads.iter().map(|l| l.took).sum();
-    let listening: Duration = listeners.iter().flat_map(|l| l.calls()).map(|c| c.total).sum();
-    ui.label(dim(format!("{} plugin loads timed, {} in all; message listeners {} in all. A plugin's Load is timed from the call to its return; a listener from the message reaching it to its return.", loads.len(), time(total), time(listening))));
-    let untimed: Vec<String> = skse_plugins().into_iter().filter(|p| p.loaded && !loads.iter().any(|l| l.file.eq_ignore_ascii_case(&p.file))).map(|p| p.file).collect();
-    let mut rows: Vec<Vec<(RichText, String)>> = loads
-        .iter()
-        .map(|l| {
-            let (spent, calls, hover) = listener_summary(&listeners, &l.file);
-            let result = if l.result { RichText::new("Loaded") } else { warn(ui, "Load returned false") };
-            vec![cell(l.file.as_str()), cell(time(l.took)), (dim(if calls == 0 { String::new() } else { format!("{} in {calls} calls", time(spent)) }), hover), cell(dim(format!("{:.2} s", l.at.as_secs_f64()))), cell(result)]
-        })
-        .collect();
-    for file in listeners.iter().map(|l| l.module.clone()).filter(|m| !loads.iter().any(|l| l.file.eq_ignore_ascii_case(m))).collect::<std::collections::BTreeSet<_>>() {
-        let (spent, calls, hover) = listener_summary(&listeners, &file);
-        rows.push(vec![cell(file), cell(dim("not timed")), (dim(format!("{} in {calls} calls", time(spent))), hover), cell(""), cell("")]);
-    }
-    if rows.is_empty() {
-        ui.label(dim("No SKSE plugin load was timed: the host starts timing at its Preload (SKSE 2.3.1) or its Load, and every plugin loaded before that."));
-    } else {
-        table(ui, "skse loads", &["File", "Load", "Listeners", "Started at", "Result"], rows);
-    }
-    if !untimed.is_empty() {
-        ui.add_space(4.0);
-        ui.label(dim(format!("Loaded before the host could time them: {}", untimed.join(", "))));
-    }
+    skse_loads(ui);
     ui.add_space(2.0 * RULE_SPACE);
 
     heading(ui, "Framework plugins");
@@ -146,18 +108,60 @@ fn loads(ui: &mut egui::Ui) {
     }
 }
 
-/// A plugin's listeners: the time they took, how many calls, and the hover text per message kind.
-fn listener_summary(listeners: &[&profile::Listener], file: &str) -> (Duration, u32, String) {
-    let (mut spent, mut calls, mut lines) = (Duration::ZERO, 0, Vec::new());
-    for listener in listeners.iter().filter(|l| l.module.eq_ignore_ascii_case(file)) {
-        for c in listener.calls() {
-            spent += c.total;
-            calls += c.count;
-            let kind = if c.sender.eq_ignore_ascii_case("SKSE") { message_name(c.kind).to_owned() } else { format!("{} kind {}", c.sender, c.kind) };
-            lines.push(format!("{kind}: {} calls, {} (longest {}), listening to {}", c.count, time(c.total), time(c.max), listener.sender));
+/// Each SKSE plugin's Load and listeners, as the timing plugin recorded them.
+fn skse_loads(ui: &mut egui::Ui) {
+    let timing = match skse::timing::table() {
+        Some(Ok(timing)) => timing,
+        Some(Err(version)) => {
+            ui.label(warn(ui, format!("{} has table version {version}; this host reads version {}. Install both from the same package.", skse::timing::FILE, skse::timing::VERSION)));
+            return;
         }
+        None => {
+            ui.label(dim(format!("Not timed: {} is not installed in Data\\SKSE\\Plugins. It comes with this package and times every SKSE plugin's Load and listeners.", skse::timing::FILE)));
+            return;
+        }
+    };
+    let calls = timing.calls();
+    let mut loads = timing.loads();
+    loads.sort_by_key(|l| core::cmp::Reverse(l.took));
+    let total: Duration = loads.iter().map(|l| l.took).sum();
+    let listening: Duration = calls.iter().map(|c| c.total).sum();
+    ui.label(dim(format!("{} plugin loads timed, {} in all; message listeners {} in all. A plugin's Load is timed from the call to its return; a listener from the message reaching it to its return.", loads.len(), time(total), time(listening))));
+    ui.label(dim(timing.status()).small());
+    let untimed: Vec<String> = skse_plugins().into_iter().filter(|p| p.loaded && !p.file.eq_ignore_ascii_case(skse::timing::FILE) && !loads.iter().any(|l| l.file.eq_ignore_ascii_case(&p.file))).map(|p| p.file).collect();
+    let mut rows: Vec<Vec<(RichText, String)>> = loads
+        .iter()
+        .map(|l| {
+            let (spent, count, hover) = listener_summary(&calls, &l.file);
+            let result = if l.result { RichText::new("Loaded") } else { warn(ui, "Load returned false") };
+            vec![cell(l.file.as_str()), cell(time(l.took)), (dim(if count == 0 { String::new() } else { format!("{} in {count} calls", time(spent)) }), hover), cell(dim(format!("{:.2} s", l.at.as_secs_f64()))), cell(result)]
+        })
+        .collect();
+    for file in calls.iter().map(|c| c.module.clone()).filter(|m| !loads.iter().any(|l| l.file.eq_ignore_ascii_case(m))).collect::<std::collections::BTreeSet<_>>() {
+        let (spent, count, hover) = listener_summary(&calls, &file);
+        rows.push(vec![cell(file), cell(dim("not timed")), (dim(format!("{} in {count} calls", time(spent))), hover), cell(""), cell("")]);
     }
-    (spent, calls, lines.join("\n"))
+    if rows.is_empty() {
+        ui.label(dim("No SKSE plugin load was timed."));
+    } else {
+        table(ui, "skse loads", &["File", "Load", "Listeners", "Started at", "Result"], rows);
+    }
+    if !untimed.is_empty() {
+        ui.add_space(4.0);
+        ui.label(dim(format!("Loaded without timing: {}", untimed.join(", "))));
+    }
+}
+
+/// A plugin's listeners: the time they took, how many calls, and the hover text per message kind.
+fn listener_summary(calls: &[skse::timing::Calls], file: &str) -> (Duration, u32, String) {
+    let (mut spent, mut count, mut lines) = (Duration::ZERO, 0, Vec::new());
+    for c in calls.iter().filter(|c| c.module.eq_ignore_ascii_case(file)) {
+        spent += c.total;
+        count += c.count;
+        let kind = if c.sender.eq_ignore_ascii_case("SKSE") { message_name(c.kind).to_owned() } else { format!("{} kind {}", c.sender, c.kind) };
+        lines.push(format!("{kind}: {} calls, {} (longest {}), listening to {}", c.count, time(c.total), time(c.max), c.asked));
+    }
+    (spent, count, lines.join("\n"))
 }
 
 /// The type of a data file: its extension, and the flags its extension does not imply.
@@ -194,9 +198,9 @@ fn files(ui: &mut egui::Ui, by_time: &mut bool) {
     ui.label(format!("{} plugin files: {} full of 254 ({masters} masters, {} plugins), {} light of 4096 ({esl} .esl, {} flagged light)", data.files.len(), full.len(), full.len() - masters, light.len(), light.len() - esl));
     let read: Duration = data.files.iter().map(|f| f.took).sum();
     let span = data.first.zip(data.done).map(|(first, done)| format!("{} from the first file opened to DATA_LOADED; ", time(done.saturating_sub(first)))).unwrap_or_default();
-    ui.label(dim(format!("{span}{} spent with a file open, sampled every 0.1 ms: a file read in less may show 0.", time(read))));
+    ui.label(dim(format!("{span}{} reading the files, each timed from its open to its close.", time(read))));
     if data.unseen {
-        ui.label(warn(ui, "No file was seen being read, so the times are missing; the game version may keep the file being read elsewhere."));
+        ui.label(warn(ui, "The files were not timed: the per-file load was not hooked, or another plugin's patch went around it."));
     }
     ui.checkbox(by_time, "Slowest first");
     ui.add_space(4.0);
@@ -343,7 +347,7 @@ fn system_page(ui: &mut egui::Ui) {
     let mut rows = vec![
         vec![cell("Game version"), cell(runtime)],
         vec![cell("Loaded by"), cell(loader)],
-        vec![cell("Running for"), cell(format!("{:.0} s", profile::since_start().as_secs_f64()))],
+        vec![cell("Running for"), cell(format!("{:.0} s", skse::timing::since_start().as_secs_f64()))],
         vec![cell("Process memory"), cell(format!("{} in use, {} committed", system::bytes(usage.working_set), system::bytes(usage.private)))],
         vec![cell("DLLs loaded"), cell(format!("{} in the process", usage.modules))],
         vec![cell("SKSE plugins"), cell(format!("{} loaded, {} in Data\\SKSE\\Plugins", legacy.iter().filter(|p| p.loaded).count(), legacy.len()))],

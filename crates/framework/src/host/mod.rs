@@ -5,7 +5,7 @@
 //! can detach a plugin and unload its DLL. It keeps every plugin's settings, its own in
 //! `skyrim-runtime-extender.settings.json` (the capture rule and every hotkey of the binding table `keys`),
 //! draws the overlay's one window (`gui`) and answers the console command `SkyrimRs` (`console`).
-//! From its Preload ([`preload`]) it times the startup for the window's Debug tab (`profile`).
+//! It times the startup for the window's Debug tab (`profile`).
 
 use core::ffi::{CStr, c_void};
 use core::sync::atomic::{AtomicU32, AtomicU64, AtomicUsize, Ordering};
@@ -181,29 +181,10 @@ struct EngineCommand {
     replaced: ReplacedCommand,
 }
 
-/// `skyrim_runtime_extender.dll`'s `SKSEPlugin_Preload`, which SKSE 2.3.1 calls before any plugin's
-/// Load: starts timing the SKSE plugins' loads and listeners.
-#[must_use]
-pub fn preload(skse: &skse::Interface) -> bool {
-    profile::step("SKSE plugins preloaded");
-    profile::install(skse);
-    true
-}
-
 /// Initializes the game layer, installs the overlay, registers the host's message listener and
 /// Papyrus callback, then loads every plugin in `Data\SKSE\Plugins\skyrim-runtime-extender\` from a shadow copy
-/// in the order their descriptors resolve to, and watches their files from then on. When it fails
-/// the loader unloads the host, so the load profile's hooks go first.
-#[must_use]
+/// in the order their descriptors resolve to, and watches their files from then on.
 pub fn load(skse: &skse::Interface) -> bool {
-    let started = start(skse);
-    if !started {
-        profile::uninstall();
-    }
-    started
-}
-
-fn start(skse: &skse::Interface) -> bool {
     // The loader hands every plugin the same object in its read-only data, alive for the whole game.
     let skse: &'static skse::Interface = SKSE.get_or_init(|| unsafe { &*core::ptr::from_ref(skse) });
     if let Ok(dir) = skse::log::dir(skse.runtime_version) {
@@ -214,7 +195,6 @@ fn start(skse: &skse::Interface) -> bool {
     }
     log!("framework {VERSION}, abi {ABI}, api {API}");
     profile::step("host loaded");
-    log!("{}", profile::install(skse));
     let old_dll: Vec<u16> = OLD_DLL.encode_utf16().chain(Some(0)).collect();
     if !unsafe { GetModuleHandleW(old_dll.as_ptr()) }.is_null() {
         log!("{OLD_DLL} is the old name of this loader and is loaded too; remove it. This one does not start.");
@@ -230,7 +210,9 @@ fn start(skse: &skse::Interface) -> bool {
         log!("nothing was patched and no plugin was loaded");
         return false;
     }
-    profile::sample_data_files();
+    if let Err(e) = profile::time_data_files() {
+        log!("load profile: data files not timed: {e}");
+    }
     let symbol_path = [plugins_dir(), plugins_dir().join(PLUGIN_DIR), plugins_dir().join(PLUGIN_DIR).join(reload::SHADOW_DIR)].iter().map(|p| p.to_string_lossy().into_owned()).collect::<Vec<_>>().join(";");
     match crash::install(&crash::Options { name: NAME, runtime_version: skse.runtime_version, build: VERSION, facts: Some(crash_facts), symbol_path: Some(symbol_path) }) {
         Ok(crash::Installed::Here { watchdog, symbols, symbol_mismatches }) => log!("crash handler installed, watchdog thread {watchdog}, game symbols {symbols:?} ({} functions, {symbol_mismatches} offsets differ from the ledger)", crash::symbols::count()),
@@ -685,6 +667,11 @@ unsafe extern "C" fn on_skse_message(msg: *mut skse::Message) {
     match msg.kind {
         skse::MessagingInterface::PLUGINS_LOADED => {
             profile::step("all SKSE plugins loaded");
+            match skse::timing::table() {
+                Some(Ok(table)) => log!("SKSE plugin timing: {}", table.status()),
+                Some(Err(version)) => log!("SKSE plugin timing: {} has table version {version}, this host reads {}", skse::timing::FILE, skse::timing::VERSION),
+                None => log!("SKSE plugin timing: {} is not installed", skse::timing::FILE),
+            }
             snapshot_skse_plugins();
             alias::resolve_waiting();
         }
@@ -692,6 +679,7 @@ unsafe extern "C" fn on_skse_message(msg: *mut skse::Message) {
         skse::MessagingInterface::DATA_LOADED => {
             profile::step("data files loaded");
             profile::finish_data_files();
+            log!("load profile: {}", profile::summary());
             Hooks::revalidate("DATA_LOADED");
         }
         skse::MessagingInterface::CONTROLS_READY => profile::step("controls ready"),
