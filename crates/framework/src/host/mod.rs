@@ -197,6 +197,7 @@ pub fn load(skse: &skse::Interface) -> bool {
     if let Ok(file) = skse::log::open(skse.runtime_version, NAME) {
         *LOG.lock().unwrap() = Some(file);
     }
+    skse::log::log_panics(skse.runtime_version, NAME, NAME);
     log!("framework {VERSION}, abi {ABI}, api {API}");
     profile::step("host loaded");
     let old_dll: Vec<u16> = OLD_DLL.encode_utf16().chain(Some(0)).collect();

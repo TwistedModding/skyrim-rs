@@ -862,7 +862,11 @@ pub type RawRestoreFn = extern "C" fn(*const u8, usize);
 #[doc(hidden)]
 pub fn start(api: *const HostApi, load: LoadFn) -> bool {
     static HOST: std::sync::OnceLock<Host> = std::sync::OnceLock::new();
-    Host::new(api).is_some_and(|host| load(HOST.get_or_init(|| host)))
+    Host::new(api).is_some_and(|host| {
+        let host = HOST.get_or_init(|| host);
+        skse::log::log_panics(host.skse().runtime_version, crate::host::NAME, host.name());
+        load(host)
+    })
 }
 
 #[doc(hidden)]
