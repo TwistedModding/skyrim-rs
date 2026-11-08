@@ -7929,7 +7929,8 @@ impl BSXAudio2GameSound_vtable_C8 {
 #[repr(C)]
 pub struct BSXFlags_vtable {
     /// `BSXFlags::vdtor` at 0xfd30c0 (layout_inference, medium); signature (low): `BSXFlags * vdtor(BSXFlags * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `BSXFlags::vfunc_2` at 0xfd3100 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -10322,11 +10323,14 @@ impl ByteArrayImplementation_vtable {
 #[repr(C)]
 pub struct CCallResult_BSWin32SystemUtility_EncryptedAppTicketResponse_t_vtable {
     /// `CCallResult<BSWin32SystemUtility,EncryptedAppTicketResponse_t>::vfunc_0` at 0x15990b0 (rtti, high); signature (low): `undefined vfunc_0(CCallResult<BSWin32SystemUtility,EncryptedAppTicketResponse_t> * this, undefined8 param_1, undefined8 param_2, CCallResult<BSWin32SystemUtility,EncryptedAppTicketResponse_t>_vtbl * param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `CCallResult<BSWin32SystemUtility,EncryptedAppTicketResponse_t>::vfunc_1` at 0x1599090 (rtti, high); signature (low): `undefined vfunc_1(CCallResult<BSWin32SystemUtility,EncryptedAppTicketResponse_t> * this, undefined8 param_1)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `CCallResult<BSWin32SystemUtility,EncryptedAppTicketResponse_t>::vfunc_2` at 0x1599060 (rtti, high); signature (low): `undefined8 vfunc_2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl CCallResult_BSWin32SystemUtility_EncryptedAppTicketResponse_t_vtable {
     pub const ID: u64 = 255898;
@@ -10356,11 +10360,14 @@ impl CCallback_BSWin32SystemUtility_FloatingGamepadTextInputDismissed_t_0_vtable
 #[repr(C)]
 pub struct CCallback_BSWin32SystemUtility_GameOverlayActivated_t_0_vtable {
     /// `CCallbackImpl<1>::vfunc_0` at 0x15990d0 (rtti, medium); signature (high): `undefined vfunc_0(CCallbackImpl<1> * this)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `CCallback<BSWin32SystemUtility,GameOverlayActivated_t,0>::vfunc_1` at 0x159ed20 (rtti, high); signature (high): `undefined vfunc_1(CCallback<BSWin32SystemUtility,GameOverlayActivated_t,0> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `CCallbackImpl<1>::vfunc_2` at 0x1599070 (rtti, medium); signature (low): `undefined8 vfunc_2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `CCallback<BSWin32SystemUtility,GameOverlayActivated_t,0>::vdtor` at 0x159eba0 (layout_inference, medium); signature (low): `CCallback<BSWin32SystemUtility,GameOverlayActivated_t,0> * vdtor(CCallback<BSWin32SystemUtility,GameOverlayActivated_t,0> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
@@ -10393,11 +10400,14 @@ impl CCallback_BSWin32SystemUtility_GamepadTextInputDismissed_t_0_vtable {
 #[repr(C)]
 pub struct CCallbackBase_vtable {
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl CCallbackBase_vtable {
     pub const ID: u64 = 469455;

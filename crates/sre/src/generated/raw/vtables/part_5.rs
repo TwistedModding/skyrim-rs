@@ -3456,7 +3456,8 @@ impl BSDistTriggerModifier_vtable {
 #[repr(C)]
 pub struct BSDistantObjectLargeRefExtraData_vtable {
     /// `BSDistantObjectLargeRefExtraData::vdtor` at 0xff6ec0 (layout_inference, medium); signature (low): `BSDistantObjectLargeRefExtraData * vdtor(BSDistantObjectLargeRefExtraData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `BSDistantObjectLargeRefExtraData::vfunc_2` at 0xff6f00 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`

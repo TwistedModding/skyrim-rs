@@ -22,7 +22,7 @@ pub const CANONICAL: &str = "1.7.104";
 
 /// The runtimes that decide plain versus accessor. 1.7.99 stays out: it has no install and every
 /// layout unverified, so it would turn every field into an accessor, and it gets no profile.
-pub const SUPPORTED: [&str; 4] = ["1.5.97", "1.6.353", "1.6.1170", CANONICAL];
+pub const SUPPORTED: [&str; 5] = ["1.5.97", "1.6.353", "1.6.1170", "1.6.1179", CANONICAL];
 
 /// Managed patches' bytes on each runtime, which the difference files do not give.
 const SITE_PATCHES: &str = include_str!("../site-patches.txt");

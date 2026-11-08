@@ -8605,7 +8605,8 @@ impl BSMultiBoundRoom_vtable {
 #[repr(C)]
 pub struct BSMultiBoundShape_vtable {
     /// `BSMultiBoundShape::vdtor` at 0xfe5140 (layout_inference, medium); signature (low): `BSMultiBoundShape * vdtor(BSMultiBoundShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `BSMultiBoundShape::vfunc_2` at 0xfe5180 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -9945,7 +9946,8 @@ impl BSOStream_vtable {
 #[repr(C)]
 pub struct BSOcclusionBox_vtable {
     /// `BSOcclusionBox::vdtor` at 0xfe82b0 (layout_inference, medium); signature (low): `BSOcclusionBox * vdtor(BSOcclusionBox * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `BSOcclusionBox::vfunc_2` at 0xfe8320 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -11668,7 +11670,8 @@ pub struct BSParentVelocityModifier_vtable {
     /// `BSParentVelocityModifier::vfunc_38` at 0x1001e10 (rtti, high); signature (low): `undefined vfunc_38(BSParentVelocityModifier * this, longlong param_1, ushort param_2, longlong param_3)`
     pub slot_38: *const c_void,
     /// `BSParentVelocityModifier::vfunc_39` at 0x1001eb0 (rtti, high); signature (high): `undefined vfunc_39(BSParentVelocityModifier * this)`
-    pub slot_39: *const c_void,
+    #[doc(hidden)]
+    pub __slot_39: *const c_void,
     /// `NiPSysModifier::vfunc_40` at 0xf9d7b0 (rtti, medium); signature (low): `undefined vfunc_40(NiPSysModifier * this, undefined1 param_1)`
     pub slot_40: *const c_void,
     /// `NiPSysModifier::vfunc_41` at 0xfa11c0 (rtti, medium); signature (low): `undefined vfunc_41(NiPSysModifier * this, undefined8 param_1)`

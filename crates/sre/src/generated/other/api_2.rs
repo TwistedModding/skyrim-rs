@@ -7,6 +7,199 @@
 
 use core::ffi::{c_char, c_void};
 
+impl crate::LoadOrderBox {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member___vftable(this: *const Self) -> *mut *const crate::raw::vtables::LoadOrderBox_vtable { unsafe { member!(this, "LoadOrderBox.__vftable", 0x0, *const crate::raw::vtables::LoadOrderBox_vtable) } }
+    /// `LoadOrderBox::__vftable`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn __vftable(&self) -> *const crate::raw::vtables::LoadOrderBox_vtable { unsafe { Self::__member___vftable(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set___vftable(&mut self, value: *const crate::raw::vtables::LoadOrderBox_vtable) { unsafe { Self::__member___vftable(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn __vftable_ptr(&self) -> *mut *const crate::raw::vtables::LoadOrderBox_vtable { Self::__member___vftable(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut f32 { unsafe { member!(this, "LoadOrderBox.field_10", 0x10, f32) } }
+    /// `LoadOrderBox::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> f32 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: f32) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut f32 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_14(this: *const Self) -> *mut f32 { unsafe { member!(this, "LoadOrderBox.field_14", 0x14, f32) } }
+    /// `LoadOrderBox::field_14`, at +0x14 on 1.7.104.
+    #[inline]
+    pub fn field_14(&self) -> f32 { unsafe { Self::__member_field_14(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_14(&mut self, value: f32) { unsafe { Self::__member_field_14(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_14_ptr(&self) -> *mut f32 { Self::__member_field_14(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut f32 { unsafe { member!(this, "LoadOrderBox.field_18", 0x18, f32) } }
+    /// `LoadOrderBox::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> f32 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: f32) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut f32 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "LoadOrderBox.field_20", 0x20, u64) } }
+    /// `LoadOrderBox::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u32 { unsafe { member!(this, "LoadOrderBox.field_28", 0x28, u32) } }
+    /// `LoadOrderBox::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u32 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u32) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u32 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_30(this: *const Self) -> *mut u64 { unsafe { member!(this, "LoadOrderBox.field_30", 0x30, u64) } }
+    /// `LoadOrderBox::field_30`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn field_30(&self) -> u64 { unsafe { Self::__member_field_30(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_30(&mut self, value: u64) { unsafe { Self::__member_field_30(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_30_ptr(&self) -> *mut u64 { Self::__member_field_30(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_38(this: *const Self) -> *mut u64 { unsafe { member!(this, "LoadOrderBox.field_38", 0x38, u64) } }
+    /// `LoadOrderBox::field_38`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn field_38(&self) -> u64 { unsafe { Self::__member_field_38(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_38(&mut self, value: u64) { unsafe { Self::__member_field_38(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_38_ptr(&self) -> *mut u64 { Self::__member_field_38(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_40(this: *const Self) -> *mut u64 { unsafe { member!(this, "LoadOrderBox.field_40", 0x40, u64) } }
+    /// `LoadOrderBox::field_40`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn field_40(&self) -> u64 { unsafe { Self::__member_field_40(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_40(&mut self, value: u64) { unsafe { Self::__member_field_40(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_40_ptr(&self) -> *mut u64 { Self::__member_field_40(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "LoadOrderBox.field_48", 0x48, u64) } }
+    /// `LoadOrderBox::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_50(this: *const Self) -> *mut u32 { unsafe { member!(this, "LoadOrderBox.field_50", 0x50, u32) } }
+    /// `LoadOrderBox::field_50`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn field_50(&self) -> u32 { unsafe { Self::__member_field_50(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_50(&mut self, value: u32) { unsafe { Self::__member_field_50(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_50_ptr(&self) -> *mut u32 { Self::__member_field_50(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_64(this: *const Self) -> *mut u64 { unsafe { member!(this, "LoadOrderBox.field_64", 0x64, u64) } }
+    /// `LoadOrderBox::field_64`, at +0x64 on 1.7.104.
+    #[inline]
+    pub fn field_64(&self) -> u64 { unsafe { Self::__member_field_64(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_64(&mut self, value: u64) { unsafe { Self::__member_field_64(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_64_ptr(&self) -> *mut u64 { Self::__member_field_64(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_6C(this: *const Self) -> *mut u64 { unsafe { member!(this, "LoadOrderBox.field_6C", 0x6C, u64) } }
+    /// `LoadOrderBox::field_6C`, at +0x6C on 1.7.104.
+    #[inline]
+    pub fn field_6C(&self) -> u64 { unsafe { Self::__member_field_6C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_6C(&mut self, value: u64) { unsafe { Self::__member_field_6C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_6C_ptr(&self) -> *mut u64 { Self::__member_field_6C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_74(this: *const Self) -> *mut u64 { unsafe { member!(this, "LoadOrderBox.field_74", 0x74, u64) } }
+    /// `LoadOrderBox::field_74`, at +0x74 on 1.7.104.
+    #[inline]
+    pub fn field_74(&self) -> u64 { unsafe { Self::__member_field_74(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_74(&mut self, value: u64) { unsafe { Self::__member_field_74(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_74_ptr(&self) -> *mut u64 { Self::__member_field_74(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_7C(this: *const Self) -> *mut u32 { unsafe { member!(this, "LoadOrderBox.field_7C", 0x7C, u32) } }
+    /// `LoadOrderBox::field_7C`, at +0x7C on 1.7.104.
+    #[inline]
+    pub fn field_7C(&self) -> u32 { unsafe { Self::__member_field_7C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_7C(&mut self, value: u32) { unsafe { Self::__member_field_7C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_7C_ptr(&self) -> *mut u32 { Self::__member_field_7C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u8 { unsafe { member!(this, "LoadOrderBox.field_8", 0x8, u8) } }
+    /// `LoadOrderBox::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u8 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u8) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u8 { Self::__member_field_8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_9(this: *const Self) -> *mut u8 { unsafe { member!(this, "LoadOrderBox.field_9", 0x9, u8) } }
+    /// `LoadOrderBox::field_9`, at +0x9 on 1.7.104.
+    #[inline]
+    pub fn field_9(&self) -> u8 { unsafe { Self::__member_field_9(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_9(&mut self, value: u8) { unsafe { Self::__member_field_9(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_9_ptr(&self) -> *mut u8 { Self::__member_field_9(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A(this: *const Self) -> *mut u8 { unsafe { member!(this, "LoadOrderBox.field_A", 0xA, u8) } }
+    /// `LoadOrderBox::field_A`, at +0xA on 1.7.104.
+    #[inline]
+    pub fn field_A(&self) -> u8 { unsafe { Self::__member_field_A(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A(&mut self, value: u8) { unsafe { Self::__member_field_A(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A_ptr(&self) -> *mut u8 { Self::__member_field_A(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C(this: *const Self) -> *mut u32 { unsafe { member!(this, "LoadOrderBox.field_C", 0xC, u32) } }
+    /// `LoadOrderBox::field_C`, at +0xC on 1.7.104.
+    #[inline]
+    pub fn field_C(&self) -> u32 { unsafe { Self::__member_field_C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C(&mut self, value: u32) { unsafe { Self::__member_field_C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C_ptr(&self) -> *mut u32 { Self::__member_field_C(core::ptr::from_ref(self)) }
+}
+
 impl crate::LoadOrderEntry {
     #[doc(hidden)]
     #[inline]

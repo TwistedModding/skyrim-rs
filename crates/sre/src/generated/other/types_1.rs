@@ -4500,15 +4500,15 @@ const _: () = assert!(core::mem::offset_of!(ByteArrayImplementation, __vftable) 
 /// `CCallResult<BSWin32SystemUtility,EncryptedAppTicketResponse_t>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `CCallbackBase`.
 /// Evidence: vptr at 0x0.
 /// Bases: `CCallbackBase`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CCallResult_BSWin32SystemUtility_EncryptedAppTicketResponse_t {
     /// +0x0 `vtbl:CCallResult<BSWin32SystemUtility,EncryptedAppTicketResponse_t>:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::CCallResult_BSWin32SystemUtility_EncryptedAppTicketResponse_t_vtable,
+    pub ____vftable: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
-const _: () = assert!(core::mem::offset_of!(CCallResult_BSWin32SystemUtility_EncryptedAppTicketResponse_t, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(CCallResult_BSWin32SystemUtility_EncryptedAppTicketResponse_t, ____vftable) == 0x0);
 
 /// `CCallback<BSWin32SystemUtility,FloatingGamepadTextInputDismissed_t,0>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `CCallbackImpl<1>`.
 /// Evidence: vptr at 0x0.
@@ -4526,15 +4526,15 @@ const _: () = assert!(core::mem::offset_of!(CCallback_BSWin32SystemUtility_Float
 /// `CCallback<BSWin32SystemUtility,GameOverlayActivated_t,0>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `CCallbackImpl<1>`.
 /// Evidence: vptr at 0x0.
 /// Bases: `CCallbackImpl<1>`@0x0, `CCallbackBase`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CCallback_BSWin32SystemUtility_GameOverlayActivated_t_0 {
     /// +0x0 `vtbl:CCallback<BSWin32SystemUtility,GameOverlayActivated_t,0>:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::CCallback_BSWin32SystemUtility_GameOverlayActivated_t_0_vtable,
+    pub ____vftable: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
-const _: () = assert!(core::mem::offset_of!(CCallback_BSWin32SystemUtility_GameOverlayActivated_t_0, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(CCallback_BSWin32SystemUtility_GameOverlayActivated_t_0, ____vftable) == 0x0);
 
 /// `CCallback<BSWin32SystemUtility,GamepadTextInputDismissed_t,0>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `CCallbackImpl<8>`.
 /// Evidence: vptr at 0x0.
@@ -4551,15 +4551,15 @@ const _: () = assert!(core::mem::offset_of!(CCallback_BSWin32SystemUtility_Gamep
 
 /// `CCallbackBase`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound.
 /// Evidence: vptr at 0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CCallbackBase {
     /// +0x0 `vtbl:CCallbackBase:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::CCallbackBase_vtable,
+    pub ____vftable: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
-const _: () = assert!(core::mem::offset_of!(CCallbackBase, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(CCallbackBase, ____vftable) == 0x0);
 
 /// `CCallbackImpl<1>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `CCallbackBase`.
 /// Evidence: vptr at 0x0.

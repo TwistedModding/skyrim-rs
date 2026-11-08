@@ -8130,7 +8130,8 @@ impl _anon_3B6C7024__MemoryManagerFileFactory_vtable {
 #[repr(C)]
 pub struct _anon_3B91968A__BSScaleformAllocatorPaged_vtable {
     /// `_anon_3B91968A::BSScaleformAllocatorPaged::vdtor` at 0x1172300 (layout_inference, medium); signature (low): `BSScaleformAllocatorPaged * vdtor(BSScaleformAllocatorPaged * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `GSysAllocPaged::vfunc_1` at 0x117e0a0 (rtti, medium); signature (low): `bool vfunc_1(GSysAllocPaged * this, undefined8 * param_1)`
     pub slot_1: *const c_void,
     /// `GSysAllocPaged::vfunc_2` at 0x117e1f0 (rtti, medium); signature (low): `undefined vfunc_2(void)`

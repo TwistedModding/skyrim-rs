@@ -4,16 +4,17 @@ Skyrim Runtime Extender is a plugin loader for Skyrim Special Edition. `skyrim_r
 
 ## Requirements
 
-- Skyrim Special Edition from Steam, one of these versions, with its script extender:
+- Skyrim Special Edition from Steam or GOG, one of these versions, with its script extender:
 
   | Game | SKSE | Address Library file in `Data\SKSE\Plugins` |
   |---|---|---|
   | 1.7.104 | 2.3.1 | `versionlib-1-7-104-0.bin` |
   | 1.6.1170 | 2.2.6 | `versionlib-1-6-1170-0.bin` |
+  | 1.6.1179 (GOG) | 2.2.6 (GOG) | `versionlib-1-6-1179-0.bin` |
   | 1.6.353 | 2.1.5 | `versionlib-1-6-353-0.bin` |
   | 1.5.97 | 2.0.19 | `version-1-5-97-0.bin` |
 
-  On any other version the loader stops with a `game layer:` line in its log.
+  On any other version the loader stops with a `game layer:` line in its log. On GOG, the logs and crash files this README places in `Documents\My Games\Skyrim Special Edition\SKSE\` are in `Documents\My Games\Skyrim Special Edition GOG\SKSE\`.
 - Address Library for SKSE Plugins (https://www.nexusmods.com/skyrimspecialedition/mods/32444), the file for your game version from the table above.
 
 ## Install
