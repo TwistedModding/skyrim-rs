@@ -6,8 +6,8 @@
 //!
 //! The packed version is the number the SKSE loader prints after the version in its log
 //! (`version = 2.3.1 01070680` for 1.7.104.0, `01050610` for 1.5.97.0): major in the top byte,
-//! minor in the next, build in the next twelve bits, the store in the low nibble (0 on Steam, the
-//! only store seen). The table lists the runtimes an Address Library file or a game install on
+//! minor in the next, build in the next twelve bits, the store in the low nibble: 0 on Steam, 1 on
+//! GOG (its 2.2.6 loader logs `010649B1` for 1.6.1179.0). The table lists the runtimes an Address Library file or a game install on
 //! this machine proved; a runtime missing here is unknown, not unsupported.
 
 use std::os::windows::ffi::OsStrExt;
@@ -32,6 +32,12 @@ pub const fn unpack(packed: u32) -> [u32; 4] {
 #[must_use]
 pub const fn is_canonical(packed: u32) -> bool {
     packed >> 4 == CANONICAL >> 4
+}
+
+/// The GOG release, whose user folder is `My Games\Skyrim Special Edition GOG`.
+#[must_use]
+pub const fn is_gog(packed: u32) -> bool {
+    packed & 0xF == 1
 }
 
 /// 1.5.x is Special Edition; 1.6 and later are Anniversary Edition.
@@ -59,11 +65,13 @@ pub fn script_extender_loaded(packed: u32) -> bool {
 }
 
 /// The running executable's version, packed, with no loader involved. `None` when the executable
-/// has no version resource, as a test binary has none.
+/// has no version resource, as a test binary has none. The file version names no store, so a
+/// runtime in the table takes its store from there.
 #[must_use]
 pub fn running() -> Option<u32> {
     let [major, minor, build, store] = file_version(&std::env::current_exe().ok()?)?;
-    Some(pack(major, minor, build, store))
+    let packed = pack(major, minor, build, store);
+    Some(RUNTIMES.iter().find(|r| r.packed >> 4 == packed >> 4).map_or(packed, |r| r.packed))
 }
 
 /// The `FileVersion` string of a file's version resource. The fixed block next to it is no use:
@@ -113,6 +121,7 @@ pub const RUNTIMES: &[Runtime] = &[
     Runtime { file_version: [1, 5, 97, 0], packed: pack(1, 5, 97, 0), name: "SE 1.5.97", versionlib: "version-1-5-97-0.bin", v5: false },
     Runtime { file_version: [1, 6, 353, 0], packed: pack(1, 6, 353, 0), name: "AE 1.6.353", versionlib: "versionlib-1-6-353-0.bin", v5: false },
     Runtime { file_version: [1, 6, 1170, 0], packed: pack(1, 6, 1170, 0), name: "AE 1.6.1170", versionlib: "versionlib-1-6-1170-0.bin", v5: false },
+    Runtime { file_version: [1, 6, 1179, 0], packed: pack(1, 6, 1179, 1), name: "AE 1.6.1179 GOG", versionlib: "versionlib-1-6-1179-0.bin", v5: false },
     Runtime { file_version: [1, 7, 99, 0], packed: pack(1, 7, 99, 0), name: "AE 1.7.99", versionlib: "versionlib-1-7-99-0.bin", v5: true },
     Runtime { file_version: [1, 7, 104, 0], packed: pack(1, 7, 104, 0), name: "AE 1.7.104", versionlib: "versionlib-1-7-104-0.bin", v5: true },
 ];
@@ -131,6 +140,8 @@ mod tests {
         assert_eq!(pack(1, 5, 97, 0), 0x0105_0610);
         assert_eq!(pack(1, 7, 104, 0), 0x0107_0680);
         assert_eq!(unpack(0x0106_4920), [1, 6, 1170, 0]);
+        assert_eq!(pack(1, 6, 1179, 1), 0x0106_49B1);
+        assert!(is_gog(0x0106_49B1) && !is_gog(0x0106_4920));
     }
 
     #[test]

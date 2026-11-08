@@ -36,10 +36,11 @@ const V2_1: u32 = pack(2, 1, 0, 0);
 const V2_2: u32 = pack(2, 2, 0, 0);
 const V2_3: u32 = pack(2, 3, 0, 0);
 
-pub const LOADERS: [Loader; 4] = [
+pub const LOADERS: [Loader; 5] = [
     Loader { runtime: pack(1, 5, 97, 0), version: pack(2, 0, 19, 0), release_index: 65 },
     Loader { runtime: pack(1, 6, 353, 0), version: pack(2, 1, 5, 0), release_index: 66 },
     Loader { runtime: pack(1, 6, 1170, 0), version: pack(2, 2, 6, 0), release_index: 72 },
+    Loader { runtime: pack(1, 6, 1179, 1), version: pack(2, 2, 6, 0), release_index: 72 },
     Loader { runtime: pack(1, 7, 104, 0), version: pack(2, 3, 1, 0), release_index: 75 },
 ];
 
@@ -163,8 +164,8 @@ mod tests {
 
     #[test]
     fn versions_match_the_interface_constants_in_the_dlls() {
-        assert_eq!(LOADERS.map(|l| l.version), [0x0200_0130, 0x0201_0050, 0x0202_0060, 0x0203_0010]);
-        assert_eq!(LOADERS.map(|l| l.runtime), [0x0105_0610, 0x0106_1610, 0x0106_4920, 0x0107_0680]);
+        assert_eq!(LOADERS.map(|l| l.version), [0x0200_0130, 0x0201_0050, 0x0202_0060, 0x0202_0060, 0x0203_0010]);
+        assert_eq!(LOADERS.map(|l| l.runtime), [0x0105_0610, 0x0106_1610, 0x0106_4920, 0x0106_49B1, 0x0107_0680]);
     }
 
     #[test]
@@ -260,7 +261,7 @@ mod tests {
     #[test]
     fn the_compatible_list_is_zero_terminated_and_names_every_runtime() {
         let list = compatible_runtimes();
-        assert_eq!(list[..4], LOADERS.map(|l| l.runtime));
-        assert!(list[4..].iter().all(|&v| v == 0));
+        assert_eq!(list[..5], LOADERS.map(|l| l.runtime));
+        assert!(list[5..].iter().all(|&v| v == 0));
     }
 }

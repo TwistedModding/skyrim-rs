@@ -21,7 +21,7 @@ $Plugins = "$GameDir\Data\SKSE\Plugins"
 $SkseLogs = "$env:USERPROFILE\Documents\My Games\Skyrim Special Edition\SKSE"
 $Logs = @("skse64.log", "skse64_loader.log", "skse64_steam_loader.log", "skyrim-rs-loader-probe.log")
 $Owner = @("skyrim-runtime-extender", "skyrim_runtime_extender.dll", "skyrim-rs", "skyrim_rs.dll", "skyrim_rs_improved_camera_stub.dll", "improved_camera_stub.dll")
-$Listed = @(0x01050610, 0x01061610, 0x01064920, 0x01070680)
+$Listed = @(0x01050610, 0x01061610, 0x01064920, 0x010649B1, 0x01070680)
 $Gated = 1600000000
 
 # name = patched fields; every field left out keeps the plugin! default.

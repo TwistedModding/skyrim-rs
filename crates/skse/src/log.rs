@@ -29,9 +29,10 @@ fn documents() -> io::Result<PathBuf> {
 }
 
 /// `<Documents>\My Games\Skyrim Special Edition\SKSE`, where the Steam SE and AE loaders write
-/// their logs (the only folder seen; other stores and VR are unverified and take the same path).
-pub fn dir(_packed_runtime: u32) -> io::Result<PathBuf> {
-    Ok(documents()?.join("My Games").join("Skyrim Special Edition").join("SKSE"))
+/// their logs, or `Skyrim Special Edition GOG` on GOG, where its loader writes them.
+pub fn dir(packed_runtime: u32) -> io::Result<PathBuf> {
+    let game = if crate::runtime::is_gog(packed_runtime) { "Skyrim Special Edition GOG" } else { "Skyrim Special Edition" };
+    Ok(documents()?.join("My Games").join(game).join("SKSE"))
 }
 
 /// Creates (truncates) `<name>.log` in the SKSE log folder.
