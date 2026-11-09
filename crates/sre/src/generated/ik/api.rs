@@ -361,7 +361,7 @@ impl crate::BSFlattenedBoneTree__Entry {
     ///
     /// Semantic field, ik pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn node(&self) -> Option<&crate::NiNode> { unsafe { Self::__member_node(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    pub fn node(&self) -> Option<&crate::NiNode> { unsafe { { self.node }.as_ref() } }
     #[doc(hidden)]
     #[inline]
     pub fn __member_childCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSFlattenedBoneTree::Entry.childCount", 0x6C, u16) } }
@@ -384,14 +384,6 @@ impl crate::BSFlattenedBoneTree__Entry {
     pub fn field_6a_ptr(&self) -> *mut u16 { Self::__member_field_6a(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_local(this: *const Self) -> *mut crate::NiTransform { unsafe { member!(this, "BSFlattenedBoneTree::Entry.local", 0x0, crate::NiTransform) } }
-    /// `BSFlattenedBoneTree::Entry::local`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn local(&self) -> &crate::NiTransform { unsafe { &*Self::__member_local(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn local_ptr(&self) -> *mut crate::NiTransform { Self::__member_local(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSFlattenedBoneTree::Entry.name", 0x78, crate::BSFixedString) } }
     /// `BSFlattenedBoneTree::Entry::name`, at +0x78 on 1.7.104.
     #[inline]
@@ -408,34 +400,6 @@ impl crate::BSFlattenedBoneTree__Entry {
     pub fn set_nextSibling(&mut self, value: u16) { unsafe { Self::__member_nextSibling(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn nextSibling_ptr(&self) -> *mut u16 { Self::__member_nextSibling(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_node(this: *const Self) -> *mut *mut crate::NiNode { unsafe { member!(this, "BSFlattenedBoneTree::Entry.node", 0x70, *mut crate::NiNode) } }
-    /// `BSFlattenedBoneTree::Entry::node`, at +0x70 on 1.7.104.
-    #[inline]
-    pub fn node_field(&self) -> *mut crate::NiNode { unsafe { Self::__member_node(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_node(&mut self, value: *mut crate::NiNode) { unsafe { Self::__member_node(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn node_ptr(&self) -> *mut *mut crate::NiNode { Self::__member_node(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_parentIndex(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSFlattenedBoneTree::Entry.parentIndex", 0x68, u16) } }
-    /// `BSFlattenedBoneTree::Entry::parentIndex`, at +0x68 on 1.7.104.
-    #[inline]
-    pub fn parentIndex(&self) -> u16 { unsafe { Self::__member_parentIndex(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_parentIndex(&mut self, value: u16) { unsafe { Self::__member_parentIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn parentIndex_ptr(&self) -> *mut u16 { Self::__member_parentIndex(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_world(this: *const Self) -> *mut crate::NiTransform { unsafe { member!(this, "BSFlattenedBoneTree::Entry.world", 0x34, crate::NiTransform) } }
-    /// `BSFlattenedBoneTree::Entry::world`, at +0x34 on 1.7.104.
-    #[inline]
-    pub fn world(&self) -> &crate::NiTransform { unsafe { &*Self::__member_world(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn world_ptr(&self) -> *mut crate::NiTransform { Self::__member_world(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSGrabIKNote {

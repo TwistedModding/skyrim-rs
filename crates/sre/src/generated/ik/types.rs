@@ -263,14 +263,11 @@ const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, boneChainIndices
 #[repr(C, align(8))]
 pub struct BSFlattenedBoneTree__Entry {
     /// +0x0 `class:NiTransform`, semantic; rotation +0 (row-major 3x3), translation +0x24, scale +0x30 (high)
-    #[doc(hidden)]
-    pub __local: [u8; 52],
+    pub local: crate::NiTransform,
     /// +0x34 `class:NiTransform`, semantic; written only by UpdateBoneWorldTransforms; read by skins (high)
-    #[doc(hidden)]
-    pub __world: [u8; 52],
+    pub world: crate::NiTransform,
     /// +0x68 `i16`, semantic; -1 = the tree itself (high)
-    #[doc(hidden)]
-    pub __parentIndex: [u8; 2],
+    pub parentIndex: u16,
     /// +0x6A `i16`, semantic; hierarchy link (child/sibling) (low)
     #[doc(hidden)]
     pub __field_6a: [u8; 2],
@@ -281,8 +278,7 @@ pub struct BSFlattenedBoneTree__Entry {
     #[doc(hidden)]
     pub __nextSibling: [u8; 2],
     /// +0x70 `ptr:NiNode`, semantic; kept or later-created real node (high)
-    #[doc(hidden)]
-    pub __node: [u8; 8],
+    pub node: *mut crate::NiNode,
     /// +0x78 `class:BSFixedString`, semantic (high)
     #[doc(hidden)]
     pub __name: [u8; 8],
@@ -290,13 +286,13 @@ pub struct BSFlattenedBoneTree__Entry {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFlattenedBoneTree__Entry>() == 0x80);
-const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree__Entry, __local) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree__Entry, __world) == 0x34);
-const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree__Entry, __parentIndex) == 0x68);
+const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree__Entry, local) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree__Entry, world) == 0x34);
+const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree__Entry, parentIndex) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree__Entry, __field_6a) == 0x6A);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree__Entry, __childCount) == 0x6C);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree__Entry, __nextSibling) == 0x6E);
-const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree__Entry, __node) == 0x70);
+const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree__Entry, node) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree__Entry, __name) == 0x78);
 
 /// `BSGrabIKNote`: size 0x28 (exact, high); primary base `BSAnimNote`.

@@ -23246,7 +23246,6 @@ member-unverified BSFlattenedBoneTree::Entry.childCount
 member-unverified BSFlattenedBoneTree::Entry.field_6a
 member-unverified BSFlattenedBoneTree::Entry.name
 member-unverified BSFlattenedBoneTree::Entry.nextSibling
-member-unverified BSFlattenedBoneTree::Entry.parentIndex
 member-unverified BSFogProperty.extraDataCapacity
 member-unverified BSGamepadDevice.source_BSGamepadEvent
 member-unverified BSGamerProfile.source_BSGamerProfileEvent

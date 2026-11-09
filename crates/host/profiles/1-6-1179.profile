@@ -1796,7 +1796,6 @@ id-unverified 32792
 id-unverified 33007
 id-unverified 33078
 id-unverified 33119
-id-unverified 33120
 id-unverified 33321
 id-unverified 33737
 id-unverified 33740
@@ -23628,7 +23627,6 @@ member-unverified BSFlattenedBoneTree::Entry.childCount
 member-unverified BSFlattenedBoneTree::Entry.field_6a
 member-unverified BSFlattenedBoneTree::Entry.name
 member-unverified BSFlattenedBoneTree::Entry.nextSibling
-member-unverified BSFlattenedBoneTree::Entry.parentIndex
 member-unverified BSFogProperty.extraDataCapacity
 member-unverified BSGamepadDevice.source_BSGamepadEvent
 member-unverified BSGamerProfile.source_BSGamerProfileEvent

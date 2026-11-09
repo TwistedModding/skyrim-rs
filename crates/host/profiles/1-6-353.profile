@@ -3466,7 +3466,6 @@ id-unverified 37485
 id-unverified 37487
 id-unverified 37488
 id-unverified 37489
-id-unverified 37491
 id-unverified 37492
 id-unverified 37496
 id-unverified 37497
@@ -39598,7 +39597,7 @@ member-unverified Actor.__vftable_D0
 member-unverified Actor.__vftable_D8
 member-unverified Actor.__vftable_E0
 member-unverified Actor.avStorage
-member-unverified Actor.boolFlags
+member Actor.boolFlags e0
 member Actor.boolFlags2 1fc
 member-unverified Actor.combatController
 member-unverified Actor.combatTargetHandle
@@ -39803,7 +39802,7 @@ member-unverified BSAnimationGraphEvent.payload
 member BSAnimationGraphManager.activeGraph a8
 member-unverified BSAnimationGraphManager.channelOverrides
 member-unverified BSAnimationGraphManager.dependentsLock
-member-unverified BSAnimationGraphManager.graphsLock
+member BSAnimationGraphManager.graphsLock 98
 member-unverified BSAnimationGraphManager.variableCache
 member-unverified BSAnimationUpdateData.delta
 member-unverified BSAudioManager.callback3
@@ -39888,7 +39887,6 @@ member-unverified BSFlattenedBoneTree::Entry.childCount
 member-unverified BSFlattenedBoneTree::Entry.field_6a
 member-unverified BSFlattenedBoneTree::Entry.name
 member-unverified BSFlattenedBoneTree::Entry.nextSibling
-member-unverified BSFlattenedBoneTree::Entry.parentIndex
 member-unverified BSFogProperty.extraDataCapacity
 member-unverified BSGamepadDevice.source_BSGamepadEvent
 member-unverified BSGamerProfile.source_BSGamerProfileEvent

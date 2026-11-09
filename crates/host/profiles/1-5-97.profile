@@ -22304,13 +22304,15 @@ id 32732 31978
 id-unverified 32733
 id-unverified 32734
 id-unverified 32735
+id 32736 31982
 id 32737 31983
 id-unverified 32738
 id-unverified 32739
 id 32740 31986
 id 32741 31987
+id 32742 31988
 id 32743 31989
-id-unverified 32744
+id 32744 31990
 id 32745 31991
 id-unverified 32747
 id-unverified 32750
@@ -25508,7 +25510,7 @@ id-unverified 37479
 id 37480 36481
 id 37481 36482
 id-unverified 37482
-id-unverified 37483
+id 37483 36484
 id 37484 36485
 id-unverified 37485
 id 37486 36487
@@ -27890,7 +27892,7 @@ id-unverified 40326
 id 40332 39259
 id-unverified 40333
 id-unverified 40334
-id-unverified 40335
+id 40335 39262
 id 40336 39263
 id-unverified 40337
 id 40338 39289
@@ -28697,8 +28699,8 @@ id 41370 40357
 id 41371 40358
 id-unverified 41372
 id-unverified 41373
-id-unverified 41374
-id-unverified 41375
+id 41374 40361
+id 41375 40362
 id-unverified 41377
 id 41378 40364
 id 41379 40365
@@ -28765,6 +28767,7 @@ id-unverified 41442
 id-unverified 41444
 id-unverified 41445
 id 41446 40430
+id 41447 40431
 id 41448 40432
 id 41449 40433
 id 41452 40435
@@ -30627,10 +30630,10 @@ id-unverified 43685
 id 43686 42522
 id 43688 42523
 id 43689 42525
-id-unverified 43690
+id 43690 42527
 id 43691 42528
-id-unverified 43692
-id-unverified 43693
+id 43692 42529
+id 43693 42530
 id-unverified 43694
 id-unverified 43695
 id-unverified 43696
@@ -47184,12 +47187,13 @@ id 63564 62623
 id-unverified 63565
 id-unverified 63566
 id 63567 62626
-id-unverified 63568
+id 63568 62627
+id 63569 62628
 id-unverified 63570
 id 63571 62630
 id 63572 62631
 id-unverified 63574
-id-unverified 63575
+id 63575 62634
 id-unverified 63576
 id 63581 62636
 id 63582 62637
@@ -47197,7 +47201,7 @@ id-unverified 63583
 id-unverified 63584
 id-unverified 63585
 id 63586 62641
-id-unverified 63587
+id 63587 62642
 id-unverified 63588
 id-unverified 63589
 id 63590 62645
@@ -47340,6 +47344,7 @@ id 63779 62843
 id 63780 62844
 id 63781 62845
 id 63782 62846
+id-unverified 63783
 id-unverified 63792
 id-unverified 63794
 id 63795 62869
@@ -58565,7 +58570,7 @@ id 77856 76023
 id 77857 76024
 id 77858 76025
 id 77859 76026
-id-unverified 77860
+id 77860 76027
 id 77861 76028
 id-unverified 77862
 id-unverified 77863
@@ -59632,7 +59637,7 @@ id-unverified 79143
 id 79144 77258
 id-unverified 79145
 id 79146 77260
-id-unverified 79147
+id 79147 77261
 id-unverified 79148
 id-unverified 79149
 id-unverified 79150
@@ -59679,7 +59684,7 @@ id-unverified 79195
 id 79196 77316
 id-unverified 79197
 id 79198 77318
-id-unverified 79199
+id 79199 77319
 id-unverified 79200
 id-unverified 79201
 id 79202 77322
@@ -107504,7 +107509,7 @@ member-unverified Actor.__vftable_D0
 member-unverified Actor.__vftable_D8
 member-unverified Actor.__vftable_E0
 member-unverified Actor.avStorage
-member-unverified Actor.boolFlags
+member Actor.boolFlags e0
 member Actor.boolFlags2 1fc
 member-unverified Actor.combatController
 member-unverified Actor.combatTargetHandle
@@ -107941,7 +107946,7 @@ member BSAnimationGraphManager.activeGraph a8
 member-unverified BSAnimationGraphManager.channelOverrides
 member-unverified BSAnimationGraphManager.dependentManagers
 member-unverified BSAnimationGraphManager.dependentsLock
-member-unverified BSAnimationGraphManager.graphsLock
+member BSAnimationGraphManager.graphsLock 98
 member-unverified BSAnimationGraphManager.variableCache
 member-unverified BSAnimationUpdateData.delta
 member-unverified BSAudioListener.field_10
@@ -108206,12 +108211,8 @@ member-unverified BSFlattenedBoneTree.nameMap
 member-unverified BSFlattenedBoneTree.previousWorldFrame
 member-unverified BSFlattenedBoneTree::Entry.childCount
 member-unverified BSFlattenedBoneTree::Entry.field_6a
-member-unverified BSFlattenedBoneTree::Entry.local
 member-unverified BSFlattenedBoneTree::Entry.name
 member-unverified BSFlattenedBoneTree::Entry.nextSibling
-member-unverified BSFlattenedBoneTree::Entry.node
-member-unverified BSFlattenedBoneTree::Entry.parentIndex
-member-unverified BSFlattenedBoneTree::Entry.world
 member-unverified BSFogProperty.extraDataCapacity
 member-unverified BSFrustumFOVController.field_20
 member-unverified BSFrustumFOVController.field_2C
