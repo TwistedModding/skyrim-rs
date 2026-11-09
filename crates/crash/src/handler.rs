@@ -15,7 +15,7 @@ use core::sync::atomic::{AtomicIsize, AtomicU32, AtomicUsize, Ordering};
 
 use windows_sys::Win32::Foundation::{CloseHandle, ERROR_ALREADY_EXISTS, GENERIC_WRITE, GetLastError, HANDLE, INVALID_HANDLE_VALUE};
 use windows_sys::Win32::Storage::FileSystem::{CREATE_ALWAYS, CreateFileW, FILE_ATTRIBUTE_NORMAL, FILE_SHARE_READ};
-use windows_sys::Win32::System::Diagnostics::Debug::{AddVectoredExceptionHandler, CONTEXT, EXCEPTION_CONTINUE_SEARCH, EXCEPTION_EXECUTE_HANDLER, EXCEPTION_POINTERS, EXCEPTION_RECORD, MINIDUMP_EXCEPTION_INFORMATION, MINIDUMP_USER_STREAM, MINIDUMP_USER_STREAM_INFORMATION, MiniDumpIgnoreInaccessibleMemory, MiniDumpWithFullMemoryInfo, MiniDumpWithIndirectlyReferencedMemory, MiniDumpWithThreadInfo, MiniDumpWithUnloadedModules, MiniDumpWriteDump, SetUnhandledExceptionFilter};
+use windows_sys::Win32::System::Diagnostics::Debug::{AddVectoredExceptionHandler, CONTEXT, EXCEPTION_CONTINUE_EXECUTION, EXCEPTION_CONTINUE_SEARCH, EXCEPTION_EXECUTE_HANDLER, EXCEPTION_POINTERS, EXCEPTION_RECORD, MINIDUMP_EXCEPTION_INFORMATION, MINIDUMP_USER_STREAM, MINIDUMP_USER_STREAM_INFORMATION, MiniDumpIgnoreInaccessibleMemory, MiniDumpWithFullMemoryInfo, MiniDumpWithIndirectlyReferencedMemory, MiniDumpWithThreadInfo, MiniDumpWithUnloadedModules, MiniDumpWriteDump, SetUnhandledExceptionFilter};
 use windows_sys::Win32::System::LibraryLoader::GetModuleHandleW;
 use windows_sys::Win32::System::SystemInformation::GetTickCount64;
 use windows_sys::Win32::System::Threading::{CreateEventW, CreateThread, GetCurrentProcess, GetCurrentProcessId, GetCurrentThreadId, INFINITE, OpenProcess, PROCESS_QUERY_INFORMATION, PROCESS_VM_READ, ResetEvent, STACK_SIZE_PARAM_IS_A_RESERVATION, SetEvent, WaitForSingleObject};
@@ -148,7 +148,8 @@ pub(crate) fn install(options: &Options, log_dir: &str, game: GameAddresses) -> 
     if let Some(previous) = unsafe { SetUnhandledExceptionFilter(Some(filter)) } {
         NEXT_FILTER.store(previous as usize, Ordering::Release);
     }
-    Ok(Installed::Here { watchdog: tid, symbols: mode, symbol_mismatches: mismatches })
+    let exits = crate::exit::install(options.runtime_version, options.name, tid);
+    Ok(Installed::Here { watchdog: tid, symbols: mode, symbol_mismatches: mismatches, exits })
 }
 
 /// The first-chance watch: counts error-class exceptions, keeps thread names and reinstates the filter.
@@ -158,6 +159,10 @@ unsafe extern "system" fn vectored(info: *mut EXCEPTION_POINTERS) -> i32 {
     if code == THREAD_NAME_EXCEPTION {
         unsafe { live::note_thread_name(record, GetCurrentThreadId()) };
         return EXCEPTION_CONTINUE_SEARCH;
+    }
+    if code == skse::log::PANIC_EXCEPTION {
+        unsafe { report_and_wait(info) };
+        return EXCEPTION_CONTINUE_EXECUTION;
     }
     // Severity "error" without the C++ and CLR throw codes, which are normal traffic.
     if code >> 30 != 3 || code == 0xE06D_7363 || code == 0xE043_4352 {
@@ -184,10 +189,16 @@ unsafe fn chain(info: *const EXCEPTION_POINTERS) -> i32 {
 }
 
 unsafe extern "system" fn filter(info: *const EXCEPTION_POINTERS) -> i32 {
-    let me = unsafe { GetCurrentThreadId() };
-    if me == WATCHDOG.load(Ordering::Acquire) || info.is_null() {
+    if unsafe { GetCurrentThreadId() } == WATCHDOG.load(Ordering::Acquire) || info.is_null() {
         return unsafe { chain(info) };
     }
+    unsafe { report_and_wait(info) };
+    unsafe { chain(info) }
+}
+
+/// Hands the exception to the watchdog, the first one only, and waits for its report.
+unsafe fn report_and_wait(info: *const EXCEPTION_POINTERS) {
+    let me = unsafe { GetCurrentThreadId() };
     let done = DONE_EVENT.load(Ordering::Acquire) as HANDLE;
     if STATE.compare_exchange(IDLE, REPORTING, Ordering::AcqRel, Ordering::Acquire).is_ok() {
         let snapshot = unsafe { SNAPSHOT.get() };
@@ -204,7 +215,6 @@ unsafe extern "system" fn filter(info: *const EXCEPTION_POINTERS) -> i32 {
         unsafe { SetEvent(CRASH_EVENT.load(Ordering::Acquire) as HANDLE) };
     }
     unsafe { WaitForSingleObject(done, REPORT_TIMEOUT_MS) };
-    unsafe { chain(info) }
 }
 
 unsafe extern "system" fn watchdog(_: *mut core::ffi::c_void) -> u32 {

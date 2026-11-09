@@ -45,6 +45,7 @@ foreach ($s in $Mod.scenarios) {
     $hookLine = First $crash '^the crashing thread is '
     $dumpLine = First $crash '^minidump written to '
     $armed = First $plugin "^armed $s`:"
+    $ended = First $hostLogS '^the game ended: exit code 0x[0-9a-f]+ on .+, called from \S+'
 
     $rows += @{ name = "$s`: report written"; plugin = "$armed | $pluginCrashLine"; devbench = "crash log lines $($crash.Count); $dumpLine; dump bytes $(if ($dump) { $dump.Length } else { 0 }); (host log) $installed";
                 ok = ($crash.Count -gt 20 -and $dumpLine -ne "" -and $dump -and $dump.Length -gt 0 -and $installed -ne "" -and $armed -ne "" -and $pluginCrashLine -ne "") }
@@ -53,7 +54,18 @@ foreach ($s in $Mod.scenarios) {
                 ok = ($pdbFrames -ge 1 -and $hash -ne "" -and $explanation -ne "") }
     $rows += @{ name = "$s`: thread"; plugin = $pluginCrashLine; devbench = $threadLine;
                 ok = ($crashThread -ne $null -and $crashThread -eq $pluginThread -and $expectedThread) }
+    # A panic ends in the abort's fail-fast, which never reaches NtTerminateProcess; every other crash ends through the filter.
+    if ($s -ne "panic") {
+        $rows += @{ name = "$s`: the game's end logged"; plugin = $pluginCrashLine; devbench = $ended; ok = ($ended -ne "") }
+    }
     switch ($s) {
+        "panic" {
+            $panicLine = First $crash '^skyrim-rs-crash-test: panic on ThreadId\(\d+\): panicked at .*lib\.rs:\d+:\d+:'
+            $rows += @{ name = "panic: exception and message"; plugin = (First $hostLogS '^skyrim-rs-crash-test: panic on '); devbench = "$codeLine | $panicLine | $(First $crash '^forced by SkyrimRsCrash panic$') | $explanation";
+                        ok = ($codeLine -match '^code 0xe0525354 Rust panic' -and $panicLine -ne "" -and (First $crash '^forced by SkyrimRsCrash panic$') -ne "" -and $explanation -match '^rule rust-panic:') }
+            $rows += @{ name = "panic: culprit"; plugin = $pluginCrashLine; devbench = (First $crash '^likely culprit: ');
+                        ok = ((First $crash '^likely culprit: ') -match 'skyrim_rs_crash_test\.1\.dll') }
+        }
         "null" {
             $rows += @{ name = "null: exception"; plugin = $atLine; devbench = "$codeLine | $accessLine";
                         ok = ($codeLine -match '^code 0xc0000005 EXCEPTION_ACCESS_VIOLATION' -and $accessLine -eq 'reading address 0x0: null' -and $atLine -match 'skyrim_rs_crash_test\.1\.dll\+0x[0-9a-f]+.*\(framework plugin skyrim-rs-crash-test generation 1\)') }

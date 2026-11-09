@@ -25,6 +25,7 @@ pub mod rules;
 pub mod symbols;
 pub mod text;
 
+mod exit;
 mod handler;
 mod images;
 mod live;
@@ -63,10 +64,11 @@ pub struct Options {
     pub symbol_path: Option<String>,
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub enum Installed {
     /// This copy owns the handlers.
-    Here { watchdog: u32, symbols: symbols::Mode, symbol_mismatches: u32 },
+    /// `exits` says whether the game's end is written to `<name>.log`, or why not.
+    Here { watchdog: u32, symbols: symbols::Mode, symbol_mismatches: u32, exits: Result<(), String> },
     /// Another copy in the process (the host's) already reports; nothing was installed.
     Elsewhere,
 }

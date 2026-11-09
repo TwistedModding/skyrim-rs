@@ -3,7 +3,7 @@
 // distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! The crash suite's plugin: the console command `SkyrimRsCrash <what>` arms one crash, which
-//! then happens where the scenario triggers it. `null`, `overflow` and `write` fire in the
+//! then happens where the scenario triggers it. `null`, `overflow`, `write` and `panic` fire in the
 //! plugin's `SAVE_GAME` handler, on the main thread, at the next console `save`; `hook` fires
 //! inside the plugin's `Before` subscriber on `Actor::ModActorValueImpl` at the next
 //! `player.damageactorvalue`, on the console's job thread. `form` reads through null with the Iron
@@ -40,6 +40,7 @@ const HOOK: u8 = 4;
 const FORM: u8 = 5;
 const DELETED: u8 = 6;
 const SCRIPT: u8 = 7;
+const PANIC: u8 = 8;
 
 /// The Iron Sword, a `WEAP` record of Skyrim.esm.
 const IRON_SWORD: u32 = 0x12EB7;
@@ -122,6 +123,7 @@ fn on_message(msg: &skse::Message) {
                 WRITE => "write",
                 FORM => "form",
                 DELETED => "deleted",
+                PANIC => "panic",
                 _ => return,
             };
             log(&format!("crashing on thread {} ({what})", thread()));
@@ -131,6 +133,7 @@ fn on_message(msg: &skse::Message) {
                     let _ = recurse(0);
                 }
                 WRITE => image_write(),
+                PANIC => panic!("forced by SkyrimRsCrash panic"),
                 FORM => null_read_holding(sre::find_form_by_id(IRON_SWORD).map_or(0, |f| core::ptr::from_ref(f) as usize)),
                 _ => {
                     let player = sre::PlayerCharacter::singleton().map_or(0, |p| core::ptr::from_ref(p) as usize);
@@ -193,7 +196,8 @@ impl Command for CrashCommand {
             [Arg::Str(what), ..] if what.eq_ignore_ascii_case("form") => (FORM, "armed form: a null read with the Iron Sword's record in rcx at the next save"),
             [Arg::Str(what), ..] if what.eq_ignore_ascii_case("deleted") => (DELETED, "armed deleted: the player's reference flagged DELETED, then a null read with it in rcx at the next save"),
             [Arg::Str(what), ..] if what.eq_ignore_ascii_case("script") => (SCRIPT, "armed script: the native SkyrimRsCrashTest.Crash faults when a script calls it"),
-            _ => (NONE, "SkyrimRsCrash null | overflow | write | hook | form | deleted | script"),
+            [Arg::Str(what), ..] if what.eq_ignore_ascii_case("panic") => (PANIC, "armed panic: a Rust panic in the SAVE_GAME handler at the next save"),
+            _ => (NONE, "SkyrimRsCrash null | overflow | write | hook | form | deleted | script | panic"),
         };
         ARMED.store(armed, Ordering::Relaxed);
         log(&format!("{line} (command thread {})", thread()));

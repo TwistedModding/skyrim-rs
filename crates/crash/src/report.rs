@@ -176,6 +176,7 @@ pub fn code_name(code: u32) -> (&'static str, &'static str) {
         0xC06D_007E => ("STATUS_DELAY_LOAD_MODULE_NOT_FOUND", "a delay-loaded DLL is missing"),
         0xC06D_007F => ("STATUS_DELAY_LOAD_PROCEDURE_NOT_FOUND", "a delay-loaded DLL lacks an export"),
         0xE06D_7363 => ("C++ exception", "an unhandled C++ throw"),
+        skse::log::PANIC_EXCEPTION => ("Rust panic", "a Rust DLL panicked; release builds end the game right after"),
         0x8000_0003 => ("EXCEPTION_BREAKPOINT", "a breakpoint instruction without a debugger"),
         _ => ("unknown exception code", "see ntstatus.h"),
     }
@@ -598,6 +599,7 @@ fn summary(w: &mut dyn Write, ctx: &Context<'_>) -> fmt::Result {
     w.write_str(" on ")?;
     thread_kind(w, ctx, rec.thread)?;
     writeln!(w)?;
+    panic_line(w, ctx)?;
     let access = access_line(w, ctx)?;
     let seen = ctx.seen.borrow();
     let signature = rules::Signature { code: rec.exception.code, access, frames: names, seen: &seen, rip_unmapped: rec.module_at(rec.exception.address).is_none() };
@@ -615,6 +617,21 @@ fn summary(w: &mut dyn Write, ctx: &Context<'_>) -> fmt::Result {
         write!(w, "{}{name}", if i == 0 { " " } else { " < " })?;
     }
     writeln!(w)
+}
+
+/// The panic's own line, which the raising hook passed by address and length.
+fn panic_line(w: &mut dyn Write, ctx: &Context<'_>) -> fmt::Result {
+    let e = &ctx.rec.exception;
+    if e.code != skse::log::PANIC_EXCEPTION || e.parameter_count < 2 {
+        return Ok(());
+    }
+    let mut buf = [0u8; 1024];
+    let len = usize::try_from(e.parameters[1]).unwrap_or(0).min(buf.len());
+    if ctx.src.read(e.parameters[0], &mut buf[..len]) {
+        writeln!(w, "{}", String::from_utf8_lossy(&buf[..len]).trim_end())
+    } else {
+        writeln!(w, "the panic's message at {:#x} is not readable", e.parameters[0])
+    }
 }
 
 fn culprit(w: &mut dyn Write, ctx: &Context<'_>, culprit: rules::Culprit, seen: &Seen, names: &[&str]) -> fmt::Result {

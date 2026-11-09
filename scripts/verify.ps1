@@ -26,7 +26,7 @@
 # install (its sessions: the host's settings file edited by hand to rebind the toggle, then malformed), each with
 # scripts/gui-<session>-steps.json and its logs and settings files in <OutDir>\<session>. The camera suite installs the camera-demo plugin,
 # drives it through its console command and reads its report log. The crash suite installs the host with its crash-test
-# plugin and runs one game session per scenario (null, hook, overflow, write, form, deleted, script), each ending in the crash the plugin's
+# plugin and runs one game session per scenario (null, hook, overflow, write, form, deleted, script, panic), each ending in the crash the plugin's
 # console command armed; the host's crash log and minidump of each session go to <OutDir>\<scenario>. Any suite's run
 # that leaves a skyrim-runtime-extender-crash-* file in the SKSE folder has it moved into <OutDir>. The sample suite installs the sample
 # plugin of docs/MODS.md and compares its log with DevBench. See docs/subsystems/<suite>.md.
@@ -100,10 +100,10 @@ $Mods = @{
              } }
     # The first copy of the crash logger to load reports, and the test plugin sorts before the host, whose logger is under test here.
     crash = @{ crate = "crash-test"; dll = "skyrim_rs_crash_test.dll"; log = "skyrim-rs-crash-test.log"; dir = "skyrim-runtime-extender"; report = $true; noTestPlugin = $true;
-               scenarios = @("null", "hook", "overflow", "write", "form", "deleted", "script")
+               scenarios = @("null", "hook", "overflow", "write", "form", "deleted", "script", "panic")
                # The step that triggers each armed crash, as the scenario's JSON.
                triggers = @{ null = '{"tool": "console", "args": {"command": "save skyrim-rs-crash-{rt}"}}'; overflow = '{"tool": "console", "args": {"command": "save skyrim-rs-crash-{rt}"}}'; write = '{"tool": "console", "args": {"command": "save skyrim-rs-crash-{rt}"}}'
-                             hook = '{"tool": "console", "args": {"command": "player.damageactorvalue health 1"}}'; form = '{"tool": "console", "args": {"command": "save skyrim-rs-crash-{rt}"}}'; deleted = '{"tool": "console", "args": {"command": "save skyrim-rs-crash-{rt}"}}'
+                             hook = '{"tool": "console", "args": {"command": "player.damageactorvalue health 1"}}'; form = '{"tool": "console", "args": {"command": "save skyrim-rs-crash-{rt}"}}'; deleted = '{"tool": "console", "args": {"command": "save skyrim-rs-crash-{rt}"}}'; panic = '{"tool": "console", "args": {"command": "save skyrim-rs-crash-{rt}"}}'
                              script = '{"tool": "papyrus", "args": {"action": "call", "script": "SkyrimRsCrashTest", "function": "CrashFromScript"}}' } }
 }
 $TagDir = "$Root\target\$Profile\reload-tags"

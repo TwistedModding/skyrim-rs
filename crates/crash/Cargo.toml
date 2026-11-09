@@ -6,6 +6,7 @@ publish.workspace = true
 license.workspace = true
 
 [dependencies]
+hook.workspace = true
 skse.workspace = true
 sre = { workspace = true, default-features = false }
 versionlib.workspace = true

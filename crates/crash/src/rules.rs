@@ -209,6 +209,14 @@ pub static RULES: &[Rule] = &[
         )
     },
     Rule {
+        code: skse::log::PANIC_EXCEPTION,
+        ..rule(
+            "rust-panic",
+            "A Rust DLL panicked: the line above names the source file, line and message. The first plugin frame is the DLL that panicked; the game ends right after this report.",
+            Culprit::FirstPlugin,
+        )
+    },
+    Rule {
         code: 0xC000_0409,
         ..rule(
             "fail-fast",
