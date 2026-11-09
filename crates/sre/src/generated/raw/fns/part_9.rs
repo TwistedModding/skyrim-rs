@@ -7,6 +7,14 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CreateNiPSysSphericalCollider` at 0xfba400 (decompiler, high); signature (untiered): `undefined CreateNiPSysSphericalCollider(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CreateNiPSysSphericalCollider: u64 = 75441;
+/// `CreateNiPSysTurbulenceFieldModifier` at 0xfbb270 (decompiler, high); signature (high): `NiPSysFieldModifier * CreateNiPSysTurbulenceFieldModifier(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CreateNiPSysTurbulenceFieldModifier: u64 = 75457;
+/// `CreateNiPSysUpdateCtlr` at 0xfa2700 (decompiler, high); signature (high): `NiTimeController * CreateNiPSysUpdateCtlr(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CreateNiPSysUpdateCtlr: u64 = 74714;
+/// `CreateNiPSysVortexFieldModifier` at 0xfbc150 (decompiler, medium); signature (medium): `NiPSysFieldModifier * CreateNiPSysVortexFieldModifier(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CreateNiPSysVortexFieldModifier: u64 = 75474;
 /// `CreateNiParticleMeshes` at 0xf15ef0 (decompiler, high); signature (high): `NiParticles * CreateNiParticleMeshes(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const CreateNiParticleMeshes: u64 = 71538;
 /// `CreateNiParticleSystem` at 0xf99460 (decompiler, medium); signature (untiered): `undefined CreateNiParticleSystem(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -8719,11 +8727,3 @@ pub const FleePackage__ctor: u64 = 42558;
 pub const FleePackage__ctor_2: u64 = 42559;
 /// `FleePackage::vdtor` at 0x7bb850 (layout_inference, medium); signature (low): `FleePackage * vdtor(FleePackage * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const FleePackage__vdtor: u64 = 42577;
-/// `FlightActionEndHandler::vdtor` at 0x7d3e20 (layout_inference, medium); signature (low): `FlightActionEndHandler * vdtor(FlightActionEndHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const FlightActionEndHandler__vdtor: u64 = 43320;
-/// `FlightActionEndHandler::vfunc_1` at 0x7cd870 (rtti, high); signature (low): `undefined8 vfunc_1(FlightActionEndHandler * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const FlightActionEndHandler__vfunc_1: u64 = 42851;
-/// `FlightActionEntryEndHandler::vdtor` at 0x7d3e50 (layout_inference, medium); signature (low): `FlightActionEntryEndHandler * vdtor(FlightActionEntryEndHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const FlightActionEntryEndHandler__vdtor: u64 = 43321;
-/// `FlightActionEntryEndHandler::vfunc_1` at 0x7cd850 (rtti, high); signature (low): `undefined1 vfunc_1(FlightActionEntryEndHandler * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const FlightActionEntryEndHandler__vfunc_1: u64 = 42850;

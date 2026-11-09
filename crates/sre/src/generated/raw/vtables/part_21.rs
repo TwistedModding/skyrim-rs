@@ -457,7 +457,7 @@ pub type hkbHandIkControlsModifier_vtable_IsValid = unsafe extern "C" fn(this: *
 /// `hkbHandIkControlsModifier::CloneNode`, slot 12: allocates a copy of the node (size argument = object size) through the copy constructor (high).
 pub type hkbHandIkControlsModifier_vtable_CloneNode = unsafe extern "C" fn(this: *mut crate::hkbHandIkControlsModifier) -> *mut crate::hkbHandIkControlsModifier;
 /// `hkbHandIkControlsModifier::Modify`, slot 23: 0xb11260: 8-byte body (returns) (high).
-pub type hkbHandIkControlsModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbHandIkControlsModifier, ctx: *const c_void, inOut: *mut c_void);
+pub type hkbHandIkControlsModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbHandIkControlsModifier, ctx: *const c_void, inOut: *mut crate::hkbGeneratorOutput);
 
 /// `hkbHandIkDriver::vftable` at 0x19e3f78, id 226847 (rtti, high); 3 slots.
 #[repr(C)]
@@ -640,7 +640,7 @@ pub type hkbHandIkModifier_vtable_IsValid = unsafe extern "C" fn(this: *mut crat
 /// `hkbHandIkModifier::CloneNode`, slot 12: allocates a copy of the node (size argument = object size) through the copy constructor (high).
 pub type hkbHandIkModifier_vtable_CloneNode = unsafe extern "C" fn(this: *mut crate::hkbHandIkModifier) -> *mut crate::hkbHandIkModifier;
 /// `hkbHandIkModifier::Modify`, slot 23: 0xb11b00 'TtHandIkModifier': per hand computes the target and solves the arm with HandIkSolveArm 0xb12700 -> TwoJointSolve 0xaa0a10 (high).
-pub type hkbHandIkModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbHandIkModifier, ctx: *const c_void, inOut: *mut c_void);
+pub type hkbHandIkModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbHandIkModifier, ctx: *const c_void, inOut: *mut crate::hkbGeneratorOutput);
 
 /// `hkbHandIkSceneModifier::vftable` at 0x19c1070, id 220357 (rtti, high); 4 slots.
 #[repr(C)]
@@ -767,7 +767,7 @@ pub struct hkbKeyframeBonesModifier_vtable {
     pub slot_21: *const c_void,
     /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
     pub slot_22: *const c_void,
-    /// `hkbKeyframeBonesModifier::Modify` at 0xb166c0 (semantic, high); signature (untiered): `undefined Modify(hkbKeyframeBonesModifier * this, undefined8 param_1, undefined8 param_2)`; `Modify`: 0xb166c0: only the timer 'TthkbKeyframeBonesModifier' (148 bytes) (high); semantic signature: `void (hkbKeyframeBonesModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
+    /// `hkbKeyframeBonesModifier::Modify` at 0xb166c0 (semantic, high); signature (untiered): `undefined Modify(hkbKeyframeBonesModifier * this, undefined8 param_1, undefined8 param_2)`; `Modify`: timer 'TthkbKeyframeBonesModifier' around ApplyKeyframes 0xb28c00 (this, output): the keyframed bones go into tracks 8/9 for the ragdoll, not into the pose track (high); semantic signature: `void (hkbKeyframeBonesModifier* this, hkbContext* ctx, hkbGeneratorOutput* output)`
     pub slot_23: *const c_void,
     /// `hkbModifier::vfunc_24` at 0xae7000 (rtti, medium); signature (low): `undefined vfunc_24(void)`
     pub slot_24: *const c_void,
@@ -815,8 +815,8 @@ pub type hkbKeyframeBonesModifier_vtable_Activate = unsafe extern "C" fn(this: *
 pub type hkbKeyframeBonesModifier_vtable_IsValid = unsafe extern "C" fn(this: *mut crate::hkbKeyframeBonesModifier, character: *const crate::hkbCharacter, errorString: *mut c_void) -> bool;
 /// `hkbKeyframeBonesModifier::CloneNode`, slot 12: allocates a copy of the node (size argument = object size) through the copy constructor (high).
 pub type hkbKeyframeBonesModifier_vtable_CloneNode = unsafe extern "C" fn(this: *mut crate::hkbKeyframeBonesModifier) -> *mut crate::hkbKeyframeBonesModifier;
-/// `hkbKeyframeBonesModifier::Modify`, slot 23: 0xb166c0: only the timer 'TthkbKeyframeBonesModifier' (148 bytes) (high).
-pub type hkbKeyframeBonesModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbKeyframeBonesModifier, ctx: *const c_void, inOut: *mut c_void);
+/// `hkbKeyframeBonesModifier::Modify`, slot 23: timer 'TthkbKeyframeBonesModifier' around ApplyKeyframes 0xb28c00 (this, output): the keyframed bones go into tracks 8/9 for the ragdoll, not into the pose track (high).
+pub type hkbKeyframeBonesModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbKeyframeBonesModifier, ctx: *mut c_void, output: *mut crate::hkbGeneratorOutput);
 
 /// `hkbLinkedSymbolInfo::vftable` at 0x1a95a70, id 241303 (rtti, high); 3 slots.
 #[repr(C)]
@@ -1827,7 +1827,7 @@ pub type hkbPoweredRagdollControlsModifier_vtable_IsValid = unsafe extern "C" fn
 /// `hkbPoweredRagdollControlsModifier::CloneNode`, slot 12: allocates a copy of the node (size argument = object size) through the copy constructor (high).
 pub type hkbPoweredRagdollControlsModifier_vtable_CloneNode = unsafe extern "C" fn(this: *mut crate::hkbPoweredRagdollControlsModifier) -> *mut crate::hkbPoweredRagdollControlsModifier;
 /// `hkbPoweredRagdollControlsModifier::Modify`, slot 23: applies the modifier to the generated pose/tracks (high).
-pub type hkbPoweredRagdollControlsModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbPoweredRagdollControlsModifier, ctx: *const c_void, inOut: *mut c_void);
+pub type hkbPoweredRagdollControlsModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbPoweredRagdollControlsModifier, ctx: *const c_void, inOut: *mut crate::hkbGeneratorOutput);
 
 /// `hkbProjectData::vftable` at 0x19e4168, id 226870 (rtti, high); 3 slots.
 #[repr(C)]
@@ -2174,7 +2174,7 @@ pub type hkbRigidBodyRagdollControlsModifier_vtable_vdtor = unsafe extern "C" fn
 /// `hkbRigidBodyRagdollControlsModifier::CloneNode`, slot 12: allocates a copy of the node (size argument = object size) through the copy constructor (high).
 pub type hkbRigidBodyRagdollControlsModifier_vtable_CloneNode = unsafe extern "C" fn(this: *mut crate::hkbRigidBodyRagdollControlsModifier) -> *mut crate::hkbRigidBodyRagdollControlsModifier;
 /// `hkbRigidBodyRagdollControlsModifier::Modify`, slot 23: applies the modifier to the generated pose/tracks (high).
-pub type hkbRigidBodyRagdollControlsModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbRigidBodyRagdollControlsModifier, ctx: *const c_void, inOut: *mut c_void);
+pub type hkbRigidBodyRagdollControlsModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbRigidBodyRagdollControlsModifier, ctx: *const c_void, inOut: *mut crate::hkbGeneratorOutput);
 
 /// `hkbRotateCharacterModifier::vftable` at 0x19e1aa8, id 226598 (rtti, high); 25 slots.
 #[repr(C)]
@@ -3108,7 +3108,7 @@ pub type hkbTwistModifier_vtable_IsValid = unsafe extern "C" fn(this: *mut crate
 /// `hkbTwistModifier::CloneNode`, slot 12: allocates a copy of the node (size argument = object size) through the copy constructor (high).
 pub type hkbTwistModifier_vtable_CloneNode = unsafe extern "C" fn(this: *mut crate::hkbTwistModifier) -> *mut crate::hkbTwistModifier;
 /// `hkbTwistModifier::Modify`, slot 23: 0xb196f0: only opens and closes the timer 'TthkbTwistModifier' (191 bytes, no other call): twisting is compiled out in this build (high).
-pub type hkbTwistModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbTwistModifier, ctx: *const c_void, inOut: *mut c_void);
+pub type hkbTwistModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbTwistModifier, ctx: *const c_void, inOut: *mut crate::hkbGeneratorOutput);
 
 /// `hkbVariableBindingSet::vftable` at 0x19dd498, id 226150 (rtti, high); 3 slots.
 #[repr(C)]

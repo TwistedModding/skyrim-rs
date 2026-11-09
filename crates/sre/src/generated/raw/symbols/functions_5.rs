@@ -8,6 +8,7 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x7de190, id: 43708, confidence: Confidence::Medium, name: "ArrowProjectile::LoadGame" },
     Function { rva: 0x7de270, id: 43709, confidence: Confidence::High, name: "ArrowProjectile::vfunc_192" },
     Function { rva: 0x7de340, id: 43710, confidence: Confidence::High, name: "ArrowProjectile::vfunc_189" },
     Function { rva: 0x7de724, id: 43711, confidence: Confidence::Medium, name: "ArrowProjectile::BSHandleRefObject_vdtor" },
@@ -6442,5 +6443,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x914fa0, id: 51175, confidence: Confidence::Medium, name: "ReserveHeapArraySlotSize8_35" },
     Function { rva: 0x914fe0, id: 51176, confidence: Confidence::Medium, name: "ReserveHeapArraySlotSize8_36" },
     Function { rva: 0x915020, id: 51177, confidence: Confidence::High, name: "ContainerMenu::Create" },
-    Function { rva: 0x915110, id: 51179, confidence: Confidence::Medium, name: "GetObjectMemberData" },
 ];

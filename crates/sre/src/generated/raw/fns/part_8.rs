@@ -7,6 +7,12 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>::vdtor` at 0x8a4a90 (slot_propagation, medium); signature (low): `CombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard> * vdtor(CombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard__vdtor: u64 = 48632;
+/// `CombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>::vfunc_1` at 0x8a4a00 (rtti, high); signature (untiered): `uint vfunc_1(void)`
+pub const CombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard__vfunc_1: u64 = 48629;
+/// `CombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>::vfunc_10` at 0x8a4980 (rtti, high); signature (untiered): `CombatPathBuilderStandard * vfunc_10(undefined8 * param_1, undefined8 * * param_2, undefined8 param_3, undefined8 param_4)`
+pub const CombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard__vfunc_10: u64 = 48627;
 /// `CombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>::vfunc_11` at 0x8a4a10 (rtti, high); signature (low): `undefined vfunc_11(CombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard> * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const CombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard__vfunc_11: u64 = 48630;
 /// `CombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>::vfunc_12` at 0x8a4a50 (rtti, high); signature (low): `undefined vfunc_12(CombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard> * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
@@ -929,7 +935,7 @@ pub const ComputeFollowerSpacingOffset: u64 = 26378;
 pub const ComputeFollowerTeleportPosition: u64 = 37438;
 /// `ComputeFormHealthDamage` at 0x86b020 (decompiler, medium); signature (untiered): `float ComputeFormHealthDamage(longlong * param_1, longlong * param_2, longlong * param_3)`
 pub const ComputeFormHealthDamage: u64 = 47334;
-/// `ComputeFractionOfScaledExtentBelowLevel` at 0x685c30 (semantic, medium); signature (low): `undefined8 ComputeFractionOfScaledExtentBelowLevel(longlong * param_1, float param_2, longlong param_3)`; semantic: the fraction of the actor's scaled height under the water surface (0..1); Actor::Update's swim input (medium); signature `float (Actor* this, float z, TESWaterForm* water)`
+/// `ComputeFractionOfScaledExtentBelowLevel` at 0x685c30 (semantic, medium); signature (low): `float ComputeFractionOfScaledExtentBelowLevel(longlong * param_1, float param_2, longlong param_3)`; semantic: the fraction of the actor's scaled height under the water surface (0..1); Actor::Update's swim input (medium); signature `float (Actor* this, float z, TESWaterForm* water)`
 pub const ComputeFractionOfScaledExtentBelowLevel: u64 = 37448;
 /// `ComputeFrustumPlanes` at 0xef7710 (semantic, high); signature (medium): `undefined ComputeFrustumPlanes(float * param_1, float * param_2, float * param_3)`; semantic: six inward planes in the order near, far, left, right, top, bottom (perspective and orthographic branches) (high); signature `void (NiPlane planes[6], const NiFrustum* frustum, const NiTransform* world)`
 pub const ComputeFrustumPlanes: u64 = 70808;
@@ -957,7 +963,7 @@ pub const ComputeGridVertexPosition: u64 = 18793;
 pub const ComputeGroupScaledOffensiveMult: u64 = 50637;
 /// `ComputeGskClosestPoints` at 0xcc2b00 (decompiler, medium); signature (untiered): `undefined ComputeGskClosestPoints(undefined8 * param_1, undefined8 * param_2, longlong param_3, longlong * param_4)`
 pub const ComputeGskClosestPoints: u64 = 67526;
-/// `ComputeGunSpread` at 0x41fda0 (semantic, medium); signature (untiered): `undefined8 ComputeGunSpread(longlong * param_1, longlong param_2, float param_3, uint param_4, byte param_5, byte param_6, byte param_7, byte param_8)`; semantic: weapon spread from skill, condition and stance, with the iron-sights base setting (fGunSpreadIronSightsBase); Fallout-era code with no caller (medium); signature `float (ActorValueOwner* shooterValues, void* weaponData, float condition, float drift, bool ironSights, bool crouching, bool walking, bool running)`
+/// `ComputeGunSpread` at 0x41fda0 (semantic, medium); signature (untiered): `float ComputeGunSpread(longlong * param_1, longlong param_2, float param_3, uint param_4, byte param_5, byte param_6, byte param_7, byte param_8)`; semantic: weapon spread from skill, condition and stance, with the iron-sights base setting (fGunSpreadIronSightsBase); Fallout-era code with no caller (medium); signature `float (ActorValueOwner* shooterValues, void* weaponData, float condition, float drift, bool ironSights, bool crouching, bool walking, bool running)`
 pub const ComputeGunSpread: u64 = 26440;
 /// `ComputeGunWeaponConditionDamage` at 0x420210 (decompiler, medium); signature (medium): `float ComputeGunWeaponConditionDamage(longlong param_1, float param_2)`
 pub const ComputeGunWeaponConditionDamage: u64 = 26446;
@@ -7755,11 +7761,3 @@ pub const CreateNiPSysRotationModifier: u64 = 75395;
 pub const CreateNiPSysSpawnModifier: u64 = 75411;
 /// `CreateNiPSysSphereEmitter` at 0xfb9c40 (decompiler, high); signature (high): `NiPSysVolumeEmitter * CreateNiPSysSphereEmitter(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const CreateNiPSysSphereEmitter: u64 = 75426;
-/// `CreateNiPSysSphericalCollider` at 0xfba400 (decompiler, high); signature (untiered): `undefined CreateNiPSysSphericalCollider(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CreateNiPSysSphericalCollider: u64 = 75441;
-/// `CreateNiPSysTurbulenceFieldModifier` at 0xfbb270 (decompiler, high); signature (high): `NiPSysFieldModifier * CreateNiPSysTurbulenceFieldModifier(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CreateNiPSysTurbulenceFieldModifier: u64 = 75457;
-/// `CreateNiPSysUpdateCtlr` at 0xfa2700 (decompiler, high); signature (high): `NiTimeController * CreateNiPSysUpdateCtlr(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CreateNiPSysUpdateCtlr: u64 = 74714;
-/// `CreateNiPSysVortexFieldModifier` at 0xfbc150 (decompiler, medium); signature (medium): `NiPSysFieldModifier * CreateNiPSysVortexFieldModifier(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CreateNiPSysVortexFieldModifier: u64 = 75474;

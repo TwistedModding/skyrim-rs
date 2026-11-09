@@ -1354,15 +1354,22 @@ pub struct CachedRaycastData {
     /// +0x2C `undefined1`, semantic; when set the cast skips the phantom and bodies paths and uses the world (medium)
     #[doc(hidden)]
     pub __useWorldOnly: [u8; 1],
-    unknown_2D: [u8; 1],
-    /// +0x2E `u8`, semantic (medium)
+    /// +0x2D `u8`, semantic; set when the record should be re-resolved; written only (low)
     #[doc(hidden)]
-    pub __inUse: [u8; 1],
-    unknown_2F: [u8; 1],
-    /// +0x30 `undefined1`, semantic; sticky: any cast hit (medium)
+    pub __needsRefresh: [u8; 1],
+    /// +0x2E `u8`, semantic; record slot unused (high)
     #[doc(hidden)]
-    pub __everHit: [u8; 1],
-    unknown_31: [u8; 7],
+    pub __isFree: [u8; 1],
+    /// +0x2F `u8`, semantic; copy of the graph variable bIsSynced; only written by dead code (medium)
+    #[doc(hidden)]
+    pub __graphIsSynced: [u8; 1],
+    /// +0x30 `undefined1`, semantic; any CastRay of this record hit (normal.z > 0) since the per-frame clear (high)
+    #[doc(hidden)]
+    pub __hitThisFrame: [u8; 1],
+    /// +0x31 `u8`, semantic; copy of the graph variable bLegCastResults; only written by dead code (medium)
+    #[doc(hidden)]
+    pub __legCastResults: [u8; 1],
+    unknown_32: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1374,8 +1381,11 @@ const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __collectedBodies
 const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __world) == 0x20);
 const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __collisionGroup) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __useWorldOnly) == 0x2C);
-const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __inUse) == 0x2E);
-const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __everHit) == 0x30);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __needsRefresh) == 0x2D);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __isFree) == 0x2E);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __graphIsSynced) == 0x2F);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __hitThisFrame) == 0x30);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __legCastResults) == 0x31);
 
 /// `Calendar`: size 0x40 (exact).
 /// Meaning: the game calendar (no RTTI): six TESGlobal pointers (medium, camera pass).

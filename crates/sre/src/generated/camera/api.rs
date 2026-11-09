@@ -2401,7 +2401,7 @@ impl crate::BleedoutCameraState {
 impl crate::CachedRaycastData {
     /// `CachedRaycastData::PopulateFromREFRHandle`: for an actor with a character controller: group = controller filter info (slot 8) >> 16, world = controller slot 15, phantom or collected bodies from controller slot 16 (+0x48 == 2: phantom (+0x18)->+0x10 if its type is 2; == 1: list at +0x20+(+0x40)), useWorldOnly = race +0x108 bit 17 (actor+0x1f8); otherwise useWorldOnly = 1 and world/group from the first collision object under the 3D
     ///
-    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 32747, rva 0x54b280.
+    /// Semantic, ik pass, high; ledger runtime evidence, name high; id 32747, rva 0x54b280.
     /// `void (CachedRaycastData* this, const RefHandle* handle)`
     ///
     /// # Safety
@@ -2445,14 +2445,14 @@ impl crate::CachedRaycastData {
     pub fn collisionGroup_ptr(&self) -> *mut u32 { Self::__member_collisionGroup(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_everHit(this: *const Self) -> *mut u8 { unsafe { member!(this, "CachedRaycastData.everHit", 0x30, u8) } }
-    /// `CachedRaycastData::everHit`, at +0x30 on 1.7.104.
+    pub fn __member_graphIsSynced(this: *const Self) -> *mut u8 { unsafe { member!(this, "CachedRaycastData.graphIsSynced", 0x2F, u8) } }
+    /// `CachedRaycastData::graphIsSynced`, at +0x2F on 1.7.104.
     #[inline]
-    pub fn everHit(&self) -> u8 { unsafe { Self::__member_everHit(core::ptr::from_ref(self)).read_unaligned() } }
+    pub fn graphIsSynced(&self) -> u8 { unsafe { Self::__member_graphIsSynced(core::ptr::from_ref(self)).read_unaligned() } }
     #[inline]
-    pub fn set_everHit(&mut self, value: u8) { unsafe { Self::__member_everHit(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    pub fn set_graphIsSynced(&mut self, value: u8) { unsafe { Self::__member_graphIsSynced(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
-    pub fn everHit_ptr(&self) -> *mut u8 { Self::__member_everHit(core::ptr::from_ref(self)) }
+    pub fn graphIsSynced_ptr(&self) -> *mut u8 { Self::__member_graphIsSynced(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_handle(this: *const Self) -> *mut u32 { unsafe { member!(this, "CachedRaycastData.handle", 0x8, u32) } }
@@ -2465,14 +2465,44 @@ impl crate::CachedRaycastData {
     pub fn handle_ptr(&self) -> *mut u32 { Self::__member_handle(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_inUse(this: *const Self) -> *mut u8 { unsafe { member!(this, "CachedRaycastData.inUse", 0x2E, u8) } }
-    /// `CachedRaycastData::inUse`, at +0x2E on 1.7.104.
+    pub fn __member_hitThisFrame(this: *const Self) -> *mut u8 { unsafe { member!(this, "CachedRaycastData.hitThisFrame", 0x30, u8) } }
+    /// `CachedRaycastData::hitThisFrame`, at +0x30 on 1.7.104.
     #[inline]
-    pub fn inUse(&self) -> u8 { unsafe { Self::__member_inUse(core::ptr::from_ref(self)).read_unaligned() } }
+    pub fn hitThisFrame(&self) -> u8 { unsafe { Self::__member_hitThisFrame(core::ptr::from_ref(self)).read_unaligned() } }
     #[inline]
-    pub fn set_inUse(&mut self, value: u8) { unsafe { Self::__member_inUse(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    pub fn set_hitThisFrame(&mut self, value: u8) { unsafe { Self::__member_hitThisFrame(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
-    pub fn inUse_ptr(&self) -> *mut u8 { Self::__member_inUse(core::ptr::from_ref(self)) }
+    pub fn hitThisFrame_ptr(&self) -> *mut u8 { Self::__member_hitThisFrame(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isFree(this: *const Self) -> *mut u8 { unsafe { member!(this, "CachedRaycastData.isFree", 0x2E, u8) } }
+    /// `CachedRaycastData::isFree`, at +0x2E on 1.7.104.
+    #[inline]
+    pub fn isFree(&self) -> u8 { unsafe { Self::__member_isFree(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isFree(&mut self, value: u8) { unsafe { Self::__member_isFree(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isFree_ptr(&self) -> *mut u8 { Self::__member_isFree(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_legCastResults(this: *const Self) -> *mut u8 { unsafe { member!(this, "CachedRaycastData.legCastResults", 0x31, u8) } }
+    /// `CachedRaycastData::legCastResults`, at +0x31 on 1.7.104.
+    #[inline]
+    pub fn legCastResults(&self) -> u8 { unsafe { Self::__member_legCastResults(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_legCastResults(&mut self, value: u8) { unsafe { Self::__member_legCastResults(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn legCastResults_ptr(&self) -> *mut u8 { Self::__member_legCastResults(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_needsRefresh(this: *const Self) -> *mut u8 { unsafe { member!(this, "CachedRaycastData.needsRefresh", 0x2D, u8) } }
+    /// `CachedRaycastData::needsRefresh`, at +0x2D on 1.7.104.
+    #[inline]
+    pub fn needsRefresh(&self) -> u8 { unsafe { Self::__member_needsRefresh(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_needsRefresh(&mut self, value: u8) { unsafe { Self::__member_needsRefresh(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn needsRefresh_ptr(&self) -> *mut u8 { Self::__member_needsRefresh(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_useWorldOnly(this: *const Self) -> *mut u8 { unsafe { member!(this, "CachedRaycastData.useWorldOnly", 0x2C, u8) } }
@@ -9289,6 +9319,15 @@ impl crate::bhkShape {
 }
 
 impl crate::bhkWorld {
+    /// `bhkWorld::ComputePhysicsTimeThisFrame`: g_PhysicsTimeThisFrame = min(accumulator + dt, uMaxNumPhysicsStepsPerUpdate * fMaxTime * timeMult) (Complex variants when the flag is set); below a minimum the time is carried in the accumulator
+    ///
+    /// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 77850, rva 0x104ab70.
+    /// `void (float frameDelta, bool complex)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn compute_physics_time_this_frame(frameDelta: f32, complex: bool) { unsafe { function!(77850, (f32, bool))(frameDelta, complex) } }
     /// `bhkWorld::LockForWriteIfEnabled`: BSReadWriteLock::LockForWrite(this+0xc598) when bUseWorldLock:HAVOK is set
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 77928, rva 0x104fce0.

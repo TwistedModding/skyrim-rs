@@ -7214,6 +7214,12 @@ impl crate::SceneGraph {
     /// `float (SceneGraph* this)`
     #[inline]
     pub fn get_far_distance(&self) -> f32 { unsafe { function!(36845, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
+    /// `SceneGraph::GetNearDistance`: see BSSceneGraph slot 63
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 36844, rva 0x665720.
+    /// `float (SceneGraph* this)`
+    #[inline]
+    pub fn get_near_distance(&self) -> f32 { unsafe { function!(36844, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `SceneGraph::SetFarDistanceOverride`: +0x144 = far, +0x149 = 1 (slot 62 then returns it)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 36842, rva 0x6656f0.

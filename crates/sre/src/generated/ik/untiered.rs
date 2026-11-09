@@ -152,16 +152,6 @@ impl crate::hkbHandIkModifier {
     pub unsafe fn vfunc_23_sub0(param_1: i64, param_2: i32, param_3: f32, param_4: *mut f32, param_5: u64, param_6: *mut i64) -> u64 { unsafe { function!(59792, (i64, i32, f32, *mut f32, u64, *mut i64) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6) } }
 }
 
-impl crate::hkbKeyframeBonesModifier {
-    /// `hkbKeyframeBonesModifier::vfunc_23_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 60071, rva 0xb28c00).
-    /// `undefined vfunc_23_sub0(longlong param_1, longlong * param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_23_sub0(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(60071, (i64, *mut i64) -> u64)(param_1, param_2) } }
-}
-
 impl crate::hkbPoweredRagdollControlsModifier {
     /// `hkbPoweredRagdollControlsModifier::vfunc_23_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 60069, rva 0xb283f0).
     /// `undefined vfunc_23_sub0(longlong param_1, longlong * param_2)`

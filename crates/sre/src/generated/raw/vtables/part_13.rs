@@ -10092,7 +10092,7 @@ impl HelpMessageManager_vtable {
 pub struct HighActorCuller_vtable {
     /// `HighActorCuller::vdtor` at 0x73c770 (slot_propagation, medium); signature (low): `HighActorCuller * vdtor(HighActorCuller * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `HighActorCuller::Visit` at 0x73c5c0 (semantic, high); signature (untiered): `undefined Visit(HighActorCuller * this, TESObjectREFR * param_1)`
+    /// `HighActorCuller::Visit` at 0x73c5c0 (runtime, high); signature (untiered): `undefined Visit(HighActorCuller * this, TESObjectREFR * param_1)`
     pub slot_1: *const c_void,
 }
 impl HighActorCuller_vtable {

@@ -6879,7 +6879,7 @@ impl crate::hkbGetUpModifier {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn modify(&self, ctx: *mut c_void, output: *mut c_void) { unsafe { function!(59766, (*const Self, *mut c_void, *mut c_void))(core::ptr::from_ref(self), ctx, output) } }
+    pub unsafe fn modify(&self, ctx: *mut c_void, output: *mut crate::hkbGeneratorOutput) { unsafe { function!(59766, (*const Self, *mut c_void, *mut crate::hkbGeneratorOutput))(core::ptr::from_ref(self), ctx, output) } }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_108(this: *const Self) -> *mut u64 { unsafe { member!(this, "hkbGetUpModifier.field_108", 0x108, u64) } }

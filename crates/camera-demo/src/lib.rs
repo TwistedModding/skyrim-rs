@@ -385,7 +385,7 @@ fn report(label: &str) {
             let setting = skyrim::render::near_distance();
             let frame = sre::get_main_camera().map(|c| (frustum(c), c.maxFarNearRatio));
             let shift = skyrim::render::depth_shift_near();
-            let graph = sre::g_scene_graph().map_or(0.0, |g| g.get_near_distance());
+            let graph = sre::g_scene_graph().map_or(0.0, sre::SceneGraph::get_near_distance);
             let gpu: Vec<f32> = skyrim::render::camera_entries().iter().filter(|e| sre::get_main_camera().is_some_and(|c| core::ptr::eq(c, e.camera))).map(snapshot_near).collect();
             let cascades = shadow_scene_node(0).and_then(sre::ShadowSceneNode::sun_shadow_light).map(|s| (floats::<3>(&s.cascadeNear), floats::<3>(&s.cascadeFar)));
             let far = frame.map_or(0.0, |f| f.0[5]);

@@ -7,20 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `SetBodySpaceAxesAndPivots` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 61895, rva 0xb721f0).
-/// `undefined SetBodySpaceAxesAndPivots(longlong param_1, undefined8 * param_2, undefined8 * param_3, undefined4 param_4, undefined8 * param_5, undefined8 * param_6, undefined4 param_7)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_body_space_axes_and_pivots(param_1: i64, param_2: *mut u64, param_3: *mut u64, param_4: u32, param_5: *mut u64, param_6: *mut u64, param_7: u32) -> u64 { unsafe { function!(61895, (i64, *mut u64, *mut u64, u32, *mut u64, *mut u64, u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7) } }
-/// `SetBodySpaceAxesAndPivotsWithFlag` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 61935, rva 0xb74920).
-/// `undefined SetBodySpaceAxesAndPivotsWithFlag(longlong param_1, undefined8 * param_2, undefined8 * param_3, undefined8 * param_4, undefined8 * param_5, undefined4 param_6, int param_7)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_body_space_axes_and_pivots_with_flag(param_1: i64, param_2: *mut u64, param_3: *mut u64, param_4: *mut u64, param_5: *mut u64, param_6: u32, param_7: i32) -> u64 { unsafe { function!(61935, (i64, *mut u64, *mut u64, *mut u64, *mut u64, u32, i32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7) } }
 /// `SetBufferField8AndFlag40` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 87459, rva 0xe00900).
 /// `undefined SetBufferField8AndFlag40(longlong param_1, uint * param_2)`
 ///
@@ -13916,3 +13902,24 @@ pub unsafe fn unescape_json_string_to_fixed_string2000(param_1: *mut u64, param_
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn unescape_json_string_to_fixed_string512(param_1: *mut u64, param_2: *mut u8, param_3: u64, param_4: *mut c_char) -> *mut u8 { unsafe { function!(449206, (*mut u64, *mut u8, u64, *mut c_char) -> *mut u8)(param_1, param_2, param_3, param_4) } }
+/// `UnescapeJsonStringToFixedString64` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 449595, rva 0x13f07a0).
+/// `undefined UnescapeJsonStringToFixedString64(undefined8 * param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn unescape_json_string_to_fixed_string64(param_1: *mut u64, param_2: *mut u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(449595, (*mut u64, *mut u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `UnescapeJsonStringToUtf8` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 527557, rva 0x142d670).
+/// `undefined UnescapeJsonStringToUtf8(undefined8 * param_1, byte * param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn unescape_json_string_to_utf8(param_1: *mut u64, param_2: *mut u8, param_3: u64, param_4: u64) -> u64 { unsafe { function!(527557, (*mut u64, *mut u8, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `UnescapeJsonString_10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 451769, rva 0x14497c0).
+/// `undefined UnescapeJsonString_10(undefined8 * param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn unescape_json_string_10(param_1: *mut u64, param_2: *mut u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(451769, (*mut u64, *mut u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }

@@ -1339,7 +1339,7 @@ pub struct Actor_vtable_C0 {
     pub slot_3: *const c_void,
     /// `Actor::ActorState_vfunc_4` at 0x6b57f0 (rtti, medium); signature (low): `undefined ActorState_vfunc_4(Actor * this, float * param_1)`
     pub slot_4: *const c_void,
-    /// `Actor::ActorState_GetMovementSpeed` at 0x6b5860 (semantic, high); signature (untiered): `undefined4 ActorState_GetMovementSpeed(Actor * this)`
+    /// `Actor::ActorState_GetMovementSpeed` at 0x6b5860 (semantic, high); signature (untiered): `float ActorState_GetMovementSpeed(Actor * this)`
     pub slot_5: *const c_void,
     /// `Actor::ActorState_vfunc_6` at 0x6b5500 (rtti, medium); signature (low): `undefined4 ActorState_vfunc_6(Actor * this)`
     pub slot_6: *const c_void,

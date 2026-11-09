@@ -7,6 +7,12 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `SendRequestOrFailSocketTerminated` at 0x146b780 (decompiler, medium); signature (untiered): `undefined SendRequestOrFailSocketTerminated(longlong * param_1, AsyncOperationProxy * param_2, undefined8 * param_3, longlong * param_4, longlong * param_5)`
+pub const SendRequestOrFailSocketTerminated: u64 = 452945;
+/// `SendSetBehaviorCommand` at 0x1104b10 (decompiler, medium); signature (untiered): `undefined SendSetBehaviorCommand(longlong param_1, undefined8 param_2, longlong param_3, longlong param_4, undefined4 param_5, undefined1 param_6)`
+pub const SendSetBehaviorCommand: u64 = 81041;
+/// `SendSetLocalTimeOfClipGeneratorCommand` at 0x1104d50 (decompiler, medium); signature (untiered): `undefined SendSetLocalTimeOfClipGeneratorCommand(longlong param_1, undefined8 param_2, undefined2 param_3, undefined4 param_4)`
+pub const SendSetLocalTimeOfClipGeneratorCommand: u64 = 81042;
 /// `SendSetNodePropertyCommand` at 0x1104da0 (decompiler, medium); signature (untiered): `undefined SendSetNodePropertyCommand(longlong param_1, undefined8 param_2, char * param_3, void * param_4, undefined4 param_5)`
 pub const SendSetNodePropertyCommand: u64 = 81043;
 /// `SendSetWordVariableCommand` at 0x11049a0 (decompiler, medium); signature (untiered): `undefined SendSetWordVariableCommand(longlong param_1, undefined8 param_2, undefined4 param_3, undefined4 * param_4, undefined1 param_5)`
@@ -5647,7 +5653,7 @@ pub type SoundHandle__GetFlags_fn = unsafe extern "C" fn(this: *const crate::Sou
 pub const SoundHandle__GetPositionMs: u64 = 67639;
 /// `SoundHandle::GetPositionMs` as a function pointer type (high).
 pub type SoundHandle__GetPositionMs_fn = unsafe extern "C" fn(this: *const crate::SoundHandle) -> u32;
-/// `SoundHandle::GetVolume` at 0xcc9820 (semantic, high); signature (untiered): `undefined8 GetVolume(int * param_1)`; semantic: status +8 (high); signature `float (const SoundHandle* this)`
+/// `SoundHandle::GetVolume` at 0xcc9820 (semantic, high); signature (untiered): `float GetVolume(int * param_1)`; semantic: status +8 (high); signature `float (const SoundHandle* this)`
 pub const SoundHandle__GetVolume: u64 = 67625;
 /// `SoundHandle::GetVolume` as a function pointer type (high).
 pub type SoundHandle__GetVolume_fn = unsafe extern "C" fn(this: *const crate::SoundHandle) -> f32;
@@ -5745,7 +5751,7 @@ pub const SpawnHazardEffect__vfunc_21: u64 = 36881;
 pub const SpawnReferenceAtStoredPosition: u64 = 34993;
 /// `SpeakDialogueItem` at 0x71edf0 (decompiler, medium); signature (untiered): `undefined SpeakDialogueItem(longlong param_1, longlong * param_2, longlong * param_3)`
 pub const SpeakDialogueItem: u64 = 39772;
-/// `SpeakSoundOrTopic` at 0x68d490 (semantic, medium); signature (untiered): `ulonglong SpeakSoundOrTopic(longlong * param_1, char * param_2, int * param_3, undefined4 param_4, undefined4 param_5, int param_6, longlong param_7, longlong param_8, longlong * param_9, char param_10, longlong param_11, char param_12, char param_13, char param_14)`; semantic: plays a voice line (sound path or topic) on an actor with its lip file and speaker/listener idles; returns the duration (medium); signature `float (Actor* speaker, const char* soundPath, SoundHandle* outHandle, u32 topicInfo, u32 emotion, i32 defaultDurationMs, TESIdleForm* speakerIdle, TESIdleForm* targetIdle, TESObjectREFR* target, bool setTopic, BGSSoundOutput* outputModel, bool rawPath, bool useLipFile, bool forceIdle)`
+/// `SpeakSoundOrTopic` at 0x68d490 (semantic, medium); signature (untiered): `float SpeakSoundOrTopic(longlong * param_1, char * param_2, int * param_3, undefined4 param_4, undefined4 param_5, int param_6, longlong param_7, longlong param_8, longlong * param_9, char param_10, longlong param_11, char param_12, char param_13, char param_14)`; semantic: plays a voice line (sound path or topic) on an actor with its lip file and speaker/listener idles; returns the duration (medium); signature `float (Actor* speaker, const char* soundPath, SoundHandle* outHandle, u32 topicInfo, u32 emotion, i32 defaultDurationMs, TESIdleForm* speakerIdle, TESIdleForm* targetIdle, TESObjectREFR* target, bool setTopic, BGSSoundOutput* outputModel, bool rawPath, bool useLipFile, bool forceIdle)`
 pub const SpeakSoundOrTopic: u64 = 37542;
 /// `SpecificItemCollector::ctor` at 0x404230 (layout_inference, medium); signature (low): `SpecificItemCollector * ctor(SpecificItemCollector * this, int param_1, longlong param_2)`
 pub const SpecificItemCollector__ctor: u64 = 25986;
@@ -8099,11 +8105,3 @@ pub const SynchronizedQueue_TextureCreator__createTask____ptr64__vdtor: u64 = 44
 pub const SynchronizedQueue_TextureCreator__createTask____ptr64__vfunc_1: u64 = 442049;
 /// `SynchronizedQueue<TextureCreator::createTask*___ptr64>::vfunc_2` at 0x59e310 (rtti, high); signature (high): `undefined vfunc_2(SynchronizedQueue<TextureCreator::createTask*___ptr64> * this)`
 pub const SynchronizedQueue_TextureCreator__createTask____ptr64__vfunc_2: u64 = 442054;
-/// `SynchronizedQueue<TextureCreator::createTask*___ptr64>::vfunc_3` at 0x59e230 (rtti, high); signature (high): `undefined vfunc_3(SynchronizedQueue<TextureCreator::createTask*___ptr64> * this)`
-pub const SynchronizedQueue_TextureCreator__createTask____ptr64__vfunc_3: u64 = 442051;
-/// `SynchronizedQueue<TextureCreator::createTask*___ptr64>::vfunc_4` at 0x59e270 (rtti, high); signature (high): `undefined4 vfunc_4(SynchronizedQueue<TextureCreator::createTask*___ptr64> * this)`
-pub const SynchronizedQueue_TextureCreator__createTask____ptr64__vfunc_4: u64 = 442052;
-/// `SystemEventAdapter::vdtor` at 0x6511a0 (layout_inference, medium); signature (low): `SystemEventAdapter * vdtor(SystemEventAdapter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const SystemEventAdapter__vdtor: u64 = 36532;
-/// `SystemEventAdapter::vfunc_1` at 0x651110 (rtti, high); signature (low): `undefined8 vfunc_1(SystemEventAdapter * this, longlong param_1)`
-pub const SystemEventAdapter__vfunc_1: u64 = 36531;

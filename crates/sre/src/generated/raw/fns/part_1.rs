@@ -57,7 +57,7 @@ pub type AIProcess__GetLastIdlePlayed_fn = unsafe extern "C" fn(this: *mut crate
 pub const AIProcess__GetLoadingMenuClosed: u64 = 39543;
 /// `AIProcess::GetLoadingMenuClosed` as a function pointer type (high).
 pub type AIProcess__GetLoadingMenuClosed_fn = unsafe extern "C" fn(this: *mut crate::AIProcess) -> bool;
-/// `AIProcess::GetMovementSpeed` at 0x723330 (semantic, high); signature (untiered): `undefined4 GetMovementSpeed(longlong param_1)`; semantic: middleHigh (+8) ? *(float*)(middleHigh + 0x2a8) : 0 (high); signature `float (const AIProcess* this)`
+/// `AIProcess::GetMovementSpeed` at 0x723330 (semantic, high); signature (untiered): `float GetMovementSpeed(longlong param_1)`; semantic: middleHigh (+8) ? *(float*)(middleHigh + 0x2a8) : 0 (high); signature `float (const AIProcess* this)`
 pub const AIProcess__GetMovementSpeed: u64 = 39872;
 /// `AIProcess::GetMovementSpeed` as a function pointer type (high).
 pub type AIProcess__GetMovementSpeed_fn = unsafe extern "C" fn(this: *const crate::AIProcess) -> f32;
@@ -517,7 +517,7 @@ pub const ActiveEffectReferenceEffectController__vfunc_9: u64 = 34842;
 pub const Actor__ActorState_GetCharacterState: u64 = 38038;
 /// `Actor::ActorState_GetCharacterState` as a function pointer type (high).
 pub type Actor__ActorState_GetCharacterState_fn = unsafe extern "C" fn(this: *mut crate::ActorState) -> u32;
-/// `Actor::ActorState_GetMovementSpeed` at 0x6b5860 (semantic, high); signature (untiered): `undefined4 ActorState_GetMovementSpeed(Actor * this)`; semantic: Actor's ActorState slot 5 (this = Actor+0xc0): the process's movement speed, 0 without a process (high); signature `float (const ActorState* this)`
+/// `Actor::ActorState_GetMovementSpeed` at 0x6b5860 (semantic, high); signature (untiered): `float ActorState_GetMovementSpeed(Actor * this)`; semantic: Actor's ActorState slot 5 (this = Actor+0xc0): the process's movement speed, 0 without a process (high); signature `float (const ActorState* this)`
 pub const Actor__ActorState_GetMovementSpeed: u64 = 38028;
 /// `Actor::ActorState_GetMovementSpeed` as a function pointer type (high).
 pub type Actor__ActorState_GetMovementSpeed_fn = unsafe extern "C" fn(this: *const crate::ActorState) -> f32;
@@ -655,7 +655,7 @@ pub const Actor__GetCharController: u64 = 37258;
 pub type Actor__GetCharController_fn = unsafe extern "C" fn(this: *mut crate::Actor) -> *mut crate::bhkCharacterController;
 /// `Actor::GetCombatState` at 0x6c90b0 (runtime, medium); signature (untiered): `undefined8 GetCombatState(longlong * param_1)`; semantic: 0 none, 1 combat, 2 searching (medium); signature `uint Actor::GetCombatState(Actor* this)`
 pub const Actor__GetCombatState: u64 = 38556;
-/// `Actor::GetCurrentSpeed` at 0x6af0d0 (semantic, high); signature (untiered): `undefined4 GetCurrentSpeed(longlong param_1)`; semantic: middleHigh+0x2a8, 0 without process (high); signature `float (Actor* this)`
+/// `Actor::GetCurrentSpeed` at 0x6af0d0 (semantic, high); signature (untiered): `float GetCurrentSpeed(longlong param_1)`; semantic: middleHigh+0x2a8, 0 without process (high); signature `float (Actor* this)`
 pub const Actor__GetCurrentSpeed: u64 = 37957;
 /// `Actor::GetCurrentSpeed` as a function pointer type (high).
 pub type Actor__GetCurrentSpeed_fn = unsafe extern "C" fn(this: *mut crate::Actor) -> f32;
@@ -663,7 +663,7 @@ pub type Actor__GetCurrentSpeed_fn = unsafe extern "C" fn(this: *mut crate::Acto
 pub const Actor__GetEquippedObject: u64 = 38574;
 /// `Actor::GetEquippedObject` as a function pointer type (high).
 pub type Actor__GetEquippedObject_fn = unsafe extern "C" fn(this: *mut crate::Actor, leftHand: bool) -> *mut crate::TESForm;
-/// `Actor::GetEyeHeight` at 0x687450 (semantic, high); signature (untiered): `undefined4 GetEyeHeight(longlong param_1)`; semantic: the height above the actor's position that cameras and detection use: the player -> PlayerCamera::GetEyeHeightFromCam3 (Cam3 node local z); others -> the process cache (process+0x50 -> +0x14) when flag bit 9 of its +0x2c is set, else UpdateField1FChildHeight (high); signature `float (const Actor* actor)`
+/// `Actor::GetEyeHeight` at 0x687450 (semantic, high); signature (untiered): `float GetEyeHeight(longlong param_1)`; semantic: the height above the actor's position that cameras and detection use: the player -> PlayerCamera::GetEyeHeightFromCam3 (Cam3 node local z); others -> the process cache (process+0x50 -> +0x14) when flag bit 9 of its +0x2c is set, else UpdateField1FChildHeight (high); signature `float (const Actor* actor)`
 pub const Actor__GetEyeHeight: u64 = 37477;
 /// `Actor::GetEyeHeight` as a function pointer type (high).
 pub type Actor__GetEyeHeight_fn = unsafe extern "C" fn(actor: *const crate::Actor) -> f32;
@@ -693,7 +693,7 @@ pub type Actor__GetMountRef_fn = unsafe extern "C" fn(this: *const crate::Actor,
 pub const Actor__GetMovementControllerPtr: u64 = 37792;
 /// `Actor::GetMovementControllerPtr` as a function pointer type (high).
 pub type Actor__GetMovementControllerPtr_fn = unsafe extern "C" fn(this: *mut crate::Actor) -> *mut c_void;
-/// `Actor::GetMovementDirection` at 0x6af1b0 (semantic, high); signature (untiered): `undefined4 GetMovementDirection(longlong param_1)`; semantic: middleHigh+0xb8 (high); signature `float (Actor* this)`
+/// `Actor::GetMovementDirection` at 0x6af1b0 (semantic, high); signature (untiered): `float GetMovementDirection(longlong param_1)`; semantic: middleHigh+0xb8 (high); signature `float (Actor* this)`
 pub const Actor__GetMovementDirection: u64 = 37960;
 /// `Actor::GetMovementDirection` as a function pointer type (high).
 pub type Actor__GetMovementDirection_fn = unsafe extern "C" fn(this: *mut crate::Actor) -> f32;

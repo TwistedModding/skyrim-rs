@@ -16668,7 +16668,9 @@ id 565152 457693
 id-unverified 215746
 id-unverified 220338
 id-unverified 235009
+id-unverified 385940
 id-unverified 389089
+id-unverified 389139
 id-unverified 402604
 id-unverified 402605
 id-unverified 402606
@@ -16692,6 +16694,7 @@ id-unverified 409426
 id-unverified 409433
 id-unverified 409440
 id-unverified 409654
+id-unverified 411327
 id-unverified 411524
 id-unverified 433846
 id-unverified 433848
@@ -25690,6 +25693,7 @@ member-unverified BSWin32MouseDevice.reinitializing
 member-unverified BSWin32MouseDevice.state
 member-unverified BSWin32SaveDataSystemUtility.source_BSSaveDataEvent
 member-unverified BSWin32SystemUtility.source_BSSystemEvent
+member-unverified BShkbAnimationGraph.boneLODEnabled
 member-unverified BShkbAnimationGraph.boneLODTable
 member-unverified BShkbAnimationGraph.eventsSuppressed
 member-unverified BShkbAnimationGraph.interpTimerA
@@ -25726,9 +25730,12 @@ member-unverified ButtonEvent.field_C
 member-unverified CachedRaycastData.cachingPhantom
 member-unverified CachedRaycastData.collectedBodies
 member-unverified CachedRaycastData.collisionGroup
-member-unverified CachedRaycastData.everHit
+member-unverified CachedRaycastData.graphIsSynced
 member-unverified CachedRaycastData.handle
-member-unverified CachedRaycastData.inUse
+member-unverified CachedRaycastData.hitThisFrame
+member-unverified CachedRaycastData.isFree
+member-unverified CachedRaycastData.legCastResults
+member-unverified CachedRaycastData.needsRefresh
 member-unverified CachedRaycastData.useWorldOnly
 member-unverified CachedRaycastData.world
 member-unverified CameraMatrixEntry.eyePosition
@@ -27703,6 +27710,8 @@ member-unverified hkbFootIkModifierLeg.originalAnkleTransformMS
 member-unverified hkbFootIkModifierLeg.prevAnkleRotLS
 member-unverified hkbFootIkModifierLeg.ungroundedEvent
 member-unverified hkbFootIkModifierLeg.verticalError
+member-unverified hkbGeneratorOutput.deleteTracks
+member-unverified hkbGeneratorOutput.tracks
 member-unverified hkbHandIkControlData.extrapolationTimeStep
 member-unverified hkbHandIkControlData.fadeInDuration
 member-unverified hkbHandIkControlData.fadeOutDuration
@@ -36443,6 +36452,7 @@ size-unverified hkbFootIkModifierInternalLegData
 size-unverified hkbFootIkModifierLeg
 size-unverified hkbFootIkSceneModifier
 size-unverified hkbGenerator
+size-unverified hkbGeneratorOutput
 size-unverified hkbGeneratorTransitionEffect
 size-unverified hkbGeneratorTransitionEffectInternalState
 size-unverified hkbGetHandleOnBoneModifier

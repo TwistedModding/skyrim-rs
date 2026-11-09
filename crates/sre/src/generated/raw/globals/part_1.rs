@@ -7635,11 +7635,11 @@ pub const INISetting_bFixNavmeshInfosOnLoad_Pathfinding: u64 = 379851;
 pub const INISetting_bFlyingMountFastTravelCruiseEnabled_GENERAL: u64 = 381554;
 /// `INISetting_bFogEnabled_Weather` at 0x209e850 (setting, high)
 pub const INISetting_bFogEnabled_Weather: u64 = 370217;
-/// `INISetting_bFootIKFeedback_Animation` at 0x20b93f0 (semantic, high); bFootIKFeedback:Animation: Actor::ApplyFootIkFeedback 0x7dd164: when 0 the feedback record is not applied to the character controller (IC7, static-W) (high); type `undefined1`
+/// `INISetting_bFootIKFeedback_Animation` at 0x20b93f0 (runtime, high); bFootIKFeedback:Animation: Actor::ApplyFootIkFeedback 0x7dd164: when 0 the feedback record is not applied to the character controller (IC7, static-W) (high); type `undefined1`
 pub const INISetting_bFootIKFeedback_Animation: u64 = 382155;
-/// `INISetting_bFootIK_Animation` at 0x20c5af8 (semantic, high); bFootIK:Animation, read by BShkbAnimationGraph::Update 0xbcf2c2 and FinalizePose 0xbcca93/0xbccbbc (high); type `class:Setting`
+/// `INISetting_bFootIK_Animation` at 0x20c5af8 (runtime, high); bFootIK:Animation, read by BShkbAnimationGraph::Update 0xbcf2c2 and FinalizePose 0xbcca93/0xbccbbc (high); type `class:Setting`
 pub const INISetting_bFootIK_Animation: u64 = 385957;
-/// `INISetting_bFootIK_RagdollAnim` at 0x20d1c00 (semantic, high); gate of the dead ragdoll foot IK; written by Debug.SetFootIK (high); type `class:Setting`
+/// `INISetting_bFootIK_RagdollAnim` at 0x20d1c00 (runtime, high); gate of the dead ragdoll foot IK; written by Debug.SetFootIK (high); type `class:Setting`
 pub const INISetting_bFootIK_RagdollAnim: u64 = 389230;
 /// `INISetting_bFootPlacementOn_FootIK` at 0x20d1d80 (semantic, high); bFootPlacementOn:FootIK: no reader (only its CRT init) (high); type `undefined1`
 pub const INISetting_bFootPlacementOn_FootIK: u64 = 389276;
@@ -7679,7 +7679,7 @@ pub const INISetting_bGestureEngageButtonsRequired_Controls: u64 = 563930;
 pub const INISetting_bGlobalNavMeshCheckDeleteWarningTriangles_NavMeshGeneration: u64 = 379822;
 /// `INISetting_bGlobalNavMeshCheck_NavMeshGeneration` at 0x20b3038 (setting, high)
 pub const INISetting_bGlobalNavMeshCheck_NavMeshGeneration: u64 = 379819;
-/// `INISetting_bGrabIK_RagdollAnim` at 0x20d1c18 (semantic, high); bGrabIK:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect; forced to 0 at startup by 0x3fd7f0 (high); type `undefined1`
+/// `INISetting_bGrabIK_RagdollAnim` at 0x20d1c18 (runtime, high); bGrabIK:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect; forced to 0 at startup by 0x3fd7f0 (high); type `undefined1`
 pub const INISetting_bGrabIK_RagdollAnim: u64 = 389233;
 /// `INISetting_bGrassPointLighting_Grass` at 0x2079410 (setting, high)
 pub const INISetting_bGrassPointLighting_Grass: u64 = 359419;
@@ -7691,7 +7691,7 @@ pub const INISetting_bHazardDebug_Combat: u64 = 382164;
 pub const INISetting_bHealthBarShowing_GamePlay: u64 = 381452;
 /// `INISetting_bHealthRegenFromRacePlayerOnly_General` at 0x20a1370 (setting, high)
 pub const INISetting_bHealthRegenFromRacePlayerOnly_General: u64 = 371462;
-/// `INISetting_bHumanoidFootIKEnable_Animation` at 0x20b6bc0 (setting, high); bHumanoidFootIKEnable:Animation, read once at 0x6b0491 in the holder's graph setup 0x6b0340 (feeds the graph bool of the same name, g_AnimationVariableNames+0x308) (medium); type `class:Setting`
+/// `INISetting_bHumanoidFootIKEnable_Animation` at 0x20b6bc0 (runtime, high); bHumanoidFootIKEnable:Animation, read once at 0x6b0491 in the holder's graph setup 0x6b0340 (feeds the graph bool of the same name, g_AnimationVariableNames+0x308) (high); type `class:Setting`
 pub const INISetting_bHumanoidFootIKEnable_Animation: u64 = 381305;
 /// `INISetting_bIgnoreThresholds_Pathfinding` at 0x20d4aa0 (setting, high)
 pub const INISetting_bIgnoreThresholds_Pathfinding: u64 = 390479;
@@ -7743,7 +7743,7 @@ pub const INISetting_bLoadMarkers_Display: u64 = 381021;
 pub const INISetting_bLockFramerate_Display: u64 = 388954;
 /// `INISetting_bLodZPrepass_Display` at 0x20d6cb0 (setting, high)
 pub const INISetting_bLodZPrepass_Display: u64 = 391098;
-/// `INISetting_bLookIK_RagdollAnim` at 0x20d1c30 (semantic, high); bLookIK:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
+/// `INISetting_bLookIK_RagdollAnim` at 0x20d1c30 (runtime, high); bLookIK:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_bLookIK_RagdollAnim: u64 = 389236;
 /// `INISetting_bLowHealthIModEnabled_Display` at 0x20b7640 (setting, high)
 pub const INISetting_bLowHealthIModEnabled_Display: u64 = 381595;
@@ -7777,9 +7777,9 @@ pub const INISetting_bPlayStaggers_Combat: u64 = 381246;
 pub const INISetting_bPlayerAlwaysStaggered_Combat: u64 = 381353;
 /// `INISetting_bPlayerGraphFeedback_Controls` at 0x20b74a0 (setting, high)
 pub const INISetting_bPlayerGraphFeedback_Controls: u64 = 381542;
-/// `INISetting_bPoseMatching_RagdollAnim` at 0x20d1c60 (semantic, high); bPoseMatching:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect; forced to 0 at startup by 0x3fd7f0 (high); type `undefined1`
+/// `INISetting_bPoseMatching_RagdollAnim` at 0x20d1c60 (runtime, high); bPoseMatching:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect; forced to 0 at startup by 0x3fd7f0 (high); type `undefined1`
 pub const INISetting_bPoseMatching_RagdollAnim: u64 = 389242;
-/// `INISetting_bPreCullActors_General` at 0x20b5df8 (semantic, high); enables the per-frame actor frustum/portal pre-cull that sets 3D flags bit 20 (value 1) (high); type `class:Setting`
+/// `INISetting_bPreCullActors_General` at 0x20b5df8 (runtime, high); enables the per-frame actor frustum/portal pre-cull that sets 3D flags bit 20 (value 1) (high); type `class:Setting`
 pub const INISetting_bPreCullActors_General: u64 = 380926;
 /// `INISetting_bPrecipitation_Weather` at 0x209e838 (setting, high)
 pub const INISetting_bPrecipitation_Weather: u64 = 370214;
@@ -8219,6 +8219,8 @@ pub const INISetting_fBadTriangleMultiplier_Pathfinding: u64 = 390326;
 pub const INISetting_fBetaDeferredKillTimer_General: u64 = 381437;
 /// `INISetting_fBoneLODDistanceScale_Animation` at 0x20c5a68 (semantic, high); 1.0: scale of the bone LOD distance (high); type `class:Setting`
 pub const INISetting_fBoneLODDistanceScale_Animation: u64 = 385939;
+/// `INISetting_fBoneLODDistanceScale_Animation_value` at 0x20c5a70 (semantic, high); bone LOD distance divisor numerator; image default 1.0 (high); type `float`
+pub const INISetting_fBoneLODDistanceScale_Animation_value: u64 = 385940;
 /// `INISetting_fBookDistance_Interface` at 0x20ba810 (setting, high)
 pub const INISetting_fBookDistance_Interface: u64 = 382714;
 /// `INISetting_fBookLight2DiffuseColorB_Interface` at 0x20bbd80 (setting, high)
@@ -10585,6 +10587,8 @@ pub const INISetting_uMaxInteriorWaterReflections_Water: u64 = 380044;
 pub const INISetting_uMaxNumPhysicsStepsPerUpdateComplex_HAVOK: u64 = 389141;
 /// `INISetting_uMaxNumPhysicsStepsPerUpdate_HAVOK` at 0x20d18e0 (setting, high)
 pub const INISetting_uMaxNumPhysicsStepsPerUpdate_HAVOK: u64 = 389138;
+/// `INISetting_uMaxNumPhysicsStepsPerUpdate_HAVOK_value` at 0x20d18e8 (semantic, high); value of the INI setting uMaxNumPhysicsStepsPerUpdate:HAVOK (the Setting object at 0x20d18e0, value +8); image default 3 (high); type `u32`
+pub const INISetting_uMaxNumPhysicsStepsPerUpdate_HAVOK_value: u64 = 389139;
 /// `INISetting_uMaxSizeForCachedSound_Audio` at 0x20b5c48 (setting, high)
 pub const INISetting_uMaxSizeForCachedSound_Audio: u64 = 380872;
 /// `INISetting_uMaxSkinDecalPerActor_Decals` at 0x2079268 (setting, high)
@@ -13159,13 +13163,3 @@ pub const g_TypeNode_NiCollisionObject: u64 = 415305;
 pub const g_TypeNode_NiColorData: u64 = 410921;
 /// `g_TypeNode_NiColorExtraData` at 0x331da98 (string, high)
 pub const g_TypeNode_NiColorExtraData: u64 = 410574;
-/// `g_TypeNode_NiColorExtraDataController` at 0x331ee68 (string, high)
-pub const g_TypeNode_NiColorExtraDataController: u64 = 410977;
-/// `g_TypeNode_NiColorInterpolator` at 0x331ebd8 (string, high)
-pub const g_TypeNode_NiColorInterpolator: u64 = 410922;
-/// `g_TypeNode_NiControllerManager` at 0x331dd58 (string, high)
-pub const g_TypeNode_NiControllerManager: u64 = 410635;
-/// `g_TypeNode_NiControllerSequence` at 0x331dd78 (string, high)
-pub const g_TypeNode_NiControllerSequence: u64 = 410638;
-/// `g_TypeNode_NiCullingProcess` at 0x331d848 (string, high)
-pub const g_TypeNode_NiCullingProcess: u64 = 410541;

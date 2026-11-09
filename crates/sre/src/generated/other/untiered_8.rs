@@ -7,20 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `RemoveAndDeleteEntryByKey` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 442871, rva 0xa76a60).
-/// `undefined RemoveAndDeleteEntryByKey(int * param_1, longlong * param_2, ulonglong param_3, ulonglong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn remove_and_delete_entry_by_key(param_1: *mut i32, param_2: *mut i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(442871, (*mut i32, *mut i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `RemoveAndDeleteEntryFromArray10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 23931, rva 0x39b350).
-/// `undefined RemoveAndDeleteEntryFromArray10(longlong param_1, void * param_2, undefined8 param_3, void * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn remove_and_delete_entry_from_array10(param_1: i64, param_2: *mut c_void, param_3: u64, param_4: *mut c_void) -> u64 { unsafe { function!(23931, (i64, *mut c_void, u64, *mut c_void) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `RemoveAndDeleteEntryFromArray60` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 23817, rva 0x3973b0).
 /// `undefined RemoveAndDeleteEntryFromArray60(longlong param_1, longlong * param_2)`
 ///
@@ -14147,3 +14133,17 @@ pub unsafe fn set_blur_filter_member(param_1: *mut u8, param_2: *mut i64, param_
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_body_field4_a_from_bone_list(param_1: i64) -> u64 { unsafe { function!(78461, (i64) -> u64)(param_1) } }
+/// `SetBodySpaceAxesAndPivots` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 61895, rva 0xb721f0).
+/// `undefined SetBodySpaceAxesAndPivots(longlong param_1, undefined8 * param_2, undefined8 * param_3, undefined4 param_4, undefined8 * param_5, undefined8 * param_6, undefined4 param_7)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_body_space_axes_and_pivots(param_1: i64, param_2: *mut u64, param_3: *mut u64, param_4: u32, param_5: *mut u64, param_6: *mut u64, param_7: u32) -> u64 { unsafe { function!(61895, (i64, *mut u64, *mut u64, u32, *mut u64, *mut u64, u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7) } }
+/// `SetBodySpaceAxesAndPivotsWithFlag` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 61935, rva 0xb74920).
+/// `undefined SetBodySpaceAxesAndPivotsWithFlag(longlong param_1, undefined8 * param_2, undefined8 * param_3, undefined8 * param_4, undefined8 * param_5, undefined4 param_6, int param_7)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_body_space_axes_and_pivots_with_flag(param_1: i64, param_2: *mut u64, param_3: *mut u64, param_4: *mut u64, param_5: *mut u64, param_6: u32, param_7: i32) -> u64 { unsafe { function!(61935, (i64, *mut u64, *mut u64, *mut u64, *mut u64, u32, i32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7) } }

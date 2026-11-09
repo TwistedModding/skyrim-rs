@@ -7,6 +7,28 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `hkpCharacterProxy::hkpPhantomListener_vdtor` at 0xba15ac (slot_propagation, medium); signature (low): `undefined hkpPhantomListener_vdtor(hkpCharacterProxy * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCharacterProxy__hkpPhantomListener_vdtor: u64 = 62666;
+/// `hkpCharacterProxy::hkpPhantomListener_vfunc_2` at 0xba0d80 (rtti, medium); signature (low): `undefined hkpPhantomListener_vfunc_2(hkpCharacterProxy * this, hkpCharacterProxy * param_1)`
+pub const hkpCharacterProxy__hkpPhantomListener_vfunc_2: u64 = 62658;
+/// `hkpCharacterProxy::vdtor` at 0xba15c0 (slot_propagation, medium); signature (low): `hkpCharacterProxy * vdtor(hkpCharacterProxy * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCharacterProxy__vdtor: u64 = 62667;
+/// `hkpCharacterProxy::vfunc_2` at 0xba0e90 (rtti, medium); signature (low): `undefined vfunc_2(hkpCharacterProxy * this, longlong * param_1)`
+pub const hkpCharacterProxy__vfunc_2: u64 = 62659;
+/// `hkpCharacterProxy::vfunc_3` at 0xb9f720 (rtti, medium); signature (low): `undefined vfunc_3(hkpCharacterProxy * this, longlong param_1, longlong param_2, longlong * param_3, longlong * param_4, longlong * param_5, char param_6)`
+pub const hkpCharacterProxy__vfunc_3: u64 = 62647;
+/// `hkpCharacterProxy::vfunc_4` at 0xba04d0 (rtti, medium); signature (low): `undefined vfunc_4(hkpCharacterProxy * this, float * param_1, float * param_2, float param_3)`
+pub const hkpCharacterProxy__vfunc_4: u64 = 62649;
+/// `hkpCharacterProxyCinfo::vdtor` at 0xb15ae0 (layout_inference, medium); signature (low): `hkpCharacterProxyCinfo * vdtor(hkpCharacterProxyCinfo * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCharacterProxyCinfo__vdtor: u64 = 59840;
+/// `hkpCharacterProxyListener::dtor` at 0x1099400 (layout_inference, high); signature (high): `undefined dtor(hkpCharacterProxyListener * this)`
+pub const hkpCharacterProxyListener__dtor: u64 = 79159;
+/// `hkpCharacterProxyListener::vdtor` at 0x1099620 (layout_inference, medium); signature (low): `hkpCharacterProxyListener * vdtor(hkpCharacterProxyListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCharacterProxyListener__vdtor: u64 = 79165;
+/// `hkpCharacterProxyListener::vfunc_1` at 0x10998b0 (rtti, high); signature (low): `undefined vfunc_1(void)`
+pub const hkpCharacterProxyListener__vfunc_1: u64 = 79175;
+/// `hkpCharacterProxyListener::vfunc_2` at 0x1099880 (rtti, high); signature (low): `undefined vfunc_2(void)`
+pub const hkpCharacterProxyListener__vfunc_2: u64 = 79172;
 /// `hkpCharacterProxyListener::vfunc_3` at 0x1099890 (rtti, high); signature (low): `undefined vfunc_3(void)`
 pub const hkpCharacterProxyListener__vfunc_3: u64 = 79173;
 /// `hkpCharacterProxyListener::vfunc_4` at 0x1099870 (rtti, high); signature (low): `undefined vfunc_4(void)`
@@ -5415,13 +5437,3 @@ pub const std___Ref_count_obj_MarketplaceEvent__make_EventHandlerEnabler__vfunc_
 pub const std___Ref_count_obj_bnet__Account__SteamExternalAuthInfo__vfunc_0: u64 = 445702;
 /// `std::_Ref_count_obj<bnet::Account::SteamExternalAuthInfo>::vfunc_1` at 0x12b1620 (rtti, high); signature (high): `undefined vfunc_1(_Ref_count_obj<bnet::Account::SteamExternalAuthInfo> * this)`
 pub const std___Ref_count_obj_bnet__Account__SteamExternalAuthInfo__vfunc_1: u64 = 445701;
-/// `std::_Ref_count_obj<bnet::Account::SteamExternalAuthInfo>::vfunc_2` at 0x12add60 (rtti, high); signature (low): `_Ref_count_obj<bnet::Account::SteamExternalAuthInfo> * vfunc_2(_Ref_count_obj<bnet::Account::SteamExternalAuthInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const std___Ref_count_obj_bnet__Account__SteamExternalAuthInfo__vfunc_2: u64 = 419667;
-/// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_>::vfunc_0` at 0x12853b0 (rtti, high); signature (low): `undefined vfunc_0(_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_407b4391a4cb964ac5cc57d63e7e618f____vfunc_0: u64 = 444327;
-/// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_>::vfunc_1` at 0x1285320 (rtti, high); signature (high): `undefined vfunc_1(_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_> * this)`
-pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_407b4391a4cb964ac5cc57d63e7e618f____vfunc_1: u64 = 444325;
-/// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_>::vfunc_2` at 0x12831f0 (rtti, high); signature (low): `_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_> * vfunc_2(_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_407b4391a4cb964ac5cc57d63e7e618f____vfunc_2: u64 = 444253;
-/// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_>::vfunc_3` at 0x1285690 (rtti, high); signature (low): `_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_> * vfunc_3(_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_> * this, longlong param_1)`
-pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_407b4391a4cb964ac5cc57d63e7e618f____vfunc_3: u64 = 444337;

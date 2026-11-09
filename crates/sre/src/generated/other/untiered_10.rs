@@ -7,27 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `UnescapeJsonStringToFixedString64` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 449595, rva 0x13f07a0).
-/// `undefined UnescapeJsonStringToFixedString64(undefined8 * param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn unescape_json_string_to_fixed_string64(param_1: *mut u64, param_2: *mut u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(449595, (*mut u64, *mut u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `UnescapeJsonStringToUtf8` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 527557, rva 0x142d670).
-/// `undefined UnescapeJsonStringToUtf8(undefined8 * param_1, byte * param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn unescape_json_string_to_utf8(param_1: *mut u64, param_2: *mut u8, param_3: u64, param_4: u64) -> u64 { unsafe { function!(527557, (*mut u64, *mut u8, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `UnescapeJsonString_10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 451769, rva 0x14497c0).
-/// `undefined UnescapeJsonString_10(undefined8 * param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn unescape_json_string_10(param_1: *mut u64, param_2: *mut u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(451769, (*mut u64, *mut u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `UnescapeJsonString_11` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 451770, rva 0x142d3c0).
 /// `undefined UnescapeJsonString_11(undefined8 * param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
 ///

@@ -8,6 +8,8 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x13b19e0, id: 450615, confidence: Confidence::Medium, name: "ConstructFunctionalCallable10_18" },
+    Function { rva: 0x13b1e80, id: 450621, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_56" },
     Function { rva: 0x13b1eb0, id: 450622, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_57" },
     Function { rva: 0x13b2330, id: 450634, confidence: Confidence::Medium, name: "DestroyViaVfunc0AndFree_37" },
     Function { rva: 0x13b23f0, id: 450636, confidence: Confidence::Medium, name: "ConstructFunctionalCallable10_19" },
@@ -8216,5 +8218,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x176f3e0, id: 168484, confidence: Confidence::Medium, name: "GameSetting_fDiffMultHPToPCH__atexit" },
     Function { rva: 0x176f430, id: 168485, confidence: Confidence::Medium, name: "GameSetting_fDiffMultHPToPCL__atexit" },
     Function { rva: 0x176f480, id: 168486, confidence: Confidence::Medium, name: "GameSetting_fDiffMultHPToPCN__atexit" },
-    Function { rva: 0x176f4d0, id: 168487, confidence: Confidence::Medium, name: "GameSetting_fDiffMultHPToPCVE__atexit" },
 ];

@@ -1330,6 +1330,13 @@ impl crate::BSSceneGraph {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn get_far_distance(&self) -> f32 { unsafe { virtual_function!(self, 62, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
+    /// `BSSceneGraph::GetNearDistance`, vtable slot 63, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 76750, rva 0xff4bb0).
+    /// `float GetNearDistance(BSSceneGraph * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_near_distance(&self) -> f32 { unsafe { virtual_function!(self, 63, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSShaderResourceManager {

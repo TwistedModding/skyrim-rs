@@ -7,6 +7,14 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ReleaseHandleWithDeleter_13` at 0x12dc840 (decompiler, medium); signature (untiered): `undefined ReleaseHandleWithDeleter_13(undefined8 * param_1)`
+pub const ReleaseHandleWithDeleter_13: u64 = 525452;
+/// `ReleaseHandleWithDeleter_14` at 0x12dc740 (decompiler, medium); signature (untiered): `undefined ReleaseHandleWithDeleter_14(undefined8 * param_1)`
+pub const ReleaseHandleWithDeleter_14: u64 = 525448;
+/// `ReleaseHandleWithDeleter_15` at 0x12dc380 (decompiler, medium); signature (untiered): `undefined ReleaseHandleWithDeleter_15(undefined8 * param_1)`
+pub const ReleaseHandleWithDeleter_15: u64 = 525433;
+/// `ReleaseHandleWithDeleter_16` at 0x1378b60 (decompiler, medium); signature (untiered): `undefined ReleaseHandleWithDeleter_16(undefined8 * param_1)`
+pub const ReleaseHandleWithDeleter_16: u64 = 449239;
 /// `ReleaseHandleWithDeleter_17` at 0x1378ba0 (decompiler, medium); signature (untiered): `undefined ReleaseHandleWithDeleter_17(undefined8 * param_1)`
 pub const ReleaseHandleWithDeleter_17: u64 = 449240;
 /// `ReleaseHandleWithDeleter_18` at 0x12f18e0 (decompiler, medium); signature (untiered): `undefined ReleaseHandleWithDeleter_18(undefined8 * param_1)`
@@ -8615,11 +8623,11 @@ pub type SceneGraph__ClearFarDistanceOverride_fn = unsafe extern "C" fn(this: *m
 pub const SceneGraph__ClearNearDistanceOverride: u64 = 36841;
 /// `SceneGraph::ClearNearDistanceOverride` as a function pointer type (high).
 pub type SceneGraph__ClearNearDistanceOverride_fn = unsafe extern "C" fn(this: *mut crate::SceneGraph);
-/// `SceneGraph::GetFarDistance` at 0x665740 (semantic, high); signature (untiered): `ulonglong GetFarDistance(SceneGraph * this)`; semantic: see BSSceneGraph slot 62 (high); signature `float (SceneGraph* this)`
+/// `SceneGraph::GetFarDistance` at 0x665740 (semantic, high); signature (untiered): `float GetFarDistance(SceneGraph * this)`; semantic: see BSSceneGraph slot 62 (high); signature `float (SceneGraph* this)`
 pub const SceneGraph__GetFarDistance: u64 = 36845;
 /// `SceneGraph::GetFarDistance` as a function pointer type (high).
 pub type SceneGraph__GetFarDistance_fn = unsafe extern "C" fn(this: *mut crate::SceneGraph) -> f32;
-/// `SceneGraph::GetNearDistance` at 0x665720 (semantic, high); signature (untiered): `ulonglong GetNearDistance(SceneGraph * this)`; semantic: see BSSceneGraph slot 63 (high); signature `float (SceneGraph* this)`
+/// `SceneGraph::GetNearDistance` at 0x665720 (semantic, high); signature (untiered): `float GetNearDistance(SceneGraph * this)`; semantic: see BSSceneGraph slot 63 (high); signature `float (SceneGraph* this)`
 pub const SceneGraph__GetNearDistance: u64 = 36844;
 /// `SceneGraph::GetNearDistance` as a function pointer type (high).
 pub type SceneGraph__GetNearDistance_fn = unsafe extern "C" fn(this: *mut crate::SceneGraph) -> f32;
@@ -9057,9 +9065,3 @@ pub const SendRaiseEventCommandWithoutCharacter: u64 = 81035;
 pub const SendRefMessageType18: u64 = 36943;
 /// `SendRequestOrFailIfDisconnected` at 0x139a3c0 (decompiler, medium); signature (untiered): `AsyncOperationProxy * SendRequestOrFailIfDisconnected(longlong param_1, AsyncOperationProxy * param_2, undefined2 param_3, undefined2 param_4, undefined8 param_5, undefined4 * param_6, longlong * param_7, longlong * param_8)`
 pub const SendRequestOrFailIfDisconnected: u64 = 97339;
-/// `SendRequestOrFailSocketTerminated` at 0x146b780 (decompiler, medium); signature (untiered): `undefined SendRequestOrFailSocketTerminated(longlong * param_1, AsyncOperationProxy * param_2, undefined8 * param_3, longlong * param_4, longlong * param_5)`
-pub const SendRequestOrFailSocketTerminated: u64 = 452945;
-/// `SendSetBehaviorCommand` at 0x1104b10 (decompiler, medium); signature (untiered): `undefined SendSetBehaviorCommand(longlong param_1, undefined8 param_2, longlong param_3, longlong param_4, undefined4 param_5, undefined1 param_6)`
-pub const SendSetBehaviorCommand: u64 = 81041;
-/// `SendSetLocalTimeOfClipGeneratorCommand` at 0x1104d50 (decompiler, medium); signature (untiered): `undefined SendSetLocalTimeOfClipGeneratorCommand(longlong param_1, undefined8 param_2, undefined2 param_3, undefined4 param_4)`
-pub const SendSetLocalTimeOfClipGeneratorCommand: u64 = 81042;

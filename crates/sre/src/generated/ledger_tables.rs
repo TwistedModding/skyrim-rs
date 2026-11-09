@@ -22689,9 +22689,9 @@ BShkbAnimationGraph.activating	244
 BShkbAnimationGraph.animationGraphEventSource	68
 BShkbAnimationGraph.behaviorGraph	208
 BShkbAnimationGraph.boneCount	240
+BShkbAnimationGraph.boneLODEnabled	247
 BShkbAnimationGraph.boneLODTable	190
 BShkbAnimationGraph.boneNodes	160
-BShkbAnimationGraph.buildNameMatch	247
 BShkbAnimationGraph.character	c0
 BShkbAnimationGraph.doFootIK	249
 BShkbAnimationGraph.eventsSuppressed	243
@@ -23326,9 +23326,12 @@ CachedRaycastData.__vftable	0
 CachedRaycastData.cachingPhantom	10
 CachedRaycastData.collectedBodies	18
 CachedRaycastData.collisionGroup	28
-CachedRaycastData.everHit	30
+CachedRaycastData.graphIsSynced	2f
 CachedRaycastData.handle	8
-CachedRaycastData.inUse	2e
+CachedRaycastData.hitThisFrame	30
+CachedRaycastData.isFree	2e
+CachedRaycastData.legCastResults	31
+CachedRaycastData.needsRefresh	2d
 CachedRaycastData.useWorldOnly	2c
 CachedRaycastData.world	20
 Calendar.daysAdvanced	38
@@ -55747,6 +55750,8 @@ hkbGenerator.m_hkpCollidableCollidableFilter_10	10
 hkbGenerator.m_hkpRayCollidableFilter_28	28
 hkbGenerator.m_hkpRayShapeCollectionFilter_20	20
 hkbGenerator.m_hkpShapeCollectionFilter_18	18
+hkbGeneratorOutput.deleteTracks	8
+hkbGeneratorOutput.tracks	0
 hkbGeneratorTransitionEffect.__vftable	0
 hkbGeneratorTransitionEffect.field_108	108
 hkbGeneratorTransitionEffect.field_110	110
@@ -95922,6 +95927,7 @@ hkbFootIkModifierInternalLegData
 hkbFootIkModifierLeg	
 hkbFootIkSceneModifier	
 hkbGenerator	
+hkbGeneratorOutput	
 hkbGeneratorTransitionEffect	
 hkbGeneratorTransitionEffectInternalState	
 hkbGetHandleOnBoneModifier	

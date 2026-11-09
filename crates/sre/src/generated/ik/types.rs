@@ -648,7 +648,7 @@ const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, field_6C) == 0x6C)
 const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __pSkeletonMemory) == 0x70);
 
 /// `BSLimbIKModifierUtility`: size 0x10 (exact, high); primary base `BSILimbIKModifierSingleton`.
-/// Meaning: the game's BSILimbIKModifierSingleton (casts against the cell's bhkWorld) (high, ik pass).
+/// Meaning: limb IK cast singleton (vtable at +0, an empty BSTSingletonSDM base at +8) (high, ik pass).
 /// Evidence: ik pass (semantic): ctor 0x552760, called from the TESInitThread start-up (Str_TESInitThread_sub0).; size: vdtor 0x552da0 frees 0x10.
 /// Bases: `BSILimbIKModifierSingleton`@0x0, `BSTSingletonSDM<BSLimbIKModifierUtility,BSTSingletonSDMOpStaticBuffer>`@0x8, `BSTSingletonSDMBase<BSTSDMTraits<BSLimbIKModifierUtility,BSTSingletonSDMOpStaticBuffer<BSLimbIKModifierUtility>_>_>`@0x8, `BSTSDMTraits<BSLimbIKModifierUtility,BSTSingletonSDMOpStaticBuffer<BSLimbIKModifierUtility>_>`@0x8, `BSTSingletonSDMOpStaticBuffer<BSLimbIKModifierUtility>`@0x9.
 #[repr(C)]
@@ -2229,7 +2229,7 @@ pub struct hkbCharacterData {
     /// +0x80 `ptr:hkbVariableValueSet`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
     #[doc(hidden)]
     pub __characterPropertyValues: [u8; 8],
-    /// +0x88 `ptr:hkbFootIkDriverInfo`, base hkBaseObject, semantic; reflected member (no description in the binary) (high)
+    /// +0x88 `ptr:hkbFootIkDriverInfo`, base hkBaseObject, semantic, runtime; reflected member (no description in the binary) (high)
     #[doc(hidden)]
     pub __footIkDriverInfo: [u8; 8],
     /// +0x90 `ptr:hkbHandIkDriverInfo`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
@@ -2292,7 +2292,7 @@ pub struct hkbCharacterSetup {
     /// +0x10 `undefined1`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
     #[doc(hidden)]
     pub __retargetingSkeletonMappers: [u8; 16],
-    /// +0x20 `ptr:hkaSkeleton`, base hkBaseObject, semantic; reflected member (no description in the binary) (high)
+    /// +0x20 `ptr:hkaSkeleton`, base hkBaseObject, semantic, runtime; reflected member (no description in the binary) (high)
     #[doc(hidden)]
     pub __animationSkeleton: [u8; 8],
     /// +0x28 `ptr:hkaSkeletonMapper`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
@@ -2304,7 +2304,7 @@ pub struct hkbCharacterSetup {
     /// +0x38 `pointer`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
     #[doc(hidden)]
     pub __animationBindingSet: [u8; 8],
-    /// +0x40 `ptr:hkbCharacterData`, base hkBaseObject, semantic; reflected member (no description in the binary) (high)
+    /// +0x40 `ptr:hkbCharacterData`, base hkBaseObject, semantic, runtime; reflected member (no description in the binary) (high)
     #[doc(hidden)]
     pub __data: [u8; 8],
     /// +0x48 `pointer`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
@@ -2706,7 +2706,7 @@ pub struct hkbFootIkDriver {
     /// +0x49 `u8`, semantic; set when alignWorldFromModelGain > 0 wrote leg +0; enables the alignment (high)
     #[doc(hidden)]
     pub __hasGroundPoints: [u8; 1],
-    /// +0x4A `u8`, semantic (high)
+    /// +0x4A `u8`, semantic, runtime (high)
     #[doc(hidden)]
     pub __disabled: [u8; 1],
     unknown_4B: [u8; 1],
@@ -2745,13 +2745,13 @@ pub struct hkbFootIkDriverInfo {
     #[doc(hidden)]
     pub __referenceCount: [u8; 2],
     unknown_C: [u8; 4],
-    /// +0x10 `undefined1`, base hkBaseObject, semantic; The properties of each leg of the character. (high)
+    /// +0x10 `undefined1`, base hkBaseObject, semantic, runtime; The properties of each leg of the character. (high)
     #[doc(hidden)]
     pub __legs: [u8; 16],
-    /// +0x20 `float`, base hkBaseObject, semantic; When ray casting from the foot towards the ground, the distance above the foot where the ray starts. (high)
+    /// +0x20 `float`, base hkBaseObject, semantic, runtime; When ray casting from the foot towards the ground, the distance above the foot where the ray starts. (high)
     #[doc(hidden)]
     pub __raycastDistanceUp: [u8; 4],
-    /// +0x24 `float`, semantic; When ray casting from the foot towards the ground, the distance below the foot where the ray ends. (high)
+    /// +0x24 `float`, semantic, runtime; When ray casting from the foot towards the ground, the distance below the foot where the ray ends. (high)
     #[doc(hidden)]
     pub __raycastDistanceDown: [u8; 4],
     /// +0x28 `float`, base hkBaseObject, semantic; The height of the ground where the model was created/animated, in model space. (high)
@@ -2778,7 +2778,7 @@ pub struct hkbFootIkDriverInfo {
     /// +0x41 `u8`, semantic; Whether to use the character up-vector as the up-vector instead of world up vector. If this is set to true the rays are cast in the direction opposite to model up vector instead of in the direction of gravity. This is useful if you want the character to be in any orientation. When this is set to true you would probably want the m_hipOrientationGain to be zero and  m_alignWorldFromModelGain to be greater than zero. (high)
     #[doc(hidden)]
     pub __useCharacterUpVector: [u8; 1],
-    /// +0x42 `u8`, semantic; This works for any character with more the two legs. If the character is such that in the sideways direction the feet are really close then set this to true. (medium)
+    /// +0x42 `u8`, semantic, runtime; This works for any character with more the two legs. If the character is such that in the sideways direction the feet are really close then set this to true. (high)
     #[doc(hidden)]
     pub __isQuadrupedNarrow: [u8; 1],
     unknown_43: [u8; 1],
@@ -3087,6 +3087,25 @@ pub struct hkbFootIkSceneModifier {
 }
 const _: () = assert!(size_of::<hkbFootIkSceneModifier>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkSceneModifier, __vftable) == 0x0);
+
+/// `hkbGeneratorOutput`: size 0x10 (exact).
+/// Meaning: the object passed as 'output' to Run, the driver helpers, hkbModifier::Modify and the scene modifiers: a pointer to the track buffer plus an ownership flag (medium, ik pass).
+/// Evidence: the object passed as 'output' to Run, the driver helpers, hkbModifier::Modify and the scene modifiers: a pointer to the track buffer plus an ownership flag; IK track G (static-G). Settles item 8: the third parameter of Run is hkbGeneratorOutput* (A) when hkbGeneratorOutput names this 0x10 object; B's hkbGeneratorOutput** names the track buffer itself hkbGeneratorOutput. Same machine word either way; the object form is preferred because Run hands the object itself (not the buffer) to hkContainerHeapAllocator::Allocator::vfunc_4_caller_10(param_3) near its end, and the callers build and free the object and FinalizePose frees the buffer when +8 is set. The name is not in the binary as a reflected class; descriptive. Track buffer layout: A's GeneratorOutputTracks.; size: built on the stack by every Run caller: FinalizePose 0xbcca53..0xbccaa6 ({tracks @rsp+0x30, deleteTracks byte @rsp+0x38}, then LEA R8,[RSP+0x30]) and 0xbccbef..0xbccc0f (MOV [RSP+0x30],RAX; MOV byte [RSP+0x38],0; LEA R8,[RSP+0x30]); ApplyRagdollPose locals d8/d0.
+#[repr(C, align(8))]
+pub struct hkbGeneratorOutput {
+    /// +0x0 `pointer`, semantic; track buffer (header +4 numTracks, track i header at 0x10+0x10*i) (high)
+    #[doc(hidden)]
+    pub __tracks: [u8; 8],
+    /// +0x8 `u8`, semantic; the buffer is owned and freed by the holder (high)
+    #[doc(hidden)]
+    pub __deleteTracks: [u8; 1],
+    unknown_9: [u8; 7],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<hkbGeneratorOutput>() == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbGeneratorOutput, __tracks) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbGeneratorOutput, __deleteTracks) == 0x8);
 
 /// `hkbHandIkControlData`: size 0x60 (exact).
 /// Meaning: hand IK control data (0x60) (high, ik pass).
@@ -4464,6 +4483,51 @@ const _: () = assert!(core::mem::offset_of!(hkbWorldFromModelModeData, __poseMat
 const _: () = assert!(core::mem::offset_of!(hkbWorldFromModelModeData, __poseMatchingBone1) == 0x2);
 const _: () = assert!(core::mem::offset_of!(hkbWorldFromModelModeData, __poseMatchingBone2) == 0x4);
 const _: () = assert!(core::mem::offset_of!(hkbWorldFromModelModeData, __mode) == 0x6);
+
+/// values in data/actorlifestates.json (ik pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum ActorLifeState {
+    /// `Alive`
+    Alive = 0,
+    /// `Dying`
+    Dying = 1,
+    /// `Dead`
+    Dead = 2,
+    /// `Unconscious`
+    Unconscious = 3,
+    /// `State4`
+    State4 = 4,
+    /// `Resetting`
+    Resetting = 5,
+    /// `Restrained`
+    Restrained = 6,
+    /// `Bleedout`
+    Bleedout = 7,
+    /// `BleedoutRecovering`
+    BleedoutRecovering = 8,
+    /// `DontMove`
+    DontMove = 9,
+}
+
+impl ActorLifeState {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::Alive),
+            1 => Some(Self::Dying),
+            2 => Some(Self::Dead),
+            3 => Some(Self::Unconscious),
+            4 => Some(Self::State4),
+            5 => Some(Self::Resetting),
+            6 => Some(Self::Restrained),
+            7 => Some(Self::Bleedout),
+            8 => Some(Self::BleedoutRecovering),
+            9 => Some(Self::DontMove),
+            _ => None,
+        }
+    }
+}
 
 /// values in data/hkbgeneratoroutputtrackindexs.json (ik pass).
 #[repr(u32)]

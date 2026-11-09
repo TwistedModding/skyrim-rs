@@ -8,6 +8,7 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x582300, id: 441745, confidence: Confidence::High, name: "ConfirmResetCallback::vfunc_1" },
     Function { rva: 0x582310, id: 441746, confidence: Confidence::High, name: "`public:_static_void___cdecl_MarketplaceMenu::Start(MarketplaceMenu::MarketplaceMode)'::__l8::doNothingCallback::vfunc_1" },
     Function { rva: 0x582320, id: 441747, confidence: Confidence::High, name: "MarketplaceMenu::errorCallback::vfunc_1" },
     Function { rva: 0x582334, id: 418933, confidence: Confidence::Medium, name: "MarketplaceMenu::GFxFunctionHandler_vdtor" },
@@ -7894,5 +7895,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x7de0f0, id: 43705, confidence: Confidence::High, name: "ArrowProjectile::vfunc_173" },
     Function { rva: 0x7de110, id: 43706, confidence: Confidence::High, name: "ArrowProjectile::vfunc_177" },
     Function { rva: 0x7de120, id: 43707, confidence: Confidence::Medium, name: "ArrowProjectile::SaveGame" },
-    Function { rva: 0x7de190, id: 43708, confidence: Confidence::Medium, name: "ArrowProjectile::LoadGame" },
 ];

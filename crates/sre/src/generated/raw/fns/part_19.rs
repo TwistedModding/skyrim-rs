@@ -7,6 +7,14 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `SynchronizedQueue<TextureCreator::createTask*___ptr64>::vfunc_3` at 0x59e230 (rtti, high); signature (high): `undefined vfunc_3(SynchronizedQueue<TextureCreator::createTask*___ptr64> * this)`
+pub const SynchronizedQueue_TextureCreator__createTask____ptr64__vfunc_3: u64 = 442051;
+/// `SynchronizedQueue<TextureCreator::createTask*___ptr64>::vfunc_4` at 0x59e270 (rtti, high); signature (high): `undefined4 vfunc_4(SynchronizedQueue<TextureCreator::createTask*___ptr64> * this)`
+pub const SynchronizedQueue_TextureCreator__createTask____ptr64__vfunc_4: u64 = 442052;
+/// `SystemEventAdapter::vdtor` at 0x6511a0 (layout_inference, medium); signature (low): `SystemEventAdapter * vdtor(SystemEventAdapter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const SystemEventAdapter__vdtor: u64 = 36532;
+/// `SystemEventAdapter::vfunc_1` at 0x651110 (rtti, high); signature (low): `undefined8 vfunc_1(SystemEventAdapter * this, longlong param_1)`
+pub const SystemEventAdapter__vfunc_1: u64 = 36531;
 /// `SystemEventAdapter::vfunc_1_sub0` at 0x1257fb0 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub0(void)`
 pub const SystemEventAdapter__vfunc_1_sub0: u64 = 93726;
 /// `SystemEventAdapter::vfunc_1_sub1` at 0x1257fd0 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub1(longlong param_1, char param_2, undefined8 param_3, undefined8 param_4)`
@@ -2093,7 +2101,7 @@ pub type TESObjectREFR__GetAnimationGraphEventSource_fn = unsafe extern "C" fn(r
 pub const TESObjectREFR__GetBaseGoldValue: u64 = 20211;
 /// `TESObjectREFR::GetBaseGoldValue` as a function pointer type (high).
 pub type TESObjectREFR__GetBaseGoldValue_fn = unsafe extern "C" fn(this: *mut crate::TESObjectREFR) -> i32;
-/// `TESObjectREFR::GetBaseWeight` at 0x300ee0 (semantic, high); signature (untiered): `undefined GetBaseWeight(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: GetFormWeight(this->baseObject (+0x40)) (high); signature `float (TESObjectREFR* this)`
+/// `TESObjectREFR::GetBaseWeight` at 0x300ee0 (semantic, high); signature (untiered): `float GetBaseWeight(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: GetFormWeight(this->baseObject (+0x40)) (high); signature `float (TESObjectREFR* this)`
 pub const TESObjectREFR__GetBaseWeight: u64 = 20212;
 /// `TESObjectREFR::GetBaseWeight` as a function pointer type (high).
 pub type TESObjectREFR__GetBaseWeight_fn = unsafe extern "C" fn(this: *mut crate::TESObjectREFR) -> f32;
@@ -4549,7 +4557,7 @@ pub const TweenMenuCameraState__Update: u64 = 50925;
 pub const TweenMenuCameraState__ctor: u64 = 50922;
 /// `TweenMenuCameraState::ctor` as a function pointer type (high).
 pub type TweenMenuCameraState__ctor_fn = unsafe extern "C" fn(this: *mut crate::TweenMenuCameraState, camera: *mut crate::PlayerCamera, id: u32) -> *mut crate::TweenMenuCameraState;
-/// `TwoJointSolve` at 0xaa0a10 (semantic, high); signature (untiered): `undefined1 * TwoJointSolve(undefined1 * param_1, short * param_2, longlong * param_3)`; semantic: analytic two-bone IK (hinge joint with cosine limits, optional end rotation) on an hkaPose (high); signature `bool* (bool* result, const TwoJointSolverSetup* setup, hkaPose* pose)`
+/// `TwoJointSolve` at 0xaa0a10 (runtime, high); signature (untiered): `undefined1 * TwoJointSolve(undefined1 * param_1, short * param_2, longlong * param_3)`; semantic: analytic two-bone IK (hinge joint with cosine limits, optional end rotation) on an hkaPose (high); signature `bool* (bool* result, const TwoJointSolverSetup* setup, hkaPose* pose)`
 pub const TwoJointSolve: u64 = 57005;
 /// `TwoJointSolve` as a function pointer type (high).
 pub type TwoJointSolve_fn = unsafe extern "C" fn(result: *mut bool, setup: *const crate::TwoJointSolverSetup, pose: *mut c_void) -> *mut bool;
@@ -6005,7 +6013,7 @@ pub const UpdateQueuedActorsWithTimeBudget: u64 = 41302;
 pub const UpdateQuiverArrowVisibility: u64 = 38542;
 /// `UpdateQuiverSlotModel` at 0x21ad80 (decompiler, medium); signature (untiered): `undefined UpdateQuiverSlotModel(int * param_1, longlong param_2, undefined8 param_3)`
 pub const UpdateQuiverSlotModel: u64 = 15688;
-/// `UpdateRagdollAnimation` at 0x106cbc0 (semantic, high); signature (untiered): `undefined UpdateRagdollAnimation(longlong param_1, undefined4 param_2)`; semantic: the old 'RagdollAnim' controller update: ragdoll feedback, pose matching and the ragdoll foot IK (0x10701d0, gated by bFootIK:RagdollAnim and controller bytes +0x383/+0x384), grab IK (0x1072160, bGrabIK) and look IK (0x106e000, bLookIK) (high); signature `void (bhkRagdollController* this)`
+/// `UpdateRagdollAnimation` at 0x106cbc0 (runtime, high); signature (untiered): `undefined UpdateRagdollAnimation(longlong param_1, undefined4 param_2)`; semantic: the old 'RagdollAnim' controller update: ragdoll feedback, pose matching and the ragdoll foot IK (0x10701d0, gated by bFootIK:RagdollAnim and controller bytes +0x383/+0x384), grab IK (0x1072160, bGrabIK) and look IK (0x106e000, bLookIK) (high); signature `void (bhkRagdollController* this)`
 pub const UpdateRagdollAnimation: u64 = 78408;
 /// `UpdateRagdollAnimation` as a function pointer type (high).
 pub type UpdateRagdollAnimation_fn = unsafe extern "C" fn(this: *mut crate::bhkRagdollController);
@@ -6014,7 +6022,7 @@ pub const UpdateRagdollFeedbackIfEnabled: u64 = 78409;
 /// `UpdateRagdollPoseBlend` at 0xac8b80 (semantic, high); signature (untiered): `undefined UpdateRagdollPoseBlend(longlong param_1, longlong * param_2, longlong * param_3)`; semantic: maps the simulated ragdoll back onto the output pose: no control track active -> the pure ragdoll pose (0xac9dd0) with a timed blend-out; powered/rigid-body controls active -> ComputeConstrainedRagdollPose 0xaca440 with the two track weights (high); signature `void (hkbRagdollDriver* this, hkbContext* ctx, hkbGeneratorOutput* output)`
 pub const UpdateRagdollPoseBlend: u64 = 58293;
 /// `UpdateRagdollPoseBlend` as a function pointer type (high).
-pub type UpdateRagdollPoseBlend_fn = unsafe extern "C" fn(this: *mut crate::hkbRagdollDriver, ctx: *mut c_void, output: *mut c_void);
+pub type UpdateRagdollPoseBlend_fn = unsafe extern "C" fn(this: *mut crate::hkbRagdollDriver, ctx: *mut c_void, output: *mut crate::hkbGeneratorOutput);
 /// `UpdateRangeVisibility` at 0xfdd820 (decompiler, medium); signature (untiered): `byte UpdateRangeVisibility(longlong * param_1, byte param_2)`
 pub const UpdateRangeVisibility: u64 = 76202;
 /// `UpdateRefDestinationLocationIfMoved` at 0x8dc040 (decompiler, medium); signature (medium): `bool UpdateRefDestinationLocationIfMoved(uint * param_1, longlong param_2)`
@@ -8999,11 +9007,3 @@ pub const WriteThreeDwordsAndShortToStream: u64 = 76732;
 pub const WriteThreeDwordsToStream: u64 = 70176;
 /// `WriteThreeUInt32ToSaveBuffer` at 0x148070 (decompiler, medium); signature (medium): `undefined WriteThreeUInt32ToSaveBuffer(void * param_1, longlong param_2)`
 pub const WriteThreeUInt32ToSaveBuffer: u64 = 10995;
-/// `WriteTimedHandlePairEntryToSave` at 0x7c05b0 (decompiler, medium); signature (untiered): `undefined WriteTimedHandlePairEntryToSave(uint * param_1, longlong param_2)`
-pub const WriteTimedHandlePairEntryToSave: u64 = 42648;
-/// `WriteToGrowableMemoryBuffer` at 0x156ab40 (decompiler, medium); signature (medium): `ulonglong WriteToGrowableMemoryBuffer(longlong param_1, void * param_2, uint param_3)`
-pub const WriteToGrowableMemoryBuffer: u64 = 107822;
-/// `WriteToRingBufferedFile` at 0xffa3f0 (decompiler, medium); signature (untiered): `ulonglong WriteToRingBufferedFile(longlong param_1, void * param_2, uint param_3, char param_4)`
-pub const WriteToRingBufferedFile: u64 = 76858;
-/// `WriteToSaveGameWithPathingStream` at 0x813350 (decompiler, medium); signature (untiered): `undefined WriteToSaveGameWithPathingStream(void * param_1, longlong param_2)`
-pub const WriteToSaveGameWithPathingStream: u64 = 44573;

@@ -7,6 +7,16 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSPointerHandleManager::CreateHandle` at 0x17e640 (runtime, high); signature (untiered): `uint * CreateHandle(uint * param_1, longlong param_2)`; semantic: allocates a handle table entry for a reference (high); signature `uint* BSPointerHandleManager::CreateHandle(uint* out, TESObjectREFR* ref)`
+pub const BSPointerHandleManager__CreateHandle: u64 = 12326;
+/// `BSPointerHandleManager::CreateHandle` as a function pointer type (high).
+pub type BSPointerHandleManager__CreateHandle_fn = unsafe extern "C" fn(out: *mut u32, ref_: *mut crate::TESObjectREFR) -> *mut u32;
+/// `BSPointerHandleManager::CreateHandle_2` at 0x17e4b0 (runtime, medium); signature (untiered): `uint * CreateHandle_2(uint * param_1, longlong param_2)`; semantic: second copy of CreateHandle (medium); signature `uint* BSPointerHandleManager::CreateHandle_2(uint* out, TESObjectREFR* ref)`
+pub const BSPointerHandleManager__CreateHandle_2: u64 = 12325;
+/// `BSPointerListBase<BSTempEffectDebris*___ptr64>::dtor` at 0x4aad90 (layout_inference, high); signature (low): `undefined dtor(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSPointerListBase_BSTempEffectDebris____ptr64__dtor: u64 = 30039;
+/// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vdtor` at 0x4aa1c0 (slot_propagation, medium); signature (low): `BSPointerListBase<BSTempEffectDebris*___ptr64> * vdtor(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSPointerListBase_BSTempEffectDebris____ptr64__vdtor: u64 = 30022;
 /// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vfunc_1` at 0x4aa160 (rtti, medium); signature (low): `undefined vfunc_1(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSPointerListBase_BSTempEffectDebris____ptr64__vfunc_1: u64 = 30020;
 /// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vfunc_2` at 0x4aa1a0 (rtti, medium); signature (low): `undefined vfunc_2(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
@@ -1183,7 +1193,7 @@ pub const BSScaleformTranslator__vfunc_2_sub0: u64 = 84609;
 pub const BSSceneGraph__GetFarDistance: u64 = 76749;
 /// `BSSceneGraph::GetFarDistance` as a function pointer type (high).
 pub type BSSceneGraph__GetFarDistance_fn = unsafe extern "C" fn(this: *mut crate::BSSceneGraph) -> f32;
-/// `BSSceneGraph::GetNearDistance` at 0xff4bb0 (semantic, high); signature (untiered): `undefined4 GetNearDistance(void)`; semantic: returns fNearDistance:Display (high); signature `float (BSSceneGraph* this)`
+/// `BSSceneGraph::GetNearDistance` at 0xff4bb0 (semantic, high); signature (untiered): `float GetNearDistance(BSSceneGraph * this)`; semantic: returns fNearDistance:Display (high); signature `float (BSSceneGraph* this)`
 pub const BSSceneGraph__GetNearDistance: u64 = 76750;
 /// `BSSceneGraph::GetNearDistance` as a function pointer type (high).
 pub type BSSceneGraph__GetNearDistance_fn = unsafe extern "C" fn(this: *mut crate::BSSceneGraph) -> f32;
@@ -6329,13 +6339,3 @@ pub const BSTDerivedCreator_BGSProcedureHoldPosition_IProcedure__vfunc_1: u64 = 
 pub const BSTDerivedCreator_BGSProcedureHoldPosition_IProcedure__vfunc_2: u64 = 28762;
 /// `BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState>::vdtor` at 0x458780 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSTDerivedCreator_BGSProcedureHoldPositionExecState_IProcedureTreeExecState__vdtor: u64 = 27983;
-/// `BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState>::vfunc_1` at 0x459b80 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedureHoldPositionExecState_IProcedureTreeExecState__vfunc_1: u64 = 28056;
-/// `BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState>::vfunc_2` at 0x45a830 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
-pub const BSTDerivedCreator_BGSProcedureHoldPositionExecState_IProcedureTreeExecState__vfunc_2: u64 = 28096;
-/// `BSTDerivedCreator<BGSProcedureHover,IProcedure>::vdtor` at 0x475af0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureHover,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureHover,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedureHover_IProcedure__vdtor: u64 = 28793;
-/// `BSTDerivedCreator<BGSProcedureHover,IProcedure>::vfunc_1` at 0x475c30 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureHover,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedureHover_IProcedure__vfunc_1: u64 = 28796;
-/// `BSTDerivedCreator<BGSProcedureHover,IProcedure>::vfunc_2` at 0x475cb0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureHover,IProcedure> * this, undefined8 * param_1)`
-pub const BSTDerivedCreator_BGSProcedureHover_IProcedure__vfunc_2: u64 = 28797;

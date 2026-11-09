@@ -7,20 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `Papyrus::Cell::SetFogColor_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 18943, rva 0x2bc2f0).
-/// `undefined SetFogColor_sub1(longlong param_1, undefined4 param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__cell__set_fog_color_sub1(param_1: i64, param_2: u32) -> u64 { unsafe { function!(18943, (i64, u32) -> u64)(param_1, param_2) } }
-/// `Papyrus::Cell::SetFogPlanes_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 18945, rva 0x2bc350).
-/// `undefined SetFogPlanes_sub0(longlong param_1, undefined4 param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__cell__set_fog_planes_sub0(param_1: i64, param_2: u32) -> u64 { unsafe { function!(18945, (i64, u32) -> u64)(param_1, param_2) } }
 /// `Papyrus::Cell::SetFogPlanes_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 18947, rva 0x2bc3c0).
 /// `undefined SetFogPlanes_sub1(longlong param_1, undefined4 param_2)`
 ///
@@ -13594,3 +13580,17 @@ pub unsafe fn remove_all_with_unlink(param_1: *mut i64, param_2: *mut i64) -> u6
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn remove_and_delete_entries_matching_field50(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(25038, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `RemoveAndDeleteEntryByKey` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 442871, rva 0xa76a60).
+/// `undefined RemoveAndDeleteEntryByKey(int * param_1, longlong * param_2, ulonglong param_3, ulonglong param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn remove_and_delete_entry_by_key(param_1: *mut i32, param_2: *mut i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(442871, (*mut i32, *mut i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `RemoveAndDeleteEntryFromArray10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 23931, rva 0x39b350).
+/// `undefined RemoveAndDeleteEntryFromArray10(longlong param_1, void * param_2, undefined8 param_3, void * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn remove_and_delete_entry_from_array10(param_1: i64, param_2: *mut c_void, param_3: u64, param_4: *mut c_void) -> u64 { unsafe { function!(23931, (i64, *mut c_void, u64, *mut c_void) -> u64)(param_1, param_2, param_3, param_4) } }

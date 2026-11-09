@@ -7,6 +7,10 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_af1c5628e4452240cdaa04843329f091>_>::vfunc_0` at 0x12c92e0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_af1c5628e4452240cdaa04843329f091>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_af1c5628e4452240cdaa04843329f091>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_420aad961b14: u64 = 446192;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_af1c5628e4452240cdaa04843329f091>_>::vfunc_1` at 0x12cacb0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_af1c5628e4452240cdaa04843329f091>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_00c0c8ab5d01: u64 = 446269;
 /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c52bf3fa64981bb2fac1cf8941423930>_>::vfunc_0` at 0x12d1ed0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c52bf3fa64981bb2fac1cf8941423930>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c52bf3fa64981bb2fac1cf8941423930>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1fc9df66ab17: u64 = 446536;
 /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c52bf3fa64981bb2fac1cf8941423930>_>::vfunc_1` at 0x12d30d0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c52bf3fa64981bb2fac1cf8941423930>_> * this, longlong param_1, undefined8 param_2, TypeDescriptor * param_3)`
@@ -5316,7 +5320,7 @@ pub const hkbBehaviorGraph__dtor: u64 = 58326;
 /// `hkbBehaviorGraph::generate` at 0xacd1d0 (semantic, high); signature (low): `undefined generate(hkbBehaviorGraph * this, undefined8 param_1, undefined8 param_2, undefined1 param_3, undefined4 param_4, undefined1 param_5)`; semantic: preGenerate, generateInternal (0xacf480), postGenerate (0xacdd80) (high); signature `void (hkbBehaviorGraph* this, const hkbContext* ctx, hkbGeneratorOutput* out, bool, u32, bool)`
 pub const hkbBehaviorGraph__generate: u64 = 58343;
 /// `hkbBehaviorGraph::generate` as a function pointer type (high).
-pub type hkbBehaviorGraph__generate_fn = unsafe extern "C" fn(this: *mut crate::hkbBehaviorGraph, ctx: *const c_void, out: *mut c_void, a3: bool, a4: u32, a5: bool);
+pub type hkbBehaviorGraph__generate_fn = unsafe extern "C" fn(this: *mut crate::hkbBehaviorGraph, ctx: *const c_void, out: *mut crate::hkbGeneratorOutput, a3: bool, a4: u32, a5: bool);
 /// `hkbBehaviorGraph::generateInternal` at 0xacf480 (semantic, medium); signature (untiered): `undefined generateInternal(longlong param_1, longlong * param_2)`; semantic: generates the active nodes into the output (medium); signature `void (hkbBehaviorGraph* this, GenerateState* st)`
 pub const hkbBehaviorGraph__generateInternal: u64 = 58376;
 /// `hkbBehaviorGraph::postGenerate` at 0xacdd80 (semantic, medium); signature (untiered): `undefined postGenerate(undefined8 param_1, longlong param_2)`; semantic: post-generate step (medium); signature `void (hkbBehaviorGraph* this, GenerateState* st)`
@@ -6049,14 +6053,10 @@ pub const hkbFootIkControlsModifier__ctor_2: u64 = 59731;
 pub const hkbFootIkControlsModifier__vdtor: u64 = 59044;
 /// `hkbFootIkControlsModifier::vfunc_23_sub0` at 0xb27890 (callgraph, medium); signature (untiered): `undefined vfunc_23_sub0(longlong param_1, longlong * param_2, undefined8 param_3, undefined4 param_4)`
 pub const hkbFootIkControlsModifier__vfunc_23_sub0: u64 = 60056;
-/// `hkbFootIkDriver::AlignWorldFromModelWithGround` at 0xad4a90 (semantic, medium); signature (untiered): `undefined AlignWorldFromModelWithGround(longlong param_1, longlong * param_2, undefined8 param_3, longlong * param_4, longlong param_5)`; semantic: when alignWorldFromModelGain > 0: target up from the legs' ground points (2 legs: their sum; more: a plane fit, or for isQuadrupedNarrow two extra sideways rays per frame), rotation from the model's current up to it scaled by 2*angle*gain -> driver +0x30 (alignWithGroundRotation), pre-multiplied into the output's world-from-model rotation (medium); signature `void (hkbFootIkDriver* this, hkbContext* ctx, const hkVector4* upWS, hkbGeneratorOutput** output, const hkbFootIkGains* gains)`
-pub const hkbFootIkDriver__AlignWorldFromModelWithGround: u64 = 58434;
-/// `hkbFootIkDriver::ApplyHipOrientation` at 0xad4560 (semantic, medium); signature (untiered): `undefined ApplyHipOrientation(undefined8 param_1, longlong * param_2, longlong * param_3, longlong * param_4, float * param_5, longlong param_6)`; semantic: when hipOrientationGain > 0: rotation between the model's current up and the world up, applied to each leg's hip bone (model space) scaled by 2*angle*hipOrientationGain (medium); signature `void (hkbFootIkDriver* this, hkbContext* ctx, hkbGeneratorOutput** output, hkaPose* pose, const hkVector4* upWS, const hkbFootIkGains* gains)`
-pub const hkbFootIkDriver__ApplyHipOrientation: u64 = 58433;
-/// `hkbFootIkDriver::ClearLegsAndReset` at 0xad42a0 (semantic, high); signature (untiered): `undefined ClearLegsAndReset(longlong param_1)`; semantic: for each internal leg (driver+0x10, count +0x18, 0x30 each) deletes the leg object at +0x20 through its vtable slot 0 (arg 1) and zeroes +0..+0x10, +0x28, +0x2c, +0x2d; then zeroes +0x40 (qword), +0x48 (u16: legs-initialised and +0x49) and +0x4c (high); signature `void (hkbFootIkDriver* this)`
-pub const hkbFootIkDriver__ClearLegsAndReset: u64 = 58431;
-/// `hkbFootIkDriver::ClearLegsAndReset` as a function pointer type (high).
-pub type hkbFootIkDriver__ClearLegsAndReset_fn = unsafe extern "C" fn(this: *mut crate::hkbFootIkDriver);
+/// `hkbFootIkDriver::AlignWorldFromModel` at 0xad4a90 (semantic, high); signature (untiered): `undefined AlignWorldFromModel(longlong param_1, longlong * param_2, undefined8 param_3, longlong * param_4, longlong param_5)`; semantic: world-from-model alignment (high); signature `void (hkbFootIkDriver* this, hkbContext* ctx, const hkVector4* upWS, hkbGeneratorOutput* output, const hkbFootIkGains* gains)`
+pub const hkbFootIkDriver__AlignWorldFromModel: u64 = 58434;
+/// `hkbFootIkDriver::AlignWorldFromModel` as a function pointer type (high).
+pub type hkbFootIkDriver__AlignWorldFromModel_fn = unsafe extern "C" fn(this: *mut crate::hkbFootIkDriver, ctx: *mut c_void, upWS: *const crate::hkVector4, output: *mut crate::hkbGeneratorOutput, gains: *const crate::hkbFootIkGains);
 /// `hkbFootIkDriver::ComputeVerticalError` at 0xad6c00 (semantic, high); signature (untiered): `float ComputeVerticalError(longlong param_1, float param_2)`; semantic: (1 - bias) * max(leg.groundHeight) + bias * min(leg.groundHeight) over the internal legs (+0x28) (high); signature `float (hkbFootIkDriver* this, float errorUpDownBias)`
 pub const hkbFootIkDriver__ComputeVerticalError: u64 = 58441;
 /// `hkbFootIkDriver::ComputeVerticalError` as a function pointer type (high).
@@ -6069,22 +6069,28 @@ pub type hkbFootIkDriver__GetAlignWithGroundRotation_fn = unsafe extern "C" fn(t
 pub const hkbFootIkDriver__GetErrorOutTranslation: u64 = 58424;
 /// `hkbFootIkDriver::GetErrorOutTranslation` as a function pointer type (high).
 pub type hkbFootIkDriver__GetErrorOutTranslation_fn = unsafe extern "C" fn(this: *const crate::hkbFootIkDriver, out: *mut crate::hkVector4);
-/// `hkbFootIkDriver::ReleaseLegsAndReset` at 0xad41c0 (semantic, high); signature (untiered): `undefined ReleaseLegsAndReset(longlong param_1)`; semantic: for each internal leg (+0x10, count +0x18, 0x30 each) with an object at +0x20: deletes it (vtable slot 0, arg 1) and zeroes +0..+0x10, +0x28, +0x2c, +0x2d; then +0x40 = 0 (qword), +0x48 = 0 (word), +0x4c = 0 (high); signature `void (hkbFootIkDriver* this)`
+/// `hkbFootIkDriver::OrientHips` at 0xad4560 (semantic, high); signature (untiered): `undefined OrientHips(undefined8 param_1, longlong * param_2, longlong * param_3, longlong * param_4, float * param_5, longlong param_6)`; semantic: hip orientation (high); signature `void (hkbFootIkDriver* this, hkbContext* ctx, hkbGeneratorOutput* output, hkaPose* pose, const hkVector4* upWS, const hkbFootIkGains* gains)`
+pub const hkbFootIkDriver__OrientHips: u64 = 58433;
+/// `hkbFootIkDriver::OrientHips` as a function pointer type (high).
+pub type hkbFootIkDriver__OrientHips_fn = unsafe extern "C" fn(this: *mut crate::hkbFootIkDriver, ctx: *mut c_void, output: *mut crate::hkbGeneratorOutput, pose: *mut c_void, upWS: *const crate::hkVector4, gains: *const crate::hkbFootIkGains);
+/// `hkbFootIkDriver::ReleaseLegsAndReset` at 0xad41c0 (runtime, high); signature (untiered): `undefined ReleaseLegsAndReset(longlong param_1)`; semantic: per leg with a solver: delete the solver (vtbl[0](solver, 1)), solver = 0, leg +0x00..+0x0f = 0, +0x28 = 0, +0x2c = 0, +0x2d = 0 (+0x10 normal untouched); then driver +0x40 qword = 0 (errorOut and prevOnFraction), +0x48 word = 0 (legsInitialized and isGroundPositionValid), +0x4c = 0 (deltaTime) (high); signature `void (hkbFootIkDriver* this)`
 pub const hkbFootIkDriver__ReleaseLegsAndReset: u64 = 58427;
 /// `hkbFootIkDriver::ReleaseLegsAndReset` as a function pointer type (high).
 pub type hkbFootIkDriver__ReleaseLegsAndReset_fn = unsafe extern "C" fn(this: *mut crate::hkbFootIkDriver);
+/// `hkbFootIkDriver::ReleaseLegsAndResetThunk` at 0xad42a0 (semantic, high); signature (untiered): `undefined ReleaseLegsAndResetThunk(longlong param_1)`; semantic: a 5-byte JMP to 0xad41c0 (0xad42a0: E9 1B FF FF FF) (high); signature `void (hkbFootIkDriver* this)`
+pub const hkbFootIkDriver__ReleaseLegsAndResetThunk: u64 = 58431;
+/// `hkbFootIkDriver::ReleaseLegsAndResetThunk` as a function pointer type (high).
+pub type hkbFootIkDriver__ReleaseLegsAndResetThunk_fn = unsafe extern "C" fn(this: *mut crate::hkbFootIkDriver);
 /// `hkbFootIkDriver::Run` at 0xad2300 (semantic, high); signature (untiered): `undefined Run(longlong param_1, longlong * param_2, longlong * param_3)`; semantic: the graph's foot IK pass ('TtFootIkController' timer): returns at once when +0x4a (disabled) is set, the pose has fewer than 12 tracks, or the character has no hkbFootIkDriverInfo; else sets up the legs (once, 0xad42b0, when +0x48 is 0), asks the raycast DB for the character's raycast interface (DB slot 1), runs SolveFootIk 0xa9ddf0 per leg and writes the corrected pose (high); signature `void (hkbFootIkDriver* this, hkbContext* ctx, hkbGeneratorOutput* pose)`
 pub const hkbFootIkDriver__Run: u64 = 58423;
 /// `hkbFootIkDriver::Run` as a function pointer type (high).
-pub type hkbFootIkDriver__Run_fn = unsafe extern "C" fn(this: *mut crate::hkbFootIkDriver, ctx: *mut c_void, pose: *mut c_void);
+pub type hkbFootIkDriver__Run_fn = unsafe extern "C" fn(this: *mut crate::hkbFootIkDriver, ctx: *mut c_void, pose: *mut crate::hkbGeneratorOutput);
 /// `hkbFootIkDriver::SetDisabled` at 0xad4260 (semantic, high); signature (untiered): `undefined SetDisabled(longlong param_1, char param_2)`; semantic: writes the disabled byte +0x4a; when disabling it also calls ClearEntriesAndResetState 0xad42a0 (frees every per-leg object and zeroes the leg state) (high); signature `void (hkbFootIkDriver* this, bool disabled)`
 pub const hkbFootIkDriver__SetDisabled: u64 = 58428;
 /// `hkbFootIkDriver::SetDisabled` as a function pointer type (high).
 pub type hkbFootIkDriver__SetDisabled_fn = unsafe extern "C" fn(this: *mut crate::hkbFootIkDriver, disabled: bool);
-/// `hkbFootIkDriver::SetupLegs` at 0xad42b0 (semantic, high); signature (untiered): `undefined SetupLegs(longlong param_1, longlong * param_2, undefined8 param_3)`; semantic: once per (re)initialisation (driver +0x48 == 0): for every info leg with hip, knee and ankle >= 0 allocates a 0xf0-byte hkaFootPlacementIkSolver from the thread's Havok memory router and constructs it from a setup filled from the info leg; sets +0x48 = 1 (high); signature `void (hkbFootIkDriver* this, hkbContext* ctx, hkaSkeleton* skeleton)`
+/// `hkbFootIkDriver::SetupLegs` at 0xad42b0 (semantic, medium); signature (untiered): `undefined SetupLegs(longlong param_1, longlong * param_2, undefined8 param_3)`; semantic: leg setup (medium); signature `void (hkbFootIkDriver* this, hkbContext* ctx, const hkaSkeleton* skeleton)`
 pub const hkbFootIkDriver__SetupLegs: u64 = 58432;
-/// `hkbFootIkDriver::SetupLegs` as a function pointer type (high).
-pub type hkbFootIkDriver__SetupLegs_fn = unsafe extern "C" fn(this: *mut crate::hkbFootIkDriver, ctx: *mut c_void, skeleton: *mut crate::hkaSkeleton);
 /// `hkbFootIkDriver::ctor` at 0xad21f0 (semantic, high); signature (high): `hkbFootIkDriver * ctor(hkbFootIkDriver * this)`; semantic: constructor (high); signature `hkbFootIkDriver* (hkbFootIkDriver* this)`
 pub const hkbFootIkDriver__ctor: u64 = 58421;
 /// `hkbFootIkDriver::ctor` as a function pointer type (high).
@@ -6267,8 +6273,10 @@ pub const hkbHandIkControlsModifier__ctor_2: u64 = 59777;
 pub const hkbHandIkControlsModifier__vdtor: u64 = 59054;
 /// `hkbHandIkControlsModifier::vfunc_23_sub0` at 0xb27cd0 (callgraph, medium); signature (untiered): `undefined vfunc_23_sub0(longlong param_1, longlong * param_2)`
 pub const hkbHandIkControlsModifier__vfunc_23_sub0: u64 = 60066;
-/// `hkbHandIkDriver::Run` at 0xaf9bc0 (semantic, medium); signature (untiered): `undefined Run(longlong param_1, longlong * param_2, longlong * param_3, float param_4, char param_5)`; semantic: hand IK of one character ('TtHandIkDriver') (medium); signature `void (hkbHandIkDriver* this, const hkbContext* ctx, hkbGeneratorOutput* output, float timestep, bool fixup)`
+/// `hkbHandIkDriver::Run` at 0xaf9bc0 (runtime, high); signature (untiered): `undefined Run(longlong param_1, longlong * param_2, longlong * param_3, float param_4, char param_5)`; semantic: hand IK of one character ('TtHandIkDriver') (high); signature `void (hkbHandIkDriver* this, const hkbContext* ctx, hkbGeneratorOutput* output, float timestep, bool fixup)`
 pub const hkbHandIkDriver__Run: u64 = 59421;
+/// `hkbHandIkDriver::Run` as a function pointer type (high).
+pub type hkbHandIkDriver__Run_fn = unsafe extern "C" fn(this: *mut crate::hkbHandIkDriver, ctx: *const c_void, output: *mut crate::hkbGeneratorOutput, timestep: f32, fixup: bool);
 /// `hkbHandIkDriver::ctor` at 0xaf9b90 (semantic, high); signature (high): `hkbHandIkDriver * ctor(hkbHandIkDriver * this)`; semantic: constructor (high); signature `hkbHandIkDriver* (hkbHandIkDriver* this)`
 pub const hkbHandIkDriver__ctor: u64 = 59420;
 /// `hkbHandIkDriver::ctor` as a function pointer type (high).
@@ -6317,6 +6325,10 @@ pub const hkbIntVariableSequencedData__vdtor: u64 = 59059;
 pub const hkbIntVariableSequencedData__vfunc_3: u64 = 59941;
 /// `hkbKeyframeBonesModifier::Activate` at 0xb16150 (semantic, high); signature (untiered): `undefined Activate(hkbKeyframeBonesModifier * this)`
 pub const hkbKeyframeBonesModifier__Activate: u64 = 59850;
+/// `hkbKeyframeBonesModifier::ApplyKeyframes` at 0xb28c00 (semantic, high); signature (untiered): `undefined ApplyKeyframes(longlong param_1, longlong * param_2)`; semantic: writes the keyframed bones into the generator output: track 9 (header +0xa0, needs numTracks > 9) gets one {position, rotation} per valid keyframeInfo (+0x50 array, 0x30 each, boneIndex +0x20, isValid +0x22) sorted by bone index; track 8 (header +0x90, needs > 8) is zeroed and set to 1.0 for every bone of keyframedBonesList (+0x60 hkbBoneIndexArray, +0x30 data, +0x38 count), on fraction +0x98 = 1.0 (high); signature `void (hkbKeyframeBonesModifier* this, hkbGeneratorOutput* output)`
+pub const hkbKeyframeBonesModifier__ApplyKeyframes: u64 = 60071;
+/// `hkbKeyframeBonesModifier::ApplyKeyframes` as a function pointer type (high).
+pub type hkbKeyframeBonesModifier__ApplyKeyframes_fn = unsafe extern "C" fn(this: *mut crate::hkbKeyframeBonesModifier, output: *mut crate::hkbGeneratorOutput);
 /// `hkbKeyframeBonesModifier::CloneNode` at 0xb16640 (semantic, high); signature (untiered): `hkbKeyframeBonesModifier * CloneNode(hkbKeyframeBonesModifier * this)`
 pub const hkbKeyframeBonesModifier__CloneNode: u64 = 59852;
 /// `hkbKeyframeBonesModifier::CollectBindables` at 0xb16110 (semantic, medium); signature (untiered): `undefined CollectBindables(hkbKeyframeBonesModifier * this, undefined8 * param_1)`
@@ -6331,8 +6343,6 @@ pub const hkbKeyframeBonesModifier__ctor: u64 = 58824;
 pub const hkbKeyframeBonesModifier__ctor_2: u64 = 59847;
 /// `hkbKeyframeBonesModifier::vdtor` at 0xae4070 (semantic, high); signature (low): `hkbKeyframeBonesModifier * vdtor(hkbKeyframeBonesModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkbKeyframeBonesModifier__vdtor: u64 = 59060;
-/// `hkbKeyframeBonesModifier::vfunc_23_sub0` at 0xb28c00 (callgraph, medium); signature (untiered): `undefined vfunc_23_sub0(longlong param_1, longlong * param_2)`
-pub const hkbKeyframeBonesModifier__vfunc_23_sub0: u64 = 60071;
 /// `hkbLinkedSymbolInfo::vdtor` at 0x10d1d90 (slot_propagation, medium); signature (low): `hkbLinkedSymbolInfo * vdtor(hkbLinkedSymbolInfo * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkbLinkedSymbolInfo__vdtor: u64 = 80365;
 /// `hkbLookAtModifier::Activate` at 0xb13af0 (semantic, high); signature (untiered): `undefined Activate(hkbLookAtModifier * this)`
@@ -7035,7 +7045,7 @@ pub const hkbVariableBindingSet__vdtor: u64 = 59105;
 pub const hkbVariableValueSet__vdtor: u64 = 58399;
 /// `hkbWorld::GenerateWithSceneModifiers` at 0xafe680 (semantic, medium); signature (untiered): `undefined GenerateWithSceneModifiers(longlong * param_1, longlong * param_2, uint param_3, undefined4 param_4)`; semantic: Havok's scene loop: hkbBehaviorGraph::generate for every character, then every scene modifier's slot 3 (CallVfunc18OnEachArrayElement 0xaff070) (medium); signature `void (hkbSceneCharacters* characters, hkbSceneModifierList* modifiers, u32 count, float timestep)`
 pub const hkbWorld__GenerateWithSceneModifiers: u64 = 59446;
-/// `hkbWorld::ctor` at 0xad8ca0 (layout_inference, medium); signature (low): `hkbWorld * ctor(hkbWorld * this, undefined4 * param_1)`; semantic: builds Havok's behaviour world including the five scene modifiers (foot IK, hand IK, hand IK fixup, ragdoll, character controller) (medium); signature `hkbWorld* (hkbWorld* this, ...)`
+/// `hkbWorld::ctor` at 0xad8ca0 (runtime, high); signature (low): `hkbWorld * ctor(hkbWorld * this, undefined4 * param_1)`; semantic: builds Havok's behaviour world including the five scene modifiers (foot IK, hand IK, hand IK fixup, ragdoll, character controller) (high); signature `hkbWorld* (hkbWorld* this, ...)`
 pub const hkbWorld__ctor: u64 = 58481;
 /// `hkbWorld::dtor` at 0xad9310 (layout_inference, high); signature (high): `undefined dtor(hkbWorld * this)`
 pub const hkbWorld__dtor: u64 = 58482;
@@ -7809,25 +7819,3 @@ pub const hkpCharacterProxy__dtor: u64 = 62629;
 pub const hkpCharacterProxy__hkpEntityListener_vdtor: u64 = 62665;
 /// `hkpCharacterProxy::hkpEntityListener_vfunc_2` at 0xba0bb0 (rtti, medium); signature (low): `undefined hkpEntityListener_vfunc_2(hkpCharacterProxy * this, hkpCharacterProxy * param_1)`
 pub const hkpCharacterProxy__hkpEntityListener_vfunc_2: u64 = 62657;
-/// `hkpCharacterProxy::hkpPhantomListener_vdtor` at 0xba15ac (slot_propagation, medium); signature (low): `undefined hkpPhantomListener_vdtor(hkpCharacterProxy * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpCharacterProxy__hkpPhantomListener_vdtor: u64 = 62666;
-/// `hkpCharacterProxy::hkpPhantomListener_vfunc_2` at 0xba0d80 (rtti, medium); signature (low): `undefined hkpPhantomListener_vfunc_2(hkpCharacterProxy * this, hkpCharacterProxy * param_1)`
-pub const hkpCharacterProxy__hkpPhantomListener_vfunc_2: u64 = 62658;
-/// `hkpCharacterProxy::vdtor` at 0xba15c0 (slot_propagation, medium); signature (low): `hkpCharacterProxy * vdtor(hkpCharacterProxy * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpCharacterProxy__vdtor: u64 = 62667;
-/// `hkpCharacterProxy::vfunc_2` at 0xba0e90 (rtti, medium); signature (low): `undefined vfunc_2(hkpCharacterProxy * this, longlong * param_1)`
-pub const hkpCharacterProxy__vfunc_2: u64 = 62659;
-/// `hkpCharacterProxy::vfunc_3` at 0xb9f720 (rtti, medium); signature (low): `undefined vfunc_3(hkpCharacterProxy * this, longlong param_1, longlong param_2, longlong * param_3, longlong * param_4, longlong * param_5, char param_6)`
-pub const hkpCharacterProxy__vfunc_3: u64 = 62647;
-/// `hkpCharacterProxy::vfunc_4` at 0xba04d0 (rtti, medium); signature (low): `undefined vfunc_4(hkpCharacterProxy * this, float * param_1, float * param_2, float param_3)`
-pub const hkpCharacterProxy__vfunc_4: u64 = 62649;
-/// `hkpCharacterProxyCinfo::vdtor` at 0xb15ae0 (layout_inference, medium); signature (low): `hkpCharacterProxyCinfo * vdtor(hkpCharacterProxyCinfo * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpCharacterProxyCinfo__vdtor: u64 = 59840;
-/// `hkpCharacterProxyListener::dtor` at 0x1099400 (layout_inference, high); signature (high): `undefined dtor(hkpCharacterProxyListener * this)`
-pub const hkpCharacterProxyListener__dtor: u64 = 79159;
-/// `hkpCharacterProxyListener::vdtor` at 0x1099620 (layout_inference, medium); signature (low): `hkpCharacterProxyListener * vdtor(hkpCharacterProxyListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpCharacterProxyListener__vdtor: u64 = 79165;
-/// `hkpCharacterProxyListener::vfunc_1` at 0x10998b0 (rtti, high); signature (low): `undefined vfunc_1(void)`
-pub const hkpCharacterProxyListener__vfunc_1: u64 = 79175;
-/// `hkpCharacterProxyListener::vfunc_2` at 0x1099880 (rtti, high); signature (low): `undefined vfunc_2(void)`
-pub const hkpCharacterProxyListener__vfunc_2: u64 = 79172;

@@ -7,6 +7,18 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GetBit2OfExtra19Field20` at 0x1623e0 (decompiler, high); signature (high): `byte GetBit2OfExtra19Field20(longlong param_1)`
+pub const GetBit2OfExtra19Field20: u64 = 11642;
+/// `GetBit2OfField0xBEA` at 0x756bf0 (decompiler, high); signature (high): `byte GetBit2OfField0xBEA(longlong param_1)`
+pub const GetBit2OfField0xBEA: u64 = 40598;
+/// `GetBit4OfField40` at 0x2c5c60 (decompiler, high); signature (high): `byte GetBit4OfField40(longlong param_1)`
+pub const GetBit4OfField40: u64 = 19114;
+/// `GetBit4OfFieldA0` at 0x30dd40 (decompiler, high); signature (high): `byte GetBit4OfFieldA0(longlong param_1)`
+pub const GetBit4OfFieldA0: u64 = 20480;
+/// `GetBit5OfField136` at 0x6eaab0 (decompiler, high); signature (high): `byte GetBit5OfField136(longlong param_1)`
+pub const GetBit5OfField136: u64 = 39182;
+/// `GetBit6OfField20` at 0x4972b0 (decompiler, high); signature (untiered): `byte GetBit6OfField20(longlong param_1)`
+pub const GetBit6OfField20: u64 = 29501;
 /// `GetBit7OfField1F8Field108` at 0x673b40 (decompiler, high); signature (high): `uint GetBit7OfField1F8Field108(longlong param_1)`
 pub const GetBit7OfField1F8Field108: u64 = 37217;
 /// `GetBit7OfField20` at 0x4972e0 (decompiler, high); signature (untiered): `byte GetBit7OfField20(longlong param_1)`
@@ -93,11 +105,11 @@ pub const GetCachedStringLength: u64 = 24642;
 pub const GetCachedVfunc758Value: u64 = 37588;
 /// `GetCachedVfunc770Value` at 0x6924f0 (decompiler, medium); signature (untiered): `ulonglong GetCachedVfunc770Value(longlong * param_1)`
 pub const GetCachedVfunc770Value: u64 = 37591;
-/// `GetCameraShakeStrength` at 0x558c30 (runtime, high); signature (untiered): `undefined4 GetCameraShakeStrength(void)`; semantic: returns g_CameraShakeStrength (0x3204860) (high); signature `float (void)`
+/// `GetCameraShakeStrength` at 0x558c30 (runtime, high); signature (untiered): `float GetCameraShakeStrength(void)`; semantic: returns g_CameraShakeStrength (0x3204860) (high); signature `float (void)`
 pub const GetCameraShakeStrength: u64 = 33014;
 /// `GetCameraShakeStrength` as a function pointer type (high).
 pub type GetCameraShakeStrength_fn = unsafe extern "C" fn() -> f32;
-/// `GetCameraShakeTimeRemaining` at 0x558c40 (semantic, high); signature (untiered): `undefined4 GetCameraShakeTimeRemaining(void)`; semantic: returns g_CameraShakeTimeRemaining (0x3204864) (high); signature `float (void)`
+/// `GetCameraShakeTimeRemaining` at 0x558c40 (semantic, high); signature (untiered): `float GetCameraShakeTimeRemaining(void)`; semantic: returns g_CameraShakeTimeRemaining (0x3204864) (high); signature `float (void)`
 pub const GetCameraShakeTimeRemaining: u64 = 33015;
 /// `GetCameraShakeTimeRemaining` as a function pointer type (high).
 pub type GetCameraShakeTimeRemaining_fn = unsafe extern "C" fn() -> f32;
@@ -641,7 +653,7 @@ pub const GetExtraFactionChanges: u64 = 12009;
 pub const GetExtraGhostFlag: u64 = 11698;
 /// `GetExtraHavokField18` at 0x16f330 (decompiler, medium); signature (untiered): `longlong * GetExtraHavokField18(longlong param_1)`
 pub const GetExtraHavokField18: u64 = 11956;
-/// `GetExtraHeadTrackingWeight` at 0x171cf0 (semantic, high); signature (untiered): `undefined4 GetExtraHeadTrackingWeight(longlong param_1)`; semantic: returns the type-0x94 extra's +0x10, else 1.0 (high); signature `float (BaseExtraList* list)`
+/// `GetExtraHeadTrackingWeight` at 0x171cf0 (semantic, high); signature (untiered): `float GetExtraHeadTrackingWeight(longlong param_1)`; semantic: returns the type-0x94 extra's +0x10, else 1.0 (high); signature `float (BaseExtraList* list)`
 pub const GetExtraHeadTrackingWeight: u64 = 12027;
 /// `GetExtraHeadTrackingWeight` as a function pointer type (high).
 pub type GetExtraHeadTrackingWeight_fn = unsafe extern "C" fn(list: *mut crate::BaseExtraList) -> f32;
@@ -2081,7 +2093,7 @@ pub const GetFormTypeByEditorID: u64 = 13695;
 pub const GetFormTypeCategory: u64 = 29622;
 /// `GetFormTypeComponent88OrB0` at 0x1d93c0 (decompiler, medium); signature (untiered): `longlong GetFormTypeComponent88OrB0(longlong param_1)`
 pub const GetFormTypeComponent88OrB0: u64 = 14281;
-/// `GetFormWeight` at 0x1f37b0 (semantic, high); signature (untiered): `undefined4 GetFormWeight(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: the TESWeightForm weight (+8 of the component) chosen by form type, else the constant at 0x17e2820 (high); signature `float (TESForm* form)`
+/// `GetFormWeight` at 0x1f37b0 (semantic, high); signature (untiered): `float GetFormWeight(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: the TESWeightForm weight (+8 of the component) chosen by form type, else the constant at 0x17e2820 (high); signature `float (TESForm* form)`
 pub const GetFormWeight: u64 = 14988;
 /// `GetFormWeight` as a function pointer type (high).
 pub type GetFormWeight_fn = unsafe extern "C" fn(form: *mut crate::TESForm) -> f32;
@@ -3443,7 +3455,7 @@ pub const GetSoundLevelValueOfFieldE0: u64 = 16987;
 pub const GetSourceTextureField20: u64 = 76211;
 /// `GetSpanBetweenColonAndSlash` at 0x13dc0c0 (decompiler, medium); signature (untiered): `longlong * GetSpanBetweenColonAndSlash(longlong * param_1, longlong * param_2)`
 pub const GetSpanBetweenColonAndSlash: u64 = 449409;
-/// `GetSpeechDelay` at 0x423e20 (semantic, high); signature (high): `undefined4 GetSpeechDelay(void)`; semantic: returns fSpeechDelay (GameSetting value 0x20b0330) (high); signature `float (void)`
+/// `GetSpeechDelay` at 0x423e20 (semantic, high); signature (high): `float GetSpeechDelay(void)`; semantic: returns fSpeechDelay (GameSetting value 0x20b0330) (high); signature `float (void)`
 pub const GetSpeechDelay: u64 = 26565;
 /// `GetSpeechDelay` as a function pointer type (high).
 pub type GetSpeechDelay_fn = unsafe extern "C" fn() -> f32;
@@ -3893,7 +3905,7 @@ pub const GrandTheftHorse__RegisterSink: u64 = 37160;
 pub const GrandTheftHorse__UnregisterSink: u64 = 37161;
 /// `GraphPhysicsStepListener::ApplyRagdollPose` at 0xbcab40 (semantic, medium); signature (untiered): `undefined ApplyRagdollPose(longlong param_1, ulonglong * param_2)`; semantic: after a physics step: blends outputs, drives the ragdoll (ID_58293), copies the driven pose into the character pose and writes the bones (0xbdfa20) (medium); signature `void (BShkbAnimationGraph* graph, void* scratch)`
 pub const GraphPhysicsStepListener__ApplyRagdollPose: u64 = 63563;
-/// `GraphPhysicsStepListener::PostStep` at 0xbc9920 (semantic, high); signature (untiered): `undefined PostStep(void * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; semantic: bhkIWorldStepListener slot 2, called once after the world's substeps: under the listener's write lock (+8) runs ApplyRagdollPose for every registered graph (inline array +0x18, count +0x10; overflow array +0x108, count +0x118), releases them and clears the list (high); signature `void (GraphPhysicsStepListener* this)`
+/// `GraphPhysicsStepListener::PostStep` at 0xbc9920 (runtime, high); signature (untiered): `undefined PostStep(void * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; semantic: bhkIWorldStepListener slot 2, called once after the world's substeps: under the listener's write lock (+8) runs ApplyRagdollPose for every registered graph (inline array +0x18, count +0x10; overflow array +0x108, count +0x118), releases them and clears the list (high); signature `void (GraphPhysicsStepListener* this)`
 pub const GraphPhysicsStepListener__PostStep: u64 = 63552;
 /// `GraphPhysicsStepListener::PostStep` as a function pointer type (high).
 pub type GraphPhysicsStepListener__PostStep_fn = unsafe extern "C" fn(this: *mut c_void);
@@ -5389,7 +5401,7 @@ pub const HideDismemberSlotForRefAt2770: u64 = 15716;
 pub const HideDismemberSlotRecursive: u64 = 15717;
 /// `HideDismemberSlotRecursive_2` at 0x38a560 (decompiler, medium); signature (untiered): `undefined HideDismemberSlotRecursive_2(undefined4 param_1, longlong * param_2)`
 pub const HideDismemberSlotRecursive_2: u64 = 23449;
-/// `HighActorCuller::Visit` at 0x73c5c0 (semantic, high); signature (untiered): `undefined Visit(HighActorCuller * this, TESObjectREFR * param_1)`; semantic: per high actor, each frame: the actor's 3D gets NiAVObject flags bit 20 when it is not a fade node, when its world bound is outside the camera frustum (BSFadeNodeCuller slot 22 0x1555fd0 sets or clears the bit) or when it fails the portal-graph test (TestAgainstPortalGraphPlanes); result bits into Actor+0x27c (high); signature `void (HighActorCuller* this, Actor* actor)`
+/// `HighActorCuller::Visit` at 0x73c5c0 (runtime, high); signature (untiered): `undefined Visit(HighActorCuller * this, TESObjectREFR * param_1)`; semantic: per high actor, each frame: the actor's 3D gets NiAVObject flags bit 20 when it is not a fade node, when its world bound is outside the camera frustum (BSFadeNodeCuller slot 22 0x1555fd0 sets or clears the bit) or when it fails the portal-graph test (TestAgainstPortalGraphPlanes); result bits into Actor+0x27c (high); signature `void (HighActorCuller* this, Actor* actor)`
 pub const HighActorCuller__Visit: u64 = 40335;
 /// `HighActorCuller::Visit` as a function pointer type (high).
 pub type HighActorCuller__Visit_fn = unsafe extern "C" fn(this: *mut crate::HighActorCuller, actor: *mut crate::Actor);
@@ -9097,11 +9109,3 @@ pub const INISetting_bVATSProjectileDebug_Combat__atexit: u64 = 171855;
 pub const INISetting_bVATSProjectileDebug_Combat__init: u64 = 6523;
 /// `INISetting_bVATSRangedSelective_VATS__atexit` at 0x179d040 (crt_init, medium); signature (high): `void INISetting_bVATSRangedSelective_VATS__atexit(void)`
 pub const INISetting_bVATSRangedSelective_VATS__atexit: u64 = 171547;
-/// `INISetting_bVATSRangedSelective_VATS__init` at 0xa71f0 (crt_init, medium); signature (high): `void INISetting_bVATSRangedSelective_VATS__init(void)`
-pub const INISetting_bVATSRangedSelective_VATS__init: u64 = 6331;
-/// `INISetting_bVATSSmartCameraCheckDebug_VATS__atexit` at 0x1798830 (crt_init, medium); signature (high): `void INISetting_bVATSSmartCameraCheckDebug_VATS__atexit(void)`
-pub const INISetting_bVATSSmartCameraCheckDebug_VATS__atexit: u64 = 171195;
-/// `INISetting_bVATSSmartCameraCheckDebug_VATS__init` at 0xa1660 (crt_init, medium); signature (high): `void INISetting_bVATSSmartCameraCheckDebug_VATS__init(void)`
-pub const INISetting_bVATSSmartCameraCheckDebug_VATS__init: u64 = 6022;
-/// `INISetting_bValidateRenderTargets_Display__atexit` at 0x17b3020 (crt_init, medium); signature (high): `void INISetting_bValidateRenderTargets_Display__atexit(void)`
-pub const INISetting_bValidateRenderTargets_Display__atexit: u64 = 173821;

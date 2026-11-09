@@ -7,6 +7,16 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `std::_Ref_count_obj<bnet::Account::SteamExternalAuthInfo>::vfunc_2` at 0x12add60 (rtti, high); signature (low): `_Ref_count_obj<bnet::Account::SteamExternalAuthInfo> * vfunc_2(_Ref_count_obj<bnet::Account::SteamExternalAuthInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const std___Ref_count_obj_bnet__Account__SteamExternalAuthInfo__vfunc_2: u64 = 419667;
+/// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_>::vfunc_0` at 0x12853b0 (rtti, high); signature (low): `undefined vfunc_0(_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_407b4391a4cb964ac5cc57d63e7e618f____vfunc_0: u64 = 444327;
+/// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_>::vfunc_1` at 0x1285320 (rtti, high); signature (high): `undefined vfunc_1(_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_> * this)`
+pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_407b4391a4cb964ac5cc57d63e7e618f____vfunc_1: u64 = 444325;
+/// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_>::vfunc_2` at 0x12831f0 (rtti, high); signature (low): `_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_> * vfunc_2(_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_407b4391a4cb964ac5cc57d63e7e618f____vfunc_2: u64 = 444253;
+/// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_>::vfunc_3` at 0x1285690 (rtti, high); signature (low): `_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_> * vfunc_3(_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_> * this, longlong param_1)`
+pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_407b4391a4cb964ac5cc57d63e7e618f____vfunc_3: u64 = 444337;
 /// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_8116ba4fa2d997d4c55ff5306dc2e0ef>_>::vfunc_0` at 0x577f40 (rtti, high); signature (low): `undefined vfunc_0(_Ref_count_resource<unsigned_char*___ptr64,<lambda_8116ba4fa2d997d4c55ff5306dc2e0ef>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_8116ba4fa2d997d4c55ff5306dc2e0ef____vfunc_0: u64 = 418834;
 /// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_8116ba4fa2d997d4c55ff5306dc2e0ef>_>::vfunc_1` at 0x577f20 (rtti, high); signature (high): `undefined vfunc_1(_Ref_count_resource<unsigned_char*___ptr64,<lambda_8116ba4fa2d997d4c55ff5306dc2e0ef>_> * this)`

@@ -2928,7 +2928,7 @@ pub struct BSSceneGraph_vtable {
     pub slot_61: *const c_void,
     /// `BSSceneGraph::GetFarDistance` at 0xff4b70 (semantic, high); signature (untiered): `float GetFarDistance(BSSceneGraph * this)`
     pub slot_62: *const c_void,
-    /// `BSSceneGraph::GetNearDistance` at 0xff4bb0 (semantic, high); signature (untiered): `undefined4 GetNearDistance(void)`
+    /// `BSSceneGraph::GetNearDistance` at 0xff4bb0 (semantic, high); signature (untiered): `float GetNearDistance(BSSceneGraph * this)`
     pub slot_63: *const c_void,
     /// `BSSceneGraph::vfunc_64` at 0xff4bc0 (rtti, medium); signature (medium): `undefined vfunc_64(BSSceneGraph * this, float param_1)`
     pub slot_64: *const c_void,

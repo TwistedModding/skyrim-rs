@@ -7,6 +7,18 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BuildAabbTreeF16` at 0x1132fc0 (decompiler, medium); signature (untiered): `undefined BuildAabbTreeF16(longlong param_1, undefined8 * param_2, undefined8 * param_3, uint param_4, undefined8 * param_5)`
+pub const BuildAabbTreeF16: u64 = 81561;
+/// `BuildAabbTreeNodesF16` at 0x1133ed0 (decompiler, medium); signature (untiered): `undefined BuildAabbTreeNodesF16(longlong param_1, float * param_2, longlong param_3, int param_4, undefined8 param_5, longlong * param_6, char param_7)`
+pub const BuildAabbTreeNodesF16: u64 = 81565;
+/// `BuildAabbTreeNodesF32` at 0x11343e0 (decompiler, medium); signature (untiered): `undefined BuildAabbTreeNodesF32(longlong param_1, float * param_2, longlong param_3, uint param_4, undefined8 param_5, longlong * param_6, char param_7)`
+pub const BuildAabbTreeNodesF32: u64 = 81566;
+/// `BuildAabbTreeNodesQ16` at 0x11333d0 (decompiler, medium); signature (untiered): `undefined BuildAabbTreeNodesQ16(longlong param_1, longlong param_2, longlong param_3, int param_4, undefined8 param_5, longlong * param_6, char param_7)`
+pub const BuildAabbTreeNodesQ16: u64 = 81563;
+/// `BuildAabbTreeNodesQ32` at 0x1133940 (decompiler, medium); signature (untiered): `undefined BuildAabbTreeNodesQ32(longlong param_1, longlong param_2, longlong param_3, uint param_4, undefined8 param_5, longlong * param_6, char param_7)`
+pub const BuildAabbTreeNodesQ32: u64 = 81564;
+/// `BuildAabbTreeQ16` at 0x1132a90 (decompiler, medium); signature (untiered): `undefined BuildAabbTreeQ16(longlong param_1, float * param_2, undefined8 * param_3, uint param_4, undefined8 * param_5)`
+pub const BuildAabbTreeQ16: u64 = 81559;
 /// `BuildAabbTreeQ32` at 0x1132d30 (decompiler, medium); signature (untiered): `undefined BuildAabbTreeQ32(longlong param_1, float * param_2, undefined8 * param_3, int param_4, undefined8 * param_5)`
 pub const BuildAabbTreeQ32: u64 = 81560;
 /// `BuildAndDispatchEventToHandlers` at 0x3d8ee0 (decompiler, medium); signature (untiered): `undefined1 BuildAndDispatchEventToHandlers(longlong param_1, int param_2, undefined4 param_3, longlong param_4, longlong param_5, longlong * param_6, undefined1 param_7, undefined8 param_8, ulonglong param_9)`
@@ -411,7 +423,7 @@ pub const CacheVfunc48ResultInField20: u64 = 63444;
 pub const CachedRaycastData__CastRay: u64 = 32744;
 /// `CachedRaycastData::CastRayFiltered` at 0x54b1e0 (semantic, high); signature (untiered): `undefined8 CastRayFiltered(CachedRaycastData * this, undefined8 param_1)`
 pub const CachedRaycastData__CastRayFiltered: u64 = 32745;
-/// `CachedRaycastData::PopulateFromREFRHandle` at 0x54b280 (semantic, high); signature (untiered): `undefined PopulateFromREFRHandle(longlong param_1, uint * param_2, undefined8 param_3, undefined8 param_4)`; semantic: for an actor with a character controller: group = controller filter info (slot 8) >> 16, world = controller slot 15, phantom or collected bodies from controller slot 16 (+0x48 == 2: phantom (+0x18)->+0x10 if its type is 2; == 1: list at +0x20+(+0x40)), useWorldOnly = race +0x108 bit 17 (actor+0x1f8); otherwise useWorldOnly = 1 and world/group from the first collision object under the 3D (high); signature `void (CachedRaycastData* this, const RefHandle* handle)`
+/// `CachedRaycastData::PopulateFromREFRHandle` at 0x54b280 (runtime, high); signature (untiered): `undefined PopulateFromREFRHandle(longlong param_1, uint * param_2, undefined8 param_3, undefined8 param_4)`; semantic: for an actor with a character controller: group = controller filter info (slot 8) >> 16, world = controller slot 15, phantom or collected bodies from controller slot 16 (+0x48 == 2: phantom (+0x18)->+0x10 if its type is 2; == 1: list at +0x20+(+0x40)), useWorldOnly = race +0x108 bit 17 (actor+0x1f8); otherwise useWorldOnly = 1 and world/group from the first collision object under the 3D (high); signature `void (CachedRaycastData* this, const RefHandle* handle)`
 pub const CachedRaycastData__PopulateFromREFRHandle: u64 = 32747;
 /// `CachedRaycastData::PopulateFromREFRHandle` as a function pointer type (high).
 pub type CachedRaycastData__PopulateFromREFRHandle_fn = unsafe extern "C" fn(this: *mut crate::CachedRaycastData, handle: *const c_void);
@@ -421,7 +433,7 @@ pub const CachedRaycastData__vdtor: u64 = 32763;
 pub const CalculateMipLevels2D: u64 = 77683;
 /// `CalculateMipLevels3D` at 0x1032230 (decompiler, medium); signature (medium): `undefined8 CalculateMipLevels3D(ulonglong param_1, ulonglong param_2, ulonglong param_3, ulonglong * param_4)`
 pub const CalculateMipLevels3D: u64 = 77684;
-/// `Calendar::GetHour` at 0x645fe0 (semantic, high); signature (untiered): `undefined4 GetHour(longlong param_1)`; semantic: returns +0x20 TESGlobal (GameHour) value +0x34, or 12.0 when null (high); signature `float (Calendar* this)`
+/// `Calendar::GetHour` at 0x645fe0 (semantic, high); signature (untiered): `float GetHour(longlong param_1)`; semantic: returns +0x20 TESGlobal (GameHour) value +0x34, or 12.0 when null (high); signature `float (Calendar* this)`
 pub const Calendar__GetHour: u64 = 36301;
 /// `Calendar::GetHour` as a function pointer type (high).
 pub type Calendar__GetHour_fn = unsafe extern "C" fn(this: *mut crate::Calendar) -> f32;
@@ -1277,7 +1289,7 @@ pub const CheckSupport_2: u64 = 62643;
 pub const CheckTriangleDegenerateOrWindingMismatch: u64 = 60318;
 /// `CheckUsableAttackItemsForTypeMask` at 0x86d570 (decompiler, medium); signature (medium): `undefined CheckUsableAttackItemsForTypeMask(longlong param_1, uint * param_2)`
 pub const CheckUsableAttackItemsForTypeMask: u64 = 47349;
-/// `CheckVATSTargetVisibleInDirection` at 0x6a07c0 (semantic, high); signature (untiered): `undefined CheckVATSTargetVisibleInDirection(longlong * param_1, longlong * param_2, float param_3)`; semantic: for i = 1..fVATSSmartCameraCheckStepCount (5): point = subject position stepped i * fVATSSmartCameraCheckStepDistance (128) along heading + angleOffset at +fVATSSmartCameraCheckHeight; ray to the target's 3D world translate; stop at the first step whose ray hits something other than the target at fraction <= 0.85 (an actor hit only within 256 units); returns i * fVATSSmartCameraCheckStepDistance of the last step evaluated (StepCount * StepDistance = 640 when no step stopped) (high); signature `float (Actor* subject, TESObjectREFR* target, float angleOffset)`
+/// `CheckVATSTargetVisibleInDirection` at 0x6a07c0 (semantic, high); signature (untiered): `float CheckVATSTargetVisibleInDirection(longlong * param_1, longlong * param_2, float param_3)`; semantic: for i = 1..fVATSSmartCameraCheckStepCount (5): point = subject position stepped i * fVATSSmartCameraCheckStepDistance (128) along heading + angleOffset at +fVATSSmartCameraCheckHeight; ray to the target's 3D world translate; stop at the first step whose ray hits something other than the target at fraction <= 0.85 (an actor hit only within 256 units); returns i * fVATSSmartCameraCheckStepDistance of the last step evaluated (StepCount * StepDistance = 640 when no step stopped) (high); signature `float (Actor* subject, TESObjectREFR* target, float angleOffset)`
 pub const CheckVATSTargetVisibleInDirection: u64 = 37727;
 /// `CheckVATSTargetVisibleInDirection` as a function pointer type (high).
 pub type CheckVATSTargetVisibleInDirection_fn = unsafe extern "C" fn(subject: *mut crate::Actor, target: *mut crate::TESObjectREFR, angleOffset: f32) -> f32;
@@ -1837,8 +1849,6 @@ pub const ClearBufferModeBitsAtFieldD8: u64 = 90648;
 pub const ClearBuffersAndHashTable: u64 = 89803;
 /// `ClearByte20` at 0xafac00 (decompiler, high); signature (high): `undefined ClearByte20(longlong param_1)`
 pub const ClearByte20: u64 = 59422;
-/// `ClearByte30WhereByte2EIsZero` at 0x54aba0 (decompiler, medium); signature (untiered): `undefined ClearByte30WhereByte2EIsZero(longlong param_1)`
-pub const ClearByte30WhereByte2EIsZero: u64 = 32740;
 /// `ClearByte4` at 0x13464b0 (decompiler, medium); signature (medium): `undefined ClearByte4(longlong param_1)`
 pub const ClearByte4: u64 = 447365;
 /// `ClearByte402985` at 0x2f82f0 (decompiler, high); signature (high): `undefined ClearByte402985(void)`
@@ -8005,7 +8015,3 @@ pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehav
 pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_0c997028b67d: u64 = 48105;
 /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextCloseMovement,bool_(__cdecl_CombatBehaviorContextCloseMovement::*)(void)const___ptr64>_>_>::vfunc_9` at 0x88adf0 (rtti, high); signature (low): `undefined * vfunc_9(void)`
 pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_20e5567e71e0: u64 = 48037;
-/// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextDodgeThreat,bool_(__cdecl_CombatBehaviorContextDodgeThreat::*)(void)___ptr64>_>_>::vdtor` at 0x87f0c0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextDodgeThreat,bool_(__cdecl_CombatBehaviorContextDodgeThreat::*)(void)___ptr64>_>_> * vdtor(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextDodgeThreat,bool_(__cdecl_CombatBehaviorContextDodgeThreat::*)(void)___ptr64>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_924e6bcd59db: u64 = 47808;
-/// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextDodgeThreat,bool_(__cdecl_CombatBehaviorContextDodgeThreat::*)(void)___ptr64>_>_>::vfunc_2` at 0x87f230 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextDodgeThreat,bool_(__cdecl_CombatBehaviorContextDodgeThreat::*)(void)___ptr64>_>_> * this, longlong param_1)`
-pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_6a09f0ff462c: u64 = 47814;

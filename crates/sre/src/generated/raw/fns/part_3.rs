@@ -7,6 +7,12 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes>::vfunc_18` at 0x482e60 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes__vfunc_18: u64 = 29048;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes>::vfunc_19` at 0x482e40 (rtti, medium); signature (low): `undefined * vfunc_19(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes__vfunc_19: u64 = 29047;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes>::vfunc_20` at 0x482e10 (rtti, medium); signature (low): `undefined1 vfunc_20(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes__vfunc_20: u64 = 29045;
 /// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes>::vfunc_30` at 0x482ea0 (rtti, medium); signature (low): `undefined8 * vfunc_30(void)`
 pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes__vfunc_30: u64 = 29050;
 /// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes>::vfunc_34` at 0x482e80 (rtti, medium); signature (low): `undefined vfunc_34(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes> * this, uint param_1)`
@@ -7957,13 +7963,3 @@ pub const BSPlayerDistanceCheckController__vfunc_23: u64 = 40195;
 pub const BSPlayerDistanceCheckController__vfunc_39: u64 = 40201;
 /// `BSPlayerDistanceCheckController::vfunc_46` at 0x738270 (rtti, high); signature (high): `undefined * vfunc_46(BSPlayerDistanceCheckController * this)`
 pub const BSPlayerDistanceCheckController__vfunc_46: u64 = 40202;
-/// `BSPointerHandleManager::CreateHandle` at 0x17e640 (runtime, high); signature (untiered): `uint * CreateHandle(uint * param_1, longlong param_2)`; semantic: allocates a handle table entry for a reference (high); signature `uint* BSPointerHandleManager::CreateHandle(uint* out, TESObjectREFR* ref)`
-pub const BSPointerHandleManager__CreateHandle: u64 = 12326;
-/// `BSPointerHandleManager::CreateHandle` as a function pointer type (high).
-pub type BSPointerHandleManager__CreateHandle_fn = unsafe extern "C" fn(out: *mut u32, ref_: *mut crate::TESObjectREFR) -> *mut u32;
-/// `BSPointerHandleManager::CreateHandle_2` at 0x17e4b0 (runtime, medium); signature (untiered): `uint * CreateHandle_2(uint * param_1, longlong param_2)`; semantic: second copy of CreateHandle (medium); signature `uint* BSPointerHandleManager::CreateHandle_2(uint* out, TESObjectREFR* ref)`
-pub const BSPointerHandleManager__CreateHandle_2: u64 = 12325;
-/// `BSPointerListBase<BSTempEffectDebris*___ptr64>::dtor` at 0x4aad90 (layout_inference, high); signature (low): `undefined dtor(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_BSTempEffectDebris____ptr64__dtor: u64 = 30039;
-/// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vdtor` at 0x4aa1c0 (slot_propagation, medium); signature (low): `BSPointerListBase<BSTempEffectDebris*___ptr64> * vdtor(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_BSTempEffectDebris____ptr64__vdtor: u64 = 30022;

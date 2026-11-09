@@ -7,6 +7,14 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `INISetting_bVATSRangedSelective_VATS__init` at 0xa71f0 (crt_init, medium); signature (high): `void INISetting_bVATSRangedSelective_VATS__init(void)`
+pub const INISetting_bVATSRangedSelective_VATS__init: u64 = 6331;
+/// `INISetting_bVATSSmartCameraCheckDebug_VATS__atexit` at 0x1798830 (crt_init, medium); signature (high): `void INISetting_bVATSSmartCameraCheckDebug_VATS__atexit(void)`
+pub const INISetting_bVATSSmartCameraCheckDebug_VATS__atexit: u64 = 171195;
+/// `INISetting_bVATSSmartCameraCheckDebug_VATS__init` at 0xa1660 (crt_init, medium); signature (high): `void INISetting_bVATSSmartCameraCheckDebug_VATS__init(void)`
+pub const INISetting_bVATSSmartCameraCheckDebug_VATS__init: u64 = 6022;
+/// `INISetting_bValidateRenderTargets_Display__atexit` at 0x17b3020 (crt_init, medium); signature (high): `void INISetting_bValidateRenderTargets_Display__atexit(void)`
+pub const INISetting_bValidateRenderTargets_Display__atexit: u64 = 173821;
 /// `INISetting_bValidateRenderTargets_Display__init` at 0xe9c80 (crt_init, medium); signature (high): `void INISetting_bValidateRenderTargets_Display__init(void)`
 pub const INISetting_bValidateRenderTargets_Display__init: u64 = 9561;
 /// `INISetting_bVatsDebug_VATS__atexit` at 0x17a0ce0 (crt_init, medium); signature (high): `void INISetting_bVatsDebug_VATS__atexit(void)`
@@ -8395,11 +8403,3 @@ pub const InsertSortedU64_4: u64 = 52020;
 pub const InsertSortedUInt: u64 = 47117;
 /// `InsertSortedUInt64` at 0x3afb30 (decompiler, medium); signature (medium): `undefined InsertSortedUInt64(longlong * param_1, ulonglong * param_2)`
 pub const InsertSortedUInt64: u64 = 24366;
-/// `InsertSortedUInt64_2` at 0x3afc10 (decompiler, medium); signature (medium): `undefined InsertSortedUInt64_2(longlong * param_1, ulonglong * param_2)`
-pub const InsertSortedUInt64_2: u64 = 24367;
-/// `InsertSortedUIntKeyedStride10` at 0x8726a0 (decompiler, medium); signature (untiered): `undefined InsertSortedUIntKeyedStride10(longlong * param_1, uint * param_2)`
-pub const InsertSortedUIntKeyedStride10: u64 = 47472;
-/// `InsertSortedUInt_2` at 0x860060 (decompiler, medium); signature (medium): `undefined InsertSortedUInt_2(longlong * param_1, uint * param_2)`
-pub const InsertSortedUInt_2: u64 = 47118;
-/// `InsertStringHashTableEntry` at 0x117acc0 (decompiler, medium); signature (untiered): `undefined InsertStringHashTableEntry(longlong * param_1, undefined8 param_2, ulonglong * param_3, ulonglong param_4)`
-pub const InsertStringHashTableEntry: u64 = 82642;

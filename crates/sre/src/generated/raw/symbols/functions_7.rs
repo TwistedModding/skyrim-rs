@@ -8,6 +8,7 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0xb52b20, id: 61235, confidence: Confidence::Medium, name: "hkpWheelConstraintData::vdtor" },
     Function { rva: 0xb52bb0, id: 61236, confidence: Confidence::High, name: "hkpSimulation::vfunc_15" },
     Function { rva: 0xb52bc0, id: 61237, confidence: Confidence::High, name: "hkpSimulation::vfunc_13" },
     Function { rva: 0xb52bd0, id: 61238, confidence: Confidence::Medium, name: "hkpConstraintListener::vfunc_1" },
@@ -8906,5 +8907,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0xee0a30, id: 70256, confidence: Confidence::Medium, name: "NiAVObject::vfunc_41" },
     Function { rva: 0xee0a40, id: 70257, confidence: Confidence::High, name: "NiAVObject::GetObjectByName" },
     Function { rva: 0xee0a60, id: 70258, confidence: Confidence::Medium, name: "NiAVObject::SetSelectiveUpdateFlags" },
-    Function { rva: 0xee0b30, id: 70259, confidence: Confidence::High, name: "NiAVObject::UpdateDownwardPass" },
 ];

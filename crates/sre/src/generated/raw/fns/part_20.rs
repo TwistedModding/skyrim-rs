@@ -7,6 +7,14 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `WriteTimedHandlePairEntryToSave` at 0x7c05b0 (decompiler, medium); signature (untiered): `undefined WriteTimedHandlePairEntryToSave(uint * param_1, longlong param_2)`
+pub const WriteTimedHandlePairEntryToSave: u64 = 42648;
+/// `WriteToGrowableMemoryBuffer` at 0x156ab40 (decompiler, medium); signature (medium): `ulonglong WriteToGrowableMemoryBuffer(longlong param_1, void * param_2, uint param_3)`
+pub const WriteToGrowableMemoryBuffer: u64 = 107822;
+/// `WriteToRingBufferedFile` at 0xffa3f0 (decompiler, medium); signature (untiered): `ulonglong WriteToRingBufferedFile(longlong param_1, void * param_2, uint param_3, char param_4)`
+pub const WriteToRingBufferedFile: u64 = 76858;
+/// `WriteToSaveGameWithPathingStream` at 0x813350 (decompiler, medium); signature (untiered): `undefined WriteToSaveGameWithPathingStream(void * param_1, longlong param_2)`
+pub const WriteToSaveGameWithPathingStream: u64 = 44573;
 /// `WriteTopicInfoEntryToSave` at 0x5ed180 (decompiler, medium); signature (untiered): `undefined WriteTopicInfoEntryToSave(undefined8 * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const WriteTopicInfoEntryToSave: u64 = 35250;
 /// `WriteTwoDwordTriplesAndDwordToStream` at 0xf45ad0 (decompiler, medium); signature (untiered): `undefined WriteTwoDwordTriplesAndDwordToStream(longlong param_1, longlong param_2)`
@@ -4061,7 +4069,7 @@ pub const bhkRagdollController__InitControlGains: u64 = 78484;
 pub const bhkRagdollController__SetupFootIkLeg: u64 = 78437;
 /// `bhkRagdollController::UpdateLookIk` at 0x106e000 (semantic, medium); signature (untiered): `undefined UpdateLookIk(longlong param_1, float * param_2)`; semantic: dead path: look IK of the ragdoll controller; bAdditiveHeadAnim:LookIK at 0x106e2d0/0x106e927; calls 0x10779a0 (fEaseAngleShutOff) -> ApplyLookIkRotationEased 0x1078bc0 (fAngleMaxEase) (medium); signature `void (bhkRagdollController* this, float* rootQsTransform)`
 pub const bhkRagdollController__UpdateLookIk: u64 = 78429;
-/// `bhkRagdollController::ctor` at 0x106c040 (semantic, high); signature (low): `bhkRagdollController * ctor(bhkRagdollController * this, longlong * param_1, longlong * param_2, undefined8 param_3)`; semantic: constructor of the 'RagdollAnim' controller (0x3a0 bytes, vftable 0x1a82090); NEVER CALLED in 1.7.104 (high); signature `bhkRagdollController* (bhkRagdollController* this, void* a1, void* a2, char* a3)`
+/// `bhkRagdollController::ctor` at 0x106c040 (runtime, high); signature (low): `bhkRagdollController * ctor(bhkRagdollController * this, longlong * param_1, longlong * param_2, undefined8 param_3)`; semantic: constructor of the 'RagdollAnim' controller (0x3a0 bytes, vftable 0x1a82090); NEVER CALLED in 1.7.104 (high); signature `bhkRagdollController* (bhkRagdollController* this, void* a1, void* a2, char* a3)`
 pub const bhkRagdollController__ctor: u64 = 78403;
 /// `bhkRagdollController::ctor` as a function pointer type (high).
 pub type bhkRagdollController__ctor_fn = unsafe extern "C" fn(this: *mut crate::bhkRagdollController, a1: *mut c_void, a2: *mut c_void, a3: *mut c_char) -> *mut crate::bhkRagdollController;
@@ -4759,6 +4767,8 @@ pub const bhkWindListener__vdtor: u64 = 78188;
 pub const bhkWindListener__vfunc_10: u64 = 78191;
 /// `bhkWindListener::vfunc_6` at 0x105d860 (rtti, medium); signature (medium): `undefined vfunc_6(bhkWindListener * this, float param_1)`
 pub const bhkWindListener__vfunc_6: u64 = 78186;
+/// `bhkWorld::ComputePhysicsTimeThisFrame` at 0x104ab70 (semantic, medium); signature (untiered): `undefined ComputePhysicsTimeThisFrame(float param_1, char param_2)`; semantic: g_PhysicsTimeThisFrame = min(accumulator + dt, uMaxNumPhysicsStepsPerUpdate * fMaxTime * timeMult) (Complex variants when the flag is set); below a minimum the time is carried in the accumulator (medium); signature `void (float frameDelta, bool complex)`
+pub const bhkWorld__ComputePhysicsTimeThisFrame: u64 = 77850;
 /// `bhkWorld::GetWorld` at 0x104b470 (semantic, high); signature (untiered): `undefined8 GetWorld(bhkWorld * this)`
 pub const bhkWorld__GetWorld: u64 = 77852;
 /// `bhkWorld::GetWorldForLock` at 0x104b480 (semantic, high); signature (untiered): `undefined8 GetWorldForLock(bhkWorld * this)`
@@ -6073,7 +6083,3 @@ pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void
 pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f31a7c90bdec: u64 = 445067;
 /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_adea97f238d027e01a467b281ee4d039>_>::vfunc_1` at 0x129adc0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_adea97f238d027e01a467b281ee4d039>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
 pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_defe234b5327: u64 = 445089;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_af1c5628e4452240cdaa04843329f091>_>::vfunc_0` at 0x12c92e0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_af1c5628e4452240cdaa04843329f091>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_af1c5628e4452240cdaa04843329f091>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_420aad961b14: u64 = 446192;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_af1c5628e4452240cdaa04843329f091>_>::vfunc_1` at 0x12cacb0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_af1c5628e4452240cdaa04843329f091>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_00c0c8ab5d01: u64 = 446269;

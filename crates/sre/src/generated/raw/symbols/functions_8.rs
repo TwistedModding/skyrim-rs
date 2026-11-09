@@ -8,6 +8,7 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0xee0b30, id: 70259, confidence: Confidence::High, name: "NiAVObject::UpdateDownwardPass" },
     Function { rva: 0xee0bb0, id: 70260, confidence: Confidence::High, name: "NiAVObject::UpdateSelectedDownwardPass" },
     Function { rva: 0xee0c90, id: 70261, confidence: Confidence::High, name: "NiAVObject::UpdateRigidDownwardPass" },
     Function { rva: 0xee0d70, id: 70262, confidence: Confidence::Medium, name: "CopyFields48ToE0" },
@@ -5843,6 +5844,7 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x104a570, id: 77845, confidence: Confidence::Medium, name: "bhkEntity::vfunc_42_sub0" },
     Function { rva: 0x104a6e0, id: 77846, confidence: Confidence::Medium, name: "bhkPhantom::vfunc_42_sub0" },
     Function { rva: 0x104a860, id: 77847, confidence: Confidence::Medium, name: "bhkAction::vfunc_42_sub0" },
+    Function { rva: 0x104ab70, id: 77850, confidence: Confidence::Medium, name: "bhkWorld::ComputePhysicsTimeThisFrame" },
     Function { rva: 0x104ac30, id: 77851, confidence: Confidence::Medium, name: "bhkWorld::Step" },
     Function { rva: 0x104b470, id: 77852, confidence: Confidence::High, name: "bhkWorld::GetWorld" },
     Function { rva: 0x104b480, id: 77853, confidence: Confidence::High, name: "bhkWorld::GetWorldForLock" },
@@ -8708,5 +8710,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x1168520, id: 82057, confidence: Confidence::Medium, name: "ComputeTriangleBarycentricFactors" },
     Function { rva: 0x11686e0, id: 82058, confidence: Confidence::Medium, name: "ComputeClosestPointOnTriangle" },
     Function { rva: 0x1168bd0, id: 82059, confidence: Confidence::Medium, name: "ComputeTriangleInverseEdgeLengths_2" },
-    Function { rva: 0x1168e00, id: 82061, confidence: Confidence::Medium, name: "BSTDerivedCreator<BSUIScaleformData,IUIMessageData>::vfunc_1" },
 ];

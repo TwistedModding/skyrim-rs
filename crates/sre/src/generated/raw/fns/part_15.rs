@@ -7,6 +7,14 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `NavMesh::vfunc_6_sub0` at 0x4b9990 (callgraph, medium); signature (untiered): `undefined8 vfunc_6_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const NavMesh__vfunc_6_sub0: u64 = 30228;
+/// `NavMesh::vfunc_6_sub1` at 0x11e0480 (callgraph, medium); signature (untiered): `undefined vfunc_6_sub1(longlong param_1, ulonglong * param_2, undefined8 param_3, undefined * param_4)`
+pub const NavMesh__vfunc_6_sub1: u64 = 91099;
+/// `NavMeshInfoMap::BSNavmeshInfoMap_vdtor` at 0x4c783c (slot_propagation, medium); signature (high): `undefined BSNavmeshInfoMap_vdtor(NavMeshInfoMap * this)`
+pub const NavMeshInfoMap__BSNavmeshInfoMap_vdtor: u64 = 30412;
+/// `NavMeshInfoMap::BSNavmeshInfoMap_vfunc_1` at 0x4c4e10 (rtti, high); signature (low): `undefined8 BSNavmeshInfoMap_vfunc_1(NavMeshInfoMap * this, uint param_1)`
+pub const NavMeshInfoMap__BSNavmeshInfoMap_vfunc_1: u64 = 30382;
 /// `NavMeshInfoMap::BSNavmeshInfoMap_vfunc_2` at 0x4c4ed0 (rtti, high); signature (low): `undefined8 BSNavmeshInfoMap_vfunc_2(NavMeshInfoMap * this, uint param_1)`
 pub const NavMeshInfoMap__BSNavmeshInfoMap_vfunc_2: u64 = 30383;
 /// `NavMeshInfoMap::BSNavmeshInfoMap_vfunc_3` at 0x4c4ff0 (rtti, high); signature (low): `undefined BSNavmeshInfoMap_vfunc_3(NavMeshInfoMap * this, longlong * param_1)`
@@ -8743,11 +8751,3 @@ pub const Papyrus__Actor__RegisterFuncs: u64 = 54784;
 pub const Papyrus__Actor__RemoveFromAllFactions: u64 = 54735;
 /// `Papyrus::Actor::RemoveFromFaction` at 0xa0d820 (papyrus_native, high); signature (medium): `void RemoveFromFaction(IVirtualMachine * vm, uint stackId, Actor * self, TESFaction * a0)`
 pub const Papyrus__Actor__RemoveFromFaction: u64 = 54958;
-/// `Papyrus::Actor::RemovePerk` at 0x9ff7e0 (papyrus_native, high); signature (medium): `void RemovePerk(IVirtualMachine * vm, uint stackId, Actor * self, BGSPerk * a0)`
-pub const Papyrus__Actor__RemovePerk: u64 = 54645;
-/// `Papyrus::Actor::RemoveShout` at 0xa0d830 (papyrus_native, high); signature (medium): `bool RemoveShout(IVirtualMachine * vm, uint stackId, Actor * self, TESShout * a0)`
-pub const Papyrus__Actor__RemoveShout: u64 = 54959;
-/// `Papyrus::Actor::RemoveSpell` at 0x9ff820 (papyrus_native, high); signature (medium): `bool RemoveSpell(IVirtualMachine * vm, uint stackId, Actor * self, SpellItem * a0)`
-pub const Papyrus__Actor__RemoveSpell: u64 = 54647;
-/// `Papyrus::Actor::RemoveSpell_sub0` at 0x668fd0 (callgraph, medium); signature (untiered): `undefined RemoveSpell_sub0(longlong param_1, undefined4 * param_2, undefined8 param_3)`
-pub const Papyrus__Actor__RemoveSpell_sub0: u64 = 36962;

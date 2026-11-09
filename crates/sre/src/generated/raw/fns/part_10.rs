@@ -7,6 +7,14 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `FlightActionEndHandler::vdtor` at 0x7d3e20 (layout_inference, medium); signature (low): `FlightActionEndHandler * vdtor(FlightActionEndHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const FlightActionEndHandler__vdtor: u64 = 43320;
+/// `FlightActionEndHandler::vfunc_1` at 0x7cd870 (rtti, high); signature (low): `undefined8 vfunc_1(FlightActionEndHandler * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const FlightActionEndHandler__vfunc_1: u64 = 42851;
+/// `FlightActionEntryEndHandler::vdtor` at 0x7d3e50 (layout_inference, medium); signature (low): `FlightActionEntryEndHandler * vdtor(FlightActionEntryEndHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const FlightActionEntryEndHandler__vdtor: u64 = 43321;
+/// `FlightActionEntryEndHandler::vfunc_1` at 0x7cd850 (rtti, high); signature (low): `undefined1 vfunc_1(FlightActionEntryEndHandler * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const FlightActionEntryEndHandler__vfunc_1: u64 = 42850;
 /// `FlightActionEntryEndHandler::vfunc_1_sub0` at 0x6a4840 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const FlightActionEntryEndHandler__vfunc_1_sub0: u64 = 37782;
 /// `FlightActionGrabHandler::vdtor` at 0x7d3e80 (layout_inference, medium); signature (low): `FlightActionGrabHandler * vdtor(FlightActionGrabHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -8515,13 +8523,3 @@ pub const GameSetting_fGunSpreadSkillBase__atexit: u64 = 168082;
 pub const GameSetting_fGunSpreadSkillBase__init: u64 = 2872;
 /// `GameSetting_fGunSpreadSkillMult__atexit` at 0x1767690 (crt_init, medium); signature (high): `void GameSetting_fGunSpreadSkillMult__atexit(void)`
 pub const GameSetting_fGunSpreadSkillMult__atexit: u64 = 168083;
-/// `GameSetting_fGunSpreadSkillMult__init` at 0x4c4e0 (crt_init, medium); signature (high): `void GameSetting_fGunSpreadSkillMult__init(void)`
-pub const GameSetting_fGunSpreadSkillMult__init: u64 = 2873;
-/// `GameSetting_fGunSpreadWalkBase__atexit` at 0x17676e0 (crt_init, medium); signature (high): `void GameSetting_fGunSpreadWalkBase__atexit(void)`
-pub const GameSetting_fGunSpreadWalkBase__atexit: u64 = 168084;
-/// `GameSetting_fGunSpreadWalkBase__init` at 0x4c560 (crt_init, medium); signature (high): `void GameSetting_fGunSpreadWalkBase__init(void)`
-pub const GameSetting_fGunSpreadWalkBase__init: u64 = 2874;
-/// `GameSetting_fGunSpreadWalkMult__atexit` at 0x1767730 (crt_init, medium); signature (high): `void GameSetting_fGunSpreadWalkMult__atexit(void)`
-pub const GameSetting_fGunSpreadWalkMult__atexit: u64 = 168085;
-/// `GameSetting_fGunSpreadWalkMult__init` at 0x4c5e0 (crt_init, medium); signature (high): `void GameSetting_fGunSpreadWalkMult__init(void)`
-pub const GameSetting_fGunSpreadWalkMult__init: u64 = 2875;

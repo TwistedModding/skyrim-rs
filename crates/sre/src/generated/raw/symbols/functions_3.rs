@@ -7523,7 +7523,8 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x54a420, id: 32734, confidence: Confidence::Medium, name: "BGSFootIkRaycastInterfaceDB::RegisterGraphManager" },
     Function { rva: 0x54a6e0, id: 32736, confidence: Confidence::High, name: "InitFootIkRaycastInterfaceDB" },
     Function { rva: 0x54a820, id: 32737, confidence: Confidence::Medium, name: "ReleaseGlobal401101" },
-    Function { rva: 0x54aba0, id: 32740, confidence: Confidence::Medium, name: "ClearByte30WhereByte2EIsZero" },
+    Function { rva: 0x54a860, id: 32738, confidence: Confidence::High, name: "BGSFootIkRaycastInterfaceDB::RefreshLegCastFlags" },
+    Function { rva: 0x54aba0, id: 32740, confidence: Confidence::High, name: "BGSFootIkRaycastInterfaceDB::ClearHitThisFrame" },
     Function { rva: 0x54abe0, id: 32741, confidence: Confidence::High, name: "BGSFootIkRaycastInterfaceDB::FindEntryByRefHandle" },
     Function { rva: 0x54ac90, id: 32742, confidence: Confidence::Medium, name: "BGSFootIkRaycastInterfaceDB::GetRaycastInterface" },
     Function { rva: 0x54aef0, id: 32743, confidence: Confidence::High, name: "BGSFootIkRaycastInterfaceDB::GetScale" },
@@ -8135,5 +8136,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x582230, id: 523612, confidence: Confidence::High, name: "FreeOwnedPointerRange" },
     Function { rva: 0x582270, id: 523613, confidence: Confidence::Medium, name: "MarketplaceMenu::ctor_sub1" },
     Function { rva: 0x5822f0, id: 33577, confidence: Confidence::High, name: "MenuEventHandler::dtor" },
-    Function { rva: 0x582300, id: 441745, confidence: Confidence::High, name: "ConfirmResetCallback::vfunc_1" },
 ];

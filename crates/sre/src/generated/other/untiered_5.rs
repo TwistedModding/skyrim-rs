@@ -7,27 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `FreeField0_2` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 70899, rva 0xefb720).
-/// `undefined FreeField0_2(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn free_field0_2(param_1: *mut u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(70899, (*mut u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `FreeField10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 447418, rva 0x1348b30).
-/// `undefined FreeField10(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn free_field10(param_1: i64) -> u64 { unsafe { function!(447418, (i64) -> u64)(param_1) } }
-/// `FreeField10Array240Items` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 39339, rva 0x6f4b40).
-/// `undefined FreeField10Array240Items(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn free_field10_array240_items(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(39339, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `FreeField10ArrayAndClearField28` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 90325, rva 0x11b4d90).
 /// `undefined FreeField10ArrayAndClearField28(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -14196,3 +14175,17 @@ pub unsafe fn init_hit_data_2(param_1: *mut f32, param_2: *mut i64, param_3: *mu
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn init_hk_arrays_and_defaults(param_1: *mut u64) -> *mut u64 { unsafe { function!(65251, (*mut u64) -> *mut u64)(param_1) } }
+/// `InitHkThreadMemoryEntry` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 79336, rva 0x10a0d10).
+/// `undefined4 * InitHkThreadMemoryEntry(undefined4 * param_1, longlong * param_2, undefined4 param_3, char param_4, undefined4 param_5)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn init_hk_thread_memory_entry(param_1: *mut u32, param_2: *mut i64, param_3: u32, param_4: c_char, param_5: u32) -> *mut u32 { unsafe { function!(79336, (*mut u32, *mut i64, u32, c_char, u32) -> *mut u32)(param_1, param_2, param_3, param_4, param_5) } }
+/// `InitHotkeyBinding` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 442683, rva 0x90cac0).
+/// `longlong * InitHotkeyBinding(longlong * param_1, char * param_2, undefined1 * param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn init_hotkey_binding(param_1: *mut i64, param_2: *mut c_char, param_3: *mut u8, param_4: u64) -> *mut i64 { unsafe { function!(442683, (*mut i64, *mut c_char, *mut u8, u64) -> *mut i64)(param_1, param_2, param_3, param_4) } }

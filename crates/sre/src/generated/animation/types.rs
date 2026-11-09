@@ -469,8 +469,9 @@ pub struct BShkbAnimationGraph {
     pub __updateBehaviorThisFrame: [u8; 1],
     /// +0x246 `undefined1`, semantic; selects GenerateBehaviorGraphPose instead of the foot-IK + node write path (low)
     pub generatePoseOnWrite: u8,
-    /// +0x247 `undefined1`, semantic; ctor flag (Actor: from the race), enables the +0x190 list (low)
-    pub buildNameMatch: u8,
+    /// +0x247 `undefined1`, semantic; ctor flag (Actor: from the race); SetRootNode 0xbcfdb0 builds the bone LOD table +0x190 only when it is set (low)
+    #[doc(hidden)]
+    pub __boneLODEnabled: [u8; 1],
     unknown_248: [u8; 1],
     /// +0x249 `u8`, semantic; foot IK runs in FinalizePose for this graph this frame: BSAnimationUpdateData+0x2e, and at the end of Update that && ComputeBoneLODCount's out byte (visible and the bone LOD level keeps the leg bones) (high)
     pub doFootIK: u8,
@@ -506,7 +507,7 @@ const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, __eventsSuppres
 const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, activating) == 0x244);
 const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, __updateBehaviorThisFrame) == 0x245);
 const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, generatePoseOnWrite) == 0x246);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, buildNameMatch) == 0x247);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, __boneLODEnabled) == 0x247);
 const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, doFootIK) == 0x249);
 
 /// `BoneNodeEntry`: size 0x10 (exact).

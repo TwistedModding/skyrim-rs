@@ -6947,7 +6947,7 @@ pub struct PlayerCharacter_vtable_C0 {
     /// `PlayerCharacter::ActorState_vfunc_4` at 0x75ed30 (rtti, high); signature (low): `undefined ActorState_vfunc_4(PlayerCharacter * this, undefined4 * param_1)`
     #[doc(hidden)]
     pub __slot_4: *const c_void,
-    /// `Actor::ActorState_GetMovementSpeed` at 0x6b5860 (semantic, high); signature (untiered): `undefined4 ActorState_GetMovementSpeed(Actor * this)`
+    /// `Actor::ActorState_GetMovementSpeed` at 0x6b5860 (semantic, high); signature (untiered): `float ActorState_GetMovementSpeed(Actor * this)`
     pub slot_5: *const c_void,
     /// `Actor::ActorState_vfunc_6` at 0x6b5500 (rtti, medium); signature (low): `undefined4 ActorState_vfunc_6(Actor * this)`
     pub slot_6: *const c_void,
@@ -10117,9 +10117,9 @@ pub struct SceneGraph_vtable {
     pub slot_60: *const c_void,
     /// `NiNode::UpdateUpwardPass` at 0xee28e0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiNode * this)`
     pub slot_61: *const c_void,
-    /// `SceneGraph::GetFarDistance` at 0x665740 (semantic, high); signature (untiered): `ulonglong GetFarDistance(SceneGraph * this)`
+    /// `SceneGraph::GetFarDistance` at 0x665740 (semantic, high); signature (untiered): `float GetFarDistance(SceneGraph * this)`
     pub slot_62: *const c_void,
-    /// `SceneGraph::GetNearDistance` at 0x665720 (semantic, high); signature (untiered): `ulonglong GetNearDistance(SceneGraph * this)`
+    /// `SceneGraph::GetNearDistance` at 0x665720 (semantic, high); signature (untiered): `float GetNearDistance(SceneGraph * this)`
     pub slot_63: *const c_void,
     /// `BSSceneGraph::vfunc_64` at 0xff4bc0 (rtti, medium); signature (medium): `undefined vfunc_64(BSSceneGraph * this, float param_1)`
     pub slot_64: *const c_void,

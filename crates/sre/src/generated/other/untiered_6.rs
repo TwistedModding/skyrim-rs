@@ -7,20 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `InitHkThreadMemoryEntry` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 79336, rva 0x10a0d10).
-/// `undefined4 * InitHkThreadMemoryEntry(undefined4 * param_1, longlong * param_2, undefined4 param_3, char param_4, undefined4 param_5)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_hk_thread_memory_entry(param_1: *mut u32, param_2: *mut i64, param_3: u32, param_4: c_char, param_5: u32) -> *mut u32 { unsafe { function!(79336, (*mut u32, *mut i64, u32, c_char, u32) -> *mut u32)(param_1, param_2, param_3, param_4, param_5) } }
-/// `InitHotkeyBinding` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 442683, rva 0x90cac0).
-/// `longlong * InitHotkeyBinding(longlong * param_1, char * param_2, undefined1 * param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_hotkey_binding(param_1: *mut i64, param_2: *mut c_char, param_3: *mut u8, param_4: u64) -> *mut i64 { unsafe { function!(442683, (*mut i64, *mut c_char, *mut u8, u64) -> *mut i64)(param_1, param_2, param_3, param_4) } }
 /// `InitHttpResponseFromHeaders` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 527210, rva 0x13dfd20).
 /// `undefined8 * InitHttpResponseFromHeaders(undefined8 * param_1, undefined8 param_2, char * param_3, undefined8 param_4, undefined1 * param_5, undefined8 * param_6)`
 ///
@@ -12831,3 +12817,17 @@ pub unsafe fn papyrus__actor__start_vampire_feed_sub0(param_1: i64, param_2: i64
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__cell__set_fog_color_sub0(param_1: i64, param_2: u32) -> u64 { unsafe { function!(18942, (i64, u32) -> u64)(param_1, param_2) } }
+/// `Papyrus::Cell::SetFogColor_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 18943, rva 0x2bc2f0).
+/// `undefined SetFogColor_sub1(longlong param_1, undefined4 param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn papyrus__cell__set_fog_color_sub1(param_1: i64, param_2: u32) -> u64 { unsafe { function!(18943, (i64, u32) -> u64)(param_1, param_2) } }
+/// `Papyrus::Cell::SetFogPlanes_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 18945, rva 0x2bc350).
+/// `undefined SetFogPlanes_sub0(longlong param_1, undefined4 param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn papyrus__cell__set_fog_planes_sub0(param_1: i64, param_2: u32) -> u64 { unsafe { function!(18945, (i64, u32) -> u64)(param_1, param_2) } }

@@ -7,6 +7,16 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState>::vfunc_1` at 0x459b80 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureHoldPositionExecState_IProcedureTreeExecState__vfunc_1: u64 = 28056;
+/// `BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState>::vfunc_2` at 0x45a830 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureHoldPositionExecState_IProcedureTreeExecState__vfunc_2: u64 = 28096;
+/// `BSTDerivedCreator<BGSProcedureHover,IProcedure>::vdtor` at 0x475af0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureHover,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureHover,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureHover_IProcedure__vdtor: u64 = 28793;
+/// `BSTDerivedCreator<BGSProcedureHover,IProcedure>::vfunc_1` at 0x475c30 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureHover,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureHover_IProcedure__vfunc_1: u64 = 28796;
+/// `BSTDerivedCreator<BGSProcedureHover,IProcedure>::vfunc_2` at 0x475cb0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureHover,IProcedure> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureHover_IProcedure__vfunc_2: u64 = 28797;
 /// `BSTDerivedCreator<BGSProcedureHoverExecState,IProcedureTreeExecState>::vdtor` at 0x4587b0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureHoverExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureHoverExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSTDerivedCreator_BGSProcedureHoverExecState_IProcedureTreeExecState__vdtor: u64 = 27984;
 /// `BSTDerivedCreator<BGSProcedureHoverExecState,IProcedureTreeExecState>::vfunc_1` at 0x459be0 (rtti, medium); signature (low): `undefined8 vfunc_1(BSTDerivedCreator<BGSProcedureHoverExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -4545,7 +4555,7 @@ pub const BSXAudio2DataSrc__vdtor: u64 = 68058;
 pub const BSXAudio2GameSound__ApplyFrequency: u64 = 68011;
 /// `BSXAudio2GameSound::ApplyVolume` at 0xcdad60 (semantic, high); signature (untiered): `undefined ApplyVolume(BSXAudio2GameSound * this)`
 pub const BSXAudio2GameSound__ApplyVolume: u64 = 68020;
-/// `BSXAudio2GameSound::ComputeAmplitude` at 0xcd5410 (semantic, high); signature (untiered): `undefined ComputeAmplitude(longlong param_1)`; semantic: the volume combination (answers) (high); signature `float (BSXAudio2GameSound* this)`
+/// `BSXAudio2GameSound::ComputeAmplitude` at 0xcd5410 (semantic, high); signature (untiered): `float ComputeAmplitude(longlong param_1)`; semantic: the volume combination (answers) (high); signature `float (BSXAudio2GameSound* this)`
 pub const BSXAudio2GameSound__ComputeAmplitude: u64 = 67873;
 /// `BSXAudio2GameSound::ComputeAmplitude` as a function pointer type (high).
 pub type BSXAudio2GameSound__ComputeAmplitude_fn = unsafe extern "C" fn(this: *mut crate::BSXAudio2GameSound) -> f32;
@@ -4673,15 +4683,15 @@ pub const BShkVisibilityController__vdtor: u64 = 63837;
 pub const BShkVisibilityController__vfunc_2: u64 = 63835;
 /// `BShkbAnimationGraph::AddRagdollToWorld` at 0xbd36a0 (semantic, medium); signature (untiered): `ulonglong AddRagdollToWorld(BShkbAnimationGraph * this)`
 pub const BShkbAnimationGraph__AddRagdollToWorld: u64 = 63621;
-/// `BShkbAnimationGraph::BuildBoneLODTable` at 0xbdf7c0 (semantic, high); signature (untiered): `undefined BuildBoneLODTable(longlong param_1, longlong param_2, ushort param_3, longlong * param_4)`; semantic: fills the graph's bone LOD table (+0x190) from the root's BSBoneLOD extra data (name global 0x332fe80): distance^2, named bone index + 1, keepsFootIk = footIkBoneCount <= that count; sorts by distance (high); signature `void (hkaSkeleton* skeleton, NiAVObject* root, u16 footIkBoneCount, BSTArray* table)`
+/// `BShkbAnimationGraph::BuildBoneLODTable` at 0xbdf7c0 (semantic, high); signature (untiered): `undefined BuildBoneLODTable(longlong param_1, longlong param_2, ushort param_3, longlong * param_4)`; semantic: fills graph+0x190 from the root's BSBoneLOD extra data (see the class row) and sorts it by distance (high); signature `void (const hkaSkeleton* skeleton, NiAVObject* root, u16 maxLegBone, BSTArray<BoneLODLevel>* table)`
 pub const BShkbAnimationGraph__BuildBoneLODTable: u64 = 63855;
 /// `BShkbAnimationGraph::BuildBoneLODTable` as a function pointer type (high).
-pub type BShkbAnimationGraph__BuildBoneLODTable_fn = unsafe extern "C" fn(skeleton: *mut crate::hkaSkeleton, root: *mut crate::NiAVObject, footIkBoneCount: u16, table: *mut crate::BSTArray);
+pub type BShkbAnimationGraph__BuildBoneLODTable_fn = unsafe extern "C" fn(skeleton: *const crate::hkaSkeleton, root: *mut crate::NiAVObject, maxLegBone: u16, table: *mut c_void);
 /// `BShkbAnimationGraph::CollectGraphEvents` at 0xbccea0 (semantic, high); signature (untiered): `undefined CollectGraphEvents(longlong param_1, longlong * param_2, longlong param_3)`; semantic: drains the Havok event queue (up to 5 passes through 0xacd4b0) and, when eventsOut is given, appends {projectData->eventNames[id] (+0xd0), payload string} for each id < projectData+0xe0 (high); signature `void (BShkbAnimationGraph* this, hkbContext* ctx, BSScrapArray<GraphEventPair>* eventsOut)`
 pub const BShkbAnimationGraph__CollectGraphEvents: u64 = 63583;
 /// `BShkbAnimationGraph::CollectGraphEvents` as a function pointer type (high).
 pub type BShkbAnimationGraph__CollectGraphEvents_fn = unsafe extern "C" fn(this: *mut crate::BShkbAnimationGraph, ctx: *mut c_void, eventsOut: *mut c_void);
-/// `BShkbAnimationGraph::ComputeBoneLODCount` at 0xbcc2c0 (semantic, high); signature (untiered): `ushort ComputeBoneLODCount(longlong param_1, float * param_2, char param_3, undefined1 * param_4, ushort param_5)`; semantic: bones to generate this frame and whether foot IK is allowed: not visible -> min(minBones, node count) and footIkAllowed = 0; visible -> footIkAllowed = 1, count = min(skeleton bones, node count), then for each bone LOD level (graph +0x190 entries of 8 bytes {distSq f32 +0, bones u16 +4, footIk u8 +6}, count +0x1a0) whose distSq < (horizontal camera-root distance * fBoneLODDistanceScale / root scale)^2: count = max(minBones, level bones), footIkAllowed = level +6 (high); signature `u16 (BShkbAnimationGraph* this, const float* cameraPos, bool visible, u8* footIkAllowed, u16 minBones)`
+/// `BShkbAnimationGraph::ComputeBoneLODCount` at 0xbcc2c0 (runtime, high); signature (untiered): `ushort ComputeBoneLODCount(longlong param_1, float * param_2, char param_3, undefined1 * param_4, ushort param_5)`; semantic: bones to generate this frame and whether foot IK is allowed: not visible -> min(minBones, node count) and footIkAllowed = 0; visible -> footIkAllowed = 1, count = min(skeleton bones, node count), then for each bone LOD level (graph +0x190 entries of 8 bytes {distSq f32 +0, bones u16 +4, footIk u8 +6}, count +0x1a0) whose distSq < (horizontal camera-root distance * fBoneLODDistanceScale / root scale)^2: count = max(minBones, level bones), footIkAllowed = level +6 (high); signature `u16 (BShkbAnimationGraph* this, const float* cameraPos, bool visible, u8* footIkAllowed, u16 minBones)`
 pub const BShkbAnimationGraph__ComputeBoneLODCount: u64 = 63575;
 /// `BShkbAnimationGraph::ComputeBoneLODCount` as a function pointer type (high).
 pub type BShkbAnimationGraph__ComputeBoneLODCount_fn = unsafe extern "C" fn(this: *mut crate::BShkbAnimationGraph, cameraPos: *const f32, visible: bool, footIkAllowed: *mut u8, minBones: u16) -> u16;
@@ -5545,15 +5555,3 @@ pub type BowZoomStopHandler__Handle_fn = unsafe extern "C" fn(this: *mut crate::
 pub const BroadcastCrimeAlarmInRange: u64 = 39361;
 /// `BubbleSortIndicesByFloatField40` at 0xb02d20 (decompiler, high); signature (high): `undefined BubbleSortIndicesByFloatField40(longlong param_1, int param_2, longlong param_3)`
 pub const BubbleSortIndicesByFloatField40: u64 = 59537;
-/// `BuildAabbTreeF16` at 0x1132fc0 (decompiler, medium); signature (untiered): `undefined BuildAabbTreeF16(longlong param_1, undefined8 * param_2, undefined8 * param_3, uint param_4, undefined8 * param_5)`
-pub const BuildAabbTreeF16: u64 = 81561;
-/// `BuildAabbTreeNodesF16` at 0x1133ed0 (decompiler, medium); signature (untiered): `undefined BuildAabbTreeNodesF16(longlong param_1, float * param_2, longlong param_3, int param_4, undefined8 param_5, longlong * param_6, char param_7)`
-pub const BuildAabbTreeNodesF16: u64 = 81565;
-/// `BuildAabbTreeNodesF32` at 0x11343e0 (decompiler, medium); signature (untiered): `undefined BuildAabbTreeNodesF32(longlong param_1, float * param_2, longlong param_3, uint param_4, undefined8 param_5, longlong * param_6, char param_7)`
-pub const BuildAabbTreeNodesF32: u64 = 81566;
-/// `BuildAabbTreeNodesQ16` at 0x11333d0 (decompiler, medium); signature (untiered): `undefined BuildAabbTreeNodesQ16(longlong param_1, longlong param_2, longlong param_3, int param_4, undefined8 param_5, longlong * param_6, char param_7)`
-pub const BuildAabbTreeNodesQ16: u64 = 81563;
-/// `BuildAabbTreeNodesQ32` at 0x1133940 (decompiler, medium); signature (untiered): `undefined BuildAabbTreeNodesQ32(longlong param_1, longlong param_2, longlong param_3, uint param_4, undefined8 param_5, longlong * param_6, char param_7)`
-pub const BuildAabbTreeNodesQ32: u64 = 81564;
-/// `BuildAabbTreeQ16` at 0x1132a90 (decompiler, medium); signature (untiered): `undefined BuildAabbTreeQ16(longlong param_1, float * param_2, undefined8 * param_3, uint param_4, undefined8 * param_5)`
-pub const BuildAabbTreeQ16: u64 = 81559;

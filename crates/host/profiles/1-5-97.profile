@@ -112491,6 +112491,7 @@ member-unverified BSXAudio2GameSound.field_40
 member-unverified BSXAudio2GameSound.field_44
 member-unverified BSXAudio2GameSound.field_48
 member-unverified BSXAudio2GameSound.field_54
+member-unverified BShkbAnimationGraph.boneLODEnabled
 member-unverified BShkbAnimationGraph.boneLODTable
 member-unverified BShkbAnimationGraph.eventsSuppressed
 member-unverified BShkbAnimationGraph.interpTimerA
@@ -112684,9 +112685,12 @@ member-missing CCallbackImpl<8>.__vftable
 member-unverified CachedRaycastData.cachingPhantom
 member-unverified CachedRaycastData.collectedBodies
 member-unverified CachedRaycastData.collisionGroup
-member-unverified CachedRaycastData.everHit
+member-unverified CachedRaycastData.graphIsSynced
 member-unverified CachedRaycastData.handle
-member-unverified CachedRaycastData.inUse
+member-unverified CachedRaycastData.hitThisFrame
+member-unverified CachedRaycastData.isFree
+member-unverified CachedRaycastData.legCastResults
+member-unverified CachedRaycastData.needsRefresh
 member-unverified CachedRaycastData.useWorldOnly
 member-unverified CachedRaycastData.world
 member-unverified Calendar.daysAdvanced
@@ -120175,6 +120179,8 @@ member-unverified hkbGenerator.field_B4
 member-unverified hkbGenerator.field_B8
 member-unverified hkbGenerator.field_C0
 member-unverified hkbGenerator.field_C4
+member-unverified hkbGeneratorOutput.deleteTracks
+member-unverified hkbGeneratorOutput.tracks
 member-unverified hkbGeneratorTransitionEffect.field_108
 member-unverified hkbGeneratorTransitionEffect.field_110
 member-unverified hkbGeneratorTransitionEffect.field_114
@@ -138571,6 +138577,7 @@ size-unverified hkbFootIkModifierInternalLegData
 size-unverified hkbFootIkModifierLeg
 size-unverified hkbFootIkSceneModifier
 size-unverified hkbGenerator
+size-unverified hkbGeneratorOutput
 size-unverified hkbGeneratorTransitionEffect
 size-unverified hkbGeneratorTransitionEffectInternalState
 size-unverified hkbGetHandleOnBoneModifier

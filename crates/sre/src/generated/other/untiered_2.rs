@@ -7,13 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `AssignRefCountedPointer_11` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 38167, rva 0x6bb180).
-/// `longlong * AssignRefCountedPointer_11(longlong * param_1, undefined8 * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_ref_counted_pointer_11(param_1: *mut i64, param_2: *mut u64) -> *mut i64 { unsafe { function!(38167, (*mut i64, *mut u64) -> *mut i64)(param_1, param_2) } }
 /// `AssignRefCountedPointer_12` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 39731, rva 0x71cb30).
 /// `longlong * AssignRefCountedPointer_12(longlong * param_1, undefined8 * param_2)`
 ///
@@ -4956,13 +4949,6 @@ pub unsafe fn clear_buffer_and_fields(param_1: i64) -> u64 { unsafe { function!(
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn clear_buffers_and_hash_table(param_1: i64) -> u64 { unsafe { function!(89803, (i64) -> u64)(param_1) } }
-/// `ClearByte30WhereByte2EIsZero` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 32740, rva 0x54aba0).
-/// `undefined ClearByte30WhereByte2EIsZero(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn clear_byte30_where_byte2_e_is_zero(param_1: i64) -> u64 { unsafe { function!(32740, (i64) -> u64)(param_1) } }
 /// `ClearByte4_2` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 449349, rva 0x13d3d10).
 /// `undefined ClearByte4_2(longlong param_1)`
 ///
@@ -13335,3 +13321,17 @@ pub unsafe fn compute_moving_spheres_contact(param_1: f32, param_2: *mut f32, pa
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn compute_named_value_list_crc32(param_1: *mut i64) -> u64 { unsafe { function!(57819, (*mut i64) -> u64)(param_1) } }
+/// `ComputeNearestTriangleFeature` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 81296, rva 0x1121ec0).
+/// `undefined ComputeNearestTriangleFeature(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5, undefined1[16] * param_6)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_nearest_triangle_feature(param_1: *mut f32, param_2: *mut f32, param_3: *mut f32, param_4: *mut f32, param_5: *mut f32, param_6: *mut c_void) -> u64 { unsafe { function!(81296, (*mut f32, *mut f32, *mut f32, *mut f32, *mut f32, *mut c_void) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6) } }
+/// `ComputeNodeSceneStatsAndTextureUse` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 15579, rva 0x215350).
+/// `undefined ComputeNodeSceneStatsAndTextureUse(undefined8 param_1, undefined4 * param_2, int * param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_node_scene_stats_and_texture_use(param_1: u64, param_2: *mut u32, param_3: *mut i32, param_4: u64) -> u64 { unsafe { function!(15579, (u64, *mut u32, *mut i32, u64) -> u64)(param_1, param_2, param_3, param_4) } }

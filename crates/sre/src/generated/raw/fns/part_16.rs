@@ -7,6 +7,14 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `Papyrus::Actor::RemovePerk` at 0x9ff7e0 (papyrus_native, high); signature (medium): `void RemovePerk(IVirtualMachine * vm, uint stackId, Actor * self, BGSPerk * a0)`
+pub const Papyrus__Actor__RemovePerk: u64 = 54645;
+/// `Papyrus::Actor::RemoveShout` at 0xa0d830 (papyrus_native, high); signature (medium): `bool RemoveShout(IVirtualMachine * vm, uint stackId, Actor * self, TESShout * a0)`
+pub const Papyrus__Actor__RemoveShout: u64 = 54959;
+/// `Papyrus::Actor::RemoveSpell` at 0x9ff820 (papyrus_native, high); signature (medium): `bool RemoveSpell(IVirtualMachine * vm, uint stackId, Actor * self, SpellItem * a0)`
+pub const Papyrus__Actor__RemoveSpell: u64 = 54647;
+/// `Papyrus::Actor::RemoveSpell_sub0` at 0x668fd0 (callgraph, medium); signature (untiered): `undefined RemoveSpell_sub0(longlong param_1, undefined4 * param_2, undefined8 param_3)`
+pub const Papyrus__Actor__RemoveSpell_sub0: u64 = 36962;
 /// `Papyrus::Actor::ResetHealthAndLimbs` at 0xa0d840 (papyrus_native, high); signature (medium): `void ResetHealthAndLimbs(IVirtualMachine * vm, uint stackId, Actor * self)`
 pub const Papyrus__Actor__ResetHealthAndLimbs: u64 = 54960;
 /// `Papyrus::Actor::RestoreActorValue` at 0xa01d60 (papyrus_native, high); signature (medium): `void RestoreActorValue(IVirtualMachine * vm, uint stackId, Actor * self, BSFixedString * a0, float a1)`
@@ -2467,11 +2475,11 @@ pub type PlayerCamera__ForceFirstPersonIfPOVAllowed_fn = unsafe extern "C" fn(th
 pub const PlayerCamera__ForceThirdPerson: u64 = 50796;
 /// `PlayerCamera::ForceThirdPerson` as a function pointer type (high).
 pub type PlayerCamera__ForceThirdPerson_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera);
-/// `PlayerCamera::GetDefaultFOVForCurrentState` at 0x8fb1e0 (runtime, high); signature (untiered): `undefined4 GetDefaultFOVForCurrentState(longlong param_1)`; semantic: fDefault1stPersonFOV:Display value if currentState == cameraStates[0], else fDefaultWorldFOV:Display value (high); signature `float (PlayerCamera* this)`
+/// `PlayerCamera::GetDefaultFOVForCurrentState` at 0x8fb1e0 (runtime, high); signature (untiered): `float GetDefaultFOVForCurrentState(longlong param_1)`; semantic: fDefault1stPersonFOV:Display value if currentState == cameraStates[0], else fDefaultWorldFOV:Display value (high); signature `float (PlayerCamera* this)`
 pub const PlayerCamera__GetDefaultFOVForCurrentState: u64 = 50835;
 /// `PlayerCamera::GetDefaultFOVForCurrentState` as a function pointer type (high).
 pub type PlayerCamera__GetDefaultFOVForCurrentState_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera) -> f32;
-/// `PlayerCamera::GetEyeHeightFromCam3` at 0x8f8c70 (semantic, high); signature (untiered): `undefined4 GetEyeHeightFromCam3(longlong param_1)`; semantic: state 9's Cam3 node local translation z, 0 without it (high); signature `float (PlayerCamera* this)`
+/// `PlayerCamera::GetEyeHeightFromCam3` at 0x8f8c70 (semantic, high); signature (untiered): `float GetEyeHeightFromCam3(longlong param_1)`; semantic: state 9's Cam3 node local translation z, 0 without it (high); signature `float (PlayerCamera* this)`
 pub const PlayerCamera__GetEyeHeightFromCam3: u64 = 50787;
 /// `PlayerCamera::GetEyeHeightFromCam3` as a function pointer type (high).
 pub type PlayerCamera__GetEyeHeightFromCam3_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera) -> f32;
@@ -3205,11 +3213,11 @@ pub type PlayerControls__CreateHandlers_fn = unsafe extern "C" fn(this: *mut cra
 pub const PlayerControls__DispatchEvent: u64 = 523956;
 /// `PlayerControls::DispatchEvent` as a function pointer type (high).
 pub type PlayerControls__DispatchEvent_fn = unsafe extern "C" fn(this: *mut crate::PlayerControls, event: *mut crate::InputEvent);
-/// `PlayerControls::GetSixaxisLookPitch` at 0x7ae110 (semantic, high); signature (untiered): `undefined4 GetSixaxisLookPitch(longlong param_1)`; semantic: Look handler (+0x178) +0xa8, or 0 without a handler: the filtered sixaxis pitch (high); signature `float (PlayerControls* this)`
+/// `PlayerControls::GetSixaxisLookPitch` at 0x7ae110 (semantic, high); signature (untiered): `float GetSixaxisLookPitch(longlong param_1)`; semantic: Look handler (+0x178) +0xa8, or 0 without a handler: the filtered sixaxis pitch (high); signature `float (PlayerControls* this)`
 pub const PlayerControls__GetSixaxisLookPitch: u64 = 523951;
 /// `PlayerControls::GetSixaxisLookPitch` as a function pointer type (high).
 pub type PlayerControls__GetSixaxisLookPitch_fn = unsafe extern "C" fn(this: *mut crate::PlayerControls) -> f32;
-/// `PlayerControls::GetSixaxisLookYaw` at 0x7ae130 (semantic, high); signature (untiered): `undefined4 GetSixaxisLookYaw(longlong param_1)`; semantic: Look handler (+0x178) +0xac, or 0: the filtered sixaxis yaw (high); signature `float (PlayerControls* this)`
+/// `PlayerControls::GetSixaxisLookYaw` at 0x7ae130 (semantic, high); signature (untiered): `float GetSixaxisLookYaw(longlong param_1)`; semantic: Look handler (+0x178) +0xac, or 0: the filtered sixaxis yaw (high); signature `float (PlayerControls* this)`
 pub const PlayerControls__GetSixaxisLookYaw: u64 = 523952;
 /// `PlayerControls::GetSixaxisLookYaw` as a function pointer type (high).
 pub type PlayerControls__GetSixaxisLookYaw_fn = unsafe extern "C" fn(this: *mut crate::PlayerControls) -> f32;
@@ -8203,11 +8211,3 @@ pub const ReleaseHandleWithDeleter_10: u64 = 525456;
 pub const ReleaseHandleWithDeleter_11: u64 = 525457;
 /// `ReleaseHandleWithDeleter_12` at 0x12dc600 (decompiler, medium); signature (untiered): `undefined ReleaseHandleWithDeleter_12(undefined8 * param_1)`
 pub const ReleaseHandleWithDeleter_12: u64 = 525443;
-/// `ReleaseHandleWithDeleter_13` at 0x12dc840 (decompiler, medium); signature (untiered): `undefined ReleaseHandleWithDeleter_13(undefined8 * param_1)`
-pub const ReleaseHandleWithDeleter_13: u64 = 525452;
-/// `ReleaseHandleWithDeleter_14` at 0x12dc740 (decompiler, medium); signature (untiered): `undefined ReleaseHandleWithDeleter_14(undefined8 * param_1)`
-pub const ReleaseHandleWithDeleter_14: u64 = 525448;
-/// `ReleaseHandleWithDeleter_15` at 0x12dc380 (decompiler, medium); signature (untiered): `undefined ReleaseHandleWithDeleter_15(undefined8 * param_1)`
-pub const ReleaseHandleWithDeleter_15: u64 = 525433;
-/// `ReleaseHandleWithDeleter_16` at 0x1378b60 (decompiler, medium); signature (untiered): `undefined ReleaseHandleWithDeleter_16(undefined8 * param_1)`
-pub const ReleaseHandleWithDeleter_16: u64 = 449239;

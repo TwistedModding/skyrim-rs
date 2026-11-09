@@ -12631,7 +12631,7 @@ pub struct _anon_FA78E63F__GraphPhysicsStepListener_vtable {
     pub slot_0: *const c_void,
     /// `GraphPhysicsStepListener::PreStep` at 0xbc9810 (semantic, medium); signature (untiered): `undefined PreStep(GraphPhysicsStepListener * this, undefined4 param_2, undefined4 param_3)`
     pub slot_1: *const c_void,
-    /// `GraphPhysicsStepListener::PostStep` at 0xbc9920 (semantic, high); signature (untiered): `undefined PostStep(void * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `GraphPhysicsStepListener::PostStep` at 0xbc9920 (runtime, high); signature (untiered): `undefined PostStep(void * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_2: *const c_void,
 }
 impl _anon_FA78E63F__GraphPhysicsStepListener_vtable {

@@ -3735,12 +3735,6 @@ impl crate::BSScaleformTranslator {
 }
 
 impl crate::BSSceneGraph {
-    /// `BSSceneGraph::GetNearDistance`: returns fNearDistance:Display
-    ///
-    /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 76750, rva 0xff4bb0.
-    /// `float (BSSceneGraph* this)`
-    #[inline]
-    pub fn get_near_distance(&self) -> f32 { unsafe { function!(76750, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `BSSceneGraph::SetFieldOfView`: camera null -> this+0x128 and: if !force and fov == +0x13c, only lodAdjust (+0x184) = fov / fDefaultFOV when updateLodAdjust, return; else +0x13c = fov. Then SetPerspectiveFromFov(camera, fov, near = slot 63, far = slot 62, g_RenderTargets width 0x3335600, height 0x3335604, +0x138 byte, updateLodAdjust, fDefaultFOV)
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106461, rva 0x1516f90.

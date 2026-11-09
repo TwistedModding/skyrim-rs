@@ -7,6 +7,16 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GameSetting_fGunSpreadSkillMult__init` at 0x4c4e0 (crt_init, medium); signature (high): `void GameSetting_fGunSpreadSkillMult__init(void)`
+pub const GameSetting_fGunSpreadSkillMult__init: u64 = 2873;
+/// `GameSetting_fGunSpreadWalkBase__atexit` at 0x17676e0 (crt_init, medium); signature (high): `void GameSetting_fGunSpreadWalkBase__atexit(void)`
+pub const GameSetting_fGunSpreadWalkBase__atexit: u64 = 168084;
+/// `GameSetting_fGunSpreadWalkBase__init` at 0x4c560 (crt_init, medium); signature (high): `void GameSetting_fGunSpreadWalkBase__init(void)`
+pub const GameSetting_fGunSpreadWalkBase__init: u64 = 2874;
+/// `GameSetting_fGunSpreadWalkMult__atexit` at 0x1767730 (crt_init, medium); signature (high): `void GameSetting_fGunSpreadWalkMult__atexit(void)`
+pub const GameSetting_fGunSpreadWalkMult__atexit: u64 = 168085;
+/// `GameSetting_fGunSpreadWalkMult__init` at 0x4c5e0 (crt_init, medium); signature (high): `void GameSetting_fGunSpreadWalkMult__init(void)`
+pub const GameSetting_fGunSpreadWalkMult__init: u64 = 2875;
 /// `GameSetting_fHUDCompassLocationMaxDist__atexit` at 0x177a790 (crt_init, medium); signature (high): `void GameSetting_fHUDCompassLocationMaxDist__atexit(void)`
 pub const GameSetting_fHUDCompassLocationMaxDist__atexit: u64 = 169059;
 /// `GameSetting_fHUDCompassLocationMaxDist__init` at 0x6a1f0 (crt_init, medium); signature (high): `void GameSetting_fHUDCompassLocationMaxDist__init(void)`
@@ -9427,15 +9437,3 @@ pub const GetBit26OfType28FormField40: u64 = 20167;
 pub const GetBit29OfField10: u64 = 19585;
 /// `GetBit2OfByteB9` at 0x306fc0 (decompiler, high); signature (high): `byte GetBit2OfByteB9(longlong param_1)`
 pub const GetBit2OfByteB9: u64 = 20347;
-/// `GetBit2OfExtra19Field20` at 0x1623e0 (decompiler, high); signature (high): `byte GetBit2OfExtra19Field20(longlong param_1)`
-pub const GetBit2OfExtra19Field20: u64 = 11642;
-/// `GetBit2OfField0xBEA` at 0x756bf0 (decompiler, high); signature (high): `byte GetBit2OfField0xBEA(longlong param_1)`
-pub const GetBit2OfField0xBEA: u64 = 40598;
-/// `GetBit4OfField40` at 0x2c5c60 (decompiler, high); signature (high): `byte GetBit4OfField40(longlong param_1)`
-pub const GetBit4OfField40: u64 = 19114;
-/// `GetBit4OfFieldA0` at 0x30dd40 (decompiler, high); signature (high): `byte GetBit4OfFieldA0(longlong param_1)`
-pub const GetBit4OfFieldA0: u64 = 20480;
-/// `GetBit5OfField136` at 0x6eaab0 (decompiler, high); signature (high): `byte GetBit5OfField136(longlong param_1)`
-pub const GetBit5OfField136: u64 = 39182;
-/// `GetBit6OfField20` at 0x4972b0 (decompiler, high); signature (untiered): `byte GetBit6OfField20(longlong param_1)`
-pub const GetBit6OfField20: u64 = 29501;

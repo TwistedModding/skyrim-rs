@@ -8,6 +8,7 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x1168e00, id: 82061, confidence: Confidence::Medium, name: "BSTDerivedCreator<BSUIScaleformData,IUIMessageData>::vfunc_1" },
     Function { rva: 0x1168e70, id: 82062, confidence: Confidence::Medium, name: "BSTDerivedCreator<BSUIScaleformData,IUIMessageData>::vfunc_2" },
     Function { rva: 0x1168e90, id: 82063, confidence: Confidence::Medium, name: "BSTDerivedCreator<BSUIScaleformData,IUIMessageData>::vdtor" },
     Function { rva: 0x1168ec0, id: 82064, confidence: Confidence::Medium, name: "AutoRegisterFactory<BSTDerivedCreator<BSUIScaleformData,IUIMessageData>,BSTCreateFactoryManager<BSFixedString,IUIMessageData,16>_>::vdtor" },
@@ -6651,6 +6652,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x13b1450, id: 526961, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_54" },
     Function { rva: 0x13b1480, id: 526962, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_55" },
     Function { rva: 0x13b1920, id: 450613, confidence: Confidence::Medium, name: "DestroyViaVfunc0AndFree_36" },
-    Function { rva: 0x13b19e0, id: 450615, confidence: Confidence::Medium, name: "ConstructFunctionalCallable10_18" },
-    Function { rva: 0x13b1e80, id: 450621, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_56" },
 ];

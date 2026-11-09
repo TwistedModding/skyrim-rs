@@ -1921,7 +1921,7 @@ impl crate::HeadTrackingOnHandler {
 }
 
 impl crate::HighActorCuller {
-    /// `HighActorCuller::Visit`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 40335, rva 0x73c5c0).
+    /// `HighActorCuller::Visit`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger runtime evidence, name high; id 40335, rva 0x73c5c0).
     /// `undefined Visit(HighActorCuller * this, TESObjectREFR * param_1)`
     ///
     /// # Safety
@@ -3934,13 +3934,6 @@ impl crate::RightHandWeaponSheatheHandler {
 }
 
 impl crate::SceneGraph {
-    /// `SceneGraph::GetNearDistance`, vtable slot 63, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 36844, rva 0x665720).
-    /// `ulonglong GetNearDistance(SceneGraph * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn get_near_distance(&self) -> u64 { unsafe { virtual_function!(self, 63, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `SceneGraph::vfunc_62_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 18952, rva 0x2bc4d0).
     /// `undefined4 vfunc_62_sub0(longlong param_1)`
     ///
@@ -13894,3 +13887,10 @@ pub unsafe fn assign_ref_counted_field10(param_1: *mut i64, param_2: *mut i64, p
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn assign_ref_counted_pair_array_ptr(param_1: *mut u64, param_2: *mut i32, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(90901, (*mut u64, *mut i32, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+/// `AssignRefCountedPointer_11` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 38167, rva 0x6bb180).
+/// `longlong * AssignRefCountedPointer_11(longlong * param_1, undefined8 * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_ref_counted_pointer_11(param_1: *mut i64, param_2: *mut u64) -> *mut i64 { unsafe { function!(38167, (*mut i64, *mut u64) -> *mut i64)(param_1, param_2) } }

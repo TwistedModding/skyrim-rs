@@ -7,6 +7,14 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `InsertSortedUInt64_2` at 0x3afc10 (decompiler, medium); signature (medium): `undefined InsertSortedUInt64_2(longlong * param_1, ulonglong * param_2)`
+pub const InsertSortedUInt64_2: u64 = 24367;
+/// `InsertSortedUIntKeyedStride10` at 0x8726a0 (decompiler, medium); signature (untiered): `undefined InsertSortedUIntKeyedStride10(longlong * param_1, uint * param_2)`
+pub const InsertSortedUIntKeyedStride10: u64 = 47472;
+/// `InsertSortedUInt_2` at 0x860060 (decompiler, medium); signature (medium): `undefined InsertSortedUInt_2(longlong * param_1, uint * param_2)`
+pub const InsertSortedUInt_2: u64 = 47118;
+/// `InsertStringHashTableEntry` at 0x117acc0 (decompiler, medium); signature (untiered): `undefined InsertStringHashTableEntry(longlong * param_1, undefined8 param_2, ulonglong * param_3, ulonglong param_4)`
+pub const InsertStringHashTableEntry: u64 = 82642;
 /// `InsertStringIntoHashTable` at 0xf1ab10 (decompiler, medium); signature (untiered): `undefined InsertStringIntoHashTable(longlong param_1, undefined8 * param_2, uint param_3)`
 pub const InsertStringIntoHashTable: u64 = 71689;
 /// `InsertStringMapEntry` at 0xab5820 (decompiler, medium); signature (untiered): `ulonglong InsertStringMapEntry(longlong * param_1, byte * param_2, undefined8 param_3)`
@@ -8399,11 +8407,3 @@ pub const NavMesh__vfunc_60: u64 = 30332;
 pub const NavMesh__vfunc_61: u64 = 30331;
 /// `NavMesh::vfunc_62` at 0x4c1890 (rtti, high); signature (low): `undefined1 vfunc_62(void)`
 pub const NavMesh__vfunc_62: u64 = 30335;
-/// `NavMesh::vfunc_6_sub0` at 0x4b9990 (callgraph, medium); signature (untiered): `undefined8 vfunc_6_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const NavMesh__vfunc_6_sub0: u64 = 30228;
-/// `NavMesh::vfunc_6_sub1` at 0x11e0480 (callgraph, medium); signature (untiered): `undefined vfunc_6_sub1(longlong param_1, ulonglong * param_2, undefined8 param_3, undefined * param_4)`
-pub const NavMesh__vfunc_6_sub1: u64 = 91099;
-/// `NavMeshInfoMap::BSNavmeshInfoMap_vdtor` at 0x4c783c (slot_propagation, medium); signature (high): `undefined BSNavmeshInfoMap_vdtor(NavMeshInfoMap * this)`
-pub const NavMeshInfoMap__BSNavmeshInfoMap_vdtor: u64 = 30412;
-/// `NavMeshInfoMap::BSNavmeshInfoMap_vfunc_1` at 0x4c4e10 (rtti, high); signature (low): `undefined8 BSNavmeshInfoMap_vfunc_1(NavMeshInfoMap * this, uint param_1)`
-pub const NavMeshInfoMap__BSNavmeshInfoMap_vfunc_1: u64 = 30382;

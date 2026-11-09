@@ -10906,7 +10906,7 @@ pub type hkbExtractRagdollPoseModifier_vtable_IsValid = unsafe extern "C" fn(thi
 /// `hkbExtractRagdollPoseModifier::CloneNode`, slot 12: allocates a copy of the node (size argument = object size) through the copy constructor (high).
 pub type hkbExtractRagdollPoseModifier_vtable_CloneNode = unsafe extern "C" fn(this: *mut crate::hkbExtractRagdollPoseModifier) -> *mut crate::hkbExtractRagdollPoseModifier;
 /// `hkbExtractRagdollPoseModifier::Modify`, slot 23: applies the modifier to the generated pose/tracks (high).
-pub type hkbExtractRagdollPoseModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbExtractRagdollPoseModifier, ctx: *const c_void, inOut: *mut c_void);
+pub type hkbExtractRagdollPoseModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbExtractRagdollPoseModifier, ctx: *const c_void, inOut: *mut crate::hkbGeneratorOutput);
 
 /// `hkbFootIkControlsModifier::vftable` at 0x19e03e8, id 226476 (rtti, high); 25 slots.
 #[repr(C)]
@@ -11155,7 +11155,7 @@ pub type hkbFootIkModifier_vtable_IsValid = unsafe extern "C" fn(this: *mut crat
 /// `hkbFootIkModifier::CloneNode`, slot 12: allocates a copy of the node (size argument = object size) through the copy constructor (high).
 pub type hkbFootIkModifier_vtable_CloneNode = unsafe extern "C" fn(this: *mut crate::hkbFootIkModifier) -> *mut crate::hkbFootIkModifier;
 /// `hkbFootIkModifier::Modify`, slot 23: 0xb0b670 (7392 bytes): the modifier version of the driver run; sets up its own hkaFootPlacementIkSolver per leg (0xb0d360, through InitFootIkLegDefaults 0xa9dc60 / ctor 0xa9dd40), uses the same raycast DB 0x325bb88 and SolveFootIkLeg 0xa9ddf0 (call 0xb0c18c) (high).
-pub type hkbFootIkModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbFootIkModifier, ctx: *const c_void, inOut: *mut c_void);
+pub type hkbFootIkModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbFootIkModifier, ctx: *const c_void, inOut: *mut crate::hkbGeneratorOutput);
 
 /// `hkbFootIkSceneModifier::vftable` at 0x19c1048, id 220355 (rtti, high); 4 slots.
 #[repr(C)]

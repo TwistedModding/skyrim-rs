@@ -2465,6 +2465,10 @@ pub const BGSExplosion__vfunc_6_sub0: u64 = 16974;
 pub const BGSExplosion__vfunc_6_sub1: u64 = 17009;
 /// `BGSExplosion::vfunc_6_sub2` at 0x2618f0 (callgraph, medium); signature (untiered): `undefined vfunc_6_sub2(ulonglong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const BGSExplosion__vfunc_6_sub2: u64 = 17010;
+/// `BGSFootIkRaycastInterfaceDB::ClearHitThisFrame` at 0x54aba0 (semantic, high); signature (untiered): `undefined ClearHitThisFrame(longlong param_1)`; semantic: per frame: record+0x30 = 0 for every claimed record (+0x2e == 0) (high); signature `void (BGSFootIkRaycastInterfaceDB* this)`
+pub const BGSFootIkRaycastInterfaceDB__ClearHitThisFrame: u64 = 32740;
+/// `BGSFootIkRaycastInterfaceDB::ClearHitThisFrame` as a function pointer type (high).
+pub type BGSFootIkRaycastInterfaceDB__ClearHitThisFrame_fn = unsafe extern "C" fn(this: *mut crate::BGSFootIkRaycastInterfaceDB);
 /// `BGSFootIkRaycastInterfaceDB::FindEntryByRefHandle` at 0x54abe0 (semantic, high); signature (untiered): `char FindEntryByRefHandle(longlong param_1, longlong param_2, undefined1 * param_3)`; semantic: finds the in-use record of the reference and returns its +0x30 byte (high); signature `bool (BGSFootIkRaycastInterfaceDB* this, TESObjectREFR* ref, u8* flagOut)`
 pub const BGSFootIkRaycastInterfaceDB__FindEntryByRefHandle: u64 = 32741;
 /// `BGSFootIkRaycastInterfaceDB::FindEntryByRefHandle` as a function pointer type (high).
@@ -2473,6 +2477,10 @@ pub type BGSFootIkRaycastInterfaceDB__FindEntryByRefHandle_fn = unsafe extern "C
 pub const BGSFootIkRaycastInterfaceDB__GetRaycastInterface: u64 = 32742;
 /// `BGSFootIkRaycastInterfaceDB::GetScale` at 0x54aef0 (semantic, high); signature (untiered): `undefined4 GetScale(void)`
 pub const BGSFootIkRaycastInterfaceDB__GetScale: u64 = 32743;
+/// `BGSFootIkRaycastInterfaceDB::RefreshLegCastFlags` at 0x54a860 (semantic, high); signature (untiered): `DWORD RefreshLegCastFlags(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; semantic: dead: under the DB lock gets ref's graph manager (ref+0x38 holder slot 2) and runs 0x54b580 over its graphs (high); signature `u32 (BGSFootIkRaycastInterfaceDB* this, TESObjectREFR* ref)`
+pub const BGSFootIkRaycastInterfaceDB__RefreshLegCastFlags: u64 = 32738;
+/// `BGSFootIkRaycastInterfaceDB::RefreshLegCastFlags` as a function pointer type (high).
+pub type BGSFootIkRaycastInterfaceDB__RefreshLegCastFlags_fn = unsafe extern "C" fn(this: *mut crate::BGSFootIkRaycastInterfaceDB, ref_: *mut crate::TESObjectREFR) -> u32;
 /// `BGSFootIkRaycastInterfaceDB::RegisterGraphManager` at 0x54a420 (semantic, medium); signature (untiered): `DWORD RegisterGraphManager(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; semantic: under the DB lock and the manager's lock +0xa0: for each graph inserts (graph's character -> the actor handle) (medium); signature `void (BGSFootIkRaycastInterfaceDB* this, BSAnimationGraphManager** manager)`
 pub const BGSFootIkRaycastInterfaceDB__RegisterGraphManager: u64 = 32734;
 /// `BGSFootIkRaycastInterfaceDB::UnregisterGraphManager` at 0x54a2a0 (semantic, medium); signature (untiered): `DWORD UnregisterGraphManager(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; semantic: removes the reference's graphs' characters (medium); signature `void (BGSFootIkRaycastInterfaceDB* this, TESObjectREFR* ref, BSAnimationGraphManager** manager)`
@@ -5075,9 +5083,3 @@ pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const_
 pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedurePursueParamTypes__vfunc_34: u64 = 28985;
 /// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes>::vdtor` at 0x482ae0 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes__vdtor: u64 = 29037;
-/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes>::vfunc_18` at 0x482e60 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes> * this, uint param_1)`
-pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes__vfunc_18: u64 = 29048;
-/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes>::vfunc_19` at 0x482e40 (rtti, medium); signature (low): `undefined * vfunc_19(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes> * this, uint param_1)`
-pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes__vfunc_19: u64 = 29047;
-/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes>::vfunc_20` at 0x482e10 (rtti, medium); signature (low): `undefined1 vfunc_20(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes> * this, uint param_1)`
-pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes__vfunc_20: u64 = 29045;

@@ -656,15 +656,15 @@ impl crate::BShkbAnimationGraph {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
-    /// `BShkbAnimationGraph::BuildBoneLODTable`: fills the graph's bone LOD table (+0x190) from the root's BSBoneLOD extra data (name global 0x332fe80): distance^2, named bone index + 1, keepsFootIk = footIkBoneCount <= that count; sorts by distance
+    /// `BShkbAnimationGraph::BuildBoneLODTable`: fills graph+0x190 from the root's BSBoneLOD extra data (see the class row) and sorts it by distance
     ///
     /// Semantic, ik pass, high; ledger semantic evidence, name high; id 63855, rva 0xbdf7c0.
-    /// `void (hkaSkeleton* skeleton, NiAVObject* root, u16 footIkBoneCount, BSTArray* table)`
+    /// `void (const hkaSkeleton* skeleton, NiAVObject* root, u16 maxLegBone, BSTArray<BoneLODLevel>* table)`
     ///
     /// # Safety
     /// `table` must point to what the engine expects.
     #[inline]
-    pub unsafe fn build_bone_lod_table(skeleton: *mut crate::hkaSkeleton, root: *mut crate::NiAVObject, footIkBoneCount: u16, table: *mut crate::BSTArray) { unsafe { function!(63855, (*mut crate::hkaSkeleton, *mut crate::NiAVObject, u16, *mut crate::BSTArray))(skeleton, root, footIkBoneCount, table) } }
+    pub unsafe fn build_bone_lod_table(skeleton: *const crate::hkaSkeleton, root: *mut crate::NiAVObject, maxLegBone: u16, table: *mut c_void) { unsafe { function!(63855, (*const crate::hkaSkeleton, *mut crate::NiAVObject, u16, *mut c_void))(skeleton, root, maxLegBone, table) } }
     /// `BShkbAnimationGraph::CollectGraphEvents`: drains the Havok event queue (up to 5 passes through 0xacd4b0) and, when eventsOut is given, appends {projectData->eventNames[id] (+0xd0), payload string} for each id < projectData+0xe0
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63583, rva 0xbccea0.
@@ -677,7 +677,7 @@ impl crate::BShkbAnimationGraph {
     pub unsafe fn collect_graph_events(&self, ctx: *mut c_void, eventsOut: *mut c_void) { unsafe { function!(63583, (*const Self, *mut c_void, *mut c_void))(core::ptr::from_ref(self), ctx, eventsOut) } }
     /// `BShkbAnimationGraph::ComputeBoneLODCount`: bones to generate this frame and whether foot IK is allowed: not visible -> min(minBones, node count) and footIkAllowed = 0; visible -> footIkAllowed = 1, count = min(skeleton bones, node count), then for each bone LOD level (graph +0x190 entries of 8 bytes {distSq f32 +0, bones u16 +4, footIk u8 +6}, count +0x1a0) whose distSq < (horizontal camera-root distance * fBoneLODDistanceScale / root scale)^2: count = max(minBones, level bones), footIkAllowed = level +6
     ///
-    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 63575, rva 0xbcc2c0.
+    /// Semantic, ik pass, high; ledger runtime evidence, name high; id 63575, rva 0xbcc2c0.
     /// `u16 (BShkbAnimationGraph* this, const float* cameraPos, bool visible, u8* footIkAllowed, u16 minBones)`
     ///
     /// # Safety
@@ -764,7 +764,7 @@ impl crate::BShkbAnimationGraph {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn notify_pose_listeners(&self, output: *mut c_void) { unsafe { function!(63573, (*const Self, *mut c_void))(core::ptr::from_ref(self), output) } }
+    pub unsafe fn notify_pose_listeners(&self, output: *mut crate::hkbGeneratorOutput) { unsafe { function!(63573, (*const Self, *mut crate::hkbGeneratorOutput))(core::ptr::from_ref(self), output) } }
     /// `BShkbAnimationGraph::ReadPoseFromBoneNodes`: inverse of ApplyPoseToBoneNodes: each bone node's local rotation matrix -> quaternion and translation into poseLocal, and the root node (+0x218) world translation/rotation into worldFromModel (+0x148)
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63598, rva 0xbd02f0.
@@ -850,6 +850,16 @@ impl crate::BShkbAnimationGraph {
     /// Semantic field, animation pass, high; `None` while the pointer is null.
     #[inline]
     pub fn root_node(&self) -> Option<&crate::NiNode> { unsafe { { self.rootNode }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_boneLODEnabled(this: *const Self) -> *mut u8 { unsafe { member!(this, "BShkbAnimationGraph.boneLODEnabled", 0x247, u8) } }
+    /// `BShkbAnimationGraph::boneLODEnabled`, at +0x247 on 1.7.104.
+    #[inline]
+    pub fn boneLODEnabled(&self) -> u8 { unsafe { Self::__member_boneLODEnabled(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_boneLODEnabled(&mut self, value: u8) { unsafe { Self::__member_boneLODEnabled(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn boneLODEnabled_ptr(&self) -> *mut u8 { Self::__member_boneLODEnabled(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_boneLODTable(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "BShkbAnimationGraph.boneLODTable", 0x190, crate::BSTArray) } }
@@ -1489,7 +1499,7 @@ impl crate::hkbBehaviorGraph {
     /// # Safety
     /// `ctx`, `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn generate(&self, ctx: *const c_void, out: *mut c_void, a3: bool, a4: u32, a5: bool) { unsafe { function!(58343, (*const Self, *const c_void, *mut c_void, bool, u32, bool))(core::ptr::from_ref(self), ctx, out, a3, a4, a5) } }
+    pub unsafe fn generate(&self, ctx: *const c_void, out: *mut crate::hkbGeneratorOutput, a3: bool, a4: u32, a5: bool) { unsafe { function!(58343, (*const Self, *const c_void, *mut crate::hkbGeneratorOutput, bool, u32, bool))(core::ptr::from_ref(self), ctx, out, a3, a4, a5) } }
     /// `hkbBehaviorGraph::generateInternal`: generates the active nodes into the output
     ///
     /// Semantic, animation pass, medium; ledger semantic evidence, name medium; id 58376, rva 0xacf480.
@@ -1857,7 +1867,7 @@ impl crate::hkbRagdollDriver {
     /// # Safety
     /// `ctx`, `output` must point to what the engine expects.
     #[inline]
-    pub unsafe fn update_ragdoll_pose_blend(&self, ctx: *mut c_void, output: *mut c_void) { unsafe { function!(58293, (*const Self, *mut c_void, *mut c_void))(core::ptr::from_ref(self), ctx, output) } }
+    pub unsafe fn update_ragdoll_pose_blend(&self, ctx: *mut c_void, output: *mut crate::hkbGeneratorOutput) { unsafe { function!(58293, (*const Self, *mut c_void, *mut crate::hkbGeneratorOutput))(core::ptr::from_ref(self), ctx, output) } }
     /// `hkbRagdollDriver::DriveToPose`: pre-physics ragdoll drive: with timestep <= 0 only records whether the output's rigid-body controls track (+0x78, track 6) and powered controls track (+0x58, track 4) are active into +0xc7/+0xc8 and adds the ragdoll to the world if pending; otherwise drives the bodies toward the pose
     ///
     /// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 58291, rva 0xac6fb0.
@@ -1866,7 +1876,7 @@ impl crate::hkbRagdollDriver {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn drive_to_pose(&self, timestep: f32, ctx: *mut c_void, output: *mut c_void) { unsafe { function!(58291, (*const Self, f32, *mut c_void, *mut c_void))(core::ptr::from_ref(self), timestep, ctx, output) } }
+    pub unsafe fn drive_to_pose(&self, timestep: f32, ctx: *mut c_void, output: *mut crate::hkbGeneratorOutput) { unsafe { function!(58291, (*const Self, f32, *mut c_void, *mut crate::hkbGeneratorOutput))(core::ptr::from_ref(self), timestep, ctx, output) } }
     /// `hkbRagdollDriver::GetRagdollInstance`: returns +0x88
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 58286, rva 0xac6cb0.

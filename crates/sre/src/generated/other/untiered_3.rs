@@ -7,20 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `ComputeNearestTriangleFeature` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 81296, rva 0x1121ec0).
-/// `undefined ComputeNearestTriangleFeature(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5, undefined1[16] * param_6)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_nearest_triangle_feature(param_1: *mut f32, param_2: *mut f32, param_3: *mut f32, param_4: *mut f32, param_5: *mut f32, param_6: *mut c_void) -> u64 { unsafe { function!(81296, (*mut f32, *mut f32, *mut f32, *mut f32, *mut f32, *mut c_void) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6) } }
-/// `ComputeNodeSceneStatsAndTextureUse` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 15579, rva 0x215350).
-/// `undefined ComputeNodeSceneStatsAndTextureUse(undefined8 param_1, undefined4 * param_2, int * param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_node_scene_stats_and_texture_use(param_1: u64, param_2: *mut u32, param_3: *mut i32, param_4: u64) -> u64 { unsafe { function!(15579, (u64, *mut u32, *mut i32, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `ComputeNormalizedDirectionToPath` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 93209, rva 0x1246250).
 /// `char ComputeNormalizedDirectionToPath(longlong param_1, float * param_2, float param_3, float * param_4, float * param_5)`
 ///
@@ -12411,3 +12397,17 @@ pub unsafe fn deleting_dtor_vtable242327_object_2(param_1: *mut u64, param_2: u3
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn deleting_dtor_vtable242327_object_3(param_1: *mut u64, param_2: u32, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(85484, (*mut u64, u32, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorVtable242327Object_4` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 85581, rva 0xd8e820).
+/// `undefined8 * DeletingDtorVtable242327Object_4(undefined8 * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_vtable242327_object_4(param_1: *mut u64, param_2: u32, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(85581, (*mut u64, u32, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorVtable244415Object` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 86711, rva 0xdcfff0).
+/// `undefined8 * DeletingDtorVtable244415Object(undefined8 * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_vtable244415_object(param_1: *mut u64, param_2: u32, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(86711, (*mut u64, u32, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }

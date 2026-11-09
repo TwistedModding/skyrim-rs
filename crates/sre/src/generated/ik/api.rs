@@ -153,6 +153,12 @@ impl crate::BGSFootIkRaycastInterfaceDB {
     /// `float (BGSFootIkRaycastInterfaceDB* this)`
     #[inline]
     pub fn get_scale(&self) -> f32 { unsafe { virtual_function!(self, 2, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
+    /// `BGSFootIkRaycastInterfaceDB::ClearHitThisFrame`: per frame: record+0x30 = 0 for every claimed record (+0x2e == 0)
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 32740, rva 0x54aba0.
+    /// `void (BGSFootIkRaycastInterfaceDB* this)`
+    #[inline]
+    pub fn clear_hit_this_frame(&self) { unsafe { function!(32740, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BGSFootIkRaycastInterfaceDB::FindEntryByRefHandle`: finds the in-use record of the reference and returns its +0x30 byte
     ///
     /// Semantic, ik pass, high; ledger semantic evidence, name high; id 32741, rva 0x54abe0.
@@ -162,15 +168,12 @@ impl crate::BGSFootIkRaycastInterfaceDB {
     /// `flagOut` must point to what the engine expects.
     #[inline]
     pub unsafe fn find_entry_by_ref_handle(&self, ref_: *mut crate::TESObjectREFR, flagOut: *mut u8) -> bool { unsafe { function!(32741, (*const Self, *mut crate::TESObjectREFR, *mut u8) -> bool)(core::ptr::from_ref(self), ref_, flagOut) } }
-    /// `BGSFootIkRaycastInterfaceDB::RefreshLegCastFlags`: takes the DB lock (owner 0x32042xx ID_402607, count ID_402608), gets the actor's graph manager and runs 0x54b580
+    /// `BGSFootIkRaycastInterfaceDB::RefreshLegCastFlags`: dead: under the DB lock gets ref's graph manager (ref+0x38 holder slot 2) and runs 0x54b580 over its graphs
     ///
-    /// Semantic, ik pass, low; ledger semantic evidence, name low; id 32738, rva 0x54a860.
-    /// `u32 (BGSFootIkRaycastInterfaceDB* db, Actor* actor)`
-    ///
-    /// # Safety
-    /// The pass rates the signature low.
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 32738, rva 0x54a860.
+    /// `u32 (BGSFootIkRaycastInterfaceDB* this, TESObjectREFR* ref)`
     #[inline]
-    pub unsafe fn refresh_leg_cast_flags(&self, actor: *mut crate::Actor) -> u32 { unsafe { function!(32738, (*const Self, *mut crate::Actor) -> u32)(core::ptr::from_ref(self), actor) } }
+    pub fn refresh_leg_cast_flags(&self, ref_: &crate::TESObjectREFR) -> u32 { unsafe { function!(32738, (*const Self, *const crate::TESObjectREFR) -> u32)(core::ptr::from_ref(self), core::ptr::from_ref(ref_)) } }
     /// `BGSFootIkRaycastInterfaceDB::RegisterGraphManager`: under the DB lock and the manager's lock +0xa0: for each graph inserts (graph's character -> the actor handle)
     ///
     /// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 32734, rva 0x54a420.
@@ -1245,11 +1248,12 @@ impl crate::BSLimbIKModifier {
     ///
     /// Semantic, ik pass, medium; called through the object's vtable.
     /// `void (BSLimbIKModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut c_void) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut c_void))(core::ptr::from_ref(self), ctx, inOut) } }
+    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut crate::hkbGeneratorOutput) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut crate::hkbGeneratorOutput))(core::ptr::from_ref(self), ctx, inOut) } }
     /// `BSLimbIKModifier::Update`, vtable slot 5: per-frame update before generate
     ///
     /// Semantic, ik pass, high; called through the object's vtable.
@@ -1630,11 +1634,12 @@ impl crate::BSLookAtModifier {
     ///
     /// Semantic, ik pass, medium; called through the object's vtable.
     /// `void (BSLookAtModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut c_void) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut c_void))(core::ptr::from_ref(self), ctx, inOut) } }
+    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut crate::hkbGeneratorOutput) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut crate::hkbGeneratorOutput))(core::ptr::from_ref(self), ctx, inOut) } }
     /// `BSLookAtModifier::Update`, vtable slot 5: per-frame update before generate
     ///
     /// Semantic, ik pass, high; called through the object's vtable.
@@ -1661,7 +1666,7 @@ impl crate::BSLookAtModifier {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn solve(&self, pose: *mut c_void, output: *mut c_void, ctx: *mut c_void) { unsafe { function!(63350, (*const Self, *mut c_void, *mut c_void, *mut c_void))(core::ptr::from_ref(self), pose, output, ctx) } }
+    pub unsafe fn solve(&self, pose: *mut c_void, output: *mut crate::hkbGeneratorOutput, ctx: *mut c_void) { unsafe { function!(63350, (*const Self, *mut c_void, *mut crate::hkbGeneratorOutput, *mut c_void))(core::ptr::from_ref(self), pose, output, ctx) } }
     /// `BSLookAtModifier::variableBindingSet` at +0x10
     ///
     /// Semantic field, ik pass, high; `None` while the pointer is null.
@@ -2727,7 +2732,7 @@ impl crate::bhkRagdollController {
     pub fn update_foot_ik(&self, worldFromModel: &crate::hkQsTransform) { unsafe { function!(78436, (*const Self, *const crate::hkQsTransform))(core::ptr::from_ref(self), core::ptr::from_ref(worldFromModel)) } }
     /// `UpdateRagdollAnimation`: the old 'RagdollAnim' controller update: ragdoll feedback, pose matching and the ragdoll foot IK (0x10701d0, gated by bFootIK:RagdollAnim and controller bytes +0x383/+0x384), grab IK (0x1072160, bGrabIK) and look IK (0x106e000, bLookIK)
     ///
-    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 78408, rva 0x106cbc0.
+    /// Semantic, ik pass, high; ledger runtime evidence, name high; id 78408, rva 0x106cbc0.
     /// `void (bhkRagdollController* this)`
     #[inline]
     pub fn update_ragdoll_animation(&self) { unsafe { function!(78408, (*const Self))(core::ptr::from_ref(self)) } }
@@ -2751,7 +2756,7 @@ impl crate::bhkRagdollController {
     pub unsafe fn update_look_ik(&self, rootQsTransform: *mut f32) { unsafe { function!(78429, (*const Self, *mut f32))(core::ptr::from_ref(self), rootQsTransform) } }
     /// `bhkRagdollController::ctor`: constructor of the 'RagdollAnim' controller (0x3a0 bytes, vftable 0x1a82090); NEVER CALLED in 1.7.104
     ///
-    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 78403, rva 0x106c040.
+    /// Semantic, ik pass, high; ledger runtime evidence, name high; id 78403, rva 0x106c040.
     /// `bhkRagdollController* (bhkRagdollController* this, void* a1, void* a2, char* a3)`
     ///
     /// # Safety
@@ -4382,11 +4387,12 @@ impl crate::hkbDetectCloseToGroundModifier {
     ///
     /// Semantic, ik pass, medium; called through the object's vtable.
     /// `void (hkbDetectCloseToGroundModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut c_void) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut c_void))(core::ptr::from_ref(self), ctx, inOut) } }
+    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut crate::hkbGeneratorOutput) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut crate::hkbGeneratorOutput))(core::ptr::from_ref(self), ctx, inOut) } }
     /// `hkbDetectCloseToGroundModifier::SetInternalState`, vtable slot 16: copies the state object back into the members
     ///
     /// Semantic, ik pass, high; called through the object's vtable.
@@ -4527,11 +4533,12 @@ impl crate::hkbExtractRagdollPoseModifier {
     ///
     /// Semantic, ik pass, high; called through the object's vtable.
     /// `void (hkbExtractRagdollPoseModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `ctx`, `inOut` must point to what the engine expects.
     #[inline]
-    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut c_void) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut c_void))(core::ptr::from_ref(self), ctx, inOut) } }
+    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut crate::hkbGeneratorOutput) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut crate::hkbGeneratorOutput))(core::ptr::from_ref(self), ctx, inOut) } }
     /// `hkbExtractRagdollPoseModifier::VisitMembers`, vtable slot 2: hkReferencedObject default 0xaa2c40 walks the members along the class chain; overridden where the object owns extra references
     ///
     /// Semantic, ik pass, low; called through the object's vtable.
@@ -4624,11 +4631,12 @@ impl crate::hkbFootIkControlsModifier {
     ///
     /// Semantic, ik pass, medium; called through the object's vtable.
     /// `void (hkbFootIkControlsModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut c_void) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut c_void))(core::ptr::from_ref(self), ctx, inOut) } }
+    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut crate::hkbGeneratorOutput) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut crate::hkbGeneratorOutput))(core::ptr::from_ref(self), ctx, inOut) } }
     /// `hkbFootIkControlsModifier::Update`, vtable slot 5: 0xb0a750: same copy, then queues each leg's ungroundedEvent when isPlantedMS && !hitSomething
     ///
     /// Semantic, ik pass, high; called through the object's vtable.
@@ -4869,30 +4877,15 @@ impl crate::hkbFootIkDriver {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn vdtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
-    /// `hkbFootIkDriver::AlignWorldFromModelWithGround`: when alignWorldFromModelGain > 0: target up from the legs' ground points (2 legs: their sum; more: a plane fit, or for isQuadrupedNarrow two extra sideways rays per frame), rotation from the model's current up to it scaled by 2*angle*gain -> driver +0x30 (alignWithGroundRotation), pre-multiplied into the output's world-from-model rotation
+    /// `hkbFootIkDriver::AlignWorldFromModel`: world-from-model alignment
     ///
-    /// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 58434, rva 0xad4a90.
-    /// `void (hkbFootIkDriver* this, hkbContext* ctx, const hkVector4* upWS, hkbGeneratorOutput** output, const hkbFootIkGains* gains)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
-    #[inline]
-    pub unsafe fn align_world_from_model_with_ground(&self, ctx: *mut c_void, upWS: *const crate::hkVector4, output: *mut *mut c_void, gains: *const crate::hkbFootIkGains) { unsafe { function!(58434, (*const Self, *mut c_void, *const crate::hkVector4, *mut *mut c_void, *const crate::hkbFootIkGains))(core::ptr::from_ref(self), ctx, upWS, output, gains) } }
-    /// `hkbFootIkDriver::ApplyHipOrientation`: when hipOrientationGain > 0: rotation between the model's current up and the world up, applied to each leg's hip bone (model space) scaled by 2*angle*hipOrientationGain
-    ///
-    /// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 58433, rva 0xad4560.
-    /// `void (hkbFootIkDriver* this, hkbContext* ctx, hkbGeneratorOutput** output, hkaPose* pose, const hkVector4* upWS, const hkbFootIkGains* gains)`
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 58434, rva 0xad4a90.
+    /// `void (hkbFootIkDriver* this, hkbContext* ctx, const hkVector4* upWS, hkbGeneratorOutput* output, const hkbFootIkGains* gains)`
     ///
     /// # Safety
-    /// The pass rates the signature medium.
+    /// `ctx`, `output` must point to what the engine expects.
     #[inline]
-    pub unsafe fn apply_hip_orientation(&self, ctx: *mut c_void, output: *mut *mut c_void, pose: *mut c_void, upWS: *const crate::hkVector4, gains: *const crate::hkbFootIkGains) { unsafe { function!(58433, (*const Self, *mut c_void, *mut *mut c_void, *mut c_void, *const crate::hkVector4, *const crate::hkbFootIkGains))(core::ptr::from_ref(self), ctx, output, pose, upWS, gains) } }
-    /// `hkbFootIkDriver::ClearLegsAndReset`: for each internal leg (driver+0x10, count +0x18, 0x30 each) deletes the leg object at +0x20 through its vtable slot 0 (arg 1) and zeroes +0..+0x10, +0x28, +0x2c, +0x2d; then zeroes +0x40 (qword), +0x48 (u16: legs-initialised and +0x49) and +0x4c
-    ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 58431, rva 0xad42a0.
-    /// `void (hkbFootIkDriver* this)`
-    #[inline]
-    pub fn clear_legs_and_reset(&self) { unsafe { function!(58431, (*const Self))(core::ptr::from_ref(self)) } }
+    pub unsafe fn align_world_from_model(&self, ctx: *mut c_void, upWS: *const crate::hkVector4, output: *mut crate::hkbGeneratorOutput, gains: *const crate::hkbFootIkGains) { unsafe { function!(58434, (*const Self, *mut c_void, *const crate::hkVector4, *mut crate::hkbGeneratorOutput, *const crate::hkbFootIkGains))(core::ptr::from_ref(self), ctx, upWS, output, gains) } }
     /// `hkbFootIkDriver::ComputeVerticalError`: (1 - bias) * max(leg.groundHeight) + bias * min(leg.groundHeight) over the internal legs (+0x28)
     ///
     /// Semantic, ik pass, high; ledger semantic evidence, name high; id 58441, rva 0xad6c00.
@@ -4911,12 +4904,27 @@ impl crate::hkbFootIkDriver {
     /// `void (const hkbFootIkDriver* this, hkVector4* out)`
     #[inline]
     pub fn get_error_out_translation(&self, out: &mut crate::hkVector4) { unsafe { function!(58424, (*const Self, *mut crate::hkVector4))(core::ptr::from_ref(self), core::ptr::from_mut(out)) } }
-    /// `hkbFootIkDriver::ReleaseLegsAndReset`: for each internal leg (+0x10, count +0x18, 0x30 each) with an object at +0x20: deletes it (vtable slot 0, arg 1) and zeroes +0..+0x10, +0x28, +0x2c, +0x2d; then +0x40 = 0 (qword), +0x48 = 0 (word), +0x4c = 0
+    /// `hkbFootIkDriver::OrientHips`: hip orientation
     ///
-    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 58427, rva 0xad41c0.
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 58433, rva 0xad4560.
+    /// `void (hkbFootIkDriver* this, hkbContext* ctx, hkbGeneratorOutput* output, hkaPose* pose, const hkVector4* upWS, const hkbFootIkGains* gains)`
+    ///
+    /// # Safety
+    /// `ctx`, `output`, `pose` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn orient_hips(&self, ctx: *mut c_void, output: *mut crate::hkbGeneratorOutput, pose: *mut c_void, upWS: *const crate::hkVector4, gains: *const crate::hkbFootIkGains) { unsafe { function!(58433, (*const Self, *mut c_void, *mut crate::hkbGeneratorOutput, *mut c_void, *const crate::hkVector4, *const crate::hkbFootIkGains))(core::ptr::from_ref(self), ctx, output, pose, upWS, gains) } }
+    /// `hkbFootIkDriver::ReleaseLegsAndReset`: per leg with a solver: delete the solver (vtbl[0](solver, 1)), solver = 0, leg +0x00..+0x0f = 0, +0x28 = 0, +0x2c = 0, +0x2d = 0 (+0x10 normal untouched); then driver +0x40 qword = 0 (errorOut and prevOnFraction), +0x48 word = 0 (legsInitialized and isGroundPositionValid), +0x4c = 0 (deltaTime)
+    ///
+    /// Semantic, ik pass, high; ledger runtime evidence, name high; id 58427, rva 0xad41c0.
     /// `void (hkbFootIkDriver* this)`
     #[inline]
     pub fn release_legs_and_reset(&self) { unsafe { function!(58427, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `hkbFootIkDriver::ReleaseLegsAndResetThunk`: a 5-byte JMP to 0xad41c0 (0xad42a0: E9 1B FF FF FF)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 58431, rva 0xad42a0.
+    /// `void (hkbFootIkDriver* this)`
+    #[inline]
+    pub fn release_legs_and_reset_thunk(&self) { unsafe { function!(58431, (*const Self))(core::ptr::from_ref(self)) } }
     /// `hkbFootIkDriver::Run`: the graph's foot IK pass ('TtFootIkController' timer): returns at once when +0x4a (disabled) is set, the pose has fewer than 12 tracks, or the character has no hkbFootIkDriverInfo; else sets up the legs (once, 0xad42b0, when +0x48 is 0), asks the raycast DB for the character's raycast interface (DB slot 1), runs SolveFootIk 0xa9ddf0 per leg and writes the corrected pose
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 58423, rva 0xad2300.
@@ -4925,22 +4933,22 @@ impl crate::hkbFootIkDriver {
     /// # Safety
     /// `ctx`, `pose` must point to what the engine expects.
     #[inline]
-    pub unsafe fn run(&self, ctx: *mut c_void, pose: *mut c_void) { unsafe { function!(58423, (*const Self, *mut c_void, *mut c_void))(core::ptr::from_ref(self), ctx, pose) } }
+    pub unsafe fn run(&self, ctx: *mut c_void, pose: *mut crate::hkbGeneratorOutput) { unsafe { function!(58423, (*const Self, *mut c_void, *mut crate::hkbGeneratorOutput))(core::ptr::from_ref(self), ctx, pose) } }
     /// `hkbFootIkDriver::SetDisabled`: writes the disabled byte +0x4a; when disabling it also calls ClearEntriesAndResetState 0xad42a0 (frees every per-leg object and zeroes the leg state)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 58428, rva 0xad4260.
     /// `void (hkbFootIkDriver* this, bool disabled)`
     #[inline]
     pub fn set_disabled(&self, disabled: bool) { unsafe { function!(58428, (*const Self, bool))(core::ptr::from_ref(self), disabled) } }
-    /// `hkbFootIkDriver::SetupLegs`: once per (re)initialisation (driver +0x48 == 0): for every info leg with hip, knee and ankle >= 0 allocates a 0xf0-byte hkaFootPlacementIkSolver from the thread's Havok memory router and constructs it from a setup filled from the info leg; sets +0x48 = 1
+    /// `hkbFootIkDriver::SetupLegs`: leg setup
     ///
-    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 58432, rva 0xad42b0.
-    /// `void (hkbFootIkDriver* this, hkbContext* ctx, hkaSkeleton* skeleton)`
+    /// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 58432, rva 0xad42b0.
+    /// `void (hkbFootIkDriver* this, hkbContext* ctx, const hkaSkeleton* skeleton)`
     ///
     /// # Safety
-    /// `ctx` must point to what the engine expects.
+    /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn setup_legs(&self, ctx: *mut c_void, skeleton: *mut crate::hkaSkeleton) { unsafe { function!(58432, (*const Self, *mut c_void, *mut crate::hkaSkeleton))(core::ptr::from_ref(self), ctx, skeleton) } }
+    pub unsafe fn setup_legs(&self, ctx: *mut c_void, skeleton: *const crate::hkaSkeleton) { unsafe { function!(58432, (*const Self, *mut c_void, *const crate::hkaSkeleton))(core::ptr::from_ref(self), ctx, skeleton) } }
     /// `hkbFootIkDriver::ctor`: constructor
     ///
     /// Semantic, ik pass, high; ledger semantic evidence, name high; id 58421, rva 0xad21f0.
@@ -5229,11 +5237,12 @@ impl crate::hkbFootIkModifier {
     ///
     /// Semantic, ik pass, high; called through the object's vtable.
     /// `void (hkbFootIkModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `ctx`, `inOut` must point to what the engine expects.
     #[inline]
-    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut c_void) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut c_void))(core::ptr::from_ref(self), ctx, inOut) } }
+    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut crate::hkbGeneratorOutput) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut crate::hkbGeneratorOutput))(core::ptr::from_ref(self), ctx, inOut) } }
     /// `hkbFootIkModifier::Update`, vtable slot 5: per-frame update before generate
     ///
     /// Semantic, ik pass, high; called through the object's vtable.
@@ -5820,6 +5829,29 @@ impl crate::hkbFootIkSceneModifier {
     pub unsafe fn vdtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
 }
 
+impl crate::hkbGeneratorOutput {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_deleteTracks(this: *const Self) -> *mut u8 { unsafe { member!(this, "hkbGeneratorOutput.deleteTracks", 0x8, u8) } }
+    /// `hkbGeneratorOutput::deleteTracks`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn deleteTracks(&self) -> u8 { unsafe { Self::__member_deleteTracks(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_deleteTracks(&mut self, value: u8) { unsafe { Self::__member_deleteTracks(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn deleteTracks_ptr(&self) -> *mut u8 { Self::__member_deleteTracks(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_tracks(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "hkbGeneratorOutput.tracks", 0x0, *mut c_void) } }
+    /// `hkbGeneratorOutput::tracks`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn tracks(&self) -> *mut c_void { unsafe { Self::__member_tracks(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_tracks(&mut self, value: *mut c_void) { unsafe { Self::__member_tracks(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn tracks_ptr(&self) -> *mut *mut c_void { Self::__member_tracks(core::ptr::from_ref(self)) }
+}
+
 impl crate::hkbHandIkControlData {
     #[doc(hidden)]
     #[inline]
@@ -5967,11 +5999,12 @@ impl crate::hkbHandIkControlsModifier {
     ///
     /// Semantic, ik pass, high; called through the object's vtable.
     /// `void (hkbHandIkControlsModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `ctx`, `inOut` must point to what the engine expects.
     #[inline]
-    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut c_void) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut c_void))(core::ptr::from_ref(self), ctx, inOut) } }
+    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut crate::hkbGeneratorOutput) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut crate::hkbGeneratorOutput))(core::ptr::from_ref(self), ctx, inOut) } }
     /// `hkbHandIkControlsModifier::vdtor`, vtable slot 0: scalar deleting destructor; frees through the Havok memory router with the object size
     ///
     /// Semantic, ik pass, high; called through the object's vtable.
@@ -6036,13 +6069,13 @@ impl crate::hkbHandIkDriver {
     pub unsafe fn vdtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `hkbHandIkDriver::Run`: hand IK of one character ('TtHandIkDriver')
     ///
-    /// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 59421, rva 0xaf9bc0.
+    /// Semantic, ik pass, high; ledger runtime evidence, name high; id 59421, rva 0xaf9bc0.
     /// `void (hkbHandIkDriver* this, const hkbContext* ctx, hkbGeneratorOutput* output, float timestep, bool fixup)`
     ///
     /// # Safety
-    /// The pass rates the signature medium.
+    /// `ctx`, `output` must point to what the engine expects.
     #[inline]
-    pub unsafe fn run(&self, ctx: *const c_void, output: *mut c_void, timestep: f32, fixup: bool) { unsafe { function!(59421, (*const Self, *const c_void, *mut c_void, f32, bool))(core::ptr::from_ref(self), ctx, output, timestep, fixup) } }
+    pub unsafe fn run(&self, ctx: *const c_void, output: *mut crate::hkbGeneratorOutput, timestep: f32, fixup: bool) { unsafe { function!(59421, (*const Self, *const c_void, *mut crate::hkbGeneratorOutput, f32, bool))(core::ptr::from_ref(self), ctx, output, timestep, fixup) } }
     /// `hkbHandIkDriver::ctor`: constructor
     ///
     /// Semantic, ik pass, high; ledger semantic evidence, name high; id 59420, rva 0xaf9b90.
@@ -6312,11 +6345,12 @@ impl crate::hkbHandIkModifier {
     ///
     /// Semantic, ik pass, high; called through the object's vtable.
     /// `void (hkbHandIkModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `ctx`, `inOut` must point to what the engine expects.
     #[inline]
-    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut c_void) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut c_void))(core::ptr::from_ref(self), ctx, inOut) } }
+    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut crate::hkbGeneratorOutput) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut crate::hkbGeneratorOutput))(core::ptr::from_ref(self), ctx, inOut) } }
     /// `hkbHandIkModifier::Update`, vtable slot 5: per-frame update before generate
     ///
     /// Semantic, ik pass, high; called through the object's vtable.
@@ -6568,15 +6602,16 @@ impl crate::hkbKeyframeBonesModifier {
     /// `errorString` must point to what the engine expects.
     #[inline]
     pub unsafe fn is_valid(&self, character: *const crate::hkbCharacter, errorString: *mut c_void) -> bool { unsafe { virtual_function!(self, 10, (*const Self, *const crate::hkbCharacter, *mut c_void) -> bool)(core::ptr::from_ref(self), character, errorString) } }
-    /// `hkbKeyframeBonesModifier::Modify`, vtable slot 23: 0xb166c0: only the timer 'TthkbKeyframeBonesModifier' (148 bytes)
+    /// `hkbKeyframeBonesModifier::Modify`, vtable slot 23: timer 'TthkbKeyframeBonesModifier' around ApplyKeyframes 0xb28c00 (this, output): the keyframed bones go into tracks 8/9 for the ragdoll, not into the pose track
     ///
     /// Semantic, ik pass, high; called through the object's vtable.
-    /// `void (hkbKeyframeBonesModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
+    /// `void (hkbKeyframeBonesModifier* this, hkbContext* ctx, hkbGeneratorOutput* output)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
-    /// `ctx`, `inOut` must point to what the engine expects.
+    /// `ctx`, `output` must point to what the engine expects.
     #[inline]
-    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut c_void) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut c_void))(core::ptr::from_ref(self), ctx, inOut) } }
+    pub unsafe fn modify(&self, ctx: *mut c_void, output: *mut crate::hkbGeneratorOutput) { unsafe { virtual_function!(self, 23, (*const Self, *mut c_void, *mut crate::hkbGeneratorOutput))(core::ptr::from_ref(self), ctx, output) } }
     /// `hkbKeyframeBonesModifier::VisitMembers`, vtable slot 2: hkReferencedObject default 0xaa2c40 walks the members along the class chain; overridden where the object owns extra references
     ///
     /// Semantic, ik pass, low; called through the object's vtable.
@@ -6596,6 +6631,15 @@ impl crate::hkbKeyframeBonesModifier {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn vdtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
+    /// `hkbKeyframeBonesModifier::ApplyKeyframes`: writes the keyframed bones into the generator output: track 9 (header +0xa0, needs numTracks > 9) gets one {position, rotation} per valid keyframeInfo (+0x50 array, 0x30 each, boneIndex +0x20, isValid +0x22) sorted by bone index; track 8 (header +0x90, needs > 8) is zeroed and set to 1.0 for every bone of keyframedBonesList (+0x60 hkbBoneIndexArray, +0x30 data, +0x38 count), on fraction +0x98 = 1.0
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 60071, rva 0xb28c00.
+    /// `void (hkbKeyframeBonesModifier* this, hkbGeneratorOutput* output)`
+    ///
+    /// # Safety
+    /// `output` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn apply_keyframes(&self, output: *mut crate::hkbGeneratorOutput) { unsafe { function!(60071, (*const Self, *mut crate::hkbGeneratorOutput))(core::ptr::from_ref(self), output) } }
     #[doc(hidden)]
     #[inline]
     pub fn __member_keyframeInfo(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "hkbKeyframeBonesModifier.keyframeInfo", 0x50, [u8; 16]) } }
@@ -6700,11 +6744,12 @@ impl crate::hkbLookAtModifier {
     ///
     /// Semantic, ik pass, medium; called through the object's vtable.
     /// `void (hkbLookAtModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut c_void) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut c_void))(core::ptr::from_ref(self), ctx, inOut) } }
+    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut crate::hkbGeneratorOutput) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut crate::hkbGeneratorOutput))(core::ptr::from_ref(self), ctx, inOut) } }
     /// `hkbLookAtModifier::SetInternalState`, vtable slot 16: copies the state object back into the members
     ///
     /// Semantic, ik pass, high; called through the object's vtable.
@@ -7358,11 +7403,12 @@ impl crate::hkbPoweredRagdollControlsModifier {
     ///
     /// Semantic, ik pass, high; called through the object's vtable.
     /// `void (hkbPoweredRagdollControlsModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `ctx`, `inOut` must point to what the engine expects.
     #[inline]
-    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut c_void) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut c_void))(core::ptr::from_ref(self), ctx, inOut) } }
+    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut crate::hkbGeneratorOutput) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut crate::hkbGeneratorOutput))(core::ptr::from_ref(self), ctx, inOut) } }
     /// `hkbPoweredRagdollControlsModifier::vdtor`, vtable slot 0: scalar deleting destructor; frees through the Havok memory router with the object size
     ///
     /// Semantic, ik pass, high; called through the object's vtable.
@@ -7492,11 +7538,12 @@ impl crate::hkbRigidBodyRagdollControlsModifier {
     ///
     /// Semantic, ik pass, high; called through the object's vtable.
     /// `void (hkbRigidBodyRagdollControlsModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `ctx`, `inOut` must point to what the engine expects.
     #[inline]
-    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut c_void) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut c_void))(core::ptr::from_ref(self), ctx, inOut) } }
+    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut crate::hkbGeneratorOutput) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut crate::hkbGeneratorOutput))(core::ptr::from_ref(self), ctx, inOut) } }
     /// `hkbRigidBodyRagdollControlsModifier::vdtor`, vtable slot 0: scalar deleting destructor; frees through the Havok memory router with the object size
     ///
     /// Semantic, ik pass, high; called through the object's vtable.
@@ -7565,11 +7612,12 @@ impl crate::hkbTwistModifier {
     ///
     /// Semantic, ik pass, high; called through the object's vtable.
     /// `void (hkbTwistModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `ctx`, `inOut` must point to what the engine expects.
     #[inline]
-    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut c_void) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut c_void))(core::ptr::from_ref(self), ctx, inOut) } }
+    pub unsafe fn modify(&self, ctx: *const c_void, inOut: *mut crate::hkbGeneratorOutput) { unsafe { virtual_function!(self, 23, (*const Self, *const c_void, *mut crate::hkbGeneratorOutput))(core::ptr::from_ref(self), ctx, inOut) } }
     /// `hkbTwistModifier::vdtor`, vtable slot 0: scalar deleting destructor; frees through the Havok memory router with the object size
     ///
     /// Semantic, ik pass, high; called through the object's vtable.
@@ -8083,7 +8131,7 @@ pub fn get_shout_look_at_heading_max_angle(actor: &crate::Actor) -> f32 { unsafe
 pub unsafe fn get_world_up_vector(ctx: *const c_void) -> *const crate::hkVector4 { unsafe { function!(58317, (*const c_void) -> *const crate::hkVector4)(ctx) } }
 /// `GraphPhysicsStepListener::PostStep`: bhkIWorldStepListener slot 2, called once after the world's substeps: under the listener's write lock (+8) runs ApplyRagdollPose for every registered graph (inline array +0x18, count +0x10; overflow array +0x108, count +0x118), releases them and clears the list
 ///
-/// Semantic, ik pass, high; ledger semantic evidence, name high; id 63552, rva 0xbc9920.
+/// Semantic, ik pass, high; ledger runtime evidence, name high; id 63552, rva 0xbc9920.
 /// `void (GraphPhysicsStepListener* this)`
 ///
 /// # Safety
@@ -8140,7 +8188,7 @@ pub fn init_foot_ik_raycast_interface_db() { unsafe { function!(32736, ())() } }
 /// # Safety
 /// The pass rates the signature medium.
 #[inline]
-pub unsafe fn init_pose_from_generator_output(output: *mut c_void, skeleton: *const crate::hkaSkeleton, buffer: *mut c_void) { unsafe { function!(58478, (*mut c_void, *const crate::hkaSkeleton, *mut c_void))(output, skeleton, buffer) } }
+pub unsafe fn init_pose_from_generator_output(output: *mut crate::hkbGeneratorOutput, skeleton: *const crate::hkaSkeleton, buffer: *mut c_void) { unsafe { function!(58478, (*mut crate::hkbGeneratorOutput, *const crate::hkaSkeleton, *mut c_void))(output, skeleton, buffer) } }
 /// `IsWithinHeadTrackDistanceOfPlayer`: distance^2 to the player <= (race+0x128 == 3 ? fAIMaxLargeCreatureHeadTrackDistance : fAIMaxHeadTrackDistanceFromPC)^2
 ///
 /// Semantic, ik pass, high; ledger semantic evidence, name high; id 37261, rva 0x675360.
@@ -8239,7 +8287,7 @@ pub unsafe fn static_init_hkb_foot_ik_driver_info_type_info() { unsafe { functio
 pub fn step_exterior_world() { unsafe { function!(18870, ())() } }
 /// `TwoJointSolve`: analytic two-bone IK (hinge joint with cosine limits, optional end rotation) on an hkaPose
 ///
-/// Semantic, ik pass, high; ledger semantic evidence, name high; id 57005, rva 0xaa0a10.
+/// Semantic, ik pass, high; ledger runtime evidence, name high; id 57005, rva 0xaa0a10.
 /// `bool* (bool* result, const TwoJointSolverSetup* setup, hkaPose* pose)`
 ///
 /// # Safety
@@ -8423,31 +8471,31 @@ pub fn ini_setting_b_drive_ragdoll_with_graph_animation() -> *mut u8 { address!(
 /// `INISetting_bFeedbackToGraphFromCharacterController_Animation` at 0x20b6ba8, id 381302 (semantic, high); bFeedbackToGraphFromCharacterController:Animation: Actor slot 285 0x6b1680 (motion feedback from the controller to the graph); not IK, listed because it shares the feedback path (high, ik pass), type `undefined1`
 #[inline]
 pub fn ini_setting_b_feedback_to_graph_from_character_controller_animation() -> *mut u8 { address!(381302) as *mut u8 }
-/// `INISetting_bFootIKFeedback_Animation` at 0x20b93f0, id 382155 (semantic, high); bFootIKFeedback:Animation: Actor::ApplyFootIkFeedback 0x7dd164: when 0 the feedback record is not applied to the character controller (IC7, static-W) (high, ik pass), type `undefined1`
+/// `INISetting_bFootIKFeedback_Animation` at 0x20b93f0, id 382155 (runtime, high); bFootIKFeedback:Animation: Actor::ApplyFootIkFeedback 0x7dd164: when 0 the feedback record is not applied to the character controller (IC7, static-W) (high, ik pass), type `undefined1`
 #[inline]
 pub fn ini_setting_b_foot_ik_feedback_animation() -> *mut u8 { address!(382155) as *mut u8 }
-/// `INISetting_bFootIK_Animation` at 0x20c5af8, id 385957 (semantic, high); bFootIK:Animation, read by BShkbAnimationGraph::Update 0xbcf2c2 and FinalizePose 0xbcca93/0xbccbbc (high, ik pass), type `class:Setting`
+/// `INISetting_bFootIK_Animation` at 0x20c5af8, id 385957 (runtime, high); bFootIK:Animation, read by BShkbAnimationGraph::Update 0xbcf2c2 and FinalizePose 0xbcca93/0xbccbbc (high, ik pass), type `class:Setting`
 #[inline]
 pub fn ini_setting_b_foot_ik_animation() -> &'static crate::Setting { unsafe { &*(address!(385957) as *const crate::Setting) } }
-/// `INISetting_bFootIK_RagdollAnim` at 0x20d1c00, id 389230 (semantic, high); gate of the dead ragdoll foot IK; written by Debug.SetFootIK (high, ik pass), type `class:Setting`
+/// `INISetting_bFootIK_RagdollAnim` at 0x20d1c00, id 389230 (runtime, high); gate of the dead ragdoll foot IK; written by Debug.SetFootIK (high, ik pass), type `class:Setting`
 #[inline]
 pub fn ini_setting_b_foot_ik_ragdoll_anim() -> &'static crate::Setting { unsafe { &*(address!(389230) as *const crate::Setting) } }
 /// `INISetting_bFootPlacementOn_FootIK` at 0x20d1d80, id 389276 (semantic, high); bFootPlacementOn:FootIK: no reader (only its CRT init) (high, ik pass), type `undefined1`
 #[inline]
 pub fn ini_setting_b_foot_placement_on_foot_ik() -> *mut u8 { address!(389276) as *mut u8 }
-/// `INISetting_bGrabIK_RagdollAnim` at 0x20d1c18, id 389233 (semantic, high); bGrabIK:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect; forced to 0 at startup by 0x3fd7f0 (high, ik pass), type `undefined1`
+/// `INISetting_bGrabIK_RagdollAnim` at 0x20d1c18, id 389233 (runtime, high); bGrabIK:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect; forced to 0 at startup by 0x3fd7f0 (high, ik pass), type `undefined1`
 #[inline]
 pub fn ini_setting_b_grab_ik_ragdoll_anim() -> *mut u8 { address!(389233) as *mut u8 }
-/// `INISetting_bHumanoidFootIKEnable_Animation` at 0x20b6bc0, id 381305 (setting, high); bHumanoidFootIKEnable:Animation, read once at 0x6b0491 in the holder's graph setup 0x6b0340 (feeds the graph bool of the same name, g_AnimationVariableNames+0x308) (medium, ik pass), type `class:Setting`
+/// `INISetting_bHumanoidFootIKEnable_Animation` at 0x20b6bc0, id 381305 (runtime, high); bHumanoidFootIKEnable:Animation, read once at 0x6b0491 in the holder's graph setup 0x6b0340 (feeds the graph bool of the same name, g_AnimationVariableNames+0x308) (high, ik pass), type `class:Setting`
 #[inline]
 pub fn ini_setting_b_humanoid_foot_ik_enable_animation() -> &'static crate::Setting { unsafe { &*(address!(381305) as *const crate::Setting) } }
-/// `INISetting_bLookIK_RagdollAnim` at 0x20d1c30, id 389236 (semantic, high); bLookIK:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high, ik pass), type `undefined1`
+/// `INISetting_bLookIK_RagdollAnim` at 0x20d1c30, id 389236 (runtime, high); bLookIK:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high, ik pass), type `undefined1`
 #[inline]
 pub fn ini_setting_b_look_ik_ragdoll_anim() -> *mut u8 { address!(389236) as *mut u8 }
-/// `INISetting_bPoseMatching_RagdollAnim` at 0x20d1c60, id 389242 (semantic, high); bPoseMatching:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect; forced to 0 at startup by 0x3fd7f0 (high, ik pass), type `undefined1`
+/// `INISetting_bPoseMatching_RagdollAnim` at 0x20d1c60, id 389242 (runtime, high); bPoseMatching:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect; forced to 0 at startup by 0x3fd7f0 (high, ik pass), type `undefined1`
 #[inline]
 pub fn ini_setting_b_pose_matching_ragdoll_anim() -> *mut u8 { address!(389242) as *mut u8 }
-/// `INISetting_bPreCullActors_General` at 0x20b5df8, id 380926 (semantic, high); enables the per-frame actor frustum/portal pre-cull that sets 3D flags bit 20 (value 1) (high, ik pass), type `class:Setting`
+/// `INISetting_bPreCullActors_General` at 0x20b5df8, id 380926 (runtime, high); enables the per-frame actor frustum/portal pre-cull that sets 3D flags bit 20 (value 1) (high, ik pass), type `class:Setting`
 #[inline]
 pub fn ini_setting_b_pre_cull_actors_general() -> &'static crate::Setting { unsafe { &*(address!(380926) as *const crate::Setting) } }
 /// `INISetting_bRagdollAnim_RagdollAnim` at 0x20d1be8, id 389227 (semantic, high); bRagdollAnim:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect; written by Debug.ToggleCollisions 0x1a7270 and 0x1a72d0 (= !arg) (high, ik pass), type `undefined1`
@@ -8474,6 +8522,9 @@ pub fn ini_setting_f_ankle_offset_foot_ik() -> *mut u8 { address!(389281) as *mu
 /// `INISetting_fBoneLODDistanceScale_Animation` at 0x20c5a68, id 385939 (semantic, high); 1.0: scale of the bone LOD distance (high, ik pass), type `class:Setting`
 #[inline]
 pub fn ini_setting_f_bone_lod_distance_scale_animation() -> &'static crate::Setting { unsafe { &*(address!(385939) as *const crate::Setting) } }
+/// `INISetting_fBoneLODDistanceScale_Animation_value` at 0x20c5a70, id 385940 (semantic, high); bone LOD distance divisor numerator; image default 1.0 (high, ik pass), type `float`
+#[inline]
+pub fn ini_setting_f_bone_lod_distance_scale_animation_value() -> *mut f32 { address!(385940) as *mut f32 }
 /// `INISetting_fCameraDist_RagdollAnim` at 0x20d1ba0, id 389221 (semantic, high); fCameraDist:RagdollAnim: no reader (high, ik pass), type `undefined1`
 #[inline]
 pub fn ini_setting_f_camera_dist_ragdoll_anim() -> *mut u8 { address!(389221) as *mut u8 }
@@ -8627,6 +8678,9 @@ pub fn ini_setting_i_num_frames_foot_ease_out_foot_ik() -> *mut u8 { address!(38
 /// `INISetting_iUpdateActorsPerFrame_HeadTracking` at 0x20b6aa0, id 381270 (semantic, high); iUpdateActorsPerFrame:HeadTracking: Actor::UpdateHeadTracking 0x6b3f8b: budget; the update runs only while the counter ID_403797 (incremented at each target re-evaluation; its reset was not read) is <= the value, else head tracking is cleared for bit-15 races (high, ik pass), type `undefined1`
 #[inline]
 pub fn ini_setting_i_update_actors_per_frame_head_tracking() -> *mut u8 { address!(381270) as *mut u8 }
+/// `INISetting_uMaxNumPhysicsStepsPerUpdate_HAVOK_value` at 0x20d18e8, id 389139 (semantic, high); value of the INI setting uMaxNumPhysicsStepsPerUpdate:HAVOK (the Setting object at 0x20d18e0, value +8); image default 3 (high, ik pass), type `u32`
+#[inline]
+pub fn ini_setting_u_max_num_physics_steps_per_update_havok_value() -> *mut u32 { address!(389139) as *mut u32 }
 /// `INISetting_uiFeedbackTimeout_RagdollFeedback` at 0x20d1ed0, id 389313 (semantic, high); uiFeedbackTimeout:RagdollFeedback: no reader (high, ik pass), type `undefined1`
 #[inline]
 pub fn ini_setting_ui_feedback_timeout_ragdoll_feedback() -> *mut u8 { address!(389313) as *mut u8 }
@@ -8651,6 +8705,9 @@ pub fn g_bhk_world_step_running() -> *mut u8 { address!(411524) as *mut u8 }
 /// `g_hkClassMemberTypeItems` at 0x1a16700, id 235009 (semantic, high); items of the hkClassMember Type enum (TYPE_VOID 0 .. TYPE_MAX 34) (high, ik pass), type `undefined1`
 #[inline]
 pub fn g_hk_class_member_type_items() -> *mut u8 { address!(235009) as *mut u8 }
+/// `g_strBSBoneLOD` at 0x332fe80, id 411327 (semantic, high); 'BSBoneLOD', the extra data name BuildBoneLODTable looks up (high, ik pass), type `class:BSFixedString`
+#[inline]
+pub fn g_str_bs_bone_lod() -> &'static crate::BSFixedString { unsafe { &*(address!(411327) as *const crate::BSFixedString) } }
 /// `g_strGraphVar_FootIKEnable` at 0x32047c8, id 402605 (semantic, high); interned 'FootIKEnable' (graph bool) (high, ik pass), type `class:BSFixedString`
 #[inline]
 pub fn g_str_graph_var_foot_ik_enable() -> &'static crate::BSFixedString { unsafe { &*(address!(402605) as *const crate::BSFixedString) } }
