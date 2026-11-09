@@ -39619,7 +39619,7 @@ member Actor.field_9A 92
 member Actor.field_9B 93
 member-unverified Actor.field_A8
 member-unverified Actor.field_B0
-member-unverified Actor.flags1
+member Actor.flags1 c0
 member-unverified Actor.flags2
 member-unverified Actor.healthModifiers
 member Actor.magicCasters 1a0
@@ -42579,7 +42579,7 @@ member Character.field_9A 92
 member Character.field_9B 93
 member-unverified Character.field_A8
 member-unverified Character.field_B0
-member-unverified Character.flags1
+member Character.flags1 c0
 member-unverified Character.flags2
 member-unverified Character.healthModifiers
 member-unverified Character.magicCasters
@@ -44367,7 +44367,7 @@ member-unverified PlayerCharacter.firstPersonBiped
 member-unverified PlayerCharacter.firstPersonCameraHeight
 member PlayerCharacter.firstPersonRoot 8f0
 member-unverified PlayerCharacter.firstPersonTorchLight
-member-unverified PlayerCharacter.flags1
+member PlayerCharacter.flags1 c0
 member-unverified PlayerCharacter.flags2
 member PlayerCharacter.healthModifiers 228
 member-unverified PlayerCharacter.m_NiTMapBase_628

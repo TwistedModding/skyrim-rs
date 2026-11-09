@@ -26042,7 +26042,7 @@ id-unverified 38050
 id-unverified 38051
 id-unverified 38052
 id-unverified 38053
-id-unverified 38054
+id 38054 37026
 id 38055 37027
 id-unverified 38056
 id 38057 37029
@@ -47191,7 +47191,7 @@ id 63572 62631
 id-unverified 63574
 id-unverified 63575
 id-unverified 63576
-id-unverified 63581
+id 63581 62636
 id 63582 62637
 id-unverified 63583
 id-unverified 63584
@@ -107525,7 +107525,7 @@ member-unverified Actor.field_9A
 member-unverified Actor.field_9B
 member-unverified Actor.field_A8
 member-unverified Actor.field_B0
-member-unverified Actor.flags1
+member Actor.flags1 c0
 member-unverified Actor.flags2
 member-unverified Actor.healthModifiers
 member Actor.magicCasters 1a0
@@ -112673,7 +112673,7 @@ member-unverified Character.field_9A
 member-unverified Character.field_9B
 member-unverified Character.field_A8
 member-unverified Character.field_B0
-member-unverified Character.flags1
+member Character.flags1 c0
 member-unverified Character.flags2
 member-unverified Character.healthModifiers
 member-unverified Character.magicCasters
@@ -115458,7 +115458,7 @@ member-unverified PlayerCharacter.firstPersonBiped
 member-unverified PlayerCharacter.firstPersonCameraHeight
 member PlayerCharacter.firstPersonRoot 8f0
 member-unverified PlayerCharacter.firstPersonTorchLight
-member-unverified PlayerCharacter.flags1
+member PlayerCharacter.flags1 c0
 member-unverified PlayerCharacter.flags2
 member PlayerCharacter.healthModifiers 228
 member-unverified PlayerCharacter.m_NiTMapBase_628
