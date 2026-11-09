@@ -7,302 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_af1c5628e4452240cdaa04843329f091>_>::vfunc_0` at 0x12c92e0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_af1c5628e4452240cdaa04843329f091>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_af1c5628e4452240cdaa04843329f091>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_420aad961b14: u64 = 446192;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_af1c5628e4452240cdaa04843329f091>_>::vfunc_1` at 0x12cacb0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_af1c5628e4452240cdaa04843329f091>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_00c0c8ab5d01: u64 = 446269;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c52bf3fa64981bb2fac1cf8941423930>_>::vfunc_0` at 0x12d1ed0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c52bf3fa64981bb2fac1cf8941423930>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c52bf3fa64981bb2fac1cf8941423930>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1fc9df66ab17: u64 = 446536;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c52bf3fa64981bb2fac1cf8941423930>_>::vfunc_1` at 0x12d30d0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c52bf3fa64981bb2fac1cf8941423930>_> * this, longlong param_1, undefined8 param_2, TypeDescriptor * param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_09342e23c237: u64 = 446578;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4e662662591968f723ad2e6b67bd457>_>::vfunc_0` at 0x12d1f00 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4e662662591968f723ad2e6b67bd457>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4e662662591968f723ad2e6b67bd457>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d0cecb276c5f: u64 = 446537;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4e662662591968f723ad2e6b67bd457>_>::vfunc_1` at 0x12d3150 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4e662662591968f723ad2e6b67bd457>_> * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_bc6f44c87d72: u64 = 446579;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_dc47955391806d5d301a84fffe1e352f>_>::vfunc_0` at 0x12bc290 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_dc47955391806d5d301a84fffe1e352f>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_dc47955391806d5d301a84fffe1e352f>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9a76e1b84c6b: u64 = 445871;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_dc47955391806d5d301a84fffe1e352f>_>::vfunc_1` at 0x12bcf20 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_dc47955391806d5d301a84fffe1e352f>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_28b22d4339c1: u64 = 445902;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_>::vfunc_0` at 0x12c9310 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_471468c401f8: u64 = 446200;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_>::vfunc_1` at 0x12cad50 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4bf593477f53: u64 = 446277;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_04364feec46ca23c904cf67120bbb977>_>::vfunc_0` at 0x12c9630 (rtti, high); signature (low): `CopyableCallable<<lambda_04364feec46ca23c904cf67120bbb977>_> * vfunc_0(CopyableCallable<<lambda_04364feec46ca23c904cf67120bbb977>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5ad7cc43dd6a: u64 = 446222;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_04364feec46ca23c904cf67120bbb977>_>::vfunc_2` at 0x12c9de0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_04364feec46ca23c904cf67120bbb977>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_38148bee71e7: u64 = 446255;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_04364feec46ca23c904cf67120bbb977>_>::vfunc_3` at 0x12cb4e0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_04364feec46ca23c904cf67120bbb977>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6e4e33a8c291: u64 = 446296;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_084b388a05d378e142dad9a3c2e195ed>_>::vfunc_0` at 0x12c9660 (rtti, high); signature (low): `CopyableCallable<<lambda_084b388a05d378e142dad9a3c2e195ed>_> * vfunc_0(CopyableCallable<<lambda_084b388a05d378e142dad9a3c2e195ed>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_42a1d699de19: u64 = 446223;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_084b388a05d378e142dad9a3c2e195ed>_>::vfunc_2` at 0x12c9e40 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_084b388a05d378e142dad9a3c2e195ed>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_bedab991a132: u64 = 446256;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_084b388a05d378e142dad9a3c2e195ed>_>::vfunc_3` at 0x12cb540 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_084b388a05d378e142dad9a3c2e195ed>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d99199083570: u64 = 446297;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_11d18c60610d650d2f78796d0d278e87>_>::vfunc_0` at 0x12c9690 (rtti, high); signature (low): `CopyableCallable<<lambda_11d18c60610d650d2f78796d0d278e87>_> * vfunc_0(CopyableCallable<<lambda_11d18c60610d650d2f78796d0d278e87>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8934d6682ae8: u64 = 446224;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_11d18c60610d650d2f78796d0d278e87>_>::vfunc_2` at 0x12c9ea0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_11d18c60610d650d2f78796d0d278e87>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9af7f9ca8bfd: u64 = 446257;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_11d18c60610d650d2f78796d0d278e87>_>::vfunc_3` at 0x12cb5a0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_11d18c60610d650d2f78796d0d278e87>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f663938a5dc3: u64 = 446298;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_133c1da527c611c9dcda295aefdf806d>_>::vfunc_0` at 0x12c96c0 (rtti, high); signature (low): `CopyableCallable<<lambda_133c1da527c611c9dcda295aefdf806d>_> * vfunc_0(CopyableCallable<<lambda_133c1da527c611c9dcda295aefdf806d>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ca4dde98c3ef: u64 = 446219;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_133c1da527c611c9dcda295aefdf806d>_>::vfunc_2` at 0x12c9f00 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_133c1da527c611c9dcda295aefdf806d>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_bb9384d13dbb: u64 = 446252;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_133c1da527c611c9dcda295aefdf806d>_>::vfunc_3` at 0x12cb600 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_133c1da527c611c9dcda295aefdf806d>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_83c21a06ac29: u64 = 446293;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_1656df761702a34a262b091507cce5f7>_>::vfunc_0` at 0x12bc410 (rtti, high); signature (low): `CopyableCallable<<lambda_1656df761702a34a262b091507cce5f7>_> * vfunc_0(CopyableCallable<<lambda_1656df761702a34a262b091507cce5f7>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b7142a53b5f0: u64 = 445876;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_1656df761702a34a262b091507cce5f7>_>::vfunc_2` at 0x12bc840 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_1656df761702a34a262b091507cce5f7>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c3b893138d06: u64 = 445888;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_1656df761702a34a262b091507cce5f7>_>::vfunc_3` at 0x12bd1e0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_1656df761702a34a262b091507cce5f7>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fb7e69823c91: u64 = 445906;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_339b5ce6d6104c0c8fb09c9881f11023>_>::vfunc_0` at 0x12bc440 (rtti, high); signature (low): `CopyableCallable<<lambda_339b5ce6d6104c0c8fb09c9881f11023>_> * vfunc_0(CopyableCallable<<lambda_339b5ce6d6104c0c8fb09c9881f11023>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fa7d93b63fec: u64 = 445878;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_339b5ce6d6104c0c8fb09c9881f11023>_>::vfunc_2` at 0x12bc8a0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_339b5ce6d6104c0c8fb09c9881f11023>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7658d11cc31d: u64 = 445890;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_339b5ce6d6104c0c8fb09c9881f11023>_>::vfunc_3` at 0x12bd240 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_339b5ce6d6104c0c8fb09c9881f11023>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9f29188cddd9: u64 = 445908;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_3be0cd93eee1a525d5980446f7145a43>_>::vfunc_0` at 0x12c9720 (rtti, high); signature (low): `CopyableCallable<<lambda_3be0cd93eee1a525d5980446f7145a43>_> * vfunc_0(CopyableCallable<<lambda_3be0cd93eee1a525d5980446f7145a43>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e6e456c7b300: u64 = 446229;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_3be0cd93eee1a525d5980446f7145a43>_>::vfunc_2` at 0x12c9fc0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_3be0cd93eee1a525d5980446f7145a43>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0ab06c11a086: u64 = 446262;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_3be0cd93eee1a525d5980446f7145a43>_>::vfunc_3` at 0x12cb6c0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_3be0cd93eee1a525d5980446f7145a43>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2784cd23f2f3: u64 = 446303;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_41fd7ee57d994a684c6bd214f348446e>_>::vfunc_0` at 0x12c9780 (rtti, high); signature (low): `CopyableCallable<<lambda_41fd7ee57d994a684c6bd214f348446e>_> * vfunc_0(CopyableCallable<<lambda_41fd7ee57d994a684c6bd214f348446e>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f18614ca139a: u64 = 446228;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_41fd7ee57d994a684c6bd214f348446e>_>::vfunc_2` at 0x12ca080 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_41fd7ee57d994a684c6bd214f348446e>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c5ea81ed0087: u64 = 446261;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_41fd7ee57d994a684c6bd214f348446e>_>::vfunc_3` at 0x12cb780 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_41fd7ee57d994a684c6bd214f348446e>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_37ebeaf8206c: u64 = 446302;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_4d412f9360f2e770764471adcb40583d>_>::vfunc_0` at 0x12bc470 (rtti, high); signature (low): `CopyableCallable<<lambda_4d412f9360f2e770764471adcb40583d>_> * vfunc_0(CopyableCallable<<lambda_4d412f9360f2e770764471adcb40583d>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3effc8be4b83: u64 = 445877;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_4d412f9360f2e770764471adcb40583d>_>::vfunc_2` at 0x12bc900 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_4d412f9360f2e770764471adcb40583d>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f07a21bb65e7: u64 = 445889;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_4d412f9360f2e770764471adcb40583d>_>::vfunc_3` at 0x12bd2a0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_4d412f9360f2e770764471adcb40583d>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2bf1ebb61215: u64 = 445907;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_60f66320e7ff53969a066e9bb5390d87>_>::vfunc_0` at 0x12c9810 (rtti, high); signature (low): `CopyableCallable<<lambda_60f66320e7ff53969a066e9bb5390d87>_> * vfunc_0(CopyableCallable<<lambda_60f66320e7ff53969a066e9bb5390d87>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7253b50c8502: u64 = 525119;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_60f66320e7ff53969a066e9bb5390d87>_>::vfunc_2` at 0x12ca1a0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_60f66320e7ff53969a066e9bb5390d87>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f3ab207dfa5f: u64 = 525122;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_60f66320e7ff53969a066e9bb5390d87>_>::vfunc_3` at 0x12cb8a0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_60f66320e7ff53969a066e9bb5390d87>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b20fa3329cc9: u64 = 525127;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_6923c7db47795dd1ace1b80563a447ad>_>::vfunc_0` at 0x12bc4a0 (rtti, high); signature (low): `CopyableCallable<<lambda_6923c7db47795dd1ace1b80563a447ad>_> * vfunc_0(CopyableCallable<<lambda_6923c7db47795dd1ace1b80563a447ad>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5ce6c4d8f283: u64 = 445879;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_6923c7db47795dd1ace1b80563a447ad>_>::vfunc_2` at 0x12bc960 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_6923c7db47795dd1ace1b80563a447ad>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a6db5846f1cd: u64 = 445891;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_6923c7db47795dd1ace1b80563a447ad>_>::vfunc_3` at 0x12bd300 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_6923c7db47795dd1ace1b80563a447ad>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b925acf795bb: u64 = 445909;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7c6a748cf7ef983a0d58de9288ce9768>_>::vfunc_0` at 0x12bc4d0 (rtti, high); signature (low): `CopyableCallable<<lambda_7c6a748cf7ef983a0d58de9288ce9768>_> * vfunc_0(CopyableCallable<<lambda_7c6a748cf7ef983a0d58de9288ce9768>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ecf58e27e6a6: u64 = 445880;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7c6a748cf7ef983a0d58de9288ce9768>_>::vfunc_2` at 0x12bc9c0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_7c6a748cf7ef983a0d58de9288ce9768>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_00feebf693b8: u64 = 445892;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7c6a748cf7ef983a0d58de9288ce9768>_>::vfunc_3` at 0x12bd360 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_7c6a748cf7ef983a0d58de9288ce9768>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_acc360ca5faa: u64 = 445910;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_81362fefa0bafdc97634a2e2e71c0582>_>::vfunc_0` at 0x12bc500 (rtti, high); signature (low): `CopyableCallable<<lambda_81362fefa0bafdc97634a2e2e71c0582>_> * vfunc_0(CopyableCallable<<lambda_81362fefa0bafdc97634a2e2e71c0582>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ee27757d39e7: u64 = 445881;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_81362fefa0bafdc97634a2e2e71c0582>_>::vfunc_2` at 0x12bca20 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_81362fefa0bafdc97634a2e2e71c0582>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3850d10071b3: u64 = 445893;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_81362fefa0bafdc97634a2e2e71c0582>_>::vfunc_3` at 0x12bd3c0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_81362fefa0bafdc97634a2e2e71c0582>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d4663d48117d: u64 = 445911;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_84ba32da379f1a5a62094d61327152df>_>::vfunc_0` at 0x12c9840 (rtti, high); signature (low): `CopyableCallable<<lambda_84ba32da379f1a5a62094d61327152df>_> * vfunc_0(CopyableCallable<<lambda_84ba32da379f1a5a62094d61327152df>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_bac8f821a068: u64 = 525120;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_84ba32da379f1a5a62094d61327152df>_>::vfunc_2` at 0x12ca200 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_84ba32da379f1a5a62094d61327152df>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1ea43756a205: u64 = 525123;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_84ba32da379f1a5a62094d61327152df>_>::vfunc_3` at 0x12cb900 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_84ba32da379f1a5a62094d61327152df>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3466740ab9ab: u64 = 525128;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_996cdf0862a56af86372b0f56da3e7fc>_>::vfunc_0` at 0x12adb80 (rtti, high); signature (low): `CopyableCallable<<lambda_996cdf0862a56af86372b0f56da3e7fc>_> * vfunc_0(CopyableCallable<<lambda_996cdf0862a56af86372b0f56da3e7fc>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_63dcd0438d73: u64 = 445539;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_996cdf0862a56af86372b0f56da3e7fc>_>::vfunc_2` at 0x12af200 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_996cdf0862a56af86372b0f56da3e7fc>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b47a7685b480: u64 = 445592;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_996cdf0862a56af86372b0f56da3e7fc>_>::vfunc_3` at 0x12b0d50 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_996cdf0862a56af86372b0f56da3e7fc>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_027b99c9b684: u64 = 445637;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_9cc4381cb528551df1adb7b5fc690a8e>_>::vfunc_0` at 0x12c9870 (rtti, high); signature (low): `CopyableCallable<<lambda_9cc4381cb528551df1adb7b5fc690a8e>_> * vfunc_0(CopyableCallable<<lambda_9cc4381cb528551df1adb7b5fc690a8e>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a4ee14e39d32: u64 = 446225;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_9cc4381cb528551df1adb7b5fc690a8e>_>::vfunc_2` at 0x12ca260 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_9cc4381cb528551df1adb7b5fc690a8e>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_500704cd1f1a: u64 = 446258;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_9cc4381cb528551df1adb7b5fc690a8e>_>::vfunc_3` at 0x12cb960 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_9cc4381cb528551df1adb7b5fc690a8e>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ddc541c03e06: u64 = 446299;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_adea97f238d027e01a467b281ee4d039>_>::vfunc_0` at 0x129a460 (rtti, high); signature (low): `CopyableCallable<<lambda_adea97f238d027e01a467b281ee4d039>_> * vfunc_0(CopyableCallable<<lambda_adea97f238d027e01a467b281ee4d039>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_44853b878fee: u64 = 445072;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_adea97f238d027e01a467b281ee4d039>_>::vfunc_2` at 0x129abf0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_adea97f238d027e01a467b281ee4d039>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7fcba577066f: u64 = 445082;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_adea97f238d027e01a467b281ee4d039>_>::vfunc_3` at 0x129b290 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_adea97f238d027e01a467b281ee4d039>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_acf5dfad7a9a: u64 = 445093;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_af1c5628e4452240cdaa04843329f091>_>::vfunc_0` at 0x12c98a0 (rtti, high); signature (low): `CopyableCallable<<lambda_af1c5628e4452240cdaa04843329f091>_> * vfunc_0(CopyableCallable<<lambda_af1c5628e4452240cdaa04843329f091>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_35f996184b5a: u64 = 446214;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_af1c5628e4452240cdaa04843329f091>_>::vfunc_2` at 0x12ca2c0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_af1c5628e4452240cdaa04843329f091>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5b131ba9b805: u64 = 446247;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_af1c5628e4452240cdaa04843329f091>_>::vfunc_3` at 0x12cb9c0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_af1c5628e4452240cdaa04843329f091>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_533af41bd738: u64 = 446288;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_c52bf3fa64981bb2fac1cf8941423930>_>::vfunc_0` at 0x12d2220 (rtti, high); signature (low): `CopyableCallable<<lambda_c52bf3fa64981bb2fac1cf8941423930>_> * vfunc_0(CopyableCallable<<lambda_c52bf3fa64981bb2fac1cf8941423930>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_646aac246f82: u64 = 446549;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_c52bf3fa64981bb2fac1cf8941423930>_>::vfunc_2` at 0x12d2f80 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_c52bf3fa64981bb2fac1cf8941423930>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_74b177c18278: u64 = 446572;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_c52bf3fa64981bb2fac1cf8941423930>_>::vfunc_3` at 0x12d37e0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_c52bf3fa64981bb2fac1cf8941423930>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6a070938cc48: u64 = 446588;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d4e662662591968f723ad2e6b67bd457>_>::vfunc_0` at 0x12d2250 (rtti, high); signature (low): `CopyableCallable<<lambda_d4e662662591968f723ad2e6b67bd457>_> * vfunc_0(CopyableCallable<<lambda_d4e662662591968f723ad2e6b67bd457>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b13c53ceda43: u64 = 446550;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d4e662662591968f723ad2e6b67bd457>_>::vfunc_2` at 0x12d2fe0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_d4e662662591968f723ad2e6b67bd457>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e540e3354656: u64 = 446573;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d4e662662591968f723ad2e6b67bd457>_>::vfunc_3` at 0x12d3840 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_d4e662662591968f723ad2e6b67bd457>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b4864bde277b: u64 = 446589;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_dc47955391806d5d301a84fffe1e352f>_>::vfunc_0` at 0x12bc590 (rtti, high); signature (low): `CopyableCallable<<lambda_dc47955391806d5d301a84fffe1e352f>_> * vfunc_0(CopyableCallable<<lambda_dc47955391806d5d301a84fffe1e352f>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_99697eac1e33: u64 = 445882;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_dc47955391806d5d301a84fffe1e352f>_>::vfunc_2` at 0x12bcb50 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_dc47955391806d5d301a84fffe1e352f>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8bf26c6ab833: u64 = 445894;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_dc47955391806d5d301a84fffe1e352f>_>::vfunc_3` at 0x12bd480 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_dc47955391806d5d301a84fffe1e352f>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_792c48126398: u64 = 445912;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_>::vfunc_0` at 0x12c98d0 (rtti, high); signature (low): `CopyableCallable<<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_> * vfunc_0(CopyableCallable<<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0200a3d08742: u64 = 446226;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_>::vfunc_2` at 0x12ca320 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ed4623535f85: u64 = 446259;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_>::vfunc_3` at 0x12cba20 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1aa097045ee6: u64 = 446300;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x129a590 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_103aab61d9bc: u64 = 444376;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x129a5f0 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7b8fb69f9a67: u64 = 444377;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_463900ed92a2f8fa13b2115620e21f94>_>::vfunc_0` at 0x12ad2a0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_463900ed92a2f8fa13b2115620e21f94>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_463900ed92a2f8fa13b2115620e21f94>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0ccf56988b66: u64 = 445515;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_463900ed92a2f8fa13b2115620e21f94>_>::vfunc_1` at 0x12b00b0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_463900ed92a2f8fa13b2115620e21f94>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_722773e48170: u64 = 445622;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b74693073e62dfe3900e7755047d3b0e>_>::vfunc_0` at 0x12ad2d0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b74693073e62dfe3900e7755047d3b0e>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b74693073e62dfe3900e7755047d3b0e>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_68083378dcaf: u64 = 445516;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b74693073e62dfe3900e7755047d3b0e>_>::vfunc_1` at 0x12b0190 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b74693073e62dfe3900e7755047d3b0e>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ca9f8013f7de: u64 = 445621;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_463900ed92a2f8fa13b2115620e21f94>_>::vfunc_0` at 0x12adb20 (rtti, high); signature (low): `CopyableCallable<<lambda_463900ed92a2f8fa13b2115620e21f94>_> * vfunc_0(CopyableCallable<<lambda_463900ed92a2f8fa13b2115620e21f94>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_33ee5a5350f4: u64 = 445542;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_463900ed92a2f8fa13b2115620e21f94>_>::vfunc_2` at 0x12af140 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_463900ed92a2f8fa13b2115620e21f94>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3b3b7497e132: u64 = 445595;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_463900ed92a2f8fa13b2115620e21f94>_>::vfunc_3` at 0x12b0c90 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_463900ed92a2f8fa13b2115620e21f94>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8d921c1e7433: u64 = 445640;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b74693073e62dfe3900e7755047d3b0e>_>::vfunc_0` at 0x12adbb0 (rtti, high); signature (low): `CopyableCallable<<lambda_b74693073e62dfe3900e7755047d3b0e>_> * vfunc_0(CopyableCallable<<lambda_b74693073e62dfe3900e7755047d3b0e>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6d15e4dedc14: u64 = 445541;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b74693073e62dfe3900e7755047d3b0e>_>::vfunc_2` at 0x12af260 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_b74693073e62dfe3900e7755047d3b0e>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f69ea3e30185: u64 = 445594;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b74693073e62dfe3900e7755047d3b0e>_>::vfunc_3` at 0x12b0db0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_b74693073e62dfe3900e7755047d3b0e>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_466faaab06c6: u64 = 445639;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x12adee0 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7fc8fd499713: u64 = 445554;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x12ae060 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1a231831214b: u64 = 445562;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d7df5299aa0dfb1534894b6ffcff0625>_>::vfunc_0` at 0x12d1f90 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d7df5299aa0dfb1534894b6ffcff0625>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d7df5299aa0dfb1534894b6ffcff0625>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_92cef95232f3: u64 = 446540;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d7df5299aa0dfb1534894b6ffcff0625>_>::vfunc_1` at 0x12d32f0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d7df5299aa0dfb1534894b6ffcff0625>_> * this, undefined8 * param_1, undefined8 param_2, TypeDescriptor * param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b81f952624fb: u64 = 446582;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d7df5299aa0dfb1534894b6ffcff0625>_>::vfunc_0` at 0x12d2280 (rtti, high); signature (low): `CopyableCallable<<lambda_d7df5299aa0dfb1534894b6ffcff0625>_> * vfunc_0(CopyableCallable<<lambda_d7df5299aa0dfb1534894b6ffcff0625>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4425a0d212a7: u64 = 446551;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d7df5299aa0dfb1534894b6ffcff0625>_>::vfunc_2` at 0x12d3040 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_d7df5299aa0dfb1534894b6ffcff0625>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f8ed70b43a59: u64 = 446574;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d7df5299aa0dfb1534894b6ffcff0625>_>::vfunc_3` at 0x12d38a0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_d7df5299aa0dfb1534894b6ffcff0625>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_682b5bedc678: u64 = 446590;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x12d2340 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1392bbfe26ce: u64 = 446555;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x12d23d0 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_23ebb124a67f: u64 = 446558;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_1e115a34fa92652d7d9402011643d019>_>::vfunc_0` at 0x12ebdf0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_1e115a34fa92652d7d9402011643d019>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_1e115a34fa92652d7d9402011643d019>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fdaccf47dc57: u64 = 444931;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_1e115a34fa92652d7d9402011643d019>_>::vfunc_1` at 0x12ec1b0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_1e115a34fa92652d7d9402011643d019>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_880163142ab3: u64 = 444940;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_4f36912b353e5ec1a478a3777faaddcb>_>::vfunc_0` at 0x1282b20 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_4f36912b353e5ec1a478a3777faaddcb>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_4f36912b353e5ec1a478a3777faaddcb>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3749361b573e: u64 = 444239;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_4f36912b353e5ec1a478a3777faaddcb>_>::vfunc_1` at 0x1284490 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_4f36912b353e5ec1a478a3777faaddcb>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_cbdebcd21195: u64 = 444296;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7dec0c800e37e37d404130c032617714>_>::vfunc_0` at 0x12943c0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7dec0c800e37e37d404130c032617714>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7dec0c800e37e37d404130c032617714>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7d2cdcbfd09d: u64 = 444983;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7dec0c800e37e37d404130c032617714>_>::vfunc_1` at 0x12957a0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7dec0c800e37e37d404130c032617714>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_eab4c6bb2ab9: u64 = 444993;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9a178d4ccf12849133a395e69fad8f52>_>::vfunc_0` at 0x12943f0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9a178d4ccf12849133a395e69fad8f52>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9a178d4ccf12849133a395e69fad8f52>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3746e5f2615d: u64 = 524857;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9a178d4ccf12849133a395e69fad8f52>_>::vfunc_1` at 0x12957d0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9a178d4ccf12849133a395e69fad8f52>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_000fcd3c7d4b: u64 = 524869;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_>::vfunc_0` at 0x12ebe20 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ba7763f696a4: u64 = 444932;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_>::vfunc_1` at 0x12ec1e0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2e47c9455529: u64 = 444941;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_1e115a34fa92652d7d9402011643d019>_>::vfunc_0` at 0x12ebe50 (rtti, high); signature (low): `CopyableCallable<<lambda_1e115a34fa92652d7d9402011643d019>_> * vfunc_0(CopyableCallable<<lambda_1e115a34fa92652d7d9402011643d019>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6df096eb0eb0: u64 = 444933;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_1e115a34fa92652d7d9402011643d019>_>::vfunc_2` at 0x12ec0f0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_1e115a34fa92652d7d9402011643d019>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b6e6f99ff390: u64 = 444938;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_1e115a34fa92652d7d9402011643d019>_>::vfunc_3` at 0x12ec310 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_1e115a34fa92652d7d9402011643d019>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c80679a5692d: u64 = 444943;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_4f36912b353e5ec1a478a3777faaddcb>_>::vfunc_0` at 0x1283050 (rtti, high); signature (low): `CopyableCallable<<lambda_4f36912b353e5ec1a478a3777faaddcb>_> * vfunc_0(CopyableCallable<<lambda_4f36912b353e5ec1a478a3777faaddcb>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4b7b3432c778: u64 = 444249;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_4f36912b353e5ec1a478a3777faaddcb>_>::vfunc_2` at 0x1283e30 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_4f36912b353e5ec1a478a3777faaddcb>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d7b0f9d1ff69: u64 = 444280;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_4f36912b353e5ec1a478a3777faaddcb>_>::vfunc_3` at 0x1284b90 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_4f36912b353e5ec1a478a3777faaddcb>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0bc582dd639b: u64 = 444302;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7dec0c800e37e37d404130c032617714>_>::vfunc_0` at 0x1294420 (rtti, high); signature (low): `CopyableCallable<<lambda_7dec0c800e37e37d404130c032617714>_> * vfunc_0(CopyableCallable<<lambda_7dec0c800e37e37d404130c032617714>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d1bf09baa874: u64 = 444984;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7dec0c800e37e37d404130c032617714>_>::vfunc_2` at 0x1294cc0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_7dec0c800e37e37d404130c032617714>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f40767187d07: u64 = 444988;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7dec0c800e37e37d404130c032617714>_>::vfunc_3` at 0x12958d0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_7dec0c800e37e37d404130c032617714>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0e5d6fa5ee75: u64 = 444995;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_9a178d4ccf12849133a395e69fad8f52>_>::vfunc_0` at 0x1294450 (rtti, high); signature (low): `CopyableCallable<<lambda_9a178d4ccf12849133a395e69fad8f52>_> * vfunc_0(CopyableCallable<<lambda_9a178d4ccf12849133a395e69fad8f52>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_11e83404f313: u64 = 524858;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_9a178d4ccf12849133a395e69fad8f52>_>::vfunc_2` at 0x1294d20 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_9a178d4ccf12849133a395e69fad8f52>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5ffdb418c319: u64 = 524865;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_9a178d4ccf12849133a395e69fad8f52>_>::vfunc_3` at 0x1295930 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_9a178d4ccf12849133a395e69fad8f52>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f71a7edc5bb3: u64 = 524870;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_>::vfunc_0` at 0x12ebe80 (rtti, high); signature (low): `CopyableCallable<<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_> * vfunc_0(CopyableCallable<<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_979a2cae27ed: u64 = 444934;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_>::vfunc_2` at 0x12ec150 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4e43ae8c5e6b: u64 = 444939;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_>::vfunc_3` at 0x12ec370 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e22e2f78b38d: u64 = 444944;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x1283310 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fa5ea47b931e: u64 = 444261;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x1283400 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4307c2f37308: u64 = 444265;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::ICopyableCallable,<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_>::vfunc_0` at 0x1259a70 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::ICopyableCallable,<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::ICopyableCallable,<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_93cfa7042a60: u64 = 443988;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::ICopyableCallable,<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_>::vfunc_1` at 0x125a6d0 (rtti, medium); signature (low): `undefined vfunc_1(void)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_42b0f6084258: u64 = 444011;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::CopyableCallable<<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_>::vfunc_0` at 0x1259b30 (rtti, high); signature (low): `CopyableCallable<<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_> * vfunc_0(CopyableCallable<<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_1f337942abe2: u64 = 443993;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::CopyableCallable<<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_>::vfunc_2` at 0x125a600 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_3ef4ab992c45: u64 = 444010;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::CopyableCallable<<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_>::vfunc_3` at 0x125a760 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_0face964f1b3: u64 = 444016;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::ICallableBase::vfunc_0` at 0x1259cb0 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_4a1730045459: u64 = 443995;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::ICopyableCallable::vfunc_0` at 0x1259d40 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_2fb924f11a60: u64 = 443998;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::ICopyableCallable,void_(__cdecl*)(bnet::LogParams_const&___ptr64)>::vfunc_0` at 0x1259aa0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::ICopyableCallable,void_(__cdecl*)(bnet::LogParams_const&___ptr64)> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::ICopyableCallable,void_(__cdecl*)(bnet::LogParams_const&___ptr64)> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_e5f4de88aa7b: u64 = 443989;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::ICopyableCallable,void_(__cdecl*)(bnet::LogParams_const&___ptr64)>::vfunc_1` at 0x125a6e0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::ICopyableCallable,void_(__cdecl*)(bnet::LogParams_const&___ptr64)> * this, undefined8 param_1)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_4d53c0221f1e: u64 = 444012;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::CopyableCallable<void_(__cdecl*)(bnet::LogParams_const&___ptr64)>::vfunc_0` at 0x1259b00 (rtti, high); signature (low): `CopyableCallable<void_(__cdecl*)(bnet::LogParams_const&___ptr64)> * vfunc_0(CopyableCallable<void_(__cdecl*)(bnet::LogParams_const&___ptr64)> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_aff275235b7b: u64 = 443991;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::CopyableCallable<void_(__cdecl*)(bnet::LogParams_const&___ptr64)>::vfunc_2` at 0x125a5a0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<void_(__cdecl*)(bnet::LogParams_const&___ptr64)> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_6708e3f78d05: u64 = 444008;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::CopyableCallable<void_(__cdecl*)(bnet::LogParams_const&___ptr64)>::vfunc_3` at 0x125a700 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<void_(__cdecl*)(bnet::LogParams_const&___ptr64)> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_ff59d3ab2275: u64 = 444014;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::ICallableBase::vfunc_0` at 0x1259ce0 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_2e994c4a1e85: u64 = 443996;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::ICopyableCallable::vfunc_0` at 0x1259d70 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_8446ee11cccf: u64 = 443999;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::ICopyableCallable,<lambda_e35940508eec14f4e3ce2fa64956727e>_>::vfunc_0` at 0x1259ad0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::ICopyableCallable,<lambda_e35940508eec14f4e3ce2fa64956727e>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::ICopyableCallable,<lambda_e35940508eec14f4e3ce2fa64956727e>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__CallableBas_7781e0accdfd: u64 = 443990;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::ICopyableCallable,<lambda_e35940508eec14f4e3ce2fa64956727e>_>::vfunc_1` at 0x125a6f0 (rtti, medium); signature (low): `undefined vfunc_1(void)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__CallableBas_a46f3a939313: u64 = 444013;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::CopyableCallable<<lambda_e35940508eec14f4e3ce2fa64956727e>_>::vfunc_0` at 0x1259b60 (rtti, high); signature (low): `CopyableCallable<<lambda_e35940508eec14f4e3ce2fa64956727e>_> * vfunc_0(CopyableCallable<<lambda_e35940508eec14f4e3ce2fa64956727e>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__CopyableCal_bb39f3b119e4: u64 = 443992;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::CopyableCallable<<lambda_e35940508eec14f4e3ce2fa64956727e>_>::vfunc_2` at 0x125a660 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_e35940508eec14f4e3ce2fa64956727e>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__CopyableCal_aef163020f38: u64 = 444009;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::CopyableCallable<<lambda_e35940508eec14f4e3ce2fa64956727e>_>::vfunc_3` at 0x125a7c0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_e35940508eec14f4e3ce2fa64956727e>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__CopyableCal_c22815040ed6: u64 = 444015;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::ICallableBase::vfunc_0` at 0x1259d10 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__ICallableBase__vfunc_0: u64 = 443997;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::ICopyableCallable::vfunc_0` at 0x1259da0 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__ICopyableCallable__vfunc_0: u64 = 524336;
-/// `crt_atexit` at 0x15a7930 (crt_init, medium); signature (low): `int crt_atexit(void)`
-pub const crt_atexit: u64 = 109608;
-/// `doDownloads::waitingCallback::vdtor` at 0x6072f0 (layout_inference, medium); signature (low): `waitingCallback * vdtor(waitingCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const doDownloads__waitingCallback__vdtor: u64 = 442436;
-/// `doDownloads::waitingCallback::vfunc_1` at 0x607220 (rtti, high); signature (low): `undefined vfunc_1(void)`
-pub const doDownloads__waitingCallback__vfunc_1: u64 = 442433;
 /// `downloadConfirmResetCallback::vdtor` at 0x607260 (layout_inference, medium); signature (low): `downloadConfirmResetCallback * vdtor(downloadConfirmResetCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const downloadConfirmResetCallback__vdtor: u64 = 442435;
 /// `downloadConfirmResetCallback::vfunc_1` at 0x606eb0 (rtti, high); signature (low): `undefined vfunc_1(void)`
@@ -947,7 +651,7 @@ pub const g_ConcreteExplosionFactory_ChainExplosion_1__init_sub0: u64 = 43817;
 pub const g_ConcreteExplosionFactory_Explosion_0__atexit: u64 = 171837;
 /// `g_ConcreteExplosionFactory_Explosion_0__init` at 0xac8c0 (crt_init, medium); signature (high): `void g_ConcreteExplosionFactory_Explosion_0__init(void)`
 pub const g_ConcreteExplosionFactory_Explosion_0__init: u64 = 6505;
-/// `g_ConcreteFormFactory_BGSCameraPath_97__atexit` at 0x17499b0 (semantic, high); signature (untiered): `void g_ConcreteFormFactory_BGSCameraPath_97__atexit(void)`; semantic: static destructor of the BGSCameraPath form factory: clears factory slot 0x61 (0x1e2e40) and restores the IFormFactory vtable (high); signature `void (void)`
+/// `g_ConcreteFormFactory_BGSCameraPath_97__atexit` at 0x17499b0 (semantic, high); signature (high): `void g_ConcreteFormFactory_BGSCameraPath_97__atexit(void)`; semantic: static destructor of the BGSCameraPath form factory: clears factory slot 0x61 (0x1e2e40) and restores the IFormFactory vtable (high); signature `void (void)`
 pub const g_ConcreteFormFactory_BGSCameraPath_97__atexit: u64 = 166295;
 /// `g_ConcreteFormFactory_BGSCameraPath_97__atexit` as a function pointer type (high).
 pub type g_ConcreteFormFactory_BGSCameraPath_97__atexit_fn = unsafe extern "C" fn();
@@ -955,85 +659,85 @@ pub type g_ConcreteFormFactory_BGSCameraPath_97__atexit_fn = unsafe extern "C" f
 pub const g_ConcreteFormFactory_BGSCameraPath_97__init: u64 = 1085;
 /// `g_ConcreteFormFactory_BGSDialogueBranch_115__init` at 0x1eb20 (crt_init, medium); signature (high): `void g_ConcreteFormFactory_BGSDialogueBranch_115__init(void)`
 pub const g_ConcreteFormFactory_BGSDialogueBranch_115__init: u64 = 1250;
-/// `g_ConcreteFormFactory_BGSDialogueBranch_115__init_cb0` at 0x174b010 (callgraph, medium); signature (untiered): `void g_ConcreteFormFactory_BGSDialogueBranch_115__init_cb0(void)`
+/// `g_ConcreteFormFactory_BGSDialogueBranch_115__init_cb0` at 0x174b010 (callgraph, medium); signature (high): `void g_ConcreteFormFactory_BGSDialogueBranch_115__init_cb0(void)`
 pub const g_ConcreteFormFactory_BGSDialogueBranch_115__init_cb0: u64 = 166463;
 /// `g_ConcreteFormFactory_BGSScene_122__init` at 0x1f530 (crt_init, medium); signature (high): `void g_ConcreteFormFactory_BGSScene_122__init(void)`
 pub const g_ConcreteFormFactory_BGSScene_122__init: u64 = 1284;
-/// `g_ConcreteFormFactory_BGSScene_122__init_cb0` at 0x174b6b0 (callgraph, medium); signature (untiered): `void g_ConcreteFormFactory_BGSScene_122__init_cb0(void)`
+/// `g_ConcreteFormFactory_BGSScene_122__init_cb0` at 0x174b6b0 (callgraph, medium); signature (high): `void g_ConcreteFormFactory_BGSScene_122__init_cb0(void)`
 pub const g_ConcreteFormFactory_BGSScene_122__init_cb0: u64 = 166498;
 /// `g_ConcreteFormFactory_BGSStoryManagerBranchNode_112__init` at 0x8f430 (crt_init, medium); signature (high): `void g_ConcreteFormFactory_BGSStoryManagerBranchNode_112__init(void)`
 pub const g_ConcreteFormFactory_BGSStoryManagerBranchNode_112__init: u64 = 5224;
-/// `g_ConcreteFormFactory_BGSStoryManagerBranchNode_112__init_cb0` at 0x178fbf0 (callgraph, medium); signature (untiered): `void g_ConcreteFormFactory_BGSStoryManagerBranchNode_112__init_cb0(void)`
+/// `g_ConcreteFormFactory_BGSStoryManagerBranchNode_112__init_cb0` at 0x178fbf0 (callgraph, medium); signature (high): `void g_ConcreteFormFactory_BGSStoryManagerBranchNode_112__init_cb0(void)`
 pub const g_ConcreteFormFactory_BGSStoryManagerBranchNode_112__init_cb0: u64 = 170454;
 /// `g_ConcreteFormFactory_BGSStoryManagerQuestNode_113__init` at 0x8f4a0 (crt_init, medium); signature (high): `void g_ConcreteFormFactory_BGSStoryManagerQuestNode_113__init(void)`
 pub const g_ConcreteFormFactory_BGSStoryManagerQuestNode_113__init: u64 = 5226;
-/// `g_ConcreteFormFactory_BGSStoryManagerQuestNode_113__init_cb0` at 0x178fc70 (callgraph, medium); signature (untiered): `void g_ConcreteFormFactory_BGSStoryManagerQuestNode_113__init_cb0(void)`
+/// `g_ConcreteFormFactory_BGSStoryManagerQuestNode_113__init_cb0` at 0x178fc70 (callgraph, medium); signature (high): `void g_ConcreteFormFactory_BGSStoryManagerQuestNode_113__init_cb0(void)`
 pub const g_ConcreteFormFactory_BGSStoryManagerQuestNode_113__init_cb0: u64 = 170456;
 /// `g_ConcreteFormFactory_NavMesh_73__init` at 0x879e0 (crt_init, medium); signature (high): `void g_ConcreteFormFactory_NavMesh_73__init(void)`
 pub const g_ConcreteFormFactory_NavMesh_73__init: u64 = 4938;
-/// `g_ConcreteFormFactory_NavMesh_73__init_cb0` at 0x178d460 (callgraph, medium); signature (untiered): `void g_ConcreteFormFactory_NavMesh_73__init_cb0(void)`
+/// `g_ConcreteFormFactory_NavMesh_73__init_cb0` at 0x178d460 (callgraph, medium); signature (high): `void g_ConcreteFormFactory_NavMesh_73__init_cb0(void)`
 pub const g_ConcreteFormFactory_NavMesh_73__init_cb0: u64 = 170191;
 /// `g_ConcreteFormFactory_TESIdleForm_78__init` at 0x1faa0 (crt_init, medium); signature (high): `void g_ConcreteFormFactory_TESIdleForm_78__init(void)`
 pub const g_ConcreteFormFactory_TESIdleForm_78__init: u64 = 1303;
-/// `g_ConcreteFormFactory_TESIdleForm_78__init_cb0` at 0x174b9a0 (callgraph, medium); signature (untiered): `void g_ConcreteFormFactory_TESIdleForm_78__init_cb0(void)`
+/// `g_ConcreteFormFactory_TESIdleForm_78__init_cb0` at 0x174b9a0 (callgraph, medium); signature (high): `void g_ConcreteFormFactory_TESIdleForm_78__init_cb0(void)`
 pub const g_ConcreteFormFactory_TESIdleForm_78__init_cb0: u64 = 166517;
 /// `g_ConcreteFormFactory_TESObjectCELL_60__init` at 0x1abf0 (crt_init, medium); signature (high): `void g_ConcreteFormFactory_TESObjectCELL_60__init(void)`
 pub const g_ConcreteFormFactory_TESObjectCELL_60__init: u64 = 994;
-/// `g_ConcreteFormFactory_TESObjectCELL_60__init_cb0` at 0x1748da0 (callgraph, medium); signature (untiered): `void g_ConcreteFormFactory_TESObjectCELL_60__init_cb0(void)`
+/// `g_ConcreteFormFactory_TESObjectCELL_60__init_cb0` at 0x1748da0 (callgraph, medium); signature (high): `void g_ConcreteFormFactory_TESObjectCELL_60__init_cb0(void)`
 pub const g_ConcreteFormFactory_TESObjectCELL_60__init_cb0: u64 = 166200;
 /// `g_ConcreteFormFactory_TESObjectLAND_72__init` at 0x1a3d0 (crt_init, medium); signature (high): `void g_ConcreteFormFactory_TESObjectLAND_72__init(void)`
 pub const g_ConcreteFormFactory_TESObjectLAND_72__init: u64 = 969;
-/// `g_ConcreteFormFactory_TESObjectLAND_72__init_cb0` at 0x17486e0 (callgraph, medium); signature (untiered): `void g_ConcreteFormFactory_TESObjectLAND_72__init_cb0(void)`
+/// `g_ConcreteFormFactory_TESObjectLAND_72__init_cb0` at 0x17486e0 (callgraph, medium); signature (high): `void g_ConcreteFormFactory_TESObjectLAND_72__init_cb0(void)`
 pub const g_ConcreteFormFactory_TESObjectLAND_72__init_cb0: u64 = 166173;
 /// `g_ConcreteFormFactory_TESRegion_58__init` at 0x16030 (crt_init, medium); signature (high): `void g_ConcreteFormFactory_TESRegion_58__init(void)`
 pub const g_ConcreteFormFactory_TESRegion_58__init: u64 = 765;
-/// `g_ConcreteFormFactory_TESRegion_58__init_cb0` at 0x17456d0 (callgraph, medium); signature (untiered): `void g_ConcreteFormFactory_TESRegion_58__init_cb0(void)`
+/// `g_ConcreteFormFactory_TESRegion_58__init_cb0` at 0x17456d0 (callgraph, medium); signature (high): `void g_ConcreteFormFactory_TESRegion_58__init_cb0(void)`
 pub const g_ConcreteFormFactory_TESRegion_58__init_cb0: u64 = 165969;
 /// `g_ConcreteFormFactory_TESTopicInfo_76__init` at 0x224c0 (crt_init, medium); signature (high): `void g_ConcreteFormFactory_TESTopicInfo_76__init(void)`
 pub const g_ConcreteFormFactory_TESTopicInfo_76__init: u64 = 1468;
-/// `g_ConcreteFormFactory_TESTopicInfo_76__init_cb0` at 0x174d220 (callgraph, medium); signature (untiered): `void g_ConcreteFormFactory_TESTopicInfo_76__init_cb0(void)`
+/// `g_ConcreteFormFactory_TESTopicInfo_76__init_cb0` at 0x174d220 (callgraph, medium); signature (high): `void g_ConcreteFormFactory_TESTopicInfo_76__init_cb0(void)`
 pub const g_ConcreteFormFactory_TESTopicInfo_76__init_cb0: u64 = 166680;
 /// `g_ConcreteFormFactory_TESTopic_75__init` at 0x22150 (crt_init, medium); signature (high): `void g_ConcreteFormFactory_TESTopic_75__init(void)`
 pub const g_ConcreteFormFactory_TESTopic_75__init: u64 = 1454;
-/// `g_ConcreteFormFactory_TESTopic_75__init_cb0` at 0x174cf30 (callgraph, medium); signature (untiered): `void g_ConcreteFormFactory_TESTopic_75__init_cb0(void)`
+/// `g_ConcreteFormFactory_TESTopic_75__init_cb0` at 0x174cf30 (callgraph, medium); signature (high): `void g_ConcreteFormFactory_TESTopic_75__init_cb0(void)`
 pub const g_ConcreteFormFactory_TESTopic_75__init_cb0: u64 = 166666;
 /// `g_ConcreteFormFactory_TESWorldSpace_71__init` at 0x1c020 (crt_init, medium); signature (high): `void g_ConcreteFormFactory_TESWorldSpace_71__init(void)`
 pub const g_ConcreteFormFactory_TESWorldSpace_71__init: u64 = 1082;
-/// `g_ConcreteFormFactory_TESWorldSpace_71__init_cb0` at 0x1749920 (callgraph, medium); signature (untiered): `void g_ConcreteFormFactory_TESWorldSpace_71__init_cb0(void)`
+/// `g_ConcreteFormFactory_TESWorldSpace_71__init_cb0` at 0x1749920 (callgraph, medium); signature (high): `void g_ConcreteFormFactory_TESWorldSpace_71__init_cb0(void)`
 pub const g_ConcreteFormFactory_TESWorldSpace_71__init_cb0: u64 = 166292;
 /// `g_ConcreteObjectFormFactory_AlchemyItem_46_17_2__init` at 0x7b90 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_AlchemyItem_46_17_2__init(void)`
 pub const g_ConcreteObjectFormFactory_AlchemyItem_46_17_2__init: u64 = 113;
-/// `g_ConcreteObjectFormFactory_AlchemyItem_46_17_2__init_cb0` at 0x173c090 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_AlchemyItem_46_17_2__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_AlchemyItem_46_17_2__init_cb0` at 0x173c090 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_AlchemyItem_46_17_2__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_AlchemyItem_46_17_2__init_cb0: u64 = 165303;
 /// `g_ConcreteObjectFormFactory_BGSAcousticSpace_16_64_8__init` at 0x1c070 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSAcousticSpace_16_64_8__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSAcousticSpace_16_64_8__init: u64 = 1084;
-/// `g_ConcreteObjectFormFactory_BGSAcousticSpace_16_64_8__init_cb0` at 0x1749970 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSAcousticSpace_16_64_8__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSAcousticSpace_16_64_8__init_cb0` at 0x1749970 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSAcousticSpace_16_64_8__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSAcousticSpace_16_64_8__init_cb0: u64 = 166294;
 /// `g_ConcreteObjectFormFactory_BGSAction_6_76_0__init` at 0x1ea60 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSAction_6_76_0__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSAction_6_76_0__init: u64 = 1247;
-/// `g_ConcreteObjectFormFactory_BGSAction_6_76_0__init_cb0` at 0x174af50 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSAction_6_76_0__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSAction_6_76_0__init_cb0` at 0x174af50 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSAction_6_76_0__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSAction_6_76_0__init_cb0: u64 = 166460;
 /// `g_ConcreteObjectFormFactory_BGSAddonNode_94_41_6__init` at 0x160b0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSAddonNode_94_41_6__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSAddonNode_94_41_6__init: u64 = 768;
-/// `g_ConcreteObjectFormFactory_BGSAddonNode_94_41_6__init_cb0` at 0x1745720 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSAddonNode_94_41_6__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSAddonNode_94_41_6__init_cb0` at 0x1745720 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSAddonNode_94_41_6__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSAddonNode_94_41_6__init_cb0: u64 = 165971;
 /// `g_ConcreteObjectFormFactory_BGSApparatus_33_90_9__init` at 0x160f0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSApparatus_33_90_9__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSApparatus_33_90_9__init: u64 = 769;
-/// `g_ConcreteObjectFormFactory_BGSApparatus_33_90_9__init_cb0` at 0x1745760 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSApparatus_33_90_9__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSApparatus_33_90_9__init_cb0` at 0x1745760 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSApparatus_33_90_9__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSApparatus_33_90_9__init_cb0: u64 = 165972;
 /// `g_ConcreteObjectFormFactory_BGSArtObject_125_84_4__init` at 0x16130 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSArtObject_125_84_4__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSArtObject_125_84_4__init: u64 = 770;
-/// `g_ConcreteObjectFormFactory_BGSArtObject_125_84_4__init_cb0` at 0x17457a0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSArtObject_125_84_4__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSArtObject_125_84_4__init_cb0` at 0x17457a0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSArtObject_125_84_4__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSArtObject_125_84_4__init_cb0: u64 = 165973;
 /// `g_ConcreteObjectFormFactory_BGSAssociationType_123_82_5__init` at 0x1eaa0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSAssociationType_123_82_5__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSAssociationType_123_82_5__init: u64 = 1248;
-/// `g_ConcreteObjectFormFactory_BGSAssociationType_123_82_5__init_cb0` at 0x174af90 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSAssociationType_123_82_5__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSAssociationType_123_82_5__init_cb0` at 0x174af90 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSAssociationType_123_82_5__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSAssociationType_123_82_5__init_cb0: u64 = 166461;
 /// `g_ConcreteObjectFormFactory_BGSBodyPartData_93_40_0__init` at 0x1eae0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSBodyPartData_93_40_0__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSBodyPartData_93_40_0__init: u64 = 1249;
-/// `g_ConcreteObjectFormFactory_BGSBodyPartData_93_40_0__init_cb0` at 0x174afd0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSBodyPartData_93_40_0__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSBodyPartData_93_40_0__init_cb0` at 0x174afd0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSBodyPartData_93_40_0__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSBodyPartData_93_40_0__init_cb0: u64 = 166462;
-/// `g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__atexit` at 0x1749ae0 (semantic, high); signature (untiered): `void g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__atexit(void)`; semantic: static destructor of the BGSCameraShot form factory: clears factory slot 0x60 (high); signature `void (void)`
+/// `g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__atexit` at 0x1749ae0 (semantic, high); signature (high): `void g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__atexit(void)`; semantic: static destructor of the BGSCameraShot form factory: clears factory slot 0x60 (high); signature `void (void)`
 pub const g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__atexit: u64 = 166299;
 /// `g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__atexit` as a function pointer type (high).
 pub type g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__atexit_fn = unsafe extern "C" fn();
@@ -1041,403 +745,403 @@ pub type g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__atexit_fn = unsafe e
 pub const g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__init: u64 = 1092;
 /// `g_ConcreteObjectFormFactory_BGSCollisionLayer_132_99_4__init` at 0x1c370 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSCollisionLayer_132_99_4__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSCollisionLayer_132_99_4__init: u64 = 1094;
-/// `g_ConcreteObjectFormFactory_BGSCollisionLayer_132_99_4__init_cb0` at 0x1749b30 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSCollisionLayer_132_99_4__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSCollisionLayer_132_99_4__init_cb0` at 0x1749b30 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSCollisionLayer_132_99_4__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSCollisionLayer_132_99_4__init_cb0: u64 = 166301;
 /// `g_ConcreteObjectFormFactory_BGSColorForm_133_101_4__init` at 0x1c3b0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSColorForm_133_101_4__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSColorForm_133_101_4__init: u64 = 1095;
-/// `g_ConcreteObjectFormFactory_BGSColorForm_133_101_4__init_cb0` at 0x1749b70 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSColorForm_133_101_4__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSColorForm_133_101_4__init_cb0` at 0x1749b70 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSColorForm_133_101_4__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSColorForm_133_101_4__init_cb0: u64 = 166302;
 /// `g_ConcreteObjectFormFactory_BGSConstructibleObject_49_63_1__init` at 0x16170 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSConstructibleObject_49_63_1__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSConstructibleObject_49_63_1__init: u64 = 771;
-/// `g_ConcreteObjectFormFactory_BGSConstructibleObject_49_63_1__init_cb0` at 0x17457e0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSConstructibleObject_49_63_1__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSConstructibleObject_49_63_1__init_cb0` at 0x17457e0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSConstructibleObject_49_63_1__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSConstructibleObject_49_63_1__init_cb0: u64 = 165974;
 /// `g_ConcreteObjectFormFactory_BGSDebris_88_36_6__init` at 0x161b0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSDebris_88_36_6__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSDebris_88_36_6__init: u64 = 772;
-/// `g_ConcreteObjectFormFactory_BGSDebris_88_36_6__init_cb0` at 0x1745820 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSDebris_88_36_6__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSDebris_88_36_6__init_cb0` at 0x1745820 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSDebris_88_36_6__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSDebris_88_36_6__init_cb0: u64 = 165975;
 /// `g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init` at 0x7c00 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init: u64 = 115;
-/// `g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init_cb0` at 0x173c0e0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init_cb0` at 0x173c0e0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init_cb0: u64 = 165305;
 /// `g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init` at 0x195a0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init: u64 = 922;
-/// `g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init_cb0` at 0x1747c50 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init_cb0` at 0x1747c50 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init_cb0: u64 = 166126;
 /// `g_ConcreteObjectFormFactory_BGSEquipSlot_120_81_5__init` at 0x1ee70 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSEquipSlot_120_81_5__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSEquipSlot_120_81_5__init: u64 = 1252;
-/// `g_ConcreteObjectFormFactory_BGSEquipSlot_120_81_5__init_cb0` at 0x174b050 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSEquipSlot_120_81_5__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSEquipSlot_120_81_5__init_cb0` at 0x174b050 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSEquipSlot_120_81_5__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSEquipSlot_120_81_5__init_cb0: u64 = 166464;
 /// `g_ConcreteObjectFormFactory_BGSExplosion_87_34_6__init` at 0x161f0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSExplosion_87_34_6__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSExplosion_87_34_6__init: u64 = 773;
-/// `g_ConcreteObjectFormFactory_BGSExplosion_87_34_6__init_cb0` at 0x1745860 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSExplosion_87_34_6__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSExplosion_87_34_6__init_cb0` at 0x1745860 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSExplosion_87_34_6__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSExplosion_87_34_6__init_cb0: u64 = 165976;
 /// `g_ConcreteObjectFormFactory_BGSFootstepSet_111_74_6__init` at 0x1c430 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSFootstepSet_111_74_6__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSFootstepSet_111_74_6__init: u64 = 1097;
-/// `g_ConcreteObjectFormFactory_BGSFootstepSet_111_74_6__init_cb0` at 0x1749cb0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSFootstepSet_111_74_6__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSFootstepSet_111_74_6__init_cb0` at 0x1749cb0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSFootstepSet_111_74_6__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSFootstepSet_111_74_6__init_cb0: u64 = 166305;
 /// `g_ConcreteObjectFormFactory_BGSFootstep_110_73_6__init` at 0x1c3f0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSFootstep_110_73_6__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSFootstep_110_73_6__init: u64 = 1096;
-/// `g_ConcreteObjectFormFactory_BGSFootstep_110_73_6__init_cb0` at 0x1749c70 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSFootstep_110_73_6__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSFootstep_110_73_6__init_cb0` at 0x1749c70 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSFootstep_110_73_6__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSFootstep_110_73_6__init_cb0: u64 = 166304;
 /// `g_ConcreteObjectFormFactory_BGSHazard_51_92_6__init` at 0x16360 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSHazard_51_92_6__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSHazard_51_92_6__init: u64 = 777;
-/// `g_ConcreteObjectFormFactory_BGSHazard_51_92_6__init_cb0` at 0x1745950 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSHazard_51_92_6__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSHazard_51_92_6__init_cb0` at 0x1745950 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSHazard_51_92_6__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSHazard_51_92_6__init_cb0: u64 = 165980;
 /// `g_ConcreteObjectFormFactory_BGSHeadPart_12_52_5__init` at 0x1eee0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSHeadPart_12_52_5__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSHeadPart_12_52_5__init: u64 = 1254;
-/// `g_ConcreteObjectFormFactory_BGSHeadPart_12_52_5__init_cb0` at 0x174b0a0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSHeadPart_12_52_5__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSHeadPart_12_52_5__init_cb0` at 0x174b0a0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSHeadPart_12_52_5__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSHeadPart_12_52_5__init_cb0: u64 = 166466;
 /// `g_ConcreteObjectFormFactory_BGSIdleMarker_47_30_4__init` at 0x1ef20 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSIdleMarker_47_30_4__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSIdleMarker_47_30_4__init: u64 = 1255;
-/// `g_ConcreteObjectFormFactory_BGSIdleMarker_47_30_4__init_cb0` at 0x174b0e0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSIdleMarker_47_30_4__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSIdleMarker_47_30_4__init_cb0` at 0x174b0e0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSIdleMarker_47_30_4__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSIdleMarker_47_30_4__init_cb0: u64 = 166467;
 /// `g_ConcreteObjectFormFactory_BGSImpactDataSet_101_45_6__init` at 0x1c510 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSImpactDataSet_101_45_6__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSImpactDataSet_101_45_6__init: u64 = 1101;
-/// `g_ConcreteObjectFormFactory_BGSImpactDataSet_101_45_6__init_cb0` at 0x1749d50 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSImpactDataSet_101_45_6__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSImpactDataSet_101_45_6__init_cb0` at 0x1749d50 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSImpactDataSet_101_45_6__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSImpactDataSet_101_45_6__init_cb0: u64 = 166309;
 /// `g_ConcreteObjectFormFactory_BGSImpactData_100_44_6__init` at 0x1c4a0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSImpactData_100_44_6__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSImpactData_100_44_6__init: u64 = 1099;
-/// `g_ConcreteObjectFormFactory_BGSImpactData_100_44_6__init_cb0` at 0x1749d00 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSImpactData_100_44_6__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSImpactData_100_44_6__init_cb0` at 0x1749d00 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSImpactData_100_44_6__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSImpactData_100_44_6__init_cb0: u64 = 166307;
 /// `g_ConcreteObjectFormFactory_BGSKeyword_4_70_4__init` at 0x1ef60 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSKeyword_4_70_4__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSKeyword_4_70_4__init: u64 = 1256;
-/// `g_ConcreteObjectFormFactory_BGSKeyword_4_70_4__init_cb0` at 0x174b120 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSKeyword_4_70_4__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSKeyword_4_70_4__init_cb0` at 0x174b120 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSKeyword_4_70_4__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSKeyword_4_70_4__init_cb0: u64 = 166468;
 /// `g_ConcreteObjectFormFactory_BGSLensFlare_135_103_6__init` at 0x163d0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSLensFlare_135_103_6__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSLensFlare_135_103_6__init: u64 = 779;
-/// `g_ConcreteObjectFormFactory_BGSLensFlare_135_103_6__init_cb0` at 0x17459a0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSLensFlare_135_103_6__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSLensFlare_135_103_6__init_cb0` at 0x17459a0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSLensFlare_135_103_6__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSLensFlare_135_103_6__init_cb0: u64 = 165982;
 /// `g_ConcreteObjectFormFactory_BGSLightingTemplate_108_87_7__init` at 0x19740 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSLightingTemplate_108_87_7__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSLightingTemplate_108_87_7__init: u64 = 926;
-/// `g_ConcreteObjectFormFactory_BGSLightingTemplate_108_87_7__init_cb0` at 0x1747d80 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSLightingTemplate_108_87_7__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSLightingTemplate_108_87_7__init_cb0` at 0x1747d80 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSLightingTemplate_108_87_7__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSLightingTemplate_108_87_7__init_cb0: u64 = 166130;
 /// `g_ConcreteObjectFormFactory_BGSListForm_91_38_4__init` at 0x1c550 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSListForm_91_38_4__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSListForm_91_38_4__init: u64 = 1102;
-/// `g_ConcreteObjectFormFactory_BGSListForm_91_38_4__init_cb0` at 0x1749d90 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSListForm_91_38_4__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSListForm_91_38_4__init_cb0` at 0x1749d90 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSListForm_91_38_4__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSListForm_91_38_4__init_cb0: u64 = 166310;
 /// `g_ConcreteObjectFormFactory_BGSLocationRefType_5_72_7__init` at 0x19810 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSLocationRefType_5_72_7__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSLocationRefType_5_72_7__init: u64 = 933;
-/// `g_ConcreteObjectFormFactory_BGSLocationRefType_5_72_7__init_cb0` at 0x1747f00 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSLocationRefType_5_72_7__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSLocationRefType_5_72_7__init_cb0` at 0x1747f00 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSLocationRefType_5_72_7__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSLocationRefType_5_72_7__init_cb0: u64 = 166137;
 /// `g_ConcreteObjectFormFactory_BGSLocation_104_71_7__init` at 0x197d0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSLocation_104_71_7__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSLocation_104_71_7__init: u64 = 932;
-/// `g_ConcreteObjectFormFactory_BGSLocation_104_71_7__init_cb0` at 0x1747ec0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSLocation_104_71_7__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSLocation_104_71_7__init_cb0` at 0x1747ec0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSLocation_104_71_7__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSLocation_104_71_7__init_cb0: u64 = 166136;
 /// `g_ConcreteObjectFormFactory_BGSMaterialObject_126_85_4__init` at 0x1c590 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSMaterialObject_126_85_4__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSMaterialObject_126_85_4__init: u64 = 1103;
-/// `g_ConcreteObjectFormFactory_BGSMaterialObject_126_85_4__init_cb0` at 0x1749dd0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSMaterialObject_126_85_4__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSMaterialObject_126_85_4__init_cb0` at 0x1749dd0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSMaterialObject_126_85_4__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSMaterialObject_126_85_4__init_cb0: u64 = 166311;
 /// `g_ConcreteObjectFormFactory_BGSMaterialType_99_75_6__init` at 0x1c5e0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSMaterialType_99_75_6__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSMaterialType_99_75_6__init: u64 = 1105;
-/// `g_ConcreteObjectFormFactory_BGSMaterialType_99_75_6__init_cb0` at 0x1749e20 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSMaterialType_99_75_6__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSMaterialType_99_75_6__init_cb0` at 0x1749e20 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSMaterialType_99_75_6__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSMaterialType_99_75_6__init_cb0: u64 = 166313;
 /// `g_ConcreteObjectFormFactory_BGSMenuIcon_8_37_9__init` at 0x1c620 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSMenuIcon_8_37_9__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSMenuIcon_8_37_9__init: u64 = 1106;
-/// `g_ConcreteObjectFormFactory_BGSMenuIcon_8_37_9__init_cb0` at 0x1749e60 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSMenuIcon_8_37_9__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSMenuIcon_8_37_9__init_cb0` at 0x1749e60 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSMenuIcon_8_37_9__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSMenuIcon_8_37_9__init_cb0: u64 = 166314;
 /// `g_ConcreteObjectFormFactory_BGSMessage_105_62_4__init` at 0x1c6d0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSMessage_105_62_4__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSMessage_105_62_4__init: u64 = 1108;
-/// `g_ConcreteObjectFormFactory_BGSMessage_105_62_4__init_cb0` at 0x1749ef0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSMessage_105_62_4__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSMessage_105_62_4__init_cb0` at 0x1749ef0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSMessage_105_62_4__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSMessage_105_62_4__init_cb0: u64 = 166316;
 /// `g_ConcreteObjectFormFactory_BGSMovableStatic_36_42_3__init` at 0x16480 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSMovableStatic_36_42_3__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSMovableStatic_36_42_3__init: u64 = 782;
-/// `g_ConcreteObjectFormFactory_BGSMovableStatic_36_42_3__init_cb0` at 0x1745a30 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSMovableStatic_36_42_3__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSMovableStatic_36_42_3__init_cb0` at 0x1745a30 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSMovableStatic_36_42_3__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSMovableStatic_36_42_3__init_cb0: u64 = 165985;
 /// `g_ConcreteObjectFormFactory_BGSMovementType_127_91_5__init` at 0x1efe0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSMovementType_127_91_5__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSMovementType_127_91_5__init: u64 = 1259;
-/// `g_ConcreteObjectFormFactory_BGSMovementType_127_91_5__init_cb0` at 0x174b180 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSMovementType_127_91_5__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSMovementType_127_91_5__init_cb0` at 0x174b180 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSMovementType_127_91_5__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSMovementType_127_91_5__init_cb0: u64 = 166471;
 /// `g_ConcreteObjectFormFactory_BGSMusicTrackFormWrapper_116_77_8__init` at 0x1cc70 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSMusicTrackFormWrapper_116_77_8__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSMusicTrackFormWrapper_116_77_8__init: u64 = 1116;
-/// `g_ConcreteObjectFormFactory_BGSMusicTrackFormWrapper_116_77_8__init_cb0` at 0x174a0b0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSMusicTrackFormWrapper_116_77_8__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSMusicTrackFormWrapper_116_77_8__init_cb0` at 0x174a0b0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSMusicTrackFormWrapper_116_77_8__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSMusicTrackFormWrapper_116_77_8__init_cb0: u64 = 166325;
 /// `g_ConcreteObjectFormFactory_BGSMusicType_109_68_8__init` at 0x1ccb0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSMusicType_109_68_8__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSMusicType_109_68_8__init: u64 = 1117;
-/// `g_ConcreteObjectFormFactory_BGSMusicType_109_68_8__init_cb0` at 0x174a0f0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSMusicType_109_68_8__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSMusicType_109_68_8__init_cb0` at 0x174a0f0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSMusicType_109_68_8__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSMusicType_109_68_8__init_cb0: u64 = 166326;
 /// `g_ConcreteObjectFormFactory_BGSNote_48_54_9__init` at 0x1f020 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSNote_48_54_9__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSNote_48_54_9__init: u64 = 1260;
-/// `g_ConcreteObjectFormFactory_BGSNote_48_54_9__init_cb0` at 0x174b1c0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSNote_48_54_9__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSNote_48_54_9__init_cb0` at 0x174b1c0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSNote_48_54_9__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSNote_48_54_9__init_cb0: u64 = 166472;
 /// `g_ConcreteObjectFormFactory_BGSOutfit_124_83_1__init` at 0x164c0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSOutfit_124_83_1__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSOutfit_124_83_1__init: u64 = 783;
-/// `g_ConcreteObjectFormFactory_BGSOutfit_124_83_1__init_cb0` at 0x1745a70 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSOutfit_124_83_1__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSOutfit_124_83_1__init_cb0` at 0x1745a70 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSOutfit_124_83_1__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSOutfit_124_83_1__init_cb0: u64 = 165986;
 /// `g_ConcreteObjectFormFactory_BGSPerk_92_39_0__init` at 0x1f060 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSPerk_92_39_0__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSPerk_92_39_0__init: u64 = 1261;
-/// `g_ConcreteObjectFormFactory_BGSPerk_92_39_0__init_cb0` at 0x174b2c0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSPerk_92_39_0__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSPerk_92_39_0__init_cb0` at 0x174b2c0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSPerk_92_39_0__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSPerk_92_39_0__init_cb0: u64 = 166474;
 /// `g_ConcreteObjectFormFactory_BGSProjectile_50_32_6__init` at 0x167b0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSProjectile_50_32_6__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSProjectile_50_32_6__init: u64 = 790;
-/// `g_ConcreteObjectFormFactory_BGSProjectile_50_32_6__init_cb0` at 0x1745c50 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSProjectile_50_32_6__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSProjectile_50_32_6__init_cb0` at 0x1745c50 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSProjectile_50_32_6__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSProjectile_50_32_6__init_cb0: u64 = 165993;
 /// `g_ConcreteObjectFormFactory_BGSRagdoll_106_65_9__init` at 0x1f2b0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSRagdoll_106_65_9__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSRagdoll_106_65_9__init: u64 = 1269;
-/// `g_ConcreteObjectFormFactory_BGSRagdoll_106_65_9__init_cb0` at 0x174b4e0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSRagdoll_106_65_9__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSRagdoll_106_65_9__init_cb0` at 0x174b4e0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSRagdoll_106_65_9__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSRagdoll_106_65_9__init_cb0: u64 = 166483;
 /// `g_ConcreteObjectFormFactory_BGSReferenceEffect_57_89_7__init` at 0x19880 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSReferenceEffect_57_89_7__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSReferenceEffect_57_89_7__init: u64 = 935;
-/// `g_ConcreteObjectFormFactory_BGSReferenceEffect_57_89_7__init_cb0` at 0x1747f50 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSReferenceEffect_57_89_7__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSReferenceEffect_57_89_7__init_cb0` at 0x1747f50 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSReferenceEffect_57_89_7__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSReferenceEffect_57_89_7__init_cb0: u64 = 166139;
 /// `g_ConcreteObjectFormFactory_BGSRelationship_121_80_5__init` at 0x1f4b0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSRelationship_121_80_5__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSRelationship_121_80_5__init: u64 = 1282;
-/// `g_ConcreteObjectFormFactory_BGSRelationship_121_80_5__init_cb0` at 0x174b660 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSRelationship_121_80_5__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSRelationship_121_80_5__init_cb0` at 0x174b660 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSRelationship_121_80_5__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSRelationship_121_80_5__init_cb0: u64 = 166496;
 /// `g_ConcreteObjectFormFactory_BGSReverbParameters_134_102_8__init` at 0x1ccf0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSReverbParameters_134_102_8__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSReverbParameters_134_102_8__init: u64 = 1118;
-/// `g_ConcreteObjectFormFactory_BGSReverbParameters_134_102_8__init_cb0` at 0x174a130 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSReverbParameters_134_102_8__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSReverbParameters_134_102_8__init_cb0` at 0x174a130 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSReverbParameters_134_102_8__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSReverbParameters_134_102_8__init_cb0: u64 = 166327;
 /// `g_ConcreteObjectFormFactory_BGSShaderParticleGeometryData_56_88_7__init` at 0x198f0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSShaderParticleGeometryData_56_88_7__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSShaderParticleGeometryData_56_88_7__init: u64 = 937;
-/// `g_ConcreteObjectFormFactory_BGSShaderParticleGeometryData_56_88_7__init_cb0` at 0x1747fa0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSShaderParticleGeometryData_56_88_7__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSShaderParticleGeometryData_56_88_7__init_cb0` at 0x1747fa0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSShaderParticleGeometryData_56_88_7__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSShaderParticleGeometryData_56_88_7__init_cb0: u64 = 166141;
 /// `g_ConcreteObjectFormFactory_BGSSoundCategory_130_96_8__init` at 0x1cd70 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSSoundCategory_130_96_8__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSSoundCategory_130_96_8__init: u64 = 1120;
-/// `g_ConcreteObjectFormFactory_BGSSoundCategory_130_96_8__init_cb0` at 0x174a190 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSSoundCategory_130_96_8__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSSoundCategory_130_96_8__init_cb0` at 0x174a190 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSSoundCategory_130_96_8__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSSoundCategory_130_96_8__init_cb0: u64 = 166329;
 /// `g_ConcreteObjectFormFactory_BGSSoundDescriptorForm_128_94_8__init` at 0x1cdf0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSSoundDescriptorForm_128_94_8__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSSoundDescriptorForm_128_94_8__init: u64 = 1122;
-/// `g_ConcreteObjectFormFactory_BGSSoundDescriptorForm_128_94_8__init_cb0` at 0x174a230 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSSoundDescriptorForm_128_94_8__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSSoundDescriptorForm_128_94_8__init_cb0` at 0x174a230 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSSoundDescriptorForm_128_94_8__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSSoundDescriptorForm_128_94_8__init_cb0: u64 = 166332;
 /// `g_ConcreteObjectFormFactory_BGSSoundOutput_131_98_8__init` at 0x1ce30 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSSoundOutput_131_98_8__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSSoundOutput_131_98_8__init: u64 = 1123;
-/// `g_ConcreteObjectFormFactory_BGSSoundOutput_131_98_8__init_cb0` at 0x174a270 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSSoundOutput_131_98_8__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSSoundOutput_131_98_8__init_cb0` at 0x174a270 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSSoundOutput_131_98_8__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSSoundOutput_131_98_8__init_cb0: u64 = 166333;
 /// `g_ConcreteObjectFormFactory_BGSStaticCollection_35_69_3__init` at 0x167f0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSStaticCollection_35_69_3__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSStaticCollection_35_69_3__init: u64 = 791;
-/// `g_ConcreteObjectFormFactory_BGSStaticCollection_35_69_3__init_cb0` at 0x1745c90 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSStaticCollection_35_69_3__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSStaticCollection_35_69_3__init_cb0` at 0x1745c90 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSStaticCollection_35_69_3__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSStaticCollection_35_69_3__init_cb0: u64 = 165994;
 /// `g_ConcreteObjectFormFactory_BGSStoryManagerEventNode_114_93_5__init` at 0x8f460 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSStoryManagerEventNode_114_93_5__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSStoryManagerEventNode_114_93_5__init: u64 = 5225;
-/// `g_ConcreteObjectFormFactory_BGSStoryManagerEventNode_114_93_5__init_cb0` at 0x178fc30 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSStoryManagerEventNode_114_93_5__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSStoryManagerEventNode_114_93_5__init_cb0` at 0x178fc30 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSStoryManagerEventNode_114_93_5__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSStoryManagerEventNode_114_93_5__init_cb0: u64 = 170455;
 /// `g_ConcreteObjectFormFactory_BGSTalkingActivator_25_33_0__init` at 0x16830 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSTalkingActivator_25_33_0__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSTalkingActivator_25_33_0__init: u64 = 792;
-/// `g_ConcreteObjectFormFactory_BGSTalkingActivator_25_33_0__init_cb0` at 0x1745cd0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSTalkingActivator_25_33_0__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSTalkingActivator_25_33_0__init_cb0` at 0x1745cd0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSTalkingActivator_25_33_0__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSTalkingActivator_25_33_0__init_cb0: u64 = 165995;
 /// `g_ConcreteObjectFormFactory_BGSTextureSet_7_35_4__init` at 0x1cfc0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSTextureSet_7_35_4__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSTextureSet_7_35_4__init: u64 = 1126;
-/// `g_ConcreteObjectFormFactory_BGSTextureSet_7_35_4__init_cb0` at 0x174a2d0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSTextureSet_7_35_4__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSTextureSet_7_35_4__init_cb0` at 0x174a2d0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSTextureSet_7_35_4__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSTextureSet_7_35_4__init_cb0: u64 = 166336;
 /// `g_ConcreteObjectFormFactory_BGSVoiceType_98_48_5__init` at 0x1f730 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSVoiceType_98_48_5__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSVoiceType_98_48_5__init: u64 = 1290;
-/// `g_ConcreteObjectFormFactory_BGSVoiceType_98_48_5__init_cb0` at 0x174b7d0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSVoiceType_98_48_5__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSVoiceType_98_48_5__init_cb0` at 0x174b7d0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSVoiceType_98_48_5__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSVoiceType_98_48_5__init_cb0: u64 = 166504;
 /// `g_ConcreteObjectFormFactory_BGSVolumetricLighting_137_105_6__init` at 0x16440 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSVolumetricLighting_137_105_6__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSVolumetricLighting_137_105_6__init: u64 = 781;
-/// `g_ConcreteObjectFormFactory_BGSVolumetricLighting_137_105_6__init_cb0` at 0x17459f0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSVolumetricLighting_137_105_6__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_BGSVolumetricLighting_137_105_6__init_cb0` at 0x17459f0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSVolumetricLighting_137_105_6__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSVolumetricLighting_137_105_6__init_cb0: u64 = 165984;
 /// `g_ConcreteObjectFormFactory_EffectSetting_18_67_2__init` at 0x8450 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_EffectSetting_18_67_2__init(void)`
 pub const g_ConcreteObjectFormFactory_EffectSetting_18_67_2__init: u64 = 135;
-/// `g_ConcreteObjectFormFactory_EffectSetting_18_67_2__init_cb0` at 0x173c6d0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_EffectSetting_18_67_2__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_EffectSetting_18_67_2__init_cb0` at 0x173c6d0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_EffectSetting_18_67_2__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_EffectSetting_18_67_2__init_cb0: u64 = 165325;
 /// `g_ConcreteObjectFormFactory_EnchantmentItem_21_16_2__init` at 0x84a0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_EnchantmentItem_21_16_2__init(void)`
 pub const g_ConcreteObjectFormFactory_EnchantmentItem_21_16_2__init: u64 = 137;
-/// `g_ConcreteObjectFormFactory_EnchantmentItem_21_16_2__init_cb0` at 0x173c7d0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_EnchantmentItem_21_16_2__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_EnchantmentItem_21_16_2__init_cb0` at 0x173c7d0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_EnchantmentItem_21_16_2__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_EnchantmentItem_21_16_2__init_cb0: u64 = 165327;
 /// `g_ConcreteObjectFormFactory_IngredientItem_30_5_1__init` at 0x86c0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_IngredientItem_30_5_1__init(void)`
 pub const g_ConcreteObjectFormFactory_IngredientItem_30_5_1__init: u64 = 143;
-/// `g_ConcreteObjectFormFactory_IngredientItem_30_5_1__init_cb0` at 0x173c960 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_IngredientItem_30_5_1__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_IngredientItem_30_5_1__init_cb0` at 0x173c960 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_IngredientItem_30_5_1__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_IngredientItem_30_5_1__init_cb0: u64 = 165333;
 /// `g_ConcreteObjectFormFactory_Script_19_66_9__init` at 0x1d330 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_Script_19_66_9__init(void)`
 pub const g_ConcreteObjectFormFactory_Script_19_66_9__init: u64 = 1145;
-/// `g_ConcreteObjectFormFactory_Script_19_66_9__init_cb0` at 0x174a4d0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_Script_19_66_9__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_Script_19_66_9__init_cb0` at 0x174a4d0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_Script_19_66_9__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_Script_19_66_9__init_cb0: u64 = 166355;
 /// `g_ConcreteObjectFormFactory_ScrollItem_23_100_2__init` at 0xa0e0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_ScrollItem_23_100_2__init(void)`
 pub const g_ConcreteObjectFormFactory_ScrollItem_23_100_2__init: u64 = 203;
-/// `g_ConcreteObjectFormFactory_ScrollItem_23_100_2__init_cb0` at 0x173dba0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_ScrollItem_23_100_2__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_ScrollItem_23_100_2__init_cb0` at 0x173dba0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_ScrollItem_23_100_2__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_ScrollItem_23_100_2__init_cb0: u64 = 165394;
 /// `g_ConcreteObjectFormFactory_SpellItem_22_15_2__init` at 0xa120 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_SpellItem_22_15_2__init(void)`
 pub const g_ConcreteObjectFormFactory_SpellItem_22_15_2__init: u64 = 204;
-/// `g_ConcreteObjectFormFactory_SpellItem_22_15_2__init_cb0` at 0x173dbe0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_SpellItem_22_15_2__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_SpellItem_22_15_2__init_cb0` at 0x173dbe0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_SpellItem_22_15_2__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_SpellItem_22_15_2__init_cb0: u64 = 165395;
 /// `g_ConcreteObjectFormFactory_TESAmmo_42_20_1__init` at 0x169e0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESAmmo_42_20_1__init(void)`
 pub const g_ConcreteObjectFormFactory_TESAmmo_42_20_1__init: u64 = 795;
-/// `g_ConcreteObjectFormFactory_TESAmmo_42_20_1__init_cb0` at 0x1745e00 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESAmmo_42_20_1__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESAmmo_42_20_1__init_cb0` at 0x1745e00 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESAmmo_42_20_1__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESAmmo_42_20_1__init_cb0: u64 = 165998;
 /// `g_ConcreteObjectFormFactory_TESClass_10_49_5__init` at 0x1f970 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESClass_10_49_5__init(void)`
 pub const g_ConcreteObjectFormFactory_TESClass_10_49_5__init: u64 = 1299;
-/// `g_ConcreteObjectFormFactory_TESClass_10_49_5__init_cb0` at 0x174b890 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESClass_10_49_5__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESClass_10_49_5__init_cb0` at 0x174b890 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESClass_10_49_5__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESClass_10_49_5__init_cb0: u64 = 166513;
 /// `g_ConcreteObjectFormFactory_TESClimate_55_56_7__init` at 0x19a30 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESClimate_55_56_7__init(void)`
 pub const g_ConcreteObjectFormFactory_TESClimate_55_56_7__init: u64 = 942;
-/// `g_ConcreteObjectFormFactory_TESClimate_55_56_7__init_cb0` at 0x1748060 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESClimate_55_56_7__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESClimate_55_56_7__init_cb0` at 0x1748060 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESClimate_55_56_7__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESClimate_55_56_7__init_cb0: u64 = 166146;
 /// `g_ConcreteObjectFormFactory_TESCombatStyle_80_25_4__init` at 0x16a20 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESCombatStyle_80_25_4__init(void)`
 pub const g_ConcreteObjectFormFactory_TESCombatStyle_80_25_4__init: u64 = 796;
-/// `g_ConcreteObjectFormFactory_TESCombatStyle_80_25_4__init_cb0` at 0x1745e40 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESCombatStyle_80_25_4__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESCombatStyle_80_25_4__init_cb0` at 0x1745e40 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESCombatStyle_80_25_4__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESCombatStyle_80_25_4__init_cb0: u64 = 165999;
 /// `g_ConcreteObjectFormFactory_TESEffectShader_85_31_6__init` at 0x16ba0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESEffectShader_85_31_6__init(void)`
 pub const g_ConcreteObjectFormFactory_TESEffectShader_85_31_6__init: u64 = 801;
-/// `g_ConcreteObjectFormFactory_TESEffectShader_85_31_6__init_cb0` at 0x1745f70 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESEffectShader_85_31_6__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESEffectShader_85_31_6__init_cb0` at 0x1745f70 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESEffectShader_85_31_6__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESEffectShader_85_31_6__init_cb0: u64 = 166004;
 /// `g_ConcreteObjectFormFactory_TESEyes_13_51_9__init` at 0x1f9b0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESEyes_13_51_9__init(void)`
 pub const g_ConcreteObjectFormFactory_TESEyes_13_51_9__init: u64 = 1300;
-/// `g_ConcreteObjectFormFactory_TESEyes_13_51_9__init_cb0` at 0x174b8d0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESEyes_13_51_9__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESEyes_13_51_9__init_cb0` at 0x174b8d0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESEyes_13_51_9__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESEyes_13_51_9__init_cb0: u64 = 166514;
 /// `g_ConcreteObjectFormFactory_TESFaction_11_53_5__init` at 0x1fa60 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESFaction_11_53_5__init(void)`
 pub const g_ConcreteObjectFormFactory_TESFaction_11_53_5__init: u64 = 1302;
-/// `g_ConcreteObjectFormFactory_TESFaction_11_53_5__init_cb0` at 0x174b960 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESFaction_11_53_5__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESFaction_11_53_5__init_cb0` at 0x174b960 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESFaction_11_53_5__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESFaction_11_53_5__init_cb0: u64 = 166516;
 /// `g_ConcreteObjectFormFactory_TESFlora_39_21_3__init` at 0x16be0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESFlora_39_21_3__init(void)`
 pub const g_ConcreteObjectFormFactory_TESFlora_39_21_3__init: u64 = 802;
-/// `g_ConcreteObjectFormFactory_TESFlora_39_21_3__init_cb0` at 0x1745fb0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESFlora_39_21_3__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESFlora_39_21_3__init_cb0` at 0x1745fb0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESFlora_39_21_3__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESFlora_39_21_3__init_cb0: u64 = 166005;
 /// `g_ConcreteObjectFormFactory_TESFurniture_40_22_3__init` at 0x16c50 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESFurniture_40_22_3__init(void)`
 pub const g_ConcreteObjectFormFactory_TESFurniture_40_22_3__init: u64 = 804;
-/// `g_ConcreteObjectFormFactory_TESFurniture_40_22_3__init_cb0` at 0x1746000 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESFurniture_40_22_3__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESFurniture_40_22_3__init_cb0` at 0x1746000 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESFurniture_40_22_3__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESFurniture_40_22_3__init_cb0: u64 = 166007;
 /// `g_ConcreteObjectFormFactory_TESGlobal_9_58_4__init` at 0x1d160 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESGlobal_9_58_4__init(void)`
 pub const g_ConcreteObjectFormFactory_TESGlobal_9_58_4__init: u64 = 1135;
-/// `g_ConcreteObjectFormFactory_TESGlobal_9_58_4__init_cb0` at 0x174a390 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESGlobal_9_58_4__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESGlobal_9_58_4__init_cb0` at 0x174a390 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESGlobal_9_58_4__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESGlobal_9_58_4__init_cb0: u64 = 166345;
 /// `g_ConcreteObjectFormFactory_TESGrass_37_9_3__init` at 0x16d10 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESGrass_37_9_3__init(void)`
 pub const g_ConcreteObjectFormFactory_TESGrass_37_9_3__init: u64 = 806;
-/// `g_ConcreteObjectFormFactory_TESGrass_37_9_3__init_cb0` at 0x1746090 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESGrass_37_9_3__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESGrass_37_9_3__init_cb0` at 0x1746090 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESGrass_37_9_3__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESGrass_37_9_3__init_cb0: u64 = 166009;
 /// `g_ConcreteObjectFormFactory_TESImageSpaceModifier_90_60_6__init` at 0x19c30 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESImageSpaceModifier_90_60_6__init(void)`
 pub const g_ConcreteObjectFormFactory_TESImageSpaceModifier_90_60_6__init: u64 = 951;
-/// `g_ConcreteObjectFormFactory_TESImageSpaceModifier_90_60_6__init_cb0` at 0x1748190 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESImageSpaceModifier_90_60_6__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESImageSpaceModifier_90_60_6__init_cb0` at 0x1748190 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESImageSpaceModifier_90_60_6__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESImageSpaceModifier_90_60_6__init_cb0: u64 = 166155;
 /// `g_ConcreteObjectFormFactory_TESImageSpace_89_59_6__init` at 0x19aa0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESImageSpace_89_59_6__init(void)`
 pub const g_ConcreteObjectFormFactory_TESImageSpace_89_59_6__init: u64 = 944;
-/// `g_ConcreteObjectFormFactory_TESImageSpace_89_59_6__init_cb0` at 0x17480b0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESImageSpace_89_59_6__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESImageSpace_89_59_6__init_cb0` at 0x17480b0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESImageSpace_89_59_6__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESImageSpace_89_59_6__init_cb0: u64 = 166148;
 /// `g_ConcreteObjectFormFactory_TESKey_45_19_1__init` at 0x16d50 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESKey_45_19_1__init(void)`
 pub const g_ConcreteObjectFormFactory_TESKey_45_19_1__init: u64 = 807;
-/// `g_ConcreteObjectFormFactory_TESKey_45_19_1__init_cb0` at 0x17460d0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESKey_45_19_1__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESKey_45_19_1__init_cb0` at 0x17460d0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESKey_45_19_1__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESKey_45_19_1__init_cb0: u64 = 166010;
 /// `g_ConcreteObjectFormFactory_TESLandTexture_20_24_4__init` at 0x1a430 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESLandTexture_20_24_4__init(void)`
 pub const g_ConcreteObjectFormFactory_TESLandTexture_20_24_4__init: u64 = 971;
-/// `g_ConcreteObjectFormFactory_TESLandTexture_20_24_4__init_cb0` at 0x1748730 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESLandTexture_20_24_4__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESLandTexture_20_24_4__init_cb0` at 0x1748730 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESLandTexture_20_24_4__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESLandTexture_20_24_4__init_cb0: u64 = 166175;
 /// `g_ConcreteObjectFormFactory_TESLevCharacter_44_14_0__init` at 0x16e00 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESLevCharacter_44_14_0__init(void)`
 pub const g_ConcreteObjectFormFactory_TESLevCharacter_44_14_0__init: u64 = 809;
-/// `g_ConcreteObjectFormFactory_TESLevCharacter_44_14_0__init_cb0` at 0x1746160 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESLevCharacter_44_14_0__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESLevCharacter_44_14_0__init_cb0` at 0x1746160 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESLevCharacter_44_14_0__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESLevCharacter_44_14_0__init_cb0: u64 = 166012;
 /// `g_ConcreteObjectFormFactory_TESLevItem_53_18_1__init` at 0x16eb0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESLevItem_53_18_1__init(void)`
 pub const g_ConcreteObjectFormFactory_TESLevItem_53_18_1__init: u64 = 811;
-/// `g_ConcreteObjectFormFactory_TESLevItem_53_18_1__init_cb0` at 0x17461f0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESLevItem_53_18_1__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESLevItem_53_18_1__init_cb0` at 0x17461f0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESLevItem_53_18_1__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESLevItem_53_18_1__init_cb0: u64 = 166014;
 /// `g_ConcreteObjectFormFactory_TESLevSpell_82_27_2__init` at 0x16ef0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESLevSpell_82_27_2__init(void)`
 pub const g_ConcreteObjectFormFactory_TESLevSpell_82_27_2__init: u64 = 812;
-/// `g_ConcreteObjectFormFactory_TESLevSpell_82_27_2__init_cb0` at 0x1746230 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESLevSpell_82_27_2__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESLevSpell_82_27_2__init_cb0` at 0x1746230 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESLevSpell_82_27_2__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESLevSpell_82_27_2__init_cb0: u64 = 166015;
 /// `g_ConcreteObjectFormFactory_TESLoadScreen_81_26_4__init` at 0x1d1d0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESLoadScreen_81_26_4__init(void)`
 pub const g_ConcreteObjectFormFactory_TESLoadScreen_81_26_4__init: u64 = 1137;
-/// `g_ConcreteObjectFormFactory_TESLoadScreen_81_26_4__init_cb0` at 0x174a3e0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESLoadScreen_81_26_4__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESLoadScreen_81_26_4__init_cb0` at 0x174a3e0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESLoadScreen_81_26_4__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESLoadScreen_81_26_4__init_cb0: u64 = 166347;
 /// `g_ConcreteObjectFormFactory_TESNPC_43_13_0__init` at 0x20320 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESNPC_43_13_0__init(void)`
 pub const g_ConcreteObjectFormFactory_TESNPC_43_13_0__init: u64 = 1332;
-/// `g_ConcreteObjectFormFactory_TESNPC_43_13_0__init_cb0` at 0x174be80 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESNPC_43_13_0__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESNPC_43_13_0__init_cb0` at 0x174be80 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESNPC_43_13_0__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESNPC_43_13_0__init_cb0: u64 = 166544;
 /// `g_ConcreteObjectFormFactory_TESObjectACTI_24_0_3__init` at 0x17640 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectACTI_24_0_3__init(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectACTI_24_0_3__init: u64 = 831;
-/// `g_ConcreteObjectFormFactory_TESObjectACTI_24_0_3__init_cb0` at 0x17466d0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESObjectACTI_24_0_3__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESObjectACTI_24_0_3__init_cb0` at 0x17466d0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectACTI_24_0_3__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectACTI_24_0_3__init_cb0: u64 = 166033;
 /// `g_ConcreteObjectFormFactory_TESObjectANIO_83_28_4__init` at 0x17680 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectANIO_83_28_4__init(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectANIO_83_28_4__init: u64 = 832;
-/// `g_ConcreteObjectFormFactory_TESObjectANIO_83_28_4__init_cb0` at 0x1746710 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESObjectANIO_83_28_4__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESObjectANIO_83_28_4__init_cb0` at 0x1746710 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectANIO_83_28_4__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectANIO_83_28_4__init_cb0: u64 = 166034;
 /// `g_ConcreteObjectFormFactory_TESObjectARMA_102_57_1__init` at 0x17760 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectARMA_102_57_1__init(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectARMA_102_57_1__init: u64 = 835;
-/// `g_ConcreteObjectFormFactory_TESObjectARMA_102_57_1__init_cb0` at 0x17467b0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESObjectARMA_102_57_1__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESObjectARMA_102_57_1__init_cb0` at 0x17467b0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectARMA_102_57_1__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectARMA_102_57_1__init_cb0: u64 = 166037;
 /// `g_ConcreteObjectFormFactory_TESObjectARMO_26_1_1__init` at 0x17a70 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectARMO_26_1_1__init(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectARMO_26_1_1__init: u64 = 843;
-/// `g_ConcreteObjectFormFactory_TESObjectARMO_26_1_1__init_cb0` at 0x17469e0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESObjectARMO_26_1_1__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESObjectARMO_26_1_1__init_cb0` at 0x17469e0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectARMO_26_1_1__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectARMO_26_1_1__init_cb0: u64 = 166045;
 /// `g_ConcreteObjectFormFactory_TESObjectBOOK_27_2_1__init` at 0x17c00 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectBOOK_27_2_1__init(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectBOOK_27_2_1__init: u64 = 847;
-/// `g_ConcreteObjectFormFactory_TESObjectBOOK_27_2_1__init_cb0` at 0x1746bd0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESObjectBOOK_27_2_1__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESObjectBOOK_27_2_1__init_cb0` at 0x1746bd0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectBOOK_27_2_1__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectBOOK_27_2_1__init_cb0: u64 = 166050;
 /// `g_ConcreteObjectFormFactory_TESObjectCONT_28_3_3__init` at 0x17c40 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectCONT_28_3_3__init(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectCONT_28_3_3__init: u64 = 848;
-/// `g_ConcreteObjectFormFactory_TESObjectCONT_28_3_3__init_cb0` at 0x1746c10 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESObjectCONT_28_3_3__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESObjectCONT_28_3_3__init_cb0` at 0x1746c10 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectCONT_28_3_3__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectCONT_28_3_3__init_cb0: u64 = 166051;
 /// `g_ConcreteObjectFormFactory_TESObjectDOOR_29_4_3__init` at 0x18430 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectDOOR_29_4_3__init(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectDOOR_29_4_3__init: u64 = 880;
-/// `g_ConcreteObjectFormFactory_TESObjectDOOR_29_4_3__init_cb0` at 0x1747080 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESObjectDOOR_29_4_3__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESObjectDOOR_29_4_3__init_cb0` at 0x1747080 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectDOOR_29_4_3__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectDOOR_29_4_3__init_cb0: u64 = 166084;
 /// `g_ConcreteObjectFormFactory_TESObjectLIGH_31_6_3__init` at 0x175b0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectLIGH_31_6_3__init(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectLIGH_31_6_3__init: u64 = 827;
-/// `g_ConcreteObjectFormFactory_TESObjectLIGH_31_6_3__init_cb0` at 0x1746640 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESObjectLIGH_31_6_3__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESObjectLIGH_31_6_3__init_cb0` at 0x1746640 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectLIGH_31_6_3__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectLIGH_31_6_3__init_cb0: u64 = 166029;
 /// `g_ConcreteObjectFormFactory_TESObjectMISC_32_7_1__init` at 0x184e0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectMISC_32_7_1__init(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectMISC_32_7_1__init: u64 = 882;
-/// `g_ConcreteObjectFormFactory_TESObjectMISC_32_7_1__init_cb0` at 0x1747110 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESObjectMISC_32_7_1__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESObjectMISC_32_7_1__init_cb0` at 0x1747110 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectMISC_32_7_1__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectMISC_32_7_1__init_cb0: u64 = 166086;
 /// `g_ConcreteObjectFormFactory_TESObjectSTAT_34_8_3__init` at 0x18520 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectSTAT_34_8_3__init(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectSTAT_34_8_3__init: u64 = 883;
-/// `g_ConcreteObjectFormFactory_TESObjectSTAT_34_8_3__init_cb0` at 0x1747150 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESObjectSTAT_34_8_3__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESObjectSTAT_34_8_3__init_cb0` at 0x1747150 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectSTAT_34_8_3__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectSTAT_34_8_3__init_cb0: u64 = 166087;
 /// `g_ConcreteObjectFormFactory_TESObjectTREE_38_10_3__init` at 0x18560 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectTREE_38_10_3__init(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectTREE_38_10_3__init: u64 = 884;
-/// `g_ConcreteObjectFormFactory_TESObjectTREE_38_10_3__init_cb0` at 0x1747190 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESObjectTREE_38_10_3__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESObjectTREE_38_10_3__init_cb0` at 0x1747190 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectTREE_38_10_3__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectTREE_38_10_3__init_cb0: u64 = 166088;
 /// `g_ConcreteObjectFormFactory_TESObjectWEAP_41_12_1__init` at 0x19000 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectWEAP_41_12_1__init(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectWEAP_41_12_1__init: u64 = 908;
-/// `g_ConcreteObjectFormFactory_TESObjectWEAP_41_12_1__init_cb0` at 0x1747840 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESObjectWEAP_41_12_1__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESObjectWEAP_41_12_1__init_cb0` at 0x1747840 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESObjectWEAP_41_12_1__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESObjectWEAP_41_12_1__init_cb0: u64 = 166112;
 /// `g_ConcreteObjectFormFactory_TESQuest_77_46_5__init` at 0x21060 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESQuest_77_46_5__init(void)`
 pub const g_ConcreteObjectFormFactory_TESQuest_77_46_5__init: u64 = 1378;
-/// `g_ConcreteObjectFormFactory_TESQuest_77_46_5__init_cb0` at 0x174c670 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESQuest_77_46_5__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESQuest_77_46_5__init_cb0` at 0x174c670 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESQuest_77_46_5__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESQuest_77_46_5__init_cb0: u64 = 166590;
 /// `g_ConcreteObjectFormFactory_TESRace_14_50_5__init` at 0x21e50 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESRace_14_50_5__init(void)`
 pub const g_ConcreteObjectFormFactory_TESRace_14_50_5__init: u64 = 1445;
-/// `g_ConcreteObjectFormFactory_TESRace_14_50_5__init_cb0` at 0x174cc50 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESRace_14_50_5__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESRace_14_50_5__init_cb0` at 0x174cc50 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESRace_14_50_5__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESRace_14_50_5__init_cb0: u64 = 166657;
 /// `g_ConcreteObjectFormFactory_TESShout_119_79_2__init` at 0x1e9a0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESShout_119_79_2__init(void)`
 pub const g_ConcreteObjectFormFactory_TESShout_119_79_2__init: u64 = 1244;
-/// `g_ConcreteObjectFormFactory_TESShout_119_79_2__init_cb0` at 0x174ae90 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESShout_119_79_2__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESShout_119_79_2__init_cb0` at 0x174ae90 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESShout_119_79_2__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESShout_119_79_2__init_cb0: u64 = 166457;
 /// `g_ConcreteObjectFormFactory_TESSoulGem_52_97_1__init` at 0x194e0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESSoulGem_52_97_1__init(void)`
 pub const g_ConcreteObjectFormFactory_TESSoulGem_52_97_1__init: u64 = 920;
-/// `g_ConcreteObjectFormFactory_TESSoulGem_52_97_1__init_cb0` at 0x1747bc0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESSoulGem_52_97_1__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESSoulGem_52_97_1__init_cb0` at 0x1747bc0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESSoulGem_52_97_1__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESSoulGem_52_97_1__init_cb0: u64 = 166124;
 /// `g_ConcreteObjectFormFactory_TESSound_15_23_8__init` at 0x1e9e0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESSound_15_23_8__init(void)`
 pub const g_ConcreteObjectFormFactory_TESSound_15_23_8__init: u64 = 1245;
-/// `g_ConcreteObjectFormFactory_TESSound_15_23_8__init_cb0` at 0x174aed0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESSound_15_23_8__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESSound_15_23_8__init_cb0` at 0x174aed0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESSound_15_23_8__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESSound_15_23_8__init_cb0: u64 = 166458;
 /// `g_ConcreteObjectFormFactory_TESWaterForm_84_29_7__init` at 0x1bd30 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESWaterForm_84_29_7__init(void)`
 pub const g_ConcreteObjectFormFactory_TESWaterForm_84_29_7__init: u64 = 1071;
-/// `g_ConcreteObjectFormFactory_TESWaterForm_84_29_7__init_cb0` at 0x1749750 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESWaterForm_84_29_7__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESWaterForm_84_29_7__init_cb0` at 0x1749750 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESWaterForm_84_29_7__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESWaterForm_84_29_7__init_cb0: u64 = 166281;
 /// `g_ConcreteObjectFormFactory_TESWeather_54_55_7__init` at 0x1bdb0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESWeather_54_55_7__init(void)`
 pub const g_ConcreteObjectFormFactory_TESWeather_54_55_7__init: u64 = 1074;
-/// `g_ConcreteObjectFormFactory_TESWeather_54_55_7__init_cb0` at 0x17497a0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESWeather_54_55_7__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESWeather_54_55_7__init_cb0` at 0x17497a0 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESWeather_54_55_7__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESWeather_54_55_7__init_cb0: u64 = 166283;
 /// `g_ConcreteObjectFormFactory_TESWordOfPower_118_78_2__init` at 0x1ea20 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_TESWordOfPower_118_78_2__init(void)`
 pub const g_ConcreteObjectFormFactory_TESWordOfPower_118_78_2__init: u64 = 1246;
-/// `g_ConcreteObjectFormFactory_TESWordOfPower_118_78_2__init_cb0` at 0x174af10 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_TESWordOfPower_118_78_2__init_cb0(void)`
+/// `g_ConcreteObjectFormFactory_TESWordOfPower_118_78_2__init_cb0` at 0x174af10 (callgraph, medium); signature (high): `void g_ConcreteObjectFormFactory_TESWordOfPower_118_78_2__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_TESWordOfPower_118_78_2__init_cb0: u64 = 166459;
 /// `g_ConcreteTempEffectFactory_BSTempEffectSPG_6__init` at 0x87710 (crt_init, medium); signature (high): `void g_ConcreteTempEffectFactory_BSTempEffectSPG_6__init(void)`
 pub const g_ConcreteTempEffectFactory_BSTempEffectSPG_6__init: u64 = 4929;
-/// `g_ConcreteTempEffectFactory_BSTempEffectSPG_6__init_cb0` at 0x178d250 (callgraph, medium); signature (untiered): `void g_ConcreteTempEffectFactory_BSTempEffectSPG_6__init_cb0(void)`
+/// `g_ConcreteTempEffectFactory_BSTempEffectSPG_6__init_cb0` at 0x178d250 (callgraph, medium); signature (high): `void g_ConcreteTempEffectFactory_BSTempEffectSPG_6__init_cb0(void)`
 pub const g_ConcreteTempEffectFactory_BSTempEffectSPG_6__init_cb0: u64 = 170182;
 /// `g_ConcreteTempEffectFactory_BSTerrainEffect_0__init` at 0x87980 (crt_init, medium); signature (high): `void g_ConcreteTempEffectFactory_BSTerrainEffect_0__init(void)`
 pub const g_ConcreteTempEffectFactory_BSTerrainEffect_0__init: u64 = 4936;
-/// `g_ConcreteTempEffectFactory_BSTerrainEffect_0__init_cb0` at 0x178d410 (callgraph, medium); signature (untiered): `void g_ConcreteTempEffectFactory_BSTerrainEffect_0__init_cb0(void)`
+/// `g_ConcreteTempEffectFactory_BSTerrainEffect_0__init_cb0` at 0x178d410 (callgraph, medium); signature (high): `void g_ConcreteTempEffectFactory_BSTerrainEffect_0__init_cb0(void)`
 pub const g_ConcreteTempEffectFactory_BSTerrainEffect_0__init_cb0: u64 = 170189;
 /// `g_ConcreteTempEffectFactory_ModelReferenceEffect_9__init` at 0x929c0 (crt_init, medium); signature (high): `void g_ConcreteTempEffectFactory_ModelReferenceEffect_9__init(void)`
 pub const g_ConcreteTempEffectFactory_ModelReferenceEffect_9__init: u64 = 5446;
-/// `g_ConcreteTempEffectFactory_ModelReferenceEffect_9__init_cb0` at 0x1791f10 (callgraph, medium); signature (untiered): `void g_ConcreteTempEffectFactory_ModelReferenceEffect_9__init_cb0(void)`
+/// `g_ConcreteTempEffectFactory_ModelReferenceEffect_9__init_cb0` at 0x1791f10 (callgraph, medium); signature (high): `void g_ConcreteTempEffectFactory_ModelReferenceEffect_9__init_cb0(void)`
 pub const g_ConcreteTempEffectFactory_ModelReferenceEffect_9__init_cb0: u64 = 170648;
 /// `g_ConcreteTempEffectFactory_ReferenceEffect_8__init` at 0x92b40 (crt_init, medium); signature (high): `void g_ConcreteTempEffectFactory_ReferenceEffect_8__init(void)`
 pub const g_ConcreteTempEffectFactory_ReferenceEffect_8__init: u64 = 5455;
-/// `g_ConcreteTempEffectFactory_ReferenceEffect_8__init_cb0` at 0x1791f70 (callgraph, medium); signature (untiered): `void g_ConcreteTempEffectFactory_ReferenceEffect_8__init_cb0(void)`
+/// `g_ConcreteTempEffectFactory_ReferenceEffect_8__init_cb0` at 0x1791f70 (callgraph, medium); signature (high): `void g_ConcreteTempEffectFactory_ReferenceEffect_8__init_cb0(void)`
 pub const g_ConcreteTempEffectFactory_ReferenceEffect_8__init_cb0: u64 = 170651;
 /// `g_ConcreteTempEffectFactory_ShaderReferenceEffect_10__init` at 0x92c60 (crt_init, medium); signature (high): `void g_ConcreteTempEffectFactory_ShaderReferenceEffect_10__init(void)`
 pub const g_ConcreteTempEffectFactory_ShaderReferenceEffect_10__init: u64 = 5462;
-/// `g_ConcreteTempEffectFactory_ShaderReferenceEffect_10__init_cb0` at 0x1791fe0 (callgraph, medium); signature (untiered): `void g_ConcreteTempEffectFactory_ShaderReferenceEffect_10__init_cb0(void)`
+/// `g_ConcreteTempEffectFactory_ShaderReferenceEffect_10__init_cb0` at 0x1791fe0 (callgraph, medium); signature (high): `void g_ConcreteTempEffectFactory_ShaderReferenceEffect_10__init_cb0(void)`
 pub const g_ConcreteTempEffectFactory_ShaderReferenceEffect_10__init_cb0: u64 = 170655;
 /// `g_ConcreteTempEffectFactory_SummonPlacementEffect_11__init` at 0x92da0 (crt_init, medium); signature (high): `void g_ConcreteTempEffectFactory_SummonPlacementEffect_11__init(void)`
 pub const g_ConcreteTempEffectFactory_SummonPlacementEffect_11__init: u64 = 5469;
-/// `g_ConcreteTempEffectFactory_SummonPlacementEffect_11__init_cb0` at 0x1792030 (callgraph, medium); signature (untiered): `void g_ConcreteTempEffectFactory_SummonPlacementEffect_11__init_cb0(void)`
+/// `g_ConcreteTempEffectFactory_SummonPlacementEffect_11__init_cb0` at 0x1792030 (callgraph, medium); signature (high): `void g_ConcreteTempEffectFactory_SummonPlacementEffect_11__init_cb0(void)`
 pub const g_ConcreteTempEffectFactory_SummonPlacementEffect_11__init_cb0: u64 = 170657;
 /// `g_PackageCreator__init` at 0x87130 (crt_init, medium); signature (high): `void g_PackageCreator__init(void)`
 pub const g_PackageCreator__init: u64 = 4901;
-/// `g_PackageCreator__init_cb0` at 0x178ce70 (callgraph, medium); signature (untiered): `void g_PackageCreator__init_cb0(void)`
+/// `g_PackageCreator__init_cb0` at 0x178ce70 (callgraph, medium); signature (high): `void g_PackageCreator__init_cb0(void)`
 pub const g_PackageCreator__init_cb0: u64 = 170160;
 /// `g_ProcessListMovementInterface__atexit` at 0x179d870 (crt_init, medium); signature (high): `void g_ProcessListMovementInterface__atexit(void)`
 pub const g_ProcessListMovementInterface__atexit: u64 = 171582;
@@ -2473,11 +2177,11 @@ pub const g_anon_5E019490_DecalApplier__atexit: u64 = 166187;
 pub const g_anon_5E019490_DecalApplier__init: u64 = 983;
 /// `g_anon_7816FE07_TESObjectREFRFactory__init` at 0x1ba20 (crt_init, medium); signature (high): `void g_anon_7816FE07_TESObjectREFRFactory__init(void)`
 pub const g_anon_7816FE07_TESObjectREFRFactory__init: u64 = 1061;
-/// `g_anon_7816FE07_TESObjectREFRFactory__init_cb0` at 0x1749510 (callgraph, medium); signature (untiered): `void g_anon_7816FE07_TESObjectREFRFactory__init_cb0(void)`
+/// `g_anon_7816FE07_TESObjectREFRFactory__init_cb0` at 0x1749510 (callgraph, medium); signature (high): `void g_anon_7816FE07_TESObjectREFRFactory__init_cb0(void)`
 pub const g_anon_7816FE07_TESObjectREFRFactory__init_cb0: u64 = 166271;
 /// `g_anon_DF2AE3C3_ActorValueFormFactory__init` at 0x818c0 (crt_init, medium); signature (high): `void g_anon_DF2AE3C3_ActorValueFormFactory__init(void)`
 pub const g_anon_DF2AE3C3_ActorValueFormFactory__init: u64 = 4703;
-/// `g_anon_DF2AE3C3_ActorValueFormFactory__init_cb0` at 0x178adc0 (callgraph, medium); signature (untiered): `void g_anon_DF2AE3C3_ActorValueFormFactory__init_cb0(void)`
+/// `g_anon_DF2AE3C3_ActorValueFormFactory__init_cb0` at 0x178adc0 (callgraph, medium); signature (high): `void g_anon_DF2AE3C3_ActorValueFormFactory__init_cb0(void)`
 pub const g_anon_DF2AE3C3_ActorValueFormFactory__init_cb0: u64 = 169906;
 /// `g_bhkOnExitCallback__atexit` at 0x17b3b40 (crt_init, medium); signature (high): `void g_bhkOnExitCallback__atexit(void)`
 pub const g_bhkOnExitCallback__atexit: u64 = 173860;
@@ -2955,7 +2659,7 @@ pub const hkBuiltinTypeRegistry__vfunc_6: u64 = 60137;
 pub const hkCharControllerShape__vdtor: u64 = 80117;
 /// `hkCharControllerShape::vfunc_18` at 0x10c8be0 (rtti, high); signature (low): `undefined vfunc_18(hkCharControllerShape * this, longlong param_1, float param_2, float * param_3)`
 pub const hkCharControllerShape__vfunc_18: u64 = 80112;
-/// `hkClass::ctor` at 0xab1660 (semantic, high); signature (untiered): `undefined8 * ctor(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, undefined8 param_5, undefined4 param_6, undefined8 param_7, undefined4 param_8, undefined8 param_9, undefined4 param_10, undefined8 param_11, undefined8 param_12, undefined4 param_13, undefined4 param_14)`; semantic: reflection class constructor called by one static initialiser per class (high); signature `hkClass* (hkClass* this, const char* name, const hkClass* parent, i32 objectSize, const hkClass** interfaces, i32 numInterfaces, const hkClassEnum* enums, i32 numEnums, const hkClassMember* members, i32 numMembers, const void* defaults, const void* attributes, u32 flags, i32 version)`
+/// `hkClass::ctor` at 0xab1660 (semantic, high); signature (low): `undefined8 * ctor(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, undefined8 param_5, undefined4 param_6, undefined8 param_7, undefined4 param_8, undefined8 param_9, undefined4 param_10, undefined8 param_11, undefined8 param_12, undefined4 param_13, undefined4 param_14)`; semantic: reflection class constructor called by one static initialiser per class (high); signature `hkClass* (hkClass* this, const char* name, const hkClass* parent, i32 objectSize, const hkClass** interfaces, i32 numInterfaces, const hkClassEnum* enums, i32 numEnums, const hkClassMember* members, i32 numMembers, const void* defaults, const void* attributes, u32 flags, i32 version)`
 pub const hkClass__ctor: u64 = 57620;
 /// `hkClass::ctor` as a function pointer type (high).
 pub type hkClass__ctor_fn = unsafe extern "C" fn(this: *mut crate::hkClass, name: *const c_char, parent: *const crate::hkClass, objectSize: i32, interfaces: *mut *const crate::hkClass, numInterfaces: i32, enums: *const crate::hkClassEnum, numEnums: i32, members: *const crate::hkClassMember, numMembers: i32, defaults: *const c_void, attributes: *const c_void, flags: u32, version: i32) -> *mut crate::hkClass;
@@ -3011,27 +2715,27 @@ pub const hkContainerDebugAllocator__Allocator__vfunc_4: u64 = 57075;
 pub const hkContainerDebugAllocator__Allocator__vfunc_8: u64 = 57076;
 /// `hkContainerDebugAllocator::Allocator::vfunc_9` at 0xaa3e40 (rtti, high); signature (low): `undefined vfunc_9(Allocator * this, undefined8 param_1, undefined4 param_2)`
 pub const hkContainerDebugAllocator__Allocator__vfunc_9: u64 = 57077;
-/// `hkContainerHeapAllocator::Allocator::AllocateBuffer` at 0xaa3c50 (semantic, medium); signature (untiered): `undefined AllocateBuffer(Allocator * this, undefined8 param_1)`
+/// `hkContainerHeapAllocator::Allocator::AllocateBuffer` at 0xaa3c50 (semantic, medium); signature (low): `undefined AllocateBuffer(Allocator * this, undefined8 param_1)`
 pub const hkContainerHeapAllocator__Allocator__AllocateBuffer: u64 = 57068;
-/// `hkContainerHeapAllocator::Allocator::FreeBuffer` at 0xaa3c80 (semantic, high); signature (untiered): `undefined FreeBuffer(Allocator * this, undefined8 param_1, undefined4 param_2)`
+/// `hkContainerHeapAllocator::Allocator::FreeBuffer` at 0xaa3c80 (semantic, high); signature (low): `undefined FreeBuffer(Allocator * this, undefined8 param_1, undefined4 param_2)`
 pub const hkContainerHeapAllocator__Allocator__FreeBuffer: u64 = 57069;
 /// `hkContainerHeapAllocator::Allocator::vfunc_0` at 0xaa3ec0 (rtti, high); signature (low): `Allocator * vfunc_0(Allocator * this, byte param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_0: u64 = 57079;
 /// `hkContainerHeapAllocator::Allocator::vfunc_1` at 0xaa3be0 (rtti, high); signature (low): `undefined vfunc_1(Allocator * this, undefined4 param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_1: u64 = 57066;
-/// `hkContainerHeapAllocator::Allocator::vfunc_1_caller` at 0x1113040 (callgraph, medium); signature (untiered): `longlong vfunc_1_caller(longlong * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_1_caller` at 0x1113040 (callgraph, medium); signature (low): `longlong vfunc_1_caller(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_1_caller: u64 = 81171;
-/// `hkContainerHeapAllocator::Allocator::vfunc_1_caller_1` at 0x11130d0 (callgraph, medium); signature (untiered): `longlong vfunc_1_caller_1(longlong * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_1_caller_1` at 0x11130d0 (callgraph, medium); signature (low): `longlong vfunc_1_caller_1(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_1_caller_1: u64 = 81172;
-/// `hkContainerHeapAllocator::Allocator::vfunc_1_caller_2` at 0x11522e0 (callgraph, medium); signature (untiered): `longlong vfunc_1_caller_2(longlong * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_1_caller_2` at 0x11522e0 (callgraph, medium); signature (low): `longlong vfunc_1_caller_2(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_1_caller_2: u64 = 81895;
-/// `hkContainerHeapAllocator::Allocator::vfunc_1_caller_3` at 0x1152370 (callgraph, medium); signature (untiered): `longlong vfunc_1_caller_3(longlong * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_1_caller_3` at 0x1152370 (callgraph, medium); signature (low): `longlong vfunc_1_caller_3(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_1_caller_3: u64 = 81896;
-/// `hkContainerHeapAllocator::Allocator::vfunc_1_caller_4` at 0x1152400 (callgraph, medium); signature (untiered): `longlong vfunc_1_caller_4(longlong * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_1_caller_4` at 0x1152400 (callgraph, medium); signature (low): `longlong vfunc_1_caller_4(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_1_caller_4: u64 = 81897;
-/// `hkContainerHeapAllocator::Allocator::vfunc_1_caller_5` at 0x1152490 (callgraph, medium); signature (untiered): `longlong vfunc_1_caller_5(longlong * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_1_caller_5` at 0x1152490 (callgraph, medium); signature (low): `longlong vfunc_1_caller_5(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_1_caller_5: u64 = 81898;
-/// `hkContainerHeapAllocator::Allocator::vfunc_1_caller_6` at 0x1152520 (callgraph, medium); signature (untiered): `longlong vfunc_1_caller_6(longlong * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_1_caller_6` at 0x1152520 (callgraph, medium); signature (low): `longlong vfunc_1_caller_6(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_1_caller_6: u64 = 81899;
 /// `hkContainerHeapAllocator::Allocator::vfunc_2` at 0xaa3c10 (rtti, high); signature (low): `undefined vfunc_2(Allocator * this, undefined8 param_1, undefined4 param_2)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_2: u64 = 57067;
@@ -3039,25 +2743,25 @@ pub const hkContainerHeapAllocator__Allocator__vfunc_2: u64 = 57067;
 pub const hkContainerHeapAllocator__Allocator__vfunc_2_caller: u64 = 57752;
 /// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_1` at 0x10eb7f0 (callgraph, medium); signature (untiered): `undefined vfunc_2_caller_1(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_2_caller_1: u64 = 80759;
-/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_10` at 0x1150ab0 (callgraph, medium); signature (untiered): `undefined vfunc_2_caller_10(longlong * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_10` at 0x1150ab0 (callgraph, medium); signature (low): `undefined vfunc_2_caller_10(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_2_caller_10: u64 = 81850;
-/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_11` at 0x1150b20 (callgraph, medium); signature (untiered): `undefined vfunc_2_caller_11(longlong * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_11` at 0x1150b20 (callgraph, medium); signature (low): `undefined vfunc_2_caller_11(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_2_caller_11: u64 = 81851;
-/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_12` at 0x1150b90 (callgraph, medium); signature (untiered): `undefined vfunc_2_caller_12(longlong * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_12` at 0x1150b90 (callgraph, medium); signature (low): `undefined vfunc_2_caller_12(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_2_caller_12: u64 = 81852;
-/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_13` at 0x1150c00 (callgraph, medium); signature (untiered): `undefined vfunc_2_caller_13(longlong * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_13` at 0x1150c00 (callgraph, medium); signature (low): `undefined vfunc_2_caller_13(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_2_caller_13: u64 = 81853;
-/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_14` at 0x1157e20 (callgraph, medium); signature (untiered): `undefined vfunc_2_caller_14(undefined8 * param_1, longlong * param_2)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_14` at 0x1157e20 (callgraph, medium); signature (low): `undefined vfunc_2_caller_14(undefined8 * param_1, longlong * param_2)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_2_caller_14: u64 = 81926;
-/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_15` at 0x1157fb0 (callgraph, medium); signature (untiered): `undefined vfunc_2_caller_15(longlong * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_15` at 0x1157fb0 (callgraph, medium); signature (low): `undefined vfunc_2_caller_15(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_2_caller_15: u64 = 81929;
-/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_16` at 0x1158040 (callgraph, medium); signature (untiered): `undefined vfunc_2_caller_16(longlong * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_16` at 0x1158040 (callgraph, medium); signature (low): `undefined vfunc_2_caller_16(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_2_caller_16: u64 = 81930;
-/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_17` at 0x11580d0 (callgraph, medium); signature (untiered): `undefined vfunc_2_caller_17(longlong * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_17` at 0x11580d0 (callgraph, medium); signature (low): `undefined vfunc_2_caller_17(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_2_caller_17: u64 = 81931;
-/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_18` at 0x1158160 (callgraph, medium); signature (untiered): `undefined vfunc_2_caller_18(longlong * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_18` at 0x1158160 (callgraph, medium); signature (low): `undefined vfunc_2_caller_18(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_2_caller_18: u64 = 81932;
-/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_19` at 0x11581f0 (callgraph, medium); signature (untiered): `undefined vfunc_2_caller_19(longlong * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_19` at 0x11581f0 (callgraph, medium); signature (low): `undefined vfunc_2_caller_19(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_2_caller_19: u64 = 81933;
 /// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_2` at 0x10eb860 (callgraph, medium); signature (untiered): `undefined vfunc_2_caller_2(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_2_caller_2: u64 = 80760;
@@ -3069,11 +2773,11 @@ pub const hkContainerHeapAllocator__Allocator__vfunc_2_caller_4: u64 = 80771;
 pub const hkContainerHeapAllocator__Allocator__vfunc_2_caller_5: u64 = 80955;
 /// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_6` at 0x10f9bb0 (callgraph, medium); signature (untiered): `undefined vfunc_2_caller_6(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_2_caller_6: u64 = 80956;
-/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_7` at 0x1100aa0 (callgraph, medium); signature (untiered): `undefined vfunc_2_caller_7(longlong * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_7` at 0x1100aa0 (callgraph, medium); signature (low): `undefined vfunc_2_caller_7(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_2_caller_7: u64 = 80979;
-/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_8` at 0x1100b30 (callgraph, medium); signature (untiered): `undefined vfunc_2_caller_8(longlong * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_8` at 0x1100b30 (callgraph, medium); signature (low): `undefined vfunc_2_caller_8(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_2_caller_8: u64 = 80980;
-/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_9` at 0x1150a40 (callgraph, medium); signature (untiered): `undefined vfunc_2_caller_9(longlong * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_9` at 0x1150a40 (callgraph, medium); signature (low): `undefined vfunc_2_caller_9(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_2_caller_9: u64 = 81849;
 /// `hkContainerHeapAllocator::Allocator::vfunc_4_caller` at 0x1b2a30 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller: u64 = 13591;
@@ -3113,45 +2817,45 @@ pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_22_2: u64 = 79373;
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_23: u64 = 64725;
 /// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_24` at 0xc50a60 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_24(undefined8 * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_24: u64 = 65595;
-/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_25` at 0xcb8650 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_25(undefined8 * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_25` at 0xcb8650 (callgraph, medium); signature (low): `undefined vfunc_4_caller_25(undefined8 * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_25: u64 = 67326;
-/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_26` at 0xcb86b0 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_26(undefined8 * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_26` at 0xcb86b0 (callgraph, medium); signature (low): `undefined vfunc_4_caller_26(undefined8 * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_26: u64 = 67327;
-/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_27` at 0x1050db0 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_27(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_27` at 0x1050db0 (callgraph, medium); signature (low): `undefined vfunc_4_caller_27(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_27: u64 = 77953;
-/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_28` at 0x1050e20 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_28(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_28` at 0x1050e20 (callgraph, medium); signature (low): `undefined vfunc_4_caller_28(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_28: u64 = 77954;
-/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_29` at 0x1054e30 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_29(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_29` at 0x1054e30 (callgraph, medium); signature (low): `undefined vfunc_4_caller_29(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_29: u64 = 78019;
 /// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_3` at 0x2f8470 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_3: u64 = 19906;
-/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_30` at 0x105c840 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_30(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_30` at 0x105c840 (callgraph, medium); signature (low): `undefined vfunc_4_caller_30(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_30: u64 = 78156;
-/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_31` at 0x1061570 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_31(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_31` at 0x1061570 (callgraph, medium); signature (low): `undefined vfunc_4_caller_31(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_31: u64 = 78229;
-/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_32` at 0x1068f40 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_32(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_32` at 0x1068f40 (callgraph, medium); signature (low): `undefined vfunc_4_caller_32(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_32: u64 = 78327;
-/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_33` at 0x1069160 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_33(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_33` at 0x1069160 (callgraph, medium); signature (low): `undefined vfunc_4_caller_33(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_33: u64 = 78334;
-/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_34` at 0x107ac40 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_34(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_34` at 0x107ac40 (callgraph, medium); signature (low): `undefined vfunc_4_caller_34(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_34: u64 = 78525;
-/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_35` at 0x10a1fc0 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_35(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_35` at 0x10a1fc0 (callgraph, medium); signature (low): `undefined vfunc_4_caller_35(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_35: u64 = 79372;
-/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_36` at 0x10af5e0 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_36(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_36` at 0x10af5e0 (callgraph, medium); signature (low): `undefined vfunc_4_caller_36(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_36: u64 = 79559;
-/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_37` at 0x1123d50 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_37(undefined8 * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_37` at 0x1123d50 (callgraph, medium); signature (low): `undefined vfunc_4_caller_37(undefined8 * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_37: u64 = 81316;
-/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_38` at 0x11310b0 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_38(undefined8 * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_38` at 0x11310b0 (callgraph, medium); signature (low): `undefined vfunc_4_caller_38(undefined8 * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_38: u64 = 81528;
-/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_39` at 0x1131140 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_39(undefined8 * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_39` at 0x1131140 (callgraph, medium); signature (low): `undefined vfunc_4_caller_39(undefined8 * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_39: u64 = 81529;
 /// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_4` at 0x2f8500 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_4: u64 = 19908;
-/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_40` at 0x11311d0 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_40(undefined8 * param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_40` at 0x11311d0 (callgraph, medium); signature (low): `undefined vfunc_4_caller_40(undefined8 * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_40: u64 = 81530;
-/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_41` at 0x1150d60 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_41(longlong param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_41` at 0x1150d60 (callgraph, medium); signature (low): `undefined vfunc_4_caller_41(longlong param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_41: u64 = 81857;
-/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_42` at 0x1150de0 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_42(longlong param_1)`
+/// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_42` at 0x1150de0 (callgraph, medium); signature (low): `undefined vfunc_4_caller_42(longlong param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_42: u64 = 81858;
 /// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_5` at 0x4031c0 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_5(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller_5: u64 = 25966;
@@ -4475,13 +4179,13 @@ pub const hkRagdollLimitsConstraintCinfo__vfunc_2: u64 = 79815;
 pub const hkRagdollLimitsConstraintCinfo__vfunc_3: u64 = 79816;
 /// `hkRagdollLimitsConstraintCinfo::vfunc_4` at 0x10ba1d0 (rtti, high); signature (low): `undefined8 vfunc_4(hkRagdollLimitsConstraintCinfo * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkRagdollLimitsConstraintCinfo__vfunc_4: u64 = 79817;
-/// `hkReferencedObject::AddReference` at 0xaa26b0 (semantic, high); signature (untiered): `undefined AddReference(longlong param_1)`; semantic: if memSizeAndFlags (+8, u16) != 0, increments referenceCount (+0xA, i16); under the global reference lock (critical section at *0x325a808 + 0x28) when its mode +0x10 == 1 and this thread does not already hold it (high); signature `void (const hkReferencedObject* this)`
+/// `hkReferencedObject::AddReference` at 0xaa26b0 (semantic, high); signature (low): `undefined AddReference(longlong param_1)`; semantic: if memSizeAndFlags (+8, u16) != 0, increments referenceCount (+0xA, i16); under the global reference lock (critical section at *0x325a808 + 0x28) when its mode +0x10 == 1 and this thread does not already hold it (high); signature `void (const hkReferencedObject* this)`
 pub const hkReferencedObject__AddReference: u64 = 57010;
 /// `hkReferencedObject::AddReference` as a function pointer type (high).
 pub type hkReferencedObject__AddReference_fn = unsafe extern "C" fn(this: *const crate::hkReferencedObject);
-/// `hkReferencedObject::Destroy` at 0x2b63d0 (semantic, high); signature (untiered): `hkReferencedObject * Destroy(hkReferencedObject * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; semantic: deleting destructor pattern every hkp class repeats: flag 1 frees through TlsGetValue(*0x325a844)->+0x58 (the thread's heap allocator) slot 2 (+0x10) with size = u16 +8, or the class size when +8 is 0xffff; flag 4 frees through FreeDefaultHeapMemory (high); signature `hkReferencedObject* (hkReferencedObject* this, unsigned flags)`
+/// `hkReferencedObject::Destroy` at 0x2b63d0 (semantic, high); signature (low): `hkReferencedObject * Destroy(hkReferencedObject * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; semantic: deleting destructor pattern every hkp class repeats: flag 1 frees through TlsGetValue(*0x325a844)->+0x58 (the thread's heap allocator) slot 2 (+0x10) with size = u16 +8, or the class size when +8 is 0xffff; flag 4 frees through FreeDefaultHeapMemory (high); signature `hkReferencedObject* (hkReferencedObject* this, unsigned flags)`
 pub const hkReferencedObject__Destroy: u64 = 18825;
-/// `hkReferencedObject::RemoveReference` at 0xaa2770 (semantic, high); signature (untiered): `undefined RemoveReference(undefined8 * param_1)`; semantic: if memSizeAndFlags != 0: when the count is 1 sets it to 0 and calls the virtual destructor (slot 0, flag 1) without the lock; else decrements under the same lock and deletes when it reached 0 (high); signature `void (const hkReferencedObject* this)`
+/// `hkReferencedObject::RemoveReference` at 0xaa2770 (semantic, high); signature (low): `undefined RemoveReference(undefined8 * param_1)`; semantic: if memSizeAndFlags != 0: when the count is 1 sets it to 0 and calls the virtual destructor (slot 0, flag 1) without the lock; else decrements under the same lock and deletes when it reached 0 (high); signature `void (const hkReferencedObject* this)`
 pub const hkReferencedObject__RemoveReference: u64 = 57011;
 /// `hkReferencedObject::RemoveReference` as a function pointer type (high).
 pub type hkReferencedObject__RemoveReference_fn = unsafe extern "C" fn(this: *const crate::hkReferencedObject);
@@ -4881,7 +4585,7 @@ pub const hkTypeInfoRegistry__vdtor: u64 = 60145;
 pub const hkTypeInfoRegistry__vfunc_3: u64 = 60136;
 /// `hkTypeInfoRegistry::vfunc_4` at 0xb2e8b0 (rtti, high); signature (low): `longlong vfunc_4(hkTypeInfoRegistry * this, undefined8 param_1, undefined8 param_2)`
 pub const hkTypeInfoRegistry__vfunc_4: u64 = 60139;
-/// `hkTypeInfoRegistry::vfunc_4_sub0` at 0xc50480 (runtime, medium); signature (untiered): `undefined vfunc_4_sub0(longlong param_1)`
+/// `hkTypeInfoRegistry::vfunc_4_sub0` at 0xc50480 (runtime, medium); signature (low): `undefined vfunc_4_sub0(longlong param_1)`
 pub const hkTypeInfoRegistry__vfunc_4_sub0: u64 = 65586;
 /// `hkTypeInfoRegistry::vfunc_5` at 0xb2e920 (rtti, high); signature (low): `longlong vfunc_5(hkTypeInfoRegistry * this, undefined8 param_1, undefined8 param_2)`
 pub const hkTypeInfoRegistry__vfunc_5: u64 = 60140;
@@ -5055,11 +4759,11 @@ pub const hkaDefaultAnimationControlMapperData__vdtor: u64 = 64187;
 pub const hkaDetectRagdollPenetration__ctor: u64 = 80066;
 /// `hkaDetectRagdollPenetration::vdtor` at 0x10c5a30 (layout_inference, medium); signature (low): `hkaDetectRagdollPenetration * vdtor(hkaDetectRagdollPenetration * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkaDetectRagdollPenetration__vdtor: u64 = 80069;
-/// `hkaFootPlacementIkSolver::CastGround` at 0xa9ec70 (semantic, high); signature (untiered): `undefined1 CastGround(longlong param_1, longlong param_2, float * param_3, float * param_4, float * param_5, float * param_6)`; semantic: ray 1 from ankle + up*raycastDistanceUp to ankle - up*raycastDistanceDown; if the foot end differs from the ankle, ray 2 the same at the foot end, accepted only with normal.up > 0 and converted to the ankle ray's fraction by intersecting its hit plane with the ankle line; keeps the higher hit; hit = ankle + up*(distUp - fraction*(distUp+distDown)) (high); signature `bool (hkaFootPlacementIkSolver* this, const FootPlacementInput* in, const hkVector4* ankleWS, const hkVector4* footEndWS, hkVector4* hitWS, hkVector4* normalWS)`
+/// `hkaFootPlacementIkSolver::CastGround` at 0xa9ec70 (semantic, high); signature (low): `undefined1 CastGround(longlong param_1, longlong param_2, float * param_3, float * param_4, float * param_5, float * param_6)`; semantic: ray 1 from ankle + up*raycastDistanceUp to ankle - up*raycastDistanceDown; if the foot end differs from the ankle, ray 2 the same at the foot end, accepted only with normal.up > 0 and converted to the ankle ray's fraction by intersecting its hit plane with the ankle line; keeps the higher hit; hit = ankle + up*(distUp - fraction*(distUp+distDown)) (high); signature `bool (hkaFootPlacementIkSolver* this, const FootPlacementInput* in, const hkVector4* ankleWS, const hkVector4* footEndWS, hkVector4* hitWS, hkVector4* normalWS)`
 pub const hkaFootPlacementIkSolver__CastGround: u64 = 56978;
 /// `hkaFootPlacementIkSolver::CastGround` as a function pointer type (high).
 pub type hkaFootPlacementIkSolver__CastGround_fn = unsafe extern "C" fn(this: *mut crate::hkaFootPlacementIkSolver, in_: *const c_void, ankleWS: *const crate::hkVector4, footEndWS: *const crate::hkVector4, hitWS: *mut crate::hkVector4, normalWS: *mut crate::hkVector4) -> bool;
-/// `hkaFootPlacementIkSolver::Solve` at 0xa9ddf0 (semantic, high); signature (untiered): `undefined Solve(longlong param_1, float * param_2, float * param_3, longlong * param_4)`; semantic: per leg: ankle and foot-end world positions from the model pose and in->worldFromModel; foot locking; ground pick (CastGround 0xa9ec70, up to two rays) when in+0x60; vertical error; smoothed ground height (ascending/descending x planted/raised gains); target ankle clamped to max/min ankle height; on/off weight +0x90 eased by onOffGain; two-joint solve (hip, knee) and ankle rotation to the ground normal, both weighted by +0x90; writes out {normal +0, verticalError +0x10, hit +0x14} (high); signature `void (hkaFootPlacementIkSolver* this, const hkaFootPlacementIkSolver::Input* in, hkaFootPlacementIkSolver::Output* out, hkaPose* pose)`
+/// `hkaFootPlacementIkSolver::Solve` at 0xa9ddf0 (semantic, high); signature (low): `undefined Solve(longlong param_1, float * param_2, float * param_3, longlong * param_4)`; semantic: per leg: ankle and foot-end world positions from the model pose and in->worldFromModel; foot locking; ground pick (CastGround 0xa9ec70, up to two rays) when in+0x60; vertical error; smoothed ground height (ascending/descending x planted/raised gains); target ankle clamped to max/min ankle height; on/off weight +0x90 eased by onOffGain; two-joint solve (hip, knee) and ankle rotation to the ground normal, both weighted by +0x90; writes out {normal +0, verticalError +0x10, hit +0x14} (high); signature `void (hkaFootPlacementIkSolver* this, const hkaFootPlacementIkSolver::Input* in, hkaFootPlacementIkSolver::Output* out, hkaPose* pose)`
 pub const hkaFootPlacementIkSolver__Solve: u64 = 56977;
 /// `hkaFootPlacementIkSolver::Solve` as a function pointer type (high).
 pub type hkaFootPlacementIkSolver__Solve_fn = unsafe extern "C" fn(this: *mut crate::hkaFootPlacementIkSolver, in_: *const crate::hkaFootPlacementIkSolver__Input, out: *mut crate::hkaFootPlacementIkSolver__Output, pose: *mut c_void);
@@ -5153,9 +4857,9 @@ pub const hkaRagdollInstance__vfunc_3: u64 = 64147;
 pub const hkaRagdollRaycastInterface__dtor: u64 = 78233;
 /// `hkaRagdollRaycastInterface::vdtor` at 0x1061b60 (semantic, high); signature (low): `hkaRagdollRaycastInterface * vdtor(hkaRagdollRaycastInterface * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkaRagdollRaycastInterface__vdtor: u64 = 78239;
-/// `hkaRaycastInterface::CastRay` at 0xa9dc40 (semantic, high); signature (untiered): `undefined1 * CastRay(hkaRaycastInterface * this, undefined1 * param_1)`
+/// `hkaRaycastInterface::CastRay` at 0xa9dc40 (semantic, high); signature (low): `undefined1 * CastRay(hkaRaycastInterface * this, undefined1 * param_1)`
 pub const hkaRaycastInterface__CastRay: u64 = 56972;
-/// `hkaRaycastInterface::CastRayFiltered` at 0xa9dc50 (semantic, high); signature (untiered): `undefined1 * CastRayFiltered(hkaRaycastInterface * this, undefined1 * param_1)`
+/// `hkaRaycastInterface::CastRayFiltered` at 0xa9dc50 (semantic, high); signature (low): `undefined1 * CastRayFiltered(hkaRaycastInterface * this, undefined1 * param_1)`
 pub const hkaRaycastInterface__CastRayFiltered: u64 = 56973;
 /// `hkaRaycastInterface::dtor` at 0x54c240 (layout_inference, high); signature (high): `undefined dtor(hkaRaycastInterface * this)`
 pub const hkaRaycastInterface__dtor: u64 = 32760;
@@ -5295,11 +4999,11 @@ pub const hkbBehaviorClient__hkRemoteObjectClientSideListener_vfunc_1_sub9: u64 
 pub const hkbBehaviorClient__vdtor: u64 = 81072;
 /// `hkbBehaviorEventsInfo::vdtor` at 0x10d1810 (layout_inference, medium); signature (low): `hkbBehaviorEventsInfo * vdtor(hkbBehaviorEventsInfo * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkbBehaviorEventsInfo__vdtor: u64 = 80355;
-/// `hkbBehaviorGraph::EnsureVariableValueSet` at 0xacd680 (semantic, high); signature (untiered): `undefined EnsureVariableValueSet(longlong param_1)`; semantic: creates variableValueSet (+0xd8) from data+0x70 when the graph data has variables (high); signature `void (hkbBehaviorGraph* this)`
+/// `hkbBehaviorGraph::EnsureVariableValueSet` at 0xacd680 (semantic, high); signature (low): `undefined EnsureVariableValueSet(longlong param_1)`; semantic: creates variableValueSet (+0xd8) from data+0x70 when the graph data has variables (high); signature `void (hkbBehaviorGraph* this)`
 pub const hkbBehaviorGraph__EnsureVariableValueSet: u64 = 58346;
 /// `hkbBehaviorGraph::EnsureVariableValueSet` as a function pointer type (high).
 pub type hkbBehaviorGraph__EnsureVariableValueSet_fn = unsafe extern "C" fn(this: *mut crate::hkbBehaviorGraph);
-/// `hkbBehaviorGraph::GetVariableValueSet` at 0xbdf360 (semantic, medium); signature (untiered): `longlong GetVariableValueSet(longlong param_1)`; semantic: returns graph+0xd8, creating it (0xacd680) when absent and +0x12c is clear (medium); signature `hkbVariableValueSet* (hkbBehaviorGraph* graph)`
+/// `hkbBehaviorGraph::GetVariableValueSet` at 0xbdf360 (semantic, medium); signature (low): `longlong GetVariableValueSet(longlong param_1)`; semantic: returns graph+0xd8, creating it (0xacd680) when absent and +0x12c is clear (medium); signature `hkbVariableValueSet* (hkbBehaviorGraph* graph)`
 pub const hkbBehaviorGraph__GetVariableValueSet: u64 = 63851;
 /// `hkbBehaviorGraph::GlobalTransitionData::dtor` at 0xacc7e0 (layout_inference, high); signature (high): `undefined dtor(GlobalTransitionData * this)`
 pub const hkbBehaviorGraph__GlobalTransitionData__dtor: u64 = 58338;
@@ -5533,27 +5237,27 @@ pub const hkbBoolVariableSequencedData__ctor: u64 = 59937;
 pub const hkbBoolVariableSequencedData__vdtor: u64 = 59008;
 /// `hkbBoolVariableSequencedData::vfunc_3` at 0xb1b2a0 (rtti, high); signature (low): `undefined vfunc_3(hkbBoolVariableSequencedData * this, undefined8 param_1, longlong * param_2, float param_3, undefined8 param_4, longlong param_5, int * param_6)`
 pub const hkbBoolVariableSequencedData__vfunc_3: u64 = 59938;
-/// `hkbCameraShakeEventPayload::Destroy` at 0x10d19d0 (semantic, high); signature (untiered): `hkbCameraShakeEventPayload * Destroy(hkbCameraShakeEventPayload * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; semantic: Havok deleting dtor: base vtable; flags & 1 frees, through the default heap (0x18 bytes) when flags & 4, else the thread's memory router with memSizeAndFlags (+8 u16, 0xffff -> 0x18) (high); signature `hkbCameraShakeEventPayload* (hkbCameraShakeEventPayload* this, u32 flags)`
+/// `hkbCameraShakeEventPayload::Destroy` at 0x10d19d0 (semantic, high); signature (low): `hkbCameraShakeEventPayload * Destroy(hkbCameraShakeEventPayload * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; semantic: Havok deleting dtor: base vtable; flags & 1 frees, through the default heap (0x18 bytes) when flags & 4, else the thread's memory router with memSizeAndFlags (+8 u16, 0xffff -> 0x18) (high); signature `hkbCameraShakeEventPayload* (hkbCameraShakeEventPayload* this, u32 flags)`
 pub const hkbCameraShakeEventPayload__Destroy: u64 = 80358;
 /// `hkbCameraShakeEventPayload::Destroy` as a function pointer type (high).
 pub type hkbCameraShakeEventPayload__Destroy_fn = unsafe extern "C" fn(this: *mut crate::hkbCameraShakeEventPayload, flags: u32) -> *mut crate::hkbCameraShakeEventPayload;
-/// `hkbCharacter::FreePoseLocal` at 0xad80f0 (semantic, high); signature (untiered): `undefined FreePoseLocal(longlong param_1)`; semantic: frees poseLocal when owned (high); signature `void (hkbCharacter* this)`
+/// `hkbCharacter::FreePoseLocal` at 0xad80f0 (semantic, high); signature (low): `undefined FreePoseLocal(longlong param_1)`; semantic: frees poseLocal when owned (high); signature `void (hkbCharacter* this)`
 pub const hkbCharacter__FreePoseLocal: u64 = 58467;
 /// `hkbCharacter::FreePoseLocal` as a function pointer type (high).
 pub type hkbCharacter__FreePoseLocal_fn = unsafe extern "C" fn(this: *mut crate::hkbCharacter);
-/// `hkbCharacter::GetAnimationBindingSet` at 0xad7d40 (semantic, high); signature (untiered): `longlong GetAnimationBindingSet(longlong param_1)`; semantic: returns +0x68, else setup+0x38 (created on demand) (high); signature `hkbAnimationBindingSet* (hkbCharacter* this)`
+/// `hkbCharacter::GetAnimationBindingSet` at 0xad7d40 (semantic, high); signature (low): `longlong GetAnimationBindingSet(longlong param_1)`; semantic: returns +0x68, else setup+0x38 (created on demand) (high); signature `hkbAnimationBindingSet* (hkbCharacter* this)`
 pub const hkbCharacter__GetAnimationBindingSet: u64 = 58459;
 /// `hkbCharacter::GetAnimationBindingSet` as a function pointer type (high).
 pub type hkbCharacter__GetAnimationBindingSet_fn = unsafe extern "C" fn(this: *mut crate::hkbCharacter) -> *mut crate::hkbAnimationBindingSet;
-/// `hkbCharacter::GetNearbyCharacters` at 0xad7910 (semantic, high); signature (untiered): `undefined GetNearbyCharacters(hkbCharacter * this, float param_1, longlong * param_2)`
+/// `hkbCharacter::GetNearbyCharacters` at 0xad7910 (semantic, high); signature (low): `undefined GetNearbyCharacters(hkbCharacter * this, float param_1, longlong * param_2)`
 pub const hkbCharacter__GetNearbyCharacters: u64 = 58452;
-/// `hkbCharacter::GetNearbyRigidBodies` at 0xad7660 (semantic, medium); signature (untiered): `undefined GetNearbyRigidBodies(hkbCharacter * this, undefined8 param_1, float param_2, longlong param_3, longlong * param_4, undefined4 param_5, char param_6, char param_7)`
+/// `hkbCharacter::GetNearbyRigidBodies` at 0xad7660 (semantic, medium); signature (low): `undefined GetNearbyRigidBodies(hkbCharacter * this, undefined8 param_1, float param_2, longlong param_3, longlong * param_4, undefined4 param_5, char param_6, char param_7)`
 pub const hkbCharacter__GetNearbyRigidBodies: u64 = 58451;
-/// `hkbCharacter::GetPoseLocal` at 0xad7d00 (semantic, high); signature (untiered): `undefined8 GetPoseLocal(longlong param_1)`; semantic: returns poseLocal (+0x90), creating it from the reference pose first (high); signature `hkQsTransform* (hkbCharacter* this)`
+/// `hkbCharacter::GetPoseLocal` at 0xad7d00 (semantic, high); signature (low): `undefined8 GetPoseLocal(longlong param_1)`; semantic: returns poseLocal (+0x90), creating it from the reference pose first (high); signature `hkQsTransform* (hkbCharacter* this)`
 pub const hkbCharacter__GetPoseLocal: u64 = 58458;
 /// `hkbCharacter::GetPoseLocal` as a function pointer type (high).
 pub type hkbCharacter__GetPoseLocal_fn = unsafe extern "C" fn(this: *mut crate::hkbCharacter) -> *mut crate::hkQsTransform;
-/// `hkbCharacter::InitPoseLocalFromReferencePose` at 0xad8060 (semantic, high); signature (untiered): `undefined InitPoseLocalFromReferencePose(longlong param_1)`; semantic: allocates poseLocal = skeleton bone count * 0x30 and copies the skeleton's reference pose (high); signature `void (hkbCharacter* this)`
+/// `hkbCharacter::InitPoseLocalFromReferencePose` at 0xad8060 (semantic, high); signature (low): `undefined InitPoseLocalFromReferencePose(longlong param_1)`; semantic: allocates poseLocal = skeleton bone count * 0x30 and copies the skeleton's reference pose (high); signature `void (hkbCharacter* this)`
 pub const hkbCharacter__InitPoseLocalFromReferencePose: u64 = 58466;
 /// `hkbCharacter::InitPoseLocalFromReferencePose` as a function pointer type (high).
 pub type hkbCharacter__InitPoseLocalFromReferencePose_fn = unsafe extern "C" fn(this: *mut crate::hkbCharacter);
@@ -5855,21 +5559,21 @@ pub const hkbDelayedModifier__vfunc_5: u64 = 59663;
 pub const hkbDelayedModifier__vfunc_9: u64 = 59664;
 /// `hkbDelayedModifierInternalState::vdtor` at 0xae2c80 (layout_inference, medium); signature (low): `hkbDelayedModifierInternalState * vdtor(hkbDelayedModifierInternalState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkbDelayedModifierInternalState__vdtor: u64 = 59027;
-/// `hkbDetectCloseToGroundModifier::Activate` at 0xb07930 (semantic, high); signature (untiered): `undefined Activate(hkbDetectCloseToGroundModifier * this)`
+/// `hkbDetectCloseToGroundModifier::Activate` at 0xb07930 (semantic, high); signature (high): `undefined Activate(hkbDetectCloseToGroundModifier * this)`
 pub const hkbDetectCloseToGroundModifier__Activate: u64 = 59674;
-/// `hkbDetectCloseToGroundModifier::CloneNode` at 0xb07af0 (semantic, high); signature (untiered): `undefined CloneNode(hkbDetectCloseToGroundModifier * this)`
+/// `hkbDetectCloseToGroundModifier::CloneNode` at 0xb07af0 (semantic, high); signature (high): `undefined CloneNode(hkbDetectCloseToGroundModifier * this)`
 pub const hkbDetectCloseToGroundModifier__CloneNode: u64 = 59677;
-/// `hkbDetectCloseToGroundModifier::CreateInternalState` at 0xb07d00 (semantic, high); signature (untiered): `undefined CreateInternalState(void)`
+/// `hkbDetectCloseToGroundModifier::CreateInternalState` at 0xb07d00 (semantic, high); signature (low): `undefined CreateInternalState(void)`
 pub const hkbDetectCloseToGroundModifier__CreateInternalState: u64 = 59679;
-/// `hkbDetectCloseToGroundModifier::GetInternalState` at 0xb07d40 (semantic, high); signature (untiered): `undefined GetInternalState(hkbDetectCloseToGroundModifier * this, longlong param_1)`
+/// `hkbDetectCloseToGroundModifier::GetInternalState` at 0xb07d40 (semantic, high); signature (low): `undefined GetInternalState(hkbDetectCloseToGroundModifier * this, longlong param_1)`
 pub const hkbDetectCloseToGroundModifier__GetInternalState: u64 = 59680;
-/// `hkbDetectCloseToGroundModifier::IsValid` at 0xb07a30 (semantic, high); signature (untiered): `ulonglong IsValid(hkbDetectCloseToGroundModifier * this, ulonglong * param_1)`
+/// `hkbDetectCloseToGroundModifier::IsValid` at 0xb07a30 (semantic, high); signature (low): `ulonglong IsValid(hkbDetectCloseToGroundModifier * this, ulonglong * param_1)`
 pub const hkbDetectCloseToGroundModifier__IsValid: u64 = 59676;
-/// `hkbDetectCloseToGroundModifier::Modify` at 0xb07b40 (semantic, medium); signature (untiered): `undefined Modify(hkbDetectCloseToGroundModifier * this, longlong * param_1, longlong * param_2)`
+/// `hkbDetectCloseToGroundModifier::Modify` at 0xb07b40 (semantic, medium); signature (low): `undefined Modify(hkbDetectCloseToGroundModifier * this, longlong * param_1, longlong * param_2)`
 pub const hkbDetectCloseToGroundModifier__Modify: u64 = 59678;
-/// `hkbDetectCloseToGroundModifier::SetInternalState` at 0xb07d50 (semantic, high); signature (untiered): `undefined SetInternalState(hkbDetectCloseToGroundModifier * this, longlong param_1)`
+/// `hkbDetectCloseToGroundModifier::SetInternalState` at 0xb07d50 (semantic, high); signature (low): `undefined SetInternalState(hkbDetectCloseToGroundModifier * this, longlong param_1)`
 pub const hkbDetectCloseToGroundModifier__SetInternalState: u64 = 59681;
-/// `hkbDetectCloseToGroundModifier::Update` at 0xb07940 (semantic, high); signature (untiered): `undefined Update(hkbDetectCloseToGroundModifier * this, longlong * param_1)`
+/// `hkbDetectCloseToGroundModifier::Update` at 0xb07940 (semantic, high); signature (low): `undefined Update(hkbDetectCloseToGroundModifier * this, longlong * param_1)`
 pub const hkbDetectCloseToGroundModifier__Update: u64 = 59675;
 /// `hkbDetectCloseToGroundModifier::ctor` at 0xade1b0 (layout_inference, high); signature (high): `undefined ctor(hkbDetectCloseToGroundModifier * this)`
 pub const hkbDetectCloseToGroundModifier__ctor: u64 = 58730;
@@ -6021,11 +5725,11 @@ pub const hkbExpressionCondition__vfunc_3: u64 = 59510;
 pub const hkbExpressionDataArray__ctor: u64 = 59682;
 /// `hkbExpressionDataArray::vdtor` at 0xae35b0 (slot_propagation, medium); signature (low): `hkbExpressionDataArray * vdtor(hkbExpressionDataArray * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkbExpressionDataArray__vdtor: u64 = 59042;
-/// `hkbExtractRagdollPoseModifier::CloneNode` at 0xb15de0 (semantic, high); signature (untiered): `hkbExtractRagdollPoseModifier * CloneNode(hkbExtractRagdollPoseModifier * this)`
+/// `hkbExtractRagdollPoseModifier::CloneNode` at 0xb15de0 (semantic, high); signature (high): `hkbExtractRagdollPoseModifier * CloneNode(hkbExtractRagdollPoseModifier * this)`
 pub const hkbExtractRagdollPoseModifier__CloneNode: u64 = 59845;
-/// `hkbExtractRagdollPoseModifier::IsValid` at 0xb15c70 (semantic, high); signature (untiered): `undefined8 IsValid(hkbExtractRagdollPoseModifier * this, ulonglong * param_1)`
+/// `hkbExtractRagdollPoseModifier::IsValid` at 0xb15c70 (semantic, high); signature (low): `undefined8 IsValid(hkbExtractRagdollPoseModifier * this, ulonglong * param_1)`
 pub const hkbExtractRagdollPoseModifier__IsValid: u64 = 59844;
-/// `hkbExtractRagdollPoseModifier::Modify` at 0xb15e50 (semantic, high); signature (untiered): `undefined Modify(hkbExtractRagdollPoseModifier * this, longlong * param_1)`
+/// `hkbExtractRagdollPoseModifier::Modify` at 0xb15e50 (semantic, high); signature (low): `undefined Modify(hkbExtractRagdollPoseModifier * this, longlong * param_1)`
 pub const hkbExtractRagdollPoseModifier__Modify: u64 = 59846;
 /// `hkbExtractRagdollPoseModifier::ctor` at 0xadee80 (layout_inference, high); signature (high): `undefined ctor(hkbExtractRagdollPoseModifier * this)`
 pub const hkbExtractRagdollPoseModifier__ctor: u64 = 58820;
@@ -6037,13 +5741,13 @@ pub const hkbExtractRagdollPoseModifier__ctor_3: u64 = 59842;
 pub const hkbExtractRagdollPoseModifier__vdtor: u64 = 59043;
 /// `hkbExtractRagdollPoseModifier::vfunc_23_sub0` at 0xac6f10 (callgraph, medium); signature (untiered): `undefined vfunc_23_sub0(void)`
 pub const hkbExtractRagdollPoseModifier__vfunc_23_sub0: u64 = 58289;
-/// `hkbFootIkControlsModifier::Activate` at 0xb0a710 (semantic, high); signature (untiered): `undefined Activate(hkbFootIkControlsModifier * this, longlong * param_1)`
+/// `hkbFootIkControlsModifier::Activate` at 0xb0a710 (semantic, high); signature (low): `undefined Activate(hkbFootIkControlsModifier * this, longlong * param_1)`
 pub const hkbFootIkControlsModifier__Activate: u64 = 59733;
-/// `hkbFootIkControlsModifier::CloneNode` at 0xb0a6a0 (semantic, high); signature (untiered): `hkbFootIkControlsModifier * CloneNode(hkbFootIkControlsModifier * this)`
+/// `hkbFootIkControlsModifier::CloneNode` at 0xb0a6a0 (semantic, high); signature (high): `hkbFootIkControlsModifier * CloneNode(hkbFootIkControlsModifier * this)`
 pub const hkbFootIkControlsModifier__CloneNode: u64 = 59732;
-/// `hkbFootIkControlsModifier::Modify` at 0xb0a8d0 (semantic, medium); signature (untiered): `undefined Modify(hkbFootIkControlsModifier * this, longlong * param_1, longlong * param_2)`
+/// `hkbFootIkControlsModifier::Modify` at 0xb0a8d0 (semantic, medium); signature (low): `undefined Modify(hkbFootIkControlsModifier * this, longlong * param_1, longlong * param_2)`
 pub const hkbFootIkControlsModifier__Modify: u64 = 59735;
-/// `hkbFootIkControlsModifier::Update` at 0xb0a750 (semantic, high); signature (untiered): `undefined Update(hkbFootIkControlsModifier * this, longlong * param_1)`
+/// `hkbFootIkControlsModifier::Update` at 0xb0a750 (semantic, high); signature (low): `undefined Update(hkbFootIkControlsModifier * this, longlong * param_1)`
 pub const hkbFootIkControlsModifier__Update: u64 = 59734;
 /// `hkbFootIkControlsModifier::ctor` at 0xade6b0 (layout_inference, high); signature (high): `undefined ctor(hkbFootIkControlsModifier * this)`
 pub const hkbFootIkControlsModifier__ctor: u64 = 58770;
@@ -6073,7 +5777,7 @@ pub type hkbFootIkDriver__GetErrorOutTranslation_fn = unsafe extern "C" fn(this:
 pub const hkbFootIkDriver__OrientHips: u64 = 58433;
 /// `hkbFootIkDriver::OrientHips` as a function pointer type (high).
 pub type hkbFootIkDriver__OrientHips_fn = unsafe extern "C" fn(this: *mut crate::hkbFootIkDriver, ctx: *mut c_void, output: *mut crate::hkbGeneratorOutput, pose: *mut c_void, upWS: *const crate::hkVector4, gains: *const crate::hkbFootIkGains);
-/// `hkbFootIkDriver::ReleaseLegsAndReset` at 0xad41c0 (runtime, high); signature (untiered): `undefined ReleaseLegsAndReset(longlong param_1)`; semantic: per leg with a solver: delete the solver (vtbl[0](solver, 1)), solver = 0, leg +0x00..+0x0f = 0, +0x28 = 0, +0x2c = 0, +0x2d = 0 (+0x10 normal untouched); then driver +0x40 qword = 0 (errorOut and prevOnFraction), +0x48 word = 0 (legsInitialized and isGroundPositionValid), +0x4c = 0 (deltaTime) (high); signature `void (hkbFootIkDriver* this)`
+/// `hkbFootIkDriver::ReleaseLegsAndReset` at 0xad41c0 (runtime, high); signature (low): `undefined ReleaseLegsAndReset(longlong param_1)`; semantic: per leg with a solver: delete the solver (vtbl[0](solver, 1)), solver = 0, leg +0x00..+0x0f = 0, +0x28 = 0, +0x2c = 0, +0x2d = 0 (+0x10 normal untouched); then driver +0x40 qword = 0 (errorOut and prevOnFraction), +0x48 word = 0 (legsInitialized and isGroundPositionValid), +0x4c = 0 (deltaTime) (high); signature `void (hkbFootIkDriver* this)`
 pub const hkbFootIkDriver__ReleaseLegsAndReset: u64 = 58427;
 /// `hkbFootIkDriver::ReleaseLegsAndReset` as a function pointer type (high).
 pub type hkbFootIkDriver__ReleaseLegsAndReset_fn = unsafe extern "C" fn(this: *mut crate::hkbFootIkDriver);
@@ -6081,7 +5785,7 @@ pub type hkbFootIkDriver__ReleaseLegsAndReset_fn = unsafe extern "C" fn(this: *m
 pub const hkbFootIkDriver__ReleaseLegsAndResetThunk: u64 = 58431;
 /// `hkbFootIkDriver::ReleaseLegsAndResetThunk` as a function pointer type (high).
 pub type hkbFootIkDriver__ReleaseLegsAndResetThunk_fn = unsafe extern "C" fn(this: *mut crate::hkbFootIkDriver);
-/// `hkbFootIkDriver::Run` at 0xad2300 (semantic, high); signature (untiered): `undefined Run(longlong param_1, longlong * param_2, longlong * param_3)`; semantic: the graph's foot IK pass ('TtFootIkController' timer): returns at once when +0x4a (disabled) is set, the pose has fewer than 12 tracks, or the character has no hkbFootIkDriverInfo; else sets up the legs (once, 0xad42b0, when +0x48 is 0), asks the raycast DB for the character's raycast interface (DB slot 1), runs SolveFootIk 0xa9ddf0 per leg and writes the corrected pose (high); signature `void (hkbFootIkDriver* this, hkbContext* ctx, hkbGeneratorOutput* pose)`
+/// `hkbFootIkDriver::Run` at 0xad2300 (semantic, high); signature (low): `undefined Run(longlong param_1, longlong * param_2, longlong * param_3)`; semantic: the graph's foot IK pass ('TtFootIkController' timer): returns at once when +0x4a (disabled) is set, the pose has fewer than 12 tracks, or the character has no hkbFootIkDriverInfo; else sets up the legs (once, 0xad42b0, when +0x48 is 0), asks the raycast DB for the character's raycast interface (DB slot 1), runs SolveFootIk 0xa9ddf0 per leg and writes the corrected pose (high); signature `void (hkbFootIkDriver* this, hkbContext* ctx, hkbGeneratorOutput* pose)`
 pub const hkbFootIkDriver__Run: u64 = 58423;
 /// `hkbFootIkDriver::Run` as a function pointer type (high).
 pub type hkbFootIkDriver__Run_fn = unsafe extern "C" fn(this: *mut crate::hkbFootIkDriver, ctx: *mut c_void, pose: *mut crate::hkbGeneratorOutput);
@@ -6101,19 +5805,19 @@ pub const hkbFootIkDriver__dtor: u64 = 58422;
 pub const hkbFootIkDriver__vdtor: u64 = 58444;
 /// `hkbFootIkDriverInfo::vdtor` at 0xae3740 (semantic, high); signature (low): `hkbFootIkDriverInfo * vdtor(hkbFootIkDriverInfo * this, uint param_1, ulonglong param_2, undefined8 param_3)`
 pub const hkbFootIkDriverInfo__vdtor: u64 = 59045;
-/// `hkbFootIkModifier::Activate` at 0xb0aee0 (semantic, high); signature (untiered): `undefined Activate(hkbFootIkModifier * this)`
+/// `hkbFootIkModifier::Activate` at 0xb0aee0 (semantic, high); signature (high): `undefined Activate(hkbFootIkModifier * this)`
 pub const hkbFootIkModifier__Activate: u64 = 59739;
-/// `hkbFootIkModifier::CloneNode` at 0xb0b620 (semantic, high); signature (untiered): `undefined CloneNode(hkbFootIkModifier * this)`
+/// `hkbFootIkModifier::CloneNode` at 0xb0b620 (semantic, high); signature (high): `undefined CloneNode(hkbFootIkModifier * this)`
 pub const hkbFootIkModifier__CloneNode: u64 = 59743;
-/// `hkbFootIkModifier::Deactivate` at 0xb0b2b0 (semantic, high); signature (untiered): `undefined Deactivate(hkbFootIkModifier * this)`
+/// `hkbFootIkModifier::Deactivate` at 0xb0b2b0 (semantic, high); signature (high): `undefined Deactivate(hkbFootIkModifier * this)`
 pub const hkbFootIkModifier__Deactivate: u64 = 59741;
-/// `hkbFootIkModifier::IsValid` at 0xb0b370 (semantic, high); signature (untiered): `undefined8 IsValid(hkbFootIkModifier * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`
+/// `hkbFootIkModifier::IsValid` at 0xb0b370 (semantic, high); signature (low): `undefined8 IsValid(hkbFootIkModifier * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkbFootIkModifier__IsValid: u64 = 59742;
-/// `hkbFootIkModifier::Modify` at 0xb0b670 (semantic, high); signature (untiered): `undefined Modify(hkbFootIkModifier * this, longlong * param_1, longlong * param_2)`
+/// `hkbFootIkModifier::Modify` at 0xb0b670 (semantic, high); signature (low): `undefined Modify(hkbFootIkModifier * this, longlong * param_1, longlong * param_2)`
 pub const hkbFootIkModifier__Modify: u64 = 59744;
 /// `hkbFootIkModifier::SetupLegs` at 0xb0d360 (semantic, medium); signature (untiered): `undefined SetupLegs(longlong param_1, longlong * param_2, undefined8 param_3)`; semantic: the modifier's solver setup (medium); signature `void (hkbFootIkModifier* this, const hkbContext* ctx, ...)`
 pub const hkbFootIkModifier__SetupLegs: u64 = 59745;
-/// `hkbFootIkModifier::Update` at 0xb0b0a0 (semantic, high); signature (untiered): `undefined Update(hkbFootIkModifier * this, longlong * param_2, undefined4 param_3)`
+/// `hkbFootIkModifier::Update` at 0xb0b0a0 (semantic, high); signature (low): `undefined Update(hkbFootIkModifier * this, longlong * param_2, undefined4 param_3)`
 pub const hkbFootIkModifier__Update: u64 = 59740;
 /// `hkbFootIkModifier::ctor` at 0xadfed0 (layout_inference, high); signature (high): `hkbFootIkModifier * ctor(hkbFootIkModifier * this)`
 pub const hkbFootIkModifier__ctor: u64 = 58964;
@@ -6133,7 +5837,7 @@ pub const hkbFootIkModifier__vdtor: u64 = 59046;
 pub const hkbFootIkModifier__vfunc_23_sub1: u64 = 59746;
 /// `hkbFootIkModifier::vfunc_23_sub2` at 0xb0db30 (callgraph, medium); signature (untiered): `undefined vfunc_23_sub2(longlong param_1, longlong * param_2, undefined8 param_3, longlong * param_4, float param_5)`
 pub const hkbFootIkModifier__vfunc_23_sub2: u64 = 59747;
-/// `hkbFootIkSceneModifier::Modify` at 0xafee20 (semantic, high); signature (untiered): `undefined Modify(hkbFootIkSceneModifier * this, longlong * param_1)`
+/// `hkbFootIkSceneModifier::Modify` at 0xafee20 (semantic, high); signature (low): `undefined Modify(hkbFootIkSceneModifier * this, longlong * param_1)`
 pub const hkbFootIkSceneModifier__Modify: u64 = 59458;
 /// `hkbFootIkSceneModifier::vdtor` at 0xadb750 (semantic, high); signature (low): `hkbFootIkSceneModifier * vdtor(hkbFootIkSceneModifier * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkbFootIkSceneModifier__vdtor: u64 = 58516;
@@ -6257,13 +5961,13 @@ pub const hkbGetWorldFromModelModifier__vfunc_16: u64 = 59776;
 pub const hkbGetWorldFromModelModifier__vfunc_23: u64 = 59773;
 /// `hkbGetWorldFromModelModifierInternalState::vdtor` at 0xae3c20 (layout_inference, medium); signature (low): `hkbGetWorldFromModelModifierInternalState * vdtor(hkbGetWorldFromModelModifierInternalState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkbGetWorldFromModelModifierInternalState__vdtor: u64 = 59053;
-/// `hkbHandIkControlsModifier::CloneNode` at 0xb111f0 (semantic, high); signature (untiered): `hkbHandIkControlsModifier * CloneNode(hkbHandIkControlsModifier * this)`
+/// `hkbHandIkControlsModifier::CloneNode` at 0xb111f0 (semantic, high); signature (high): `hkbHandIkControlsModifier * CloneNode(hkbHandIkControlsModifier * this)`
 pub const hkbHandIkControlsModifier__CloneNode: u64 = 59780;
-/// `hkbHandIkControlsModifier::Deactivate` at 0xb11030 (semantic, high); signature (untiered): `undefined Deactivate(hkbHandIkControlsModifier * this)`
+/// `hkbHandIkControlsModifier::Deactivate` at 0xb11030 (semantic, high); signature (high): `undefined Deactivate(hkbHandIkControlsModifier * this)`
 pub const hkbHandIkControlsModifier__Deactivate: u64 = 59778;
-/// `hkbHandIkControlsModifier::IsValid` at 0xb110a0 (semantic, high); signature (untiered): `ulonglong IsValid(hkbHandIkControlsModifier * this, ulonglong * param_1)`
+/// `hkbHandIkControlsModifier::IsValid` at 0xb110a0 (semantic, high); signature (low): `ulonglong IsValid(hkbHandIkControlsModifier * this, ulonglong * param_1)`
 pub const hkbHandIkControlsModifier__IsValid: u64 = 59779;
-/// `hkbHandIkControlsModifier::Modify` at 0xb11260 (semantic, high); signature (untiered): `undefined Modify(hkbHandIkControlsModifier * this, undefined8 param_1, undefined8 param_2)`
+/// `hkbHandIkControlsModifier::Modify` at 0xb11260 (semantic, high); signature (low): `undefined Modify(hkbHandIkControlsModifier * this, undefined8 param_1, undefined8 param_2)`
 pub const hkbHandIkControlsModifier__Modify: u64 = 59781;
 /// `hkbHandIkControlsModifier::ctor` at 0xadea30 (layout_inference, high); signature (high): `undefined ctor(hkbHandIkControlsModifier * this)`
 pub const hkbHandIkControlsModifier__ctor: u64 = 58795;
@@ -6273,7 +5977,7 @@ pub const hkbHandIkControlsModifier__ctor_2: u64 = 59777;
 pub const hkbHandIkControlsModifier__vdtor: u64 = 59054;
 /// `hkbHandIkControlsModifier::vfunc_23_sub0` at 0xb27cd0 (callgraph, medium); signature (untiered): `undefined vfunc_23_sub0(longlong param_1, longlong * param_2)`
 pub const hkbHandIkControlsModifier__vfunc_23_sub0: u64 = 60066;
-/// `hkbHandIkDriver::Run` at 0xaf9bc0 (runtime, high); signature (untiered): `undefined Run(longlong param_1, longlong * param_2, longlong * param_3, float param_4, char param_5)`; semantic: hand IK of one character ('TtHandIkDriver') (high); signature `void (hkbHandIkDriver* this, const hkbContext* ctx, hkbGeneratorOutput* output, float timestep, bool fixup)`
+/// `hkbHandIkDriver::Run` at 0xaf9bc0 (runtime, high); signature (low): `undefined Run(longlong param_1, longlong * param_2, longlong * param_3, float param_4, char param_5)`; semantic: hand IK of one character ('TtHandIkDriver') (high); signature `void (hkbHandIkDriver* this, const hkbContext* ctx, hkbGeneratorOutput* output, float timestep, bool fixup)`
 pub const hkbHandIkDriver__Run: u64 = 59421;
 /// `hkbHandIkDriver::Run` as a function pointer type (high).
 pub type hkbHandIkDriver__Run_fn = unsafe extern "C" fn(this: *mut crate::hkbHandIkDriver, ctx: *const c_void, output: *mut crate::hkbGeneratorOutput, timestep: f32, fixup: bool);
@@ -6285,19 +5989,19 @@ pub type hkbHandIkDriver__ctor_fn = unsafe extern "C" fn(this: *mut crate::hkbHa
 pub const hkbHandIkDriver__vdtor: u64 = 59429;
 /// `hkbHandIkDriverInfo::vdtor` at 0xae3d80 (semantic, high); signature (low): `hkbHandIkDriverInfo * vdtor(hkbHandIkDriverInfo * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkbHandIkDriverInfo__vdtor: u64 = 59055;
-/// `hkbHandIkFixupSceneModifier::Modify` at 0xafefa0 (semantic, high); signature (untiered): `undefined Modify(undefined8 param_1, longlong * param_2, undefined4 param_3)`
+/// `hkbHandIkFixupSceneModifier::Modify` at 0xafefa0 (semantic, high); signature (low): `undefined Modify(undefined8 param_1, longlong * param_2, undefined4 param_3)`
 pub const hkbHandIkFixupSceneModifier__Modify: u64 = 59460;
 /// `hkbHandIkFixupSceneModifier::vdtor` at 0xadb7e0 (semantic, high); signature (low): `hkbHandIkFixupSceneModifier * vdtor(hkbHandIkFixupSceneModifier * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkbHandIkFixupSceneModifier__vdtor: u64 = 58517;
-/// `hkbHandIkModifier::Activate` at 0xb11580 (semantic, high); signature (untiered): `undefined Activate(hkbHandIkModifier * this, ulonglong * param_1)`
+/// `hkbHandIkModifier::Activate` at 0xb11580 (semantic, high); signature (low): `undefined Activate(hkbHandIkModifier * this, ulonglong * param_1)`
 pub const hkbHandIkModifier__Activate: u64 = 59784;
-/// `hkbHandIkModifier::CloneNode` at 0xb11ab0 (semantic, high); signature (untiered): `undefined CloneNode(hkbHandIkModifier * this)`
+/// `hkbHandIkModifier::CloneNode` at 0xb11ab0 (semantic, high); signature (high): `undefined CloneNode(hkbHandIkModifier * this)`
 pub const hkbHandIkModifier__CloneNode: u64 = 59787;
-/// `hkbHandIkModifier::IsValid` at 0xb11830 (semantic, high); signature (untiered): `undefined8 IsValid(hkbHandIkModifier * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`
+/// `hkbHandIkModifier::IsValid` at 0xb11830 (semantic, high); signature (low): `undefined8 IsValid(hkbHandIkModifier * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkbHandIkModifier__IsValid: u64 = 59786;
-/// `hkbHandIkModifier::Modify` at 0xb11b00 (semantic, high); signature (untiered): `undefined Modify(hkbHandIkModifier * this, longlong * param_1, ulonglong * param_2)`
+/// `hkbHandIkModifier::Modify` at 0xb11b00 (semantic, high); signature (low): `undefined Modify(hkbHandIkModifier * this, longlong * param_1, ulonglong * param_2)`
 pub const hkbHandIkModifier__Modify: u64 = 59788;
-/// `hkbHandIkModifier::Update` at 0xb11720 (semantic, high); signature (untiered): `undefined Update(hkbHandIkModifier * this, undefined8 param_1, float param_2)`
+/// `hkbHandIkModifier::Update` at 0xb11720 (semantic, high); signature (low): `undefined Update(hkbHandIkModifier * this, undefined8 param_1, float param_2)`
 pub const hkbHandIkModifier__Update: u64 = 59785;
 /// `hkbHandIkModifier::ctor` at 0xadeae0 (layout_inference, medium); signature (high): `undefined ctor(hkbHandIkModifier * this)`
 pub const hkbHandIkModifier__ctor: u64 = 58799;
@@ -6309,7 +6013,7 @@ pub const hkbHandIkModifier__ctor_3: u64 = 59783;
 pub const hkbHandIkModifier__vdtor: u64 = 59056;
 /// `hkbHandIkModifier::vfunc_23_sub0` at 0xb13000 (callgraph, medium); signature (untiered): `undefined vfunc_23_sub0(longlong param_1, int param_2, float param_3, float * param_4, undefined8 param_5, longlong * param_6)`
 pub const hkbHandIkModifier__vfunc_23_sub0: u64 = 59792;
-/// `hkbHandIkSceneModifier::Modify` at 0xafeed0 (semantic, high); signature (untiered): `undefined Modify(undefined8 param_1, longlong * param_2, undefined4 param_3)`
+/// `hkbHandIkSceneModifier::Modify` at 0xafeed0 (semantic, high); signature (low): `undefined Modify(undefined8 param_1, longlong * param_2, undefined4 param_3)`
 pub const hkbHandIkSceneModifier__Modify: u64 = 59459;
 /// `hkbHandIkSceneModifier::vdtor` at 0xadb870 (semantic, high); signature (low): `hkbHandIkSceneModifier * vdtor(hkbHandIkSceneModifier * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkbHandIkSceneModifier__vdtor: u64 = 58518;
@@ -6323,19 +6027,19 @@ pub const hkbIntVariableSequencedData__ctor: u64 = 59940;
 pub const hkbIntVariableSequencedData__vdtor: u64 = 59059;
 /// `hkbIntVariableSequencedData::vfunc_3` at 0xb1b4e0 (rtti, high); signature (low): `undefined vfunc_3(hkbIntVariableSequencedData * this, undefined8 param_1, longlong * param_2, float param_3, undefined8 param_4, longlong param_5, int * param_6)`
 pub const hkbIntVariableSequencedData__vfunc_3: u64 = 59941;
-/// `hkbKeyframeBonesModifier::Activate` at 0xb16150 (semantic, high); signature (untiered): `undefined Activate(hkbKeyframeBonesModifier * this)`
+/// `hkbKeyframeBonesModifier::Activate` at 0xb16150 (semantic, high); signature (high): `undefined Activate(hkbKeyframeBonesModifier * this)`
 pub const hkbKeyframeBonesModifier__Activate: u64 = 59850;
 /// `hkbKeyframeBonesModifier::ApplyKeyframes` at 0xb28c00 (semantic, high); signature (untiered): `undefined ApplyKeyframes(longlong param_1, longlong * param_2)`; semantic: writes the keyframed bones into the generator output: track 9 (header +0xa0, needs numTracks > 9) gets one {position, rotation} per valid keyframeInfo (+0x50 array, 0x30 each, boneIndex +0x20, isValid +0x22) sorted by bone index; track 8 (header +0x90, needs > 8) is zeroed and set to 1.0 for every bone of keyframedBonesList (+0x60 hkbBoneIndexArray, +0x30 data, +0x38 count), on fraction +0x98 = 1.0 (high); signature `void (hkbKeyframeBonesModifier* this, hkbGeneratorOutput* output)`
 pub const hkbKeyframeBonesModifier__ApplyKeyframes: u64 = 60071;
 /// `hkbKeyframeBonesModifier::ApplyKeyframes` as a function pointer type (high).
 pub type hkbKeyframeBonesModifier__ApplyKeyframes_fn = unsafe extern "C" fn(this: *mut crate::hkbKeyframeBonesModifier, output: *mut crate::hkbGeneratorOutput);
-/// `hkbKeyframeBonesModifier::CloneNode` at 0xb16640 (semantic, high); signature (untiered): `hkbKeyframeBonesModifier * CloneNode(hkbKeyframeBonesModifier * this)`
+/// `hkbKeyframeBonesModifier::CloneNode` at 0xb16640 (semantic, high); signature (high): `hkbKeyframeBonesModifier * CloneNode(hkbKeyframeBonesModifier * this)`
 pub const hkbKeyframeBonesModifier__CloneNode: u64 = 59852;
-/// `hkbKeyframeBonesModifier::CollectBindables` at 0xb16110 (semantic, medium); signature (untiered): `undefined CollectBindables(hkbKeyframeBonesModifier * this, undefined8 * param_1)`
+/// `hkbKeyframeBonesModifier::CollectBindables` at 0xb16110 (semantic, medium); signature (low): `undefined CollectBindables(hkbKeyframeBonesModifier * this, undefined8 * param_1)`
 pub const hkbKeyframeBonesModifier__CollectBindables: u64 = 59849;
-/// `hkbKeyframeBonesModifier::IsValid` at 0xb16180 (semantic, high); signature (untiered): `undefined8 IsValid(hkbKeyframeBonesModifier * this, ulonglong * param_1)`
+/// `hkbKeyframeBonesModifier::IsValid` at 0xb16180 (semantic, high); signature (low): `undefined8 IsValid(hkbKeyframeBonesModifier * this, ulonglong * param_1)`
 pub const hkbKeyframeBonesModifier__IsValid: u64 = 59851;
-/// `hkbKeyframeBonesModifier::Modify` at 0xb166c0 (semantic, high); signature (untiered): `undefined Modify(hkbKeyframeBonesModifier * this, undefined8 param_1, undefined8 param_2)`
+/// `hkbKeyframeBonesModifier::Modify` at 0xb166c0 (semantic, high); signature (low): `undefined Modify(hkbKeyframeBonesModifier * this, undefined8 param_1, undefined8 param_2)`
 pub const hkbKeyframeBonesModifier__Modify: u64 = 59853;
 /// `hkbKeyframeBonesModifier::ctor` at 0xadef20 (layout_inference, high); signature (high): `undefined ctor(hkbKeyframeBonesModifier * this)`
 pub const hkbKeyframeBonesModifier__ctor: u64 = 58824;
@@ -6345,19 +6049,19 @@ pub const hkbKeyframeBonesModifier__ctor_2: u64 = 59847;
 pub const hkbKeyframeBonesModifier__vdtor: u64 = 59060;
 /// `hkbLinkedSymbolInfo::vdtor` at 0x10d1d90 (slot_propagation, medium); signature (low): `hkbLinkedSymbolInfo * vdtor(hkbLinkedSymbolInfo * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkbLinkedSymbolInfo__vdtor: u64 = 80365;
-/// `hkbLookAtModifier::Activate` at 0xb13af0 (semantic, high); signature (untiered): `undefined Activate(hkbLookAtModifier * this)`
+/// `hkbLookAtModifier::Activate` at 0xb13af0 (semantic, high); signature (high): `undefined Activate(hkbLookAtModifier * this)`
 pub const hkbLookAtModifier__Activate: u64 = 59805;
-/// `hkbLookAtModifier::CloneNode` at 0xb13bd0 (semantic, high); signature (untiered): `undefined CloneNode(hkbLookAtModifier * this)`
+/// `hkbLookAtModifier::CloneNode` at 0xb13bd0 (semantic, high); signature (high): `undefined CloneNode(hkbLookAtModifier * this)`
 pub const hkbLookAtModifier__CloneNode: u64 = 59807;
-/// `hkbLookAtModifier::CreateInternalState` at 0xb14490 (semantic, high); signature (untiered): `undefined CreateInternalState(void)`
+/// `hkbLookAtModifier::CreateInternalState` at 0xb14490 (semantic, high); signature (low): `undefined CreateInternalState(void)`
 pub const hkbLookAtModifier__CreateInternalState: u64 = 59809;
-/// `hkbLookAtModifier::GetInternalState` at 0xb144d0 (semantic, high); signature (untiered): `undefined GetInternalState(hkbLookAtModifier * this, longlong param_1)`
+/// `hkbLookAtModifier::GetInternalState` at 0xb144d0 (semantic, high); signature (low): `undefined GetInternalState(hkbLookAtModifier * this, longlong param_1)`
 pub const hkbLookAtModifier__GetInternalState: u64 = 59810;
-/// `hkbLookAtModifier::IsValid` at 0xb13b20 (semantic, high); signature (untiered): `ulonglong IsValid(hkbLookAtModifier * this, ulonglong * param_1)`
+/// `hkbLookAtModifier::IsValid` at 0xb13b20 (semantic, high); signature (low): `ulonglong IsValid(hkbLookAtModifier * this, ulonglong * param_1)`
 pub const hkbLookAtModifier__IsValid: u64 = 59806;
-/// `hkbLookAtModifier::Modify` at 0xb13c20 (semantic, medium); signature (untiered): `undefined Modify(hkbLookAtModifier * this, longlong * param_1, longlong * param_2)`
+/// `hkbLookAtModifier::Modify` at 0xb13c20 (semantic, medium); signature (low): `undefined Modify(hkbLookAtModifier * this, longlong * param_1, longlong * param_2)`
 pub const hkbLookAtModifier__Modify: u64 = 59808;
-/// `hkbLookAtModifier::SetInternalState` at 0xb14500 (semantic, high); signature (untiered): `undefined SetInternalState(hkbLookAtModifier * this, longlong param_1)`
+/// `hkbLookAtModifier::SetInternalState` at 0xb14500 (semantic, high); signature (low): `undefined SetInternalState(hkbLookAtModifier * this, longlong param_1)`
 pub const hkbLookAtModifier__SetInternalState: u64 = 59811;
 /// `hkbLookAtModifier::ctor` at 0xadebf0 (layout_inference, high); signature (high): `undefined ctor(hkbLookAtModifier * this)`
 pub const hkbLookAtModifier__ctor: u64 = 58804;
@@ -6587,23 +6291,23 @@ pub const hkbNode__vfunc_9: u64 = 58407;
 pub const hkbNodeInternalStateInfo__vdtor: u64 = 58398;
 /// `hkbParticleSystemEventPayload::vdtor` at 0x10d1e10 (layout_inference, medium); signature (low): `hkbParticleSystemEventPayload * vdtor(hkbParticleSystemEventPayload * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkbParticleSystemEventPayload__vdtor: u64 = 80366;
-/// `hkbPoseMatchingGenerator::Activate` at 0xb04330 (semantic, high); signature (untiered): `undefined Activate(hkbPoseMatchingGenerator * this, longlong * param_1)`
+/// `hkbPoseMatchingGenerator::Activate` at 0xb04330 (semantic, high); signature (low): `undefined Activate(hkbPoseMatchingGenerator * this, longlong * param_1)`
 pub const hkbPoseMatchingGenerator__Activate: u64 = 59575;
-/// `hkbPoseMatchingGenerator::CloneNode` at 0xb04b30 (semantic, high); signature (untiered): `undefined CloneNode(hkbPoseMatchingGenerator * this)`
+/// `hkbPoseMatchingGenerator::CloneNode` at 0xb04b30 (semantic, high); signature (high): `undefined CloneNode(hkbPoseMatchingGenerator * this)`
 pub const hkbPoseMatchingGenerator__CloneNode: u64 = 59580;
-/// `hkbPoseMatchingGenerator::CreateInternalState` at 0xb05130 (semantic, high); signature (untiered): `undefined CreateInternalState(void)`
+/// `hkbPoseMatchingGenerator::CreateInternalState` at 0xb05130 (semantic, high); signature (low): `undefined CreateInternalState(void)`
 pub const hkbPoseMatchingGenerator__CreateInternalState: u64 = 59584;
-/// `hkbPoseMatchingGenerator::Deactivate` at 0xb04910 (semantic, high); signature (untiered): `undefined Deactivate(hkbPoseMatchingGenerator * this)`
+/// `hkbPoseMatchingGenerator::Deactivate` at 0xb04910 (semantic, high); signature (high): `undefined Deactivate(hkbPoseMatchingGenerator * this)`
 pub const hkbPoseMatchingGenerator__Deactivate: u64 = 59578;
 /// `hkbPoseMatchingGenerator::GetClassType` at 0xb04320 (semantic, medium); signature (untiered): `undefined * GetClassType(void)`
 pub const hkbPoseMatchingGenerator__GetClassType: u64 = 59574;
-/// `hkbPoseMatchingGenerator::GetInternalState` at 0xb05170 (semantic, high); signature (untiered): `undefined GetInternalState(hkbPoseMatchingGenerator * this, longlong param_1)`
+/// `hkbPoseMatchingGenerator::GetInternalState` at 0xb05170 (semantic, high); signature (low): `undefined GetInternalState(hkbPoseMatchingGenerator * this, longlong param_1)`
 pub const hkbPoseMatchingGenerator__GetInternalState: u64 = 59585;
-/// `hkbPoseMatchingGenerator::IsValid` at 0xb049b0 (semantic, high); signature (untiered): `ulonglong IsValid(hkbPoseMatchingGenerator * this, ulonglong * param_1)`
+/// `hkbPoseMatchingGenerator::IsValid` at 0xb049b0 (semantic, high); signature (low): `ulonglong IsValid(hkbPoseMatchingGenerator * this, ulonglong * param_1)`
 pub const hkbPoseMatchingGenerator__IsValid: u64 = 59579;
-/// `hkbPoseMatchingGenerator::SetInternalState` at 0xb051b0 (semantic, high); signature (untiered): `undefined SetInternalState(hkbPoseMatchingGenerator * this, longlong param_1)`
+/// `hkbPoseMatchingGenerator::SetInternalState` at 0xb051b0 (semantic, high); signature (low): `undefined SetInternalState(hkbPoseMatchingGenerator * this, longlong param_1)`
 pub const hkbPoseMatchingGenerator__SetInternalState: u64 = 59586;
-/// `hkbPoseMatchingGenerator::Update` at 0xb048a0 (semantic, high); signature (untiered): `undefined Update(hkbPoseMatchingGenerator * this, longlong * param_1, float param_2)`
+/// `hkbPoseMatchingGenerator::Update` at 0xb048a0 (semantic, high); signature (low): `undefined Update(hkbPoseMatchingGenerator * this, longlong * param_1, float param_2)`
 pub const hkbPoseMatchingGenerator__Update: u64 = 59576;
 /// `hkbPoseMatchingGenerator::ctor` at 0xb04210 (layout_inference, high); signature (low): `hkbPoseMatchingGenerator * ctor(hkbPoseMatchingGenerator * this, longlong param_1)`
 pub const hkbPoseMatchingGenerator__ctor: u64 = 59572;
@@ -6619,13 +6323,13 @@ pub const hkbPoseMatchingGenerator__vfunc_25: u64 = 59582;
 pub const hkbPoseMatchingGenerator__vfunc_6: u64 = 59577;
 /// `hkbPoseMatchingGeneratorInternalState::vdtor` at 0xae4ad0 (semantic, high); signature (low): `hkbPoseMatchingGeneratorInternalState * vdtor(hkbPoseMatchingGeneratorInternalState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkbPoseMatchingGeneratorInternalState__vdtor: u64 = 59078;
-/// `hkbPoweredRagdollControlsModifier::CloneNode` at 0xb16da0 (semantic, high); signature (untiered): `hkbPoweredRagdollControlsModifier * CloneNode(hkbPoweredRagdollControlsModifier * this)`
+/// `hkbPoweredRagdollControlsModifier::CloneNode` at 0xb16da0 (semantic, high); signature (high): `hkbPoweredRagdollControlsModifier * CloneNode(hkbPoweredRagdollControlsModifier * this)`
 pub const hkbPoweredRagdollControlsModifier__CloneNode: u64 = 59860;
-/// `hkbPoweredRagdollControlsModifier::CollectBindables` at 0xb16b90 (semantic, medium); signature (untiered): `undefined CollectBindables(hkbPoweredRagdollControlsModifier * this, undefined8 * param_1)`
+/// `hkbPoweredRagdollControlsModifier::CollectBindables` at 0xb16b90 (semantic, medium); signature (low): `undefined CollectBindables(hkbPoweredRagdollControlsModifier * this, undefined8 * param_1)`
 pub const hkbPoweredRagdollControlsModifier__CollectBindables: u64 = 59858;
-/// `hkbPoweredRagdollControlsModifier::IsValid` at 0xb16bf0 (semantic, high); signature (untiered): `ulonglong IsValid(hkbPoweredRagdollControlsModifier * this, ulonglong * param_1)`
+/// `hkbPoweredRagdollControlsModifier::IsValid` at 0xb16bf0 (semantic, high); signature (low): `ulonglong IsValid(hkbPoweredRagdollControlsModifier * this, ulonglong * param_1)`
 pub const hkbPoweredRagdollControlsModifier__IsValid: u64 = 59859;
-/// `hkbPoweredRagdollControlsModifier::Modify` at 0xb16e30 (semantic, high); signature (untiered): `undefined Modify(hkbPoweredRagdollControlsModifier * this, undefined8 param_1, undefined8 param_2)`
+/// `hkbPoweredRagdollControlsModifier::Modify` at 0xb16e30 (semantic, high); signature (low): `undefined Modify(hkbPoweredRagdollControlsModifier * this, undefined8 param_1, undefined8 param_2)`
 pub const hkbPoweredRagdollControlsModifier__Modify: u64 = 59861;
 /// `hkbPoweredRagdollControlsModifier::ctor` at 0xadefc0 (layout_inference, high); signature (high): `undefined ctor(hkbPoweredRagdollControlsModifier * this)`
 pub const hkbPoweredRagdollControlsModifier__ctor: u64 = 58828;
@@ -6671,13 +6375,13 @@ pub const hkbProxyModifier__vfunc_4: u64 = 59828;
 pub const hkbProxyModifier__vfunc_5: u64 = 59829;
 /// `hkbProxyModifier::vfunc_7` at 0xb14ed0 (rtti, high); signature (low): `undefined vfunc_7(hkbProxyModifier * this, longlong * param_1)`
 pub const hkbProxyModifier__vfunc_7: u64 = 59830;
-/// `hkbRagdollDriver::DriveToPose` at 0xac6fb0 (semantic, medium); signature (untiered): `undefined DriveToPose(longlong param_1, float param_2, longlong * param_3, longlong * param_4)`; semantic: pre-physics ragdoll drive: with timestep <= 0 only records whether the output's rigid-body controls track (+0x78, track 6) and powered controls track (+0x58, track 4) are active into +0xc7/+0xc8 and adds the ragdoll to the world if pending; otherwise drives the bodies toward the pose (medium); signature `void (hkbRagdollDriver* this, float timestep, hkbContext* ctx, hkbGeneratorOutput* output)`
+/// `hkbRagdollDriver::DriveToPose` at 0xac6fb0 (semantic, medium); signature (low): `undefined DriveToPose(longlong param_1, float param_2, longlong * param_3, longlong * param_4)`; semantic: pre-physics ragdoll drive: with timestep <= 0 only records whether the output's rigid-body controls track (+0x78, track 6) and powered controls track (+0x58, track 4) are active into +0xc7/+0xc8 and adds the ragdoll to the world if pending; otherwise drives the bodies toward the pose (medium); signature `void (hkbRagdollDriver* this, float timestep, hkbContext* ctx, hkbGeneratorOutput* output)`
 pub const hkbRagdollDriver__DriveToPose: u64 = 58291;
 /// `hkbRagdollDriver::GetRagdollInstance` at 0xac6cb0 (semantic, high); signature (untiered): `undefined8 GetRagdollInstance(longlong param_1)`; semantic: returns +0x88 (high); signature `hkaRagdollInstance* (hkbRagdollDriver* this)`
 pub const hkbRagdollDriver__GetRagdollInstance: u64 = 58286;
 /// `hkbRagdollDriver::GetRagdollInstance` as a function pointer type (high).
 pub type hkbRagdollDriver__GetRagdollInstance_fn = unsafe extern "C" fn(this: *mut crate::hkbRagdollDriver) -> *mut crate::hkaRagdollInstance;
-/// `hkbRagdollDriver::ResetControlFlags` at 0xac6f60 (semantic, high); signature (untiered): `undefined ResetControlFlags(longlong param_1)`; semantic: with an instance: when powered or rigid-body control was on (+0xc7/+0xc8) and a ragdoll pose buffer exists, rebuilds it (0xaca000); then clears +0xc7, +0xc8, +0xca, +0xcb (high); signature `void (hkbRagdollDriver* this)`
+/// `hkbRagdollDriver::ResetControlFlags` at 0xac6f60 (semantic, high); signature (low): `undefined ResetControlFlags(longlong param_1)`; semantic: with an instance: when powered or rigid-body control was on (+0xc7/+0xc8) and a ragdoll pose buffer exists, rebuilds it (0xaca000); then clears +0xc7, +0xc8, +0xca, +0xcb (high); signature `void (hkbRagdollDriver* this)`
 pub const hkbRagdollDriver__ResetControlFlags: u64 = 58290;
 /// `hkbRagdollDriver::ResetControlFlags` as a function pointer type (high).
 pub type hkbRagdollDriver__ResetControlFlags_fn = unsafe extern "C" fn(this: *mut crate::hkbRagdollDriver);
@@ -6689,7 +6393,7 @@ pub type hkbRagdollDriver__ctor_fn = unsafe extern "C" fn(this: *mut crate::hkbR
 pub const hkbRagdollDriver__dtor: u64 = 58281;
 /// `hkbRagdollDriver::vdtor` at 0xacacd0 (semantic, high); signature (low): `hkbRagdollDriver * vdtor(hkbRagdollDriver * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkbRagdollDriver__vdtor: u64 = 58312;
-/// `hkbRagdollSceneModifier::Modify` at 0xafea70 (semantic, high); signature (untiered): `undefined Modify(hkbRagdollSceneModifier * this, longlong * param_1, float param_2)`
+/// `hkbRagdollSceneModifier::Modify` at 0xafea70 (semantic, high); signature (low): `undefined Modify(hkbRagdollSceneModifier * this, longlong * param_1, float param_2)`
 pub const hkbRagdollSceneModifier__Modify: u64 = 59455;
 /// `hkbRagdollSceneModifier::ctor` at 0xafea40 (layout_inference, medium); signature (high): `hkbRagdollSceneModifier * ctor(hkbRagdollSceneModifier * this)`
 pub const hkbRagdollSceneModifier__ctor: u64 = 59454;
@@ -6721,11 +6425,11 @@ pub const hkbReferencePoseGenerator__vfunc_12: u64 = 59590;
 pub const hkbReferencePoseGenerator__vfunc_23: u64 = 59591;
 /// `hkbRegisteredGenerator::vdtor` at 0xae4f40 (slot_propagation, medium); signature (low): `hkbRegisteredGenerator * vdtor(hkbRegisteredGenerator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkbRegisteredGenerator__vdtor: u64 = 59085;
-/// `hkbRigidBodyRagdollControlsModifier::CloneNode` at 0xb17090 (semantic, high); signature (untiered): `hkbRigidBodyRagdollControlsModifier * CloneNode(hkbRigidBodyRagdollControlsModifier * this)`
+/// `hkbRigidBodyRagdollControlsModifier::CloneNode` at 0xb17090 (semantic, high); signature (high): `hkbRigidBodyRagdollControlsModifier * CloneNode(hkbRigidBodyRagdollControlsModifier * this)`
 pub const hkbRigidBodyRagdollControlsModifier__CloneNode: u64 = 59865;
-/// `hkbRigidBodyRagdollControlsModifier::CollectBindables` at 0xb17040 (semantic, medium); signature (untiered): `undefined CollectBindables(hkbRigidBodyRagdollControlsModifier * this, undefined8 * param_1)`
+/// `hkbRigidBodyRagdollControlsModifier::CollectBindables` at 0xb17040 (semantic, medium); signature (low): `undefined CollectBindables(hkbRigidBodyRagdollControlsModifier * this, undefined8 * param_1)`
 pub const hkbRigidBodyRagdollControlsModifier__CollectBindables: u64 = 59864;
-/// `hkbRigidBodyRagdollControlsModifier::Modify` at 0xb17110 (semantic, high); signature (untiered): `undefined Modify(hkbRigidBodyRagdollControlsModifier * this, undefined8 param_1, undefined8 param_2)`
+/// `hkbRigidBodyRagdollControlsModifier::Modify` at 0xb17110 (semantic, high); signature (low): `undefined Modify(hkbRigidBodyRagdollControlsModifier * this, undefined8 param_1, undefined8 param_2)`
 pub const hkbRigidBodyRagdollControlsModifier__Modify: u64 = 59866;
 /// `hkbRigidBodyRagdollControlsModifier::ctor` at 0xadf070 (layout_inference, high); signature (high): `undefined ctor(hkbRigidBodyRagdollControlsModifier * this)`
 pub const hkbRigidBodyRagdollControlsModifier__ctor: u64 = 58832;
@@ -7017,15 +6721,15 @@ pub const hkbTransitionEffect__ctor_2: u64 = 59488;
 pub const hkbTransitionEffect__vdtor: u64 = 59103;
 /// `hkbTransitionEffect::vfunc_19` at 0xb00210 (rtti, medium); signature (low): `undefined1 vfunc_19(void)`
 pub const hkbTransitionEffect__vfunc_19: u64 = 59489;
-/// `hkbTwistModifier::Activate` at 0xb194d0 (semantic, high); signature (untiered): `undefined Activate(hkbTwistModifier * this, longlong * param_1)`
+/// `hkbTwistModifier::Activate` at 0xb194d0 (semantic, high); signature (low): `undefined Activate(hkbTwistModifier * this, longlong * param_1)`
 pub const hkbTwistModifier__Activate: u64 = 59914;
-/// `hkbTwistModifier::CloneNode` at 0xb196a0 (semantic, high); signature (untiered): `undefined CloneNode(hkbTwistModifier * this)`
+/// `hkbTwistModifier::CloneNode` at 0xb196a0 (semantic, high); signature (high): `undefined CloneNode(hkbTwistModifier * this)`
 pub const hkbTwistModifier__CloneNode: u64 = 59917;
-/// `hkbTwistModifier::Deactivate` at 0xb195a0 (semantic, high); signature (untiered): `undefined Deactivate(hkbTwistModifier * this)`
+/// `hkbTwistModifier::Deactivate` at 0xb195a0 (semantic, high); signature (high): `undefined Deactivate(hkbTwistModifier * this)`
 pub const hkbTwistModifier__Deactivate: u64 = 59915;
-/// `hkbTwistModifier::IsValid` at 0xb195c0 (semantic, high); signature (untiered): `ulonglong IsValid(hkbTwistModifier * this, ulonglong * param_1)`
+/// `hkbTwistModifier::IsValid` at 0xb195c0 (semantic, high); signature (low): `ulonglong IsValid(hkbTwistModifier * this, ulonglong * param_1)`
 pub const hkbTwistModifier__IsValid: u64 = 59916;
-/// `hkbTwistModifier::Modify` at 0xb196f0 (semantic, high); signature (untiered): `undefined Modify(hkbTwistModifier * this, longlong * param_1, undefined8 param_2)`
+/// `hkbTwistModifier::Modify` at 0xb196f0 (semantic, high); signature (low): `undefined Modify(hkbTwistModifier * this, longlong * param_1, undefined8 param_2)`
 pub const hkbTwistModifier__Modify: u64 = 59918;
 /// `hkbTwistModifier::ctor` at 0xae0100 (layout_inference, high); signature (high): `hkbTwistModifier * ctor(hkbTwistModifier * this)`
 pub const hkbTwistModifier__ctor: u64 = 58968;
@@ -7043,7 +6747,7 @@ pub const hkbVariableBindingSet__dtor: u64 = 59466;
 pub const hkbVariableBindingSet__vdtor: u64 = 59105;
 /// `hkbVariableValueSet::vdtor` at 0xad1f40 (slot_propagation, medium); signature (low): `hkbVariableValueSet * vdtor(hkbVariableValueSet * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkbVariableValueSet__vdtor: u64 = 58399;
-/// `hkbWorld::GenerateWithSceneModifiers` at 0xafe680 (semantic, medium); signature (untiered): `undefined GenerateWithSceneModifiers(longlong * param_1, longlong * param_2, uint param_3, undefined4 param_4)`; semantic: Havok's scene loop: hkbBehaviorGraph::generate for every character, then every scene modifier's slot 3 (CallVfunc18OnEachArrayElement 0xaff070) (medium); signature `void (hkbSceneCharacters* characters, hkbSceneModifierList* modifiers, u32 count, float timestep)`
+/// `hkbWorld::GenerateWithSceneModifiers` at 0xafe680 (semantic, medium); signature (low): `undefined GenerateWithSceneModifiers(longlong * param_1, longlong * param_2, uint param_3, undefined4 param_4)`; semantic: Havok's scene loop: hkbBehaviorGraph::generate for every character, then every scene modifier's slot 3 (CallVfunc18OnEachArrayElement 0xaff070) (medium); signature `void (hkbSceneCharacters* characters, hkbSceneModifierList* modifiers, u32 count, float timestep)`
 pub const hkbWorld__GenerateWithSceneModifiers: u64 = 59446;
 /// `hkbWorld::ctor` at 0xad8ca0 (runtime, high); signature (low): `hkbWorld * ctor(hkbWorld * this, undefined4 * param_1)`; semantic: builds Havok's behaviour world including the five scene modifiers (foot IK, hand IK, hand IK fixup, ragdoll, character controller) (high); signature `hkbWorld* (hkbWorld* this, ...)`
 pub const hkbWorld__ctor: u64 = 58481;
@@ -7237,7 +6941,7 @@ pub const hkp3AxisSweep__vfunc_8_sub1: u64 = 64713;
 pub const hkp3AxisSweep__vfunc_9: u64 = 64677;
 /// `hkpAabbPhantom::ctor` at 0xb4e380 (layout_inference, high); signature (low): `hkpAabbPhantom * ctor(hkpAabbPhantom * this, undefined8 * param_1, undefined4 param_2)`
 pub const hkpAabbPhantom__ctor: u64 = 60938;
-/// `hkpAabbPhantom::ctor_2` at 0xb51560 (decompiler, medium); signature (untiered): `undefined8 * ctor_2(undefined8 * param_1)`
+/// `hkpAabbPhantom::ctor_2` at 0xb51560 (decompiler, medium); signature (low): `undefined8 * ctor_2(undefined8 * param_1)`
 pub const hkpAabbPhantom__ctor_2: u64 = 61185;
 /// `hkpAabbPhantom::dtor` at 0xb4e440 (layout_inference, high); signature (high): `undefined dtor(hkpAabbPhantom * this)`
 pub const hkpAabbPhantom__dtor: u64 = 60939;
@@ -7673,7 +7377,7 @@ pub const hkpBvTreeStreamAgent__vfunc_9: u64 = 66743;
 pub const hkpCachingShapePhantom__ctor: u64 = 61658;
 /// `hkpCachingShapePhantom::ctor` at 0xb660e0 (layout_inference, medium); signature (high): `undefined ctor(hkpCachingShapePhantom * this)`
 pub const hkpCachingShapePhantom__ctor_2: u64 = 61659;
-/// `hkpCachingShapePhantom::ctor_2` at 0xb515d0 (decompiler, medium); signature (untiered): `hkpWorldObject * ctor_2(hkpWorldObject * param_1, int param_2)`
+/// `hkpCachingShapePhantom::ctor_2` at 0xb515d0 (decompiler, medium); signature (low): `hkpWorldObject * ctor_2(hkpWorldObject * param_1, int param_2)`
 pub const hkpCachingShapePhantom__ctor_2_2: u64 = 61186;
 /// `hkpCachingShapePhantom::vdtor` at 0xb51a10 (slot_propagation, medium); signature (low): `hkpCachingShapePhantom * vdtor(hkpCachingShapePhantom * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkpCachingShapePhantom__vdtor: u64 = 61203;
@@ -7805,7 +7509,7 @@ pub const hkpCharacterMotion__vfunc_7: u64 = 61745;
 pub const hkpCharacterMotion__vfunc_8: u64 = 61746;
 /// `hkpCharacterMotion::vfunc_9` at 0xb699b0 (rtti, high); signature (low): `undefined vfunc_9(hkpCharacterMotion * this, undefined8 * param_1)`
 pub const hkpCharacterMotion__vfunc_9: u64 = 61747;
-/// `hkpCharacterProxy::GetShapePhantom` at 0xb9ddf0 (semantic, high); signature (untiered): `undefined8 GetShapePhantom(longlong param_1)`; semantic: returns hkpCharacterProxy+0x80 (the shape phantom) (high); signature `hkpShapePhantom* (hkpCharacterProxy* this)`
+/// `hkpCharacterProxy::GetShapePhantom` at 0xb9ddf0 (semantic, high); signature (low): `undefined8 GetShapePhantom(longlong param_1)`; semantic: returns hkpCharacterProxy+0x80 (the shape phantom) (high); signature `hkpShapePhantom* (hkpCharacterProxy* this)`
 pub const hkpCharacterProxy__GetShapePhantom: u64 = 62642;
 /// `hkpCharacterProxy::GetShapePhantom` as a function pointer type (high).
 pub type hkpCharacterProxy__GetShapePhantom_fn = unsafe extern "C" fn(this: *mut crate::hkpCharacterProxy) -> *mut crate::hkpShapePhantom;
@@ -7819,3 +7523,813 @@ pub const hkpCharacterProxy__dtor: u64 = 62629;
 pub const hkpCharacterProxy__hkpEntityListener_vdtor: u64 = 62665;
 /// `hkpCharacterProxy::hkpEntityListener_vfunc_2` at 0xba0bb0 (rtti, medium); signature (low): `undefined hkpEntityListener_vfunc_2(hkpCharacterProxy * this, hkpCharacterProxy * param_1)`
 pub const hkpCharacterProxy__hkpEntityListener_vfunc_2: u64 = 62657;
+/// `hkpCharacterProxy::hkpPhantomListener_vdtor` at 0xba15ac (slot_propagation, medium); signature (low): `undefined hkpPhantomListener_vdtor(hkpCharacterProxy * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCharacterProxy__hkpPhantomListener_vdtor: u64 = 62666;
+/// `hkpCharacterProxy::hkpPhantomListener_vfunc_2` at 0xba0d80 (rtti, medium); signature (low): `undefined hkpPhantomListener_vfunc_2(hkpCharacterProxy * this, hkpCharacterProxy * param_1)`
+pub const hkpCharacterProxy__hkpPhantomListener_vfunc_2: u64 = 62658;
+/// `hkpCharacterProxy::vdtor` at 0xba15c0 (slot_propagation, medium); signature (low): `hkpCharacterProxy * vdtor(hkpCharacterProxy * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCharacterProxy__vdtor: u64 = 62667;
+/// `hkpCharacterProxy::vfunc_2` at 0xba0e90 (rtti, medium); signature (low): `undefined vfunc_2(hkpCharacterProxy * this, longlong * param_1)`
+pub const hkpCharacterProxy__vfunc_2: u64 = 62659;
+/// `hkpCharacterProxy::vfunc_3` at 0xb9f720 (rtti, medium); signature (low): `undefined vfunc_3(hkpCharacterProxy * this, longlong param_1, longlong param_2, longlong * param_3, longlong * param_4, longlong * param_5, char param_6)`
+pub const hkpCharacterProxy__vfunc_3: u64 = 62647;
+/// `hkpCharacterProxy::vfunc_4` at 0xba04d0 (rtti, medium); signature (low): `undefined vfunc_4(hkpCharacterProxy * this, float * param_1, float * param_2, float param_3)`
+pub const hkpCharacterProxy__vfunc_4: u64 = 62649;
+/// `hkpCharacterProxyCinfo::vdtor` at 0xb15ae0 (layout_inference, medium); signature (low): `hkpCharacterProxyCinfo * vdtor(hkpCharacterProxyCinfo * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCharacterProxyCinfo__vdtor: u64 = 59840;
+/// `hkpCharacterProxyListener::dtor` at 0x1099400 (layout_inference, high); signature (high): `undefined dtor(hkpCharacterProxyListener * this)`
+pub const hkpCharacterProxyListener__dtor: u64 = 79159;
+/// `hkpCharacterProxyListener::vdtor` at 0x1099620 (layout_inference, medium); signature (low): `hkpCharacterProxyListener * vdtor(hkpCharacterProxyListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCharacterProxyListener__vdtor: u64 = 79165;
+/// `hkpCharacterProxyListener::vfunc_1` at 0x10998b0 (rtti, high); signature (low): `undefined vfunc_1(void)`
+pub const hkpCharacterProxyListener__vfunc_1: u64 = 79175;
+/// `hkpCharacterProxyListener::vfunc_2` at 0x1099880 (rtti, high); signature (low): `undefined vfunc_2(void)`
+pub const hkpCharacterProxyListener__vfunc_2: u64 = 79172;
+/// `hkpCharacterProxyListener::vfunc_3` at 0x1099890 (rtti, high); signature (low): `undefined vfunc_3(void)`
+pub const hkpCharacterProxyListener__vfunc_3: u64 = 79173;
+/// `hkpCharacterProxyListener::vfunc_4` at 0x1099870 (rtti, high); signature (low): `undefined vfunc_4(void)`
+pub const hkpCharacterProxyListener__vfunc_4: u64 = 79171;
+/// `hkpCharacterProxyListener::vfunc_5` at 0x10998a0 (rtti, high); signature (low): `undefined vfunc_5(void)`
+pub const hkpCharacterProxyListener__vfunc_5: u64 = 79174;
+/// `hkpCharacterRigidBody::ctor` at 0xb985e0 (layout_inference, medium); signature (low): `hkpCharacterRigidBody * ctor(hkpCharacterRigidBody * this, longlong param_1)`
+pub const hkpCharacterRigidBody__ctor: u64 = 62447;
+/// `hkpCharacterRigidBody::dtor` at 0xb987a0 (layout_inference, high); signature (high): `undefined dtor(hkpCharacterRigidBody * this)`
+pub const hkpCharacterRigidBody__dtor: u64 = 62448;
+/// `hkpCharacterRigidBody::hkpEntityListener_vdtor` at 0xb99924 (slot_propagation, medium); signature (high): `undefined hkpEntityListener_vdtor(hkpCharacterRigidBody * this)`
+pub const hkpCharacterRigidBody__hkpEntityListener_vdtor: u64 = 62463;
+/// `hkpCharacterRigidBody::hkpEntityListener_vfunc_1` at 0xb99860 (rtti, medium); signature (low): `undefined hkpEntityListener_vfunc_1(hkpCharacterRigidBody * this, longlong param_1)`
+pub const hkpCharacterRigidBody__hkpEntityListener_vfunc_1: u64 = 62460;
+/// `hkpCharacterRigidBody::hkpEntityListener_vfunc_2` at 0xb998c0 (rtti, medium); signature (low): `undefined hkpEntityListener_vfunc_2(hkpCharacterRigidBody * this, longlong param_1)`
+pub const hkpCharacterRigidBody__hkpEntityListener_vfunc_2: u64 = 62461;
+/// `hkpCharacterRigidBody::hkpWorldPostSimulationListener_vdtor` at 0xb99930 (slot_propagation, medium); signature (high): `undefined hkpWorldPostSimulationListener_vdtor(hkpCharacterRigidBody * this)`
+pub const hkpCharacterRigidBody__hkpWorldPostSimulationListener_vdtor: u64 = 62464;
+/// `hkpCharacterRigidBody::hkpWorldPostSimulationListener_vfunc_1` at 0xb99910 (rtti, medium); signature (low): `undefined hkpWorldPostSimulationListener_vfunc_1(hkpCharacterRigidBody * this, undefined8 param_1)`
+pub const hkpCharacterRigidBody__hkpWorldPostSimulationListener_vfunc_1: u64 = 62462;
+/// `hkpCharacterRigidBody::vdtor` at 0xb99940 (slot_propagation, medium); signature (low): `hkpCharacterRigidBody * vdtor(hkpCharacterRigidBody * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCharacterRigidBody__vdtor: u64 = 62465;
+/// `hkpCharacterRigidBody::vfunc_3` at 0xb98920 (rtti, medium); signature (low): `undefined vfunc_3(hkpCharacterRigidBody * this, undefined8 param_1, int * param_2)`
+pub const hkpCharacterRigidBody__vfunc_3: u64 = 62452;
+/// `hkpCharacterRigidBody::vfunc_4` at 0xb98af0 (rtti, medium); signature (low): `int vfunc_4(hkpCharacterRigidBody * this, longlong param_1, longlong * param_2)`
+pub const hkpCharacterRigidBody__vfunc_4: u64 = 62453;
+/// `hkpCharacterRigidBody::vfunc_5` at 0xb994e0 (rtti, medium); signature (low): `undefined vfunc_5(hkpCharacterRigidBody * this, longlong * param_1, char param_2, longlong param_3)`
+pub const hkpCharacterRigidBody__vfunc_5: u64 = 62454;
+/// `hkpCharacterRigidBodyCinfo::vdtor` at 0xb9bf30 (layout_inference, medium); signature (low): `hkpCharacterRigidBodyCinfo * vdtor(hkpCharacterRigidBodyCinfo * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCharacterRigidBodyCinfo__vdtor: u64 = 62581;
+/// `hkpCharacterRigidBodyListener::vdtor` at 0x109c3f0 (layout_inference, medium); signature (low): `hkpCharacterRigidBodyListener * vdtor(hkpCharacterRigidBodyListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCharacterRigidBodyListener__vdtor: u64 = 79216;
+/// `hkpCharacterRigidBodyListener::vfunc_3` at 0x10df6d0 (rtti, high); signature (low): `undefined vfunc_3(hkpCharacterRigidBodyListener * this, longlong param_1, undefined8 param_2)`
+pub const hkpCharacterRigidBodyListener__vfunc_3: u64 = 80567;
+/// `hkpCharacterRigidBodyListener::vfunc_3_sub0` at 0x10df7d0 (callgraph, medium); signature (untiered): `undefined vfunc_3_sub0(undefined8 param_1, longlong param_2)`
+pub const hkpCharacterRigidBodyListener__vfunc_3_sub0: u64 = 80568;
+/// `hkpCharacterRigidBodyListener::vfunc_3_sub1` at 0x10dfb20 (callgraph, medium); signature (untiered): `undefined vfunc_3_sub1(longlong * param_1, undefined8 param_2, longlong param_3)`
+pub const hkpCharacterRigidBodyListener__vfunc_3_sub1: u64 = 80569;
+/// `hkpCharacterRigidBodyListener::vfunc_4` at 0x10dfd60 (rtti, high); signature (low): `undefined vfunc_4(hkpCharacterRigidBodyListener * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5)`
+pub const hkpCharacterRigidBodyListener__vfunc_4: u64 = 80570;
+/// `hkpCharacterRigidBodyListener::vfunc_5` at 0x10dfdf0 (rtti, medium); signature (low): `undefined vfunc_5(hkpCharacterRigidBodyListener * this, longlong param_1, longlong * param_2, longlong * param_3, longlong * param_4)`
+pub const hkpCharacterRigidBodyListener__vfunc_5: u64 = 80571;
+/// `hkpCharacterRigidBodyListener::vfunc_6` at 0x10e01e0 (rtti, high); signature (low): `undefined vfunc_6(hkpCharacterRigidBodyListener * this, longlong param_1, longlong param_2, longlong * param_3)`
+pub const hkpCharacterRigidBodyListener__vfunc_6: u64 = 80572;
+/// `hkpCharacterRigidBodyListener::vfunc_7` at 0x10e0580 (rtti, medium); signature (low): `undefined vfunc_7(hkpCharacterRigidBodyListener * this, undefined8 param_1, longlong param_2, longlong * param_3, longlong * param_4, longlong * param_5)`
+pub const hkpCharacterRigidBodyListener__vfunc_7: u64 = 80573;
+/// `hkpCharacterState::vdtor` at 0x1069b50 (layout_inference, medium); signature (low): `hkpCharacterState * vdtor(hkpCharacterState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCharacterState__vdtor: u64 = 78351;
+/// `hkpCharacterState::vfunc_4` at 0x10c7bf0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
+pub const hkpCharacterState__vfunc_4: u64 = 80090;
+/// `hkpCharacterState::vfunc_5` at 0x10c7c00 (rtti, medium); signature (low): `undefined vfunc_5(void)`
+pub const hkpCharacterState__vfunc_5: u64 = 80091;
+/// `hkpCharacterStateManager::ctor` at 0xb98450 (layout_inference, medium); signature (high): `hkpCharacterStateManager * ctor(hkpCharacterStateManager * this)`
+pub const hkpCharacterStateManager__ctor: u64 = 62442;
+/// `hkpCharacterStateManager::dtor` at 0xb98490 (layout_inference, high); signature (high): `undefined dtor(hkpCharacterStateManager * this)`
+pub const hkpCharacterStateManager__dtor: u64 = 62443;
+/// `hkpCharacterStateManager::vdtor` at 0xb98560 (slot_propagation, medium); signature (low): `hkpCharacterStateManager * vdtor(hkpCharacterStateManager * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCharacterStateManager__vdtor: u64 = 62446;
+/// `hkpClosestCdPointCollector::vdtor` at 0x86d670 (layout_inference, medium); signature (low): `hkpClosestCdPointCollector * vdtor(hkpClosestCdPointCollector * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpClosestCdPointCollector__vdtor: u64 = 47351;
+/// `hkpClosestCdPointCollector::vfunc_1` at 0xb3b650 (rtti, high); signature (low): `undefined vfunc_1(hkpClosestCdPointCollector * this, undefined8 * param_1)`
+pub const hkpClosestCdPointCollector__vfunc_1: u64 = 60373;
+/// `hkpClosestCdPointCollector::vfunc_2` at 0x86d6e0 (rtti, high); signature (high): `undefined vfunc_2(hkpClosestCdPointCollector * this)`
+pub const hkpClosestCdPointCollector__vfunc_2: u64 = 47352;
+/// `hkpClosestRayHitCollector::vdtor` at 0x404410 (layout_inference, medium); signature (low): `hkpClosestRayHitCollector * vdtor(hkpClosestRayHitCollector * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpClosestRayHitCollector__vdtor: u64 = 25991;
+/// `hkpClosestRayHitCollector::vfunc_0` at 0xb3a200 (rtti, high); signature (low): `undefined vfunc_0(hkpClosestRayHitCollector * this, longlong param_1, undefined4 * param_2)`
+pub const hkpClosestRayHitCollector__vfunc_0: u64 = 60338;
+/// `hkpCogWheelConstraintData::vdtor` at 0xb51b20 (layout_inference, medium); signature (low): `hkpCogWheelConstraintData * vdtor(hkpCogWheelConstraintData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCogWheelConstraintData__vdtor: u64 = 61205;
+/// `hkpCogWheelConstraintData::vfunc_10` at 0xb726d0 (rtti, high); signature (low): `undefined1 * vfunc_10(hkpCogWheelConstraintData * this, undefined1 * param_1)`
+pub const hkpCogWheelConstraintData__vfunc_10: u64 = 61898;
+/// `hkpCogWheelConstraintData::vfunc_11` at 0xb72780 (rtti, high); signature (low): `undefined8 vfunc_11(void)`
+pub const hkpCogWheelConstraintData__vfunc_11: u64 = 61899;
+/// `hkpCogWheelConstraintData::vfunc_12` at 0xb727b0 (rtti, high); signature (low): `undefined vfunc_12(hkpCogWheelConstraintData * this, undefined8 param_1, undefined4 * param_2)`
+pub const hkpCogWheelConstraintData__vfunc_12: u64 = 61901;
+/// `hkpCogWheelConstraintData::vfunc_18` at 0xb72790 (rtti, high); signature (low): `undefined vfunc_18(hkpCogWheelConstraintData * this, int * param_1)`
+pub const hkpCogWheelConstraintData__vfunc_18: u64 = 61900;
+/// `hkpCollidableCollidableFilter::vdtor` at 0xb36530 (layout_inference, medium); signature (low): `hkpCollidableCollidableFilter * vdtor(hkpCollidableCollidableFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCollidableCollidableFilter__vdtor: u64 = 60406;
+/// `hkpCollidableMediator::ctor` at 0x1160c70 (layout_inference, medium); signature (low): `hkpCollidableMediator * ctor(hkpCollidableMediator * this, longlong param_1, longlong param_2)`
+pub const hkpCollidableMediator__ctor: u64 = 82012;
+/// `hkpCollidableMediator::vdtor` at 0x1160f30 (layout_inference, medium); signature (low): `hkpCollidableMediator * vdtor(hkpCollidableMediator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCollidableMediator__vdtor: u64 = 82017;
+/// `hkpCollidableMediator::vfunc_3` at 0x1160d70 (rtti, high); signature (high): `undefined4 vfunc_3(hkpCollidableMediator * this)`
+pub const hkpCollidableMediator__vfunc_3: u64 = 82013;
+/// `hkpCollidableMediator::vfunc_4` at 0x1160e90 (rtti, high); signature (low): `undefined8 vfunc_4(hkpCollidableMediator * this, int param_1)`
+pub const hkpCollidableMediator__vfunc_4: u64 = 82015;
+/// `hkpCollidableMediator::vfunc_5` at 0x1160d80 (rtti, high); signature (low): `undefined vfunc_5(hkpCollidableMediator * this, undefined8 * param_1, undefined2 * param_2)`
+pub const hkpCollidableMediator__vfunc_5: u64 = 82014;
+/// `hkpCollisionAgent::vdtor` at 0xb3cc00 (layout_inference, medium); signature (low): `hkpCollisionAgent * vdtor(hkpCollisionAgent * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCollisionAgent__vdtor: u64 = 64624;
+/// `hkpCollisionAgent::vfunc_10` at 0xb3f890 (rtti, medium); signature (low): `undefined vfunc_10(void)`
+pub const hkpCollisionAgent__vfunc_10: u64 = 65677;
+/// `hkpCollisionAgent::vfunc_11` at 0xb3f8a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+pub const hkpCollisionAgent__vfunc_11: u64 = 65678;
+/// `hkpCollisionAgent::vfunc_12` at 0xb3f8b0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+pub const hkpCollisionAgent__vfunc_12: u64 = 65679;
+/// `hkpCollisionAgent::vfunc_13` at 0xb3f8c0 (rtti, medium); signature (low): `undefined vfunc_13(void)`
+pub const hkpCollisionAgent__vfunc_13: u64 = 65680;
+/// `hkpCollisionAgent::vfunc_8` at 0xb3cd70 (rtti, medium); signature (low): `undefined vfunc_8(void)`
+pub const hkpCollisionAgent__vfunc_8: u64 = 64631;
+/// `hkpCollisionAgent::vfunc_9` at 0xb3f880 (rtti, medium); signature (low): `undefined vfunc_9(void)`
+pub const hkpCollisionAgent__vfunc_9: u64 = 65676;
+/// `hkpCollisionCallbackUtil::hkpConstraintListener_vdtor` at 0xb5c7f0 (slot_propagation, medium); signature (high): `undefined hkpConstraintListener_vdtor(hkpCollisionCallbackUtil * this)`
+pub const hkpCollisionCallbackUtil__hkpConstraintListener_vdtor: u64 = 61444;
+/// `hkpCollisionCallbackUtil::hkpConstraintListener_vfunc_1` at 0xb81f60 (rtti, high); signature (low): `undefined hkpConstraintListener_vfunc_1(hkpCollisionCallbackUtil * this, longlong param_1)`
+pub const hkpCollisionCallbackUtil__hkpConstraintListener_vfunc_1: u64 = 62242;
+/// `hkpCollisionCallbackUtil::hkpConstraintListener_vfunc_1_sub0` at 0xb68660 (callgraph, medium); signature (untiered): `undefined hkpConstraintListener_vfunc_1_sub0(longlong param_1, undefined8 param_2)`
+pub const hkpCollisionCallbackUtil__hkpConstraintListener_vfunc_1_sub0: u64 = 61706;
+/// `hkpCollisionCallbackUtil::hkpConstraintListener_vfunc_1_sub1` at 0xb6b200 (callgraph, medium); signature (untiered): `undefined hkpConstraintListener_vfunc_1_sub1(longlong param_1, undefined8 param_2)`
+pub const hkpCollisionCallbackUtil__hkpConstraintListener_vfunc_1_sub1: u64 = 61772;
+/// `hkpCollisionCallbackUtil::hkpConstraintListener_vfunc_2` at 0xb82060 (rtti, high); signature (low): `undefined hkpConstraintListener_vfunc_2(hkpCollisionCallbackUtil * this, longlong param_1)`
+pub const hkpCollisionCallbackUtil__hkpConstraintListener_vfunc_2: u64 = 62243;
+/// `hkpCollisionCallbackUtil::hkpConstraintListener_vfunc_2_sub0` at 0xb687d0 (callgraph, medium); signature (untiered): `undefined hkpConstraintListener_vfunc_2_sub0(longlong param_1, undefined8 param_2)`
+pub const hkpCollisionCallbackUtil__hkpConstraintListener_vfunc_2_sub0: u64 = 61707;
+/// `hkpCollisionCallbackUtil::hkpConstraintListener_vfunc_2_sub1` at 0xb6b360 (callgraph, medium); signature (untiered): `undefined hkpConstraintListener_vfunc_2_sub1(longlong param_1, undefined8 param_2)`
+pub const hkpCollisionCallbackUtil__hkpConstraintListener_vfunc_2_sub1: u64 = 61773;
+/// `hkpCollisionCallbackUtil::vdtor` at 0xb5c900 (layout_inference, medium); signature (low): `hkpCollisionCallbackUtil * vdtor(hkpCollisionCallbackUtil * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCollisionCallbackUtil__vdtor: u64 = 61449;
+/// `hkpCollisionCallbackUtil::vfunc_3` at 0xb81ea0 (rtti, high); signature (low): `undefined vfunc_3(hkpCollisionCallbackUtil * this, longlong param_1)`
+pub const hkpCollisionCallbackUtil__vfunc_3: u64 = 62240;
+/// `hkpCollisionCallbackUtil::vfunc_4` at 0xb81f00 (rtti, high); signature (low): `undefined vfunc_4(hkpCollisionCallbackUtil * this, longlong param_1)`
+pub const hkpCollisionCallbackUtil__vfunc_4: u64 = 62241;
+/// `hkpCollisionDispatcher::ctor` at 0xb34430 (layout_inference, medium); signature (low): `hkpCollisionDispatcher * ctor(hkpCollisionDispatcher * this, undefined8 param_1, longlong param_2)`
+pub const hkpCollisionDispatcher__ctor: u64 = 64589;
+/// `hkpCollisionDispatcher::debugPrintTable` at 0xb349d0 (string, medium); signature (high): `undefined debugPrintTable(hkpCollisionDispatcher * this)`
+pub const hkpCollisionDispatcher__debugPrintTable: u64 = 64595;
+/// `hkpCollisionDispatcher::debugPrintTable_sub0` at 0xaad470 (callgraph, medium); signature (untiered): `undefined8 * debugPrintTable_sub0(undefined8 * param_1)`
+pub const hkpCollisionDispatcher__debugPrintTable_sub0: u64 = 57460;
+/// `hkpCollisionDispatcher::dtor` at 0xb345a0 (layout_inference, high); signature (high): `undefined dtor(hkpCollisionDispatcher * this)`
+pub const hkpCollisionDispatcher__dtor: u64 = 64590;
+/// `hkpCollisionDispatcher::dtor_sub0` at 0xb34e40 (callgraph, medium); signature (untiered): `undefined dtor_sub0(longlong param_1)`
+pub const hkpCollisionDispatcher__dtor_sub0: u64 = 64596;
+/// `hkpCollisionDispatcher::vdtor` at 0xb36560 (slot_propagation, medium); signature (low): `hkpCollisionDispatcher * vdtor(hkpCollisionDispatcher * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCollisionDispatcher__vdtor: u64 = 64610;
+/// `hkpCollisionDispatcher::vfunc_2` at 0xb35a30 (rtti, high); signature (low): `undefined vfunc_2(hkpCollisionDispatcher * this, longlong * param_1)`
+pub const hkpCollisionDispatcher__vfunc_2: u64 = 64601;
+/// `hkpCollisionFilter::ctor` at 0xb3cda0 (layout_inference, medium); signature (high): `hkpCollisionFilter * ctor(hkpCollisionFilter * this)`
+pub const hkpCollisionFilter__ctor: u64 = 60623;
+/// `hkpCollisionFilter::hkpCollidableCollidableFilter_vdtor` at 0xb3cdf8 (slot_propagation, medium); signature (high): `undefined hkpCollidableCollidableFilter_vdtor(hkpCollisionFilter * this)`
+pub const hkpCollisionFilter__hkpCollidableCollidableFilter_vdtor: u64 = 60510;
+/// `hkpCollisionFilter::hkpRayCollidableFilter_vdtor` at 0xb3ce1c (slot_propagation, medium); signature (high): `undefined hkpRayCollidableFilter_vdtor(hkpCollisionFilter * this)`
+pub const hkpCollisionFilter__hkpRayCollidableFilter_vdtor: u64 = 60513;
+/// `hkpCollisionFilter::hkpRayShapeCollectionFilter_vdtor` at 0xb3ce10 (slot_propagation, medium); signature (high): `undefined hkpRayShapeCollectionFilter_vdtor(hkpCollisionFilter * this)`
+pub const hkpCollisionFilter__hkpRayShapeCollectionFilter_vdtor: u64 = 60512;
+/// `hkpCollisionFilter::hkpShapeCollectionFilter_vdtor` at 0xb3ce04 (slot_propagation, medium); signature (high): `undefined hkpShapeCollectionFilter_vdtor(hkpCollisionFilter * this)`
+pub const hkpCollisionFilter__hkpShapeCollectionFilter_vdtor: u64 = 60511;
+/// `hkpCollisionFilter::hkpShapeCollectionFilter_vfunc_2` at 0xb3cdf0 (rtti, medium); signature (low): `undefined4 hkpShapeCollectionFilter_vfunc_2(void)`
+pub const hkpCollisionFilter__hkpShapeCollectionFilter_vfunc_2: u64 = 60624;
+/// `hkpCollisionFilter::vdtor` at 0xb3ce30 (layout_inference, medium); signature (low): `hkpCollisionFilter * vdtor(hkpCollisionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCollisionFilter__vdtor: u64 = 60526;
+/// `hkpCollisionFilter::vfunc_3` at 0xb36810 (rtti, medium); signature (low): `undefined vfunc_3(void)`
+pub const hkpCollisionFilter__vfunc_3: u64 = 60412;
+/// `hkpCollisionFilterList::ctor` at 0xb3f8d0 (layout_inference, high); signature (high): `hkpCollisionFilterList * ctor(hkpCollisionFilterList * this)`
+pub const hkpCollisionFilterList__ctor: u64 = 60626;
+/// `hkpCollisionFilterList::ctor` at 0xb3f940 (layout_inference, high); signature (low): `hkpCollisionFilterList * ctor(hkpCollisionFilterList * this, longlong * param_1)`
+pub const hkpCollisionFilterList__ctor_2: u64 = 60627;
+/// `hkpCollisionFilterList::dtor` at 0xb3fa90 (layout_inference, high); signature (high): `undefined dtor(hkpCollisionFilterList * this)`
+pub const hkpCollisionFilterList__dtor: u64 = 60628;
+/// `hkpCollisionFilterList::hkpCollidableCollidableFilter_vdtor` at 0xb3db2c (slot_propagation, medium); signature (high): `undefined hkpCollidableCollidableFilter_vdtor(hkpCollisionFilterList * this)`
+pub const hkpCollisionFilterList__hkpCollidableCollidableFilter_vdtor: u64 = 60514;
+/// `hkpCollisionFilterList::hkpCollidableCollidableFilter_vfunc_1` at 0xb3fc60 (rtti, high); signature (low): `undefined1 * hkpCollidableCollidableFilter_vfunc_1(hkpCollisionFilterList * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCollisionFilterList__hkpCollidableCollidableFilter_vfunc_1: u64 = 60636;
+/// `hkpCollisionFilterList::hkpRayCollidableFilter_vdtor` at 0xb3db50 (slot_propagation, medium); signature (high): `undefined hkpRayCollidableFilter_vdtor(hkpCollisionFilterList * this)`
+pub const hkpCollisionFilterList__hkpRayCollidableFilter_vdtor: u64 = 60517;
+/// `hkpCollisionFilterList::hkpRayCollidableFilter_vfunc_1` at 0xb3ff20 (rtti, high); signature (low): `undefined1 * hkpRayCollidableFilter_vfunc_1(hkpCollisionFilterList * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCollisionFilterList__hkpRayCollidableFilter_vfunc_1: u64 = 60640;
+/// `hkpCollisionFilterList::hkpRayShapeCollectionFilter_vdtor` at 0xb3db44 (slot_propagation, medium); signature (high): `undefined hkpRayShapeCollectionFilter_vdtor(hkpCollisionFilterList * this)`
+pub const hkpCollisionFilterList__hkpRayShapeCollectionFilter_vdtor: u64 = 60516;
+/// `hkpCollisionFilterList::hkpRayShapeCollectionFilter_vfunc_0` at 0xb3fe80 (rtti, high); signature (low): `undefined1 * hkpRayShapeCollectionFilter_vfunc_0(hkpCollisionFilterList * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined4 param_5)`
+pub const hkpCollisionFilterList__hkpRayShapeCollectionFilter_vfunc_0: u64 = 60639;
+/// `hkpCollisionFilterList::hkpShapeCollectionFilter_vdtor` at 0xb3db38 (slot_propagation, medium); signature (high): `undefined hkpShapeCollectionFilter_vdtor(hkpCollisionFilterList * this)`
+pub const hkpCollisionFilterList__hkpShapeCollectionFilter_vdtor: u64 = 60515;
+/// `hkpCollisionFilterList::hkpShapeCollectionFilter_vfunc_0` at 0xb3fda0 (rtti, high); signature (low): `undefined1 * hkpShapeCollectionFilter_vfunc_0(hkpCollisionFilterList * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined8 param_6, undefined4 param_7, undefined4 param_8)`
+pub const hkpCollisionFilterList__hkpShapeCollectionFilter_vfunc_0: u64 = 60638;
+/// `hkpCollisionFilterList::hkpShapeCollectionFilter_vfunc_1` at 0xb3fce0 (rtti, high); signature (low): `undefined1 * hkpShapeCollectionFilter_vfunc_1(hkpCollisionFilterList * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined4 param_6)`
+pub const hkpCollisionFilterList__hkpShapeCollectionFilter_vfunc_1: u64 = 60637;
+/// `hkpCollisionFilterList::vdtor` at 0xb3dcb0 (slot_propagation, medium); signature (low): `hkpCollisionFilterList * vdtor(hkpCollisionFilterList * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCollisionFilterList__vdtor: u64 = 60527;
+/// `hkpCompressedMeshShape::ctor` at 0x10e55b0 (layout_inference, high); signature (low): `hkpCompressedMeshShape * ctor(hkpCompressedMeshShape * this, int param_2, undefined4 param_3)`
+pub const hkpCompressedMeshShape__ctor: u64 = 80696;
+/// `hkpCompressedMeshShape::ctor` at 0x10e6e20 (layout_inference, high); signature (low): `hkpCompressedMeshShape * ctor(hkpCompressedMeshShape * this, int param_1)`
+pub const hkpCompressedMeshShape__ctor_2: u64 = 80722;
+/// `hkpCompressedMeshShape::ctor_caller` at 0x10e7000 (callgraph, medium); signature (untiered): `undefined ctor_caller(undefined4 * param_1, undefined4 param_2, undefined1 param_3, undefined4 param_4)`
+pub const hkpCompressedMeshShape__ctor_caller: u64 = 80726;
+/// `hkpCompressedMeshShape::hkpShapeContainer_vdtor` at 0x10e6ea0 (slot_propagation, medium); signature (high): `undefined hkpShapeContainer_vdtor(hkpCompressedMeshShape * this)`
+pub const hkpCompressedMeshShape__hkpShapeContainer_vdtor: u64 = 80723;
+/// `hkpCompressedMeshShape::hkpShapeContainer_vfunc_2` at 0x10e5710 (rtti, medium); signature (high): `undefined hkpShapeContainer_vfunc_2(hkpCompressedMeshShape * this)`
+pub const hkpCompressedMeshShape__hkpShapeContainer_vfunc_2: u64 = 80697;
+/// `hkpCompressedMeshShape::hkpShapeContainer_vfunc_3` at 0x10e5720 (rtti, medium); signature (low): `uint hkpShapeContainer_vfunc_3(hkpCompressedMeshShape * this, uint param_1)`
+pub const hkpCompressedMeshShape__hkpShapeContainer_vfunc_3: u64 = 80698;
+/// `hkpCompressedMeshShape::hkpShapeContainer_vfunc_4` at 0x10e5f50 (rtti, medium); signature (low): `undefined4 hkpShapeContainer_vfunc_4(hkpCompressedMeshShape * this, uint param_1)`
+pub const hkpCompressedMeshShape__hkpShapeContainer_vfunc_4: u64 = 80700;
+/// `hkpCompressedMeshShape::hkpShapeContainer_vfunc_5` at 0x10e5950 (rtti, medium); signature (low): `hkpConvexVerticesShape * hkpShapeContainer_vfunc_5(hkpCompressedMeshShape * this, uint param_1, hkpConvexVerticesShape * param_2)`
+pub const hkpCompressedMeshShape__hkpShapeContainer_vfunc_5: u64 = 80699;
+/// `hkpCompressedMeshShape::vdtor` at 0x10e6eb0 (slot_propagation, medium); signature (low): `hkpCompressedMeshShape * vdtor(hkpCompressedMeshShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCompressedMeshShape__vdtor: u64 = 80724;
+/// `hkpCompressedMeshShape::vfunc_11` at 0x10e6030 (rtti, medium); signature (low): `undefined vfunc_11(hkpCompressedMeshShape * this, int param_1)`
+pub const hkpCompressedMeshShape__vfunc_11: u64 = 80703;
+/// `hkpCompressedMeshShape::vfunc_12` at 0x10e5fb0 (rtti, medium); signature (low): `undefined vfunc_12(hkpCompressedMeshShape * this, uint param_1, undefined2 param_2)`
+pub const hkpCompressedMeshShape__vfunc_12: u64 = 80702;
+/// `hkpCompressedMeshShape::vfunc_2` at 0x10e6300 (rtti, medium); signature (low): `undefined vfunc_2(hkpCompressedMeshShape * this, undefined8 param_1)`
+pub const hkpCompressedMeshShape__vfunc_2: u64 = 80707;
+/// `hkpCompressedMeshShape::vfunc_6` at 0x10e6320 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+pub const hkpCompressedMeshShape__vfunc_6: u64 = 80708;
+/// `hkpCompressedMeshShape::vfunc_7` at 0x10e6220 (rtti, medium); signature (low): `undefined vfunc_7(hkpCompressedMeshShape * this, float * param_1, float param_2, float * param_3)`
+pub const hkpCompressedMeshShape__vfunc_7: u64 = 80706;
+/// `hkpCompressedSampledHeightFieldShape::ctor` at 0xb48490 (layout_inference, medium); signature (low): `hkpCompressedSampledHeightFieldShape * ctor(hkpCompressedSampledHeightFieldShape * this, longlong * param_1)`
+pub const hkpCompressedSampledHeightFieldShape__ctor: u64 = 60802;
+/// `hkpCompressedSampledHeightFieldShape::ctor` at 0xb48660 (layout_inference, high); signature (low): `hkpCompressedSampledHeightFieldShape * ctor(hkpCompressedSampledHeightFieldShape * this, float * param_2, longlong * param_3, undefined4 param_4, undefined4 param_5)`
+pub const hkpCompressedSampledHeightFieldShape__ctor_2: u64 = 60803;
+/// `hkpCompressedSampledHeightFieldShape::vdtor` at 0xb3f3e0 (slot_propagation, medium); signature (low): `hkpCompressedSampledHeightFieldShape * vdtor(hkpCompressedSampledHeightFieldShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCompressedSampledHeightFieldShape__vdtor: u64 = 60606;
+/// `hkpCompressedSampledHeightFieldShape::vfunc_11` at 0xb48770 (rtti, high); signature (low): `undefined vfunc_11(hkpCompressedSampledHeightFieldShape * this, undefined8 * param_1, float * param_2)`
+pub const hkpCompressedSampledHeightFieldShape__vfunc_11: u64 = 60804;
+/// `hkpCompressedSampledHeightFieldShape::vfunc_13` at 0xb3f7b0 (rtti, high); signature (low): `float vfunc_13(hkpCompressedSampledHeightFieldShape * this, int param_1, int param_2)`
+pub const hkpCompressedSampledHeightFieldShape__vfunc_13: u64 = 60613;
+/// `hkpCompressedSampledHeightFieldShape::vfunc_14` at 0xb3f800 (rtti, high); signature (low): `undefined1 * vfunc_14(hkpCompressedSampledHeightFieldShape * this, undefined1 * param_1)`
+pub const hkpCompressedSampledHeightFieldShape__vfunc_14: u64 = 60615;
+/// `hkpCompressedSampledHeightFieldShape::vfunc_6` at 0xb48b80 (rtti, high); signature (low): `undefined8 vfunc_6(hkpCompressedSampledHeightFieldShape * this, undefined8 param_1, int param_2)`
+pub const hkpCompressedSampledHeightFieldShape__vfunc_6: u64 = 60805;
+/// `hkpConstrainedSystemFilter::ctor` at 0xba5620 (layout_inference, high); signature (low): `hkpConstrainedSystemFilter * ctor(hkpConstrainedSystemFilter * this, longlong param_1)`
+pub const hkpConstrainedSystemFilter__ctor: u64 = 62732;
+/// `hkpConstrainedSystemFilter::dtor` at 0xba56a0 (layout_inference, high); signature (high): `undefined dtor(hkpConstrainedSystemFilter * this)`
+pub const hkpConstrainedSystemFilter__dtor: u64 = 62733;
+/// `hkpConstrainedSystemFilter::hkpCollidableCollidableFilter_vdtor` at 0xb9bc54 (slot_propagation, medium); signature (high): `undefined hkpCollidableCollidableFilter_vdtor(hkpConstrainedSystemFilter * this)`
+pub const hkpConstrainedSystemFilter__hkpCollidableCollidableFilter_vdtor: u64 = 62563;
+/// `hkpConstrainedSystemFilter::hkpCollidableCollidableFilter_vfunc_1` at 0xba5750 (rtti, high); signature (low): `undefined1 * hkpCollidableCollidableFilter_vfunc_1(hkpConstrainedSystemFilter * this, undefined1 * param_1, longlong param_2, longlong param_3)`
+pub const hkpConstrainedSystemFilter__hkpCollidableCollidableFilter_vfunc_1: u64 = 62734;
+/// `hkpConstrainedSystemFilter::hkpConstraintListener_vdtor` at 0xb9bc84 (slot_propagation, medium); signature (low): `undefined hkpConstraintListener_vdtor(hkpConstrainedSystemFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstrainedSystemFilter__hkpConstraintListener_vdtor: u64 = 62567;
+/// `hkpConstrainedSystemFilter::hkpConstraintListener_vfunc_1` at 0xba5a40 (rtti, high); signature (low): `undefined hkpConstraintListener_vfunc_1(hkpConstrainedSystemFilter * this, longlong param_1)`
+pub const hkpConstrainedSystemFilter__hkpConstraintListener_vfunc_1: u64 = 62739;
+/// `hkpConstrainedSystemFilter::hkpConstraintListener_vfunc_2` at 0xba5a90 (rtti, high); signature (low): `undefined hkpConstraintListener_vfunc_2(void)`
+pub const hkpConstrainedSystemFilter__hkpConstraintListener_vfunc_2: u64 = 62740;
+/// `hkpConstrainedSystemFilter::hkpRayCollidableFilter_vdtor` at 0xb9bc78 (slot_propagation, medium); signature (low): `undefined hkpRayCollidableFilter_vdtor(hkpConstrainedSystemFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstrainedSystemFilter__hkpRayCollidableFilter_vdtor: u64 = 62566;
+/// `hkpConstrainedSystemFilter::hkpRayCollidableFilter_vfunc_1` at 0xba59f0 (rtti, high); signature (low): `undefined1 * hkpRayCollidableFilter_vfunc_1(hkpConstrainedSystemFilter * this, undefined1 * param_1)`
+pub const hkpConstrainedSystemFilter__hkpRayCollidableFilter_vfunc_1: u64 = 62738;
+/// `hkpConstrainedSystemFilter::hkpRayShapeCollectionFilter_vdtor` at 0xb9bc6c (slot_propagation, medium); signature (low): `undefined hkpRayShapeCollectionFilter_vdtor(hkpConstrainedSystemFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstrainedSystemFilter__hkpRayShapeCollectionFilter_vdtor: u64 = 62565;
+/// `hkpConstrainedSystemFilter::hkpRayShapeCollectionFilter_vfunc_0` at 0xba5990 (rtti, high); signature (low): `undefined1 * hkpRayShapeCollectionFilter_vfunc_0(hkpConstrainedSystemFilter * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined4 param_5)`
+pub const hkpConstrainedSystemFilter__hkpRayShapeCollectionFilter_vfunc_0: u64 = 62737;
+/// `hkpConstrainedSystemFilter::hkpShapeCollectionFilter_vdtor` at 0xb9bc60 (slot_propagation, medium); signature (high): `undefined hkpShapeCollectionFilter_vdtor(hkpConstrainedSystemFilter * this)`
+pub const hkpConstrainedSystemFilter__hkpShapeCollectionFilter_vdtor: u64 = 62564;
+/// `hkpConstrainedSystemFilter::hkpShapeCollectionFilter_vfunc_0` at 0xba5900 (rtti, high); signature (low): `undefined1 * hkpShapeCollectionFilter_vfunc_0(hkpConstrainedSystemFilter * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined8 param_6, undefined4 param_7, undefined4 param_8)`
+pub const hkpConstrainedSystemFilter__hkpShapeCollectionFilter_vfunc_0: u64 = 62736;
+/// `hkpConstrainedSystemFilter::hkpShapeCollectionFilter_vfunc_1` at 0xba5890 (rtti, high); signature (low): `undefined1 * hkpShapeCollectionFilter_vfunc_1(hkpConstrainedSystemFilter * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined4 param_6)`
+pub const hkpConstrainedSystemFilter__hkpShapeCollectionFilter_vfunc_1: u64 = 62735;
+/// `hkpConstrainedSystemFilter::vdtor` at 0xb9bfc0 (slot_propagation, medium); signature (low): `hkpConstrainedSystemFilter * vdtor(hkpConstrainedSystemFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstrainedSystemFilter__vdtor: u64 = 62582;
+/// `hkpConstrainedSystemFilter::vfunc_1` at 0xb9c7a0 (rtti, high); signature (low): `undefined * vfunc_1(void)`
+pub const hkpConstrainedSystemFilter__vfunc_1: u64 = 62598;
+/// `hkpConstraintChainData::vdtor` at 0xb76e50 (layout_inference, medium); signature (low): `hkpConstraintChainData * vdtor(hkpConstraintChainData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintChainData__vdtor: u64 = 61985;
+/// `hkpConstraintChainInstance::ctor` at 0xb50d60 (layout_inference, high); signature (high): `undefined ctor(hkpConstraintChainInstance * this)`
+pub const hkpConstraintChainInstance__ctor: u64 = 61098;
+/// `hkpConstraintChainInstance::ctor` at 0xb783b0 (layout_inference, high); signature (low): `hkpConstraintChainInstance * ctor(hkpConstraintChainInstance * this, longlong param_1)`
+pub const hkpConstraintChainInstance__ctor_2: u64 = 62015;
+/// `hkpConstraintChainInstance::ctor` at 0xb78480 (layout_inference, medium); signature (high): `undefined ctor(hkpConstraintChainInstance * this)`
+pub const hkpConstraintChainInstance__ctor_3: u64 = 62016;
+/// `hkpConstraintChainInstance::vdtor` at 0xb51bb0 (slot_propagation, medium); signature (low): `hkpConstraintChainInstance * vdtor(hkpConstraintChainInstance * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintChainInstance__vdtor: u64 = 61206;
+/// `hkpConstraintChainInstance::vfunc_4` at 0xb78530 (rtti, high); signature (low): `undefined vfunc_4(hkpConstraintChainInstance * this, longlong param_1)`
+pub const hkpConstraintChainInstance__vfunc_4: u64 = 62017;
+/// `hkpConstraintChainInstance::vfunc_6` at 0xb52c50 (rtti, high); signature (low): `undefined8 vfunc_6(void)`
+pub const hkpConstraintChainInstance__vfunc_6: u64 = 61246;
+/// `hkpConstraintChainInstanceAction::ctor` at 0xb50dd0 (layout_inference, high); signature (high): `undefined ctor(hkpConstraintChainInstanceAction * this)`
+pub const hkpConstraintChainInstanceAction__ctor: u64 = 61100;
+/// `hkpConstraintChainInstanceAction::vdtor` at 0xb51c30 (layout_inference, medium); signature (low): `hkpConstraintChainInstanceAction * vdtor(hkpConstraintChainInstanceAction * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintChainInstanceAction__vdtor: u64 = 61207;
+/// `hkpConstraintChainInstanceAction::vfunc_3` at 0xb78630 (rtti, high); signature (low): `undefined vfunc_3(void)`
+pub const hkpConstraintChainInstanceAction__vfunc_3: u64 = 62019;
+/// `hkpConstraintChainInstanceAction::vfunc_4` at 0xb78670 (rtti, high); signature (low): `undefined vfunc_4(hkpConstraintChainInstanceAction * this, longlong * param_1)`
+pub const hkpConstraintChainInstanceAction__vfunc_4: u64 = 62022;
+/// `hkpConstraintChainInstanceAction::vfunc_6` at 0xb78650 (rtti, high); signature (high): `undefined vfunc_6(hkpConstraintChainInstanceAction * this)`
+pub const hkpConstraintChainInstanceAction__vfunc_6: u64 = 62021;
+/// `hkpConstraintChainInstanceAction::vfunc_7` at 0xb78640 (rtti, high); signature (low): `undefined8 vfunc_7(void)`
+pub const hkpConstraintChainInstanceAction__vfunc_7: u64 = 62020;
+/// `hkpConstraintCollisionFilter::ctor` at 0xb717e0 (layout_inference, high); signature (low): `hkpConstraintCollisionFilter * ctor(hkpConstraintCollisionFilter * this, longlong param_1)`
+pub const hkpConstraintCollisionFilter__ctor: u64 = 61884;
+/// `hkpConstraintCollisionFilter::ctor` at 0xb71850 (layout_inference, medium); signature (high): `undefined ctor(hkpConstraintCollisionFilter * this)`
+pub const hkpConstraintCollisionFilter__ctor_2: u64 = 61885;
+/// `hkpConstraintCollisionFilter::hkpCollidableCollidableFilter_vdtor` at 0xb51884 (slot_propagation, medium); signature (high): `undefined hkpCollidableCollidableFilter_vdtor(hkpConstraintCollisionFilter * this)`
+pub const hkpConstraintCollisionFilter__hkpCollidableCollidableFilter_vdtor: u64 = 61192;
+/// `hkpConstraintCollisionFilter::hkpConstraintListener_vdtor` at 0xb518b4 (slot_propagation, medium); signature (high): `undefined hkpConstraintListener_vdtor(hkpConstraintCollisionFilter * this)`
+pub const hkpConstraintCollisionFilter__hkpConstraintListener_vdtor: u64 = 61196;
+/// `hkpConstraintCollisionFilter::hkpConstraintListener_vfunc_1` at 0xb71a50 (rtti, high); signature (low): `undefined hkpConstraintListener_vfunc_1(hkpConstraintCollisionFilter * this, longlong param_1)`
+pub const hkpConstraintCollisionFilter__hkpConstraintListener_vfunc_1: u64 = 61888;
+/// `hkpConstraintCollisionFilter::hkpConstraintListener_vfunc_1_sub0` at 0xb70bb0 (callgraph, medium); signature (untiered): `int hkpConstraintListener_vfunc_1_sub0(longlong param_1, ulonglong param_2, ulonglong param_3)`
+pub const hkpConstraintCollisionFilter__hkpConstraintListener_vfunc_1_sub0: u64 = 61852;
+/// `hkpConstraintCollisionFilter::hkpConstraintListener_vfunc_2` at 0xb71b30 (rtti, high); signature (low): `undefined hkpConstraintListener_vfunc_2(hkpConstraintCollisionFilter * this, longlong param_1)`
+pub const hkpConstraintCollisionFilter__hkpConstraintListener_vfunc_2: u64 = 61889;
+/// `hkpConstraintCollisionFilter::hkpConstraintListener_vfunc_2_sub0` at 0xb70af0 (callgraph, medium); signature (untiered): `ulonglong hkpConstraintListener_vfunc_2_sub0(longlong param_1, ulonglong param_2, ulonglong param_3)`
+pub const hkpConstraintCollisionFilter__hkpConstraintListener_vfunc_2_sub0: u64 = 61851;
+/// `hkpConstraintCollisionFilter::hkpConstraintListener_vfunc_5` at 0xb71c40 (rtti, high); signature (low): `undefined hkpConstraintListener_vfunc_5(hkpConstraintCollisionFilter * this, longlong * param_1)`
+pub const hkpConstraintCollisionFilter__hkpConstraintListener_vfunc_5: u64 = 61890;
+/// `hkpConstraintCollisionFilter::hkpConstraintListener_vfunc_6` at 0xb71ca0 (rtti, high); signature (low): `undefined hkpConstraintListener_vfunc_6(hkpConstraintCollisionFilter * this, longlong * param_1)`
+pub const hkpConstraintCollisionFilter__hkpConstraintListener_vfunc_6: u64 = 61891;
+/// `hkpConstraintCollisionFilter::hkpRayCollidableFilter_vdtor` at 0xb518a8 (slot_propagation, medium); signature (high): `undefined hkpRayCollidableFilter_vdtor(hkpConstraintCollisionFilter * this)`
+pub const hkpConstraintCollisionFilter__hkpRayCollidableFilter_vdtor: u64 = 61195;
+/// `hkpConstraintCollisionFilter::hkpRayShapeCollectionFilter_vdtor` at 0xb5189c (slot_propagation, medium); signature (high): `undefined hkpRayShapeCollectionFilter_vdtor(hkpConstraintCollisionFilter * this)`
+pub const hkpConstraintCollisionFilter__hkpRayShapeCollectionFilter_vdtor: u64 = 61194;
+/// `hkpConstraintCollisionFilter::hkpShapeCollectionFilter_vdtor` at 0xb51890 (slot_propagation, medium); signature (high): `undefined hkpShapeCollectionFilter_vdtor(hkpConstraintCollisionFilter * this)`
+pub const hkpConstraintCollisionFilter__hkpShapeCollectionFilter_vdtor: u64 = 61193;
+/// `hkpConstraintCollisionFilter::vdtor` at 0xb51cd0 (slot_propagation, medium); signature (low): `hkpConstraintCollisionFilter * vdtor(hkpConstraintCollisionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintCollisionFilter__vdtor: u64 = 61208;
+/// `hkpConstraintCollisionFilter::vfunc_3` at 0xb719e0 (rtti, high); signature (low): `undefined vfunc_3(hkpConstraintCollisionFilter * this, longlong param_1)`
+pub const hkpConstraintCollisionFilter__vfunc_3: u64 = 61887;
+/// `hkpConstraintData::vdtor` at 0xb4ff10 (layout_inference, medium); signature (low): `hkpConstraintData * vdtor(hkpConstraintData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintData__vdtor: u64 = 60986;
+/// `hkpConstraintData::vfunc_13` at 0xb70050 (rtti, medium); signature (low): `undefined8 vfunc_13(hkpConstraintData * this, undefined8 param_1)`
+pub const hkpConstraintData__vfunc_13: u64 = 61832;
+/// `hkpConstraintData::vfunc_14` at 0xb70060 (rtti, medium); signature (low): `undefined vfunc_14(hkpConstraintData * this, undefined8 param_1, void * param_2, uint param_3)`
+pub const hkpConstraintData__vfunc_14: u64 = 61833;
+/// `hkpConstraintData::vfunc_15` at 0xb50020 (rtti, medium); signature (low): `undefined vfunc_15(void)`
+pub const hkpConstraintData__vfunc_15: u64 = 60988;
+/// `hkpConstraintData::vfunc_16` at 0xb50070 (rtti, medium); signature (low): `undefined1 * vfunc_16(hkpConstraintData * this, undefined1 * param_1)`
+pub const hkpConstraintData__vfunc_16: u64 = 60993;
+/// `hkpConstraintData::vfunc_17` at 0xb50030 (rtti, medium); signature (low): `undefined vfunc_17(void)`
+pub const hkpConstraintData__vfunc_17: u64 = 60989;
+/// `hkpConstraintData::vfunc_3` at 0xb500a0 (rtti, medium); signature (low): `undefined vfunc_3(void)`
+pub const hkpConstraintData__vfunc_3: u64 = 60996;
+/// `hkpConstraintData::vfunc_4` at 0xb50050 (rtti, medium); signature (low): `undefined4 vfunc_4(void)`
+pub const hkpConstraintData__vfunc_4: u64 = 60991;
+/// `hkpConstraintData::vfunc_5` at 0xb500b0 (rtti, medium); signature (low): `undefined vfunc_5(void)`
+pub const hkpConstraintData__vfunc_5: u64 = 60997;
+/// `hkpConstraintData::vfunc_6` at 0xb50040 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+pub const hkpConstraintData__vfunc_6: u64 = 60990;
+/// `hkpConstraintData::vfunc_7` at 0xb50090 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+pub const hkpConstraintData__vfunc_7: u64 = 60995;
+/// `hkpConstraintData::vfunc_8` at 0xb50080 (rtti, medium); signature (low): `undefined vfunc_8(void)`
+pub const hkpConstraintData__vfunc_8: u64 = 60994;
+/// `hkpConstraintData::vfunc_9` at 0xb50060 (rtti, medium); signature (low): `undefined1 vfunc_9(void)`
+pub const hkpConstraintData__vfunc_9: u64 = 60992;
+/// `hkpConstraintInstance::ctor` at 0xb51050 (layout_inference, medium); signature (high): `undefined ctor(hkpConstraintInstance * this)`
+pub const hkpConstraintInstance__ctor: u64 = 61127;
+/// `hkpConstraintInstance::ctor` at 0xb63680 (layout_inference, medium); signature (low): `hkpConstraintInstance * ctor(hkpConstraintInstance * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined1 param_4)`
+pub const hkpConstraintInstance__ctor_2: u64 = 61566;
+/// `hkpConstraintInstance::ctor` at 0xb63980 (layout_inference, medium); signature (low): `hkpConstraintInstance * ctor(hkpConstraintInstance * this, undefined1 param_1)`
+pub const hkpConstraintInstance__ctor_3: u64 = 61569;
+/// `hkpConstraintInstance::dtor` at 0xb63740 (layout_inference, high); signature (high): `undefined dtor(hkpConstraintInstance * this)`
+pub const hkpConstraintInstance__dtor: u64 = 61567;
+/// `hkpConstraintInstance::dtor_sub0` at 0xb82400 (callgraph, medium); signature (untiered): `undefined dtor_sub0(longlong param_1)`
+pub const hkpConstraintInstance__dtor_sub0: u64 = 62246;
+/// `hkpConstraintInstance::vdtor` at 0xb51d50 (slot_propagation, medium); signature (low): `hkpConstraintInstance * vdtor(hkpConstraintInstance * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintInstance__vdtor: u64 = 61209;
+/// `hkpConstraintInstance::vfunc_3` at 0xb642f0 (rtti, medium); signature (low): `undefined vfunc_3(void)`
+pub const hkpConstraintInstance__vfunc_3: u64 = 61583;
+/// `hkpConstraintInstance::vfunc_4` at 0xb64300 (rtti, high); signature (low): `undefined vfunc_4(hkpConstraintInstance * this, longlong param_1)`
+pub const hkpConstraintInstance__vfunc_4: u64 = 61584;
+/// `hkpConstraintInstance::vfunc_5` at 0xb64330 (rtti, medium); signature (low): `undefined vfunc_5(void)`
+pub const hkpConstraintInstance__vfunc_5: u64 = 61585;
+/// `hkpConstraintInstance::vfunc_6` at 0xb52c60 (rtti, high); signature (low): `undefined8 vfunc_6(void)`
+pub const hkpConstraintInstance__vfunc_6: u64 = 61247;
+/// `hkpConstraintListener::dtor` at 0xb516e0 (layout_inference, high); signature (high): `undefined dtor(hkpConstraintListener * this)`
+pub const hkpConstraintListener__dtor: u64 = 61189;
+/// `hkpConstraintListener::dtor` at 0x1050f70 (layout_inference, high); signature (low): `undefined dtor(hkpConstraintListener * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintListener__dtor_2: u64 = 77957;
+/// `hkpConstraintListener::vdtor` at 0xb51dd0 (layout_inference, medium); signature (low): `hkpConstraintListener * vdtor(hkpConstraintListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintListener__vdtor: u64 = 61210;
+/// `hkpConstraintListener::vfunc_1` at 0xb52bd0 (rtti, medium); signature (low): `undefined vfunc_1(void)`
+pub const hkpConstraintListener__vfunc_1: u64 = 61238;
+/// `hkpConstraintListener::vfunc_2` at 0xb52c00 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+pub const hkpConstraintListener__vfunc_2: u64 = 61241;
+/// `hkpConstraintListener::vfunc_3` at 0xb52bf0 (rtti, medium); signature (low): `undefined vfunc_3(void)`
+pub const hkpConstraintListener__vfunc_3: u64 = 61240;
+/// `hkpConstraintListener::vfunc_4` at 0xb52c20 (rtti, medium); signature (low): `undefined vfunc_4(void)`
+pub const hkpConstraintListener__vfunc_4: u64 = 61243;
+/// `hkpConstraintListener::vfunc_5` at 0xb52be0 (rtti, medium); signature (low): `undefined vfunc_5(void)`
+pub const hkpConstraintListener__vfunc_5: u64 = 61239;
+/// `hkpConstraintListener::vfunc_6` at 0xb52c10 (rtti, medium); signature (low): `undefined vfunc_6(void)`
+pub const hkpConstraintListener__vfunc_6: u64 = 61242;
+/// `hkpConstraintMotor::vdtor` at 0xb51e30 (layout_inference, medium); signature (low): `hkpConstraintMotor * vdtor(hkpConstraintMotor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintMotor__vdtor: u64 = 61211;
+/// `hkpConstraintOwner::vdtor` at 0xb66eb0 (layout_inference, medium); signature (low): `hkpConstraintOwner * vdtor(hkpConstraintOwner * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintOwner__vdtor: u64 = 61674;
+/// `hkpConstraintOwner::vfunc_3` at 0xb66f50 (rtti, high); signature (low): `undefined vfunc_3(void)`
+pub const hkpConstraintOwner__vfunc_3: u64 = 61676;
+/// `hkpConstraintOwner::vfunc_4` at 0xb66f70 (rtti, high); signature (low): `undefined vfunc_4(void)`
+pub const hkpConstraintOwner__vfunc_4: u64 = 61678;
+/// `hkpConstraintOwner::vfunc_5` at 0xb66f40 (rtti, high); signature (low): `undefined vfunc_5(void)`
+pub const hkpConstraintOwner__vfunc_5: u64 = 61675;
+/// `hkpConstraintOwner::vfunc_6` at 0xb66f60 (rtti, medium); signature (low): `undefined vfunc_6(void)`
+pub const hkpConstraintOwner__vfunc_6: u64 = 61677;
+/// `hkpConstraintUtils::CollectConstraintsFilter::vdtor` at 0xc414f0 (layout_inference, medium); signature (low): `CollectConstraintsFilter * vdtor(CollectConstraintsFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintUtils__CollectConstraintsFilter__vdtor: u64 = 65192;
+/// `hkpConstraintUtils::CollectConstraintsFilter::vfunc_1` at 0xc41600 (rtti, high); signature (low): `undefined1 * vfunc_1(CollectConstraintsFilter * this, undefined1 * param_1)`
+pub const hkpConstraintUtils__CollectConstraintsFilter__vfunc_1: u64 = 65195;
+/// `hkpContactListener::dtor` at 0x3fc740 (layout_inference, high); signature (high): `undefined dtor(hkpContactListener * this)`
+pub const hkpContactListener__dtor: u64 = 25828;
+/// `hkpContactListener::vdtor` at 0x3fc8d0 (layout_inference, medium); signature (low): `hkpContactListener * vdtor(hkpContactListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpContactListener__vdtor: u64 = 25832;
+/// `hkpContactListener::vfunc_0` at 0x3fcb50 (rtti, medium); signature (low): `undefined vfunc_0(void)`
+pub const hkpContactListener__vfunc_0: u64 = 25841;
+/// `hkpContactListener::vfunc_1` at 0x3fcb20 (rtti, medium); signature (low): `undefined vfunc_1(void)`
+pub const hkpContactListener__vfunc_1: u64 = 25838;
+/// `hkpContactListener::vfunc_2` at 0x3fcb30 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+pub const hkpContactListener__vfunc_2: u64 = 25839;
+/// `hkpContactListener::vfunc_4` at 0x3fcb40 (rtti, medium); signature (low): `undefined vfunc_4(void)`
+pub const hkpContactListener__vfunc_4: u64 = 25840;
+/// `hkpContactListener::vfunc_5` at 0x3fcb60 (rtti, medium); signature (low): `undefined vfunc_5(void)`
+pub const hkpContactListener__vfunc_5: u64 = 25842;
+/// `hkpContactListener::vfunc_6` at 0x3fcb70 (rtti, medium); signature (low): `undefined vfunc_6(void)`
+pub const hkpContactListener__vfunc_6: u64 = 25843;
+/// `hkpContactMgr::vdtor` at 0xb5c9a0 (layout_inference, medium); signature (low): `hkpContactMgr * vdtor(hkpContactMgr * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpContactMgr__vdtor: u64 = 61450;
+/// `hkpContactMgr::vfunc_9` at 0xb5cf00 (rtti, medium); signature (low): `undefined vfunc_9(void)`
+pub const hkpContactMgr__vfunc_9: u64 = 61463;
+/// `hkpContactMgrFactory::vdtor` at 0xb5ca30 (layout_inference, medium); signature (low): `hkpContactMgrFactory * vdtor(hkpContactMgrFactory * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpContactMgrFactory__vdtor: u64 = 61451;
+/// `hkpContactMgrFactory::vfunc_2` at 0xb5ced0 (rtti, medium); signature (low): `undefined vfunc_2(hkpContactMgrFactory * this, longlong * param_1)`
+pub const hkpContactMgrFactory__vfunc_2: u64 = 61462;
+/// `hkpContinuousSimulation::ctor` at 0x10d4140 (layout_inference, high); signature (low): `hkpContinuousSimulation * ctor(hkpContinuousSimulation * this, longlong param_1)`
+pub const hkpContinuousSimulation__ctor: u64 = 80426;
+/// `hkpContinuousSimulation::ctor` at 0x10d4220 (layout_inference, medium); signature (high): `undefined ctor(hkpContinuousSimulation * this)`
+pub const hkpContinuousSimulation__ctor_2: u64 = 80427;
+/// `hkpContinuousSimulation::ctor_caller` at 0x10d42c0 (callgraph, medium); signature (untiered): `undefined ctor_caller(undefined8 param_1)`
+pub const hkpContinuousSimulation__ctor_caller: u64 = 80428;
+/// `hkpContinuousSimulation::vdtor` at 0x10d9ee0 (slot_propagation, medium); signature (low): `hkpContinuousSimulation * vdtor(hkpContinuousSimulation * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpContinuousSimulation__vdtor: u64 = 80471;
+/// `hkpContinuousSimulation::vfunc_12` at 0x10d4650 (rtti, medium); signature (low): `undefined vfunc_12(hkpContinuousSimulation * this, longlong * param_1, int param_2, undefined8 param_3, byte param_4)`
+pub const hkpContinuousSimulation__vfunc_12: u64 = 80432;
+/// `hkpContinuousSimulation::vfunc_13` at 0x10d46c0 (rtti, high); signature (low): `undefined vfunc_13(void)`
+pub const hkpContinuousSimulation__vfunc_13: u64 = 80433;
+/// `hkpContinuousSimulation::vfunc_14` at 0x10d46d0 (rtti, medium); signature (low): `undefined vfunc_14(hkpContinuousSimulation * this, longlong param_1)`
+pub const hkpContinuousSimulation__vfunc_14: u64 = 80434;
+/// `hkpContinuousSimulation::vfunc_15` at 0x10d4780 (rtti, high); signature (low): `undefined vfunc_15(void)`
+pub const hkpContinuousSimulation__vfunc_15: u64 = 80435;
+/// `hkpContinuousSimulation::vfunc_16` at 0x10d4420 (rtti, medium); signature (low): `undefined vfunc_16(hkpContinuousSimulation * this, longlong * param_1, int param_2, longlong param_3, uint param_4)`
+pub const hkpContinuousSimulation__vfunc_16: u64 = 80430;
+/// `hkpContinuousSimulation::vfunc_17` at 0x10d5600 (rtti, medium); signature (low): `undefined vfunc_17(hkpContinuousSimulation * this, undefined8 * param_1)`
+pub const hkpContinuousSimulation__vfunc_17: u64 = 80441;
+/// `hkpContinuousSimulation::vfunc_18` at 0x10d4610 (rtti, medium); signature (medium): `undefined vfunc_18(hkpContinuousSimulation * this, float param_1)`
+pub const hkpContinuousSimulation__vfunc_18: u64 = 80431;
+/// `hkpContinuousSimulation::vfunc_19` at 0x10d63d0 (rtti, high); signature (low): `undefined vfunc_19(hkpContinuousSimulation * this, longlong * param_1, int param_2, longlong * param_3, longlong * param_4)`
+pub const hkpContinuousSimulation__vfunc_19: u64 = 80447;
+/// `hkpContinuousSimulation::vfunc_2` at 0x10d6ca0 (rtti, medium); signature (low): `undefined vfunc_2(hkpContinuousSimulation * this, longlong * param_1)`
+pub const hkpContinuousSimulation__vfunc_2: u64 = 80449;
+/// `hkpContinuousSimulation::vfunc_20` at 0x10d6810 (rtti, high); signature (low): `undefined vfunc_20(hkpContinuousSimulation * this, longlong * param_1, longlong * param_2)`
+pub const hkpContinuousSimulation__vfunc_20: u64 = 80448;
+/// `hkpContinuousSimulation::vfunc_21` at 0x10d70c0 (rtti, medium); signature (low): `undefined vfunc_21(hkpContinuousSimulation * this, longlong param_1, float * param_2, float param_3, undefined4 param_4)`
+pub const hkpContinuousSimulation__vfunc_21: u64 = 80451;
+/// `hkpContinuousSimulation::vfunc_6` at 0x10d4310 (rtti, medium); signature (high): `undefined4 vfunc_6(hkpContinuousSimulation * this)`
+pub const hkpContinuousSimulation__vfunc_6: u64 = 80429;
+/// `hkpContinuousSimulation::vfunc_6_sub0` at 0x10d59b0 (callgraph, medium); signature (untiered): `int vfunc_6_sub0(longlong * param_1)`
+pub const hkpContinuousSimulation__vfunc_6_sub0: u64 = 80442;
+/// `hkpConvexListAgent::ctor` at 0xc8c8f0 (layout_inference, high); signature (low): `hkpConvexListAgent * ctor(hkpConvexListAgent * this, undefined8 * param_1, undefined8 * param_2, undefined8 * param_3)`
+pub const hkpConvexListAgent__ctor: u64 = 67006;
+/// `hkpConvexListAgent::vdtor` at 0xc8d0a0 (layout_inference, medium); signature (low): `hkpConvexListAgent * vdtor(hkpConvexListAgent * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexListAgent__vdtor: u64 = 67014;
+/// `hkpConvexListAgent::vfunc_10` at 0xc8c800 (rtti, medium); signature (low): `undefined vfunc_10(hkpConvexListAgent * this, float param_2, uint param_3, longlong * param_4)`
+pub const hkpConvexListAgent__vfunc_10: u64 = 67001;
+/// `hkpConvexListAgent::vfunc_11` at 0xc8c890 (rtti, medium); signature (low): `undefined vfunc_11(hkpConvexListAgent * this, short param_1)`
+pub const hkpConvexListAgent__vfunc_11: u64 = 67003;
+/// `hkpConvexListAgent::vfunc_12` at 0xc8c8b0 (rtti, medium); signature (low): `undefined vfunc_12(hkpConvexListAgent * this, undefined2 param_1)`
+pub const hkpConvexListAgent__vfunc_12: u64 = 67004;
+/// `hkpConvexListAgent::vfunc_13` at 0xc8c8d0 (rtti, medium); signature (low): `undefined vfunc_13(hkpConvexListAgent * this, short param_1)`
+pub const hkpConvexListAgent__vfunc_13: u64 = 67005;
+/// `hkpConvexListAgent::vfunc_2` at 0xc8c7c0 (rtti, medium); signature (low): `undefined vfunc_2(hkpConvexListAgent * this, longlong * param_1)`
+pub const hkpConvexListAgent__vfunc_2: u64 = 66999;
+/// `hkpConvexListAgent::vfunc_3` at 0xc8c610 (rtti, high); signature (low): `undefined vfunc_3(hkpConvexListAgent * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const hkpConvexListAgent__vfunc_3: u64 = 66996;
+/// `hkpConvexListAgent::vfunc_4` at 0xc8c420 (rtti, high); signature (low): `undefined vfunc_4(hkpConvexListAgent * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const hkpConvexListAgent__vfunc_4: u64 = 66994;
+/// `hkpConvexListAgent::vfunc_5` at 0xc8c2a0 (rtti, medium); signature (low): `undefined vfunc_5(hkpConvexListAgent * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const hkpConvexListAgent__vfunc_5: u64 = 66992;
+/// `hkpConvexListAgent::vfunc_6` at 0xc8bcd0 (rtti, high); signature (low): `undefined vfunc_6(hkpConvexListAgent * this, longlong * param_1, longlong * param_2, longlong param_3, undefined8 * param_4)`
+pub const hkpConvexListAgent__vfunc_6: u64 = 66991;
+/// `hkpConvexListAgent::vfunc_6_sub0` at 0xc8c9b0 (callgraph, medium); signature (untiered): `undefined vfunc_6_sub0(longlong param_1, undefined8 param_2)`
+pub const hkpConvexListAgent__vfunc_6_sub0: u64 = 67007;
+/// `hkpConvexListAgent::vfunc_6_sub1` at 0xc8ca00 (callgraph, medium); signature (untiered): `undefined vfunc_6_sub1(longlong param_1, undefined8 param_2)`
+pub const hkpConvexListAgent__vfunc_6_sub1: u64 = 67008;
+/// `hkpConvexListAgent::vfunc_7` at 0xc8c820 (rtti, medium); signature (low): `undefined vfunc_7(hkpConvexListAgent * this, undefined8 param_1)`
+pub const hkpConvexListAgent__vfunc_7: u64 = 67002;
+/// `hkpConvexListAgent::vfunc_8` at 0xc8c760 (rtti, high); signature (low): `undefined vfunc_8(hkpConvexListAgent * this, undefined8 param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
+pub const hkpConvexListAgent__vfunc_8: u64 = 66998;
+/// `hkpConvexListAgent::vfunc_9` at 0xc8c7e0 (rtti, medium); signature (low): `undefined vfunc_9(hkpConvexListAgent * this, longlong * param_1)`
+pub const hkpConvexListAgent__vfunc_9: u64 = 67000;
+/// `hkpConvexListFilter::vdtor` at 0xb365e0 (layout_inference, medium); signature (low): `hkpConvexListFilter * vdtor(hkpConvexListFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexListFilter__vdtor: u64 = 60528;
+/// `hkpConvexListShape::ctor` at 0xb450e0 (layout_inference, medium); signature (low): `hkpConvexListShape * ctor(hkpConvexListShape * this, longlong * param_1, int param_2)`
+pub const hkpConvexListShape__ctor: u64 = 60747;
+/// `hkpConvexListShape::dtor` at 0xb45150 (layout_inference, high); signature (high): `undefined dtor(hkpConvexListShape * this)`
+pub const hkpConvexListShape__dtor: u64 = 60748;
+/// `hkpConvexListShape::hkpShapeContainer_vdtor` at 0xb3db5c (slot_propagation, medium); signature (high): `undefined hkpShapeContainer_vdtor(hkpConvexListShape * this)`
+pub const hkpConvexListShape__hkpShapeContainer_vdtor: u64 = 60518;
+/// `hkpConvexListShape::hkpShapeContainer_vfunc_1` at 0xb45580 (rtti, high); signature (high): `undefined4 hkpShapeContainer_vfunc_1(hkpConvexListShape * this)`
+pub const hkpConvexListShape__hkpShapeContainer_vfunc_1: u64 = 60756;
+/// `hkpConvexListShape::hkpShapeContainer_vfunc_2` at 0xb45590 (rtti, high); signature (low): `undefined8 hkpShapeContainer_vfunc_2(void)`
+pub const hkpConvexListShape__hkpShapeContainer_vfunc_2: u64 = 60757;
+/// `hkpConvexListShape::hkpShapeContainer_vfunc_3` at 0xb455a0 (rtti, high); signature (low): `int hkpShapeContainer_vfunc_3(hkpConvexListShape * this, int param_1)`
+pub const hkpConvexListShape__hkpShapeContainer_vfunc_3: u64 = 60758;
+/// `hkpConvexListShape::hkpShapeContainer_vfunc_4` at 0xb455c0 (rtti, high); signature (low): `undefined8 hkpShapeContainer_vfunc_4(void)`
+pub const hkpConvexListShape__hkpShapeContainer_vfunc_4: u64 = 60759;
+/// `hkpConvexListShape::hkpShapeContainer_vfunc_5` at 0xb455d0 (rtti, high); signature (low): `undefined8 hkpShapeContainer_vfunc_5(hkpConvexListShape * this, int param_1)`
+pub const hkpConvexListShape__hkpShapeContainer_vfunc_5: u64 = 60760;
+/// `hkpConvexListShape::vdtor` at 0xb3dd30 (slot_propagation, medium); signature (low): `hkpConvexListShape * vdtor(hkpConvexListShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexListShape__vdtor: u64 = 60529;
+/// `hkpConvexListShape::vfunc_11` at 0xb45490 (rtti, high); signature (high): `int vfunc_11(hkpConvexListShape * this)`
+pub const hkpConvexListShape__vfunc_11: u64 = 60754;
+/// `hkpConvexListShape::vfunc_12` at 0xb454f0 (rtti, high); signature (low): `longlong vfunc_12(hkpConvexListShape * this, longlong param_1)`
+pub const hkpConvexListShape__vfunc_12: u64 = 60755;
+/// `hkpConvexListShape::vfunc_13` at 0xb45470 (rtti, high); signature (high): `undefined vfunc_13(hkpConvexListShape * this)`
+pub const hkpConvexListShape__vfunc_13: u64 = 60753;
+/// `hkpConvexListShape::vfunc_14` at 0xb452e0 (rtti, high); signature (low): `undefined vfunc_14(hkpConvexListShape * this, float * param_1, float * param_2)`
+pub const hkpConvexListShape__vfunc_14: u64 = 60751;
+/// `hkpConvexListShape::vfunc_15` at 0xb453c0 (rtti, high); signature (low): `undefined vfunc_15(hkpConvexListShape * this, ushort * param_1, uint param_2, longlong param_3)`
+pub const hkpConvexListShape__vfunc_15: u64 = 60752;
+/// `hkpConvexListShape::vfunc_2` at 0xb459e0 (rtti, high); signature (low): `undefined vfunc_2(hkpConvexListShape * this, longlong * param_1)`
+pub const hkpConvexListShape__vfunc_2: u64 = 60765;
+/// `hkpConvexListShape::vfunc_4` at 0xb459c0 (rtti, high); signature (high): `hkpConvexListShape_vtbl_28 * * vfunc_4(hkpConvexListShape * this)`
+pub const hkpConvexListShape__vfunc_4: u64 = 60764;
+/// `hkpConvexListShape::vfunc_7` at 0xb455f0 (rtti, high); signature (low): `undefined vfunc_7(hkpConvexListShape * this, float * param_1, float param_2, undefined1[16] * param_3)`
+pub const hkpConvexListShape__vfunc_7: u64 = 60761;
+/// `hkpConvexListShape::vfunc_8` at 0xb45750 (rtti, high); signature (low): `undefined8 vfunc_8(hkpConvexListShape * this, undefined8 param_1, undefined8 param_2, longlong param_3)`
+pub const hkpConvexListShape__vfunc_8: u64 = 60762;
+/// `hkpConvexListShape::vfunc_9` at 0xb45890 (rtti, high); signature (low): `undefined vfunc_9(hkpConvexListShape * this, undefined8 param_1, longlong param_2, undefined8 param_3)`
+pub const hkpConvexListShape__vfunc_9: u64 = 60763;
+/// `hkpConvexPieceStreamData::vdtor` at 0xb8daa0 (slot_propagation, medium); signature (low): `hkpConvexPieceStreamData * vdtor(hkpConvexPieceStreamData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexPieceStreamData__vdtor: u64 = 62382;
+/// `hkpConvexShape::vdtor` at 0xb37580 (layout_inference, medium); signature (low): `hkpConvexShape * vdtor(hkpConvexShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexShape__vdtor: u64 = 60300;
+/// `hkpConvexShape::vfunc_16` at 0xb377d0 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+pub const hkpConvexShape__vfunc_16: u64 = 60306;
+/// `hkpConvexShape::vfunc_17` at 0xb377e0 (rtti, medium); signature (low): `undefined vfunc_17(hkpConvexShape * this, float * param_1)`
+pub const hkpConvexShape__vfunc_17: u64 = 60307;
+/// `hkpConvexShape::vfunc_3` at 0xb376c0 (rtti, medium); signature (low): `float vfunc_3(hkpConvexShape * this, float * param_1)`
+pub const hkpConvexShape__vfunc_3: u64 = 60304;
+/// `hkpConvexShape::vfunc_5` at 0xb376b0 (rtti, medium); signature (low): `undefined1 vfunc_5(void)`
+pub const hkpConvexShape__vfunc_5: u64 = 60303;
+/// `hkpConvexShape::vfunc_9` at 0xb37720 (rtti, medium); signature (low): `undefined vfunc_9(hkpConvexShape * this, undefined8 param_1, longlong param_2, undefined8 * param_3)`
+pub const hkpConvexShape__vfunc_9: u64 = 60305;
+/// `hkpConvexTransformShape::ctor` at 0xb41880 (layout_inference, high); signature (low): `hkpConvexTransformShape * ctor(hkpConvexTransformShape * this, longlong param_1, undefined8 * param_2, int param_3)`
+pub const hkpConvexTransformShape__ctor: u64 = 60690;
+/// `hkpConvexTransformShape::vdtor` at 0xb3ddb0 (layout_inference, medium); signature (low): `hkpConvexTransformShape * vdtor(hkpConvexTransformShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexTransformShape__vdtor: u64 = 60530;
+/// `hkpConvexTransformShape::vfunc_11` at 0xb41b10 (rtti, high); signature (high): `undefined vfunc_11(hkpConvexTransformShape * this)`
+pub const hkpConvexTransformShape__vfunc_11: u64 = 60695;
+/// `hkpConvexTransformShape::vfunc_12` at 0xb41b30 (rtti, high); signature (low): `longlong vfunc_12(hkpConvexTransformShape * this, longlong param_1)`
+pub const hkpConvexTransformShape__vfunc_12: u64 = 60696;
+/// `hkpConvexTransformShape::vfunc_13` at 0xb41fe0 (rtti, high); signature (low): `undefined vfunc_13(hkpConvexTransformShape * this, float * param_1)`
+pub const hkpConvexTransformShape__vfunc_13: u64 = 60700;
+/// `hkpConvexTransformShape::vfunc_14` at 0xb41920 (rtti, high); signature (low): `undefined vfunc_14(hkpConvexTransformShape * this, float * param_1, float * param_2)`
+pub const hkpConvexTransformShape__vfunc_14: u64 = 60692;
+/// `hkpConvexTransformShape::vfunc_15` at 0xb419f0 (rtti, high); signature (low): `undefined vfunc_15(hkpConvexTransformShape * this, undefined8 param_1, int param_2, longlong param_3)`
+pub const hkpConvexTransformShape__vfunc_15: u64 = 60693;
+/// `hkpConvexTransformShape::vfunc_17` at 0xb41ab0 (rtti, high); signature (low): `undefined vfunc_17(hkpConvexTransformShape * this, float * param_1)`
+pub const hkpConvexTransformShape__vfunc_17: u64 = 60694;
+/// `hkpConvexTransformShape::vfunc_2` at 0xb42120 (rtti, high); signature (low): `undefined vfunc_2(hkpConvexTransformShape * this, longlong * param_1)`
+pub const hkpConvexTransformShape__vfunc_2: u64 = 60702;
+/// `hkpConvexTransformShape::vfunc_3` at 0xb42040 (rtti, high); signature (low): `float vfunc_3(hkpConvexTransformShape * this, float * param_1)`
+pub const hkpConvexTransformShape__vfunc_3: u64 = 60701;
+/// `hkpConvexTransformShape::vfunc_4` at 0xb42170 (rtti, high); signature (high): `undefined8 * vfunc_4(hkpConvexTransformShape * this)`
+pub const hkpConvexTransformShape__vfunc_4: u64 = 60703;
+/// `hkpConvexTransformShape::vfunc_6` at 0xb3e490 (rtti, high); signature (low): `longlong vfunc_6(hkpConvexTransformShape * this, undefined8 param_1, int param_2)`
+pub const hkpConvexTransformShape__vfunc_6: u64 = 60544;
+/// `hkpConvexTransformShape::vfunc_7` at 0xb41c00 (rtti, high); signature (low): `undefined vfunc_7(hkpConvexTransformShape * this, float * param_2, undefined4 param_3, undefined8 param_4)`
+pub const hkpConvexTransformShape__vfunc_7: u64 = 60697;
+/// `hkpConvexTransformShape::vfunc_8` at 0xb41c60 (rtti, high); signature (low): `char * vfunc_8(hkpConvexTransformShape * this, char * param_1, float * param_2, float * param_3)`
+pub const hkpConvexTransformShape__vfunc_8: u64 = 60698;
+/// `hkpConvexTransformShape::vfunc_9` at 0xb41e20 (rtti, high); signature (low): `undefined vfunc_9(hkpConvexTransformShape * this, float * param_1, longlong param_2, undefined8 param_3)`
+pub const hkpConvexTransformShape__vfunc_9: u64 = 60699;
+/// `hkpConvexTransformShapeBase::ctor` at 0xb37830 (layout_inference, medium); signature (low): `hkpConvexTransformShapeBase * ctor(hkpConvexTransformShapeBase * this, undefined4 param_2, undefined4 param_3, longlong param_4, int param_5)`
+pub const hkpConvexTransformShapeBase__ctor: u64 = 60308;
+/// `hkpConvexTransformShapeBase::vdtor` at 0xb37890 (layout_inference, medium); signature (low): `hkpConvexTransformShapeBase * vdtor(hkpConvexTransformShapeBase * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexTransformShapeBase__vdtor: u64 = 60309;
+/// `hkpConvexTranslateShape::vdtor` at 0xb3de60 (layout_inference, medium); signature (low): `hkpConvexTranslateShape * vdtor(hkpConvexTranslateShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexTranslateShape__vdtor: u64 = 60531;
+/// `hkpConvexTranslateShape::vfunc_11` at 0xb42260 (rtti, high); signature (high): `undefined vfunc_11(hkpConvexTranslateShape * this)`
+pub const hkpConvexTranslateShape__vfunc_11: u64 = 60707;
+/// `hkpConvexTranslateShape::vfunc_12` at 0xb42280 (rtti, high); signature (low): `longlong vfunc_12(hkpConvexTranslateShape * this, longlong param_1)`
+pub const hkpConvexTranslateShape__vfunc_12: u64 = 60708;
+/// `hkpConvexTranslateShape::vfunc_13` at 0xb42540 (rtti, high); signature (low): `undefined vfunc_13(hkpConvexTranslateShape * this, float * param_1)`
+pub const hkpConvexTranslateShape__vfunc_13: u64 = 60712;
+/// `hkpConvexTranslateShape::vfunc_14` at 0xb42180 (rtti, high); signature (low): `undefined vfunc_14(hkpConvexTranslateShape * this, undefined8 param_1, float * param_2)`
+pub const hkpConvexTranslateShape__vfunc_14: u64 = 60704;
+/// `hkpConvexTranslateShape::vfunc_15` at 0xb421c0 (rtti, high); signature (low): `undefined vfunc_15(hkpConvexTranslateShape * this, undefined8 param_1, int param_2, float * param_3)`
+pub const hkpConvexTranslateShape__vfunc_15: u64 = 60705;
+/// `hkpConvexTranslateShape::vfunc_17` at 0xb42220 (rtti, high); signature (low): `undefined vfunc_17(hkpConvexTranslateShape * this, float * param_1)`
+pub const hkpConvexTranslateShape__vfunc_17: u64 = 60706;
+/// `hkpConvexTranslateShape::vfunc_2` at 0xb425e0 (rtti, high); signature (low): `undefined vfunc_2(hkpConvexTranslateShape * this, longlong * param_1)`
+pub const hkpConvexTranslateShape__vfunc_2: u64 = 60714;
+/// `hkpConvexTranslateShape::vfunc_3` at 0xb42580 (rtti, high); signature (low): `float vfunc_3(hkpConvexTranslateShape * this, float * param_1)`
+pub const hkpConvexTranslateShape__vfunc_3: u64 = 60713;
+/// `hkpConvexTranslateShape::vfunc_4` at 0xb42630 (rtti, high); signature (high): `undefined8 * vfunc_4(hkpConvexTranslateShape * this)`
+pub const hkpConvexTranslateShape__vfunc_4: u64 = 60715;
+/// `hkpConvexTranslateShape::vfunc_6` at 0xb42640 (rtti, high); signature (low): `longlong vfunc_6(hkpConvexTranslateShape * this, undefined8 param_1, int param_2)`
+pub const hkpConvexTranslateShape__vfunc_6: u64 = 60716;
+/// `hkpConvexTranslateShape::vfunc_7` at 0xb422f0 (rtti, high); signature (low): `undefined vfunc_7(hkpConvexTranslateShape * this, float * param_1, undefined8 param_2, float * param_3)`
+pub const hkpConvexTranslateShape__vfunc_7: u64 = 60709;
+/// `hkpConvexTranslateShape::vfunc_8` at 0xb42370 (rtti, high); signature (low): `char * vfunc_8(hkpConvexTranslateShape * this, char * param_1, float * param_2, longlong param_3)`
+pub const hkpConvexTranslateShape__vfunc_8: u64 = 60710;
+/// `hkpConvexTranslateShape::vfunc_9` at 0xb42470 (rtti, high); signature (low): `undefined vfunc_9(hkpConvexTranslateShape * this, float * param_1, longlong param_2, undefined8 param_3)`
+pub const hkpConvexTranslateShape__vfunc_9: u64 = 60711;
+/// `hkpConvexVerticesConnectivity::vdtor` at 0xb3df10 (slot_propagation, medium); signature (low): `hkpConvexVerticesConnectivity * vdtor(hkpConvexVerticesConnectivity * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexVerticesConnectivity__vdtor: u64 = 60532;
+/// `hkpConvexVerticesConnectivity::vfunc_3` at 0xb428b0 (rtti, high); signature (high): `undefined vfunc_3(hkpConvexVerticesConnectivity * this)`
+pub const hkpConvexVerticesConnectivity__vfunc_3: u64 = 60718;
+/// `hkpConvexVerticesShape::BuildFromPoints` at 0x10ee650 (semantic, high); signature (low): `hkpConvexVerticesShape * BuildFromPoints(hkpConvexVerticesShape * this, ulonglong * param_1, char * param_2)`; semantic: builds the convex hull of the points (hkgpConvexHull) and constructs from it: radius = config+4, planes into +0x78, vertices +0x50/+0x60; config byte 0 keeps an hkpConvexVerticesConnectivity (+0x88); config byte 1 with radius > 0 shrinks by the convex radius (floats +0xc/+0x10, byte +2); int +8 > 3 limits the vertex count (high); signature `hkpConvexVerticesShape* (hkpConvexVerticesShape* this, const hkStridedVertices* points, const hkpConvexVerticesShape::BuildConfig* config)`
+pub const hkpConvexVerticesShape__BuildFromPoints: u64 = 80831;
+/// `hkpConvexVerticesShape::BuildFromPoints` as a function pointer type (high).
+pub type hkpConvexVerticesShape__BuildFromPoints_fn = unsafe extern "C" fn(this: *mut crate::hkpConvexVerticesShape, points: *const crate::hkStridedVertices, config: *const crate::hkpConvexVerticesShape__BuildConfig) -> *mut crate::hkpConvexVerticesShape;
+/// `hkpConvexVerticesShape::GetVertices` at 0xc3abd0 (semantic, high); signature (low): `undefined GetVertices(longlong param_1, longlong * param_2)`; semantic: unpacks the SoA vertex blocks (+0x50, 0x30 bytes per 4 vertices: x[4] +0, y[4] +0x10, z[4] +0x20) into out (count +0x60, w = 0), growing out with hkContainerHeapAllocator (high); signature `void (const hkpConvexVerticesShape* this, hkArray<hkVector4>* out)`
+pub const hkpConvexVerticesShape__GetVertices: u64 = 65093;
+/// `hkpConvexVerticesShape::GetVertices` as a function pointer type (high).
+pub type hkpConvexVerticesShape__GetVertices_fn = unsafe extern "C" fn(this: *const crate::hkpConvexVerticesShape, out: *mut c_void);
+/// `hkpConvexVerticesShape::ctor` at 0xc3a870 (semantic, high); signature (low): `hkpConvexVerticesShape * ctor(hkpConvexVerticesShape * this, undefined8 * param_2, longlong * param_3, undefined4 param_4)`; semantic: direct constructor: +8 = 0x1ffff, radius +0x20, type +0x18 = 6, copies the planes into +0x78 (hkContainerHeapAllocator), packs the vertices into the SoA array +0x50 and computes the AABB (PackStridedVerticesAndComputeAabb 0xc3b990) (high); signature `hkpConvexVerticesShape* (hkpConvexVerticesShape* this, const hkStridedVertices* vertices, const hkArray<hkVector4>* planeEquations, float radius)`
+pub const hkpConvexVerticesShape__ctor: u64 = 65089;
+/// `hkpConvexVerticesShape::ctor` as a function pointer type (high).
+pub type hkpConvexVerticesShape__ctor_fn = unsafe extern "C" fn(this: *mut crate::hkpConvexVerticesShape, vertices: *const crate::hkStridedVertices, planeEquations: *const c_void, radius: f32) -> *mut crate::hkpConvexVerticesShape;
+/// `hkpConvexVerticesShape::ctor` at 0xc3a9a0 (layout_inference, medium); signature (low): `hkpConvexVerticesShape * ctor(hkpConvexVerticesShape * this, undefined4 param_2)`
+pub const hkpConvexVerticesShape__ctor_2: u64 = 65090;
+/// `hkpConvexVerticesShape::ctor` at 0xc3aac0 (layout_inference, high); signature (low): `hkpConvexVerticesShape * ctor(hkpConvexVerticesShape * this, int param_1)`
+pub const hkpConvexVerticesShape__ctor_3: u64 = 65091;
+/// `hkpConvexVerticesShape::dtor` at 0xc3ab10 (layout_inference, high); signature (high): `undefined dtor(hkpConvexVerticesShape * this)`
+pub const hkpConvexVerticesShape__dtor: u64 = 65092;
+/// `hkpConvexVerticesShape::vdtor` at 0xc3c180 (slot_propagation, medium); signature (low): `hkpConvexVerticesShape * vdtor(hkpConvexVerticesShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexVerticesShape__vdtor: u64 = 65108;
+/// `hkpConvexVerticesShape::vfunc_11` at 0xc3b390 (rtti, medium); signature (high): `undefined4 vfunc_11(hkpConvexVerticesShape * this)`
+pub const hkpConvexVerticesShape__vfunc_11: u64 = 65100;
+/// `hkpConvexVerticesShape::vfunc_12` at 0xc3b3a0 (rtti, medium); signature (low): `undefined4 * vfunc_12(hkpConvexVerticesShape * this, undefined4 * param_1)`
+pub const hkpConvexVerticesShape__vfunc_12: u64 = 65101;
+/// `hkpConvexVerticesShape::vfunc_13` at 0xc3b8f0 (rtti, medium); signature (low): `undefined vfunc_13(hkpConvexVerticesShape * this, undefined4 * param_1)`
+pub const hkpConvexVerticesShape__vfunc_13: u64 = 65104;
+/// `hkpConvexVerticesShape::vfunc_14` at 0xc3b020 (rtti, medium); signature (low): `undefined vfunc_14(hkpConvexVerticesShape * this, float * param_1, undefined4 * param_2)`
+pub const hkpConvexVerticesShape__vfunc_14: u64 = 65097;
+/// `hkpConvexVerticesShape::vfunc_15` at 0xc3b1b0 (rtti, medium); signature (low): `undefined vfunc_15(hkpConvexVerticesShape * this, ushort * param_1, uint param_2, undefined4 * param_3)`
+pub const hkpConvexVerticesShape__vfunc_15: u64 = 65098;
+/// `hkpConvexVerticesShape::vfunc_17` at 0xc3b380 (rtti, medium); signature (low): `undefined vfunc_17(hkpConvexVerticesShape * this, undefined8 * param_1)`
+pub const hkpConvexVerticesShape__vfunc_17: u64 = 65099;
+/// `hkpConvexVerticesShape::vfunc_6` at 0xc3c2f0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+pub const hkpConvexVerticesShape__vfunc_6: u64 = 65111;
+/// `hkpConvexVerticesShape::vfunc_7` at 0xc3b510 (rtti, medium); signature (low): `undefined vfunc_7(hkpConvexVerticesShape * this, float * param_1, float param_2, float * param_3)`
+pub const hkpConvexVerticesShape__vfunc_7: u64 = 65102;
+/// `hkpConvexVerticesShape::vfunc_8` at 0xc3b5c0 (rtti, medium); signature (low): `undefined1 * vfunc_8(hkpConvexVerticesShape * this, undefined1 * param_1, float * param_2, float * param_3)`
+pub const hkpConvexVerticesShape__vfunc_8: u64 = 65103;
+/// `hkpCylinderShape::ctor` at 0xb42980 (layout_inference, medium); signature (low): `hkpCylinderShape * ctor(hkpCylinderShape * this, undefined8 * param_1, undefined8 * param_2, float param_3, undefined4 param_4)`
+pub const hkpCylinderShape__ctor: u64 = 60720;
+/// `hkpCylinderShape::ctor` at 0xb43ae0 (layout_inference, high); signature (low): `hkpCylinderShape * ctor(hkpCylinderShape * this, int param_1)`
+pub const hkpCylinderShape__ctor_2: u64 = 60733;
+/// `hkpCylinderShape::vdtor` at 0xb43b70 (layout_inference, medium); signature (low): `hkpCylinderShape * vdtor(hkpCylinderShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCylinderShape__vdtor: u64 = 60734;
+/// `hkpCylinderShape::vfunc_11` at 0xb42e20 (rtti, high); signature (low): `undefined8 vfunc_11(void)`
+pub const hkpCylinderShape__vfunc_11: u64 = 60726;
+/// `hkpCylinderShape::vfunc_12` at 0xb42e30 (rtti, high); signature (low): `longlong vfunc_12(hkpCylinderShape * this, longlong param_1)`
+pub const hkpCylinderShape__vfunc_12: u64 = 60727;
+/// `hkpCylinderShape::vfunc_13` at 0xb438b0 (rtti, high); signature (low): `undefined vfunc_13(hkpCylinderShape * this, undefined8 * param_1)`
+pub const hkpCylinderShape__vfunc_13: u64 = 60730;
+/// `hkpCylinderShape::vfunc_14` at 0xb42a80 (rtti, high); signature (low): `undefined vfunc_14(hkpCylinderShape * this, float * param_1, float * param_2)`
+pub const hkpCylinderShape__vfunc_14: u64 = 60723;
+/// `hkpCylinderShape::vfunc_15` at 0xb42cb0 (rtti, high); signature (low): `undefined vfunc_15(hkpCylinderShape * this, ushort * param_1, int param_2, float * param_3)`
+pub const hkpCylinderShape__vfunc_15: u64 = 60724;
+/// `hkpCylinderShape::vfunc_17` at 0xb42df0 (rtti, high); signature (low): `undefined vfunc_17(hkpCylinderShape * this, float * param_1)`
+pub const hkpCylinderShape__vfunc_17: u64 = 60725;
+/// `hkpCylinderShape::vfunc_2` at 0xb438c0 (rtti, high); signature (low): `undefined vfunc_2(hkpCylinderShape * this, undefined8 param_1)`
+pub const hkpCylinderShape__vfunc_2: u64 = 60731;
+/// `hkpCylinderShape::vfunc_6` at 0xb43c00 (rtti, high); signature (low): `undefined8 vfunc_6(void)`
+pub const hkpCylinderShape__vfunc_6: u64 = 60735;
+/// `hkpCylinderShape::vfunc_7` at 0xb43000 (rtti, high); signature (low): `undefined vfunc_7(hkpCylinderShape * this, float * param_1, float param_2, float * param_3)`
+pub const hkpCylinderShape__vfunc_7: u64 = 60728;
+/// `hkpCylinderShape::vfunc_8` at 0xb43160 (rtti, high); signature (low): `undefined1 * vfunc_8(hkpCylinderShape * this, undefined1 * param_1, float * param_2, float * param_3)`
+pub const hkpCylinderShape__vfunc_8: u64 = 60729;
+/// `hkpDashpotAction::ctor` at 0xb9b170 (layout_inference, high); signature (high): `undefined ctor(hkpDashpotAction * this)`
+pub const hkpDashpotAction__ctor: u64 = 62483;
+/// `hkpDashpotAction::ctor` at 0xba2a60 (layout_inference, high); signature (low): `hkpDashpotAction * ctor(hkpDashpotAction * this, longlong param_1, longlong param_2, undefined8 param_3)`
+pub const hkpDashpotAction__ctor_2: u64 = 62683;
+/// `hkpDashpotAction::vdtor` at 0xb9c040 (slot_propagation, medium); signature (low): `hkpDashpotAction * vdtor(hkpDashpotAction * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDashpotAction__vdtor: u64 = 62583;
+/// `hkpDashpotAction::vfunc_3` at 0xba2aa0 (rtti, high); signature (low): `undefined vfunc_3(hkpDashpotAction * this, longlong param_1)`
+pub const hkpDashpotAction__vfunc_3: u64 = 62684;
+/// `hkpDashpotAction::vfunc_7` at 0xba2c20 (rtti, high); signature (low): `hkpDashpotAction * vfunc_7(hkpDashpotAction * this, longlong * param_1, longlong param_2)`
+pub const hkpDashpotAction__vfunc_7: u64 = 62685;
+/// `hkpDefaultConvexListFilter::vdtor` at 0xb36670 (layout_inference, medium); signature (low): `hkpDefaultConvexListFilter * vdtor(hkpDefaultConvexListFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDefaultConvexListFilter__vdtor: u64 = 60533;
+/// `hkpDefaultConvexListFilter::vfunc_3` at 0xb3cd80 (rtti, high); signature (low): `uint vfunc_3(hkpDefaultConvexListFilter * this, undefined8 param_1, longlong * param_2, longlong * param_3)`
+pub const hkpDefaultConvexListFilter__vfunc_3: u64 = 60625;
+/// `hkpDefaultToiResourceMgr::ctor` at 0x1107580 (layout_inference, medium); signature (high): `hkpDefaultToiResourceMgr * ctor(hkpDefaultToiResourceMgr * this)`
+pub const hkpDefaultToiResourceMgr__ctor: u64 = 81075;
+/// `hkpDefaultToiResourceMgr::vdtor` at 0x1107750 (slot_propagation, medium); signature (low): `hkpDefaultToiResourceMgr * vdtor(hkpDefaultToiResourceMgr * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDefaultToiResourceMgr__vdtor: u64 = 81084;
+/// `hkpDefaultToiResourceMgr::vfunc_1` at 0x1107870 (rtti, high); signature (low): `undefined * vfunc_1(void)`
+pub const hkpDefaultToiResourceMgr__vfunc_1: u64 = 81087;
+/// `hkpDefaultToiResourceMgr::vfunc_2` at 0x11076f0 (rtti, high); signature (low): `undefined vfunc_2(hkpDefaultToiResourceMgr * this, longlong * param_1)`
+pub const hkpDefaultToiResourceMgr__vfunc_2: u64 = 81081;
+/// `hkpDefaultToiResourceMgr::vfunc_3` at 0x11075d0 (rtti, high); signature (low): `undefined8 vfunc_3(hkpDefaultToiResourceMgr * this, undefined8 param_1, undefined8 param_2, undefined4 * param_3)`
+pub const hkpDefaultToiResourceMgr__vfunc_3: u64 = 81077;
+/// `hkpDefaultToiResourceMgr::vfunc_3_sub0` at 0x1107730 (callgraph, medium); signature (untiered): `undefined1 * vfunc_3_sub0(undefined8 param_1, undefined1 * param_2)`
+pub const hkpDefaultToiResourceMgr__vfunc_3_sub0: u64 = 81083;
+/// `hkpDefaultToiResourceMgr::vfunc_4` at 0x1107690 (rtti, high); signature (low): `undefined8 vfunc_4(void)`
+pub const hkpDefaultToiResourceMgr__vfunc_4: u64 = 81078;
+/// `hkpDefaultToiResourceMgr::vfunc_5` at 0x11076a0 (rtti, high); signature (low): `undefined8 vfunc_5(void)`
+pub const hkpDefaultToiResourceMgr__vfunc_5: u64 = 81079;
+/// `hkpDefaultToiResourceMgr::vfunc_6` at 0x11076b0 (rtti, high); signature (low): `undefined vfunc_6(hkpDefaultToiResourceMgr * this, undefined8 param_1, undefined8 param_2, longlong param_3)`
+pub const hkpDefaultToiResourceMgr__vfunc_6: u64 = 81080;
+/// `hkpDefaultToiResourceMgr::vfunc_7` at 0x1107720 (rtti, high); signature (high): `undefined4 vfunc_7(hkpDefaultToiResourceMgr * this)`
+pub const hkpDefaultToiResourceMgr__vfunc_7: u64 = 81082;
+/// `hkpDefaultWorldMaintenanceMgr::ctor` at 0xb80a30 (layout_inference, medium); signature (high): `hkpDefaultWorldMaintenanceMgr * ctor(hkpDefaultWorldMaintenanceMgr * this)`
+pub const hkpDefaultWorldMaintenanceMgr__ctor: u64 = 62217;
+/// `hkpDefaultWorldMaintenanceMgr::vdtor` at 0xb80c40 (layout_inference, medium); signature (low): `hkpDefaultWorldMaintenanceMgr * vdtor(hkpDefaultWorldMaintenanceMgr * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDefaultWorldMaintenanceMgr__vdtor: u64 = 62221;
+/// `hkpDefaultWorldMaintenanceMgr::vfunc_3` at 0xb80a60 (rtti, high); signature (low): `undefined vfunc_3(hkpDefaultWorldMaintenanceMgr * this, longlong param_1)`
+pub const hkpDefaultWorldMaintenanceMgr__vfunc_3: u64 = 62218;
+/// `hkpDefaultWorldMaintenanceMgr::vfunc_4` at 0xb80a80 (rtti, high); signature (low): `undefined vfunc_4(hkpDefaultWorldMaintenanceMgr * this, longlong param_1, float * param_2)`
+pub const hkpDefaultWorldMaintenanceMgr__vfunc_4: u64 = 62219;
+/// `hkpDefaultWorldMaintenanceMgr::vfunc_4_sub0` at 0xb60870 (callgraph, medium); signature (untiered): `undefined vfunc_4_sub0(longlong param_1)`
+pub const hkpDefaultWorldMaintenanceMgr__vfunc_4_sub0: u64 = 61512;
+/// `hkpDefaultWorldMaintenanceMgr::vfunc_5` at 0xb80b80 (rtti, high); signature (low): `undefined vfunc_5(hkpDefaultWorldMaintenanceMgr * this, undefined8 param_1, float * param_2)`
+pub const hkpDefaultWorldMaintenanceMgr__vfunc_5: u64 = 62220;
+/// `hkpDefaultWorldMemoryWatchDog::vdtor` at 0xb51ec0 (layout_inference, medium); signature (low): `hkpDefaultWorldMemoryWatchDog * vdtor(hkpDefaultWorldMemoryWatchDog * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDefaultWorldMemoryWatchDog__vdtor: u64 = 61212;
+/// `hkpDefaultWorldMemoryWatchDog::vfunc_3` at 0xb7a210 (rtti, high); signature (high): `undefined4 vfunc_3(hkpDefaultWorldMemoryWatchDog * this)`
+pub const hkpDefaultWorldMemoryWatchDog__vfunc_3: u64 = 62066;
+/// `hkpDefaultWorldMemoryWatchDog::vfunc_4` at 0xb7a220 (rtti, high); signature (low): `undefined vfunc_4(hkpDefaultWorldMemoryWatchDog * this, longlong param_1)`
+pub const hkpDefaultWorldMemoryWatchDog__vfunc_4: u64 = 62067;
+/// `hkpDefaultWorldMemoryWatchDog::vfunc_4_sub0` at 0xb7a310 (callgraph, medium); signature (untiered): `undefined vfunc_4_sub0(longlong param_1, int param_2, undefined4 param_3, int * param_4)`
+pub const hkpDefaultWorldMemoryWatchDog__vfunc_4_sub0: u64 = 62069;
+/// `hkpDefaultWorldMemoryWatchDog::vfunc_5` at 0xb7a2e0 (rtti, high); signature (low): `undefined vfunc_5(hkpDefaultWorldMemoryWatchDog * this, longlong param_1)`
+pub const hkpDefaultWorldMemoryWatchDog__vfunc_5: u64 = 62068;
+/// `hkpDeferredConstraintOwner::vdtor` at 0x110c3c0 (layout_inference, medium); signature (low): `hkpDeferredConstraintOwner * vdtor(hkpDeferredConstraintOwner * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDeferredConstraintOwner__vdtor: u64 = 81113;
+/// `hkpDeferredConstraintOwner::vfunc_3` at 0x110c470 (rtti, high); signature (low): `undefined vfunc_3(hkpDeferredConstraintOwner * this, undefined8 param_1)`
+pub const hkpDeferredConstraintOwner__vfunc_3: u64 = 81115;
+/// `hkpDeferredConstraintOwner::vfunc_4` at 0x110c480 (rtti, high); signature (low): `undefined vfunc_4(hkpDeferredConstraintOwner * this, undefined8 param_1)`
+pub const hkpDeferredConstraintOwner__vfunc_4: u64 = 81116;
+/// `hkpDeferredConstraintOwner::vfunc_5` at 0x110c450 (rtti, high); signature (low): `undefined vfunc_5(hkpDeferredConstraintOwner * this, longlong param_1, uint param_2)`
+pub const hkpDeferredConstraintOwner__vfunc_5: u64 = 81114;
+/// `hkpDisableEntityCollisionFilter::ctor` at 0xba5aa0 (layout_inference, high); signature (high): `hkpDisableEntityCollisionFilter * ctor(hkpDisableEntityCollisionFilter * this)`
+pub const hkpDisableEntityCollisionFilter__ctor: u64 = 62741;
+/// `hkpDisableEntityCollisionFilter::dtor` at 0xba5b10 (layout_inference, high); signature (high): `undefined dtor(hkpDisableEntityCollisionFilter * this)`
+pub const hkpDisableEntityCollisionFilter__dtor: u64 = 62742;
+/// `hkpDisableEntityCollisionFilter::hkpCollidableCollidableFilter_vdtor` at 0xb9bc90 (slot_propagation, medium); signature (high): `undefined hkpCollidableCollidableFilter_vdtor(hkpDisableEntityCollisionFilter * this)`
+pub const hkpDisableEntityCollisionFilter__hkpCollidableCollidableFilter_vdtor: u64 = 62568;
+/// `hkpDisableEntityCollisionFilter::hkpCollidableCollidableFilter_vfunc_1` at 0xba5f20 (rtti, high); signature (low): `undefined1 * hkpCollidableCollidableFilter_vfunc_1(hkpDisableEntityCollisionFilter * this, undefined1 * param_1, longlong param_2, longlong param_3)`
+pub const hkpDisableEntityCollisionFilter__hkpCollidableCollidableFilter_vfunc_1: u64 = 62747;
+/// `hkpDisableEntityCollisionFilter::hkpEntityListener_vdtor` at 0xb9bcc0 (slot_propagation, medium); signature (low): `undefined hkpEntityListener_vdtor(hkpDisableEntityCollisionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDisableEntityCollisionFilter__hkpEntityListener_vdtor: u64 = 62572;
+/// `hkpDisableEntityCollisionFilter::hkpEntityListener_vfunc_2` at 0xba5eb0 (rtti, high); signature (low): `undefined hkpEntityListener_vfunc_2(hkpDisableEntityCollisionFilter * this, longlong param_1)`
+pub const hkpDisableEntityCollisionFilter__hkpEntityListener_vfunc_2: u64 = 62745;
+/// `hkpDisableEntityCollisionFilter::hkpEntityListener_vfunc_2_sub0` at 0xba5e40 (callgraph, medium); signature (untiered): `undefined1 * hkpEntityListener_vfunc_2_sub0(longlong param_1, undefined1 * param_2, longlong param_3)`
+pub const hkpDisableEntityCollisionFilter__hkpEntityListener_vfunc_2_sub0: u64 = 62744;
+/// `hkpDisableEntityCollisionFilter::hkpEntityListener_vfunc_5` at 0xba5f10 (rtti, high); signature (low): `undefined hkpEntityListener_vfunc_5(void)`
+pub const hkpDisableEntityCollisionFilter__hkpEntityListener_vfunc_5: u64 = 62746;
+/// `hkpDisableEntityCollisionFilter::hkpRayCollidableFilter_vdtor` at 0xb9bcb4 (slot_propagation, medium); signature (low): `undefined hkpRayCollidableFilter_vdtor(hkpDisableEntityCollisionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDisableEntityCollisionFilter__hkpRayCollidableFilter_vdtor: u64 = 62571;
+/// `hkpDisableEntityCollisionFilter::hkpRayCollidableFilter_vfunc_1` at 0xba5fa0 (rtti, high); signature (low): `undefined1 * hkpRayCollidableFilter_vfunc_1(hkpDisableEntityCollisionFilter * this, undefined1 * param_1)`
+pub const hkpDisableEntityCollisionFilter__hkpRayCollidableFilter_vfunc_1: u64 = 62751;
+/// `hkpDisableEntityCollisionFilter::hkpRayShapeCollectionFilter_vdtor` at 0xb9bca8 (slot_propagation, medium); signature (low): `undefined hkpRayShapeCollectionFilter_vdtor(hkpDisableEntityCollisionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDisableEntityCollisionFilter__hkpRayShapeCollectionFilter_vdtor: u64 = 62570;
+/// `hkpDisableEntityCollisionFilter::hkpRayShapeCollectionFilter_vfunc_0` at 0xba5f90 (rtti, high); signature (low): `undefined1 * hkpRayShapeCollectionFilter_vfunc_0(hkpDisableEntityCollisionFilter * this, undefined1 * param_1)`
+pub const hkpDisableEntityCollisionFilter__hkpRayShapeCollectionFilter_vfunc_0: u64 = 62750;
+/// `hkpDisableEntityCollisionFilter::hkpShapeCollectionFilter_vdtor` at 0xb9bc9c (slot_propagation, medium); signature (high): `undefined hkpShapeCollectionFilter_vdtor(hkpDisableEntityCollisionFilter * this)`
+pub const hkpDisableEntityCollisionFilter__hkpShapeCollectionFilter_vdtor: u64 = 62569;
+/// `hkpDisableEntityCollisionFilter::hkpShapeCollectionFilter_vfunc_0` at 0xba5f80 (rtti, high); signature (low): `undefined1 * hkpShapeCollectionFilter_vfunc_0(hkpDisableEntityCollisionFilter * this, undefined1 * param_1)`
+pub const hkpDisableEntityCollisionFilter__hkpShapeCollectionFilter_vfunc_0: u64 = 62749;
+/// `hkpDisableEntityCollisionFilter::hkpShapeCollectionFilter_vfunc_1` at 0xba5f70 (rtti, high); signature (low): `undefined1 * hkpShapeCollectionFilter_vfunc_1(hkpDisableEntityCollisionFilter * this, undefined1 * param_1)`
+pub const hkpDisableEntityCollisionFilter__hkpShapeCollectionFilter_vfunc_1: u64 = 62748;
+/// `hkpDisableEntityCollisionFilter::vdtor` at 0xb9c0c0 (slot_propagation, medium); signature (low): `hkpDisableEntityCollisionFilter * vdtor(hkpDisableEntityCollisionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDisableEntityCollisionFilter__vdtor: u64 = 62584;
+/// `hkpDisplayBindingData::PhysicsSystem::vdtor` at 0xb9bd00 (slot_propagation, medium); signature (low): `PhysicsSystem * vdtor(PhysicsSystem * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDisplayBindingData__PhysicsSystem__vdtor: u64 = 62577;
+/// `hkpDisplayBindingData::RigidBody::vdtor` at 0xb9bd80 (layout_inference, medium); signature (low): `RigidBody * vdtor(RigidBody * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDisplayBindingData__RigidBody__vdtor: u64 = 62578;
+/// `hkpDisplayBindingData::vdtor` at 0xb9c140 (slot_propagation, medium); signature (low): `hkpDisplayBindingData * vdtor(hkpDisplayBindingData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDisplayBindingData__vdtor: u64 = 62585;
+/// `hkpDynamicsContactMgr::vdtor` at 0xb7e000 (layout_inference, medium); signature (low): `hkpDynamicsContactMgr * vdtor(hkpDynamicsContactMgr * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDynamicsContactMgr__vdtor: u64 = 62161;
+/// `hkpDynamicsContactMgr::vfunc_10` at 0xb7e290 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+pub const hkpDynamicsContactMgr__vfunc_10: u64 = 62172;
+/// `hkpDynamicsContactMgr::vfunc_11` at 0xb7e280 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+pub const hkpDynamicsContactMgr__vfunc_11: u64 = 62171;
+/// `hkpDynamicsContactMgr::vfunc_12` at 0xb7e1d0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+pub const hkpDynamicsContactMgr__vfunc_12: u64 = 62167;
+/// `hkpDynamicsContactMgr::vfunc_14` at 0xb7e4f0 (rtti, medium); signature (low): `undefined vfunc_14(void)`
+pub const hkpDynamicsContactMgr__vfunc_14: u64 = 62176;
+/// `hkpDynamicsContactMgr::vfunc_15` at 0xb7e500 (rtti, medium); signature (low): `undefined vfunc_15(void)`
+pub const hkpDynamicsContactMgr__vfunc_15: u64 = 62177;
+/// `hkpDynamicsContactMgr::vfunc_16` at 0xb7e270 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+pub const hkpDynamicsContactMgr__vfunc_16: u64 = 62170;
+/// `hkpDynamicsContactMgr::vfunc_17` at 0xb7e1c0 (rtti, medium); signature (low): `undefined1 * vfunc_17(hkpDynamicsContactMgr * this, undefined1 * param_1)`
+pub const hkpDynamicsContactMgr__vfunc_17: u64 = 62166;
+/// `hkpDynamicsContactMgr::vfunc_18` at 0xb7e1b0 (rtti, high); signature (low): `undefined vfunc_18(void)`
+pub const hkpDynamicsContactMgr__vfunc_18: u64 = 62165;
+/// `hkpEaseConstraintsAction::CollectSupportedConstraints::vdtor` at 0xc41520 (layout_inference, medium); signature (low): `CollectSupportedConstraints * vdtor(CollectSupportedConstraints * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpEaseConstraintsAction__CollectSupportedConstraints__vdtor: u64 = 65193;
+/// `hkpEaseConstraintsAction::CollectSupportedConstraints::vfunc_1` at 0xc41610 (rtti, high); signature (low): `undefined1 * vfunc_1(CollectSupportedConstraints * this, undefined1 * param_1, longlong param_2)`
+pub const hkpEaseConstraintsAction__CollectSupportedConstraints__vfunc_1: u64 = 65196;

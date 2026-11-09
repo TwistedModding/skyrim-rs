@@ -7,6 +7,20 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `RotateTreeNodeRight_2` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 419726, rva 0x12b40e0).
+/// `undefined RotateTreeNodeRight_2(longlong * param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn rotate_tree_node_right_2(param_1: *mut i64, param_2: *mut i64) -> u64 { unsafe { function!(419726, (*mut i64, *mut i64) -> u64)(param_1, param_2) } }
+/// `RotateVectorAroundZByCellAngle` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 19138, rva 0x2c85f0).
+/// `undefined RotateVectorAroundZByCellAngle(longlong param_1, float * param_2, float * param_3, char param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn rotate_vector_around_z_by_cell_angle(param_1: i64, param_2: *mut f32, param_3: *mut f32, param_4: c_char) -> u64 { unsafe { function!(19138, (i64, *mut f32, *mut f32, c_char) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `RotateVectorArrayByQuaternions` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 67232, rva 0xca6640).
 /// `undefined RotateVectorArrayByQuaternions(longlong param_1, longlong param_2, longlong param_3, int param_4)`
 ///

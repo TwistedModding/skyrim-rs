@@ -7,320 +7,50 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>::vftable` at 0x19a0218, id 217936 (rtti, high); 23 slots.
-#[repr(C)]
-pub struct BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float_vtable {
-    /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>::vdtor` at 0xa2aa30 (slot_propagation, medium); signature (low): `NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float> * vdtor(NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
-    pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
-    pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
-    pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
-    pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
-    pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
-    pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
-    pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
-    pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
-    pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
-    pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
-    pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
-    pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
-    pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
-    pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
-    pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
-    pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
-    pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
-    pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
-    pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
-    pub slot_20: *const c_void,
-    /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>::vfunc_21` at 0xa2b180 (rtti, high); signature (high): `bool vfunc_21(NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float> * this)`
-    pub slot_21: *const c_void,
-    /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>::vfunc_22` at 0xa2d540 (rtti, high); signature (low): `undefined8 vfunc_22(NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float> * this, undefined8 param_1, longlong * param_2, ulonglong param_3, ulonglong * param_4, uint * param_5)`
-    pub slot_22: *const c_void,
-}
-impl BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float_vtable {
-    pub const ID: u64 = 217936;
-}
-
-/// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::vftable` at 0x199fc18, id 217920 (rtti, high); 23 slots.
-#[repr(C)]
-pub struct BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36_vtable {
-    /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::vdtor` at 0xa2aab0 (slot_propagation, medium); signature (low): `NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64> * vdtor(NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
-    pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
-    pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
-    pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
-    pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
-    pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
-    pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
-    pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
-    pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
-    pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
-    pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
-    pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
-    pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
-    pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
-    pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
-    pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
-    pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
-    pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
-    pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
-    pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
-    pub slot_20: *const c_void,
-    /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::vfunc_21` at 0xa2b1a0 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64> * this)`
-    pub slot_21: *const c_void,
-    /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::vfunc_22` at 0xa2da50 (rtti, medium); signature (low): `undefined8 vfunc_22(NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, ulonglong * param_4, uint * param_5)`
-    pub slot_22: *const c_void,
-}
-impl BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36_vtable {
-    pub const ID: u64 = 217920;
-}
-
-/// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>::vftable` at 0x199ff18, id 217928 (rtti, high); 23 slots.
-#[repr(C)]
-pub struct BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float_vtable {
-    /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>::vdtor` at 0xa2aa70 (slot_propagation, medium); signature (low): `NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float> * vdtor(NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
-    pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
-    pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
-    pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
-    pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
-    pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
-    pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
-    pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
-    pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
-    pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
-    pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
-    pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
-    pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
-    pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
-    pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
-    pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
-    pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
-    pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
-    pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
-    pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
-    pub slot_20: *const c_void,
-    /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>::vfunc_21` at 0xa2b190 (rtti, high); signature (high): `bool vfunc_21(NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float> * this)`
-    pub slot_21: *const c_void,
-    /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float>::vfunc_22` at 0xa2d790 (rtti, high); signature (low): `undefined8 vfunc_22(NativeFunction4<BSScript::StaticFunctionTag,void,bool,bool,float,float> * this, undefined8 param_1, undefined8 param_2, undefined4 param_3, ulonglong * param_4, uint * param_5)`
-    pub slot_22: *const c_void,
-}
-impl BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float_vtable {
-    pub const ID: u64 = 217928;
-}
-
-/// `BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>::vftable` at 0x19ae140, id 218592 (rtti, high); 23 slots.
-#[repr(C)]
-pub struct BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool_vtable {
-    /// `BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>::vdtor` at 0xa55b90 (slot_propagation, medium); signature (low): `NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool> * vdtor(NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
-    pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
-    pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
-    pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
-    pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
-    pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
-    pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
-    pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
-    pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
-    pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
-    pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
-    pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
-    pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
-    pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
-    pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
-    pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
-    pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
-    pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
-    pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
-    pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
-    pub slot_20: *const c_void,
-    /// `BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>::vfunc_21` at 0xa574d0 (rtti, high); signature (high): `bool vfunc_21(NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool> * this)`
-    pub slot_21: *const c_void,
-    /// `BSScript::NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool>::vfunc_22` at 0xa5b840 (rtti, high); signature (low): `bool vfunc_22(NativeFunction4<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int,bool,bool> * this, uint * param_1, longlong * param_2, undefined4 param_3, ulonglong * param_4, uint * param_5)`
-    pub slot_22: *const c_void,
-}
-impl BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool_vtable {
-    pub const ID: u64 = 218592;
-}
-
-/// `BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>::vftable` at 0x19aeb00, id 218618 (rtti, high); 23 slots.
-#[repr(C)]
-pub struct BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64_vtable {
-    /// `BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>::vdtor` at 0xa55c10 (slot_propagation, medium); signature (low): `NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64> * vdtor(NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
-    pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
-    pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
-    pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
-    pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
-    pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
-    pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
-    pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
-    pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
-    pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
-    pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
-    pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
-    pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
-    pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
-    pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
-    pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
-    pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
-    pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
-    pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
-    pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
-    pub slot_20: *const c_void,
-    /// `BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>::vfunc_21` at 0xa574f0 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64> * this)`
-    pub slot_21: *const c_void,
-    /// `BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>::vfunc_22` at 0xa5bcd0 (rtti, medium); signature (low): `bool vfunc_22(NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64> * this, uint * param_1, undefined8 param_2, undefined4 param_3, ulonglong * param_4, uint * param_5)`
-    pub slot_22: *const c_void,
-}
-impl BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64_vtable {
-    pub const ID: u64 = 218618;
-}
-
 /// `BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>::vftable` at 0x19ac1c0, id 218508 (rtti, high); 23 slots.
 #[repr(C)]
 pub struct BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float_vtable {
     /// `BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>::vdtor` at 0xa55bd0 (slot_propagation, medium); signature (low): `NativeFunction4<TESObjectREFR,bool,float,float,float,float> * vdtor(NativeFunction4<TESObjectREFR,bool,float,float,float,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>::vfunc_21` at 0xa574e0 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction4<TESObjectREFR,bool,float,float,float,float> * this)`
     pub slot_21: *const c_void,
@@ -336,45 +66,45 @@ impl BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float_vtable
 pub struct BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289_vtable {
     /// `BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::vdtor` at 0xa16460 (slot_propagation, medium); signature (low): `NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int> * vdtor(NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::vfunc_21` at 0xa166d0 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int> * this)`
     pub slot_21: *const c_void,
@@ -390,45 +120,45 @@ impl BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREF
 pub struct BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413_vtable {
     /// `BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::vdtor` at 0xa16420 (slot_propagation, medium); signature (low): `NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int> * vdtor(NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::vfunc_21` at 0xa166c0 (rtti, high); signature (high): `bool vfunc_21(NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int> * this)`
     pub slot_21: *const c_void,
@@ -444,45 +174,45 @@ impl BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREF
 pub struct BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55_vtable {
     /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>::vdtor` at 0xa2aaf0 (slot_propagation, medium); signature (low): `NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float> * vdtor(NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>::vfunc_21` at 0xa2b1b0 (rtti, high); signature (high): `bool vfunc_21(NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float> * this)`
     pub slot_21: *const c_void,
@@ -498,45 +228,45 @@ impl BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr6
 pub struct BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_TESForm____ptr64_float_float_float_float_vtable {
     /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>::vdtor` at 0xa2ab30 (slot_propagation, medium); signature (low): `NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float> * vdtor(NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>::vfunc_21` at 0xa2b1c0 (rtti, high); signature (high): `bool vfunc_21(NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float> * this)`
     pub slot_21: *const c_void,
@@ -552,45 +282,45 @@ impl BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr6
 pub struct BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool_bool_bool_bool_vtable {
     /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>::vdtor` at 0xa2ab70 (slot_propagation, medium); signature (low): `NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool> * vdtor(NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool>::vfunc_21` at 0xa2b1d0 (rtti, high); signature (high): `bool vfunc_21(NativeFunction5<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64,bool,bool,bool,bool> * this)`
     pub slot_21: *const c_void,
@@ -606,45 +336,45 @@ impl BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_co
 pub struct BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____d65118ed5622_vtable {
     /// `BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::vdtor` at 0xa55c90 (slot_propagation, medium); signature (low): `NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64> * vdtor(NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::vfunc_21` at 0xa57510 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64> * this)`
     pub slot_21: *const c_void,
@@ -660,45 +390,45 @@ impl BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_B
 pub struct BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_float_float_bool_vtable {
     /// `BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>::vdtor` at 0xa55cd0 (slot_propagation, medium); signature (low): `NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool> * vdtor(NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>::vfunc_21` at 0xa57520 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool> * this)`
     pub slot_21: *const c_void,
@@ -714,45 +444,45 @@ impl BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_f
 pub struct BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_float_float_float_vtable {
     /// `BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>::vdtor` at 0xa55c50 (slot_propagation, medium); signature (low): `NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float> * vdtor(NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float>::vfunc_21` at 0xa57500 (rtti, high); signature (high): `bool vfunc_21(NativeFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float> * this)`
     pub slot_21: *const c_void,
@@ -768,45 +498,45 @@ impl BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixed
 pub struct BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsigned_int_unsigned_int_4cf828fffc9c_vtable {
     /// `BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>::vdtor` at 0xa3ff20 (slot_propagation, medium); signature (low): `NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int> * vdtor(NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int>::vfunc_21` at 0xa40130 (rtti, high); signature (high): `bool vfunc_21(NativeFunction6<TESObjectCELL,void,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int,unsigned_int> * this)`
     pub slot_21: *const c_void,
@@ -822,45 +552,45 @@ impl BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsi
 pub struct BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFixedString_const____pt_5d9a4796be0a_vtable {
     /// `BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>::vdtor` at 0xa55d50 (slot_propagation, medium); signature (low): `NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool> * vdtor(NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>::vfunc_21` at 0xa57540 (rtti, high); signature (high): `bool vfunc_21(NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool> * this)`
     pub slot_21: *const c_void,
@@ -876,45 +606,45 @@ impl BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFi
 pub struct BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_float_float_float_vtable {
     /// `BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>::vdtor` at 0xa55d10 (slot_propagation, medium); signature (low): `NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float> * vdtor(NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float>::vfunc_21` at 0xa57530 (rtti, high); signature (high): `bool vfunc_21(NativeFunction8<TESObjectREFR,void,float,float,float,float,float,float,float,float> * this)`
     pub slot_21: *const c_void,
@@ -930,45 +660,45 @@ impl BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_
 pub struct BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float_float_float_float_float_vtable {
     /// `BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>::vdtor` at 0xa0d2b0 (slot_propagation, medium); signature (low): `NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float> * vdtor(NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>::vfunc_21` at 0xa0e590 (rtti, high); signature (high): `bool vfunc_21(NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float> * this)`
     pub slot_21: *const c_void,
@@ -984,45 +714,45 @@ impl BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float
 pub struct BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_float_float_float_float_vtable {
     /// `BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>::vdtor` at 0xa1a580 (slot_propagation, medium); signature (low): `NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float> * vdtor(NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>::vfunc_21` at 0xa1a760 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float> * this)`
     pub slot_21: *const c_void,
@@ -1038,45 +768,45 @@ impl BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_flo
 pub struct BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_bool_bool_bool_bool_bool_unsigned_int_vtable {
     /// `BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>::vdtor` at 0xa2abb0 (slot_propagation, medium); signature (low): `NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int> * vdtor(NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>::vfunc_21` at 0xa2b1e0 (rtti, high); signature (high): `bool vfunc_21(NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int> * this)`
     pub slot_21: *const c_void,
@@ -1092,45 +822,45 @@ impl BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_b
 pub struct BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_float_float_float_float_vtable {
     /// `BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>::vdtor` at 0xa55d90 (slot_propagation, medium); signature (low): `NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float> * vdtor(NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float>::vfunc_21` at 0xa57550 (rtti, high); signature (high): `bool vfunc_21(NativeFunction9<TESObjectREFR,void,float,float,float,float,float,float,float,float,float> * this)`
     pub slot_21: *const c_void,
@@ -1146,45 +876,45 @@ impl BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_
 pub struct BSScript__NativeLatentFunction0_Actor_void_vtable {
     /// `BSScript::NativeLatentFunction0<Actor,void>::vdtor` at 0xa0d2f0 (slot_propagation, medium); signature (low): `NativeLatentFunction0<Actor,void> * vdtor(NativeLatentFunction0<Actor,void> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction0<Actor,bool>::vfunc_21` at 0xa0e290 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction0<Actor,bool> * this)`
     pub slot_21: *const c_void,
@@ -1200,45 +930,45 @@ impl BSScript__NativeLatentFunction0_Actor_void_vtable {
 pub struct BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_vtable {
     /// `BSScript::NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64>::vdtor` at 0xa217b0 (slot_propagation, medium); signature (low): `NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64> * vdtor(NativeLatentFunction0<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction0<BSScript::StaticFunctionTag,bool>::vfunc_21` at 0xa218b0 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction0<BSScript::StaticFunctionTag,bool> * this)`
     pub slot_21: *const c_void,
@@ -1254,45 +984,45 @@ impl BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_c
 pub struct BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64_vtable {
     /// `BSScript::NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64>::vdtor` at 0xa22be0 (slot_propagation, medium); signature (low): `NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64> * vdtor(NativeLatentFunction0<EffectSetting,BSFixedString_const&___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction0<EffectSetting,bool>::vfunc_21` at 0xa22c20 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction0<EffectSetting,bool> * this)`
     pub slot_21: *const c_void,
@@ -1308,45 +1038,45 @@ impl BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64_
 pub struct BSScript__NativeLatentFunction0_TESObjectREFR_void_vtable {
     /// `BSScript::NativeLatentFunction0<TESObjectREFR,void>::vdtor` at 0xa55dd0 (slot_propagation, medium); signature (low): `NativeLatentFunction0<TESObjectREFR,void> * vdtor(NativeLatentFunction0<TESObjectREFR,void> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction0<TESObjectREFR,bool>::vfunc_21` at 0xa57230 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction0<TESObjectREFR,bool> * this)`
     pub slot_21: *const c_void,
@@ -1362,45 +1092,45 @@ impl BSScript__NativeLatentFunction0_TESObjectREFR_void_vtable {
 pub struct BSScript__NativeLatentFunction0_TESQuest_bool_vtable {
     /// `BSScript::NativeLatentFunction0<TESQuest,bool>::vdtor` at 0xa61690 (slot_propagation, medium); signature (low): `NativeLatentFunction0<TESQuest,bool> * vdtor(NativeLatentFunction0<TESQuest,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction0<TESQuest,bool>::vfunc_21` at 0xa61810 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction0<TESQuest,bool> * this)`
     pub slot_21: *const c_void,
@@ -1416,45 +1146,45 @@ impl BSScript__NativeLatentFunction0_TESQuest_bool_vtable {
 pub struct BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixed_05afeaf1fbe1_vtable {
     /// `BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>::vdtor` at 0xa2abf0 (slot_propagation, medium); signature (low): `NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float> * vdtor(NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>::vfunc_21` at 0xa2b020 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float> * this)`
     pub slot_21: *const c_void,
@@ -1470,45 +1200,45 @@ impl BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TESObject
 pub struct BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_BSFixedString_const____ptr64_vtable {
     /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::vdtor` at 0xa2ac30 (slot_propagation, medium); signature (low): `NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64> * vdtor(NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64>::vfunc_21` at 0xa218e0 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction1<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64> * this)`
     pub slot_21: *const c_void,
@@ -1524,45 +1254,45 @@ impl BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_c
 pub struct BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_float_vtable {
     /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float>::vdtor` at 0xa662b0 (slot_propagation, medium); signature (low): `NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float> * vdtor(NativeLatentFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,float>::vfunc_21` at 0xa663f0 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction1<BSScript::StaticFunctionTag,bool,float> * this)`
     pub slot_21: *const c_void,
@@ -1578,45 +1308,45 @@ impl BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_c
 pub struct BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64_vtable {
     /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>::vdtor` at 0xa217f0 (slot_propagation, medium); signature (low): `NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64> * vdtor(NativeLatentFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64>::vfunc_21` at 0xa218e0 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction1<BSScript::StaticFunctionTag,bool,BSFixedString_const&___ptr64> * this)`
     pub slot_21: *const c_void,
@@ -1632,45 +1362,45 @@ impl BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedSt
 pub struct BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float_vtable {
     /// `BSScript::NativeLatentFunction1<BSScript::StaticFunctionTag,void,float>::vdtor` at 0xa662f0 (slot_propagation, medium); signature (low): `NativeLatentFunction1<BSScript::StaticFunctionTag,void,float> * vdtor(NativeLatentFunction1<BSScript::StaticFunctionTag,void,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,float>::vfunc_21` at 0xa663f0 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction1<BSScript::StaticFunctionTag,bool,float> * this)`
     pub slot_21: *const c_void,
@@ -1686,45 +1416,45 @@ impl BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float_vtab
 pub struct BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64_vtable {
     /// `BSScript::NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>::vdtor` at 0xa55ed0 (slot_propagation, medium); signature (low): `NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64> * vdtor(NativeLatentFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>::vfunc_21` at 0xa57330 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64> * this)`
     pub slot_21: *const c_void,
@@ -1740,45 +1470,45 @@ impl BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____p
 pub struct BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64_vtable {
     /// `BSScript::NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>::vdtor` at 0xa55e50 (slot_propagation, medium); signature (low): `NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64> * vdtor(NativeLatentFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>::vfunc_21` at 0xa57350 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64> * this)`
     pub slot_21: *const c_void,
@@ -1794,45 +1524,45 @@ impl BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64_v
 pub struct BSScript__NativeLatentFunction1_TESObjectREFR_void_bool_vtable {
     /// `BSScript::NativeLatentFunction1<TESObjectREFR,void,bool>::vdtor` at 0xa55e90 (slot_propagation, medium); signature (low): `NativeLatentFunction1<TESObjectREFR,void,bool> * vdtor(NativeLatentFunction1<TESObjectREFR,void,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction1<TESObjectREFR,bool,bool>::vfunc_21` at 0xa57380 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction1<TESObjectREFR,bool,bool> * this)`
     pub slot_21: *const c_void,
@@ -1848,45 +1578,45 @@ impl BSScript__NativeLatentFunction1_TESObjectREFR_void_bool_vtable {
 pub struct BSScript__NativeLatentFunction1_TESObjectREFR_void_float_vtable {
     /// `BSScript::NativeLatentFunction1<TESObjectREFR,void,float>::vdtor` at 0xa55e10 (slot_propagation, medium); signature (low): `NativeLatentFunction1<TESObjectREFR,void,float> * vdtor(NativeLatentFunction1<TESObjectREFR,void,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction1<TESObjectREFR,bool,float>::vfunc_21` at 0xa57340 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction1<TESObjectREFR,bool,float> * this)`
     pub slot_21: *const c_void,
@@ -1902,45 +1632,45 @@ impl BSScript__NativeLatentFunction1_TESObjectREFR_void_float_vtable {
 pub struct BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int_vtable {
     /// `BSScript::NativeLatentFunction1<TESQuest,bool,unsigned_int>::vdtor` at 0xa616d0 (slot_propagation, medium); signature (low): `NativeLatentFunction1<TESQuest,bool,unsigned_int> * vdtor(NativeLatentFunction1<TESQuest,bool,unsigned_int> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction1<TESQuest,bool,unsigned_int>::vfunc_21` at 0xa61840 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction1<TESQuest,bool,unsigned_int> * this)`
     pub slot_21: *const c_void,
@@ -1956,45 +1686,45 @@ impl BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int_vtable {
 pub struct BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64_vtable {
     /// `BSScript::NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64>::vdtor` at 0xa62ef0 (slot_propagation, medium); signature (low): `NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64> * vdtor(NativeLatentFunction1<TESSound,bool,TESObjectREFR*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64>::vfunc_21` at 0xa63020 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction1<TESSound,bool,TESObjectREFR*___ptr64> * this)`
     pub slot_21: *const c_void,
@@ -2010,45 +1740,45 @@ impl BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64_vtable
 pub struct BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float_vtable {
     /// `BSScript::NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float>::vdtor` at 0xa0d330 (slot_propagation, medium); signature (low): `NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float> * vdtor(NativeLatentFunction2<Actor,bool,TESObjectREFR*___ptr64,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float>::vfunc_21` at 0xa0e550 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction2<Actor,bool,TESObjectREFR*___ptr64,float> * this)`
     pub slot_21: *const c_void,
@@ -2064,45 +1794,45 @@ impl BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float_vta
 pub struct BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64_vtable {
     /// `BSScript::NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::vdtor` at 0xa32390 (slot_propagation, medium); signature (low): `NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64> * vdtor(NativeLatentFunction2<ScrollItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::vfunc_21` at 0xa323d0 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction2<ScrollItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64> * this)`
     pub slot_21: *const c_void,
@@ -2118,45 +1848,45 @@ impl BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESO
 pub struct BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64_vtable {
     /// `BSScript::NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::vdtor` at 0xa33920 (slot_propagation, medium); signature (low): `NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64> * vdtor(NativeLatentFunction2<SpellItem,void,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64>::vfunc_21` at 0xa33aa0 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction2<SpellItem,bool,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64> * this)`
     pub slot_21: *const c_void,
@@ -2172,45 +1902,45 @@ impl BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESOb
 pub struct BSScript__NativeLatentFunction2_TESFaction_void_bool_bool_vtable {
     /// `BSScript::NativeLatentFunction2<TESFaction,void,bool,bool>::vdtor` at 0xa36590 (slot_propagation, medium); signature (low): `NativeLatentFunction2<TESFaction,void,bool,bool> * vdtor(NativeLatentFunction2<TESFaction,void,bool,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction2<TESFaction,bool,bool,bool>::vfunc_21` at 0xa367c0 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction2<TESFaction,bool,bool,bool> * this)`
     pub slot_21: *const c_void,
@@ -2226,45 +1956,45 @@ impl BSScript__NativeLatentFunction2_TESFaction_void_bool_bool_vtable {
 pub struct BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_vtable {
     /// `BSScript::NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int>::vdtor` at 0xa55f10 (slot_propagation, medium); signature (low): `NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int> * vdtor(NativeLatentFunction2<TESObjectREFR,TESObjectREFR*___ptr64,TESForm*___ptr64,unsigned_int> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int>::vfunc_21` at 0xa57450 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction2<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int> * this)`
     pub slot_21: *const c_void,
@@ -2280,45 +2010,45 @@ impl BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64_TESFor
 pub struct BSScript__NativeLatentFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64_vtable {
     /// `BSScript::NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::vdtor` at 0xa55fd0 (slot_propagation, medium); signature (low): `NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64> * vdtor(NativeLatentFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::vfunc_21` at 0xa57410 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction2<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64> * this)`
     pub slot_21: *const c_void,
@@ -2334,45 +2064,45 @@ impl BSScript__NativeLatentFunction2_TESObjectREFR_bool_BSFixedString_const____p
 pub struct BSScript__NativeLatentFunction2_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_vtable {
     /// `BSScript::NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::vdtor` at 0xa55f90 (slot_propagation, medium); signature (low): `NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64> * vdtor(NativeLatentFunction2<TESObjectREFR,void,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::vfunc_21` at 0xa57430 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction2<TESObjectREFR,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64> * this)`
     pub slot_21: *const c_void,
@@ -2388,45 +2118,45 @@ impl BSScript__NativeLatentFunction2_TESObjectREFR_void_TESObjectREFR____ptr64_B
 pub struct BSScript__NativeLatentFunction2_TESObjectREFR_void_unsigned_int_bool_vtable {
     /// `BSScript::NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool>::vdtor` at 0xa55f50 (slot_propagation, medium); signature (low): `NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool> * vdtor(NativeLatentFunction2<TESObjectREFR,void,unsigned_int,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>::vfunc_21` at 0xa57420 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction2<TESObjectREFR,bool,unsigned_int,bool> * this)`
     pub slot_21: *const c_void,
@@ -2442,45 +2172,45 @@ impl BSScript__NativeLatentFunction2_TESObjectREFR_void_unsigned_int_bool_vtable
 pub struct BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64_vtable {
     /// `BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>::vdtor` at 0xa33960 (slot_propagation, medium); signature (low): `NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64> * vdtor(NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>::vfunc_21` at 0xa33ab0 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64> * this)`
     pub slot_21: *const c_void,
@@ -2496,45 +2226,45 @@ impl BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor
 pub struct BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool_vtable {
     /// `BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>::vdtor` at 0xa56050 (slot_propagation, medium); signature (low): `NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool> * vdtor(NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>::vfunc_21` at 0xa574c0 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool> * this)`
     pub slot_21: *const c_void,
@@ -2550,45 +2280,45 @@ impl BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigne
 pub struct BSScript__NativeLatentFunction3_TESObjectREFR_void_float_float_float_vtable {
     /// `BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>::vdtor` at 0xa56010 (slot_propagation, medium); signature (low): `NativeLatentFunction3<TESObjectREFR,void,float,float,float> * vdtor(NativeLatentFunction3<TESObjectREFR,void,float,float,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>::vfunc_21` at 0xa574b0 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction3<TESObjectREFR,bool,float,float,float> * this)`
     pub slot_21: *const c_void,
@@ -2604,45 +2334,45 @@ impl BSScript__NativeLatentFunction3_TESObjectREFR_void_float_float_float_vtable
 pub struct BSScript__NativeLatentFunction4_Actor_int_bool_BGSListForm____ptr64_bool_bool_vtable {
     /// `BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>::vdtor` at 0xa0d370 (slot_propagation, medium); signature (low): `NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool> * vdtor(NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>::vfunc_21` at 0xa0e580 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool> * this)`
     pub slot_21: *const c_void,
@@ -2658,45 +2388,45 @@ impl BSScript__NativeLatentFunction4_Actor_int_bool_BGSListForm____ptr64_bool_bo
 pub struct BSScript__NativeLatentFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedS_d8b5dbe1c137_vtable {
     /// `BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::vdtor` at 0xa2ac70 (slot_propagation, medium); signature (low): `NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64> * vdtor(NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>::vfunc_21` at 0xa2b1a0 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64> * this)`
     pub slot_21: *const c_void,
@@ -2712,45 +2442,45 @@ impl BSScript__NativeLatentFunction4_BSScript__StaticFunctionTag_bool_TESObjectR
 pub struct BSScript__NativeLatentFunction4_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64_vtable {
     /// `BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>::vdtor` at 0xa560d0 (slot_propagation, medium); signature (low): `NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64> * vdtor(NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>::vfunc_21` at 0xa574f0 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction4<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64> * this)`
     pub slot_21: *const c_void,
@@ -2766,45 +2496,45 @@ impl BSScript__NativeLatentFunction4_TESObjectREFR_void_TESForm____ptr64_unsigne
 pub struct BSScript__NativeLatentFunction4_TESObjectREFR_void_float_float_float_float_vtable {
     /// `BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>::vdtor` at 0xa56090 (slot_propagation, medium); signature (low): `NativeLatentFunction4<TESObjectREFR,void,float,float,float,float> * vdtor(NativeLatentFunction4<TESObjectREFR,void,float,float,float,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction4<TESObjectREFR,bool,float,float,float,float>::vfunc_21` at 0xa574e0 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction4<TESObjectREFR,bool,float,float,float,float> * this)`
     pub slot_21: *const c_void,
@@ -2820,45 +2550,45 @@ impl BSScript__NativeLatentFunction4_TESObjectREFR_void_float_float_float_float_
 pub struct BSScript__NativeLatentFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESO_34fa37a7470b_vtable {
     /// `BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::vdtor` at 0xa164a0 (slot_propagation, medium); signature (low): `NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int> * vdtor(NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::vfunc_21` at 0xa166d0 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int> * this)`
     pub slot_21: *const c_void,
@@ -2874,45 +2604,45 @@ impl BSScript__NativeLatentFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObj
 pub struct BSScript__NativeLatentFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_co_3dc1935df090_vtable {
     /// `BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::vdtor` at 0xa56150 (slot_propagation, medium); signature (low): `NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64> * vdtor(NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>::vfunc_21` at 0xa57510 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64> * this)`
     pub slot_21: *const c_void,
@@ -2928,45 +2658,45 @@ impl BSScript__NativeLatentFunction5_TESObjectREFR_bool_BSFixedString_const____p
 pub struct BSScript__NativeLatentFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_float_float_float_bool_vtable {
     /// `BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>::vdtor` at 0xa56110 (slot_propagation, medium); signature (low): `NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool> * vdtor(NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool>::vfunc_21` at 0xa57520 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction5<TESObjectREFR,bool,TESObjectREFR*___ptr64,float,float,float,bool> * this)`
     pub slot_21: *const c_void,
@@ -2982,45 +2712,45 @@ impl BSScript__NativeLatentFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_f
 pub struct BSScript__NativeLatentFunction9_BGSMessage_int_float_float_float_float_float_float_float_float_float_vtable {
     /// `BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>::vdtor` at 0xa1a5c0 (slot_propagation, medium); signature (low): `NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float> * vdtor(NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
     pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
     pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
     pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
     pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
     pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
     pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
     pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
     pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
     pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
     pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
     pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
     pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
     pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
     pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
     pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
     pub slot_20: *const c_void,
     /// `BSScript::NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float>::vfunc_21` at 0xa1a760 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction9<BGSMessage,bool,float,float,float,float,float,float,float,float,float> * this)`
     pub slot_21: *const c_void,
@@ -3308,9 +3038,9 @@ pub struct BSSegmentedTriShape_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (untiered): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (low): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
     pub slot_37: *const c_void,
-    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (untiered): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (low): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
     pub slot_38: *const c_void,
     /// `NiGeometry::vfunc_39` at 0xf0cb90 (rtti, medium); signature (low): `undefined vfunc_39(NiGeometry * this, longlong * param_1)`
     pub slot_39: *const c_void,
@@ -3318,7 +3048,7 @@ pub struct BSSegmentedTriShape_vtable {
     pub slot_40: *const c_void,
     /// `NiAVObject::vfunc_41` at 0xee0a30 (rtti, medium); signature (low): `undefined vfunc_41(void)`
     pub slot_41: *const c_void,
-    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (untiered): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (low): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
     pub slot_42: *const c_void,
     /// `NiGeometry::vfunc_43` at 0xf0ba20 (rtti, medium); signature (low): `undefined vfunc_43(NiGeometry * this, char * param_1, byte param_2, byte * param_3)`
     pub slot_43: *const c_void,
@@ -3330,13 +3060,13 @@ pub struct BSSegmentedTriShape_vtable {
     pub slot_46: *const c_void,
     /// `NiGeometry::vfunc_47` at 0xf0c600 (rtti, medium); signature (high): `undefined vfunc_47(NiGeometry * this)`
     pub slot_47: *const c_void,
-    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (low): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
-    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (untiered): `undefined UpdateTransformsAndBound(NiAVObject * this)`
+    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (high): `undefined UpdateTransformsAndBound(NiAVObject * this)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
     /// `BSSegmentedTriShape::vfunc_52` at 0xf1e320 (rtti, high); signature (high): `undefined vfunc_52(BSSegmentedTriShape * this)`
     pub slot_52: *const c_void,
@@ -3370,9 +3100,9 @@ pub struct BSShader_vtable {
     pub slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`; `SetupMaterial`: uploads textures and constants of the material for the current technique (high); semantic signature: `void (BSShader* this, BSShaderMaterial* material)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`; `SetupMaterial`: uploads textures and constants of the material for the current technique (high); semantic signature: `void (BSShader* this, BSShaderMaterial* material)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`; `RestoreMaterial`: empty in BSShader and BSLightingShader; the paired restore of slot 4 by position (low); semantic signature: `void (BSShader* this, BSShaderMaterial* material)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`; `RestoreMaterial`: empty in BSShader and BSLightingShader; the paired restore of slot 4 by position (low); semantic signature: `void (BSShader* this, BSShaderMaterial* material)`
     pub slot_5: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_6: *const c_void,
@@ -3434,7 +3164,7 @@ pub struct BSShaderAccumulator_vtable {
     pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
-    /// `BSShaderAccumulator::GetRTTI` at 0x1521e20 (semantic, high); signature (untiered): `TypeNode * GetRTTI(void)`; `GetRTTI`: returns g_TypeNode_BSShaderAccumulator (high); semantic signature: `TypeNode* (BSShaderAccumulator* this)`
+    /// `BSShaderAccumulator::GetRTTI` at 0x1521e20 (semantic, high); signature (low): `TypeNode * GetRTTI(void)`; `GetRTTI`: returns g_TypeNode_BSShaderAccumulator (high); semantic signature: `TypeNode* (BSShaderAccumulator* this)`
     pub slot_2: *const c_void,
     /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
     pub slot_3: *const c_void,
@@ -3504,19 +3234,19 @@ pub struct BSShaderAccumulator_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `BSShaderAccumulator::SetCamera` at 0x151e2e0 (semantic, high); signature (untiered): `undefined SetCamera(BSShaderAccumulator * this, undefined8 param_1)`; `SetCamera`: stores the camera at +0x10 (high); semantic signature: `void (BSShaderAccumulator* this, NiCamera* camera)`
+    /// `BSShaderAccumulator::SetCamera` at 0x151e2e0 (semantic, high); signature (low): `undefined SetCamera(BSShaderAccumulator * this, undefined8 param_1)`; `SetCamera`: stores the camera at +0x10 (high); semantic signature: `void (BSShaderAccumulator* this, NiCamera* camera)`
     pub slot_37: *const c_void,
-    /// `BSShaderAccumulator::Render` at 0x151e3f0 (semantic, high); signature (untiered): `undefined Render(BSShaderAccumulator * this, undefined4 param_1)`; `Render`: slot 42 then slot 43: the whole draw of the accumulator (high); semantic signature: `void (BSShaderAccumulator* this, u32 flags)`
+    /// `BSShaderAccumulator::Render` at 0x151e3f0 (semantic, high); signature (low): `undefined Render(BSShaderAccumulator * this, undefined4 param_1)`; `Render`: slot 42 then slot 43: the whole draw of the accumulator (high); semantic signature: `void (BSShaderAccumulator* this, u32 flags)`
     pub slot_38: *const c_void,
-    /// `BSShaderAccumulator::vfunc_39` at 0xf0f3d0 (semantic, high); signature (untiered): `undefined vfunc_39(void)`; `vfunc_39`: inherited empty NiAlphaAccumulator slot (pure in NiAccumulator) (high); semantic signature: `void (BSShaderAccumulator* this)`
+    /// `BSShaderAccumulator::vfunc_39` at 0xf0f3d0 (semantic, high); signature (low): `undefined vfunc_39(void)`; `vfunc_39`: inherited empty NiAlphaAccumulator slot (pure in NiAccumulator) (high); semantic signature: `void (BSShaderAccumulator* this)`
     pub slot_39: *const c_void,
-    /// `BSShaderAccumulator::PushDepthGroup` at 0x1520d50 (semantic, medium); signature (untiered): `undefined PushDepthGroup(BSShaderAccumulator * this, undefined8 param_1)`; `PushDepthGroup`: opens a depth-keyed pass group in the batch renderer: key = dot(camera axis +0x7c/+0x88/+0x94, center) (minus radius when +0x51), from the pool 0x3693a00 (0x28 each, count 0x36939d0) (medium); semantic signature: `void* (BSShaderAccumulator* this, NiBound* bound)`
+    /// `BSShaderAccumulator::PushDepthGroup` at 0x1520d50 (semantic, medium); signature (low): `undefined PushDepthGroup(BSShaderAccumulator * this, undefined8 param_1)`; `PushDepthGroup`: opens a depth-keyed pass group in the batch renderer: key = dot(camera axis +0x7c/+0x88/+0x94, center) (minus radius when +0x51), from the pool 0x3693a00 (0x28 each, count 0x36939d0) (medium); semantic signature: `void* (BSShaderAccumulator* this, NiBound* bound)`
     pub slot_40: *const c_void,
-    /// `BSShaderAccumulator::PopDepthGroup` at 0x1520d70 (semantic, medium); signature (untiered): `undefined PopDepthGroup(BSShaderAccumulator * this)`; `PopDepthGroup`: closes the group opened by slot 40 (medium); semantic signature: `void (BSShaderAccumulator* this, void* group)`
+    /// `BSShaderAccumulator::PopDepthGroup` at 0x1520d70 (semantic, medium); signature (high): `undefined PopDepthGroup(BSShaderAccumulator * this)`; `PopDepthGroup`: closes the group opened by slot 40 (medium); semantic signature: `void (BSShaderAccumulator* this, void* group)`
     pub slot_41: *const c_void,
-    /// `BSShaderAccumulator::RenderOpaque` at 0x151ee90 (semantic, high); signature (untiered): `undefined RenderOpaque(BSShaderAccumulator * this, undefined4 param_1)`; `RenderOpaque`: activates the mode (SetActiveIndexWithFallback(renderMode)); mode 0: the opaque half ID_106583; any other mode: the whole per-mode draw g_AccumulatorRenderFns[renderMode] (fallback entry 0) (high); semantic signature: `void (BSShaderAccumulator* this, u32 flags)`
+    /// `BSShaderAccumulator::RenderOpaque` at 0x151ee90 (semantic, high); signature (low): `undefined RenderOpaque(BSShaderAccumulator * this, undefined4 param_1)`; `RenderOpaque`: activates the mode (SetActiveIndexWithFallback(renderMode)); mode 0: the opaque half ID_106583; any other mode: the whole per-mode draw g_AccumulatorRenderFns[renderMode] (fallback entry 0) (high); semantic signature: `void (BSShaderAccumulator* this, u32 flags)`
     pub slot_42: *const c_void,
-    /// `BSShaderAccumulator::RenderTransparent` at 0x151ef00 (semantic, high); signature (untiered): `undefined RenderTransparent(BSShaderAccumulator * this)`; `RenderTransparent`: mode 0 only: the blended half ID_106584 (water, blended groups, sorted alpha, last sky technique); then the empty NiAccumulator slot 38 (high); semantic signature: `void (BSShaderAccumulator* this, u32 flags)`
+    /// `BSShaderAccumulator::RenderTransparent` at 0x151ef00 (semantic, high); signature (high): `undefined RenderTransparent(BSShaderAccumulator * this)`; `RenderTransparent`: mode 0 only: the blended half ID_106584 (water, blended groups, sorted alpha, last sky technique); then the empty NiAccumulator slot 38 (high); semantic signature: `void (BSShaderAccumulator* this, u32 flags)`
     pub slot_43: *const c_void,
     /// `BSShaderAccumulator::vfunc_44` at 0x1520960 (rtti, high); signature (low): `undefined vfunc_44(void)`; `vfunc_44`: empty (high); semantic signature: `void (BSShaderAccumulator* this)`
     pub slot_44: *const c_void,
@@ -3588,19 +3318,19 @@ pub type BSShaderAccumulator_vtable_vfunc_44 = unsafe extern "C" fn(this: *mut c
 pub struct BSShaderMaterial_vtable {
     /// `BSShaderMaterial::vdtor` at 0x15758f0 (layout_inference, medium); signature (low): `BSShaderMaterial * vdtor(BSShaderMaterial * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSShaderMaterial::Create` at 0x1575620 (semantic, high); signature (untiered): `undefined8 * Create(BSShaderMaterial * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Create`: new default instance of the same class (high); semantic signature: `BSShaderMaterial* (BSShaderMaterial* this)`
+    /// `BSShaderMaterial::Create` at 0x1575620 (semantic, high); signature (low): `undefined8 * Create(BSShaderMaterial * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Create`: new default instance of the same class (high); semantic signature: `BSShaderMaterial* (BSShaderMaterial* this)`
     pub slot_1: *const c_void,
-    /// `BSShaderMaterial::CopyMembers` at 0x1575700 (semantic, high); signature (untiered): `undefined CopyMembers(BSShaderMaterial * this, longlong param_1)`; `CopyMembers`: copies uv offset/scale; derived classes add their fields (high); semantic signature: `void (BSShaderMaterial* this, const BSShaderMaterial* src)`
+    /// `BSShaderMaterial::CopyMembers` at 0x1575700 (semantic, high); signature (low): `undefined CopyMembers(BSShaderMaterial * this, longlong param_1)`; `CopyMembers`: copies uv offset/scale; derived classes add their fields (high); semantic signature: `void (BSShaderMaterial* this, const BSShaderMaterial* src)`
     pub slot_2: *const c_void,
-    /// `BSShaderMaterial::IsEqual` at 0x1575730 (semantic, high); signature (untiered): `undefined8 IsEqual(BSShaderMaterial * this, longlong * param_1)`; `IsEqual`: same GetType and uv offset/scale (lighting: also same feature and same texture path 0) (high); semantic signature: `bool (BSShaderMaterial* this, const BSShaderMaterial* other)`
+    /// `BSShaderMaterial::IsEqual` at 0x1575730 (semantic, high); signature (low): `undefined8 IsEqual(BSShaderMaterial * this, longlong * param_1)`; `IsEqual`: same GetType and uv offset/scale (lighting: also same feature and same texture path 0) (high); semantic signature: `bool (BSShaderMaterial* this, const BSShaderMaterial* other)`
     pub slot_3: *const c_void,
-    /// `BSShaderMaterial::ComputeHash` at 0x15757c0 (semantic, high); signature (untiered): `uint ComputeHash(BSShaderMaterial * this, undefined4 param_1)`; `ComputeHash`: CRC32 of offset, scale and seed (lighting adds the texture path CRCs and quantised floats) (high); semantic signature: `u32 (BSShaderMaterial* this, u32 seed)`
+    /// `BSShaderMaterial::ComputeHash` at 0x15757c0 (semantic, high); signature (low): `uint ComputeHash(BSShaderMaterial * this, undefined4 param_1)`; `ComputeHash`: CRC32 of offset, scale and seed (lighting adds the texture path CRCs and quantised floats) (high); semantic signature: `u32 (BSShaderMaterial* this, u32 seed)`
     pub slot_4: *const c_void,
-    /// `BSShaderMaterial::GetDefault` at 0x1575820 (semantic, medium); signature (untiered): `undefined8 GetDefault(void)`; `GetDefault`: the class's default material (0x3698be8 base, 0x33d4db0 lighting, 0x34866e0 effect) (medium); semantic signature: `BSShaderMaterial* (BSShaderMaterial* this)`
+    /// `BSShaderMaterial::GetDefault` at 0x1575820 (semantic, medium); signature (low): `undefined8 GetDefault(void)`; `GetDefault`: the class's default material (0x3698be8 base, 0x33d4db0 lighting, 0x34866e0 effect) (medium); semantic signature: `BSShaderMaterial* (BSShaderMaterial* this)`
     pub slot_5: *const c_void,
-    /// `BSShaderMaterial::GetFeature` at 0x1556680 (semantic, high); signature (untiered): `undefined8 GetFeature(void)`; `GetFeature`: lighting feature (enum BSLightingShaderMaterial::Feature): 0 default, 1 envmap, 2 glow, 3 parallax, 4 facegen, 5 facegen tint, 6 hair tint, 7 parallax occ, 0xb multilayer parallax, 0xe snow, 0x10 eye, 0x12 LOD landscape, 0x13 landscape (high); semantic signature: `LightingMaterialFeature (BSShaderMaterial* this)`
+    /// `BSShaderMaterial::GetFeature` at 0x1556680 (semantic, high); signature (low): `undefined8 GetFeature(void)`; `GetFeature`: lighting feature (enum BSLightingShaderMaterial::Feature): 0 default, 1 envmap, 2 glow, 3 parallax, 4 facegen, 5 facegen tint, 6 hair tint, 7 parallax occ, 0xb multilayer parallax, 0xe snow, 0x10 eye, 0x12 LOD landscape, 0x13 landscape (high); semantic signature: `LightingMaterialFeature (BSShaderMaterial* this)`
     pub slot_6: *const c_void,
-    /// `BSShaderMaterial::GetType` at 0x1575920 (semantic, high); signature (untiered): `undefined8 GetType(void)`; `GetType`: material family: 0 base, 1 effect, 2 lighting, 3 water (high); semantic signature: `ShaderMaterialType (BSShaderMaterial* this)`
+    /// `BSShaderMaterial::GetType` at 0x1575920 (semantic, high); signature (low): `undefined8 GetType(void)`; `GetType`: material family: 0 base, 1 effect, 2 lighting, 3 water (high); semantic signature: `ShaderMaterialType (BSShaderMaterial* this)`
     pub slot_7: *const c_void,
 }
 impl BSShaderMaterial_vtable {
@@ -3705,15 +3435,15 @@ pub struct BSShaderProperty_vtable {
     pub slot_21: *const c_void,
     /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
     pub slot_22: *const c_void,
-    /// `BSShaderProperty::CreateClone` at 0x14e72c0 (semantic, medium); signature (untiered): `undefined8 CreateClone(void)`; `CreateClone`: clone; the base returns null, derived classes allocate their size and copy (medium); semantic signature: `NiObject* (NiObject* this, NiCloningProcess* p)`
+    /// `BSShaderProperty::CreateClone` at 0x14e72c0 (semantic, medium); signature (low): `undefined8 CreateClone(void)`; `CreateClone`: clone; the base returns null, derived classes allocate their size and copy (medium); semantic signature: `NiObject* (NiObject* this, NiCloningProcess* p)`
     pub slot_23: *const c_void,
-    /// `BSShaderProperty::LoadBinary` at 0x14e7390 (semantic, high); signature (untiered): `undefined LoadBinary(BSShaderProperty * this, longlong param_1)`; `LoadBinary`: reads flags (8 bytes) and two float pairs into material+0xc (uv offset) and +0x1c (uv scale), duplicated into +0x14/+0x24 (high); semantic signature: `void (BSShaderProperty* this, NiStream* s)`
+    /// `BSShaderProperty::LoadBinary` at 0x14e7390 (semantic, high); signature (low): `undefined LoadBinary(BSShaderProperty * this, longlong param_1)`; `LoadBinary`: reads flags (8 bytes) and two float pairs into material+0xc (uv offset) and +0x1c (uv scale), duplicated into +0x14/+0x24 (high); semantic signature: `void (BSShaderProperty* this, NiStream* s)`
     pub slot_24: *const c_void,
     /// `BSShaderProperty::LinkObject` at 0x14e7430 (semantic, medium); signature (untiered): `undefined LinkObject(BSShaderProperty * this, longlong param_1)`; `LinkObject`: resolves the extra data and controller links (medium); semantic signature: `void (BSShaderProperty* this, NiStream* s)`
     pub slot_25: *const c_void,
     /// `BSShaderProperty::RegisterStreamables` at 0x14e7440 (semantic, medium); signature (untiered): `undefined8 RegisterStreamables(BSShaderProperty * this, longlong * param_1)`; `RegisterStreamables`: registers itself, its extra data and controller (medium); semantic signature: `bool (BSShaderProperty* this, NiStream* s)`
     pub slot_26: *const c_void,
-    /// `BSShaderProperty::SaveBinary` at 0x14e7450 (semantic, high); signature (untiered): `undefined SaveBinary(BSShaderProperty * this, longlong * param_1)`; `SaveBinary`: writes flags and the uv offset/scale (high); semantic signature: `void (BSShaderProperty* this, NiStream* s)`
+    /// `BSShaderProperty::SaveBinary` at 0x14e7450 (semantic, high); signature (low): `undefined SaveBinary(BSShaderProperty * this, longlong * param_1)`; `SaveBinary`: writes flags and the uv offset/scale (high); semantic signature: `void (BSShaderProperty* this, NiStream* s)`
     pub slot_27: *const c_void,
     /// `BSShaderProperty::vfunc_28` at 0x14e74d0 (rtti, medium); signature (low): `undefined1 vfunc_28(void)`
     pub slot_28: *const c_void,
@@ -3733,7 +3463,7 @@ pub struct BSShaderProperty_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `BSShaderProperty::GetPropertyType` at 0xf0f110 (semantic, medium); signature (untiered): `undefined8 GetPropertyType(void)`; `GetPropertyType`: 1 for shade/shader properties (NiAlphaProperty returns 0) (medium); semantic signature: `u32 (NiProperty* this)`
+    /// `BSShaderProperty::GetPropertyType` at 0xf0f110 (semantic, medium); signature (low): `undefined8 GetPropertyType(void)`; `GetPropertyType`: 1 for shade/shader properties (NiAlphaProperty returns 0) (medium); semantic signature: `u32 (NiProperty* this)`
     pub slot_37: *const c_void,
     /// `BSShaderProperty::Update` at 0xef26b0 (semantic, medium); signature (untiered): `undefined Update(BSShaderProperty * this, undefined8 param_1)`; `Update`: runs every controller of the +0x18 chain (controller slot 39) (medium); semantic signature: `void (NiProperty* this, NiUpdateData* d)`
     pub slot_38: *const c_void,
@@ -3741,13 +3471,13 @@ pub struct BSShaderProperty_vtable {
     pub slot_39: *const c_void,
     /// `NiShadeProperty::vfunc_40` at 0xf0ef00 (rtti, medium); signature (low): `undefined1 vfunc_40(void)`
     pub slot_40: *const c_void,
-    /// `BSShaderProperty::SetShadowLightBit` at 0x14e77b0 (semantic, medium); signature (untiered): `undefined SetShadowLightBit(BSShaderProperty * this, int param_1)`; `SetShadowLightBit`: sets bit lightIndex-1 of lightData+0x1c; 0xffff clears the mask and invalidates lastRenderPassState (medium); semantic signature: `void (BSShaderProperty* this, u32 lightIndex)`
+    /// `BSShaderProperty::SetShadowLightBit` at 0x14e77b0 (semantic, medium); signature (low): `undefined SetShadowLightBit(BSShaderProperty * this, int param_1)`; `SetShadowLightBit`: sets bit lightIndex-1 of lightData+0x1c; 0xffff clears the mask and invalidates lastRenderPassState (medium); semantic signature: `void (BSShaderProperty* this, u32 lightIndex)`
     pub slot_41: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_42: *const c_void,
-    /// `BSShaderProperty::GetDepthRenderPasses` at 0x14e7af0 (semantic, high); signature (untiered): `undefined8 GetDepthRenderPasses(void)`; `GetDepthRenderPasses`: pass list for the depth/shadow modes 0xc-0xf; base returns null (the existing ledger row calls the lighting override GetRenderPasses) (high); semantic signature: `BSRenderPass** (BSShaderProperty* this, BSGeometry* g, AccumulatorRenderMode renderMode, BSShaderAccumulator* acc)`
+    /// `BSShaderProperty::GetDepthRenderPasses` at 0x14e7af0 (semantic, high); signature (low): `undefined8 GetDepthRenderPasses(void)`; `GetDepthRenderPasses`: pass list for the depth/shadow modes 0xc-0xf; base returns null (the existing ledger row calls the lighting override GetRenderPasses) (high); semantic signature: `BSRenderPass** (BSShaderProperty* this, BSGeometry* g, AccumulatorRenderMode renderMode, BSShaderAccumulator* acc)`
     pub slot_43: *const c_void,
-    /// `BSShaderProperty::GetLocalMapRenderPasses` at 0x14e7b00 (semantic, low); signature (untiered): `undefined8 GetLocalMapRenderPasses(void)`; `GetLocalMapRenderPasses`: lighting override 0x151bcb0 builds a RENDER_BASE_TEXTURE (0x2000000) or LOCALMAP_FOGOFWAR (0x10000000) utility pass; landscape (bit 14) goes through slot 42 (low); semantic signature: `BSRenderPass** (BSShaderProperty* this, BSGeometry* g, u32 mode)`
+    /// `BSShaderProperty::GetLocalMapRenderPasses` at 0x14e7b00 (semantic, low); signature (low): `undefined8 GetLocalMapRenderPasses(void)`; `GetLocalMapRenderPasses`: lighting override 0x151bcb0 builds a RENDER_BASE_TEXTURE (0x2000000) or LOCALMAP_FOGOFWAR (0x10000000) utility pass; landscape (bit 14) goes through slot 42 (low); semantic signature: `BSRenderPass** (BSShaderProperty* this, BSGeometry* g, u32 mode)`
     pub slot_44: *const c_void,
     /// `BSShaderProperty::vfunc_45` at 0x14e7b10 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -3755,35 +3485,35 @@ pub struct BSShaderProperty_vtable {
     pub slot_46: *const c_void,
     /// `BSShaderProperty::vfunc_47` at 0x14e8640 (rtti, medium); signature (low): `undefined8 vfunc_47(void)`
     pub slot_47: *const c_void,
-    /// `BSShaderProperty::IsEquivalent` at 0x14e7ec0 (semantic, medium); signature (untiered): `ulonglong IsEquivalent(BSShaderProperty * this, longlong param_1)`; `IsEquivalent`: same flags and material IsEqual (material slot 3); lighting adds the emit colour and scale (medium); semantic signature: `bool (BSShaderProperty* this, BSShaderProperty* other)`
+    /// `BSShaderProperty::IsEquivalent` at 0x14e7ec0 (semantic, medium); signature (low): `ulonglong IsEquivalent(BSShaderProperty * this, longlong param_1)`; `IsEquivalent`: same flags and material IsEqual (material slot 3); lighting adds the emit colour and scale (medium); semantic signature: `bool (BSShaderProperty* this, BSShaderProperty* other)`
     pub slot_48: *const c_void,
-    /// `BSShaderProperty::SetMaterialAlpha` at 0x14e8760 (semantic, high); signature (untiered): `undefined SetMaterialAlpha(void)`; `SetMaterialAlpha`: lighting writes material+0x80, effect material+0x54 (clamped at 0); base does nothing (high); semantic signature: `void (BSShaderProperty* this, float alpha)`
+    /// `BSShaderProperty::SetMaterialAlpha` at 0x14e8760 (semantic, high); signature (low): `undefined SetMaterialAlpha(void)`; `SetMaterialAlpha`: lighting writes material+0x80, effect material+0x54 (clamped at 0); base does nothing (high); semantic signature: `void (BSShaderProperty* this, float alpha)`
     pub slot_49: *const c_void,
-    /// `BSShaderProperty::GetMaterialAlpha` at 0x14e8680 (semantic, high); signature (untiered): `undefined4 GetMaterialAlpha(void)`; `GetMaterialAlpha`: lighting reads material+0x80, effect material+0x54, base 1.0 (high); semantic signature: `float (BSShaderProperty* this)`
+    /// `BSShaderProperty::GetMaterialAlpha` at 0x14e8680 (semantic, high); signature (low): `undefined4 GetMaterialAlpha(void)`; `GetMaterialAlpha`: lighting reads material+0x80, effect material+0x54, base 1.0 (high); semantic signature: `float (BSShaderProperty* this)`
     pub slot_50: *const c_void,
     /// `BSShaderProperty::vfunc_51` at 0x14e85f0 (rtti, medium); signature (low): `undefined8 vfunc_51(void)`
     pub slot_51: *const c_void,
-    /// `BSShaderProperty::ClearRenderPasses` at 0x14e7fb0 (semantic, high); signature (untiered): `undefined ClearRenderPasses(BSShaderProperty * this)`; `ClearRenderPasses`: releases the pass lists and invalidates lastRenderPassState (high); semantic signature: `void (BSShaderProperty* this)`
+    /// `BSShaderProperty::ClearRenderPasses` at 0x14e7fb0 (semantic, high); signature (high): `undefined ClearRenderPasses(BSShaderProperty * this)`; `ClearRenderPasses`: releases the pass lists and invalidates lastRenderPassState (high); semantic signature: `void (BSShaderProperty* this)`
     pub slot_52: *const c_void,
-    /// `BSShaderProperty::GetShaderTypeId` at 0x14e8690 (semantic, low); signature (untiered): `undefined8 GetShaderTypeId(void)`; `GetShaderTypeId`: constant per class: base 0, effect 1, grass 2, distant tree 4, particle 5, sky 10, lighting 0xb, blood splatter 0xc, water 0x11 (low); semantic signature: `u32 (BSShaderProperty* this)`
+    /// `BSShaderProperty::GetShaderTypeId` at 0x14e8690 (semantic, low); signature (low): `undefined8 GetShaderTypeId(void)`; `GetShaderTypeId`: constant per class: base 0, effect 1, grass 2, distant tree 4, particle 5, sky 10, lighting 0xb, blood splatter 0xc, water 0x11 (low); semantic signature: `u32 (BSShaderProperty* this)`
     pub slot_53: *const c_void,
     /// `BSShaderProperty::vfunc_54` at 0x14e85d0 (rtti, medium); signature (low): `undefined8 vfunc_54(void)`
     pub slot_54: *const c_void,
-    /// `BSShaderProperty::GetBaseTexture` at 0x14e8600 (semantic, medium); signature (untiered): `undefined8 GetBaseTexture(void)`; `GetBaseTexture`: lighting returns material+0x48 (texture slot 0), effect material+0x58 (medium); semantic signature: `NiSourceTexture* (BSShaderProperty* this)`
+    /// `BSShaderProperty::GetBaseTexture` at 0x14e8600 (semantic, medium); signature (low): `undefined8 GetBaseTexture(void)`; `GetBaseTexture`: lighting returns material+0x48 (texture slot 0), effect material+0x58 (medium); semantic signature: `NiSourceTexture* (BSShaderProperty* this)`
     pub slot_55: *const c_void,
     /// `BSShaderProperty::vfunc_56` at 0x14e8650 (rtti, medium); signature (low): `undefined8 vfunc_56(void)`
     pub slot_56: *const c_void,
-    /// `BSShaderProperty::IsNotRefractive` at 0x14e85c0 (semantic, low); signature (untiered): `undefined1 IsNotRefractive(void)`; `IsNotRefractive`: lighting: true when flag bits 2 and 15 are both clear (low); semantic signature: `bool (BSShaderProperty* this)`
+    /// `BSShaderProperty::IsNotRefractive` at 0x14e85c0 (semantic, low); signature (low): `undefined1 IsNotRefractive(void)`; `IsNotRefractive`: lighting: true when flag bits 2 and 15 are both clear (low); semantic signature: `bool (BSShaderProperty* this)`
     pub slot_57: *const c_void,
     /// `BSShaderProperty::vfunc_58` at 0x14e8670 (rtti, medium); signature (low): `undefined vfunc_58(void)`
     pub slot_58: *const c_void,
-    /// `BSShaderProperty::PrecacheTechniques` at 0x14e8380 (semantic, low); signature (untiered): `undefined PrecacheTechniques(void)`; `PrecacheTechniques`: lighting 0x151c400 enumerates the technique variants of its flags (low); semantic signature: `void (BSShaderProperty* this, ...)`
+    /// `BSShaderProperty::PrecacheTechniques` at 0x14e8380 (semantic, low); signature (low): `undefined PrecacheTechniques(void)`; `PrecacheTechniques`: lighting 0x151c400 enumerates the technique variants of its flags (low); semantic signature: `void (BSShaderProperty* this, ...)`
     pub slot_59: *const c_void,
     /// `BSShaderProperty::vfunc_60` at 0x14e8660 (rtti, medium); signature (low): `undefined1 vfunc_60(void)`
     pub slot_60: *const c_void,
-    /// `BSShaderProperty::GetDepthTechnique` at 0x14e85e0 (semantic, high); signature (untiered): `undefined8 GetDepthTechnique(void)`; `GetDepthTechnique`: utility technique bits of the depth passes (lighting 0x151a0b0): TEXTURE|NORMALS|BINORMAL_TANGENT (0x1a), TEXTURE only with bit 12, SKINNED from bit 1, VC from bit 37, 0x20 from bits 14/46, LOD_LANDSCAPE from bit 33, 0x40 from bit 17, TREE_ANIM from bit 61 (high); semantic signature: `u32 (BSShaderProperty* this)`
+    /// `BSShaderProperty::GetDepthTechnique` at 0x14e85e0 (semantic, high); signature (low): `undefined8 GetDepthTechnique(void)`; `GetDepthTechnique`: utility technique bits of the depth passes (lighting 0x151a0b0): TEXTURE|NORMALS|BINORMAL_TANGENT (0x1a), TEXTURE only with bit 12, SKINNED from bit 1, VC from bit 37, 0x20 from bits 14/46, LOD_LANDSCAPE from bit 33, 0x40 from bit 17, TREE_ANIM from bit 61 (high); semantic signature: `u32 (BSShaderProperty* this)`
     pub slot_61: *const c_void,
-    /// `BSShaderProperty::GetMaterialType` at 0x14e8610 (semantic, medium); signature (untiered): `undefined8 GetMaterialType(void)`; `GetMaterialType`: material family: base 0, effect 1, lighting (and grass) 2, water 3; the values of BSShaderMaterial::GetType (medium); semantic signature: `ShaderMaterialType (BSShaderProperty* this)`
+    /// `BSShaderProperty::GetMaterialType` at 0x14e8610 (semantic, medium); signature (low): `undefined8 GetMaterialType(void)`; `GetMaterialType`: material family: base 0, effect 1, lighting (and grass) 2, water 3; the values of BSShaderMaterial::GetType (medium); semantic signature: `ShaderMaterialType (BSShaderProperty* this)`
     pub slot_62: *const c_void,
 }
 impl BSShaderProperty_vtable {
@@ -4036,11 +3766,11 @@ pub struct BSShaderTextureSet_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `BSShaderTextureSet::GetTexturePath` at 0x153b3c0 (semantic, high); signature (untiered): `BSShaderTextureSet_vtbl * GetTexturePath(BSShaderTextureSet * this, int param_1)`; `GetTexturePath`: *(this+0x10+8*index) (high); semantic signature: `const char* (BSShaderTextureSet* this, TextureSetSlot index)`
+    /// `BSShaderTextureSet::GetTexturePath` at 0x153b3c0 (semantic, high); signature (low): `BSShaderTextureSet_vtbl * GetTexturePath(BSShaderTextureSet * this, int param_1)`; `GetTexturePath`: *(this+0x10+8*index) (high); semantic signature: `const char* (BSShaderTextureSet* this, TextureSetSlot index)`
     pub slot_37: *const c_void,
-    /// `BSShaderTextureSet::LoadTexture` at 0x153b3d0 (semantic, high); signature (untiered): `undefined LoadTexture(BSShaderTextureSet * this, int param_1, undefined8 * param_2)`; `LoadTexture`: loads the texture at the path (index 4 as a cube map) (high); semantic signature: `void (BSShaderTextureSet* this, TextureSetSlot index, NiPointer<NiSourceTexture>* out)`
+    /// `BSShaderTextureSet::LoadTexture` at 0x153b3d0 (semantic, high); signature (low): `undefined LoadTexture(BSShaderTextureSet * this, int param_1, undefined8 * param_2)`; `LoadTexture`: loads the texture at the path (index 4 as a cube map) (high); semantic signature: `void (BSShaderTextureSet* this, TextureSetSlot index, NiPointer<NiSourceTexture>* out)`
     pub slot_38: *const c_void,
-    /// `BSShaderTextureSet::SetTexturePath` at 0x153b4c0 (semantic, high); signature (untiered): `undefined SetTexturePath(BSShaderTextureSet * this, int param_1, char * param_2)`; `SetTexturePath`: replaces the BSFixedString (high); semantic signature: `void (BSShaderTextureSet* this, TextureSetSlot index, const char* path)`
+    /// `BSShaderTextureSet::SetTexturePath` at 0x153b4c0 (semantic, high); signature (low): `undefined SetTexturePath(BSShaderTextureSet * this, int param_1, char * param_2)`; `SetTexturePath`: replaces the BSFixedString (high); semantic signature: `void (BSShaderTextureSet* this, TextureSetSlot index, const char* path)`
     pub slot_39: *const c_void,
 }
 impl BSShaderTextureSet_vtable {
@@ -4080,33 +3810,33 @@ pub struct BSShadowDirectionalLight_vtable {
     pub slot_1: *const c_void,
     /// `BSLight::vfunc_2` at 0x1576ad0 (rtti, medium); signature (low): `undefined vfunc_2(BSLight * this, longlong * param_1)`
     pub slot_2: *const c_void,
-    /// `BSShadowLight::IsShadowLight` at 0x155dbd0 (semantic, high); signature (untiered): `undefined1 IsShadowLight(void)`
+    /// `BSShadowLight::IsShadowLight` at 0x155dbd0 (semantic, high); signature (low): `undefined1 IsShadowLight(void)`
     pub slot_3: *const c_void,
     /// `BSShadowDirectionalLight::vfunc_4` at 0x1582010 (rtti, high); signature (low): `undefined1 vfunc_4(void)`
     pub slot_4: *const c_void,
     /// `BSShadowLight::vfunc_5` at 0x155dbb0 (rtti, medium); signature (low): `undefined1 vfunc_5(void)`
     pub slot_5: *const c_void,
-    /// `BSShadowDirectionalLight::IsDirectionalLight` at 0x1582020 (semantic, medium); signature (untiered): `undefined1 IsDirectionalLight(void)`; `IsDirectionalLight`: true only for the directional light (medium); semantic signature: `bool (BSShadowLight* this)`
+    /// `BSShadowDirectionalLight::IsDirectionalLight` at 0x1582020 (semantic, medium); signature (low): `undefined1 IsDirectionalLight(void)`; `IsDirectionalLight`: true only for the directional light (medium); semantic signature: `bool (BSShadowLight* this)`
     pub slot_6: *const c_void,
     /// `BSShadowLight::vfunc_7` at 0x155dbc0 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
     pub slot_7: *const c_void,
     /// `BSShadowLight::vfunc_8` at 0x155dba0 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
     pub slot_8: *const c_void,
-    /// `BSShadowDirectionalLight::CullCasters` at 0x157ead0 (runtime, high); signature (untiered): `undefined CullCasters(BSShadowDirectionalLight * this, uint * param_1)`; `CullCasters`: for each map: tags its accumulator with the map index (+0x160 index+1, +0x164 bit, +0x168 cascade) and culls the casters into it through 0x155cea0 with the map's camera (high); semantic signature: `void (BSShadowLight* this, u32* counter, ...)`
+    /// `BSShadowDirectionalLight::CullCasters` at 0x157ead0 (runtime, high); signature (low): `undefined CullCasters(BSShadowDirectionalLight * this, uint * param_1)`; `CullCasters`: for each map: tags its accumulator with the map index (+0x160 index+1, +0x164 bit, +0x168 cascade) and culls the casters into it through 0x155cea0 with the map's camera (high); semantic signature: `void (BSShadowLight* this, u32* counter, ...)`
     pub slot_9: *const c_void,
-    /// `BSShadowDirectionalLight::RenderShadowMaps` at 0x157ebb0 (runtime, high); signature (untiered): `undefined RenderShadowMaps(BSShadowDirectionalLight * this, int * param_1)`; `RenderShadowMaps`: renders each map into depth target 2 slice k (and target 3 with iEnableShadowCastingFlag 2), then the focus maps into target 4 when focusShadowsActive (high); semantic signature: `void (BSShadowLight* this, u32* counter)`
+    /// `BSShadowDirectionalLight::RenderShadowMaps` at 0x157ebb0 (runtime, high); signature (low): `undefined RenderShadowMaps(BSShadowDirectionalLight * this, int * param_1)`; `RenderShadowMaps`: renders each map into depth target 2 slice k (and target 3 with iEnableShadowCastingFlag 2), then the focus maps into target 4 when focusShadowsActive (high); semantic signature: `void (BSShadowLight* this, u32* counter)`
     pub slot_10: *const c_void,
-    /// `BSShadowLight::SetShadowMapCount` at 0x155c850 (semantic, high); signature (untiered): `undefined SetShadowMapCount(BSShadowLight * this, uint param_1)`
+    /// `BSShadowLight::SetShadowMapCount` at 0x155c850 (semantic, high); signature (low): `undefined SetShadowMapCount(BSShadowLight * this, uint param_1)`
     pub slot_11: *const c_void,
-    /// `BSShadowDirectionalLight::ReleaseShadowMaps` at 0x157ed20 (semantic, high); signature (untiered): `undefined ReleaseShadowMaps(BSShadowDirectionalLight * this)`; `ReleaseShadowMaps`: maps 1.. get depthTarget -1 and texelScale 1.0, then BSShadowLight::ReleaseShadowMaps (high); semantic signature: `void (BSShadowDirectionalLight* this)`
+    /// `BSShadowDirectionalLight::ReleaseShadowMaps` at 0x157ed20 (semantic, high); signature (high): `undefined ReleaseShadowMaps(BSShadowDirectionalLight * this)`; `ReleaseShadowMaps`: maps 1.. get depthTarget -1 and texelScale 1.0, then BSShadowLight::ReleaseShadowMaps (high); semantic signature: `void (BSShadowDirectionalLight* this)`
     pub slot_12: *const c_void,
     /// `BSShadowDirectionalLight::vfunc_13` at 0x157ed10 (rtti, high); signature (low): `undefined4 vfunc_13(BSShadowDirectionalLight * this, undefined4 param_1)`
     pub slot_13: *const c_void,
     /// `BSShadowDirectionalLight::vfunc_14` at 0x1582030 (rtti, high); signature (low): `undefined1 vfunc_14(void)`
     pub slot_14: *const c_void,
-    /// `BSShadowDirectionalLight::UpdateCascadeFrusta` at 0x157ea50 (semantic, medium); signature (untiered): `undefined UpdateCascadeFrusta(BSShadowDirectionalLight * this, float * param_1, undefined8 * param_2)`; `UpdateCascadeFrusta`: computes the cascade frusta once per update (+0xd0 marks done) (medium); semantic signature: `void (BSShadowDirectionalLight* this, ...)`
+    /// `BSShadowDirectionalLight::UpdateCascadeFrusta` at 0x157ea50 (semantic, medium); signature (low): `undefined UpdateCascadeFrusta(BSShadowDirectionalLight * this, float * param_1, undefined8 * param_2)`; `UpdateCascadeFrusta`: computes the cascade frusta once per update (+0xd0 marks done) (medium); semantic signature: `void (BSShadowDirectionalLight* this, ...)`
     pub slot_15: *const c_void,
-    /// `BSShadowDirectionalLight::UpdateForCamera` at 0x157f080 (runtime, high); signature (untiered): `undefined8 UpdateForCamera(BSShadowDirectionalLight * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `UpdateForCamera`: per-frame setup against the scene camera: sun direction, cascade split and camera placement (bDisableShadowJumps, fSunStaticTimeUpdateScale) (high); semantic signature: `bool (BSShadowLight* this, NiCamera* camera)`
+    /// `BSShadowDirectionalLight::UpdateForCamera` at 0x157f080 (runtime, high); signature (low): `undefined8 UpdateForCamera(BSShadowDirectionalLight * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `UpdateForCamera`: per-frame setup against the scene camera: sun direction, cascade split and camera placement (bDisableShadowJumps, fSunStaticTimeUpdateScale) (high); semantic signature: `bool (BSShadowLight* this, NiCamera* camera)`
     pub slot_16: *const c_void,
 }
 impl BSShadowDirectionalLight_vtable {
@@ -4147,13 +3877,13 @@ pub struct BSShadowFrustumLight_vtable {
     pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
-    /// `BSShadowFrustumLight::SetLight` at 0x1587ae0 (semantic, medium); signature (untiered): `undefined SetLight(BSShadowFrustumLight * this, longlong * param_1)`; `SetLight`: BSLight slot 2, then sizes the map camera's frustum (far = light radius) and copies the light's local transform into it (medium); semantic signature: `void (BSShadowFrustumLight* this, NiLight* light)`
+    /// `BSShadowFrustumLight::SetLight` at 0x1587ae0 (semantic, medium); signature (low): `undefined SetLight(BSShadowFrustumLight * this, longlong * param_1)`; `SetLight`: BSLight slot 2, then sizes the map camera's frustum (far = light radius) and copies the light's local transform into it (medium); semantic signature: `void (BSShadowFrustumLight* this, NiLight* light)`
     pub slot_2: *const c_void,
-    /// `BSShadowLight::IsShadowLight` at 0x155dbd0 (semantic, high); signature (untiered): `undefined1 IsShadowLight(void)`
+    /// `BSShadowLight::IsShadowLight` at 0x155dbd0 (semantic, high); signature (low): `undefined1 IsShadowLight(void)`
     pub slot_3: *const c_void,
-    /// `BSShadowFrustumLight::SupportsFocusShadows` at 0x1587f70 (semantic, medium); signature (untiered): `undefined1 SupportsFocusShadows(void)`; `SupportsFocusShadows`: true (medium); semantic signature: `bool (BSShadowLight* this)`
+    /// `BSShadowFrustumLight::SupportsFocusShadows` at 0x1587f70 (semantic, medium); signature (low): `undefined1 SupportsFocusShadows(void)`; `SupportsFocusShadows`: true (medium); semantic signature: `bool (BSShadowLight* this)`
     pub slot_4: *const c_void,
-    /// `BSShadowFrustumLight::IsFrustumLight` at 0x1587f80 (semantic, medium); signature (untiered): `undefined1 IsFrustumLight(void)`; `IsFrustumLight`: true only for the frustum light (medium); semantic signature: `bool (BSShadowLight* this)`
+    /// `BSShadowFrustumLight::IsFrustumLight` at 0x1587f80 (semantic, medium); signature (low): `undefined1 IsFrustumLight(void)`; `IsFrustumLight`: true only for the frustum light (medium); semantic signature: `bool (BSShadowLight* this)`
     pub slot_5: *const c_void,
     /// `BSShadowLight::vfunc_6` at 0x155db90 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -4161,13 +3891,13 @@ pub struct BSShadowFrustumLight_vtable {
     pub slot_7: *const c_void,
     /// `BSShadowLight::vfunc_8` at 0x155dba0 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
     pub slot_8: *const c_void,
-    /// `BSShadowFrustumLight::CullCasters` at 0x15879d0 (semantic, medium); signature (untiered): `undefined CullCasters(BSShadowFrustumLight * this, uint * param_1, int param_2)`; `CullCasters`: tags the map's accumulator (+0x160 = index + 1, +0x164 = 1 << index) and culls the casters into it (medium); semantic signature: `void (BSShadowFrustumLight* this, u32* mapCounter, i32 mode)`
+    /// `BSShadowFrustumLight::CullCasters` at 0x15879d0 (semantic, medium); signature (low): `undefined CullCasters(BSShadowFrustumLight * this, uint * param_1, int param_2)`; `CullCasters`: tags the map's accumulator (+0x160 = index + 1, +0x164 = 1 << index) and culls the casters into it (medium); semantic signature: `void (BSShadowFrustumLight* this, u32* mapCounter, i32 mode)`
     pub slot_9: *const c_void,
-    /// `BSShadowFrustumLight::RenderShadowMaps` at 0x1587a30 (semantic, high); signature (untiered): `undefined RenderShadowMaps(BSShadowFrustumLight * this, int * param_1)`; `RenderShadowMaps`: RenderShadowMap on its single map, then the focus maps when focusShadowsActive (high); semantic signature: `void (BSShadowFrustumLight* this, i32* counter)`
+    /// `BSShadowFrustumLight::RenderShadowMaps` at 0x1587a30 (semantic, high); signature (low): `undefined RenderShadowMaps(BSShadowFrustumLight * this, int * param_1)`; `RenderShadowMaps`: RenderShadowMap on its single map, then the focus maps when focusShadowsActive (high); semantic signature: `void (BSShadowFrustumLight* this, i32* counter)`
     pub slot_10: *const c_void,
-    /// `BSShadowLight::SetShadowMapCount` at 0x155c850 (semantic, high); signature (untiered): `undefined SetShadowMapCount(BSShadowLight * this, uint param_1)`
+    /// `BSShadowLight::SetShadowMapCount` at 0x155c850 (semantic, high); signature (low): `undefined SetShadowMapCount(BSShadowLight * this, uint param_1)`
     pub slot_11: *const c_void,
-    /// `BSShadowLight::ReleaseShadowMaps` at 0x155c990 (runtime, medium); signature (untiered): `undefined ReleaseShadowMaps(BSShadowLight * this)`
+    /// `BSShadowLight::ReleaseShadowMaps` at 0x155c990 (runtime, medium); signature (high): `undefined ReleaseShadowMaps(BSShadowLight * this)`
     pub slot_12: *const c_void,
     /// `BSShadowLight::vfunc_13` at 0x155dbf0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
     pub slot_13: *const c_void,
@@ -4175,7 +3905,7 @@ pub struct BSShadowFrustumLight_vtable {
     pub slot_14: *const c_void,
     /// `BSShadowLight::vfunc_15` at 0x155dd20 (rtti, medium); signature (low): `undefined vfunc_15(void)`
     pub slot_15: *const c_void,
-    /// `BSShadowFrustumLight::UpdateForCamera` at 0x1587bc0 (semantic, high); signature (untiered): `bool UpdateForCamera(BSShadowFrustumLight * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `UpdateForCamera`: per-frame shadow light update against the frame camera: distance test scaled by the camera's lodAdjust (+0x184); returns false when the light is dropped (+0x5c == 0xff) (high); semantic signature: `bool (BSShadowFrustumLight* this, NiCamera* camera)`
+    /// `BSShadowFrustumLight::UpdateForCamera` at 0x1587bc0 (semantic, high); signature (low): `bool UpdateForCamera(BSShadowFrustumLight * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `UpdateForCamera`: per-frame shadow light update against the frame camera: distance test scaled by the camera's lodAdjust (+0x184); returns false when the light is dropped (+0x5c == 0xff) (high); semantic signature: `bool (BSShadowFrustumLight* this, NiCamera* camera)`
     pub slot_16: *const c_void,
 }
 impl BSShadowFrustumLight_vtable {
@@ -4211,9 +3941,9 @@ pub struct BSShadowLight_vtable {
     pub slot_1: *const c_void,
     /// `BSLight::vfunc_2` at 0x1576ad0 (rtti, medium); signature (low): `undefined vfunc_2(BSLight * this, longlong * param_1)`
     pub slot_2: *const c_void,
-    /// `BSShadowLight::IsShadowLight` at 0x155dbd0 (semantic, high); signature (untiered): `undefined1 IsShadowLight(void)`; `IsShadowLight`: true (high); semantic signature: `bool (BSLight* this)`
+    /// `BSShadowLight::IsShadowLight` at 0x155dbd0 (semantic, high); signature (low): `undefined1 IsShadowLight(void)`; `IsShadowLight`: true (high); semantic signature: `bool (BSLight* this)`
     pub slot_3: *const c_void,
-    /// `BSShadowLight::SupportsFocusShadows` at 0x155d960 (semantic, medium); signature (untiered): `undefined1 SupportsFocusShadows(void)`; `SupportsFocusShadows`: whether the light may own the focus shadow maps: true for directional (0x1582010) and frustum (0x1587f70), false in BSShadowLight and parabolic (medium); semantic signature: `bool (BSShadowLight* this)`
+    /// `BSShadowLight::SupportsFocusShadows` at 0x155d960 (semantic, medium); signature (low): `undefined1 SupportsFocusShadows(void)`; `SupportsFocusShadows`: whether the light may own the focus shadow maps: true for directional (0x1582010) and frustum (0x1587f70), false in BSShadowLight and parabolic (medium); semantic signature: `bool (BSShadowLight* this)`
     pub slot_4: *const c_void,
     /// `BSShadowLight::vfunc_5` at 0x155dbb0 (rtti, medium); signature (low): `undefined1 vfunc_5(void)`
     pub slot_5: *const c_void,
@@ -4227,9 +3957,9 @@ pub struct BSShadowLight_vtable {
     pub slot_9: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_10: *const c_void,
-    /// `BSShadowLight::SetShadowMapCount` at 0x155c850 (semantic, high); signature (untiered): `undefined SetShadowMapCount(BSShadowLight * this, uint param_1)`; `SetShadowMapCount`: resizes shadowMaps and initialises new records (+0xcc 1.0, +0xe8 1, accumulator released) (high); semantic signature: `void (BSShadowLight* this, u32 count)`
+    /// `BSShadowLight::SetShadowMapCount` at 0x155c850 (semantic, high); signature (low): `undefined SetShadowMapCount(BSShadowLight * this, uint param_1)`; `SetShadowMapCount`: resizes shadowMaps and initialises new records (+0xcc 1.0, +0xe8 1, accumulator released) (high); semantic signature: `void (BSShadowLight* this, u32 count)`
     pub slot_11: *const c_void,
-    /// `BSShadowLight::ReleaseShadowMaps` at 0x155c990 (runtime, medium); signature (untiered): `undefined ReleaseShadowMaps(BSShadowLight * this)`; `ReleaseShadowMaps`: returns every map's depth slice to the free mask 0x20d8ff8 and marks the record unassigned (+0x54 = -1) (medium); semantic signature: `void (BSShadowLight* this)`
+    /// `BSShadowLight::ReleaseShadowMaps` at 0x155c990 (runtime, medium); signature (high): `undefined ReleaseShadowMaps(BSShadowLight * this)`; `ReleaseShadowMaps`: returns every map's depth slice to the free mask 0x20d8ff8 and marks the record unassigned (+0x54 = -1) (medium); semantic signature: `void (BSShadowLight* this)`
     pub slot_12: *const c_void,
     /// `BSShadowLight::vfunc_13` at 0x155dbf0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`; `vfunc_13`: 0 in BSShadowLight, frustum and parabolic; the directional light returns its argument (0x157ed10) (low); semantic signature: `u32 (BSShadowLight* this, u32 value)`
     pub slot_13: *const c_void,
@@ -4273,23 +4003,23 @@ pub struct BSShadowParabolicLight_vtable {
     pub slot_1: *const c_void,
     /// `BSLight::vfunc_2` at 0x1576ad0 (rtti, medium); signature (low): `undefined vfunc_2(BSLight * this, longlong * param_1)`
     pub slot_2: *const c_void,
-    /// `BSShadowLight::IsShadowLight` at 0x155dbd0 (semantic, high); signature (untiered): `undefined1 IsShadowLight(void)`
+    /// `BSShadowLight::IsShadowLight` at 0x155dbd0 (semantic, high); signature (low): `undefined1 IsShadowLight(void)`
     pub slot_3: *const c_void,
-    /// `BSShadowLight::SupportsFocusShadows` at 0x155d960 (semantic, medium); signature (untiered): `undefined1 SupportsFocusShadows(void)`
+    /// `BSShadowLight::SupportsFocusShadows` at 0x155d960 (semantic, medium); signature (low): `undefined1 SupportsFocusShadows(void)`
     pub slot_4: *const c_void,
     /// `BSShadowLight::vfunc_5` at 0x155dbb0 (rtti, medium); signature (low): `undefined1 vfunc_5(void)`
     pub slot_5: *const c_void,
     /// `BSShadowLight::vfunc_6` at 0x155db90 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
     pub slot_6: *const c_void,
-    /// `BSShadowParabolicLight::IsParabolicLight` at 0x1588e30 (semantic, medium); signature (untiered): `undefined1 IsParabolicLight(void)`; `IsParabolicLight`: true only for the parabolic light (medium); semantic signature: `bool (BSShadowLight* this)`
+    /// `BSShadowParabolicLight::IsParabolicLight` at 0x1588e30 (semantic, medium); signature (low): `undefined1 IsParabolicLight(void)`; `IsParabolicLight`: true only for the parabolic light (medium); semantic signature: `bool (BSShadowLight* this)`
     pub slot_7: *const c_void,
-    /// `BSShadowParabolicLight::UsesTwoMaps` at 0x1588e20 (semantic, high); signature (untiered): `bool UsesTwoMaps(BSShadowParabolicLight * this)`; `UsesTwoMaps`: shadowMapCount == 2 (both hemispheres) (high); semantic signature: `bool (BSShadowParabolicLight* this)`
+    /// `BSShadowParabolicLight::UsesTwoMaps` at 0x1588e20 (semantic, high); signature (high): `bool UsesTwoMaps(BSShadowParabolicLight * this)`; `UsesTwoMaps`: shadowMapCount == 2 (both hemispheres) (high); semantic signature: `bool (BSShadowParabolicLight* this)`
     pub slot_8: *const c_void,
-    /// `BSShadowParabolicLight::CullCasters` at 0x15888d0 (semantic, medium); signature (untiered): `undefined CullCasters(BSShadowParabolicLight * this, uint * param_1, int param_2, longlong * param_3)`; `CullCasters`: tags the map accumulators and culls the casters (light+0x528 candidates when present) with the parabolic culler (medium); semantic signature: `void (BSShadowParabolicLight* this, u32* mapCounter, u32 lightOrdinal)`
+    /// `BSShadowParabolicLight::CullCasters` at 0x15888d0 (semantic, medium); signature (low): `undefined CullCasters(BSShadowParabolicLight * this, uint * param_1, int param_2, longlong * param_3)`; `CullCasters`: tags the map accumulators and culls the casters (light+0x528 candidates when present) with the parabolic culler (medium); semantic signature: `void (BSShadowParabolicLight* this, u32* mapCounter, u32 lightOrdinal)`
     pub slot_9: *const c_void,
-    /// `BSShadowParabolicLight::RenderShadowMaps` at 0x1588c80 (semantic, medium); signature (untiered): `undefined RenderShadowMaps(BSShadowParabolicLight * this, int * param_1)`; `RenderShadowMaps`: RenderShadowMap per map (medium); semantic signature: `void (BSShadowParabolicLight* this, i32* drawCounter)`
+    /// `BSShadowParabolicLight::RenderShadowMaps` at 0x1588c80 (semantic, medium); signature (low): `undefined RenderShadowMaps(BSShadowParabolicLight * this, int * param_1)`; `RenderShadowMaps`: RenderShadowMap per map (medium); semantic signature: `void (BSShadowParabolicLight* this, i32* drawCounter)`
     pub slot_10: *const c_void,
-    /// `BSShadowLight::SetShadowMapCount` at 0x155c850 (semantic, high); signature (untiered): `undefined SetShadowMapCount(BSShadowLight * this, uint param_1)`
+    /// `BSShadowLight::SetShadowMapCount` at 0x155c850 (semantic, high); signature (low): `undefined SetShadowMapCount(BSShadowLight * this, uint param_1)`
     pub slot_11: *const c_void,
     /// `BSShadowParabolicLight::vfunc_12` at 0x1588d50 (rtti, high); signature (high): `undefined vfunc_12(BSShadowParabolicLight * this)`
     pub slot_12: *const c_void,
@@ -4299,7 +4029,7 @@ pub struct BSShadowParabolicLight_vtable {
     pub slot_14: *const c_void,
     /// `BSShadowLight::vfunc_15` at 0x155dd20 (rtti, medium); signature (low): `undefined vfunc_15(void)`
     pub slot_15: *const c_void,
-    /// `BSShadowParabolicLight::UpdateForCamera` at 0x1588590 (semantic, high); signature (untiered): `undefined8 UpdateForCamera(BSShadowParabolicLight * this, longlong param_1)`; `UpdateForCamera`: copies the NiLight's world transform into the map cameras (second map mirrored), visible = light sphere (radius NiLight+0x128) inside the camera frustum, then dropped when +0x63 and (d^2 - r^2) * camera+0x184 >= g_ShadowDistanceSq (high); semantic signature: `bool (BSShadowParabolicLight* this, NiCamera* camera)`
+    /// `BSShadowParabolicLight::UpdateForCamera` at 0x1588590 (semantic, high); signature (low): `undefined8 UpdateForCamera(BSShadowParabolicLight * this, longlong param_1)`; `UpdateForCamera`: copies the NiLight's world transform into the map cameras (second map mirrored), visible = light sphere (radius NiLight+0x128) inside the camera frustum, then dropped when +0x63 and (d^2 - r^2) * camera+0x184 >= g_ShadowDistanceSq (high); semantic signature: `bool (BSShadowParabolicLight* this, NiCamera* camera)`
     pub slot_16: *const c_void,
 }
 impl BSShadowParabolicLight_vtable {
@@ -4518,9 +4248,9 @@ pub struct BSSkinnedDecalTriShape_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (untiered): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (low): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
     pub slot_37: *const c_void,
-    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (untiered): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (low): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
     pub slot_38: *const c_void,
     /// `BSGeometry::vfunc_39` at 0x26d430 (rtti, medium); signature (low): `undefined vfunc_39(BSGeometry * this, longlong * param_1)`
     pub slot_39: *const c_void,
@@ -4528,7 +4258,7 @@ pub struct BSSkinnedDecalTriShape_vtable {
     pub slot_40: *const c_void,
     /// `NiAVObject::vfunc_41` at 0xee0a30 (rtti, medium); signature (low): `undefined vfunc_41(void)`
     pub slot_41: *const c_void,
-    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (untiered): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (low): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
     pub slot_42: *const c_void,
     /// `BSGeometry::vfunc_43` at 0xefc680 (rtti, medium); signature (low): `undefined vfunc_43(BSGeometry * this, char * param_1, byte param_2, byte * param_3)`
     pub slot_43: *const c_void,
@@ -4538,17 +4268,17 @@ pub struct BSSkinnedDecalTriShape_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (high): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
-    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (low): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
-    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (untiered): `undefined UpdateTransformsAndBound(NiAVObject * this)`
+    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (high): `undefined UpdateTransformsAndBound(NiAVObject * this)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `BSGeometry::OnVisible` at 0xefc980 (semantic, high); signature (untiered): `undefined OnVisible(BSGeometry * this, longlong * param_1, undefined8 param_2)`
+    /// `BSGeometry::OnVisible` at 0xefc980 (semantic, high); signature (low): `undefined OnVisible(BSGeometry * this, longlong * param_1, undefined8 param_2)`
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
@@ -4568,13 +4298,13 @@ pub struct BSSkyShader_vtable {
     pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
-    /// `BSSkyShader::SetupTechnique` at 0x1552280 (semantic, high); signature (untiered): `ulonglong SetupTechnique(BSSkyShader * this, uint param_1)`
+    /// `BSSkyShader::SetupTechnique` at 0x1552280 (semantic, high); signature (low): `ulonglong SetupTechnique(BSSkyShader * this, uint param_1)`
     pub slot_2: *const c_void,
-    /// `BSSkyShader::RestoreTechnique` at 0x1552190 (semantic, high); signature (untiered): `undefined RestoreTechnique(void)`
+    /// `BSSkyShader::RestoreTechnique` at 0x1552190 (semantic, high); signature (low): `undefined RestoreTechnique(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSSkyShader::vfunc_6` at 0x15525b0 (rtti, high); signature (low): `undefined vfunc_6(BSSkyShader * this, longlong param_1)`
     pub slot_6: *const c_void,
@@ -4688,7 +4418,7 @@ pub struct BSSkyShaderProperty_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `BSShaderProperty::GetPropertyType` at 0xf0f110 (semantic, medium); signature (untiered): `undefined8 GetPropertyType(void)`
+    /// `BSShaderProperty::GetPropertyType` at 0xf0f110 (semantic, medium); signature (low): `undefined8 GetPropertyType(void)`
     pub slot_37: *const c_void,
     /// `BSShaderProperty::Update` at 0xef26b0 (semantic, medium); signature (untiered): `undefined Update(BSShaderProperty * this, undefined8 param_1)`
     pub slot_38: *const c_void,
@@ -4696,13 +4426,13 @@ pub struct BSSkyShaderProperty_vtable {
     pub slot_39: *const c_void,
     /// `NiShadeProperty::vfunc_40` at 0xf0ef00 (rtti, medium); signature (low): `undefined1 vfunc_40(void)`
     pub slot_40: *const c_void,
-    /// `BSShaderProperty::SetShadowLightBit` at 0x14e77b0 (semantic, medium); signature (untiered): `undefined SetShadowLightBit(BSShaderProperty * this, int param_1)`
+    /// `BSShaderProperty::SetShadowLightBit` at 0x14e77b0 (semantic, medium); signature (low): `undefined SetShadowLightBit(BSShaderProperty * this, int param_1)`
     pub slot_41: *const c_void,
     /// `BSSkyShaderProperty::vfunc_42` at 0x1553550 (rtti, high); signature (low): `undefined8 * vfunc_42(BSSkyShaderProperty * this, undefined8 param_1, int param_2)`
     pub slot_42: *const c_void,
-    /// `BSShaderProperty::GetDepthRenderPasses` at 0x14e7af0 (semantic, high); signature (untiered): `undefined8 GetDepthRenderPasses(void)`
+    /// `BSShaderProperty::GetDepthRenderPasses` at 0x14e7af0 (semantic, high); signature (low): `undefined8 GetDepthRenderPasses(void)`
     pub slot_43: *const c_void,
-    /// `BSShaderProperty::GetLocalMapRenderPasses` at 0x14e7b00 (semantic, low); signature (untiered): `undefined8 GetLocalMapRenderPasses(void)`
+    /// `BSShaderProperty::GetLocalMapRenderPasses` at 0x14e7b00 (semantic, low); signature (low): `undefined8 GetLocalMapRenderPasses(void)`
     pub slot_44: *const c_void,
     /// `BSShaderProperty::vfunc_45` at 0x14e7b10 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -4710,15 +4440,15 @@ pub struct BSSkyShaderProperty_vtable {
     pub slot_46: *const c_void,
     /// `BSShaderProperty::vfunc_47` at 0x14e8640 (rtti, medium); signature (low): `undefined8 vfunc_47(void)`
     pub slot_47: *const c_void,
-    /// `BSShaderProperty::IsEquivalent` at 0x14e7ec0 (semantic, medium); signature (untiered): `ulonglong IsEquivalent(BSShaderProperty * this, longlong param_1)`
+    /// `BSShaderProperty::IsEquivalent` at 0x14e7ec0 (semantic, medium); signature (low): `ulonglong IsEquivalent(BSShaderProperty * this, longlong param_1)`
     pub slot_48: *const c_void,
-    /// `BSShaderProperty::SetMaterialAlpha` at 0x14e8760 (semantic, high); signature (untiered): `undefined SetMaterialAlpha(void)`
+    /// `BSShaderProperty::SetMaterialAlpha` at 0x14e8760 (semantic, high); signature (low): `undefined SetMaterialAlpha(void)`
     pub slot_49: *const c_void,
-    /// `BSShaderProperty::GetMaterialAlpha` at 0x14e8680 (semantic, high); signature (untiered): `undefined4 GetMaterialAlpha(void)`
+    /// `BSShaderProperty::GetMaterialAlpha` at 0x14e8680 (semantic, high); signature (low): `undefined4 GetMaterialAlpha(void)`
     pub slot_50: *const c_void,
     /// `BSSkyShaderProperty::vfunc_51` at 0x1553750 (rtti, high); signature (low): `undefined vfunc_51(BSSkyShaderProperty * this, longlong * param_1)`
     pub slot_51: *const c_void,
-    /// `BSShaderProperty::ClearRenderPasses` at 0x14e7fb0 (semantic, high); signature (untiered): `undefined ClearRenderPasses(BSShaderProperty * this)`
+    /// `BSShaderProperty::ClearRenderPasses` at 0x14e7fb0 (semantic, high); signature (high): `undefined ClearRenderPasses(BSShaderProperty * this)`
     pub slot_52: *const c_void,
     /// `BSSkyShaderProperty::vfunc_53` at 0x1553540 (rtti, high); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
@@ -4728,17 +4458,17 @@ pub struct BSSkyShaderProperty_vtable {
     pub slot_55: *const c_void,
     /// `BSShaderProperty::vfunc_56` at 0x14e8650 (rtti, medium); signature (low): `undefined8 vfunc_56(void)`
     pub slot_56: *const c_void,
-    /// `BSShaderProperty::IsNotRefractive` at 0x14e85c0 (semantic, low); signature (untiered): `undefined1 IsNotRefractive(void)`
+    /// `BSShaderProperty::IsNotRefractive` at 0x14e85c0 (semantic, low); signature (low): `undefined1 IsNotRefractive(void)`
     pub slot_57: *const c_void,
     /// `BSShaderProperty::vfunc_58` at 0x14e8670 (rtti, medium); signature (low): `undefined vfunc_58(void)`
     pub slot_58: *const c_void,
-    /// `BSShaderProperty::PrecacheTechniques` at 0x14e8380 (semantic, low); signature (untiered): `undefined PrecacheTechniques(void)`
+    /// `BSShaderProperty::PrecacheTechniques` at 0x14e8380 (semantic, low); signature (low): `undefined PrecacheTechniques(void)`
     pub slot_59: *const c_void,
     /// `BSShaderProperty::vfunc_60` at 0x14e8660 (rtti, medium); signature (low): `undefined1 vfunc_60(void)`
     pub slot_60: *const c_void,
-    /// `BSShaderProperty::GetDepthTechnique` at 0x14e85e0 (semantic, high); signature (untiered): `undefined8 GetDepthTechnique(void)`
+    /// `BSShaderProperty::GetDepthTechnique` at 0x14e85e0 (semantic, high); signature (low): `undefined8 GetDepthTechnique(void)`
     pub slot_61: *const c_void,
-    /// `BSShaderProperty::GetMaterialType` at 0x14e8610 (semantic, medium); signature (untiered): `undefined8 GetMaterialType(void)`
+    /// `BSShaderProperty::GetMaterialType` at 0x14e8610 (semantic, medium); signature (low): `undefined8 GetMaterialType(void)`
     pub slot_62: *const c_void,
 }
 impl BSSkyShaderProperty_vtable {
@@ -4970,9 +4700,9 @@ pub struct BSSplatterExtraData_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiExtraData::IsStreamable` at 0xef9b60 (semantic, medium); signature (untiered): `undefined1 IsStreamable(void)`
+    /// `NiExtraData::IsStreamable` at 0xef9b60 (semantic, medium); signature (low): `undefined1 IsStreamable(void)`
     pub slot_37: *const c_void,
-    /// `NiExtraData::Slot38ReturnsTrue` at 0xef9b70 (semantic, low); signature (untiered): `undefined1 Slot38ReturnsTrue(void)`
+    /// `NiExtraData::Slot38ReturnsTrue` at 0xef9b70 (semantic, low); signature (low): `undefined1 Slot38ReturnsTrue(void)`
     pub slot_38: *const c_void,
 }
 impl BSSplatterExtraData_vtable {
@@ -5299,9 +5029,9 @@ pub struct BSStripParticleSystem_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (untiered): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (low): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
     pub slot_37: *const c_void,
-    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (untiered): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (low): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
     pub slot_38: *const c_void,
     /// `BSGeometry::vfunc_39` at 0x26d430 (rtti, medium); signature (low): `undefined vfunc_39(BSGeometry * this, longlong * param_1)`
     pub slot_39: *const c_void,
@@ -5309,7 +5039,7 @@ pub struct BSStripParticleSystem_vtable {
     pub slot_40: *const c_void,
     /// `NiAVObject::vfunc_41` at 0xee0a30 (rtti, medium); signature (low): `undefined vfunc_41(void)`
     pub slot_41: *const c_void,
-    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (untiered): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (low): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
     pub slot_42: *const c_void,
     /// `NiParticleSystem::vfunc_43` at 0xf99ba0 (rtti, medium); signature (low): `undefined vfunc_43(NiParticleSystem * this, char * param_1, undefined8 param_2, char * param_3)`
     pub slot_43: *const c_void,
@@ -5319,21 +5049,21 @@ pub struct BSStripParticleSystem_vtable {
     pub slot_45: *const c_void,
     /// `NiParticleSystem::vfunc_46` at 0xf99b20 (rtti, medium); signature (low): `undefined vfunc_46(NiParticleSystem * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (high): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
     /// `NiParticleSystem::vfunc_48` at 0xf99e20 (rtti, medium); signature (low): `undefined vfunc_48(void)`
     pub slot_48: *const c_void,
-    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (untiered): `undefined UpdateTransformsAndBound(NiAVObject * this)`
+    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (high): `undefined UpdateTransformsAndBound(NiAVObject * this)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
     /// `BSStripParticleSystem::vfunc_52` at 0xf9fc70 (rtti, high); signature (untiered): `undefined vfunc_52(BSStripParticleSystem * this, longlong * param_1, undefined8 param_2)`
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (low): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSGeometry::vfunc_55` at 0x26d480 (rtti, medium); signature (low): `undefined8 vfunc_55(void)`
     pub slot_55: *const c_void,
@@ -5423,9 +5153,9 @@ pub struct BSSubIndexLandTriShape_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (untiered): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (low): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
     pub slot_37: *const c_void,
-    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (untiered): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (low): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
     pub slot_38: *const c_void,
     /// `BSGeometry::vfunc_39` at 0x26d430 (rtti, medium); signature (low): `undefined vfunc_39(BSGeometry * this, longlong * param_1)`
     pub slot_39: *const c_void,
@@ -5433,7 +5163,7 @@ pub struct BSSubIndexLandTriShape_vtable {
     pub slot_40: *const c_void,
     /// `NiAVObject::vfunc_41` at 0xee0a30 (rtti, medium); signature (low): `undefined vfunc_41(void)`
     pub slot_41: *const c_void,
-    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (untiered): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (low): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
     pub slot_42: *const c_void,
     /// `BSGeometry::vfunc_43` at 0xefc680 (rtti, medium); signature (low): `undefined vfunc_43(BSGeometry * this, char * param_1, byte param_2, byte * param_3)`
     pub slot_43: *const c_void,
@@ -5443,21 +5173,21 @@ pub struct BSSubIndexLandTriShape_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (high): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
-    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (low): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
-    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (untiered): `undefined UpdateTransformsAndBound(NiAVObject * this)`
+    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (high): `undefined UpdateTransformsAndBound(NiAVObject * this)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
     /// `BSSubIndexTriShape::vfunc_52` at 0xff6990 (rtti, medium); signature (low): `undefined vfunc_52(BSSubIndexTriShape * this, longlong * param_1, undefined8 param_2)`
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (low): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSGeometry::vfunc_55` at 0x26d480 (rtti, medium); signature (low): `undefined8 vfunc_55(void)`
     pub slot_55: *const c_void,
@@ -5543,9 +5273,9 @@ pub struct BSSubIndexTriShape_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (untiered): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (low): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
     pub slot_37: *const c_void,
-    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (untiered): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (low): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
     pub slot_38: *const c_void,
     /// `BSGeometry::vfunc_39` at 0x26d430 (rtti, medium); signature (low): `undefined vfunc_39(BSGeometry * this, longlong * param_1)`
     pub slot_39: *const c_void,
@@ -5553,7 +5283,7 @@ pub struct BSSubIndexTriShape_vtable {
     pub slot_40: *const c_void,
     /// `NiAVObject::vfunc_41` at 0xee0a30 (rtti, medium); signature (low): `undefined vfunc_41(void)`
     pub slot_41: *const c_void,
-    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (untiered): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (low): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
     pub slot_42: *const c_void,
     /// `BSGeometry::vfunc_43` at 0xefc680 (rtti, medium); signature (low): `undefined vfunc_43(BSGeometry * this, char * param_1, byte param_2, byte * param_3)`
     pub slot_43: *const c_void,
@@ -5563,21 +5293,21 @@ pub struct BSSubIndexTriShape_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (high): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
-    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (low): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
-    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (untiered): `undefined UpdateTransformsAndBound(NiAVObject * this)`
+    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (high): `undefined UpdateTransformsAndBound(NiAVObject * this)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
     /// `BSSubIndexTriShape::vfunc_52` at 0xff6990 (rtti, medium); signature (low): `undefined vfunc_52(BSSubIndexTriShape * this, longlong * param_1, undefined8 param_2)`
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (low): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSGeometry::vfunc_55` at 0x26d480 (rtti, medium); signature (low): `undefined8 vfunc_55(void)`
     pub slot_55: *const c_void,
@@ -6944,9 +6674,9 @@ pub struct BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable {
     pub slot_3: *const c_void,
     /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::TryPop` at 0x116dc70 (semantic, high); signature (untiered): `uint TryPop(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this)`; `TryPop`: one lock attempt, then slot 6 (high); semantic signature: `bool (this, UIMessage** out)`
     pub slot_4: *const c_void,
-    /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::PushImpl` at 0x116cd40 (semantic, high); signature (untiered): `longlong PushImpl(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this, undefined8 * param_1)`; `PushImpl`: ring insert, false when 100 are queued (high); semantic signature: `bool (this, UIMessage** msg)`
+    /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::PushImpl` at 0x116cd40 (semantic, high); signature (low): `longlong PushImpl(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this, undefined8 * param_1)`; `PushImpl`: ring insert, false when 100 are queued (high); semantic signature: `bool (this, UIMessage** msg)`
     pub slot_5: *const c_void,
-    /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::PopImpl` at 0x116ccd0 (semantic, high); signature (untiered): `bool PopImpl(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this, undefined8 * param_1)`; `PopImpl`: ring remove, false when empty (high); semantic signature: `bool (this, UIMessage** out)`
+    /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::PopImpl` at 0x116ccd0 (semantic, high); signature (low): `bool PopImpl(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this, undefined8 * param_1)`; `PopImpl`: ring remove, false when empty (high); semantic signature: `bool (this, UIMessage** out)`
     pub slot_6: *const c_void,
 }
 impl BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable {
@@ -10373,5 +10103,285 @@ pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingG
 }
 impl BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathin_1d2591ff19bf_vtable {
     pub const ID: u64 = 212954;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>,CombatObject>::vftable` at 0x195c6d0, id 212989 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlankDistant_Comba_c0bef157139a_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>,CombatObject>::vdtor` at 0x893d70 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>,CombatObject>::vfunc_1` at 0x893c60 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>,CombatObject>::vfunc_2` at 0x893d50 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlankDistant_Comba_c0bef157139a_vtable {
+    pub const ID: u64 = 212989;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject>::vftable` at 0x195e140, id 213205 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathing_33afdcacf272_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject>::vdtor` at 0x8a4190 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject>::vfunc_1` at 0x8a40a0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject>::vfunc_2` at 0x8a4170 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathing_33afdcacf272_vtable {
+    pub const ID: u64 = 213205;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject>::vftable` at 0x196a130, id 214762 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPath_4cf8fccdfa24_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject>::vdtor` at 0x8ec940 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject>::vfunc_1` at 0x8ec860 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject>::vfunc_2` at 0x8ec920 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPath_4cf8fccdfa24_vtable {
+    pub const ID: u64 = 214762;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>,CombatObject>::vftable` at 0x19627d0, id 213816 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_fc0d0519513a_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>,CombatObject>::vdtor` at 0x8bda30 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>,CombatObject>::vfunc_1` at 0x8bd910 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>,CombatObject>::vfunc_2` at 0x8bda10 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_fc0d0519513a_vtable {
+    pub const ID: u64 = 213816;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject>::vftable` at 0x1964a40, id 214053 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicySearch_CombatPathi_8469879344cf_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject>::vdtor` at 0x8cbe40 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject>::vfunc_1` at 0x8cbd40 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject>::vfunc_2` at 0x8cbe20 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicySearch_CombatPathi_8469879344cf_vtable {
+    pub const ID: u64 = 214053;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject>::vftable` at 0x1964c90, id 214100 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicySearchWander_Comba_6e2a578139fb_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject>::vdtor` at 0x8cc440 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject>::vfunc_1` at 0x8cc380 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject>::vfunc_2` at 0x8cc420 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicySearchWander_Comba_6e2a578139fb_vtable {
+    pub const ID: u64 = 214100;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestHover,CombatPathDestinationNone>,CombatObject>::vftable` at 0x19698b8, id 214682 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestHover_CombatPathDestinationNone_CombatObject_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestHover,CombatPathDestinationNone>,CombatObject>::vdtor` at 0x8ea130 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestHover,CombatPathDestinationNone>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestHover,CombatPathDestinationNone>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestHover,CombatPathDestinationNone>,CombatObject>::vfunc_1` at 0x8ea070 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestHover,CombatPathDestinationNone>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestHover,CombatPathDestinationNone>,CombatObject>::vfunc_2` at 0x8ea110 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestHover,CombatPathDestinationNone>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestHover_CombatPathDestinationNone_CombatObject_vtable {
+    pub const ID: u64 = 214682;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestLanding,CombatPathDestinationLocation>,CombatObject>::vftable` at 0x1969838, id 214670 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestLanding_CombatPathDestinationLocation_CombatObject_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestLanding,CombatPathDestinationLocation>,CombatObject>::vdtor` at 0x8e9fb0 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestLanding,CombatPathDestinationLocation>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestLanding,CombatPathDestinationLocation>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestLanding,CombatPathDestinationLocation>,CombatObject>::vfunc_1` at 0x8e9ea0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestLanding,CombatPathDestinationLocation>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestLanding,CombatPathDestinationLocation>,CombatObject>::vfunc_2` at 0x8e9f90 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestLanding,CombatPathDestinationLocation>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestLanding_CombatPathDestinationLocation_CombatObject_vtable {
+    pub const ID: u64 = 214670;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationLocations>,CombatObject>::vftable` at 0x1969398, id 214561 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationLocations_CombatObject_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationLocations>,CombatObject>::vdtor` at 0x8e9030 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationLocations>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationLocations>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationLocations>,CombatObject>::vfunc_1` at 0x8e8f40 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationLocations>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationLocations>,CombatObject>::vfunc_2` at 0x8e9010 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationLocations>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationLocations_CombatObject_vtable {
+    pub const ID: u64 = 214561;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>,CombatObject>::vftable` at 0x1969418, id 214573 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationRefs_CombatObject_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>,CombatObject>::vdtor` at 0x8e91c0 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>,CombatObject>::vfunc_1` at 0x8e90f0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>,CombatObject>::vfunc_2` at 0x8e91a0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationRefs_CombatObject_vtable {
+    pub const ID: u64 = 214573;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>,CombatObject>::vftable` at 0x19697b8, id 214658 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestOrbit_CombatPathDestinationLocation_CombatObject_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>,CombatObject>::vdtor` at 0x8e9de0 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>,CombatObject>::vfunc_1` at 0x8e9cd0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>,CombatObject>::vfunc_2` at 0x8e9dc0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestOrbit_CombatPathDestinationLocation_CombatObject_vtable {
+    pub const ID: u64 = 214658;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>,CombatObject>::vftable` at 0x1969638, id 214622 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestRotatePath_CombatPathDestinationLocation_CombatObject_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>,CombatObject>::vdtor` at 0x8e9860 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>,CombatObject>::vfunc_1` at 0x8e9770 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>,CombatObject>::vfunc_2` at 0x8e9840 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestRotatePath_CombatPathDestinationLocation_CombatObject_vtable {
+    pub const ID: u64 = 214622;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>,CombatObject>::vftable` at 0x1969298, id 214536 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestStandard_CombatPathDestinationLocation_CombatObject_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>,CombatObject>::vdtor` at 0x8e8cd0 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>,CombatObject>::vfunc_1` at 0x8e8be0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>,CombatObject>::vfunc_2` at 0x8e8cb0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestStandard_CombatPathDestinationLocation_CombatObject_vtable {
+    pub const ID: u64 = 214536;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationRef>,CombatObject>::vftable` at 0x1969318, id 214549 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestStandard_CombatPathDestinationRef_CombatObject_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationRef>,CombatObject>::vdtor` at 0x8e8e80 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationRef>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationRef>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationRef>,CombatObject>::vfunc_1` at 0x8e8d90 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationRef>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationRef>,CombatObject>::vfunc_2` at 0x8e8e60 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationRef>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestStandard_CombatPathDestinationRef_CombatObject_vtable {
+    pub const ID: u64 = 214549;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>,CombatObject>::vftable` at 0x19695b8, id 214610 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestStraightPath_CombatPathDestinationLocation_CombatObject_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>,CombatObject>::vdtor` at 0x8e96b0 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>,CombatObject>::vfunc_1` at 0x8e95c0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>,CombatObject>::vfunc_2` at 0x8e9690 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestStraightPath_CombatPathDestinationLocation_CombatObject_vtable {
+    pub const ID: u64 = 214610;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>,CombatObject>::vftable` at 0x1969498, id 214585 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationLocations_CombatObject_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>,CombatObject>::vdtor` at 0x8e9370 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>,CombatObject>::vfunc_1` at 0x8e9280 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>,CombatObject>::vfunc_2` at 0x8e9350 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationLocations_CombatObject_vtable {
+    pub const ID: u64 = 214585;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>,CombatObject>::vftable` at 0x1969538, id 214597 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs_CombatObject_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>,CombatObject>::vdtor` at 0x8e9500 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>,CombatObject>::vfunc_1` at 0x8e9430 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>,CombatObject>::vfunc_2` at 0x8e94e0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs_CombatObject_vtable {
+    pub const ID: u64 = 214597;
+}
+
+/// `BSTDerivedCreator<CombatPathingDebugData,CombatObject>::vftable` at 0x19688e8, id 214502 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathingDebugData_CombatObject_vtable {
+    /// `BSTDerivedCreator<CombatPathingDebugData,CombatObject>::vdtor` at 0x8e6910 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathingDebugData,CombatObject> * vdtor(BSTDerivedCreator<CombatPathingDebugData,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathingDebugData,CombatObject>::vfunc_1` at 0x8e67f0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathingDebugData,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathingDebugData,CombatObject>::vfunc_2` at 0x8e68f0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathingDebugData,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathingDebugData_CombatObject_vtable {
+    pub const ID: u64 = 214502;
+}
+
+/// `BSTDerivedCreator<CombatPathingRequestAdapter,BSPathingRequest>::vftable` at 0x19686d8, id 214470 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathingRequestAdapter_BSPathingRequest_vtable {
+    /// `BSTDerivedCreator<CombatPathingRequestAdapter,BSPathingRequest>::vdtor` at 0x8e48c0 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathingRequestAdapter,BSPathingRequest> * vdtor(BSTDerivedCreator<CombatPathingRequestAdapter,BSPathingRequest> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathingRequestAdapter,BSPathingRequest>::vfunc_1` at 0x8e4800 (rtti, medium); signature (low): `PathingRequest * vfunc_1(BSTDerivedCreator<CombatPathingRequestAdapter,BSPathingRequest> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathingRequestAdapter,BSPathingRequest>::vfunc_2` at 0x8e48a0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathingRequestAdapter,BSPathingRequest> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathingRequestAdapter_BSPathingRequest_vtable {
+    pub const ID: u64 = 214470;
+}
+
+/// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vftable` at 0x19628f0, id 213840 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSear_2f4a6bce3959_vtable {
+    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vdtor` at 0x8bdc30 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,BSPathingRequest> * vdtor(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vfunc_1` at 0x8bdb40 (rtti, medium); signature (low): `CombatPathingRequest * vfunc_1(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vfunc_2` at 0x8bdc10 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSear_2f4a6bce3959_vtable {
+    pub const ID: u64 = 213840;
 }
 

@@ -7,698 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `JumpHandler::vftable` at 0x19354a8, id 208731 (rtti, high); 7 slots.
-#[repr(C)]
-pub struct JumpHandler_vtable {
-    /// `JumpHandler::vdtor` at 0x7b1b90 (layout_inference, medium); signature (low): `JumpHandler * vdtor(JumpHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `JumpHandler::CanProcess` at 0x7b4f10 (semantic, high); signature (untiered): `bool CanProcess(JumpHandler * this, longlong * param_1)`; `CanProcess`: Jump (high); semantic signature: `bool (JumpHandler* this, InputEvent* event)`
-    pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (untiered): `undefined ProcessMotionGesture(void)`
-    #[doc(hidden)]
-    pub __slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, high); signature (untiered): `undefined ProcessSixaxis(void)`
-    #[doc(hidden)]
-    pub __slot_3: *const c_void,
-    /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, high); signature (untiered): `undefined ProcessThumbstick(void)`
-    #[doc(hidden)]
-    pub __slot_4: *const c_void,
-    /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, high); signature (untiered): `undefined ProcessMouseMove(void)`
-    #[doc(hidden)]
-    pub __slot_5: *const c_void,
-    /// `JumpHandler::vfunc_6` at 0x7b3150 (rtti, high); signature (low): `undefined vfunc_6(JumpHandler * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_6: *const c_void,
-}
-impl JumpHandler_vtable {
-    pub const ID: u64 = 208731;
-    pub const SLOT_CanProcess: usize = 1;
-    /// Slot 1 as `JumpHandler_vtable_CanProcess`, `None` when the slot is null.
-    #[must_use]
-    pub fn CanProcess(&self) -> Option<JumpHandler_vtable_CanProcess> {
-        unsafe { core::mem::transmute::<*const c_void, Option<JumpHandler_vtable_CanProcess>>(self.slot_1) }
-    }
-}
-/// `JumpHandler::CanProcess`, slot 1: Jump (high).
-pub type JumpHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::JumpHandler, event: *mut crate::InputEvent) -> bool;
-
-/// `KeywordDispelFunctor::vftable` at 0x18f8d48, id 205916 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct KeywordDispelFunctor_vtable {
-    /// `KeywordDispelFunctor::vdtor` at 0x5d4980 (layout_inference, medium); signature (low): `KeywordDispelFunctor * vdtor(KeywordDispelFunctor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `KeywordDispelFunctor::vfunc_1` at 0x5d4570 (rtti, high); signature (low): `undefined8 vfunc_1(KeywordDispelFunctor * this, longlong param_1)`
-    pub slot_1: *const c_void,
-}
-impl KeywordDispelFunctor_vtable {
-    pub const ID: u64 = 205916;
-}
-
-/// `KillActorHandler::vftable` at 0x19380e8, id 208865 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct KillActorHandler_vtable {
-    /// `KillActorHandler::vdtor` at 0x7d4240 (layout_inference, medium); signature (low): `KillActorHandler * vdtor(KillActorHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `KillActorHandler::vfunc_1` at 0x7cd430 (rtti, high); signature (low): `undefined8 vfunc_1(KillActorHandler * this, longlong param_1)`
-    pub slot_1: *const c_void,
-}
-impl KillActorHandler_vtable {
-    pub const ID: u64 = 208865;
-}
-
-/// `KillMoveEndHandler::vftable` at 0x1938400, id 208931 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct KillMoveEndHandler_vtable {
-    /// `KillMoveEndHandler::vdtor` at 0x7d4270 (layout_inference, medium); signature (low): `KillMoveEndHandler * vdtor(KillMoveEndHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `KillMoveEndHandler::vfunc_1` at 0x7ce420 (rtti, high); signature (low): `undefined1 vfunc_1(KillMoveEndHandler * this, longlong param_1)`
-    pub slot_1: *const c_void,
-}
-impl KillMoveEndHandler_vtable {
-    pub const ID: u64 = 208931;
-}
-
-/// `KillMoveStartHandler::vftable` at 0x19383e8, id 208929 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct KillMoveStartHandler_vtable {
-    /// `KillMoveStartHandler::vdtor` at 0x7d42a0 (layout_inference, medium); signature (low): `KillMoveStartHandler * vdtor(KillMoveStartHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `KillMoveStartHandler::vfunc_1` at 0x7ce410 (rtti, high); signature (low): `undefined1 vfunc_1(void)`
-    pub slot_1: *const c_void,
-}
-impl KillMoveStartHandler_vtable {
-    pub const ID: u64 = 208929;
-}
-
-/// `KinectEvent::vftable` at 0x1a23c20, id 236709 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct KinectEvent_vtable {
-    /// `KinectEvent::vdtor` at 0xcfa560 (layout_inference, medium); signature (low): `KinectEvent * vdtor(KinectEvent * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `IDEvent::vfunc_1` at 0x7b4470 (rtti, medium); signature (low): `undefined1 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `IDEvent::vfunc_2` at 0x7b4830 (rtti, medium); signature (high): `IDEvent * vfunc_2(IDEvent * this)`
-    pub slot_2: *const c_void,
-}
-impl KinectEvent_vtable {
-    pub const ID: u64 = 236709;
-}
-
-/// `KinectMenu::vftable` at 0x18f4df0, id 205770 (rtti, high); 9 slots.
-#[repr(C)]
-pub struct KinectMenu_vtable {
-    /// `KinectMenu::vdtor` at 0x5b8a40 (layout_inference, medium); signature (low): `KinectMenu * vdtor(KinectMenu * this, uint param_1, longlong * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `IMenu::Accept` at 0x57b460 (semantic, high); signature (untiered): `undefined Accept(void)`
-    pub slot_1: *const c_void,
-    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
-    pub slot_2: *const c_void,
-    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
-    pub slot_3: *const c_void,
-    /// `KinectMenu::vfunc_4` at 0x5b83f0 (rtti, high); signature (low): `longlong * vfunc_4(KinectMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
-    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (untiered): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
-    pub slot_5: *const c_void,
-    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (untiered): `undefined PostDisplay(IMenu * this)`
-    pub slot_6: *const c_void,
-    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
-    pub slot_7: *const c_void,
-    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (untiered): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
-    pub slot_8: *const c_void,
-}
-impl KinectMenu_vtable {
-    pub const ID: u64 = 205770;
-}
-
-/// `KinectMenu::vftable_30` at 0x18f4e40, id 205772 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct KinectMenu_vtable_30 {
-    /// `KinectMenu::BSTEventSink_MenuOpenCloseEvent_vdtor` at 0x5b8a34 (slot_propagation, medium); signature (high): `undefined BSTEventSink_MenuOpenCloseEvent_vdtor(KinectMenu * this)`
-    pub slot_0: *const c_void,
-    /// `KinectMenu::BSTEventSink_MenuOpenCloseEvent_vfunc_1` at 0x5b8600 (rtti, high); signature (high): `undefined8 BSTEventSink_MenuOpenCloseEvent_vfunc_1(KinectMenu * this)`
-    pub slot_1: *const c_void,
-}
-impl KinectMenu_vtable_30 {
-    pub const ID: u64 = 205772;
-}
-
-/// `KinectStateChangeData::vftable` at 0x19849b8, id 216354 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct KinectStateChangeData_vtable {
-    /// `KinectStateChangeData::vdtor` at 0x98d960 (layout_inference, medium); signature (low): `KinectStateChangeData * vdtor(KinectStateChangeData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl KinectStateChangeData_vtable {
-    pub const ID: u64 = 216354;
-}
-
-/// `KinectUserEventData::vftable` at 0x19849c8, id 216356 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct KinectUserEventData_vtable {
-    /// `KinectUserEventData::vdtor` at 0x98d9b0 (layout_inference, medium); signature (low): `KinectUserEventData * vdtor(KinectUserEventData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl KinectUserEventData_vtable {
-    pub const ID: u64 = 216356;
-}
-
-/// `LargestAreaFunctor::vftable` at 0x17e3528, id 186481 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct LargestAreaFunctor_vtable {
-    /// `LargestAreaFunctor::vdtor` at 0x152600 (layout_inference, medium); signature (low): `LargestAreaFunctor * vdtor(LargestAreaFunctor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `LargestAreaFunctor::vfunc_1` at 0x1522e0 (rtti, high); signature (low): `undefined8 vfunc_1(LargestAreaFunctor * this, longlong param_1)`
-    pub slot_1: *const c_void,
-}
-impl LargestAreaFunctor_vtable {
-    pub const ID: u64 = 186481;
-}
-
-/// `LeftHandSpellCastHandler::vftable` at 0x1937f20, id 208827 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct LeftHandSpellCastHandler_vtable {
-    /// `LeftHandSpellCastHandler::vdtor` at 0x7d42d0 (layout_inference, medium); signature (low): `LeftHandSpellCastHandler * vdtor(LeftHandSpellCastHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `LeftHandSpellCastHandler::vfunc_1` at 0x7cc870 (rtti, high); signature (low): `bool vfunc_1(LeftHandSpellCastHandler * this, longlong * param_1)`
-    pub slot_1: *const c_void,
-}
-impl LeftHandSpellCastHandler_vtable {
-    pub const ID: u64 = 208827;
-}
-
-/// `LeftHandSpellFireHandler::vftable` at 0x1937ed8, id 208821 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct LeftHandSpellFireHandler_vtable {
-    /// `LeftHandSpellFireHandler::vdtor` at 0x7d4300 (layout_inference, medium); signature (low): `LeftHandSpellFireHandler * vdtor(LeftHandSpellFireHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `LeftHandSpellFireHandler::vfunc_1` at 0x7cc6b0 (rtti, high); signature (low): `undefined8 vfunc_1(LeftHandSpellFireHandler * this, longlong * param_1)`
-    pub slot_1: *const c_void,
-}
-impl LeftHandSpellFireHandler_vtable {
-    pub const ID: u64 = 208821;
-}
-
-/// `LevelUpMenu::vftable` at 0x19788b0, id 215560 (rtti, high); 9 slots.
-#[repr(C)]
-pub struct LevelUpMenu_vtable {
-    /// `LevelUpMenu::vdtor` at 0x94aeb0 (slot_propagation, medium); signature (low): `LevelUpMenu * vdtor(LevelUpMenu * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `LevelUpMenu::vfunc_1` at 0x94aa80 (rtti, high); signature (low): `undefined vfunc_1(LevelUpMenu * this, longlong * param_1)`
-    pub slot_1: *const c_void,
-    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
-    pub slot_2: *const c_void,
-    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
-    pub slot_3: *const c_void,
-    /// `IMenu::ProcessMessage` at 0x116ede0 (semantic, high); signature (untiered): `undefined8 ProcessMessage(IMenu * this, longlong param_1)`
-    pub slot_4: *const c_void,
-    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (untiered): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
-    pub slot_5: *const c_void,
-    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (untiered): `undefined PostDisplay(IMenu * this)`
-    pub slot_6: *const c_void,
-    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
-    pub slot_7: *const c_void,
-    /// `LevelUpMenu::vfunc_8` at 0x94acb0 (rtti, high); signature (low): `undefined vfunc_8(LevelUpMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
-    #[doc(hidden)]
-    pub __slot_8: *const c_void,
-}
-impl LevelUpMenu_vtable {
-    pub const ID: u64 = 215560;
-}
-
-/// `LightEffect::vftable` at 0x18f8140, id 205894 (rtti, high); 25 slots.
-#[repr(C)]
-pub struct LightEffect_vtable {
-    /// `ActiveEffect::vfunc_0` at 0x5baed0 (rtti, medium); signature (low): `undefined vfunc_0(ActiveEffect * this, longlong * param_1, longlong * param_2)`
-    pub slot_0: *const c_void,
-    /// `ActiveEffect::vfunc_1` at 0x5baf80 (rtti, medium); signature (high): `undefined vfunc_1(ActiveEffect * this)`
-    pub slot_1: *const c_void,
-    /// `ActiveEffect::vfunc_2` at 0x5ba080 (rtti, medium); signature (low): `undefined vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `ActiveEffect::vfunc_3` at 0x5bb070 (rtti, medium); signature (high): `undefined8 vfunc_3(ActiveEffect * this)`
-    pub slot_3: *const c_void,
-    /// `LightEffect::vfunc_4` at 0x5c9560 (rtti, high); signature (high): `undefined vfunc_4(LightEffect * this)`
-    pub slot_4: *const c_void,
-    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_5: *const c_void,
-    /// `ActiveEffect::vfunc_6` at 0x5bb9c0 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `ActiveEffect::vfunc_7` at 0x5ba0a0 (rtti, medium); signature (low): `undefined vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `ActiveEffect::vfunc_8` at 0x5bb9d0 (rtti, medium); signature (low): `undefined vfunc_8(ActiveEffect * this, longlong param_1)`
-    pub slot_8: *const c_void,
-    /// `ActiveEffect::vfunc_9` at 0x5bbc00 (rtti, medium); signature (low): `undefined vfunc_9(ActiveEffect * this, longlong param_1)`
-    pub slot_9: *const c_void,
-    /// `LightEffect::vfunc_10` at 0x5c9940 (rtti, high); signature (low): `undefined vfunc_10(LightEffect * this, undefined8 param_1)`
-    pub slot_10: *const c_void,
-    /// `LightEffect::vfunc_11` at 0x5c9970 (rtti, high); signature (high): `undefined vfunc_11(LightEffect * this)`
-    pub slot_11: *const c_void,
-    /// `ActiveEffect::vfunc_12` at 0x5bc8a0 (rtti, medium); signature (low): `undefined vfunc_12(ActiveEffect * this, longlong param_1)`
-    pub slot_12: *const c_void,
-    /// `ActiveEffect::vfunc_13` at 0x5ba060 (rtti, medium); signature (low): `undefined vfunc_13(void)`
-    pub slot_13: *const c_void,
-    /// `LightEffect::vfunc_14` at 0x5c93e0 (rtti, high); signature (low): `undefined vfunc_14(LightEffect * this, undefined8 param_1, undefined8 param_2)`
-    pub slot_14: *const c_void,
-    /// `ActiveEffect::vfunc_15` at 0x5ba070 (rtti, medium); signature (low): `undefined vfunc_15(void)`
-    pub slot_15: *const c_void,
-    /// `ActiveEffect::vfunc_16` at 0x5bcb70 (rtti, medium); signature (high): `byte vfunc_16(ActiveEffect * this)`
-    pub slot_16: *const c_void,
-    /// `ActiveEffect::vfunc_17` at 0x5bcb90 (rtti, medium); signature (low): `undefined1 vfunc_17(void)`
-    pub slot_17: *const c_void,
-    /// `ActiveEffect::vfunc_18` at 0x5bcc10 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
-    /// `LightEffect::vdtor` at 0x5c9c40 (slot_propagation, medium); signature (low): `LightEffect * vdtor(LightEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_19: *const c_void,
-    /// `LightEffect::vfunc_20` at 0x5c95e0 (rtti, high); signature (low): `undefined vfunc_20(void)`
-    pub slot_20: *const c_void,
-    /// `LightEffect::vfunc_21` at 0x5c95f0 (rtti, high); signature (high): `undefined vfunc_21(LightEffect * this)`
-    pub slot_21: *const c_void,
-    /// `ActiveEffect::vfunc_22` at 0x5bcda0 (rtti, medium); signature (high): `undefined8 vfunc_22(ActiveEffect * this)`
-    pub slot_22: *const c_void,
-    /// `ActiveEffect::vfunc_23` at 0x5bdc00 (rtti, medium); signature (low): `undefined1 vfunc_23(void)`
-    pub slot_23: *const c_void,
-    /// `ActiveEffect::vfunc_24` at 0x5bdc10 (rtti, medium); signature (low): `undefined4 vfunc_24(void)`
-    pub slot_24: *const c_void,
-}
-impl LightEffect_vtable {
-    pub const ID: u64 = 205894;
-}
-
-/// `LightEffect::AttachBestLightVisitor::vftable` at 0x18f8128, id 205892 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct LightEffect__AttachBestLightVisitor_vtable {
-    /// `LightEffect::AttachBestLightVisitor::vdtor` at 0x5c9be0 (layout_inference, medium); signature (low): `AttachBestLightVisitor * vdtor(AttachBestLightVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `LightEffect::AttachBestLightVisitor::vfunc_1` at 0x5c94a0 (rtti, high); signature (low): `undefined8 vfunc_1(AttachBestLightVisitor * this, longlong param_1)`
-    pub slot_1: *const c_void,
-}
-impl LightEffect__AttachBestLightVisitor_vtable {
-    pub const ID: u64 = 205892;
-}
-
-/// `Likes::vftable` at 0x1b58118, id 469799 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct Likes_vtable {
-    /// `Likes::vdtor` at 0x119470 (slot_propagation, medium); signature (low): `Likes * vdtor(Likes * this, ulonglong param_1, void * param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
-}
-impl Likes_vtable {
-    pub const ID: u64 = 469799;
-}
-
-/// `LineNode::vftable` at 0x19801c0, id 215977 (rtti, high); 20 slots.
-#[repr(C)]
-pub struct LineNode_vtable {
-    /// `LineNode::vdtor` at 0x983760 (slot_propagation, medium); signature (low): `LineNode * vdtor(LineNode * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `SimpleAnimationGraphManagerHolder::vfunc_2` at 0x556610 (rtti, medium); signature (low): `bool vfunc_2(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
-    pub slot_2: *const c_void,
-    /// `SimpleAnimationGraphManagerHolder::vfunc_3` at 0x556670 (rtti, medium); signature (low): `undefined8 vfunc_3(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
-    pub slot_3: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphRootNodes` at 0x554330 (semantic, medium); signature (untiered): `undefined1 GetGraphRootNodes(void)`
-    pub slot_4: *const c_void,
-    /// `SimpleAnimationGraphManagerHolder::vfunc_5` at 0x5566c0 (rtti, medium); signature (low): `bool vfunc_5(SimpleAnimationGraphManagerHolder * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
-    pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
-    pub slot_7: *const c_void,
-    /// `IAnimationGraphManagerHolder::RegisterGraphEventSinks` at 0x554350 (semantic, high); signature (untiered): `undefined1 RegisterGraphEventSinks(void)`
-    pub slot_8: *const c_void,
-    /// `IAnimationGraphManagerHolder::OnGraphLoadFailed` at 0x554360 (semantic, medium); signature (untiered): `undefined OnGraphLoadFailed(void)`
-    pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
-    pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
-    pub slot_11: *const c_void,
-    /// `LineNode::vfunc_12` at 0x980460 (rtti, high); signature (high): `undefined vfunc_12(LineNode * this)`
-    pub slot_12: *const c_void,
-    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerChanged` at 0x5543c0 (semantic, medium); signature (untiered): `undefined OnAnimationGraphManagerChanged(void)`
-    pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
-    pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
-    pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
-    pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
-    pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
-    pub slot_18: *const c_void,
-    /// `SimpleAnimationGraphManagerHolder::vfunc_19` at 0x556770 (rtti, medium); signature (low): `undefined vfunc_19(void)`
-    pub slot_19: *const c_void,
-}
-impl LineNode_vtable {
-    pub const ID: u64 = 215977;
-}
-
-/// `LipSynchAnimDB::LipAudioInterface::vftable` at 0x1805dd0, id 188642 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct LipSynchAnimDB__LipAudioInterface_vtable {
-    /// `LipSynchAnimDB::LipAudioInterface::vdtor` at 0x244650 (layout_inference, medium); signature (low): `LipAudioInterface * vdtor(LipAudioInterface * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `LipSynchAnimDB::LipAudioInterface::vfunc_1` at 0x242d90 (rtti, high); signature (low): `int vfunc_1(LipAudioInterface * this, undefined4 * param_1, longlong * param_2)`
-    pub slot_1: *const c_void,
-}
-impl LipSynchAnimDB__LipAudioInterface_vtable {
-    pub const ID: u64 = 188642;
-}
-
-/// `LoadGameDifferentLoadOrderCallBack::vftable` at 0x190b0c8, id 465343 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct LoadGameDifferentLoadOrderCallBack_vtable {
-    /// `LoadGameDifferentLoadOrderCallBack::vdtor` at 0x62dfc0 (layout_inference, medium); signature (low): `LoadGameDifferentLoadOrderCallBack * vdtor(LoadGameDifferentLoadOrderCallBack * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
-    /// `LoadGameDifferentLoadOrderCallBack::vfunc_1` at 0x62c500 (rtti, high); signature (low): `undefined vfunc_1(LoadGameDifferentLoadOrderCallBack * this, char param_1, ulonglong param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_1: *const c_void,
-}
-impl LoadGameDifferentLoadOrderCallBack_vtable {
-    pub const ID: u64 = 465343;
-}
-
-/// `LoadGameInactiveContentCallBack::vftable` at 0x190b080, id 465337 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct LoadGameInactiveContentCallBack_vtable {
-    /// `LoadGameInactiveContentCallBack::vdtor` at 0x62e020 (layout_inference, medium); signature (low): `LoadGameInactiveContentCallBack * vdtor(LoadGameInactiveContentCallBack * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
-    /// `LoadGameInactiveContentCallBack::vfunc_1` at 0x62c7e0 (rtti, high); signature (low): `undefined vfunc_1(LoadGameInactiveContentCallBack * this, undefined8 param_1, ulonglong param_2, ulonglong param_3)`
-    #[doc(hidden)]
-    pub __slot_1: *const c_void,
-}
-impl LoadGameInactiveContentCallBack_vtable {
-    pub const ID: u64 = 465337;
-}
-
-/// `LoadGameMagicCasterVisitor::vftable` at 0x191c4f8, id 207591 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct LoadGameMagicCasterVisitor_vtable {
-    /// `LoadGameMagicCasterVisitor::vdtor` at 0x6bc800 (layout_inference, medium); signature (low): `LoadGameMagicCasterVisitor * vdtor(LoadGameMagicCasterVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `LoadGameMagicCasterVisitor::vfunc_1` at 0x6bb7b0 (rtti, high); signature (low): `undefined8 vfunc_1(LoadGameMagicCasterVisitor * this, byte param_1)`
-    pub slot_1: *const c_void,
-}
-impl LoadGameMagicCasterVisitor_vtable {
-    pub const ID: u64 = 207591;
-}
-
-/// `LoadGameMissingContentCallBack::vftable` at 0x190b068, id 465335 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct LoadGameMissingContentCallBack_vtable {
-    /// `LoadGameMissingContentCallBack::vdtor` at 0x62e0a0 (layout_inference, medium); signature (low): `LoadGameMissingContentCallBack * vdtor(LoadGameMissingContentCallBack * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
-    /// `LoadGameMissingContentCallBack::vfunc_1` at 0x62cd70 (rtti, high); signature (low): `undefined vfunc_1(LoadGameMissingContentCallBack * this, char param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_1: *const c_void,
-}
-impl LoadGameMissingContentCallBack_vtable {
-    pub const ID: u64 = 465335;
-}
-
-/// `LoadGameMissingContentDownloadCallBack::vftable` at 0x190b098, id 465339 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct LoadGameMissingContentDownloadCallBack_vtable {
-    /// `LoadGameMissingContentDownloadCallBack::vdtor` at 0x62e100 (layout_inference, medium); signature (low): `LoadGameMissingContentDownloadCallBack * vdtor(LoadGameMissingContentDownloadCallBack * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
-    /// `LoadGameMissingContentDownloadCallBack::vfunc_1` at 0x62cf00 (rtti, high); signature (low): `undefined vfunc_1(LoadGameMissingContentDownloadCallBack * this, void * * param_1, undefined4 * param_2, ulonglong param_3)`
-    #[doc(hidden)]
-    pub __slot_1: *const c_void,
-}
-impl LoadGameMissingContentDownloadCallBack_vtable {
-    pub const ID: u64 = 465339;
-}
-
-/// `LoadGameUnrecognizedContentCallBack::vftable` at 0x190b0b0, id 465341 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct LoadGameUnrecognizedContentCallBack_vtable {
-    /// `LoadGameUnrecognizedContentCallBack::vdtor` at 0x62e180 (layout_inference, medium); signature (low): `LoadGameUnrecognizedContentCallBack * vdtor(LoadGameUnrecognizedContentCallBack * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
-    /// `LoadGameUnrecognizedContentCallBack::vfunc_1` at 0x62d810 (rtti, high); signature (low): `undefined vfunc_1(LoadGameUnrecognizedContentCallBack * this, undefined8 param_1, undefined8 param_2, ulonglong param_3)`
-    #[doc(hidden)]
-    pub __slot_1: *const c_void,
-}
-impl LoadGameUnrecognizedContentCallBack_vtable {
-    pub const ID: u64 = 465341;
-}
-
-/// `LoadOrder::vftable` at 0x1b5a138, id 469900 (rtti, high); 21 slots.
-#[repr(C)]
-pub struct LoadOrder_vtable {
-    /// `LoadOrder::vdtor` at 0x1330c0 (slot_propagation, medium); signature (low): `LoadOrder * vdtor(LoadOrder * this, ulonglong param_1, undefined8 * param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
-    /// `UI_element::vfunc_1` at 0x15e7950 (rtti, medium); signature (high): `undefined vfunc_1(UI_element * this)`
-    #[doc(hidden)]
-    pub __slot_1: *const c_void,
-    /// `LoadOrder::vfunc_2` at 0x15f6ab0 (rtti, high); signature (low): `undefined vfunc_2(LoadOrder * this, undefined8 param_1, longlong param_2)`
-    #[doc(hidden)]
-    pub __slot_2: *const c_void,
-    /// `LoadOrder::vfunc_3` at 0x15f6b90 (rtti, high); signature (low): `undefined vfunc_3(LoadOrder * this, undefined4 param_2)`
-    #[doc(hidden)]
-    pub __slot_3: *const c_void,
-    /// `LoadOrder::vfunc_4` at 0x15f6600 (rtti, high); signature (low): `undefined8 vfunc_4(LoadOrder * this, float * param_1, undefined8 * param_2)`
-    #[doc(hidden)]
-    pub __slot_4: *const c_void,
-    /// `UI_element::vfunc_5` at 0x15e7770 (rtti, medium); signature (low): `undefined vfunc_5(UI_element * this, undefined1 param_1)`
-    #[doc(hidden)]
-    pub __slot_5: *const c_void,
-    /// `UI_element::vfunc_6` at 0x15e7760 (rtti, medium); signature (low): `undefined vfunc_6(UI_element * this, undefined1 param_1)`
-    #[doc(hidden)]
-    pub __slot_6: *const c_void,
-    /// `UI_element::vfunc_7` at 0x15e76d0 (rtti, medium); signature (medium): `undefined vfunc_7(UI_element * this, float param_1, float param_2)`
-    #[doc(hidden)]
-    pub __slot_7: *const c_void,
-    /// `UI_element::vfunc_8` at 0x15e76a0 (rtti, medium); signature (low): `undefined vfunc_8(UI_element * this, undefined4 * param_1)`
-    #[doc(hidden)]
-    pub __slot_8: *const c_void,
-    /// `UI_element::vfunc_9` at 0x15e7620 (rtti, medium); signature (low): `undefined vfunc_9(UI_element * this, longlong param_1)`
-    #[doc(hidden)]
-    pub __slot_9: *const c_void,
-    /// `UI_element::vfunc_10` at 0x15e7590 (rtti, medium); signature (low): `undefined vfunc_10(UI_element * this, undefined8 param_1)`
-    #[doc(hidden)]
-    pub __slot_10: *const c_void,
-    /// `UI_element::vfunc_11` at 0x118cd0 (rtti, medium); signature (high): `float vfunc_11(UI_element * this)`
-    #[doc(hidden)]
-    pub __slot_11: *const c_void,
-    /// `UI_element::vfunc_12` at 0x118ce0 (rtti, medium); signature (high): `float vfunc_12(UI_element * this)`
-    #[doc(hidden)]
-    pub __slot_12: *const c_void,
-    /// `UI_element::vfunc_13` at 0x15e7470 (rtti, medium); signature (low): `undefined vfunc_13(UI_element * this, longlong * param_1)`
-    #[doc(hidden)]
-    pub __slot_13: *const c_void,
-    /// `LoadOrder::vfunc_14` at 0x15f6730 (rtti, high); signature (low): `undefined vfunc_14(LoadOrder * this, char * param_1, void * param_2, ulonglong param_3)`
-    #[doc(hidden)]
-    pub __slot_14: *const c_void,
-    /// `LoadOrder::vfunc_15` at 0x15f64f0 (rtti, high); signature (low): `undefined vfunc_15(LoadOrder * this, longlong param_1)`
-    #[doc(hidden)]
-    pub __slot_15: *const c_void,
-    /// `LoadOrder::vfunc_16` at 0x15f64c0 (rtti, high); signature (low): `undefined vfunc_16(LoadOrder * this, longlong * param_1, longlong param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_16: *const c_void,
-    /// `LoadOrder::vfunc_17` at 0x15f7330 (rtti, high); signature (low): `undefined vfunc_17(LoadOrder * this, undefined8 param_1, undefined8 * param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_17: *const c_void,
-    /// `UI_page::vfunc_18` at 0x15f2560 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    #[doc(hidden)]
-    pub __slot_18: *const c_void,
-    /// `UI_page::vfunc_19` at 0x122030 (rtti, medium); signature (low): `undefined vfunc_19(void)`
-    #[doc(hidden)]
-    pub __slot_19: *const c_void,
-    /// `UI_page::vfunc_20` at 0x122040 (rtti, medium); signature (low): `undefined vfunc_20(void)`
-    #[doc(hidden)]
-    pub __slot_20: *const c_void,
-}
-impl LoadOrder_vtable {
-    pub const ID: u64 = 469900;
-}
-
-/// `LoadOrderArchive::vftable` at 0x1b5b450, id 469864 (rtti, high); 21 slots.
-#[repr(C)]
-pub struct LoadOrderArchive_vtable {
-    /// `LoadOrderArchive::vdtor` at 0x1415f0 (slot_propagation, medium); signature (low): `LoadOrderArchive * vdtor(LoadOrderArchive * this, ulonglong param_1, undefined8 * param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
-    /// `UI_element::vfunc_1` at 0x15e7950 (rtti, medium); signature (high): `undefined vfunc_1(UI_element * this)`
-    #[doc(hidden)]
-    pub __slot_1: *const c_void,
-    /// `LoadOrderArchive::vfunc_2` at 0x16170b0 (rtti, high); signature (high): `undefined vfunc_2(LoadOrderArchive * this)`
-    #[doc(hidden)]
-    pub __slot_2: *const c_void,
-    /// `LoadOrderArchive::vfunc_3` at 0x1617230 (rtti, high); signature (low): `undefined vfunc_3(LoadOrderArchive * this, undefined4 param_2)`
-    #[doc(hidden)]
-    pub __slot_3: *const c_void,
-    /// `LoadOrderArchive::vfunc_4` at 0x1616d70 (rtti, high); signature (low): `undefined8 vfunc_4(LoadOrderArchive * this, float * param_1, longlong * param_2)`
-    #[doc(hidden)]
-    pub __slot_4: *const c_void,
-    /// `UI_element::vfunc_5` at 0x15e7770 (rtti, medium); signature (low): `undefined vfunc_5(UI_element * this, undefined1 param_1)`
-    #[doc(hidden)]
-    pub __slot_5: *const c_void,
-    /// `UI_element::vfunc_6` at 0x15e7760 (rtti, medium); signature (low): `undefined vfunc_6(UI_element * this, undefined1 param_1)`
-    #[doc(hidden)]
-    pub __slot_6: *const c_void,
-    /// `UI_element::vfunc_7` at 0x15e76d0 (rtti, medium); signature (medium): `undefined vfunc_7(UI_element * this, float param_1, float param_2)`
-    #[doc(hidden)]
-    pub __slot_7: *const c_void,
-    /// `UI_element::vfunc_8` at 0x15e76a0 (rtti, medium); signature (low): `undefined vfunc_8(UI_element * this, undefined4 * param_1)`
-    #[doc(hidden)]
-    pub __slot_8: *const c_void,
-    /// `UI_element::vfunc_9` at 0x15e7620 (rtti, medium); signature (low): `undefined vfunc_9(UI_element * this, longlong param_1)`
-    #[doc(hidden)]
-    pub __slot_9: *const c_void,
-    /// `UI_element::vfunc_10` at 0x15e7590 (rtti, medium); signature (low): `undefined vfunc_10(UI_element * this, undefined8 param_1)`
-    #[doc(hidden)]
-    pub __slot_10: *const c_void,
-    /// `UI_element::vfunc_11` at 0x118cd0 (rtti, medium); signature (high): `float vfunc_11(UI_element * this)`
-    #[doc(hidden)]
-    pub __slot_11: *const c_void,
-    /// `UI_element::vfunc_12` at 0x118ce0 (rtti, medium); signature (high): `float vfunc_12(UI_element * this)`
-    #[doc(hidden)]
-    pub __slot_12: *const c_void,
-    /// `UI_element::vfunc_13` at 0x15e7470 (rtti, medium); signature (low): `undefined vfunc_13(UI_element * this, longlong * param_1)`
-    #[doc(hidden)]
-    pub __slot_13: *const c_void,
-    /// `LoadOrderArchive::vfunc_14` at 0x1616f70 (rtti, high); signature (low): `undefined vfunc_14(LoadOrderArchive * this, longlong param_1, longlong param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_14: *const c_void,
-    /// `LoadOrderArchive::vfunc_15` at 0x1616d00 (rtti, high); signature (low): `undefined vfunc_15(LoadOrderArchive * this, longlong param_1)`
-    #[doc(hidden)]
-    pub __slot_15: *const c_void,
-    /// `LoadOrderArchive::vfunc_16` at 0x1616ce0 (rtti, high); signature (low): `undefined vfunc_16(LoadOrderArchive * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_16: *const c_void,
-    /// `LoadOrderArchive::vfunc_17` at 0x1617f00 (rtti, high); signature (low): `undefined vfunc_17(LoadOrderArchive * this, undefined8 param_1, undefined8 * param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_17: *const c_void,
-    /// `UI_page::vfunc_18` at 0x15f2560 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    #[doc(hidden)]
-    pub __slot_18: *const c_void,
-    /// `UI_page::vfunc_19` at 0x122030 (rtti, medium); signature (low): `undefined vfunc_19(void)`
-    #[doc(hidden)]
-    pub __slot_19: *const c_void,
-    /// `UI_page::vfunc_20` at 0x122040 (rtti, medium); signature (low): `undefined vfunc_20(void)`
-    #[doc(hidden)]
-    pub __slot_20: *const c_void,
-}
-impl LoadOrderArchive_vtable {
-    pub const ID: u64 = 469864;
-}
-
-/// `LoadOrderBox::vftable` at 0x1b5a720, id 469972 (rtti, high); 14 slots.
-#[repr(C)]
-pub struct LoadOrderBox_vtable {
-    /// `LoadOrderBox::vdtor` at 0x137070 (slot_propagation, medium); signature (low): `LoadOrderBox * vdtor(LoadOrderBox * this, ulonglong param_1, void * param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
-    /// `LoadOrderBox::vfunc_1` at 0x1602610 (rtti, high); signature (low): `undefined vfunc_1(void)`
-    #[doc(hidden)]
-    pub __slot_1: *const c_void,
-    /// `LoadOrderBox::vfunc_2` at 0x1601ca0 (rtti, high); signature (high): `undefined vfunc_2(LoadOrderBox * this)`
-    #[doc(hidden)]
-    pub __slot_2: *const c_void,
-    /// `LoadOrderBox::vfunc_3` at 0x1601df0 (rtti, high); signature (medium): `undefined vfunc_3(LoadOrderBox * this, float param_1)`
-    #[doc(hidden)]
-    pub __slot_3: *const c_void,
-    /// `LoadOrderBox::vfunc_4` at 0x1601c00 (rtti, high); signature (low): `undefined8 vfunc_4(LoadOrderBox * this, float * param_1, longlong param_2)`
-    #[doc(hidden)]
-    pub __slot_4: *const c_void,
-    /// `UI_element::vfunc_5` at 0x15e7770 (rtti, medium); signature (low): `undefined vfunc_5(UI_element * this, undefined1 param_1)`
-    #[doc(hidden)]
-    pub __slot_5: *const c_void,
-    /// `UI_element::vfunc_6` at 0x15e7760 (rtti, medium); signature (low): `undefined vfunc_6(UI_element * this, undefined1 param_1)`
-    #[doc(hidden)]
-    pub __slot_6: *const c_void,
-    /// `UI_element::vfunc_7` at 0x15e76d0 (rtti, medium); signature (medium): `undefined vfunc_7(UI_element * this, float param_1, float param_2)`
-    #[doc(hidden)]
-    pub __slot_7: *const c_void,
-    /// `UI_element::vfunc_8` at 0x15e76a0 (rtti, medium); signature (low): `undefined vfunc_8(UI_element * this, undefined4 * param_1)`
-    #[doc(hidden)]
-    pub __slot_8: *const c_void,
-    /// `UI_element::vfunc_9` at 0x15e7620 (rtti, medium); signature (low): `undefined vfunc_9(UI_element * this, longlong param_1)`
-    #[doc(hidden)]
-    pub __slot_9: *const c_void,
-    /// `UI_element::vfunc_10` at 0x15e7590 (rtti, medium); signature (low): `undefined vfunc_10(UI_element * this, undefined8 param_1)`
-    #[doc(hidden)]
-    pub __slot_10: *const c_void,
-    /// `UI_element::vfunc_11` at 0x118cd0 (rtti, medium); signature (high): `float vfunc_11(UI_element * this)`
-    #[doc(hidden)]
-    pub __slot_11: *const c_void,
-    /// `UI_element::vfunc_12` at 0x118ce0 (rtti, medium); signature (high): `float vfunc_12(UI_element * this)`
-    #[doc(hidden)]
-    pub __slot_12: *const c_void,
-    /// `UI_element::vfunc_13` at 0x15e7470 (rtti, medium); signature (low): `undefined vfunc_13(UI_element * this, longlong * param_1)`
-    #[doc(hidden)]
-    pub __slot_13: *const c_void,
-}
-impl LoadOrderBox_vtable {
-    pub const ID: u64 = 469972;
-}
-
-/// `LoadOrderEntry::vftable` at 0x1b5a690, id 469970 (rtti, high); 17 slots.
-#[repr(C)]
-pub struct LoadOrderEntry_vtable {
-    /// `LoadOrderEntry::vdtor` at 0x137020 (slot_propagation, medium); signature (low): `LoadOrderEntry * vdtor(LoadOrderEntry * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
-    /// `UI_element::vfunc_1` at 0x15e7950 (rtti, medium); signature (high): `undefined vfunc_1(UI_element * this)`
-    #[doc(hidden)]
-    pub __slot_1: *const c_void,
-    /// `LoadOrderEntry::vfunc_2` at 0x16004e0 (rtti, high); signature (high): `undefined vfunc_2(LoadOrderEntry * this)`
-    #[doc(hidden)]
-    pub __slot_2: *const c_void,
-    /// `LoadOrderEntry::vfunc_3` at 0x15fff20 (rtti, high); signature (low): `undefined vfunc_3(LoadOrderEntry * this, undefined4 param_2, undefined8 param_3, longlong * param_4)`
-    #[doc(hidden)]
-    pub __slot_3: *const c_void,
-    /// `LoadOrderEntry::vfunc_4` at 0x16005e0 (rtti, high); signature (low): `undefined8 vfunc_4(LoadOrderEntry * this, float * param_1, undefined8 * param_2)`
-    #[doc(hidden)]
-    pub __slot_4: *const c_void,
-    /// `UI_element::vfunc_5` at 0x15e7770 (rtti, medium); signature (low): `undefined vfunc_5(UI_element * this, undefined1 param_1)`
-    #[doc(hidden)]
-    pub __slot_5: *const c_void,
-    /// `LoadOrderEntry::vfunc_6` at 0x1600750 (rtti, medium); signature (low): `undefined vfunc_6(LoadOrderEntry * this, undefined1 param_1)`
-    #[doc(hidden)]
-    pub __slot_6: *const c_void,
-    /// `LoadOrderEntry::vfunc_7` at 0x1600550 (rtti, high); signature (medium): `undefined vfunc_7(LoadOrderEntry * this, float param_1, float param_2)`
-    #[doc(hidden)]
-    pub __slot_7: *const c_void,
-    /// `UI_element::vfunc_8` at 0x15e76a0 (rtti, medium); signature (low): `undefined vfunc_8(UI_element * this, undefined4 * param_1)`
-    #[doc(hidden)]
-    pub __slot_8: *const c_void,
-    /// `UI_element::vfunc_9` at 0x15e7620 (rtti, medium); signature (low): `undefined vfunc_9(UI_element * this, longlong param_1)`
-    #[doc(hidden)]
-    pub __slot_9: *const c_void,
-    /// `UI_element::vfunc_10` at 0x15e7590 (rtti, medium); signature (low): `undefined vfunc_10(UI_element * this, undefined8 param_1)`
-    #[doc(hidden)]
-    pub __slot_10: *const c_void,
-    /// `UI_element::vfunc_11` at 0x118cd0 (rtti, medium); signature (high): `float vfunc_11(UI_element * this)`
-    #[doc(hidden)]
-    pub __slot_11: *const c_void,
-    /// `UI_element::vfunc_12` at 0x118ce0 (rtti, medium); signature (high): `float vfunc_12(UI_element * this)`
-    #[doc(hidden)]
-    pub __slot_12: *const c_void,
-    /// `UI_element::vfunc_13` at 0x15e7470 (rtti, medium); signature (low): `undefined vfunc_13(UI_element * this, longlong * param_1)`
-    #[doc(hidden)]
-    pub __slot_13: *const c_void,
-    /// `LoadOrderEntry::vfunc_14` at 0x16007b0 (rtti, high); signature (high): `undefined8 * vfunc_14(LoadOrderEntry * this)`
-    #[doc(hidden)]
-    pub __slot_14: *const c_void,
-    /// `LoadOrderEntry::vfunc_15` at 0x1600780 (rtti, high); signature (high): `longlong vfunc_15(LoadOrderEntry * this)`
-    #[doc(hidden)]
-    pub __slot_15: *const c_void,
-    /// `LoadOrderEntry::vfunc_16` at 0x1600700 (rtti, high); signature (low): `undefined vfunc_16(LoadOrderEntry * this, uint param_1)`
-    #[doc(hidden)]
-    pub __slot_16: *const c_void,
-}
-impl LoadOrderEntry_vtable {
-    pub const ID: u64 = 469970;
-}
-
 /// `LoadOrderEntry_CC::vftable` at 0x1b5b908, id 469995 (rtti, high); 17 slots.
 #[repr(C)]
 pub struct LoadOrderEntry_CC_vtable {
@@ -838,19 +146,19 @@ pub struct LoadWaitSpinner_vtable {
     pub slot_0: *const c_void,
     /// `LoadWaitSpinner::vfunc_1` at 0x5b8e40 (rtti, high); signature (low): `undefined vfunc_1(void)`
     pub slot_1: *const c_void,
-    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
+    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (low): `undefined PostCreate(void)`
     pub slot_2: *const c_void,
-    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
+    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (low): `undefined Refresh(void)`
     pub slot_3: *const c_void,
     /// `LoadWaitSpinner::vfunc_4` at 0x5b8e50 (rtti, high); signature (low): `undefined8 vfunc_4(LoadWaitSpinner * this, longlong * param_1)`
     pub slot_4: *const c_void,
-    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (untiered): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
+    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (low): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
     pub slot_5: *const c_void,
-    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (untiered): `undefined PostDisplay(IMenu * this)`
+    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (high): `undefined PostDisplay(IMenu * this)`
     pub slot_6: *const c_void,
-    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
+    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (low): `undefined PreDisplay(void)`
     pub slot_7: *const c_void,
-    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (untiered): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
+    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (low): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
     pub slot_8: *const c_void,
 }
 impl LoadWaitSpinner_vtable {
@@ -912,19 +220,19 @@ pub struct LoadingMenu_vtable {
     pub slot_0: *const c_void,
     /// `LoadingMenu::vfunc_1` at 0x94b5b0 (rtti, high); signature (low): `undefined vfunc_1(LoadingMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
+    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (low): `undefined PostCreate(void)`
     pub slot_2: *const c_void,
-    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
+    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (low): `undefined Refresh(void)`
     pub slot_3: *const c_void,
     /// `LoadingMenu::vfunc_4` at 0x94b680 (rtti, high); signature (low): `undefined8 vfunc_4(LoadingMenu * this, longlong * param_1, undefined4 * param_2, undefined * param_3)`
     pub slot_4: *const c_void,
-    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (untiered): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
+    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (low): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
     pub slot_5: *const c_void,
-    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (untiered): `undefined PostDisplay(IMenu * this)`
+    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (high): `undefined PostDisplay(IMenu * this)`
     pub slot_6: *const c_void,
-    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
+    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (low): `undefined PreDisplay(void)`
     pub slot_7: *const c_void,
-    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (untiered): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
+    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (low): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
     pub slot_8: *const c_void,
 }
 impl LoadingMenu_vtable {
@@ -944,11 +252,11 @@ impl LoadingMenuData_vtable {
 /// `LocalMapCamera::vftable` at 0x18064b0, id 188659 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct LocalMapCamera_vtable {
-    /// `LocalMapCamera::Destroy` at 0x249f90 (semantic, high); signature (untiered): `LocalMapCamera * Destroy(LocalMapCamera * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: dtor 0x248060 then free 0x68 when flags & 1 (high); semantic signature: `LocalMapCamera* (LocalMapCamera* this, u32 flags)`
+    /// `LocalMapCamera::Destroy` at 0x249f90 (semantic, high); signature (low): `LocalMapCamera * Destroy(LocalMapCamera * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: dtor 0x248060 then free 0x68 when flags & 1 (high); semantic signature: `LocalMapCamera* (LocalMapCamera* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `TESCamera::SetCameraRoot` at 0x558dd0 (semantic, high); signature (untiered): `undefined SetCameraRoot(TESCamera * this, longlong * param_1)`
+    /// `TESCamera::SetCameraRoot` at 0x558dd0 (semantic, high); signature (low): `undefined SetCameraRoot(TESCamera * this, longlong * param_1)`
     pub slot_1: *const c_void,
-    /// `TESCamera::Update` at 0x558e70 (semantic, high); signature (untiered): `undefined Update(TESCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESCamera::Update` at 0x558e70 (semantic, high); signature (low): `undefined Update(TESCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_2: *const c_void,
 }
 impl LocalMapCamera_vtable {
@@ -966,23 +274,23 @@ pub type LocalMapCamera_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::
 /// `LocalMapCamera::DefaultState::vftable` at 0x18064d0, id 188661 (rtti, high); 9 slots.
 #[repr(C)]
 pub struct LocalMapCamera__DefaultState_vtable {
-    /// `LocalMapCamera::DefaultState::Destroy` at 0x249f60 (semantic, high); signature (untiered): `DefaultState * Destroy(DefaultState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: resets the vtable to TESCameraState's and frees 0x48 when flags & 1 (high); semantic signature: `LocalMapCamera::DefaultState* (LocalMapCamera::DefaultState* this, u32 flags)`
+    /// `LocalMapCamera::DefaultState::Destroy` at 0x249f60 (semantic, high); signature (low): `DefaultState * Destroy(DefaultState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: resets the vtable to TESCameraState's and frees 0x48 when flags & 1 (high); semantic signature: `LocalMapCamera::DefaultState* (LocalMapCamera::DefaultState* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `LocalMapCamera::DefaultState::Begin` at 0x2492a0 (semantic, high); signature (untiered): `undefined Begin(DefaultState * this)`; `Begin`: panOffset = 0, zoom = 0.5 (high); semantic signature: `void (LocalMapCamera::DefaultState* this)`
+    /// `LocalMapCamera::DefaultState::Begin` at 0x2492a0 (semantic, high); signature (high): `undefined Begin(DefaultState * this)`; `Begin`: panOffset = 0, zoom = 0.5 (high); semantic signature: `void (LocalMapCamera::DefaultState* this)`
     pub slot_1: *const c_void,
-    /// `TESCameraState::End` at 0x24a010 (semantic, high); signature (untiered): `undefined End(void)`
+    /// `TESCameraState::End` at 0x24a010 (semantic, high); signature (low): `undefined End(void)`
     pub slot_2: *const c_void,
-    /// `LocalMapCamera::DefaultState::Update` at 0x248dc0 (semantic, high); signature (untiered): `undefined Update(DefaultState * this)`; `Update`: rotates the area corners by northRotation, applies zoom and pan input, sets the NiCamera's orthographic frustum {-w, w, w*r, -w*r, near 100, far = boundMax.z - boundMin.z + 100, ortho 1} (boundMax.z already includes fMapLocalHeight), clamps the pan, places the root at (center + panOffset).xy, z = boundMax.z + 100, UpdateNode (high); semantic signature: `void (LocalMapCamera::DefaultState* this, BSTSmartPointer<TESCameraState>* next)`
+    /// `LocalMapCamera::DefaultState::Update` at 0x248dc0 (semantic, high); signature (high): `undefined Update(DefaultState * this)`; `Update`: rotates the area corners by northRotation, applies zoom and pan input, sets the NiCamera's orthographic frustum {-w, w, w*r, -w*r, near 100, far = boundMax.z - boundMin.z + 100, ortho 1} (boundMax.z already includes fMapLocalHeight), clamps the pan, places the root at (center + panOffset).xy, z = boundMax.z + 100, UpdateNode (high); semantic signature: `void (LocalMapCamera::DefaultState* this, BSTSmartPointer<TESCameraState>* next)`
     pub slot_3: *const c_void,
-    /// `TESCameraState::GetRotation` at 0x24a020 (semantic, high); signature (untiered): `undefined GetRotation(TESCameraState * this, undefined8 * param_1)`
+    /// `TESCameraState::GetRotation` at 0x24a020 (semantic, high); signature (low): `undefined GetRotation(TESCameraState * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `TESCameraState::GetTranslation` at 0x24a030 (semantic, high); signature (untiered): `undefined GetTranslation(TESCameraState * this, undefined4 * param_1)`
+    /// `TESCameraState::GetTranslation` at 0x24a030 (semantic, high); signature (low): `undefined GetTranslation(TESCameraState * this, undefined4 * param_1)`
     pub slot_5: *const c_void,
-    /// `TESCameraState::SaveGame` at 0x24a080 (semantic, high); signature (untiered): `undefined SaveGame(void)`
+    /// `TESCameraState::SaveGame` at 0x24a080 (semantic, high); signature (low): `undefined SaveGame(void)`
     pub slot_6: *const c_void,
-    /// `TESCameraState::LoadGame` at 0x24a060 (semantic, high); signature (untiered): `undefined LoadGame(void)`
+    /// `TESCameraState::LoadGame` at 0x24a060 (semantic, high); signature (low): `undefined LoadGame(void)`
     pub slot_7: *const c_void,
-    /// `TESCameraState::Revert` at 0x24a070 (semantic, high); signature (untiered): `undefined Revert(void)`
+    /// `TESCameraState::Revert` at 0x24a070 (semantic, high); signature (low): `undefined Revert(void)`
     pub slot_8: *const c_void,
 }
 impl LocalMapCamera__DefaultState_vtable {
@@ -1020,13 +328,13 @@ pub struct LocalMapMenu__InputHandler_vtable {
     pub slot_0: *const c_void,
     /// `LocalMapMenu::InputHandler::vfunc_1` at 0x9948a0 (rtti, high); signature (low): `ulonglong vfunc_1(InputHandler * this, longlong * param_1)`
     pub slot_1: *const c_void,
-    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
+    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (low): `undefined1 Unk2(void)`
     #[doc(hidden)]
     pub __slot_2: *const c_void,
-    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
+    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (low): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
-    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (untiered): `undefined1 ProcessKinectEvent(void)`
+    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (low): `undefined1 ProcessKinectEvent(void)`
     #[doc(hidden)]
     pub __slot_4: *const c_void,
     /// `LocalMapMenu::InputHandler::vfunc_5` at 0x9949d0 (rtti, high); signature (low): `undefined1 vfunc_5(InputHandler * this, longlong param_1)`
@@ -1035,7 +343,7 @@ pub struct LocalMapMenu__InputHandler_vtable {
     /// `LocalMapMenu::InputHandler::vfunc_6` at 0x994bd0 (rtti, high); signature (low): `undefined8 vfunc_6(InputHandler * this, longlong param_1)`
     #[doc(hidden)]
     pub __slot_6: *const c_void,
-    /// `LocalMapMenu::InputHandler::ProcessButtonEvent` at 0x994a30 (semantic, high); signature (untiered): `undefined8 ProcessButtonEvent(InputHandler * this, longlong * param_1)`
+    /// `LocalMapMenu::InputHandler::ProcessButtonEvent` at 0x994a30 (semantic, high); signature (low): `undefined8 ProcessButtonEvent(InputHandler * this, longlong * param_1)`
     #[doc(hidden)]
     pub __slot_7: *const c_void,
 }
@@ -1056,7 +364,7 @@ pub struct LockEffect_vtable {
     pub slot_3: *const c_void,
     /// `ActiveEffect::vfunc_4` at 0x5bf0c0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
     pub slot_4: *const c_void,
-    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (low): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `ActiveEffect::vfunc_6` at 0x5bb9c0 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -1106,19 +414,19 @@ impl LockEffect_vtable {
 pub struct LockpickingMenu_vtable {
     /// `LockpickingMenu::vdtor` at 0x950740 (layout_inference, medium); signature (low): `LockpickingMenu * vdtor(LockpickingMenu * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `IMenu::Accept` at 0x57b460 (semantic, high); signature (untiered): `undefined Accept(void)`
+    /// `IMenu::Accept` at 0x57b460 (semantic, high); signature (low): `undefined Accept(void)`
     pub slot_1: *const c_void,
-    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
+    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (low): `undefined PostCreate(void)`
     pub slot_2: *const c_void,
-    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
+    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (low): `undefined Refresh(void)`
     pub slot_3: *const c_void,
     /// `LockpickingMenu::vfunc_4` at 0x94d350 (rtti, high); signature (low): `ulonglong vfunc_4(LockpickingMenu * this, longlong param_1, undefined8 param_2, longlong * * * * * * * param_3)`
     pub slot_4: *const c_void,
-    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (untiered): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
+    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (low): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
     pub slot_5: *const c_void,
     /// `LockpickingMenu::vfunc_6` at 0x94d580 (rtti, high); signature (high): `undefined vfunc_6(LockpickingMenu * this)`
     pub slot_6: *const c_void,
-    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
+    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (low): `undefined PreDisplay(void)`
     pub slot_7: *const c_void,
     /// `LockpickingMenu::vfunc_8` at 0x94d630 (rtti, high); signature (untiered): `undefined vfunc_8(LockpickingMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
     #[doc(hidden)]
@@ -1135,13 +443,13 @@ pub struct LockpickingMenu_vtable_30 {
     pub slot_0: *const c_void,
     /// `LockpickingMenu::MenuEventHandler_vfunc_1` at 0x94d640 (rtti, high); signature (low): `undefined8 MenuEventHandler_vfunc_1(LockpickingMenu * this, longlong * param_1)`
     pub slot_1: *const c_void,
-    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
+    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (low): `undefined1 Unk2(void)`
     #[doc(hidden)]
     pub __slot_2: *const c_void,
     /// `LockpickingMenu::MenuEventHandler_vfunc_3` at 0x94d980 (rtti, high); signature (low): `undefined8 MenuEventHandler_vfunc_3(LockpickingMenu * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
-    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (untiered): `undefined1 ProcessKinectEvent(void)`
+    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (low): `undefined1 ProcessKinectEvent(void)`
     #[doc(hidden)]
     pub __slot_4: *const c_void,
     /// `LockpickingMenu::MenuEventHandler_vfunc_5` at 0x94d700 (rtti, high); signature (low): `undefined8 MenuEventHandler_vfunc_5(LockpickingMenu * this, longlong * param_1)`
@@ -1190,28 +498,28 @@ pub struct LoginMenu__loginMenu_vtable {
     /// `LoginMenu::loginMenu::vdtor` at 0x57b830 (slot_propagation, medium); signature (low): `loginMenu * vdtor(loginMenu * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     #[doc(hidden)]
     pub __slot_0: *const c_void,
-    /// `IMenu::Accept` at 0x57b460 (semantic, high); signature (untiered): `undefined Accept(void)`
+    /// `IMenu::Accept` at 0x57b460 (semantic, high); signature (low): `undefined Accept(void)`
     #[doc(hidden)]
     pub __slot_1: *const c_void,
-    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
+    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (low): `undefined PostCreate(void)`
     #[doc(hidden)]
     pub __slot_2: *const c_void,
-    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
+    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (low): `undefined Refresh(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
-    /// `IMenu::ProcessMessage` at 0x116ede0 (semantic, high); signature (untiered): `undefined8 ProcessMessage(IMenu * this, longlong param_1)`
+    /// `IMenu::ProcessMessage` at 0x116ede0 (semantic, high); signature (low): `undefined8 ProcessMessage(IMenu * this, longlong param_1)`
     #[doc(hidden)]
     pub __slot_4: *const c_void,
     /// `LoginMenu::loginMenu::vfunc_5` at 0x57b490 (rtti, high); signature (untiered): `undefined vfunc_5(IMenu * this, undefined4 param_2, uint param_3)`
     #[doc(hidden)]
     pub __slot_5: *const c_void,
-    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (untiered): `undefined PostDisplay(IMenu * this)`
+    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (high): `undefined PostDisplay(IMenu * this)`
     #[doc(hidden)]
     pub __slot_6: *const c_void,
-    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
+    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (low): `undefined PreDisplay(void)`
     #[doc(hidden)]
     pub __slot_7: *const c_void,
-    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (untiered): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
+    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (low): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
     #[doc(hidden)]
     pub __slot_8: *const c_void,
 }
@@ -1248,23 +556,23 @@ impl LongestDurationFunctor_vtable {
 /// `LookHandler::vftable` at 0x1935150, id 208710 (rtti, high); 7 slots.
 #[repr(C)]
 pub struct LookHandler_vtable {
-    /// `LookHandler::Destroy` at 0x7b1bc0 (semantic, high); signature (untiered): `LookHandler * Destroy(LookHandler * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: releases the embedded event's string, resets the embedded vtable and its own, frees 0xb8 when flags bit 0 (high); semantic signature: `LookHandler* (LookHandler* this, u32 flags)`
+    /// `LookHandler::Destroy` at 0x7b1bc0 (semantic, high); signature (low): `LookHandler * Destroy(LookHandler * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: releases the embedded event's string, resets the embedded vtable and its own, frees 0xb8 when flags bit 0 (high); semantic signature: `LookHandler* (LookHandler* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `LookHandler::CanProcess` at 0x7b4f40 (semantic, high); signature (untiered): `undefined8 CanProcess(LookHandler * this, longlong * param_1)`; `CanProcess`: Look, or a type-6 (motion) event that 0x7b5200 accepts (bEnableSixaxisBowAiming/bEnableSixaxisMagicAiming with a matching equipped weapon or spell) (high); semantic signature: `bool (LookHandler* this, InputEvent* event)`
+    /// `LookHandler::CanProcess` at 0x7b4f40 (semantic, high); signature (low): `undefined8 CanProcess(LookHandler * this, longlong * param_1)`; `CanProcess`: Look, or a type-6 (motion) event that 0x7b5200 accepts (bEnableSixaxisBowAiming/bEnableSixaxisMagicAiming with a matching equipped weapon or spell) (high); semantic signature: `bool (LookHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (untiered): `undefined ProcessMotionGesture(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (low): `undefined ProcessMotionGesture(void)`
     #[doc(hidden)]
     pub __slot_2: *const c_void,
-    /// `LookHandler::ProcessMotion` at 0x7b32a0 (semantic, high); signature (untiered): `undefined ProcessMotion(LookHandler * this, longlong param_1, longlong param_2, undefined8 param_3)`; `ProcessMotion`: motion-controller aiming: only with bEnableSixaxisBowAiming and a bow/crossbow drawn (weapon types 7 / 12) or bEnableSixaxisMagicAiming with a usable hand caster; otherwise resets the embedded event. When look input is zero: the relative rotation between the new orientation and the stored one gives pitch/heading deltas, smoothed by alpha in [fSixaxisAlphaMin, 1] (scaled by fSixaxisAlphaMaxThreshold), scaled during bow zoom (PlayerCamera+0x161) by the FOV ratio (bSixaxisAimingRespectsFOV) and the time multiplier (bSixaxisAimingRespectsTimeMultiplier); applies ApplyClampedPitchDelta (not mounted) and the heading delta to the player, sets data+0x26, stores the event and the deltas (high); semantic signature: `void (LookHandler* this, SixaxisEvent* event, PlayerControlsData* data)`
+    /// `LookHandler::ProcessMotion` at 0x7b32a0 (semantic, high); signature (low): `undefined ProcessMotion(LookHandler * this, longlong param_1, longlong param_2, undefined8 param_3)`; `ProcessMotion`: motion-controller aiming: only with bEnableSixaxisBowAiming and a bow/crossbow drawn (weapon types 7 / 12) or bEnableSixaxisMagicAiming with a usable hand caster; otherwise resets the embedded event. When look input is zero: the relative rotation between the new orientation and the stored one gives pitch/heading deltas, smoothed by alpha in [fSixaxisAlphaMin, 1] (scaled by fSixaxisAlphaMaxThreshold), scaled during bow zoom (PlayerCamera+0x161) by the FOV ratio (bSixaxisAimingRespectsFOV) and the time multiplier (bSixaxisAimingRespectsTimeMultiplier); applies ApplyClampedPitchDelta (not mounted) and the heading delta to the player, sets data+0x26, stores the event and the deltas (high); semantic signature: `void (LookHandler* this, SixaxisEvent* event, PlayerControlsData* data)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
-    /// `LookHandler::ProcessThumbstick` at 0x7b37b0 (semantic, high); signature (untiered): `undefined ProcessThumbstick(LookHandler * this, longlong param_1, longlong param_2)`; `ProcessThumbstick`: data.lookInput (data+8, +0xc) = event x, y (+0x28, +0x2c) unchanged (high); semantic signature: `void (LookHandler* this, const ThumbstickEvent* event, PlayerControlsData* data)`
+    /// `LookHandler::ProcessThumbstick` at 0x7b37b0 (semantic, high); signature (low): `undefined ProcessThumbstick(LookHandler * this, longlong param_1, longlong param_2)`; `ProcessThumbstick`: data.lookInput (data+8, +0xc) = event x, y (+0x28, +0x2c) unchanged (high); semantic signature: `void (LookHandler* this, const ThumbstickEvent* event, PlayerControlsData* data)`
     #[doc(hidden)]
     pub __slot_4: *const c_void,
-    /// `LookHandler::ProcessMouseMove` at 0x7b3270 (runtime, high); signature (untiered): `undefined ProcessMouseMove(LookHandler * this, longlong param_1, longlong param_2)`; `ProcessMouseMove`: adds the mouse delta (scaled) to the look input of PlayerControls+0x24 (high); semantic signature: `void (LookHandler* this, const MouseMoveEvent* event, PlayerControlsData* data)`
+    /// `LookHandler::ProcessMouseMove` at 0x7b3270 (runtime, high); signature (low): `undefined ProcessMouseMove(LookHandler * this, longlong param_1, longlong param_2)`; `ProcessMouseMove`: adds the mouse delta (scaled) to the look input of PlayerControls+0x24 (high); semantic signature: `void (LookHandler* this, const MouseMoveEvent* event, PlayerControlsData* data)`
     #[doc(hidden)]
     pub __slot_5: *const c_void,
-    /// `PlayerInputHandler::ProcessButton` at 0x55d5c0 (semantic, high); signature (untiered): `undefined ProcessButton(void)`
+    /// `PlayerInputHandler::ProcessButton` at 0x55d5c0 (semantic, high); signature (low): `undefined ProcessButton(void)`
     #[doc(hidden)]
     pub __slot_6: *const c_void,
 }
@@ -1452,9 +760,9 @@ pub struct MagicItem_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -1464,13 +772,13 @@ pub struct MagicItem_vtable {
     pub slot_18: *const c_void,
     /// `MagicItem::vfunc_19` at 0x1507d0 (rtti, high); signature (high): `undefined vfunc_19(MagicItem * this)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -1494,7 +802,7 @@ pub struct MagicItem_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -1512,7 +820,7 @@ pub struct MagicItem_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -1524,9 +832,9 @@ pub struct MagicItem_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -1536,7 +844,7 @@ pub struct MagicItem_vtable {
     pub slot_54: *const c_void,
     /// `TESBoundObject::vfunc_55` at 0x278e50 (rtti, medium); signature (low): `undefined1 vfunc_55(TESBoundObject * this, longlong param_1, undefined8 param_2, undefined1 param_3, undefined8 param_4, undefined4 param_5)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -1552,7 +860,7 @@ pub struct MagicItem_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -1666,9 +974,9 @@ pub struct MagicItem_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl MagicItem_vtable_30 {
@@ -1686,7 +994,7 @@ pub struct MagicItem_vtable_40 {
     pub slot_2: *const c_void,
     /// `BGSKeywordForm::vfunc_3` at 0x1d86b0 (rtti, medium); signature (low): `undefined vfunc_3(BGSKeywordForm * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `MagicItem::BGSKeywordForm_HasKeyword` at 0x151aa0 (slot_propagation, high); signature (untiered): `ulonglong BGSKeywordForm_HasKeyword(MagicItem * this, longlong param_1)`
+    /// `MagicItem::BGSKeywordForm_HasKeyword` at 0x151aa0 (slot_propagation, high); signature (low): `ulonglong BGSKeywordForm_HasKeyword(MagicItem * this, longlong param_1)`
     pub slot_4: *const c_void,
     /// `BGSKeywordForm::vfunc_5` at 0x14c8b0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
     pub slot_5: *const c_void,
@@ -1788,19 +1096,19 @@ pub struct MagicMenu_vtable {
     pub slot_0: *const c_void,
     /// `MagicMenu::vfunc_1` at 0x952d10 (rtti, high); signature (low): `undefined vfunc_1(MagicMenu * this, longlong * param_1)`
     pub slot_1: *const c_void,
-    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
+    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (low): `undefined PostCreate(void)`
     pub slot_2: *const c_void,
-    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
+    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (low): `undefined Refresh(void)`
     pub slot_3: *const c_void,
     /// `MagicMenu::vfunc_4` at 0x952080 (rtti, high); signature (low): `undefined8 * vfunc_4(MagicMenu * this, longlong param_1, undefined8 param_2, ulonglong param_3)`
     pub slot_4: *const c_void,
-    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (untiered): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
+    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (low): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
     pub slot_5: *const c_void,
     /// `MagicMenu::vfunc_6` at 0x952cd0 (rtti, high); signature (low): `undefined vfunc_6(MagicMenu * this, undefined8 param_1, undefined8 param_2, longlong param_3)`
     pub slot_6: *const c_void,
-    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
+    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (low): `undefined PreDisplay(void)`
     pub slot_7: *const c_void,
-    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (untiered): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
+    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (low): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
     pub slot_8: *const c_void,
 }
 impl MagicMenu_vtable {
@@ -1914,19 +1222,19 @@ pub struct MainMenu_vtable {
     pub slot_0: *const c_void,
     /// `MainMenu::vfunc_1` at 0x958690 (rtti, high); signature (low): `undefined vfunc_1(MainMenu * this, longlong * param_1)`
     pub slot_1: *const c_void,
-    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
+    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (low): `undefined PostCreate(void)`
     pub slot_2: *const c_void,
-    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
+    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (low): `undefined Refresh(void)`
     pub slot_3: *const c_void,
     /// `MainMenu::vfunc_4` at 0x959f90 (rtti, high); signature (low): `MessageBoxData * vfunc_4(MainMenu * this, undefined4 * param_1, undefined8 param_2, undefined * param_3)`
     pub slot_4: *const c_void,
     /// `MainMenu::vfunc_5` at 0x9581e0 (rtti, high); signature (low): `undefined vfunc_5(MainMenu * this, undefined4 param_2, longlong * param_3, char * param_4)`
     pub slot_5: *const c_void,
-    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (untiered): `undefined PostDisplay(IMenu * this)`
+    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (high): `undefined PostDisplay(IMenu * this)`
     pub slot_6: *const c_void,
-    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
+    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (low): `undefined PreDisplay(void)`
     pub slot_7: *const c_void,
-    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (untiered): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
+    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (low): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
     pub slot_8: *const c_void,
 }
 impl MainMenu_vtable {
@@ -1972,13 +1280,13 @@ impl MainMenu_vtable_40 {
 /// `MapCamera::vftable` at 0x1985f78, id 216441 (rtti, high); 4 slots.
 #[repr(C)]
 pub struct MapCamera_vtable {
-    /// `MapCamera::Destroy` at 0x997240 (semantic, high); signature (untiered): `MapCamera * Destroy(MapCamera * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: releases transition and exit states, destroys worldStates, TESCamera::dtor, frees 0x90 when flags & 1 (high); semantic signature: `MapCamera* (MapCamera* this, u32 flags)`
+    /// `MapCamera::Destroy` at 0x997240 (semantic, high); signature (low): `MapCamera * Destroy(MapCamera * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: releases transition and exit states, destroys worldStates, TESCamera::dtor, frees 0x90 when flags & 1 (high); semantic signature: `MapCamera* (MapCamera* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `TESCamera::SetCameraRoot` at 0x558dd0 (semantic, high); signature (untiered): `undefined SetCameraRoot(TESCamera * this, longlong * param_1)`
+    /// `TESCamera::SetCameraRoot` at 0x558dd0 (semantic, high); signature (low): `undefined SetCameraRoot(TESCamera * this, longlong * param_1)`
     pub slot_1: *const c_void,
-    /// `TESCamera::Update` at 0x558e70 (semantic, high); signature (untiered): `undefined Update(TESCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESCamera::Update` at 0x558e70 (semantic, high); signature (low): `undefined Update(TESCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_2: *const c_void,
-    /// `MapCamera::Enter` at 0x996740 (runtime, high); signature (untiered): `undefined Enter(MapCamera * this, longlong * param_1, float * param_2)`; `Enter`: sets the root; with a root and a worldspace: hides the player's first-person 3D, orients the root by the map's default pitch, places it at position, configures worldStates[index] around position, starts the Transition (mode 1) into it (high); semantic signature: `void (MapCamera* this, NiNode* root, const NiPoint3* position)`
+    /// `MapCamera::Enter` at 0x996740 (runtime, high); signature (low): `undefined Enter(MapCamera * this, longlong * param_1, float * param_2)`; `Enter`: sets the root; with a root and a worldspace: hides the player's first-person 3D, orients the root by the map's default pitch, places it at position, configures worldStates[index] around position, starts the Transition (mode 1) into it (high); semantic signature: `void (MapCamera* this, NiNode* root, const NiPoint3* position)`
     pub slot_3: *const c_void,
 }
 impl MapCamera_vtable {
@@ -2004,23 +1312,23 @@ pub type MapCamera_vtable_Enter = unsafe extern "C" fn(this: *mut crate::MapCame
 /// `MapCameraStates::Exit::vftable` at 0x1985ff0, id 216445 (rtti, high); 9 slots.
 #[repr(C)]
 pub struct MapCameraStates__Exit_vtable {
-    /// `MapCameraStates::Exit::Destroy` at 0x9971e0 (semantic, high); signature (untiered): `Exit * Destroy(Exit * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: frees 0x20 when flags & 1 (high); semantic signature: `MapCameraStates::Exit* (MapCameraStates::Exit* this, u32 flags)`
+    /// `MapCameraStates::Exit::Destroy` at 0x9971e0 (semantic, high); signature (low): `Exit * Destroy(Exit * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: frees 0x20 when flags & 1 (high); semantic signature: `MapCameraStates::Exit* (MapCameraStates::Exit* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `MapCameraStates::Exit::Begin` at 0x9988b0 (semantic, high); signature (untiered): `undefined Begin(Exit * this)`; `Begin`: tail-calls camera->callbacks slot 1 (OnExitBegin; empty in MapMenu) (high); semantic signature: `void (MapCameraStates::Exit* this)`
+    /// `MapCameraStates::Exit::Begin` at 0x9988b0 (semantic, high); signature (high): `undefined Begin(Exit * this)`; `Begin`: tail-calls camera->callbacks slot 1 (OnExitBegin; empty in MapMenu) (high); semantic signature: `void (MapCameraStates::Exit* this)`
     pub slot_1: *const c_void,
-    /// `TESCameraState::End` at 0x24a010 (semantic, high); signature (untiered): `undefined End(void)`
+    /// `TESCameraState::End` at 0x24a010 (semantic, high); signature (low): `undefined End(void)`
     pub slot_2: *const c_void,
-    /// `MapCameraStates::Exit::Update` at 0x9988d0 (semantic, high); signature (untiered): `undefined Update(void)`; `Update`: queues {MapMenu, hide (3)} and {HUD Menu, show (1)} on every Update (high); semantic signature: `void (MapCameraStates::Exit* this, BSTSmartPointer<TESCameraState>* next)`
+    /// `MapCameraStates::Exit::Update` at 0x9988d0 (semantic, high); signature (low): `undefined Update(void)`; `Update`: queues {MapMenu, hide (3)} and {HUD Menu, show (1)} on every Update (high); semantic signature: `void (MapCameraStates::Exit* this, BSTSmartPointer<TESCameraState>* next)`
     pub slot_3: *const c_void,
-    /// `MapCameraStates::Exit::GetRotation` at 0x998970 (semantic, high); signature (untiered): `undefined GetRotation(Exit * this, undefined4 * param_1)`; `GetRotation`: a rotation about one axis by the map's default pitch: SinCos(mapData+0x18 * -pi/360) into the first two components, the last two 0; unchanged when the camera has no worldspace (high); semantic signature: `void (const MapCameraStates::Exit* this, NiQuaternion* out)`
+    /// `MapCameraStates::Exit::GetRotation` at 0x998970 (semantic, high); signature (low): `undefined GetRotation(Exit * this, undefined4 * param_1)`; `GetRotation`: a rotation about one axis by the map's default pitch: SinCos(mapData+0x18 * -pi/360) into the first two components, the last two 0; unchanged when the camera has no worldspace (high); semantic signature: `void (const MapCameraStates::Exit* this, NiQuaternion* out)`
     pub slot_4: *const c_void,
-    /// `MapCameraStates::Exit::GetTranslation` at 0x9989c0 (semantic, high); signature (untiered): `undefined GetTranslation(Exit * this, undefined4 * param_1)`; `GetTranslation`: *out = camera->entryPosition (+0x40) (high); semantic signature: `void (const MapCameraStates::Exit* this, NiPoint3* out)`
+    /// `MapCameraStates::Exit::GetTranslation` at 0x9989c0 (semantic, high); signature (low): `undefined GetTranslation(Exit * this, undefined4 * param_1)`; `GetTranslation`: *out = camera->entryPosition (+0x40) (high); semantic signature: `void (const MapCameraStates::Exit* this, NiPoint3* out)`
     pub slot_5: *const c_void,
-    /// `TESCameraState::SaveGame` at 0x24a080 (semantic, high); signature (untiered): `undefined SaveGame(void)`
+    /// `TESCameraState::SaveGame` at 0x24a080 (semantic, high); signature (low): `undefined SaveGame(void)`
     pub slot_6: *const c_void,
-    /// `TESCameraState::LoadGame` at 0x24a060 (semantic, high); signature (untiered): `undefined LoadGame(void)`
+    /// `TESCameraState::LoadGame` at 0x24a060 (semantic, high); signature (low): `undefined LoadGame(void)`
     pub slot_7: *const c_void,
-    /// `TESCameraState::Revert` at 0x24a070 (semantic, high); signature (untiered): `undefined Revert(void)`
+    /// `TESCameraState::Revert` at 0x24a070 (semantic, high); signature (low): `undefined Revert(void)`
     pub slot_8: *const c_void,
 }
 impl MapCameraStates__Exit_vtable {
@@ -2070,23 +1378,23 @@ pub type MapCameraStates__Exit_vtable_GetTranslation = unsafe extern "C" fn(this
 /// `MapCameraStates::Transition::vftable` at 0x1985fa0, id 216443 (rtti, high); 9 slots.
 #[repr(C)]
 pub struct MapCameraStates__Transition_vtable {
-    /// `MapCameraStates::Transition::Destroy` at 0x997330 (semantic, high); signature (untiered): `Transition * Destroy(Transition * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: releases targetState, frees 0x88 when flags & 1 (high); semantic signature: `MapCameraStates::Transition* (MapCameraStates::Transition* this, u32 flags)`
+    /// `MapCameraStates::Transition::Destroy` at 0x997330 (semantic, high); signature (low): `Transition * Destroy(Transition * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: releases targetState, frees 0x88 when flags & 1 (high); semantic signature: `MapCameraStates::Transition* (MapCameraStates::Transition* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `MapCameraStates::Transition::Begin` at 0x9987c0 (semantic, high); signature (untiered): `undefined Begin(Transition * this)`; `Begin`: TransitionState::Begin, heightEventFired = 0 (high); semantic signature: `void (MapCameraStates::Transition* this)`
+    /// `MapCameraStates::Transition::Begin` at 0x9987c0 (semantic, high); signature (high): `undefined Begin(Transition * this)`; `Begin`: TransitionState::Begin, heightEventFired = 0 (high); semantic signature: `void (MapCameraStates::Transition* this)`
     pub slot_1: *const c_void,
-    /// `TESCameraState::End` at 0x24a010 (semantic, high); signature (untiered): `undefined End(void)`
+    /// `TESCameraState::End` at 0x24a010 (semantic, high); signature (low): `undefined End(void)`
     pub slot_2: *const c_void,
-    /// `MapCameraStates::Transition::Update` at 0x9987e0 (semantic, high); signature (untiered): `undefined Update(Transition * this, longlong * param_1, float * param_2, longlong * param_3)`; `Update`: for a World target (id 0): UpdateHeightAtClampedPosition(target) and re-read its translation and rotation; TransitionState::Update; then the one-shot height event per mode (high); semantic signature: `void (MapCameraStates::Transition* this, BSTSmartPointer<TESCameraState>* next)`
+    /// `MapCameraStates::Transition::Update` at 0x9987e0 (semantic, high); signature (low): `undefined Update(Transition * this, longlong * param_1, float * param_2, longlong * param_3)`; `Update`: for a World target (id 0): UpdateHeightAtClampedPosition(target) and re-read its translation and rotation; TransitionState::Update; then the one-shot height event per mode (high); semantic signature: `void (MapCameraStates::Transition* this, BSTSmartPointer<TESCameraState>* next)`
     pub slot_3: *const c_void,
-    /// `TESCameraState::GetRotation` at 0x24a020 (semantic, high); signature (untiered): `undefined GetRotation(TESCameraState * this, undefined8 * param_1)`
+    /// `TESCameraState::GetRotation` at 0x24a020 (semantic, high); signature (low): `undefined GetRotation(TESCameraState * this, undefined8 * param_1)`
     pub slot_4: *const c_void,
-    /// `TransitionState::GetTranslation` at 0x9973f0 (semantic, high); signature (untiered): `undefined GetTranslation(TransitionState * this, undefined4 * param_1)`
+    /// `TransitionState::GetTranslation` at 0x9973f0 (semantic, high); signature (low): `undefined GetTranslation(TransitionState * this, undefined4 * param_1)`
     pub slot_5: *const c_void,
-    /// `TESCameraState::SaveGame` at 0x24a080 (semantic, high); signature (untiered): `undefined SaveGame(void)`
+    /// `TESCameraState::SaveGame` at 0x24a080 (semantic, high); signature (low): `undefined SaveGame(void)`
     pub slot_6: *const c_void,
-    /// `TESCameraState::LoadGame` at 0x24a060 (semantic, high); signature (untiered): `undefined LoadGame(void)`
+    /// `TESCameraState::LoadGame` at 0x24a060 (semantic, high); signature (low): `undefined LoadGame(void)`
     pub slot_7: *const c_void,
-    /// `TESCameraState::Revert` at 0x24a070 (semantic, high); signature (untiered): `undefined Revert(void)`
+    /// `TESCameraState::Revert` at 0x24a070 (semantic, high); signature (low): `undefined Revert(void)`
     pub slot_8: *const c_void,
 }
 impl MapCameraStates__Transition_vtable {
@@ -2120,23 +1428,23 @@ pub type MapCameraStates__Transition_vtable_Update = unsafe extern "C" fn(this: 
 /// `MapCameraStates::World::vftable` at 0x19864b0, id 216457 (rtti, high); 9 slots.
 #[repr(C)]
 pub struct MapCameraStates__World_vtable {
-    /// `MapCameraStates::World::Destroy` at 0x9989f0 (semantic, high); signature (untiered): `World * Destroy(World * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: frees boundsPolygon, frees 0x78 when flags & 1 (high); semantic signature: `MapCameraStates::World* (MapCameraStates::World* this, u32 flags)`
+    /// `MapCameraStates::World::Destroy` at 0x9989f0 (semantic, high); signature (low): `World * Destroy(World * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: frees boundsPolygon, frees 0x78 when flags & 1 (high); semantic signature: `MapCameraStates::World* (MapCameraStates::World* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `MapCameraStates::World::Begin` at 0x997f50 (semantic, high); signature (untiered): `undefined Begin(World * this)`; `Begin`: reads yaw and pitch back from the root's world rotation; calls callbacks slot 0 when notifyOnBegin (high); semantic signature: `void (MapCameraStates::World* this)`
+    /// `MapCameraStates::World::Begin` at 0x997f50 (semantic, high); signature (high): `undefined Begin(World * this)`; `Begin`: reads yaw and pitch back from the root's world rotation; calls callbacks slot 0 when notifyOnBegin (high); semantic signature: `void (MapCameraStates::World* this)`
     pub slot_1: *const c_void,
-    /// `TESCameraState::End` at 0x24a010 (semantic, high); signature (untiered): `undefined End(void)`
+    /// `TESCameraState::End` at 0x24a010 (semantic, high); signature (low): `undefined End(void)`
     pub slot_2: *const c_void,
-    /// `MapCameraStates::World::Update` at 0x997a50 (runtime, high); signature (untiered): `undefined Update(World * this)`; `Update`: the map camera step: delta = min(frameDelta, 0.033); yaw/pitch with soft limits; root local rotation = BuildRotationMatrixFromAngles_2 0xede800(yaw, 0, pitch); pan; bounds; terrain-height follow; zoom; root local translation = position; UpdateNode (high); semantic signature: `void (MapCameraStates::World* this, BSTSmartPointer<TESCameraState>* next)`
+    /// `MapCameraStates::World::Update` at 0x997a50 (runtime, high); signature (high): `undefined Update(World * this)`; `Update`: the map camera step: delta = min(frameDelta, 0.033); yaw/pitch with soft limits; root local rotation = BuildRotationMatrixFromAngles_2 0xede800(yaw, 0, pitch); pan; bounds; terrain-height follow; zoom; root local translation = position; UpdateNode (high); semantic signature: `void (MapCameraStates::World* this, BSTSmartPointer<TESCameraState>* next)`
     pub slot_3: *const c_void,
-    /// `MapCameraStates::World::GetRotation` at 0x997890 (semantic, high); signature (untiered): `undefined GetRotation(World * this, float * param_1)`; `GetRotation`: quaternion looking from GetTranslation toward basePosition (high); semantic signature: `void (const MapCameraStates::World* this, NiQuaternion* out)`
+    /// `MapCameraStates::World::GetRotation` at 0x997890 (semantic, high); signature (low): `undefined GetRotation(World * this, float * param_1)`; `GetRotation`: quaternion looking from GetTranslation toward basePosition (high); semantic signature: `void (const MapCameraStates::World* this, NiQuaternion* out)`
     pub slot_4: *const c_void,
-    /// `MapCameraStates::World::GetTranslation` at 0x9979e0 (semantic, high); signature (untiered): `undefined GetTranslation(World * this, float * param_1)`; `GetTranslation`: camera position: basePosition.xy + panOffset.xy + heightOffset.xy + zoom * zoomAxis.xy; z = panOffset.z + terrainHeight + heightOffset.z + zoom * zoomAxis.z (high); semantic signature: `void (const MapCameraStates::World* this, NiPoint3* out)`
+    /// `MapCameraStates::World::GetTranslation` at 0x9979e0 (semantic, high); signature (low): `undefined GetTranslation(World * this, float * param_1)`; `GetTranslation`: camera position: basePosition.xy + panOffset.xy + heightOffset.xy + zoom * zoomAxis.xy; z = panOffset.z + terrainHeight + heightOffset.z + zoom * zoomAxis.z (high); semantic signature: `void (const MapCameraStates::World* this, NiPoint3* out)`
     pub slot_5: *const c_void,
-    /// `TESCameraState::SaveGame` at 0x24a080 (semantic, high); signature (untiered): `undefined SaveGame(void)`
+    /// `TESCameraState::SaveGame` at 0x24a080 (semantic, high); signature (low): `undefined SaveGame(void)`
     pub slot_6: *const c_void,
-    /// `TESCameraState::LoadGame` at 0x24a060 (semantic, high); signature (untiered): `undefined LoadGame(void)`
+    /// `TESCameraState::LoadGame` at 0x24a060 (semantic, high); signature (low): `undefined LoadGame(void)`
     pub slot_7: *const c_void,
-    /// `TESCameraState::Revert` at 0x24a070 (semantic, high); signature (untiered): `undefined Revert(void)`
+    /// `TESCameraState::Revert` at 0x24a070 (semantic, high); signature (low): `undefined Revert(void)`
     pub slot_8: *const c_void,
 }
 impl MapCameraStates__World_vtable {
@@ -2190,22 +1498,22 @@ pub struct MapInputHandler_vtable {
     pub slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_1: *const c_void,
-    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
+    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (low): `undefined1 Unk2(void)`
     #[doc(hidden)]
     pub __slot_2: *const c_void,
-    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
+    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (low): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
-    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (untiered): `undefined1 ProcessKinectEvent(void)`
+    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (low): `undefined1 ProcessKinectEvent(void)`
     #[doc(hidden)]
     pub __slot_4: *const c_void,
-    /// `MenuEventHandler::ProcessThumbstickEvent` at 0x582610 (semantic, medium); signature (untiered): `undefined1 ProcessThumbstickEvent(void)`
+    /// `MenuEventHandler::ProcessThumbstickEvent` at 0x582610 (semantic, medium); signature (low): `undefined1 ProcessThumbstickEvent(void)`
     #[doc(hidden)]
     pub __slot_5: *const c_void,
-    /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (untiered): `undefined1 ProcessMouseMoveEvent(void)`
+    /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (low): `undefined1 ProcessMouseMoveEvent(void)`
     #[doc(hidden)]
     pub __slot_6: *const c_void,
-    /// `MenuEventHandler::ProcessButtonEvent` at 0x5825c0 (semantic, medium); signature (untiered): `undefined1 ProcessButtonEvent(void)`
+    /// `MenuEventHandler::ProcessButtonEvent` at 0x5825c0 (semantic, medium); signature (low): `undefined1 ProcessButtonEvent(void)`
     #[doc(hidden)]
     pub __slot_7: *const c_void,
 }
@@ -2220,13 +1528,13 @@ pub struct MapLookHandler_vtable {
     pub slot_0: *const c_void,
     /// `MapLookHandler::vfunc_1` at 0x998af0 (rtti, high); signature (low): `undefined8 vfunc_1(MapLookHandler * this, longlong * param_1)`
     pub slot_1: *const c_void,
-    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
+    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (low): `undefined1 Unk2(void)`
     #[doc(hidden)]
     pub __slot_2: *const c_void,
-    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
+    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (low): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
-    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (untiered): `undefined1 ProcessKinectEvent(void)`
+    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (low): `undefined1 ProcessKinectEvent(void)`
     #[doc(hidden)]
     pub __slot_4: *const c_void,
     /// `MapLookHandler::vfunc_5` at 0x998e70 (rtti, high); signature (low): `undefined4 vfunc_5(MapLookHandler * this, longlong param_1)`
@@ -2250,15 +1558,15 @@ pub struct MapMenu_vtable {
     pub slot_0: *const c_void,
     /// `MapMenu::vfunc_1` at 0x99cdc0 (rtti, high); signature (low): `undefined vfunc_1(MapMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
+    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (low): `undefined PostCreate(void)`
     pub slot_2: *const c_void,
-    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
+    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (low): `undefined Refresh(void)`
     pub slot_3: *const c_void,
-    /// `MapMenu::ProcessMessage` at 0x99c180 (runtime, high); signature (untiered): `undefined8 ProcessMessage(MapMenu * this, longlong param_1, longlong * param_2, undefined8 param_3)`
+    /// `MapMenu::ProcessMessage` at 0x99c180 (runtime, high); signature (low): `undefined8 ProcessMessage(MapMenu * this, longlong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_4: *const c_void,
-    /// `MapMenu::AdvanceMovie` at 0x99bd30 (semantic, high); signature (untiered): `undefined AdvanceMovie(MapMenu * this, float param_1, float * param_2, char * param_3)`
+    /// `MapMenu::AdvanceMovie` at 0x99bd30 (semantic, high); signature (low): `undefined AdvanceMovie(MapMenu * this, float param_1, float * param_2, char * param_3)`
     pub slot_5: *const c_void,
-    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (untiered): `undefined PostDisplay(IMenu * this)`
+    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (high): `undefined PostDisplay(IMenu * this)`
     pub slot_6: *const c_void,
     /// `MapMenu::vfunc_7` at 0x99cd60 (rtti, high); signature (low): `undefined vfunc_7(MapMenu * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_7: *const c_void,
@@ -2284,11 +1592,11 @@ impl MapMenu_vtable_30 {
 /// `MapMenu::vftable_38` at 0x19872b0, id 216506 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct MapMenu_vtable_38 {
-    /// `MapMenu::OnWorldStateBegin` at 0x99f000 (runtime, high); signature (untiered): `undefined OnWorldStateBegin(MapMenu * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `MapMenu::OnWorldStateBegin` at 0x99f000 (runtime, high); signature (low): `undefined OnWorldStateBegin(MapMenu * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `MapMenu::OnExitBegin` at 0x99f170 (semantic, high); signature (untiered): `undefined OnExitBegin(void)`
+    /// `MapMenu::OnExitBegin` at 0x99f170 (semantic, high); signature (low): `undefined OnExitBegin(void)`
     pub slot_1: *const c_void,
-    /// `MapMenu::IMapCameraCallbacks_Destroy` at 0x99f87c (semantic, high); signature (untiered): `undefined IMapCameraCallbacks_Destroy(MapMenu * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `MapMenu::IMapCameraCallbacks_Destroy` at 0x99f87c (semantic, high); signature (low): `undefined IMapCameraCallbacks_Destroy(MapMenu * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_2: *const c_void,
 }
 impl MapMenu_vtable_38 {
@@ -2302,22 +1610,22 @@ pub struct MapMoveHandler_vtable {
     pub slot_0: *const c_void,
     /// `MapMoveHandler::vfunc_1` at 0x998f30 (rtti, high); signature (low): `bool vfunc_1(MapMoveHandler * this, longlong * param_1)`
     pub slot_1: *const c_void,
-    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
+    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (low): `undefined1 Unk2(void)`
     #[doc(hidden)]
     pub __slot_2: *const c_void,
-    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
+    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (low): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
-    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (untiered): `undefined1 ProcessKinectEvent(void)`
+    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (low): `undefined1 ProcessKinectEvent(void)`
     #[doc(hidden)]
     pub __slot_4: *const c_void,
     /// `MapMoveHandler::vfunc_5` at 0x998f60 (rtti, high); signature (low): `undefined8 vfunc_5(MapMoveHandler * this, longlong param_1)`
     #[doc(hidden)]
     pub __slot_5: *const c_void,
-    /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (untiered): `undefined1 ProcessMouseMoveEvent(void)`
+    /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (low): `undefined1 ProcessMouseMoveEvent(void)`
     #[doc(hidden)]
     pub __slot_6: *const c_void,
-    /// `MenuEventHandler::ProcessButtonEvent` at 0x5825c0 (semantic, medium); signature (untiered): `undefined1 ProcessButtonEvent(void)`
+    /// `MenuEventHandler::ProcessButtonEvent` at 0x5825c0 (semantic, medium); signature (low): `undefined1 ProcessButtonEvent(void)`
     #[doc(hidden)]
     pub __slot_7: *const c_void,
 }
@@ -2328,26 +1636,26 @@ impl MapMoveHandler_vtable {
 /// `MapZoomHandler::vftable` at 0x1987200, id 216500 (rtti, high); 8 slots.
 #[repr(C)]
 pub struct MapZoomHandler_vtable {
-    /// `MapZoomHandler::Destroy` at 0x99f9f0 (semantic, high); signature (untiered): `MapZoomHandler * Destroy(MapZoomHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `MapZoomHandler::Destroy` at 0x99f9f0 (semantic, high); signature (low): `MapZoomHandler * Destroy(MapZoomHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `MapZoomHandler::CanProcess` at 0x998f80 (semantic, high); signature (untiered): `undefined8 CanProcess(MapZoomHandler * this, longlong * param_1)`
+    /// `MapZoomHandler::CanProcess` at 0x998f80 (semantic, high); signature (low): `undefined8 CanProcess(MapZoomHandler * this, longlong * param_1)`
     pub slot_1: *const c_void,
-    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
+    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (low): `undefined1 Unk2(void)`
     #[doc(hidden)]
     pub __slot_2: *const c_void,
-    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
+    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (low): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
-    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (untiered): `undefined1 ProcessKinectEvent(void)`
+    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (low): `undefined1 ProcessKinectEvent(void)`
     #[doc(hidden)]
     pub __slot_4: *const c_void,
-    /// `MenuEventHandler::ProcessThumbstickEvent` at 0x582610 (semantic, medium); signature (untiered): `undefined1 ProcessThumbstickEvent(void)`
+    /// `MenuEventHandler::ProcessThumbstickEvent` at 0x582610 (semantic, medium); signature (low): `undefined1 ProcessThumbstickEvent(void)`
     #[doc(hidden)]
     pub __slot_5: *const c_void,
-    /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (untiered): `undefined1 ProcessMouseMoveEvent(void)`
+    /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (low): `undefined1 ProcessMouseMoveEvent(void)`
     #[doc(hidden)]
     pub __slot_6: *const c_void,
-    /// `MapZoomHandler::ProcessButtonEvent` at 0x998ff0 (semantic, high); signature (untiered): `undefined8 ProcessButtonEvent(MapZoomHandler * this, longlong * param_1)`
+    /// `MapZoomHandler::ProcessButtonEvent` at 0x998ff0 (semantic, high); signature (low): `undefined8 ProcessButtonEvent(MapZoomHandler * this, longlong * param_1)`
     #[doc(hidden)]
     pub __slot_7: *const c_void,
 }
@@ -2531,13 +1839,13 @@ pub struct MarketplaceMenu_vtable {
     /// `MarketplaceMenu::vdtor` at 0x582410 (slot_propagation, medium); signature (low): `MarketplaceMenu * vdtor(MarketplaceMenu * this, ulonglong param_1, undefined1 * param_2, ulonglong param_3)`
     #[doc(hidden)]
     pub __slot_0: *const c_void,
-    /// `IMenu::Accept` at 0x57b460 (semantic, high); signature (untiered): `undefined Accept(void)`
+    /// `IMenu::Accept` at 0x57b460 (semantic, high); signature (low): `undefined Accept(void)`
     #[doc(hidden)]
     pub __slot_1: *const c_void,
-    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
+    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (low): `undefined PostCreate(void)`
     #[doc(hidden)]
     pub __slot_2: *const c_void,
-    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
+    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (low): `undefined Refresh(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
     /// `MarketplaceMenu::vfunc_4` at 0x57f390 (rtti, high); signature (low): `undefined8 vfunc_4(MarketplaceMenu * this, longlong param_1)`
@@ -2549,10 +1857,10 @@ pub struct MarketplaceMenu_vtable {
     /// `MarketplaceMenu::vfunc_6` at 0x57f550 (rtti, high); signature (high): `undefined vfunc_6(MarketplaceMenu * this)`
     #[doc(hidden)]
     pub __slot_6: *const c_void,
-    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
+    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (low): `undefined PreDisplay(void)`
     #[doc(hidden)]
     pub __slot_7: *const c_void,
-    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (untiered): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
+    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (low): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
     #[doc(hidden)]
     pub __slot_8: *const c_void,
 }
@@ -2583,13 +1891,13 @@ pub struct MarketplaceMenu__InputHandler_vtable {
     /// `MarketplaceMenu::InputHandler::vfunc_1` at 0x580b90 (rtti, high); signature (low): `bool vfunc_1(InputHandler * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     #[doc(hidden)]
     pub __slot_1: *const c_void,
-    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
+    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (low): `undefined1 Unk2(void)`
     #[doc(hidden)]
     pub __slot_2: *const c_void,
-    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
+    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (low): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
-    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (untiered): `undefined1 ProcessKinectEvent(void)`
+    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (low): `undefined1 ProcessKinectEvent(void)`
     #[doc(hidden)]
     pub __slot_4: *const c_void,
     /// `MarketplaceMenu::InputHandler::vfunc_5` at 0x580bc0 (rtti, high); signature (low): `undefined1 vfunc_5(InputHandler * this, longlong param_1)`
@@ -2693,7 +2001,7 @@ impl MemoryManagerFile_vtable {
 pub struct MenuControls_vtable {
     /// `MenuControls::vdtor` at 0x960be0 (semantic, high); signature (low): `MenuControls * vdtor(MenuControls * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor` (high); semantic signature: `MenuControls* (MenuControls* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `MenuControls::ProcessEvent` at 0x95f020 (semantic, high); signature (untiered): `undefined8 ProcessEvent(MenuControls * this, longlong * param_1, longlong * param_2, undefined8 param_3)`; `ProcessEvent`: walks the frame's InputEvent list (next at +0x10) and dispatches (see answers); returns 0 (high); semantic signature: `BSEventNotifyControl (MenuControls* this, InputEvent* const* head, BSTEventSource<InputEvent*>* source)`
+    /// `MenuControls::ProcessEvent` at 0x95f020 (semantic, high); signature (low): `undefined8 ProcessEvent(MenuControls * this, longlong * param_1, longlong * param_2, undefined8 param_3)`; `ProcessEvent`: walks the frame's InputEvent list (next at +0x10) and dispatches (see answers); returns 0 (high); semantic signature: `BSEventNotifyControl (MenuControls* this, InputEvent* const* head, BSTEventSource<InputEvent*>* source)`
     pub slot_1: *const c_void,
 }
 impl MenuControls_vtable {
@@ -2735,22 +2043,22 @@ pub struct MenuEventHandler_vtable {
     pub slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_1: *const c_void,
-    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`; `Unk2`: returns false in the base; not called by MenuControls::ProcessEvent (low); semantic signature: `bool (MenuEventHandler* this, InputEvent* event)`
+    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (low): `undefined1 Unk2(void)`; `Unk2`: returns false in the base; not called by MenuControls::ProcessEvent (low); semantic signature: `bool (MenuEventHandler* this, InputEvent* event)`
     #[doc(hidden)]
     pub __slot_2: *const c_void,
-    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`; `ProcessSixaxisEvent`: event type 6 (SixaxisEvent); returns handled (medium); semantic signature: `bool (MenuEventHandler* this, InputEvent* event)`
+    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (low): `undefined1 ProcessSixaxisEvent(void)`; `ProcessSixaxisEvent`: event type 6 (SixaxisEvent); returns handled (medium); semantic signature: `bool (MenuEventHandler* this, InputEvent* event)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
-    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (untiered): `undefined1 ProcessKinectEvent(void)`; `ProcessKinectEvent`: event type 5 (KinectEvent) (medium); semantic signature: `bool (MenuEventHandler* this, InputEvent* event)`
+    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (low): `undefined1 ProcessKinectEvent(void)`; `ProcessKinectEvent`: event type 5 (KinectEvent) (medium); semantic signature: `bool (MenuEventHandler* this, InputEvent* event)`
     #[doc(hidden)]
     pub __slot_4: *const c_void,
-    /// `MenuEventHandler::ProcessThumbstickEvent` at 0x582610 (semantic, medium); signature (untiered): `undefined1 ProcessThumbstickEvent(void)`; `ProcessThumbstickEvent`: event type 3 (ThumbstickEvent) (medium); semantic signature: `bool (MenuEventHandler* this, InputEvent* event)`
+    /// `MenuEventHandler::ProcessThumbstickEvent` at 0x582610 (semantic, medium); signature (low): `undefined1 ProcessThumbstickEvent(void)`; `ProcessThumbstickEvent`: event type 3 (ThumbstickEvent) (medium); semantic signature: `bool (MenuEventHandler* this, InputEvent* event)`
     #[doc(hidden)]
     pub __slot_5: *const c_void,
-    /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (untiered): `undefined1 ProcessMouseMoveEvent(void)`; `ProcessMouseMoveEvent`: event type 1 (MouseMoveEvent) (medium); semantic signature: `bool (MenuEventHandler* this, InputEvent* event)`
+    /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (low): `undefined1 ProcessMouseMoveEvent(void)`; `ProcessMouseMoveEvent`: event type 1 (MouseMoveEvent) (medium); semantic signature: `bool (MenuEventHandler* this, InputEvent* event)`
     #[doc(hidden)]
     pub __slot_6: *const c_void,
-    /// `MenuEventHandler::ProcessButtonEvent` at 0x5825c0 (semantic, medium); signature (untiered): `undefined1 ProcessButtonEvent(void)`; `ProcessButtonEvent`: event type 0 (ButtonEvent) (medium); semantic signature: `bool (MenuEventHandler* this, ButtonEvent* event)`
+    /// `MenuEventHandler::ProcessButtonEvent` at 0x5825c0 (semantic, medium); signature (low): `undefined1 ProcessButtonEvent(void)`; `ProcessButtonEvent`: event type 0 (ButtonEvent) (medium); semantic signature: `bool (MenuEventHandler* this, ButtonEvent* event)`
     #[doc(hidden)]
     pub __slot_7: *const c_void,
 }
@@ -2795,24 +2103,24 @@ pub type MenuEventHandler_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::
 pub struct MenuOpenHandler_vtable {
     /// `MenuOpenHandler::vdtor` at 0x960c20 (layout_inference, medium); signature (low): `MenuOpenHandler * vdtor(MenuOpenHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `MenuOpenHandler::CanProcess` at 0x962180 (semantic, high); signature (untiered): `char CanProcess(MenuOpenHandler * this, longlong * param_1)`; `CanProcess` (high); semantic signature: `bool (MenuOpenHandler* this, InputEvent* event)`
+    /// `MenuOpenHandler::CanProcess` at 0x962180 (semantic, high); signature (low): `char CanProcess(MenuOpenHandler * this, longlong * param_1)`; `CanProcess` (high); semantic signature: `bool (MenuOpenHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
-    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
+    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (low): `undefined1 Unk2(void)`
     #[doc(hidden)]
     pub __slot_2: *const c_void,
-    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
+    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (low): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
-    /// `MenuOpenHandler::ProcessKinectEvent` at 0x961a90 (semantic, medium); signature (untiered): `byte ProcessKinectEvent(MenuOpenHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`; `ProcessKinectEvent` (medium); semantic signature: `bool (MenuOpenHandler* this, KinectEvent* event)`
+    /// `MenuOpenHandler::ProcessKinectEvent` at 0x961a90 (semantic, medium); signature (low): `byte ProcessKinectEvent(MenuOpenHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`; `ProcessKinectEvent` (medium); semantic signature: `bool (MenuOpenHandler* this, KinectEvent* event)`
     #[doc(hidden)]
     pub __slot_4: *const c_void,
-    /// `MenuEventHandler::ProcessThumbstickEvent` at 0x582610 (semantic, medium); signature (untiered): `undefined1 ProcessThumbstickEvent(void)`
+    /// `MenuEventHandler::ProcessThumbstickEvent` at 0x582610 (semantic, medium); signature (low): `undefined1 ProcessThumbstickEvent(void)`
     #[doc(hidden)]
     pub __slot_5: *const c_void,
-    /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (untiered): `undefined1 ProcessMouseMoveEvent(void)`
+    /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (low): `undefined1 ProcessMouseMoveEvent(void)`
     #[doc(hidden)]
     pub __slot_6: *const c_void,
-    /// `MenuOpenHandler::ProcessButtonEvent` at 0x961580 (semantic, high); signature (untiered): `undefined1 ProcessButtonEvent(MenuOpenHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`; `ProcessButtonEvent` (high); semantic signature: `bool (MenuOpenHandler* this, ButtonEvent* event)`
+    /// `MenuOpenHandler::ProcessButtonEvent` at 0x961580 (semantic, high); signature (low): `undefined1 ProcessButtonEvent(MenuOpenHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`; `ProcessButtonEvent` (high); semantic signature: `bool (MenuOpenHandler* this, ButtonEvent* event)`
     #[doc(hidden)]
     pub __slot_7: *const c_void,
 }
@@ -2848,7 +2156,7 @@ pub type MenuOpenHandler_vtable_ProcessButtonEvent = unsafe extern "C" fn(this: 
 pub struct MenuTopicManager_vtable {
     /// `MenuTopicManager::vdtor` at 0x5f2520 (slot_propagation, medium); signature (low): `MenuTopicManager * vdtor(MenuTopicManager * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `MenuTopicManager::ProcessEvent_MenuOpenClose` at 0x5ee850 (semantic, high); signature (untiered): `undefined8 ProcessEvent_MenuOpenClose(MenuTopicManager * this, longlong * param_1)`
+    /// `MenuTopicManager::ProcessEvent_MenuOpenClose` at 0x5ee850 (semantic, high); signature (low): `undefined8 ProcessEvent_MenuOpenClose(MenuTopicManager * this, longlong * param_1)`
     pub slot_1: *const c_void,
 }
 impl MenuTopicManager_vtable {
@@ -2880,23 +2188,23 @@ impl MessageBoxData_vtable {
 /// `MessageBoxMenu::vftable` at 0x197c788, id 215795 (rtti, high); 9 slots.
 #[repr(C)]
 pub struct MessageBoxMenu_vtable {
-    /// `MessageBoxMenu::Dtor` at 0x964150 (semantic, high); signature (untiered): `MessageBoxMenu * Dtor(MessageBoxMenu * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Dtor`: deletes every queued MessageBoxData, clears g_MessageBoxMenu (high); semantic signature: `MessageBoxMenu* (MessageBoxMenu* this, u32 flags)`
+    /// `MessageBoxMenu::Dtor` at 0x964150 (semantic, high); signature (low): `MessageBoxMenu * Dtor(MessageBoxMenu * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Dtor`: deletes every queued MessageBoxData, clears g_MessageBoxMenu (high); semantic signature: `MessageBoxMenu* (MessageBoxMenu* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `MessageBoxMenu::Accept` at 0x962e80 (semantic, high); signature (untiered): `undefined Accept(MessageBoxMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`; `Accept`: registers 'buttonPress' (0x962f50) and 'PlaySound' (high); semantic signature: `void (MessageBoxMenu* this, FxDelegateHandler::CallbackProcessor* p)`
+    /// `MessageBoxMenu::Accept` at 0x962e80 (semantic, high); signature (low): `undefined Accept(MessageBoxMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`; `Accept`: registers 'buttonPress' (0x962f50) and 'PlaySound' (high); semantic signature: `void (MessageBoxMenu* this, FxDelegateHandler::CallbackProcessor* p)`
     pub slot_1: *const c_void,
-    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
+    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (low): `undefined PostCreate(void)`
     pub slot_2: *const c_void,
-    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
+    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (low): `undefined Refresh(void)`
     pub slot_3: *const c_void,
-    /// `MessageBoxMenu::ProcessMessage` at 0x963050 (semantic, high); signature (untiered): `undefined8 ProcessMessage(MessageBoxMenu * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `ProcessMessage`: on show (1) shows the top queued box unless 'Loading Menu' is open; refuses hide (3) while boxes remain (high); semantic signature: `UIMessageResult (MessageBoxMenu* this, UIMessage* msg)`
+    /// `MessageBoxMenu::ProcessMessage` at 0x963050 (semantic, high); signature (low): `undefined8 ProcessMessage(MessageBoxMenu * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `ProcessMessage`: on show (1) shows the top queued box unless 'Loading Menu' is open; refuses hide (3) while boxes remain (high); semantic signature: `UIMessageResult (MessageBoxMenu* this, UIMessage* msg)`
     pub slot_4: *const c_void,
-    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (untiered): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
+    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (low): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
     pub slot_5: *const c_void,
-    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (untiered): `undefined PostDisplay(IMenu * this)`
+    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (high): `undefined PostDisplay(IMenu * this)`
     pub slot_6: *const c_void,
-    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
+    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (low): `undefined PreDisplay(void)`
     pub slot_7: *const c_void,
-    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (untiered): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
+    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (low): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
     pub slot_8: *const c_void,
 }
 impl MessageBoxMenu_vtable {
@@ -3020,9 +2328,9 @@ pub struct MissileProjectile_vtable {
     pub slot_12: *const c_void,
     /// `TESObjectREFR::vfunc_13` at 0x2e0a40 (rtti, medium); signature (low): `undefined1 vfunc_13(TESObjectREFR * this, longlong param_1)`
     pub slot_13: *const c_void,
-    /// `MissileProjectile::SaveGame` at 0x7f4d70 (slot_propagation, medium); signature (untiered): `undefined SaveGame(MissileProjectile * this, longlong param_1)`
+    /// `MissileProjectile::SaveGame` at 0x7f4d70 (slot_propagation, medium); signature (low): `undefined SaveGame(MissileProjectile * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `MissileProjectile::LoadGame` at 0x7f4dc0 (slot_propagation, medium); signature (untiered): `undefined LoadGame(MissileProjectile * this, longlong param_1)`
+    /// `MissileProjectile::LoadGame` at 0x7f4dc0 (slot_propagation, medium); signature (low): `undefined LoadGame(MissileProjectile * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `MissileProjectile::vfunc_16` at 0x7f4e00 (rtti, medium); signature (untiered): `undefined vfunc_16(MissileProjectile * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_16: *const c_void,
@@ -3032,13 +2340,13 @@ pub struct MissileProjectile_vtable {
     pub slot_18: *const c_void,
     /// `TESObjectREFR::vfunc_19` at 0x2dec90 (rtti, medium); signature (low): `undefined vfunc_19(TESObjectREFR * this, undefined8 param_1, longlong param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESObjectREFR::GetFormType` at 0x2e39d0 (slot_propagation, high); signature (untiered): `undefined4 GetFormType(TESObjectREFR * this)`
+    /// `TESObjectREFR::GetFormType` at 0x2e39d0 (slot_propagation, high); signature (high): `undefined4 GetFormType(TESObjectREFR * this)`
     pub slot_21: *const c_void,
-    /// `TESObjectREFR::GetFormDetailedString` at 0x2f0730 (slot_propagation, high); signature (untiered): `undefined GetFormDetailedString(TESObjectREFR * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESObjectREFR::GetFormDetailedString` at 0x2f0730 (slot_propagation, high); signature (low): `undefined GetFormDetailedString(TESObjectREFR * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESObjectREFR::vfunc_24` at 0x2ee6b0 (rtti, medium); signature (high): `undefined vfunc_24(TESObjectREFR * this)`
     pub slot_24: *const c_void,
@@ -3080,7 +2388,7 @@ pub struct MissileProjectile_vtable {
     pub slot_42: *const c_void,
     /// `TESObjectREFR::vfunc_43` at 0x2fa360 (rtti, medium); signature (high): `TESObjectREFR * vfunc_43(TESObjectREFR * this)`
     pub slot_43: *const c_void,
-    /// `TESObjectREFR::AsReference` at 0x2fa350 (slot_propagation, medium); signature (untiered): `TESObjectREFR * AsReference(TESObjectREFR * this)`
+    /// `TESObjectREFR::AsReference` at 0x2fa350 (slot_propagation, medium); signature (high): `TESObjectREFR * AsReference(TESObjectREFR * this)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -3092,9 +2400,9 @@ pub struct MissileProjectile_vtable {
     pub slot_48: *const c_void,
     /// `TESObjectREFR::vfunc_49` at 0x2df750 (rtti, medium); signature (low): `undefined vfunc_49(TESObjectREFR * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESObjectREFR::GetFormEditorID` at 0x2f0670 (slot_propagation, high); signature (untiered): `char * GetFormEditorID(TESObjectREFR * this)`
+    /// `TESObjectREFR::GetFormEditorID` at 0x2f0670 (slot_propagation, high); signature (high): `char * GetFormEditorID(TESObjectREFR * this)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -3104,7 +2412,7 @@ pub struct MissileProjectile_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -3136,7 +2444,7 @@ pub struct MissileProjectile_vtable {
     pub slot_70: *const c_void,
     /// `Projectile::vfunc_71` at 0x7fafe0 (rtti, medium); signature (low): `undefined1 vfunc_71(void)`
     pub slot_71: *const c_void,
-    /// `Projectile::HasKeyword` at 0x7fe2b0 (slot_propagation, high); signature (untiered): `undefined8 HasKeyword(Projectile * this)`
+    /// `Projectile::HasKeyword` at 0x7fe2b0 (slot_propagation, high); signature (high): `undefined8 HasKeyword(Projectile * this)`
     pub slot_72: *const c_void,
     /// `TESObjectREFR::vfunc_73` at 0x2f9e70 (rtti, medium); signature (low): `undefined8 vfunc_73(void)`
     pub slot_73: *const c_void,
@@ -3180,7 +2488,7 @@ pub struct MissileProjectile_vtable {
     pub slot_92: *const c_void,
     /// `TESObjectREFR::vfunc_93` at 0x2e8dd0 (rtti, medium); signature (high): `longlong * vfunc_93(TESObjectREFR * this)`
     pub slot_93: *const c_void,
-    /// `TESObjectREFR::IsChild` at 0x2e8f70 (slot_propagation, high); signature (untiered): `undefined1 IsChild(void)`
+    /// `TESObjectREFR::IsChild` at 0x2e8f70 (slot_propagation, high); signature (low): `undefined1 IsChild(void)`
     pub slot_94: *const c_void,
     /// `TESObjectREFR::vfunc_95` at 0x2fa250 (rtti, medium); signature (low): `undefined8 vfunc_95(void)`
     pub slot_95: *const c_void,
@@ -3216,7 +2524,7 @@ pub struct MissileProjectile_vtable {
     pub slot_110: *const c_void,
     /// `TESObjectREFR::vfunc_111` at 0x2f9f40 (rtti, medium); signature (high): `undefined vfunc_111(TESObjectREFR * this)`
     pub slot_111: *const c_void,
-    /// `TESObjectREFR::Get3D` at 0x2ebce0 (runtime, high); signature (untiered): `undefined8 Get3D(TESObjectREFR * this)`
+    /// `TESObjectREFR::Get3D` at 0x2ebce0 (runtime, high); signature (high): `undefined8 Get3D(TESObjectREFR * this)`
     pub slot_112: *const c_void,
     /// `TESObjectREFR::vfunc_113` at 0x2fa2d0 (rtti, medium); signature (low): `undefined1 vfunc_113(void)`
     pub slot_113: *const c_void,
@@ -3266,7 +2574,7 @@ pub struct MissileProjectile_vtable {
     pub slot_135: *const c_void,
     /// `TESObjectREFR::vfunc_136` at 0x2fbdb0 (rtti, medium); signature (low): `undefined vfunc_136(void)`
     pub slot_136: *const c_void,
-    /// `TESObjectREFR::Disable` at 0x2f2d70 (semantic, high); signature (untiered): `undefined Disable(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESObjectREFR::Disable` at 0x2f2d70 (semantic, high); signature (low): `undefined Disable(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_137: *const c_void,
     /// `TESObjectREFR::vfunc_138` at 0x2f3330 (rtti, medium); signature (low): `undefined vfunc_138(TESObjectREFR * this, longlong * param_1, undefined8 param_2, longlong * param_3)`
     pub slot_138: *const c_void,
@@ -3298,7 +2606,7 @@ pub struct MissileProjectile_vtable {
     pub slot_151: *const c_void,
     /// `TESObjectREFR::vfunc_152` at 0x2f3e70 (rtti, medium); signature (low): `undefined vfunc_152(TESObjectREFR * this, longlong param_1)`
     pub slot_152: *const c_void,
-    /// `TESObjectREFR::IsDead` at 0x2f4060 (slot_propagation, high); signature (untiered): `uint IsDead(TESObjectREFR * this)`
+    /// `TESObjectREFR::IsDead` at 0x2f4060 (slot_propagation, high); signature (high): `uint IsDead(TESObjectREFR * this)`
     pub slot_153: *const c_void,
     /// `TESObjectREFR::vfunc_154` at 0x2f5520 (rtti, medium); signature (low): `longlong vfunc_154(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_154: *const c_void,
@@ -3418,7 +2726,7 @@ impl MissileProjectile_vtable_30 {
 pub struct MissileProjectile_vtable_38 {
     /// `MissileProjectile::IAnimationGraphManagerHolder_vdtor` at 0x7f51fc (slot_propagation, medium); signature (high): `undefined IAnimationGraphManagerHolder_vdtor(MissileProjectile * this)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (low): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_2` at 0x2fd720 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_2(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_2: *const c_void,
@@ -3428,31 +2736,31 @@ pub struct MissileProjectile_vtable_38 {
     pub slot_4: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_5` at 0x2fd570 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_5(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (low): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (low): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_8` at 0x2fd750 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_8(TESObjectREFR * this, longlong * param_1)`
     pub slot_8: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_9` at 0x2fd790 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (low): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (low): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (low): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_13` at 0x2fd630 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_13(TESObjectREFR * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (low): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (low): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (low): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (low): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (low): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
 }
 impl MissileProjectile_vtable_38 {
@@ -3535,21 +2843,21 @@ impl MissingContent_vtable {
 pub struct MistMenu_vtable {
     /// `MistMenu::vdtor` at 0x966be0 (slot_propagation, medium); signature (low): `MistMenu * vdtor(MistMenu * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `IMenu::Accept` at 0x57b460 (semantic, high); signature (untiered): `undefined Accept(void)`
+    /// `IMenu::Accept` at 0x57b460 (semantic, high); signature (low): `undefined Accept(void)`
     pub slot_1: *const c_void,
-    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
+    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (low): `undefined PostCreate(void)`
     pub slot_2: *const c_void,
-    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
+    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (low): `undefined Refresh(void)`
     pub slot_3: *const c_void,
     /// `MistMenu::vfunc_4` at 0x964c50 (rtti, high); signature (low): `undefined8 vfunc_4(MistMenu * this, longlong param_1)`
     pub slot_4: *const c_void,
-    /// `MistMenu::AdvanceMovie` at 0x964c80 (runtime, high); signature (untiered): `undefined AdvanceMovie(MistMenu * this, float param_1, float * param_2, float * param_3)`
+    /// `MistMenu::AdvanceMovie` at 0x964c80 (runtime, high); signature (low): `undefined AdvanceMovie(MistMenu * this, float param_1, float * param_2, float * param_3)`
     pub slot_5: *const c_void,
     /// `MistMenu::vfunc_6` at 0x965180 (rtti, high); signature (high): `undefined vfunc_6(MistMenu * this)`
     pub slot_6: *const c_void,
-    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
+    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (low): `undefined PreDisplay(void)`
     pub slot_7: *const c_void,
-    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (untiered): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
+    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (low): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
     pub slot_8: *const c_void,
 }
 impl MistMenu_vtable {
@@ -3561,41 +2869,41 @@ impl MistMenu_vtable {
 pub struct MistMenu_vtable_30 {
     /// `MistMenu::SimpleAnimationGraphManagerHolder_vdtor` at 0x966bc0 (slot_propagation, medium); signature (high): `undefined SimpleAnimationGraphManagerHolder_vdtor(MistMenu * this)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (low): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_2` at 0x556610 (rtti, medium); signature (low): `bool vfunc_2(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_2: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_3` at 0x556670 (rtti, medium); signature (low): `undefined8 vfunc_3(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_3: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphRootNodes` at 0x554330 (semantic, medium); signature (untiered): `undefined1 GetGraphRootNodes(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphRootNodes` at 0x554330 (semantic, medium); signature (low): `undefined1 GetGraphRootNodes(void)`
     pub slot_4: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_5` at 0x5566c0 (rtti, medium); signature (low): `bool vfunc_5(SimpleAnimationGraphManagerHolder * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (low): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (low): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
-    /// `IAnimationGraphManagerHolder::RegisterGraphEventSinks` at 0x554350 (semantic, high); signature (untiered): `undefined1 RegisterGraphEventSinks(void)`
+    /// `IAnimationGraphManagerHolder::RegisterGraphEventSinks` at 0x554350 (semantic, high); signature (low): `undefined1 RegisterGraphEventSinks(void)`
     pub slot_8: *const c_void,
-    /// `IAnimationGraphManagerHolder::OnGraphLoadFailed` at 0x554360 (semantic, medium); signature (untiered): `undefined OnGraphLoadFailed(void)`
+    /// `IAnimationGraphManagerHolder::OnGraphLoadFailed` at 0x554360 (semantic, medium); signature (low): `undefined OnGraphLoadFailed(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (low): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (low): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (low): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
-    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerChanged` at 0x5543c0 (semantic, medium); signature (untiered): `undefined OnAnimationGraphManagerChanged(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerChanged` at 0x5543c0 (semantic, medium); signature (low): `undefined OnAnimationGraphManagerChanged(void)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (low): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (low): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (low): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (low): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (low): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
     /// `MistMenu::SimpleAnimationGraphManagerHolder_vfunc_19` at 0x966b70 (rtti, high); signature (high): `undefined SimpleAnimationGraphManagerHolder_vfunc_19(MistMenu * this)`
     pub slot_19: *const c_void,
@@ -3611,13 +2919,13 @@ pub struct MistMenu_vtable_48 {
     pub slot_0: *const c_void,
     /// `MistMenu::MenuEventHandler_vfunc_1` at 0x965250 (rtti, high); signature (low): `longlong MenuEventHandler_vfunc_1(void)`
     pub slot_1: *const c_void,
-    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
+    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (low): `undefined1 Unk2(void)`
     #[doc(hidden)]
     pub __slot_2: *const c_void,
-    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
+    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (low): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
-    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (untiered): `undefined1 ProcessKinectEvent(void)`
+    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (low): `undefined1 ProcessKinectEvent(void)`
     #[doc(hidden)]
     pub __slot_4: *const c_void,
     /// `MistMenu::MenuEventHandler_vfunc_5` at 0x965280 (rtti, high); signature (low): `undefined8 MenuEventHandler_vfunc_5(MistMenu * this, longlong param_1)`
@@ -3745,21 +3053,21 @@ impl ModManagerData_vtable {
 pub struct ModManagerMenu_vtable {
     /// `ModManagerMenu::vdtor` at 0x5b7c80 (slot_propagation, medium); signature (low): `ModManagerMenu * vdtor(ModManagerMenu * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `IMenu::Accept` at 0x57b460 (semantic, high); signature (untiered): `undefined Accept(void)`
+    /// `IMenu::Accept` at 0x57b460 (semantic, high); signature (low): `undefined Accept(void)`
     pub slot_1: *const c_void,
-    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
+    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (low): `undefined PostCreate(void)`
     pub slot_2: *const c_void,
-    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
+    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (low): `undefined Refresh(void)`
     pub slot_3: *const c_void,
     /// `ModManagerMenu::vfunc_4` at 0x5af230 (rtti, high); signature (low): `undefined vfunc_4(ModManagerMenu * this, longlong param_1)`
     pub slot_4: *const c_void,
     /// `ModManagerMenu::vfunc_5` at 0x5b0cc0 (rtti, high); signature (low): `undefined vfunc_5(ModManagerMenu * this, undefined4 param_2, longlong * param_3, undefined1 * param_4)`
     pub slot_5: *const c_void,
-    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (untiered): `undefined PostDisplay(IMenu * this)`
+    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (high): `undefined PostDisplay(IMenu * this)`
     pub slot_6: *const c_void,
-    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
+    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (low): `undefined PreDisplay(void)`
     pub slot_7: *const c_void,
-    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (untiered): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
+    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (low): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
     pub slot_8: *const c_void,
 }
 impl ModManagerMenu_vtable {
@@ -3773,22 +3081,22 @@ pub struct ModManagerMenu_vtable_30 {
     pub slot_0: *const c_void,
     /// `ModManagerMenu::MenuEventHandler_vfunc_1` at 0x5b1150 (rtti, high); signature (low): `undefined1 MenuEventHandler_vfunc_1(ModManagerMenu * this, longlong param_1)`
     pub slot_1: *const c_void,
-    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
+    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (low): `undefined1 Unk2(void)`
     #[doc(hidden)]
     pub __slot_2: *const c_void,
-    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
+    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (low): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
-    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (untiered): `undefined1 ProcessKinectEvent(void)`
+    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (low): `undefined1 ProcessKinectEvent(void)`
     #[doc(hidden)]
     pub __slot_4: *const c_void,
     /// `ModManagerMenu::MenuEventHandler_vfunc_5` at 0x5b1170 (rtti, high); signature (low): `undefined8 MenuEventHandler_vfunc_5(ModManagerMenu * this, longlong param_1)`
     #[doc(hidden)]
     pub __slot_5: *const c_void,
-    /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (untiered): `undefined1 ProcessMouseMoveEvent(void)`
+    /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (low): `undefined1 ProcessMouseMoveEvent(void)`
     #[doc(hidden)]
     pub __slot_6: *const c_void,
-    /// `MenuEventHandler::ProcessButtonEvent` at 0x5825c0 (semantic, medium); signature (untiered): `undefined1 ProcessButtonEvent(void)`
+    /// `MenuEventHandler::ProcessButtonEvent` at 0x5825c0 (semantic, medium); signature (low): `undefined1 ProcessButtonEvent(void)`
     #[doc(hidden)]
     pub __slot_7: *const c_void,
 }
@@ -3947,41 +3255,41 @@ impl ModelReferenceEffect_vtable {
 pub struct ModelReferenceEffect_vtable_48 {
     /// `ModelReferenceEffect::SimpleAnimationGraphManagerHolder_vdtor` at 0x5d87b0 (slot_propagation, medium); signature (high): `undefined SimpleAnimationGraphManagerHolder_vdtor(ModelReferenceEffect * this)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (low): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_2` at 0x556610 (rtti, medium); signature (low): `bool vfunc_2(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_2: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_3` at 0x556670 (rtti, medium); signature (low): `undefined8 vfunc_3(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_3: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphRootNodes` at 0x554330 (semantic, medium); signature (untiered): `undefined1 GetGraphRootNodes(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphRootNodes` at 0x554330 (semantic, medium); signature (low): `undefined1 GetGraphRootNodes(void)`
     pub slot_4: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_5` at 0x5566c0 (rtti, medium); signature (low): `bool vfunc_5(SimpleAnimationGraphManagerHolder * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (low): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (low): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
     /// `ModelReferenceEffect::SimpleAnimationGraphManagerHolder_vfunc_8` at 0x5d82e0 (rtti, high); signature (low): `undefined8 SimpleAnimationGraphManagerHolder_vfunc_8(ModelReferenceEffect * this, longlong * param_1)`
     pub slot_8: *const c_void,
-    /// `IAnimationGraphManagerHolder::OnGraphLoadFailed` at 0x554360 (semantic, medium); signature (untiered): `undefined OnGraphLoadFailed(void)`
+    /// `IAnimationGraphManagerHolder::OnGraphLoadFailed` at 0x554360 (semantic, medium); signature (low): `undefined OnGraphLoadFailed(void)`
     pub slot_9: *const c_void,
     /// `ModelReferenceEffect::SimpleAnimationGraphManagerHolder_vfunc_10` at 0x5d8150 (rtti, high); signature (low): `undefined8 SimpleAnimationGraphManagerHolder_vfunc_10(ModelReferenceEffect * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (low): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (low): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
     /// `ModelReferenceEffect::SimpleAnimationGraphManagerHolder_vfunc_13` at 0x5d80a0 (rtti, high); signature (low): `undefined SimpleAnimationGraphManagerHolder_vfunc_13(ModelReferenceEffect * this, longlong * param_1, longlong * param_2)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (low): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (low): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (low): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (low): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (low): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_19` at 0x556770 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
@@ -5058,13 +4366,13 @@ pub struct MovementControllerNPC_vtable {
     pub slot_10: *const c_void,
     /// `MovementControllerNPC::vfunc_11` at 0x796410 (rtti, high); signature (high): `undefined vfunc_11(MovementControllerNPC * this)`
     pub slot_11: *const c_void,
-    /// `MovementControllerNPC::SetAIDriven` at 0x796940 (runtime, high); signature (untiered): `undefined SetAIDriven(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `SetAIDriven`: controlsDriven = 0; if it changed: the IMovementSetGoal interface (slot 3 lookup with the name 0x3350980) gets its slot 3, then the motion-driven sub-object's slot 4 when its slot 6 is true (high); semantic signature: `void (MovementControllerNPC* this)`
+    /// `MovementControllerNPC::SetAIDriven` at 0x796940 (runtime, high); signature (low): `undefined SetAIDriven(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `SetAIDriven`: controlsDriven = 0; if it changed: the IMovementSetGoal interface (slot 3 lookup with the name 0x3350980) gets its slot 3, then the motion-driven sub-object's slot 4 when its slot 6 is true (high); semantic signature: `void (MovementControllerNPC* this)`
     pub slot_12: *const c_void,
-    /// `MovementControllerNPC::SetControlsDriven` at 0x7969f0 (runtime, high); signature (untiered): `undefined SetControlsDriven(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `SetControlsDriven`: controlsDriven = 1; same notifications as slot 12 (high); semantic signature: `void (MovementControllerNPC* this)`
+    /// `MovementControllerNPC::SetControlsDriven` at 0x7969f0 (runtime, high); signature (low): `undefined SetControlsDriven(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `SetControlsDriven`: controlsDriven = 1; same notifications as slot 12 (high); semantic signature: `void (MovementControllerNPC* this)`
     pub slot_13: *const c_void,
-    /// `MovementControllerNPC::IsAIDriven` at 0x796aa0 (semantic, high); signature (untiered): `bool IsAIDriven(MovementControllerNPC * this)`; `IsAIDriven`: controlsDriven == 0 (high); semantic signature: `bool (MovementControllerNPC* this)`
+    /// `MovementControllerNPC::IsAIDriven` at 0x796aa0 (semantic, high); signature (high): `bool IsAIDriven(MovementControllerNPC * this)`; `IsAIDriven`: controlsDriven == 0 (high); semantic signature: `bool (MovementControllerNPC* this)`
     pub slot_14: *const c_void,
-    /// `MovementControllerNPC::IsControlsDriven` at 0x796ac0 (semantic, high); signature (untiered): `undefined1 IsControlsDriven(MovementControllerNPC * this)`; `IsControlsDriven`: controlsDriven (high); semantic signature: `bool (MovementControllerNPC* this)`
+    /// `MovementControllerNPC::IsControlsDriven` at 0x796ac0 (semantic, high); signature (high): `undefined1 IsControlsDriven(MovementControllerNPC * this)`; `IsControlsDriven`: controlsDriven (high); semantic signature: `bool (MovementControllerNPC* this)`
     pub slot_15: *const c_void,
     /// `MovementControllerNPC::vfunc_16` at 0x796ad0 (rtti, high); signature (low): `undefined vfunc_16(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_16: *const c_void,
@@ -5162,17 +4470,17 @@ pub struct MovementControllerNPC_vtable_128 {
     pub slot_1: *const c_void,
     /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_2` at 0x7964d0 (rtti, high); signature (high): `undefined IMovementMotionDrivenControl_vfunc_2(MovementControllerNPC * this)`
     pub slot_2: *const c_void,
-    /// `MovementControllerNPC::IMovementMotionDrivenControl_StartAnimationDriven` at 0x796760 (semantic, medium); signature (untiered): `undefined IMovementMotionDrivenControl_StartAnimationDriven(MovementControllerNPC * this)`
+    /// `MovementControllerNPC::IMovementMotionDrivenControl_StartAnimationDriven` at 0x796760 (semantic, medium); signature (high): `undefined IMovementMotionDrivenControl_StartAnimationDriven(MovementControllerNPC * this)`
     pub slot_3: *const c_void,
-    /// `MovementControllerNPC::IMovementMotionDrivenControl_StartMotionDriven` at 0x796550 (semantic, medium); signature (untiered): `undefined IMovementMotionDrivenControl_StartMotionDriven(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `MovementControllerNPC::IMovementMotionDrivenControl_StartMotionDriven` at 0x796550 (semantic, medium); signature (low): `undefined IMovementMotionDrivenControl_StartMotionDriven(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_4: *const c_void,
-    /// `MovementControllerNPC::IMovementMotionDrivenControl_StartAllowRotation` at 0x7967d0 (semantic, high); signature (untiered): `undefined IMovementMotionDrivenControl_StartAllowRotation(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `MovementControllerNPC::IMovementMotionDrivenControl_StartAllowRotation` at 0x7967d0 (semantic, high); signature (low): `undefined IMovementMotionDrivenControl_StartAllowRotation(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `MovementControllerNPC::IMovementMotionDrivenControl_IsMotionDriven` at 0x7968b0 (semantic, high); signature (untiered): `longlong IMovementMotionDrivenControl_IsMotionDriven(MovementControllerNPC * this)`
+    /// `MovementControllerNPC::IMovementMotionDrivenControl_IsMotionDriven` at 0x7968b0 (semantic, high); signature (high): `longlong IMovementMotionDrivenControl_IsMotionDriven(MovementControllerNPC * this)`
     pub slot_6: *const c_void,
-    /// `MovementControllerNPC::IMovementMotionDrivenControl_IsAnimationOrRotationDriven` at 0x7968e0 (semantic, high); signature (untiered): `longlong IMovementMotionDrivenControl_IsAnimationOrRotationDriven(MovementControllerNPC * this)`
+    /// `MovementControllerNPC::IMovementMotionDrivenControl_IsAnimationOrRotationDriven` at 0x7968e0 (semantic, high); signature (high): `longlong IMovementMotionDrivenControl_IsAnimationOrRotationDriven(MovementControllerNPC * this)`
     pub slot_7: *const c_void,
-    /// `MovementControllerNPC::IMovementMotionDrivenControl_IsAllowRotation` at 0x796910 (semantic, high); signature (untiered): `longlong IMovementMotionDrivenControl_IsAllowRotation(MovementControllerNPC * this)`
+    /// `MovementControllerNPC::IMovementMotionDrivenControl_IsAllowRotation` at 0x796910 (semantic, high); signature (high): `longlong IMovementMotionDrivenControl_IsAllowRotation(MovementControllerNPC * this)`
     pub slot_8: *const c_void,
 }
 impl MovementControllerNPC_vtable_128 {
@@ -5274,18 +4582,18 @@ impl MovementControllerNullDataTracker_vtable {
 pub struct MovementHandler_vtable {
     /// `MovementHandler::vdtor` at 0x7b1c10 (layout_inference, medium); signature (low): `MovementHandler * vdtor(MovementHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `MovementHandler::CanProcess` at 0x7b4fb0 (semantic, high); signature (untiered): `undefined8 CanProcess(MovementHandler * this, longlong * param_1)`; `CanProcess`: Forward/Back/Strafe Left/Strafe Right/Move (high); semantic signature: `bool (MovementHandler* this, InputEvent* event)`
+    /// `MovementHandler::CanProcess` at 0x7b4fb0 (semantic, high); signature (low): `undefined8 CanProcess(MovementHandler * this, longlong * param_1)`; `CanProcess`: Forward/Back/Strafe Left/Strafe Right/Move (high); semantic signature: `bool (MovementHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (untiered): `undefined ProcessMotionGesture(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (low): `undefined ProcessMotionGesture(void)`
     #[doc(hidden)]
     pub __slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, high); signature (untiered): `undefined ProcessSixaxis(void)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, high); signature (low): `undefined ProcessSixaxis(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
     /// `MovementHandler::vfunc_4` at 0x7b38c0 (rtti, high); signature (low): `undefined vfunc_4(MovementHandler * this, longlong param_1, undefined4 * param_2)`
     #[doc(hidden)]
     pub __slot_4: *const c_void,
-    /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, high); signature (untiered): `undefined ProcessMouseMove(void)`
+    /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, high); signature (low): `undefined ProcessMouseMove(void)`
     #[doc(hidden)]
     pub __slot_5: *const c_void,
     /// `MovementHandler::vfunc_6` at 0x7b37c0 (rtti, high); signature (low): `undefined vfunc_6(MovementHandler * this, longlong * param_1, undefined4 * param_2)`
@@ -5695,7 +5003,7 @@ pub struct MovementHandlerAgentPlayerControls_vtable_18 {
     pub slot_0: *const c_void,
     /// `MovementHandlerAgent::IMovementHandlerAgent_vfunc_1` at 0x1223f90 (rtti, medium); signature (high): `undefined IMovementHandlerAgent_vfunc_1(MovementHandlerAgent * this)`
     pub slot_1: *const c_void,
-    /// `MovementHandlerAgentPlayerControls::HandleMovement` at 0x7a3fd0 (semantic, high); signature (untiered): `undefined HandleMovement(MovementHandlerAgentPlayerControls * this, longlong * param_1, undefined1 * param_2, float * param_3)`
+    /// `MovementHandlerAgentPlayerControls::HandleMovement` at 0x7a3fd0 (semantic, high); signature (low): `undefined HandleMovement(MovementHandlerAgentPlayerControls * this, longlong * param_1, undefined1 * param_2, float * param_3)`
     pub slot_2: *const c_void,
     /// `MovementHandlerAgentPlayerControls::IMovementHandlerAgent_vfunc_3` at 0x7a48f0 (rtti, high); signature (low): `undefined IMovementHandlerAgent_vfunc_3(void)`
     pub slot_3: *const c_void,
@@ -7973,9 +7281,9 @@ pub struct NavMesh_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -7985,13 +7293,13 @@ pub struct NavMesh_vtable {
     pub slot_18: *const c_void,
     /// `NavMesh::vfunc_19` at 0x4c18a0 (rtti, high); signature (low): `undefined vfunc_19(NavMesh * this, undefined8 param_1, undefined8 param_2, ushort * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `NavMesh::GetFormDetailedString` at 0x4c1b70 (slot_propagation, high); signature (untiered): `undefined GetFormDetailedString(NavMesh * this, undefined8 param_1, ulonglong param_2, undefined8 param_3)`
+    /// `NavMesh::GetFormDetailedString` at 0x4c1b70 (slot_propagation, high); signature (low): `undefined GetFormDetailedString(NavMesh * this, undefined8 param_1, ulonglong param_2, undefined8 param_3)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -8033,7 +7341,7 @@ pub struct NavMesh_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -8045,9 +7353,9 @@ pub struct NavMesh_vtable {
     pub slot_48: *const c_void,
     /// `NavMesh::vfunc_49` at 0x4c17c0 (rtti, high); signature (low): `undefined vfunc_49(NavMesh * this, undefined4 * param_1, longlong param_2, undefined8 param_3)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -8057,7 +7365,7 @@ pub struct NavMesh_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -8131,9 +7439,9 @@ pub struct NavMeshInfoMap_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -8143,13 +7451,13 @@ pub struct NavMeshInfoMap_vtable {
     pub slot_18: *const c_void,
     /// `NavMeshInfoMap::vfunc_19` at 0x4c4160 (rtti, high); signature (low): `undefined vfunc_19(NavMeshInfoMap * this, undefined8 param_1, undefined8 param_2, ulonglong param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -8173,7 +7481,7 @@ pub struct NavMeshInfoMap_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `NavMeshInfoMap::vfunc_36` at 0x4c4050 (rtti, high); signature (low): `undefined vfunc_36(NavMeshInfoMap * this, char param_1)`
     pub slot_36: *const c_void,
@@ -8191,7 +7499,7 @@ pub struct NavMeshInfoMap_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -8203,9 +7511,9 @@ pub struct NavMeshInfoMap_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -8215,7 +7523,7 @@ pub struct NavMeshInfoMap_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -8507,7 +7815,7 @@ pub struct NiAVObject_vtable {
     pub slot_28: *const c_void,
     /// `NiAVObject::vfunc_29` at 0xee0f70 (rtti, medium); signature (low): `undefined vfunc_29(NiAVObject * this, undefined8 param_1)`
     pub slot_29: *const c_void,
-    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (untiered): `undefined PostLinkObject(NiObjectNET * this)`
+    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (high): `undefined PostLinkObject(NiObjectNET * this)`
     pub slot_30: *const c_void,
     /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
     pub slot_31: *const c_void,
@@ -8521,35 +7829,35 @@ pub struct NiAVObject_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (untiered): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`; `UpdateControllers`: runs each controller's slot 39 when data->flags bit 0 is set; NiNode 0xee2420 also recurses into the children's slot 37 (high); semantic signature: `void (NiAVObject* this, NiUpdateData* data)`
+    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (low): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`; `UpdateControllers`: runs each controller's slot 39 when data->flags bit 0 is set; NiNode 0xee2420 also recurses into the children's slot 37 (high); semantic signature: `void (NiAVObject* this, NiUpdateData* data)`
     pub slot_37: *const c_void,
-    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (untiered): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`; `AcceptVisitor`: calls v->slot1(this); NiNode 0xee2310 recurses into the children only when that returns true (medium); semantic signature: `void (NiAVObject* this, Visitor* v)`
+    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (low): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`; `AcceptVisitor`: calls v->slot1(this); NiNode 0xee2310 recurses into the children only when that returns true (medium); semantic signature: `void (NiAVObject* this, Visitor* v)`
     pub slot_38: *const c_void,
-    /// `NiAVObject::Slot39Recursive` at 0xee1300 (semantic, low); signature (untiered): `undefined Slot39Recursive(void)`; `Slot39Recursive`: no-op on NiAVObject; NiNode 0xee3010 forwards the argument to every child's slot 39 (low); semantic signature: `void (NiAVObject* this, void* arg)`
+    /// `NiAVObject::Slot39Recursive` at 0xee1300 (semantic, low); signature (low): `undefined Slot39Recursive(void)`; `Slot39Recursive`: no-op on NiAVObject; NiNode 0xee3010 forwards the argument to every child's slot 39 (low); semantic signature: `void (NiAVObject* this, void* arg)`
     pub slot_39: *const c_void,
     /// `NiAVObject::vfunc_40` at 0xee0a20 (rtti, medium); signature (low): `undefined vfunc_40(void)`
     pub slot_40: *const c_void,
     /// `NiAVObject::vfunc_41` at 0xee0a30 (rtti, medium); signature (low): `undefined vfunc_41(void)`
     pub slot_41: *const c_void,
-    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (untiered): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`; `GetObjectByName`: this when this->name == *name (pointer compare), else null; NiNode 0xee23a0 then searches the children depth-first in array order (high); semantic signature: `NiAVObject* (NiAVObject* this, const BSFixedString* name)`
+    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (low): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`; `GetObjectByName`: this when this->name == *name (pointer compare), else null; NiNode 0xee23a0 then searches the children depth-first in array order (high); semantic signature: `NiAVObject* (NiAVObject* this, const BSFixedString* name)`
     pub slot_42: *const c_void,
-    /// `NiAVObject::SetSelectiveUpdateFlags` at 0xee0a60 (semantic, medium); signature (untiered): `undefined SetSelectiveUpdateFlags(NiAVObject * this, char * param_1, byte param_2, byte * param_3)`; `SetSelectiveUpdateFlags`: recomputes flags bit 1 (selected for update), bit 2 (update transforms) and bit 4 (rigid: set by NiAVObject, cleared by NiNode 0xee2e30) from the controllers and flag bit 7 (medium); semantic signature: `void (NiAVObject* this, bool* selectiveUpdate, bool updateTransforms, bool* rigid)`
+    /// `NiAVObject::SetSelectiveUpdateFlags` at 0xee0a60 (semantic, medium); signature (low): `undefined SetSelectiveUpdateFlags(NiAVObject * this, char * param_1, byte param_2, byte * param_3)`; `SetSelectiveUpdateFlags`: recomputes flags bit 1 (selected for update), bit 2 (update transforms) and bit 4 (rigid: set by NiAVObject, cleared by NiNode 0xee2e30) from the controllers and flag bit 7 (medium); semantic signature: `void (NiAVObject* this, bool* selectiveUpdate, bool updateTransforms, bool* rigid)`
     pub slot_43: *const c_void,
-    /// `NiAVObject::UpdateDownwardPass` at 0xee0b30 (semantic, high); signature (untiered): `undefined UpdateDownwardPass(NiAVObject * this, longlong param_1)`; `UpdateDownwardPass`: full update of the subtree: controllers (data bit 0), UpdateWorldData (slot 48), bound; NiNode 0xee24d0 runs slot 44 on every child and merges their bounds (unless flags bit 13) (high); semantic signature: `void (NiAVObject* this, NiUpdateData* data, u32 parentFlags)`
+    /// `NiAVObject::UpdateDownwardPass` at 0xee0b30 (semantic, high); signature (low): `undefined UpdateDownwardPass(NiAVObject * this, longlong param_1)`; `UpdateDownwardPass`: full update of the subtree: controllers (data bit 0), UpdateWorldData (slot 48), bound; NiNode 0xee24d0 runs slot 44 on every child and merges their bounds (unless flags bit 13) (high); semantic signature: `void (NiAVObject* this, NiUpdateData* data, u32 parentFlags)`
     pub slot_44: *const c_void,
-    /// `NiAVObject::UpdateSelectedDownwardPass` at 0xee0bb0 (semantic, high); signature (untiered): `undefined UpdateSelectedDownwardPass(NiAVObject * this, longlong param_1)`; `UpdateSelectedDownwardPass`: selective update: controllers only with flags bit 3, transforms only with flags bit 2 and data bit 1 clear; NiNode 0xee2680 visits only children with flags bit 1, through slot 46 for children with bit 4 (high); semantic signature: `void (NiAVObject* this, NiUpdateData* data, u32 parentFlags)`
+    /// `NiAVObject::UpdateSelectedDownwardPass` at 0xee0bb0 (semantic, high); signature (low): `undefined UpdateSelectedDownwardPass(NiAVObject * this, longlong param_1)`; `UpdateSelectedDownwardPass`: selective update: controllers only with flags bit 3, transforms only with flags bit 2 and data bit 1 clear; NiNode 0xee2680 visits only children with flags bit 1, through slot 46 for children with bit 4 (high); semantic signature: `void (NiAVObject* this, NiUpdateData* data, u32 parentFlags)`
     pub slot_45: *const c_void,
-    /// `NiAVObject::UpdateRigidDownwardPass` at 0xee0c90 (semantic, high); signature (untiered): `undefined UpdateRigidDownwardPass(NiAVObject * this, longlong param_1)`; `UpdateRigidDownwardPass`: as slot 45 for rigid subtrees: NiNode 0xee2a40 recurses with slot 46 into children with flags bit 1 and does not rebuild the bound (high); semantic signature: `void (NiAVObject* this, NiUpdateData* data, u32 parentFlags)`
+    /// `NiAVObject::UpdateRigidDownwardPass` at 0xee0c90 (semantic, high); signature (low): `undefined UpdateRigidDownwardPass(NiAVObject * this, longlong param_1)`; `UpdateRigidDownwardPass`: as slot 45 for rigid subtrees: NiNode 0xee2a40 recurses with slot 46 into children with flags bit 1 and does not rebuild the bound (high); semantic signature: `void (NiAVObject* this, NiUpdateData* data, u32 parentFlags)`
     pub slot_46: *const c_void,
-    /// `NiAVObject::UpdateWorldBound` at 0xee1320 (semantic, high); signature (untiered): `undefined UpdateWorldBound(void)`; `UpdateWorldBound`: rebuilds worldBound: no-op on NiAVObject, union of the children on NiNode 0xee2920 (skipped with flags bit 13), the camera position on NiCamera 0xef1950 (high); semantic signature: `void (NiAVObject* this)`
+    /// `NiAVObject::UpdateWorldBound` at 0xee1320 (semantic, high); signature (low): `undefined UpdateWorldBound(void)`; `UpdateWorldBound`: rebuilds worldBound: no-op on NiAVObject, union of the children on NiNode 0xee2920 (skipped with flags bit 13), the camera position on NiCamera 0xef1950 (high); semantic signature: `void (NiAVObject* this)`
     pub slot_47: *const c_void,
-    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`; `UpdateWorldData`: snapshots previousWorld once per render frame, then world = parent.world * local (MultiplyTransforms 0x3059a0), world = parent.world with flags bit 9, world = local without a parent, or the collision object's slot 38 when +0x40 is set (high); semantic signature: `void (NiAVObject* this, NiUpdateData* data)`
+    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (low): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`; `UpdateWorldData`: snapshots previousWorld once per render frame, then world = parent.world * local (MultiplyTransforms 0x3059a0), world = parent.world with flags bit 9, world = local without a parent, or the collision object's slot 38 when +0x40 is set (high); semantic signature: `void (NiAVObject* this, NiUpdateData* data)`
     pub slot_48: *const c_void,
-    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (untiered): `undefined UpdateTransformsAndBound(NiAVObject * this)`; `UpdateTransformsAndBound`: update without controllers: UpdateWorldData when flags bit 2, then UpdateWorldBound; NiNode 0xee2b70 recurses with slot 49 and merges bounds (medium); semantic signature: `void (NiAVObject* this, NiUpdateData* data)`
+    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (high): `undefined UpdateTransformsAndBound(NiAVObject * this)`; `UpdateTransformsAndBound`: update without controllers: UpdateWorldData when flags bit 2, then UpdateWorldBound; NiNode 0xee2b70 recurses with slot 49 and merges bounds (medium); semantic signature: `void (NiAVObject* this, NiUpdateData* data)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`; `UpdateDownwardPassUnderParent`: temporarily sets parent, runs slot 44, clears parent (medium); semantic signature: `void (NiAVObject* this, NiNode* parent, NiUpdateData* data)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`; `UpdateDownwardPassUnderParent`: temporarily sets parent, runs slot 44, clears parent (medium); semantic signature: `void (NiAVObject* this, NiNode* parent, NiUpdateData* data)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`; `UpdateUpwardPass`: asks the parent to rebuild its bound upward (parent slot 61) (high); semantic signature: `void (NiAVObject* this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`; `UpdateUpwardPass`: asks the parent to rebuild its bound upward (parent slot 61) (high); semantic signature: `void (NiAVObject* this)`
     pub slot_51: *const c_void,
     /// `NiAVObject::vfunc_52` at 0xee0f60 (rtti, medium); signature (low): `undefined vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -9007,7 +8315,7 @@ pub struct NiAlphaAccumulator_vtable {
     pub slot_37: *const c_void,
     /// `NiBackToFrontAccumulator::vfunc_38` at 0xf1e980 (rtti, medium); signature (low): `undefined vfunc_38(void)`
     pub slot_38: *const c_void,
-    /// `BSShaderAccumulator::vfunc_39` at 0xf0f3d0 (semantic, high); signature (untiered): `undefined vfunc_39(void)`
+    /// `BSShaderAccumulator::vfunc_39` at 0xf0f3d0 (semantic, high); signature (low): `undefined vfunc_39(void)`
     pub slot_39: *const c_void,
     /// `NiAccumulator::vfunc_40` at 0xf0f4f0 (rtti, medium); signature (low): `undefined8 vfunc_40(void)`
     pub slot_40: *const c_void,
@@ -9081,7 +8389,7 @@ pub struct NiAlphaProperty_vtable {
     pub slot_28: *const c_void,
     /// `NiObjectNET::vfunc_29` at 0xeeb8c0 (rtti, medium); signature (low): `undefined vfunc_29(NiObjectNET * this, longlong param_1)`
     pub slot_29: *const c_void,
-    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (untiered): `undefined PostLinkObject(NiObjectNET * this)`
+    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (high): `undefined PostLinkObject(NiObjectNET * this)`
     pub slot_30: *const c_void,
     /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
     pub slot_31: *const c_void,
@@ -9167,7 +8475,7 @@ pub struct NiAmbientLight_vtable {
     pub slot_28: *const c_void,
     /// `NiAVObject::vfunc_29` at 0xee0f70 (rtti, medium); signature (low): `undefined vfunc_29(NiAVObject * this, undefined8 param_1)`
     pub slot_29: *const c_void,
-    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (untiered): `undefined PostLinkObject(NiObjectNET * this)`
+    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (high): `undefined PostLinkObject(NiObjectNET * this)`
     pub slot_30: *const c_void,
     /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
     pub slot_31: *const c_void,
@@ -9181,35 +8489,35 @@ pub struct NiAmbientLight_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (untiered): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (low): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
     pub slot_37: *const c_void,
-    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (untiered): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (low): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
     pub slot_38: *const c_void,
-    /// `NiAVObject::Slot39Recursive` at 0xee1300 (semantic, low); signature (untiered): `undefined Slot39Recursive(void)`
+    /// `NiAVObject::Slot39Recursive` at 0xee1300 (semantic, low); signature (low): `undefined Slot39Recursive(void)`
     pub slot_39: *const c_void,
     /// `NiAVObject::vfunc_40` at 0xee0a20 (rtti, medium); signature (low): `undefined vfunc_40(void)`
     pub slot_40: *const c_void,
     /// `NiAVObject::vfunc_41` at 0xee0a30 (rtti, medium); signature (low): `undefined vfunc_41(void)`
     pub slot_41: *const c_void,
-    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (untiered): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (low): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
     pub slot_42: *const c_void,
-    /// `NiAVObject::SetSelectiveUpdateFlags` at 0xee0a60 (semantic, medium); signature (untiered): `undefined SetSelectiveUpdateFlags(NiAVObject * this, char * param_1, byte param_2, byte * param_3)`
+    /// `NiAVObject::SetSelectiveUpdateFlags` at 0xee0a60 (semantic, medium); signature (low): `undefined SetSelectiveUpdateFlags(NiAVObject * this, char * param_1, byte param_2, byte * param_3)`
     pub slot_43: *const c_void,
-    /// `NiAVObject::UpdateDownwardPass` at 0xee0b30 (semantic, high); signature (untiered): `undefined UpdateDownwardPass(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateDownwardPass` at 0xee0b30 (semantic, high); signature (low): `undefined UpdateDownwardPass(NiAVObject * this, longlong param_1)`
     pub slot_44: *const c_void,
-    /// `NiAVObject::UpdateSelectedDownwardPass` at 0xee0bb0 (semantic, high); signature (untiered): `undefined UpdateSelectedDownwardPass(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateSelectedDownwardPass` at 0xee0bb0 (semantic, high); signature (low): `undefined UpdateSelectedDownwardPass(NiAVObject * this, longlong param_1)`
     pub slot_45: *const c_void,
-    /// `NiAVObject::UpdateRigidDownwardPass` at 0xee0c90 (semantic, high); signature (untiered): `undefined UpdateRigidDownwardPass(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateRigidDownwardPass` at 0xee0c90 (semantic, high); signature (low): `undefined UpdateRigidDownwardPass(NiAVObject * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `NiAVObject::UpdateWorldBound` at 0xee1320 (semantic, high); signature (untiered): `undefined UpdateWorldBound(void)`
+    /// `NiAVObject::UpdateWorldBound` at 0xee1320 (semantic, high); signature (low): `undefined UpdateWorldBound(void)`
     pub slot_47: *const c_void,
-    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (low): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
-    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (untiered): `undefined UpdateTransformsAndBound(NiAVObject * this)`
+    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (high): `undefined UpdateTransformsAndBound(NiAVObject * this)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
     /// `NiAVObject::vfunc_52` at 0xee0f60 (rtti, medium); signature (low): `undefined vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -9331,7 +8639,7 @@ pub struct NiBSPNode_vtable {
     pub slot_1: *const c_void,
     /// `NiBSPNode::vfunc_2` at 0xf108e0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
     pub slot_2: *const c_void,
-    /// `NiNode::AsNode` at 0x1b4d10 (semantic, high); signature (untiered): `NiNode * AsNode(NiNode * this)`
+    /// `NiNode::AsNode` at 0x1b4d10 (semantic, high); signature (high): `NiNode * AsNode(NiNode * this)`
     pub slot_3: *const c_void,
     /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
     pub slot_4: *const c_void,
@@ -9385,7 +8693,7 @@ pub struct NiBSPNode_vtable {
     pub slot_28: *const c_void,
     /// `NiNode::vfunc_29` at 0xee2f60 (rtti, medium); signature (low): `undefined vfunc_29(NiNode * this, longlong param_1)`
     pub slot_29: *const c_void,
-    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (untiered): `undefined PostLinkObject(NiObjectNET * this)`
+    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (high): `undefined PostLinkObject(NiObjectNET * this)`
     pub slot_30: *const c_void,
     /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
     pub slot_31: *const c_void,
@@ -9425,29 +8733,29 @@ pub struct NiBSPNode_vtable {
     pub slot_48: *const c_void,
     /// `NiNode::vfunc_49` at 0xee2b70 (rtti, medium); signature (low): `undefined vfunc_49(NiNode * this, undefined8 param_1)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
     /// `NiBSPNode::vfunc_52` at 0xf10460 (rtti, high); signature (low): `undefined vfunc_52(NiBSPNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
-    /// `NiNode::AttachChild` at 0xee1b00 (semantic, high); signature (untiered): `undefined AttachChild(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+    /// `NiNode::AttachChild` at 0xee1b00 (semantic, high); signature (low): `undefined AttachChild(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
-    /// `NiNode::InsertChildAt` at 0xee1c70 (semantic, high); signature (untiered): `undefined InsertChildAt(NiNode * this, undefined4 param_1, longlong * param_2, undefined8 param_3)`
+    /// `NiNode::InsertChildAt` at 0xee1c70 (semantic, high); signature (low): `undefined InsertChildAt(NiNode * this, undefined4 param_1, longlong * param_2, undefined8 param_3)`
     pub slot_54: *const c_void,
-    /// `NiNode::DetachChild` at 0xee1d60 (semantic, high); signature (untiered): `undefined DetachChild(NiNode * this, longlong * param_1, longlong * param_2)`
+    /// `NiNode::DetachChild` at 0xee1d60 (semantic, high); signature (low): `undefined DetachChild(NiNode * this, longlong * param_1, longlong * param_2)`
     pub slot_55: *const c_void,
-    /// `NiNode::DetachChild2` at 0xee1d10 (semantic, high); signature (untiered): `undefined DetachChild2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `NiNode::DetachChild2` at 0xee1d10 (semantic, high); signature (low): `undefined DetachChild2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_56: *const c_void,
-    /// `NiNode::DetachChildAt` at 0xee1f20 (semantic, high); signature (untiered): `undefined DetachChildAt(NiNode * this, uint param_1, longlong * param_2)`
+    /// `NiNode::DetachChildAt` at 0xee1f20 (semantic, high); signature (low): `undefined DetachChildAt(NiNode * this, uint param_1, longlong * param_2)`
     pub slot_57: *const c_void,
-    /// `NiNode::DetachChildAt2` at 0xee1ed0 (semantic, high); signature (untiered): `undefined DetachChildAt2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `NiNode::DetachChildAt2` at 0xee1ed0 (semantic, high); signature (low): `undefined DetachChildAt2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_58: *const c_void,
-    /// `NiNode::SetAt` at 0xee2150 (semantic, high); signature (untiered): `undefined SetAt(NiNode * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `NiNode::SetAt` at 0xee2150 (semantic, high); signature (low): `undefined SetAt(NiNode * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_59: *const c_void,
-    /// `NiNode::SetAt2` at 0xee2100 (semantic, high); signature (untiered): `undefined SetAt2(NiNode * this)`
+    /// `NiNode::SetAt2` at 0xee2100 (semantic, high); signature (high): `undefined SetAt2(NiNode * this)`
     pub slot_60: *const c_void,
-    /// `NiNode::UpdateUpwardPass` at 0xee28e0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiNode * this)`
+    /// `NiNode::UpdateUpwardPass` at 0xee28e0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiNode * this)`
     pub slot_61: *const c_void,
 }
 impl NiBSPNode_vtable {
@@ -10979,7 +10287,7 @@ pub struct NiBillboardNode_vtable {
     pub slot_1: *const c_void,
     /// `NiBillboardNode::vfunc_2` at 0x41cce0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
     pub slot_2: *const c_void,
-    /// `NiNode::AsNode` at 0x1b4d10 (semantic, high); signature (untiered): `NiNode * AsNode(NiNode * this)`
+    /// `NiNode::AsNode` at 0x1b4d10 (semantic, high); signature (high): `NiNode * AsNode(NiNode * this)`
     pub slot_3: *const c_void,
     /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
     pub slot_4: *const c_void,
@@ -11033,7 +10341,7 @@ pub struct NiBillboardNode_vtable {
     pub slot_28: *const c_void,
     /// `NiNode::vfunc_29` at 0xee2f60 (rtti, medium); signature (low): `undefined vfunc_29(NiNode * this, longlong param_1)`
     pub slot_29: *const c_void,
-    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (untiered): `undefined PostLinkObject(NiObjectNET * this)`
+    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (high): `undefined PostLinkObject(NiObjectNET * this)`
     pub slot_30: *const c_void,
     /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
     pub slot_31: *const c_void,
@@ -11073,29 +10381,29 @@ pub struct NiBillboardNode_vtable {
     pub slot_48: *const c_void,
     /// `NiNode::vfunc_49` at 0xee2b70 (rtti, medium); signature (low): `undefined vfunc_49(NiNode * this, undefined8 param_1)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
     /// `NiBillboardNode::vfunc_52` at 0xf041d0 (rtti, high); signature (low): `undefined vfunc_52(NiBillboardNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
-    /// `NiNode::AttachChild` at 0xee1b00 (semantic, high); signature (untiered): `undefined AttachChild(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+    /// `NiNode::AttachChild` at 0xee1b00 (semantic, high); signature (low): `undefined AttachChild(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
-    /// `NiNode::InsertChildAt` at 0xee1c70 (semantic, high); signature (untiered): `undefined InsertChildAt(NiNode * this, undefined4 param_1, longlong * param_2, undefined8 param_3)`
+    /// `NiNode::InsertChildAt` at 0xee1c70 (semantic, high); signature (low): `undefined InsertChildAt(NiNode * this, undefined4 param_1, longlong * param_2, undefined8 param_3)`
     pub slot_54: *const c_void,
-    /// `NiNode::DetachChild` at 0xee1d60 (semantic, high); signature (untiered): `undefined DetachChild(NiNode * this, longlong * param_1, longlong * param_2)`
+    /// `NiNode::DetachChild` at 0xee1d60 (semantic, high); signature (low): `undefined DetachChild(NiNode * this, longlong * param_1, longlong * param_2)`
     pub slot_55: *const c_void,
-    /// `NiNode::DetachChild2` at 0xee1d10 (semantic, high); signature (untiered): `undefined DetachChild2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `NiNode::DetachChild2` at 0xee1d10 (semantic, high); signature (low): `undefined DetachChild2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_56: *const c_void,
-    /// `NiNode::DetachChildAt` at 0xee1f20 (semantic, high); signature (untiered): `undefined DetachChildAt(NiNode * this, uint param_1, longlong * param_2)`
+    /// `NiNode::DetachChildAt` at 0xee1f20 (semantic, high); signature (low): `undefined DetachChildAt(NiNode * this, uint param_1, longlong * param_2)`
     pub slot_57: *const c_void,
-    /// `NiNode::DetachChildAt2` at 0xee1ed0 (semantic, high); signature (untiered): `undefined DetachChildAt2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `NiNode::DetachChildAt2` at 0xee1ed0 (semantic, high); signature (low): `undefined DetachChildAt2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_58: *const c_void,
-    /// `NiNode::SetAt` at 0xee2150 (semantic, high); signature (untiered): `undefined SetAt(NiNode * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `NiNode::SetAt` at 0xee2150 (semantic, high); signature (low): `undefined SetAt(NiNode * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_59: *const c_void,
-    /// `NiNode::SetAt2` at 0xee2100 (semantic, high); signature (untiered): `undefined SetAt2(NiNode * this)`
+    /// `NiNode::SetAt2` at 0xee2100 (semantic, high); signature (high): `undefined SetAt2(NiNode * this)`
     pub slot_60: *const c_void,
-    /// `NiNode::UpdateUpwardPass` at 0xee28e0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiNode * this)`
+    /// `NiNode::UpdateUpwardPass` at 0xee28e0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiNode * this)`
     pub slot_61: *const c_void,
 }
 impl NiBillboardNode_vtable {
@@ -11179,9 +10487,9 @@ pub struct NiBinaryExtraData_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiExtraData::IsStreamable` at 0xef9b60 (semantic, medium); signature (untiered): `undefined1 IsStreamable(void)`
+    /// `NiExtraData::IsStreamable` at 0xef9b60 (semantic, medium); signature (low): `undefined1 IsStreamable(void)`
     pub slot_37: *const c_void,
-    /// `NiExtraData::Slot38ReturnsTrue` at 0xef9b70 (semantic, low); signature (untiered): `undefined1 Slot38ReturnsTrue(void)`
+    /// `NiExtraData::Slot38ReturnsTrue` at 0xef9b70 (semantic, low); signature (low): `undefined1 Slot38ReturnsTrue(void)`
     pub slot_38: *const c_void,
 }
 impl NiBinaryExtraData_vtable {
@@ -12826,9 +12134,9 @@ pub struct NiBooleanExtraData_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiExtraData::IsStreamable` at 0xef9b60 (semantic, medium); signature (untiered): `undefined1 IsStreamable(void)`
+    /// `NiExtraData::IsStreamable` at 0xef9b60 (semantic, medium); signature (low): `undefined1 IsStreamable(void)`
     pub slot_37: *const c_void,
-    /// `NiExtraData::Slot38ReturnsTrue` at 0xef9b70 (semantic, low); signature (untiered): `undefined1 Slot38ReturnsTrue(void)`
+    /// `NiExtraData::Slot38ReturnsTrue` at 0xef9b70 (semantic, low); signature (low): `undefined1 Slot38ReturnsTrue(void)`
     pub slot_38: *const c_void,
 }
 impl NiBooleanExtraData_vtable {
@@ -12934,11 +12242,11 @@ impl NiBoxSphereIntersector_vtable {
 /// `NiCamera::vftable` at 0x1a485b8, id 237191 (rtti, high); 53 slots.
 #[repr(C)]
 pub struct NiCamera_vtable {
-    /// `NiCamera::Destroy` at 0xef1a10 (semantic, high); signature (untiered): `NiCamera * Destroy(NiCamera * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: NiAVObject::dtor, frees 0x188 when flags & 1 (high); semantic signature: `NiCamera* (NiCamera* this, u32 flags)`
+    /// `NiCamera::Destroy` at 0xef1a10 (semantic, high); signature (low): `NiCamera * Destroy(NiCamera * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: NiAVObject::dtor, frees 0x188 when flags & 1 (high); semantic signature: `NiCamera* (NiCamera* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
-    /// `NiCamera::GetRTTI` at 0xef1a50 (semantic, high); signature (untiered): `TypeNode * GetRTTI(void)`; `GetRTTI`: returns the NiCamera type node g_TypeNode_NiCamera 0x331c690 (high); semantic signature: `const NiRTTI* (const NiCamera* this)`
+    /// `NiCamera::GetRTTI` at 0xef1a50 (semantic, high); signature (low): `TypeNode * GetRTTI(void)`; `GetRTTI`: returns the NiCamera type node g_TypeNode_NiCamera 0x331c690 (high); semantic signature: `const NiRTTI* (const NiCamera* this)`
     pub slot_2: *const c_void,
     /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
     pub slot_3: *const c_void,
@@ -12980,21 +12288,21 @@ pub struct NiCamera_vtable {
     pub slot_21: *const c_void,
     /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
     pub slot_22: *const c_void,
-    /// `NiCamera::CreateClone` at 0xeeeed0 (semantic, high); signature (untiered): `NiCamera * CreateClone(NiCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `CreateClone`: new NiCamera, NiAVObject clone copy (CopyFieldsForClone), then copies worldToCam, world translation, frustum (+ the padding dword), viewport, lodAdjust, minNear, maxFarNearRatio (high); semantic signature: `NiObject* (NiCamera* this, NiCloningProcess* process)`
+    /// `NiCamera::CreateClone` at 0xeeeed0 (semantic, high); signature (low): `NiCamera * CreateClone(NiCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `CreateClone`: new NiCamera, NiAVObject clone copy (CopyFieldsForClone), then copies worldToCam, world translation, frustum (+ the padding dword), viewport, lodAdjust, minNear, maxFarNearRatio (high); semantic signature: `NiObject* (NiCamera* this, NiCloningProcess* process)`
     pub slot_23: *const c_void,
-    /// `NiCamera::LoadBinary` at 0xeef130 (semantic, high); signature (untiered): `undefined LoadBinary(NiCamera * this, longlong param_1)`; `LoadBinary`: NiAVObject::LoadBinary (0xee05a0), then reads a u16 (discarded), left, right, top, bottom, near, far, an ortho byte, viewport l/r/t/b, lodAdjust, then one link id and two link-id lists (high); semantic signature: `void (NiCamera* this, NiStream* stream)`
+    /// `NiCamera::LoadBinary` at 0xeef130 (semantic, high); signature (low): `undefined LoadBinary(NiCamera * this, longlong param_1)`; `LoadBinary`: NiAVObject::LoadBinary (0xee05a0), then reads a u16 (discarded), left, right, top, bottom, near, far, an ortho byte, viewport l/r/t/b, lodAdjust, then one link id and two link-id lists (high); semantic signature: `void (NiCamera* this, NiStream* stream)`
     pub slot_24: *const c_void,
-    /// `NiCamera::LinkObject` at 0xeef3f0 (semantic, high); signature (untiered): `undefined LinkObject(NiCamera * this, longlong param_1)`; `LinkObject`: NiAVObject::LinkObject (0xee0680), then resolves the one link and the two lists LoadBinary queued and releases every object (nothing kept) (high); semantic signature: `void (NiCamera* this, NiStream* stream)`
+    /// `NiCamera::LinkObject` at 0xeef3f0 (semantic, high); signature (low): `undefined LinkObject(NiCamera * this, longlong param_1)`; `LinkObject`: NiAVObject::LinkObject (0xee0680), then resolves the one link and the two lists LoadBinary queued and releases every object (nothing kept) (high); semantic signature: `void (NiCamera* this, NiStream* stream)`
     pub slot_25: *const c_void,
     /// `NiCamera::RegisterStreamables` at 0xeef4e0 (semantic, high); signature (untiered): `undefined1 RegisterStreamables(NiCamera * this, undefined8 param_1)`; `RegisterStreamables`: 5-byte jmp to NiAVObject's 0xee0700: NiObjectNET::RegisterStreamables then collisionObject's (high); semantic signature: `bool (NiCamera* this, NiStream* stream)`
     pub slot_26: *const c_void,
-    /// `NiCamera::SaveBinary` at 0xeef4f0 (semantic, high); signature (untiered): `undefined SaveBinary(NiCamera * this, longlong * param_1)`; `SaveBinary`: NiAVObject::SaveBinary (0xee0750), then writes u16 0, the frustum, ortho byte, viewport, lodAdjust, a null link (stream vfunc +0x60) and two zero counts (high); semantic signature: `void (NiCamera* this, NiStream* stream)`
+    /// `NiCamera::SaveBinary` at 0xeef4f0 (semantic, high); signature (low): `undefined SaveBinary(NiCamera * this, longlong * param_1)`; `SaveBinary`: NiAVObject::SaveBinary (0xee0750), then writes u16 0, the frustum, ortho byte, viewport, lodAdjust, a null link (stream vfunc +0x60) and two zero counts (high); semantic signature: `void (NiCamera* this, NiStream* stream)`
     pub slot_27: *const c_void,
-    /// `NiCamera::IsEqual` at 0xeef7f0 (semantic, high); signature (untiered): `undefined8 IsEqual(NiCamera * this, longlong param_1)`; `IsEqual`: NiAVObject::IsEqual (0xee0810) and equal frustum l/r/t/b/near/far, viewport and lodAdjust (ortho, minNear, maxFarNearRatio and worldToCam not compared) (high); semantic signature: `bool (NiCamera* this, NiObject* other)`
+    /// `NiCamera::IsEqual` at 0xeef7f0 (semantic, high); signature (low): `undefined8 IsEqual(NiCamera * this, longlong param_1)`; `IsEqual`: NiAVObject::IsEqual (0xee0810) and equal frustum l/r/t/b/near/far, viewport and lodAdjust (ortho, minNear, maxFarNearRatio and worldToCam not compared) (high); semantic signature: `bool (NiCamera* this, NiObject* other)`
     pub slot_28: *const c_void,
     /// `NiAVObject::vfunc_29` at 0xee0f70 (rtti, medium); signature (low): `undefined vfunc_29(NiAVObject * this, undefined8 param_1)`
     pub slot_29: *const c_void,
-    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (untiered): `undefined PostLinkObject(NiObjectNET * this)`
+    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (high): `undefined PostLinkObject(NiObjectNET * this)`
     pub slot_30: *const c_void,
     /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
     pub slot_31: *const c_void,
@@ -13008,35 +12316,35 @@ pub struct NiCamera_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (untiered): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (low): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
     pub slot_37: *const c_void,
-    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (untiered): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (low): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
     pub slot_38: *const c_void,
-    /// `NiAVObject::Slot39Recursive` at 0xee1300 (semantic, low); signature (untiered): `undefined Slot39Recursive(void)`
+    /// `NiAVObject::Slot39Recursive` at 0xee1300 (semantic, low); signature (low): `undefined Slot39Recursive(void)`
     pub slot_39: *const c_void,
     /// `NiAVObject::vfunc_40` at 0xee0a20 (rtti, medium); signature (low): `undefined vfunc_40(void)`
     pub slot_40: *const c_void,
     /// `NiAVObject::vfunc_41` at 0xee0a30 (rtti, medium); signature (low): `undefined vfunc_41(void)`
     pub slot_41: *const c_void,
-    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (untiered): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (low): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
     pub slot_42: *const c_void,
-    /// `NiAVObject::SetSelectiveUpdateFlags` at 0xee0a60 (semantic, medium); signature (untiered): `undefined SetSelectiveUpdateFlags(NiAVObject * this, char * param_1, byte param_2, byte * param_3)`
+    /// `NiAVObject::SetSelectiveUpdateFlags` at 0xee0a60 (semantic, medium); signature (low): `undefined SetSelectiveUpdateFlags(NiAVObject * this, char * param_1, byte param_2, byte * param_3)`
     pub slot_43: *const c_void,
-    /// `NiAVObject::UpdateDownwardPass` at 0xee0b30 (semantic, high); signature (untiered): `undefined UpdateDownwardPass(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateDownwardPass` at 0xee0b30 (semantic, high); signature (low): `undefined UpdateDownwardPass(NiAVObject * this, longlong param_1)`
     pub slot_44: *const c_void,
-    /// `NiAVObject::UpdateSelectedDownwardPass` at 0xee0bb0 (semantic, high); signature (untiered): `undefined UpdateSelectedDownwardPass(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateSelectedDownwardPass` at 0xee0bb0 (semantic, high); signature (low): `undefined UpdateSelectedDownwardPass(NiAVObject * this, longlong param_1)`
     pub slot_45: *const c_void,
-    /// `NiAVObject::UpdateRigidDownwardPass` at 0xee0c90 (semantic, high); signature (untiered): `undefined UpdateRigidDownwardPass(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateRigidDownwardPass` at 0xee0c90 (semantic, high); signature (low): `undefined UpdateRigidDownwardPass(NiAVObject * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `NiCamera::UpdateWorldBound` at 0xef1950 (semantic, high); signature (untiered): `undefined UpdateWorldBound(NiCamera * this)`; `UpdateWorldBound`: bound centre = world translation (high); semantic signature: `void (NiCamera* this)`
+    /// `NiCamera::UpdateWorldBound` at 0xef1950 (semantic, high); signature (high): `undefined UpdateWorldBound(NiCamera * this)`; `UpdateWorldBound`: bound centre = world translation (high); semantic signature: `void (NiCamera* this)`
     pub slot_47: *const c_void,
-    /// `NiCamera::UpdateWorldData` at 0xef1770 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiCamera * this, longlong param_1)`; `UpdateWorldData`: NiAVObject::UpdateWorldData then UpdateWorldToCamera 0xef1310 (high); semantic signature: `void (NiCamera* this, NiUpdateData* data)`
+    /// `NiCamera::UpdateWorldData` at 0xef1770 (semantic, high); signature (low): `undefined UpdateWorldData(NiCamera * this, longlong param_1)`; `UpdateWorldData`: NiAVObject::UpdateWorldData then UpdateWorldToCamera 0xef1310 (high); semantic signature: `void (NiCamera* this, NiUpdateData* data)`
     pub slot_48: *const c_void,
-    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (untiered): `undefined UpdateTransformsAndBound(NiAVObject * this)`
+    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (high): `undefined UpdateTransformsAndBound(NiAVObject * this)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
     /// `NiAVObject::vfunc_52` at 0xee0f60 (rtti, medium); signature (low): `undefined vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -13569,9 +12877,9 @@ pub struct NiColorExtraData_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiExtraData::IsStreamable` at 0xef9b60 (semantic, medium); signature (untiered): `undefined1 IsStreamable(void)`
+    /// `NiExtraData::IsStreamable` at 0xef9b60 (semantic, medium); signature (low): `undefined1 IsStreamable(void)`
     pub slot_37: *const c_void,
-    /// `NiExtraData::Slot38ReturnsTrue` at 0xef9b70 (semantic, low); signature (untiered): `undefined1 Slot38ReturnsTrue(void)`
+    /// `NiExtraData::Slot38ReturnsTrue` at 0xef9b70 (semantic, low); signature (low): `undefined1 Slot38ReturnsTrue(void)`
     pub slot_38: *const c_void,
 }
 impl NiColorExtraData_vtable {
@@ -13842,5 +13150,699 @@ pub struct NiColorInterpolator_vtable {
 }
 impl NiColorInterpolator_vtable {
     pub const ID: u64 = 237593;
+}
+
+/// `NiControllerManager::vftable` at 0x1a51d70, id 237541 (rtti, high); 48 slots.
+#[repr(C)]
+pub struct NiControllerManager_vtable {
+    /// `NiControllerManager::vdtor` at 0xf53380 (slot_propagation, medium); signature (low): `NiControllerManager * vdtor(NiControllerManager * this, ulonglong param_1, longlong param_2, undefined * param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `NiControllerManager::vfunc_2` at 0xf53970 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
+    pub slot_22: *const c_void,
+    /// `NiControllerManager::vfunc_23` at 0xf4f100 (rtti, high); signature (low): `ulonglong vfunc_23(NiControllerManager * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_23: *const c_void,
+    /// `NiControllerManager::vfunc_24` at 0xf4f360 (rtti, high); signature (low): `undefined vfunc_24(NiControllerManager * this, longlong param_1)`
+    pub slot_24: *const c_void,
+    /// `NiControllerManager::vfunc_25` at 0xf4f420 (rtti, high); signature (low): `undefined vfunc_25(NiControllerManager * this, longlong param_1)`
+    pub slot_25: *const c_void,
+    /// `NiControllerManager::vfunc_26` at 0xf4f490 (rtti, high); signature (low): `undefined1 vfunc_26(NiControllerManager * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_26: *const c_void,
+    /// `NiControllerManager::vfunc_27` at 0xf4f680 (rtti, high); signature (low): `undefined vfunc_27(NiControllerManager * this, longlong * param_1)`
+    pub slot_27: *const c_void,
+    /// `NiControllerManager::vfunc_28` at 0xf4f760 (rtti, high); signature (low): `ulonglong vfunc_28(NiControllerManager * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_28: *const c_void,
+    /// `NiControllerManager::vfunc_29` at 0xf523e0 (rtti, high); signature (low): `undefined vfunc_29(NiControllerManager * this, longlong param_1, undefined * param_2, undefined * param_3)`
+    pub slot_29: *const c_void,
+    /// `NiControllerManager::vfunc_30` at 0xf527f0 (rtti, high); signature (high): `undefined vfunc_30(NiControllerManager * this)`
+    pub slot_30: *const c_void,
+    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
+    pub slot_31: *const c_void,
+    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
+    pub slot_32: *const c_void,
+    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
+    pub slot_33: *const c_void,
+    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
+    pub slot_35: *const c_void,
+    /// `NiControllerManager::vfunc_36` at 0xf53980 (rtti, high); signature (high): `NiControllerManager * vfunc_36(NiControllerManager * this)`
+    pub slot_36: *const c_void,
+    /// `NiControllerManager::vfunc_37` at 0xf53f30 (rtti, high); signature (low): `undefined vfunc_37(void)`
+    pub slot_37: *const c_void,
+    /// `NiControllerManager::vfunc_38` at 0xf53f50 (rtti, high); signature (low): `undefined vfunc_38(void)`
+    pub slot_38: *const c_void,
+    /// `NiControllerManager::vfunc_39` at 0xf4fe10 (rtti, high); signature (low): `undefined vfunc_39(NiControllerManager * this, float * param_1)`
+    pub slot_39: *const c_void,
+    /// `NiControllerManager::vfunc_40` at 0xf53f20 (rtti, high); signature (low): `undefined vfunc_40(void)`
+    pub slot_40: *const c_void,
+    /// `NiTimeController::vfunc_41` at 0x305d80 (rtti, medium); signature (low): `undefined1 vfunc_41(void)`
+    pub slot_41: *const c_void,
+    /// `NiTimeController::vfunc_42` at 0x305d90 (rtti, medium); signature (low): `undefined1 vfunc_42(void)`
+    pub slot_42: *const c_void,
+    /// `NiTimeController::vfunc_43` at 0xef86d0 (rtti, medium); signature (medium): `float vfunc_43(NiTimeController * this, float param_1)`
+    pub slot_43: *const c_void,
+    /// `NiTimeController::vfunc_44` at 0xef88f0 (rtti, medium); signature (low): `undefined vfunc_44(void)`
+    pub slot_44: *const c_void,
+    /// `NiTimeController::vfunc_45` at 0x305d70 (rtti, medium); signature (low): `undefined1 vfunc_45(void)`
+    pub slot_45: *const c_void,
+    /// `NiControllerManager::vfunc_46` at 0xf52b70 (rtti, high); signature (high): `undefined * vfunc_46(NiControllerManager * this)`
+    pub slot_46: *const c_void,
+    /// `NiControllerManager::vfunc_47` at 0xf53f40 (rtti, high); signature (low): `undefined vfunc_47(void)`
+    pub slot_47: *const c_void,
+}
+impl NiControllerManager_vtable {
+    pub const ID: u64 = 237541;
+}
+
+/// `NiControllerSequence::vftable` at 0x1a525c8, id 237554 (rtti, high); 38 slots.
+#[repr(C)]
+pub struct NiControllerSequence_vtable {
+    /// `NiControllerSequence::vdtor` at 0xf5b4e0 (slot_propagation, medium); signature (low): `NiControllerSequence * vdtor(NiControllerSequence * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `NiControllerSequence::vfunc_2` at 0xf5b690 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
+    pub slot_22: *const c_void,
+    /// `NiControllerSequence::vfunc_23` at 0xf53f60 (rtti, high); signature (low): `NiControllerSequence * vfunc_23(NiControllerSequence * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_23: *const c_void,
+    /// `NiControllerSequence::vfunc_24` at 0xf544d0 (rtti, medium); signature (low): `undefined vfunc_24(NiControllerSequence * this, longlong param_1)`
+    pub slot_24: *const c_void,
+    /// `NiControllerSequence::vfunc_25` at 0xf549f0 (rtti, medium); signature (low): `undefined vfunc_25(NiControllerSequence * this, longlong param_1)`
+    pub slot_25: *const c_void,
+    /// `NiControllerSequence::vfunc_26` at 0xf54af0 (rtti, medium); signature (low): `undefined1 vfunc_26(NiControllerSequence * this, longlong * param_1)`
+    pub slot_26: *const c_void,
+    /// `NiControllerSequence::vfunc_27` at 0xf54c50 (rtti, medium); signature (low): `undefined vfunc_27(NiControllerSequence * this, longlong * param_1)`
+    pub slot_27: *const c_void,
+    /// `NiControllerSequence::vfunc_28` at 0xf54f40 (rtti, medium); signature (low): `ulonglong vfunc_28(NiControllerSequence * this, longlong * param_1)`
+    pub slot_28: *const c_void,
+    /// `NiControllerSequence::vfunc_29` at 0xf58b80 (rtti, medium); signature (low): `undefined vfunc_29(NiControllerSequence * this, longlong param_1)`
+    pub slot_29: *const c_void,
+    /// `NiControllerSequence::vfunc_30` at 0xf58fb0 (rtti, medium); signature (low): `undefined vfunc_30(NiControllerSequence * this, undefined8 param_1)`
+    pub slot_30: *const c_void,
+    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
+    pub slot_31: *const c_void,
+    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
+    pub slot_32: *const c_void,
+    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
+    pub slot_33: *const c_void,
+    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
+    pub slot_35: *const c_void,
+    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
+    pub slot_36: *const c_void,
+    /// `NiControllerSequence::vfunc_37` at 0xf57ed0 (rtti, high); signature (low): `undefined8 vfunc_37(NiControllerSequence * this, float param_1, byte param_2)`
+    pub slot_37: *const c_void,
+}
+impl NiControllerSequence_vtable {
+    pub const ID: u64 = 237554;
+}
+
+/// `NiCullingProcess::vftable` at 0x1a4b160, id 237327 (rtti, high); 25 slots.
+#[repr(C)]
+pub struct NiCullingProcess_vtable {
+    /// `NiCullingProcess::vfunc_0` at 0xf04cb0 (rtti, high); signature (low): `TypeNode * vfunc_0(void)`
+    pub slot_0: *const c_void,
+    /// `NiCullingProcess::vfunc_1` at 0x410490 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `NiCullingProcess::vfunc_2` at 0x4104d0 (rtti, medium); signature (low): `undefined8 vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiCullingProcess::vfunc_3` at 0x410420 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiCullingProcess::vfunc_4` at 0x410450 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiCullingProcess::vfunc_5` at 0x410430 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiCullingProcess::vfunc_6` at 0x4104f0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiCullingProcess::vfunc_7` at 0x4104e0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiCullingProcess::vfunc_8` at 0x4104b0 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiCullingProcess::vfunc_9` at 0x4104c0 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiCullingProcess::vfunc_10` at 0x410410 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiCullingProcess::vfunc_11` at 0x410460 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiCullingProcess::vfunc_12` at 0x410470 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiCullingProcess::vfunc_13` at 0x410480 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiCullingProcess::vfunc_14` at 0x4104a0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiCullingProcess::vfunc_15` at 0x410440 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiCullingProcess::vfunc_16` at 0x4103f0 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiCullingProcess::vfunc_17` at 0x4103d0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiCullingProcess::vfunc_18` at 0x4103c0 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiCullingProcess::vfunc_19` at 0x410400 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiCullingProcess::vfunc_20` at 0x4103e0 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiCullingProcess::vdtor` at 0xf04c80 (layout_inference, medium); signature (low): `NiCullingProcess * vdtor(NiCullingProcess * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_21: *const c_void,
+    /// `NiCullingProcess::vfunc_22` at 0xf04ae0 (rtti, high); signature (low): `undefined vfunc_22(NiCullingProcess * this, longlong * param_1)`
+    pub slot_22: *const c_void,
+    /// `NiCullingProcess::vfunc_23` at 0xf04840 (rtti, high); signature (low): `undefined vfunc_23(void)`
+    pub slot_23: *const c_void,
+    /// `NiCullingProcess::vfunc_24` at 0x441460 (rtti, medium); signature (low): `undefined vfunc_24(void)`
+    pub slot_24: *const c_void,
+}
+impl NiCullingProcess_vtable {
+    pub const ID: u64 = 237327;
+}
+
+/// `NiDefaultAVObjectPalette::vftable` at 0x1a4ab00, id 237305 (rtti, high); 42 slots.
+#[repr(C)]
+pub struct NiDefaultAVObjectPalette_vtable {
+    /// `NiDefaultAVObjectPalette::vdtor` at 0xf00a10 (layout_inference, medium); signature (low): `NiDefaultAVObjectPalette * vdtor(NiDefaultAVObjectPalette * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_2` at 0xf00b10 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
+    pub slot_22: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_23` at 0xeff690 (rtti, high); signature (low): `NiObject * vfunc_23(NiDefaultAVObjectPalette * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_23: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_24` at 0xeff820 (rtti, high); signature (low): `undefined vfunc_24(NiDefaultAVObjectPalette * this, longlong param_1)`
+    pub slot_24: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_25` at 0xeff980 (rtti, high); signature (low): `undefined vfunc_25(NiDefaultAVObjectPalette * this, ulonglong * * * * param_1)`
+    pub slot_25: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_26` at 0xeffce0 (rtti, high); signature (untiered): `bool vfunc_26(NiDefaultAVObjectPalette * this, longlong * param_1)`
+    pub slot_26: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_27` at 0xeffcf0 (rtti, high); signature (low): `undefined vfunc_27(NiDefaultAVObjectPalette * this, longlong * param_1)`
+    pub slot_27: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_28` at 0xeffe40 (rtti, high); signature (low): `ulonglong vfunc_28(NiDefaultAVObjectPalette * this, longlong * param_1)`
+    pub slot_28: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_29` at 0xf000d0 (rtti, high); signature (low): `undefined vfunc_29(NiDefaultAVObjectPalette * this, longlong param_1)`
+    pub slot_29: *const c_void,
+    /// `NiObject::vfunc_30` at 0xedcb50 (rtti, medium); signature (low): `undefined vfunc_30(void)`
+    pub slot_30: *const c_void,
+    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
+    pub slot_31: *const c_void,
+    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
+    pub slot_32: *const c_void,
+    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
+    pub slot_33: *const c_void,
+    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
+    pub slot_35: *const c_void,
+    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
+    pub slot_36: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_37` at 0xf00a70 (rtti, high); signature (low): `ulonglong vfunc_37(NiDefaultAVObjectPalette * this, ulonglong * param_1)`
+    pub slot_37: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_38` at 0xf01190 (rtti, high); signature (low): `undefined vfunc_38(NiDefaultAVObjectPalette * this, ulonglong * param_1, ulonglong param_2)`
+    pub slot_38: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_39` at 0xf002d0 (rtti, high); signature (high): `undefined vfunc_39(NiDefaultAVObjectPalette * this)`
+    pub slot_39: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_40` at 0xf011d0 (rtti, high); signature (low): `undefined vfunc_40(NiDefaultAVObjectPalette * this, NiDefaultAVObjectPalette_vtbl * param_1)`
+    pub slot_40: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_41` at 0xf00b20 (rtti, high); signature (high): `NiDefaultAVObjectPalette_vtbl * vfunc_41(NiDefaultAVObjectPalette * this)`
+    pub slot_41: *const c_void,
+}
+impl NiDefaultAVObjectPalette_vtable {
+    pub const ID: u64 = 237305;
+}
+
+/// `NiDirectionalLight::vftable` at 0x1a4af98, id 237324 (rtti, high); 53 slots.
+#[repr(C)]
+pub struct NiDirectionalLight_vtable {
+    /// `NiDirectionalLight::vdtor` at 0xf046d0 (slot_propagation, medium); signature (low): `NiDirectionalLight * vdtor(NiDirectionalLight * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `NiDirectionalLight::vfunc_2` at 0xf04710 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
+    pub slot_22: *const c_void,
+    /// `NiDirectionalLight::vfunc_23` at 0xf042e0 (rtti, high); signature (low): `NiLight * vfunc_23(NiDirectionalLight * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_23: *const c_void,
+    /// `NiDirectionalLight::vfunc_24` at 0xf04450 (rtti, high); signature (untiered): `undefined vfunc_24(NiDirectionalLight * this, longlong param_1)`
+    pub slot_24: *const c_void,
+    /// `NiDirectionalLight::vfunc_25` at 0xf04460 (rtti, high); signature (untiered): `undefined vfunc_25(NiDirectionalLight * this, longlong param_1)`
+    pub slot_25: *const c_void,
+    /// `NiDirectionalLight::vfunc_26` at 0xf04470 (rtti, high); signature (untiered): `undefined1 vfunc_26(NiDirectionalLight * this, undefined8 param_1)`
+    pub slot_26: *const c_void,
+    /// `NiDirectionalLight::vfunc_27` at 0xf04480 (rtti, high); signature (untiered): `undefined vfunc_27(NiDirectionalLight * this, longlong * param_1)`
+    pub slot_27: *const c_void,
+    /// `NiDirectionalLight::vfunc_28` at 0xf04490 (rtti, high); signature (untiered): `undefined8 vfunc_28(NiDirectionalLight * this, longlong param_1)`
+    pub slot_28: *const c_void,
+    /// `NiAVObject::vfunc_29` at 0xee0f70 (rtti, medium); signature (low): `undefined vfunc_29(NiAVObject * this, undefined8 param_1)`
+    pub slot_29: *const c_void,
+    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (high): `undefined PostLinkObject(NiObjectNET * this)`
+    pub slot_30: *const c_void,
+    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
+    pub slot_31: *const c_void,
+    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
+    pub slot_32: *const c_void,
+    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
+    pub slot_33: *const c_void,
+    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
+    pub slot_35: *const c_void,
+    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
+    pub slot_36: *const c_void,
+    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (low): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
+    pub slot_37: *const c_void,
+    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (low): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
+    pub slot_38: *const c_void,
+    /// `NiAVObject::Slot39Recursive` at 0xee1300 (semantic, low); signature (low): `undefined Slot39Recursive(void)`
+    pub slot_39: *const c_void,
+    /// `NiAVObject::vfunc_40` at 0xee0a20 (rtti, medium); signature (low): `undefined vfunc_40(void)`
+    pub slot_40: *const c_void,
+    /// `NiAVObject::vfunc_41` at 0xee0a30 (rtti, medium); signature (low): `undefined vfunc_41(void)`
+    pub slot_41: *const c_void,
+    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (low): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
+    pub slot_42: *const c_void,
+    /// `NiAVObject::SetSelectiveUpdateFlags` at 0xee0a60 (semantic, medium); signature (low): `undefined SetSelectiveUpdateFlags(NiAVObject * this, char * param_1, byte param_2, byte * param_3)`
+    pub slot_43: *const c_void,
+    /// `NiAVObject::UpdateDownwardPass` at 0xee0b30 (semantic, high); signature (low): `undefined UpdateDownwardPass(NiAVObject * this, longlong param_1)`
+    pub slot_44: *const c_void,
+    /// `NiAVObject::UpdateSelectedDownwardPass` at 0xee0bb0 (semantic, high); signature (low): `undefined UpdateSelectedDownwardPass(NiAVObject * this, longlong param_1)`
+    pub slot_45: *const c_void,
+    /// `NiAVObject::UpdateRigidDownwardPass` at 0xee0c90 (semantic, high); signature (low): `undefined UpdateRigidDownwardPass(NiAVObject * this, longlong param_1)`
+    pub slot_46: *const c_void,
+    /// `NiAVObject::UpdateWorldBound` at 0xee1320 (semantic, high); signature (low): `undefined UpdateWorldBound(void)`
+    pub slot_47: *const c_void,
+    /// `NiDirectionalLight::UpdateWorldData` at 0xf045c0 (semantic, high); signature (low): `undefined UpdateWorldData(NiDirectionalLight * this, longlong param_1)`
+    pub slot_48: *const c_void,
+    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (high): `undefined UpdateTransformsAndBound(NiAVObject * this)`
+    pub slot_49: *const c_void,
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    pub slot_50: *const c_void,
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
+    pub slot_51: *const c_void,
+    /// `NiAVObject::vfunc_52` at 0xee0f60 (rtti, medium); signature (low): `undefined vfunc_52(void)`
+    pub slot_52: *const c_void,
+}
+impl NiDirectionalLight_vtable {
+    pub const ID: u64 = 237324;
+}
+
+/// `NiExtraData::vftable` at 0x1a49cc8, id 237244 (rtti, high); 39 slots.
+#[repr(C)]
+pub struct NiExtraData_vtable {
+    /// `NiExtraData::vdtor` at 0xef9c50 (layout_inference, medium); signature (low): `NiExtraData * vdtor(NiExtraData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `NiExtraData::vfunc_2` at 0xef9cb0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
+    pub slot_22: *const c_void,
+    /// `NiAVObject::CreateClone` at 0xedc740 (semantic, high); signature (untiered): `NiObject * CreateClone(NiAVObject * this)`
+    pub slot_23: *const c_void,
+    /// `NiExtraData::vfunc_24` at 0xef9880 (rtti, medium); signature (low): `undefined vfunc_24(NiExtraData * this, longlong param_1)`
+    pub slot_24: *const c_void,
+    /// `NiExtraData::vfunc_25` at 0xef98c0 (rtti, medium); signature (low): `undefined vfunc_25(void)`
+    pub slot_25: *const c_void,
+    /// `NiExtraData::vfunc_26` at 0xef98d0 (rtti, medium); signature (low): `undefined8 vfunc_26(NiExtraData * this, longlong * param_1)`
+    pub slot_26: *const c_void,
+    /// `NiExtraData::vfunc_27` at 0xef9920 (rtti, medium); signature (low): `undefined vfunc_27(NiExtraData * this, longlong param_1)`
+    pub slot_27: *const c_void,
+    /// `NiExtraData::vfunc_28` at 0xef9960 (rtti, medium); signature (low): `ulonglong vfunc_28(NiExtraData * this, longlong * param_1)`
+    pub slot_28: *const c_void,
+    /// `NiObject::vfunc_29` at 0xedca00 (rtti, medium); signature (low): `undefined vfunc_29(NiObject * this, longlong param_1)`
+    pub slot_29: *const c_void,
+    /// `NiObject::vfunc_30` at 0xedcb50 (rtti, medium); signature (low): `undefined vfunc_30(void)`
+    pub slot_30: *const c_void,
+    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
+    pub slot_31: *const c_void,
+    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
+    pub slot_32: *const c_void,
+    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
+    pub slot_33: *const c_void,
+    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
+    pub slot_35: *const c_void,
+    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
+    pub slot_36: *const c_void,
+    /// `NiExtraData::IsStreamable` at 0xef9b60 (semantic, medium); signature (low): `undefined1 IsStreamable(void)`; `IsStreamable`: true for every class seen here (medium); semantic signature: `bool (const NiExtraData* this)`
+    pub slot_37: *const c_void,
+    /// `NiExtraData::Slot38ReturnsTrue` at 0xef9b70 (semantic, low); signature (low): `undefined1 Slot38ReturnsTrue(void)`; `Slot38ReturnsTrue`: returns true; purpose not established (low); semantic signature: `bool (const NiExtraData* this)`
+    pub slot_38: *const c_void,
+}
+impl NiExtraData_vtable {
+    pub const ID: u64 = 237244;
+    pub const SLOT_IsStreamable: usize = 37;
+    pub const SLOT_Slot38ReturnsTrue: usize = 38;
+}
+
+/// `NiExtraDataController::vftable` at 0x1a5de90, id 237870 (rtti, high); 61 slots.
+#[repr(C)]
+pub struct NiExtraDataController_vtable {
+    /// `NiExtraDataController::vdtor` at 0xf973a0 (layout_inference, medium); signature (low): `NiExtraDataController * vdtor(NiExtraDataController * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `NiExtraDataController::vfunc_2` at 0xf97440 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
+    pub slot_22: *const c_void,
+    /// `NiAVObject::CreateClone` at 0xedc740 (semantic, high); signature (untiered): `NiObject * CreateClone(NiAVObject * this)`
+    pub slot_23: *const c_void,
+    /// `NiExtraDataController::vfunc_24` at 0xf96df0 (rtti, high); signature (low): `undefined vfunc_24(NiExtraDataController * this, longlong param_1)`
+    pub slot_24: *const c_void,
+    /// `NiExtraDataController::vfunc_25` at 0xf96e30 (rtti, high); signature (untiered): `undefined vfunc_25(NiExtraDataController * this, longlong param_1)`
+    pub slot_25: *const c_void,
+    /// `NiExtraDataController::vfunc_26` at 0xf96e40 (rtti, high); signature (low): `undefined1 vfunc_26(NiExtraDataController * this, longlong * param_1)`
+    pub slot_26: *const c_void,
+    /// `NiExtraDataController::vfunc_27` at 0xf96e90 (rtti, high); signature (low): `undefined vfunc_27(NiExtraDataController * this, longlong * param_1)`
+    pub slot_27: *const c_void,
+    /// `NiExtraDataController::vfunc_28` at 0xf96ed0 (rtti, high); signature (low): `ulonglong vfunc_28(NiExtraDataController * this, longlong * param_1)`
+    pub slot_28: *const c_void,
+    /// `NiExtraDataController::vfunc_29` at 0xf97060 (rtti, medium); signature (low): `undefined vfunc_29(NiExtraDataController * this, longlong param_1)`
+    pub slot_29: *const c_void,
+    /// `NiExtraDataController::vfunc_30` at 0xf97180 (rtti, medium); signature (high): `undefined vfunc_30(NiExtraDataController * this)`
+    pub slot_30: *const c_void,
+    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
+    pub slot_31: *const c_void,
+    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
+    pub slot_32: *const c_void,
+    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
+    pub slot_33: *const c_void,
+    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
+    pub slot_35: *const c_void,
+    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
+    pub slot_36: *const c_void,
+    /// `NiTimeController::vfunc_37` at 0xef8320 (rtti, medium); signature (low): `undefined vfunc_37(NiTimeController * this, undefined4 param_2)`
+    pub slot_37: *const c_void,
+    /// `NiTimeController::vfunc_38` at 0xef8340 (rtti, medium); signature (high): `undefined vfunc_38(NiTimeController * this)`
+    pub slot_38: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_39: *const c_void,
+    /// `NiExtraDataController::vfunc_40` at 0xf96fc0 (rtti, medium); signature (low): `undefined vfunc_40(NiExtraDataController * this, longlong param_1)`
+    pub slot_40: *const c_void,
+    /// `NiTimeController::vfunc_41` at 0x305d80 (rtti, medium); signature (low): `undefined1 vfunc_41(void)`
+    pub slot_41: *const c_void,
+    /// `NiTimeController::vfunc_42` at 0x305d90 (rtti, medium); signature (low): `undefined1 vfunc_42(void)`
+    pub slot_42: *const c_void,
+    /// `NiTimeController::vfunc_43` at 0xef86d0 (rtti, medium); signature (medium): `float vfunc_43(NiTimeController * this, float param_1)`
+    pub slot_43: *const c_void,
+    /// `NiTimeController::vfunc_44` at 0xef88f0 (rtti, medium); signature (low): `undefined vfunc_44(void)`
+    pub slot_44: *const c_void,
+    /// `NiTimeController::vfunc_45` at 0x305d70 (rtti, medium); signature (low): `undefined1 vfunc_45(void)`
+    pub slot_45: *const c_void,
+    /// `NiSingleInterpController::vfunc_46` at 0xf63140 (rtti, medium); signature (high): `undefined vfunc_46(NiSingleInterpController * this)`
+    pub slot_46: *const c_void,
+    /// `NiSingleInterpController::vfunc_47` at 0xf62fc0 (rtti, medium); signature (low): `undefined8 vfunc_47(void)`
+    pub slot_47: *const c_void,
+    /// `NiSingleInterpController::vfunc_48` at 0xf62fd0 (rtti, medium); signature (low): `undefined8 vfunc_48(void)`
+    pub slot_48: *const c_void,
+    /// `NiSingleInterpController::vfunc_49` at 0xf62fe0 (rtti, medium); signature (low): `undefined8 vfunc_49(void)`
+    pub slot_49: *const c_void,
+    /// `NiSingleInterpController::vfunc_50` at 0xf62ff0 (rtti, medium); signature (low): `undefined2 vfunc_50(NiSingleInterpController * this, longlong * param_1)`
+    pub slot_50: *const c_void,
+    /// `NiSingleInterpController::vfunc_51` at 0xf63010 (rtti, medium); signature (high): `undefined8 vfunc_51(NiSingleInterpController * this)`
+    pub slot_51: *const c_void,
+    /// `NiSingleInterpController::vfunc_52` at 0xf63020 (rtti, medium); signature (low): `undefined vfunc_52(NiSingleInterpController * this, longlong * param_1)`
+    pub slot_52: *const c_void,
+    /// `NiSingleInterpController::vfunc_53` at 0xf63060 (rtti, medium); signature (high): `undefined vfunc_53(NiSingleInterpController * this)`
+    pub slot_53: *const c_void,
+    /// `NiExtraDataController::vfunc_54` at 0xf971f0 (rtti, medium); signature (high): `undefined8 vfunc_54(NiExtraDataController * this)`
+    pub slot_54: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_55: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_56: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_57: *const c_void,
+    /// `NiSingleInterpController::vfunc_58` at 0xf630b0 (rtti, medium); signature (high): `undefined vfunc_58(NiSingleInterpController * this)`
+    pub slot_58: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_59: *const c_void,
+    /// `NiExtraDataController::vfunc_60` at 0xf972a0 (rtti, medium); signature (low): `undefined8 vfunc_60(NiExtraDataController * this, longlong * param_1)`
+    pub slot_60: *const c_void,
+}
+impl NiExtraDataController_vtable {
+    pub const ID: u64 = 237870;
+}
+
+/// `NiFile::vftable` at 0x1a41490, id 236871 (rtti, high); 8 slots.
+#[repr(C)]
+pub struct NiFile_vtable {
+    /// `NiFile::vdtor` at 0xeae0b0 (layout_inference, medium); signature (low): `NiFile * vdtor(NiFile * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiFile::vfunc_1` at 0xeaf5b0 (rtti, medium); signature (high): `undefined1 vfunc_1(NiFile * this)`
+    pub slot_1: *const c_void,
+    /// `NiFile::vfunc_2` at 0xeaf5c0 (rtti, high); signature (low): `undefined vfunc_2(NiFile * this, undefined8 param_1)`
+    pub slot_2: *const c_void,
+    /// `NiBinaryStream::vfunc_3` at 0xeae180 (rtti, medium); signature (high): `undefined4 vfunc_3(NiBinaryStream * this)`
+    pub slot_3: *const c_void,
+    /// `NiFile::vfunc_4` at 0xeaf630 (rtti, medium); signature (low): `undefined vfunc_4(NiFile * this, undefined8 * param_1)`
+    pub slot_4: *const c_void,
+    /// `NiFile::vfunc_5` at 0xeaf5e0 (rtti, high); signature (low): `undefined vfunc_5(NiFile * this, char param_1)`
+    pub slot_5: *const c_void,
+    /// `NiFile::vfunc_6` at 0xeadc50 (rtti, high); signature (low): `undefined vfunc_6(NiFile * this, int param_1, int param_2)`
+    pub slot_6: *const c_void,
+    /// `NiFile::vfunc_7` at 0xeadd20 (rtti, high); signature (high): `long vfunc_7(NiFile * this)`
+    pub slot_7: *const c_void,
+}
+impl NiFile_vtable {
+    pub const ID: u64 = 236871;
 }
 

@@ -8,13 +8,6 @@
 use core::ffi::{c_char, c_void};
 
 impl crate::BSEffectShaderProperty {
-    /// `BSEffectShaderProperty::LoadBinary` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 106865, rva 0x1529450).
-    /// `undefined LoadBinary(BSEffectShaderProperty * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn load_binary(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(106865, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSEffectShaderProperty::vfunc_42_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 105541, rva 0x14e7f40).
     /// `undefined vfunc_42_sub0(longlong param_1, float param_2)`
     ///
@@ -22,23 +15,6 @@ impl crate::BSEffectShaderProperty {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_42_sub0(param_1: i64, param_2: f32) -> u64 { unsafe { function!(105541, (i64, f32) -> u64)(param_1, param_2) } }
-}
-
-impl crate::BSFadeNode {
-    /// `BSFadeNode::OnVisible` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 105485, rva 0x14e5f60).
-    /// `undefined OnVisible(BSFadeNode * this, longlong * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn on_visible(&self, param_1: *mut i64) -> u64 { unsafe { function!(105485, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
-    /// `BSFadeNode::UpdateSelectedDownwardPass` (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 105489, rva 0x14e6850).
-    /// `undefined UpdateSelectedDownwardPass(BSFadeNode * this, float * param_1, uint param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn update_selected_downward_pass(&self, param_1: *mut f32, param_2: u32) -> u64 { unsafe { function!(105489, (*const Self, *mut f32, u32) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
 }
 
 impl crate::BSLightingShader {
@@ -135,13 +111,6 @@ impl crate::BSShader {
 }
 
 impl crate::ImageSpaceEffectDepthOfField {
-    /// `ImageSpaceEffectDepthOfField::Render`, vtable slot 7, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 107388, rva 0x15512f0).
-    /// `undefined8 Render(ImageSpaceEffectDepthOfField * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn render(&self) -> u64 { unsafe { virtual_function!(self, 7, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `ImageSpaceEffectDepthOfField::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 107393, rva 0x1551e30).
     /// `undefined ctor_sub0(ImageSpaceEffect * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -180,41 +149,6 @@ impl crate::ImageSpaceEffectDepthOfField {
 }
 
 impl crate::NiCamera {
-    /// `NiCamera::CreateClone` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70616, rva 0xeeeed0).
-    /// `NiCamera * CreateClone(NiCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn create_clone(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(70616, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `NiCamera::GetRTTI` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70647, rva 0xef1a50).
-    /// `TypeNode * GetRTTI(void)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn get_rtti() -> *mut crate::TypeNode { unsafe { function!(70647, () -> *mut crate::TypeNode)() } }
-    /// `NiCamera::IsEqual` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70622, rva 0xeef7f0).
-    /// `undefined8 IsEqual(NiCamera * this, longlong param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn is_equal(&self, param_1: i64) -> u64 { unsafe { function!(70622, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
-    /// `NiCamera::LinkObject` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70619, rva 0xeef3f0).
-    /// `undefined LinkObject(NiCamera * this, longlong param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn link_object(&self, param_1: i64) -> u64 { unsafe { function!(70619, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
-    /// `NiCamera::LoadBinary` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70618, rva 0xeef130).
-    /// `undefined LoadBinary(NiCamera * this, longlong param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn load_binary(&self, param_1: i64) -> u64 { unsafe { function!(70618, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `NiCamera::RegisterStreamables` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70620, rva 0xeef4e0).
     /// `undefined1 RegisterStreamables(NiCamera * this, undefined8 param_1)`
     ///
@@ -222,27 +156,6 @@ impl crate::NiCamera {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn register_streamables(&self, param_1: u64) -> u8 { unsafe { function!(70620, (*const Self, u64) -> u8)(core::ptr::from_ref(self), param_1) } }
-    /// `NiCamera::SaveBinary` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70621, rva 0xeef4f0).
-    /// `undefined SaveBinary(NiCamera * this, longlong * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn save_binary(&self, param_1: *mut i64) -> u64 { unsafe { function!(70621, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
-    /// `NiCamera::UpdateWorldBound` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70644, rva 0xef1950).
-    /// `undefined UpdateWorldBound(NiCamera * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn update_world_bound(&self) -> u64 { unsafe { function!(70644, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-    /// `NiCamera::UpdateWorldData` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70642, rva 0xef1770).
-    /// `undefined UpdateWorldData(NiCamera * this, longlong param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn update_world_data(&self, param_1: i64) -> u64 { unsafe { function!(70642, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::NiExtraData {
@@ -284,16 +197,6 @@ impl crate::NiObjectNET {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_28_sub1(param_1: i64) -> i32 { unsafe { function!(70823, (i64) -> i32)(param_1) } }
-}
-
-impl crate::Sky {
-    /// `Sky::UpdateOnWindowUpdateInterval` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 26237, rva 0x414b00).
-    /// `undefined UpdateOnWindowUpdateInterval(float * param_1, float param_2, float * param_3, longlong * param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn update_on_window_update_interval(param_1: *mut f32, param_2: f32, param_3: *mut f32, param_4: *mut i64) -> u64 { unsafe { function!(26237, (*mut f32, f32, *mut f32, *mut i64) -> u64)(param_1, param_2, param_3, param_4) } }
 }
 
 impl crate::Sun {

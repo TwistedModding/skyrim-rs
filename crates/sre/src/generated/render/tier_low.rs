@@ -25,6 +25,13 @@ impl crate::BSCullingProcess {
 }
 
 impl crate::BSGeometry {
+    /// `BSGeometry::OnVisible`, vtable slot 52, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 70926, rva 0xefc980).
+    /// `undefined OnVisible(BSGeometry * this, longlong * param_1, undefined8 param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn on_visible(&self, param_1: *mut i64, param_2: u64) -> u64 { unsafe { virtual_function!(self, 52, (*const Self, *mut i64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `BSGeometry::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 70918, rva 0xefc4b0).
     /// `BSGeometry * ctor(BSGeometry * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -87,6 +94,13 @@ impl crate::BSLightingShaderProperty {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn create(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(106492, (u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `BSLightingShaderProperty::GetDepthRenderPasses` (decompiler signature, tier low; ledger runtime evidence, name high; id 106517, rva 0x151b1e0).
+    /// `longlong * GetDepthRenderPasses(BSLightingShaderProperty * this, longlong param_1, int param_2, longlong param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_depth_render_passes(&self, param_1: i64, param_2: i32, param_3: i64) -> *mut i64 { unsafe { function!(106517, (*const Self, i64, i32, i64) -> *mut i64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSLightingShaderProperty::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 106500, rva 0x1518fc0).
     /// `undefined dtor(BSLightingShaderProperty * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -128,6 +142,20 @@ impl crate::BSShaderAccumulator {
 }
 
 impl crate::BSShaderProperty {
+    /// `BSShaderProperty::LoadBinary` (decompiler signature, tier low; ledger semantic evidence, name high; id 105514, rva 0x14e7390).
+    /// `undefined LoadBinary(BSShaderProperty * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn load_binary(&self, param_1: i64) -> u64 { unsafe { function!(105514, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    /// `BSShaderProperty::SaveBinary` (decompiler signature, tier low; ledger semantic evidence, name high; id 105517, rva 0x14e7450).
+    /// `undefined SaveBinary(BSShaderProperty * this, longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn save_binary(&self, param_1: *mut i64) -> u64 { unsafe { function!(105517, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSShaderProperty::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 105522, rva 0x14e7640).
     /// `undefined dtor(BSShaderProperty * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -145,6 +173,20 @@ impl crate::BSShaderProperty {
 }
 
 impl crate::BSShadowDirectionalLight {
+    /// `BSShadowDirectionalLight::CullCasters` (decompiler signature, tier low; ledger runtime evidence, name high; id 108488, rva 0x157ead0).
+    /// `undefined CullCasters(BSShadowDirectionalLight * this, uint * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn cull_casters(&self, param_1: *mut u32) -> u64 { unsafe { function!(108488, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
+    /// `BSShadowDirectionalLight::UpdateCascadeFrusta` (decompiler signature, tier low; ledger semantic evidence, name medium; id 108487, rva 0x157ea50).
+    /// `undefined UpdateCascadeFrusta(BSShadowDirectionalLight * this, float * param_1, undefined8 * param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn update_cascade_frusta(&self, param_1: *mut f32, param_2: *mut u64) -> u64 { unsafe { function!(108487, (*const Self, *mut f32, *mut u64) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `BSShadowDirectionalLight::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 108485, rva 0x157e490).
     /// `BSShadowDirectionalLight * ctor(BSShadowDirectionalLight * this, uint param_1, ulonglong param_2, undefined8 param_3)`
     ///
@@ -169,6 +211,13 @@ impl crate::BSShadowDirectionalLight {
 }
 
 impl crate::BSShadowFrustumLight {
+    /// `BSShadowFrustumLight::SupportsFocusShadows` (decompiler signature, tier low; ledger semantic evidence, name medium; id 108620, rva 0x1587f70).
+    /// `undefined1 SupportsFocusShadows(void)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn supports_focus_shadows() -> u8 { unsafe { function!(108620, () -> u8)() } }
     /// `BSShadowFrustumLight::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 108612, rva 0x15872e0).
     /// `BSShadowFrustumLight * ctor(BSShadowFrustumLight * this, float param_1, undefined8 param_2, float param_3, float param_4)`
     ///
@@ -200,6 +249,13 @@ impl crate::BSShadowFrustumLight {
 }
 
 impl crate::BSShadowLight {
+    /// `BSShadowLight::IsShadowLight` (decompiler signature, tier low; ledger semantic evidence, name high; id 107620, rva 0x155dbd0).
+    /// `undefined1 IsShadowLight(void)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn is_shadow_light() -> u8 { unsafe { function!(107620, () -> u8)() } }
     /// `BSShadowLight::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 107595, rva 0x155c590).
     /// `undefined dtor(BSShadowLight * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -258,6 +314,13 @@ impl crate::NiAVObject {
 }
 
 impl crate::NiNode {
+    /// `NiNode::RemoveFromArrayAndDetachChild` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 15291, rva 0x203570).
+    /// `undefined RemoveFromArrayAndDetachChild(NiNode * param_1, longlong * param_2, longlong * param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn remove_from_array_and_detach_child(&self, param_2: *mut i64, param_3: *mut i64) -> u64 { unsafe { function!(15291, (*const Self, *mut i64, *mut i64) -> u64)(core::ptr::from_ref(self), param_2, param_3) } }
     /// `NiNode::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 70287, rva 0xee1940).
     /// `NiNode * ctor(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///

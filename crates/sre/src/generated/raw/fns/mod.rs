@@ -50,5 +50,3 @@ mod part_21;
 pub use part_21::*;
 mod part_22;
 pub use part_22::*;
-mod part_23;
-pub use part_23::*;

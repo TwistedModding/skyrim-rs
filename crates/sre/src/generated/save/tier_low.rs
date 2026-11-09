@@ -25,6 +25,13 @@ impl crate::BGSLoadGameBuffer {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `BGSLoadGameBuffer::GetVersion` (decompiler signature, tier low; ledger semantic evidence, name medium; id 35999, rva 0x637a90).
+    /// `undefined GetVersion(void)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_version() -> u64 { unsafe { function!(35999, () -> u64)() } }
 }
 
 impl crate::BGSSaveFormBuffer {
@@ -69,6 +76,13 @@ impl crate::BGSSaveLoadManager {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn bst_event_sink_race_sex_menu_event_name_changed_event_vfunc_1(&self, param_1: *mut u64) -> u64 { unsafe { function!(35774, (*const Self, *mut u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
+    /// `BGSSaveLoadManager::ProcessSaveDataEvent` (decompiler signature, tier low; ledger semantic evidence, name high; id 35773, rva 0x626380).
+    /// `undefined8 ProcessSaveDataEvent(BGSSaveLoadManager * this, LoadRequest * param_1, ulonglong param_2, ulonglong param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn process_save_data_event(&self, param_1: *mut c_void, param_2: u64, param_3: u64) -> u64 { unsafe { function!(35773, (*const Self, *mut c_void, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BGSSaveLoadManager::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 35721, rva 0x6220c0).
     /// `undefined dtor(BGSSaveLoadManager * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -86,6 +100,13 @@ impl crate::BGSSaveLoadManager {
 }
 
 impl crate::BGSSaveLoadManager__Thread {
+    /// `BGSSaveLoadManager::Thread::Run` (decompiler signature, tier low; ledger semantic evidence, name high; id 35790, rva 0x62a030).
+    /// `undefined8 Run(Thread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn run(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(35790, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BGSSaveLoadManager::Thread::vdtor` (decompiler signature, tier low; ledger semantic evidence, name high; id 35847, rva 0x62e290).
     /// `Thread * vdtor(Thread * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -96,6 +117,13 @@ impl crate::BGSSaveLoadManager__Thread {
 }
 
 impl crate::_anon_14F04957__Win32FileType {
+    /// `_anon_14F04957::Win32FileType::Seek` (decompiler signature, tier low; ledger semantic evidence, name medium; id 109375, rva 0x159d8c0).
+    /// `int Seek(Win32FileType * this, int param_1, int param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn seek(&self, param_1: i32, param_2: i32) -> i32 { unsafe { function!(109375, (*const Self, i32, i32) -> i32)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `_anon_14F04957::Win32FileType::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 109365, rva 0x159d3e0).
     /// `Win32FileType * vdtor(Win32FileType * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///

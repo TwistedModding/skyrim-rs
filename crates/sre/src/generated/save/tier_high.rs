@@ -62,6 +62,20 @@ impl crate::BGSSaveLoadManager {
 }
 
 impl crate::_anon_14F04957__Win32FileType {
+    /// `_anon_14F04957::Win32FileType::GetSize` (decompiler signature, tier high; ledger semantic evidence, name medium; id 109368, rva 0x159d440).
+    /// `undefined4 GetSize(Win32FileType * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_size(&self) -> u32 { unsafe { function!(109368, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
+    /// `_anon_14F04957::Win32FileType::Open` (decompiler signature, tier high; ledger semantic evidence, name medium; id 109370, rva 0x159d770).
+    /// `bool Open(Win32FileType * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn open(&self) -> u8 { unsafe { function!(109370, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
     /// `_anon_14F04957::Win32FileType::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 109362, rva 0x159d320).
     /// `undefined ctor(Win32FileType * this)`
     ///

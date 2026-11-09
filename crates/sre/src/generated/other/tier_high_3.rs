@@ -7,6 +7,27 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `SetStaggerTimeToMaxDuration` (decompiler signature, tier high; ledger decompiler evidence, name high; id 40040, rva 0x7286f0).
+/// `undefined SetStaggerTimeToMaxDuration(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_stagger_time_to_max_duration(param_1: i64) -> u64 { unsafe { function!(40040, (i64) -> u64)(param_1) } }
+/// `SetStringField8` (decompiler signature, tier high; ledger decompiler evidence, name high; id 12951, rva 0x190aa0).
+/// `undefined SetStringField8(longlong param_1, char * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_string_field8(param_1: i64, param_2: *mut c_char) -> u64 { unsafe { function!(12951, (i64, *mut c_char) -> u64)(param_1, param_2) } }
+/// `SetThreadPriorityLevel_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 69068, rva 0xeaedf0).
+/// `undefined8 SetThreadPriorityLevel_2(longlong param_1, int param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_thread_priority_level_2(param_1: i64, param_2: i32) -> u64 { unsafe { function!(69068, (i64, i32) -> u64)(param_1, param_2) } }
 /// `SetThreeShorts` (decompiler signature, tier high; ledger decompiler evidence, name high; id 68662, rva 0xcfac30).
 /// `undefined2 * SetThreeShorts(undefined2 * param_1, undefined2 param_2, undefined2 param_3, undefined2 param_4)`
 ///
@@ -1512,6 +1533,860 @@ pub unsafe fn zero_twelve_bytes(param_1: *mut u64) -> u64 { unsafe { function!(6
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn zero_two_qwords_2(param_1: *mut u64) -> *mut u64 { unsafe { function!(68283, (*mut u64) -> *mut u64)(param_1) } }
+/// `g_ConcreteFormFactory_BGSDialogueBranch_115__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166463, rva 0x174b010).
+/// `void g_ConcreteFormFactory_BGSDialogueBranch_115__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_form_factory_bgs_dialogue_branch_115__init_cb0() { unsafe { function!(166463, ())() } }
+/// `g_ConcreteFormFactory_BGSScene_122__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166498, rva 0x174b6b0).
+/// `void g_ConcreteFormFactory_BGSScene_122__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_form_factory_bgs_scene_122__init_cb0() { unsafe { function!(166498, ())() } }
+/// `g_ConcreteFormFactory_BGSStoryManagerBranchNode_112__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 170454, rva 0x178fbf0).
+/// `void g_ConcreteFormFactory_BGSStoryManagerBranchNode_112__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_form_factory_bgs_story_manager_branch_node_112__init_cb0() { unsafe { function!(170454, ())() } }
+/// `g_ConcreteFormFactory_BGSStoryManagerQuestNode_113__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 170456, rva 0x178fc70).
+/// `void g_ConcreteFormFactory_BGSStoryManagerQuestNode_113__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_form_factory_bgs_story_manager_quest_node_113__init_cb0() { unsafe { function!(170456, ())() } }
+/// `g_ConcreteFormFactory_NavMesh_73__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 170191, rva 0x178d460).
+/// `void g_ConcreteFormFactory_NavMesh_73__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_form_factory_nav_mesh_73__init_cb0() { unsafe { function!(170191, ())() } }
+/// `g_ConcreteFormFactory_TESIdleForm_78__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166517, rva 0x174b9a0).
+/// `void g_ConcreteFormFactory_TESIdleForm_78__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_form_factory_tes_idle_form_78__init_cb0() { unsafe { function!(166517, ())() } }
+/// `g_ConcreteFormFactory_TESObjectCELL_60__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166200, rva 0x1748da0).
+/// `void g_ConcreteFormFactory_TESObjectCELL_60__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_form_factory_tes_object_cell_60__init_cb0() { unsafe { function!(166200, ())() } }
+/// `g_ConcreteFormFactory_TESObjectLAND_72__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166173, rva 0x17486e0).
+/// `void g_ConcreteFormFactory_TESObjectLAND_72__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_form_factory_tes_object_land_72__init_cb0() { unsafe { function!(166173, ())() } }
+/// `g_ConcreteFormFactory_TESRegion_58__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165969, rva 0x17456d0).
+/// `void g_ConcreteFormFactory_TESRegion_58__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_form_factory_tes_region_58__init_cb0() { unsafe { function!(165969, ())() } }
+/// `g_ConcreteFormFactory_TESTopicInfo_76__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166680, rva 0x174d220).
+/// `void g_ConcreteFormFactory_TESTopicInfo_76__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_form_factory_tes_topic_info_76__init_cb0() { unsafe { function!(166680, ())() } }
+/// `g_ConcreteFormFactory_TESTopic_75__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166666, rva 0x174cf30).
+/// `void g_ConcreteFormFactory_TESTopic_75__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_form_factory_tes_topic_75__init_cb0() { unsafe { function!(166666, ())() } }
+/// `g_ConcreteFormFactory_TESWorldSpace_71__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166292, rva 0x1749920).
+/// `void g_ConcreteFormFactory_TESWorldSpace_71__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_form_factory_tes_world_space_71__init_cb0() { unsafe { function!(166292, ())() } }
+/// `g_ConcreteObjectFormFactory_AlchemyItem_46_17_2__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165303, rva 0x173c090).
+/// `void g_ConcreteObjectFormFactory_AlchemyItem_46_17_2__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_alchemy_item_46_17_2__init_cb0() { unsafe { function!(165303, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSAcousticSpace_16_64_8__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166294, rva 0x1749970).
+/// `void g_ConcreteObjectFormFactory_BGSAcousticSpace_16_64_8__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_acoustic_space_16_64_8__init_cb0() { unsafe { function!(166294, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSAction_6_76_0__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166460, rva 0x174af50).
+/// `void g_ConcreteObjectFormFactory_BGSAction_6_76_0__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_action_6_76_0__init_cb0() { unsafe { function!(166460, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSAddonNode_94_41_6__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165971, rva 0x1745720).
+/// `void g_ConcreteObjectFormFactory_BGSAddonNode_94_41_6__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_addon_node_94_41_6__init_cb0() { unsafe { function!(165971, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSApparatus_33_90_9__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165972, rva 0x1745760).
+/// `void g_ConcreteObjectFormFactory_BGSApparatus_33_90_9__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_apparatus_33_90_9__init_cb0() { unsafe { function!(165972, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSArtObject_125_84_4__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165973, rva 0x17457a0).
+/// `void g_ConcreteObjectFormFactory_BGSArtObject_125_84_4__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_art_object_125_84_4__init_cb0() { unsafe { function!(165973, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSAssociationType_123_82_5__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166461, rva 0x174af90).
+/// `void g_ConcreteObjectFormFactory_BGSAssociationType_123_82_5__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_association_type_123_82_5__init_cb0() { unsafe { function!(166461, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSBodyPartData_93_40_0__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166462, rva 0x174afd0).
+/// `void g_ConcreteObjectFormFactory_BGSBodyPartData_93_40_0__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_body_part_data_93_40_0__init_cb0() { unsafe { function!(166462, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSCollisionLayer_132_99_4__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166301, rva 0x1749b30).
+/// `void g_ConcreteObjectFormFactory_BGSCollisionLayer_132_99_4__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_collision_layer_132_99_4__init_cb0() { unsafe { function!(166301, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSColorForm_133_101_4__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166302, rva 0x1749b70).
+/// `void g_ConcreteObjectFormFactory_BGSColorForm_133_101_4__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_color_form_133_101_4__init_cb0() { unsafe { function!(166302, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSConstructibleObject_49_63_1__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165974, rva 0x17457e0).
+/// `void g_ConcreteObjectFormFactory_BGSConstructibleObject_49_63_1__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_constructible_object_49_63_1__init_cb0() { unsafe { function!(165974, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSDebris_88_36_6__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165975, rva 0x1745820).
+/// `void g_ConcreteObjectFormFactory_BGSDebris_88_36_6__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_debris_88_36_6__init_cb0() { unsafe { function!(165975, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165305, rva 0x173c0e0).
+/// `void g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_dual_cast_data_129_95_2__init_cb0() { unsafe { function!(165305, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166126, rva 0x1747c50).
+/// `void g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_encounter_zone_103_61_7__init_cb0() { unsafe { function!(166126, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSEquipSlot_120_81_5__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166464, rva 0x174b050).
+/// `void g_ConcreteObjectFormFactory_BGSEquipSlot_120_81_5__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_equip_slot_120_81_5__init_cb0() { unsafe { function!(166464, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSExplosion_87_34_6__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165976, rva 0x1745860).
+/// `void g_ConcreteObjectFormFactory_BGSExplosion_87_34_6__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_explosion_87_34_6__init_cb0() { unsafe { function!(165976, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSFootstepSet_111_74_6__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166305, rva 0x1749cb0).
+/// `void g_ConcreteObjectFormFactory_BGSFootstepSet_111_74_6__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_footstep_set_111_74_6__init_cb0() { unsafe { function!(166305, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSFootstep_110_73_6__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166304, rva 0x1749c70).
+/// `void g_ConcreteObjectFormFactory_BGSFootstep_110_73_6__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_footstep_110_73_6__init_cb0() { unsafe { function!(166304, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSHazard_51_92_6__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165980, rva 0x1745950).
+/// `void g_ConcreteObjectFormFactory_BGSHazard_51_92_6__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_hazard_51_92_6__init_cb0() { unsafe { function!(165980, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSHeadPart_12_52_5__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166466, rva 0x174b0a0).
+/// `void g_ConcreteObjectFormFactory_BGSHeadPart_12_52_5__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_head_part_12_52_5__init_cb0() { unsafe { function!(166466, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSIdleMarker_47_30_4__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166467, rva 0x174b0e0).
+/// `void g_ConcreteObjectFormFactory_BGSIdleMarker_47_30_4__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_idle_marker_47_30_4__init_cb0() { unsafe { function!(166467, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSImpactDataSet_101_45_6__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166309, rva 0x1749d50).
+/// `void g_ConcreteObjectFormFactory_BGSImpactDataSet_101_45_6__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_impact_data_set_101_45_6__init_cb0() { unsafe { function!(166309, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSImpactData_100_44_6__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166307, rva 0x1749d00).
+/// `void g_ConcreteObjectFormFactory_BGSImpactData_100_44_6__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_impact_data_100_44_6__init_cb0() { unsafe { function!(166307, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSKeyword_4_70_4__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166468, rva 0x174b120).
+/// `void g_ConcreteObjectFormFactory_BGSKeyword_4_70_4__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_keyword_4_70_4__init_cb0() { unsafe { function!(166468, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSLensFlare_135_103_6__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165982, rva 0x17459a0).
+/// `void g_ConcreteObjectFormFactory_BGSLensFlare_135_103_6__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_lens_flare_135_103_6__init_cb0() { unsafe { function!(165982, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSLightingTemplate_108_87_7__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166130, rva 0x1747d80).
+/// `void g_ConcreteObjectFormFactory_BGSLightingTemplate_108_87_7__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_lighting_template_108_87_7__init_cb0() { unsafe { function!(166130, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSListForm_91_38_4__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166310, rva 0x1749d90).
+/// `void g_ConcreteObjectFormFactory_BGSListForm_91_38_4__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_list_form_91_38_4__init_cb0() { unsafe { function!(166310, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSLocationRefType_5_72_7__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166137, rva 0x1747f00).
+/// `void g_ConcreteObjectFormFactory_BGSLocationRefType_5_72_7__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_location_ref_type_5_72_7__init_cb0() { unsafe { function!(166137, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSLocation_104_71_7__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166136, rva 0x1747ec0).
+/// `void g_ConcreteObjectFormFactory_BGSLocation_104_71_7__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_location_104_71_7__init_cb0() { unsafe { function!(166136, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSMaterialObject_126_85_4__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166311, rva 0x1749dd0).
+/// `void g_ConcreteObjectFormFactory_BGSMaterialObject_126_85_4__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_material_object_126_85_4__init_cb0() { unsafe { function!(166311, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSMaterialType_99_75_6__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166313, rva 0x1749e20).
+/// `void g_ConcreteObjectFormFactory_BGSMaterialType_99_75_6__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_material_type_99_75_6__init_cb0() { unsafe { function!(166313, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSMenuIcon_8_37_9__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166314, rva 0x1749e60).
+/// `void g_ConcreteObjectFormFactory_BGSMenuIcon_8_37_9__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_menu_icon_8_37_9__init_cb0() { unsafe { function!(166314, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSMessage_105_62_4__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166316, rva 0x1749ef0).
+/// `void g_ConcreteObjectFormFactory_BGSMessage_105_62_4__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_message_105_62_4__init_cb0() { unsafe { function!(166316, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSMovableStatic_36_42_3__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165985, rva 0x1745a30).
+/// `void g_ConcreteObjectFormFactory_BGSMovableStatic_36_42_3__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_movable_static_36_42_3__init_cb0() { unsafe { function!(165985, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSMovementType_127_91_5__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166471, rva 0x174b180).
+/// `void g_ConcreteObjectFormFactory_BGSMovementType_127_91_5__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_movement_type_127_91_5__init_cb0() { unsafe { function!(166471, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSMusicTrackFormWrapper_116_77_8__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166325, rva 0x174a0b0).
+/// `void g_ConcreteObjectFormFactory_BGSMusicTrackFormWrapper_116_77_8__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_music_track_form_wrapper_116_77_8__init_cb0() { unsafe { function!(166325, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSMusicType_109_68_8__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166326, rva 0x174a0f0).
+/// `void g_ConcreteObjectFormFactory_BGSMusicType_109_68_8__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_music_type_109_68_8__init_cb0() { unsafe { function!(166326, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSNote_48_54_9__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166472, rva 0x174b1c0).
+/// `void g_ConcreteObjectFormFactory_BGSNote_48_54_9__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_note_48_54_9__init_cb0() { unsafe { function!(166472, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSOutfit_124_83_1__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165986, rva 0x1745a70).
+/// `void g_ConcreteObjectFormFactory_BGSOutfit_124_83_1__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_outfit_124_83_1__init_cb0() { unsafe { function!(165986, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSPerk_92_39_0__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166474, rva 0x174b2c0).
+/// `void g_ConcreteObjectFormFactory_BGSPerk_92_39_0__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_perk_92_39_0__init_cb0() { unsafe { function!(166474, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSProjectile_50_32_6__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165993, rva 0x1745c50).
+/// `void g_ConcreteObjectFormFactory_BGSProjectile_50_32_6__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_projectile_50_32_6__init_cb0() { unsafe { function!(165993, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSRagdoll_106_65_9__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166483, rva 0x174b4e0).
+/// `void g_ConcreteObjectFormFactory_BGSRagdoll_106_65_9__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_ragdoll_106_65_9__init_cb0() { unsafe { function!(166483, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSReferenceEffect_57_89_7__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166139, rva 0x1747f50).
+/// `void g_ConcreteObjectFormFactory_BGSReferenceEffect_57_89_7__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_reference_effect_57_89_7__init_cb0() { unsafe { function!(166139, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSRelationship_121_80_5__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166496, rva 0x174b660).
+/// `void g_ConcreteObjectFormFactory_BGSRelationship_121_80_5__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_relationship_121_80_5__init_cb0() { unsafe { function!(166496, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSReverbParameters_134_102_8__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166327, rva 0x174a130).
+/// `void g_ConcreteObjectFormFactory_BGSReverbParameters_134_102_8__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_reverb_parameters_134_102_8__init_cb0() { unsafe { function!(166327, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSShaderParticleGeometryData_56_88_7__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166141, rva 0x1747fa0).
+/// `void g_ConcreteObjectFormFactory_BGSShaderParticleGeometryData_56_88_7__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_shader_particle_geometry_data_56_88_7__init_cb0() { unsafe { function!(166141, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSSoundCategory_130_96_8__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166329, rva 0x174a190).
+/// `void g_ConcreteObjectFormFactory_BGSSoundCategory_130_96_8__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_sound_category_130_96_8__init_cb0() { unsafe { function!(166329, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSSoundDescriptorForm_128_94_8__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166332, rva 0x174a230).
+/// `void g_ConcreteObjectFormFactory_BGSSoundDescriptorForm_128_94_8__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_sound_descriptor_form_128_94_8__init_cb0() { unsafe { function!(166332, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSSoundOutput_131_98_8__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166333, rva 0x174a270).
+/// `void g_ConcreteObjectFormFactory_BGSSoundOutput_131_98_8__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_sound_output_131_98_8__init_cb0() { unsafe { function!(166333, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSStaticCollection_35_69_3__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165994, rva 0x1745c90).
+/// `void g_ConcreteObjectFormFactory_BGSStaticCollection_35_69_3__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_static_collection_35_69_3__init_cb0() { unsafe { function!(165994, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSStoryManagerEventNode_114_93_5__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 170455, rva 0x178fc30).
+/// `void g_ConcreteObjectFormFactory_BGSStoryManagerEventNode_114_93_5__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_story_manager_event_node_114_93_5__init_cb0() { unsafe { function!(170455, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSTalkingActivator_25_33_0__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165995, rva 0x1745cd0).
+/// `void g_ConcreteObjectFormFactory_BGSTalkingActivator_25_33_0__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_talking_activator_25_33_0__init_cb0() { unsafe { function!(165995, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSTextureSet_7_35_4__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166336, rva 0x174a2d0).
+/// `void g_ConcreteObjectFormFactory_BGSTextureSet_7_35_4__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_texture_set_7_35_4__init_cb0() { unsafe { function!(166336, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSVoiceType_98_48_5__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166504, rva 0x174b7d0).
+/// `void g_ConcreteObjectFormFactory_BGSVoiceType_98_48_5__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_voice_type_98_48_5__init_cb0() { unsafe { function!(166504, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSVolumetricLighting_137_105_6__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165984, rva 0x17459f0).
+/// `void g_ConcreteObjectFormFactory_BGSVolumetricLighting_137_105_6__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_bgs_volumetric_lighting_137_105_6__init_cb0() { unsafe { function!(165984, ())() } }
+/// `g_ConcreteObjectFormFactory_EffectSetting_18_67_2__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165325, rva 0x173c6d0).
+/// `void g_ConcreteObjectFormFactory_EffectSetting_18_67_2__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_effect_setting_18_67_2__init_cb0() { unsafe { function!(165325, ())() } }
+/// `g_ConcreteObjectFormFactory_EnchantmentItem_21_16_2__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165327, rva 0x173c7d0).
+/// `void g_ConcreteObjectFormFactory_EnchantmentItem_21_16_2__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_enchantment_item_21_16_2__init_cb0() { unsafe { function!(165327, ())() } }
+/// `g_ConcreteObjectFormFactory_IngredientItem_30_5_1__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165333, rva 0x173c960).
+/// `void g_ConcreteObjectFormFactory_IngredientItem_30_5_1__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_ingredient_item_30_5_1__init_cb0() { unsafe { function!(165333, ())() } }
+/// `g_ConcreteObjectFormFactory_Script_19_66_9__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166355, rva 0x174a4d0).
+/// `void g_ConcreteObjectFormFactory_Script_19_66_9__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_script_19_66_9__init_cb0() { unsafe { function!(166355, ())() } }
+/// `g_ConcreteObjectFormFactory_ScrollItem_23_100_2__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165394, rva 0x173dba0).
+/// `void g_ConcreteObjectFormFactory_ScrollItem_23_100_2__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_scroll_item_23_100_2__init_cb0() { unsafe { function!(165394, ())() } }
+/// `g_ConcreteObjectFormFactory_SpellItem_22_15_2__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165395, rva 0x173dbe0).
+/// `void g_ConcreteObjectFormFactory_SpellItem_22_15_2__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_spell_item_22_15_2__init_cb0() { unsafe { function!(165395, ())() } }
+/// `g_ConcreteObjectFormFactory_TESAmmo_42_20_1__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165998, rva 0x1745e00).
+/// `void g_ConcreteObjectFormFactory_TESAmmo_42_20_1__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_ammo_42_20_1__init_cb0() { unsafe { function!(165998, ())() } }
+/// `g_ConcreteObjectFormFactory_TESClass_10_49_5__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166513, rva 0x174b890).
+/// `void g_ConcreteObjectFormFactory_TESClass_10_49_5__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_class_10_49_5__init_cb0() { unsafe { function!(166513, ())() } }
+/// `g_ConcreteObjectFormFactory_TESClimate_55_56_7__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166146, rva 0x1748060).
+/// `void g_ConcreteObjectFormFactory_TESClimate_55_56_7__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_climate_55_56_7__init_cb0() { unsafe { function!(166146, ())() } }
+/// `g_ConcreteObjectFormFactory_TESCombatStyle_80_25_4__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 165999, rva 0x1745e40).
+/// `void g_ConcreteObjectFormFactory_TESCombatStyle_80_25_4__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_combat_style_80_25_4__init_cb0() { unsafe { function!(165999, ())() } }
+/// `g_ConcreteObjectFormFactory_TESEffectShader_85_31_6__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166004, rva 0x1745f70).
+/// `void g_ConcreteObjectFormFactory_TESEffectShader_85_31_6__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_effect_shader_85_31_6__init_cb0() { unsafe { function!(166004, ())() } }
+/// `g_ConcreteObjectFormFactory_TESEyes_13_51_9__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166514, rva 0x174b8d0).
+/// `void g_ConcreteObjectFormFactory_TESEyes_13_51_9__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_eyes_13_51_9__init_cb0() { unsafe { function!(166514, ())() } }
+/// `g_ConcreteObjectFormFactory_TESFaction_11_53_5__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166516, rva 0x174b960).
+/// `void g_ConcreteObjectFormFactory_TESFaction_11_53_5__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_faction_11_53_5__init_cb0() { unsafe { function!(166516, ())() } }
+/// `g_ConcreteObjectFormFactory_TESFlora_39_21_3__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166005, rva 0x1745fb0).
+/// `void g_ConcreteObjectFormFactory_TESFlora_39_21_3__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_flora_39_21_3__init_cb0() { unsafe { function!(166005, ())() } }
+/// `g_ConcreteObjectFormFactory_TESFurniture_40_22_3__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166007, rva 0x1746000).
+/// `void g_ConcreteObjectFormFactory_TESFurniture_40_22_3__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_furniture_40_22_3__init_cb0() { unsafe { function!(166007, ())() } }
+/// `g_ConcreteObjectFormFactory_TESGlobal_9_58_4__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166345, rva 0x174a390).
+/// `void g_ConcreteObjectFormFactory_TESGlobal_9_58_4__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_global_9_58_4__init_cb0() { unsafe { function!(166345, ())() } }
+/// `g_ConcreteObjectFormFactory_TESGrass_37_9_3__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166009, rva 0x1746090).
+/// `void g_ConcreteObjectFormFactory_TESGrass_37_9_3__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_grass_37_9_3__init_cb0() { unsafe { function!(166009, ())() } }
+/// `g_ConcreteObjectFormFactory_TESImageSpaceModifier_90_60_6__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166155, rva 0x1748190).
+/// `void g_ConcreteObjectFormFactory_TESImageSpaceModifier_90_60_6__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_image_space_modifier_90_60_6__init_cb0() { unsafe { function!(166155, ())() } }
+/// `g_ConcreteObjectFormFactory_TESImageSpace_89_59_6__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166148, rva 0x17480b0).
+/// `void g_ConcreteObjectFormFactory_TESImageSpace_89_59_6__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_image_space_89_59_6__init_cb0() { unsafe { function!(166148, ())() } }
+/// `g_ConcreteObjectFormFactory_TESKey_45_19_1__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166010, rva 0x17460d0).
+/// `void g_ConcreteObjectFormFactory_TESKey_45_19_1__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_key_45_19_1__init_cb0() { unsafe { function!(166010, ())() } }
+/// `g_ConcreteObjectFormFactory_TESLandTexture_20_24_4__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166175, rva 0x1748730).
+/// `void g_ConcreteObjectFormFactory_TESLandTexture_20_24_4__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_land_texture_20_24_4__init_cb0() { unsafe { function!(166175, ())() } }
+/// `g_ConcreteObjectFormFactory_TESLevCharacter_44_14_0__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166012, rva 0x1746160).
+/// `void g_ConcreteObjectFormFactory_TESLevCharacter_44_14_0__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_lev_character_44_14_0__init_cb0() { unsafe { function!(166012, ())() } }
+/// `g_ConcreteObjectFormFactory_TESLevItem_53_18_1__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166014, rva 0x17461f0).
+/// `void g_ConcreteObjectFormFactory_TESLevItem_53_18_1__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_lev_item_53_18_1__init_cb0() { unsafe { function!(166014, ())() } }
+/// `g_ConcreteObjectFormFactory_TESLevSpell_82_27_2__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166015, rva 0x1746230).
+/// `void g_ConcreteObjectFormFactory_TESLevSpell_82_27_2__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_lev_spell_82_27_2__init_cb0() { unsafe { function!(166015, ())() } }
+/// `g_ConcreteObjectFormFactory_TESLoadScreen_81_26_4__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166347, rva 0x174a3e0).
+/// `void g_ConcreteObjectFormFactory_TESLoadScreen_81_26_4__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_load_screen_81_26_4__init_cb0() { unsafe { function!(166347, ())() } }
+/// `g_ConcreteObjectFormFactory_TESNPC_43_13_0__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166544, rva 0x174be80).
+/// `void g_ConcreteObjectFormFactory_TESNPC_43_13_0__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tesnpc_43_13_0__init_cb0() { unsafe { function!(166544, ())() } }
+/// `g_ConcreteObjectFormFactory_TESObjectACTI_24_0_3__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166033, rva 0x17466d0).
+/// `void g_ConcreteObjectFormFactory_TESObjectACTI_24_0_3__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_object_acti_24_0_3__init_cb0() { unsafe { function!(166033, ())() } }
+/// `g_ConcreteObjectFormFactory_TESObjectANIO_83_28_4__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166034, rva 0x1746710).
+/// `void g_ConcreteObjectFormFactory_TESObjectANIO_83_28_4__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_object_anio_83_28_4__init_cb0() { unsafe { function!(166034, ())() } }
+/// `g_ConcreteObjectFormFactory_TESObjectARMA_102_57_1__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166037, rva 0x17467b0).
+/// `void g_ConcreteObjectFormFactory_TESObjectARMA_102_57_1__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_object_arma_102_57_1__init_cb0() { unsafe { function!(166037, ())() } }
+/// `g_ConcreteObjectFormFactory_TESObjectARMO_26_1_1__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166045, rva 0x17469e0).
+/// `void g_ConcreteObjectFormFactory_TESObjectARMO_26_1_1__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_object_armo_26_1_1__init_cb0() { unsafe { function!(166045, ())() } }
+/// `g_ConcreteObjectFormFactory_TESObjectBOOK_27_2_1__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166050, rva 0x1746bd0).
+/// `void g_ConcreteObjectFormFactory_TESObjectBOOK_27_2_1__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_object_book_27_2_1__init_cb0() { unsafe { function!(166050, ())() } }
+/// `g_ConcreteObjectFormFactory_TESObjectCONT_28_3_3__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166051, rva 0x1746c10).
+/// `void g_ConcreteObjectFormFactory_TESObjectCONT_28_3_3__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_object_cont_28_3_3__init_cb0() { unsafe { function!(166051, ())() } }
+/// `g_ConcreteObjectFormFactory_TESObjectDOOR_29_4_3__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166084, rva 0x1747080).
+/// `void g_ConcreteObjectFormFactory_TESObjectDOOR_29_4_3__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_object_door_29_4_3__init_cb0() { unsafe { function!(166084, ())() } }
+/// `g_ConcreteObjectFormFactory_TESObjectLIGH_31_6_3__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166029, rva 0x1746640).
+/// `void g_ConcreteObjectFormFactory_TESObjectLIGH_31_6_3__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_object_ligh_31_6_3__init_cb0() { unsafe { function!(166029, ())() } }
+/// `g_ConcreteObjectFormFactory_TESObjectMISC_32_7_1__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166086, rva 0x1747110).
+/// `void g_ConcreteObjectFormFactory_TESObjectMISC_32_7_1__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_object_misc_32_7_1__init_cb0() { unsafe { function!(166086, ())() } }
+/// `g_ConcreteObjectFormFactory_TESObjectSTAT_34_8_3__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166087, rva 0x1747150).
+/// `void g_ConcreteObjectFormFactory_TESObjectSTAT_34_8_3__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_object_stat_34_8_3__init_cb0() { unsafe { function!(166087, ())() } }
+/// `g_ConcreteObjectFormFactory_TESObjectTREE_38_10_3__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166088, rva 0x1747190).
+/// `void g_ConcreteObjectFormFactory_TESObjectTREE_38_10_3__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_object_tree_38_10_3__init_cb0() { unsafe { function!(166088, ())() } }
+/// `g_ConcreteObjectFormFactory_TESObjectWEAP_41_12_1__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166112, rva 0x1747840).
+/// `void g_ConcreteObjectFormFactory_TESObjectWEAP_41_12_1__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_object_weap_41_12_1__init_cb0() { unsafe { function!(166112, ())() } }
+/// `g_ConcreteObjectFormFactory_TESQuest_77_46_5__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166590, rva 0x174c670).
+/// `void g_ConcreteObjectFormFactory_TESQuest_77_46_5__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_quest_77_46_5__init_cb0() { unsafe { function!(166590, ())() } }
+/// `g_ConcreteObjectFormFactory_TESRace_14_50_5__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166657, rva 0x174cc50).
+/// `void g_ConcreteObjectFormFactory_TESRace_14_50_5__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_race_14_50_5__init_cb0() { unsafe { function!(166657, ())() } }
+/// `g_ConcreteObjectFormFactory_TESShout_119_79_2__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166457, rva 0x174ae90).
+/// `void g_ConcreteObjectFormFactory_TESShout_119_79_2__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_shout_119_79_2__init_cb0() { unsafe { function!(166457, ())() } }
+/// `g_ConcreteObjectFormFactory_TESSoulGem_52_97_1__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166124, rva 0x1747bc0).
+/// `void g_ConcreteObjectFormFactory_TESSoulGem_52_97_1__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_soul_gem_52_97_1__init_cb0() { unsafe { function!(166124, ())() } }
+/// `g_ConcreteObjectFormFactory_TESSound_15_23_8__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166458, rva 0x174aed0).
+/// `void g_ConcreteObjectFormFactory_TESSound_15_23_8__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_sound_15_23_8__init_cb0() { unsafe { function!(166458, ())() } }
+/// `g_ConcreteObjectFormFactory_TESWaterForm_84_29_7__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166281, rva 0x1749750).
+/// `void g_ConcreteObjectFormFactory_TESWaterForm_84_29_7__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_water_form_84_29_7__init_cb0() { unsafe { function!(166281, ())() } }
+/// `g_ConcreteObjectFormFactory_TESWeather_54_55_7__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166283, rva 0x17497a0).
+/// `void g_ConcreteObjectFormFactory_TESWeather_54_55_7__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_weather_54_55_7__init_cb0() { unsafe { function!(166283, ())() } }
+/// `g_ConcreteObjectFormFactory_TESWordOfPower_118_78_2__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166459, rva 0x174af10).
+/// `void g_ConcreteObjectFormFactory_TESWordOfPower_118_78_2__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_object_form_factory_tes_word_of_power_118_78_2__init_cb0() { unsafe { function!(166459, ())() } }
+/// `g_ConcreteTempEffectFactory_BSTempEffectSPG_6__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 170182, rva 0x178d250).
+/// `void g_ConcreteTempEffectFactory_BSTempEffectSPG_6__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_temp_effect_factory_bs_temp_effect_spg_6__init_cb0() { unsafe { function!(170182, ())() } }
+/// `g_ConcreteTempEffectFactory_BSTerrainEffect_0__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 170189, rva 0x178d410).
+/// `void g_ConcreteTempEffectFactory_BSTerrainEffect_0__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_temp_effect_factory_bs_terrain_effect_0__init_cb0() { unsafe { function!(170189, ())() } }
+/// `g_ConcreteTempEffectFactory_ModelReferenceEffect_9__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 170648, rva 0x1791f10).
+/// `void g_ConcreteTempEffectFactory_ModelReferenceEffect_9__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_temp_effect_factory_model_reference_effect_9__init_cb0() { unsafe { function!(170648, ())() } }
+/// `g_ConcreteTempEffectFactory_ReferenceEffect_8__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 170651, rva 0x1791f70).
+/// `void g_ConcreteTempEffectFactory_ReferenceEffect_8__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_temp_effect_factory_reference_effect_8__init_cb0() { unsafe { function!(170651, ())() } }
+/// `g_ConcreteTempEffectFactory_ShaderReferenceEffect_10__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 170655, rva 0x1791fe0).
+/// `void g_ConcreteTempEffectFactory_ShaderReferenceEffect_10__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_temp_effect_factory_shader_reference_effect_10__init_cb0() { unsafe { function!(170655, ())() } }
+/// `g_ConcreteTempEffectFactory_SummonPlacementEffect_11__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 170657, rva 0x1792030).
+/// `void g_ConcreteTempEffectFactory_SummonPlacementEffect_11__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_concrete_temp_effect_factory_summon_placement_effect_11__init_cb0() { unsafe { function!(170657, ())() } }
+/// `g_PackageCreator__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 170160, rva 0x178ce70).
+/// `void g_PackageCreator__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_package_creator__init_cb0() { unsafe { function!(170160, ())() } }
+/// `g_anon_7816FE07_TESObjectREFRFactory__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 166271, rva 0x1749510).
+/// `void g_anon_7816FE07_TESObjectREFRFactory__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_anon_7816_fe07_tes_object_refr_factory__init_cb0() { unsafe { function!(166271, ())() } }
+/// `g_anon_DF2AE3C3_ActorValueFormFactory__init_cb0` (decompiler signature, tier high; ledger callgraph evidence, name medium; id 169906, rva 0x178adc0).
+/// `void g_anon_DF2AE3C3_ActorValueFormFactory__init_cb0(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_anon_df2_ae3_c3_actor_value_form_factory__init_cb0() { unsafe { function!(169906, ())() } }
 /// `memcpy_s` (decompiler signature, tier high; ledger decompiler evidence, name high; id 11037, rva 0x10c240).
 /// `undefined memcpy_s(void * param_1, ulonglong param_2, void * param_3, ulonglong param_4)`
 ///

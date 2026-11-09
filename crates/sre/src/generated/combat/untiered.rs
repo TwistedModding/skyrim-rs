@@ -1206,13 +1206,6 @@ impl crate::CombatNavmeshSearch {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor_sub1(param_1: *mut u64, param_2: i32) -> *mut u64 { unsafe { function!(50097, (*mut u64, i32) -> *mut u64)(param_1, param_2) } }
-    /// `CombatNavmeshSearch::dtor` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 47142, rva 0x860940).
-    /// `undefined dtor(AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3> * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(param_1: *mut crate::AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(47142, (*mut crate::AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 }
 
 impl crate::CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard {

@@ -42,6 +42,13 @@ impl crate::BSDirectAtModifier {
 }
 
 impl crate::BSGrabIKNote {
+    /// `BSGrabIKNote::ParseText`, vtable slot 37, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 74039, rva 0xf8b410).
+    /// `ulonglong ParseText(BSGrabIKNote * this, undefined4 * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn parse_text(&self, param_1: *mut u32) -> u64 { unsafe { virtual_function!(self, 37, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSGrabIKNote::Create` (decompiler signature, tier low; ledger string evidence, name high; id 74040, rva 0xf8b560).
     /// `NiObject * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -106,6 +113,13 @@ impl crate::BSLookAtModifier {
 }
 
 impl crate::BSLookIKNote {
+    /// `BSLookIKNote::ParseText`, vtable slot 37, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 74063, rva 0xf8bce0).
+    /// `ulonglong ParseText(BSLookIKNote * this, undefined4 * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn parse_text(&self, param_1: *mut u32) -> u64 { unsafe { virtual_function!(self, 37, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSLookIKNote::Create` (decompiler signature, tier low; ledger string evidence, name high; id 74064, rva 0xf8be20).
     /// `NiObject * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///

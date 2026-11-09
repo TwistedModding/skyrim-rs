@@ -7,34 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `BSImagespaceShaderISSAOCameraZAndMipsCS::vftable_90` at 0x1b3b850, id 254385 (rtti, high); 10 slots.
-#[repr(C)]
-pub struct BSImagespaceShaderISSAOCameraZAndMipsCS_vtable_90 {
-    /// `BSImagespaceShaderISSAOCameraZAndMipsCS::ImageSpaceEffect_vdtor` at 0x1507744 (semantic, high); signature (high): `undefined ImageSpaceEffect_vdtor(BSImagespaceShaderISSAOCameraZAndMipsCS * this)`
-    pub slot_0: *const c_void,
-    /// `BSImagespaceShader::ImageSpaceEffect_vfunc_1` at 0x1564e30 (rtti, medium); signature (low): `undefined ImageSpaceEffect_vfunc_1(BSImagespaceShader * this, undefined8 param_1, undefined * param_2)`
-    pub slot_1: *const c_void,
-    /// `ImageSpaceEffect::vfunc_2` at 0x150b9f0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `BSImagespaceShader::ImageSpaceEffect_vfunc_3` at 0x15652a0 (rtti, medium); signature (low): `undefined ImageSpaceEffect_vfunc_3(BSImagespaceShader * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_3: *const c_void,
-    /// `ImageSpaceEffect::vfunc_4` at 0x1509bc0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
-    pub slot_4: *const c_void,
-    /// `ImageSpaceEffect::vfunc_5` at 0x150b820 (rtti, medium); signature (low): `undefined vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `ImageSpaceEffect::vfunc_6` at 0x150b480 (rtti, medium); signature (high): `undefined1 vfunc_6(ImageSpaceEffect * this)`
-    pub slot_6: *const c_void,
-    /// `ImageSpaceEffect::vfunc_7` at 0x150ba40 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `ImageSpaceEffect::vfunc_8` at 0x150b8e0 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `ImageSpaceEffect::vfunc_9` at 0x150b810 (rtti, medium); signature (low): `undefined1 vfunc_9(void)`
-    pub slot_9: *const c_void,
-}
-impl BSImagespaceShaderISSAOCameraZAndMipsCS_vtable_90 {
-    pub const ID: u64 = 254385;
-}
-
 /// `BSImagespaceShaderISSAOCompositeFog::vftable` at 0x1b3bb48, id 254415 (rtti, high); 15 slots.
 #[repr(C)]
 pub struct BSImagespaceShaderISSAOCompositeFog_vtable {
@@ -46,9 +18,9 @@ pub struct BSImagespaceShaderISSAOCompositeFog_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -134,9 +106,9 @@ pub struct BSImagespaceShaderISSAOCompositeSAO_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -222,9 +194,9 @@ pub struct BSImagespaceShaderISSAOCompositeSAOFog_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -310,9 +282,9 @@ pub struct BSImagespaceShaderISSAORawAO_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -398,9 +370,9 @@ pub struct BSImagespaceShaderISSAORawAOCS_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -486,9 +458,9 @@ pub struct BSImagespaceShaderISSAORawAONoTemporal_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -574,9 +546,9 @@ pub struct BSImagespaceShaderISSILComposite_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -662,9 +634,9 @@ pub struct BSImagespaceShaderISSILRawInd_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -750,9 +722,9 @@ pub struct BSImagespaceShaderISSimpleColor_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -838,9 +810,9 @@ pub struct BSImagespaceShaderISSnowSSS_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -926,9 +898,9 @@ pub struct BSImagespaceShaderISTemporalAA_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -1014,9 +986,9 @@ pub struct BSImagespaceShaderISTemporalAA_UI_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -1102,9 +1074,9 @@ pub struct BSImagespaceShaderISTemporalAA_Water_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -1190,9 +1162,9 @@ pub struct BSImagespaceShaderISUnderwaterMask_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -1278,9 +1250,9 @@ pub struct BSImagespaceShaderISUpsampleDynamicResolution_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -1366,9 +1338,9 @@ pub struct BSImagespaceShaderISVolumetricLightingBlurHCS_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -1454,9 +1426,9 @@ pub struct BSImagespaceShaderISVolumetricLightingBlurVCS_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -1542,9 +1514,9 @@ pub struct BSImagespaceShaderISWaterBlend_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -1630,9 +1602,9 @@ pub struct BSImagespaceShaderLensFlare_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -1718,9 +1690,9 @@ pub struct BSImagespaceShaderLensFlareVisibility_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -1806,9 +1778,9 @@ pub struct BSImagespaceShaderLocalMap_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -1894,9 +1866,9 @@ pub struct BSImagespaceShaderMap_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -1982,9 +1954,9 @@ pub struct BSImagespaceShaderNoiseNormalmap_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -2070,9 +2042,9 @@ pub struct BSImagespaceShaderNoiseScrollAndBlend_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -2158,9 +2130,9 @@ pub struct BSImagespaceShaderNonHDRBlur11_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -2246,9 +2218,9 @@ pub struct BSImagespaceShaderNonHDRBlur13_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -2334,9 +2306,9 @@ pub struct BSImagespaceShaderNonHDRBlur15_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -2422,9 +2394,9 @@ pub struct BSImagespaceShaderNonHDRBlur3_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -2510,9 +2482,9 @@ pub struct BSImagespaceShaderNonHDRBlur5_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -2598,9 +2570,9 @@ pub struct BSImagespaceShaderNonHDRBlur7_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -2686,9 +2658,9 @@ pub struct BSImagespaceShaderNonHDRBlur9_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -2774,9 +2746,9 @@ pub struct BSImagespaceShaderRadialBlur_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -2862,9 +2834,9 @@ pub struct BSImagespaceShaderRadialBlurHigh_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -2950,9 +2922,9 @@ pub struct BSImagespaceShaderRadialBlurMedium_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -3038,9 +3010,9 @@ pub struct BSImagespaceShaderReflectionBlurHCS_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -3126,9 +3098,9 @@ pub struct BSImagespaceShaderReflectionBlurVCS_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -3214,9 +3186,9 @@ pub struct BSImagespaceShaderReflectionsDebugSpecMask_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -3302,9 +3274,9 @@ pub struct BSImagespaceShaderReflectionsRayTracing_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -3390,9 +3362,9 @@ pub struct BSImagespaceShaderRefraction_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -3478,9 +3450,9 @@ pub struct BSImagespaceShaderTextureMask_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -3566,9 +3538,9 @@ pub struct BSImagespaceShaderVolumetricLighting_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -3654,9 +3626,9 @@ pub struct BSImagespaceShaderWaterBlendHeightmaps_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -3742,9 +3714,9 @@ pub struct BSImagespaceShaderWaterDisplacementClearSimulation_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -3830,9 +3802,9 @@ pub struct BSImagespaceShaderWaterDisplacementNormals_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -3918,9 +3890,9 @@ pub struct BSImagespaceShaderWaterDisplacementRainRipple_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -4006,9 +3978,9 @@ pub struct BSImagespaceShaderWaterDisplacementTexOffset_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -4094,9 +4066,9 @@ pub struct BSImagespaceShaderWaterDisplacementWadingRipple_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -4182,9 +4154,9 @@ pub struct BSImagespaceShaderWaterFlow_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShaderWaterFlow::vfunc_6` at 0x15866b0 (rtti, high); signature (high): `undefined vfunc_6(BSImagespaceShaderWaterFlow * this)`
     pub slot_6: *const c_void,
@@ -4270,9 +4242,9 @@ pub struct BSImagespaceShaderWaterRainHeightmap_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -4358,9 +4330,9 @@ pub struct BSImagespaceShaderWaterSmoothHeightmap_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -4446,9 +4418,9 @@ pub struct BSImagespaceShaderWaterWadingHeightmap_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -4534,9 +4506,9 @@ pub struct BSImagespaceShaderWorldMap_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -4622,9 +4594,9 @@ pub struct BSImagespaceShaderWorldMapNoSkyBlur_vtable {
     pub slot_2: *const c_void,
     /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
     pub slot_6: *const c_void,
@@ -4702,7 +4674,7 @@ impl BSImagespaceShaderWorldMapNoSkyBlur_vtable_90 {
 /// `BSInputDevice::vftable` at 0x1a24190, id 236726 (rtti, high); 9 slots.
 #[repr(C)]
 pub struct BSInputDevice_vtable {
-    /// `BSInputDevice::Destroy` at 0xcfc0e0 (semantic, high); signature (untiered): `BSInputDevice * Destroy(BSInputDevice * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: destructor (high); semantic signature: `BSInputDevice* (BSInputDevice* this, u32 flags)`
+    /// `BSInputDevice::Destroy` at 0xcfc0e0 (semantic, high); signature (low): `BSInputDevice * Destroy(BSInputDevice * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: destructor (high); semantic signature: `BSInputDevice* (BSInputDevice* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_1: *const c_void,
@@ -4710,13 +4682,13 @@ pub struct BSInputDevice_vtable {
     pub slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_3: *const c_void,
-    /// `BSInputDevice::GetKeyName` at 0xd6ee20 (semantic, high); signature (untiered): `undefined8 GetKeyName(BSInputDevice * this, ulonglong param_1, longlong * param_2)`; `GetKeyName`: name of an id (high); semantic signature: `bool (BSInputDevice* this, u32 id, BSFixedString* out)`
+    /// `BSInputDevice::GetKeyName` at 0xd6ee20 (semantic, high); signature (low): `undefined8 GetKeyName(BSInputDevice * this, ulonglong param_1, longlong * param_2)`; `GetKeyName`: name of an id (high); semantic signature: `bool (BSInputDevice* this, u32 id, BSFixedString* out)`
     pub slot_4: *const c_void,
-    /// `BSInputDevice::GetKeyIDByName` at 0xd6eeb0 (semantic, high); signature (untiered): `undefined4 GetKeyIDByName(BSInputDevice * this, ulonglong * param_1)`; `GetKeyIDByName`: id for a name, 0xffffffff if unknown (high); semantic signature: `u32 (BSInputDevice* this, const BSFixedString* name)`
+    /// `BSInputDevice::GetKeyIDByName` at 0xd6eeb0 (semantic, high); signature (low): `undefined4 GetKeyIDByName(BSInputDevice * this, ulonglong * param_1)`; `GetKeyIDByName`: id for a name, 0xffffffff if unknown (high); semantic signature: `u32 (BSInputDevice* this, const BSFixedString* name)`
     pub slot_5: *const c_void,
-    /// `BSInputDevice::GetKeyCode` at 0xd6ef40 (semantic, high); signature (untiered): `ulonglong GetKeyCode(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`; `GetKeyCode`: third column of the definition line (record +0xc) (high); semantic signature: `bool (BSInputDevice* this, u32 id, u32* out)`
+    /// `BSInputDevice::GetKeyCode` at 0xd6ef40 (semantic, high); signature (low): `ulonglong GetKeyCode(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`; `GetKeyCode`: third column of the definition line (record +0xc) (high); semantic signature: `bool (BSInputDevice* this, u32 id, u32* out)`
     pub slot_6: *const c_void,
-    /// `BSInputDevice::IsEnabled` at 0xcfc170 (semantic, high); signature (untiered): `undefined1 IsEnabled(void)`; `IsEnabled`: true in the base; pads: connected (high); semantic signature: `bool (BSInputDevice* this)`
+    /// `BSInputDevice::IsEnabled` at 0xcfc170 (semantic, high); signature (low): `undefined1 IsEnabled(void)`; `IsEnabled`: true in the base; pads: connected (high); semantic signature: `bool (BSInputDevice* this)`
     pub slot_7: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_8: *const c_void,
@@ -4842,9 +4814,9 @@ pub struct BSInstanceTriShape_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (untiered): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (low): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
     pub slot_37: *const c_void,
-    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (untiered): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (low): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
     pub slot_38: *const c_void,
     /// `BSGeometry::vfunc_39` at 0x26d430 (rtti, medium); signature (low): `undefined vfunc_39(BSGeometry * this, longlong * param_1)`
     pub slot_39: *const c_void,
@@ -4852,7 +4824,7 @@ pub struct BSInstanceTriShape_vtable {
     pub slot_40: *const c_void,
     /// `NiAVObject::vfunc_41` at 0xee0a30 (rtti, medium); signature (low): `undefined vfunc_41(void)`
     pub slot_41: *const c_void,
-    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (untiered): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (low): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
     pub slot_42: *const c_void,
     /// `BSGeometry::vfunc_43` at 0xefc680 (rtti, medium); signature (low): `undefined vfunc_43(BSGeometry * this, char * param_1, byte param_2, byte * param_3)`
     pub slot_43: *const c_void,
@@ -4862,21 +4834,21 @@ pub struct BSInstanceTriShape_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (high): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
-    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (low): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
-    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (untiered): `undefined UpdateTransformsAndBound(NiAVObject * this)`
+    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (high): `undefined UpdateTransformsAndBound(NiAVObject * this)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `BSGeometry::OnVisible` at 0xefc980 (semantic, high); signature (untiered): `undefined OnVisible(BSGeometry * this, longlong * param_1, undefined8 param_2)`
+    /// `BSGeometry::OnVisible` at 0xefc980 (semantic, high); signature (low): `undefined OnVisible(BSGeometry * this, longlong * param_1, undefined8 param_2)`
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (low): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSGeometry::vfunc_55` at 0x26d480 (rtti, medium); signature (low): `undefined8 vfunc_55(void)`
     pub slot_55: *const c_void,
@@ -5032,9 +5004,9 @@ pub struct BSInvMarker_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiExtraData::IsStreamable` at 0xef9b60 (semantic, medium); signature (untiered): `undefined1 IsStreamable(void)`
+    /// `NiExtraData::IsStreamable` at 0xef9b60 (semantic, medium); signature (low): `undefined1 IsStreamable(void)`
     pub slot_37: *const c_void,
-    /// `NiExtraData::Slot38ReturnsTrue` at 0xef9b70 (semantic, low); signature (untiered): `undefined1 Slot38ReturnsTrue(void)`
+    /// `NiExtraData::Slot38ReturnsTrue` at 0xef9b70 (semantic, low); signature (low): `undefined1 Slot38ReturnsTrue(void)`
     pub slot_38: *const c_void,
 }
 impl BSInvMarker_vtable {
@@ -5124,13 +5096,13 @@ pub struct BSKeyboardDevice_vtable {
     pub slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_3: *const c_void,
-    /// `BSInputDevice::GetKeyName` at 0xd6ee20 (semantic, high); signature (untiered): `undefined8 GetKeyName(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
+    /// `BSInputDevice::GetKeyName` at 0xd6ee20 (semantic, high); signature (low): `undefined8 GetKeyName(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
     pub slot_4: *const c_void,
-    /// `BSInputDevice::GetKeyIDByName` at 0xd6eeb0 (semantic, high); signature (untiered): `undefined4 GetKeyIDByName(BSInputDevice * this, ulonglong * param_1)`
+    /// `BSInputDevice::GetKeyIDByName` at 0xd6eeb0 (semantic, high); signature (low): `undefined4 GetKeyIDByName(BSInputDevice * this, ulonglong * param_1)`
     pub slot_5: *const c_void,
-    /// `BSInputDevice::GetKeyCode` at 0xd6ef40 (semantic, high); signature (untiered): `ulonglong GetKeyCode(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
+    /// `BSInputDevice::GetKeyCode` at 0xd6ef40 (semantic, high); signature (low): `ulonglong GetKeyCode(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
     pub slot_6: *const c_void,
-    /// `BSInputDevice::IsEnabled` at 0xcfc170 (semantic, high); signature (untiered): `undefined1 IsEnabled(void)`
+    /// `BSInputDevice::IsEnabled` at 0xcfc170 (semantic, high); signature (low): `undefined1 IsEnabled(void)`
     pub slot_7: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_8: *const c_void,
@@ -5220,9 +5192,9 @@ pub struct BSLODMultiIndexTriShape_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (untiered): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (low): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
     pub slot_37: *const c_void,
-    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (untiered): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (low): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
     pub slot_38: *const c_void,
     /// `BSGeometry::vfunc_39` at 0x26d430 (rtti, medium); signature (low): `undefined vfunc_39(BSGeometry * this, longlong * param_1)`
     pub slot_39: *const c_void,
@@ -5230,7 +5202,7 @@ pub struct BSLODMultiIndexTriShape_vtable {
     pub slot_40: *const c_void,
     /// `NiAVObject::vfunc_41` at 0xee0a30 (rtti, medium); signature (low): `undefined vfunc_41(void)`
     pub slot_41: *const c_void,
-    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (untiered): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (low): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
     pub slot_42: *const c_void,
     /// `BSGeometry::vfunc_43` at 0xefc680 (rtti, medium); signature (low): `undefined vfunc_43(BSGeometry * this, char * param_1, byte param_2, byte * param_3)`
     pub slot_43: *const c_void,
@@ -5240,21 +5212,21 @@ pub struct BSLODMultiIndexTriShape_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (high): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
-    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (low): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
-    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (untiered): `undefined UpdateTransformsAndBound(NiAVObject * this)`
+    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (high): `undefined UpdateTransformsAndBound(NiAVObject * this)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
     /// `BSLODMultiIndexTriShape::vfunc_52` at 0x158a7f0 (rtti, high); signature (low): `undefined vfunc_52(BSLODMultiIndexTriShape * this, longlong * param_1, uint param_2)`
     pub slot_52: *const c_void,
     /// `BSMultiIndexTriShape::vfunc_53` at 0x1575450 (rtti, medium); signature (high): `BSMultiIndexTriShape * vfunc_53(BSMultiIndexTriShape * this)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (low): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSLODMultiIndexTriShape::vfunc_55` at 0x158a700 (rtti, high); signature (low): `undefined vfunc_55(BSLODMultiIndexTriShape * this, uint param_1)`
     pub slot_55: *const c_void,
@@ -5340,9 +5312,9 @@ pub struct BSLODTriShape_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (untiered): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (low): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
     pub slot_37: *const c_void,
-    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (untiered): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (low): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
     pub slot_38: *const c_void,
     /// `NiGeometry::vfunc_39` at 0xf0cb90 (rtti, medium); signature (low): `undefined vfunc_39(NiGeometry * this, longlong * param_1)`
     pub slot_39: *const c_void,
@@ -5350,7 +5322,7 @@ pub struct BSLODTriShape_vtable {
     pub slot_40: *const c_void,
     /// `NiAVObject::vfunc_41` at 0xee0a30 (rtti, medium); signature (low): `undefined vfunc_41(void)`
     pub slot_41: *const c_void,
-    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (untiered): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (low): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
     pub slot_42: *const c_void,
     /// `NiGeometry::vfunc_43` at 0xf0ba20 (rtti, medium); signature (low): `undefined vfunc_43(NiGeometry * this, char * param_1, byte param_2, byte * param_3)`
     pub slot_43: *const c_void,
@@ -5362,13 +5334,13 @@ pub struct BSLODTriShape_vtable {
     pub slot_46: *const c_void,
     /// `NiGeometry::vfunc_47` at 0xf0c600 (rtti, medium); signature (high): `undefined vfunc_47(NiGeometry * this)`
     pub slot_47: *const c_void,
-    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (low): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
-    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (untiered): `undefined UpdateTransformsAndBound(NiAVObject * this)`
+    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (high): `undefined UpdateTransformsAndBound(NiAVObject * this)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
     /// `NiAVObject::vfunc_52` at 0xee0f60 (rtti, medium); signature (low): `undefined vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -5502,11 +5474,11 @@ pub struct BSLeafAnimNode_vtable {
     pub slot_1: *const c_void,
     /// `BSLeafAnimNode::vfunc_2` at 0x14e8b30 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
     pub slot_2: *const c_void,
-    /// `NiNode::AsNode` at 0x1b4d10 (semantic, high); signature (untiered): `NiNode * AsNode(NiNode * this)`
+    /// `NiNode::AsNode` at 0x1b4d10 (semantic, high); signature (high): `NiNode * AsNode(NiNode * this)`
     pub slot_3: *const c_void,
     /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
     pub slot_4: *const c_void,
-    /// `BSFadeNode::AsFadeNode` at 0x14e7290 (semantic, high); signature (untiered): `BSFadeNode * AsFadeNode(BSFadeNode * this)`
+    /// `BSFadeNode::AsFadeNode` at 0x14e7290 (semantic, high); signature (high): `BSFadeNode * AsFadeNode(BSFadeNode * this)`
     pub slot_5: *const c_void,
     /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -5556,7 +5528,7 @@ pub struct BSLeafAnimNode_vtable {
     pub slot_28: *const c_void,
     /// `NiNode::vfunc_29` at 0xee2f60 (rtti, medium); signature (low): `undefined vfunc_29(NiNode * this, longlong param_1)`
     pub slot_29: *const c_void,
-    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (untiered): `undefined PostLinkObject(NiObjectNET * this)`
+    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (high): `undefined PostLinkObject(NiObjectNET * this)`
     pub slot_30: *const c_void,
     /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
     pub slot_31: *const c_void,
@@ -5586,41 +5558,41 @@ pub struct BSLeafAnimNode_vtable {
     pub slot_43: *const c_void,
     /// `NiNode::vfunc_44` at 0xee24d0 (rtti, medium); signature (low): `undefined vfunc_44(NiNode * this, longlong param_1, uint param_2)`
     pub slot_44: *const c_void,
-    /// `BSFadeNode::UpdateSelectedDownwardPass` at 0x14e6850 (semantic, medium); signature (untiered): `undefined UpdateSelectedDownwardPass(BSFadeNode * this, float * param_1, uint param_2)`
+    /// `BSFadeNode::UpdateSelectedDownwardPass` at 0x14e6850 (semantic, medium); signature (low): `undefined UpdateSelectedDownwardPass(BSFadeNode * this, float * param_1, uint param_2)`
     pub slot_45: *const c_void,
     /// `NiNode::vfunc_46` at 0xee2a40 (rtti, medium); signature (low): `undefined vfunc_46(NiNode * this, longlong param_1, uint param_2)`
     pub slot_46: *const c_void,
     /// `NiNode::vfunc_47` at 0xee2920 (rtti, medium); signature (high): `undefined vfunc_47(NiNode * this)`
     pub slot_47: *const c_void,
-    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (low): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
     /// `NiNode::vfunc_49` at 0xee2b70 (rtti, medium); signature (low): `undefined vfunc_49(NiNode * this, undefined8 param_1)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
     /// `BSLeafAnimNode::vfunc_52` at 0x14e89d0 (rtti, high); signature (low): `undefined vfunc_52(BSLeafAnimNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
-    /// `NiNode::AttachChild` at 0xee1b00 (semantic, high); signature (untiered): `undefined AttachChild(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+    /// `NiNode::AttachChild` at 0xee1b00 (semantic, high); signature (low): `undefined AttachChild(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
-    /// `NiNode::InsertChildAt` at 0xee1c70 (semantic, high); signature (untiered): `undefined InsertChildAt(NiNode * this, undefined4 param_1, longlong * param_2, undefined8 param_3)`
+    /// `NiNode::InsertChildAt` at 0xee1c70 (semantic, high); signature (low): `undefined InsertChildAt(NiNode * this, undefined4 param_1, longlong * param_2, undefined8 param_3)`
     pub slot_54: *const c_void,
-    /// `NiNode::DetachChild` at 0xee1d60 (semantic, high); signature (untiered): `undefined DetachChild(NiNode * this, longlong * param_1, longlong * param_2)`
+    /// `NiNode::DetachChild` at 0xee1d60 (semantic, high); signature (low): `undefined DetachChild(NiNode * this, longlong * param_1, longlong * param_2)`
     pub slot_55: *const c_void,
-    /// `NiNode::DetachChild2` at 0xee1d10 (semantic, high); signature (untiered): `undefined DetachChild2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `NiNode::DetachChild2` at 0xee1d10 (semantic, high); signature (low): `undefined DetachChild2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_56: *const c_void,
-    /// `NiNode::DetachChildAt` at 0xee1f20 (semantic, high); signature (untiered): `undefined DetachChildAt(NiNode * this, uint param_1, longlong * param_2)`
+    /// `NiNode::DetachChildAt` at 0xee1f20 (semantic, high); signature (low): `undefined DetachChildAt(NiNode * this, uint param_1, longlong * param_2)`
     pub slot_57: *const c_void,
-    /// `NiNode::DetachChildAt2` at 0xee1ed0 (semantic, high); signature (untiered): `undefined DetachChildAt2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `NiNode::DetachChildAt2` at 0xee1ed0 (semantic, high); signature (low): `undefined DetachChildAt2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_58: *const c_void,
-    /// `NiNode::SetAt` at 0xee2150 (semantic, high); signature (untiered): `undefined SetAt(NiNode * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `NiNode::SetAt` at 0xee2150 (semantic, high); signature (low): `undefined SetAt(NiNode * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_59: *const c_void,
-    /// `NiNode::SetAt2` at 0xee2100 (semantic, high); signature (untiered): `undefined SetAt2(NiNode * this)`
+    /// `NiNode::SetAt2` at 0xee2100 (semantic, high); signature (high): `undefined SetAt2(NiNode * this)`
     pub slot_60: *const c_void,
-    /// `NiNode::UpdateUpwardPass` at 0xee28e0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiNode * this)`
+    /// `NiNode::UpdateUpwardPass` at 0xee28e0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiNode * this)`
     pub slot_61: *const c_void,
-    /// `BSFadeNode::Slot62ReturnsZero` at 0x14e72b0 (semantic, low); signature (untiered): `undefined8 Slot62ReturnsZero(void)`
+    /// `BSFadeNode::Slot62ReturnsZero` at 0x14e72b0 (semantic, low); signature (low): `undefined8 Slot62ReturnsZero(void)`
     pub slot_62: *const c_void,
     /// `BSLeafAnimNode::vfunc_63` at 0x14e8b40 (rtti, medium); signature (high): `BSLeafAnimNode * vfunc_63(BSLeafAnimNode * this)`
     pub slot_63: *const c_void,
@@ -5652,7 +5624,7 @@ pub struct BSLight_vtable {
     pub slot_1: *const c_void,
     /// `BSLight::vfunc_2` at 0x1576ad0 (rtti, medium); signature (low): `undefined vfunc_2(BSLight * this, longlong * param_1)`
     pub slot_2: *const c_void,
-    /// `BSLight::IsShadowLight` at 0x1578880 (semantic, high); signature (untiered): `undefined1 IsShadowLight(void)`; `IsShadowLight`: false for a plain light, true for every BSShadowLight (high); semantic signature: `bool (BSLight* this)`
+    /// `BSLight::IsShadowLight` at 0x1578880 (semantic, high); signature (low): `undefined1 IsShadowLight(void)`; `IsShadowLight`: false for a plain light, true for every BSShadowLight (high); semantic signature: `bool (BSLight* this)`
     pub slot_3: *const c_void,
 }
 impl BSLight_vtable {
@@ -5682,7 +5654,7 @@ pub struct BSLightingShader_vtable {
     pub slot_4: *const c_void,
     /// `BSLightingShader::vfunc_5` at 0x1549540 (rtti, high); signature (low): `undefined vfunc_5(void)`
     pub slot_5: *const c_void,
-    /// `BSLightingShader::SetupGeometry` at 0x1549550 (semantic, high); signature (untiered): `undefined SetupGeometry(BSLightingShader * this, longlong param_1, uint param_2)`; `SetupGeometry`: per-pass constants; reads the first light: lights = numLights ? pass->sceneLights : null; niLight = lights[0]->light (+0x48); color = niLight +0x11c..+0x124 times niLight+0x134 times *(g 0x33d40a0 + 0xe0); direction niLight +0x140..+0x148; then point lights in vfunc_6_sub1 (high); semantic signature: `void (BSLightingShader* this, BSRenderPass* pass, u32 flags)`
+    /// `BSLightingShader::SetupGeometry` at 0x1549550 (semantic, high); signature (low): `undefined SetupGeometry(BSLightingShader * this, longlong param_1, uint param_2)`; `SetupGeometry`: per-pass constants; reads the first light: lights = numLights ? pass->sceneLights : null; niLight = lights[0]->light (+0x48); color = niLight +0x11c..+0x124 times niLight+0x134 times *(g 0x33d40a0 + 0xe0); direction niLight +0x140..+0x148; then point lights in vfunc_6_sub1 (high); semantic signature: `void (BSLightingShader* this, BSRenderPass* pass, u32 flags)`
     pub slot_6: *const c_void,
     /// `BSLightingShader::vfunc_7` at 0x154a900 (rtti, high); signature (low): `undefined vfunc_7(BSLightingShader * this, longlong param_1)`
     pub slot_7: *const c_void,
@@ -5744,17 +5716,17 @@ pub struct BSLightingShaderMaterial_vtable {
     pub slot_6: *const c_void,
     /// `BSLightingShaderMaterialBase::vfunc_7` at 0x4b4ad0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
     pub slot_7: *const c_void,
-    /// `BSLightingShaderMaterialBase::OnLoadTextureSet` at 0x1523d20 (semantic, high); signature (untiered): `undefined OnLoadTextureSet(BSLightingShaderMaterialBase * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSLightingShaderMaterialBase::OnLoadTextureSet` at 0x1523d20 (semantic, high); signature (low): `undefined OnLoadTextureSet(BSLightingShaderMaterialBase * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`
     pub slot_8: *const c_void,
-    /// `BSLightingShaderMaterialBase::ClearTextures` at 0x1523e50 (semantic, high); signature (untiered): `undefined ClearTextures(BSLightingShaderMaterialBase * this)`
+    /// `BSLightingShaderMaterialBase::ClearTextures` at 0x1523e50 (semantic, high); signature (high): `undefined ClearTextures(BSLightingShaderMaterialBase * this)`
     pub slot_9: *const c_void,
-    /// `BSLightingShaderMaterialBase::SetDefaultTextures` at 0x1523f00 (semantic, medium); signature (untiered): `undefined SetDefaultTextures(BSLightingShaderMaterialBase * this, char param_1, char param_2, char param_3, char param_4, char param_5)`
+    /// `BSLightingShaderMaterialBase::SetDefaultTextures` at 0x1523f00 (semantic, medium); signature (low): `undefined SetDefaultTextures(BSLightingShaderMaterialBase * this, char param_1, char param_2, char param_3, char param_4, char param_5)`
     pub slot_10: *const c_void,
-    /// `BSLightingShaderMaterialBase::GetTextures` at 0x1523fd0 (semantic, high); signature (untiered): `ulonglong GetTextures(BSLightingShaderMaterialBase * this, longlong * param_1)`
+    /// `BSLightingShaderMaterialBase::GetTextures` at 0x1523fd0 (semantic, high); signature (low): `ulonglong GetTextures(BSLightingShaderMaterialBase * this, longlong * param_1)`
     pub slot_11: *const c_void,
-    /// `BSLightingShaderMaterialBase::SaveBinary` at 0x1524030 (semantic, high); signature (untiered): `undefined SaveBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
+    /// `BSLightingShaderMaterialBase::SaveBinary` at 0x1524030 (semantic, high); signature (low): `undefined SaveBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
     pub slot_12: *const c_void,
-    /// `BSLightingShaderMaterialBase::LoadBinary` at 0x15241d0 (semantic, high); signature (untiered): `undefined LoadBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
+    /// `BSLightingShaderMaterialBase::LoadBinary` at 0x15241d0 (semantic, high); signature (low): `undefined LoadBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
     pub slot_13: *const c_void,
 }
 impl BSLightingShaderMaterial_vtable {
@@ -5780,17 +5752,17 @@ pub struct BSLightingShaderMaterialBase_vtable {
     pub slot_6: *const c_void,
     /// `BSLightingShaderMaterialBase::vfunc_7` at 0x4b4ad0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
     pub slot_7: *const c_void,
-    /// `BSLightingShaderMaterialBase::OnLoadTextureSet` at 0x1523d20 (semantic, high); signature (untiered): `undefined OnLoadTextureSet(BSLightingShaderMaterialBase * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`; `OnLoadTextureSet`: stores the set (+0x78) and loads texture slots 0,1,2,7; derived classes add theirs (envmap/eye 4,5; glow 2; parallax/parallax occ 3; facegen 2,3,6; multilayer 6,4,5) (high); semantic signature: `void (BSLightingShaderMaterialBase* this, u64 unused, BSTextureSet* set)`
+    /// `BSLightingShaderMaterialBase::OnLoadTextureSet` at 0x1523d20 (semantic, high); signature (low): `undefined OnLoadTextureSet(BSLightingShaderMaterialBase * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`; `OnLoadTextureSet`: stores the set (+0x78) and loads texture slots 0,1,2,7; derived classes add theirs (envmap/eye 4,5; glow 2; parallax/parallax occ 3; facegen 2,3,6; multilayer 6,4,5) (high); semantic signature: `void (BSLightingShaderMaterialBase* this, u64 unused, BSTextureSet* set)`
     pub slot_8: *const c_void,
-    /// `BSLightingShaderMaterialBase::ClearTextures` at 0x1523e50 (semantic, high); signature (untiered): `undefined ClearTextures(BSLightingShaderMaterialBase * this)`; `ClearTextures`: releases the textures (high); semantic signature: `void (BSLightingShaderMaterialBase* this)`
+    /// `BSLightingShaderMaterialBase::ClearTextures` at 0x1523e50 (semantic, high); signature (high): `undefined ClearTextures(BSLightingShaderMaterialBase * this)`; `ClearTextures`: releases the textures (high); semantic signature: `void (BSLightingShaderMaterialBase* this)`
     pub slot_9: *const c_void,
-    /// `BSLightingShaderMaterialBase::SetDefaultTextures` at 0x1523f00 (semantic, medium); signature (untiered): `undefined SetDefaultTextures(BSLightingShaderMaterialBase * this, char param_1, char param_2, char param_3, char param_4, char param_5)`; `SetDefaultTextures`: fills missing textures with the placeholder 0x3336448 (medium); semantic signature: `void (BSLightingShaderMaterialBase* this, bool, bool, bool, bool, bool)`
+    /// `BSLightingShaderMaterialBase::SetDefaultTextures` at 0x1523f00 (semantic, medium); signature (low): `undefined SetDefaultTextures(BSLightingShaderMaterialBase * this, char param_1, char param_2, char param_3, char param_4, char param_5)`; `SetDefaultTextures`: fills missing textures with the placeholder 0x3336448 (medium); semantic signature: `void (BSLightingShaderMaterialBase* this, bool, bool, bool, bool, bool)`
     pub slot_10: *const c_void,
-    /// `BSLightingShaderMaterialBase::GetTextures` at 0x1523fd0 (semantic, high); signature (untiered): `ulonglong GetTextures(BSLightingShaderMaterialBase * this, longlong * param_1)`; `GetTextures`: writes the non-null textures and returns their count (high); semantic signature: `u32 (BSLightingShaderMaterialBase* this, NiSourceTexture** out)`
+    /// `BSLightingShaderMaterialBase::GetTextures` at 0x1523fd0 (semantic, high); signature (low): `ulonglong GetTextures(BSLightingShaderMaterialBase * this, longlong * param_1)`; `GetTextures`: writes the non-null textures and returns their count (high); semantic signature: `u32 (BSLightingShaderMaterialBase* this, NiSourceTexture** out)`
     pub slot_11: *const c_void,
-    /// `BSLightingShaderMaterialBase::SaveBinary` at 0x1524030 (semantic, high); signature (untiered): `undefined SaveBinary(BSLightingShaderMaterialBase * this, longlong param_1)`; `SaveBinary`: writes clamp mode, alpha, refraction power, glossiness, specular colour, strength, +0x90, +0x94 (high); semantic signature: `void (BSLightingShaderMaterialBase* this, NiStream* s)`
+    /// `BSLightingShaderMaterialBase::SaveBinary` at 0x1524030 (semantic, high); signature (low): `undefined SaveBinary(BSLightingShaderMaterialBase * this, longlong param_1)`; `SaveBinary`: writes clamp mode, alpha, refraction power, glossiness, specular colour, strength, +0x90, +0x94 (high); semantic signature: `void (BSLightingShaderMaterialBase* this, NiStream* s)`
     pub slot_12: *const c_void,
-    /// `BSLightingShaderMaterialBase::LoadBinary` at 0x15241d0 (semantic, high); signature (untiered): `undefined LoadBinary(BSLightingShaderMaterialBase * this, longlong param_1)`; `LoadBinary`: reads the same fields (high); semantic signature: `void (BSLightingShaderMaterialBase* this, NiStream* s)`
+    /// `BSLightingShaderMaterialBase::LoadBinary` at 0x15241d0 (semantic, high); signature (low): `undefined LoadBinary(BSLightingShaderMaterialBase * this, longlong param_1)`; `LoadBinary`: reads the same fields (high); semantic signature: `void (BSLightingShaderMaterialBase* this, NiStream* s)`
     pub slot_13: *const c_void,
 }
 impl BSLightingShaderMaterialBase_vtable {
@@ -5937,9 +5909,9 @@ pub struct BSLightingShaderMaterialFacegen_vtable {
     pub slot_10: *const c_void,
     /// `BSLightingShaderMaterialFacegen::vfunc_11` at 0x1526d80 (rtti, high); signature (low): `ulonglong vfunc_11(BSLightingShaderMaterialFacegen * this, longlong * param_1)`
     pub slot_11: *const c_void,
-    /// `BSLightingShaderMaterialBase::SaveBinary` at 0x1524030 (semantic, high); signature (untiered): `undefined SaveBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
+    /// `BSLightingShaderMaterialBase::SaveBinary` at 0x1524030 (semantic, high); signature (low): `undefined SaveBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
     pub slot_12: *const c_void,
-    /// `BSLightingShaderMaterialBase::LoadBinary` at 0x15241d0 (semantic, high); signature (untiered): `undefined LoadBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
+    /// `BSLightingShaderMaterialBase::LoadBinary` at 0x15241d0 (semantic, high); signature (low): `undefined LoadBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
     pub slot_13: *const c_void,
 }
 impl BSLightingShaderMaterialFacegen_vtable {
@@ -5965,13 +5937,13 @@ pub struct BSLightingShaderMaterialFacegenTint_vtable {
     pub slot_6: *const c_void,
     /// `BSLightingShaderMaterialBase::vfunc_7` at 0x4b4ad0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
     pub slot_7: *const c_void,
-    /// `BSLightingShaderMaterialBase::OnLoadTextureSet` at 0x1523d20 (semantic, high); signature (untiered): `undefined OnLoadTextureSet(BSLightingShaderMaterialBase * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSLightingShaderMaterialBase::OnLoadTextureSet` at 0x1523d20 (semantic, high); signature (low): `undefined OnLoadTextureSet(BSLightingShaderMaterialBase * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`
     pub slot_8: *const c_void,
-    /// `BSLightingShaderMaterialBase::ClearTextures` at 0x1523e50 (semantic, high); signature (untiered): `undefined ClearTextures(BSLightingShaderMaterialBase * this)`
+    /// `BSLightingShaderMaterialBase::ClearTextures` at 0x1523e50 (semantic, high); signature (high): `undefined ClearTextures(BSLightingShaderMaterialBase * this)`
     pub slot_9: *const c_void,
-    /// `BSLightingShaderMaterialBase::SetDefaultTextures` at 0x1523f00 (semantic, medium); signature (untiered): `undefined SetDefaultTextures(BSLightingShaderMaterialBase * this, char param_1, char param_2, char param_3, char param_4, char param_5)`
+    /// `BSLightingShaderMaterialBase::SetDefaultTextures` at 0x1523f00 (semantic, medium); signature (low): `undefined SetDefaultTextures(BSLightingShaderMaterialBase * this, char param_1, char param_2, char param_3, char param_4, char param_5)`
     pub slot_10: *const c_void,
-    /// `BSLightingShaderMaterialBase::GetTextures` at 0x1523fd0 (semantic, high); signature (untiered): `ulonglong GetTextures(BSLightingShaderMaterialBase * this, longlong * param_1)`
+    /// `BSLightingShaderMaterialBase::GetTextures` at 0x1523fd0 (semantic, high); signature (low): `ulonglong GetTextures(BSLightingShaderMaterialBase * this, longlong * param_1)`
     pub slot_11: *const c_void,
     /// `BSLightingShaderMaterialFacegenTint::vfunc_12` at 0x1526fd0 (rtti, high); signature (low): `undefined vfunc_12(BSLightingShaderMaterialFacegenTint * this, longlong param_1)`
     pub slot_12: *const c_void,
@@ -6009,9 +5981,9 @@ pub struct BSLightingShaderMaterialGlowmap_vtable {
     pub slot_10: *const c_void,
     /// `BSLightingShaderMaterialGlowmap::vfunc_11` at 0x1525c70 (rtti, high); signature (low): `ulonglong vfunc_11(BSLightingShaderMaterialGlowmap * this, longlong * param_1)`
     pub slot_11: *const c_void,
-    /// `BSLightingShaderMaterialBase::SaveBinary` at 0x1524030 (semantic, high); signature (untiered): `undefined SaveBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
+    /// `BSLightingShaderMaterialBase::SaveBinary` at 0x1524030 (semantic, high); signature (low): `undefined SaveBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
     pub slot_12: *const c_void,
-    /// `BSLightingShaderMaterialBase::LoadBinary` at 0x15241d0 (semantic, high); signature (untiered): `undefined LoadBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
+    /// `BSLightingShaderMaterialBase::LoadBinary` at 0x15241d0 (semantic, high); signature (low): `undefined LoadBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
     pub slot_13: *const c_void,
 }
 impl BSLightingShaderMaterialGlowmap_vtable {
@@ -6037,13 +6009,13 @@ pub struct BSLightingShaderMaterialHairTint_vtable {
     pub slot_6: *const c_void,
     /// `BSLightingShaderMaterialBase::vfunc_7` at 0x4b4ad0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
     pub slot_7: *const c_void,
-    /// `BSLightingShaderMaterialBase::OnLoadTextureSet` at 0x1523d20 (semantic, high); signature (untiered): `undefined OnLoadTextureSet(BSLightingShaderMaterialBase * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSLightingShaderMaterialBase::OnLoadTextureSet` at 0x1523d20 (semantic, high); signature (low): `undefined OnLoadTextureSet(BSLightingShaderMaterialBase * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`
     pub slot_8: *const c_void,
-    /// `BSLightingShaderMaterialBase::ClearTextures` at 0x1523e50 (semantic, high); signature (untiered): `undefined ClearTextures(BSLightingShaderMaterialBase * this)`
+    /// `BSLightingShaderMaterialBase::ClearTextures` at 0x1523e50 (semantic, high); signature (high): `undefined ClearTextures(BSLightingShaderMaterialBase * this)`
     pub slot_9: *const c_void,
-    /// `BSLightingShaderMaterialBase::SetDefaultTextures` at 0x1523f00 (semantic, medium); signature (untiered): `undefined SetDefaultTextures(BSLightingShaderMaterialBase * this, char param_1, char param_2, char param_3, char param_4, char param_5)`
+    /// `BSLightingShaderMaterialBase::SetDefaultTextures` at 0x1523f00 (semantic, medium); signature (low): `undefined SetDefaultTextures(BSLightingShaderMaterialBase * this, char param_1, char param_2, char param_3, char param_4, char param_5)`
     pub slot_10: *const c_void,
-    /// `BSLightingShaderMaterialBase::GetTextures` at 0x1523fd0 (semantic, high); signature (untiered): `ulonglong GetTextures(BSLightingShaderMaterialBase * this, longlong * param_1)`
+    /// `BSLightingShaderMaterialBase::GetTextures` at 0x1523fd0 (semantic, high); signature (low): `ulonglong GetTextures(BSLightingShaderMaterialBase * this, longlong * param_1)`
     pub slot_11: *const c_void,
     /// `BSLightingShaderMaterialHairTint::vfunc_12` at 0x15271f0 (rtti, high); signature (low): `undefined vfunc_12(BSLightingShaderMaterialHairTint * this, longlong param_1)`
     pub slot_12: *const c_void,
@@ -6073,7 +6045,7 @@ pub struct BSLightingShaderMaterialLODLandscape_vtable {
     pub slot_6: *const c_void,
     /// `BSLightingShaderMaterialBase::vfunc_7` at 0x4b4ad0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
     pub slot_7: *const c_void,
-    /// `BSLightingShaderMaterialBase::OnLoadTextureSet` at 0x1523d20 (semantic, high); signature (untiered): `undefined OnLoadTextureSet(BSLightingShaderMaterialBase * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSLightingShaderMaterialBase::OnLoadTextureSet` at 0x1523d20 (semantic, high); signature (low): `undefined OnLoadTextureSet(BSLightingShaderMaterialBase * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`
     pub slot_8: *const c_void,
     /// `BSLightingShaderMaterialLODLandscape::vfunc_9` at 0x1527db0 (rtti, high); signature (high): `undefined vfunc_9(BSLightingShaderMaterialLODLandscape * this)`
     pub slot_9: *const c_void,
@@ -6081,9 +6053,9 @@ pub struct BSLightingShaderMaterialLODLandscape_vtable {
     pub slot_10: *const c_void,
     /// `BSLightingShaderMaterialLODLandscape::vfunc_11` at 0x1527f10 (rtti, high); signature (low): `ulonglong vfunc_11(BSLightingShaderMaterialLODLandscape * this, longlong * param_1)`
     pub slot_11: *const c_void,
-    /// `BSLightingShaderMaterialBase::SaveBinary` at 0x1524030 (semantic, high); signature (untiered): `undefined SaveBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
+    /// `BSLightingShaderMaterialBase::SaveBinary` at 0x1524030 (semantic, high); signature (low): `undefined SaveBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
     pub slot_12: *const c_void,
-    /// `BSLightingShaderMaterialBase::LoadBinary` at 0x15241d0 (semantic, high); signature (untiered): `undefined LoadBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
+    /// `BSLightingShaderMaterialBase::LoadBinary` at 0x15241d0 (semantic, high); signature (low): `undefined LoadBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
     pub slot_13: *const c_void,
 }
 impl BSLightingShaderMaterialLODLandscape_vtable {
@@ -6109,7 +6081,7 @@ pub struct BSLightingShaderMaterialLandscape_vtable {
     pub slot_6: *const c_void,
     /// `BSLightingShaderMaterialBase::vfunc_7` at 0x4b4ad0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
     pub slot_7: *const c_void,
-    /// `BSLightingShaderMaterialBase::OnLoadTextureSet` at 0x1523d20 (semantic, high); signature (untiered): `undefined OnLoadTextureSet(BSLightingShaderMaterialBase * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSLightingShaderMaterialBase::OnLoadTextureSet` at 0x1523d20 (semantic, high); signature (low): `undefined OnLoadTextureSet(BSLightingShaderMaterialBase * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`
     pub slot_8: *const c_void,
     /// `BSLightingShaderMaterialLandscape::vfunc_9` at 0x15277e0 (rtti, high); signature (high): `undefined vfunc_9(BSLightingShaderMaterialLandscape * this)`
     pub slot_9: *const c_void,
@@ -6117,9 +6089,9 @@ pub struct BSLightingShaderMaterialLandscape_vtable {
     pub slot_10: *const c_void,
     /// `BSLightingShaderMaterialLandscape::vfunc_11` at 0x15279b0 (rtti, high); signature (low): `ulonglong vfunc_11(BSLightingShaderMaterialLandscape * this, longlong * param_1)`
     pub slot_11: *const c_void,
-    /// `BSLightingShaderMaterialBase::SaveBinary` at 0x1524030 (semantic, high); signature (untiered): `undefined SaveBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
+    /// `BSLightingShaderMaterialBase::SaveBinary` at 0x1524030 (semantic, high); signature (low): `undefined SaveBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
     pub slot_12: *const c_void,
-    /// `BSLightingShaderMaterialBase::LoadBinary` at 0x15241d0 (semantic, high); signature (untiered): `undefined LoadBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
+    /// `BSLightingShaderMaterialBase::LoadBinary` at 0x15241d0 (semantic, high); signature (low): `undefined LoadBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
     pub slot_13: *const c_void,
 }
 impl BSLightingShaderMaterialLandscape_vtable {
@@ -6189,9 +6161,9 @@ pub struct BSLightingShaderMaterialParallax_vtable {
     pub slot_10: *const c_void,
     /// `BSLightingShaderMaterialParallax::vfunc_11` at 0x15260f0 (rtti, high); signature (low): `ulonglong vfunc_11(BSLightingShaderMaterialParallax * this, longlong * param_1)`
     pub slot_11: *const c_void,
-    /// `BSLightingShaderMaterialBase::SaveBinary` at 0x1524030 (semantic, high); signature (untiered): `undefined SaveBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
+    /// `BSLightingShaderMaterialBase::SaveBinary` at 0x1524030 (semantic, high); signature (low): `undefined SaveBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
     pub slot_12: *const c_void,
-    /// `BSLightingShaderMaterialBase::LoadBinary` at 0x15241d0 (semantic, high); signature (untiered): `undefined LoadBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
+    /// `BSLightingShaderMaterialBase::LoadBinary` at 0x15241d0 (semantic, high); signature (low): `undefined LoadBinary(BSLightingShaderMaterialBase * this, longlong param_1)`
     pub slot_13: *const c_void,
 }
 impl BSLightingShaderMaterialParallax_vtable {
@@ -6253,13 +6225,13 @@ pub struct BSLightingShaderMaterialSnow_vtable {
     pub slot_6: *const c_void,
     /// `BSLightingShaderMaterialBase::vfunc_7` at 0x4b4ad0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
     pub slot_7: *const c_void,
-    /// `BSLightingShaderMaterialBase::OnLoadTextureSet` at 0x1523d20 (semantic, high); signature (untiered): `undefined OnLoadTextureSet(BSLightingShaderMaterialBase * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`
+    /// `BSLightingShaderMaterialBase::OnLoadTextureSet` at 0x1523d20 (semantic, high); signature (low): `undefined OnLoadTextureSet(BSLightingShaderMaterialBase * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`
     pub slot_8: *const c_void,
-    /// `BSLightingShaderMaterialBase::ClearTextures` at 0x1523e50 (semantic, high); signature (untiered): `undefined ClearTextures(BSLightingShaderMaterialBase * this)`
+    /// `BSLightingShaderMaterialBase::ClearTextures` at 0x1523e50 (semantic, high); signature (high): `undefined ClearTextures(BSLightingShaderMaterialBase * this)`
     pub slot_9: *const c_void,
-    /// `BSLightingShaderMaterialBase::SetDefaultTextures` at 0x1523f00 (semantic, medium); signature (untiered): `undefined SetDefaultTextures(BSLightingShaderMaterialBase * this, char param_1, char param_2, char param_3, char param_4, char param_5)`
+    /// `BSLightingShaderMaterialBase::SetDefaultTextures` at 0x1523f00 (semantic, medium); signature (low): `undefined SetDefaultTextures(BSLightingShaderMaterialBase * this, char param_1, char param_2, char param_3, char param_4, char param_5)`
     pub slot_10: *const c_void,
-    /// `BSLightingShaderMaterialBase::GetTextures` at 0x1523fd0 (semantic, high); signature (untiered): `ulonglong GetTextures(BSLightingShaderMaterialBase * this, longlong * param_1)`
+    /// `BSLightingShaderMaterialBase::GetTextures` at 0x1523fd0 (semantic, high); signature (low): `ulonglong GetTextures(BSLightingShaderMaterialBase * this, longlong * param_1)`
     pub slot_11: *const c_void,
     /// `BSLightingShaderMaterialSnow::vfunc_12` at 0x1528120 (rtti, high); signature (low): `undefined vfunc_12(BSLightingShaderMaterialSnow * this, longlong param_1)`
     pub slot_12: *const c_void,
@@ -6347,27 +6319,27 @@ pub struct BSLightingShaderProperty_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `BSShaderProperty::GetPropertyType` at 0xf0f110 (semantic, medium); signature (untiered): `undefined8 GetPropertyType(void)`
+    /// `BSShaderProperty::GetPropertyType` at 0xf0f110 (semantic, medium); signature (low): `undefined8 GetPropertyType(void)`
     pub slot_37: *const c_void,
     /// `BSShaderProperty::Update` at 0xef26b0 (semantic, medium); signature (untiered): `undefined Update(BSShaderProperty * this, undefined8 param_1)`
     pub slot_38: *const c_void,
-    /// `BSLightingShaderProperty::UpdateFlagsFromGeometry` at 0x15191c0 (semantic, medium); signature (untiered): `undefined8 UpdateFlagsFromGeometry(BSLightingShaderProperty * this, longlong * param_1)`; `UpdateFlagsFromGeometry`: sets bit 37 from the vertex descriptor (+0x148), hides geometry that lacks normals, clears tree-anim without vertex colours, eye without a skin instance (+0x130), specular when colour*strength is black (medium); semantic signature: `bool (BSLightingShaderProperty* this, BSGeometry* g)`
+    /// `BSLightingShaderProperty::UpdateFlagsFromGeometry` at 0x15191c0 (semantic, medium); signature (low): `undefined8 UpdateFlagsFromGeometry(BSLightingShaderProperty * this, longlong * param_1)`; `UpdateFlagsFromGeometry`: sets bit 37 from the vertex descriptor (+0x148), hides geometry that lacks normals, clears tree-anim without vertex colours, eye without a skin instance (+0x130), specular when colour*strength is black (medium); semantic signature: `bool (BSLightingShaderProperty* this, BSGeometry* g)`
     pub slot_39: *const c_void,
     /// `BSLightingShaderProperty::vfunc_40` at 0x1519360 (rtti, medium); signature (low): `undefined1 vfunc_40(BSLightingShaderProperty * this, longlong * param_1)`
     pub slot_40: *const c_void,
-    /// `BSShaderProperty::SetShadowLightBit` at 0x14e77b0 (semantic, medium); signature (untiered): `undefined SetShadowLightBit(BSShaderProperty * this, int param_1)`
+    /// `BSShaderProperty::SetShadowLightBit` at 0x14e77b0 (semantic, medium); signature (low): `undefined SetShadowLightBit(BSShaderProperty * this, int param_1)`
     pub slot_41: *const c_void,
-    /// `BSLightingShaderProperty::GetRenderPasses` at 0x151a160 (semantic, high); signature (untiered): `longlong * GetRenderPasses(BSLightingShaderProperty * this, longlong param_1, int param_2, longlong param_3)`; `GetRenderPasses`: builds the lighting pass (technique bits from the flags, see flags) plus refraction, overlay and stipple passes; returns &renderPasses (high); semantic signature: `BSRenderPass** (BSLightingShaderProperty* this, BSGeometry* g, AccumulatorRenderMode renderMode, BSShaderAccumulator* acc)`
+    /// `BSLightingShaderProperty::GetRenderPasses` at 0x151a160 (semantic, high); signature (low): `longlong * GetRenderPasses(BSLightingShaderProperty * this, longlong param_1, int param_2, longlong param_3)`; `GetRenderPasses`: builds the lighting pass (technique bits from the flags, see flags) plus refraction, overlay and stipple passes; returns &renderPasses (high); semantic signature: `BSRenderPass** (BSLightingShaderProperty* this, BSGeometry* g, AccumulatorRenderMode renderMode, BSShaderAccumulator* acc)`
     pub slot_42: *const c_void,
-    /// `BSLightingShaderProperty::GetDepthRenderPasses` at 0x151b1e0 (runtime, high); signature (untiered): `longlong * GetDepthRenderPasses(BSLightingShaderProperty * this, longlong param_1, int param_2, longlong param_3)`; `GetDepthRenderPasses`: pass list for an accumulator mode; modes 0xc-0xf are the depth/shadow modes and yield no pass when flags & 0x8004, an alpha-blended alpha property, or a fade below 1 (without stipple fade) (high); semantic signature: `RenderPass* (BSLightingShaderProperty* this, BSGeometry* geometry, AccumulatorRenderMode mode, BSShaderAccumulator* accumulator)`
+    /// `BSLightingShaderProperty::GetDepthRenderPasses` at 0x151b1e0 (runtime, high); signature (low): `longlong * GetDepthRenderPasses(BSLightingShaderProperty * this, longlong param_1, int param_2, longlong param_3)`; `GetDepthRenderPasses`: pass list for an accumulator mode; modes 0xc-0xf are the depth/shadow modes and yield no pass when flags & 0x8004, an alpha-blended alpha property, or a fade below 1 (without stipple fade) (high); semantic signature: `RenderPass* (BSLightingShaderProperty* this, BSGeometry* geometry, AccumulatorRenderMode mode, BSShaderAccumulator* accumulator)`
     pub slot_43: *const c_void,
     /// `BSLightingShaderProperty::vfunc_44` at 0x151bcb0 (rtti, medium); signature (low): `undefined8 * vfunc_44(BSLightingShaderProperty * this, longlong param_1, int param_2)`
     pub slot_44: *const c_void,
-    /// `BSLightingShaderProperty::GetDepthOnlyRenderPasses` at 0x151bf00 (semantic, low); signature (untiered): `undefined8 * GetDepthOnlyRenderPasses(BSLightingShaderProperty * this, longlong param_1)`; `GetDepthOnlyRenderPasses`: RENDER_DEPTH pass for plain opaque geometry with z-write (bit 32), no refraction, skin, landscape, eye, tree, decal or bit 53 (low); semantic signature: `BSRenderPass** (BSLightingShaderProperty* this, BSGeometry* g)`
+    /// `BSLightingShaderProperty::GetDepthOnlyRenderPasses` at 0x151bf00 (semantic, low); signature (low): `undefined8 * GetDepthOnlyRenderPasses(BSLightingShaderProperty * this, longlong param_1)`; `GetDepthOnlyRenderPasses`: RENDER_DEPTH pass for plain opaque geometry with z-write (bit 32), no refraction, skin, landscape, eye, tree, decal or bit 53 (low); semantic signature: `BSRenderPass** (BSLightingShaderProperty* this, BSGeometry* g)`
     pub slot_45: *const c_void,
     /// `BSShaderProperty::vfunc_46` at 0x14e8620 (rtti, medium); signature (low): `undefined8 vfunc_46(void)`
     pub slot_46: *const c_void,
-    /// `BSLightingShaderProperty::GetOcclusionPass` at 0x151c0e0 (semantic, low); signature (untiered): `undefined8 GetOcclusionPass(BSLightingShaderProperty * this, longlong param_1)`; `GetOcclusionPass`: one pooled depth pass (requires bit 32, no refraction) (low); semantic signature: `BSRenderPass* (BSLightingShaderProperty* this, BSGeometry* g)`
+    /// `BSLightingShaderProperty::GetOcclusionPass` at 0x151c0e0 (semantic, low); signature (low): `undefined8 GetOcclusionPass(BSLightingShaderProperty * this, longlong param_1)`; `GetOcclusionPass`: one pooled depth pass (requires bit 32, no refraction) (low); semantic signature: `BSRenderPass* (BSLightingShaderProperty* this, BSGeometry* g)`
     pub slot_47: *const c_void,
     /// `BSLightingShaderProperty::vfunc_48` at 0x1519740 (rtti, medium); signature (low): `longlong * vfunc_48(BSLightingShaderProperty * this, longlong * param_1)`
     pub slot_48: *const c_void,
@@ -6375,7 +6347,7 @@ pub struct BSLightingShaderProperty_vtable {
     pub slot_49: *const c_void,
     /// `BSLightingShaderProperty::vfunc_50` at 0x151d550 (rtti, medium); signature (low): `undefined4 vfunc_50(BSLightingShaderProperty * this)`
     pub slot_50: *const c_void,
-    /// `BSLightingShaderProperty::VisitTextures` at 0x151caa0 (semantic, low); signature (untiered): `ulonglong VisitTextures(BSLightingShaderProperty * this, longlong * param_1)`; `VisitTextures`: calls v slot 1 on every texture the material returns from its slot 11 (low); semantic signature: `s32 (BSLightingShaderProperty* this, Visitor* v)`
+    /// `BSLightingShaderProperty::VisitTextures` at 0x151caa0 (semantic, low); signature (low): `ulonglong VisitTextures(BSLightingShaderProperty * this, longlong * param_1)`; `VisitTextures`: calls v slot 1 on every texture the material returns from its slot 11 (low); semantic signature: `s32 (BSLightingShaderProperty* this, Visitor* v)`
     pub slot_51: *const c_void,
     /// `BSLightingShaderProperty::vfunc_52` at 0x151cb40 (rtti, medium); signature (high): `undefined vfunc_52(BSLightingShaderProperty * this)`
     pub slot_52: *const c_void,
@@ -6831,23 +6803,23 @@ pub struct BSLimbIKModifier_vtable {
     pub slot_2: *const c_void,
     /// `hkbBindable::vfunc_3` at 0xadba10 (rtti, medium); signature (low): `undefined vfunc_3(hkbBindable * this, undefined8 * param_1)`
     pub slot_3: *const c_void,
-    /// `BSLimbIKModifier::Activate` at 0xbb8860 (semantic, high); signature (untiered): `undefined Activate(BSLimbIKModifier * this)`; `Activate`: resets runtime state when the node becomes active (high); semantic signature: `void (BSLimbIKModifier* this, const hkbContext* ctx)`
+    /// `BSLimbIKModifier::Activate` at 0xbb8860 (semantic, high); signature (high): `undefined Activate(BSLimbIKModifier * this)`; `Activate`: resets runtime state when the node becomes active (high); semantic signature: `void (BSLimbIKModifier* this, const hkbContext* ctx)`
     pub slot_4: *const c_void,
-    /// `BSLimbIKModifier::Update` at 0xbb8920 (semantic, high); signature (untiered): `undefined Update(BSLimbIKModifier * this, undefined8 param_2, undefined4 param_3)`; `Update`: per-frame update before generate (high); semantic signature: `void (BSLimbIKModifier* this, const hkbContext* ctx, float timestep)`
+    /// `BSLimbIKModifier::Update` at 0xbb8920 (semantic, high); signature (low): `undefined Update(BSLimbIKModifier * this, undefined8 param_2, undefined4 param_3)`; `Update`: per-frame update before generate (high); semantic signature: `void (BSLimbIKModifier* this, const hkbContext* ctx, float timestep)`
     pub slot_5: *const c_void,
     /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
     pub slot_6: *const c_void,
-    /// `BSLimbIKModifier::Deactivate` at 0xbb8870 (semantic, high); signature (untiered): `undefined Deactivate(BSLimbIKModifier * this)`; `Deactivate`: releases runtime state (high); semantic signature: `void (BSLimbIKModifier* this, const hkbContext* ctx)`
+    /// `BSLimbIKModifier::Deactivate` at 0xbb8870 (semantic, high); signature (high): `undefined Deactivate(BSLimbIKModifier * this)`; `Deactivate`: releases runtime state (high); semantic signature: `void (BSLimbIKModifier* this, const hkbContext* ctx)`
     pub slot_7: *const c_void,
     /// `hkbNode::vfunc_8` at 0xad2140 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
     pub slot_8: *const c_void,
     /// `hkbNode::vfunc_9` at 0xad2110 (rtti, medium); signature (low): `undefined vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `BSLimbIKModifier::IsValid` at 0xbb8880 (semantic, high); signature (untiered): `undefined8 IsValid(BSLimbIKModifier * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`; `IsValid`: validates the node's data, writing an error string (high); semantic signature: `bool (BSLimbIKModifier* this, const hkbCharacter* character, hkStringPtr* errorString)`
+    /// `BSLimbIKModifier::IsValid` at 0xbb8880 (semantic, high); signature (low): `undefined8 IsValid(BSLimbIKModifier * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`; `IsValid`: validates the node's data, writing an error string (high); semantic signature: `bool (BSLimbIKModifier* this, const hkbCharacter* character, hkStringPtr* errorString)`
     pub slot_10: *const c_void,
     /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
     pub slot_11: *const c_void,
-    /// `BSLimbIKModifier::CloneNode` at 0xbb88d0 (semantic, high); signature (untiered): `undefined CloneNode(BSLimbIKModifier * this)`; `CloneNode`: allocates a copy of the node (size argument = object size) through the copy constructor (high); semantic signature: `BSLimbIKModifier* (BSLimbIKModifier* this)`
+    /// `BSLimbIKModifier::CloneNode` at 0xbb88d0 (semantic, high); signature (high): `undefined CloneNode(BSLimbIKModifier * this)`; `CloneNode`: allocates a copy of the node (size argument = object size) through the copy constructor (high); semantic signature: `BSLimbIKModifier* (BSLimbIKModifier* this)`
     pub slot_12: *const c_void,
     /// `hkbNode::vfunc_13` at 0xadbed0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
     pub slot_13: *const c_void,
@@ -6869,7 +6841,7 @@ pub struct BSLimbIKModifier_vtable {
     pub slot_21: *const c_void,
     /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
     pub slot_22: *const c_void,
-    /// `BSLimbIKModifier::Modify` at 0xbb8930 (semantic, medium); signature (untiered): `undefined Modify(BSLimbIKModifier * this, longlong * param_1, longlong * param_2)`; `Modify`: 0xbb8930 (4451 bytes): builds a pose (InitPoseFromGeneratorOutput 0xad87b0), casts along the limb chain startBoneIndex..endBoneIndex through BSLimbIKModifierUtility (BSILimbIKModifierSingleton) and pitches the chain by up to limitAngleDegrees (acos, SetQuaternionFromAxisAngle 0xaa46d0, gain via ClampScaledProduct-like 'ComputeClampedScaledProduct') (medium); semantic signature: `void (BSLimbIKModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
+    /// `BSLimbIKModifier::Modify` at 0xbb8930 (semantic, medium); signature (low): `undefined Modify(BSLimbIKModifier * this, longlong * param_1, longlong * param_2)`; `Modify`: 0xbb8930 (4451 bytes): builds a pose (InitPoseFromGeneratorOutput 0xad87b0), casts along the limb chain startBoneIndex..endBoneIndex through BSLimbIKModifierUtility (BSILimbIKModifierSingleton) and pitches the chain by up to limitAngleDegrees (acos, SetQuaternionFromAxisAngle 0xaa46d0, gain via ClampScaledProduct-like 'ComputeClampedScaledProduct') (medium); semantic signature: `void (BSLimbIKModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
     pub slot_23: *const c_void,
     /// `hkbModifier::vfunc_24` at 0xae7000 (rtti, medium); signature (low): `undefined vfunc_24(void)`
     pub slot_24: *const c_void,
@@ -6943,11 +6915,11 @@ impl BSLimbIKModifierCastInfo_vtable {
 pub struct BSLimbIKModifierUtility_vtable {
     /// `BSLimbIKModifierUtility::vdtor` at 0x552da0 (semantic, high); signature (low): `BSLimbIKModifierUtility * vdtor(BSLimbIKModifierUtility * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: 0x552da0, size 0x10 (high); semantic signature: `BSLimbIKModifierUtility* (BSLimbIKModifierUtility* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `BSLimbIKModifierUtility::GetWorldScaleInverse` at 0x5527c0 (semantic, high); signature (untiered): `undefined4 GetWorldScaleInverse(void)`; `GetWorldScaleInverse`: g_HavokWorldScaleInverse (high); semantic signature: `float (BSLimbIKModifierUtility* this)`
+    /// `BSLimbIKModifierUtility::GetWorldScaleInverse` at 0x5527c0 (semantic, high); signature (low): `undefined4 GetWorldScaleInverse(void)`; `GetWorldScaleInverse`: g_HavokWorldScaleInverse (high); semantic signature: `float (BSLimbIKModifierUtility* this)`
     pub slot_1: *const c_void,
-    /// `BSLimbIKModifierUtility::BeginCast` at 0x5527d0 (semantic, medium); signature (untiered): `undefined1 * BeginCast(BSLimbIKModifierUtility * this, undefined1 * param_1, undefined8 * param_2, longlong * param_3, float * param_4, float * param_5)`; `BeginCast`: cast info for the owning actor (medium); semantic signature: `bool* (BSLimbIKModifierUtility* this, bool* outOk, BSLimbIKModifierCastInfo** outInfo, hkbContext* ctx, const hkVector4* aabbMin, const hkVector4* aabbMax)`
+    /// `BSLimbIKModifierUtility::BeginCast` at 0x5527d0 (semantic, medium); signature (low): `undefined1 * BeginCast(BSLimbIKModifierUtility * this, undefined1 * param_1, undefined8 * param_2, longlong * param_3, float * param_4, float * param_5)`; `BeginCast`: cast info for the owning actor (medium); semantic signature: `bool* (BSLimbIKModifierUtility* this, bool* outOk, BSLimbIKModifierCastInfo** outInfo, hkbContext* ctx, const hkVector4* aabbMin, const hkVector4* aabbMax)`
     pub slot_2: *const c_void,
-    /// `BSLimbIKModifierUtility::CastRay` at 0x552a10 (semantic, high); signature (untiered): `undefined1 * CastRay(BSLimbIKModifierUtility * this, undefined1 * param_1, longlong param_2, float * param_3, float * param_4, undefined4 * param_5, float * param_6)`; `CastRay`: layer 0x2b pick (high); semantic signature: `bool* (BSLimbIKModifierUtility* this, bool* outHit, BSLimbIKModifierUtilityCastInfo* info, const hkVector4* from, const hkVector4* to, float* outFraction, hkVector4* outNormal)`
+    /// `BSLimbIKModifierUtility::CastRay` at 0x552a10 (semantic, high); signature (low): `undefined1 * CastRay(BSLimbIKModifierUtility * this, undefined1 * param_1, longlong param_2, float * param_3, float * param_4, undefined4 * param_5, float * param_6)`; `CastRay`: layer 0x2b pick (high); semantic signature: `bool* (BSLimbIKModifierUtility* this, bool* outHit, BSLimbIKModifierUtilityCastInfo* info, const hkVector4* from, const hkVector4* to, float* outFraction, hkVector4* outNormal)`
     pub slot_3: *const c_void,
 }
 impl BSLimbIKModifierUtility_vtable {
@@ -6982,7 +6954,7 @@ pub type BSLimbIKModifierUtility_vtable_CastRay = unsafe extern "C" fn(this: *mu
 /// `BSLimbIKModifierUtilityCastInfo::vftable` at 0x18eab48, id 205168 (rtti, high); 1 slots.
 #[repr(C)]
 pub struct BSLimbIKModifierUtilityCastInfo_vtable {
-    /// `BSLimbIKModifierUtilityCastInfo::vdtor` at 0x552df0 (semantic, medium); signature (untiered): `BSLimbIKModifierUtilityCastInfo * vdtor(BSLimbIKModifierUtilityCastInfo * this, ulonglong param_1, ulonglong param_2, undefined8 param_3)`; `vdtor`: 0x552df0 (medium); semantic signature: `BSLimbIKModifierUtilityCastInfo* (BSLimbIKModifierUtilityCastInfo* this, u32 flags)`
+    /// `BSLimbIKModifierUtilityCastInfo::vdtor` at 0x552df0 (semantic, medium); signature (low): `BSLimbIKModifierUtilityCastInfo * vdtor(BSLimbIKModifierUtilityCastInfo * this, ulonglong param_1, ulonglong param_2, undefined8 param_3)`; `vdtor`: 0x552df0 (medium); semantic signature: `BSLimbIKModifierUtilityCastInfo* (BSLimbIKModifierUtilityCastInfo* this, u32 flags)`
     pub slot_0: *const c_void,
 }
 impl BSLimbIKModifierUtilityCastInfo_vtable {
@@ -7067,9 +7039,9 @@ pub struct BSLines_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (untiered): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (low): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
     pub slot_37: *const c_void,
-    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (untiered): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (low): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
     pub slot_38: *const c_void,
     /// `BSGeometry::vfunc_39` at 0x26d430 (rtti, medium); signature (low): `undefined vfunc_39(BSGeometry * this, longlong * param_1)`
     pub slot_39: *const c_void,
@@ -7077,7 +7049,7 @@ pub struct BSLines_vtable {
     pub slot_40: *const c_void,
     /// `NiAVObject::vfunc_41` at 0xee0a30 (rtti, medium); signature (low): `undefined vfunc_41(void)`
     pub slot_41: *const c_void,
-    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (untiered): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (low): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
     pub slot_42: *const c_void,
     /// `BSGeometry::vfunc_43` at 0xefc680 (rtti, medium); signature (low): `undefined vfunc_43(BSGeometry * this, char * param_1, byte param_2, byte * param_3)`
     pub slot_43: *const c_void,
@@ -7087,21 +7059,21 @@ pub struct BSLines_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (high): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
-    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (low): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
-    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (untiered): `undefined UpdateTransformsAndBound(NiAVObject * this)`
+    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (high): `undefined UpdateTransformsAndBound(NiAVObject * this)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `BSGeometry::OnVisible` at 0xefc980 (semantic, high); signature (untiered): `undefined OnVisible(BSGeometry * this, longlong * param_1, undefined8 param_2)`
+    /// `BSGeometry::OnVisible` at 0xefc980 (semantic, high); signature (low): `undefined OnVisible(BSGeometry * this, longlong * param_1, undefined8 param_2)`
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (low): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSGeometry::vfunc_55` at 0x26d480 (rtti, medium); signature (low): `undefined8 vfunc_55(void)`
     pub slot_55: *const c_void,
@@ -7177,23 +7149,23 @@ pub struct BSLookAtModifier_vtable {
     pub slot_2: *const c_void,
     /// `hkbBindable::vfunc_3` at 0xadba10 (rtti, medium); signature (low): `undefined vfunc_3(hkbBindable * this, undefined8 * param_1)`
     pub slot_3: *const c_void,
-    /// `BSLookAtModifier::Activate` at 0xbb9d90 (semantic, high); signature (untiered): `undefined Activate(BSLookAtModifier * this, longlong * param_1)`; `Activate`: resets runtime state when the node becomes active (high); semantic signature: `void (BSLookAtModifier* this, const hkbContext* ctx)`
+    /// `BSLookAtModifier::Activate` at 0xbb9d90 (semantic, high); signature (low): `undefined Activate(BSLookAtModifier * this, longlong * param_1)`; `Activate`: resets runtime state when the node becomes active (high); semantic signature: `void (BSLookAtModifier* this, const hkbContext* ctx)`
     pub slot_4: *const c_void,
-    /// `BSLookAtModifier::Update` at 0xbba0b0 (semantic, high); signature (untiered): `undefined Update(BSLookAtModifier * this, undefined8 param_2, undefined4 param_3)`; `Update`: per-frame update before generate (high); semantic signature: `void (BSLookAtModifier* this, const hkbContext* ctx, float timestep)`
+    /// `BSLookAtModifier::Update` at 0xbba0b0 (semantic, high); signature (low): `undefined Update(BSLookAtModifier * this, undefined8 param_2, undefined4 param_3)`; `Update`: per-frame update before generate (high); semantic signature: `void (BSLookAtModifier* this, const hkbContext* ctx, float timestep)`
     pub slot_5: *const c_void,
     /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
     pub slot_6: *const c_void,
-    /// `BSLookAtModifier::Deactivate` at 0xbb9f00 (semantic, high); signature (untiered): `undefined Deactivate(BSLookAtModifier * this)`; `Deactivate`: releases runtime state (high); semantic signature: `void (BSLookAtModifier* this, const hkbContext* ctx)`
+    /// `BSLookAtModifier::Deactivate` at 0xbb9f00 (semantic, high); signature (high): `undefined Deactivate(BSLookAtModifier * this)`; `Deactivate`: releases runtime state (high); semantic signature: `void (BSLookAtModifier* this, const hkbContext* ctx)`
     pub slot_7: *const c_void,
     /// `hkbNode::vfunc_8` at 0xad2140 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
     pub slot_8: *const c_void,
     /// `hkbNode::vfunc_9` at 0xad2110 (rtti, medium); signature (low): `undefined vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `BSLookAtModifier::IsValid` at 0xbb9f20 (semantic, high); signature (untiered): `ulonglong IsValid(BSLookAtModifier * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`; `IsValid`: validates the node's data, writing an error string (high); semantic signature: `bool (BSLookAtModifier* this, const hkbCharacter* character, hkStringPtr* errorString)`
+    /// `BSLookAtModifier::IsValid` at 0xbb9f20 (semantic, high); signature (low): `ulonglong IsValid(BSLookAtModifier * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`; `IsValid`: validates the node's data, writing an error string (high); semantic signature: `bool (BSLookAtModifier* this, const hkbCharacter* character, hkStringPtr* errorString)`
     pub slot_10: *const c_void,
     /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
     pub slot_11: *const c_void,
-    /// `BSLookAtModifier::CloneNode` at 0xbba060 (semantic, high); signature (untiered): `undefined CloneNode(BSLookAtModifier * this)`; `CloneNode`: allocates a copy of the node (size argument = object size) through the copy constructor (high); semantic signature: `BSLookAtModifier* (BSLookAtModifier* this)`
+    /// `BSLookAtModifier::CloneNode` at 0xbba060 (semantic, high); signature (high): `undefined CloneNode(BSLookAtModifier * this)`; `CloneNode`: allocates a copy of the node (size argument = object size) through the copy constructor (high); semantic signature: `BSLookAtModifier* (BSLookAtModifier* this)`
     pub slot_12: *const c_void,
     /// `hkbNode::vfunc_13` at 0xadbed0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
     pub slot_13: *const c_void,
@@ -7215,7 +7187,7 @@ pub struct BSLookAtModifier_vtable {
     pub slot_21: *const c_void,
     /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
     pub slot_22: *const c_void,
-    /// `BSLookAtModifier::Modify` at 0xbba0c0 (semantic, medium); signature (untiered): `undefined Modify(BSLookAtModifier * this, longlong * param_1, longlong * param_2)`; `Modify`: 0xbba0c0: builds a pose and calls the look-at worker (the decompiler shows a nested BSLookAtModifier::vfunc_23 helper) that rotates each bone of bones/eyeBones toward targetLocation (or the camera point) within limitAngleDegrees with on/off gains (medium); semantic signature: `void (BSLookAtModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
+    /// `BSLookAtModifier::Modify` at 0xbba0c0 (semantic, medium); signature (low): `undefined Modify(BSLookAtModifier * this, longlong * param_1, longlong * param_2)`; `Modify`: 0xbba0c0: builds a pose and calls the look-at worker (the decompiler shows a nested BSLookAtModifier::vfunc_23 helper) that rotates each bone of bones/eyeBones toward targetLocation (or the camera point) within limitAngleDegrees with on/off gains (medium); semantic signature: `void (BSLookAtModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
     pub slot_23: *const c_void,
     /// `hkbModifier::vfunc_24` at 0xae7000 (rtti, medium); signature (low): `undefined vfunc_24(void)`
     pub slot_24: *const c_void,
@@ -7288,7 +7260,7 @@ pub struct BSLookIKNote_vtable {
     pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
-    /// `BSLookIKNote::GetRTTI` at 0xf8c020 (semantic, medium); signature (untiered): `TypeNode * GetRTTI(void)`; `GetRTTI`: 0xf8c020 (medium); semantic signature: `const NiRTTI* (BSLookIKNote* this)`
+    /// `BSLookIKNote::GetRTTI` at 0xf8c020 (semantic, medium); signature (low): `TypeNode * GetRTTI(void)`; `GetRTTI`: 0xf8c020 (medium); semantic signature: `const NiRTTI* (BSLookIKNote* this)`
     pub slot_2: *const c_void,
     /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
     pub slot_3: *const c_void,
@@ -7330,9 +7302,9 @@ pub struct BSLookIKNote_vtable {
     pub slot_21: *const c_void,
     /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
     pub slot_22: *const c_void,
-    /// `BSLookIKNote::CreateClone` at 0xf8bae0 (semantic, medium); signature (untiered): `NiObject * CreateClone(BSLookIKNote * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `CreateClone`: 0xf8bae0 writes the vtable on a new object (medium); semantic signature: `NiObject* (BSLookIKNote* this, NiCloningProcess* cp)`
+    /// `BSLookIKNote::CreateClone` at 0xf8bae0 (semantic, medium); signature (low): `NiObject * CreateClone(BSLookIKNote * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `CreateClone`: 0xf8bae0 writes the vtable on a new object (medium); semantic signature: `NiObject* (BSLookIKNote* this, NiCloningProcess* cp)`
     pub slot_23: *const c_void,
-    /// `BSLookIKNote::LoadBinary` at 0xf8b880 (semantic, medium); signature (untiered): `undefined LoadBinary(BSLookIKNote * this, longlong param_1)`; `LoadBinary`: 0xf8b880 (medium); semantic signature: `void (BSLookIKNote* this, NiStream* stream)`
+    /// `BSLookIKNote::LoadBinary` at 0xf8b880 (semantic, medium); signature (low): `undefined LoadBinary(BSLookIKNote * this, longlong param_1)`; `LoadBinary`: 0xf8b880 (medium); semantic signature: `void (BSLookIKNote* this, NiStream* stream)`
     pub slot_24: *const c_void,
     /// `BSLookIKNote::vfunc_25` at 0xf8b910 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
     pub slot_25: *const c_void,
@@ -7358,7 +7330,7 @@ pub struct BSLookIKNote_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `BSLookIKNote::ParseText` at 0xf8bce0 (semantic, high); signature (untiered): `ulonglong ParseText(BSLookIKNote * this, undefined4 * param_1)`
+    /// `BSLookIKNote::ParseText` at 0xf8bce0 (semantic, high); signature (low): `ulonglong ParseText(BSLookIKNote * this, undefined4 * param_1)`
     pub slot_37: *const c_void,
 }
 impl BSLookIKNote_vtable {
@@ -7627,7 +7599,7 @@ pub struct BSMasterParticleSystem_vtable {
     pub slot_1: *const c_void,
     /// `BSMasterParticleSystem::vfunc_2` at 0xffc480 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
     pub slot_2: *const c_void,
-    /// `NiNode::AsNode` at 0x1b4d10 (semantic, high); signature (untiered): `NiNode * AsNode(NiNode * this)`
+    /// `NiNode::AsNode` at 0x1b4d10 (semantic, high); signature (high): `NiNode * AsNode(NiNode * this)`
     pub slot_3: *const c_void,
     /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
     pub slot_4: *const c_void,
@@ -7717,33 +7689,33 @@ pub struct BSMasterParticleSystem_vtable {
     pub slot_46: *const c_void,
     /// `NiNode::vfunc_47` at 0xee2920 (rtti, medium); signature (high): `undefined vfunc_47(NiNode * this)`
     pub slot_47: *const c_void,
-    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (low): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
     /// `NiNode::vfunc_49` at 0xee2b70 (rtti, medium); signature (low): `undefined vfunc_49(NiNode * this, undefined8 param_1)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (untiered): `undefined OnVisible(NiNode * this, longlong * param_1)`
+    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (low): `undefined OnVisible(NiNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
-    /// `NiNode::AttachChild` at 0xee1b00 (semantic, high); signature (untiered): `undefined AttachChild(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+    /// `NiNode::AttachChild` at 0xee1b00 (semantic, high); signature (low): `undefined AttachChild(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
-    /// `NiNode::InsertChildAt` at 0xee1c70 (semantic, high); signature (untiered): `undefined InsertChildAt(NiNode * this, undefined4 param_1, longlong * param_2, undefined8 param_3)`
+    /// `NiNode::InsertChildAt` at 0xee1c70 (semantic, high); signature (low): `undefined InsertChildAt(NiNode * this, undefined4 param_1, longlong * param_2, undefined8 param_3)`
     pub slot_54: *const c_void,
-    /// `NiNode::DetachChild` at 0xee1d60 (semantic, high); signature (untiered): `undefined DetachChild(NiNode * this, longlong * param_1, longlong * param_2)`
+    /// `NiNode::DetachChild` at 0xee1d60 (semantic, high); signature (low): `undefined DetachChild(NiNode * this, longlong * param_1, longlong * param_2)`
     pub slot_55: *const c_void,
-    /// `NiNode::DetachChild2` at 0xee1d10 (semantic, high); signature (untiered): `undefined DetachChild2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `NiNode::DetachChild2` at 0xee1d10 (semantic, high); signature (low): `undefined DetachChild2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_56: *const c_void,
-    /// `NiNode::DetachChildAt` at 0xee1f20 (semantic, high); signature (untiered): `undefined DetachChildAt(NiNode * this, uint param_1, longlong * param_2)`
+    /// `NiNode::DetachChildAt` at 0xee1f20 (semantic, high); signature (low): `undefined DetachChildAt(NiNode * this, uint param_1, longlong * param_2)`
     pub slot_57: *const c_void,
-    /// `NiNode::DetachChildAt2` at 0xee1ed0 (semantic, high); signature (untiered): `undefined DetachChildAt2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `NiNode::DetachChildAt2` at 0xee1ed0 (semantic, high); signature (low): `undefined DetachChildAt2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_58: *const c_void,
-    /// `NiNode::SetAt` at 0xee2150 (semantic, high); signature (untiered): `undefined SetAt(NiNode * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `NiNode::SetAt` at 0xee2150 (semantic, high); signature (low): `undefined SetAt(NiNode * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_59: *const c_void,
-    /// `NiNode::SetAt2` at 0xee2100 (semantic, high); signature (untiered): `undefined SetAt2(NiNode * this)`
+    /// `NiNode::SetAt2` at 0xee2100 (semantic, high); signature (high): `undefined SetAt2(NiNode * this)`
     pub slot_60: *const c_void,
-    /// `NiNode::UpdateUpwardPass` at 0xee28e0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiNode * this)`
+    /// `NiNode::UpdateUpwardPass` at 0xee28e0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiNode * this)`
     pub slot_61: *const c_void,
 }
 impl BSMasterParticleSystem_vtable {
@@ -7879,9 +7851,9 @@ pub struct BSMeshLODTriShape_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (untiered): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (low): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
     pub slot_37: *const c_void,
-    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (untiered): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (low): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
     pub slot_38: *const c_void,
     /// `BSGeometry::vfunc_39` at 0x26d430 (rtti, medium); signature (low): `undefined vfunc_39(BSGeometry * this, longlong * param_1)`
     pub slot_39: *const c_void,
@@ -7889,7 +7861,7 @@ pub struct BSMeshLODTriShape_vtable {
     pub slot_40: *const c_void,
     /// `NiAVObject::vfunc_41` at 0xee0a30 (rtti, medium); signature (low): `undefined vfunc_41(void)`
     pub slot_41: *const c_void,
-    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (untiered): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (low): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
     pub slot_42: *const c_void,
     /// `BSGeometry::vfunc_43` at 0xefc680 (rtti, medium); signature (low): `undefined vfunc_43(BSGeometry * this, char * param_1, byte param_2, byte * param_3)`
     pub slot_43: *const c_void,
@@ -7899,21 +7871,21 @@ pub struct BSMeshLODTriShape_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (high): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
-    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (low): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
-    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (untiered): `undefined UpdateTransformsAndBound(NiAVObject * this)`
+    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (high): `undefined UpdateTransformsAndBound(NiAVObject * this)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
     /// `BSMeshLODTriShape::vfunc_52` at 0x156fee0 (rtti, high); signature (low): `undefined vfunc_52(BSMeshLODTriShape * this, longlong * param_1, uint param_2)`
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (low): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSMeshLODTriShape::vfunc_55` at 0x156fd60 (rtti, high); signature (untiered): `int vfunc_55(longlong param_1, uint param_2)`
     pub slot_55: *const c_void,
@@ -8063,17 +8035,17 @@ pub struct BSMouseDevice_vtable {
     pub slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_3: *const c_void,
-    /// `BSInputDevice::GetKeyName` at 0xd6ee20 (semantic, high); signature (untiered): `undefined8 GetKeyName(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
+    /// `BSInputDevice::GetKeyName` at 0xd6ee20 (semantic, high); signature (low): `undefined8 GetKeyName(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
     pub slot_4: *const c_void,
-    /// `BSInputDevice::GetKeyIDByName` at 0xd6eeb0 (semantic, high); signature (untiered): `undefined4 GetKeyIDByName(BSInputDevice * this, ulonglong * param_1)`
+    /// `BSInputDevice::GetKeyIDByName` at 0xd6eeb0 (semantic, high); signature (low): `undefined4 GetKeyIDByName(BSInputDevice * this, ulonglong * param_1)`
     pub slot_5: *const c_void,
-    /// `BSInputDevice::GetKeyCode` at 0xd6ef40 (semantic, high); signature (untiered): `ulonglong GetKeyCode(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
+    /// `BSInputDevice::GetKeyCode` at 0xd6ef40 (semantic, high); signature (low): `ulonglong GetKeyCode(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
     pub slot_6: *const c_void,
-    /// `BSInputDevice::IsEnabled` at 0xcfc170 (semantic, high); signature (untiered): `undefined1 IsEnabled(void)`
+    /// `BSInputDevice::IsEnabled` at 0xcfc170 (semantic, high); signature (low): `undefined1 IsEnabled(void)`
     pub slot_7: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_8: *const c_void,
-    /// `BSMouseDevice::Reinitialize` at 0xe13070 (semantic, medium); signature (untiered): `undefined Reinitialize(void)`; `Reinitialize`: empty in the base (medium); semantic signature: `void (BSMouseDevice* this, bool background)`
+    /// `BSMouseDevice::Reinitialize` at 0xe13070 (semantic, medium); signature (low): `undefined Reinitialize(void)`; `Reinitialize`: empty in the base (medium); semantic signature: `void (BSMouseDevice* this, bool background)`
     pub slot_9: *const c_void,
 }
 impl BSMouseDevice_vtable {
@@ -8400,7 +8372,7 @@ pub struct BSMultiBoundNode_vtable {
     pub slot_1: *const c_void,
     /// `BSMultiBoundNode::vfunc_2` at 0xff36d0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
     pub slot_2: *const c_void,
-    /// `NiNode::AsNode` at 0x1b4d10 (semantic, high); signature (untiered): `NiNode * AsNode(NiNode * this)`
+    /// `NiNode::AsNode` at 0x1b4d10 (semantic, high); signature (high): `NiNode * AsNode(NiNode * this)`
     pub slot_3: *const c_void,
     /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
     pub slot_4: *const c_void,
@@ -8454,7 +8426,7 @@ pub struct BSMultiBoundNode_vtable {
     pub slot_28: *const c_void,
     /// `NiNode::vfunc_29` at 0xee2f60 (rtti, medium); signature (low): `undefined vfunc_29(NiNode * this, longlong param_1)`
     pub slot_29: *const c_void,
-    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (untiered): `undefined PostLinkObject(NiObjectNET * this)`
+    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (high): `undefined PostLinkObject(NiObjectNET * this)`
     pub slot_30: *const c_void,
     /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
     pub slot_31: *const c_void,
@@ -8490,31 +8462,31 @@ pub struct BSMultiBoundNode_vtable {
     pub slot_46: *const c_void,
     /// `BSMultiBoundNode::vfunc_47` at 0xff2f50 (rtti, high); signature (high): `undefined vfunc_47(BSMultiBoundNode * this)`
     pub slot_47: *const c_void,
-    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (low): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
     /// `NiNode::vfunc_49` at 0xee2b70 (rtti, medium); signature (low): `undefined vfunc_49(NiNode * this, undefined8 param_1)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
     /// `BSMultiBoundNode::vfunc_52` at 0xff2db0 (rtti, high); signature (low): `undefined vfunc_52(BSMultiBoundNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
-    /// `NiNode::AttachChild` at 0xee1b00 (semantic, high); signature (untiered): `undefined AttachChild(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+    /// `NiNode::AttachChild` at 0xee1b00 (semantic, high); signature (low): `undefined AttachChild(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
-    /// `NiNode::InsertChildAt` at 0xee1c70 (semantic, high); signature (untiered): `undefined InsertChildAt(NiNode * this, undefined4 param_1, longlong * param_2, undefined8 param_3)`
+    /// `NiNode::InsertChildAt` at 0xee1c70 (semantic, high); signature (low): `undefined InsertChildAt(NiNode * this, undefined4 param_1, longlong * param_2, undefined8 param_3)`
     pub slot_54: *const c_void,
-    /// `NiNode::DetachChild` at 0xee1d60 (semantic, high); signature (untiered): `undefined DetachChild(NiNode * this, longlong * param_1, longlong * param_2)`
+    /// `NiNode::DetachChild` at 0xee1d60 (semantic, high); signature (low): `undefined DetachChild(NiNode * this, longlong * param_1, longlong * param_2)`
     pub slot_55: *const c_void,
-    /// `NiNode::DetachChild2` at 0xee1d10 (semantic, high); signature (untiered): `undefined DetachChild2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `NiNode::DetachChild2` at 0xee1d10 (semantic, high); signature (low): `undefined DetachChild2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_56: *const c_void,
-    /// `NiNode::DetachChildAt` at 0xee1f20 (semantic, high); signature (untiered): `undefined DetachChildAt(NiNode * this, uint param_1, longlong * param_2)`
+    /// `NiNode::DetachChildAt` at 0xee1f20 (semantic, high); signature (low): `undefined DetachChildAt(NiNode * this, uint param_1, longlong * param_2)`
     pub slot_57: *const c_void,
-    /// `NiNode::DetachChildAt2` at 0xee1ed0 (semantic, high); signature (untiered): `undefined DetachChildAt2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `NiNode::DetachChildAt2` at 0xee1ed0 (semantic, high); signature (low): `undefined DetachChildAt2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_58: *const c_void,
-    /// `NiNode::SetAt` at 0xee2150 (semantic, high); signature (untiered): `undefined SetAt(NiNode * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `NiNode::SetAt` at 0xee2150 (semantic, high); signature (low): `undefined SetAt(NiNode * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_59: *const c_void,
-    /// `NiNode::SetAt2` at 0xee2100 (semantic, high); signature (untiered): `undefined SetAt2(NiNode * this)`
+    /// `NiNode::SetAt2` at 0xee2100 (semantic, high); signature (high): `undefined SetAt2(NiNode * this)`
     pub slot_60: *const c_void,
     /// `BSMultiBoundNode::vfunc_61` at 0xff3380 (rtti, medium); signature (high): `undefined vfunc_61(BSMultiBoundNode * this)`
     pub slot_61: *const c_void,
@@ -8642,7 +8614,7 @@ pub struct BSMultiBoundRoom_vtable {
     pub slot_1: *const c_void,
     /// `BSMultiBoundRoom::vfunc_2` at 0xfce6d0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
     pub slot_2: *const c_void,
-    /// `NiNode::AsNode` at 0x1b4d10 (semantic, high); signature (untiered): `NiNode * AsNode(NiNode * this)`
+    /// `NiNode::AsNode` at 0x1b4d10 (semantic, high); signature (high): `NiNode * AsNode(NiNode * this)`
     pub slot_3: *const c_void,
     /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
     pub slot_4: *const c_void,
@@ -8696,7 +8668,7 @@ pub struct BSMultiBoundRoom_vtable {
     pub slot_28: *const c_void,
     /// `NiNode::vfunc_29` at 0xee2f60 (rtti, medium); signature (low): `undefined vfunc_29(NiNode * this, longlong param_1)`
     pub slot_29: *const c_void,
-    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (untiered): `undefined PostLinkObject(NiObjectNET * this)`
+    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (high): `undefined PostLinkObject(NiObjectNET * this)`
     pub slot_30: *const c_void,
     /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
     pub slot_31: *const c_void,
@@ -8732,31 +8704,31 @@ pub struct BSMultiBoundRoom_vtable {
     pub slot_46: *const c_void,
     /// `BSMultiBoundRoom::vfunc_47` at 0xfce250 (rtti, high); signature (high): `undefined vfunc_47(BSMultiBoundRoom * this)`
     pub slot_47: *const c_void,
-    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (low): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
     /// `NiNode::vfunc_49` at 0xee2b70 (rtti, medium); signature (low): `undefined vfunc_49(NiNode * this, undefined8 param_1)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
     /// `BSMultiBoundRoom::vfunc_52` at 0xfcddd0 (rtti, high); signature (low): `undefined vfunc_52(BSMultiBoundRoom * this, BSMultiBoundRoom * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_52: *const c_void,
-    /// `NiNode::AttachChild` at 0xee1b00 (semantic, high); signature (untiered): `undefined AttachChild(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+    /// `NiNode::AttachChild` at 0xee1b00 (semantic, high); signature (low): `undefined AttachChild(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
-    /// `NiNode::InsertChildAt` at 0xee1c70 (semantic, high); signature (untiered): `undefined InsertChildAt(NiNode * this, undefined4 param_1, longlong * param_2, undefined8 param_3)`
+    /// `NiNode::InsertChildAt` at 0xee1c70 (semantic, high); signature (low): `undefined InsertChildAt(NiNode * this, undefined4 param_1, longlong * param_2, undefined8 param_3)`
     pub slot_54: *const c_void,
-    /// `NiNode::DetachChild` at 0xee1d60 (semantic, high); signature (untiered): `undefined DetachChild(NiNode * this, longlong * param_1, longlong * param_2)`
+    /// `NiNode::DetachChild` at 0xee1d60 (semantic, high); signature (low): `undefined DetachChild(NiNode * this, longlong * param_1, longlong * param_2)`
     pub slot_55: *const c_void,
-    /// `NiNode::DetachChild2` at 0xee1d10 (semantic, high); signature (untiered): `undefined DetachChild2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `NiNode::DetachChild2` at 0xee1d10 (semantic, high); signature (low): `undefined DetachChild2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_56: *const c_void,
-    /// `NiNode::DetachChildAt` at 0xee1f20 (semantic, high); signature (untiered): `undefined DetachChildAt(NiNode * this, uint param_1, longlong * param_2)`
+    /// `NiNode::DetachChildAt` at 0xee1f20 (semantic, high); signature (low): `undefined DetachChildAt(NiNode * this, uint param_1, longlong * param_2)`
     pub slot_57: *const c_void,
-    /// `NiNode::DetachChildAt2` at 0xee1ed0 (semantic, high); signature (untiered): `undefined DetachChildAt2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `NiNode::DetachChildAt2` at 0xee1ed0 (semantic, high); signature (low): `undefined DetachChildAt2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_58: *const c_void,
-    /// `NiNode::SetAt` at 0xee2150 (semantic, high); signature (untiered): `undefined SetAt(NiNode * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `NiNode::SetAt` at 0xee2150 (semantic, high); signature (low): `undefined SetAt(NiNode * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_59: *const c_void,
-    /// `NiNode::SetAt2` at 0xee2100 (semantic, high); signature (untiered): `undefined SetAt2(NiNode * this)`
+    /// `NiNode::SetAt2` at 0xee2100 (semantic, high); signature (high): `undefined SetAt2(NiNode * this)`
     pub slot_60: *const c_void,
     /// `BSMultiBoundNode::vfunc_61` at 0xff3380 (rtti, medium); signature (high): `undefined vfunc_61(BSMultiBoundNode * this)`
     pub slot_61: *const c_void,
@@ -9055,9 +9027,9 @@ pub struct BSMultiIndexTriShape_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (untiered): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (low): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
     pub slot_37: *const c_void,
-    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (untiered): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (low): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
     pub slot_38: *const c_void,
     /// `BSGeometry::vfunc_39` at 0x26d430 (rtti, medium); signature (low): `undefined vfunc_39(BSGeometry * this, longlong * param_1)`
     pub slot_39: *const c_void,
@@ -9065,7 +9037,7 @@ pub struct BSMultiIndexTriShape_vtable {
     pub slot_40: *const c_void,
     /// `NiAVObject::vfunc_41` at 0xee0a30 (rtti, medium); signature (low): `undefined vfunc_41(void)`
     pub slot_41: *const c_void,
-    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (untiered): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (low): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
     pub slot_42: *const c_void,
     /// `BSGeometry::vfunc_43` at 0xefc680 (rtti, medium); signature (low): `undefined vfunc_43(BSGeometry * this, char * param_1, byte param_2, byte * param_3)`
     pub slot_43: *const c_void,
@@ -9075,21 +9047,21 @@ pub struct BSMultiIndexTriShape_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (high): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
-    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (low): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
-    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (untiered): `undefined UpdateTransformsAndBound(NiAVObject * this)`
+    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (high): `undefined UpdateTransformsAndBound(NiAVObject * this)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `BSGeometry::OnVisible` at 0xefc980 (semantic, high); signature (untiered): `undefined OnVisible(BSGeometry * this, longlong * param_1, undefined8 param_2)`
+    /// `BSGeometry::OnVisible` at 0xefc980 (semantic, high); signature (low): `undefined OnVisible(BSGeometry * this, longlong * param_1, undefined8 param_2)`
     pub slot_52: *const c_void,
     /// `BSMultiIndexTriShape::vfunc_53` at 0x1575450 (rtti, medium); signature (high): `BSMultiIndexTriShape * vfunc_53(BSMultiIndexTriShape * this)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (low): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSGeometry::vfunc_55` at 0x26d480 (rtti, medium); signature (low): `undefined8 vfunc_55(void)`
     pub slot_55: *const c_void,
@@ -9175,9 +9147,9 @@ pub struct BSMultiStreamInstanceTriShape_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (untiered): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (low): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
     pub slot_37: *const c_void,
-    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (untiered): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (low): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
     pub slot_38: *const c_void,
     /// `BSGeometry::vfunc_39` at 0x26d430 (rtti, medium); signature (low): `undefined vfunc_39(BSGeometry * this, longlong * param_1)`
     pub slot_39: *const c_void,
@@ -9185,7 +9157,7 @@ pub struct BSMultiStreamInstanceTriShape_vtable {
     pub slot_40: *const c_void,
     /// `NiAVObject::vfunc_41` at 0xee0a30 (rtti, medium); signature (low): `undefined vfunc_41(void)`
     pub slot_41: *const c_void,
-    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (untiered): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (low): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
     pub slot_42: *const c_void,
     /// `BSGeometry::vfunc_43` at 0xefc680 (rtti, medium); signature (low): `undefined vfunc_43(BSGeometry * this, char * param_1, byte param_2, byte * param_3)`
     pub slot_43: *const c_void,
@@ -9195,21 +9167,21 @@ pub struct BSMultiStreamInstanceTriShape_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (high): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
-    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (low): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
-    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (untiered): `undefined UpdateTransformsAndBound(NiAVObject * this)`
+    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (high): `undefined UpdateTransformsAndBound(NiAVObject * this)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
     /// `BSMultiStreamInstanceTriShape::vfunc_52` at 0xfe3940 (rtti, high); signature (low): `undefined vfunc_52(BSMultiStreamInstanceTriShape * this, longlong * param_1, uint param_2)`
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (low): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSMultiStreamInstanceTriShape::vfunc_55` at 0xfe2710 (rtti, high); signature (high): `int vfunc_55(BSMultiStreamInstanceTriShape * this)`
     pub slot_55: *const c_void,
@@ -9363,7 +9335,7 @@ impl BSMultiTargetTreadTransfController_vtable {
 pub struct BSMusicManager_vtable {
     /// `BSMusicManager::vdtor` at 0x11b5050 (layout_inference, medium); signature (low): `BSMusicManager * vdtor(BSMusicManager * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSMusicManager::ProcessEvent` at 0x11b4a80 (semantic, high); signature (untiered): `undefined4 ProcessEvent(BSMusicManager * this, longlong * param_1)`; `ProcessEvent`: applies a music event under the music lock: 0 push (or re-arm a finished type), 1/2 finish (current) or finish+remove, 3 pause, 4 unpause (high); semantic signature: `BSEventNotifyControl (BSMusicManager* this, const BSMusicEvent* event, BSTEventSource<BSMusicEvent>* source)`
+    /// `BSMusicManager::ProcessEvent` at 0x11b4a80 (semantic, high); signature (low): `undefined4 ProcessEvent(BSMusicManager * this, longlong * param_1)`; `ProcessEvent`: applies a music event under the music lock: 0 push (or re-arm a finished type), 1/2 finish (current) or finish+remove, 3 pause, 4 unpause (high); semantic signature: `BSEventNotifyControl (BSMusicManager* this, const BSMusicEvent* event, BSTEventSource<BSMusicEvent>* source)`
     pub slot_1: *const c_void,
 }
 impl BSMusicManager_vtable {
@@ -9705,7 +9677,7 @@ pub struct BSNiNode_vtable {
     pub slot_1: *const c_void,
     /// `BSNiNode::vfunc_2` at 0x1005490 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
     pub slot_2: *const c_void,
-    /// `NiNode::AsNode` at 0x1b4d10 (semantic, high); signature (untiered): `NiNode * AsNode(NiNode * this)`
+    /// `NiNode::AsNode` at 0x1b4d10 (semantic, high); signature (high): `NiNode * AsNode(NiNode * this)`
     pub slot_3: *const c_void,
     /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
     pub slot_4: *const c_void,
@@ -9759,7 +9731,7 @@ pub struct BSNiNode_vtable {
     pub slot_28: *const c_void,
     /// `NiNode::vfunc_29` at 0xee2f60 (rtti, medium); signature (low): `undefined vfunc_29(NiNode * this, longlong param_1)`
     pub slot_29: *const c_void,
-    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (untiered): `undefined PostLinkObject(NiObjectNET * this)`
+    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (high): `undefined PostLinkObject(NiObjectNET * this)`
     pub slot_30: *const c_void,
     /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
     pub slot_31: *const c_void,
@@ -9795,33 +9767,33 @@ pub struct BSNiNode_vtable {
     pub slot_46: *const c_void,
     /// `NiNode::vfunc_47` at 0xee2920 (rtti, medium); signature (high): `undefined vfunc_47(NiNode * this)`
     pub slot_47: *const c_void,
-    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (low): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
     /// `NiNode::vfunc_49` at 0xee2b70 (rtti, medium); signature (low): `undefined vfunc_49(NiNode * this, undefined8 param_1)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (untiered): `undefined OnVisible(NiNode * this, longlong * param_1)`
+    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (low): `undefined OnVisible(NiNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
-    /// `NiNode::AttachChild` at 0xee1b00 (semantic, high); signature (untiered): `undefined AttachChild(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+    /// `NiNode::AttachChild` at 0xee1b00 (semantic, high); signature (low): `undefined AttachChild(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
-    /// `NiNode::InsertChildAt` at 0xee1c70 (semantic, high); signature (untiered): `undefined InsertChildAt(NiNode * this, undefined4 param_1, longlong * param_2, undefined8 param_3)`
+    /// `NiNode::InsertChildAt` at 0xee1c70 (semantic, high); signature (low): `undefined InsertChildAt(NiNode * this, undefined4 param_1, longlong * param_2, undefined8 param_3)`
     pub slot_54: *const c_void,
-    /// `NiNode::DetachChild` at 0xee1d60 (semantic, high); signature (untiered): `undefined DetachChild(NiNode * this, longlong * param_1, longlong * param_2)`
+    /// `NiNode::DetachChild` at 0xee1d60 (semantic, high); signature (low): `undefined DetachChild(NiNode * this, longlong * param_1, longlong * param_2)`
     pub slot_55: *const c_void,
-    /// `NiNode::DetachChild2` at 0xee1d10 (semantic, high); signature (untiered): `undefined DetachChild2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `NiNode::DetachChild2` at 0xee1d10 (semantic, high); signature (low): `undefined DetachChild2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_56: *const c_void,
-    /// `NiNode::DetachChildAt` at 0xee1f20 (semantic, high); signature (untiered): `undefined DetachChildAt(NiNode * this, uint param_1, longlong * param_2)`
+    /// `NiNode::DetachChildAt` at 0xee1f20 (semantic, high); signature (low): `undefined DetachChildAt(NiNode * this, uint param_1, longlong * param_2)`
     pub slot_57: *const c_void,
-    /// `NiNode::DetachChildAt2` at 0xee1ed0 (semantic, high); signature (untiered): `undefined DetachChildAt2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `NiNode::DetachChildAt2` at 0xee1ed0 (semantic, high); signature (low): `undefined DetachChildAt2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_58: *const c_void,
-    /// `NiNode::SetAt` at 0xee2150 (semantic, high); signature (untiered): `undefined SetAt(NiNode * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `NiNode::SetAt` at 0xee2150 (semantic, high); signature (low): `undefined SetAt(NiNode * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_59: *const c_void,
-    /// `NiNode::SetAt2` at 0xee2100 (semantic, high); signature (untiered): `undefined SetAt2(NiNode * this)`
+    /// `NiNode::SetAt2` at 0xee2100 (semantic, high); signature (high): `undefined SetAt2(NiNode * this)`
     pub slot_60: *const c_void,
-    /// `NiNode::UpdateUpwardPass` at 0xee28e0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiNode * this)`
+    /// `NiNode::UpdateUpwardPass` at 0xee28e0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiNode * this)`
     pub slot_61: *const c_void,
 }
 impl BSNiNode_vtable {
@@ -9987,9 +9959,9 @@ pub struct BSNonUniformScaleExtraData_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiExtraData::IsStreamable` at 0xef9b60 (semantic, medium); signature (untiered): `undefined1 IsStreamable(void)`
+    /// `NiExtraData::IsStreamable` at 0xef9b60 (semantic, medium); signature (low): `undefined1 IsStreamable(void)`
     pub slot_37: *const c_void,
-    /// `NiExtraData::Slot38ReturnsTrue` at 0xef9b70 (semantic, low); signature (untiered): `undefined1 Slot38ReturnsTrue(void)`
+    /// `NiExtraData::Slot38ReturnsTrue` at 0xef9b70 (semantic, low); signature (low): `undefined1 Slot38ReturnsTrue(void)`
     pub slot_38: *const c_void,
 }
 impl BSNonUniformScaleExtraData_vtable {
@@ -10446,7 +10418,7 @@ pub struct BSOrderedNode_vtable {
     pub slot_1: *const c_void,
     /// `BSOrderedNode::vfunc_2` at 0x15709e0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
     pub slot_2: *const c_void,
-    /// `NiNode::AsNode` at 0x1b4d10 (semantic, high); signature (untiered): `NiNode * AsNode(NiNode * this)`
+    /// `NiNode::AsNode` at 0x1b4d10 (semantic, high); signature (high): `NiNode * AsNode(NiNode * this)`
     pub slot_3: *const c_void,
     /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
     pub slot_4: *const c_void,
@@ -10500,7 +10472,7 @@ pub struct BSOrderedNode_vtable {
     pub slot_28: *const c_void,
     /// `NiNode::vfunc_29` at 0xee2f60 (rtti, medium); signature (low): `undefined vfunc_29(NiNode * this, longlong param_1)`
     pub slot_29: *const c_void,
-    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (untiered): `undefined PostLinkObject(NiObjectNET * this)`
+    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (high): `undefined PostLinkObject(NiObjectNET * this)`
     pub slot_30: *const c_void,
     /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
     pub slot_31: *const c_void,
@@ -10536,33 +10508,33 @@ pub struct BSOrderedNode_vtable {
     pub slot_46: *const c_void,
     /// `NiNode::vfunc_47` at 0xee2920 (rtti, medium); signature (high): `undefined vfunc_47(NiNode * this)`
     pub slot_47: *const c_void,
-    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (low): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
     /// `NiNode::vfunc_49` at 0xee2b70 (rtti, medium); signature (low): `undefined vfunc_49(NiNode * this, undefined8 param_1)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `BSOrderedNode::OnVisible` at 0x1570700 (runtime, high); signature (untiered): `undefined OnVisible(BSOrderedNode * this, longlong * param_1)`
+    /// `BSOrderedNode::OnVisible` at 0x1570700 (runtime, high); signature (low): `undefined OnVisible(BSOrderedNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
-    /// `NiNode::AttachChild` at 0xee1b00 (semantic, high); signature (untiered): `undefined AttachChild(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+    /// `NiNode::AttachChild` at 0xee1b00 (semantic, high); signature (low): `undefined AttachChild(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
-    /// `NiNode::InsertChildAt` at 0xee1c70 (semantic, high); signature (untiered): `undefined InsertChildAt(NiNode * this, undefined4 param_1, longlong * param_2, undefined8 param_3)`
+    /// `NiNode::InsertChildAt` at 0xee1c70 (semantic, high); signature (low): `undefined InsertChildAt(NiNode * this, undefined4 param_1, longlong * param_2, undefined8 param_3)`
     pub slot_54: *const c_void,
-    /// `NiNode::DetachChild` at 0xee1d60 (semantic, high); signature (untiered): `undefined DetachChild(NiNode * this, longlong * param_1, longlong * param_2)`
+    /// `NiNode::DetachChild` at 0xee1d60 (semantic, high); signature (low): `undefined DetachChild(NiNode * this, longlong * param_1, longlong * param_2)`
     pub slot_55: *const c_void,
-    /// `NiNode::DetachChild2` at 0xee1d10 (semantic, high); signature (untiered): `undefined DetachChild2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `NiNode::DetachChild2` at 0xee1d10 (semantic, high); signature (low): `undefined DetachChild2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_56: *const c_void,
-    /// `NiNode::DetachChildAt` at 0xee1f20 (semantic, high); signature (untiered): `undefined DetachChildAt(NiNode * this, uint param_1, longlong * param_2)`
+    /// `NiNode::DetachChildAt` at 0xee1f20 (semantic, high); signature (low): `undefined DetachChildAt(NiNode * this, uint param_1, longlong * param_2)`
     pub slot_57: *const c_void,
-    /// `NiNode::DetachChildAt2` at 0xee1ed0 (semantic, high); signature (untiered): `undefined DetachChildAt2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `NiNode::DetachChildAt2` at 0xee1ed0 (semantic, high); signature (low): `undefined DetachChildAt2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_58: *const c_void,
-    /// `NiNode::SetAt` at 0xee2150 (semantic, high); signature (untiered): `undefined SetAt(NiNode * this, uint param_1, longlong * param_2, longlong * param_3)`
+    /// `NiNode::SetAt` at 0xee2150 (semantic, high); signature (low): `undefined SetAt(NiNode * this, uint param_1, longlong * param_2, longlong * param_3)`
     pub slot_59: *const c_void,
-    /// `NiNode::SetAt2` at 0xee2100 (semantic, high); signature (untiered): `undefined SetAt2(NiNode * this)`
+    /// `NiNode::SetAt2` at 0xee2100 (semantic, high); signature (high): `undefined SetAt2(NiNode * this)`
     pub slot_60: *const c_void,
-    /// `NiNode::UpdateUpwardPass` at 0xee28e0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiNode * this)`
+    /// `NiNode::UpdateUpwardPass` at 0xee28e0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiNode * this)`
     pub slot_61: *const c_void,
 }
 impl BSOrderedNode_vtable {
@@ -10594,13 +10566,13 @@ pub struct BSPCGamepadDeviceDelegate_vtable {
     pub slot_2: *const c_void,
     /// `BSPCGamepadDeviceDelegate::vfunc_3` at 0xe124c0 (rtti, high); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSInputDevice::GetKeyName` at 0xd6ee20 (semantic, high); signature (untiered): `undefined8 GetKeyName(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
+    /// `BSInputDevice::GetKeyName` at 0xd6ee20 (semantic, high); signature (low): `undefined8 GetKeyName(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
     pub slot_4: *const c_void,
-    /// `BSInputDevice::GetKeyIDByName` at 0xd6eeb0 (semantic, high); signature (untiered): `undefined4 GetKeyIDByName(BSInputDevice * this, ulonglong * param_1)`
+    /// `BSInputDevice::GetKeyIDByName` at 0xd6eeb0 (semantic, high); signature (low): `undefined4 GetKeyIDByName(BSInputDevice * this, ulonglong * param_1)`
     pub slot_5: *const c_void,
-    /// `BSInputDevice::GetKeyCode` at 0xd6ef40 (semantic, high); signature (untiered): `ulonglong GetKeyCode(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
+    /// `BSInputDevice::GetKeyCode` at 0xd6ef40 (semantic, high); signature (low): `ulonglong GetKeyCode(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
     pub slot_6: *const c_void,
-    /// `BSGamepadDevice::IsEnabled` at 0xcfc150 (semantic, high); signature (untiered): `undefined1 IsEnabled(BSGamepadDevice * this)`
+    /// `BSGamepadDevice::IsEnabled` at 0xcfc150 (semantic, high); signature (high): `undefined1 IsEnabled(BSGamepadDevice * this)`
     pub slot_7: *const c_void,
     /// `BSPCGamepadDeviceDelegate::vfunc_8` at 0xe12470 (rtti, high); signature (low): `undefined vfunc_8(void)`
     pub slot_8: *const c_void,
@@ -10612,7 +10584,7 @@ pub struct BSPCGamepadDeviceDelegate_vtable {
     pub slot_11: *const c_void,
     /// `BSGamepadDevice::vfunc_12` at 0xcfc180 (rtti, medium); signature (low): `undefined1 vfunc_12(void)`
     pub slot_12: *const c_void,
-    /// `BSGamepadDevice::NormalizeStick` at 0xcfbb90 (semantic, high); signature (untiered): `undefined NormalizeStick(BSGamepadDevice * this, int param_1, int param_2, float * param_3, float * param_4)`
+    /// `BSGamepadDevice::NormalizeStick` at 0xcfbb90 (semantic, high); signature (low): `undefined NormalizeStick(BSGamepadDevice * this, int param_1, int param_2, float * param_3, float * param_4)`
     pub slot_13: *const c_void,
     /// `BSGamepadDevice::vfunc_14` at 0xcfbde0 (rtti, medium); signature (low): `undefined vfunc_14(void)`
     pub slot_14: *const c_void,
@@ -10626,9 +10598,9 @@ impl BSPCGamepadDeviceDelegate_vtable {
 pub struct BSPCGamepadDeviceHandler_vtable {
     /// `BSPCGamepadDeviceHandler::vdtor` at 0xe12390 (layout_inference, medium); signature (low): `BSPCGamepadDeviceHandler * vdtor(BSPCGamepadDeviceHandler * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSPCGamepadDeviceHandler::Initialize` at 0xe11eb0 (semantic, high); signature (untiered): `undefined Initialize(BSPCGamepadDeviceHandler * this)`; `Initialize`: init the pad library, detect a pad when bGamepadEnable (high); semantic signature: `void (BSPCGamepadDeviceHandler* this)`
+    /// `BSPCGamepadDeviceHandler::Initialize` at 0xe11eb0 (semantic, high); signature (high): `undefined Initialize(BSPCGamepadDeviceHandler * this)`; `Initialize`: init the pad library, detect a pad when bGamepadEnable (high); semantic signature: `void (BSPCGamepadDeviceHandler* this)`
     pub slot_1: *const c_void,
-    /// `BSPCGamepadDeviceHandler::Poll` at 0xe11ee0 (semantic, high); signature (untiered): `undefined Poll(BSPCGamepadDeviceHandler * this, undefined4 param_2)`; `Poll`: detect when none (bGamepadEnable), then forward Poll (high); semantic signature: `void (BSPCGamepadDeviceHandler* this, float realDelta)`
+    /// `BSPCGamepadDeviceHandler::Poll` at 0xe11ee0 (semantic, high); signature (low): `undefined Poll(BSPCGamepadDeviceHandler * this, undefined4 param_2)`; `Poll`: detect when none (bGamepadEnable), then forward Poll (high); semantic signature: `void (BSPCGamepadDeviceHandler* this, float realDelta)`
     pub slot_2: *const c_void,
     /// `BSPCGamepadDeviceHandler::vfunc_3` at 0xe11f30 (rtti, high); signature (high): `undefined vfunc_3(BSPCGamepadDeviceHandler * this)`
     pub slot_3: *const c_void,
@@ -10638,7 +10610,7 @@ pub struct BSPCGamepadDeviceHandler_vtable {
     pub slot_5: *const c_void,
     /// `BSPCGamepadDeviceHandler::vfunc_6` at 0xe11f90 (rtti, high); signature (high): `ulonglong vfunc_6(BSPCGamepadDeviceHandler * this)`
     pub slot_6: *const c_void,
-    /// `BSPCGamepadDeviceHandler::IsEnabled` at 0xe12490 (semantic, high); signature (untiered): `bool IsEnabled(BSPCGamepadDeviceHandler * this)`; `IsEnabled`: a pad is present (high); semantic signature: `bool (BSPCGamepadDeviceHandler* this)`
+    /// `BSPCGamepadDeviceHandler::IsEnabled` at 0xe12490 (semantic, high); signature (high): `bool IsEnabled(BSPCGamepadDeviceHandler * this)`; `IsEnabled`: a pad is present (high); semantic signature: `bool (BSPCGamepadDeviceHandler* this)`
     pub slot_7: *const c_void,
     /// `BSPCGamepadDeviceHandler::vfunc_8` at 0xe11fb0 (rtti, high); signature (high): `undefined vfunc_8(BSPCGamepadDeviceHandler * this)`
     pub slot_8: *const c_void,
@@ -10678,17 +10650,17 @@ pub struct BSPCOrbisGamepadDevice_vtable {
     pub slot_0: *const c_void,
     /// `BSPCOrbisGamepadDevice::vfunc_1` at 0xe7bf50 (rtti, high); signature (high): `undefined vfunc_1(BSPCOrbisGamepadDevice * this)`
     pub slot_1: *const c_void,
-    /// `BSPCOrbisGamepadDevice::Poll` at 0xe7bf80 (semantic, medium); signature (untiered): `undefined Poll(BSPCOrbisGamepadDevice * this, float param_1)`; `Poll`: as BSWin32GamepadDevice::Poll with the pad library's state (medium); semantic signature: `void (BSPCOrbisGamepadDevice* this, float realDelta)`
+    /// `BSPCOrbisGamepadDevice::Poll` at 0xe7bf80 (semantic, medium); signature (medium): `undefined Poll(BSPCOrbisGamepadDevice * this, float param_1)`; `Poll`: as BSWin32GamepadDevice::Poll with the pad library's state (medium); semantic signature: `void (BSPCOrbisGamepadDevice* this, float realDelta)`
     pub slot_2: *const c_void,
     /// `BSPCOrbisGamepadDevice::vfunc_3` at 0xe7c2b0 (rtti, high); signature (high): `ulonglong vfunc_3(BSPCOrbisGamepadDevice * this)`
     pub slot_3: *const c_void,
-    /// `BSInputDevice::GetKeyName` at 0xd6ee20 (semantic, high); signature (untiered): `undefined8 GetKeyName(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
+    /// `BSInputDevice::GetKeyName` at 0xd6ee20 (semantic, high); signature (low): `undefined8 GetKeyName(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
     pub slot_4: *const c_void,
-    /// `BSInputDevice::GetKeyIDByName` at 0xd6eeb0 (semantic, high); signature (untiered): `undefined4 GetKeyIDByName(BSInputDevice * this, ulonglong * param_1)`
+    /// `BSInputDevice::GetKeyIDByName` at 0xd6eeb0 (semantic, high); signature (low): `undefined4 GetKeyIDByName(BSInputDevice * this, ulonglong * param_1)`
     pub slot_5: *const c_void,
-    /// `BSInputDevice::GetKeyCode` at 0xd6ef40 (semantic, high); signature (untiered): `ulonglong GetKeyCode(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
+    /// `BSInputDevice::GetKeyCode` at 0xd6ef40 (semantic, high); signature (low): `ulonglong GetKeyCode(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
     pub slot_6: *const c_void,
-    /// `BSGamepadDevice::IsEnabled` at 0xcfc150 (semantic, high); signature (untiered): `undefined1 IsEnabled(BSGamepadDevice * this)`
+    /// `BSGamepadDevice::IsEnabled` at 0xcfc150 (semantic, high); signature (high): `undefined1 IsEnabled(BSGamepadDevice * this)`
     pub slot_7: *const c_void,
     /// `BSPCOrbisGamepadDevice::vfunc_8` at 0xe7c2d0 (rtti, high); signature (high): `undefined vfunc_8(BSPCOrbisGamepadDevice * this)`
     pub slot_8: *const c_void,
@@ -11745,7 +11717,7 @@ pub struct BSParabolicCullingProcess_vtable {
     pub slot_22: *const c_void,
     /// `BSParabolicCullingProcess::vfunc_23` at 0x1586c00 (rtti, high); signature (low): `undefined vfunc_23(BSParabolicCullingProcess * this, longlong param_1, longlong param_2, longlong param_3)`
     pub slot_23: *const c_void,
-    /// `BSCullingProcess::AppendVisible` at 0xfedfc0 (runtime, high); signature (untiered): `undefined AppendVisible(BSCullingProcess * this, undefined8 param_1, int param_2)`
+    /// `BSCullingProcess::AppendVisible` at 0xfedfc0 (runtime, high); signature (low): `undefined AppendVisible(BSCullingProcess * this, undefined8 param_1, int param_2)`
     pub slot_24: *const c_void,
     /// `BSParabolicCullingProcess::vfunc_25` at 0x1586dd0 (rtti, high); signature (low): `uint vfunc_25(BSParabolicCullingProcess * this, longlong * param_1, int param_2)`
     pub slot_25: *const c_void,
@@ -11864,9 +11836,9 @@ pub struct BSParticleShader_vtable {
     pub slot_2: *const c_void,
     /// `BSParticleShader::vfunc_3` at 0x15798b0 (rtti, high); signature (low): `undefined vfunc_3(BSParticleShader * this, undefined4 param_1)`
     pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
     pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (low): `undefined RestoreMaterial(void)`
     pub slot_5: *const c_void,
     /// `BSParticleShader::vfunc_6` at 0x1579b10 (rtti, high); signature (low): `undefined vfunc_6(BSParticleShader * this, longlong param_1)`
     pub slot_6: *const c_void,
@@ -12034,9 +12006,9 @@ pub struct BSParticleShaderGeometry_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (untiered): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (low): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
     pub slot_37: *const c_void,
-    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (untiered): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (low): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
     pub slot_38: *const c_void,
     /// `BSGeometry::vfunc_39` at 0x26d430 (rtti, medium); signature (low): `undefined vfunc_39(BSGeometry * this, longlong * param_1)`
     pub slot_39: *const c_void,
@@ -12044,7 +12016,7 @@ pub struct BSParticleShaderGeometry_vtable {
     pub slot_40: *const c_void,
     /// `NiAVObject::vfunc_41` at 0xee0a30 (rtti, medium); signature (low): `undefined vfunc_41(void)`
     pub slot_41: *const c_void,
-    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (untiered): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
+    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (low): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
     pub slot_42: *const c_void,
     /// `BSGeometry::vfunc_43` at 0xefc680 (rtti, medium); signature (low): `undefined vfunc_43(BSGeometry * this, char * param_1, byte param_2, byte * param_3)`
     pub slot_43: *const c_void,
@@ -12054,21 +12026,21 @@ pub struct BSParticleShaderGeometry_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (high): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
-    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (low): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
-    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (untiered): `undefined UpdateTransformsAndBound(NiAVObject * this)`
+    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (high): `undefined UpdateTransformsAndBound(NiAVObject * this)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `BSGeometry::OnVisible` at 0xefc980 (semantic, high); signature (untiered): `undefined OnVisible(BSGeometry * this, longlong * param_1, undefined8 param_2)`
+    /// `BSGeometry::OnVisible` at 0xefc980 (semantic, high); signature (low): `undefined OnVisible(BSGeometry * this, longlong * param_1, undefined8 param_2)`
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (low): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSGeometry::vfunc_55` at 0x26d480 (rtti, medium); signature (low): `undefined8 vfunc_55(void)`
     pub slot_55: *const c_void,
@@ -12170,15 +12142,15 @@ pub struct BSParticleShaderProperty_vtable {
     pub slot_21: *const c_void,
     /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
     pub slot_22: *const c_void,
-    /// `BSShaderProperty::CreateClone` at 0x14e72c0 (semantic, medium); signature (untiered): `undefined8 CreateClone(void)`
+    /// `BSShaderProperty::CreateClone` at 0x14e72c0 (semantic, medium); signature (low): `undefined8 CreateClone(void)`
     pub slot_23: *const c_void,
-    /// `BSShaderProperty::LoadBinary` at 0x14e7390 (semantic, high); signature (untiered): `undefined LoadBinary(BSShaderProperty * this, longlong param_1)`
+    /// `BSShaderProperty::LoadBinary` at 0x14e7390 (semantic, high); signature (low): `undefined LoadBinary(BSShaderProperty * this, longlong param_1)`
     pub slot_24: *const c_void,
     /// `BSShaderProperty::LinkObject` at 0x14e7430 (semantic, medium); signature (untiered): `undefined LinkObject(BSShaderProperty * this, longlong param_1)`
     pub slot_25: *const c_void,
     /// `BSShaderProperty::RegisterStreamables` at 0x14e7440 (semantic, medium); signature (untiered): `undefined8 RegisterStreamables(BSShaderProperty * this, longlong * param_1)`
     pub slot_26: *const c_void,
-    /// `BSShaderProperty::SaveBinary` at 0x14e7450 (semantic, high); signature (untiered): `undefined SaveBinary(BSShaderProperty * this, longlong * param_1)`
+    /// `BSShaderProperty::SaveBinary` at 0x14e7450 (semantic, high); signature (low): `undefined SaveBinary(BSShaderProperty * this, longlong * param_1)`
     pub slot_27: *const c_void,
     /// `BSShaderProperty::vfunc_28` at 0x14e74d0 (rtti, medium); signature (low): `undefined1 vfunc_28(void)`
     pub slot_28: *const c_void,
@@ -12198,7 +12170,7 @@ pub struct BSParticleShaderProperty_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `BSShaderProperty::GetPropertyType` at 0xf0f110 (semantic, medium); signature (untiered): `undefined8 GetPropertyType(void)`
+    /// `BSShaderProperty::GetPropertyType` at 0xf0f110 (semantic, medium); signature (low): `undefined8 GetPropertyType(void)`
     pub slot_37: *const c_void,
     /// `BSShaderProperty::Update` at 0xef26b0 (semantic, medium); signature (untiered): `undefined Update(BSShaderProperty * this, undefined8 param_1)`
     pub slot_38: *const c_void,
@@ -12206,13 +12178,13 @@ pub struct BSParticleShaderProperty_vtable {
     pub slot_39: *const c_void,
     /// `NiShadeProperty::vfunc_40` at 0xf0ef00 (rtti, medium); signature (low): `undefined1 vfunc_40(void)`
     pub slot_40: *const c_void,
-    /// `BSShaderProperty::SetShadowLightBit` at 0x14e77b0 (semantic, medium); signature (untiered): `undefined SetShadowLightBit(BSShaderProperty * this, int param_1)`
+    /// `BSShaderProperty::SetShadowLightBit` at 0x14e77b0 (semantic, medium); signature (low): `undefined SetShadowLightBit(BSShaderProperty * this, int param_1)`
     pub slot_41: *const c_void,
     /// `BSParticleShaderProperty::vfunc_42` at 0x1532cb0 (rtti, high); signature (low): `undefined8 * vfunc_42(BSParticleShaderProperty * this, longlong param_1, int param_2)`
     pub slot_42: *const c_void,
-    /// `BSShaderProperty::GetDepthRenderPasses` at 0x14e7af0 (semantic, high); signature (untiered): `undefined8 GetDepthRenderPasses(void)`
+    /// `BSShaderProperty::GetDepthRenderPasses` at 0x14e7af0 (semantic, high); signature (low): `undefined8 GetDepthRenderPasses(void)`
     pub slot_43: *const c_void,
-    /// `BSShaderProperty::GetLocalMapRenderPasses` at 0x14e7b00 (semantic, low); signature (untiered): `undefined8 GetLocalMapRenderPasses(void)`
+    /// `BSShaderProperty::GetLocalMapRenderPasses` at 0x14e7b00 (semantic, low); signature (low): `undefined8 GetLocalMapRenderPasses(void)`
     pub slot_44: *const c_void,
     /// `BSShaderProperty::vfunc_45` at 0x14e7b10 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -12220,15 +12192,15 @@ pub struct BSParticleShaderProperty_vtable {
     pub slot_46: *const c_void,
     /// `BSShaderProperty::vfunc_47` at 0x14e8640 (rtti, medium); signature (low): `undefined8 vfunc_47(void)`
     pub slot_47: *const c_void,
-    /// `BSShaderProperty::IsEquivalent` at 0x14e7ec0 (semantic, medium); signature (untiered): `ulonglong IsEquivalent(BSShaderProperty * this, longlong param_1)`
+    /// `BSShaderProperty::IsEquivalent` at 0x14e7ec0 (semantic, medium); signature (low): `ulonglong IsEquivalent(BSShaderProperty * this, longlong param_1)`
     pub slot_48: *const c_void,
-    /// `BSShaderProperty::SetMaterialAlpha` at 0x14e8760 (semantic, high); signature (untiered): `undefined SetMaterialAlpha(void)`
+    /// `BSShaderProperty::SetMaterialAlpha` at 0x14e8760 (semantic, high); signature (low): `undefined SetMaterialAlpha(void)`
     pub slot_49: *const c_void,
-    /// `BSShaderProperty::GetMaterialAlpha` at 0x14e8680 (semantic, high); signature (untiered): `undefined4 GetMaterialAlpha(void)`
+    /// `BSShaderProperty::GetMaterialAlpha` at 0x14e8680 (semantic, high); signature (low): `undefined4 GetMaterialAlpha(void)`
     pub slot_50: *const c_void,
     /// `BSShaderProperty::vfunc_51` at 0x14e85f0 (rtti, medium); signature (low): `undefined8 vfunc_51(void)`
     pub slot_51: *const c_void,
-    /// `BSShaderProperty::ClearRenderPasses` at 0x14e7fb0 (semantic, high); signature (untiered): `undefined ClearRenderPasses(BSShaderProperty * this)`
+    /// `BSShaderProperty::ClearRenderPasses` at 0x14e7fb0 (semantic, high); signature (high): `undefined ClearRenderPasses(BSShaderProperty * this)`
     pub slot_52: *const c_void,
     /// `BSParticleShaderProperty::vfunc_53` at 0x1532c90 (rtti, high); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
@@ -12238,17 +12210,17 @@ pub struct BSParticleShaderProperty_vtable {
     pub slot_55: *const c_void,
     /// `BSShaderProperty::vfunc_56` at 0x14e8650 (rtti, medium); signature (low): `undefined8 vfunc_56(void)`
     pub slot_56: *const c_void,
-    /// `BSShaderProperty::IsNotRefractive` at 0x14e85c0 (semantic, low); signature (untiered): `undefined1 IsNotRefractive(void)`
+    /// `BSShaderProperty::IsNotRefractive` at 0x14e85c0 (semantic, low); signature (low): `undefined1 IsNotRefractive(void)`
     pub slot_57: *const c_void,
     /// `BSShaderProperty::vfunc_58` at 0x14e8670 (rtti, medium); signature (low): `undefined vfunc_58(void)`
     pub slot_58: *const c_void,
-    /// `BSShaderProperty::PrecacheTechniques` at 0x14e8380 (semantic, low); signature (untiered): `undefined PrecacheTechniques(void)`
+    /// `BSShaderProperty::PrecacheTechniques` at 0x14e8380 (semantic, low); signature (low): `undefined PrecacheTechniques(void)`
     pub slot_59: *const c_void,
     /// `BSShaderProperty::vfunc_60` at 0x14e8660 (rtti, medium); signature (low): `undefined1 vfunc_60(void)`
     pub slot_60: *const c_void,
-    /// `BSShaderProperty::GetDepthTechnique` at 0x14e85e0 (semantic, high); signature (untiered): `undefined8 GetDepthTechnique(void)`
+    /// `BSShaderProperty::GetDepthTechnique` at 0x14e85e0 (semantic, high); signature (low): `undefined8 GetDepthTechnique(void)`
     pub slot_61: *const c_void,
-    /// `BSShaderProperty::GetMaterialType` at 0x14e8610 (semantic, medium); signature (untiered): `undefined8 GetMaterialType(void)`
+    /// `BSShaderProperty::GetMaterialType` at 0x14e8610 (semantic, medium); signature (low): `undefined8 GetMaterialType(void)`
     pub slot_62: *const c_void,
 }
 impl BSParticleShaderProperty_vtable {
@@ -12318,7 +12290,7 @@ pub struct BSParticleSystemManager_vtable {
     pub slot_1: *const c_void,
     /// `BSParticleSystemManager::vfunc_2` at 0xff0b70 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
     pub slot_2: *const c_void,
-    /// `NiNode::AsNode` at 0x1b4d10 (semantic, high); signature (untiered): `NiNode * AsNode(NiNode * this)`
+    /// `NiNode::AsNode` at 0x1b4d10 (semantic, high); signature (high): `NiNode * AsNode(NiNode * this)`
     pub slot_3: *const c_void,
     /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
     pub slot_4: *const c_void,
@@ -12372,7 +12344,7 @@ pub struct BSParticleSystemManager_vtable {
     pub slot_28: *const c_void,
     /// `NiNode::vfunc_29` at 0xee2f60 (rtti, medium); signature (low): `undefined vfunc_29(NiNode * this, longlong param_1)`
     pub slot_29: *const c_void,
-    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (untiered): `undefined PostLinkObject(NiObjectNET * this)`
+    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (high): `undefined PostLinkObject(NiObjectNET * this)`
     pub slot_30: *const c_void,
     /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
     pub slot_31: *const c_void,
@@ -12408,19 +12380,19 @@ pub struct BSParticleSystemManager_vtable {
     pub slot_46: *const c_void,
     /// `NiNode::vfunc_47` at 0xee2920 (rtti, medium); signature (high): `undefined vfunc_47(NiNode * this)`
     pub slot_47: *const c_void,
-    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
+    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (low): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
     /// `NiNode::vfunc_49` at 0xee2b70 (rtti, medium); signature (low): `undefined vfunc_49(NiNode * this, undefined8 param_1)`
     pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (low): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
     pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (untiered): `undefined OnVisible(NiNode * this, longlong * param_1)`
+    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (low): `undefined OnVisible(NiNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
     /// `BSParticleSystemManager::vfunc_53` at 0xfef670 (rtti, high); signature (low): `undefined vfunc_53(BSParticleSystemManager * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
-    /// `NiNode::InsertChildAt` at 0xee1c70 (semantic, high); signature (untiered): `undefined InsertChildAt(NiNode * this, undefined4 param_1, longlong * param_2, undefined8 param_3)`
+    /// `NiNode::InsertChildAt` at 0xee1c70 (semantic, high); signature (low): `undefined InsertChildAt(NiNode * this, undefined4 param_1, longlong * param_2, undefined8 param_3)`
     pub slot_54: *const c_void,
     /// `BSParticleSystemManager::vfunc_55` at 0xfef790 (rtti, high); signature (low): `undefined vfunc_55(BSParticleSystemManager * this, longlong * param_1, longlong * param_2)`
     pub slot_55: *const c_void,
@@ -12434,7 +12406,7 @@ pub struct BSParticleSystemManager_vtable {
     pub slot_59: *const c_void,
     /// `BSParticleSystemManager::vfunc_60` at 0xfef950 (rtti, high); signature (high): `undefined vfunc_60(BSParticleSystemManager * this)`
     pub slot_60: *const c_void,
-    /// `NiNode::UpdateUpwardPass` at 0xee28e0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiNode * this)`
+    /// `NiNode::UpdateUpwardPass` at 0xee28e0 (semantic, high); signature (high): `undefined UpdateUpwardPass(NiNode * this)`
     pub slot_61: *const c_void,
 }
 impl BSParticleSystemManager_vtable {
@@ -12506,7 +12478,7 @@ pub struct BSPassByTargetTriggerModifierInterface_vtable {
     pub slot_0: *const c_void,
     /// `BSPassByTargetTriggerModifierInterface::vfunc_1` at 0x7dbaa0 (rtti, high); signature (low): `bool vfunc_1(BSPassByTargetTriggerModifierInterface * this, longlong * param_1)`
     pub slot_1: *const c_void,
-    /// `BSPassByTargetTriggerModifierInterface::GetTargetPosition` at 0x7dbb40 (semantic, high); signature (untiered): `undefined GetTargetPosition(BSPassByTargetTriggerModifierInterface * this, float * param_1)`
+    /// `BSPassByTargetTriggerModifierInterface::GetTargetPosition` at 0x7dbb40 (semantic, high); signature (low): `undefined GetTargetPosition(BSPassByTargetTriggerModifierInterface * this, float * param_1)`
     pub slot_2: *const c_void,
     /// `BSPassByTargetTriggerModifierInterface::vfunc_3` at 0x7dbba0 (rtti, high); signature (low): `undefined vfunc_3(BSPassByTargetTriggerModifierInterface * this, longlong * param_1, undefined4 * param_2)`
     pub slot_3: *const c_void,

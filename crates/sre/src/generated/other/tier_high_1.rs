@@ -801,6 +801,16 @@ impl crate::CompactingStore__Store {
     pub unsafe fn ctor(&self) -> u64 { unsafe { function!(68295, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
+impl crate::Compass {
+    /// `Compass::Update`, vtable slot 1, through the object's vtable (decompiler signature, tier high; ledger semantic evidence, name high; id 51668, rva 0x9385b0).
+    /// `undefined Update(Compass * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn update(&self) -> u64 { unsafe { virtual_function!(self, 1, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+}
+
 impl crate::ConeProjectile {
     /// `ConeProjectile::BSHandleRefObject_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 43808, rva 0x7e3350).
     /// `undefined BSHandleRefObject_vdtor(ConeProjectile * this)`
@@ -2580,6 +2590,13 @@ impl crate::ImageSpaceEffectRefraction {
 }
 
 impl crate::ImageSpaceEffectVolumetricLighting {
+    /// `ImageSpaceEffectVolumetricLighting::Render`, vtable slot 7, through the object's vtable (decompiler signature, tier high; ledger semantic evidence, name medium; id 107379, rva 0x1550010).
+    /// `undefined8 Render(ImageSpaceEffectVolumetricLighting * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn render(&self) -> u64 { unsafe { virtual_function!(self, 7, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `ImageSpaceEffectVolumetricLighting::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 107375, rva 0x154fa30).
     /// `ImageSpaceEffectVolumetricLighting * ctor(ImageSpaceEffectVolumetricLighting * this)`
     ///
@@ -4148,6 +4165,13 @@ impl crate::Projectile {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(44252, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
+    /// `Projectile::HasKeyword` (decompiler signature, tier high; ledger slot_propagation evidence, name high; id 44170, rva 0x7fe2b0).
+    /// `undefined8 HasKeyword(Projectile * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn has_keyword(&self) -> u64 { unsafe { function!(44170, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `Projectile::IAnimationGraphManagerHolder_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 44253, rva 0x804c8c).
     /// `undefined IAnimationGraphManagerHolder_vdtor(Projectile * this)`
     ///
@@ -15275,24 +15299,3 @@ pub unsafe fn get_channel_byte_ptr_2(param_1: i64, param_2: i64) -> i64 { unsafe
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_check_for_missing_content_on_startup() -> u8 { unsafe { function!(442573, () -> u8)() } }
-/// `GetClientOrServerString` (decompiler signature, tier high; ledger decompiler evidence, name high; id 449894, rva 0x13d2940).
-/// `char * GetClientOrServerString(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_client_or_server_string(param_1: i64) -> *mut c_char { unsafe { function!(449894, (i64) -> *mut c_char)(param_1) } }
-/// `GetColorField20AsFloat3` (decompiler signature, tier high; ledger decompiler evidence, name high; id 18288, rva 0x295610).
-/// `undefined GetColorField20AsFloat3(longlong param_1, float * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_color_field20_as_float3(param_1: i64, param_2: *mut f32) -> u64 { unsafe { function!(18288, (i64, *mut f32) -> u64)(param_1, param_2) } }
-/// `GetColorField24AsFloat3` (decompiler signature, tier high; ledger decompiler evidence, name high; id 18290, rva 0x295690).
-/// `undefined GetColorField24AsFloat3(longlong param_1, float * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_color_field24_as_float3(param_1: i64, param_2: *mut f32) -> u64 { unsafe { function!(18290, (i64, *mut f32) -> u64)(param_1, param_2) } }

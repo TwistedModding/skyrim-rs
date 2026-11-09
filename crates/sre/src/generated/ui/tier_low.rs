@@ -47,6 +47,23 @@ impl crate::BSUIScaleformData {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(82071, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
+impl crate::Console {
+    /// `Console::Accept` (decompiler signature, tier low; ledger semantic evidence, name high; id 51083, rva 0x909ad0).
+    /// `undefined Accept(Console * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn accept(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(51083, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `Console::ProcessMessage` (decompiler signature, tier low; ledger semantic evidence, name high; id 442669, rva 0x9092d0).
+    /// `byte ProcessMessage(Console * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn process_message(&self, param_1: i64) -> u8 { unsafe { function!(442669, (*const Self, i64) -> u8)(core::ptr::from_ref(self), param_1) } }
+}
+
 impl crate::ConsoleData {
     /// `ConsoleData::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 52846, rva 0x98dc90).
     /// `undefined dtor(ConsoleData * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -103,6 +120,13 @@ impl crate::CursorMenu {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn menu_event_handler_vfunc_6() -> u8 { unsafe { function!(51498, () -> u8)() } }
+    /// `CursorMenu::ProcessMessage` (decompiler signature, tier low; ledger semantic evidence, name high; id 51496, rva 0x92a070).
+    /// `undefined8 ProcessMessage(CursorMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn process_message(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(51496, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `CursorMenu::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 51502, rva 0x92a280).
     /// `CursorMenu * vdtor(CursorMenu * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -129,6 +153,142 @@ impl crate::DialogueMenu {
     pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(51519, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
+impl crate::GFxMovieView {
+    /// `GFxMovieView::Advance` (decompiler signature, tier low; ledger semantic evidence, name high; id 83766, rva 0xd43d60).
+    /// `undefined Advance(undefined8 * param_1, float param_2, int param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn advance(param_1: *mut u64, param_2: f32, param_3: i32) -> u64 { unsafe { function!(83766, (*mut u64, f32, i32) -> u64)(param_1, param_2, param_3) } }
+    /// `GFxMovieView::CreateArray` (decompiler signature, tier low; ledger semantic evidence, name medium; id 82223, rva 0xcf42d0).
+    /// `undefined CreateArray(longlong param_1, undefined8 * param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn create_array(param_1: i64, param_2: *mut u64) -> u64 { unsafe { function!(82223, (i64, *mut u64) -> u64)(param_1, param_2) } }
+    /// `GFxMovieView::CreateFunction` (decompiler signature, tier low; ledger semantic evidence, name high; id 82225, rva 0xcf45a0).
+    /// `undefined CreateFunction(longlong param_1, undefined8 * param_2, longlong param_3, longlong param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn create_function(param_1: i64, param_2: *mut u64, param_3: i64, param_4: i64) -> u64 { unsafe { function!(82225, (i64, *mut u64, i64, i64) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `GFxMovieView::CreateObject` (decompiler signature, tier low; ledger semantic evidence, name high; id 82227, rva 0xcf4800).
+    /// `undefined CreateObject(longlong param_1, longlong * param_2, char * param_3, longlong param_4, uint param_5)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn create_object(param_1: i64, param_2: *mut i64, param_3: *mut c_char, param_4: i64, param_5: u32) -> u64 { unsafe { function!(82227, (i64, *mut i64, *mut c_char, i64, u32) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
+    /// `GFxMovieView::CreateString` (decompiler signature, tier low; ledger semantic evidence, name high; id 82228, rva 0xcf4c80).
+    /// `undefined CreateString(longlong param_1, undefined8 * param_2, longlong param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn create_string(param_1: i64, param_2: *mut u64, param_3: i64) -> u64 { unsafe { function!(82228, (i64, *mut u64, i64) -> u64)(param_1, param_2, param_3) } }
+    /// `GFxMovieView::CreateStringW` (decompiler signature, tier low; ledger semantic evidence, name high; id 82229, rva 0xcf4d20).
+    /// `undefined CreateStringW(longlong param_1, undefined8 * param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn create_string_w(param_1: i64, param_2: *mut u64, param_3: u64) -> u64 { unsafe { function!(82229, (i64, *mut u64, u64) -> u64)(param_1, param_2, param_3) } }
+    /// `GFxMovieView::Display` (decompiler signature, tier low; ledger semantic evidence, name high; id 83789, rva 0xd45c50).
+    /// `undefined Display(longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn display(param_1: i64) -> u64 { unsafe { function!(83789, (i64) -> u64)(param_1) } }
+    /// `GFxMovieView::GetVariable` (decompiler signature, tier low; ledger semantic evidence, name high; id 83864, rva 0xd49060).
+    /// `ulonglong GetVariable(longlong param_1, undefined8 * param_2, longlong param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_variable(param_1: i64, param_2: *mut u64, param_3: i64) -> u64 { unsafe { function!(83864, (i64, *mut u64, i64) -> u64)(param_1, param_2, param_3) } }
+    /// `GFxMovieView::GetVariableArraySize` (decompiler signature, tier low; ledger semantic evidence, name high; id 83866, rva 0xd49780).
+    /// `undefined4 GetVariableArraySize(longlong param_1, longlong param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_variable_array_size(param_1: i64, param_2: i64) -> u32 { unsafe { function!(83866, (i64, i64) -> u32)(param_1, param_2) } }
+    /// `GFxMovieView::HandleEvent` (decompiler signature, tier low; ledger semantic evidence, name high; id 83874, rva 0xd499d0).
+    /// `ulonglong HandleEvent(longlong * param_1, int * param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn handle_event(param_1: *mut i64, param_2: *mut i32) -> u64 { unsafe { function!(83874, (*mut i64, *mut i32) -> u64)(param_1, param_2) } }
+    /// `GFxMovieView::Invoke` (decompiler signature, tier low; ledger semantic evidence, name high; id 83885, rva 0xd4b150).
+    /// `undefined Invoke(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined4 param_5)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn invoke(param_1: i64, param_2: u64, param_3: u64, param_4: u64, param_5: u32) -> u64 { unsafe { function!(83885, (i64, u64, u64, u64, u32) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
+    /// `GFxMovieView::InvokeFmt` (decompiler signature, tier low; ledger semantic evidence, name high; id 83884, rva 0xd4b070).
+    /// `ulonglong InvokeFmt(longlong param_1, longlong param_2, undefined8 * param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn invoke_fmt(param_1: i64, param_2: i64, param_3: *mut u64, param_4: u64) -> u64 { unsafe { function!(83884, (i64, i64, *mut u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `GFxMovieView::InvokeFmtV` (decompiler signature, tier low; ledger semantic evidence, name high; id 83888, rva 0xd4b430).
+    /// `ulonglong InvokeFmtV(longlong param_1, longlong param_2, undefined8 * param_3, undefined8 param_4, undefined8 param_5)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn invoke_fmt_v(param_1: i64, param_2: i64, param_3: *mut u64, param_4: u64, param_5: u64) -> u64 { unsafe { function!(83888, (i64, i64, *mut u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
+    /// `GFxMovieView::IsAvailable` (decompiler signature, tier low; ledger semantic evidence, name high; id 83889, rva 0xd4b510).
+    /// `ulonglong IsAvailable(longlong param_1, longlong param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn is_available(param_1: i64, param_2: i64) -> u64 { unsafe { function!(83889, (i64, i64) -> u64)(param_1, param_2) } }
+    /// `GFxMovieView::Release` (decompiler signature, tier low; ledger semantic evidence, name high; id 83930, rva 0xd4fc20).
+    /// `undefined Release(undefined8 * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn release(param_1: *mut u64) -> u64 { unsafe { function!(83930, (*mut u64) -> u64)(param_1) } }
+    /// `GFxMovieView::SetPause` (decompiler signature, tier low; ledger semantic evidence, name high; id 83973, rva 0xd52400).
+    /// `ulonglong SetPause(longlong param_1, char param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn set_pause(param_1: i64, param_2: c_char) -> u64 { unsafe { function!(83973, (i64, c_char) -> u64)(param_1, param_2) } }
+    /// `GFxMovieView::SetVariable` (decompiler signature, tier low; ledger semantic evidence, name high; id 83982, rva 0xd529f0).
+    /// `ulonglong SetVariable(longlong param_1, longlong param_2, longlong param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn set_variable(param_1: i64, param_2: i64, param_3: i64, param_4: u64) -> u64 { unsafe { function!(83982, (i64, i64, i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `GFxMovieView::SetVariableArraySize` (decompiler signature, tier low; ledger semantic evidence, name medium; id 83984, rva 0xd52f60).
+    /// `ulonglong SetVariableArraySize(longlong param_1, longlong param_2, int param_3, int param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn set_variable_array_size(param_1: i64, param_2: i64, param_3: i32, param_4: i32) -> u64 { unsafe { function!(83984, (i64, i64, i32, i32) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `GFxMovieView::SetViewport` (decompiler signature, tier low; ledger semantic evidence, name high; id 83989, rva 0xd53280).
+    /// `undefined SetViewport(longlong param_1, undefined8 * param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn set_viewport(param_1: i64, param_2: *mut u64) -> u64 { unsafe { function!(83989, (i64, *mut u64) -> u64)(param_1, param_2) } }
+}
+
 impl crate::HUDData {
     /// `HUDData::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 52820, rva 0x98d420).
     /// `HUDData * vdtor(HUDData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -140,6 +300,20 @@ impl crate::HUDData {
 }
 
 impl crate::HUDMenu {
+    /// `HUDMenu::Accept` (decompiler signature, tier low; ledger semantic evidence, name medium; id 51615, rva 0x934cc0).
+    /// `undefined Accept(HUDMenu * this, longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn accept(&self, param_1: *mut i64) -> u64 { unsafe { function!(51615, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    /// `HUDMenu::AdvanceMovie` (decompiler signature, tier low; ledger semantic evidence, name high; id 51613, rva 0x934a50).
+    /// `undefined AdvanceMovie(HUDMenu * this, float param_1, longlong * param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn advance_movie(&self, param_1: f32, param_2: *mut i64, param_3: u64) -> u64 { unsafe { function!(51613, (*const Self, f32, *mut i64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `HUDMenu::BSTEventSink_BSRemoteGamepadEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 51644, rva 0x936470).
     /// `undefined8 BSTEventSink_BSRemoteGamepadEvent_vfunc_1(void)`
     ///
@@ -154,6 +328,37 @@ impl crate::HUDMenu {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn bst_event_sink_user_event_enabled_event_vfunc_1(&self, param_1: *mut u8, param_2: u64, param_3: u64) -> u64 { unsafe { function!(51643, (*const Self, *mut u8, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x30), param_1, param_2, param_3) } }
+    /// `HUDMenu::ProcessMessage` (decompiler signature, tier low; ledger semantic evidence, name high; id 51612, rva 0x933180).
+    /// `undefined8 ProcessMessage(HUDMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn process_message(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(51612, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
+impl crate::HUDNotifications {
+    /// `HUDNotifications::Cleanup` (decompiler signature, tier low; ledger semantic evidence, name high; id 51651, rva 0x936b10).
+    /// `undefined Cleanup(HUDNotifications * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn cleanup(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(51651, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `HUDNotifications::ProcessMessage` (decompiler signature, tier low; ledger semantic evidence, name high; id 51653, rva 0x937570).
+    /// `undefined1 * ProcessMessage(HUDNotifications * this, void * * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn process_message(&self, param_1: *mut *mut c_void) -> *mut u8 { unsafe { function!(51653, (*const Self, *mut *mut c_void) -> *mut u8)(core::ptr::from_ref(self), param_1) } }
+    /// `HUDNotifications::RegisterHUDComponent` (decompiler signature, tier low; ledger semantic evidence, name high; id 51650, rva 0x936a80).
+    /// `undefined RegisterHUDComponent(HUDNotifications * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn register_hud_component(&self, param_1: i64) -> u64 { unsafe { function!(51650, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::IUIMessageData {
@@ -260,6 +465,13 @@ impl crate::MainMenu {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: *mut c_char, param_2: *mut i64, param_3: u64) -> *mut Self { unsafe { function!(52179, (*const Self, *mut c_char, *mut i64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `MainMenu::vfunc_5_sub3` (decompiler signature, tier low; ledger runtime evidence, name medium; id 416420, rva 0x95e9b0).
+    /// `undefined vfunc_5_sub3(void)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_5_sub3() -> u64 { unsafe { function!(416420, () -> u64)() } }
 }
 
 impl crate::MenuControls {
@@ -280,6 +492,20 @@ impl crate::MenuControls {
 }
 
 impl crate::MenuOpenHandler {
+    /// `MenuOpenHandler::ProcessButtonEvent` (decompiler signature, tier low; ledger semantic evidence, name high; id 52249, rva 0x961580).
+    /// `undefined1 ProcessButtonEvent(MenuOpenHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn process_button_event(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u8 { unsafe { function!(52249, (*const Self, *mut i64, u64, u64) -> u8)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `MenuOpenHandler::ProcessKinectEvent` (decompiler signature, tier low; ledger semantic evidence, name medium; id 52250, rva 0x961a90).
+    /// `byte ProcessKinectEvent(MenuOpenHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn process_kinect_event(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u8 { unsafe { function!(52250, (*const Self, *mut i64, u64, u64) -> u8)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `MenuOpenHandler::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 52238, rva 0x960c20).
     /// `MenuOpenHandler * vdtor(MenuOpenHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -297,6 +523,23 @@ impl crate::MessageBoxData {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(33612, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
+impl crate::MessageBoxMenu {
+    /// `MessageBoxMenu::Accept` (decompiler signature, tier low; ledger semantic evidence, name high; id 52278, rva 0x962e80).
+    /// `undefined Accept(MessageBoxMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn accept(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(52278, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `MessageBoxMenu::ProcessMessage` (decompiler signature, tier low; ledger semantic evidence, name high; id 52280, rva 0x963050).
+    /// `undefined8 ProcessMessage(MessageBoxMenu * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn process_message(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(52280, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback {
@@ -320,6 +563,20 @@ impl crate::StandardItemData {
 }
 
 impl crate::TweenMenu {
+    /// `TweenMenu::PostDisplay` (decompiler signature, tier low; ledger runtime evidence, name high; id 52706, rva 0x988250).
+    /// `undefined PostDisplay(TweenMenu * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn post_display(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(52706, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `TweenMenu::ProcessMessage` (decompiler signature, tier low; ledger semantic evidence, name high; id 52705, rva 0x987c00).
+    /// `ulonglong ProcessMessage(TweenMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn process_message(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(52705, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `TweenMenu::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 52704, rva 0x987ba0).
     /// `undefined ctor(TweenMenu * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -334,6 +591,16 @@ impl crate::TweenMenu {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52721, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
+impl crate::UIMessageQueue {
+    /// `UIMessageQueue::dtor` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 82166, rva 0x116df10).
+    /// `undefined dtor(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn dtor(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(82166, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 }
 
 impl crate::_anon_7C6875DF__OldMessageBoxCallback {

@@ -32,6 +32,13 @@ impl crate::BGSMusicTrackFormWrapper {
 }
 
 impl crate::BGSMusicType {
+    /// `BGSMusicType::SetFormEditorID` (decompiler signature, tier low; ledger semantic evidence, name high; id 21161, rva 0x328570).
+    /// `undefined8 SetFormEditorID(BGSMusicType * this, char * param_1, ulonglong param_2, ulonglong param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn set_form_editor_id(&self, param_1: *mut c_char, param_2: u64, param_3: u64) -> u64 { unsafe { function!(21161, (*const Self, *mut c_char, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BGSMusicType::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 21155, rva 0x327f10).
     /// `BGSMusicType * ctor(BGSMusicType * this, undefined8 param_1, uint * param_2, longlong * param_3)`
     ///
@@ -77,6 +84,20 @@ impl crate::BGSSoundCategory {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(21235, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `BSISoundCategory::SetFrequency` (decompiler signature, tier low; ledger semantic evidence, name high; id 21221, rva 0x329970).
+    /// `undefined SetFrequency(BGSSoundCategory * this, undefined4 param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn set_frequency(&self, param_2: u32) -> u64 { unsafe { function!(21221, (*const Self, u32) -> u64)(core::ptr::from_ref(self), param_2) } }
+    /// `BSISoundCategory::SetVolume` (decompiler signature, tier low; ledger semantic evidence, name high; id 21219, rva 0x3298d0).
+    /// `undefined SetVolume(BGSSoundCategory * this, undefined4 param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn set_volume(&self, param_2: u32) -> u64 { unsafe { function!(21219, (*const Self, u32) -> u64)(core::ptr::from_ref(self), param_2) } }
 }
 
 impl crate::BGSSoundDescriptor {
@@ -90,6 +111,13 @@ impl crate::BGSSoundDescriptor {
 }
 
 impl crate::BGSSoundDescriptorForm {
+    /// `BGSSoundDescriptorForm::SetFormEditorID` (decompiler signature, tier low; ledger semantic evidence, name high; id 21255, rva 0x32a7c0).
+    /// `undefined8 SetFormEditorID(BGSSoundDescriptorForm * this, undefined8 param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn set_form_editor_id(&self, param_1: u64) -> u64 { unsafe { function!(21255, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BGSSoundDescriptorForm::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 21248, rva 0x32a180).
     /// `BGSSoundDescriptorForm * ctor(BGSSoundDescriptorForm * this, undefined8 param_1, uint * param_2, longlong * param_3)`
     ///
@@ -148,6 +176,34 @@ impl crate::BGSSoundOutput__DynamicAttenuationCharacteristics {
 }
 
 impl crate::BGSStandardSoundDef {
+    /// `BGSStandardSoundDef::FillPlayData` (decompiler signature, tier low; ledger semantic evidence, name high; id 21324, rva 0x32c330).
+    /// `ulonglong FillPlayData(BGSStandardSoundDef * this, undefined4 * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn fill_play_data(&self, param_1: *mut u32) -> u64 { unsafe { function!(21324, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
+    /// `BGSStandardSoundDef::GetTypeCRC` (decompiler signature, tier low; ledger semantic evidence, name high; id 21322, rva 0x32c290).
+    /// `int GetTypeCRC(void)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_type_crc() -> i32 { unsafe { function!(21322, () -> i32)() } }
+    /// `BGSStandardSoundDef::InitItem` (decompiler signature, tier low; ledger semantic evidence, name high; id 21313, rva 0x32bdf0).
+    /// `undefined InitItem(BGSStandardSoundDef * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn init_item(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(21313, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `BGSStandardSoundDef::LoadChunk` (decompiler signature, tier low; ledger semantic evidence, name high; id 21314, rva 0x32be90).
+    /// `undefined LoadChunk(BGSStandardSoundDef * this, longlong param_1, ulonglong param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn load_chunk(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(21314, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BGSStandardSoundDef::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 21312, rva 0x32bd50).
     /// `undefined dtor(BGSStandardSoundDef * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -192,6 +248,13 @@ impl crate::BSIMusicTrack {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `BSIMusicTrack::GetTypeCRC` (decompiler signature, tier low; ledger semantic evidence, name high; id 21101, rva 0x326c50).
+    /// `int GetTypeCRC(void)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_type_crc() -> i32 { unsafe { function!(21101, () -> i32)() } }
 }
 
 impl crate::BSIMusicType {
@@ -232,6 +295,13 @@ impl crate::BSISoundOutputModel {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `BSISoundOutputModel::Unk06` (decompiler signature, tier low; ledger semantic evidence, name high; id 21289, rva 0x32b610).
+    /// `undefined8 Unk06(void)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn unk06_2() -> u64 { unsafe { function!(21289, () -> u64)() } }
 }
 
 impl crate::BSMusicManager {

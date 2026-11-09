@@ -7,30 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterRestore>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x83b810 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterRestore>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterRestore>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterRestore__ccf1fef248f8: u64 = 45527;
-/// `AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterScript>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8320c0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterScript>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterScript>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterScript_B_a2749685d1b3: u64 = 45268;
-/// `AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterStagger>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x83dd00 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterStagger>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterStagger>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterStagger__b463b562f195: u64 = 45683;
-/// `AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterSummon>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x83c230 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterSummon>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterSummon>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterSummon_B_e94b295a8495: u64 = 45575;
-/// `AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterTargetEffect>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82fef0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterTargetEffect>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterTargetEffect>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterTargetEf_078fed9d4dba: u64 = 46495;
-/// `AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterWard>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8389d0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterWard>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterWard>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterWard_BST_ea1c3c507d96: u64 = 45470;
-/// `AutoRegisterCreator<CombatInventoryItemMelee,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82f460 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemMelee,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemMelee,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatInventoryItemMelee_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45111;
-/// `AutoRegisterCreator<CombatInventoryItemOneHandedBlock,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82f880 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemOneHandedBlock,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemOneHandedBlock,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatInventoryItemOneHandedBlock_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45129;
-/// `AutoRegisterCreator<CombatInventoryItemRanged,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82f5c0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemRanged,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemRanged,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatInventoryItemRanged_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45117;
-/// `AutoRegisterCreator<CombatInventoryItemShield,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82f720 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemShield,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemShield,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatInventoryItemShield_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45123;
-/// `AutoRegisterCreator<CombatInventoryItemTorch,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82f9e0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemTorch,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemTorch,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatInventoryItemTorch_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45135;
-/// `AutoRegisterCreator<CombatMagicCasterArmor,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x849970 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatMagicCasterArmor,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatMagicCasterArmor,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatMagicCasterArmor_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 46430;
 /// `AutoRegisterCreator<CombatMagicCasterBoundItem,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x847dd0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatMagicCasterBoundItem,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatMagicCasterBoundItem,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const AutoRegisterCreator_CombatMagicCasterBoundItem_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 46315;
 /// `AutoRegisterCreator<CombatMagicCasterCloak,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8417c0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatMagicCasterCloak,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatMagicCasterCloak,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -1655,17 +1631,17 @@ pub const AutoRegisterSmartPtrDerivedPathingType_PathingRequestRotate_BSPathingR
 pub const AutoRegisterSmartPtrDerivedPathingType_PathingRequestSafeStraightLine_BSPathingRequest_64__vdtor: u64 = 31456;
 /// `AutoRegisterSmartPtrDerivedPathingType<PathingRequestStopMoving,BSPathingRequest,64>::vdtor` at 0x4f95f0 (layout_inference, medium); signature (low): `AutoRegisterSmartPtrDerivedPathingType<PathingRequestStopMoving,BSPathingRequest,64> * vdtor(AutoRegisterSmartPtrDerivedPathingType<PathingRequestStopMoving,BSPathingRequest,64> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const AutoRegisterSmartPtrDerivedPathingType_PathingRequestStopMoving_BSPathingRequest_64__vdtor: u64 = 31472;
-/// `AutoVanityState::Begin` at 0x8f3770 (semantic, high); signature (untiered): `undefined Begin(AutoVanityState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+/// `AutoVanityState::Begin` at 0x8f3770 (semantic, high); signature (low): `undefined Begin(AutoVanityState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const AutoVanityState__Begin: u64 = 50708;
-/// `AutoVanityState::Destroy` at 0x8fc4b0 (semantic, high); signature (untiered): `AutoVanityState * Destroy(AutoVanityState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+/// `AutoVanityState::Destroy` at 0x8fc4b0 (semantic, high); signature (low): `AutoVanityState * Destroy(AutoVanityState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const AutoVanityState__Destroy: u64 = 50866;
-/// `AutoVanityState::End` at 0x8f3980 (semantic, high); signature (untiered): `undefined End(void)`
+/// `AutoVanityState::End` at 0x8f3980 (semantic, high); signature (low): `undefined End(void)`
 pub const AutoVanityState__End: u64 = 50710;
-/// `AutoVanityState::GetRotation` at 0x8f39a0 (semantic, high); signature (untiered): `undefined GetRotation(AutoVanityState * this, float * param_1)`
+/// `AutoVanityState::GetRotation` at 0x8f39a0 (semantic, high); signature (low): `undefined GetRotation(AutoVanityState * this, float * param_1)`
 pub const AutoVanityState__GetRotation: u64 = 50711;
-/// `AutoVanityState::GetTranslation` at 0x8f39c0 (semantic, high); signature (untiered): `undefined GetTranslation(AutoVanityState * this, undefined8 param_1)`
+/// `AutoVanityState::GetTranslation` at 0x8f39c0 (semantic, high); signature (low): `undefined GetTranslation(AutoVanityState * this, undefined8 param_1)`
 pub const AutoVanityState__GetTranslation: u64 = 50712;
-/// `AutoVanityState::Update` at 0x8f3810 (semantic, high); signature (untiered): `undefined Update(AutoVanityState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+/// `AutoVanityState::Update` at 0x8f3810 (semantic, high); signature (low): `undefined Update(AutoVanityState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const AutoVanityState__Update: u64 = 50709;
 /// `AutoVanityState::dtor` at 0x8f3750 (semantic, high); signature (untiered): `undefined dtor(AutoVanityState * this)`; semantic: non-deleting destructor: restores TESCameraState's vtable (no members to release) (high); signature `void (AutoVanityState* this)`
 pub const AutoVanityState__dtor: u64 = 50707;
@@ -2077,13 +2053,13 @@ pub const BGSBodyPartData__vfunc_6_sub1: u64 = 23446;
 pub const BGSCameraPath__AreDataFlagBits01Clear: u64 = 20645;
 /// `BGSCameraPath::AreDataFlagBits01Clear` as a function pointer type (high).
 pub type BGSCameraPath__AreDataFlagBits01Clear_fn = unsafe extern "C" fn(this: *mut crate::BGSCameraPath) -> bool;
-/// `BGSCameraPath::ClearData` at 0x316130 (semantic, high); signature (untiered): `undefined ClearData(BGSCameraPath * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+/// `BGSCameraPath::ClearData` at 0x316130 (semantic, high); signature (low): `undefined ClearData(BGSCameraPath * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSCameraPath__ClearData: u64 = 20636;
-/// `BGSCameraPath::CreateDuplicateForm` at 0x316200 (semantic, high); signature (untiered): `longlong CreateDuplicateForm(BGSCameraPath * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+/// `BGSCameraPath::CreateDuplicateForm` at 0x316200 (semantic, high); signature (low): `longlong CreateDuplicateForm(BGSCameraPath * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
 pub const BGSCameraPath__CreateDuplicateForm: u64 = 20637;
-/// `BGSCameraPath::Destroy` at 0x317ce0 (semantic, high); signature (untiered): `BGSCameraPath * Destroy(BGSCameraPath * this, ulonglong param_1, undefined8 * param_2, TypeDescriptor * param_3)`
+/// `BGSCameraPath::Destroy` at 0x317ce0 (semantic, high); signature (low): `BGSCameraPath * Destroy(BGSCameraPath * this, ulonglong param_1, undefined8 * param_2, TypeDescriptor * param_3)`
 pub const BGSCameraPath__Destroy: u64 = 20674;
-/// `BGSCameraPath::GetChildAt` at 0x317180 (semantic, high); signature (untiered): `undefined8 GetChildAt(longlong param_1, uint param_2)`; semantic: children[index] cast to BGSCameraPath, or null (high); signature `BGSCameraPath* (BGSCameraPath* this, u32 index)`
+/// `BGSCameraPath::GetChildAt` at 0x317180 (semantic, high); signature (low): `undefined8 GetChildAt(longlong param_1, uint param_2)`; semantic: children[index] cast to BGSCameraPath, or null (high); signature `BGSCameraPath* (BGSCameraPath* this, u32 index)`
 pub const BGSCameraPath__GetChildAt: u64 = 20651;
 /// `BGSCameraPath::GetChildAt` as a function pointer type (high).
 pub type BGSCameraPath__GetChildAt_fn = unsafe extern "C" fn(this: *mut crate::BGSCameraPath, index: u32) -> *mut crate::BGSCameraPath;
@@ -2095,25 +2071,25 @@ pub type BGSCameraPath__GetDataFlagBit0_fn = unsafe extern "C" fn(this: *mut cra
 pub const BGSCameraPath__GetDataFlagBit1: u64 = 20647;
 /// `BGSCameraPath::GetDataFlagBit1` as a function pointer type (high).
 pub type BGSCameraPath__GetDataFlagBit1_fn = unsafe extern "C" fn(this: *mut crate::BGSCameraPath) -> bool;
-/// `BGSCameraPath::InitItem` at 0x316780 (semantic, high); signature (untiered): `undefined InitItem(BGSCameraPath * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
+/// `BGSCameraPath::InitItem` at 0x316780 (semantic, high); signature (low): `undefined InitItem(BGSCameraPath * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
 pub const BGSCameraPath__InitItem: u64 = 20639;
-/// `BGSCameraPath::InitializeData` at 0x316110 (semantic, high); signature (untiered): `undefined InitializeData(BGSCameraPath * this)`
+/// `BGSCameraPath::InitializeData` at 0x316110 (semantic, high); signature (high): `undefined InitializeData(BGSCameraPath * this)`
 pub const BGSCameraPath__InitializeData: u64 = 20635;
-/// `BGSCameraPath::InsertChildAfter` at 0x317340 (semantic, high); signature (untiered): `undefined InsertChildAfter(longlong param_1, longlong param_2, longlong param_3, undefined8 param_4)`; semantic: as InsertChildAt with index = index of after + 1 (0 when after is null) (high); signature `void (BGSCameraPath* this, BGSCameraPath* after, BGSCameraPath* child)`
+/// `BGSCameraPath::InsertChildAfter` at 0x317340 (semantic, high); signature (low): `undefined InsertChildAfter(longlong param_1, longlong param_2, longlong param_3, undefined8 param_4)`; semantic: as InsertChildAt with index = index of after + 1 (0 when after is null) (high); signature `void (BGSCameraPath* this, BGSCameraPath* after, BGSCameraPath* child)`
 pub const BGSCameraPath__InsertChildAfter: u64 = 20654;
 /// `BGSCameraPath::InsertChildAfter` as a function pointer type (high).
 pub type BGSCameraPath__InsertChildAfter_fn = unsafe extern "C" fn(this: *mut crate::BGSCameraPath, after: *mut crate::BGSCameraPath, child: *mut crate::BGSCameraPath);
-/// `BGSCameraPath::InsertChildAt` at 0x3171f0 (semantic, high); signature (untiered): `undefined InsertChildAt(longlong param_1, uint param_2, longlong param_3, undefined8 param_4)`; semantic: create children if needed; index -1 = append; set child->parent, child->previousSibling = children[index-1], children[index]->previousSibling = child; insert (high); signature `void (BGSCameraPath* this, u32 index, BGSCameraPath* child)`
+/// `BGSCameraPath::InsertChildAt` at 0x3171f0 (semantic, high); signature (low): `undefined InsertChildAt(longlong param_1, uint param_2, longlong param_3, undefined8 param_4)`; semantic: create children if needed; index -1 = append; set child->parent, child->previousSibling = children[index-1], children[index]->previousSibling = child; insert (high); signature `void (BGSCameraPath* this, u32 index, BGSCameraPath* child)`
 pub const BGSCameraPath__InsertChildAt: u64 = 20653;
 /// `BGSCameraPath::InsertChildAt` as a function pointer type (high).
 pub type BGSCameraPath__InsertChildAt_fn = unsafe extern "C" fn(this: *mut crate::BGSCameraPath, index: u32, child: *mut crate::BGSCameraPath);
-/// `BGSCameraPath::Load` at 0x316460 (semantic, high); signature (untiered): `undefined8 Load(BGSCameraPath * this, uint * param_1, undefined1 * param_2, ulonglong param_3)`
+/// `BGSCameraPath::Load` at 0x316460 (semantic, high); signature (low): `undefined8 Load(BGSCameraPath * this, uint * param_1, undefined1 * param_2, ulonglong param_3)`
 pub const BGSCameraPath__Load: u64 = 20638;
-/// `BGSCameraPath::RemoveChild` at 0x317590 (semantic, high); signature (untiered): `undefined RemoveChild(longlong param_1, longlong param_2)`; semantic: find child in children, relink its follower's previousSibling, remove and compact (high); signature `void (BGSCameraPath* this, BGSCameraPath* child)`
+/// `BGSCameraPath::RemoveChild` at 0x317590 (semantic, high); signature (low): `undefined RemoveChild(longlong param_1, longlong param_2)`; semantic: find child in children, relink its follower's previousSibling, remove and compact (high); signature `void (BGSCameraPath* this, BGSCameraPath* child)`
 pub const BGSCameraPath__RemoveChild: u64 = 20656;
 /// `BGSCameraPath::RemoveChild` as a function pointer type (high).
 pub type BGSCameraPath__RemoveChild_fn = unsafe extern "C" fn(this: *mut crate::BGSCameraPath, child: *mut crate::BGSCameraPath);
-/// `BGSCameraPath::RemoveChildAt` at 0x3174b0 (semantic, high); signature (untiered): `undefined RemoveChildAt(longlong param_1, uint param_2)`; semantic: children[index+1]->previousSibling = children[index-1]; null the slot and compact (high); signature `void (BGSCameraPath* this, u32 index)`
+/// `BGSCameraPath::RemoveChildAt` at 0x3174b0 (semantic, high); signature (low): `undefined RemoveChildAt(longlong param_1, uint param_2)`; semantic: children[index+1]->previousSibling = children[index-1]; null the slot and compact (high); signature `void (BGSCameraPath* this, u32 index)`
 pub const BGSCameraPath__RemoveChildAt: u64 = 20655;
 /// `BGSCameraPath::RemoveChildAt` as a function pointer type (high).
 pub type BGSCameraPath__RemoveChildAt_fn = unsafe extern "C" fn(this: *mut crate::BGSCameraPath, index: u32);
@@ -2121,31 +2097,31 @@ pub type BGSCameraPath__RemoveChildAt_fn = unsafe extern "C" fn(this: *mut crate
 pub const BGSCameraPath__ctor: u64 = 20633;
 /// `BGSCameraPath::ctor` as a function pointer type (high).
 pub type BGSCameraPath__ctor_fn = unsafe extern "C" fn(this: *mut crate::BGSCameraPath) -> *mut crate::BGSCameraPath;
-/// `BGSCameraPath::dtor` at 0x315f30 (semantic, high); signature (untiered): `undefined dtor(BGSCameraPath * this, undefined8 param_1, undefined8 * param_2, TypeDescriptor * param_3)`; semantic: destructor: detach from the parent (or the root list, fixing the next sibling's previousSibling) unless TESDataHandler+0xda5 is set, delete every child (child->parent = 0, child vdtor 1) and the children array, free shots and conditions, TESForm::dtor (high); signature `void (BGSCameraPath* this)`
+/// `BGSCameraPath::dtor` at 0x315f30 (semantic, high); signature (low): `undefined dtor(BGSCameraPath * this, undefined8 param_1, undefined8 * param_2, TypeDescriptor * param_3)`; semantic: destructor: detach from the parent (or the root list, fixing the next sibling's previousSibling) unless TESDataHandler+0xda5 is set, delete every child (child->parent = 0, child vdtor 1) and the children array, free shots and conditions, TESForm::dtor (high); signature `void (BGSCameraPath* this)`
 pub const BGSCameraPath__dtor: u64 = 20634;
 /// `BGSCameraPath::dtor` as a function pointer type (high).
 pub type BGSCameraPath__dtor_fn = unsafe extern "C" fn(this: *mut crate::BGSCameraPath);
-/// `BGSCameraShot::Destroy` at 0x31a0c0 (semantic, high); signature (untiered): `BGSCameraShot * Destroy(BGSCameraShot * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+/// `BGSCameraShot::Destroy` at 0x31a0c0 (semantic, high); signature (low): `BGSCameraShot * Destroy(BGSCameraShot * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSCameraShot__Destroy: u64 = 20715;
-/// `BGSCameraShot::GetLookAtPoint` at 0x319f60 (semantic, high); signature (untiered): `undefined4 * GetLookAtPoint(longlong param_1, undefined4 * param_2)`; semantic: out = lookAtNode world translate (targetPercent <= 0) or ComputeVATSCameraTargetPosition(g_VATS, targetPercent); also pushes rotationEuler (animated root rotation or 0) to the VATS state (high); signature `NiPoint3* (BGSCameraShot* shot, NiPoint3* out)`
+/// `BGSCameraShot::GetLookAtPoint` at 0x319f60 (semantic, high); signature (low): `undefined4 * GetLookAtPoint(longlong param_1, undefined4 * param_2)`; semantic: out = lookAtNode world translate (targetPercent <= 0) or ComputeVATSCameraTargetPosition(g_VATS, targetPercent); also pushes rotationEuler (animated root rotation or 0) to the VATS state (high); signature `NiPoint3* (BGSCameraShot* shot, NiPoint3* out)`
 pub const BGSCameraShot__GetLookAtPoint: u64 = 20711;
 /// `BGSCameraShot::GetLookAtPoint` as a function pointer type (high).
 pub type BGSCameraShot__GetLookAtPoint_fn = unsafe extern "C" fn(shot: *mut crate::BGSCameraShot, out: *mut crate::NiPoint3) -> *mut crate::NiPoint3;
-/// `BGSCameraShot::InitItem` at 0x318c50 (semantic, high); signature (untiered): `undefined InitItem(BGSCameraShot * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+/// `BGSCameraShot::InitItem` at 0x318c50 (semantic, high); signature (low): `undefined InitItem(BGSCameraShot * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSCameraShot__InitItem: u64 = 20703;
-/// `BGSCameraShot::InitializeData` at 0x318c10 (semantic, high); signature (untiered): `undefined InitializeData(BGSCameraShot * this)`
+/// `BGSCameraShot::InitializeData` at 0x318c10 (semantic, high); signature (high): `undefined InitializeData(BGSCameraShot * this)`
 pub const BGSCameraShot__InitializeData: u64 = 20702;
-/// `BGSCameraShot::Load` at 0x318ca0 (semantic, high); signature (untiered): `undefined8 Load(BGSCameraShot * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+/// `BGSCameraShot::Load` at 0x318ca0 (semantic, high); signature (low): `undefined8 Load(BGSCameraShot * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSCameraShot__Load: u64 = 20704;
-/// `BGSCameraShot::ReleaseRuntime` at 0x319370 (semantic, high); signature (untiered): `undefined ReleaseRuntime(longlong param_1)`; semantic: release +0x88, +0x90, +0xa8, +0xa0, +0xb8; +0x98 = invalid handle; cutAway = 0; UIVATSCameraOut when the in-sound flag is set and no VATS command is queued (high); signature `void (BGSCameraShot* shot)`
+/// `BGSCameraShot::ReleaseRuntime` at 0x319370 (semantic, high); signature (low): `undefined ReleaseRuntime(longlong param_1)`; semantic: release +0x88, +0x90, +0xa8, +0xa0, +0xb8; +0x98 = invalid handle; cutAway = 0; UIVATSCameraOut when the in-sound flag is set and no VATS command is queued (high); signature `void (BGSCameraShot* shot)`
 pub const BGSCameraShot__ReleaseRuntime: u64 = 20707;
 /// `BGSCameraShot::ReleaseRuntime` as a function pointer type (high).
 pub type BGSCameraShot__ReleaseRuntime_fn = unsafe extern "C" fn(shot: *mut crate::BGSCameraShot);
-/// `BGSCameraShot::TESImageSpaceModifiableForm_Destroy` at 0x31a0b0 (semantic, high); signature (untiered): `undefined TESImageSpaceModifiableForm_Destroy(BGSCameraShot * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; semantic: this-adjusting thunk (this - 0x48) to BGSCameraShot::Destroy (high); signature `BGSCameraShot* (TESImageSpaceModifiableForm* this, u32 flags)`
+/// `BGSCameraShot::TESImageSpaceModifiableForm_Destroy` at 0x31a0b0 (semantic, high); signature (low): `undefined TESImageSpaceModifiableForm_Destroy(BGSCameraShot * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; semantic: this-adjusting thunk (this - 0x48) to BGSCameraShot::Destroy (high); signature `BGSCameraShot* (TESImageSpaceModifiableForm* this, u32 flags)`
 pub const BGSCameraShot__TESImageSpaceModifiableForm_Destroy: u64 = 20714;
 /// `BGSCameraShot::TESImageSpaceModifiableForm_Destroy` as a function pointer type (high).
 pub type BGSCameraShot__TESImageSpaceModifiableForm_Destroy_fn = unsafe extern "C" fn(this: *mut crate::TESImageSpaceModifiableForm, flags: u32) -> *mut crate::BGSCameraShot;
-/// `BGSCameraShot::TESModel_Destroy` at 0x31a0a4 (semantic, high); signature (untiered): `undefined TESModel_Destroy(BGSCameraShot * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; semantic: this-adjusting thunk (this - 0x20) to BGSCameraShot::Destroy (high); signature `BGSCameraShot* (TESModel* this, u32 flags)`
+/// `BGSCameraShot::TESModel_Destroy` at 0x31a0a4 (semantic, high); signature (low): `undefined TESModel_Destroy(BGSCameraShot * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; semantic: this-adjusting thunk (this - 0x20) to BGSCameraShot::Destroy (high); signature `BGSCameraShot* (TESModel* this, u32 flags)`
 pub const BGSCameraShot__TESModel_Destroy: u64 = 20713;
 /// `BGSCameraShot::TESModel_Destroy` as a function pointer type (high).
 pub type BGSCameraShot__TESModel_Destroy_fn = unsafe extern "C" fn(this: *mut crate::TESModel, flags: u32) -> *mut crate::BGSCameraShot;
@@ -2285,9 +2261,9 @@ pub const BGSDualCastData__vdtor: u64 = 10957;
 pub const BGSDualCastData__vfunc_19: u64 = 10941;
 /// `BGSDualCastData::vfunc_6` at 0x146e40 (rtti, high); signature (low): `undefined8 vfunc_6(BGSDualCastData * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSDualCastData__vfunc_6: u64 = 10940;
-/// `BGSEncounterZone::LoadGame` at 0x28fc40 (slot_propagation, medium); signature (untiered): `undefined LoadGame(BGSEncounterZone * this, longlong param_1)`
+/// `BGSEncounterZone::LoadGame` at 0x28fc40 (slot_propagation, medium); signature (low): `undefined LoadGame(BGSEncounterZone * this, longlong param_1)`
 pub const BGSEncounterZone__LoadGame: u64 = 18204;
-/// `BGSEncounterZone::SaveGame` at 0x28fbc0 (slot_propagation, medium); signature (untiered): `undefined SaveGame(BGSEncounterZone * this, longlong param_1)`
+/// `BGSEncounterZone::SaveGame` at 0x28fbc0 (slot_propagation, medium); signature (low): `undefined SaveGame(BGSEncounterZone * this, longlong param_1)`
 pub const BGSEncounterZone__SaveGame: u64 = 18203;
 /// `BGSEncounterZone::ctor` at 0x28f570 (layout_inference, high); signature (low): `BGSEncounterZone * ctor(BGSEncounterZone * this, undefined8 param_1, uint * param_2, longlong * param_3)`
 pub const BGSEncounterZone__ctor: u64 = 18189;
@@ -2465,7 +2441,7 @@ pub const BGSExplosion__vfunc_6_sub0: u64 = 16974;
 pub const BGSExplosion__vfunc_6_sub1: u64 = 17009;
 /// `BGSExplosion::vfunc_6_sub2` at 0x2618f0 (callgraph, medium); signature (untiered): `undefined vfunc_6_sub2(ulonglong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const BGSExplosion__vfunc_6_sub2: u64 = 17010;
-/// `BGSFootIkRaycastInterfaceDB::ClearHitThisFrame` at 0x54aba0 (semantic, high); signature (untiered): `undefined ClearHitThisFrame(longlong param_1)`; semantic: per frame: record+0x30 = 0 for every claimed record (+0x2e == 0) (high); signature `void (BGSFootIkRaycastInterfaceDB* this)`
+/// `BGSFootIkRaycastInterfaceDB::ClearHitThisFrame` at 0x54aba0 (semantic, high); signature (low): `undefined ClearHitThisFrame(longlong param_1)`; semantic: per frame: record+0x30 = 0 for every claimed record (+0x2e == 0) (high); signature `void (BGSFootIkRaycastInterfaceDB* this)`
 pub const BGSFootIkRaycastInterfaceDB__ClearHitThisFrame: u64 = 32740;
 /// `BGSFootIkRaycastInterfaceDB::ClearHitThisFrame` as a function pointer type (high).
 pub type BGSFootIkRaycastInterfaceDB__ClearHitThisFrame_fn = unsafe extern "C" fn(this: *mut crate::BGSFootIkRaycastInterfaceDB);
@@ -2473,11 +2449,11 @@ pub type BGSFootIkRaycastInterfaceDB__ClearHitThisFrame_fn = unsafe extern "C" f
 pub const BGSFootIkRaycastInterfaceDB__FindEntryByRefHandle: u64 = 32741;
 /// `BGSFootIkRaycastInterfaceDB::FindEntryByRefHandle` as a function pointer type (high).
 pub type BGSFootIkRaycastInterfaceDB__FindEntryByRefHandle_fn = unsafe extern "C" fn(this: *mut crate::BGSFootIkRaycastInterfaceDB, ref_: *mut crate::TESObjectREFR, flagOut: *mut u8) -> bool;
-/// `BGSFootIkRaycastInterfaceDB::GetRaycastInterface` at 0x54ac90 (semantic, medium); signature (untiered): `ulonglong GetRaycastInterface(BGSFootIkRaycastInterfaceDB * this, ulonglong param_1, ulonglong param_2)`; semantic: DB slot 1: under spin lock 0x32042xx (ID_402607/402608) looks the key up in a hash map (+0x18..+0x38) and returns its 0x38-byte record in the array at +0x40; creates one (bytes +0x2c/+0x2d = 1, handle +8 invalid, PopulateFromREFRHandle) when missing (medium); signature `void* (BGSFootIkRaycastInterfaceDB* this, u64 key /* hkbCharacter* */)`
+/// `BGSFootIkRaycastInterfaceDB::GetRaycastInterface` at 0x54ac90 (semantic, medium); signature (low): `ulonglong GetRaycastInterface(BGSFootIkRaycastInterfaceDB * this, ulonglong param_1, ulonglong param_2)`; semantic: DB slot 1: under spin lock 0x32042xx (ID_402607/402608) looks the key up in a hash map (+0x18..+0x38) and returns its 0x38-byte record in the array at +0x40; creates one (bytes +0x2c/+0x2d = 1, handle +8 invalid, PopulateFromREFRHandle) when missing (medium); signature `void* (BGSFootIkRaycastInterfaceDB* this, u64 key /* hkbCharacter* */)`
 pub const BGSFootIkRaycastInterfaceDB__GetRaycastInterface: u64 = 32742;
-/// `BGSFootIkRaycastInterfaceDB::GetScale` at 0x54aef0 (semantic, high); signature (untiered): `undefined4 GetScale(void)`
+/// `BGSFootIkRaycastInterfaceDB::GetScale` at 0x54aef0 (semantic, high); signature (low): `undefined4 GetScale(void)`
 pub const BGSFootIkRaycastInterfaceDB__GetScale: u64 = 32743;
-/// `BGSFootIkRaycastInterfaceDB::RefreshLegCastFlags` at 0x54a860 (semantic, high); signature (untiered): `DWORD RefreshLegCastFlags(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; semantic: dead: under the DB lock gets ref's graph manager (ref+0x38 holder slot 2) and runs 0x54b580 over its graphs (high); signature `u32 (BGSFootIkRaycastInterfaceDB* this, TESObjectREFR* ref)`
+/// `BGSFootIkRaycastInterfaceDB::RefreshLegCastFlags` at 0x54a860 (semantic, high); signature (low): `DWORD RefreshLegCastFlags(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; semantic: dead: under the DB lock gets ref's graph manager (ref+0x38 holder slot 2) and runs 0x54b580 over its graphs (high); signature `u32 (BGSFootIkRaycastInterfaceDB* this, TESObjectREFR* ref)`
 pub const BGSFootIkRaycastInterfaceDB__RefreshLegCastFlags: u64 = 32738;
 /// `BGSFootIkRaycastInterfaceDB::RefreshLegCastFlags` as a function pointer type (high).
 pub type BGSFootIkRaycastInterfaceDB__RefreshLegCastFlags_fn = unsafe extern "C" fn(this: *mut crate::BGSFootIkRaycastInterfaceDB, ref_: *mut crate::TESObjectREFR) -> u32;
@@ -2593,9 +2569,9 @@ pub const BGSHazard__vfunc_19: u64 = 17025;
 pub const BGSHazard__vfunc_4: u64 = 17023;
 /// `BGSHazard::vfunc_6` at 0x262010 (rtti, high); signature (low): `undefined8 vfunc_6(BGSHazard * this, uint * param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSHazard__vfunc_6: u64 = 17024;
-/// `BGSHeadPart::GetFormEditorID` at 0x391020 (slot_propagation, high); signature (untiered): `undefined1 * GetFormEditorID(BGSHeadPart * this)`
+/// `BGSHeadPart::GetFormEditorID` at 0x391020 (slot_propagation, high); signature (high): `undefined1 * GetFormEditorID(BGSHeadPart * this)`
 pub const BGSHeadPart__GetFormEditorID: u64 = 23650;
-/// `BGSHeadPart::SetFormEditorID` at 0x391210 (slot_propagation, high); signature (untiered): `undefined8 SetFormEditorID(BGSHeadPart * this, char * param_1, ulonglong param_2, ulonglong param_3)`
+/// `BGSHeadPart::SetFormEditorID` at 0x391210 (slot_propagation, high); signature (low): `undefined8 SetFormEditorID(BGSHeadPart * this, char * param_1, ulonglong param_2, ulonglong param_3)`
 pub const BGSHeadPart__SetFormEditorID: u64 = 23655;
 /// `BGSHeadPart::TESFullName_vdtor` at 0x390e18 (slot_propagation, medium); signature (high): `undefined TESFullName_vdtor(BGSHeadPart * this)`
 pub const BGSHeadPart__TESFullName_vdtor: u64 = 23645;
@@ -2661,7 +2637,7 @@ pub const BGSImpactData__dtor: u64 = 20835;
 pub const BGSImpactData__vdtor: u64 = 20845;
 /// `BGSImpactData::vfunc_19` at 0x31dcf0 (rtti, high); signature (low): `undefined vfunc_19(BGSImpactData * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
 pub const BGSImpactData__vfunc_19: u64 = 20838;
-/// `BGSImpactData::vfunc_19_sub0` at 0x32e050 (runtime, medium); signature (untiered): `undefined vfunc_19_sub0(undefined8 * param_1, undefined8 * param_2)`
+/// `BGSImpactData::vfunc_19_sub0` at 0x32e050 (runtime, medium); signature (low): `undefined vfunc_19_sub0(undefined8 * param_1, undefined8 * param_2)`
 pub const BGSImpactData__vfunc_19_sub0: u64 = 21379;
 /// `BGSImpactData::vfunc_4` at 0x31d7b0 (rtti, high); signature (high): `undefined vfunc_4(BGSImpactData * this)`
 pub const BGSImpactData__vfunc_4: u64 = 20836;
@@ -2707,9 +2683,9 @@ pub const BGSImpactManager__vfunc_1_sub1: u64 = 20811;
 pub const BGSImpactManager__vfunc_1_sub2: u64 = 36227;
 /// `BGSImpactManager::vfunc_1_sub3` at 0x11d6800 (callgraph, medium); signature (untiered): `undefined8 vfunc_1_sub3(longlong * param_1, float * param_2, float * param_3)`
 pub const BGSImpactManager__vfunc_1_sub3: u64 = 90923;
-/// `BGSKeyword::GetFormEditorID` at 0x29e710 (slot_propagation, high); signature (untiered): `undefined8 GetFormEditorID(BGSKeyword * this)`
+/// `BGSKeyword::GetFormEditorID` at 0x29e710 (slot_propagation, high); signature (high): `undefined8 GetFormEditorID(BGSKeyword * this)`
 pub const BGSKeyword__GetFormEditorID: u64 = 18468;
-/// `BGSKeyword::SetFormEditorID` at 0x29e720 (slot_propagation, high); signature (untiered): `undefined8 SetFormEditorID(BGSKeyword * this, char * param_1)`
+/// `BGSKeyword::SetFormEditorID` at 0x29e720 (slot_propagation, high); signature (low): `undefined8 SetFormEditorID(BGSKeyword * this, char * param_1)`
 pub const BGSKeyword__SetFormEditorID: u64 = 18469;
 /// `BGSKeyword::ctor` at 0x391f50 (layout_inference, high); signature (low): `BGSKeyword * ctor(BGSKeyword * this, undefined8 param_1, uint * param_2, longlong * param_3)`
 pub const BGSKeyword__ctor: u64 = 23696;
@@ -2719,7 +2695,7 @@ pub const BGSKeyword__dtor: u64 = 23697;
 pub const BGSKeyword__vdtor: u64 = 23700;
 /// `BGSKeyword::vfunc_6` at 0x391fe0 (rtti, medium); signature (low): `undefined8 vfunc_6(BGSKeyword * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSKeyword__vfunc_6: u64 = 23698;
-/// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (untiered): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
+/// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (low): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
 pub const BGSKeywordForm__HasKeyword: u64 = 14257;
 /// `BGSKeywordForm::ctor` at 0x1d85e0 (layout_inference, medium); signature (high): `BGSKeywordForm * ctor(BGSKeywordForm * this)`
 pub const BGSKeywordForm__ctor: u64 = 14250;
@@ -2769,21 +2745,21 @@ pub const BGSLightingTemplate__vfunc_19: u64 = 18308;
 pub const BGSLightingTemplate__vfunc_4: u64 = 18286;
 /// `BGSLightingTemplate::vfunc_6` at 0x295990 (rtti, high); signature (low): `undefined8 vfunc_6(BGSLightingTemplate * this, uint * param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSLightingTemplate__vfunc_6: u64 = 18307;
-/// `BGSListForm::Find` at 0x320140 (runtime, high); signature (untiered): `uint Find(longlong param_1, longlong param_2)`; semantic: index of a form or -1 (high); signature `int BGSListForm::Find(BGSListForm* this, TESForm* form)`
+/// `BGSListForm::Find` at 0x320140 (runtime, high); signature (low): `uint Find(longlong param_1, longlong param_2)`; semantic: index of a form or -1 (high); signature `int BGSListForm::Find(BGSListForm* this, TESForm* form)`
 pub const BGSListForm__Find: u64 = 20906;
 /// `BGSListForm::Find` as a function pointer type (high).
 pub type BGSListForm__Find_fn = unsafe extern "C" fn(this: *mut crate::BGSListForm, form: *mut crate::TESForm) -> i32;
-/// `BGSListForm::GetAt` at 0x320210 (semantic, high); signature (untiered): `longlong GetAt(longlong param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`; semantic: entry at index counting added forms first (high); signature `TESForm* BGSListForm::GetAt(BGSListForm* this, uint index)`
+/// `BGSListForm::GetAt` at 0x320210 (semantic, high); signature (low): `longlong GetAt(longlong param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`; semantic: entry at index counting added forms first (high); signature `TESForm* BGSListForm::GetAt(BGSListForm* this, uint index)`
 pub const BGSListForm__GetAt: u64 = 20907;
 /// `BGSListForm::GetAt` as a function pointer type (high).
 pub type BGSListForm__GetAt_fn = unsafe extern "C" fn(this: *mut crate::BGSListForm, index: u32) -> *mut crate::TESForm;
-/// `BGSListForm::GetFormsSize` at 0x320390 (runtime, high); signature (untiered): `undefined4 GetFormsSize(longlong param_1)`; semantic: number of entries in the forms array (high); signature `uint BGSListForm::GetFormsSize(BGSListForm* this)`
+/// `BGSListForm::GetFormsSize` at 0x320390 (runtime, high); signature (low): `undefined4 GetFormsSize(longlong param_1)`; semantic: number of entries in the forms array (high); signature `uint BGSListForm::GetFormsSize(BGSListForm* this)`
 pub const BGSListForm__GetFormsSize: u64 = 20911;
 /// `BGSListForm::GetFormsSize` as a function pointer type (high).
 pub type BGSListForm__GetFormsSize_fn = unsafe extern "C" fn(this: *mut crate::BGSListForm) -> u32;
-/// `BGSListForm::LoadGame` at 0x320860 (slot_propagation, medium); signature (untiered): `undefined LoadGame(BGSListForm * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+/// `BGSListForm::LoadGame` at 0x320860 (slot_propagation, medium); signature (low): `undefined LoadGame(BGSListForm * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSListForm__LoadGame: u64 = 20916;
-/// `BGSListForm::SaveGame` at 0x320770 (slot_propagation, medium); signature (untiered): `undefined SaveGame(BGSListForm * this, longlong param_1)`
+/// `BGSListForm::SaveGame` at 0x320770 (slot_propagation, medium); signature (low): `undefined SaveGame(BGSListForm * this, longlong param_1)`
 pub const BGSListForm__SaveGame: u64 = 20915;
 /// `BGSListForm::ctor` at 0x31fbc0 (layout_inference, medium); signature (low): `BGSListForm * ctor(BGSListForm * this, undefined8 param_1, uint * param_2, longlong * param_3)`
 pub const BGSListForm__ctor: u64 = 20901;
@@ -2799,11 +2775,11 @@ pub const BGSListForm__vfunc_19: u64 = 20905;
 pub const BGSListForm__vfunc_5: u64 = 20903;
 /// `BGSListForm::vfunc_6` at 0x31fe00 (rtti, high); signature (low): `undefined8 vfunc_6(BGSListForm * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSListForm__vfunc_6: u64 = 20904;
-/// `BGSLoadFormBuffer::GetVersion` at 0x637580 (semantic, high); signature (untiered): `undefined1 GetVersion(BGSLoadFormBuffer * this)`
+/// `BGSLoadFormBuffer::GetVersion` at 0x637580 (semantic, high); signature (high): `undefined1 GetVersion(BGSLoadFormBuffer * this)`
 pub const BGSLoadFormBuffer__GetVersion: u64 = 35990;
 /// `BGSLoadFormBuffer::vdtor` at 0x1c7160 (slot_propagation, medium); signature (low): `BGSLoadFormBuffer * vdtor(BGSLoadFormBuffer * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSLoadFormBuffer__vdtor: u64 = 13854;
-/// `BGSLoadGameBuffer::GetVersion` at 0x637a90 (semantic, medium); signature (untiered): `undefined GetVersion(void)`
+/// `BGSLoadGameBuffer::GetVersion` at 0x637a90 (semantic, medium); signature (low): `undefined GetVersion(void)`
 pub const BGSLoadGameBuffer__GetVersion: u64 = 35999;
 /// `BGSLoadGameBuffer::ctor` at 0x637820 (layout_inference, medium); signature (high): `BGSLoadGameBuffer * ctor(BGSLoadGameBuffer * this)`
 pub const BGSLoadGameBuffer__ctor: u64 = 35993;
@@ -2833,9 +2809,9 @@ pub const BGSLocAlias__vfunc_2: u64 = 23706;
 pub const BGSLocAlias__vfunc_3: u64 = 23711;
 /// `BGSLocation::BGSKeywordForm_vdtor` at 0x29ccf4 (slot_propagation, medium); signature (high): `undefined BGSKeywordForm_vdtor(BGSLocation * this)`
 pub const BGSLocation__BGSKeywordForm_vdtor: u64 = 18419;
-/// `BGSLocation::LoadGame` at 0x29b960 (slot_propagation, medium); signature (untiered): `undefined LoadGame(BGSLocation * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+/// `BGSLocation::LoadGame` at 0x29b960 (slot_propagation, medium); signature (low): `undefined LoadGame(BGSLocation * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSLocation__LoadGame: u64 = 18385;
-/// `BGSLocation::SaveGame` at 0x29b860 (slot_propagation, medium); signature (untiered): `undefined SaveGame(BGSLocation * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+/// `BGSLocation::SaveGame` at 0x29b860 (slot_propagation, medium); signature (low): `undefined SaveGame(BGSLocation * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSLocation__SaveGame: u64 = 18384;
 /// `BGSLocation::TESFullName_vdtor` at 0x29cce8 (slot_propagation, medium); signature (high): `undefined TESFullName_vdtor(BGSLocation * this)`
 pub const BGSLocation__TESFullName_vdtor: u64 = 18418;
@@ -2991,7 +2967,7 @@ pub const BGSMovementType__vfunc_4: u64 = 23723;
 pub const BGSMovementType__vfunc_6: u64 = 23724;
 /// `BGSMoviePlayer::BSTEventSink_InputEvent____ptr64_vdtor` at 0x644ad8 (slot_propagation, medium); signature (high): `undefined BSTEventSink_InputEvent____ptr64_vdtor(BGSMoviePlayer * this)`
 pub const BGSMoviePlayer__BSTEventSink_InputEvent____ptr64_vdtor: u64 = 36264;
-/// `BGSMoviePlayer::ProcessEvent` at 0x6449d0 (semantic, high); signature (untiered): `undefined8 ProcessEvent(BGSMoviePlayer * this, undefined8 * param_1)`; semantic: sets a skip flag when an Activate press is in the list; returns 0 (high); signature `BSEventNotifyControl (BGSMoviePlayer* this+0x58, InputEvent* const* head, ...)`
+/// `BGSMoviePlayer::ProcessEvent` at 0x6449d0 (semantic, high); signature (low): `undefined8 ProcessEvent(BGSMoviePlayer * this, undefined8 * param_1)`; semantic: sets a skip flag when an Activate press is in the list; returns 0 (high); signature `BSEventNotifyControl (BGSMoviePlayer* this+0x58, InputEvent* const* head, ...)`
 pub const BGSMoviePlayer__ProcessEvent: u64 = 36261;
 /// `BGSMoviePlayer::ctor` at 0x644690 (layout_inference, high); signature (high): `BGSMoviePlayer * ctor(BGSMoviePlayer * this)`
 pub const BGSMoviePlayer__ctor: u64 = 36248;
@@ -3143,15 +3119,15 @@ pub const BGSMusicType__BSIMusicType_vfunc_1_sub0: u64 = 21169;
 pub const BGSMusicType__BSIMusicType_vfunc_1_sub1: u64 = 33063;
 /// `BGSMusicType::BSIMusicType_vfunc_7` at 0x328688 (rtti, high); signature (high): `undefined BSIMusicType_vfunc_7(BGSMusicType * this)`
 pub const BGSMusicType__BSIMusicType_vfunc_7: u64 = 21166;
-/// `BGSMusicType::ClearData` at 0x328080 (semantic, high); signature (untiered): `undefined ClearData(BGSMusicType * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+/// `BGSMusicType::ClearData` at 0x328080 (semantic, high); signature (low): `undefined ClearData(BGSMusicType * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSMusicType__ClearData: u64 = 21157;
-/// `BGSMusicType::GetFormEditorID` at 0x328550 (semantic, high); signature (untiered): `undefined1 * GetFormEditorID(BGSMusicType * this)`
+/// `BGSMusicType::GetFormEditorID` at 0x328550 (semantic, high); signature (high): `undefined1 * GetFormEditorID(BGSMusicType * this)`
 pub const BGSMusicType__GetFormEditorID: u64 = 21160;
-/// `BGSMusicType::InitItemImpl` at 0x328410 (semantic, high); signature (untiered): `undefined InitItemImpl(BGSMusicType * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
+/// `BGSMusicType::InitItemImpl` at 0x328410 (semantic, high); signature (low): `undefined InitItemImpl(BGSMusicType * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
 pub const BGSMusicType__InitItemImpl: u64 = 21159;
-/// `BGSMusicType::Load` at 0x3280e0 (semantic, high); signature (untiered): `undefined8 Load(BGSMusicType * this, longlong param_1, ulonglong param_2, ulonglong param_3)`
+/// `BGSMusicType::Load` at 0x3280e0 (semantic, high); signature (low): `undefined8 Load(BGSMusicType * this, longlong param_1, ulonglong param_2, ulonglong param_3)`
 pub const BGSMusicType__Load: u64 = 21158;
-/// `BGSMusicType::SetFormEditorID` at 0x328570 (semantic, high); signature (untiered): `undefined8 SetFormEditorID(BGSMusicType * this, char * param_1, ulonglong param_2, ulonglong param_3)`
+/// `BGSMusicType::SetFormEditorID` at 0x328570 (semantic, high); signature (low): `undefined8 SetFormEditorID(BGSMusicType * this, char * param_1, ulonglong param_2, ulonglong param_3)`
 pub const BGSMusicType__SetFormEditorID: u64 = 21161;
 /// `BGSMusicType::ctor` at 0x327f10 (layout_inference, high); signature (low): `BGSMusicType * ctor(BGSMusicType * this, undefined8 param_1, uint * param_2, longlong * param_3)`
 pub const BGSMusicType__ctor: u64 = 21155;
@@ -3227,7 +3203,7 @@ pub const BGSNamedPackageData_IPackageDataAIWorldLocationHandle__dtor: u64 = 276
 pub const BGSNamedPackageData_IPackageDataAIWorldLocationHandle__vdtor: u64 = 27589;
 /// `BGSNote::BGSPickupPutdownSounds_vdtor` at 0x3953f8 (slot_propagation, medium); signature (high): `undefined BGSPickupPutdownSounds_vdtor(BGSNote * this)`
 pub const BGSNote__BGSPickupPutdownSounds_vdtor: u64 = 23772;
-/// `BGSNote::LoadGame` at 0x3952b0 (slot_propagation, medium); signature (untiered): `undefined LoadGame(BGSNote * this, longlong param_1)`
+/// `BGSNote::LoadGame` at 0x3952b0 (slot_propagation, medium); signature (low): `undefined LoadGame(BGSNote * this, longlong param_1)`
 pub const BGSNote__LoadGame: u64 = 23765;
 /// `BGSNote::TESFullName_vdtor` at 0x3953e0 (slot_propagation, medium); signature (high): `undefined TESFullName_vdtor(BGSNote * this)`
 pub const BGSNote__TESFullName_vdtor: u64 = 23770;
@@ -3813,9 +3789,9 @@ pub const BGSPickupPutdownSounds__vfunc_2: u64 = 14331;
 pub const BGSPickupPutdownSounds__vfunc_3: u64 = 14332;
 /// `BGSPlayerMusicChanger::BSTEventSink_BGSActorDeathEvent_vdtor` at 0x5eaedc (slot_propagation, medium); signature (high): `undefined BSTEventSink_BGSActorDeathEvent_vdtor(BGSPlayerMusicChanger * this)`
 pub const BGSPlayerMusicChanger__BSTEventSink_BGSActorDeathEvent_vdtor: u64 = 35170;
-/// `BGSPlayerMusicChanger::ProcessActorCellEvent` at 0x737360 (semantic, medium); signature (untiered): `undefined8 ProcessActorCellEvent(BGSPlayerMusicChanger * this, uint * param_1, undefined8 param_2, TypeDescriptor * param_3)`; semantic: for the player entering a cell: resolves the cell's music type and, when it changed, notifies its BSMusicEvent source with {old,1} then {new,0} (medium); signature `BSEventNotifyControl (BGSPlayerMusicChanger* this, const BGSActorCellEvent* e, ...)`
+/// `BGSPlayerMusicChanger::ProcessActorCellEvent` at 0x737360 (semantic, medium); signature (low): `undefined8 ProcessActorCellEvent(BGSPlayerMusicChanger * this, uint * param_1, undefined8 param_2, TypeDescriptor * param_3)`; semantic: for the player entering a cell: resolves the cell's music type and, when it changed, notifies its BSMusicEvent source with {old,1} then {new,0} (medium); signature `BSEventNotifyControl (BGSPlayerMusicChanger* this, const BGSActorCellEvent* e, ...)`
 pub const BGSPlayerMusicChanger__ProcessActorCellEvent: u64 = 40175;
-/// `BGSPlayerMusicChanger::ProcessActorDeathEvent` at 0x737470 (semantic, medium); signature (untiered): `undefined8 ProcessActorDeathEvent(BGSPlayerMusicChanger * this, uint * param_1, undefined8 param_2, undefined8 param_3)`; semantic: on the player's death notifies {default music type 0x400193 global, 0} when that type has flags bit 0 (medium); signature `BSEventNotifyControl (...)`
+/// `BGSPlayerMusicChanger::ProcessActorDeathEvent` at 0x737470 (semantic, medium); signature (low): `undefined8 ProcessActorDeathEvent(BGSPlayerMusicChanger * this, uint * param_1, undefined8 param_2, undefined8 param_3)`; semantic: on the player's death notifies {default music type 0x400193 global, 0} when that type has flags bit 0 (medium); signature `BSEventNotifyControl (...)`
 pub const BGSPlayerMusicChanger__ProcessActorDeathEvent: u64 = 40176;
 /// `BGSPlayerMusicChanger::vdtor` at 0x5eaf20 (layout_inference, medium); signature (low): `BGSPlayerMusicChanger * vdtor(BGSPlayerMusicChanger * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSPlayerMusicChanger__vdtor: u64 = 35172;
@@ -5083,3 +5059,39 @@ pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const_
 pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedurePursueParamTypes__vfunc_34: u64 = 28985;
 /// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes>::vdtor` at 0x482ae0 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes__vdtor: u64 = 29037;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes>::vfunc_18` at 0x482e60 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes__vfunc_18: u64 = 29048;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes>::vfunc_19` at 0x482e40 (rtti, medium); signature (low): `undefined * vfunc_19(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes__vfunc_19: u64 = 29047;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes>::vfunc_20` at 0x482e10 (rtti, medium); signature (low): `undefined1 vfunc_20(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes__vfunc_20: u64 = 29045;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes>::vfunc_30` at 0x482ea0 (rtti, medium); signature (low): `undefined8 * vfunc_30(void)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes__vfunc_30: u64 = 29050;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes>::vfunc_34` at 0x482e80 (rtti, medium); signature (low): `undefined vfunc_34(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes__vfunc_34: u64 = 29049;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vdtor` at 0x483600 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vdtor: u64 = 29065;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vfunc_18` at 0x4837a0 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vfunc_18: u64 = 29073;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vfunc_19` at 0x483780 (rtti, medium); signature (low): `undefined * vfunc_19(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vfunc_19: u64 = 29072;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vfunc_20` at 0x483760 (rtti, medium); signature (low): `undefined1 vfunc_20(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vfunc_20: u64 = 29071;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vfunc_30` at 0x4837e0 (rtti, medium); signature (low): `undefined8 * vfunc_30(void)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vfunc_30: u64 = 29075;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vfunc_34` at 0x4837c0 (rtti, medium); signature (low): `undefined vfunc_34(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vfunc_34: u64 = 29074;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vdtor` at 0x485220 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vdtor: u64 = 29099;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_18` at 0x4855f0 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vfunc_18: u64 = 29111;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_19` at 0x4855d0 (rtti, medium); signature (low): `undefined * vfunc_19(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vfunc_19: u64 = 29110;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_20` at 0x4855b0 (rtti, medium); signature (low): `undefined1 vfunc_20(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vfunc_20: u64 = 29109;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_30` at 0x485630 (rtti, medium); signature (low): `undefined8 * vfunc_30(void)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vfunc_30: u64 = 29113;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_34` at 0x485610 (rtti, medium); signature (low): `undefined vfunc_34(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vfunc_34: u64 = 29112;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes>::vdtor` at 0x487ac0 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSitParamTypes__vdtor: u64 = 29160;

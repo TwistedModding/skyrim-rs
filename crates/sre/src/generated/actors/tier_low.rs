@@ -8,6 +8,34 @@
 use core::ffi::{c_char, c_void};
 
 impl crate::Actor {
+    /// `Actor::AttachWeapon3D`, vtable slot 180, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name medium; id 37374, rva 0x67e830).
+    /// `undefined AttachWeapon3D(Actor * this, ulonglong * param_1, byte param_2, char param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn attach_weapon3_d(&self, param_1: *mut u64, param_2: u8, param_3: c_char) -> u64 { unsafe { virtual_function!(self, 180, (*const Self, *mut u64, u8, c_char) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `Actor::GetLookOriginAndDirection`, vtable slot 194, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 37479, rva 0x6874c0).
+    /// `undefined GetLookOriginAndDirection(Actor * this, undefined4 * param_1, float * param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_look_origin_and_direction(&self, param_1: *mut u32, param_2: *mut f32) -> u64 { unsafe { virtual_function!(self, 194, (*const Self, *mut u32, *mut f32) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    /// `Actor::PrepareAnimationUpdate`, vtable slot 121, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 38054, rva 0x6b6300).
+    /// `undefined PrepareAnimationUpdate(Actor * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn prepare_animation_update(&self, param_1: i64) -> u64 { unsafe { virtual_function!(self, 121, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    /// `Actor::UpdateAnimation`, vtable slot 125, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name medium; id 37361, rva 0x67d590).
+    /// `undefined UpdateAnimation(Actor * this, TESObjectREFR * param_1, ulonglong param_2, TypeDescriptor * param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn update_animation(&self, param_1: *mut crate::TESObjectREFR, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { virtual_function!(self, 125, (*const Self, *mut crate::TESObjectREFR, u64, *mut c_void) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `Actor::ActorState_vfunc_14` (decompiler signature, tier low; ledger rtti evidence, name medium; id 38032, rva 0x6b5a40).
     /// `undefined8 ActorState_vfunc_14(Actor * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -148,6 +176,13 @@ impl crate::Actor {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn i_animation_graph_manager_holder_vfunc_8(&self, param_1: *mut i64) -> u64 { unsafe { function!(37983, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x38), param_1) } }
+    /// `Actor::LoadGame` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 37650, rva 0x699900).
+    /// `undefined LoadGame(Actor * this, TESObjectREFR_vtbl * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn load_game(&self, param_1: *mut c_void) -> u64 { unsafe { function!(37650, (*const Self, *mut c_void) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `Actor::MagicTarget_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name medium; id 38786, rva 0x6d7b90).
     /// `char MagicTarget_vfunc_1(Actor * this, longlong * param_1)`
     ///
@@ -197,6 +232,13 @@ impl crate::Actor {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn magic_target_vfunc_9(&self, param_1: i64) -> u64 { unsafe { function!(38740, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("Actor:MagicTarget", 0xA0)), param_1) } }
+    /// `Actor::SaveGame` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 37649, rva 0x699230).
+    /// `undefined SaveGame(Actor * this, longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn save_game(&self, param_1: *mut i64) -> u64 { unsafe { function!(37649, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `Actor::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 37174, rva 0x670c60).
     /// `Actor * ctor(Actor * this, ulonglong param_1, uint * param_2, longlong * param_3)`
     ///
@@ -364,6 +406,13 @@ impl crate::ExtraContainerChanges {
 }
 
 impl crate::PlayerCharacter {
+    /// `PlayerCharacter::GetLookAtPosition`, vtable slot 91, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 40664, rva 0x75ad40).
+    /// `float * GetLookAtPosition(PlayerCharacter * this, float * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_look_at_position(&self, param_1: *mut f32) -> *mut f32 { unsafe { virtual_function!(self, 91, (*const Self, *mut f32) -> *mut f32)(core::ptr::from_ref(self), param_1) } }
     /// `PlayerCharacter::ActorState_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 40936, rva 0x76932c).
     /// `undefined ActorState_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
     ///
@@ -511,6 +560,13 @@ impl crate::PlayerCharacter {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn magic_target_vfunc_8(&self, param_1: i64, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { function!(40762, (*const Self, i64, u64, *mut c_void) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:MagicTarget", 0xA0)), param_1, param_2, param_3) } }
+    /// `PlayerCharacter::Update` (decompiler signature, tier low; ledger semantic evidence, name high; id 40447, rva 0x745200).
+    /// `undefined Update(PlayerCharacter * this, float param_1, longlong * param_2, TypeDescriptor * param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn update(&self, param_1: f32, param_2: *mut i64, param_3: *mut c_void) -> u64 { unsafe { function!(40447, (*const Self, f32, *mut i64, *mut c_void) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `PlayerCharacter::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 40946, rva 0x769500).
     /// `PlayerCharacter * vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
     ///
@@ -572,6 +628,20 @@ impl crate::TESFullName {
 }
 
 impl crate::TESNPC {
+    /// `TESNPC::ActorValueOwner_GetActorValue` (decompiler signature, tier low; ledger slot_propagation evidence, name high; id 24774, rva 0x3c71f0).
+    /// `undefined ActorValueOwner_GetActorValue(TESNPC * this, int param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn actor_value_owner_get_actor_value(&self, param_1: i32) -> u64 { unsafe { function!(24774, (*const Self, i32) -> u64)(core::ptr::from_ref(self).byte_add(0xE8), param_1) } }
+    /// `TESNPC::ActorValueOwner_SetActorValue` (decompiler signature, tier low; ledger slot_propagation evidence, name high; id 24775, rva 0x3c7460).
+    /// `undefined ActorValueOwner_SetActorValue(TESNPC * this, int param_1, float param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn actor_value_owner_set_actor_value(&self, param_1: i32, param_2: f32) -> u64 { unsafe { function!(24775, (*const Self, i32, f32) -> u64)(core::ptr::from_ref(self).byte_add(0xE8), param_1, param_2) } }
     /// `TESNPC::BSTEventSink_MenuOpenCloseEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 24681, rva 0x3beed0).
     /// `undefined8 BSTEventSink_MenuOpenCloseEvent_vfunc_1(TESNPC * this, longlong * param_1)`
     ///
@@ -579,6 +649,20 @@ impl crate::TESNPC {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn bst_event_sink_menu_open_close_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(24681, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x188), param_1) } }
+    /// `TESNPC::LoadGame` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 24778, rva 0x3c7b10).
+    /// `undefined LoadGame(TESNPC * this, undefined8 * param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn load_game(&self, param_1: *mut u64, param_2: *mut c_void, param_3: *mut c_void) -> u64 { unsafe { function!(24778, (*const Self, *mut u64, *mut c_void, *mut c_void) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `TESNPC::SaveGame` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 24777, rva 0x3c7640).
+    /// `undefined SaveGame(TESNPC * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn save_game(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(24777, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `TESNPC::TESActorBaseData_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name high; id 24720, rva 0x3c1e30).
     /// `undefined TESActorBaseData_vfunc_4(TESNPC * this, TESNPC * param_1, ulonglong param_2, longlong * param_3)`
     ///
@@ -603,6 +687,20 @@ impl crate::TESNPC {
 }
 
 impl crate::TESObjectREFR {
+    /// `TESObjectREFR::Disable`, vtable slot 137, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 19801, rva 0x2f2d70).
+    /// `undefined Disable(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn disable(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { virtual_function!(self, 137, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `TESObjectREFR::Update3DCollision`, vtable slot 133, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name medium; id 19794, rva 0x2f10d0).
+    /// `undefined Update3DCollision(TESObjectREFR * this, byte param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn update3_d_collision(&self, param_1: u8) -> u64 { unsafe { virtual_function!(self, 133, (*const Self, u8) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `TESObjectREFR::BSTEventSink_BSAnimationGraphEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name medium; id 20102, rva 0x2fcb80).
     /// `undefined8 BSTEventSink_BSAnimationGraphEvent_vfunc_1(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -610,6 +708,13 @@ impl crate::TESObjectREFR {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn bst_event_sink_bs_animation_graph_event_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(20102, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x30), param_1, param_2, param_3) } }
+    /// `TESObjectREFR::GetFormDetailedString` (decompiler signature, tier low; ledger slot_propagation evidence, name high; id 19779, rva 0x2f0730).
+    /// `undefined GetFormDetailedString(TESObjectREFR * this, undefined8 param_1, ulonglong param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_form_detailed_string(&self, param_1: u64, param_2: u64) -> u64 { unsafe { function!(19779, (*const Self, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_13` (decompiler signature, tier low; ledger rtti evidence, name medium; id 20109, rva 0x2fd630).
     /// `undefined IAnimationGraphManagerHolder_vfunc_13(TESObjectREFR * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
     ///
@@ -659,6 +764,34 @@ impl crate::TESObjectREFR {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn i_animation_graph_manager_holder_vfunc_9() -> u64 { unsafe { function!(20113, () -> u64)() } }
+    /// `TESObjectREFR::IsChild` (decompiler signature, tier low; ledger slot_propagation evidence, name high; id 19713, rva 0x2e8f70).
+    /// `undefined1 IsChild(void)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn is_child() -> u8 { unsafe { function!(19713, () -> u8)() } }
+    /// `TESObjectREFR::LoadAnimationGraphState` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 20099, rva 0x2fc5e0).
+    /// `undefined8 LoadAnimationGraphState(TESObjectREFR * param_1, longlong * param_2, undefined8 param_3, char * param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn load_animation_graph_state(&self, param_2: *mut i64, param_3: u64, param_4: *mut c_char) -> u64 { unsafe { function!(20099, (*const Self, *mut i64, u64, *mut c_char) -> u64)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
+    /// `TESObjectREFR::LoadGame` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 19529, rva 0x2e0c70).
+    /// `undefined LoadGame(TESObjectREFR * this, TESObjectREFR_vtbl * param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn load_game(&self, param_1: *mut c_void, param_2: *mut c_void, param_3: *mut c_void) -> u64 { unsafe { function!(19529, (*const Self, *mut c_void, *mut c_void, *mut c_void) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `TESObjectREFR::SaveGame` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 19528, rva 0x2e0b10).
+    /// `undefined SaveGame(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn save_game(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(19528, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `TESObjectREFR::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 19501, rva 0x2dd7d0).
     /// `TESObjectREFR * ctor(TESObjectREFR * this, undefined8 param_1, uint * param_2, longlong * param_3)`
     ///

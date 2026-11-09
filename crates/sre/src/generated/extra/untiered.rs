@@ -77,10 +77,3 @@ impl crate::ExtraTeleport {
     pub unsafe fn vfunc_2_sub0(param_1: *mut u32, param_2: *mut u32) -> u64 { unsafe { function!(12985, (*mut u32, *mut u32) -> u64)(param_1, param_2) } }
 }
 
-/// `ExtraType1DContainsRef` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 37714, rva 0x69ff10).
-/// `ulonglong ExtraType1DContainsRef(longlong param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn extra_type1_d_contains_ref(param_1: i64, param_2: i64) -> u64 { unsafe { function!(37714, (i64, i64) -> u64)(param_1, param_2) } }

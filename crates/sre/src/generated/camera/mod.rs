@@ -13,6 +13,8 @@ mod api;
 pub use api::*;
 #[cfg(all(feature = "camera", feature = "tier-high"))]
 mod tier_high;
+#[cfg(all(feature = "camera", feature = "tier-medium"))]
+mod tier_medium;
 #[cfg(all(feature = "camera", feature = "tier-low"))]
 mod tier_low;
 #[cfg(all(feature = "camera", feature = "untiered"))]

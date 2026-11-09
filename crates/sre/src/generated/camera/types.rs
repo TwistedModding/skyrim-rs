@@ -1336,24 +1336,18 @@ pub struct CachedRaycastData {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CachedRaycastData_vtable,
     /// +0x8 `undefined4`, semantic; the actor's reference handle (high)
-    #[doc(hidden)]
-    pub __handle: [u8; 4],
+    pub handle: u32,
     unknown_C: [u8; 4],
     /// +0x10 `pointer`, semantic; char controller's caching shape phantom (when its type slot 6 returns 2) (medium)
-    #[doc(hidden)]
-    pub __cachingPhantom: [u8; 8],
+    pub cachingPhantom: *mut c_void,
     /// +0x18 `pointer`, semantic; char controller's collected bodies (mode 1) (medium)
-    #[doc(hidden)]
-    pub __collectedBodies: [u8; 8],
+    pub collectedBodies: *mut c_void,
     /// +0x20 `ptr:bhkWorld`, semantic; the actor's bhkWorld (fallback cast through slot 51) (high)
-    #[doc(hidden)]
-    pub __world: [u8; 8],
+    pub world: *mut crate::bhkWorld,
     /// +0x28 `undefined4`, semantic; the actor's filter info >> 16, shifted back into the ray's filterInfo (high)
-    #[doc(hidden)]
-    pub __collisionGroup: [u8; 4],
+    pub collisionGroup: u32,
     /// +0x2C `undefined1`, semantic; when set the cast skips the phantom and bodies paths and uses the world (medium)
-    #[doc(hidden)]
-    pub __useWorldOnly: [u8; 1],
+    pub useWorldOnly: u8,
     /// +0x2D `u8`, semantic; set when the record should be re-resolved; written only (low)
     #[doc(hidden)]
     pub __needsRefresh: [u8; 1],
@@ -1364,8 +1358,7 @@ pub struct CachedRaycastData {
     #[doc(hidden)]
     pub __graphIsSynced: [u8; 1],
     /// +0x30 `undefined1`, semantic; any CastRay of this record hit (normal.z > 0) since the per-frame clear (high)
-    #[doc(hidden)]
-    pub __hitThisFrame: [u8; 1],
+    pub hitThisFrame: u8,
     /// +0x31 `u8`, semantic; copy of the graph variable bLegCastResults; only written by dead code (medium)
     #[doc(hidden)]
     pub __legCastResults: [u8; 1],
@@ -1375,16 +1368,16 @@ pub struct CachedRaycastData {
 }
 const _: () = assert!(size_of::<CachedRaycastData>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __handle) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __cachingPhantom) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __collectedBodies) == 0x18);
-const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __world) == 0x20);
-const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __collisionGroup) == 0x28);
-const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __useWorldOnly) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, handle) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, cachingPhantom) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, collectedBodies) == 0x18);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, world) == 0x20);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, collisionGroup) == 0x28);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, useWorldOnly) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __needsRefresh) == 0x2D);
 const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __isFree) == 0x2E);
 const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __graphIsSynced) == 0x2F);
-const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __hitThisFrame) == 0x30);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, hitThisFrame) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __legCastResults) == 0x31);
 
 /// `Calendar`: size 0x40 (exact).
@@ -5502,8 +5495,7 @@ pub struct TESRace {
     pub __heights: [u8; 8],
     unknown_100: [u8; 8],
     /// +0x108 `u32`, semantic; race DATA flags (DATA+0x20); bit 15 gates head tracking (see flags); see the flag rows (medium)
-    #[doc(hidden)]
-    pub __dataFlags: [u8; 4],
+    pub dataFlags: u32,
     unknown_10C: [u8; 28],
     /// +0x128 `u32`, semantic; race size (DATA+0x40); 3 selects fAIMaxLargeCreatureHeadTrackDistance (medium)
     #[doc(hidden)]
@@ -5557,7 +5549,7 @@ const _: () = assert!(core::mem::offset_of!(TESRace, numKeywords) == 0x80);
 const _: () = assert!(core::mem::offset_of!(TESRace, __vftable_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(TESRace, field_90) == 0x90);
 const _: () = assert!(core::mem::offset_of!(TESRace, __heights) == 0xF8);
-const _: () = assert!(core::mem::offset_of!(TESRace, __dataFlags) == 0x108);
+const _: () = assert!(core::mem::offset_of!(TESRace, dataFlags) == 0x108);
 const _: () = assert!(core::mem::offset_of!(TESRace, __size) == 0x128);
 const _: () = assert!(core::mem::offset_of!(TESRace, leftHandBipedIndex) == 0x138);
 const _: () = assert!(core::mem::offset_of!(TESRace, __field_168) == 0x168);
@@ -6820,158 +6812,127 @@ const _: () = assert!(core::mem::offset_of!(hkStridedVertices, striding) == 0xC)
 /// `hkbFootIkDriver::InternalLeg`: size 0x30 (exact).
 /// Meaning: per-leg runtime state of the driver (medium, camera pass).
 /// Evidence: per-leg runtime state of the driver; IC7 FS A (static-W); size: stride in 0xad42a0 and the run 0xad2300.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct hkbFootIkDriver__InternalLeg {
     /// +0x0 `class:hkVector4`, semantic; ankle world position with its height set to root height + groundHeight; only when alignWorldFromModelGain > 0 (high)
-    #[doc(hidden)]
-    pub __groundPositionWS: [u8; 16],
+    pub groundPositionWS: crate::hkVector4,
     /// +0x10 `class:hkVector4`, semantic; solver output +0: the ground normal used for the ankle (also kept in solver +0xa0) (high)
-    #[doc(hidden)]
-    pub __groundNormalWS: [u8; 16],
+    pub groundNormalWS: crate::hkVector4,
     /// +0x20 `ptr:hkaFootPlacementIkSolver`, semantic; the leg's solver (null for legs with an index < 0) (high)
-    #[doc(hidden)]
-    pub __solver: [u8; 8],
+    pub solver: *mut crate::hkaFootPlacementIkSolver,
     /// +0x28 `float`, semantic; vertical error of the leg (+ verticalOffset on a hit) (high)
-    #[doc(hidden)]
-    pub __groundHeight: [u8; 4],
+    pub groundHeight: f32,
     /// +0x2C `u8`, semantic; the leg's ray hit (high)
-    #[doc(hidden)]
-    pub __hit: [u8; 1],
+    pub hit: u8,
     /// +0x2D `u8`, semantic; original ankle height (model up) < footPlantedAnkleHeightMS (high)
-    #[doc(hidden)]
-    pub __isPlanted: [u8; 1],
-    unknown_2E: [u8; 2],
+    pub isPlanted: u8,
+    pub unknown_2E: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbFootIkDriver__InternalLeg>() == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, __groundPositionWS) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, __groundNormalWS) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, __solver) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, __groundHeight) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, __hit) == 0x2C);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, __isPlanted) == 0x2D);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, groundPositionWS) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, groundNormalWS) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, solver) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, groundHeight) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, hit) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, isPlanted) == 0x2D);
 
 /// `hkbFootIkDriverInfoLeg`: size 0x60 (exact).
 /// Meaning: per-leg foot IK data (toe point = footEndLS) (high, camera pass).
 /// Evidence: per-leg foot IK data (toe point = footEndLS); IC7 FS A (static-W). Reflection member table 0x19c74b0. The run reads ankleIndex (+0x50) and footPlantedAnkleHeightMS (+0x30) every frame from the info, so an edit of footEndLS is seen by the next run once the legs are (re)initialised; when the legs object copies it (0xad42b0) was not read.; size: leg stride 0x60 in the run 0xad2300.
-#[repr(C, align(4))]
+#[repr(C)]
 pub struct hkbFootIkDriverInfoLeg {
     /// +0x0 `undefined16`, semantic; quaternion (high)
-    #[doc(hidden)]
-    pub __prevAnkleRotLS: [u8; 16],
+    pub prevAnkleRotLS: [u8; 16],
     /// +0x10 `undefined16`, semantic; reflection (high)
-    #[doc(hidden)]
-    pub __kneeAxisLS: [u8; 16],
+    pub kneeAxisLS: [u8; 16],
     /// +0x20 `undefined16`, semantic; reflection (the toe/foot end point) (high)
-    #[doc(hidden)]
-    pub __footEndLS: [u8; 16],
+    pub footEndLS: [u8; 16],
     /// +0x30 `float`, semantic; reflection; run compares the ankle height with it (high)
-    #[doc(hidden)]
-    pub __footPlantedAnkleHeightMS: [u8; 4],
+    pub footPlantedAnkleHeightMS: f32,
     /// +0x34 `float`, semantic; reflection (high)
-    #[doc(hidden)]
-    pub __footRaisedAnkleHeightMS: [u8; 4],
+    pub footRaisedAnkleHeightMS: f32,
     /// +0x38 `float`, semantic; reflection (high)
-    #[doc(hidden)]
-    pub __maxAnkleHeightMS: [u8; 4],
+    pub maxAnkleHeightMS: f32,
     /// +0x3C `float`, semantic; reflection (high)
-    #[doc(hidden)]
-    pub __minAnkleHeightMS: [u8; 4],
+    pub minAnkleHeightMS: f32,
     /// +0x40 `float`, semantic; reflection (high)
-    #[doc(hidden)]
-    pub __maxKneeAngleDegrees: [u8; 4],
+    pub maxKneeAngleDegrees: f32,
     /// +0x44 `float`, semantic; reflection (high)
-    #[doc(hidden)]
-    pub __minKneeAngleDegrees: [u8; 4],
+    pub minKneeAngleDegrees: f32,
     /// +0x48 `float`, semantic; reflection (high)
-    #[doc(hidden)]
-    pub __maxAnkleAngleDegrees: [u8; 4],
+    pub maxAnkleAngleDegrees: f32,
     /// +0x4C `i16`, semantic; reflection (high)
-    #[doc(hidden)]
-    pub __hipIndex: [u8; 2],
+    pub hipIndex: u16,
     /// +0x4E `i16`, semantic; reflection (high)
-    #[doc(hidden)]
-    pub __kneeIndex: [u8; 2],
+    pub kneeIndex: u16,
     /// +0x50 `i16`, semantic; reflection; read by the run (high)
-    #[doc(hidden)]
-    pub __ankleIndex: [u8; 2],
-    unknown_52: [u8; 14],
+    pub ankleIndex: u16,
+    pub unknown_52: [u8; 14],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbFootIkDriverInfoLeg>() == 0x60);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __prevAnkleRotLS) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __kneeAxisLS) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __footEndLS) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __footPlantedAnkleHeightMS) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __footRaisedAnkleHeightMS) == 0x34);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __maxAnkleHeightMS) == 0x38);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __minAnkleHeightMS) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __maxKneeAngleDegrees) == 0x40);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __minKneeAngleDegrees) == 0x44);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __maxAnkleAngleDegrees) == 0x48);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __hipIndex) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __kneeIndex) == 0x4E);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __ankleIndex) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, prevAnkleRotLS) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, kneeAxisLS) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, footEndLS) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, footPlantedAnkleHeightMS) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, footRaisedAnkleHeightMS) == 0x34);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, maxAnkleHeightMS) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, minAnkleHeightMS) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, maxKneeAngleDegrees) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, minKneeAngleDegrees) == 0x44);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, maxAnkleAngleDegrees) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, hipIndex) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, kneeIndex) == 0x4E);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, ankleIndex) == 0x50);
 
 /// `hkbFootIkGains`: size 0x30 (exact).
 /// Meaning: foot IK gains (graph data of hkbFootIkControlsModifier); no engine INI feeds them (high, camera pass).
 /// Evidence: foot IK gains (graph data of hkbFootIkControlsModifier); no engine INI feeds them; IC7 FS A (static-W). Reflection member table 0x19c42b0. The [FootIK] INI gains are read only by the ragdoll path 0x10701d0, which is unreachable in 1.7.104 (pass IK tracks D and E).; size: reflection members to +0x2c.
-#[repr(C, align(4))]
+#[repr(C)]
 pub struct hkbFootIkGains {
     /// +0x0 `float`, semantic; reflection (high)
-    #[doc(hidden)]
-    pub __onOffGain: [u8; 4],
+    pub onOffGain: f32,
     /// +0x4 `float`, semantic; reflection (high)
-    #[doc(hidden)]
-    pub __groundAscendingGain: [u8; 4],
+    pub groundAscendingGain: f32,
     /// +0x8 `float`, semantic; reflection (high)
-    #[doc(hidden)]
-    pub __groundDescendingGain: [u8; 4],
+    pub groundDescendingGain: f32,
     /// +0xC `float`, semantic; reflection (high)
-    #[doc(hidden)]
-    pub __footPlantedGain: [u8; 4],
+    pub footPlantedGain: f32,
     /// +0x10 `float`, semantic; reflection (high)
-    #[doc(hidden)]
-    pub __footRaisedGain: [u8; 4],
+    pub footRaisedGain: f32,
     /// +0x14 `float`, semantic; reflection (high)
-    #[doc(hidden)]
-    pub __footUnlockGain: [u8; 4],
+    pub footUnlockGain: f32,
     /// +0x18 `float`, semantic; reflection (high)
-    #[doc(hidden)]
-    pub __worldFromModelFeedbackGain: [u8; 4],
+    pub worldFromModelFeedbackGain: f32,
     /// +0x1C `float`, semantic; reflection (high)
-    #[doc(hidden)]
-    pub __errorUpDownBias: [u8; 4],
+    pub errorUpDownBias: f32,
     /// +0x20 `float`, semantic; reflection (high)
-    #[doc(hidden)]
-    pub __alignWorldFromModelGain: [u8; 4],
+    pub alignWorldFromModelGain: f32,
     /// +0x24 `float`, semantic; reflection (high)
-    #[doc(hidden)]
-    pub __hipOrientationGain: [u8; 4],
+    pub hipOrientationGain: f32,
     /// +0x28 `float`, semantic; reflection (high)
-    #[doc(hidden)]
-    pub __maxKneeAngleDifference: [u8; 4],
+    pub maxKneeAngleDifference: f32,
     /// +0x2C `float`, semantic; reflection (high)
-    #[doc(hidden)]
-    pub __ankleOrientationGain: [u8; 4],
+    pub ankleOrientationGain: f32,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbFootIkGains>() == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __onOffGain) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __groundAscendingGain) == 0x4);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __groundDescendingGain) == 0x8);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __footPlantedGain) == 0xC);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __footRaisedGain) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __footUnlockGain) == 0x14);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __worldFromModelFeedbackGain) == 0x18);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __errorUpDownBias) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __alignWorldFromModelGain) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __hipOrientationGain) == 0x24);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __maxKneeAngleDifference) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, __ankleOrientationGain) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, onOffGain) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, groundAscendingGain) == 0x4);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, groundDescendingGain) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, footPlantedGain) == 0xC);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, footRaisedGain) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, footUnlockGain) == 0x14);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, worldFromModelFeedbackGain) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, errorUpDownBias) == 0x1C);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, alignWorldFromModelGain) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, hipOrientationGain) == 0x24);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, maxKneeAngleDifference) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, ankleOrientationGain) == 0x2C);
 
 /// `hkpCapsuleShape`: size 0x50 (exact, high); primary base `hkpConvexShape`.
 /// Meaning: capsule: two end points and a radius (high, camera pass).

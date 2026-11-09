@@ -7,78 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `BSPointerHandleManager::CreateHandle` at 0x17e640 (runtime, high); signature (untiered): `uint * CreateHandle(uint * param_1, longlong param_2)`; semantic: allocates a handle table entry for a reference (high); signature `uint* BSPointerHandleManager::CreateHandle(uint* out, TESObjectREFR* ref)`
-pub const BSPointerHandleManager__CreateHandle: u64 = 12326;
-/// `BSPointerHandleManager::CreateHandle` as a function pointer type (high).
-pub type BSPointerHandleManager__CreateHandle_fn = unsafe extern "C" fn(out: *mut u32, ref_: *mut crate::TESObjectREFR) -> *mut u32;
-/// `BSPointerHandleManager::CreateHandle_2` at 0x17e4b0 (runtime, medium); signature (untiered): `uint * CreateHandle_2(uint * param_1, longlong param_2)`; semantic: second copy of CreateHandle (medium); signature `uint* BSPointerHandleManager::CreateHandle_2(uint* out, TESObjectREFR* ref)`
-pub const BSPointerHandleManager__CreateHandle_2: u64 = 12325;
-/// `BSPointerListBase<BSTempEffectDebris*___ptr64>::dtor` at 0x4aad90 (layout_inference, high); signature (low): `undefined dtor(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_BSTempEffectDebris____ptr64__dtor: u64 = 30039;
-/// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vdtor` at 0x4aa1c0 (slot_propagation, medium); signature (low): `BSPointerListBase<BSTempEffectDebris*___ptr64> * vdtor(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_BSTempEffectDebris____ptr64__vdtor: u64 = 30022;
-/// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vfunc_1` at 0x4aa160 (rtti, medium); signature (low): `undefined vfunc_1(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_BSTempEffectDebris____ptr64__vfunc_1: u64 = 30020;
-/// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vfunc_2` at 0x4aa1a0 (rtti, medium); signature (low): `undefined vfunc_2(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_BSTempEffectDebris____ptr64__vfunc_2: u64 = 30021;
-/// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::dtor` at 0x408470 (callgraph, high); signature (untiered): `undefined dtor(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_TriggerEntry__TriggerEvent____ptr64__dtor: u64 = 26070;
-/// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::dtor` at 0x408490 (layout_inference, high); signature (low): `undefined dtor(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_TriggerEntry__TriggerEvent____ptr64__dtor_2: u64 = 26071;
-/// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::vdtor` at 0x408900 (slot_propagation, medium); signature (low): `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * vdtor(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_TriggerEntry__TriggerEvent____ptr64__vdtor: u64 = 26084;
-/// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::vfunc_1` at 0x408fc0 (rtti, medium); signature (low): `undefined vfunc_1(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_TriggerEntry__TriggerEvent____ptr64__vfunc_1: u64 = 26103;
-/// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::vfunc_2` at 0x408f60 (rtti, medium); signature (low): `undefined vfunc_2(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_TriggerEntry__TriggerEvent____ptr64__vfunc_2: u64 = 26101;
-/// `BSPortal::vdtor` at 0x213b70 (layout_inference, medium); signature (low): `BSPortal * vdtor(BSPortal * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortal__vdtor: u64 = 15555;
-/// `BSPortal::vfunc_2` at 0x213c50 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const BSPortal__vfunc_2: u64 = 15560;
-/// `BSPortal::vfunc_23` at 0xfe9f00 (rtti, high); signature (low): `BSOcclusionPlane * vfunc_23(BSPortal * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortal__vfunc_23: u64 = 76449;
-/// `BSPortalGraph::ctor` at 0xfd9ac0 (layout_inference, high); signature (high): `BSPortalGraph * ctor(BSPortalGraph * this)`
-pub const BSPortalGraph__ctor: u64 = 76125;
-/// `BSPortalGraph::dtor` at 0xfd9c70 (layout_inference, high); signature (low): `undefined dtor(BSPortalGraph * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalGraph__dtor: u64 = 76126;
-/// `BSPortalGraph::vdtor` at 0xfdb1b0 (slot_propagation, medium); signature (low): `BSPortalGraph * vdtor(BSPortalGraph * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalGraph__vdtor: u64 = 76152;
-/// `BSPortalGraphEntry::ctor` at 0xfd92c0 (layout_inference, high); signature (high): `BSPortalGraphEntry * ctor(BSPortalGraphEntry * this)`
-pub const BSPortalGraphEntry__ctor: u64 = 76114;
-/// `BSPortalGraphEntry::ctor_sub0` at 0xfdb0c0 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong param_1)`
-pub const BSPortalGraphEntry__ctor_sub0: u64 = 76149;
-/// `BSPortalGraphEntry::dtor` at 0xfd9370 (layout_inference, high); signature (low): `undefined dtor(BSPortalGraphEntry * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalGraphEntry__dtor: u64 = 76115;
-/// `BSPortalGraphEntry::vdtor` at 0xfdb1f0 (slot_propagation, medium); signature (low): `BSPortalGraphEntry * vdtor(BSPortalGraphEntry * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalGraphEntry__vdtor: u64 = 524235;
-/// `BSPortalSharedNode::ctor` at 0xfe9d10 (layout_inference, high); signature (low): `BSPortalSharedNode * ctor(BSPortalSharedNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalSharedNode__ctor: u64 = 76446;
-/// `BSPortalSharedNode::ctor` at 0xfe9d90 (layout_inference, medium); signature (low): `undefined ctor(BSPortalSharedNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalSharedNode__ctor_2: u64 = 76447;
-/// `BSPortalSharedNode::vdtor` at 0xfea050 (layout_inference, medium); signature (low): `BSPortalSharedNode * vdtor(BSPortalSharedNode * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalSharedNode__vdtor: u64 = 76456;
-/// `BSPortalSharedNode::vfunc_2` at 0xfea100 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const BSPortalSharedNode__vfunc_2: u64 = 76457;
-/// `BSPortalSharedNode::vfunc_23` at 0xfe9c20 (rtti, high); signature (low): `NiNode * vfunc_23(BSPortalSharedNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalSharedNode__vfunc_23: u64 = 76444;
-/// `BSPortalSharedNode::vfunc_52` at 0xfe9e20 (rtti, high); signature (low): `undefined vfunc_52(BSPortalSharedNode * this, BSPortalSharedNode * param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalSharedNode__vfunc_52: u64 = 76448;
-/// `BSPrecomputedNavmeshInfoPathMap::INavmeshInfoVisitor::vdtor` at 0x11f1fa0 (semantic, high); signature (low): `INavmeshInfoVisitor * vdtor(INavmeshInfoVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; semantic: slot 0: vtable reset, OperatorDelete(this, 8) when flags bit 0 (high); signature `INavmeshInfoVisitor* (INavmeshInfoVisitor* this, u64 flags)`
-pub const BSPrecomputedNavmeshInfoPathMap__INavmeshInfoVisitor__vdtor: u64 = 91369;
-/// `BSPrecomputedNavmeshInfoPathMap::INavmeshInfoVisitor::vdtor` as a function pointer type (high).
-pub type BSPrecomputedNavmeshInfoPathMap__INavmeshInfoVisitor__vdtor_fn = unsafe extern "C" fn(this: *mut c_void, flags: u64) -> *mut c_void;
-/// `BSPrecomputedNavmeshInfoSearch::ctor` at 0x11c8a20 (layout_inference, high); signature (high): `BSPrecomputedNavmeshInfoSearch * ctor(BSPrecomputedNavmeshInfoSearch * this)`
-pub const BSPrecomputedNavmeshInfoSearch__ctor: u64 = 90545;
-/// `BSPrecomputedNavmeshInfoSearch::vdtor` at 0x11c95d0 (layout_inference, medium); signature (low): `BSPrecomputedNavmeshInfoSearch * vdtor(BSPrecomputedNavmeshInfoSearch * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPrecomputedNavmeshInfoSearch__vdtor: u64 = 90565;
-/// `BSPrecomputedNavmeshInfoSearch::vfunc_2` at 0x11c8b50 (rtti, high); signature (low): `longlong vfunc_2(BSPrecomputedNavmeshInfoSearch * this, longlong param_1)`
-pub const BSPrecomputedNavmeshInfoSearch__vfunc_2: u64 = 90547;
-/// `BSProceduralLightningController::Create` at 0xffdf50 (string, medium); signature (low): `undefined Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const BSProceduralLightningController__Create: u64 = 76939;
-/// `BSProceduralLightningController::ctor` at 0xffcc50 (layout_inference, high); signature (high): `BSProceduralLightningController * ctor(BSProceduralLightningController * this)`
-pub const BSProceduralLightningController__ctor: u64 = 76916;
-/// `BSProceduralLightningController::ctor` at 0xffcd80 (layout_inference, medium); signature (low): `undefined ctor(BSProceduralLightningController * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSProceduralLightningController__ctor_2: u64 = 76917;
 /// `BSProceduralLightningController::ctor_sub0` at 0xffe0c0 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const BSProceduralLightningController__ctor_sub0: u64 = 76942;
 /// `BSProceduralLightningController::ctor_sub1` at 0xffe200 (callgraph, medium); signature (untiered): `undefined ctor_sub1(longlong * param_1)`
@@ -279,19 +207,19 @@ pub const BSQueuedResourceCollectionBase__vfunc_3: u64 = 75761;
 pub const BSQueuedResourceCollectionBase__vfunc_4: u64 = 75762;
 /// `BSQueuedResourceCollectionBase::vfunc_9` at 0xfc8490 (rtti, medium); signature (high): `undefined vfunc_9(BSQueuedResourceCollectionBase * this)`
 pub const BSQueuedResourceCollectionBase__vfunc_9: u64 = 75763;
-/// `BSRagdollContactListenerModifier::Activate` at 0xbb1fa0 (semantic, high); signature (untiered): `undefined Activate(BSRagdollContactListenerModifier * this, undefined8 param_1)`
+/// `BSRagdollContactListenerModifier::Activate` at 0xbb1fa0 (semantic, high); signature (low): `undefined Activate(BSRagdollContactListenerModifier * this, undefined8 param_1)`
 pub const BSRagdollContactListenerModifier__Activate: u64 = 63088;
-/// `BSRagdollContactListenerModifier::CloneNode` at 0xbb1f50 (semantic, high); signature (untiered): `undefined CloneNode(BSRagdollContactListenerModifier * this)`
+/// `BSRagdollContactListenerModifier::CloneNode` at 0xbb1f50 (semantic, high); signature (high): `undefined CloneNode(BSRagdollContactListenerModifier * this)`
 pub const BSRagdollContactListenerModifier__CloneNode: u64 = 63087;
-/// `BSRagdollContactListenerModifier::CollectBindables` at 0xbb1f10 (semantic, medium); signature (untiered): `undefined CollectBindables(BSRagdollContactListenerModifier * this, undefined8 * param_1)`
+/// `BSRagdollContactListenerModifier::CollectBindables` at 0xbb1f10 (semantic, medium); signature (low): `undefined CollectBindables(BSRagdollContactListenerModifier * this, undefined8 * param_1)`
 pub const BSRagdollContactListenerModifier__CollectBindables: u64 = 63086;
-/// `BSRagdollContactListenerModifier::Deactivate` at 0xbb1fc0 (semantic, high); signature (untiered): `undefined Deactivate(BSRagdollContactListenerModifier * this, undefined8 param_1)`
+/// `BSRagdollContactListenerModifier::Deactivate` at 0xbb1fc0 (semantic, high); signature (low): `undefined Deactivate(BSRagdollContactListenerModifier * this, undefined8 param_1)`
 pub const BSRagdollContactListenerModifier__Deactivate: u64 = 63089;
 /// `BSRagdollContactListenerModifier::GetClassType` at 0xbb1f00 (semantic, medium); signature (untiered): `undefined * GetClassType(void)`
 pub const BSRagdollContactListenerModifier__GetClassType: u64 = 63085;
-/// `BSRagdollContactListenerModifier::IsValid` at 0xbb1fe0 (semantic, high); signature (untiered): `ulonglong IsValid(BSRagdollContactListenerModifier * this, ulonglong * param_1)`
+/// `BSRagdollContactListenerModifier::IsValid` at 0xbb1fe0 (semantic, high); signature (low): `ulonglong IsValid(BSRagdollContactListenerModifier * this, ulonglong * param_1)`
 pub const BSRagdollContactListenerModifier__IsValid: u64 = 63090;
-/// `BSRagdollContactListenerModifier::Update` at 0xbb2370 (semantic, high); signature (untiered): `undefined Update(BSRagdollContactListenerModifier * this, longlong * param_1)`
+/// `BSRagdollContactListenerModifier::Update` at 0xbb2370 (semantic, high); signature (low): `undefined Update(BSRagdollContactListenerModifier * this, longlong * param_1)`
 pub const BSRagdollContactListenerModifier__Update: u64 = 63091;
 /// `BSRagdollContactListenerModifier::ctor` at 0xbb1d00 (layout_inference, medium); signature (high): `BSRagdollContactListenerModifier * ctor(BSRagdollContactListenerModifier * this)`
 pub const BSRagdollContactListenerModifier__ctor: u64 = 63082;
@@ -335,19 +263,19 @@ pub const BSRangeNode__vfunc_27: u64 = 76198;
 pub const BSRangeNode__vfunc_28: u64 = 76199;
 /// `BSRangeNode::vfunc_62` at 0xfdd8c0 (rtti, medium); signature (high): `undefined vfunc_62(BSRangeNode * this)`
 pub const BSRangeNode__vfunc_62: u64 = 76203;
-/// `BSReadWriteLock::LockForRead` at 0xce3250 (semantic, high); signature (untiered): `undefined LockForRead(DWORD * param_1)`; semantic: shared lock (high); signature `void BSReadWriteLock::LockForRead(BSReadWriteLock* this)`
+/// `BSReadWriteLock::LockForRead` at 0xce3250 (semantic, high); signature (low): `undefined LockForRead(DWORD * param_1)`; semantic: shared lock (high); signature `void BSReadWriteLock::LockForRead(BSReadWriteLock* this)`
 pub const BSReadWriteLock__LockForRead: u64 = 68233;
 /// `BSReadWriteLock::LockForRead` as a function pointer type (high).
 pub type BSReadWriteLock__LockForRead_fn = unsafe extern "C" fn(this: *mut crate::BSReadWriteLock);
-/// `BSReadWriteLock::LockForWrite` at 0xce32d0 (semantic, high); signature (untiered): `DWORD LockForWrite(DWORD * param_1)`; semantic: exclusive lock (high); signature `void BSReadWriteLock::LockForWrite(BSReadWriteLock* this)`
+/// `BSReadWriteLock::LockForWrite` at 0xce32d0 (semantic, high); signature (low): `DWORD LockForWrite(DWORD * param_1)`; semantic: exclusive lock (high); signature `void BSReadWriteLock::LockForWrite(BSReadWriteLock* this)`
 pub const BSReadWriteLock__LockForWrite: u64 = 68234;
 /// `BSReadWriteLock::LockForWrite` as a function pointer type (high).
 pub type BSReadWriteLock__LockForWrite_fn = unsafe extern "C" fn(this: *mut crate::BSReadWriteLock);
-/// `BSReadWriteLock::UnlockForRead` at 0xce3510 (semantic, high); signature (untiered): `undefined UnlockForRead(longlong param_1)`; semantic: release shared lock (high); signature `void BSReadWriteLock::UnlockForRead(BSReadWriteLock* this)`
+/// `BSReadWriteLock::UnlockForRead` at 0xce3510 (semantic, high); signature (low): `undefined UnlockForRead(longlong param_1)`; semantic: release shared lock (high); signature `void BSReadWriteLock::UnlockForRead(BSReadWriteLock* this)`
 pub const BSReadWriteLock__UnlockForRead: u64 = 68239;
 /// `BSReadWriteLock::UnlockForRead` as a function pointer type (high).
 pub type BSReadWriteLock__UnlockForRead_fn = unsafe extern "C" fn(this: *mut crate::BSReadWriteLock);
-/// `BSReadWriteLock::UnlockForWrite` at 0xce3520 (semantic, high); signature (untiered): `int UnlockForWrite(undefined4 * param_1)`; semantic: release exclusive lock (high); signature `void BSReadWriteLock::UnlockForWrite(BSReadWriteLock* this)`
+/// `BSReadWriteLock::UnlockForWrite` at 0xce3520 (semantic, high); signature (low): `int UnlockForWrite(undefined4 * param_1)`; semantic: release exclusive lock (high); signature `void BSReadWriteLock::UnlockForWrite(BSReadWriteLock* this)`
 pub const BSReadWriteLock__UnlockForWrite: u64 = 68240;
 /// `BSReadWriteLock::UnlockForWrite` as a function pointer type (high).
 pub type BSReadWriteLock__UnlockForWrite_fn = unsafe extern "C" fn(this: *mut crate::BSReadWriteLock);
@@ -367,7 +295,7 @@ pub const BSReference__vfunc_26: u64 = 77021;
 pub const BSReference__vfunc_27: u64 = 77022;
 /// `BSReference::vfunc_28` at 0x10001c0 (rtti, high); signature (low): `ulonglong vfunc_28(BSReference * this, longlong * param_1)`
 pub const BSReference__vfunc_28: u64 = 77023;
-/// `BSRenderPass::Alloc` at 0x1555820 (semantic, high); signature (untiered): `undefined Alloc(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, byte param_5, longlong param_6)`; semantic: takes a pass from this thread's pool (index TLS+0x9f4) and initialises it (high); signature `BSRenderPass* (BSShader* shader, BSShaderProperty* property, BSGeometry* geometry, u32 techniqueId, u8 numLights, BSLight** lights)`
+/// `BSRenderPass::Alloc` at 0x1555820 (semantic, high); signature (low): `undefined Alloc(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, byte param_5, longlong param_6)`; semantic: takes a pass from this thread's pool (index TLS+0x9f4) and initialises it (high); signature `BSRenderPass* (BSShader* shader, BSShaderProperty* property, BSGeometry* geometry, u32 techniqueId, u8 numLights, BSLight** lights)`
 pub const BSRenderPass__Alloc: u64 = 107497;
 /// `BSRenderPass::Alloc` as a function pointer type (high).
 pub type BSRenderPass__Alloc_fn = unsafe extern "C" fn(shader: *mut crate::BSShader, property: *mut crate::BSShaderProperty, geometry: *mut crate::BSGeometry, techniqueId: u32, numLights: u8, lights: *mut *mut crate::BSLight) -> *mut c_void;
@@ -525,7 +453,7 @@ pub const BSResource__CompressedArchiveStream__vfunc_5: u64 = 69668;
 pub const BSResource__CompressedArchiveStream__vfunc_6: u64 = 69670;
 /// `BSResource::CompressedArchiveStream::vfunc_8` at 0xec7b20 (rtti, high); signature (low): `ulonglong vfunc_8(CompressedArchiveStream * this, longlong param_1, int param_2, ulonglong * param_3)`
 pub const BSResource__CompressedArchiveStream__vfunc_8: u64 = 69671;
-/// `BSResource::DispatchToEventSourceC0` at 0xecf2c0 (semantic, high); signature (untiered): `undefined DispatchToEventSourceC0(undefined8 param_1)`; semantic: DispatchToSinksWithDeferredChanges(&g_BSResource event sources +0xc0, event) (high); signature `void (void* event)`
+/// `BSResource::DispatchToEventSourceC0` at 0xecf2c0 (semantic, high); signature (low): `undefined DispatchToEventSourceC0(undefined8 param_1)`; semantic: DispatchToSinksWithDeferredChanges(&g_BSResource event sources +0xc0, event) (high); signature `void (void* event)`
 pub const BSResource__DispatchToEventSourceC0: u64 = 69851;
 /// `BSResource::DispatchToEventSourceC0` as a function pointer type (high).
 pub type BSResource__DispatchToEventSourceC0_fn = unsafe extern "C" fn(event: *mut c_void);
@@ -1153,17 +1081,17 @@ pub const BSScaleformImageLoader__dtor: u64 = 88018;
 pub const BSScaleformImageLoader__vdtor: u64 = 84484;
 /// `BSScaleformImageLoader::vfunc_1` at 0x1172d90 (rtti, high); signature (low): `GRefCountImplCore * vfunc_1(BSScaleformImageLoader * this, char * param_1)`
 pub const BSScaleformImageLoader__vfunc_1: u64 = 84468;
-/// `BSScaleformManager::BeginDisplay` at 0x117bd50 (semantic, medium); signature (untiered): `undefined BeginDisplay(longlong * param_1)`; semantic: renderer vt[0x20] before the menus draw (medium); signature `void (void* renderConfigHolder)`
+/// `BSScaleformManager::BeginDisplay` at 0x117bd50 (semantic, medium); signature (low): `undefined BeginDisplay(longlong * param_1)`; semantic: renderer vt[0x20] before the menus draw (medium); signature `void (void* renderConfigHolder)`
 pub const BSScaleformManager__BeginDisplay: u64 = 82732;
-/// `BSScaleformManager::EndDisplay` at 0x117bd70 (semantic, medium); signature (untiered): `undefined EndDisplay(longlong * param_1)`; semantic: renderer vt[0x28] after the menus draw, then restores the engine renderer state (medium); signature `void (void* renderConfigHolder)`
+/// `BSScaleformManager::EndDisplay` at 0x117bd70 (semantic, medium); signature (low): `undefined EndDisplay(longlong * param_1)`; semantic: renderer vt[0x28] after the menus draw, then restores the engine renderer state (medium); signature `void (void* renderConfigHolder)`
 pub const BSScaleformManager__EndDisplay: u64 = 82733;
-/// `BSScaleformManager::LoadMovie` at 0x116fda0 (semantic, high); signature (untiered): `undefined8 LoadMovie(longlong param_1, longlong * param_2, longlong * param_3, undefined * param_4, undefined4 param_5)`; semantic: formats 'Interface/%s.swf' (else 'Interface/Exported/%s.gfx'), creates the definition through the loader (flags 0x82), instantiates the view (movieDef vt[0xc0]), sets scale mode, background alpha (movie variable 'BackgroundAlpha' clamped, else the argument), safe rect, viewport, the menu's FxDelegate, Advance(0,2), calls _root.InitExtensions and _root.SetPlatform, stores the view into *outView releasing the old one (high); signature `bool (BSScaleformManager* this, IMenu* menu, GFxMovieView** outView, const char* name, GFxScaleMode scaleMode, float backgroundAlpha)`
+/// `BSScaleformManager::LoadMovie` at 0x116fda0 (semantic, high); signature (low): `undefined8 LoadMovie(longlong param_1, longlong * param_2, longlong * param_3, undefined * param_4, undefined4 param_5)`; semantic: formats 'Interface/%s.swf' (else 'Interface/Exported/%s.gfx'), creates the definition through the loader (flags 0x82), instantiates the view (movieDef vt[0xc0]), sets scale mode, background alpha (movie variable 'BackgroundAlpha' clamped, else the argument), safe rect, viewport, the menu's FxDelegate, Advance(0,2), calls _root.InitExtensions and _root.SetPlatform, stores the view into *outView releasing the old one (high); signature `bool (BSScaleformManager* this, IMenu* menu, GFxMovieView** outView, const char* name, GFxScaleMode scaleMode, float backgroundAlpha)`
 pub const BSScaleformManager__LoadMovie: u64 = 82325;
 /// `BSScaleformManager::LoadMovie` as a function pointer type (high).
 pub type BSScaleformManager__LoadMovie_fn = unsafe extern "C" fn(this: *mut crate::BSScaleformManager, menu: *mut crate::IMenu, outView: *mut *mut crate::GFxMovieView, name: *const c_char, scaleMode: u32, backgroundAlpha: f32) -> bool;
-/// `BSScaleformManager::Shutdown` at 0x116fc90 (semantic, medium); signature (untiered): `undefined Shutdown(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: releases image loader, font map, loader, render config, the allocator, clears 0x369b060 (medium); signature `void (BSScaleformManager* this)`
+/// `BSScaleformManager::Shutdown` at 0x116fc90 (semantic, medium); signature (low): `undefined Shutdown(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: releases image loader, font map, loader, render config, the allocator, clears 0x369b060 (medium); signature `void (BSScaleformManager* this)`
 pub const BSScaleformManager__Shutdown: u64 = 82324;
-/// `BSScaleformManager::ctor` at 0x116f630 (semantic, high); signature (untiered): `longlong ctor(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: constructs the manager in the static block 0x3241bc0 and publishes it in 0x369b060 (high); signature `BSScaleformManager* (BSScaleformManager* this)`
+/// `BSScaleformManager::ctor` at 0x116f630 (semantic, high); signature (low): `longlong ctor(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: constructs the manager in the static block 0x3241bc0 and publishes it in 0x369b060 (high); signature `BSScaleformManager* (BSScaleformManager* this)`
 pub const BSScaleformManager__ctor: u64 = 82323;
 /// `BSScaleformManager::ctor` as a function pointer type (high).
 pub type BSScaleformManager__ctor_fn = unsafe extern "C" fn(this: *mut crate::BSScaleformManager) -> *mut crate::BSScaleformManager;
@@ -1189,7 +1117,7 @@ pub const BSScaleformTranslator__vdtor: u64 = 82364;
 pub const BSScaleformTranslator__vfunc_2: u64 = 84658;
 /// `BSScaleformTranslator::vfunc_2_sub0` at 0xdf6940 (callgraph, medium); signature (untiered): `undefined vfunc_2_sub0(longlong param_1, wchar_t * param_2, rsize_t param_3)`
 pub const BSScaleformTranslator__vfunc_2_sub0: u64 = 84609;
-/// `BSSceneGraph::GetFarDistance` at 0xff4b70 (semantic, high); signature (untiered): `float GetFarDistance(BSSceneGraph * this)`; semantic: 20480 when +0x138, else (fNoLODFarDistanceMax - Min) * Pct + Min (high); signature `float (BSSceneGraph* this)`
+/// `BSSceneGraph::GetFarDistance` at 0xff4b70 (semantic, high); signature (high): `float GetFarDistance(BSSceneGraph * this)`; semantic: 20480 when +0x138, else (fNoLODFarDistanceMax - Min) * Pct + Min (high); signature `float (BSSceneGraph* this)`
 pub const BSSceneGraph__GetFarDistance: u64 = 76749;
 /// `BSSceneGraph::GetFarDistance` as a function pointer type (high).
 pub type BSSceneGraph__GetFarDistance_fn = unsafe extern "C" fn(this: *mut crate::BSSceneGraph) -> f32;
@@ -1197,7 +1125,7 @@ pub type BSSceneGraph__GetFarDistance_fn = unsafe extern "C" fn(this: *mut crate
 pub const BSSceneGraph__GetNearDistance: u64 = 76750;
 /// `BSSceneGraph::GetNearDistance` as a function pointer type (high).
 pub type BSSceneGraph__GetNearDistance_fn = unsafe extern "C" fn(this: *mut crate::BSSceneGraph) -> f32;
-/// `BSSceneGraph::SetFieldOfView` at 0x1516f90 (semantic, high); signature (untiered): `undefined SetFieldOfView(longlong * param_1, float param_2, char param_3, longlong param_4, char param_5)`; semantic: camera null -> this+0x128 and: if !force and fov == +0x13c, only lodAdjust (+0x184) = fov / fDefaultFOV when updateLodAdjust, return; else +0x13c = fov. Then SetPerspectiveFromFov(camera, fov, near = slot 63, far = slot 62, g_RenderTargets width 0x3335600, height 0x3335604, +0x138 byte, updateLodAdjust, fDefaultFOV) (high); signature `void (BSSceneGraph* this, float fov, bool force, NiCamera* camera, bool updateLodAdjust)`
+/// `BSSceneGraph::SetFieldOfView` at 0x1516f90 (semantic, high); signature (low): `undefined SetFieldOfView(longlong * param_1, float param_2, char param_3, longlong param_4, char param_5)`; semantic: camera null -> this+0x128 and: if !force and fov == +0x13c, only lodAdjust (+0x184) = fov / fDefaultFOV when updateLodAdjust, return; else +0x13c = fov. Then SetPerspectiveFromFov(camera, fov, near = slot 63, far = slot 62, g_RenderTargets width 0x3335600, height 0x3335604, +0x138 byte, updateLodAdjust, fDefaultFOV) (high); signature `void (BSSceneGraph* this, float fov, bool force, NiCamera* camera, bool updateLodAdjust)`
 pub const BSSceneGraph__SetFieldOfView: u64 = 106461;
 /// `BSSceneGraph::SetFieldOfView` as a function pointer type (high).
 pub type BSSceneGraph__SetFieldOfView_fn = unsafe extern "C" fn(this: *mut crate::BSSceneGraph, fov: f32, force: bool, camera: *mut crate::NiCamera, updateLodAdjust: bool);
@@ -1289,7 +1217,7 @@ pub const BSScrapMap_unsigned_int_unsigned_int__vfunc_6: u64 = 53003;
 pub const BSScript__ByteCode__PackedInstructionStream__InstructionFunctor__dtor: u64 = 104552;
 /// `BSScript::ByteCode::PackedInstructionStream::InstructionFunctor::vdtor` at 0x14a3a80 (layout_inference, medium); signature (low): `InstructionFunctor * vdtor(InstructionFunctor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__ByteCode__PackedInstructionStream__InstructionFunctor__vdtor: u64 = 104559;
-/// `BSScript::CompiledScriptLoader::Load` at 0x14a42c0 (semantic, high); signature (untiered): `undefined8 Load(CompiledScriptLoader * this, char * param_1, longlong * param_2)`
+/// `BSScript::CompiledScriptLoader::Load` at 0x14a42c0 (semantic, high); signature (low): `undefined8 Load(CompiledScriptLoader * this, char * param_1, longlong * param_2)`
 pub const BSScript__CompiledScriptLoader__Load: u64 = 104575;
 /// `BSScript::CompiledScriptLoader::ReadDebugInfo` at 0x14a4970 (semantic, high); signature (untiered): `bool ReadDebugInfo(longlong param_1, longlong param_2, undefined8 param_3, ulonglong param_4)`; semantic: reads the .pex debug section: a has-debug byte, the source modification time (u64), a u16 function count, per function object/state/function names (string-table indices), a type byte (<= 2), a u16 instruction count and one u16 line per instruction; stores them only when flags bit 0 is set, else skips them (high); signature `bool (BSScript::CompiledScriptLoader* this, void* unlinkedObject)`
 pub const BSScript__CompiledScriptLoader__ReadDebugInfo: u64 = 104580;
@@ -1477,7 +1405,7 @@ pub const BSScript__IProfilePolicy__vdtor: u64 = 54374;
 pub const BSScript__ISavePatcherInterface__dtor: u64 = 104366;
 /// `BSScript::ISavePatcherInterface::vdtor` at 0x9f08e0 (slot_propagation, medium); signature (low): `ISavePatcherInterface * vdtor(ISavePatcherInterface * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__ISavePatcherInterface__vdtor: u64 = 54375;
-/// `BSScript::IStackCallbackFunctor::dtor` at 0x9f0920 (semantic, high); signature (untiered): `IStackCallbackFunctor * dtor(IStackCallbackFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+/// `BSScript::IStackCallbackFunctor::dtor` at 0x9f0920 (semantic, high); signature (low): `IStackCallbackFunctor * dtor(IStackCallbackFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__IStackCallbackFunctor__dtor: u64 = 54376;
 /// `BSScript::IStackCallbackFunctor::vfunc_2` at 0x149c7a0 (rtti, high); signature (low): `undefined1 vfunc_2(void)`
 pub const BSScript__IStackCallbackFunctor__vfunc_2: u64 = 104472;
@@ -1507,13 +1435,13 @@ pub const BSScript__IVMSaveLoadInterface__vdtor: u64 = 104372;
 pub const BSScript__IVirtualMachine__dtor: u64 = 104369;
 /// `BSScript::IVirtualMachine::vdtor` at 0x1497090 (layout_inference, medium); signature (low): `IVirtualMachine * vdtor(IVirtualMachine * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__IVirtualMachine__vdtor: u64 = 104373;
-/// `BSScript::Internal::AutoPropGetFunction::GetFunctionName` at 0x14d6a40 (semantic, high); signature (untiered): `AutoPropGetFunction * GetFunctionName(AutoPropGetFunction * this)`
+/// `BSScript::Internal::AutoPropGetFunction::GetFunctionName` at 0x14d6a40 (semantic, high); signature (high): `AutoPropGetFunction * GetFunctionName(AutoPropGetFunction * this)`
 pub const BSScript__Internal__AutoPropGetFunction__GetFunctionName: u64 = 105234;
-/// `BSScript::Internal::AutoPropGetFunction::GetIsNative` at 0x14d6af0 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+/// `BSScript::Internal::AutoPropGetFunction::GetIsNative` at 0x14d6af0 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
 pub const BSScript__Internal__AutoPropGetFunction__GetIsNative: u64 = 105241;
-/// `BSScript::Internal::AutoPropGetFunction::GetLineForIP` at 0x14d6d50 (semantic, high); signature (untiered): `undefined1 GetLineForIP(AutoPropGetFunction * this, undefined8 param_1, undefined4 * param_2)`
+/// `BSScript::Internal::AutoPropGetFunction::GetLineForIP` at 0x14d6d50 (semantic, high); signature (low): `undefined1 GetLineForIP(AutoPropGetFunction * this, undefined8 param_1, undefined4 * param_2)`
 pub const BSScript__Internal__AutoPropGetFunction__GetLineForIP: u64 = 105250;
-/// `BSScript::Internal::AutoPropGetFunction::GetObjectTypeName` at 0x14d6a50 (semantic, high); signature (untiered): `AutoPropGetFunction * GetObjectTypeName(AutoPropGetFunction * this)`
+/// `BSScript::Internal::AutoPropGetFunction::GetObjectTypeName` at 0x14d6a50 (semantic, high); signature (high): `AutoPropGetFunction * GetObjectTypeName(AutoPropGetFunction * this)`
 pub const BSScript__Internal__AutoPropGetFunction__GetObjectTypeName: u64 = 105235;
 /// `BSScript::Internal::AutoPropGetFunction::vdtor` at 0x14d7190 (layout_inference, medium); signature (low): `AutoPropGetFunction * vdtor(AutoPropGetFunction * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__Internal__AutoPropGetFunction__vdtor: u64 = 105274;
@@ -1549,9 +1477,9 @@ pub const BSScript__Internal__AutoPropGetFunction__vfunc_6: u64 = 105239;
 pub const BSScript__Internal__AutoPropGetFunction__vfunc_7: u64 = 105240;
 /// `BSScript::Internal::AutoPropGetFunction::vfunc_9` at 0x14d6b00 (rtti, high); signature (low): `undefined1 vfunc_9(void)`
 pub const BSScript__Internal__AutoPropGetFunction__vfunc_9: u64 = 105242;
-/// `BSScript::Internal::AutoPropSetFunction::GetFunctionName` at 0x14d6db0 (semantic, high); signature (untiered): `AutoPropSetFunction * GetFunctionName(AutoPropSetFunction * this)`
+/// `BSScript::Internal::AutoPropSetFunction::GetFunctionName` at 0x14d6db0 (semantic, high); signature (high): `AutoPropSetFunction * GetFunctionName(AutoPropSetFunction * this)`
 pub const BSScript__Internal__AutoPropSetFunction__GetFunctionName: u64 = 105254;
-/// `BSScript::Internal::AutoPropSetFunction::GetObjectTypeName` at 0x14d6dc0 (semantic, high); signature (untiered): `AutoPropSetFunction * GetObjectTypeName(AutoPropSetFunction * this)`
+/// `BSScript::Internal::AutoPropSetFunction::GetObjectTypeName` at 0x14d6dc0 (semantic, high); signature (high): `AutoPropSetFunction * GetObjectTypeName(AutoPropSetFunction * this)`
 pub const BSScript__Internal__AutoPropSetFunction__GetObjectTypeName: u64 = 105255;
 /// `BSScript::Internal::AutoPropSetFunction::vdtor` at 0x14d71e0 (layout_inference, medium); signature (low): `AutoPropSetFunction * vdtor(AutoPropSetFunction * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__Internal__AutoPropSetFunction__vdtor: u64 = 105275;
@@ -1591,7 +1519,7 @@ pub const BSScript__Internal__AutoPropSetFunction__vfunc_7: u64 = 105260;
 pub const BSScript__Internal__AutoPropSetFunction__vfunc_8: u64 = 105261;
 /// `BSScript::Internal::AutoPropSetFunction::vfunc_9` at 0x14d6ea0 (rtti, high); signature (low): `undefined1 vfunc_9(void)`
 pub const BSScript__Internal__AutoPropSetFunction__vfunc_9: u64 = 105262;
-/// `BSScript::Internal::CodeTasklet::GetFunctionCallInfo` at 0x14cf440 (semantic, high); signature (untiered): `char GetFunctionCallInfo(CodeTasklet * this, undefined4 * param_1, ulonglong * param_2, longlong * param_3, ulonglong * param_4, longlong * param_5)`
+/// `BSScript::Internal::CodeTasklet::GetFunctionCallInfo` at 0x14cf440 (semantic, high); signature (low): `char GetFunctionCallInfo(CodeTasklet * this, undefined4 * param_1, ulonglong * param_2, longlong * param_3, ulonglong * param_4, longlong * param_5)`
 pub const BSScript__Internal__CodeTasklet__GetFunctionCallInfo: u64 = 105179;
 /// `BSScript::Internal::CodeTasklet::ctor` at 0x14ce5e0 (semantic, high); signature (low): `CodeTasklet * ctor(CodeTasklet * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; semantic: vtable 0x1b2bd88, refcount 0, stack/vm/logger, state 2, stores itself into stack+0x88 with a reference (high); signature `BSScript::Internal::CodeTasklet* (BSScript::Internal::CodeTasklet* this, BSScript::Stack* stack, BSScript::Internal::VirtualMachine* vm, BSScript::ErrorLogger* logger)`
 pub const BSScript__Internal__CodeTasklet__ctor: u64 = 105175;
@@ -1605,15 +1533,15 @@ pub const BSScript__Internal__CodeTasklet__vfunc_1_sub0: u64 = 105229;
 pub const BSScript__Internal__IFuncCallQuery__dtor: u64 = 104998;
 /// `BSScript::Internal::IFuncCallQuery::vdtor` at 0x14c8960 (layout_inference, medium); signature (low): `IFuncCallQuery * vdtor(IFuncCallQuery * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__Internal__IFuncCallQuery__vdtor: u64 = 105029;
-/// `BSScript::Internal::NativeFunctionStub::GetFunctionName` at 0x14acc30 (semantic, high); signature (untiered): `NativeFunctionStub * GetFunctionName(NativeFunctionStub * this)`
+/// `BSScript::Internal::NativeFunctionStub::GetFunctionName` at 0x14acc30 (semantic, high); signature (high): `NativeFunctionStub * GetFunctionName(NativeFunctionStub * this)`
 pub const BSScript__Internal__NativeFunctionStub__GetFunctionName: u64 = 104701;
-/// `BSScript::Internal::NativeFunctionStub::GetIsNative` at 0x14acd00 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+/// `BSScript::Internal::NativeFunctionStub::GetIsNative` at 0x14acd00 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
 pub const BSScript__Internal__NativeFunctionStub__GetIsNative: u64 = 104708;
-/// `BSScript::Internal::NativeFunctionStub::GetLineForIP` at 0x14acf20 (semantic, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionStub * this, undefined8 param_1, undefined4 * param_2)`
+/// `BSScript::Internal::NativeFunctionStub::GetLineForIP` at 0x14acf20 (semantic, high); signature (low): `undefined1 GetLineForIP(NativeFunctionStub * this, undefined8 param_1, undefined4 * param_2)`
 pub const BSScript__Internal__NativeFunctionStub__GetLineForIP: u64 = 104717;
-/// `BSScript::Internal::NativeFunctionStub::GetObjectTypeName` at 0x14acc40 (semantic, high); signature (untiered): `NativeFunctionStub * GetObjectTypeName(NativeFunctionStub * this)`
+/// `BSScript::Internal::NativeFunctionStub::GetObjectTypeName` at 0x14acc40 (semantic, high); signature (high): `NativeFunctionStub * GetObjectTypeName(NativeFunctionStub * this)`
 pub const BSScript__Internal__NativeFunctionStub__GetObjectTypeName: u64 = 104702;
-/// `BSScript::Internal::NativeFunctionStub::GetSourceFileName` at 0x14ace80 (semantic, high); signature (untiered): `undefined * GetSourceFileName(void)`
+/// `BSScript::Internal::NativeFunctionStub::GetSourceFileName` at 0x14ace80 (semantic, high); signature (low): `undefined * GetSourceFileName(void)`
 pub const BSScript__Internal__NativeFunctionStub__GetSourceFileName: u64 = 104716;
 /// `BSScript::Internal::NativeFunctionStub::vdtor` at 0x14dc930 (layout_inference, medium); signature (low): `NativeFunctionStub * vdtor(NativeFunctionStub * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__Internal__NativeFunctionStub__vdtor: u64 = 105346;
@@ -1655,47 +1583,47 @@ pub const BSScript__Internal__RawFuncCallQuery__vdtor: u64 = 105032;
 pub const BSScript__Internal__RawFuncCallQuery__vfunc_1: u64 = 105083;
 /// `BSScript::Internal::RawFuncCallQuery::vfunc_1_sub0` at 0x14c2f00 (callgraph, medium); signature (untiered): `undefined8 vfunc_1_sub0(longlong * param_1, longlong * param_2, undefined8 param_3)`
 pub const BSScript__Internal__RawFuncCallQuery__vfunc_1_sub0: u64 = 104910;
-/// `BSScript::Internal::ScriptFunction::Call` at 0x14e5520 (semantic, high); signature (untiered): `int Call(ScriptFunction * this, longlong * param_1, undefined8 param_2, longlong param_3, char param_4)`
+/// `BSScript::Internal::ScriptFunction::Call` at 0x14e5520 (semantic, high); signature (low): `int Call(ScriptFunction * this, longlong * param_1, undefined8 param_2, longlong param_3, char param_4)`
 pub const BSScript__Internal__ScriptFunction__Call: u64 = 105466;
-/// `BSScript::Internal::ScriptFunction::CopyReturnType` at 0x14e5340 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(ScriptFunction * this, undefined8 * param_1)`
+/// `BSScript::Internal::ScriptFunction::CopyReturnType` at 0x14e5340 (semantic, high); signature (low): `undefined8 * CopyReturnType(ScriptFunction * this, undefined8 * param_1)`
 pub const BSScript__Internal__ScriptFunction__CopyReturnType: u64 = 105455;
-/// `BSScript::Internal::ScriptFunction::Destroy` at 0x14e5700 (semantic, high); signature (untiered): `ScriptFunction * Destroy(ScriptFunction * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+/// `BSScript::Internal::ScriptFunction::Destroy` at 0x14e5700 (semantic, high); signature (low): `ScriptFunction * Destroy(ScriptFunction * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__Internal__ScriptFunction__Destroy: u64 = 105472;
-/// `BSScript::Internal::ScriptFunction::GetDocString` at 0x14e5450 (semantic, high); signature (untiered): `undefined1 * GetDocString(ScriptFunction * this)`
+/// `BSScript::Internal::ScriptFunction::GetDocString` at 0x14e5450 (semantic, high); signature (high): `undefined1 * GetDocString(ScriptFunction * this)`
 pub const BSScript__Internal__ScriptFunction__GetDocString: u64 = 105464;
-/// `BSScript::Internal::ScriptFunction::GetFunctionName` at 0x14e5310 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(ScriptFunction * this)`
+/// `BSScript::Internal::ScriptFunction::GetFunctionName` at 0x14e5310 (semantic, high); signature (high): `undefined1 * GetFunctionName(ScriptFunction * this)`
 pub const BSScript__Internal__ScriptFunction__GetFunctionName: u64 = 105452;
-/// `BSScript::Internal::ScriptFunction::GetFunctionType` at 0x14e5430 (semantic, high); signature (untiered): `undefined2 GetFunctionType(ScriptFunction * this)`
+/// `BSScript::Internal::ScriptFunction::GetFunctionType` at 0x14e5430 (semantic, high); signature (high): `undefined2 GetFunctionType(ScriptFunction * this)`
 pub const BSScript__Internal__ScriptFunction__GetFunctionType: u64 = 105462;
-/// `BSScript::Internal::ScriptFunction::GetIsCallableFromTasklet` at 0x14e56e0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(void)`
+/// `BSScript::Internal::ScriptFunction::GetIsCallableFromTasklet` at 0x14e56e0 (semantic, high); signature (low): `undefined1 GetIsCallableFromTasklet(void)`
 pub const BSScript__Internal__ScriptFunction__GetIsCallableFromTasklet: u64 = 105470;
-/// `BSScript::Internal::ScriptFunction::GetIsEmpty` at 0x14e5420 (semantic, high); signature (untiered): `bool GetIsEmpty(ScriptFunction * this)`
+/// `BSScript::Internal::ScriptFunction::GetIsEmpty` at 0x14e5420 (semantic, high); signature (high): `bool GetIsEmpty(ScriptFunction * this)`
 pub const BSScript__Internal__ScriptFunction__GetIsEmpty: u64 = 105461;
-/// `BSScript::Internal::ScriptFunction::GetIsNative` at 0x14e5400 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+/// `BSScript::Internal::ScriptFunction::GetIsNative` at 0x14e5400 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
 pub const BSScript__Internal__ScriptFunction__GetIsNative: u64 = 105459;
-/// `BSScript::Internal::ScriptFunction::GetIsStatic` at 0x14e5410 (semantic, high); signature (untiered): `undefined1 GetIsStatic(ScriptFunction * this)`
+/// `BSScript::Internal::ScriptFunction::GetIsStatic` at 0x14e5410 (semantic, high); signature (high): `undefined1 GetIsStatic(ScriptFunction * this)`
 pub const BSScript__Internal__ScriptFunction__GetIsStatic: u64 = 105460;
-/// `BSScript::Internal::ScriptFunction::GetLineForIP` at 0x14e5590 (semantic, high); signature (untiered): `undefined4 GetLineForIP(ScriptFunction * this, uint param_1, uint * param_2)`
+/// `BSScript::Internal::ScriptFunction::GetLineForIP` at 0x14e5590 (semantic, high); signature (low): `undefined4 GetLineForIP(ScriptFunction * this, uint param_1, uint * param_2)`
 pub const BSScript__Internal__ScriptFunction__GetLineForIP: u64 = 105468;
-/// `BSScript::Internal::ScriptFunction::GetObjectTypeName` at 0x14e5320 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(ScriptFunction * this)`
+/// `BSScript::Internal::ScriptFunction::GetObjectTypeName` at 0x14e5320 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(ScriptFunction * this)`
 pub const BSScript__Internal__ScriptFunction__GetObjectTypeName: u64 = 105453;
-/// `BSScript::Internal::ScriptFunction::GetParamCount` at 0x14e5360 (semantic, high); signature (untiered): `undefined2 GetParamCount(ScriptFunction * this)`
+/// `BSScript::Internal::ScriptFunction::GetParamCount` at 0x14e5360 (semantic, high); signature (high): `undefined2 GetParamCount(ScriptFunction * this)`
 pub const BSScript__Internal__ScriptFunction__GetParamCount: u64 = 105456;
-/// `BSScript::Internal::ScriptFunction::GetParamNameAndType` at 0x14e5370 (semantic, high); signature (untiered): `undefined GetParamNameAndType(ScriptFunction * this, ulonglong param_1, longlong * param_2, longlong * param_3)`
+/// `BSScript::Internal::ScriptFunction::GetParamNameAndType` at 0x14e5370 (semantic, high); signature (low): `undefined GetParamNameAndType(ScriptFunction * this, ulonglong param_1, longlong * param_2, longlong * param_3)`
 pub const BSScript__Internal__ScriptFunction__GetParamNameAndType: u64 = 105457;
-/// `BSScript::Internal::ScriptFunction::GetSourceFileName` at 0x14e5580 (semantic, high); signature (untiered): `undefined1 * GetSourceFileName(ScriptFunction * this)`
+/// `BSScript::Internal::ScriptFunction::GetSourceFileName` at 0x14e5580 (semantic, high); signature (high): `undefined1 * GetSourceFileName(ScriptFunction * this)`
 pub const BSScript__Internal__ScriptFunction__GetSourceFileName: u64 = 105467;
-/// `BSScript::Internal::ScriptFunction::GetStackFrameSize` at 0x14e53d0 (semantic, high); signature (untiered): `int GetStackFrameSize(ScriptFunction * this)`
+/// `BSScript::Internal::ScriptFunction::GetStackFrameSize` at 0x14e53d0 (semantic, high); signature (high): `int GetStackFrameSize(ScriptFunction * this)`
 pub const BSScript__Internal__ScriptFunction__GetStackFrameSize: u64 = 105458;
-/// `BSScript::Internal::ScriptFunction::GetStateName` at 0x14e5330 (semantic, high); signature (untiered): `undefined1 * GetStateName(ScriptFunction * this)`
+/// `BSScript::Internal::ScriptFunction::GetStateName` at 0x14e5330 (semantic, high); signature (high): `undefined1 * GetStateName(ScriptFunction * this)`
 pub const BSScript__Internal__ScriptFunction__GetStateName: u64 = 105454;
-/// `BSScript::Internal::ScriptFunction::GetUserFlags` at 0x14e5440 (semantic, high); signature (untiered): `undefined4 GetUserFlags(ScriptFunction * this)`
+/// `BSScript::Internal::ScriptFunction::GetUserFlags` at 0x14e5440 (semantic, high); signature (high): `undefined4 GetUserFlags(ScriptFunction * this)`
 pub const BSScript__Internal__ScriptFunction__GetUserFlags: u64 = 105463;
-/// `BSScript::Internal::ScriptFunction::InsertLocals` at 0x14e5460 (semantic, high); signature (untiered): `undefined InsertLocals(ScriptFunction * this, ulonglong * param_1, undefined8 param_2, ulonglong param_3)`
+/// `BSScript::Internal::ScriptFunction::InsertLocals` at 0x14e5460 (semantic, high); signature (low): `undefined InsertLocals(ScriptFunction * this, ulonglong * param_1, undefined8 param_2, ulonglong param_3)`
 pub const BSScript__Internal__ScriptFunction__InsertLocals: u64 = 105465;
-/// `BSScript::Internal::ScriptFunction::SetIsCallableFromTasklet` at 0x14e56f0 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(void)`
+/// `BSScript::Internal::ScriptFunction::SetIsCallableFromTasklet` at 0x14e56f0 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(void)`
 pub const BSScript__Internal__ScriptFunction__SetIsCallableFromTasklet: u64 = 105471;
-/// `BSScript::Internal::ScriptFunction::TryGetVariableName` at 0x14e5600 (semantic, high); signature (untiered): `bool TryGetVariableName(ScriptFunction * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+/// `BSScript::Internal::ScriptFunction::TryGetVariableName` at 0x14e5600 (semantic, high); signature (low): `bool TryGetVariableName(ScriptFunction * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
 pub const BSScript__Internal__ScriptFunction__TryGetVariableName: u64 = 105469;
 /// `BSScript::Internal::ScriptFunction::ctor` at 0x14e50c0 (semantic, high); signature (low): `ScriptFunction * ctor(ScriptFunction * this, longlong * param_1, undefined * param_2, undefined8 param_3)`; semantic: copies an unlinked function's names, signature, instruction stream and (narrowed to u16) line array (high); signature `BSScript::Internal::ScriptFunction* (BSScript::Internal::ScriptFunction* this, void* unlinkedFunction)`
 pub const BSScript__Internal__ScriptFunction__ctor: u64 = 105450;
@@ -1703,7 +1631,7 @@ pub const BSScript__Internal__ScriptFunction__ctor: u64 = 105450;
 pub type BSScript__Internal__ScriptFunction__ctor_fn = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__ScriptFunction, unlinkedFunction: *mut c_void) -> *mut crate::BSScript__Internal__ScriptFunction;
 /// `BSScript::Internal::ScriptFunction::dtor` at 0x14e5250 (layout_inference, high); signature (low): `undefined dtor(ScriptFunction * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__Internal__ScriptFunction__dtor: u64 = 105451;
-/// `BSScript::Internal::VirtualMachine::AttachObjectToHandle` at 0x14b5160 (runtime, high); signature (untiered): `undefined AttachObjectToHandle(VirtualMachine * this, ulonglong * param_1, ulonglong param_2, undefined1 * param_3)`; semantic: bind interface slot 4: removes the object from the list of the handle it has, appends it (with a reference; the flag in bit 0 of the stored pointer) to the new handle's list in the +0x93a0 map and stores the handle in the object (+0x20); request GA2: the caller's reference is neither taken nor released, but removing the object from its previous handle's list releases the reference that list held, so an object rebound to a handle it already had (or to a new one) must still be held by the caller (skyrim-rs crashed in Object::Destroy from ReleaseScriptObjectPtr at +0x2bd binding an uncounted pointer a second time) (high); signature `void (IVMObjectBindInterface* this, BSTSmartPointer<BSScript::Object>* object, u64 handle, bool flag)`
+/// `BSScript::Internal::VirtualMachine::AttachObjectToHandle` at 0x14b5160 (runtime, high); signature (low): `undefined AttachObjectToHandle(VirtualMachine * this, ulonglong * param_1, ulonglong param_2, undefined1 * param_3)`; semantic: bind interface slot 4: removes the object from the list of the handle it has, appends it (with a reference; the flag in bit 0 of the stored pointer) to the new handle's list in the +0x93a0 map and stores the handle in the object (+0x20); request GA2: the caller's reference is neither taken nor released, but removing the object from its previous handle's list releases the reference that list held, so an object rebound to a handle it already had (or to a new one) must still be held by the caller (skyrim-rs crashed in Object::Destroy from ReleaseScriptObjectPtr at +0x2bd binding an uncounted pointer a second time) (high); signature `void (IVMObjectBindInterface* this, BSTSmartPointer<BSScript::Object>* object, u64 handle, bool flag)`
 pub const BSScript__Internal__VirtualMachine__AttachObjectToHandle: u64 = 104821;
 /// `BSScript::Internal::VirtualMachine::AttachObjectToHandle` as a function pointer type (high).
 pub type BSScript__Internal__VirtualMachine__AttachObjectToHandle_fn = unsafe extern "C" fn(this: *mut c_void, object: *mut c_void, handle: u64, flag: bool);
@@ -1823,81 +1751,81 @@ pub const BSScript__Internal__VirtualMachine__BSScript_IVMSaveLoadInterface_vfun
 pub const BSScript__Internal__VirtualMachine__BSScript_IVMSaveLoadInterface_vfunc_8: u64 = 104835;
 /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_9` at 0x14b8b70 (rtti, high); signature (low): `undefined BSScript_IVMSaveLoadInterface_vfunc_9(void)`
 pub const BSScript__Internal__VirtualMachine__BSScript_IVMSaveLoadInterface_vfunc_9: u64 = 104836;
-/// `BSScript::Internal::VirtualMachine::BindNativeMethod` at 0x14b1ff0 (runtime, high); signature (untiered): `ulonglong BindNativeMethod(VirtualMachine * this, ulonglong * param_1, undefined8 param_2, longlong * param_3)`
+/// `BSScript::Internal::VirtualMachine::BindNativeMethod` at 0x14b1ff0 (runtime, high); signature (low): `ulonglong BindNativeMethod(VirtualMachine * this, ulonglong * param_1, undefined8 param_2, longlong * param_3)`
 pub const BSScript__Internal__VirtualMachine__BindNativeMethod: u64 = 104788;
-/// `BSScript::Internal::VirtualMachine::BindObject` at 0x14b4fb0 (runtime, high); signature (untiered): `undefined BindObject(VirtualMachine * this, longlong * param_1, uint * param_2, undefined8 param_3)`; semantic: bind interface slot 3, what ObjectBindPolicy::BindObject forwards to (request GA2: a fourth argument, the bool in r9, reaches slot 4 AttachObjectToHandle unchanged at 0x14b5019 and is ORed into the stored object pointer, so a caller must pass 0/1, never leave r9 undefined: skyrim-rs crashed with garbage there; the policy passes false, the engine passes false for forms and 1 for some loaded script objects): attaches the object to the handle (slot 4), then walks the object's type and its parents for the first class with a registered type id that HandleIsType accepts for the handle; when none does, the object's own handle is reset to the invalid handle while it stays in the handle's object list (high); signature `void (IVMObjectBindInterface* this, BSTSmartPointer<BSScript::Object>* object, u64 handle, bool flag)`
+/// `BSScript::Internal::VirtualMachine::BindObject` at 0x14b4fb0 (runtime, high); signature (low): `undefined BindObject(VirtualMachine * this, longlong * param_1, uint * param_2, undefined8 param_3)`; semantic: bind interface slot 3, what ObjectBindPolicy::BindObject forwards to (request GA2: a fourth argument, the bool in r9, reaches slot 4 AttachObjectToHandle unchanged at 0x14b5019 and is ORed into the stored object pointer, so a caller must pass 0/1, never leave r9 undefined: skyrim-rs crashed with garbage there; the policy passes false, the engine passes false for forms and 1 for some loaded script objects): attaches the object to the handle (slot 4), then walks the object's type and its parents for the first class with a registered type id that HandleIsType accepts for the handle; when none does, the object's own handle is reset to the invalid handle while it stays in the handle's object list (high); signature `void (IVMObjectBindInterface* this, BSTSmartPointer<BSScript::Object>* object, u64 handle, bool flag)`
 pub const BSScript__Internal__VirtualMachine__BindObject: u64 = 104820;
 /// `BSScript::Internal::VirtualMachine::BindObject` as a function pointer type (high).
 pub type BSScript__Internal__VirtualMachine__BindObject_fn = unsafe extern "C" fn(this: *mut c_void, object: *mut c_void, handle: u64, flag: bool);
-/// `BSScript::Internal::VirtualMachine::CreateArray` at 0x14b1f00 (runtime, high); signature (untiered): `undefined1 CreateArray(VirtualMachine * this, ulonglong * param_1, undefined4 param_2, undefined8 param_3)`
+/// `BSScript::Internal::VirtualMachine::CreateArray` at 0x14b1f00 (runtime, high); signature (low): `undefined1 CreateArray(VirtualMachine * this, ulonglong * param_1, undefined4 param_2, undefined8 param_3)`
 pub const BSScript__Internal__VirtualMachine__CreateArray: u64 = 104787;
-/// `BSScript::Internal::VirtualMachine::CreateArrayOfType` at 0x14b1de0 (semantic, medium); signature (untiered): `undefined1 CreateArrayOfType(VirtualMachine * this, uint param_1, undefined8 param_2, ulonglong param_3, undefined8 param_4)`
+/// `BSScript::Internal::VirtualMachine::CreateArrayOfType` at 0x14b1de0 (semantic, medium); signature (low): `undefined1 CreateArrayOfType(VirtualMachine * this, uint param_1, undefined8 param_2, ulonglong param_3, undefined8 param_4)`
 pub const BSScript__Internal__VirtualMachine__CreateArrayOfType: u64 = 104786;
-/// `BSScript::Internal::VirtualMachine::CreateObject` at 0x14b1cc0 (runtime, high); signature (untiered): `char CreateObject(VirtualMachine * this, undefined8 param_1, ulonglong * param_2)`
+/// `BSScript::Internal::VirtualMachine::CreateObject` at 0x14b1cc0 (runtime, high); signature (low): `char CreateObject(VirtualMachine * this, undefined8 param_1, ulonglong * param_2)`
 pub const BSScript__Internal__VirtualMachine__CreateObject: u64 = 104784;
-/// `BSScript::Internal::VirtualMachine::DispatchMethodCall` at 0x14b40e0 (runtime, high); signature (untiered): `undefined8 DispatchMethodCall(VirtualMachine * this, ulonglong * param_1, RawFuncCallQuery * * param_2, longlong * param_3, longlong * param_4)`
+/// `BSScript::Internal::VirtualMachine::DispatchMethodCall` at 0x14b40e0 (runtime, high); signature (low): `undefined8 DispatchMethodCall(VirtualMachine * this, ulonglong * param_1, RawFuncCallQuery * * param_2, longlong * param_3, longlong * param_4)`
 pub const BSScript__Internal__VirtualMachine__DispatchMethodCall: u64 = 104804;
-/// `BSScript::Internal::VirtualMachine::DispatchMethodCallByHandle` at 0x14b3ff0 (runtime, high); signature (untiered): `undefined1 DispatchMethodCallByHandle(VirtualMachine * this, uint * * param_1, undefined8 * param_2, undefined8 param_3, uint * * param_4)`
+/// `BSScript::Internal::VirtualMachine::DispatchMethodCallByHandle` at 0x14b3ff0 (runtime, high); signature (low): `undefined1 DispatchMethodCallByHandle(VirtualMachine * this, uint * * param_1, undefined8 * param_2, undefined8 param_3, uint * * param_4)`
 pub const BSScript__Internal__VirtualMachine__DispatchMethodCallByHandle: u64 = 104803;
-/// `BSScript::Internal::VirtualMachine::DispatchStaticCall` at 0x14b3ca0 (runtime, high); signature (untiered): `undefined8 DispatchStaticCall(VirtualMachine * this, ulonglong * param_1, ulonglong * param_2, RawFuncCallQuery_vtbl * param_3, longlong * param_4)`
+/// `BSScript::Internal::VirtualMachine::DispatchStaticCall` at 0x14b3ca0 (runtime, high); signature (low): `undefined8 DispatchStaticCall(VirtualMachine * this, ulonglong * param_1, ulonglong * param_2, RawFuncCallQuery_vtbl * param_3, longlong * param_4)`
 pub const BSScript__Internal__VirtualMachine__DispatchStaticCall: u64 = 104802;
-/// `BSScript::Internal::VirtualMachine::DumpRunningStacksToLog` at 0x14b8fa0 (semantic, medium); signature (untiered): `undefined DumpRunningStacksToLog(VirtualMachine * this, undefined8 param_1, int * * param_2, char * * param_3)`; semantic: IVMDebugInterface slot 1 (this = VM+0x20): dumps the queued calls and every stack of the running-stacks map (VM+0x9320 under VM+0x9318) through DumpStackToLog (medium); signature `void (BSScript::IVMDebugInterface* this, void* logger)`
+/// `BSScript::Internal::VirtualMachine::DumpRunningStacksToLog` at 0x14b8fa0 (semantic, medium); signature (low): `undefined DumpRunningStacksToLog(VirtualMachine * this, undefined8 param_1, int * * param_2, char * * param_3)`; semantic: IVMDebugInterface slot 1 (this = VM+0x20): dumps the queued calls and every stack of the running-stacks map (VM+0x9320 under VM+0x9318) through DumpStackToLog (medium); signature `void (BSScript::IVMDebugInterface* this, void* logger)`
 pub const BSScript__Internal__VirtualMachine__DumpRunningStacksToLog: u64 = 104844;
 /// `BSScript::Internal::VirtualMachine::DumpStackToLog` at 0x149fc70 (semantic, high); signature (untiered): `undefined DumpStackToLog(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; semantic: header (0x14a0ac0: 'Dumping stack %d', frame/page count, state, type, return value, callback), then per frame the trace line, 'IP: %d' (frame+0x20), 'Instruction: %d' (InstructionIndexAtBit, script functions only), 'Line: %d' (slot 17), and every variable by slot 18's name (high); signature `void (const BSScript::Stack* stack, BSScript::ErrorLogger* logger)`
 pub const BSScript__Internal__VirtualMachine__DumpStackToLog: u64 = 104491;
 /// `BSScript::Internal::VirtualMachine::DumpStackToLog` as a function pointer type (high).
 pub type BSScript__Internal__VirtualMachine__DumpStackToLog_fn = unsafe extern "C" fn(stack: *const crate::BSScript__Stack, logger: *mut crate::BSScript__ErrorLogger);
-/// `BSScript::Internal::VirtualMachine::FindBoundObject` at 0x14b2710 (runtime, high); signature (untiered): `undefined1 FindBoundObject(VirtualMachine * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+/// `BSScript::Internal::VirtualMachine::FindBoundObject` at 0x14b2710 (runtime, high); signature (low): `undefined1 FindBoundObject(VirtualMachine * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__Internal__VirtualMachine__FindBoundObject: u64 = 104792;
-/// `BSScript::Internal::VirtualMachine::ForEachBoundObject` at 0x14b2600 (semantic, medium); signature (untiered): `ulonglong ForEachBoundObject(VirtualMachine * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`
+/// `BSScript::Internal::VirtualMachine::ForEachBoundObject` at 0x14b2600 (semantic, medium); signature (low): `ulonglong ForEachBoundObject(VirtualMachine * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`
 pub const BSScript__Internal__VirtualMachine__ForEachBoundObject: u64 = 104791;
-/// `BSScript::Internal::VirtualMachine::GetErrorLogger` at 0x14b4bd0 (semantic, high); signature (untiered): `undefined8 GetErrorLogger(VirtualMachine * this)`
+/// `BSScript::Internal::VirtualMachine::GetErrorLogger` at 0x14b4bd0 (semantic, high); signature (high): `undefined8 GetErrorLogger(VirtualMachine * this)`
 pub const BSScript__Internal__VirtualMachine__GetErrorLogger: u64 = 104808;
-/// `BSScript::Internal::VirtualMachine::GetObjectBindPolicy` at 0x14b4c10 (runtime, high); signature (untiered): `undefined8 GetObjectBindPolicy(VirtualMachine * this)`
+/// `BSScript::Internal::VirtualMachine::GetObjectBindPolicy` at 0x14b4c10 (runtime, high); signature (high): `undefined8 GetObjectBindPolicy(VirtualMachine * this)`
 pub const BSScript__Internal__VirtualMachine__GetObjectBindPolicy: u64 = 104812;
-/// `BSScript::Internal::VirtualMachine::GetObjectBindPolicyConst` at 0x14b4c00 (semantic, high); signature (untiered): `undefined8 GetObjectBindPolicyConst(VirtualMachine * this)`
+/// `BSScript::Internal::VirtualMachine::GetObjectBindPolicyConst` at 0x14b4c00 (semantic, high); signature (high): `undefined8 GetObjectBindPolicyConst(VirtualMachine * this)`
 pub const BSScript__Internal__VirtualMachine__GetObjectBindPolicyConst: u64 = 104811;
-/// `BSScript::Internal::VirtualMachine::GetObjectHandlePolicy` at 0x14b4bf0 (runtime, high); signature (untiered): `undefined8 GetObjectHandlePolicy(VirtualMachine * this)`
+/// `BSScript::Internal::VirtualMachine::GetObjectHandlePolicy` at 0x14b4bf0 (runtime, high); signature (high): `undefined8 GetObjectHandlePolicy(VirtualMachine * this)`
 pub const BSScript__Internal__VirtualMachine__GetObjectHandlePolicy: u64 = 104810;
-/// `BSScript::Internal::VirtualMachine::GetObjectHandlePolicyConst` at 0x14b4be0 (semantic, high); signature (untiered): `undefined8 GetObjectHandlePolicyConst(VirtualMachine * this)`
+/// `BSScript::Internal::VirtualMachine::GetObjectHandlePolicyConst` at 0x14b4be0 (semantic, high); signature (high): `undefined8 GetObjectHandlePolicyConst(VirtualMachine * this)`
 pub const BSScript__Internal__VirtualMachine__GetObjectHandlePolicyConst: u64 = 104809;
-/// `BSScript::Internal::VirtualMachine::GetScriptObjectType` at 0x14b0f80 (runtime, high); signature (untiered): `undefined1 GetScriptObjectType(VirtualMachine * this, undefined8 param_1, undefined8 param_2)`
+/// `BSScript::Internal::VirtualMachine::GetScriptObjectType` at 0x14b0f80 (runtime, high); signature (low): `undefined1 GetScriptObjectType(VirtualMachine * this, undefined8 param_1, undefined8 param_2)`
 pub const BSScript__Internal__VirtualMachine__GetScriptObjectType: u64 = 104775;
-/// `BSScript::Internal::VirtualMachine::GetScriptObjectTypeByID` at 0x14b0e40 (semantic, medium); signature (untiered): `bool GetScriptObjectTypeByID(VirtualMachine * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+/// `BSScript::Internal::VirtualMachine::GetScriptObjectTypeByID` at 0x14b0e40 (semantic, medium); signature (low): `bool GetScriptObjectTypeByID(VirtualMachine * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
 pub const BSScript__Internal__VirtualMachine__GetScriptObjectTypeByID: u64 = 104774;
-/// `BSScript::Internal::VirtualMachine::GetScriptObjectTypeNoLoad` at 0x14b11e0 (semantic, medium); signature (untiered): `bool GetScriptObjectTypeNoLoad(VirtualMachine * this, ulonglong * param_1, longlong * param_2)`
+/// `BSScript::Internal::VirtualMachine::GetScriptObjectTypeNoLoad` at 0x14b11e0 (semantic, medium); signature (low): `bool GetScriptObjectTypeNoLoad(VirtualMachine * this, ulonglong * param_1, longlong * param_2)`
 pub const BSScript__Internal__VirtualMachine__GetScriptObjectTypeNoLoad: u64 = 104777;
-/// `BSScript::Internal::VirtualMachine::GetScriptObjectTypeNoLoadByID` at 0x14b1050 (semantic, medium); signature (untiered): `bool GetScriptObjectTypeNoLoadByID(VirtualMachine * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+/// `BSScript::Internal::VirtualMachine::GetScriptObjectTypeNoLoadByID` at 0x14b1050 (semantic, medium); signature (low): `bool GetScriptObjectTypeNoLoadByID(VirtualMachine * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
 pub const BSScript__Internal__VirtualMachine__GetScriptObjectTypeNoLoadByID: u64 = 104776;
-/// `BSScript::Internal::VirtualMachine::GetScriptObjectsWithATypeID` at 0x14b13d0 (semantic, medium); signature (untiered): `longlong * GetScriptObjectsWithATypeID(VirtualMachine * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+/// `BSScript::Internal::VirtualMachine::GetScriptObjectsWithATypeID` at 0x14b13d0 (semantic, medium); signature (low): `longlong * GetScriptObjectsWithATypeID(VirtualMachine * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__Internal__VirtualMachine__GetScriptObjectsWithATypeID: u64 = 104779;
-/// `BSScript::Internal::VirtualMachine::GetTypeIDForScriptObject` at 0x14b1300 (runtime, high); signature (untiered): `undefined1 GetTypeIDForScriptObject(VirtualMachine * this, undefined8 param_1, undefined8 param_2)`
+/// `BSScript::Internal::VirtualMachine::GetTypeIDForScriptObject` at 0x14b1300 (runtime, high); signature (low): `undefined1 GetTypeIDForScriptObject(VirtualMachine * this, undefined8 param_1, undefined8 param_2)`
 pub const BSScript__Internal__VirtualMachine__GetTypeIDForScriptObject: u64 = 104778;
-/// `BSScript::Internal::VirtualMachine::IsWaitingOnLatent` at 0x14b4770 (semantic, high); signature (untiered): `undefined1 IsWaitingOnLatent(VirtualMachine * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+/// `BSScript::Internal::VirtualMachine::IsWaitingOnLatent` at 0x14b4770 (semantic, high); signature (low): `undefined1 IsWaitingOnLatent(VirtualMachine * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__Internal__VirtualMachine__IsWaitingOnLatent: u64 = 104806;
-/// `BSScript::Internal::VirtualMachine::LinkScript` at 0x14b18e0 (semantic, medium); signature (untiered): `bool LinkScript(VirtualMachine * this, char * param_1, undefined8 param_2, undefined8 param_3)`
+/// `BSScript::Internal::VirtualMachine::LinkScript` at 0x14b18e0 (semantic, medium); signature (low): `bool LinkScript(VirtualMachine * this, char * param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__Internal__VirtualMachine__LinkScript: u64 = 104782;
-/// `BSScript::Internal::VirtualMachine::LogError` at 0x14b0ab0 (semantic, medium); signature (untiered): `undefined LogError(VirtualMachine * this, char * param_1, int param_2)`
+/// `BSScript::Internal::VirtualMachine::LogError` at 0x14b0ab0 (semantic, medium); signature (low): `undefined LogError(VirtualMachine * this, char * param_1, int param_2)`
 pub const BSScript__Internal__VirtualMachine__LogError: u64 = 104771;
-/// `BSScript::Internal::VirtualMachine::QueueTaskletsToJobList` at 0x14bb1c0 (semantic, high); signature (untiered): `undefined8 * QueueTaskletsToJobList(VirtualMachine * this, longlong * param_1)`
+/// `BSScript::Internal::VirtualMachine::QueueTaskletsToJobList` at 0x14bb1c0 (semantic, high); signature (low): `undefined8 * QueueTaskletsToJobList(VirtualMachine * this, longlong * param_1)`
 pub const BSScript__Internal__VirtualMachine__QueueTaskletsToJobList: u64 = 104855;
-/// `BSScript::Internal::VirtualMachine::RegisterObjectType` at 0x14b0c30 (runtime, high); signature (untiered): `byte RegisterObjectType(VirtualMachine * this, uint param_1, char * param_2)`
+/// `BSScript::Internal::VirtualMachine::RegisterObjectType` at 0x14b0c30 (runtime, high); signature (low): `byte RegisterObjectType(VirtualMachine * this, uint param_1, char * param_2)`
 pub const BSScript__Internal__VirtualMachine__RegisterObjectType: u64 = 104773;
-/// `BSScript::Internal::VirtualMachine::ReturnFromLatent` at 0x14b4840 (runtime, high); signature (untiered): `int * ReturnFromLatent(VirtualMachine * this, uint param_1, ulonglong * param_2, ulonglong param_3)`
+/// `BSScript::Internal::VirtualMachine::ReturnFromLatent` at 0x14b4840 (runtime, high); signature (low): `int * ReturnFromLatent(VirtualMachine * this, uint param_1, ulonglong * param_2, ulonglong param_3)`
 pub const BSScript__Internal__VirtualMachine__ReturnFromLatent: u64 = 104807;
-/// `BSScript::Internal::VirtualMachine::RunQueuedTasklets` at 0x14b0890 (semantic, high); signature (untiered): `undefined RunQueuedTasklets(VirtualMachine * this)`
+/// `BSScript::Internal::VirtualMachine::RunQueuedTasklets` at 0x14b0890 (semantic, high); signature (high): `undefined RunQueuedTasklets(VirtualMachine * this)`
 pub const BSScript__Internal__VirtualMachine__RunQueuedTasklets: u64 = 104768;
-/// `BSScript::Internal::VirtualMachine::SendEvent` at 0x14b3800 (runtime, high); signature (untiered): `undefined SendEvent(VirtualMachine * this, ulonglong * * * param_1, ulonglong * * * * param_2, undefined8 param_3)`
+/// `BSScript::Internal::VirtualMachine::SendEvent` at 0x14b3800 (runtime, high); signature (low): `undefined SendEvent(VirtualMachine * this, ulonglong * * * param_1, ulonglong * * * * param_2, undefined8 param_3)`
 pub const BSScript__Internal__VirtualMachine__SendEvent: u64 = 104800;
-/// `BSScript::Internal::VirtualMachine::SendEventAll` at 0x14b3b50 (semantic, medium); signature (untiered): `undefined8 * SendEventAll(VirtualMachine * this, undefined8 param_1, undefined8 param_2)`
+/// `BSScript::Internal::VirtualMachine::SendEventAll` at 0x14b3b50 (semantic, medium); signature (low): `undefined8 * SendEventAll(VirtualMachine * this, undefined8 param_1, undefined8 param_2)`
 pub const BSScript__Internal__VirtualMachine__SendEventAll: u64 = 104801;
-/// `BSScript::Internal::VirtualMachine::SetCallableFromTasklets` at 0x14b2260 (runtime, high); signature (untiered): `undefined SetCallableFromTasklets(VirtualMachine * this, undefined8 param_1, undefined8 param_2, undefined1 param_3)`
+/// `BSScript::Internal::VirtualMachine::SetCallableFromTasklets` at 0x14b2260 (runtime, high); signature (low): `undefined SetCallableFromTasklets(VirtualMachine * this, undefined8 param_1, undefined8 param_2, undefined1 param_3)`
 pub const BSScript__Internal__VirtualMachine__SetCallableFromTasklets: u64 = 104789;
-/// `BSScript::Internal::VirtualMachine::SetCallableFromTaskletsInState` at 0x14b2290 (semantic, medium); signature (untiered): `undefined SetCallableFromTaskletsInState(VirtualMachine * this, longlong * * param_1, char * param_2, longlong * * param_3, byte param_4)`
+/// `BSScript::Internal::VirtualMachine::SetCallableFromTaskletsInState` at 0x14b2290 (semantic, medium); signature (low): `undefined SetCallableFromTaskletsInState(VirtualMachine * this, longlong * * param_1, char * param_2, longlong * * param_3, byte param_4)`
 pub const BSScript__Internal__VirtualMachine__SetCallableFromTaskletsInState: u64 = 104790;
-/// `BSScript::Internal::VirtualMachine::TraceStack` at 0x14b0b10 (semantic, medium); signature (untiered): `undefined TraceStack(VirtualMachine * this, char * param_1, uint param_2, uint param_3)`
+/// `BSScript::Internal::VirtualMachine::TraceStack` at 0x14b0b10 (semantic, medium); signature (low): `undefined TraceStack(VirtualMachine * this, char * param_1, uint param_2, uint param_3)`
 pub const BSScript__Internal__VirtualMachine__TraceStack: u64 = 104772;
-/// `BSScript::Internal::VirtualMachine::Update` at 0x14b0220 (runtime, high); signature (untiered): `longlong * Update(VirtualMachine * this, float param_1, longlong * param_2, longlong * param_3)`
+/// `BSScript::Internal::VirtualMachine::Update` at 0x14b0220 (runtime, high); signature (low): `longlong * Update(VirtualMachine * this, float param_1, longlong * param_2, longlong * param_3)`
 pub const BSScript__Internal__VirtualMachine__Update: u64 = 104767;
 /// `BSScript::Internal::VirtualMachine::ctor` at 0x14af8d0 (layout_inference, high); signature (low): `VirtualMachine * ctor(VirtualMachine * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined8 param_6, undefined8 param_7, undefined8 param_8)`
 pub const BSScript__Internal__VirtualMachine__ctor: u64 = 104763;
@@ -2033,45 +1961,45 @@ pub const BSScript__LinkerProcessor__vfunc_2: u64 = 105447;
 pub const BSScript__LinkerProcessor__vfunc_3: u64 = 105381;
 /// `BSScript::LinkerProcessor::vfunc_3_sub0` at 0x14e1430 (callgraph, medium); signature (untiered): `undefined vfunc_3_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, ulonglong param_4)`
 pub const BSScript__LinkerProcessor__vfunc_3_sub0: u64 = 105389;
-/// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+/// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (low): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
 pub const BSScript__NF_util__NativeFunctionBase__Call: u64 = 104651;
-/// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+/// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (low): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
 pub const BSScript__NF_util__NativeFunctionBase__CopyReturnType: u64 = 104635;
-/// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+/// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (high): `undefined1 * GetDocString(NativeFunctionBase * this)`
 pub const BSScript__NF_util__NativeFunctionBase__GetDocString: u64 = 104644;
-/// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+/// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (high): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
 pub const BSScript__NF_util__NativeFunctionBase__GetFunctionName: u64 = 104632;
-/// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+/// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (low): `undefined8 GetFunctionType(void)`
 pub const BSScript__NF_util__NativeFunctionBase__GetFunctionType: u64 = 104642;
-/// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+/// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (high): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
 pub const BSScript__NF_util__NativeFunctionBase__GetIsCallableFromTasklet: u64 = 104649;
-/// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+/// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (low): `undefined1 GetIsEmpty(void)`
 pub const BSScript__NF_util__NativeFunctionBase__GetIsEmpty: u64 = 104641;
-/// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+/// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (low): `undefined1 GetIsNative(void)`
 pub const BSScript__NF_util__NativeFunctionBase__GetIsNative: u64 = 104639;
-/// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+/// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (high): `undefined1 GetIsStatic(NativeFunctionBase * this)`
 pub const BSScript__NF_util__NativeFunctionBase__GetIsStatic: u64 = 104640;
-/// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+/// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (low): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
 pub const BSScript__NF_util__NativeFunctionBase__GetLineForIP: u64 = 104647;
-/// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+/// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (high): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
 pub const BSScript__NF_util__NativeFunctionBase__GetObjectTypeName: u64 = 104633;
-/// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+/// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (high): `undefined2 GetParamCount(NativeFunctionBase * this)`
 pub const BSScript__NF_util__NativeFunctionBase__GetParamCount: u64 = 104636;
-/// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+/// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (low): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
 pub const BSScript__NF_util__NativeFunctionBase__GetParamNameAndType: u64 = 104637;
-/// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+/// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (low): `undefined * GetSourceFilename(void)`
 pub const BSScript__NF_util__NativeFunctionBase__GetSourceFilename: u64 = 104646;
-/// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+/// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (high): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
 pub const BSScript__NF_util__NativeFunctionBase__GetStackFrameSize: u64 = 104638;
-/// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+/// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (high): `undefined1 * GetStateName(NativeFunctionBase * this)`
 pub const BSScript__NF_util__NativeFunctionBase__GetStateName: u64 = 104634;
-/// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+/// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (high): `undefined4 GetUserFlags(NativeFunctionBase * this)`
 pub const BSScript__NF_util__NativeFunctionBase__GetUserFlags: u64 = 104643;
-/// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+/// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (low): `undefined InsertLocals(void)`
 pub const BSScript__NF_util__NativeFunctionBase__InsertLocals: u64 = 104645;
-/// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+/// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (low): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
 pub const BSScript__NF_util__NativeFunctionBase__SetIsCallableFromTasklet: u64 = 104650;
-/// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+/// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (low): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
 pub const BSScript__NF_util__NativeFunctionBase__TryGetParamName: u64 = 104648;
 /// `BSScript::NF_util::NativeFunctionBase::ctor` at 0x14a9fc0 (layout_inference, medium); signature (low): `NativeFunctionBase * ctor(NativeFunctionBase * this, char * param_1, char * param_2, char * param_3, undefined1 param_4, uint param_5)`
 pub const BSScript__NF_util__NativeFunctionBase__ctor: u64 = 104652;
@@ -4225,25 +4153,25 @@ pub const BSScript__NativeLatentFunction5_TESObjectREFR_bool_BSFixedString_const
 pub const BSScript__NativeLatentFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_float_float_float_bool__vdtor: u64 = 56486;
 /// `BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>::vdtor` at 0xa1a5c0 (slot_propagation, medium); signature (low): `NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float> * vdtor(NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__NativeLatentFunction9_BGSMessage_int_float_float_float_float_float_float_float_float_float__vdtor: u64 = 55263;
-/// `BSScript::Object::DecRef` at 0x148ef60 (semantic, high); signature (untiered): `int DecRef(longlong param_1)`; semantic: drops a reference and returns the new count; the 2 -> 1 transition calls IObjectHandlePolicy::ReleaseHandle; the caller destroys the object at 0 (high); signature `u32 (BSScript::Object* this)`
+/// `BSScript::Object::DecRef` at 0x148ef60 (semantic, high); signature (low): `int DecRef(longlong param_1)`; semantic: drops a reference and returns the new count; the 2 -> 1 transition calls IObjectHandlePolicy::ReleaseHandle; the caller destroys the object at 0 (high); signature `u32 (BSScript::Object* this)`
 pub const BSScript__Object__DecRef: u64 = 104253;
 /// `BSScript::Object::DecRef` as a function pointer type (high).
 pub type BSScript__Object__DecRef_fn = unsafe extern "C" fn(this: *mut crate::BSScript__Object) -> u32;
-/// `BSScript::Object::Destroy` at 0x148e1a0 (semantic, medium); signature (untiered): `undefined Destroy(uint * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: resets the variables after the header when bit 0 of +0 is set, drops the stack and type references (medium); signature `void (BSScript::Object* this)`
+/// `BSScript::Object::Destroy` at 0x148e1a0 (semantic, medium); signature (low): `undefined Destroy(uint * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: resets the variables after the header when bit 0 of +0 is set, drops the stack and type references (medium); signature `void (BSScript::Object* this)`
 pub const BSScript__Object__Destroy: u64 = 104246;
-/// `BSScript::Object::GetHandle` at 0x148e250 (semantic, high); signature (untiered): `undefined8 GetHandle(longlong param_1)`; semantic: the handle at +0x20, read under the lock bit of +0x28 (high); signature `u64 (BSScript::Object* this)`
+/// `BSScript::Object::GetHandle` at 0x148e250 (semantic, high); signature (low): `undefined8 GetHandle(longlong param_1)`; semantic: the handle at +0x20, read under the lock bit of +0x28 (high); signature `u64 (BSScript::Object* this)`
 pub const BSScript__Object__GetHandle: u64 = 104247;
 /// `BSScript::Object::GetHandle` as a function pointer type (high).
 pub type BSScript__Object__GetHandle_fn = unsafe extern "C" fn(this: *mut crate::BSScript__Object) -> u64;
-/// `BSScript::Object::IncRef` at 0x148eeb0 (semantic, high); signature (untiered): `ulonglong IncRef(longlong param_1)`; semantic: adds a reference (bit 31 of +0x28 as the lock); the 1 -> 2 transition calls IObjectHandlePolicy::PersistHandle (high); signature `u32 (BSScript::Object* this)`
+/// `BSScript::Object::IncRef` at 0x148eeb0 (semantic, high); signature (low): `ulonglong IncRef(longlong param_1)`; semantic: adds a reference (bit 31 of +0x28 as the lock); the 1 -> 2 transition calls IObjectHandlePolicy::PersistHandle (high); signature `u32 (BSScript::Object* this)`
 pub const BSScript__Object__IncRef: u64 = 104252;
 /// `BSScript::Object::IncRef` as a function pointer type (high).
 pub type BSScript__Object__IncRef_fn = unsafe extern "C" fn(this: *mut crate::BSScript__Object) -> u32;
-/// `BSScript::Object::ctor` at 0x148f060 (semantic, high); signature (untiered): `uint * ctor(uint * param_1, undefined8 * param_2, longlong * param_3, undefined8 param_4)`; semantic: fills the header: flags variableCount * 8 | 4, the type (with a reference), a string at +0x10, no stack, handle = policy->GetInvalidHandle(), count 0; stores policy in g_IObjectHandlePolicy_ptr (high); signature `BSScript::Object* (BSScript::Object* this, BSTSmartPointer<BSScript::ObjectTypeInfo>* type, BSScript::IObjectHandlePolicy* policy, u32 variableCount)`
+/// `BSScript::Object::ctor` at 0x148f060 (semantic, high); signature (low): `uint * ctor(uint * param_1, undefined8 * param_2, longlong * param_3, undefined8 param_4)`; semantic: fills the header: flags variableCount * 8 | 4, the type (with a reference), a string at +0x10, no stack, handle = policy->GetInvalidHandle(), count 0; stores policy in g_IObjectHandlePolicy_ptr (high); signature `BSScript::Object* (BSScript::Object* this, BSTSmartPointer<BSScript::ObjectTypeInfo>* type, BSScript::IObjectHandlePolicy* policy, u32 variableCount)`
 pub const BSScript__Object__ctor: u64 = 104255;
 /// `BSScript::Object::ctor` as a function pointer type (high).
 pub type BSScript__Object__ctor_fn = unsafe extern "C" fn(this: *mut crate::BSScript__Object, type_: *mut c_void, policy: *mut crate::BSScript__IObjectHandlePolicy, variableCount: u32) -> *mut crate::BSScript__Object;
-/// `BSScript::ObjectBindPolicy::BindObject` at 0x1489b40 (semantic, high); signature (untiered): `undefined BindObject(longlong param_1)`; semantic: binds a script object to a handle: forwards its arguments, with flag false (xor r9d,r9d at 0x1489b89; request GA2), to slot 3 of the VM's bind interface held at +0x10 (high); signature `void (BSScript::ObjectBindPolicy* this, BSTSmartPointer<BSScript::Object>* object, u64 handle)`
+/// `BSScript::ObjectBindPolicy::BindObject` at 0x1489b40 (semantic, high); signature (low): `undefined BindObject(longlong param_1)`; semantic: binds a script object to a handle: forwards its arguments, with flag false (xor r9d,r9d at 0x1489b89; request GA2), to slot 3 of the VM's bind interface held at +0x10 (high); signature `void (BSScript::ObjectBindPolicy* this, BSTSmartPointer<BSScript::Object>* object, u64 handle)`
 pub const BSScript__ObjectBindPolicy__BindObject: u64 = 104184;
 /// `BSScript::ObjectBindPolicy::BindObject` as a function pointer type (high).
 pub type BSScript__ObjectBindPolicy__BindObject_fn = unsafe extern "C" fn(this: *mut crate::BSScript__ObjectBindPolicy, object: *mut c_void, handle: u64);
@@ -4253,11 +4181,11 @@ pub const BSScript__ObjectBindPolicy__dtor: u64 = 104173;
 pub const BSScript__ObjectBindPolicy__dtor_sub0: u64 = 54417;
 /// `BSScript::ObjectBindPolicy::vfunc_0` at 0x9f0a60 (rtti, high); signature (low): `ObjectBindPolicy * vfunc_0(ObjectBindPolicy * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__ObjectBindPolicy__vfunc_0: u64 = 54381;
-/// `BSScript::ObjectTypeInfo::BindNativeFunction` at 0x1494c60 (semantic, high); signature (untiered): `ulonglong BindNativeFunction(longlong param_1, ulonglong * param_2, longlong * param_3, longlong * param_4)`; semantic: checks the function's class name matches and that it is native, then: linked type -> a static native is looked up in the static table; a member native's state name (slot 3) is compared by pointer with g_EmptyStateName (0x33d37b8): equal -> the empty state's functions, otherwise the named state (none found: 'could find no state %s', not bound); then compares signatures (0x1496bb0) and installs the native in its slot; unlinked type -> replaces a native of the same name in the list at +0x30 or prepends a new {next, function} node; the error strings 'Attempting to bind a non-native function %s', 'Native function %s in empty state could find no matching function on linked type %s', 'does not match existing signature', 'Replacing native function %s on unlinked object %s' (high); signature `bool (BSScript::ObjectTypeInfo* this, BSScript::IFunction* function, BSScript::ErrorLogger* logger)`
+/// `BSScript::ObjectTypeInfo::BindNativeFunction` at 0x1494c60 (semantic, high); signature (low): `ulonglong BindNativeFunction(longlong param_1, ulonglong * param_2, longlong * param_3, longlong * param_4)`; semantic: checks the function's class name matches and that it is native, then: linked type -> a static native is looked up in the static table; a member native's state name (slot 3) is compared by pointer with g_EmptyStateName (0x33d37b8): equal -> the empty state's functions, otherwise the named state (none found: 'could find no state %s', not bound); then compares signatures (0x1496bb0) and installs the native in its slot; unlinked type -> replaces a native of the same name in the list at +0x30 or prepends a new {next, function} node; the error strings 'Attempting to bind a non-native function %s', 'Native function %s in empty state could find no matching function on linked type %s', 'does not match existing signature', 'Replacing native function %s on unlinked object %s' (high); signature `bool (BSScript::ObjectTypeInfo* this, BSScript::IFunction* function, BSScript::ErrorLogger* logger)`
 pub const BSScript__ObjectTypeInfo__BindNativeFunction: u64 = 104325;
 /// `BSScript::ObjectTypeInfo::BindNativeFunction` as a function pointer type (high).
 pub type BSScript__ObjectTypeInfo__BindNativeFunction_fn = unsafe extern "C" fn(this: *mut crate::BSScript__ObjectTypeInfo, function: *mut crate::BSScript__IFunction, logger: *mut crate::BSScript__ErrorLogger) -> bool;
-/// `BSScript::ObjectTypeInfo::GetFunction` at 0x1492470 (semantic, high); signature (untiered): `undefined8 GetFunction(longlong param_1, longlong * param_2, longlong * param_3, char param_4)`; semantic: finds a static (global) function by name: on a type in link state 3 (or state 2 when linkedOnly is false) through ID_104355 (the skyrim-rs papyrus run got static natives for either flag value and no method on a linked type); on an unlinked type, only when linkedOnly is false, the pending native whose IFunction slot 9 (GetIsStatic) is true, so DispatchStaticCall needs the script loaded (high); signature `bool (BSScript::ObjectTypeInfo* this, const BSFixedString* name, BSTSmartPointer<BSScript::IFunction>* out, bool linkedOnly)`
+/// `BSScript::ObjectTypeInfo::GetFunction` at 0x1492470 (semantic, high); signature (low): `undefined8 GetFunction(longlong param_1, longlong * param_2, longlong * param_3, char param_4)`; semantic: finds a static (global) function by name: on a type in link state 3 (or state 2 when linkedOnly is false) through ID_104355 (the skyrim-rs papyrus run got static natives for either flag value and no method on a linked type); on an unlinked type, only when linkedOnly is false, the pending native whose IFunction slot 9 (GetIsStatic) is true, so DispatchStaticCall needs the script loaded (high); signature `bool (BSScript::ObjectTypeInfo* this, const BSFixedString* name, BSTSmartPointer<BSScript::IFunction>* out, bool linkedOnly)`
 pub const BSScript__ObjectTypeInfo__GetFunction: u64 = 104311;
 /// `BSScript::ObjectTypeInfo::GetFunction` as a function pointer type (high).
 pub type BSScript__ObjectTypeInfo__GetFunction_fn = unsafe extern "C" fn(this: *mut crate::BSScript__ObjectTypeInfo, name: *const crate::BSFixedString, out: *mut c_void, linkedOnly: bool) -> bool;
@@ -4265,13 +4193,13 @@ pub type BSScript__ObjectTypeInfo__GetFunction_fn = unsafe extern "C" fn(this: *
 pub const BSScript__ObjectTypeInfo__GetTotalNumVariables: u64 = 104317;
 /// `BSScript::ObjectTypeInfo::GetTotalNumVariables` as a function pointer type (high).
 pub type BSScript__ObjectTypeInfo__GetTotalNumVariables_fn = unsafe extern "C" fn(this: *const crate::BSScript__ObjectTypeInfo) -> u32;
-/// `BSScript::ObjectTypeInfo::dtor` at 0x1491e00 (semantic, medium); signature (untiered): `undefined dtor(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: releases the tables, the name, the parent and the doc string (medium); signature `void (BSScript::ObjectTypeInfo* this)`
+/// `BSScript::ObjectTypeInfo::dtor` at 0x1491e00 (semantic, medium); signature (low): `undefined dtor(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: releases the tables, the name, the parent and the doc string (medium); signature `void (BSScript::ObjectTypeInfo* this)`
 pub const BSScript__ObjectTypeInfo__dtor: u64 = 104299;
-/// `BSScript::PackedInstructionStream::InstructionIndexAtBit` at 0x14a3350 (runtime, medium); signature (untiered): `int InstructionIndexAtBit(longlong param_1, uint param_2)`; semantic: counts instructions from bit 0 until the cursor reaches bitOffset; -1 when bitOffset is not an instruction start or decoding fails (medium); signature `i32 (const void* stream, u32 bitOffset)`
+/// `BSScript::PackedInstructionStream::InstructionIndexAtBit` at 0x14a3350 (runtime, medium); signature (low): `int InstructionIndexAtBit(longlong param_1, uint param_2)`; semantic: counts instructions from bit 0 until the cursor reaches bitOffset; -1 when bitOffset is not an instruction start or decoding fails (medium); signature `i32 (const void* stream, u32 bitOffset)`
 pub const BSScript__PackedInstructionStream__InstructionIndexAtBit: u64 = 104551;
-/// `BSScript::PackedInstructionStream::SkipInstruction` at 0x14a37d0 (runtime, medium); signature (untiered): `undefined8 SkipInstruction(longlong param_1, longlong * param_2, undefined * param_3)`; semantic: reads one 6-bit opcode and skips its operands: 0 none; 0x14 jumpBits; 0x15/0x16 one operand + jumpBits; 0x17/0x19 a 9-bit count n, 3 operands + n; 0x18 count n, 2 + n; 0x22/0x23 4; 1-9, 0xf-0x13, 0x1b-0x1d, 0x20, 0x21 3; 0xa-0xe, 0x1e, 0x1f 2; 0x1a 1; any other opcode fails (medium); signature `bool (const void* stream, void* cursor, void (*skipOperand)(void* cursor, u8 tag6Bits, u8 tag7Bits))`
+/// `BSScript::PackedInstructionStream::SkipInstruction` at 0x14a37d0 (runtime, medium); signature (low): `undefined8 SkipInstruction(longlong param_1, longlong * param_2, undefined * param_3)`; semantic: reads one 6-bit opcode and skips its operands: 0 none; 0x14 jumpBits; 0x15/0x16 one operand + jumpBits; 0x17/0x19 a 9-bit count n, 3 operands + n; 0x18 count n, 2 + n; 0x22/0x23 4; 1-9, 0xf-0x13, 0x1b-0x1d, 0x20, 0x21 3; 0xa-0xe, 0x1e, 0x1f 2; 0x1a 1; any other opcode fails (medium); signature `bool (const void* stream, void* cursor, void (*skipOperand)(void* cursor, u8 tag6Bits, u8 tag7Bits))`
 pub const BSScript__PackedInstructionStream__SkipInstruction: u64 = 104556;
-/// `BSScript::PackedInstructionStream::SkipOperand` at 0x14a28c0 (runtime, medium); signature (untiered): `undefined SkipOperand(longlong * param_1, uint param_2, ulonglong param_3)`; semantic: 3-bit tag, then: 0 nothing; 1, 2 (identifier, string) 62 bits; 3 (int) 6 bits, stop if bit 5, else 9 more, stop if bit 13 of (nine << 5 | six), else 19 more; 4 (float) 32; 5 (bool) 1; 6 tag6Bits; 7 tag7Bits (medium); signature `void (void* cursor, u32 tag6Bits, u32 tag7Bits)`
+/// `BSScript::PackedInstructionStream::SkipOperand` at 0x14a28c0 (runtime, medium); signature (low): `undefined SkipOperand(longlong * param_1, uint param_2, ulonglong param_3)`; semantic: 3-bit tag, then: 0 nothing; 1, 2 (identifier, string) 62 bits; 3 (int) 6 bits, stop if bit 5, else 9 more, stop if bit 13 of (nine << 5 | six), else 19 more; 4 (float) 32; 5 (bool) 1; 6 tag6Bits; 7 tag7Bits (medium); signature `void (void* cursor, u32 tag6Bits, u32 tag7Bits)`
 pub const BSScript__PackedInstructionStream__SkipOperand: u64 = 104535;
 /// `BSScript::SimpleAllocMemoryPagePolicy::ctor` at 0x14a3bc0 (layout_inference, medium); signature (low): `SimpleAllocMemoryPagePolicy * ctor(SimpleAllocMemoryPagePolicy * this, undefined4 param_1, undefined4 param_2, undefined4 param_3)`
 pub const BSScript__SimpleAllocMemoryPagePolicy__ctor: u64 = 104563;
@@ -4285,15 +4213,15 @@ pub const BSScript__SimpleAllocMemoryPagePolicy__vfunc_2: u64 = 104566;
 pub const BSScript__SimpleAllocMemoryPagePolicy__vfunc_3: u64 = 104567;
 /// `BSScript::SimpleAllocMemoryPagePolicy::vfunc_4` at 0x14a3e50 (rtti, high); signature (low): `int * vfunc_4(SimpleAllocMemoryPagePolicy * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__SimpleAllocMemoryPagePolicy__vfunc_4: u64 = 104568;
-/// `BSScript::Stack::GetPageForFrame` at 0x149e7f0 (semantic, high); signature (untiered): `ulonglong GetPageForFrame(longlong param_1, uint * param_2)`; semantic: index of the page that holds the frame (searches the page array at +0x20) (high); signature `u32 (BSScript::Stack* this, const BSScript::StackFrame* frame)`
+/// `BSScript::Stack::GetPageForFrame` at 0x149e7f0 (semantic, high); signature (low): `ulonglong GetPageForFrame(longlong param_1, uint * param_2)`; semantic: index of the page that holds the frame (searches the page array at +0x20) (high); signature `u32 (BSScript::Stack* this, const BSScript::StackFrame* frame)`
 pub const BSScript__Stack__GetPageForFrame: u64 = 104483;
 /// `BSScript::Stack::GetPageForFrame` as a function pointer type (high).
 pub type BSScript__Stack__GetPageForFrame_fn = unsafe extern "C" fn(this: *mut crate::BSScript__Stack, frame: *const crate::BSScript__StackFrame) -> u32;
-/// `BSScript::Stack::GetStackFrameVariable` at 0x149e860 (semantic, high); signature (untiered): `longlong GetStackFrameVariable(longlong param_1, undefined8 param_2, undefined8 param_3, uint param_4)`; semantic: address of Variable index of the frame: page data + the frame's offset + 0x3c + index * 0x10, crossing into the next page when needed (high); signature `BSScript::Variable* (BSScript::Stack* this, const BSScript::StackFrame* frame, u32 index, u32 page)`
+/// `BSScript::Stack::GetStackFrameVariable` at 0x149e860 (semantic, high); signature (low): `longlong GetStackFrameVariable(longlong param_1, undefined8 param_2, undefined8 param_3, uint param_4)`; semantic: address of Variable index of the frame: page data + the frame's offset + 0x3c + index * 0x10, crossing into the next page when needed (high); signature `BSScript::Variable* (BSScript::Stack* this, const BSScript::StackFrame* frame, u32 index, u32 page)`
 pub const BSScript__Stack__GetStackFrameVariable: u64 = 104484;
 /// `BSScript::Stack::GetStackFrameVariable` as a function pointer type (high).
 pub type BSScript__Stack__GetStackFrameVariable_fn = unsafe extern "C" fn(this: *mut crate::BSScript__Stack, frame: *const crate::BSScript__StackFrame, index: u32, page: u32) -> *mut crate::BSScript__Variable;
-/// `BSScript::Stack::ctor` at 0x149e2a0 (runtime, high); signature (untiered): `undefined4 * ctor(undefined4 * param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, undefined4 param_5, longlong * param_6)`; semantic: zero count, the two policies at +8/+0x10, an empty page array, the two u32 at +0x80/+0x84, the callback at +0x90 with a reference (high); signature `BSScript::Stack* (BSScript::Stack* this, void* pagePolicy, void* profilePolicy, u32 a3, u32 a4, BSTSmartPointer<BSScript::IStackCallbackFunctor>* callback)`
+/// `BSScript::Stack::ctor` at 0x149e2a0 (runtime, high); signature (low): `undefined4 * ctor(undefined4 * param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, undefined4 param_5, longlong * param_6)`; semantic: zero count, the two policies at +8/+0x10, an empty page array, the two u32 at +0x80/+0x84, the callback at +0x90 with a reference (high); signature `BSScript::Stack* (BSScript::Stack* this, void* pagePolicy, void* profilePolicy, u32 a3, u32 a4, BSTSmartPointer<BSScript::IStackCallbackFunctor>* callback)`
 pub const BSScript__Stack__ctor: u64 = 104479;
 /// `BSScript::Stack::ctor` as a function pointer type (high).
 pub type BSScript__Stack__ctor_fn = unsafe extern "C" fn(this: *mut crate::BSScript__Stack, pagePolicy: *mut c_void, profilePolicy: *mut c_void, a3: u32, a4: u32, callback: *mut c_void) -> *mut crate::BSScript__Stack;
@@ -4351,23 +4279,23 @@ pub const BSScript__UnlinkedTypes___anon_E61FEF15__WriteInstructionsFunctor__vfu
 pub const BSScript__UnlinkedTypes___anon_E61FEF15__WriteInstructionsFunctor__vfunc_1_sub0: u64 = 104544;
 /// `BSScript::UnlinkedTypes::_anon_E61FEF15::WriteInstructionsFunctor::vfunc_2` at 0x14dbb70 (rtti, high); signature (low): `undefined8 vfunc_2(WriteInstructionsFunctor * this, undefined4 param_1, undefined4 param_2)`
 pub const BSScript__UnlinkedTypes___anon_E61FEF15__WriteInstructionsFunctor__vfunc_2: u64 = 105315;
-/// `BSScript::Variable::GetObjectPtr` at 0x1490780 (semantic, high); signature (untiered): `uint * GetObjectPtr(uint * param_1)`; semantic: address of the Object* payload when the type is an object, else a static null (high); signature `BSTSmartPointer<BSScript::Object>* (BSScript::Variable* this)`
+/// `BSScript::Variable::GetObjectPtr` at 0x1490780 (semantic, high); signature (low): `uint * GetObjectPtr(uint * param_1)`; semantic: address of the Object* payload when the type is an object, else a static null (high); signature `BSTSmartPointer<BSScript::Object>* (BSScript::Variable* this)`
 pub const BSScript__Variable__GetObjectPtr: u64 = 104287;
 /// `BSScript::Variable::GetObjectPtr` as a function pointer type (high).
 pub type BSScript__Variable__GetObjectPtr_fn = unsafe extern "C" fn(this: *mut crate::BSScript__Variable) -> *mut c_void;
-/// `BSScript::Variable::GetString` at 0x1490600 (semantic, high); signature (untiered): `uint * GetString(uint * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: the string payload for a String Variable, else the empty string (high); signature `const BSFixedString* (const BSScript::Variable* this)`
+/// `BSScript::Variable::GetString` at 0x1490600 (semantic, high); signature (low): `uint * GetString(uint * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: the string payload for a String Variable, else the empty string (high); signature `const BSFixedString* (const BSScript::Variable* this)`
 pub const BSScript__Variable__GetString: u64 = 104285;
 /// `BSScript::Variable::GetString` as a function pointer type (high).
 pub type BSScript__Variable__GetString_fn = unsafe extern "C" fn(this: *const crate::BSScript__Variable) -> *const crate::BSFixedString;
-/// `BSScript::Variable::SetObject` at 0x1490830 (semantic, high); signature (untiered): `undefined SetObject(ulonglong * param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`; semantic: for an object-typed Variable: reset, store the Object* and IncRef it (high); signature `void (BSScript::Variable* this, BSTSmartPointer<BSScript::Object>* object)`
+/// `BSScript::Variable::SetObject` at 0x1490830 (semantic, high); signature (low): `undefined SetObject(ulonglong * param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`; semantic: for an object-typed Variable: reset, store the Object* and IncRef it (high); signature `void (BSScript::Variable* this, BSTSmartPointer<BSScript::Object>* object)`
 pub const BSScript__Variable__SetObject: u64 = 104288;
 /// `BSScript::Variable::SetObject` as a function pointer type (high).
 pub type BSScript__Variable__SetObject_fn = unsafe extern "C" fn(this: *mut crate::BSScript__Variable, object: *mut c_void);
-/// `BSScript::Variable::assign` at 0x1491b00 (semantic, high); signature (untiered): `undefined assign(ulonglong * param_1, ulonglong * param_2, undefined8 param_3, ulonglong param_4)`; semantic: resets this, then copies other by type: arrays and objects add a reference, strings copy the BSFixedString, scalars copy the qword (high); signature `void (BSScript::Variable* this, const BSScript::Variable* other)`
+/// `BSScript::Variable::assign` at 0x1491b00 (semantic, high); signature (low): `undefined assign(ulonglong * param_1, ulonglong * param_2, undefined8 param_3, ulonglong param_4)`; semantic: resets this, then copies other by type: arrays and objects add a reference, strings copy the BSFixedString, scalars copy the qword (high); signature `void (BSScript::Variable* this, const BSScript::Variable* other)`
 pub const BSScript__Variable__assign: u64 = 104297;
 /// `BSScript::Variable::assign` as a function pointer type (high).
 pub type BSScript__Variable__assign_fn = unsafe extern "C" fn(this: *mut crate::BSScript__Variable, other: *const crate::BSScript__Variable);
-/// `BSScript::Variable::reset` at 0x1491a00 (semantic, high); signature (untiered): `undefined reset(ulonglong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: releases the payload by type (array, string, object) and zeroes +8; the type stays (high); signature `void (BSScript::Variable* this)`
+/// `BSScript::Variable::reset` at 0x1491a00 (semantic, high); signature (low): `undefined reset(ulonglong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: releases the payload by type (array, string, object) and zeroes +8; the type stays (high); signature `void (BSScript::Variable* this)`
 pub const BSScript__Variable__reset: u64 = 104296;
 /// `BSScript::Variable::reset` as a function pointer type (high).
 pub type BSScript__Variable__reset_fn = unsafe extern "C" fn(this: *mut crate::BSScript__Variable);
@@ -4425,7 +4353,7 @@ pub const BSShader__NiBoneMatrixSetterI__SetBoneMatrices: u64 = 108322;
 pub type BSShader__NiBoneMatrixSetterI__SetBoneMatrices_fn = unsafe extern "C" fn(this: *mut crate::NiBoneMatrixSetterI, skin: *mut crate::NiSkinInstance, partition: *mut crate::NiSkinPartition__Partition, geometryWorld: *const crate::NiTransform);
 /// `BSShader::NiBoneMatrixSetterI_vdtor` at 0x15796dc (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSShader * this)`
 pub const BSShader__NiBoneMatrixSetterI_vdtor: u64 = 108337;
-/// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+/// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (low): `undefined SetupMaterial(void)`
 pub const BSShader__SetupMaterial: u64 = 108315;
 /// `BSShader::ctor` at 0x1578980 (layout_inference, high); signature (low): `BSShader * ctor(BSShader * this, longlong param_1)`
 pub const BSShader__ctor: u64 = 108318;
@@ -4443,63 +4371,63 @@ pub const BSShader__vfunc_8: u64 = 108320;
 pub const BSShaderAccumulator__GetBatchGroup5Field24: u64 = 106598;
 /// `BSShaderAccumulator::GetBatchGroup5Field24` as a function pointer type (high).
 pub type BSShaderAccumulator__GetBatchGroup5Field24_fn = unsafe extern "C" fn(this: *mut crate::BSShaderAccumulator) -> u16;
-/// `BSShaderAccumulator::GetRTTI` at 0x1521e20 (semantic, high); signature (untiered): `TypeNode * GetRTTI(void)`
+/// `BSShaderAccumulator::GetRTTI` at 0x1521e20 (semantic, high); signature (low): `TypeNode * GetRTTI(void)`
 pub const BSShaderAccumulator__GetRTTI: u64 = 106629;
-/// `BSShaderAccumulator::PopDepthGroup` at 0x1520d70 (semantic, medium); signature (untiered): `undefined PopDepthGroup(BSShaderAccumulator * this)`
+/// `BSShaderAccumulator::PopDepthGroup` at 0x1520d70 (semantic, medium); signature (high): `undefined PopDepthGroup(BSShaderAccumulator * this)`
 pub const BSShaderAccumulator__PopDepthGroup: u64 = 106603;
-/// `BSShaderAccumulator::PushDepthGroup` at 0x1520d50 (semantic, medium); signature (untiered): `undefined PushDepthGroup(BSShaderAccumulator * this, undefined8 param_1)`
+/// `BSShaderAccumulator::PushDepthGroup` at 0x1520d50 (semantic, medium); signature (low): `undefined PushDepthGroup(BSShaderAccumulator * this, undefined8 param_1)`
 pub const BSShaderAccumulator__PushDepthGroup: u64 = 106602;
-/// `BSShaderAccumulator::RegisterDepthGeometry` at 0x151ec10 (runtime, high); signature (untiered): `undefined8 RegisterDepthGeometry(longlong param_1, longlong param_2, longlong * param_3)`; semantic: for the depth and shadow modes: skips properties with flags 0xc000000 (unless allowed), asks the property for its passes in renderMode (slot 43), stamps passFrame and batches the passes (high); signature `bool (BSShaderAccumulator* this, BSGeometry* geometry, BSShaderProperty* property)`
+/// `BSShaderAccumulator::RegisterDepthGeometry` at 0x151ec10 (runtime, high); signature (low): `undefined8 RegisterDepthGeometry(longlong param_1, longlong param_2, longlong * param_3)`; semantic: for the depth and shadow modes: skips properties with flags 0xc000000 (unless allowed), asks the property for its passes in renderMode (slot 43), stamps passFrame and batches the passes (high); signature `bool (BSShaderAccumulator* this, BSGeometry* geometry, BSShaderProperty* property)`
 pub const BSShaderAccumulator__RegisterDepthGeometry: u64 = 106576;
 /// `BSShaderAccumulator::RegisterDepthGeometry` as a function pointer type (high).
 pub type BSShaderAccumulator__RegisterDepthGeometry_fn = unsafe extern "C" fn(this: *mut crate::BSShaderAccumulator, geometry: *mut crate::BSGeometry, property: *mut crate::BSShaderProperty) -> bool;
-/// `BSShaderAccumulator::RegisterGeometry` at 0x151e2f0 (semantic, high); signature (untiered): `undefined8 RegisterGeometry(longlong param_1, longlong * param_2, undefined8 param_3)`; semantic: the culler's entry point: skips unrenderable geometry (no property, no buffers, dismember skin without parts) and calls g_AccumulatorRegisterFns[renderMode](this, geometry, geometry->shaderProperty (+0x128), arg); stamps the shadow-map receiver mask (high); signature `bool (BSShaderAccumulator* this, BSGeometry* geometry, void* arg)`
+/// `BSShaderAccumulator::RegisterGeometry` at 0x151e2f0 (semantic, high); signature (low): `undefined8 RegisterGeometry(longlong param_1, longlong * param_2, undefined8 param_3)`; semantic: the culler's entry point: skips unrenderable geometry (no property, no buffers, dismember skin without parts) and calls g_AccumulatorRegisterFns[renderMode](this, geometry, geometry->shaderProperty (+0x128), arg); stamps the shadow-map receiver mask (high); signature `bool (BSShaderAccumulator* this, BSGeometry* geometry, void* arg)`
 pub const BSShaderAccumulator__RegisterGeometry: u64 = 106567;
 /// `BSShaderAccumulator::RegisterGeometry` as a function pointer type (high).
 pub type BSShaderAccumulator__RegisterGeometry_fn = unsafe extern "C" fn(this: *mut crate::BSShaderAccumulator, geometry: *mut crate::BSGeometry, arg: *mut c_void) -> bool;
-/// `BSShaderAccumulator::RegisterStandard` at 0x151e4e0 (semantic, high); signature (untiered): `undefined8 RegisterStandard(longlong param_1, longlong * param_2, longlong * param_3, longlong param_4)`; semantic: default register (modes 0..0xb, 0x16, 0x1b, 0x1d): property slot 42 GetRenderPasses(geometry, renderMode); each pass filed by accumulationHint into a group, hint 1 into the alpha group, others into the main technique buckets (batch slot 2); passes of the geometry's second property (geometry slot 53 -> +0x1b0) get hint 0xc into group 2 (high); signature `bool (BSShaderAccumulator* this, BSGeometry* geometry, BSShaderProperty* property, void* group)`
+/// `BSShaderAccumulator::RegisterStandard` at 0x151e4e0 (semantic, high); signature (low): `undefined8 RegisterStandard(longlong param_1, longlong * param_2, longlong * param_3, longlong param_4)`; semantic: default register (modes 0..0xb, 0x16, 0x1b, 0x1d): property slot 42 GetRenderPasses(geometry, renderMode); each pass filed by accumulationHint into a group, hint 1 into the alpha group, others into the main technique buckets (batch slot 2); passes of the geometry's second property (geometry slot 53 -> +0x1b0) get hint 0xc into group 2 (high); signature `bool (BSShaderAccumulator* this, BSGeometry* geometry, BSShaderProperty* property, void* group)`
 pub const BSShaderAccumulator__RegisterStandard: u64 = 106570;
 /// `BSShaderAccumulator::RegisterStandard` as a function pointer type (high).
 pub type BSShaderAccumulator__RegisterStandard_fn = unsafe extern "C" fn(this: *mut crate::BSShaderAccumulator, geometry: *mut crate::BSGeometry, property: *mut crate::BSShaderProperty, group: *mut c_void) -> bool;
-/// `BSShaderAccumulator::Render` at 0x151e3f0 (semantic, high); signature (untiered): `undefined Render(BSShaderAccumulator * this, undefined4 param_1)`
+/// `BSShaderAccumulator::Render` at 0x151e3f0 (semantic, high); signature (low): `undefined Render(BSShaderAccumulator * this, undefined4 param_1)`
 pub const BSShaderAccumulator__Render: u64 = 106568;
-/// `BSShaderAccumulator::RenderBatches` at 0x1521190 (semantic, high); signature (untiered): `undefined RenderBatches(longlong param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, int param_5)`; semantic: draws the technique range from the main buckets (group -1) or from group i's sub-batch, then clears that group and resets the shader cache (high); signature `void (BSShaderAccumulator* this, u32 firstTechnique, u32 lastTechnique, u32 flags, int group)`
+/// `BSShaderAccumulator::RenderBatches` at 0x1521190 (semantic, high); signature (low): `undefined RenderBatches(longlong param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, int param_5)`; semantic: draws the technique range from the main buckets (group -1) or from group i's sub-batch, then clears that group and resets the shader cache (high); signature `void (BSShaderAccumulator* this, u32 firstTechnique, u32 lastTechnique, u32 flags, int group)`
 pub const BSShaderAccumulator__RenderBatches: u64 = 106609;
 /// `BSShaderAccumulator::RenderBatches` as a function pointer type (high).
 pub type BSShaderAccumulator__RenderBatches_fn = unsafe extern "C" fn(this: *mut crate::BSShaderAccumulator, firstTechnique: u32, lastTechnique: u32, flags: u32, group: i32);
-/// `BSShaderAccumulator::RenderDecals` at 0x151fd60 (semantic, medium); signature (untiered): `undefined RenderDecals(longlong param_1, uint param_2)`; semantic: when drawDecals: group 3 then group 2 under stencil modes 6/7 and 8/9 (medium); signature `void (BSShaderAccumulator* this, u32 flags)`
+/// `BSShaderAccumulator::RenderDecals` at 0x151fd60 (semantic, medium); signature (low): `undefined RenderDecals(longlong param_1, uint param_2)`; semantic: when drawDecals: group 3 then group 2 under stencil modes 6/7 and 8/9 (medium); signature `void (BSShaderAccumulator* this, u32 flags)`
 pub const BSShaderAccumulator__RenderDecals: u64 = 106586;
-/// `BSShaderAccumulator::RenderDepth` at 0x15206a0 (semantic, high); signature (untiered): `undefined RenderDepth(longlong param_1, uint param_2)`; semantic: render for modes 0xc..0x11: lighting 0x2b..0x4000002b, grass 0x5c000030..0x5c00005c, group 1, group 9, decal group 4; with flags & 0x100 only group 0xf (the cascade pre-pass) with cull none (high); signature `void (BSShaderAccumulator* this, u32 flags)`
+/// `BSShaderAccumulator::RenderDepth` at 0x15206a0 (semantic, high); signature (low): `undefined RenderDepth(longlong param_1, uint param_2)`; semantic: render for modes 0xc..0x11: lighting 0x2b..0x4000002b, grass 0x5c000030..0x5c00005c, group 1, group 9, decal group 4; with flags & 0x100 only group 0xf (the cascade pre-pass) with cull none (high); signature `void (BSShaderAccumulator* this, u32 flags)`
 pub const BSShaderAccumulator__RenderDepth: u64 = 106592;
 /// `BSShaderAccumulator::RenderDepth` as a function pointer type (high).
 pub type BSShaderAccumulator__RenderDepth_fn = unsafe extern "C" fn(this: *mut crate::BSShaderAccumulator, flags: u32);
-/// `BSShaderAccumulator::RenderFirstPersonPasses` at 0x15200d0 (semantic, high); signature (untiered): `undefined RenderFirstPersonPasses(longlong param_1, uint param_2)`; semantic: render for mode 0x16 (the first-person accumulator 0x3436240): techniques 1..0x5c00006c, group 8, decals, sorted alpha, groups 0xb, 0xc, 7, 0x5c006072, then frees the batches (high); signature `void (BSShaderAccumulator* this, u32 flags)`
+/// `BSShaderAccumulator::RenderFirstPersonPasses` at 0x15200d0 (semantic, high); signature (low): `undefined RenderFirstPersonPasses(longlong param_1, uint param_2)`; semantic: render for mode 0x16 (the first-person accumulator 0x3436240): techniques 1..0x5c00006c, group 8, decals, sorted alpha, groups 0xb, 0xc, 7, 0x5c006072, then frees the batches (high); signature `void (BSShaderAccumulator* this, u32 flags)`
 pub const BSShaderAccumulator__RenderFirstPersonPasses: u64 = 106588;
 /// `BSShaderAccumulator::RenderFirstPersonPasses` as a function pointer type (high).
 pub type BSShaderAccumulator__RenderFirstPersonPasses_fn = unsafe extern "C" fn(this: *mut crate::BSShaderAccumulator, flags: u32);
-/// `BSShaderAccumulator::RenderGroup4` at 0x151ff00 (semantic, medium); signature (untiered): `undefined RenderGroup4(longlong param_1, uint param_2)`; semantic: when +0x12c or +0x12d: group 4 (hint 3, lighting properties with flags 0xc000000) with depth mode 1 and stencil 10/11 (medium); signature `void (BSShaderAccumulator* this, u32 flags)`
+/// `BSShaderAccumulator::RenderGroup4` at 0x151ff00 (semantic, medium); signature (low): `undefined RenderGroup4(longlong param_1, uint param_2)`; semantic: when +0x12c or +0x12d: group 4 (hint 3, lighting properties with flags 0xc000000) with depth mode 1 and stencil 10/11 (medium); signature `void (BSShaderAccumulator* this, u32 flags)`
 pub const BSShaderAccumulator__RenderGroup4: u64 = 106587;
-/// `BSShaderAccumulator::RenderLateGroups` at 0x1520a10 (semantic, medium); signature (untiered): `ulonglong RenderLateGroups(longlong param_1, undefined8 param_2)`; semantic: draws group 6 (hint 5) into target 0xd and group 5 (hint 4) with blend 2 and depth mode 1 using the given camera; called after the main draw when group 5 has passes and from RenderFirstPerson (medium); signature `bool (BSShaderAccumulator* this, NiCamera* camera)`
+/// `BSShaderAccumulator::RenderLateGroups` at 0x1520a10 (semantic, medium); signature (low): `ulonglong RenderLateGroups(longlong param_1, undefined8 param_2)`; semantic: draws group 6 (hint 5) into target 0xd and group 5 (hint 4) with blend 2 and depth mode 1 using the given camera; called after the main draw when group 5 has passes and from RenderFirstPerson (medium); signature `bool (BSShaderAccumulator* this, NiCamera* camera)`
 pub const BSShaderAccumulator__RenderLateGroups: u64 = 106599;
-/// `BSShaderAccumulator::RenderOpaque` at 0x151ee90 (semantic, high); signature (untiered): `undefined RenderOpaque(BSShaderAccumulator * this, undefined4 param_1)`
+/// `BSShaderAccumulator::RenderOpaque` at 0x151ee90 (semantic, high); signature (low): `undefined RenderOpaque(BSShaderAccumulator * this, undefined4 param_1)`
 pub const BSShaderAccumulator__RenderOpaque: u64 = 106581;
-/// `BSShaderAccumulator::RenderOpaquePasses` at 0x151ef40 (semantic, high); signature (untiered): `undefined RenderOpaquePasses(longlong param_1, uint param_2)`; semantic: mode-0 first half; order in answers[0] (high); signature `void (BSShaderAccumulator* this, u32 flags)`
+/// `BSShaderAccumulator::RenderOpaquePasses` at 0x151ef40 (semantic, high); signature (low): `undefined RenderOpaquePasses(longlong param_1, uint param_2)`; semantic: mode-0 first half; order in answers[0] (high); signature `void (BSShaderAccumulator* this, u32 flags)`
 pub const BSShaderAccumulator__RenderOpaquePasses: u64 = 106583;
 /// `BSShaderAccumulator::RenderOpaquePasses` as a function pointer type (high).
 pub type BSShaderAccumulator__RenderOpaquePasses_fn = unsafe extern "C" fn(this: *mut crate::BSShaderAccumulator, flags: u32);
-/// `BSShaderAccumulator::RenderSortedAlpha` at 0x151fb80 (semantic, medium); signature (untiered): `undefined RenderSortedAlpha(longlong param_1, uint param_2)`; semantic: draws the alpha group back to front by depth slices (qsort, ID_107673/ID_107672) and releases it (medium); signature `void (BSShaderAccumulator* this, u32 flags)`
+/// `BSShaderAccumulator::RenderSortedAlpha` at 0x151fb80 (semantic, medium); signature (low): `undefined RenderSortedAlpha(longlong param_1, uint param_2)`; semantic: draws the alpha group back to front by depth slices (qsort, ID_107673/ID_107672) and releases it (medium); signature `void (BSShaderAccumulator* this, u32 flags)`
 pub const BSShaderAccumulator__RenderSortedAlpha: u64 = 106585;
-/// `BSShaderAccumulator::RenderStandard` at 0x151ee60 (semantic, high); signature (untiered): `undefined RenderStandard(undefined8 param_1, undefined4 param_2)`; semantic: render table entry 0: RenderOpaquePasses then RenderTransparentPasses (used by modes without their own entry) (high); signature `void (BSShaderAccumulator* this, u32 flags)`
+/// `BSShaderAccumulator::RenderStandard` at 0x151ee60 (semantic, high); signature (low): `undefined RenderStandard(undefined8 param_1, undefined4 param_2)`; semantic: render table entry 0: RenderOpaquePasses then RenderTransparentPasses (used by modes without their own entry) (high); signature `void (BSShaderAccumulator* this, u32 flags)`
 pub const BSShaderAccumulator__RenderStandard: u64 = 106580;
 /// `BSShaderAccumulator::RenderStandard` as a function pointer type (high).
 pub type BSShaderAccumulator__RenderStandard_fn = unsafe extern "C" fn(this: *mut crate::BSShaderAccumulator, flags: u32);
-/// `BSShaderAccumulator::RenderTransparent` at 0x151ef00 (semantic, high); signature (untiered): `undefined RenderTransparent(BSShaderAccumulator * this)`
+/// `BSShaderAccumulator::RenderTransparent` at 0x151ef00 (semantic, high); signature (high): `undefined RenderTransparent(BSShaderAccumulator * this)`
 pub const BSShaderAccumulator__RenderTransparent: u64 = 106582;
-/// `BSShaderAccumulator::RenderTransparentPasses` at 0x151f540 (semantic, high); signature (untiered): `undefined RenderTransparentPasses(longlong param_1, uint param_2)`; semantic: mode-0 second half; order in answers[0] (high); signature `void (BSShaderAccumulator* this, u32 flags)`
+/// `BSShaderAccumulator::RenderTransparentPasses` at 0x151f540 (semantic, high); signature (low): `undefined RenderTransparentPasses(longlong param_1, uint param_2)`; semantic: mode-0 second half; order in answers[0] (high); signature `void (BSShaderAccumulator* this, u32 flags)`
 pub const BSShaderAccumulator__RenderTransparentPasses: u64 = 106584;
 /// `BSShaderAccumulator::RenderTransparentPasses` as a function pointer type (high).
 pub type BSShaderAccumulator__RenderTransparentPasses_fn = unsafe extern "C" fn(this: *mut crate::BSShaderAccumulator, flags: u32);
-/// `BSShaderAccumulator::SetCamera` at 0x151e2e0 (semantic, high); signature (untiered): `undefined SetCamera(BSShaderAccumulator * this, undefined8 param_1)`
+/// `BSShaderAccumulator::SetCamera` at 0x151e2e0 (semantic, high); signature (low): `undefined SetCamera(BSShaderAccumulator * this, undefined8 param_1)`
 pub const BSShaderAccumulator__SetCamera: u64 = 106566;
 /// `BSShaderAccumulator::ctor` at 0x151dea0 (layout_inference, high); signature (low): `BSShaderAccumulator * ctor(BSShaderAccumulator * this, undefined4 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSShaderAccumulator__ctor: u64 = 106564;
@@ -4507,25 +4435,25 @@ pub const BSShaderAccumulator__ctor: u64 = 106564;
 pub const BSShaderAccumulator__ctor_2: u64 = 106565;
 /// `BSShaderAccumulator::vdtor` at 0x1521db0 (slot_propagation, medium); signature (low): `BSShaderAccumulator * vdtor(BSShaderAccumulator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSShaderAccumulator__vdtor: u64 = 106626;
-/// `BSShaderAccumulator::vfunc_39` at 0xf0f3d0 (semantic, high); signature (untiered): `undefined vfunc_39(void)`
+/// `BSShaderAccumulator::vfunc_39` at 0xf0f3d0 (semantic, high); signature (low): `undefined vfunc_39(void)`
 pub const BSShaderAccumulator__vfunc_39: u64 = 71322;
 /// `BSShaderAccumulator::vfunc_40_sub0` at 0x1561650 (callgraph, medium); signature (untiered): `longlong * vfunc_40_sub0(longlong param_1, float * param_2, longlong param_3, char param_4)`
 pub const BSShaderAccumulator__vfunc_40_sub0: u64 = 107670;
 /// `BSShaderAccumulator::vfunc_44` at 0x1520960 (rtti, high); signature (low): `undefined vfunc_44(void)`
 pub const BSShaderAccumulator__vfunc_44: u64 = 106595;
-/// `BSShaderMaterial::ComputeHash` at 0x15757c0 (semantic, high); signature (untiered): `uint ComputeHash(BSShaderMaterial * this, undefined4 param_1)`
+/// `BSShaderMaterial::ComputeHash` at 0x15757c0 (semantic, high); signature (low): `uint ComputeHash(BSShaderMaterial * this, undefined4 param_1)`
 pub const BSShaderMaterial__ComputeHash: u64 = 108270;
-/// `BSShaderMaterial::CopyMembers` at 0x1575700 (semantic, high); signature (untiered): `undefined CopyMembers(BSShaderMaterial * this, longlong param_1)`
+/// `BSShaderMaterial::CopyMembers` at 0x1575700 (semantic, high); signature (low): `undefined CopyMembers(BSShaderMaterial * this, longlong param_1)`
 pub const BSShaderMaterial__CopyMembers: u64 = 108268;
-/// `BSShaderMaterial::Create` at 0x1575620 (semantic, high); signature (untiered): `undefined8 * Create(BSShaderMaterial * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+/// `BSShaderMaterial::Create` at 0x1575620 (semantic, high); signature (low): `undefined8 * Create(BSShaderMaterial * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSShaderMaterial__Create: u64 = 108267;
-/// `BSShaderMaterial::GetDefault` at 0x1575820 (semantic, medium); signature (untiered): `undefined8 GetDefault(void)`
+/// `BSShaderMaterial::GetDefault` at 0x1575820 (semantic, medium); signature (low): `undefined8 GetDefault(void)`
 pub const BSShaderMaterial__GetDefault: u64 = 108271;
-/// `BSShaderMaterial::GetFeature` at 0x1556680 (semantic, high); signature (untiered): `undefined8 GetFeature(void)`
+/// `BSShaderMaterial::GetFeature` at 0x1556680 (semantic, high); signature (low): `undefined8 GetFeature(void)`
 pub const BSShaderMaterial__GetFeature: u64 = 107519;
-/// `BSShaderMaterial::GetType` at 0x1575920 (semantic, high); signature (untiered): `undefined8 GetType(void)`
+/// `BSShaderMaterial::GetType` at 0x1575920 (semantic, high); signature (low): `undefined8 GetType(void)`
 pub const BSShaderMaterial__GetType: u64 = 108275;
-/// `BSShaderMaterial::IsEqual` at 0x1575730 (semantic, high); signature (untiered): `undefined8 IsEqual(BSShaderMaterial * this, longlong * param_1)`
+/// `BSShaderMaterial::IsEqual` at 0x1575730 (semantic, high); signature (low): `undefined8 IsEqual(BSShaderMaterial * this, longlong * param_1)`
 pub const BSShaderMaterial__IsEqual: u64 = 108269;
 /// `BSShaderMaterial::ctor` at 0x15755b0 (layout_inference, medium); signature (high): `BSShaderMaterial * ctor(BSShaderMaterial * this)`
 pub const BSShaderMaterial__ctor: u64 = 108265;
@@ -4533,9 +4461,9 @@ pub const BSShaderMaterial__ctor: u64 = 108265;
 pub const BSShaderMaterial__dtor: u64 = 108266;
 /// `BSShaderMaterial::vdtor` at 0x15758f0 (layout_inference, medium); signature (low): `BSShaderMaterial * vdtor(BSShaderMaterial * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSShaderMaterial__vdtor: u64 = 108274;
-/// `BSShaderProperty::ClearRenderPasses` at 0x14e7fb0 (semantic, high); signature (untiered): `undefined ClearRenderPasses(BSShaderProperty * this)`
+/// `BSShaderProperty::ClearRenderPasses` at 0x14e7fb0 (semantic, high); signature (high): `undefined ClearRenderPasses(BSShaderProperty * this)`
 pub const BSShaderProperty__ClearRenderPasses: u64 = 105543;
-/// `BSShaderProperty::CreateClone` at 0x14e72c0 (semantic, medium); signature (untiered): `undefined8 CreateClone(void)`
+/// `BSShaderProperty::CreateClone` at 0x14e72c0 (semantic, medium); signature (low): `undefined8 CreateClone(void)`
 pub const BSShaderProperty__CreateClone: u64 = 105512;
 /// `BSShaderProperty::ForEachVisitor::dtor` at 0x216150 (layout_inference, high); signature (high): `undefined dtor(ForEachVisitor * this)`
 pub const BSShaderProperty__ForEachVisitor__dtor: u64 = 15607;
@@ -4543,29 +4471,29 @@ pub const BSShaderProperty__ForEachVisitor__dtor: u64 = 15607;
 pub const BSShaderProperty__ForEachVisitor__dtor_2: u64 = 15646;
 /// `BSShaderProperty::ForEachVisitor::vdtor` at 0x216330 (layout_inference, medium); signature (low): `ForEachVisitor * vdtor(ForEachVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSShaderProperty__ForEachVisitor__vdtor: u64 = 15613;
-/// `BSShaderProperty::GetBaseTexture` at 0x14e8600 (semantic, medium); signature (untiered): `undefined8 GetBaseTexture(void)`
+/// `BSShaderProperty::GetBaseTexture` at 0x14e8600 (semantic, medium); signature (low): `undefined8 GetBaseTexture(void)`
 pub const BSShaderProperty__GetBaseTexture: u64 = 105565;
-/// `BSShaderProperty::GetDepthRenderPasses` at 0x14e7af0 (semantic, high); signature (untiered): `undefined8 GetDepthRenderPasses(void)`
+/// `BSShaderProperty::GetDepthRenderPasses` at 0x14e7af0 (semantic, high); signature (low): `undefined8 GetDepthRenderPasses(void)`
 pub const BSShaderProperty__GetDepthRenderPasses: u64 = 105534;
-/// `BSShaderProperty::GetDepthTechnique` at 0x14e85e0 (semantic, high); signature (untiered): `undefined8 GetDepthTechnique(void)`
+/// `BSShaderProperty::GetDepthTechnique` at 0x14e85e0 (semantic, high); signature (low): `undefined8 GetDepthTechnique(void)`
 pub const BSShaderProperty__GetDepthTechnique: u64 = 105563;
-/// `BSShaderProperty::GetMaterialAlpha` at 0x14e8680 (semantic, high); signature (untiered): `undefined4 GetMaterialAlpha(void)`
+/// `BSShaderProperty::GetMaterialAlpha` at 0x14e8680 (semantic, high); signature (low): `undefined4 GetMaterialAlpha(void)`
 pub const BSShaderProperty__GetMaterialAlpha: u64 = 105573;
-/// `BSShaderProperty::GetMaterialType` at 0x14e8610 (semantic, medium); signature (untiered): `undefined8 GetMaterialType(void)`
+/// `BSShaderProperty::GetMaterialType` at 0x14e8610 (semantic, medium); signature (low): `undefined8 GetMaterialType(void)`
 pub const BSShaderProperty__GetMaterialType: u64 = 105566;
-/// `BSShaderProperty::GetPropertyType` at 0xf0f110 (semantic, medium); signature (untiered): `undefined8 GetPropertyType(void)`
+/// `BSShaderProperty::GetPropertyType` at 0xf0f110 (semantic, medium); signature (low): `undefined8 GetPropertyType(void)`
 pub const BSShaderProperty__GetPropertyType: u64 = 71311;
-/// `BSShaderProperty::IsEquivalent` at 0x14e7ec0 (semantic, medium); signature (untiered): `ulonglong IsEquivalent(BSShaderProperty * this, longlong param_1)`
+/// `BSShaderProperty::IsEquivalent` at 0x14e7ec0 (semantic, medium); signature (low): `ulonglong IsEquivalent(BSShaderProperty * this, longlong param_1)`
 pub const BSShaderProperty__IsEquivalent: u64 = 105539;
 /// `BSShaderProperty::LinkObject` at 0x14e7430 (semantic, medium); signature (untiered): `undefined LinkObject(BSShaderProperty * this, longlong param_1)`
 pub const BSShaderProperty__LinkObject: u64 = 105515;
-/// `BSShaderProperty::LoadBinary` at 0x14e7390 (semantic, high); signature (untiered): `undefined LoadBinary(BSShaderProperty * this, longlong param_1)`
+/// `BSShaderProperty::LoadBinary` at 0x14e7390 (semantic, high); signature (low): `undefined LoadBinary(BSShaderProperty * this, longlong param_1)`
 pub const BSShaderProperty__LoadBinary: u64 = 105514;
 /// `BSShaderProperty::RegisterStreamables` at 0x14e7440 (semantic, medium); signature (untiered): `undefined8 RegisterStreamables(BSShaderProperty * this, longlong * param_1)`
 pub const BSShaderProperty__RegisterStreamables: u64 = 105516;
-/// `BSShaderProperty::SaveBinary` at 0x14e7450 (semantic, high); signature (untiered): `undefined SaveBinary(BSShaderProperty * this, longlong * param_1)`
+/// `BSShaderProperty::SaveBinary` at 0x14e7450 (semantic, high); signature (low): `undefined SaveBinary(BSShaderProperty * this, longlong * param_1)`
 pub const BSShaderProperty__SaveBinary: u64 = 105517;
-/// `BSShaderProperty::SetEffectData` at 0x26d4e0 (semantic, high); signature (untiered): `undefined SetEffectData(longlong param_1, int * param_2, undefined8 param_3, undefined8 param_4)`; semantic: add-ref data (+0 count), reset prop+0x34 to 0x7fffffff, release the old +0x68 (on last ref releases its NiPointers +0x10/+0x18/+0x20 and frees 0x88 bytes), store data at +0x68 (high); signature `void (BSShaderProperty* prop, BSEffectShaderData* data)`
+/// `BSShaderProperty::SetEffectData` at 0x26d4e0 (semantic, high); signature (low): `undefined SetEffectData(longlong param_1, int * param_2, undefined8 param_3, undefined8 param_4)`; semantic: add-ref data (+0 count), reset prop+0x34 to 0x7fffffff, release the old +0x68 (on last ref releases its NiPointers +0x10/+0x18/+0x20 and frees 0x88 bytes), store data at +0x68 (high); signature `void (BSShaderProperty* prop, BSEffectShaderData* data)`
 pub const BSShaderProperty__SetEffectData: u64 = 17356;
 /// `BSShaderProperty::SetEffectData` as a function pointer type (high).
 pub type BSShaderProperty__SetEffectData_fn = unsafe extern "C" fn(prop: *mut crate::BSShaderProperty, data: *mut crate::BSEffectShaderData);
@@ -4573,13 +4501,13 @@ pub type BSShaderProperty__SetEffectData_fn = unsafe extern "C" fn(prop: *mut cr
 pub const BSShaderProperty__SetFlag: u64 = 105540;
 /// `BSShaderProperty::SetFlag` as a function pointer type (high).
 pub type BSShaderProperty__SetFlag_fn = unsafe extern "C" fn(this: *mut crate::BSShaderProperty, bit: u8, value: bool);
-/// `BSShaderProperty::SetMaterial` at 0x14e8000 (semantic, high); signature (untiered): `undefined SetMaterial(longlong param_1, longlong param_2, char param_3)`; semantic: stores the cache entry for material at +0x78 (unique when asked or when the property has controllers) and releases the previous one (high); signature `void (BSShaderProperty* this, BSShaderMaterial* material, bool unique)`
+/// `BSShaderProperty::SetMaterial` at 0x14e8000 (semantic, high); signature (low): `undefined SetMaterial(longlong param_1, longlong param_2, char param_3)`; semantic: stores the cache entry for material at +0x78 (unique when asked or when the property has controllers) and releases the previous one (high); signature `void (BSShaderProperty* this, BSShaderMaterial* material, bool unique)`
 pub const BSShaderProperty__SetMaterial: u64 = 105544;
 /// `BSShaderProperty::SetMaterial` as a function pointer type (high).
 pub type BSShaderProperty__SetMaterial_fn = unsafe extern "C" fn(this: *mut crate::BSShaderProperty, material: *mut crate::BSShaderMaterial, unique: bool);
-/// `BSShaderProperty::SetMaterialAlpha` at 0x14e8760 (semantic, high); signature (untiered): `undefined SetMaterialAlpha(void)`
+/// `BSShaderProperty::SetMaterialAlpha` at 0x14e8760 (semantic, high); signature (low): `undefined SetMaterialAlpha(void)`
 pub const BSShaderProperty__SetMaterialAlpha: u64 = 105576;
-/// `BSShaderProperty::SetShadowLightBit` at 0x14e77b0 (semantic, medium); signature (untiered): `undefined SetShadowLightBit(BSShaderProperty * this, int param_1)`
+/// `BSShaderProperty::SetShadowLightBit` at 0x14e77b0 (semantic, medium); signature (low): `undefined SetShadowLightBit(BSShaderProperty * this, int param_1)`
 pub const BSShaderProperty__SetShadowLightBit: u64 = 105524;
 /// `BSShaderProperty::Update` at 0xef26b0 (semantic, medium); signature (untiered): `undefined Update(BSShaderProperty * this, undefined8 param_1)`
 pub const BSShaderProperty__Update: u64 = 70676;
@@ -4731,11 +4659,11 @@ pub const BSShaderResourceManager__vfunc_9: u64 = 108513;
 pub const BSShaderResourceManager__vfunc_9_sub0: u64 = 77268;
 /// `BSShaderTextureSet::Create` at 0x153b520 (string, high); signature (low): `NiObject * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const BSShaderTextureSet__Create: u64 = 107172;
-/// `BSShaderTextureSet::GetTexturePath` at 0x153b3c0 (semantic, high); signature (untiered): `BSShaderTextureSet_vtbl * GetTexturePath(BSShaderTextureSet * this, int param_1)`
+/// `BSShaderTextureSet::GetTexturePath` at 0x153b3c0 (semantic, high); signature (low): `BSShaderTextureSet_vtbl * GetTexturePath(BSShaderTextureSet * this, int param_1)`
 pub const BSShaderTextureSet__GetTexturePath: u64 = 107169;
-/// `BSShaderTextureSet::LoadTexture` at 0x153b3d0 (semantic, high); signature (untiered): `undefined LoadTexture(BSShaderTextureSet * this, int param_1, undefined8 * param_2)`
+/// `BSShaderTextureSet::LoadTexture` at 0x153b3d0 (semantic, high); signature (low): `undefined LoadTexture(BSShaderTextureSet * this, int param_1, undefined8 * param_2)`
 pub const BSShaderTextureSet__LoadTexture: u64 = 107170;
-/// `BSShaderTextureSet::SetTexturePath` at 0x153b4c0 (semantic, high); signature (untiered): `undefined SetTexturePath(BSShaderTextureSet * this, int param_1, char * param_2)`
+/// `BSShaderTextureSet::SetTexturePath` at 0x153b4c0 (semantic, high); signature (low): `undefined SetTexturePath(BSShaderTextureSet * this, int param_1, char * param_2)`
 pub const BSShaderTextureSet__SetTexturePath: u64 = 107171;
 /// `BSShaderTextureSet::vdtor` at 0x32df20 (layout_inference, medium); signature (low): `BSShaderTextureSet * vdtor(BSShaderTextureSet * this, uint param_1)`
 pub const BSShaderTextureSet__vdtor: u64 = 21373;
@@ -4757,19 +4685,19 @@ pub const BSShadowDirectionalLight__BlendDirection: u64 = 108497;
 pub type BSShadowDirectionalLight__BlendDirection_fn = unsafe extern "C" fn(this: *mut crate::BSShadowDirectionalLight, inOutDirection: *mut crate::NiPoint3, previousCameraJumped: u32);
 /// `BSShadowDirectionalLight::BuildCullPlanes` at 0x1581a80 (semantic, medium); signature (untiered): `undefined BuildCullPlanes(undefined8 param_1, longlong param_2, longlong param_3, uint * param_4, uint param_5, float * param_6, float * param_7, uint param_8)`; semantic: six cull planes (+ mask 0x3f) from the 2D convex hull of the projected frustum corners, copied into the culler's +0xac..+0x118 (medium); signature `void (BSShadowDirectionalLight* this, float* outPlanes, NiPoint3* corners, u32* hull, u32 hullCount, float* lightAxes, NiPoint3* origin, u32 farCorner)`
 pub const BSShadowDirectionalLight__BuildCullPlanes: u64 = 108499;
-/// `BSShadowDirectionalLight::CullCasters` at 0x157ead0 (runtime, high); signature (untiered): `undefined CullCasters(BSShadowDirectionalLight * this, uint * param_1)`
+/// `BSShadowDirectionalLight::CullCasters` at 0x157ead0 (runtime, high); signature (low): `undefined CullCasters(BSShadowDirectionalLight * this, uint * param_1)`
 pub const BSShadowDirectionalLight__CullCasters: u64 = 108488;
-/// `BSShadowDirectionalLight::CullGeometryLists` at 0x157ed80 (runtime, high); signature (untiered): `undefined CullGeometryLists(longlong param_1, longlong * param_2, longlong param_3)`; semantic: one job per culling job: the job's BSGeometryListCullingProcess (cullMode 3 or 4) walks the scene roots with lightCamera; waits for the jobs before returning (high); signature `void (BSShadowDirectionalLight* this, BSTArray* lists, ...)`
+/// `BSShadowDirectionalLight::CullGeometryLists` at 0x157ed80 (runtime, high); signature (low): `undefined CullGeometryLists(longlong param_1, longlong * param_2, longlong param_3)`; semantic: one job per culling job: the job's BSGeometryListCullingProcess (cullMode 3 or 4) walks the scene roots with lightCamera; waits for the jobs before returning (high); signature `void (BSShadowDirectionalLight* this, BSTArray* lists, ...)`
 pub const BSShadowDirectionalLight__CullGeometryLists: u64 = 108492;
-/// `BSShadowDirectionalLight::IsDirectionalLight` at 0x1582020 (semantic, medium); signature (untiered): `undefined1 IsDirectionalLight(void)`
+/// `BSShadowDirectionalLight::IsDirectionalLight` at 0x1582020 (semantic, medium); signature (low): `undefined1 IsDirectionalLight(void)`
 pub const BSShadowDirectionalLight__IsDirectionalLight: u64 = 108503;
-/// `BSShadowDirectionalLight::ReleaseShadowMaps` at 0x157ed20 (semantic, high); signature (untiered): `undefined ReleaseShadowMaps(BSShadowDirectionalLight * this)`
+/// `BSShadowDirectionalLight::ReleaseShadowMaps` at 0x157ed20 (semantic, high); signature (high): `undefined ReleaseShadowMaps(BSShadowDirectionalLight * this)`
 pub const BSShadowDirectionalLight__ReleaseShadowMaps: u64 = 108491;
-/// `BSShadowDirectionalLight::RenderShadowMaps` at 0x157ebb0 (runtime, high); signature (untiered): `undefined RenderShadowMaps(BSShadowDirectionalLight * this, int * param_1)`
+/// `BSShadowDirectionalLight::RenderShadowMaps` at 0x157ebb0 (runtime, high); signature (low): `undefined RenderShadowMaps(BSShadowDirectionalLight * this, int * param_1)`
 pub const BSShadowDirectionalLight__RenderShadowMaps: u64 = 108489;
-/// `BSShadowDirectionalLight::UpdateCascadeFrusta` at 0x157ea50 (semantic, medium); signature (untiered): `undefined UpdateCascadeFrusta(BSShadowDirectionalLight * this, float * param_1, undefined8 * param_2)`
+/// `BSShadowDirectionalLight::UpdateCascadeFrusta` at 0x157ea50 (semantic, medium); signature (low): `undefined UpdateCascadeFrusta(BSShadowDirectionalLight * this, float * param_1, undefined8 * param_2)`
 pub const BSShadowDirectionalLight__UpdateCascadeFrusta: u64 = 108487;
-/// `BSShadowDirectionalLight::UpdateForCamera` at 0x157f080 (runtime, high); signature (untiered): `undefined8 UpdateForCamera(BSShadowDirectionalLight * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+/// `BSShadowDirectionalLight::UpdateForCamera` at 0x157f080 (runtime, high); signature (low): `undefined8 UpdateForCamera(BSShadowDirectionalLight * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSShadowDirectionalLight__UpdateForCamera: u64 = 108496;
 /// `BSShadowDirectionalLight::ctor` at 0x157e490 (layout_inference, medium); signature (low): `BSShadowDirectionalLight * ctor(BSShadowDirectionalLight * this, uint param_1, ulonglong param_2, undefined8 param_3)`
 pub const BSShadowDirectionalLight__ctor: u64 = 108485;
@@ -4785,17 +4713,17 @@ pub const BSShadowDirectionalLight__vfunc_14: u64 = 108504;
 pub const BSShadowDirectionalLight__vfunc_15_sub0: u64 = 106454;
 /// `BSShadowDirectionalLight::vfunc_4` at 0x1582010 (rtti, high); signature (low): `undefined1 vfunc_4(void)`
 pub const BSShadowDirectionalLight__vfunc_4: u64 = 108502;
-/// `BSShadowFrustumLight::CullCasters` at 0x15879d0 (semantic, medium); signature (untiered): `undefined CullCasters(BSShadowFrustumLight * this, uint * param_1, int param_2)`
+/// `BSShadowFrustumLight::CullCasters` at 0x15879d0 (semantic, medium); signature (low): `undefined CullCasters(BSShadowFrustumLight * this, uint * param_1, int param_2)`
 pub const BSShadowFrustumLight__CullCasters: u64 = 108615;
-/// `BSShadowFrustumLight::IsFrustumLight` at 0x1587f80 (semantic, medium); signature (untiered): `undefined1 IsFrustumLight(void)`
+/// `BSShadowFrustumLight::IsFrustumLight` at 0x1587f80 (semantic, medium); signature (low): `undefined1 IsFrustumLight(void)`
 pub const BSShadowFrustumLight__IsFrustumLight: u64 = 108621;
-/// `BSShadowFrustumLight::RenderShadowMaps` at 0x1587a30 (semantic, high); signature (untiered): `undefined RenderShadowMaps(BSShadowFrustumLight * this, int * param_1)`
+/// `BSShadowFrustumLight::RenderShadowMaps` at 0x1587a30 (semantic, high); signature (low): `undefined RenderShadowMaps(BSShadowFrustumLight * this, int * param_1)`
 pub const BSShadowFrustumLight__RenderShadowMaps: u64 = 108616;
-/// `BSShadowFrustumLight::SetLight` at 0x1587ae0 (semantic, medium); signature (untiered): `undefined SetLight(BSShadowFrustumLight * this, longlong * param_1)`
+/// `BSShadowFrustumLight::SetLight` at 0x1587ae0 (semantic, medium); signature (low): `undefined SetLight(BSShadowFrustumLight * this, longlong * param_1)`
 pub const BSShadowFrustumLight__SetLight: u64 = 108617;
-/// `BSShadowFrustumLight::SupportsFocusShadows` at 0x1587f70 (semantic, medium); signature (untiered): `undefined1 SupportsFocusShadows(void)`
+/// `BSShadowFrustumLight::SupportsFocusShadows` at 0x1587f70 (semantic, medium); signature (low): `undefined1 SupportsFocusShadows(void)`
 pub const BSShadowFrustumLight__SupportsFocusShadows: u64 = 108620;
-/// `BSShadowFrustumLight::UpdateForCamera` at 0x1587bc0 (semantic, high); signature (untiered): `bool UpdateForCamera(BSShadowFrustumLight * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+/// `BSShadowFrustumLight::UpdateForCamera` at 0x1587bc0 (semantic, high); signature (low): `bool UpdateForCamera(BSShadowFrustumLight * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSShadowFrustumLight__UpdateForCamera: u64 = 108618;
 /// `BSShadowFrustumLight::ctor` at 0x15872e0 (layout_inference, medium); signature (low): `BSShadowFrustumLight * ctor(BSShadowFrustumLight * this, float param_1, undefined8 param_2, float param_3, float param_4)`
 pub const BSShadowFrustumLight__ctor: u64 = 108612;
@@ -4811,25 +4739,25 @@ pub const BSShadowFrustumLight__vfunc_16_sub0: u64 = 108306;
 pub const BSShadowLight__CullFocusShadowCasters: u64 = 107603;
 /// `BSShadowLight::CullFocusShadowCasters` as a function pointer type (high).
 pub type BSShadowLight__CullFocusShadowCasters_fn = unsafe extern "C" fn(this: *mut crate::BSShadowLight, mapCounter: *mut u32);
-/// `BSShadowLight::CullMapCasters` at 0x155cea0 (runtime, high); signature (untiered): `undefined CullMapCasters(longlong * param_1, longlong param_2, int * param_3, longlong * param_4, undefined4 param_5)`; semantic: one map's caster cull with the static culler 0x33d57a0: map camera, map accumulator, cull mode 3 + light+0x47, the map culler's planes; sun: replay each geometry list (RunCullingWithStaticProcess mode 2); local light: cull light+0x528 (mode 1) or the scene root (mode 0); ++*mapCounter (high); signature `void (BSShadowLight* this, ShadowMapData* map, u32* mapCounter, BSTArray* geometryLists, u32 cullTag)`
+/// `BSShadowLight::CullMapCasters` at 0x155cea0 (runtime, high); signature (low): `undefined CullMapCasters(longlong * param_1, longlong param_2, int * param_3, longlong * param_4, undefined4 param_5)`; semantic: one map's caster cull with the static culler 0x33d57a0: map camera, map accumulator, cull mode 3 + light+0x47, the map culler's planes; sun: replay each geometry list (RunCullingWithStaticProcess mode 2); local light: cull light+0x528 (mode 1) or the scene root (mode 0); ++*mapCounter (high); signature `void (BSShadowLight* this, ShadowMapData* map, u32* mapCounter, BSTArray* geometryLists, u32 cullTag)`
 pub const BSShadowLight__CullMapCasters: u64 = 107602;
 /// `BSShadowLight::CullMapCasters` as a function pointer type (high).
 pub type BSShadowLight__CullMapCasters_fn = unsafe extern "C" fn(this: *mut crate::BSShadowLight, map: *mut crate::ShadowMapData, mapCounter: *mut u32, geometryLists: *mut crate::BSTArray, cullTag: u32);
-/// `BSShadowLight::IsShadowLight` at 0x155dbd0 (semantic, high); signature (untiered): `undefined1 IsShadowLight(void)`
+/// `BSShadowLight::IsShadowLight` at 0x155dbd0 (semantic, high); signature (low): `undefined1 IsShadowLight(void)`
 pub const BSShadowLight__IsShadowLight: u64 = 107620;
-/// `BSShadowLight::ReleaseShadowMaps` at 0x155c990 (runtime, medium); signature (untiered): `undefined ReleaseShadowMaps(BSShadowLight * this)`
+/// `BSShadowLight::ReleaseShadowMaps` at 0x155c990 (runtime, medium); signature (high): `undefined ReleaseShadowMaps(BSShadowLight * this)`
 pub const BSShadowLight__ReleaseShadowMaps: u64 = 107600;
-/// `BSShadowLight::RenderShadowMap` at 0x155d270 (semantic, high); signature (untiered): `undefined RenderShadowMap(longlong * param_1, undefined1[16] * param_2, int * param_3, uint param_4)`; semantic: assigns a slice when the record has none (target 4 from the free mask 0x20d8ff8), binds and clears the depth target when clearBeforeRender, draws the accumulator with the map's camera (0x1515230) and scales the frustum to the viewport (high); signature `void (BSShadowLight* this, ShadowMapData* map, u32* counter, u32 flags)`
+/// `BSShadowLight::RenderShadowMap` at 0x155d270 (semantic, high); signature (low): `undefined RenderShadowMap(longlong * param_1, undefined1[16] * param_2, int * param_3, uint param_4)`; semantic: assigns a slice when the record has none (target 4 from the free mask 0x20d8ff8), binds and clears the depth target when clearBeforeRender, draws the accumulator with the map's camera (0x1515230) and scales the frustum to the viewport (high); signature `void (BSShadowLight* this, ShadowMapData* map, u32* counter, u32 flags)`
 pub const BSShadowLight__RenderShadowMap: u64 = 107604;
 /// `BSShadowLight::RenderShadowMap` as a function pointer type (high).
 pub type BSShadowLight__RenderShadowMap_fn = unsafe extern "C" fn(this: *mut crate::BSShadowLight, map: *mut crate::ShadowMapData, counter: *mut u32, flags: u32);
-/// `BSShadowLight::SetShadowMapCount` at 0x155c850 (semantic, high); signature (untiered): `undefined SetShadowMapCount(BSShadowLight * this, uint param_1)`
+/// `BSShadowLight::SetShadowMapCount` at 0x155c850 (semantic, high); signature (low): `undefined SetShadowMapCount(BSShadowLight * this, uint param_1)`
 pub const BSShadowLight__SetShadowMapCount: u64 = 107599;
-/// `BSShadowLight::SetupFocusShadows` at 0x155ca00 (semantic, high); signature (untiered): `undefined SetupFocusShadows(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; semantic: aims each focus map's camera at a focus actor and sizes its viewport by distance (ffocusShadowMapDoubleEveryXUnit, at most iShadowMapResolution) (high); signature `void (BSShadowLight* this, NiAVObject* camera)`
+/// `BSShadowLight::SetupFocusShadows` at 0x155ca00 (semantic, high); signature (low): `undefined SetupFocusShadows(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; semantic: aims each focus map's camera at a focus actor and sizes its viewport by distance (ffocusShadowMapDoubleEveryXUnit, at most iShadowMapResolution) (high); signature `void (BSShadowLight* this, NiAVObject* camera)`
 pub const BSShadowLight__SetupFocusShadows: u64 = 107601;
 /// `BSShadowLight::SetupFocusShadows` as a function pointer type (high).
 pub type BSShadowLight__SetupFocusShadows_fn = unsafe extern "C" fn(this: *mut crate::BSShadowLight, camera: *mut crate::NiAVObject);
-/// `BSShadowLight::SupportsFocusShadows` at 0x155d960 (semantic, medium); signature (untiered): `undefined1 SupportsFocusShadows(void)`
+/// `BSShadowLight::SupportsFocusShadows` at 0x155d960 (semantic, medium); signature (low): `undefined1 SupportsFocusShadows(void)`
 pub const BSShadowLight__SupportsFocusShadows: u64 = 107612;
 /// `BSShadowLight::ctor` at 0x155c4b0 (layout_inference, high); signature (high): `BSShadowLight * ctor(BSShadowLight * this)`
 pub const BSShadowLight__ctor: u64 = 107594;
@@ -4855,15 +4783,15 @@ pub const BSShadowLight__vfunc_6: u64 = 107616;
 pub const BSShadowLight__vfunc_7: u64 = 107619;
 /// `BSShadowLight::vfunc_8` at 0x155dba0 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
 pub const BSShadowLight__vfunc_8: u64 = 107617;
-/// `BSShadowParabolicLight::CullCasters` at 0x15888d0 (semantic, medium); signature (untiered): `undefined CullCasters(BSShadowParabolicLight * this, uint * param_1, int param_2, longlong * param_3)`
+/// `BSShadowParabolicLight::CullCasters` at 0x15888d0 (semantic, medium); signature (low): `undefined CullCasters(BSShadowParabolicLight * this, uint * param_1, int param_2, longlong * param_3)`
 pub const BSShadowParabolicLight__CullCasters: u64 = 108626;
-/// `BSShadowParabolicLight::IsParabolicLight` at 0x1588e30 (semantic, medium); signature (untiered): `undefined1 IsParabolicLight(void)`
+/// `BSShadowParabolicLight::IsParabolicLight` at 0x1588e30 (semantic, medium); signature (low): `undefined1 IsParabolicLight(void)`
 pub const BSShadowParabolicLight__IsParabolicLight: u64 = 108633;
-/// `BSShadowParabolicLight::RenderShadowMaps` at 0x1588c80 (semantic, medium); signature (untiered): `undefined RenderShadowMaps(BSShadowParabolicLight * this, int * param_1)`
+/// `BSShadowParabolicLight::RenderShadowMaps` at 0x1588c80 (semantic, medium); signature (low): `undefined RenderShadowMaps(BSShadowParabolicLight * this, int * param_1)`
 pub const BSShadowParabolicLight__RenderShadowMaps: u64 = 108627;
-/// `BSShadowParabolicLight::UpdateForCamera` at 0x1588590 (semantic, high); signature (untiered): `undefined8 UpdateForCamera(BSShadowParabolicLight * this, longlong param_1)`
+/// `BSShadowParabolicLight::UpdateForCamera` at 0x1588590 (semantic, high); signature (low): `undefined8 UpdateForCamera(BSShadowParabolicLight * this, longlong param_1)`
 pub const BSShadowParabolicLight__UpdateForCamera: u64 = 108625;
-/// `BSShadowParabolicLight::UsesTwoMaps` at 0x1588e20 (semantic, high); signature (untiered): `bool UsesTwoMaps(BSShadowParabolicLight * this)`
+/// `BSShadowParabolicLight::UsesTwoMaps` at 0x1588e20 (semantic, high); signature (high): `bool UsesTwoMaps(BSShadowParabolicLight * this)`
 pub const BSShadowParabolicLight__UsesTwoMaps: u64 = 108632;
 /// `BSShadowParabolicLight::ctor` at 0x1587f90 (layout_inference, medium); signature (low): `BSShadowParabolicLight * ctor(BSShadowParabolicLight * this, byte param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSShadowParabolicLight__ctor: u64 = 108622;
@@ -4923,11 +4851,11 @@ pub const BSSkinnedDecalTriShape__vdtor: u64 = 70665;
 pub const BSSkinnedDecalTriShape__vfunc_54: u64 = 70668;
 /// `BSSkyShader::NiBoneMatrixSetterI_vdtor` at 0x1552ed8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSSkyShader * this)`
 pub const BSSkyShader__NiBoneMatrixSetterI_vdtor: u64 = 107424;
-/// `BSSkyShader::RestoreTechnique` at 0x1552190 (semantic, high); signature (untiered): `undefined RestoreTechnique(void)`; semantic: the sky shader's technique restore (vtable slot 3): puts back the render state SetupTechnique changed: depth mode 3 (LESS_EQUAL with write) at g_RenderStateCache +0x88, and the +0xa8/+0xb0/+0xb4/+0xa0 states (dirty bits 0x80, 0x100, 0x40) (high); signature `void (BSSkyShader* this)`
+/// `BSSkyShader::RestoreTechnique` at 0x1552190 (semantic, high); signature (low): `undefined RestoreTechnique(void)`; semantic: the sky shader's technique restore (vtable slot 3): puts back the render state SetupTechnique changed: depth mode 3 (LESS_EQUAL with write) at g_RenderStateCache +0x88, and the +0xa8/+0xb0/+0xb4/+0xa0 states (dirty bits 0x80, 0x100, 0x40) (high); signature `void (BSSkyShader* this)`
 pub const BSSkyShader__RestoreTechnique: u64 = 107400;
 /// `BSSkyShader::RestoreTechnique` as a function pointer type (high).
 pub type BSSkyShader__RestoreTechnique_fn = unsafe extern "C" fn(this: *mut crate::BSSkyShader);
-/// `BSSkyShader::SetupTechnique` at 0x1552280 (semantic, high); signature (untiered): `ulonglong SetupTechnique(BSSkyShader * this, uint param_1)`; semantic: the sky shader's technique setup (vtable slot 2): technique ids 0x5c00005e..0x5c000064 and 0x5c006072 map to nine sky techniques (0..8), whose vertex/pixel shader pair LookupAndBindShaderPair 0x1579120 binds; sets depth mode 1 (LESS_EQUAL test, no write) in g_RenderStateCache +0x88, then per-technique state through a jump table. The sky's vertex shaders output (x, y, w, w) from a CPU-built matrix in cb2 (rows 0, 1, 3): depth is the viewport's maximum whatever the projection (high); signature `bool (BSSkyShader* this, u32 technique)`
+/// `BSSkyShader::SetupTechnique` at 0x1552280 (semantic, high); signature (low): `ulonglong SetupTechnique(BSSkyShader * this, uint param_1)`; semantic: the sky shader's technique setup (vtable slot 2): technique ids 0x5c00005e..0x5c000064 and 0x5c006072 map to nine sky techniques (0..8), whose vertex/pixel shader pair LookupAndBindShaderPair 0x1579120 binds; sets depth mode 1 (LESS_EQUAL test, no write) in g_RenderStateCache +0x88, then per-technique state through a jump table. The sky's vertex shaders output (x, y, w, w) from a CPU-built matrix in cb2 (rows 0, 1, 3): depth is the viewport's maximum whatever the projection (high); signature `bool (BSSkyShader* this, u32 technique)`
 pub const BSSkyShader__SetupTechnique: u64 = 107402;
 /// `BSSkyShader::SetupTechnique` as a function pointer type (high).
 pub type BSSkyShader__SetupTechnique_fn = unsafe extern "C" fn(this: *mut crate::BSSkyShader, technique: u32) -> bool;
@@ -5047,11 +4975,11 @@ pub const BSSphereConstructor__vfunc_0: u64 = 108231;
 pub const BSSphereConstructor__vfunc_1: u64 = 109073;
 /// `BSSphereConstructor::vfunc_2` at 0x15909c0 (rtti, high); signature (low): `undefined8 vfunc_2(BSSphereConstructor * this, longlong param_1, undefined8 param_2, longlong param_3)`
 pub const BSSphereConstructor__vfunc_2: u64 = 109074;
-/// `BSSpinLock::Lock` at 0x199fa0 (semantic, high); signature (untiered): `undefined8 * Lock(undefined8 * param_1, DWORD * param_2)`; semantic: acquires the lock for the current thread (recursive) and returns it for the inline unlock sequence (high); signature `BSSpinLock* (BSSpinLock** out, BSSpinLock* lock)`
+/// `BSSpinLock::Lock` at 0x199fa0 (semantic, high); signature (low): `undefined8 * Lock(undefined8 * param_1, DWORD * param_2)`; semantic: acquires the lock for the current thread (recursive) and returns it for the inline unlock sequence (high); signature `BSSpinLock* (BSSpinLock** out, BSSpinLock* lock)`
 pub const BSSpinLock__Lock: u64 = 13129;
 /// `BSSpinLock::Lock` as a function pointer type (high).
 pub type BSSpinLock__Lock_fn = unsafe extern "C" fn(out: *mut *mut crate::BSSpinLock, lock: *mut crate::BSSpinLock) -> *mut crate::BSSpinLock;
-/// `BSSpinLock::LockTimed` at 0x1b4d80 (semantic, medium); signature (untiered): `DWORD LockTimed(DWORD * param_1, uint param_2)`; semantic: the variant the second set of template instances uses, called with 0 (medium); signature `uint32 (BSSpinLock* lock, uint32 timeout)`
+/// `BSSpinLock::LockTimed` at 0x1b4d80 (semantic, medium); signature (low): `DWORD LockTimed(DWORD * param_1, uint param_2)`; semantic: the variant the second set of template instances uses, called with 0 (medium); signature `uint32 (BSSpinLock* lock, uint32 timeout)`
 pub const BSSpinLock__LockTimed: u64 = 13663;
 /// `BSSplatterExtraData::vdtor` at 0x24dac0 (slot_propagation, medium); signature (low): `BSSplatterExtraData * vdtor(BSSplatterExtraData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSSplatterExtraData__vdtor: u64 = 16414;
@@ -5125,13 +5053,13 @@ pub const BSStreamSystemUtility__vfunc_5: u64 = 416436;
 pub const BSStreamSystemUtility__vfunc_6: u64 = 416437;
 /// `BSStreamSystemUtility::vfunc_7` at 0x159df80 (rtti, high); signature (low): `undefined1 vfunc_7(void)`
 pub const BSStreamSystemUtility__vfunc_7: u64 = 416438;
-/// `BSString::Clear` at 0x90d290 (semantic, medium); signature (untiered): `undefined Clear(longlong param_1, undefined8 param_2, undefined1 * param_3, ulonglong param_4)`; semantic: sets a BSString to empty (used on log+0x408) (medium); signature `void (BSString* s)`
+/// `BSString::Clear` at 0x90d290 (semantic, medium); signature (low): `undefined Clear(longlong param_1, undefined8 param_2, undefined1 * param_3, ulonglong param_4)`; semantic: sets a BSString to empty (used on log+0x408) (medium); signature `void (BSString* s)`
 pub const BSString__Clear: u64 = 51103;
-/// `BSStringPool::Entry::release` at 0xeb2360 (semantic, high); signature (untiered): `undefined release(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: decrements the reference count; at 1 it takes the bucket lock, unlinks the entry and frees it; pinned entries are untouched (high); signature `void (BSFixedString* str)`
+/// `BSStringPool::Entry::release` at 0xeb2360 (semantic, high); signature (low): `undefined release(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: decrements the reference count; at 1 it takes the bucket lock, unlinks the entry and frees it; pinned entries are untouched (high); signature `void (BSFixedString* str)`
 pub const BSStringPool__Entry__release: u64 = 69192;
 /// `BSStringPool::Entry::release` as a function pointer type (high).
 pub type BSStringPool__Entry__release_fn = unsafe extern "C" fn(str: *mut crate::BSFixedString);
-/// `BSStringPool::GetEntry` at 0xeb2bb0 (semantic, high); signature (untiered): `longlong * GetEntry(undefined8 * param_1, char * param_2, uint param_3, int param_4)`; semantic: finds the narrow entry with the same text (_stricmp) in bucket hash, adding a reference, or creates one; holds the bucket lock hash & 0x1f (high); signature `void (BSStringPool::Entry** out, const char* text, uint32 hash, int length)`
+/// `BSStringPool::GetEntry` at 0xeb2bb0 (semantic, high); signature (low): `longlong * GetEntry(undefined8 * param_1, char * param_2, uint param_3, int param_4)`; semantic: finds the narrow entry with the same text (_stricmp) in bucket hash, adding a reference, or creates one; holds the bucket lock hash & 0x1f (high); signature `void (BSStringPool::Entry** out, const char* text, uint32 hash, int length)`
 pub const BSStringPool__GetEntry: u64 = 69201;
 /// `BSStringPool::GetEntry` as a function pointer type (high).
 pub type BSStringPool__GetEntry_fn = unsafe extern "C" fn(out: *mut *mut crate::BSStringPool__Entry, text: *const c_char, hash: u32, length: i32);
@@ -5971,11 +5899,11 @@ pub const BSTCommonStaticMessageQueue_NiPointer_NiAVObject_256__vfunc_5: u64 = 9
 pub const BSTCommonStaticMessageQueue_NiPointer_NiAVObject_256__vfunc_6: u64 = 91482;
 /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::Pop` at 0x116d740 (semantic, high); signature (untiered): `undefined1 Pop(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this)`
 pub const BSTCommonStaticMessageQueue_UIMessage____ptr64_100__Pop: u64 = 82143;
-/// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::PopImpl` at 0x116ccd0 (semantic, high); signature (untiered): `bool PopImpl(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this, undefined8 * param_1)`
+/// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::PopImpl` at 0x116ccd0 (semantic, high); signature (low): `bool PopImpl(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this, undefined8 * param_1)`
 pub const BSTCommonStaticMessageQueue_UIMessage____ptr64_100__PopImpl: u64 = 82132;
 /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::Push` at 0x116d790 (semantic, high); signature (untiered): `undefined1 Push(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this)`
 pub const BSTCommonStaticMessageQueue_UIMessage____ptr64_100__Push: u64 = 82144;
-/// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::PushImpl` at 0x116cd40 (semantic, high); signature (untiered): `longlong PushImpl(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this, undefined8 * param_1)`
+/// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::PushImpl` at 0x116cd40 (semantic, high); signature (low): `longlong PushImpl(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this, undefined8 * param_1)`
 pub const BSTCommonStaticMessageQueue_UIMessage____ptr64_100__PushImpl: u64 = 82134;
 /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::TryPop` at 0x116dc70 (semantic, high); signature (untiered): `uint TryPop(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this)`
 pub const BSTCommonStaticMessageQueue_UIMessage____ptr64_100__TryPop: u64 = 82151;
@@ -6339,3 +6267,61 @@ pub const BSTDerivedCreator_BGSProcedureHoldPosition_IProcedure__vfunc_1: u64 = 
 pub const BSTDerivedCreator_BGSProcedureHoldPosition_IProcedure__vfunc_2: u64 = 28762;
 /// `BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState>::vdtor` at 0x458780 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSTDerivedCreator_BGSProcedureHoldPositionExecState_IProcedureTreeExecState__vdtor: u64 = 27983;
+/// `BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState>::vfunc_1` at 0x459b80 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureHoldPositionExecState_IProcedureTreeExecState__vfunc_1: u64 = 28056;
+/// `BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState>::vfunc_2` at 0x45a830 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureHoldPositionExecState_IProcedureTreeExecState__vfunc_2: u64 = 28096;
+/// `BSTDerivedCreator<BGSProcedureHover,IProcedure>::vdtor` at 0x475af0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureHover,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureHover,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureHover_IProcedure__vdtor: u64 = 28793;
+/// `BSTDerivedCreator<BGSProcedureHover,IProcedure>::vfunc_1` at 0x475c30 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureHover,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureHover_IProcedure__vfunc_1: u64 = 28796;
+/// `BSTDerivedCreator<BGSProcedureHover,IProcedure>::vfunc_2` at 0x475cb0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureHover,IProcedure> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureHover_IProcedure__vfunc_2: u64 = 28797;
+/// `BSTDerivedCreator<BGSProcedureHoverExecState,IProcedureTreeExecState>::vdtor` at 0x4587b0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureHoverExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureHoverExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureHoverExecState_IProcedureTreeExecState__vdtor: u64 = 27984;
+/// `BSTDerivedCreator<BGSProcedureHoverExecState,IProcedureTreeExecState>::vfunc_1` at 0x459be0 (rtti, medium); signature (low): `undefined8 vfunc_1(BSTDerivedCreator<BGSProcedureHoverExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureHoverExecState_IProcedureTreeExecState__vfunc_1: u64 = 28057;
+/// `BSTDerivedCreator<BGSProcedureHoverExecState,IProcedureTreeExecState>::vfunc_2` at 0x45a850 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureHoverExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureHoverExecState_IProcedureTreeExecState__vfunc_2: u64 = 28097;
+/// `BSTDerivedCreator<BGSProcedureKeepAnEyeOn,IProcedure>::vdtor` at 0x476840 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureKeepAnEyeOn,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureKeepAnEyeOn,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureKeepAnEyeOn_IProcedure__vdtor: u64 = 28820;
+/// `BSTDerivedCreator<BGSProcedureKeepAnEyeOn,IProcedure>::vfunc_1` at 0x4768b0 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureKeepAnEyeOn,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureKeepAnEyeOn_IProcedure__vfunc_1: u64 = 28822;
+/// `BSTDerivedCreator<BGSProcedureKeepAnEyeOn,IProcedure>::vfunc_2` at 0x476930 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureKeepAnEyeOn,IProcedure> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureKeepAnEyeOn_IProcedure__vfunc_2: u64 = 28823;
+/// `BSTDerivedCreator<BGSProcedureKeepAnEyeOnExecState,IProcedureTreeExecState>::vdtor` at 0x4587e0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureKeepAnEyeOnExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureKeepAnEyeOnExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureKeepAnEyeOnExecState_IProcedureTreeExecState__vdtor: u64 = 27985;
+/// `BSTDerivedCreator<BGSProcedureKeepAnEyeOnExecState,IProcedureTreeExecState>::vfunc_1` at 0x459c40 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<BGSProcedureKeepAnEyeOnExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureKeepAnEyeOnExecState_IProcedureTreeExecState__vfunc_1: u64 = 28058;
+/// `BSTDerivedCreator<BGSProcedureKeepAnEyeOnExecState,IProcedureTreeExecState>::vfunc_2` at 0x45a870 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureKeepAnEyeOnExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureKeepAnEyeOnExecState_IProcedureTreeExecState__vfunc_2: u64 = 28098;
+/// `BSTDerivedCreator<BGSProcedureLock,IProcedure>::vdtor` at 0x4778a0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureLock,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureLock,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureLock_IProcedure__vdtor: u64 = 28860;
+/// `BSTDerivedCreator<BGSProcedureLock,IProcedure>::vfunc_1` at 0x477a30 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureLock,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureLock_IProcedure__vfunc_1: u64 = 28865;
+/// `BSTDerivedCreator<BGSProcedureLock,IProcedure>::vfunc_2` at 0x477b30 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureLock,IProcedure> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureLock_IProcedure__vfunc_2: u64 = 28867;
+/// `BSTDerivedCreator<BGSProcedureLockUnlockExecState,IProcedureTreeExecState>::vdtor` at 0x458810 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureLockUnlockExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureLockUnlockExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureLockUnlockExecState_IProcedureTreeExecState__vdtor: u64 = 27986;
+/// `BSTDerivedCreator<BGSProcedureLockUnlockExecState,IProcedureTreeExecState>::vfunc_1` at 0x459cb0 (rtti, medium); signature (low): `BGSProcedureLockUnlockExecState * vfunc_1(BSTDerivedCreator<BGSProcedureLockUnlockExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureLockUnlockExecState_IProcedureTreeExecState__vfunc_1: u64 = 28059;
+/// `BSTDerivedCreator<BGSProcedureLockUnlockExecState,IProcedureTreeExecState>::vfunc_2` at 0x45a890 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureLockUnlockExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureLockUnlockExecState_IProcedureTreeExecState__vfunc_2: u64 = 28099;
+/// `BSTDerivedCreator<BGSProcedureOrbit,IProcedure>::vdtor` at 0x479030 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureOrbit,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureOrbit,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureOrbit_IProcedure__vdtor: u64 = 28905;
+/// `BSTDerivedCreator<BGSProcedureOrbit,IProcedure>::vfunc_1` at 0x479170 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureOrbit,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureOrbit_IProcedure__vfunc_1: u64 = 28908;
+/// `BSTDerivedCreator<BGSProcedureOrbit,IProcedure>::vfunc_2` at 0x4791f0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureOrbit,IProcedure> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureOrbit_IProcedure__vfunc_2: u64 = 28909;
+/// `BSTDerivedCreator<BGSProcedureOrbitExecState,IProcedureTreeExecState>::vdtor` at 0x458840 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureOrbitExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureOrbitExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureOrbitExecState_IProcedureTreeExecState__vdtor: u64 = 27987;
+/// `BSTDerivedCreator<BGSProcedureOrbitExecState,IProcedureTreeExecState>::vfunc_1` at 0x459d10 (rtti, medium); signature (low): `BGSProcedureOrbitExecState * vfunc_1(BSTDerivedCreator<BGSProcedureOrbitExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureOrbitExecState_IProcedureTreeExecState__vfunc_1: u64 = 28060;
+/// `BSTDerivedCreator<BGSProcedureOrbitExecState,IProcedureTreeExecState>::vfunc_2` at 0x45a8b0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureOrbitExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureOrbitExecState_IProcedureTreeExecState__vfunc_2: u64 = 28100;
+/// `BSTDerivedCreator<BGSProcedurePatrol,IProcedure>::vdtor` at 0x47c940 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedurePatrol,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedurePatrol,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedurePatrol_IProcedure__vdtor: u64 = 28955;
+/// `BSTDerivedCreator<BGSProcedurePatrol,IProcedure>::vfunc_1` at 0x47cb30 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedurePatrol,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedurePatrol_IProcedure__vfunc_1: u64 = 28959;
+/// `BSTDerivedCreator<BGSProcedurePatrol,IProcedure>::vfunc_2` at 0x47cbb0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedurePatrol,IProcedure> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedurePatrol_IProcedure__vfunc_2: u64 = 28960;

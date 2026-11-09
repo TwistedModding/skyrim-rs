@@ -802,10 +802,3 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterWard 
     pub unsafe fn ctor_sub4() -> u32 { unsafe { function!(46840, () -> u32)() } }
 }
 
-/// `ReleaseViaKeyedFactory` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 28121, rva 0x45ab50).
-/// `undefined ReleaseViaKeyedFactory(longlong * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_via_keyed_factory(param_1: *mut i64) -> u64 { unsafe { function!(28121, (*mut i64) -> u64)(param_1) } }

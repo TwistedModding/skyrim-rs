@@ -17,23 +17,6 @@ impl crate::BSCullingProcess {
     pub unsafe fn ctor_sub0(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(76573, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 }
 
-impl crate::BSGeometry {
-    /// `BSGeometry::OnVisible`, vtable slot 52, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70926, rva 0xefc980).
-    /// `undefined OnVisible(BSGeometry * this, longlong * param_1, undefined8 param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn on_visible(&self, param_1: *mut i64, param_2: u64) -> u64 { unsafe { virtual_function!(self, 52, (*const Self, *mut i64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
-    /// `BSGeometry::UpdateWorldBound` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70925, rva 0xefc810).
-    /// `undefined UpdateWorldBound(BSGeometry * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn update_world_bound(&self) -> u64 { unsafe { function!(70925, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::BSLight {
     /// `BSLight::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 108308, rva 0x15786f0).
     /// `undefined ctor_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -59,13 +42,6 @@ impl crate::BSLight {
 }
 
 impl crate::BSLightingShaderProperty {
-    /// `BSLightingShaderProperty::GetDepthRenderPasses` (decompiler signature, tier untiered; ledger runtime evidence, name high; id 106517, rva 0x151b1e0).
-    /// `longlong * GetDepthRenderPasses(BSLightingShaderProperty * this, longlong param_1, int param_2, longlong param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn get_depth_render_passes(&self, param_1: i64, param_2: i32, param_3: i64) -> *mut i64 { unsafe { function!(106517, (*const Self, i64, i32, i64) -> *mut i64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSLightingShaderProperty::vfunc_42_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 105553, rva 0x14e8420).
     /// `undefined1 vfunc_42_sub0(float param_1, float param_2, float param_3, float * param_4)`
     ///
@@ -107,13 +83,6 @@ impl crate::BSShaderProperty {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn link_object(&self, param_1: i64) -> u64 { unsafe { function!(105515, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
-    /// `BSShaderProperty::LoadBinary` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 105514, rva 0x14e7390).
-    /// `undefined LoadBinary(BSShaderProperty * this, longlong param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn load_binary(&self, param_1: i64) -> u64 { unsafe { function!(105514, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSShaderProperty::RegisterStreamables` (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 105516, rva 0x14e7440).
     /// `undefined8 RegisterStreamables(BSShaderProperty * this, longlong * param_1)`
     ///
@@ -121,37 +90,9 @@ impl crate::BSShaderProperty {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn register_streamables(&self, param_1: *mut i64) -> u64 { unsafe { function!(105516, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
-    /// `BSShaderProperty::SaveBinary` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 105517, rva 0x14e7450).
-    /// `undefined SaveBinary(BSShaderProperty * this, longlong * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn save_binary(&self, param_1: *mut i64) -> u64 { unsafe { function!(105517, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::BSShadowDirectionalLight {
-    /// `BSShadowDirectionalLight::CullCasters` (decompiler signature, tier untiered; ledger runtime evidence, name high; id 108488, rva 0x157ead0).
-    /// `undefined CullCasters(BSShadowDirectionalLight * this, uint * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn cull_casters(&self, param_1: *mut u32) -> u64 { unsafe { function!(108488, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
-    /// `BSShadowDirectionalLight::ReleaseShadowMaps` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 108491, rva 0x157ed20).
-    /// `undefined ReleaseShadowMaps(BSShadowDirectionalLight * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn release_shadow_maps(&self) -> u64 { unsafe { function!(108491, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-    /// `BSShadowDirectionalLight::UpdateCascadeFrusta` (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 108487, rva 0x157ea50).
-    /// `undefined UpdateCascadeFrusta(BSShadowDirectionalLight * this, float * param_1, undefined8 * param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn update_cascade_frusta(&self, param_1: *mut f32, param_2: *mut u64) -> u64 { unsafe { function!(108487, (*const Self, *mut f32, *mut u64) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `BSShadowDirectionalLight::vfunc_15_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 106454, rva 0x1516c40).
     /// `undefined vfunc_15_sub0(float * param_1, undefined8 * param_2, longlong param_3)`
     ///
@@ -162,13 +103,6 @@ impl crate::BSShadowDirectionalLight {
 }
 
 impl crate::BSShadowFrustumLight {
-    /// `BSShadowFrustumLight::SupportsFocusShadows` (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 108620, rva 0x1587f70).
-    /// `undefined1 SupportsFocusShadows(void)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn supports_focus_shadows() -> u8 { unsafe { function!(108620, () -> u8)() } }
     /// `BSShadowFrustumLight::vfunc_16_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 108306, rva 0x1577a10).
     /// `undefined8 vfunc_16_sub0(undefined8 param_1, longlong param_2, longlong param_3)`
     ///
@@ -179,13 +113,6 @@ impl crate::BSShadowFrustumLight {
 }
 
 impl crate::BSShadowLight {
-    /// `BSShadowLight::IsShadowLight` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 107620, rva 0x155dbd0).
-    /// `undefined1 IsShadowLight(void)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn is_shadow_light() -> u8 { unsafe { function!(107620, () -> u8)() } }
     /// `BSShadowLight::ctor_cb0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 107597, rva 0x155c6a0).
     /// `longlong ctor_cb0(longlong param_1)`
     ///
@@ -210,16 +137,6 @@ impl crate::NiAVObject {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor_sub0(param_1: *mut i64) -> u64 { unsafe { function!(70274, (*mut i64) -> u64)(param_1) } }
-}
-
-impl crate::NiNode {
-    /// `NiNode::RemoveFromArrayAndDetachChild` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 15291, rva 0x203570).
-    /// `undefined RemoveFromArrayAndDetachChild(NiNode * param_1, longlong * param_2, longlong * param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn remove_from_array_and_detach_child(&self, param_2: *mut i64, param_3: *mut i64) -> u64 { unsafe { function!(15291, (*const Self, *mut i64, *mut i64) -> u64)(core::ptr::from_ref(self), param_2, param_3) } }
 }
 
 impl crate::NiSkinInstance {

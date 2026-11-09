@@ -7,427 +7,27 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `GetBit2OfExtra19Field20` at 0x1623e0 (decompiler, high); signature (high): `byte GetBit2OfExtra19Field20(longlong param_1)`
-pub const GetBit2OfExtra19Field20: u64 = 11642;
-/// `GetBit2OfField0xBEA` at 0x756bf0 (decompiler, high); signature (high): `byte GetBit2OfField0xBEA(longlong param_1)`
-pub const GetBit2OfField0xBEA: u64 = 40598;
-/// `GetBit4OfField40` at 0x2c5c60 (decompiler, high); signature (high): `byte GetBit4OfField40(longlong param_1)`
-pub const GetBit4OfField40: u64 = 19114;
-/// `GetBit4OfFieldA0` at 0x30dd40 (decompiler, high); signature (high): `byte GetBit4OfFieldA0(longlong param_1)`
-pub const GetBit4OfFieldA0: u64 = 20480;
-/// `GetBit5OfField136` at 0x6eaab0 (decompiler, high); signature (high): `byte GetBit5OfField136(longlong param_1)`
-pub const GetBit5OfField136: u64 = 39182;
-/// `GetBit6OfField20` at 0x4972b0 (decompiler, high); signature (untiered): `byte GetBit6OfField20(longlong param_1)`
-pub const GetBit6OfField20: u64 = 29501;
-/// `GetBit7OfField1F8Field108` at 0x673b40 (decompiler, high); signature (high): `uint GetBit7OfField1F8Field108(longlong param_1)`
-pub const GetBit7OfField1F8Field108: u64 = 37217;
-/// `GetBit7OfField20` at 0x4972e0 (decompiler, high); signature (untiered): `byte GetBit7OfField20(longlong param_1)`
-pub const GetBit7OfField20: u64 = 29502;
-/// `GetBit8OfGlobal358290EntryForFieldC0` at 0x14b870 (decompiler, medium); signature (untiered): `uint GetBit8OfGlobal358290EntryForFieldC0(longlong param_1)`
-pub const GetBit8OfGlobal358290EntryForFieldC0: u64 = 11084;
-/// `GetBlackboardFloatWithFlightMinRange` at 0x8f2d80 (decompiler, medium); signature (medium): `float GetBlackboardFloatWithFlightMinRange(longlong param_1)`
-pub const GetBlackboardFloatWithFlightMinRange: u64 = 50692;
-/// `GetBlockUsedSize` at 0xb621e0 (decompiler, medium); signature (untiered): `undefined2 GetBlockUsedSize(undefined2 * param_1, int param_2)`
-pub const GetBlockUsedSize: u64 = 61532;
-/// `GetBlurFilterMember` at 0xde2330 (decompiler, medium); signature (untiered): `undefined8 GetBlurFilterMember(longlong * param_1, longlong param_2, undefined8 * param_3, byte * param_4)`
-pub const GetBlurFilterMember: u64 = 87059;
-/// `GetBoolIfTypeIs5` at 0x14a2200 (decompiler, medium); signature (medium): `undefined GetBoolIfTypeIs5(int * param_1, undefined1 * param_2)`
-pub const GetBoolIfTypeIs5: u64 = 104524;
-/// `GetBooleanObjectPrimitiveValue` at 0xdb58a0 (decompiler, medium); signature (untiered): `undefined GetBooleanObjectPrimitiveValue(longlong param_1)`
-pub const GetBooleanObjectPrimitiveValue: u64 = 86172;
-/// `GetBoundObjectModelStatusCode` at 0x258470 (decompiler, medium); signature (medium): `undefined4 GetBoundObjectModelStatusCode(longlong param_1)`
-pub const GetBoundObjectModelStatusCode: u64 = 16683;
-/// `GetBoundRadius` at 0x277a80 (decompiler, medium); signature (medium): `float GetBoundRadius(longlong param_1)`
-pub const GetBoundRadius: u64 = 17662;
-/// `GetBoundsCornersTransformed` at 0xd336e0 (decompiler, medium); signature (medium): `undefined GetBoundsCornersTransformed(longlong * param_1, float * param_2, float * param_3, char param_4)`
-pub const GetBoundsCornersTransformed: u64 = 83471;
-/// `GetBoundsOfField330SpriteOrSelf` at 0xd60ff0 (decompiler, medium); signature (untiered): `undefined GetBoundsOfField330SpriteOrSelf(longlong * param_1, float * param_2)`
-pub const GetBoundsOfField330SpriteOrSelf: u64 = 84183;
-/// `GetBoundsTransformedByMatrix` at 0xd33680 (decompiler, medium); signature (medium): `float * GetBoundsTransformedByMatrix(longlong * param_1, float * param_2, float * param_3, char param_4)`
-pub const GetBoundsTransformedByMatrix: u64 = 83470;
-/// `GetBoxCorners` at 0xfe6640 (decompiler, medium); signature (untiered): `undefined GetBoxCorners(longlong param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetBoxCorners: u64 = 76407;
-/// `GetBucketIndexForString` at 0x58f790 (decompiler, medium); signature (untiered): `ulonglong GetBucketIndexForString(longlong param_1, undefined8 * param_2)`
-pub const GetBucketIndexForString: u64 = 523720;
-/// `GetBufferAtKeyOffset` at 0x1203070 (decompiler, medium); signature (medium): `longlong GetBufferAtKeyOffset(longlong param_1, ulonglong param_2)`
-pub const GetBufferAtKeyOffset: u64 = 91662;
-/// `GetBufferDataOrInlineStorage` at 0x1385480 (decompiler, medium); signature (medium): `longlong * GetBufferDataOrInlineStorage(longlong * param_1)`
-pub const GetBufferDataOrInlineStorage: u64 = 526885;
-/// `GetBufferDataOrInlineStorage_2` at 0x1385d60 (decompiler, medium); signature (medium): `longlong * GetBufferDataOrInlineStorage_2(longlong * param_1)`
-pub const GetBufferDataOrInlineStorage_2: u64 = 449092;
-/// `GetBufferDataPointer` at 0x99a4d0 (decompiler, medium); signature (untiered): `longlong * GetBufferDataPointer(longlong * param_1)`
-pub const GetBufferDataPointer: u64 = 53083;
-/// `GetByte13B` at 0x6e9740 (decompiler, high); signature (high): `undefined1 GetByte13B(longlong param_1)`
-pub const GetByte13B: u64 = 39138;
-/// `GetByte14` at 0x1e0a00 (decompiler, high); signature (high): `undefined1 GetByte14(longlong param_1)`
-pub const GetByte14: u64 = 441562;
-/// `GetByte19ForEntryNamed` at 0x220ad0 (decompiler, medium); signature (medium): `ulonglong GetByte19ForEntryNamed(longlong param_1, char * param_2, int * param_3)`
-pub const GetByte19ForEntryNamed: u64 = 15769;
-/// `GetByte310OfField8` at 0x7245c0 (decompiler, high); signature (untiered): `undefined1 GetByte310OfField8(longlong param_1)`
-pub const GetByte310OfField8: u64 = 39905;
-/// `GetByte412OfField30Locked` at 0x1308f40 (decompiler, medium); signature (medium): `undefined1 GetByte412OfField30Locked(longlong param_1)`
-pub const GetByte412OfField30Locked: u64 = 448101;
-/// `GetByte413OfField30Locked` at 0x1308fa0 (decompiler, medium); signature (medium): `undefined1 GetByte413OfField30Locked(longlong param_1)`
-pub const GetByte413OfField30Locked: u64 = 448102;
-/// `GetByte472OfField10` at 0x6f63a0 (decompiler, high); signature (untiered): `undefined1 GetByte472OfField10(longlong param_1)`
-pub const GetByte472OfField10: u64 = 39380;
-/// `GetByte690Locked` at 0x9daf60 (decompiler, high); signature (untiered): `undefined1 GetByte690Locked(longlong param_1)`
-pub const GetByte690Locked: u64 = 53957;
-/// `GetByteField0C2` at 0xb65860 (decompiler, high); signature (high): `undefined1 * GetByteField0C2(longlong param_1, undefined1 * param_2)`
-pub const GetByteField0C2: u64 = 61629;
-/// `GetByteField1872` at 0x12fe190 (decompiler, high); signature (untiered): `undefined1 GetByteField1872(longlong param_1)`
-pub const GetByteField1872: u64 = 446891;
-/// `GetByteField19` at 0xab0ad0 (decompiler, high); signature (high): `undefined1 GetByteField19(longlong param_1)`
-pub const GetByteField19: u64 = 57602;
-/// `GetByteField478` at 0x1cc6b0 (decompiler, high); signature (untiered): `undefined1 GetByteField478(longlong param_1)`
-pub const GetByteField478: u64 = 13961;
-/// `GetByteFieldCC` at 0xb86b80 (decompiler, high); signature (high): `undefined1 GetByteFieldCC(longlong param_1)`
-pub const GetByteFieldCC: u64 = 62276;
-/// `GetByteFieldDA5` at 0x1c2280 (decompiler, high); signature (high): `undefined1 GetByteFieldDA5(longlong param_1)`
-pub const GetByteFieldDA5: u64 = 441532;
-/// `GetByteKeyValueAtTime` at 0xf8ffb0 (decompiler, medium); signature (medium): `undefined1 GetByteKeyValueAtTime(float param_1, float * param_2, int param_3, uint param_4, byte param_5)`
-pub const GetByteKeyValueAtTime: u64 = 74196;
-/// `GetCachedDefaultObject86` at 0x5e9ae0 (decompiler, medium); signature (untiered): `longlong GetCachedDefaultObject86(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetCachedDefaultObject86: u64 = 35138;
-/// `GetCachedHighestScoredEntryField10` at 0x150aa0 (decompiler, medium); signature (untiered): `ulonglong GetCachedHighestScoredEntryField10(longlong * param_1)`
-pub const GetCachedHighestScoredEntryField10: u64 = 11302;
-/// `GetCachedObjectPairForValueTypeB` at 0xd0d4c0 (decompiler, medium); signature (untiered): `undefined8 * GetCachedObjectPairForValueTypeB(char * param_1, undefined8 * param_2, longlong param_3)`
-pub const GetCachedObjectPairForValueTypeB: u64 = 82900;
-/// `GetCachedOrComputedExtentX` at 0x685970 (decompiler, medium); signature (medium): `ulonglong GetCachedOrComputedExtentX(longlong param_1)`
-pub const GetCachedOrComputedExtentX: u64 = 37441;
-/// `GetCachedOrComputedMaxXYExtent` at 0x685900 (decompiler, medium); signature (medium): `ulonglong GetCachedOrComputedMaxXYExtent(longlong param_1)`
-pub const GetCachedOrComputedMaxXYExtent: u64 = 37439;
-/// `GetCachedScaledExtentZ` at 0x685a30 (decompiler, medium); signature (medium): `float GetCachedScaledExtentZ(longlong * param_1)`
-pub const GetCachedScaledExtentZ: u64 = 37444;
-/// `GetCachedStringLength` at 0x3bb1e0 (decompiler, medium); signature (untiered): `ulonglong GetCachedStringLength(longlong param_1)`
-pub const GetCachedStringLength: u64 = 24642;
-/// `GetCachedVfunc758Value` at 0x692340 (decompiler, medium); signature (untiered): `ulonglong GetCachedVfunc758Value(longlong * param_1)`
-pub const GetCachedVfunc758Value: u64 = 37588;
-/// `GetCachedVfunc770Value` at 0x6924f0 (decompiler, medium); signature (untiered): `ulonglong GetCachedVfunc770Value(longlong * param_1)`
-pub const GetCachedVfunc770Value: u64 = 37591;
-/// `GetCameraShakeStrength` at 0x558c30 (runtime, high); signature (untiered): `float GetCameraShakeStrength(void)`; semantic: returns g_CameraShakeStrength (0x3204860) (high); signature `float (void)`
-pub const GetCameraShakeStrength: u64 = 33014;
-/// `GetCameraShakeStrength` as a function pointer type (high).
-pub type GetCameraShakeStrength_fn = unsafe extern "C" fn() -> f32;
-/// `GetCameraShakeTimeRemaining` at 0x558c40 (semantic, high); signature (untiered): `float GetCameraShakeTimeRemaining(void)`; semantic: returns g_CameraShakeTimeRemaining (0x3204864) (high); signature `float (void)`
-pub const GetCameraShakeTimeRemaining: u64 = 33015;
-/// `GetCameraShakeTimeRemaining` as a function pointer type (high).
-pub type GetCameraShakeTimeRemaining_fn = unsafe extern "C" fn() -> f32;
-/// `GetCapsuleCapsuleClosestPoints` at 0xc84590 (decompiler, medium); signature (untiered): `undefined GetCapsuleCapsuleClosestPoints(longlong * param_1, longlong * param_2, longlong param_3, longlong * param_4)`
-pub const GetCapsuleCapsuleClosestPoints: u64 = 66849;
-/// `GetCapsuleTriangleClosestPoint` at 0xc85c20 (decompiler, medium); signature (untiered): `undefined4 GetCapsuleTriangleClosestPoint(longlong * param_1, longlong * param_2, longlong param_3, float * param_4, float * param_5)`
-pub const GetCapsuleTriangleClosestPoint: u64 = 66868;
-/// `GetCapsuleTriangleClosestPoints` at 0xc85210 (decompiler, medium); signature (untiered): `undefined GetCapsuleTriangleClosestPoints(longlong * param_1, longlong * param_2, longlong param_3, longlong * param_4)`
-pub const GetCapsuleTriangleClosestPoints: u64 = 66861;
-/// `GetCapsuleTriangleContacts` at 0xc85ad0 (decompiler, medium); signature (untiered): `undefined GetCapsuleTriangleContacts(longlong * param_1, longlong * param_2, longlong param_3, float * param_4, int param_5, float * param_6)`
-pub const GetCapsuleTriangleContacts: u64 = 66867;
-/// `GetCapsuleTrianglePenetrations` at 0xc85700 (decompiler, medium); signature (untiered): `undefined GetCapsuleTrianglePenetrations(longlong * param_1, longlong * param_2, longlong param_3, longlong * param_4)`
-pub const GetCapsuleTrianglePenetrations: u64 = 66863;
-/// `GetCellEncounterZone` at 0x2be700 (decompiler, medium); signature (untiered): `longlong GetCellEncounterZone(longlong param_1)`
-pub const GetCellEncounterZone: u64 = 18988;
-/// `GetCellImageSpaceData` at 0x2bf340 (decompiler, medium); signature (untiered): `undefined * GetCellImageSpaceData(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetCellImageSpaceData: u64 = 19008;
-/// `GetCellIndexInWorldBounds` at 0x30cde0 (decompiler, medium); signature (medium): `int GetCellIndexInWorldBounds(undefined8 param_1, undefined8 param_2, int param_3, int param_4)`
-pub const GetCellIndexInWorldBounds: u64 = 20457;
-/// `GetChangeFormInitialType` at 0x6204c0 (semantic, high); signature (untiered): `byte GetChangeFormInitialType(longlong param_1, uint param_2)`; semantic: kind of initial data a record carries: refs 5 created, 6 bits 3|25, 4 bits 1|2, else 0; cells with bit 30: 1 if bit 29, 2 if bit 28, else 3 (high); signature `ChangeFormInitialType (TESForm* form, u32 changeFlags)`
-pub const GetChangeFormInitialType: u64 = 35708;
-/// `GetChangeFormInitialType` as a function pointer type (high).
-pub type GetChangeFormInitialType_fn = unsafe extern "C" fn(form: *mut crate::TESForm, changeFlags: u32) -> u32;
-/// `GetChannelBytePtr` at 0x1044130 (decompiler, high); signature (high): `longlong GetChannelBytePtr(longlong param_1, longlong param_2)`
-pub const GetChannelBytePtr: u64 = 77775;
-/// `GetChannelBytePtr_2` at 0x1044160 (decompiler, high); signature (high): `longlong GetChannelBytePtr_2(longlong param_1, longlong param_2)`
-pub const GetChannelBytePtr_2: u64 = 77776;
-/// `GetCharAtIndex` at 0xd0a410 (decompiler, medium); signature (untiered): `uint GetCharAtIndex(longlong * param_1, uint param_2)`
-pub const GetCharAtIndex: u64 = 82835;
-/// `GetCharIndexInLineAtX` at 0xe4cf30 (decompiler, medium); signature (medium): `ulonglong GetCharIndexInLineAtX(longlong param_1, uint param_2, float param_3)`
-pub const GetCharIndexInLineAtX: u64 = 88591;
-/// `GetCharacterRaycastInterface` at 0xad7f70 (semantic, high); signature (untiered): `longlong GetCharacterRaycastInterface(longlong param_1)`; semantic: character+0x70, else (character+0x78)+0x148 (high); signature `hkaRaycastInterface* (const hkbCharacter* character)`
-pub const GetCharacterRaycastInterface: u64 = 58463;
-/// `GetCharacterRaycastInterface` as a function pointer type (high).
-pub type GetCharacterRaycastInterface_fn = unsafe extern "C" fn(character: *const crate::hkbCharacter) -> *mut crate::hkaRaycastInterface;
-/// `GetCheckForMissingContentOnStartup` at 0x623d80 (decompiler, high); signature (high): `undefined1 GetCheckForMissingContentOnStartup(void)`
-pub const GetCheckForMissingContentOnStartup: u64 = 442573;
-/// `GetCheckedOptionalValueFlag110` at 0x1284170 (decompiler, medium); signature (medium): `longlong GetCheckedOptionalValueFlag110(longlong param_1)`
-pub const GetCheckedOptionalValueFlag110: u64 = 524612;
-/// `GetCheckedOptionalValueFlag4` at 0x127a8a0 (decompiler, medium); signature (medium): `longlong GetCheckedOptionalValueFlag4(longlong param_1)`
-pub const GetCheckedOptionalValueFlag4: u64 = 524535;
-/// `GetCheckedOptionalValueFlag40` at 0x129ace0 (decompiler, medium); signature (medium): `longlong GetCheckedOptionalValueFlag40(longlong param_1)`
-pub const GetCheckedOptionalValueFlag40: u64 = 445087;
-/// `GetCheckedOptionalValueFlag68` at 0x129ad50 (decompiler, medium); signature (medium): `longlong GetCheckedOptionalValueFlag68(longlong param_1)`
-pub const GetCheckedOptionalValueFlag68: u64 = 445088;
-/// `GetChildAtArgDepth` at 0xd58080 (decompiler, medium); signature (untiered): `undefined GetChildAtArgDepth(longlong param_1)`
-pub const GetChildAtArgDepth: u64 = 84040;
-/// `GetChildBlendWeight` at 0xb236f0 (decompiler, medium); signature (medium): `float GetChildBlendWeight(longlong param_1, int param_2)`
-pub const GetChildBlendWeight: u64 = 60040;
-/// `GetClampedActorValue` at 0x447180 (decompiler, medium); signature (medium): `float GetClampedActorValue(longlong * param_1, int param_2)`
-pub const GetClampedActorValue: u64 = 27284;
-/// `GetClampedIndexFromField19C` at 0x28baf0 (decompiler, medium); signature (medium): `uint GetClampedIndexFromField19C(longlong param_1)`
-pub const GetClampedIndexFromField19C: u64 = 18080;
-/// `GetClampedRunIteratorAtPosition` at 0xe406c0 (decompiler, medium); signature (untiered): `undefined8 * GetClampedRunIteratorAtPosition(longlong * param_1, undefined8 * param_2, longlong param_3)`
-pub const GetClampedRunIteratorAtPosition: u64 = 88428;
-/// `GetClientOrServerString` at 0x13d2940 (decompiler, high); signature (high): `char * GetClientOrServerString(longlong param_1)`
-pub const GetClientOrServerString: u64 = 449894;
-/// `GetClosestCapsuleTriangleContact` at 0xc2f050 (decompiler, medium); signature (untiered): `undefined GetClosestCapsuleTriangleContact(longlong * param_1, undefined8 param_2, longlong param_3, float * param_4)`
-pub const GetClosestCapsuleTriangleContact: u64 = 64946;
-/// `GetClosestPointsSymmetricFlipped` at 0xc8ba60 (decompiler, medium); signature (untiered): `undefined GetClosestPointsSymmetricFlipped(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetClosestPointsSymmetricFlipped: u64 = 66986;
-/// `GetCoarseCellHeightAtPosition` at 0x2c02b0 (decompiler, medium); signature (medium): `bool GetCoarseCellHeightAtPosition(longlong param_1, float * param_2, float * param_3)`
-pub const GetCoarseCellHeightAtPosition: u64 = 19037;
-/// `GetColorField20AsFloat3` at 0x295610 (decompiler, high); signature (high): `undefined GetColorField20AsFloat3(longlong param_1, float * param_2)`
-pub const GetColorField20AsFloat3: u64 = 18288;
-/// `GetColorField24AsFloat3` at 0x295690 (decompiler, high); signature (high): `undefined GetColorField24AsFloat3(longlong param_1, float * param_2)`
-pub const GetColorField24AsFloat3: u64 = 18290;
-/// `GetColorField28AsFloat3` at 0x2957a0 (decompiler, high); signature (high): `undefined GetColorField28AsFloat3(longlong param_1, float * param_2)`
-pub const GetColorField28AsFloat3: u64 = 18296;
-/// `GetColorField68AsFloat3` at 0x295800 (decompiler, high); signature (high): `undefined GetColorField68AsFloat3(longlong param_1, float * param_2)`
-pub const GetColorField68AsFloat3: u64 = 18297;
-/// `GetColorMatrixFilterMember` at 0xde5630 (decompiler, medium); signature (untiered): `undefined GetColorMatrixFilterMember(longlong * param_1, longlong param_2, undefined8 * param_3, byte * param_4)`
-pub const GetColorMatrixFilterMember: u64 = 87122;
-/// `GetColorRGBAsNumber` at 0xd9fb80 (decompiler, medium); signature (untiered): `undefined GetColorRGBAsNumber(longlong param_1)`
-pub const GetColorRGBAsNumber: u64 = 85775;
-/// `GetColorTransformAsObject` at 0xd9f4a0 (decompiler, medium); signature (untiered): `undefined GetColorTransformAsObject(longlong param_1)`
-pub const GetColorTransformAsObject: u64 = 85773;
-/// `GetColorTransformMemberByName` at 0xda52e0 (decompiler, medium); signature (untiered): `undefined8 GetColorTransformMemberByName(longlong * param_1, longlong param_2, undefined8 * param_3, byte * param_4)`
-pub const GetColorTransformMemberByName: u64 = 85871;
-/// `GetColorTransformMembers` at 0xda5050 (decompiler, medium); signature (untiered): `undefined GetColorTransformMembers(longlong param_1, longlong param_2, longlong param_3)`
-pub const GetColorTransformMembers: u64 = 85869;
-/// `GetComImageMetadataFromFile` at 0x1026330 (decompiler, medium); signature (untiered): `ulonglong GetComImageMetadataFromFile(longlong param_1, uint param_2, ulonglong * param_3)`
-pub const GetComImageMetadataFromFile: u64 = 77607;
-/// `GetComImageMetadataFromMemory` at 0x10261a0 (decompiler, medium); signature (untiered): `ulonglong GetComImageMetadataFromMemory(longlong param_1, ulonglong param_2, uint param_3, ulonglong * param_4)`
-pub const GetComImageMetadataFromMemory: u64 = 77606;
-/// `GetCombatGrenadeBounceTime` at 0x4202f0 (decompiler, medium); signature (medium): `float GetCombatGrenadeBounceTime(void)`
-pub const GetCombatGrenadeBounceTime: u64 = 26448;
-/// `GetCombatGroupStrength` at 0x81f950 (decompiler, medium); signature (untiered): `float GetCombatGroupStrength(longlong param_1, longlong param_2)`
-pub const GetCombatGroupStrength: u64 = 44781;
-/// `GetCombatMagicScoreForTypeAndDistance` at 0x82ec10 (decompiler, medium); signature (medium): `float GetCombatMagicScoreForTypeAndDistance(longlong param_1, undefined8 param_2, int param_3, float param_4)`
-pub const GetCombatMagicScoreForTypeAndDistance: u64 = 45085;
-/// `GetCombatPathDestinationLocationNameCrc` at 0x8f0830 (decompiler, high); signature (high): `uint GetCombatPathDestinationLocationNameCrc(void)`
-pub const GetCombatPathDestinationLocationNameCrc: u64 = 50602;
-/// `GetCombatPathDestinationNoneHash` at 0x8a7cc0 (decompiler, high); signature (high): `uint GetCombatPathDestinationNoneHash(void)`
-pub const GetCombatPathDestinationNoneHash: u64 = 48750;
-/// `GetCombatPathDestinationRefNameCrc32` at 0x89d820 (decompiler, high); signature (high): `uint GetCombatPathDestinationRefNameCrc32(void)`
-pub const GetCombatPathDestinationRefNameCrc32: u64 = 48482;
-/// `GetCombatPathingGoalPolicyLocationCrc` at 0x8e7b40 (decompiler, high); signature (high): `undefined4 GetCombatPathingGoalPolicyLocationCrc(void)`
-pub const GetCombatPathingGoalPolicyLocationCrc: u64 = 50226;
-/// `GetCombatPathingRequestGenericExitWaterStandardHash` at 0x8c2050 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericExitWaterStandardHash(void)`
-pub const GetCombatPathingRequestGenericExitWaterStandardHash: u64 = 49416;
-/// `GetCombatPathingRequestGenericFindAttackLocationStandardHash` at 0x892830 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFindAttackLocationStandardHash(void)`
-pub const GetCombatPathingRequestGenericFindAttackLocationStandardHash: u64 = 48240;
-/// `GetCombatPathingRequestGenericFindCoverStandardHash` at 0x8d7130 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFindCoverStandardHash(void)`
-pub const GetCombatPathingRequestGenericFindCoverStandardHash: u64 = 49891;
-/// `GetCombatPathingRequestGenericFindHideCoverStandardHash` at 0x8a7b60 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFindHideCoverStandardHash(void)`
-pub const GetCombatPathingRequestGenericFindHideCoverStandardHash: u64 = 48748;
-/// `GetCombatPathingRequestGenericFindTargetLocationStandardHash` at 0x860ff0 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFindTargetLocationStandardHash(void)`
-pub const GetCombatPathingRequestGenericFindTargetLocationStandardHash: u64 = 47156;
-/// `GetCombatPathingRequestGenericFlankDistantStandardHash` at 0x89d6f0 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFlankDistantStandardHash(void)`
-pub const GetCombatPathingRequestGenericFlankDistantStandardHash: u64 = 48480;
-/// `GetCombatPathingRequestGenericFlankFlankHash` at 0x89d640 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFlankFlankHash(void)`
-pub const GetCombatPathingRequestGenericFlankFlankHash: u64 = 48479;
-/// `GetCombatPathingRequestGenericFleeStandardHash` at 0x8a7c10 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFleeStandardHash(void)`
-pub const GetCombatPathingRequestGenericFleeStandardHash: u64 = 48749;
-/// `GetCombatPathingRequestGenericRetreatStandardHash` at 0x8f0700 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericRetreatStandardHash(void)`
-pub const GetCombatPathingRequestGenericRetreatStandardHash: u64 = 50600;
-/// `GetCombatPathingRequestGenericReturnToCombatAreaStandardHash` at 0x8c2100 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericReturnToCombatAreaStandardHash(void)`
-pub const GetCombatPathingRequestGenericReturnToCombatAreaStandardHash: u64 = 49417;
-/// `GetCombatPathingRequestGenericSearchStandardHash` at 0x8cf910 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericSearchStandardHash(void)`
-pub const GetCombatPathingRequestGenericSearchStandardHash: u64 = 49713;
-/// `GetCombatPathingRequestGenericSearchWanderStandardHash` at 0x8cf9c0 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericSearchWanderStandardHash(void)`
-pub const GetCombatPathingRequestGenericSearchWanderStandardHash: u64 = 49714;
-/// `GetCombatPathingRequestMultiGoalHash` at 0x8e7c60 (decompiler, high); signature (high): `undefined4 GetCombatPathingRequestMultiGoalHash(void)`
-pub const GetCombatPathingRequestMultiGoalHash: u64 = 50228;
-/// `GetCombatWeaponDPSAsInt` at 0x28c120 (decompiler, high); signature (high): `int GetCombatWeaponDPSAsInt(longlong param_1)`
-pub const GetCombatWeaponDPSAsInt: u64 = 18092;
-/// `GetCombinedBoxCenterAndDiagonalSq` at 0x81c740 (decompiler, medium); signature (medium): `float GetCombinedBoxCenterAndDiagonalSq(longlong param_1, float * param_2)`
-pub const GetCombinedBoxCenterAndDiagonalSq: u64 = 44752;
-/// `GetCommandLineProgramName` at 0xeac660 (decompiler, medium); signature (untiered): `undefined1 * GetCommandLineProgramName(void)`
-pub const GetCommandLineProgramName: u64 = 68971;
-/// `GetCommandNumParams` at 0x4a8bf0 (decompiler, medium); signature (medium): `ushort GetCommandNumParams(ushort * param_1)`
-pub const GetCommandNumParams: u64 = 29937;
-/// `GetCommandTableEntryByOpcode` at 0x34a230 (semantic, high); signature (high): `CommandTableEntry * GetCommandTableEntryByOpcode(int param_1)`; semantic: op-0x100 < 0x1c1 -> console table, op-0x1000 < 0x2e1 -> script table, else null (high); signature `CommandTableEntry* (int opcode)`
-pub const GetCommandTableEntryByOpcode: u64 = 21963;
-/// `GetCommandTableEntryByOpcode` as a function pointer type (high).
-pub type GetCommandTableEntryByOpcode_fn = unsafe extern "C" fn(opcode: i32) -> *mut crate::CommandTableEntry;
-/// `GetComplementOfField10` at 0xab2590 (decompiler, high); signature (untiered): `uint GetComplementOfField10(longlong param_1)`
-pub const GetComplementOfField10: u64 = 57666;
-/// `GetComponentByFormType` at 0x1d7310 (decompiler, medium); signature (untiered): `longlong GetComponentByFormType(longlong param_1)`
-pub const GetComponentByFormType: u64 = 14218;
-/// `GetComponentForFormType1AOr66` at 0x1d21c0 (decompiler, medium); signature (untiered): `longlong GetComponentForFormType1AOr66(longlong param_1)`
-pub const GetComponentForFormType1AOr66: u64 = 14121;
-/// `GetConcatenatedText` at 0xe413d0 (decompiler, medium); signature (medium): `ulonglong * GetConcatenatedText(longlong param_1, ulonglong * param_2)`
-pub const GetConcatenatedText: u64 = 88441;
-/// `GetConsoleCommandQueue` at 0x992740 (semantic, medium); signature (untiered): `undefined * GetConsoleCommandQueue(void)`; semantic: returns the static queue 0x3258bc8 (thread-safe static init) (medium); signature `ConsoleCommandQueue* ()`
-pub const GetConsoleCommandQueue: u64 = 52950;
-/// `GetConstant0x4000000` at 0x63bce0 (decompiler, high); signature (high): `undefined8 GetConstant0x4000000(void)`
-pub const GetConstant0x4000000: u64 = 36095;
-/// `GetConstant92068` at 0x1274e30 (decompiler, high); signature (untiered): `undefined8 GetConstant92068(void)`
-pub const GetConstant92068: u64 = 444061;
-/// `GetContentByte88ByKeyName` at 0x58b080 (decompiler, medium); signature (untiered): `undefined1 GetContentByte88ByKeyName(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetContentByte88ByKeyName: u64 = 441823;
-/// `GetContentField8CByKey` at 0x5891d0 (decompiler, medium); signature (untiered): `undefined1 GetContentField8CByKey(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetContentField8CByKey: u64 = 441801;
-/// `GetConvexHullField1B0Checked` at 0x10f4190 (decompiler, medium); signature (medium): `ulonglong GetConvexHullField1B0Checked(longlong param_1)`
-pub const GetConvexHullField1B0Checked: u64 = 80917;
-/// `GetConvexHullField1B4Checked` at 0x10f4270 (decompiler, medium); signature (medium): `ulonglong GetConvexHullField1B4Checked(longlong param_1)`
-pub const GetConvexHullField1B4Checked: u64 = 80918;
-/// `GetConvexHullFirstVertex` at 0x10f36c0 (decompiler, medium); signature (untiered): `undefined8 GetConvexHullFirstVertex(longlong param_1)`
-pub const GetConvexHullFirstVertex: u64 = 80883;
-/// `GetConvexHullInternalsField160Checked` at 0x10f4540 (decompiler, medium); signature (untiered): `longlong GetConvexHullInternalsField160Checked(longlong param_1)`
-pub const GetConvexHullInternalsField160Checked: u64 = 80921;
-/// `GetConvexHullInternalsField1B8` at 0x10f3230 (decompiler, high); signature (untiered): `undefined4 GetConvexHullInternalsField1B8(longlong param_1)`
-pub const GetConvexHullInternalsField1B8: u64 = 80876;
-/// `GetConvexHullInternalsFieldF0Ptr` at 0x10f34d0 (decompiler, high); signature (untiered): `longlong GetConvexHullInternalsFieldF0Ptr(longlong param_1)`
-pub const GetConvexHullInternalsFieldF0Ptr: u64 = 80879;
-/// `GetConvexHullItemField34Checked` at 0x10f36d0 (decompiler, medium); signature (untiered): `ulonglong GetConvexHullItemField34Checked(longlong param_1, longlong param_2)`
-pub const GetConvexHullItemField34Checked: u64 = 80884;
-/// `GetConvexHullItemField58Checked` at 0x10f3930 (decompiler, medium); signature (untiered): `ulonglong GetConvexHullItemField58Checked(longlong param_1, longlong param_2)`
-pub const GetConvexHullItemField58Checked: u64 = 80892;
-/// `GetConvexHullItemField64Checked` at 0x10f3840 (decompiler, medium); signature (untiered): `ulonglong GetConvexHullItemField64Checked(longlong param_1, longlong param_2)`
-pub const GetConvexHullItemField64Checked: u64 = 80890;
-/// `GetConvexHullNextVertex` at 0x10f37b0 (decompiler, medium); signature (untiered): `undefined8 GetConvexHullNextVertex(undefined8 param_1, undefined8 * param_2)`
-pub const GetConvexHullNextVertex: u64 = 80885;
-/// `GetConvexHullVertexCount` at 0x10f36b0 (decompiler, medium); signature (untiered): `undefined4 GetConvexHullVertexCount(longlong param_1)`
-pub const GetConvexHullVertexCount: u64 = 80882;
-/// `GetConvexHullVertexPositionPtr` at 0x10f3810 (decompiler, medium); signature (untiered): `longlong GetConvexHullVertexPositionPtr(undefined8 param_1, longlong param_2)`
-pub const GetConvexHullVertexPositionPtr: u64 = 80887;
-/// `GetConvexListClosestPoints` at 0xc8c440 (decompiler, medium); signature (untiered): `undefined GetConvexListClosestPoints(undefined8 param_1, longlong * param_2, undefined8 param_3, longlong * param_4)`
-pub const GetConvexListClosestPoints: u64 = 66995;
-/// `GetConvexListClosestPointsFlipped` at 0xc8d3d0 (decompiler, medium); signature (untiered): `undefined GetConvexListClosestPointsFlipped(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetConvexListClosestPointsFlipped: u64 = 67019;
-/// `GetConvexListPenetrations` at 0xc8c630 (decompiler, medium); signature (untiered): `undefined GetConvexListPenetrations(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetConvexListPenetrations: u64 = 66997;
-/// `GetConvexListPenetrationsFlipped` at 0xc8d410 (decompiler, medium); signature (untiered): `undefined GetConvexListPenetrationsFlipped(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetConvexListPenetrationsFlipped: u64 = 67020;
-/// `GetCoordsFromField68` at 0x2bc660 (decompiler, medium); signature (medium): `undefined GetCoordsFromField68(longlong param_1, undefined4 * param_2, undefined4 * param_3)`
-pub const GetCoordsFromField68: u64 = 18960;
-/// `GetCostliestEffect` at 0x151a00 (decompiler, medium); signature (untiered): `undefined8 GetCostliestEffect(longlong param_1, undefined4 param_2, undefined1 param_3)`
-pub const GetCostliestEffect: u64 = 11335;
-/// `GetCostliestEffectFunctor::vdtor` at 0x1525d0 (layout_inference, medium); signature (low): `GetCostliestEffectFunctor * vdtor(GetCostliestEffectFunctor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const GetCostliestEffectFunctor__vdtor: u64 = 11377;
-/// `GetCostliestEffectFunctor::vfunc_1` at 0x152240 (rtti, high); signature (low): `undefined8 vfunc_1(GetCostliestEffectFunctor * this, GetCostliestEffectFunctor_vtbl * param_1)`
-pub const GetCostliestEffectFunctor__vfunc_1: u64 = 11362;
-/// `GetCountedStringLength` at 0x156b750 (decompiler, medium); signature (medium): `undefined4 GetCountedStringLength(longlong * param_1)`
-pub const GetCountedStringLength: u64 = 107849;
-/// `GetCountryCodeString` at 0x1317430 (decompiler, high); signature (high): `char * GetCountryCodeString(undefined4 param_1)`
-pub const GetCountryCodeString: u64 = 448048;
-/// `GetCrimeFaction` at 0x67ea40 (decompiler, medium); signature (untiered): `longlong GetCrimeFaction(longlong param_1)`
-pub const GetCrimeFaction: u64 = 37380;
-/// `GetCrimeFactionValueForCrimeType` at 0x69dab0 (decompiler, medium); signature (medium): `uint GetCrimeFactionValueForCrimeType(longlong param_1, undefined4 param_2, longlong param_3, uint param_4)`
-pub const GetCrimeFactionValueForCrimeType: u64 = 37680;
-/// `GetCurrentAccumulator` at 0x14ecb90 (semantic, medium); signature (untiered): `undefined8 GetCurrentAccumulator(void)`; semantic: returns 0x33d3da8 (set by RenderAccumulator / BeginAccumulatorDraw) (medium); signature `BSShaderAccumulator* (void)`
-pub const GetCurrentAccumulator: u64 = 105651;
-/// `GetCurrentChunkType` at 0x1cdc10 (decompiler, medium); signature (untiered): `undefined4 GetCurrentChunkType(longlong param_1)`
-pub const GetCurrentChunkType: u64 = 13988;
-/// `GetCurrentFilePosition` at 0xec3460 (decompiler, medium); signature (medium): `undefined GetCurrentFilePosition(longlong param_1, LARGE_INTEGER * param_2)`
-pub const GetCurrentFilePosition: u64 = 443426;
-/// `GetCurrentHandleOrInvalid` at 0x7bc520 (decompiler, medium); signature (medium): `undefined4 * GetCurrentHandleOrInvalid(longlong param_1, undefined4 * param_2)`
-pub const GetCurrentHandleOrInvalid: u64 = 42596;
-/// `GetCurrentOrCenterGridCell` at 0x1a0180 (decompiler, medium); signature (untiered): `longlong GetCurrentOrCenterGridCell(longlong param_1)`
-pub const GetCurrentOrCenterGridCell: u64 = 13282;
-/// `GetCurrentPackage_2` at 0x67f680 (decompiler, medium); signature (untiered): `longlong GetCurrentPackage_2(longlong param_1)`
-pub const GetCurrentPackage_2: u64 = 37399;
-/// `GetCurrentProcessByte137` at 0x6af250 (decompiler, high); signature (untiered): `ulonglong GetCurrentProcessByte137(longlong param_1)`
-pub const GetCurrentProcessByte137: u64 = 37965;
-/// `GetCurrentShoutVariation` at 0x700080 (decompiler, medium); signature (untiered): `undefined4 GetCurrentShoutVariation(longlong param_1)`
-pub const GetCurrentShoutVariation: u64 = 39528;
-/// `GetCurrentThreadAttackerActor` at 0x86ec30 (decompiler, medium); signature (untiered): `longlong GetCurrentThreadAttackerActor(void)`
-pub const GetCurrentThreadAttackerActor: u64 = 47379;
-/// `GetCurrentThreadAttackerActor_2` at 0x8742a0 (decompiler, medium); signature (untiered): `longlong GetCurrentThreadAttackerActor_2(void)`
-pub const GetCurrentThreadAttackerActor_2: u64 = 47519;
-/// `GetCurrentThreadTargetActor` at 0x874360 (decompiler, medium); signature (untiered): `longlong GetCurrentThreadTargetActor(void)`
-pub const GetCurrentThreadTargetActor: u64 = 47520;
-/// `GetCurrentTimeAsFileTime` at 0x61f430 (decompiler, high); signature (high): `undefined GetCurrentTimeAsFileTime(LPFILETIME param_1)`
-pub const GetCurrentTimeAsFileTime: u64 = 35676;
-/// `GetCurrentValueOfEffectWithBase` at 0x5d1930 (decompiler, medium); signature (medium): `float GetCurrentValueOfEffectWithBase(longlong * param_1, longlong param_2)`
-pub const GetCurrentValueOfEffectWithBase: u64 = 34521;
-/// `GetCurvePointAtDistance` at 0x1574750 (decompiler, medium); signature (medium): `undefined GetCurvePointAtDistance(longlong * param_1, float param_2, float * param_3)`
-pub const GetCurvePointAtDistance: u64 = 108239;
-/// `GetDamagedRegenDelay` at 0x6c6380 (decompiler, medium); signature (medium): `undefined4 GetDamagedRegenDelay(longlong param_1, int param_2)`
-pub const GetDamagedRegenDelay: u64 = 38485;
-/// `GetDataColor0AsFloat3` at 0x2bbe40 (decompiler, medium); signature (medium): `undefined GetDataColor0AsFloat3(longlong param_1, float * param_2)`
-pub const GetDataColor0AsFloat3: u64 = 18921;
-/// `GetDataColor48AsFloat3` at 0x2bc240 (decompiler, medium); signature (medium): `undefined GetDataColor48AsFloat3(longlong param_1, float * param_2)`
-pub const GetDataColor48AsFloat3: u64 = 18941;
-/// `GetDataColor4AsFloat3` at 0x2bbf30 (decompiler, medium); signature (medium): `undefined GetDataColor4AsFloat3(longlong param_1, float * param_2)`
-pub const GetDataColor4AsFloat3: u64 = 18926;
-/// `GetDataColor8AsFloat3` at 0x2bc1b0 (decompiler, medium); signature (medium): `undefined GetDataColor8AsFloat3(longlong param_1, float * param_2)`
-pub const GetDataColor8AsFloat3: u64 = 18940;
-/// `GetDataColorSetAsFloat3` at 0x2bc790 (decompiler, medium); signature (untiered): `undefined GetDataColorSetAsFloat3(longlong param_1, undefined8 * param_2, float * param_3, undefined4 * param_4)`
-pub const GetDataColorSetAsFloat3: u64 = 18966;
-/// `GetDataField10OrOverride` at 0x2bc380 (decompiler, medium); signature (untiered): `undefined4 GetDataField10OrOverride(longlong param_1)`
-pub const GetDataField10OrOverride: u64 = 18946;
-/// `GetDataField24OrOverride` at 0x2bc3f0 (decompiler, medium); signature (untiered): `undefined4 GetDataField24OrOverride(longlong param_1)`
-pub const GetDataField24OrOverride: u64 = 18948;
-/// `GetDataField4COrOverride` at 0x2bc460 (decompiler, medium); signature (untiered): `undefined4 GetDataField4COrOverride(longlong param_1)`
-pub const GetDataField4COrOverride: u64 = 18950;
-/// `GetDataField50OrOverride` at 0x2bc540 (decompiler, medium); signature (untiered): `undefined4 GetDataField50OrOverride(longlong param_1)`
-pub const GetDataField50OrOverride: u64 = 18954;
-/// `GetDataField54OrOverride` at 0x2bc5b0 (decompiler, medium); signature (untiered): `undefined4 GetDataField54OrOverride(longlong param_1)`
-pub const GetDataField54OrOverride: u64 = 18956;
-/// `GetDataFieldCOrOverride` at 0x2bc310 (decompiler, medium); signature (untiered): `undefined4 GetDataFieldCOrOverride(longlong param_1)`
-pub const GetDataFieldCOrOverride: u64 = 18944;
-/// `GetDataFileModifiedTime` at 0xa6e0b0 (decompiler, medium); signature (medium): `undefined8 GetDataFileModifiedTime(undefined1 * param_1)`
-pub const GetDataFileModifiedTime: u64 = 505828;
-/// `GetDataFileTotalSize` at 0x1c3380 (decompiler, medium); signature (medium): `longlong GetDataFileTotalSize(longlong param_1, char * param_2)`
-pub const GetDataFileTotalSize: u64 = 13777;
-/// `GetDataHandlerGroup6ElementAtIndexOfPointer` at 0x3b8810 (decompiler, medium); signature (untiered): `undefined8 GetDataHandlerGroup6ElementAtIndexOfPointer(undefined8 param_1, longlong param_2, longlong param_3)`
-pub const GetDataHandlerGroup6ElementAtIndexOfPointer: u64 = 24593;
-/// `GetDataOrInlineBuffer` at 0x1420bc0 (decompiler, medium); signature (medium): `longlong * GetDataOrInlineBuffer(longlong * param_1)`
-pub const GetDataOrInlineBuffer: u64 = 100977;
-/// `GetDataOrInlineBuffer_2` at 0x1420bd0 (decompiler, medium); signature (medium): `longlong * GetDataOrInlineBuffer_2(longlong * param_1)`
-pub const GetDataOrInlineBuffer_2: u64 = 100978;
-/// `GetDataPtrForFormType0FOr80` at 0x559d00 (decompiler, medium); signature (medium): `bool GetDataPtrForFormType0FOr80(longlong * param_1, longlong * param_2)`
-pub const GetDataPtrForFormType0FOr80: u64 = 33050;
-/// `GetDataRelativePathOffset` at 0xeb4250 (decompiler, medium); signature (medium): `int GetDataRelativePathOffset(char * param_1, char param_2)`
-pub const GetDataRelativePathOffset: u64 = 69229;
-/// `GetDayOfMonthOfTime68` at 0xdbaee0 (decompiler, medium); signature (untiered): `undefined GetDayOfMonthOfTime68(longlong param_1)`
-pub const GetDayOfMonthOfTime68: u64 = 86314;
-/// `GetDayOfWeek` at 0x6460b0 (decompiler, medium); signature (medium): `int GetDayOfWeek(longlong param_1)`
-pub const GetDayOfWeek: u64 = 36306;
-/// `GetDayOfWeekOfTime68` at 0xdbb0c0 (decompiler, medium); signature (untiered): `undefined GetDayOfWeekOfTime68(longlong param_1)`
-pub const GetDayOfWeekOfTime68: u64 = 86315;
-/// `GetDayWithinMonth` at 0x222e80 (decompiler, medium); signature (medium): `undefined4 GetDayWithinMonth(ushort * param_1)`
-pub const GetDayWithinMonth: u64 = 15837;
-/// `GetDdsMetadataFromFile` at 0x1021ee0 (decompiler, medium); signature (medium): `ulonglong GetDdsMetadataFromFile(LPCWSTR param_1, uint param_2, ulonglong * param_3)`
-pub const GetDdsMetadataFromFile: u64 = 77570;
-/// `GetDdsMetadataFromMemory` at 0x1021ea0 (decompiler, high); signature (untiered): `undefined8 GetDdsMetadataFromMemory(int * param_1, ulonglong param_2, uint param_3, ulonglong * param_4)`
-pub const GetDdsMetadataFromMemory: u64 = 77569;
-/// `GetDefaultCameraPath` at 0x318010 (semantic, high); signature (untiered): `undefined8 GetDefaultCameraPath(void)`; semantic: returns the default camera path pointer 0x31df550 (high); signature `BGSCameraPath* (void)`
-pub const GetDefaultCameraPath: u64 = 20681;
-/// `GetDefaultCameraPath` as a function pointer type (high).
-pub type GetDefaultCameraPath_fn = unsafe extern "C" fn() -> *mut crate::BGSCameraPath;
-/// `GetDefaultLocationDataField20` at 0xed79d0 (decompiler, high); signature (untiered): `undefined GetDefaultLocationDataField20(undefined8 * param_1)`
-pub const GetDefaultLocationDataField20: u64 = 70064;
-/// `GetDefaultObject13` at 0x38fa30 (decompiler, high); signature (untiered): `undefined GetDefaultObject13(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetDefaultObject13: u64 = 23607;
-/// `GetDefaultObject14` at 0x38fa40 (decompiler, high); signature (untiered): `undefined GetDefaultObject14(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetDefaultObject14: u64 = 23608;
-/// `GetDefaultObject15` at 0x38fa50 (decompiler, high); signature (untiered): `undefined GetDefaultObject15(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetDefaultObject15: u64 = 23609;
-/// `GetDefaultObject16` at 0x38fa60 (decompiler, high); signature (untiered): `undefined GetDefaultObject16(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetDefaultObject16: u64 = 23610;
-/// `GetDefaultObject2AField34` at 0x758740 (decompiler, high); signature (untiered): `undefined4 GetDefaultObject2AField34(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetDefaultObject2AField34: u64 = 40634;
-/// `GetDefaultObject80Or81IfType80` at 0x153590 (decompiler, medium); signature (untiered): `longlong GetDefaultObject80Or81IfType80(int param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetDefaultObject80Or81IfType80` at 0x153590 (decompiler, medium); signature (low): `longlong GetDefaultObject80Or81IfType80(int param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetDefaultObject80Or81IfType80: u64 = 11411;
 /// `GetDefaultObjectByIndex` at 0x154440 (decompiler, medium); signature (medium): `undefined8 GetDefaultObjectByIndex(int param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetDefaultObjectByIndex: u64 = 11436;
-/// `GetDefaultObjectForField0F4` at 0x5c1270 (decompiler, medium); signature (untiered): `undefined8 GetDefaultObjectForField0F4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetDefaultObjectForField0F4` at 0x5c1270 (decompiler, medium); signature (low): `undefined8 GetDefaultObjectForField0F4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetDefaultObjectForField0F4: u64 = 34161;
 /// `GetDefaultObjectForSlotIndex` at 0x5d5b70 (decompiler, high); signature (high): `undefined8 GetDefaultObjectForSlotIndex(int param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetDefaultObjectForSlotIndex: u64 = 34623;
-/// `GetDefaultObjectMatchIndex` at 0x1536e0 (decompiler, medium); signature (untiered): `undefined8 GetDefaultObjectMatchIndex(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetDefaultObjectMatchIndex` at 0x1536e0 (decompiler, medium); signature (low): `undefined8 GetDefaultObjectMatchIndex(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetDefaultObjectMatchIndex: u64 = 11419;
-/// `GetDefaultTextFormat` at 0x1181d10 (decompiler, medium); signature (untiered): `longlong GetDefaultTextFormat(longlong param_1)`
+/// `GetDefaultTextFormat` at 0x1181d10 (decompiler, medium); signature (low): `longlong GetDefaultTextFormat(longlong param_1)`
 pub const GetDefaultTextFormat: u64 = 443451;
-/// `GetDequeBack` at 0xa819c0 (decompiler, medium); signature (untiered): `undefined8 GetDequeBack(longlong * param_1)`
+/// `GetDequeBack` at 0xa819c0 (decompiler, medium); signature (low): `undefined8 GetDequeBack(longlong * param_1)`
 pub const GetDequeBack: u64 = 443098;
-/// `GetDequeBack_2` at 0xa81a30 (decompiler, medium); signature (untiered): `undefined8 GetDequeBack_2(longlong * param_1)`
+/// `GetDequeBack_2` at 0xa81a30 (decompiler, medium); signature (low): `undefined8 GetDequeBack_2(longlong * param_1)`
 pub const GetDequeBack_2: u64 = 443099;
-/// `GetDerefField0` at 0x873f10 (decompiler, high); signature (untiered): `undefined8 GetDerefField0(undefined8 * param_1)`
+/// `GetDerefField0` at 0x873f10 (decompiler, high); signature (low): `undefined8 GetDerefField0(undefined8 * param_1)`
 pub const GetDerefField0: u64 = 47512;
 /// `GetDescriptorDataPointer` at 0xca3ae0 (decompiler, medium); signature (untiered): `longlong GetDescriptorDataPointer(longlong param_1, uint * param_2)`
 pub const GetDescriptorDataPointer: u64 = 67193;
-/// `GetDescriptorDataPointer_2` at 0xca3af0 (decompiler, medium); signature (untiered): `longlong GetDescriptorDataPointer_2(longlong param_1, uint * param_2)`
+/// `GetDescriptorDataPointer_2` at 0xca3af0 (decompiler, medium); signature (low): `longlong GetDescriptorDataPointer_2(longlong param_1, uint * param_2)`
 pub const GetDescriptorDataPointer_2: u64 = 67194;
 /// `GetDialogueSpeakerYawOffset` at 0x74a350 (semantic, high); signature (untiered): `float GetDialogueSpeakerYawOffset(longlong * param_1)`; semantic: while the topic manager has a speaker (MenuTopicManager +0xb1 and the byte 0x20b763c): the yaw from actor's look position to the speaker's (slot 91 on both) minus PlayerCamera.yaw (+0x154), wrapped to [-pi, pi]; else FLT_MAX (0x17ed6a8) (high); signature `float (Actor* actor)`
 pub const GetDialogueSpeakerYawOffset: u64 = 40498;
@@ -443,15 +43,15 @@ pub const GetDistanceSquaredToPoint: u64 = 19822;
 pub const GetDistanceToPoint: u64 = 19821;
 /// `GetDominantLandLayerAtPosition` at 0x2aaa70 (decompiler, medium); signature (medium): `undefined8 GetDominantLandLayerAtPosition(longlong param_1, undefined8 param_2)`
 pub const GetDominantLandLayerAtPosition: u64 = 18714;
-/// `GetDownloadingLabelString` at 0x59b120 (decompiler, medium); signature (untiered): `undefined8 GetDownloadingLabelString(void)`
+/// `GetDownloadingLabelString` at 0x59b120 (decompiler, medium); signature (low): `undefined8 GetDownloadingLabelString(void)`
 pub const GetDownloadingLabelString: u64 = 442008;
-/// `GetDropShadowFilterMember` at 0xddeb20 (decompiler, medium); signature (untiered): `undefined8 GetDropShadowFilterMember(longlong * param_1, longlong param_2, undefined8 * param_3, byte * param_4)`
+/// `GetDropShadowFilterMember` at 0xddeb20 (decompiler, medium); signature (low): `undefined8 GetDropShadowFilterMember(longlong * param_1, longlong param_2, undefined8 * param_3, byte * param_4)`
 pub const GetDropShadowFilterMember: u64 = 86997;
 /// `GetDwordAt8OfField0` at 0x142a4b0 (decompiler, high); signature (high): `undefined4 GetDwordAt8OfField0(longlong * param_1)`
 pub const GetDwordAt8OfField0: u64 = 452102;
 /// `GetDwordEntryAtField8` at 0x532a30 (decompiler, high); signature (high): `undefined4 GetDwordEntryAtField8(longlong param_1, uint param_2)`
 pub const GetDwordEntryAtField8: u64 = 32335;
-/// `GetDwordField10` at 0xab1cb0 (decompiler, high); signature (untiered): `undefined4 GetDwordField10(longlong param_1)`
+/// `GetDwordField10` at 0xab1cb0 (decompiler, high); signature (low): `undefined4 GetDwordField10(longlong param_1)`
 pub const GetDwordField10: u64 = 57645;
 /// `GetDxgiFormatBitsPerPixel` at 0x1011c70 (decompiler, medium); signature (medium): `undefined8 GetDxgiFormatBitsPerPixel(undefined4 param_1)`
 pub const GetDxgiFormatBitsPerPixel: u64 = 77390;
@@ -459,9 +59,9 @@ pub const GetDxgiFormatBitsPerPixel: u64 = 77390;
 pub const GetDxgiFormatBitsPerPixel_2: u64 = 77542;
 /// `GetDxgiFormatSrgbVariant` at 0x1020580 (decompiler, high); signature (high): `undefined4 GetDxgiFormatSrgbVariant(undefined4 param_1)`
 pub const GetDxgiFormatSrgbVariant: u64 = 77544;
-/// `GetEffectiveField290` at 0x1064690 (decompiler, medium); signature (untiered): `undefined4 GetEffectiveField290(longlong param_1)`
+/// `GetEffectiveField290` at 0x1064690 (decompiler, medium); signature (low): `undefined4 GetEffectiveField290(longlong param_1)`
 pub const GetEffectiveField290: u64 = 78265;
-/// `GetEffectiveRefRank` at 0x300640 (decompiler, medium); signature (untiered): `int GetEffectiveRefRank(longlong param_1)`
+/// `GetEffectiveRefRank` at 0x300640 (decompiler, medium); signature (low): `int GetEffectiveRefRank(longlong param_1)`
 pub const GetEffectiveRefRank: u64 = 20196;
 /// `GetElement948AtField18` at 0x12b1c20 (decompiler, medium); signature (medium): `longlong * GetElement948AtField18(longlong * param_1)`
 pub const GetElement948AtField18: u64 = 445760;
@@ -471,57 +71,57 @@ pub const GetElementAddress8: u64 = 57560;
 pub const GetElementAddress8_2: u64 = 57559;
 /// `GetElementAndSetBit0OfField88` at 0xe33220 (decompiler, medium); signature (medium): `undefined8 GetElementAndSetBit0OfField88(longlong * param_1, uint param_2)`
 pub const GetElementAndSetBit0OfField88: u64 = 88323;
-/// `GetElementAtIndexOfArray120` at 0x12768e0 (decompiler, medium); signature (untiered): `undefined8 * GetElementAtIndexOfArray120(longlong param_1, undefined8 * param_2, uint param_3)`
+/// `GetElementAtIndexOfArray120` at 0x12768e0 (decompiler, medium); signature (low): `undefined8 * GetElementAtIndexOfArray120(longlong param_1, undefined8 * param_2, uint param_3)`
 pub const GetElementAtIndexOfArray120: u64 = 444088;
-/// `GetElementAtIndexOfArray1B0` at 0x125dfb0 (decompiler, medium); signature (untiered): `undefined8 * GetElementAtIndexOfArray1B0(longlong param_1, undefined8 * param_2, uint param_3)`
+/// `GetElementAtIndexOfArray1B0` at 0x125dfb0 (decompiler, medium); signature (low): `undefined8 * GetElementAtIndexOfArray1B0(longlong param_1, undefined8 * param_2, uint param_3)`
 pub const GetElementAtIndexOfArray1B0: u64 = 443510;
-/// `GetElementFromIndexByte4A` at 0x4386d0 (decompiler, medium); signature (untiered): `longlong GetElementFromIndexByte4A(longlong param_1, undefined8 param_2, int param_3)`
+/// `GetElementFromIndexByte4A` at 0x4386d0 (decompiler, medium); signature (low): `longlong GetElementFromIndexByte4A(longlong param_1, undefined8 param_2, int param_3)`
 pub const GetElementFromIndexByte4A: u64 = 26932;
-/// `GetElementFromIndexTable18` at 0x4385b0 (decompiler, medium); signature (untiered): `longlong GetElementFromIndexTable18(longlong param_1, undefined8 param_2, uint param_3)`
+/// `GetElementFromIndexTable18` at 0x4385b0 (decompiler, medium); signature (low): `longlong GetElementFromIndexTable18(longlong param_1, undefined8 param_2, uint param_3)`
 pub const GetElementFromIndexTable18: u64 = 26929;
-/// `GetElementFromIndexTable29` at 0x438610 (decompiler, medium); signature (untiered): `longlong GetElementFromIndexTable29(longlong param_1, undefined8 param_2, uint param_3)`
+/// `GetElementFromIndexTable29` at 0x438610 (decompiler, medium); signature (low): `longlong GetElementFromIndexTable29(longlong param_1, undefined8 param_2, uint param_3)`
 pub const GetElementFromIndexTable29: u64 = 26930;
-/// `GetElementFromIndexTable3A` at 0x438670 (decompiler, medium); signature (untiered): `longlong GetElementFromIndexTable3A(longlong param_1, undefined8 param_2, uint param_3)`
+/// `GetElementFromIndexTable3A` at 0x438670 (decompiler, medium); signature (low): `longlong GetElementFromIndexTable3A(longlong param_1, undefined8 param_2, uint param_3)`
 pub const GetElementFromIndexTable3A: u64 = 26931;
 /// `GetEmptyFixedString` at 0x17eed0 (decompiler, high); signature (high): `undefined8 * GetEmptyFixedString(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetEmptyFixedString: u64 = 12340;
-/// `GetEnableStateParentHandle` at 0x165560 (decompiler, medium); signature (untiered): `int * GetEnableStateParentHandle(longlong param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetEnableStateParentHandle` at 0x165560 (decompiler, medium); signature (low): `int * GetEnableStateParentHandle(longlong param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetEnableStateParentHandle: u64 = 11739;
-/// `GetEnchantableField12OrFallback` at 0x1e2040 (decompiler, medium); signature (untiered): `short GetEnchantableField12OrFallback(undefined8 param_1, longlong param_2)`
+/// `GetEnchantableField12OrFallback` at 0x1e2040 (decompiler, medium); signature (low): `short GetEnchantableField12OrFallback(undefined8 param_1, longlong param_2)`
 pub const GetEnchantableField12OrFallback: u64 = 14564;
-/// `GetEnchantmentOrFallback` at 0x1e1fd0 (decompiler, medium); signature (untiered): `longlong GetEnchantmentOrFallback(undefined8 param_1, longlong param_2)`
+/// `GetEnchantmentOrFallback` at 0x1e1fd0 (decompiler, medium); signature (low): `longlong GetEnchantmentOrFallback(undefined8 param_1, longlong param_2)`
 pub const GetEnchantmentOrFallback: u64 = 14563;
-/// `GetEnchantmentOrFallbackFromPair` at 0x22a290 (decompiler, high); signature (untiered): `undefined GetEnchantmentOrFallbackFromPair(undefined8 * param_1)`
+/// `GetEnchantmentOrFallbackFromPair` at 0x22a290 (decompiler, high); signature (low): `undefined GetEnchantmentOrFallbackFromPair(undefined8 * param_1)`
 pub const GetEnchantmentOrFallbackFromPair: u64 = 16026;
-/// `GetEncounterZoneLocationByteEC` at 0x2c4050 (decompiler, medium); signature (untiered): `undefined1 GetEncounterZoneLocationByteEC(longlong param_1, undefined8 param_2, undefined8 param_3, TypeDescriptor * param_4)`
+/// `GetEncounterZoneLocationByteEC` at 0x2c4050 (decompiler, medium); signature (low): `undefined1 GetEncounterZoneLocationByteEC(longlong param_1, undefined8 param_2, undefined8 param_3, TypeDescriptor * param_4)`
 pub const GetEncounterZoneLocationByteEC: u64 = 19085;
 /// `GetEntry18Field8` at 0xab59d0 (decompiler, high); signature (high): `undefined8 GetEntry18Field8(longlong * param_1, int param_2)`
 pub const GetEntry18Field8: u64 = 57764;
 /// `GetEntry58At` at 0x11e02a0 (decompiler, high); signature (high): `longlong GetEntry58At(longlong param_1, ushort param_2)`
 pub const GetEntry58At: u64 = 91096;
-/// `GetEntryAtField60Position` at 0xe52010 (decompiler, medium); signature (untiered): `undefined8 GetEntryAtField60Position(longlong param_1)`
+/// `GetEntryAtField60Position` at 0xe52010 (decompiler, medium); signature (low): `undefined8 GetEntryAtField60Position(longlong param_1)`
 pub const GetEntryAtField60Position: u64 = 88980;
-/// `GetEntryAtIndex` at 0xd80f00 (decompiler, medium); signature (untiered): `undefined GetEntryAtIndex(longlong param_1, longlong * param_2, uint param_3)`
+/// `GetEntryAtIndex` at 0xd80f00 (decompiler, medium); signature (low): `undefined GetEntryAtIndex(longlong param_1, longlong * param_2, uint param_3)`
 pub const GetEntryAtIndex: u64 = 85355;
-/// `GetEntryAtIndexFromInlineOrHeapArray` at 0xee54b0 (decompiler, medium); signature (untiered): `undefined8 GetEntryAtIndexFromInlineOrHeapArray(longlong param_1, uint param_2)`
+/// `GetEntryAtIndexFromInlineOrHeapArray` at 0xee54b0 (decompiler, medium); signature (low): `undefined8 GetEntryAtIndexFromInlineOrHeapArray(longlong param_1, uint param_2)`
 pub const GetEntryAtIndexFromInlineOrHeapArray: u64 = 70365;
-/// `GetEntryAtIndexLocked` at 0xe153d0 (decompiler, medium); signature (untiered): `undefined GetEntryAtIndexLocked(longlong param_1, longlong * param_2, uint param_3)`
+/// `GetEntryAtIndexLocked` at 0xe153d0 (decompiler, medium); signature (low): `undefined GetEntryAtIndexLocked(longlong param_1, longlong * param_2, uint param_3)`
 pub const GetEntryAtIndexLocked: u64 = 88114;
 /// `GetEntryAtIndexLocked_2` at 0xd805a0 (decompiler, medium); signature (medium): `undefined8 GetEntryAtIndexLocked_2(longlong param_1, uint param_2)`
 pub const GetEntryAtIndexLocked_2: u64 = 85332;
-/// `GetEntryAtIndexOrDefault` at 0xe1b1d0 (decompiler, medium); signature (untiered): `GRefCountImplCore * GetEntryAtIndexOrDefault(longlong param_1, ulonglong param_2)`
+/// `GetEntryAtIndexOrDefault` at 0xe1b1d0 (decompiler, medium); signature (low): `GRefCountImplCore * GetEntryAtIndexOrDefault(longlong param_1, ulonglong param_2)`
 pub const GetEntryAtIndexOrDefault: u64 = 88828;
-/// `GetEntryAtIndex_2` at 0xb4b3d0 (decompiler, medium); signature (untiered): `undefined8 GetEntryAtIndex_2(longlong param_1, int param_2)`
+/// `GetEntryAtIndex_2` at 0xb4b3d0 (decompiler, medium); signature (low): `undefined8 GetEntryAtIndex_2(longlong param_1, int param_2)`
 pub const GetEntryAtIndex_2: u64 = 60857;
 /// `GetEntryBoundsRect` at 0xe1a2d0 (decompiler, medium); signature (medium): `float * GetEntryBoundsRect(longlong * param_1, uint param_2, float * param_3)`
 pub const GetEntryBoundsRect: u64 = 88794;
-/// `GetEntryByIndexAcrossTwoArrays` at 0xb4b290 (decompiler, medium); signature (untiered): `undefined8 GetEntryByIndexAcrossTwoArrays(longlong param_1, int param_2)`
+/// `GetEntryByIndexAcrossTwoArrays` at 0xb4b290 (decompiler, medium); signature (low): `undefined8 GetEntryByIndexAcrossTwoArrays(longlong param_1, int param_2)`
 pub const GetEntryByIndexAcrossTwoArrays: u64 = 60855;
-/// `GetEntryByIndexOrDefault` at 0xbd0660 (decompiler, high); signature (untiered): `undefined * GetEntryByIndexOrDefault(longlong param_1, short param_2)`
+/// `GetEntryByIndexOrDefault` at 0xbd0660 (decompiler, high); signature (low): `undefined * GetEntryByIndexOrDefault(longlong param_1, short param_2)`
 pub const GetEntryByIndexOrDefault: u64 = 63600;
-/// `GetEntryByte1CForTarget` at 0x223770 (decompiler, medium); signature (untiered): `int GetEntryByte1CForTarget(longlong param_1, longlong param_2)`
+/// `GetEntryByte1CForTarget` at 0x223770 (decompiler, medium); signature (low): `int GetEntryByte1CForTarget(longlong param_1, longlong param_2)`
 pub const GetEntryByte1CForTarget: u64 = 15871;
-/// `GetEntryByte7CAtIndex` at 0xdbdea0 (decompiler, medium); signature (untiered): `undefined GetEntryByte7CAtIndex(longlong param_1)`
+/// `GetEntryByte7CAtIndex` at 0xdbdea0 (decompiler, medium); signature (low): `undefined GetEntryByte7CAtIndex(longlong param_1)`
 pub const GetEntryByte7CAtIndex: u64 = 86370;
 /// `GetEntryDataByKeyFromArray448` at 0x3e9510 (decompiler, medium); signature (medium): `char GetEntryDataByKeyFromArray448(longlong param_1, longlong param_2, longlong param_3)`
 pub const GetEntryDataByKeyFromArray448: u64 = 25390;
@@ -529,81 +129,81 @@ pub const GetEntryDataByKeyFromArray448: u64 = 25390;
 pub const GetEntryDword20Stride18: u64 = 13706;
 /// `GetEntryEdgeFlagNibble` at 0x11df5a0 (decompiler, medium); signature (medium): `ushort GetEntryEdgeFlagNibble(longlong param_1, ushort param_2, char param_3, undefined1 * param_4, undefined1 * param_5)`
 pub const GetEntryEdgeFlagNibble: u64 = 91070;
-/// `GetEntryEnchantableField12OrFallback` at 0x2288c0 (decompiler, medium); signature (untiered): `undefined GetEntryEnchantableField12OrFallback(undefined8 * param_1)`
+/// `GetEntryEnchantableField12OrFallback` at 0x2288c0 (decompiler, medium); signature (low): `undefined GetEntryEnchantableField12OrFallback(undefined8 * param_1)`
 pub const GetEntryEnchantableField12OrFallback: u64 = 15992;
-/// `GetEntryField20ByFormModelPath` at 0x3b8f60 (decompiler, medium); signature (untiered): `longlong GetEntryField20ByFormModelPath(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetEntryField20ByFormModelPath` at 0x3b8f60 (decompiler, medium); signature (low): `longlong GetEntryField20ByFormModelPath(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetEntryField20ByFormModelPath: u64 = 24600;
-/// `GetEntryField40ByKey` at 0x11f3ed0 (decompiler, medium); signature (untiered): `undefined8 * GetEntryField40ByKey(longlong * param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetEntryField40ByKey` at 0x11f3ed0 (decompiler, medium); signature (low): `undefined8 * GetEntryField40ByKey(longlong * param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetEntryField40ByKey: u64 = 91409;
-/// `GetEntryField70ByRecord` at 0xa68f30 (decompiler, medium); signature (untiered): `undefined8 GetEntryField70ByRecord(longlong param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetEntryField70ByRecord` at 0xa68f30 (decompiler, medium); signature (low): `undefined8 GetEntryField70ByRecord(longlong param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetEntryField70ByRecord: u64 = 524065;
-/// `GetEntryField8AtIndex` at 0x5332f0 (decompiler, high); signature (untiered): `undefined8 GetEntryField8AtIndex(longlong * param_1, ulonglong param_2)`
+/// `GetEntryField8AtIndex` at 0x5332f0 (decompiler, high); signature (low): `undefined8 GetEntryField8AtIndex(longlong * param_1, ulonglong param_2)`
 pub const GetEntryField8AtIndex: u64 = 32352;
-/// `GetEntryField8CForRef` at 0x81a8e0 (decompiler, medium); signature (untiered): `int * GetEntryField8CForRef(longlong param_1, int * param_2, longlong param_3)`
+/// `GetEntryField8CForRef` at 0x81a8e0 (decompiler, medium); signature (low): `int * GetEntryField8CForRef(longlong param_1, int * param_2, longlong param_3)`
 pub const GetEntryField8CForRef: u64 = 44731;
-/// `GetEntryField90ByRecord` at 0xa68fd0 (decompiler, medium); signature (untiered): `undefined4 GetEntryField90ByRecord(longlong param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetEntryField90ByRecord` at 0xa68fd0 (decompiler, medium); signature (low): `undefined4 GetEntryField90ByRecord(longlong param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetEntryField90ByRecord: u64 = 524066;
 /// `GetEntryFieldA58At` at 0x1010900 (decompiler, high); signature (high): `undefined8 GetEntryFieldA58At(longlong param_1, uint param_2)`
 pub const GetEntryFieldA58At: u64 = 77377;
-/// `GetEntryFlagA6Bit0ForRef` at 0x81a800 (decompiler, medium); signature (untiered): `ulonglong GetEntryFlagA6Bit0ForRef(longlong param_1, longlong param_2)`
+/// `GetEntryFlagA6Bit0ForRef` at 0x81a800 (decompiler, medium); signature (low): `ulonglong GetEntryFlagA6Bit0ForRef(longlong param_1, longlong param_2)`
 pub const GetEntryFlagA6Bit0ForRef: u64 = 44729;
-/// `GetEntryFlagBit1ForRef` at 0x81a790 (decompiler, medium); signature (untiered): `byte GetEntryFlagBit1ForRef(longlong param_1, longlong param_2)`
+/// `GetEntryFlagBit1ForRef` at 0x81a790 (decompiler, medium); signature (low): `byte GetEntryFlagBit1ForRef(longlong param_1, longlong param_2)`
 pub const GetEntryFlagBit1ForRef: u64 = 44728;
 /// `GetEntryForCurrentThreadIndex` at 0x1555990 (decompiler, medium); signature (medium): `undefined * GetEntryForCurrentThreadIndex(void)`
 pub const GetEntryForCurrentThreadIndex: u64 = 107499;
-/// `GetEntryInt78AtIndex` at 0xdbdf30 (decompiler, medium); signature (untiered): `undefined GetEntryInt78AtIndex(longlong param_1)`
+/// `GetEntryInt78AtIndex` at 0xdbdf30 (decompiler, medium); signature (low): `undefined GetEntryInt78AtIndex(longlong param_1)`
 pub const GetEntryInt78AtIndex: u64 = 86371;
 /// `GetEntryOrEmptyFixedString` at 0x14dc790 (decompiler, medium); signature (medium): `undefined8 * GetEntryOrEmptyFixedString(longlong * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetEntryOrEmptyFixedString: u64 = 105340;
-/// `GetEntryOrLookupByByteKey` at 0x45c380 (decompiler, medium); signature (untiered): `ulonglong GetEntryOrLookupByByteKey(longlong * param_1, uint param_2, longlong * param_3)`
+/// `GetEntryOrLookupByByteKey` at 0x45c380 (decompiler, medium); signature (low): `ulonglong GetEntryOrLookupByByteKey(longlong * param_1, uint param_2, longlong * param_3)`
 pub const GetEntryOrLookupByByteKey: u64 = 28187;
-/// `GetEntryPairAtIndex` at 0xec6600 (decompiler, medium); signature (untiered): `ulonglong GetEntryPairAtIndex(longlong param_1, undefined8 * param_2, undefined8 * param_3, uint param_4)`
+/// `GetEntryPairAtIndex` at 0xec6600 (decompiler, medium); signature (low): `ulonglong GetEntryPairAtIndex(longlong param_1, undefined8 * param_2, undefined8 * param_3, uint param_4)`
 pub const GetEntryPairAtIndex: u64 = 69638;
 /// `GetEntryPointerLocked` at 0x115a6c0 (decompiler, medium); signature (medium): `ulonglong GetEntryPointerLocked(longlong param_1, int param_2)`
 pub const GetEntryPointerLocked: u64 = 81952;
 /// `GetEntrySoulLevelValue` at 0x228bc0 (decompiler, medium); signature (medium): `int GetEntrySoulLevelValue(longlong * param_1)`
 pub const GetEntrySoulLevelValue: u64 = 15997;
-/// `GetEntryStringOrDummy` at 0x3b48f0 (decompiler, medium); signature (untiered): `char * GetEntryStringOrDummy(undefined8 param_1, int param_2, longlong * param_3)`
+/// `GetEntryStringOrDummy` at 0x3b48f0 (decompiler, medium); signature (low): `char * GetEntryStringOrDummy(undefined8 param_1, int param_2, longlong * param_3)`
 pub const GetEntryStringOrDummy: u64 = 24501;
-/// `GetEntryValueForOriginalNode` at 0xaf8b90 (decompiler, high); signature (untiered): `undefined8 GetEntryValueForOriginalNode(ulonglong param_1, longlong param_2, int param_3)`
+/// `GetEntryValueForOriginalNode` at 0xaf8b90 (decompiler, high); signature (low): `undefined8 GetEntryValueForOriginalNode(ulonglong param_1, longlong param_2, int param_3)`
 pub const GetEntryValueForOriginalNode: u64 = 59400;
-/// `GetEntryValueForRefHandle` at 0x81a600 (decompiler, medium); signature (untiered): `int GetEntryValueForRefHandle(longlong param_1, longlong param_2)`
+/// `GetEntryValueForRefHandle` at 0x81a600 (decompiler, medium); signature (low): `int GetEntryValueForRefHandle(longlong param_1, longlong param_2)`
 pub const GetEntryValueForRefHandle: u64 = 44726;
 /// `GetEquipBackupField20` at 0x75d370 (decompiler, high); signature (high): `undefined8 GetEquipBackupField20(longlong param_1)`
 pub const GetEquipBackupField20: u64 = 40703;
-/// `GetEquipSlotOfEquippedObject` at 0x6dd720 (decompiler, medium); signature (untiered): `undefined8 GetEquipSlotOfEquippedObject(undefined8 param_1, longlong param_2, longlong param_3, undefined8 param_4)`
+/// `GetEquipSlotOfEquippedObject` at 0x6dd720 (decompiler, medium); signature (low): `undefined8 GetEquipSlotOfEquippedObject(undefined8 param_1, longlong param_2, longlong param_3, undefined8 param_4)`
 pub const GetEquipSlotOfEquippedObject: u64 = 38912;
-/// `GetEquippedItemEnchantment` at 0x6ca170 (decompiler, medium); signature (untiered): `longlong GetEquippedItemEnchantment(longlong param_1, char param_2)`
+/// `GetEquippedItemEnchantment` at 0x6ca170 (decompiler, medium); signature (low): `longlong GetEquippedItemEnchantment(longlong param_1, char param_2)`
 pub const GetEquippedItemEnchantment: u64 = 38575;
 /// `GetEquippedItemType` at 0x1d74a0 (semantic, high); signature (medium): `int GetEquippedItemType(longlong param_1)`; semantic: item type of an equipped object: weapon types 0..8 as stored, Crossbow 9 -> 12, spell 9, shield 10, torch 11, else 0 (high); signature `int (TESForm* item)`
 pub const GetEquippedItemType: u64 = 14220;
 /// `GetEquippedItemType` as a function pointer type (high).
 pub type GetEquippedItemType_fn = unsafe extern "C" fn(item: *mut crate::TESForm) -> i32;
-/// `GetEquippedObjectOfType29` at 0x66fc60 (decompiler, medium); signature (untiered): `longlong GetEquippedObjectOfType29(longlong param_1, int * param_2)`
+/// `GetEquippedObjectOfType29` at 0x66fc60 (decompiler, medium); signature (low): `longlong GetEquippedObjectOfType29(longlong param_1, int * param_2)`
 pub const GetEquippedObjectOfType29: u64 = 37168;
-/// `GetEquippedShout` at 0x6d7070 (decompiler, medium); signature (untiered): `longlong GetEquippedShout(longlong param_1)`
+/// `GetEquippedShout` at 0x6d7070 (decompiler, medium); signature (low): `longlong GetEquippedShout(longlong param_1)`
 pub const GetEquippedShout: u64 = 38771;
-/// `GetEulerAngleXFromField58Matrix` at 0x8f55b0 (decompiler, medium); signature (untiered): `uint GetEulerAngleXFromField58Matrix(longlong param_1)`
+/// `GetEulerAngleXFromField58Matrix` at 0x8f55b0 (decompiler, medium); signature (low): `uint GetEulerAngleXFromField58Matrix(longlong param_1)`
 pub const GetEulerAngleXFromField58Matrix: u64 = 50731;
 /// `GetExeVersionString` at 0x2178c0 (decompiler, high); signature (high): `char * GetExeVersionString(void)`
 pub const GetExeVersionString: u64 = 15650;
-/// `GetExteriorGridX` at 0x2bc620 (decompiler, medium); signature (untiered): `undefined4 GetExteriorGridX(longlong param_1)`
+/// `GetExteriorGridX` at 0x2bc620 (decompiler, medium); signature (low): `undefined4 GetExteriorGridX(longlong param_1)`
 pub const GetExteriorGridX: u64 = 18958;
-/// `GetExteriorGridY` at 0x2bc640 (decompiler, medium); signature (untiered): `undefined4 GetExteriorGridY(longlong param_1)`
+/// `GetExteriorGridY` at 0x2bc640 (decompiler, medium); signature (low): `undefined4 GetExteriorGridY(longlong param_1)`
 pub const GetExteriorGridY: u64 = 18959;
 /// `GetExtra19Field1C` at 0x164d80 (decompiler, high); signature (high): `int GetExtra19Field1C(longlong param_1)`
 pub const GetExtra19Field1C: u64 = 11724;
-/// `GetExtra2BRefField10OrDefault` at 0x3010e0 (decompiler, medium); signature (untiered): `undefined4 * GetExtra2BRefField10OrDefault(longlong param_1)`
+/// `GetExtra2BRefField10OrDefault` at 0x3010e0 (decompiler, medium); signature (low): `undefined4 * GetExtra2BRefField10OrDefault(longlong param_1)`
 pub const GetExtra2BRefField10OrDefault: u64 = 20218;
-/// `GetExtra40Field10` at 0x164eb0 (decompiler, high); signature (untiered): `longlong GetExtra40Field10(longlong param_1)`
+/// `GetExtra40Field10` at 0x164eb0 (decompiler, high); signature (low): `longlong GetExtra40Field10(longlong param_1)`
 pub const GetExtra40Field10: u64 = 11730;
-/// `GetExtra8BField10` at 0x166cf0 (decompiler, high); signature (untiered): `longlong GetExtra8BField10(longlong param_1)`
+/// `GetExtra8BField10` at 0x166cf0 (decompiler, high); signature (low): `longlong GetExtra8BField10(longlong param_1)`
 pub const GetExtra8BField10: u64 = 11768;
 /// `GetExtraA4RefHandle` at 0x1722a0 (decompiler, high); signature (high): `undefined4 * GetExtraA4RefHandle(longlong param_1, undefined4 * param_2)`
 pub const GetExtraA4RefHandle: u64 = 12035;
 /// `GetExtraActivateRefFlag` at 0x1689b0 (decompiler, high); signature (high): `undefined8 GetExtraActivateRefFlag(longlong param_1)`
 pub const GetExtraActivateRefFlag: u64 = 11794;
-/// `GetExtraAmmo` at 0x171680 (decompiler, medium); signature (untiered): `undefined GetExtraAmmo(longlong param_1)`
+/// `GetExtraAmmo` at 0x171680 (decompiler, medium); signature (low): `undefined GetExtraAmmo(longlong param_1)`
 pub const GetExtraAmmo: u64 = 12019;
 /// `GetExtraByType47` at 0x164140 (decompiler, high); signature (high): `undefined GetExtraByType47(longlong param_1)`
 pub const GetExtraByType47: u64 = 11679;
@@ -611,75 +211,75 @@ pub const GetExtraByType47: u64 = 11679;
 pub const GetExtraCachedScaleFirst: u64 = 11708;
 /// `GetExtraCachedScaleSecond` at 0x1649e0 (decompiler, high); signature (high): `undefined4 GetExtraCachedScaleSecond(longlong param_1)`
 pub const GetExtraCachedScaleSecond: u64 = 11709;
-/// `GetExtraCell3DField10` at 0x16efc0 (decompiler, medium); signature (untiered): `longlong GetExtraCell3DField10(longlong param_1)`
+/// `GetExtraCell3DField10` at 0x16efc0 (decompiler, medium); signature (low): `longlong GetExtraCell3DField10(longlong param_1)`
 pub const GetExtraCell3DField10: u64 = 11951;
-/// `GetExtraCellWaterType` at 0x1669a0 (decompiler, high); signature (untiered): `longlong GetExtraCellWaterType(longlong param_1)`
+/// `GetExtraCellWaterType` at 0x1669a0 (decompiler, high); signature (low): `longlong GetExtraCellWaterType(longlong param_1)`
 pub const GetExtraCellWaterType: u64 = 11764;
-/// `GetExtraCreatureAwakeSound` at 0x164a90 (decompiler, medium); signature (untiered): `undefined GetExtraCreatureAwakeSound(longlong param_1, undefined4 * param_2)`
+/// `GetExtraCreatureAwakeSound` at 0x164a90 (decompiler, medium); signature (low): `undefined GetExtraCreatureAwakeSound(longlong param_1, undefined4 * param_2)`
 pub const GetExtraCreatureAwakeSound: u64 = 11712;
-/// `GetExtraDataType14Field10` at 0x164e80 (decompiler, high); signature (untiered): `longlong GetExtraDataType14Field10(longlong param_1)`
+/// `GetExtraDataType14Field10` at 0x164e80 (decompiler, high); signature (low): `longlong GetExtraDataType14Field10(longlong param_1)`
 pub const GetExtraDataType14Field10: u64 = 11729;
-/// `GetExtraDataType15Field10` at 0x164c20 (decompiler, high); signature (untiered): `longlong GetExtraDataType15Field10(longlong param_1)`
+/// `GetExtraDataType15Field10` at 0x164c20 (decompiler, high); signature (low): `longlong GetExtraDataType15Field10(longlong param_1)`
 pub const GetExtraDataType15Field10: u64 = 11717;
-/// `GetExtraDataType2E` at 0x164830 (decompiler, high); signature (untiered): `undefined GetExtraDataType2E(longlong param_1)`
+/// `GetExtraDataType2E` at 0x164830 (decompiler, high); signature (low): `undefined GetExtraDataType2E(longlong param_1)`
 pub const GetExtraDataType2E: u64 = 11700;
-/// `GetExtraDataType3CPayload` at 0x1700c0 (decompiler, high); signature (untiered): `longlong * GetExtraDataType3CPayload(longlong param_1)`
+/// `GetExtraDataType3CPayload` at 0x1700c0 (decompiler, high); signature (low): `longlong * GetExtraDataType3CPayload(longlong param_1)`
 pub const GetExtraDataType3CPayload: u64 = 11978;
-/// `GetExtraDataType5C` at 0x171370 (decompiler, high); signature (untiered): `undefined GetExtraDataType5C(longlong param_1)`
+/// `GetExtraDataType5C` at 0x171370 (decompiler, high); signature (low): `undefined GetExtraDataType5C(longlong param_1)`
 pub const GetExtraDataType5C: u64 = 12013;
 /// `GetExtraDataType6CValue` at 0x16db10 (decompiler, high); signature (high): `longlong GetExtraDataType6CValue(longlong param_1)`
 pub const GetExtraDataType6CValue: u64 = 11903;
-/// `GetExtraDataType71` at 0x1692e0 (decompiler, high); signature (untiered): `longlong * GetExtraDataType71(longlong param_1)`
+/// `GetExtraDataType71` at 0x1692e0 (decompiler, high); signature (low): `longlong * GetExtraDataType71(longlong param_1)`
 pub const GetExtraDataType71: u64 = 11803;
 /// `GetExtraDataType88` at 0x1728d0 (decompiler, high); signature (high): `undefined GetExtraDataType88(longlong param_1)`
 pub const GetExtraDataType88: u64 = 12045;
-/// `GetExtraDataType8E` at 0x1648b0 (decompiler, high); signature (untiered): `undefined GetExtraDataType8E(longlong param_1)`
+/// `GetExtraDataType8E` at 0x1648b0 (decompiler, high); signature (low): `undefined GetExtraDataType8E(longlong param_1)`
 pub const GetExtraDataType8E: u64 = 11702;
 /// `GetExtraDataType99Field10` at 0x16a4c0 (decompiler, high); signature (high): `longlong GetExtraDataType99Field10(longlong param_1)`
 pub const GetExtraDataType99Field10: u64 = 11834;
-/// `GetExtraDistantDataValues` at 0x165500 (decompiler, medium); signature (untiered): `undefined8 * GetExtraDistantDataValues(longlong param_1, undefined8 * param_2)`
+/// `GetExtraDistantDataValues` at 0x165500 (decompiler, medium); signature (low): `undefined8 * GetExtraDistantDataValues(longlong param_1, undefined8 * param_2)`
 pub const GetExtraDistantDataValues: u64 = 11738;
-/// `GetExtraEnableStateChildrenList` at 0x165910 (decompiler, high); signature (untiered): `longlong * GetExtraEnableStateChildrenList(longlong param_1)`
+/// `GetExtraEnableStateChildrenList` at 0x165910 (decompiler, high); signature (low): `longlong * GetExtraEnableStateChildrenList(longlong param_1)`
 pub const GetExtraEnableStateChildrenList: u64 = 11748;
 /// `GetExtraEnableStateParentFlag` at 0x165790 (decompiler, high); signature (high): `byte GetExtraEnableStateParentFlag(longlong param_1)`
 pub const GetExtraEnableStateParentFlag: u64 = 11741;
-/// `GetExtraEncounterZone` at 0x16a0a0 (decompiler, high); signature (untiered): `longlong GetExtraEncounterZone(longlong param_1)`
+/// `GetExtraEncounterZone` at 0x16a0a0 (decompiler, high); signature (low): `longlong GetExtraEncounterZone(longlong param_1)`
 pub const GetExtraEncounterZone: u64 = 11828;
-/// `GetExtraEncounterZoneOrField128Field220` at 0x2be760 (decompiler, medium); signature (untiered): `longlong GetExtraEncounterZoneOrField128Field220(longlong param_1)`
+/// `GetExtraEncounterZoneOrField128Field220` at 0x2be760 (decompiler, medium); signature (low): `longlong GetExtraEncounterZoneOrField128Field220(longlong param_1)`
 pub const GetExtraEncounterZoneOrField128Field220: u64 = 18989;
-/// `GetExtraFactionChanges` at 0x171100 (decompiler, high); signature (untiered): `undefined GetExtraFactionChanges(longlong param_1)`
+/// `GetExtraFactionChanges` at 0x171100 (decompiler, high); signature (low): `undefined GetExtraFactionChanges(longlong param_1)`
 pub const GetExtraFactionChanges: u64 = 12009;
 /// `GetExtraGhostFlag` at 0x164790 (decompiler, medium); signature (medium): `undefined1 GetExtraGhostFlag(longlong param_1)`
 pub const GetExtraGhostFlag: u64 = 11698;
-/// `GetExtraHavokField18` at 0x16f330 (decompiler, medium); signature (untiered): `longlong * GetExtraHavokField18(longlong param_1)`
+/// `GetExtraHavokField18` at 0x16f330 (decompiler, medium); signature (low): `longlong * GetExtraHavokField18(longlong param_1)`
 pub const GetExtraHavokField18: u64 = 11956;
 /// `GetExtraHeadTrackingWeight` at 0x171cf0 (semantic, high); signature (untiered): `float GetExtraHeadTrackingWeight(longlong param_1)`; semantic: returns the type-0x94 extra's +0x10, else 1.0 (high); signature `float (BaseExtraList* list)`
 pub const GetExtraHeadTrackingWeight: u64 = 12027;
 /// `GetExtraHeadTrackingWeight` as a function pointer type (high).
 pub type GetExtraHeadTrackingWeight_fn = unsafe extern "C" fn(list: *mut crate::BaseExtraList) -> f32;
-/// `GetExtraHealthValue` at 0x1648c0 (decompiler, high); signature (untiered): `undefined4 GetExtraHealthValue(longlong param_1)`
+/// `GetExtraHealthValue` at 0x1648c0 (decompiler, high); signature (low): `undefined4 GetExtraHealthValue(longlong param_1)`
 pub const GetExtraHealthValue: u64 = 11703;
-/// `GetExtraLeveledItemBase` at 0x166f90 (decompiler, high); signature (untiered): `longlong GetExtraLeveledItemBase(longlong param_1)`
+/// `GetExtraLeveledItemBase` at 0x166f90 (decompiler, high); signature (low): `longlong GetExtraLeveledItemBase(longlong param_1)`
 pub const GetExtraLeveledItemBase: u64 = 11772;
-/// `GetExtraMapMarkerData` at 0x1644e0 (decompiler, high); signature (untiered): `longlong GetExtraMapMarkerData(longlong param_1)`
+/// `GetExtraMapMarkerData` at 0x1644e0 (decompiler, high); signature (low): `longlong GetExtraMapMarkerData(longlong param_1)`
 pub const GetExtraMapMarkerData: u64 = 11689;
-/// `GetExtraMultiBoundField10` at 0x16a870 (decompiler, medium); signature (untiered): `longlong GetExtraMultiBoundField10(longlong param_1)`
+/// `GetExtraMultiBoundField10` at 0x16a870 (decompiler, medium); signature (low): `longlong GetExtraMultiBoundField10(longlong param_1)`
 pub const GetExtraMultiBoundField10: u64 = 11840;
-/// `GetExtraMultiBoundMarkerData` at 0x16a760 (decompiler, medium); signature (untiered): `undefined GetExtraMultiBoundMarkerData(longlong param_1)`
+/// `GetExtraMultiBoundMarkerData` at 0x16a760 (decompiler, medium); signature (low): `undefined GetExtraMultiBoundMarkerData(longlong param_1)`
 pub const GetExtraMultiBoundMarkerData: u64 = 11838;
 /// `GetExtraMultiBoundRef` at 0x16a610 (decompiler, medium); signature (medium): `longlong GetExtraMultiBoundRef(longlong param_1)`
 pub const GetExtraMultiBoundRef: u64 = 11836;
-/// `GetExtraMultiBoundRefAtField70` at 0x301da0 (decompiler, high); signature (untiered): `undefined GetExtraMultiBoundRefAtField70(longlong param_1)`
+/// `GetExtraMultiBoundRefAtField70` at 0x301da0 (decompiler, high); signature (low): `undefined GetExtraMultiBoundRefAtField70(longlong param_1)`
 pub const GetExtraMultiBoundRefAtField70: u64 = 20243;
-/// `GetExtraOcclusionPlaneRefDataEntry` at 0x16af10 (decompiler, medium); signature (untiered): `undefined4 * GetExtraOcclusionPlaneRefDataEntry(longlong param_1, undefined4 * param_2, int param_3)`
+/// `GetExtraOcclusionPlaneRefDataEntry` at 0x16af10 (decompiler, medium); signature (low): `undefined4 * GetExtraOcclusionPlaneRefDataEntry(longlong param_1, undefined4 * param_2, int param_3)`
 pub const GetExtraOcclusionPlaneRefDataEntry: u64 = 11848;
 /// `GetExtraOcclusionPlaneRefDataValue` at 0x16b070 (decompiler, medium); signature (medium): `longlong GetExtraOcclusionPlaneRefDataValue(longlong param_1)`
 pub const GetExtraOcclusionPlaneRefDataValue: u64 = 11850;
 /// `GetExtraOwnershipOwner` at 0x164570 (decompiler, medium); signature (medium): `longlong GetExtraOwnershipOwner(longlong param_1)`
 pub const GetExtraOwnershipOwner: u64 = 11692;
-/// `GetExtraOwnershipOwnerAt70` at 0x300730 (decompiler, high); signature (untiered): `undefined GetExtraOwnershipOwnerAt70(longlong param_1)`
+/// `GetExtraOwnershipOwnerAt70` at 0x300730 (decompiler, high); signature (low): `undefined GetExtraOwnershipOwnerAt70(longlong param_1)`
 pub const GetExtraOwnershipOwnerAt70: u64 = 20197;
-/// `GetExtraPackageStartLocationData` at 0x164c50 (decompiler, high); signature (untiered): `longlong * GetExtraPackageStartLocationData(longlong param_1)`
+/// `GetExtraPackageStartLocationData` at 0x164c50 (decompiler, high); signature (low): `longlong * GetExtraPackageStartLocationData(longlong param_1)`
 pub const GetExtraPackageStartLocationData: u64 = 11718;
 /// `GetExtraPortalRefDataHandleAt` at 0x16b1b0 (decompiler, medium); signature (medium): `undefined4 * GetExtraPortalRefDataHandleAt(longlong param_1, undefined4 * param_2, int param_3)`
 pub const GetExtraPortalRefDataHandleAt: u64 = 11852;
@@ -689,11 +289,11 @@ pub const GetExtraRadius: u64 = 11875;
 pub const GetExtraRank: u64 = 11695;
 /// `GetExtraRankOrZero` at 0x2be5e0 (decompiler, high); signature (high): `int GetExtraRankOrZero(longlong param_1)`
 pub const GetExtraRankOrZero: u64 = 18984;
-/// `GetExtraReflectorRefsField10Ptr` at 0x16cbf0 (decompiler, medium); signature (untiered): `longlong * GetExtraReflectorRefsField10Ptr(longlong param_1)`
+/// `GetExtraReflectorRefsField10Ptr` at 0x16cbf0 (decompiler, medium); signature (low): `longlong * GetExtraReflectorRefsField10Ptr(longlong param_1)`
 pub const GetExtraReflectorRefsField10Ptr: u64 = 11887;
-/// `GetExtraRoomRefDataField10Ptr` at 0x16b4d0 (decompiler, medium); signature (untiered): `longlong GetExtraRoomRefDataField10Ptr(longlong param_1)`
+/// `GetExtraRoomRefDataField10Ptr` at 0x16b4d0 (decompiler, medium); signature (low): `longlong GetExtraRoomRefDataField10Ptr(longlong param_1)`
 pub const GetExtraRoomRefDataField10Ptr: u64 = 11854;
-/// `GetExtraRoomRefDataField28` at 0x16bb70 (decompiler, high); signature (untiered): `undefined8 GetExtraRoomRefDataField28(longlong param_1)`
+/// `GetExtraRoomRefDataField28` at 0x16bb70 (decompiler, high); signature (low): `undefined8 GetExtraRoomRefDataField28(longlong param_1)`
 pub const GetExtraRoomRefDataField28: u64 = 11864;
 /// `GetExtraRoomRefDataValue` at 0x16b6b0 (decompiler, medium); signature (medium): `longlong GetExtraRoomRefDataValue(longlong param_1)`
 pub const GetExtraRoomRefDataValue: u64 = 11856;
@@ -701,119 +301,119 @@ pub const GetExtraRoomRefDataValue: u64 = 11856;
 pub const GetExtraRoomRefDataValue_2: u64 = 11870;
 /// `GetExtraScale` at 0x164a10 (decompiler, high); signature (high): `undefined4 GetExtraScale(longlong param_1)`
 pub const GetExtraScale: u64 = 11710;
-/// `GetExtraSeenDataValue` at 0x16e590 (decompiler, medium); signature (untiered): `longlong GetExtraSeenDataValue(longlong param_1)`
+/// `GetExtraSeenDataValue` at 0x16e590 (decompiler, medium); signature (low): `longlong GetExtraSeenDataValue(longlong param_1)`
 pub const GetExtraSeenDataValue: u64 = 11921;
 /// `GetExtraShouldWear` at 0x164740 (decompiler, high); signature (high): `bool GetExtraShouldWear(longlong param_1, undefined1 * param_2)`
 pub const GetExtraShouldWear: u64 = 11697;
-/// `GetExtraSoul` at 0x164980 (decompiler, high); signature (untiered): `int GetExtraSoul(longlong param_1)`
+/// `GetExtraSoul` at 0x164980 (decompiler, high); signature (low): `int GetExtraSoul(longlong param_1)`
 pub const GetExtraSoul: u64 = 11707;
-/// `GetExtraSoundData` at 0x164a40 (decompiler, medium); signature (untiered): `undefined GetExtraSoundData(longlong param_1, undefined4 * param_2)`
+/// `GetExtraSoundData` at 0x164a40 (decompiler, medium); signature (low): `undefined GetExtraSoundData(longlong param_1, undefined4 * param_2)`
 pub const GetExtraSoundData: u64 = 11711;
-/// `GetExtraStartingPositionField10Ptr` at 0x164390 (decompiler, medium); signature (untiered): `longlong * GetExtraStartingPositionField10Ptr(longlong param_1)`
+/// `GetExtraStartingPositionField10Ptr` at 0x164390 (decompiler, medium); signature (low): `longlong * GetExtraStartingPositionField10Ptr(longlong param_1)`
 pub const GetExtraStartingPositionField10Ptr: u64 = 11684;
-/// `GetExtraStartingPositionField28` at 0x16a340 (decompiler, medium); signature (untiered): `longlong GetExtraStartingPositionField28(longlong param_1)`
+/// `GetExtraStartingPositionField28` at 0x16a340 (decompiler, medium); signature (low): `longlong GetExtraStartingPositionField28(longlong param_1)`
 pub const GetExtraStartingPositionField28: u64 = 11832;
 /// `GetExtraTerminalStateField10` at 0x163470 (decompiler, medium); signature (medium): `undefined1 GetExtraTerminalStateField10(longlong param_1)`
 pub const GetExtraTerminalStateField10: u64 = 11659;
 /// `GetExtraTerminalStateField11` at 0x1635e0 (decompiler, medium); signature (medium): `undefined1 GetExtraTerminalStateField11(longlong param_1)`
 pub const GetExtraTerminalStateField11: u64 = 11661;
-/// `GetExtraTimeLeft` at 0x164920 (decompiler, medium); signature (untiered): `undefined4 GetExtraTimeLeft(longlong param_1)`
+/// `GetExtraTimeLeft` at 0x164920 (decompiler, medium); signature (low): `undefined4 GetExtraTimeLeft(longlong param_1)`
 pub const GetExtraTimeLeft: u64 = 11705;
-/// `GetExtraType0x01Value` at 0x16f140 (decompiler, medium); signature (untiered): `longlong * GetExtraType0x01Value(longlong param_1)`
+/// `GetExtraType0x01Value` at 0x16f140 (decompiler, medium); signature (low): `longlong * GetExtraType0x01Value(longlong param_1)`
 pub const GetExtraType0x01Value: u64 = 11954;
-/// `GetExtraType0x54` at 0x1702b0 (decompiler, medium); signature (untiered): `undefined GetExtraType0x54(longlong param_1)`
+/// `GetExtraType0x54` at 0x1702b0 (decompiler, medium); signature (low): `undefined GetExtraType0x54(longlong param_1)`
 pub const GetExtraType0x54: u64 = 11982;
-/// `GetExtraType0x9BValue` at 0x1732b0 (decompiler, medium); signature (untiered): `longlong GetExtraType0x9BValue(longlong param_1)`
+/// `GetExtraType0x9BValue` at 0x1732b0 (decompiler, medium); signature (low): `longlong GetExtraType0x9BValue(longlong param_1)`
 pub const GetExtraType0x9BValue: u64 = 12061;
-/// `GetExtraType0xA9Pointer` at 0x173aa0 (decompiler, medium); signature (untiered): `undefined GetExtraType0xA9Pointer(longlong param_1, longlong * param_2)`
+/// `GetExtraType0xA9Pointer` at 0x173aa0 (decompiler, medium); signature (low): `undefined GetExtraType0xA9Pointer(longlong param_1, longlong * param_2)`
 pub const GetExtraType0xA9Pointer: u64 = 12075;
-/// `GetExtraType11Field10OrDefault` at 0x1643c0 (decompiler, medium); signature (untiered): `longlong * GetExtraType11Field10OrDefault(longlong param_1)`
+/// `GetExtraType11Field10OrDefault` at 0x1643c0 (decompiler, medium); signature (low): `longlong * GetExtraType11Field10OrDefault(longlong param_1)`
 pub const GetExtraType11Field10OrDefault: u64 = 11685;
-/// `GetExtraType19Field10` at 0x164cc0 (decompiler, high); signature (untiered): `longlong GetExtraType19Field10(longlong param_1)`
+/// `GetExtraType19Field10` at 0x164cc0 (decompiler, high); signature (low): `longlong GetExtraType19Field10(longlong param_1)`
 pub const GetExtraType19Field10: u64 = 11720;
 /// `GetExtraType1AField10` at 0x164d50 (decompiler, high); signature (high): `longlong GetExtraType1AField10(longlong param_1)`
 pub const GetExtraType1AField10: u64 = 11723;
-/// `GetExtraType1BValueForKey` at 0x1650a0 (decompiler, medium); signature (untiered): `undefined1 GetExtraType1BValueForKey(longlong param_1, longlong param_2)`
+/// `GetExtraType1BValueForKey` at 0x1650a0 (decompiler, medium); signature (low): `undefined1 GetExtraType1BValueForKey(longlong param_1, longlong param_2)`
 pub const GetExtraType1BValueForKey: u64 = 11734;
-/// `GetExtraType1D` at 0x162d00 (decompiler, high); signature (untiered): `undefined GetExtraType1D(longlong param_1)`
+/// `GetExtraType1D` at 0x162d00 (decompiler, high); signature (low): `undefined GetExtraType1D(longlong param_1)`
 pub const GetExtraType1D: u64 = 11651;
 /// `GetExtraType1EField10` at 0x1693b0 (decompiler, high); signature (high): `undefined4 GetExtraType1EField10(longlong param_1)`
 pub const GetExtraType1EField10: u64 = 11805;
 /// `GetExtraType1EValuesOrDefaults` at 0x169350 (decompiler, medium); signature (medium): `undefined GetExtraType1EValuesOrDefaults(longlong param_1, undefined4 * param_2, undefined4 * param_3)`
 pub const GetExtraType1EValuesOrDefaults: u64 = 11804;
-/// `GetExtraType20Handle` at 0x1642a0 (decompiler, high); signature (untiered): `undefined4 * GetExtraType20Handle(longlong param_1, undefined4 * param_2)`
+/// `GetExtraType20Handle` at 0x1642a0 (decompiler, high); signature (low): `undefined4 * GetExtraType20Handle(longlong param_1, undefined4 * param_2)`
 pub const GetExtraType20Handle: u64 = 11682;
-/// `GetExtraType21Field10IfByte1AIs0B` at 0x164540 (decompiler, medium); signature (untiered): `longlong GetExtraType21Field10IfByte1AIs0B(longlong param_1)`
+/// `GetExtraType21Field10IfByte1AIs0B` at 0x164540 (decompiler, medium); signature (low): `longlong GetExtraType21Field10IfByte1AIs0B(longlong param_1)`
 pub const GetExtraType21Field10IfByte1AIs0B: u64 = 11691;
-/// `GetExtraType21Field10IfByte1AIs2B` at 0x164510 (decompiler, medium); signature (untiered): `longlong GetExtraType21Field10IfByte1AIs2B(longlong param_1)`
+/// `GetExtraType21Field10IfByte1AIs2B` at 0x164510 (decompiler, medium); signature (low): `longlong GetExtraType21Field10IfByte1AIs2B(longlong param_1)`
 pub const GetExtraType21Field10IfByte1AIs2B: u64 = 11690;
-/// `GetExtraType22Field10` at 0x1645d0 (decompiler, high); signature (untiered): `longlong GetExtraType22Field10(longlong param_1)`
+/// `GetExtraType22Field10` at 0x1645d0 (decompiler, high); signature (low): `longlong GetExtraType22Field10(longlong param_1)`
 pub const GetExtraType22Field10: u64 = 11694;
-/// `GetExtraType22Field10FromExtraList` at 0x2be5d0 (decompiler, high); signature (untiered): `undefined GetExtraType22Field10FromExtraList(longlong param_1)`
+/// `GetExtraType22Field10FromExtraList` at 0x2be5d0 (decompiler, high); signature (low): `undefined GetExtraType22Field10FromExtraList(longlong param_1)`
 pub const GetExtraType22Field10FromExtraList: u64 = 18983;
-/// `GetExtraType22ValueFromRefOrLinkedRef` at 0x300560 (decompiler, medium); signature (untiered): `longlong GetExtraType22ValueFromRefOrLinkedRef(longlong param_1)`
+/// `GetExtraType22ValueFromRefOrLinkedRef` at 0x300560 (decompiler, medium); signature (low): `longlong GetExtraType22ValueFromRefOrLinkedRef(longlong param_1)`
 pub const GetExtraType22ValueFromRefOrLinkedRef: u64 = 20195;
 /// `GetExtraType24Value` at 0x1648f0 (decompiler, high); signature (high): `undefined2 GetExtraType24Value(longlong param_1)`
 pub const GetExtraType24Value: u64 = 11704;
 /// `GetExtraType28Value` at 0x164950 (decompiler, medium); signature (medium): `undefined4 GetExtraType28Value(longlong param_1)`
 pub const GetExtraType28Value: u64 = 11706;
-/// `GetExtraType29Field10` at 0x164450 (decompiler, high); signature (untiered): `longlong GetExtraType29Field10(longlong param_1)`
+/// `GetExtraType29Field10` at 0x164450 (decompiler, high); signature (low): `longlong GetExtraType29Field10(longlong param_1)`
 pub const GetExtraType29Field10: u64 = 11686;
-/// `GetExtraType2AFromSelfOrLinkedRef` at 0x301580 (decompiler, medium); signature (untiered): `longlong * GetExtraType2AFromSelfOrLinkedRef(longlong param_1)`
+/// `GetExtraType2AFromSelfOrLinkedRef` at 0x301580 (decompiler, medium); signature (low): `longlong * GetExtraType2AFromSelfOrLinkedRef(longlong param_1)`
 pub const GetExtraType2AFromSelfOrLinkedRef: u64 = 20228;
 /// `GetExtraType2AValue` at 0x164480 (decompiler, high); signature (high): `longlong GetExtraType2AValue(longlong param_1)`
 pub const GetExtraType2AValue: u64 = 11687;
 /// `GetExtraType2BValue` at 0x1644b0 (decompiler, high); signature (high): `longlong GetExtraType2BValue(longlong param_1)`
 pub const GetExtraType2BValue: u64 = 11688;
-/// `GetExtraType2BValueFromRefHandle` at 0x304bd0 (decompiler, high); signature (untiered): `longlong GetExtraType2BValueFromRefHandle(uint * param_1)`
+/// `GetExtraType2BValueFromRefHandle` at 0x304bd0 (decompiler, high); signature (low): `longlong GetExtraType2BValueFromRefHandle(uint * param_1)`
 pub const GetExtraType2BValueFromRefHandle: u64 = 20302;
 /// `GetExtraType2DField18` at 0x1696a0 (decompiler, high); signature (high): `longlong GetExtraType2DField18(longlong param_1)`
 pub const GetExtraType2DField18: u64 = 11811;
 /// `GetExtraType2EShortField10` at 0x164e20 (decompiler, high); signature (high): `int GetExtraType2EShortField10(longlong param_1)`
 pub const GetExtraType2EShortField10: u64 = 11727;
-/// `GetExtraType34Field10` at 0x164df0 (decompiler, high); signature (untiered): `longlong GetExtraType34Field10(longlong param_1)`
+/// `GetExtraType34Field10` at 0x164df0 (decompiler, high); signature (low): `longlong GetExtraType34Field10(longlong param_1)`
 pub const GetExtraType34Field10: u64 = 11726;
 /// `GetExtraType39Field10` at 0x166270 (decompiler, high); signature (high): `longlong * GetExtraType39Field10(longlong param_1)`
 pub const GetExtraType39Field10: u64 = 11758;
-/// `GetExtraType3EField10` at 0x169c30 (decompiler, medium); signature (untiered): `undefined GetExtraType3EField10(longlong param_1)`
+/// `GetExtraType3EField10` at 0x169c30 (decompiler, medium); signature (low): `undefined GetExtraType3EField10(longlong param_1)`
 pub const GetExtraType3EField10: u64 = 11821;
 /// `GetExtraType3EField18` at 0x169d90 (decompiler, high); signature (high): `undefined4 GetExtraType3EField18(longlong param_1)`
 pub const GetExtraType3EField18: u64 = 11823;
-/// `GetExtraType3FField10` at 0x169dc0 (decompiler, high); signature (untiered): `longlong GetExtraType3FField10(longlong param_1)`
+/// `GetExtraType3FField10` at 0x169dc0 (decompiler, high); signature (low): `longlong GetExtraType3FField10(longlong param_1)`
 pub const GetExtraType3FField10: u64 = 11824;
-/// `GetExtraType3FField10FromField70` at 0x2e76f0 (decompiler, high); signature (untiered): `undefined GetExtraType3FField10FromField70(longlong param_1)`
+/// `GetExtraType3FField10FromField70` at 0x2e76f0 (decompiler, high); signature (low): `undefined GetExtraType3FField10FromField70(longlong param_1)`
 pub const GetExtraType3FField10FromField70: u64 = 19675;
 /// `GetExtraType41DataOrDefault` at 0x16fe90 (decompiler, high); signature (high): `longlong * GetExtraType41DataOrDefault(longlong param_1)`
 pub const GetExtraType41DataOrDefault: u64 = 11974;
 /// `GetExtraType42Field10` at 0x16e440 (decompiler, high); signature (high): `undefined4 GetExtraType42Field10(longlong param_1)`
 pub const GetExtraType42Field10: u64 = 11919;
-/// `GetExtraType48Field10` at 0x1708d0 (decompiler, high); signature (untiered): `longlong GetExtraType48Field10(longlong param_1)`
+/// `GetExtraType48Field10` at 0x1708d0 (decompiler, high); signature (low): `longlong GetExtraType48Field10(longlong param_1)`
 pub const GetExtraType48Field10: u64 = 11993;
 /// `GetExtraType49Byte` at 0x163960 (decompiler, high); signature (high): `undefined1 GetExtraType49Byte(longlong param_1)`
 pub const GetExtraType49Byte: u64 = 11666;
-/// `GetExtraType4Data` at 0x16f540 (decompiler, high); signature (untiered): `longlong GetExtraType4Data(longlong param_1)`
+/// `GetExtraType4Data` at 0x16f540 (decompiler, high); signature (low): `longlong GetExtraType4Data(longlong param_1)`
 pub const GetExtraType4Data: u64 = 11958;
 /// `GetExtraType52Data` at 0x168070 (decompiler, high); signature (high): `longlong * GetExtraType52Data(longlong param_1)`
 pub const GetExtraType52Data: u64 = 11788;
-/// `GetExtraType52ValueForRefHandle` at 0x168730 (decompiler, medium); signature (untiered): `int GetExtraType52ValueForRefHandle(longlong param_1, longlong param_2)`
+/// `GetExtraType52ValueForRefHandle` at 0x168730 (decompiler, medium); signature (low): `int GetExtraType52ValueForRefHandle(longlong param_1, longlong param_2)`
 pub const GetExtraType52ValueForRefHandle: u64 = 11792;
-/// `GetExtraType53Field10` at 0x168b00 (decompiler, high); signature (untiered): `longlong * GetExtraType53Field10(longlong param_1)`
+/// `GetExtraType53Field10` at 0x168b00 (decompiler, high); signature (low): `longlong * GetExtraType53Field10(longlong param_1)`
 pub const GetExtraType53Field10: u64 = 11796;
-/// `GetExtraType53Field20OrDefault` at 0x169100 (decompiler, high); signature (untiered): `undefined4 GetExtraType53Field20OrDefault(longlong param_1)`
+/// `GetExtraType53Field20OrDefault` at 0x169100 (decompiler, high); signature (low): `undefined4 GetExtraType53Field20OrDefault(longlong param_1)`
 pub const GetExtraType53Field20OrDefault: u64 = 11800;
-/// `GetExtraType55Value` at 0x170dc0 (decompiler, high); signature (untiered): `undefined4 GetExtraType55Value(longlong param_1)`
+/// `GetExtraType55Value` at 0x170dc0 (decompiler, high); signature (low): `undefined4 GetExtraType55Value(longlong param_1)`
 pub const GetExtraType55Value: u64 = 12004;
-/// `GetExtraType56Data` at 0x16fa80 (decompiler, high); signature (untiered): `longlong GetExtraType56Data(longlong param_1)`
+/// `GetExtraType56Data` at 0x16fa80 (decompiler, high); signature (low): `longlong GetExtraType56Data(longlong param_1)`
 pub const GetExtraType56Data: u64 = 11966;
-/// `GetExtraType57` at 0x16fc10 (decompiler, medium); signature (untiered): `undefined GetExtraType57(longlong param_1)`
+/// `GetExtraType57` at 0x16fc10 (decompiler, medium); signature (low): `undefined GetExtraType57(longlong param_1)`
 pub const GetExtraType57: u64 = 11970;
-/// `GetExtraType58Field10` at 0x16fbd0 (decompiler, high); signature (untiered): `longlong GetExtraType58Field10(longlong param_1)`
+/// `GetExtraType58Field10` at 0x16fbd0 (decompiler, high); signature (low): `longlong GetExtraType58Field10(longlong param_1)`
 pub const GetExtraType58Field10: u64 = 11968;
-/// `GetExtraType5CField18` at 0x2ef7d0 (decompiler, medium); signature (untiered): `undefined8 GetExtraType5CField18(longlong param_1)`
+/// `GetExtraType5CField18` at 0x2ef7d0 (decompiler, medium); signature (low): `undefined8 GetExtraType5CField18(longlong param_1)`
 pub const GetExtraType5CField18: u64 = 19767;
-/// `GetExtraType61Field10Ptr` at 0x16cbc0 (decompiler, high); signature (untiered): `longlong * GetExtraType61Field10Ptr(longlong param_1)`
+/// `GetExtraType61Field10Ptr` at 0x16cbc0 (decompiler, high); signature (low): `longlong * GetExtraType61Field10Ptr(longlong param_1)`
 pub const GetExtraType61Field10Ptr: u64 = 11886;
-/// `GetExtraType65Field10` at 0x171550 (decompiler, high); signature (untiered): `longlong GetExtraType65Field10(longlong param_1)`
+/// `GetExtraType65Field10` at 0x171550 (decompiler, high); signature (low): `longlong GetExtraType65Field10(longlong param_1)`
 pub const GetExtraType65Field10: u64 = 12017;
 /// `GetExtraType67Value` at 0x16d850 (decompiler, high); signature (high): `longlong GetExtraType67Value(longlong param_1)`
 pub const GetExtraType67Value: u64 = 11898;
@@ -831,21 +431,21 @@ pub const GetExtraType73Value: u64 = 11868;
 pub const GetExtraType74Value: u64 = 11844;
 /// `GetExtraType75Value` at 0x16ad60 (decompiler, high); signature (high): `longlong GetExtraType75Value(longlong param_1)`
 pub const GetExtraType75Value: u64 = 11846;
-/// `GetExtraType77Field10Field30` at 0x16bbb0 (decompiler, medium); signature (untiered): `undefined8 GetExtraType77Field10Field30(longlong param_1)`
+/// `GetExtraType77Field10Field30` at 0x16bbb0 (decompiler, medium); signature (low): `undefined8 GetExtraType77Field10Field30(longlong param_1)`
 pub const GetExtraType77Field10Field30: u64 = 11865;
 /// `GetExtraType7BHandle` at 0x172130 (decompiler, high); signature (high): `undefined4 * GetExtraType7BHandle(longlong param_1, undefined4 * param_2)`
 pub const GetExtraType7BHandle: u64 = 12033;
-/// `GetExtraType80Field10Ptr` at 0x16cfa0 (decompiler, high); signature (untiered): `longlong * GetExtraType80Field10Ptr(longlong param_1)`
+/// `GetExtraType80Field10Ptr` at 0x16cfa0 (decompiler, high); signature (low): `longlong * GetExtraType80Field10Ptr(longlong param_1)`
 pub const GetExtraType80Field10Ptr: u64 = 11891;
-/// `GetExtraType81Data` at 0x16cfd0 (decompiler, high); signature (untiered): `longlong * GetExtraType81Data(longlong param_1)`
+/// `GetExtraType81Data` at 0x16cfd0 (decompiler, high); signature (low): `longlong * GetExtraType81Data(longlong param_1)`
 pub const GetExtraType81Data: u64 = 11892;
-/// `GetExtraType85Field10` at 0x1672a0 (decompiler, high); signature (untiered): `undefined4 * GetExtraType85Field10(longlong param_1, undefined4 * param_2)`
+/// `GetExtraType85Field10` at 0x1672a0 (decompiler, high); signature (low): `undefined4 * GetExtraType85Field10(longlong param_1, undefined4 * param_2)`
 pub const GetExtraType85Field10: u64 = 11776;
-/// `GetExtraType86Data` at 0x164ae0 (decompiler, medium); signature (untiered): `undefined GetExtraType86Data(longlong param_1, undefined4 * param_2)`
+/// `GetExtraType86Data` at 0x164ae0 (decompiler, medium); signature (low): `undefined GetExtraType86Data(longlong param_1, undefined4 * param_2)`
 pub const GetExtraType86Data: u64 = 11713;
-/// `GetExtraType8Field10` at 0x16f930 (decompiler, high); signature (untiered): `longlong GetExtraType8Field10(longlong param_1)`
+/// `GetExtraType8Field10` at 0x16f930 (decompiler, high); signature (low): `longlong GetExtraType8Field10(longlong param_1)`
 pub const GetExtraType8Field10: u64 = 11964;
-/// `GetExtraType8Field10IfFlag40Bit0` at 0x2bf310 (decompiler, medium); signature (untiered): `longlong GetExtraType8Field10IfFlag40Bit0(longlong param_1)`
+/// `GetExtraType8Field10IfFlag40Bit0` at 0x2bf310 (decompiler, medium); signature (low): `longlong GetExtraType8Field10IfFlag40Bit0(longlong param_1)`
 pub const GetExtraType8Field10IfFlag40Bit0: u64 = 19007;
 /// `GetExtraType91Byte20` at 0x16cb90 (decompiler, high); signature (high): `undefined1 GetExtraType91Byte20(longlong param_1)`
 pub const GetExtraType91Byte20: u64 = 11885;
@@ -857,7 +457,7 @@ pub const GetExtraType91Field18: u64 = 11881;
 pub const GetExtraType97Field10: u64 = 12029;
 /// `GetExtraType9AField10` at 0x172690 (decompiler, high); signature (high): `undefined1 GetExtraType9AField10(longlong param_1)`
 pub const GetExtraType9AField10: u64 = 12041;
-/// `GetExtraType9BByte1A` at 0x173310 (decompiler, high); signature (untiered): `undefined1 GetExtraType9BByte1A(longlong param_1)`
+/// `GetExtraType9BByte1A` at 0x173310 (decompiler, high); signature (low): `undefined1 GetExtraType9BByte1A(longlong param_1)`
 pub const GetExtraType9BByte1A: u64 = 12063;
 /// `GetExtraType9BField18` at 0x1732e0 (decompiler, high); signature (high): `undefined2 GetExtraType9BField18(longlong param_1)`
 pub const GetExtraType9BField18: u64 = 12062;
@@ -865,17 +465,17 @@ pub const GetExtraType9BField18: u64 = 12062;
 pub const GetExtraType9DHandle: u64 = 12037;
 /// `GetExtraType9FValues` at 0x171e90 (decompiler, high); signature (high): `undefined GetExtraType9FValues(longlong param_1, undefined2 * param_2, undefined4 * param_3)`
 pub const GetExtraType9FValues: u64 = 12030;
-/// `GetExtraTypeA3Field10` at 0x1645a0 (decompiler, high); signature (untiered): `longlong GetExtraTypeA3Field10(longlong param_1)`
+/// `GetExtraTypeA3Field10` at 0x1645a0 (decompiler, high); signature (low): `longlong GetExtraTypeA3Field10(longlong param_1)`
 pub const GetExtraTypeA3Field10: u64 = 11693;
-/// `GetExtraTypeA7Field28Ref` at 0x173800 (decompiler, medium); signature (untiered): `undefined GetExtraTypeA7Field28Ref(longlong param_1, longlong * param_2)`
+/// `GetExtraTypeA7Field28Ref` at 0x173800 (decompiler, medium); signature (low): `undefined GetExtraTypeA7Field28Ref(longlong param_1, longlong * param_2)`
 pub const GetExtraTypeA7Field28Ref: u64 = 12072;
-/// `GetExtraTypeA8Field10` at 0x164fa0 (decompiler, high); signature (untiered): `longlong GetExtraTypeA8Field10(longlong param_1)`
+/// `GetExtraTypeA8Field10` at 0x164fa0 (decompiler, high); signature (low): `longlong GetExtraTypeA8Field10(longlong param_1)`
 pub const GetExtraTypeA8Field10: u64 = 11732;
-/// `GetExtraTypeA8StringOrEmpty` at 0x164ee0 (decompiler, medium); signature (untiered): `undefined * GetExtraTypeA8StringOrEmpty(longlong param_1, undefined8 param_2, undefined8 param_3, char * param_4)`
+/// `GetExtraTypeA8StringOrEmpty` at 0x164ee0 (decompiler, medium); signature (low): `undefined * GetExtraTypeA8StringOrEmpty(longlong param_1, undefined8 param_2, undefined8 param_3, char * param_4)`
 pub const GetExtraTypeA8StringOrEmpty: u64 = 11731;
-/// `GetExtraTypeAAObject` at 0x173d00 (decompiler, medium); signature (untiered): `undefined8 * GetExtraTypeAAObject(longlong param_1)`
+/// `GetExtraTypeAAObject` at 0x173d00 (decompiler, medium); signature (low): `undefined8 * GetExtraTypeAAObject(longlong param_1)`
 pub const GetExtraTypeAAObject: u64 = 12078;
-/// `GetExtraTypeADData` at 0x165e20 (decompiler, high); signature (untiered): `longlong * GetExtraTypeADData(longlong param_1)`
+/// `GetExtraTypeADData` at 0x165e20 (decompiler, high); signature (low): `longlong * GetExtraTypeADData(longlong param_1)`
 pub const GetExtraTypeADData: u64 = 11753;
 /// `GetExtraTypeAField10` at 0x1697f0 (decompiler, high); signature (high): `undefined4 GetExtraTypeAField10(longlong param_1)`
 pub const GetExtraTypeAField10: u64 = 11813;
@@ -885,27 +485,27 @@ pub const GetExtraTypeDField18: u64 = 12001;
 pub const GetExtraWaterDataEntry0Vec3At0: u64 = 12085;
 /// `GetExtraWaterDataEntry0Vec3At10` at 0x1742a0 (decompiler, medium); signature (medium): `undefined GetExtraWaterDataEntry0Vec3At10(longlong param_1, undefined4 * param_2)`
 pub const GetExtraWaterDataEntry0Vec3At10: u64 = 12086;
-/// `GetExtraWaterDataVec3At0OrDefault` at 0x2cb6e0 (decompiler, medium); signature (untiered): `undefined4 * GetExtraWaterDataVec3At0OrDefault(longlong param_1, undefined4 * param_2)`
+/// `GetExtraWaterDataVec3At0OrDefault` at 0x2cb6e0 (decompiler, medium); signature (low): `undefined4 * GetExtraWaterDataVec3At0OrDefault(longlong param_1, undefined4 * param_2)`
 pub const GetExtraWaterDataVec3At0OrDefault: u64 = 19184;
-/// `GetExtraWaterDataVec3At10OrDefault` at 0x2cb730 (decompiler, medium); signature (untiered): `undefined4 * GetExtraWaterDataVec3At10OrDefault(longlong param_1, undefined4 * param_2)`
+/// `GetExtraWaterDataVec3At10OrDefault` at 0x2cb730 (decompiler, medium); signature (low): `undefined4 * GetExtraWaterDataVec3At10OrDefault(longlong param_1, undefined4 * param_2)`
 pub const GetExtraWaterDataVec3At10OrDefault: u64 = 19185;
-/// `GetExtraWeaponAttackSoundData` at 0x164b80 (decompiler, medium); signature (untiered): `undefined GetExtraWeaponAttackSoundData(longlong param_1, undefined4 * param_2)`
+/// `GetExtraWeaponAttackSoundData` at 0x164b80 (decompiler, medium); signature (low): `undefined GetExtraWeaponAttackSoundData(longlong param_1, undefined4 * param_2)`
 pub const GetExtraWeaponAttackSoundData: u64 = 11715;
-/// `GetExtraWeaponIdleSound` at 0x164b30 (decompiler, medium); signature (untiered): `undefined GetExtraWeaponIdleSound(longlong param_1, undefined4 * param_2)`
+/// `GetExtraWeaponIdleSound` at 0x164b30 (decompiler, medium); signature (low): `undefined GetExtraWeaponIdleSound(longlong param_1, undefined4 * param_2)`
 pub const GetExtraWeaponIdleSound: u64 = 11714;
-/// `GetFaceGenMorphDataHair` at 0x43b330 (decompiler, medium); signature (untiered): `longlong * GetFaceGenMorphDataHair(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetFaceGenMorphDataHair` at 0x43b330 (decompiler, medium); signature (low): `longlong * GetFaceGenMorphDataHair(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetFaceGenMorphDataHair: u64 = 27021;
-/// `GetFaceGenMorphDataHead` at 0x43b2e0 (decompiler, medium); signature (untiered): `longlong * GetFaceGenMorphDataHead(void)`
+/// `GetFaceGenMorphDataHead` at 0x43b2e0 (decompiler, medium); signature (low): `longlong * GetFaceGenMorphDataHead(void)`
 pub const GetFaceGenMorphDataHead: u64 = 27020;
-/// `GetFactionRank` at 0x1dd650 (decompiler, medium); signature (untiered): `undefined1 GetFactionRank(longlong param_1, longlong param_2, char param_3)`
+/// `GetFactionRank` at 0x1dd650 (decompiler, medium); signature (low): `undefined1 GetFactionRank(longlong param_1, longlong param_2, char param_3)`
 pub const GetFactionRank: u64 = 14393;
-/// `GetFactionRankWithChanges` at 0x69d3c0 (decompiler, medium); signature (untiered): `int GetFactionRankWithChanges(longlong param_1, longlong param_2, char param_3)`
+/// `GetFactionRankWithChanges` at 0x69d3c0 (decompiler, medium); signature (low): `int GetFactionRankWithChanges(longlong param_1, longlong param_2, char param_3)`
 pub const GetFactionRankWithChanges: u64 = 37676;
-/// `GetFactionReaction` at 0x69ca50 (decompiler, medium); signature (untiered): `undefined GetFactionReaction(longlong * * * * * * * param_1, longlong * * * * * * * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetFactionReaction` at 0x69ca50 (decompiler, medium); signature (low): `undefined GetFactionReaction(longlong * * * * * * * param_1, longlong * * * * * * * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetFactionReaction: u64 = 37666;
 /// `GetField0` at 0xeaea40 (decompiler, high); signature (high): `undefined8 GetField0(undefined8 * param_1)`
 pub const GetField0: u64 = 69059;
-/// `GetField08` at 0xab16d0 (decompiler, high); signature (untiered): `undefined8 GetField08(longlong param_1)`
+/// `GetField08` at 0xab16d0 (decompiler, high); signature (low): `undefined8 GetField08(longlong param_1)`
 pub const GetField08: u64 = 57622;
 /// `GetField08Times30` at 0xc76590 (decompiler, medium); signature (medium): `int GetField08Times30(longlong param_1)`
 pub const GetField08Times30: u64 = 66538;
@@ -915,7 +515,7 @@ pub const GetField0Byte: u64 = 29847;
 pub const GetField0C: u64 = 109320;
 /// `GetField0E` at 0x159b3f0 (decompiler, high); signature (high): `undefined2 GetField0E(longlong param_1)`
 pub const GetField0E: u64 = 109321;
-/// `GetField0EEFromParentChain` at 0xd339d0 (decompiler, medium); signature (untiered): `ulonglong GetField0EEFromParentChain(longlong param_1)`
+/// `GetField0EEFromParentChain` at 0xd339d0 (decompiler, medium); signature (low): `ulonglong GetField0EEFromParentChain(longlong param_1)`
 pub const GetField0EEFromParentChain: u64 = 83480;
 /// `GetField0EEInherited` at 0xd33990 (decompiler, medium); signature (medium): `ulonglong GetField0EEInherited(longlong param_1)`
 pub const GetField0EEInherited: u64 = 83479;
@@ -927,17 +527,17 @@ pub const GetField0UnlessFlagBit10: u64 = 11007;
 pub const GetField0Vec4: u64 = 80782;
 /// `GetField0Word` at 0xcfac70 (decompiler, high); signature (high): `undefined2 GetField0Word(undefined2 * param_1)`
 pub const GetField0Word: u64 = 68665;
-/// `GetField0_2` at 0xab16c0 (decompiler, high); signature (untiered): `undefined8 GetField0_2(undefined8 * param_1)`
+/// `GetField0_2` at 0xab16c0 (decompiler, high); signature (low): `undefined8 GetField0_2(undefined8 * param_1)`
 pub const GetField0_2: u64 = 57621;
-/// `GetField0_3` at 0xeb1be0 (decompiler, high); signature (untiered): `undefined8 GetField0_3(undefined8 * param_1)`
+/// `GetField0_3` at 0xeb1be0 (decompiler, high); signature (low): `undefined8 GetField0_3(undefined8 * param_1)`
 pub const GetField0_3: u64 = 443404;
-/// `GetField0_4` at 0x159b400 (decompiler, high); signature (untiered): `undefined8 GetField0_4(undefined8 * param_1)`
+/// `GetField0_4` at 0x159b400 (decompiler, high); signature (low): `undefined8 GetField0_4(undefined8 * param_1)`
 pub const GetField0_4: u64 = 109322;
-/// `GetField0_5` at 0x15550a0 (decompiler, high); signature (untiered): `undefined8 GetField0_5(undefined8 * param_1)`
+/// `GetField0_5` at 0x15550a0 (decompiler, high); signature (low): `undefined8 GetField0_5(undefined8 * param_1)`
 pub const GetField0_5: u64 = 107481;
 /// `GetField0_6` at 0xab01f0 (decompiler, high); signature (high): `undefined8 GetField0_6(undefined8 * param_1)`
 pub const GetField0_6: u64 = 57558;
-/// `GetField0_7` at 0xab01e0 (decompiler, high); signature (untiered): `undefined8 GetField0_7(undefined8 * param_1)`
+/// `GetField0_7` at 0xab01e0 (decompiler, high); signature (low): `undefined8 GetField0_7(undefined8 * param_1)`
 pub const GetField0_7: u64 = 57557;
 /// `GetField0_8` at 0xe98100 (decompiler, high); signature (high): `undefined4 GetField0_8(undefined4 * param_1)`
 pub const GetField0_8: u64 = 90050;
@@ -945,31 +545,31 @@ pub const GetField0_8: u64 = 90050;
 pub const GetField0_9: u64 = 82320;
 /// `GetField0xF8Field50ValueOrScaledExtentY` at 0x6859f0 (decompiler, medium); signature (medium): `ulonglong GetField0xF8Field50ValueOrScaledExtentY(longlong param_1)`
 pub const GetField0xF8Field50ValueOrScaledExtentY: u64 = 37443;
-/// `GetField10` at 0x228e80 (decompiler, high); signature (untiered): `undefined4 GetField10(longlong param_1)`
+/// `GetField10` at 0x228e80 (decompiler, high); signature (low): `undefined4 GetField10(longlong param_1)`
 pub const GetField10: u64 = 16004;
-/// `GetField100` at 0xb657e0 (decompiler, high); signature (untiered): `undefined8 GetField100(longlong param_1)`
+/// `GetField100` at 0xb657e0 (decompiler, high); signature (low): `undefined8 GetField100(longlong param_1)`
 pub const GetField100: u64 = 61623;
-/// `GetField100Field30OrFlagDefault` at 0x2660b0 (decompiler, medium); signature (untiered): `undefined4 GetField100Field30OrFlagDefault(longlong param_1)`
+/// `GetField100Field30OrFlagDefault` at 0x2660b0 (decompiler, medium); signature (low): `undefined4 GetField100Field30OrFlagDefault(longlong param_1)`
 pub const GetField100Field30OrFlagDefault: u64 = 17136;
 /// `GetField100Ptr` at 0x6239f0 (decompiler, high); signature (high): `longlong GetField100Ptr(longlong param_1)`
 pub const GetField100Ptr: u64 = 35747;
-/// `GetField100_2` at 0x1143380 (decompiler, high); signature (untiered): `undefined8 GetField100_2(longlong param_1)`
+/// `GetField100_2` at 0x1143380 (decompiler, high); signature (low): `undefined8 GetField100_2(longlong param_1)`
 pub const GetField100_2: u64 = 81756;
-/// `GetField108` at 0xb65830 (decompiler, high); signature (untiered): `undefined8 GetField108(longlong param_1)`
+/// `GetField108` at 0xb65830 (decompiler, high); signature (low): `undefined8 GetField108(longlong param_1)`
 pub const GetField108: u64 = 61627;
 /// `GetField108Address` at 0x11dee90 (decompiler, high); signature (high): `longlong GetField108Address(longlong param_1)`
 pub const GetField108Address: u64 = 91060;
-/// `GetField108OrField158Field58` at 0x3bf580 (decompiler, high); signature (untiered): `longlong GetField108OrField158Field58(longlong param_1)`
+/// `GetField108OrField158Field58` at 0x3bf580 (decompiler, high); signature (low): `longlong GetField108OrField158Field58(longlong param_1)`
 pub const GetField108OrField158Field58: u64 = 24698;
 /// `GetField10Address_2` at 0x191890 (decompiler, high); signature (high): `longlong GetField10Address_2(longlong param_1)`
 pub const GetField10Address_2: u64 = 12973;
 /// `GetField10Address_3` at 0xad4290 (decompiler, high); signature (high): `longlong GetField10Address_3(longlong param_1)`
 pub const GetField10Address_3: u64 = 58430;
-/// `GetField10Byte455` at 0x6f12b0 (decompiler, high); signature (untiered): `undefined1 GetField10Byte455(longlong param_1)`
+/// `GetField10Byte455` at 0x6f12b0 (decompiler, high); signature (low): `undefined1 GetField10Byte455(longlong param_1)`
 pub const GetField10Byte455: u64 = 39260;
-/// `GetField10Byte464` at 0x702630 (decompiler, high); signature (untiered): `undefined1 GetField10Byte464(longlong param_1)`
+/// `GetField10Byte464` at 0x702630 (decompiler, high); signature (low): `undefined1 GetField10Byte464(longlong param_1)`
 pub const GetField10Byte464: u64 = 39607;
-/// `GetField10CStringAtIndexAsString` at 0xa84820 (decompiler, medium); signature (untiered): `longlong * GetField10CStringAtIndexAsString(longlong param_1, longlong * param_2, int param_3)`
+/// `GetField10CStringAtIndexAsString` at 0xa84820 (decompiler, medium); signature (low): `longlong * GetField10CStringAtIndexAsString(longlong param_1, longlong * param_2, int param_3)`
 pub const GetField10CStringAtIndexAsString: u64 = 443135;
 /// `GetField10DataOrDefault` at 0xcd4b80 (decompiler, medium); signature (medium): `undefined4 * GetField10DataOrDefault(longlong param_1)`
 pub const GetField10DataOrDefault: u64 = 67849;
@@ -977,127 +577,127 @@ pub const GetField10DataOrDefault: u64 = 67849;
 pub const GetField10Dword: u64 = 29852;
 /// `GetField10Entry2FC` at 0x6f6ba0 (decompiler, high); signature (high): `undefined4 * GetField10Entry2FC(longlong param_1, int param_2)`
 pub const GetField10Entry2FC: u64 = 39399;
-/// `GetField10Field10OrZero` at 0x1082fb0 (decompiler, high); signature (untiered): `undefined GetField10Field10OrZero(longlong param_1, undefined4 * param_2)`
+/// `GetField10Field10OrZero` at 0x1082fb0 (decompiler, high); signature (low): `undefined GetField10Field10OrZero(longlong param_1, undefined4 * param_2)`
 pub const GetField10Field10OrZero: u64 = 78678;
-/// `GetField10Field18` at 0x700100 (decompiler, high); signature (untiered): `undefined4 GetField10Field18(longlong param_1)`
+/// `GetField10Field18` at 0x700100 (decompiler, high); signature (low): `undefined4 GetField10Field18(longlong param_1)`
 pub const GetField10Field18: u64 = 39532;
-/// `GetField10Field1E4` at 0x702370 (decompiler, high); signature (untiered): `undefined4 GetField10Field1E4(longlong param_1)`
+/// `GetField10Field1E4` at 0x702370 (decompiler, high); signature (low): `undefined4 GetField10Field1E4(longlong param_1)`
 pub const GetField10Field1E4: u64 = 39587;
-/// `GetField10Field218` at 0x6f4030 (decompiler, high); signature (untiered): `undefined8 GetField10Field218(longlong param_1)`
+/// `GetField10Field218` at 0x6f4030 (decompiler, high); signature (low): `undefined8 GetField10Field218(longlong param_1)`
 pub const GetField10Field218: u64 = 39319;
-/// `GetField10Field24` at 0xb5b3b0 (decompiler, high); signature (untiered): `undefined4 GetField10Field24(longlong param_1)`
+/// `GetField10Field24` at 0xb5b3b0 (decompiler, high); signature (low): `undefined4 GetField10Field24(longlong param_1)`
 pub const GetField10Field24: u64 = 61420;
-/// `GetField10Field27CPtr` at 0x6ff250 (decompiler, high); signature (untiered): `undefined4 * GetField10Field27CPtr(longlong param_1)`
+/// `GetField10Field27CPtr` at 0x6ff250 (decompiler, high); signature (low): `undefined4 * GetField10Field27CPtr(longlong param_1)`
 pub const GetField10Field27CPtr: u64 = 39500;
-/// `GetField10Field28` at 0x6f2210 (decompiler, high); signature (untiered): `undefined8 GetField10Field28(longlong param_1)`
+/// `GetField10Field28` at 0x6f2210 (decompiler, high); signature (low): `undefined8 GetField10Field28(longlong param_1)`
 pub const GetField10Field28: u64 = 39274;
-/// `GetField10Field2AC` at 0x6f5e80 (decompiler, high); signature (untiered): `undefined4 GetField10Field2AC(longlong param_1)`
+/// `GetField10Field2AC` at 0x6f5e80 (decompiler, high); signature (low): `undefined4 GetField10Field2AC(longlong param_1)`
 pub const GetField10Field2AC: u64 = 39366;
 /// `GetField10Field2D8` at 0x6f6470 (decompiler, high); signature (high): `int GetField10Field2D8(longlong param_1)`
 pub const GetField10Field2D8: u64 = 39385;
-/// `GetField10Field314` at 0x6f6fa0 (decompiler, high); signature (untiered): `undefined4 GetField10Field314(longlong param_1)`
+/// `GetField10Field314` at 0x6f6fa0 (decompiler, high); signature (low): `undefined4 GetField10Field314(longlong param_1)`
 pub const GetField10Field314: u64 = 39412;
-/// `GetField10Field324` at 0x6f5220 (decompiler, high); signature (untiered): `undefined4 GetField10Field324(longlong param_1)`
+/// `GetField10Field324` at 0x6f5220 (decompiler, high); signature (low): `undefined4 GetField10Field324(longlong param_1)`
 pub const GetField10Field324: u64 = 39352;
-/// `GetField10Field328` at 0x7025a0 (decompiler, high); signature (untiered): `undefined4 GetField10Field328(longlong param_1)`
+/// `GetField10Field328` at 0x7025a0 (decompiler, high); signature (low): `undefined4 GetField10Field328(longlong param_1)`
 pub const GetField10Field328: u64 = 39603;
-/// `GetField10Field348` at 0x6ff3e0 (decompiler, medium); signature (untiered): `undefined8 GetField10Field348(longlong param_1)`
+/// `GetField10Field348` at 0x6ff3e0 (decompiler, medium); signature (low): `undefined8 GetField10Field348(longlong param_1)`
 pub const GetField10Field348: u64 = 39505;
-/// `GetField10Field358` at 0x6f5140 (decompiler, high); signature (untiered): `undefined8 GetField10Field358(longlong param_1)`
+/// `GetField10Field358` at 0x6f5140 (decompiler, high); signature (low): `undefined8 GetField10Field358(longlong param_1)`
 pub const GetField10Field358: u64 = 39345;
-/// `GetField10Field390` at 0x6fd9a0 (decompiler, high); signature (untiered): `undefined4 GetField10Field390(longlong param_1)`
+/// `GetField10Field390` at 0x6fd9a0 (decompiler, high); signature (low): `undefined4 GetField10Field390(longlong param_1)`
 pub const GetField10Field390: u64 = 39439;
-/// `GetField10Field3B0` at 0x6f71d0 (decompiler, high); signature (untiered): `undefined4 * GetField10Field3B0(longlong param_1, undefined4 * param_2)`
+/// `GetField10Field3B0` at 0x6f71d0 (decompiler, high); signature (low): `undefined4 * GetField10Field3B0(longlong param_1, undefined4 * param_2)`
 pub const GetField10Field3B0: u64 = 39423;
-/// `GetField10Field3C8` at 0x6ff360 (decompiler, high); signature (untiered): `undefined8 GetField10Field3C8(longlong param_1)`
+/// `GetField10Field3C8` at 0x6ff360 (decompiler, high); signature (low): `undefined8 GetField10Field3C8(longlong param_1)`
 pub const GetField10Field3C8: u64 = 39503;
-/// `GetField10Field440` at 0x701340 (decompiler, high); signature (untiered): `undefined8 GetField10Field440(longlong param_1)`
+/// `GetField10Field440` at 0x701340 (decompiler, high); signature (low): `undefined8 GetField10Field440(longlong param_1)`
 pub const GetField10Field440: u64 = 39558;
-/// `GetField10Field8` at 0x700060 (decompiler, high); signature (untiered): `undefined8 GetField10Field8(longlong param_1)`
+/// `GetField10Field8` at 0x700060 (decompiler, high); signature (low): `undefined8 GetField10Field8(longlong param_1)`
 pub const GetField10Field8: u64 = 39527;
-/// `GetField10Field88Ptr` at 0x702fb0 (decompiler, high); signature (untiered): `undefined4 * GetField10Field88Ptr(longlong param_1)`
+/// `GetField10Field88Ptr` at 0x702fb0 (decompiler, high); signature (low): `undefined4 * GetField10Field88Ptr(longlong param_1)`
 pub const GetField10Field88Ptr: u64 = 39615;
-/// `GetField10FieldB8Ptr` at 0x703030 (decompiler, high); signature (untiered): `undefined4 * GetField10FieldB8Ptr(longlong param_1)`
+/// `GetField10FieldB8Ptr` at 0x703030 (decompiler, high); signature (low): `undefined4 * GetField10FieldB8Ptr(longlong param_1)`
 pub const GetField10FieldB8Ptr: u64 = 39619;
-/// `GetField10FieldE8` at 0x701660 (decompiler, high); signature (untiered): `undefined8 GetField10FieldE8(longlong param_1)`
+/// `GetField10FieldE8` at 0x701660 (decompiler, high); signature (low): `undefined8 GetField10FieldE8(longlong param_1)`
 pub const GetField10FieldE8: u64 = 39576;
-/// `GetField10FirstDword` at 0x700020 (decompiler, high); signature (untiered): `undefined4 GetField10FirstDword(longlong param_1)`
+/// `GetField10FirstDword` at 0x700020 (decompiler, high); signature (low): `undefined4 GetField10FirstDword(longlong param_1)`
 pub const GetField10FirstDword: u64 = 39525;
-/// `GetField10Float288` at 0x6ff1e0 (decompiler, high); signature (untiered): `undefined4 GetField10Float288(longlong param_1)`
+/// `GetField10Float288` at 0x6ff1e0 (decompiler, high); signature (low): `undefined4 GetField10Float288(longlong param_1)`
 pub const GetField10Float288: u64 = 39497;
 /// `GetField10ForId` at 0xccbfd0 (decompiler, medium); signature (medium): `undefined4 GetField10ForId(longlong param_1, uint param_2)`
 pub const GetField10ForId: u64 = 67687;
-/// `GetField10Handle178` at 0x6ff1b0 (decompiler, high); signature (untiered): `undefined4 * GetField10Handle178(longlong param_1, undefined4 * param_2)`
+/// `GetField10Handle178` at 0x6ff1b0 (decompiler, high); signature (low): `undefined4 * GetField10Handle178(longlong param_1, undefined4 * param_2)`
 pub const GetField10Handle178: u64 = 39496;
-/// `GetField10HandleByIndex` at 0x6ff0a0 (decompiler, high); signature (untiered): `undefined4 * GetField10HandleByIndex(longlong param_1, undefined4 * param_2, int param_3)`
+/// `GetField10HandleByIndex` at 0x6ff0a0 (decompiler, high); signature (low): `undefined4 * GetField10HandleByIndex(longlong param_1, undefined4 * param_2, int param_3)`
 pub const GetField10HandleByIndex: u64 = 39485;
 /// `GetField10IfType1` at 0x4a35f0 (decompiler, high); signature (high): `undefined8 GetField10IfType1(longlong param_1)`
 pub const GetField10IfType1: u64 = 29805;
-/// `GetField10IfType4` at 0x4a3610 (decompiler, high); signature (untiered): `undefined8 GetField10IfType4(longlong param_1)`
+/// `GetField10IfType4` at 0x4a3610 (decompiler, high); signature (low): `undefined8 GetField10IfType4(longlong param_1)`
 pub const GetField10IfType4: u64 = 29806;
-/// `GetField10IfType5` at 0x4a3670 (decompiler, high); signature (untiered): `undefined4 GetField10IfType5(longlong param_1)`
+/// `GetField10IfType5` at 0x4a3670 (decompiler, high); signature (low): `undefined4 GetField10IfType5(longlong param_1)`
 pub const GetField10IfType5: u64 = 29809;
-/// `GetField10OfField20OfField10` at 0x2fa1f0 (decompiler, medium); signature (untiered): `undefined8 GetField10OfField20OfField10(longlong param_1)`
+/// `GetField10OfField20OfField10` at 0x2fa1f0 (decompiler, medium); signature (low): `undefined8 GetField10OfField20OfField10(longlong param_1)`
 pub const GetField10OfField20OfField10: u64 = 20015;
-/// `GetField10OfObjectAtField10` at 0xbdc7a0 (decompiler, medium); signature (untiered): `undefined8 GetField10OfObjectAtField10(longlong param_1)`
+/// `GetField10OfObjectAtField10` at 0xbdc7a0 (decompiler, medium); signature (low): `undefined8 GetField10OfObjectAtField10(longlong param_1)`
 pub const GetField10OfObjectAtField10: u64 = 63805;
-/// `GetField10OrDefault` at 0x532f30 (decompiler, medium); signature (untiered): `undefined1 * GetField10OrDefault(longlong param_1)`
+/// `GetField10OrDefault` at 0x532f30 (decompiler, medium); signature (low): `undefined1 * GetField10OrDefault(longlong param_1)`
 pub const GetField10OrDefault: u64 = 32343;
 /// `GetField10OrFirstOfField18` at 0x11b6dc0 (decompiler, medium); signature (medium): `longlong GetField10OrFirstOfField18(longlong param_1)`
 pub const GetField10OrFirstOfField18: u64 = 90356;
 /// `GetField10Plus14` at 0xcba340 (decompiler, high); signature (high): `longlong GetField10Plus14(longlong param_1)`
 pub const GetField10Plus14: u64 = 67375;
-/// `GetField10Plus220` at 0x704c50 (decompiler, high); signature (untiered): `longlong GetField10Plus220(longlong param_1)`
+/// `GetField10Plus220` at 0x704c50 (decompiler, high); signature (low): `longlong GetField10Plus220(longlong param_1)`
 pub const GetField10Plus220: u64 = 39636;
-/// `GetField10Plus238` at 0x704c30 (decompiler, high); signature (untiered): `longlong GetField10Plus238(longlong param_1)`
+/// `GetField10Plus238` at 0x704c30 (decompiler, high); signature (low): `longlong GetField10Plus238(longlong param_1)`
 pub const GetField10Plus238: u64 = 39635;
 /// `GetField10Plus28Address` at 0x148a10 (decompiler, medium); signature (medium): `longlong GetField10Plus28Address(longlong param_1)`
 pub const GetField10Plus28Address: u64 = 11015;
 /// `GetField10PlusA0OrGlobal410468` at 0x432b70 (decompiler, medium); signature (medium): `undefined4 * GetField10PlusA0OrGlobal410468(longlong param_1)`
 pub const GetField10PlusA0OrGlobal410468: u64 = 26834;
-/// `GetField10Point2DCOr2E8` at 0x6f66f0 (decompiler, medium); signature (untiered): `undefined4 * GetField10Point2DCOr2E8(longlong param_1, char param_2)`
+/// `GetField10Point2DCOr2E8` at 0x6f66f0 (decompiler, medium); signature (low): `undefined4 * GetField10Point2DCOr2E8(longlong param_1, char param_2)`
 pub const GetField10Point2DCOr2E8: u64 = 39394;
-/// `GetField10Ptr` at 0x12fc9e0 (decompiler, high); signature (untiered): `longlong GetField10Ptr(longlong param_1)`
+/// `GetField10Ptr` at 0x12fc9e0 (decompiler, high); signature (low): `longlong GetField10Ptr(longlong param_1)`
 pub const GetField10Ptr: u64 = 446839;
-/// `GetField10Ptr_2` at 0xf76a20 (decompiler, high); signature (untiered): `longlong GetField10Ptr_2(longlong param_1)`
+/// `GetField10Ptr_2` at 0xf76a20 (decompiler, high); signature (low): `longlong GetField10Ptr_2(longlong param_1)`
 pub const GetField10Ptr_2: u64 = 73336;
-/// `GetField10RefFromHandleE0` at 0x7015e0 (decompiler, medium); signature (untiered): `longlong GetField10RefFromHandleE0(longlong param_1)`
+/// `GetField10RefFromHandleE0` at 0x7015e0 (decompiler, medium); signature (low): `longlong GetField10RefFromHandleE0(longlong param_1)`
 pub const GetField10RefFromHandleE0: u64 = 39575;
 /// `GetField10RefHandle` at 0x6f6de0 (decompiler, high); signature (high): `undefined4 * GetField10RefHandle(longlong param_1, undefined4 * param_2)`
 pub const GetField10RefHandle: u64 = 39406;
-/// `GetField10RefOfType3E` at 0x78c890 (decompiler, medium); signature (untiered): `bool GetField10RefOfType3E(longlong param_1, longlong * param_2)`
+/// `GetField10RefOfType3E` at 0x78c890 (decompiler, medium); signature (low): `bool GetField10RefOfType3E(longlong param_1, longlong * param_2)`
 pub const GetField10RefOfType3E: u64 = 41526;
 /// `GetField10RotationTransposedWithScaledTranslation` at 0x805070 (decompiler, medium); signature (medium): `undefined GetField10RotationTransposedWithScaledTranslation(longlong param_1, undefined4 * param_2)`
 pub const GetField10RotationTransposedWithScaledTranslation: u64 = 44263;
 /// `GetField10TimesField14` at 0xcb8f00 (decompiler, high); signature (high): `int GetField10TimesField14(longlong param_1)`
 pub const GetField10TimesField14: u64 = 67347;
-/// `GetField10ValueAsByteOr7` at 0x645fa0 (decompiler, medium); signature (untiered): `int GetField10ValueAsByteOr7(longlong param_1)`
+/// `GetField10ValueAsByteOr7` at 0x645fa0 (decompiler, medium); signature (low): `int GetField10ValueAsByteOr7(longlong param_1)`
 pub const GetField10ValueAsByteOr7: u64 = 36299;
-/// `GetField10ValueForIndex18To1A` at 0x700140 (decompiler, high); signature (untiered): `undefined4 GetField10ValueForIndex18To1A(longlong param_1, int param_2)`
+/// `GetField10ValueForIndex18To1A` at 0x700140 (decompiler, high); signature (low): `undefined4 GetField10ValueForIndex18To1A(longlong param_1, int param_2)`
 pub const GetField10ValueForIndex18To1A: u64 = 39534;
-/// `GetField10_2` at 0x184b80 (decompiler, high); signature (untiered): `undefined8 GetField10_2(longlong param_1)`
+/// `GetField10_2` at 0x184b80 (decompiler, high); signature (low): `undefined8 GetField10_2(longlong param_1)`
 pub const GetField10_2: u64 = 12586;
-/// `GetField10_3` at 0xab1050 (decompiler, high); signature (untiered): `undefined8 GetField10_3(longlong param_1)`
+/// `GetField10_3` at 0xab1050 (decompiler, high); signature (low): `undefined8 GetField10_3(longlong param_1)`
 pub const GetField10_3: u64 = 57610;
-/// `GetField10_4` at 0xab7ea0 (decompiler, high); signature (untiered): `undefined8 GetField10_4(longlong param_1)`
+/// `GetField10_4` at 0xab7ea0 (decompiler, high); signature (low): `undefined8 GetField10_4(longlong param_1)`
 pub const GetField10_4: u64 = 57843;
 /// `GetField10_5` at 0xcb89a0 (decompiler, high); signature (high): `undefined4 GetField10_5(longlong param_1)`
 pub const GetField10_5: u64 = 67337;
 /// `GetField10_6` at 0x10ec690 (decompiler, high); signature (high): `undefined4 GetField10_6(longlong param_1)`
 pub const GetField10_6: u64 = 80783;
-/// `GetField10_7` at 0x1569310 (decompiler, high); signature (untiered): `undefined4 GetField10_7(longlong param_1)`
+/// `GetField10_7` at 0x1569310 (decompiler, high); signature (low): `undefined4 GetField10_7(longlong param_1)`
 pub const GetField10_7: u64 = 107779;
 /// `GetField110` at 0x6e9720 (decompiler, high); signature (high): `undefined4 * GetField110(longlong param_1, undefined4 * param_2)`
 pub const GetField110: u64 = 39137;
-/// `GetField110_2` at 0x11deea0 (decompiler, high); signature (untiered): `undefined8 GetField110_2(longlong param_1)`
+/// `GetField110_2` at 0x11deea0 (decompiler, high); signature (low): `undefined8 GetField110_2(longlong param_1)`
 pub const GetField110_2: u64 = 91061;
-/// `GetField110_3` at 0xb65800 (decompiler, high); signature (untiered): `undefined8 GetField110_3(longlong param_1)`
+/// `GetField110_3` at 0xb65800 (decompiler, high); signature (low): `undefined8 GetField110_3(longlong param_1)`
 pub const GetField110_3: u64 = 61625;
-/// `GetField110_4` at 0x11a16a0 (decompiler, high); signature (untiered): `undefined8 GetField110_4(longlong param_1)`
+/// `GetField110_4` at 0x11a16a0 (decompiler, high); signature (low): `undefined8 GetField110_4(longlong param_1)`
 pub const GetField110_4: u64 = 89540;
 /// `GetField114` at 0x6e9700 (decompiler, high); signature (high): `undefined4 * GetField114(longlong param_1, undefined4 * param_2)`
 pub const GetField114: u64 = 39136;
-/// `GetField118EntryLocked` at 0xff0350 (decompiler, high); signature (untiered): `undefined8 GetField118EntryLocked(longlong param_1, uint param_2)`
+/// `GetField118EntryLocked` at 0xff0350 (decompiler, high); signature (low): `undefined8 GetField118EntryLocked(longlong param_1, uint param_2)`
 pub const GetField118EntryLocked: u64 = 76608;
 /// `GetField118EntryOfField8` at 0x727420 (decompiler, high); signature (high): `undefined8 GetField118EntryOfField8(longlong param_1, int param_2)`
 pub const GetField118EntryOfField8: u64 = 39974;
@@ -1105,43 +705,43 @@ pub const GetField118EntryOfField8: u64 = 39974;
 pub const GetField11C: u64 = 39179;
 /// `GetField12` at 0x190bc0 (decompiler, high); signature (high): `undefined2 GetField12(longlong param_1)`
 pub const GetField12: u64 = 12957;
-/// `GetField120OfField10` at 0x1555400 (decompiler, medium); signature (untiered): `undefined8 GetField120OfField10(longlong param_1)`
+/// `GetField120OfField10` at 0x1555400 (decompiler, medium); signature (low): `undefined8 GetField120OfField10(longlong param_1)`
 pub const GetField120OfField10: u64 = 107491;
-/// `GetField120Ptr` at 0x12fc9f0 (decompiler, high); signature (untiered): `longlong GetField120Ptr(longlong param_1)`
+/// `GetField120Ptr` at 0x12fc9f0 (decompiler, high); signature (low): `longlong GetField120Ptr(longlong param_1)`
 pub const GetField120Ptr: u64 = 446840;
-/// `GetField128` at 0x6ea7f0 (decompiler, high); signature (untiered): `undefined8 GetField128(longlong param_1)`
+/// `GetField128` at 0x6ea7f0 (decompiler, high); signature (low): `undefined8 GetField128(longlong param_1)`
 pub const GetField128: u64 = 39173;
-/// `GetField128AsBSLightingShaderProperty` at 0x21cba0 (decompiler, medium); signature (untiered): `longlong * GetField128AsBSLightingShaderProperty(longlong * param_1)`
+/// `GetField128AsBSLightingShaderProperty` at 0x21cba0 (decompiler, medium); signature (low): `longlong * GetField128AsBSLightingShaderProperty(longlong * param_1)`
 pub const GetField128AsBSLightingShaderProperty: u64 = 15707;
-/// `GetField128EntryField20OrDefault` at 0xd611f0 (decompiler, medium); signature (untiered): `undefined4 * GetField128EntryField20OrDefault(longlong param_1, undefined4 * param_2, int param_3)`
+/// `GetField128EntryField20OrDefault` at 0xd611f0 (decompiler, medium); signature (low): `undefined4 * GetField128EntryField20OrDefault(longlong param_1, undefined4 * param_2, int param_3)`
 pub const GetField128EntryField20OrDefault: u64 = 84193;
-/// `GetField128OfRefField60ByHandle` at 0x191a00 (decompiler, medium); signature (untiered): `undefined8 GetField128OfRefField60ByHandle(uint * param_1)`
+/// `GetField128OfRefField60ByHandle` at 0x191a00 (decompiler, medium); signature (low): `undefined8 GetField128OfRefField60ByHandle(uint * param_1)`
 pub const GetField128OfRefField60ByHandle: u64 = 12976;
 /// `GetField128UnlessFlag40Bit0` at 0x294230 (decompiler, high); signature (high): `undefined8 GetField128UnlessFlag40Bit0(longlong param_1)`
 pub const GetField128UnlessFlag40Bit0: u64 = 18263;
-/// `GetField130` at 0x30f610 (decompiler, high); signature (untiered): `undefined8 GetField130(longlong param_1)`
+/// `GetField130` at 0x30f610 (decompiler, high); signature (low): `undefined8 GetField130(longlong param_1)`
 pub const GetField130: u64 = 20513;
 /// `GetField130Address` at 0x159af30 (decompiler, high); signature (high): `longlong GetField130Address(longlong param_1)`
 pub const GetField130Address: u64 = 109302;
 /// `GetField130ArrayEntry` at 0x2dcb30 (decompiler, medium); signature (medium): `undefined8 GetField130ArrayEntry(longlong param_1, uint param_2)`
 pub const GetField130ArrayEntry: u64 = 19478;
-/// `GetField130B0OrField128Field138` at 0x2cb160 (decompiler, medium); signature (untiered): `longlong GetField130B0OrField128Field138(longlong param_1)`
+/// `GetField130B0OrField128Field138` at 0x2cb160 (decompiler, medium); signature (low): `longlong GetField130B0OrField128Field138(longlong param_1)`
 pub const GetField130B0OrField128Field138: u64 = 19171;
-/// `GetField130Byte32Bits2To3` at 0xb4b240 (decompiler, high); signature (untiered): `byte * GetField130Byte32Bits2To3(longlong param_1, byte * param_2)`
+/// `GetField130Byte32Bits2To3` at 0xb4b240 (decompiler, high); signature (low): `byte * GetField130Byte32Bits2To3(longlong param_1, byte * param_2)`
 pub const GetField130Byte32Bits2To3: u64 = 60853;
-/// `GetField130D0OrField128Field140` at 0x2cb190 (decompiler, medium); signature (untiered): `longlong GetField130D0OrField128Field140(longlong param_1)`
+/// `GetField130D0OrField128Field140` at 0x2cb190 (decompiler, medium); signature (low): `longlong GetField130D0OrField128Field140(longlong param_1)`
 pub const GetField130D0OrField128Field140: u64 = 19172;
 /// `GetField130Field16C` at 0x2c97a0 (decompiler, high); signature (high): `undefined4 GetField130Field16C(longlong param_1)`
 pub const GetField130Field16C: u64 = 19153;
-/// `GetField130Field170` at 0x2c9700 (decompiler, high); signature (untiered): `undefined4 GetField130Field170(longlong param_1)`
+/// `GetField130Field170` at 0x2c9700 (decompiler, high); signature (low): `undefined4 GetField130Field170(longlong param_1)`
 pub const GetField130Field170: u64 = 19149;
-/// `GetField130Field8ArrayEntry4` at 0x2d4580 (decompiler, medium); signature (untiered): `undefined8 GetField130Field8ArrayEntry4(longlong param_1)`
+/// `GetField130Field8ArrayEntry4` at 0x2d4580 (decompiler, medium); signature (low): `undefined8 GetField130Field8ArrayEntry4(longlong param_1)`
 pub const GetField130Field8ArrayEntry4: u64 = 19339;
-/// `GetField130OfField10` at 0x6fe000 (decompiler, medium); signature (untiered): `undefined4 GetField130OfField10(longlong param_1)`
+/// `GetField130OfField10` at 0x6fe000 (decompiler, medium); signature (low): `undefined4 GetField130OfField10(longlong param_1)`
 pub const GetField130OfField10: u64 = 39451;
-/// `GetField130Plus100` at 0x2da3b0 (decompiler, medium); signature (untiered): `longlong GetField130Plus100(longlong param_1)`
+/// `GetField130Plus100` at 0x2da3b0 (decompiler, medium); signature (low): `longlong GetField130Plus100(longlong param_1)`
 pub const GetField130Plus100: u64 = 19436;
-/// `GetField130ValueOrOwnerField130` at 0x2caec0 (decompiler, medium); signature (untiered): `longlong GetField130ValueOrOwnerField130(longlong param_1)`
+/// `GetField130ValueOrOwnerField130` at 0x2caec0 (decompiler, medium); signature (low): `longlong GetField130ValueOrOwnerField130(longlong param_1)`
 pub const GetField130ValueOrOwnerField130: u64 = 19167;
 /// `GetField138IfFormType3CWithBit0OfField40` at 0x6767e0 (decompiler, high); signature (high): `longlong GetField138IfFormType3CWithBit0OfField40(longlong param_1)`
 pub const GetField138IfFormType3CWithBit0OfField40: u64 = 37299;
@@ -1153,11 +753,11 @@ pub const GetField138PrefixSum: u64 = 71713;
 pub const GetField139: u64 = 39129;
 /// `GetField13A` at 0x6eb4e0 (decompiler, high); signature (high): `undefined1 GetField13A(longlong param_1)`
 pub const GetField13A: u64 = 39197;
-/// `GetField14` at 0xab17f0 (decompiler, high); signature (untiered): `undefined4 GetField14(longlong param_1)`
+/// `GetField14` at 0xab17f0 (decompiler, high); signature (low): `undefined4 GetField14(longlong param_1)`
 pub const GetField14: u64 = 57629;
 /// `GetField140UnlessByte149` at 0x101bd00 (decompiler, medium); signature (medium): `undefined4 GetField140UnlessByte149(longlong param_1)`
 pub const GetField140UnlessByte149: u64 = 77498;
-/// `GetField148` at 0x1a2610 (decompiler, high); signature (untiered): `undefined8 GetField148(longlong param_1)`
+/// `GetField148` at 0x1a2610 (decompiler, high); signature (low): `undefined8 GetField148(longlong param_1)`
 pub const GetField148: u64 = 13314;
 /// `GetField148ByKey` at 0x128fd20 (decompiler, medium); signature (medium): `undefined4 GetField148ByKey(ulonglong param_1)`
 pub const GetField148ByKey: u64 = 445193;
@@ -1165,7 +765,7 @@ pub const GetField148ByKey: u64 = 445193;
 pub const GetField148EntryAt: u64 = 106361;
 /// `GetField148Locked` at 0x13052c0 (decompiler, high); signature (high): `undefined4 GetField148Locked(longlong param_1)`
 pub const GetField148Locked: u64 = 446979;
-/// `GetField148OfRootMount` at 0x6a5540 (decompiler, medium); signature (untiered): `undefined8 GetField148OfRootMount(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetField148OfRootMount` at 0x6a5540 (decompiler, medium); signature (low): `undefined8 GetField148OfRootMount(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetField148OfRootMount: u64 = 37799;
 /// `GetField148OfRootMount_2` at 0x6b5150 (decompiler, high); signature (untiered): `undefined8 GetField148OfRootMount_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetField148OfRootMount_2: u64 = 38016;
@@ -1177,7 +777,7 @@ pub const GetField14Address_2: u64 = 65008;
 pub const GetField14CLocked: u64 = 446983;
 /// `GetField14MinusField18Locked` at 0x196f90 (decompiler, medium); signature (medium): `int GetField14MinusField18Locked(longlong param_1)`
 pub const GetField14MinusField18Locked: u64 = 13070;
-/// `GetField14OfField30` at 0x3b7b60 (decompiler, high); signature (untiered): `undefined4 GetField14OfField30(longlong param_1)`
+/// `GetField14OfField30` at 0x3b7b60 (decompiler, high); signature (low): `undefined4 GetField14OfField30(longlong param_1)`
 pub const GetField14OfField30: u64 = 24573;
 /// `GetField14_2` at 0xcb9300 (decompiler, high); signature (high): `undefined4 GetField14_2(longlong param_1)`
 pub const GetField14_2: u64 = 67350;
@@ -1185,27 +785,27 @@ pub const GetField14_2: u64 = 67350;
 pub const GetField14_3: u64 = 82715;
 /// `GetField14_4` at 0x10ec6b0 (decompiler, high); signature (high): `undefined4 GetField14_4(longlong param_1)`
 pub const GetField14_4: u64 = 80784;
-/// `GetField150Address_2` at 0x159af20 (decompiler, high); signature (untiered): `longlong GetField150Address_2(longlong param_1)`
+/// `GetField150Address_2` at 0x159af20 (decompiler, high); signature (low): `longlong GetField150Address_2(longlong param_1)`
 pub const GetField150Address_2: u64 = 109301;
-/// `GetField158` at 0x30e090 (decompiler, high); signature (untiered): `undefined8 GetField158(longlong param_1)`
+/// `GetField158` at 0x30e090 (decompiler, high); signature (low): `undefined8 GetField158(longlong param_1)`
 pub const GetField158: u64 = 20491;
-/// `GetField158IfBitSetInFieldA2` at 0x30e050 (decompiler, medium); signature (untiered): `longlong GetField158IfBitSetInFieldA2(longlong param_1, uint param_2)`
+/// `GetField158IfBitSetInFieldA2` at 0x30e050 (decompiler, medium); signature (low): `longlong GetField158IfBitSetInFieldA2(longlong param_1, uint param_2)`
 pub const GetField158IfBitSetInFieldA2: u64 = 20490;
 /// `GetField158Ptr` at 0xe4df10 (decompiler, medium); signature (medium): `longlong GetField158Ptr(longlong param_1)`
 pub const GetField158Ptr: u64 = 88615;
 /// `GetField168Byte18OrDefault` at 0x28e7d0 (decompiler, high); signature (high): `undefined1 GetField168Byte18OrDefault(longlong param_1)`
 pub const GetField168Byte18OrDefault: u64 = 18146;
-/// `GetField168FromParentChainOrDefault` at 0x30e430 (decompiler, medium); signature (untiered): `longlong GetField168FromParentChainOrDefault(longlong param_1)`
+/// `GetField168FromParentChainOrDefault` at 0x30e430 (decompiler, medium); signature (low): `longlong GetField168FromParentChainOrDefault(longlong param_1)`
 pub const GetField168FromParentChainOrDefault: u64 = 20499;
 /// `GetField168OfField8` at 0x728e30 (decompiler, high); signature (high): `undefined8 GetField168OfField8(longlong param_1)`
 pub const GetField168OfField8: u64 = 40046;
-/// `GetField168OrOneIfFlag171` at 0x51a6c0 (decompiler, high); signature (untiered): `undefined4 GetField168OrOneIfFlag171(longlong param_1)`
+/// `GetField168OrOneIfFlag171` at 0x51a6c0 (decompiler, high); signature (low): `undefined4 GetField168OrOneIfFlag171(longlong param_1)`
 pub const GetField168OrOneIfFlag171: u64 = 31870;
 /// `GetField170Address` at 0x77e400 (decompiler, high); signature (high): `longlong GetField170Address(longlong param_1)`
 pub const GetField170Address: u64 = 41319;
 /// `GetField170OfField8` at 0x727ae0 (decompiler, high); signature (high): `undefined8 GetField170OfField8(longlong param_1)`
 pub const GetField170OfField8: u64 = 39989;
-/// `GetField178Element` at 0x158e0a0 (decompiler, high); signature (untiered): `undefined4 GetField178Element(longlong param_1, uint param_2)`
+/// `GetField178Element` at 0x158e0a0 (decompiler, high); signature (low): `undefined4 GetField178Element(longlong param_1, uint param_2)`
 pub const GetField178Element: u64 = 109003;
 /// `GetField17C` at 0x159aeb0 (decompiler, high); signature (high): `undefined4 GetField17C(longlong param_1)`
 pub const GetField17C: u64 = 109299;
@@ -1213,41 +813,41 @@ pub const GetField17C: u64 = 109299;
 pub const GetField18: u64 = 62047;
 /// `GetField180` at 0x159aea0 (decompiler, high); signature (high): `undefined4 GetField180(longlong param_1)`
 pub const GetField180: u64 = 109298;
-/// `GetField180ObjectField60` at 0xd91f90 (decompiler, medium); signature (untiered): `undefined8 GetField180ObjectField60(longlong param_1)`
+/// `GetField180ObjectField60` at 0xd91f90 (decompiler, medium); signature (low): `undefined8 GetField180ObjectField60(longlong param_1)`
 pub const GetField180ObjectField60: u64 = 85642;
-/// `GetField180ObjectStringLength` at 0xd91f30 (decompiler, medium); signature (untiered): `ulonglong GetField180ObjectStringLength(longlong param_1)`
+/// `GetField180ObjectStringLength` at 0xd91f30 (decompiler, medium); signature (low): `ulonglong GetField180ObjectStringLength(longlong param_1)`
 pub const GetField180ObjectStringLength: u64 = 85641;
 /// `GetField180OfField8` at 0x727200 (decompiler, high); signature (high): `undefined8 GetField180OfField8(longlong param_1)`
 pub const GetField180OfField8: u64 = 39966;
-/// `GetField1871` at 0x12fe170 (decompiler, high); signature (untiered): `undefined1 GetField1871(longlong param_1)`
+/// `GetField1871` at 0x12fe170 (decompiler, high); signature (low): `undefined1 GetField1871(longlong param_1)`
 pub const GetField1871: u64 = 446890;
 /// `GetField1873` at 0x12fe180 (decompiler, high); signature (high): `undefined1 GetField1873(longlong param_1)`
 pub const GetField1873: u64 = 525806;
 /// `GetField1874` at 0x12fe140 (decompiler, high); signature (high): `undefined1 GetField1874(longlong param_1)`
 pub const GetField1874: u64 = 525804;
-/// `GetField188` at 0x159aed0 (decompiler, high); signature (untiered): `undefined1 GetField188(longlong param_1)`
+/// `GetField188` at 0x159aed0 (decompiler, high); signature (low): `undefined1 GetField188(longlong param_1)`
 pub const GetField188: u64 = 109300;
-/// `GetField1888` at 0x12fe150 (decompiler, high); signature (untiered): `undefined1 GetField1888(longlong param_1)`
+/// `GetField1888` at 0x12fe150 (decompiler, high); signature (low): `undefined1 GetField1888(longlong param_1)`
 pub const GetField1888: u64 = 525805;
 /// `GetField18Address` at 0xd94150 (decompiler, high); signature (high): `longlong GetField18Address(longlong param_1)`
 pub const GetField18Address: u64 = 85666;
-/// `GetField18ByNameRecursive` at 0xe5b900 (decompiler, medium); signature (untiered): `ulonglong GetField18ByNameRecursive(longlong param_1, longlong param_2)`
+/// `GetField18ByNameRecursive` at 0xe5b900 (decompiler, medium); signature (low): `ulonglong GetField18ByNameRecursive(longlong param_1, longlong param_2)`
 pub const GetField18ByNameRecursive: u64 = 89132;
-/// `GetField18Entry` at 0xab1920 (decompiler, high); signature (untiered): `longlong GetField18Entry(longlong param_1, int param_2)`
+/// `GetField18Entry` at 0xab1920 (decompiler, high); signature (low): `longlong GetField18Entry(longlong param_1, int param_2)`
 pub const GetField18Entry: u64 = 57633;
-/// `GetField18EntryByIndexInParentChain` at 0xab1800 (decompiler, medium); signature (untiered): `longlong GetField18EntryByIndexInParentChain(longlong param_1, int param_2)`
+/// `GetField18EntryByIndexInParentChain` at 0xab1800 (decompiler, medium); signature (low): `longlong GetField18EntryByIndexInParentChain(longlong param_1, int param_2)`
 pub const GetField18EntryByIndexInParentChain: u64 = 57630;
 /// `GetField18FloatAt34AsInt` at 0x645fc0 (decompiler, medium); signature (medium): `int GetField18FloatAt34AsInt(longlong param_1)`
 pub const GetField18FloatAt34AsInt: u64 = 36300;
-/// `GetField18OfFieldB8OrB0` at 0x1048960 (decompiler, medium); signature (untiered): `undefined4 GetField18OfFieldB8OrB0(longlong param_1)`
+/// `GetField18OfFieldB8OrB0` at 0x1048960 (decompiler, medium); signature (low): `undefined4 GetField18OfFieldB8OrB0(longlong param_1)`
 pub const GetField18OfFieldB8OrB0: u64 = 77824;
-/// `GetField18OfFieldF8Field10` at 0x6d92b0 (decompiler, high); signature (untiered): `undefined4 GetField18OfFieldF8Field10(longlong param_1)`
+/// `GetField18OfFieldF8Field10` at 0x6d92b0 (decompiler, high); signature (low): `undefined4 GetField18OfFieldF8Field10(longlong param_1)`
 pub const GetField18OfFieldF8Field10: u64 = 38808;
-/// `GetField18OrEmptyFixedString` at 0xec8ef0 (decompiler, medium); signature (untiered): `undefined8 * GetField18OrEmptyFixedString(longlong param_1)`
+/// `GetField18OrEmptyFixedString` at 0xec8ef0 (decompiler, medium); signature (low): `undefined8 * GetField18OrEmptyFixedString(longlong param_1)`
 pub const GetField18OrEmptyFixedString: u64 = 69700;
 /// `GetField18OrSelf` at 0x73f650 (decompiler, high); signature (high): `longlong GetField18OrSelf(longlong param_1)`
 pub const GetField18OrSelf: u64 = 40410;
-/// `GetField18_2` at 0x40b710 (decompiler, high); signature (untiered): `undefined8 GetField18_2(longlong param_1)`
+/// `GetField18_2` at 0x40b710 (decompiler, high); signature (low): `undefined8 GetField18_2(longlong param_1)`
 pub const GetField18_2: u64 = 26141;
 /// `GetField18_3` at 0x438cd0 (decompiler, high); signature (high): `undefined8 GetField18_3(longlong param_1)`
 pub const GetField18_3: u64 = 26940;
@@ -1261,29 +861,29 @@ pub const GetField198: u64 = 109303;
 pub const GetField1A: u64 = 57611;
 /// `GetField1A8Entry` at 0x6d4d20 (decompiler, high); signature (high): `undefined8 GetField1A8Entry(longlong param_1, int param_2)`
 pub const GetField1A8Entry: u64 = 523940;
-/// `GetField1B0OfField8` at 0x7219f0 (decompiler, high); signature (untiered): `undefined8 GetField1B0OfField8(longlong param_1)`
+/// `GetField1B0OfField8` at 0x7219f0 (decompiler, high); signature (low): `undefined8 GetField1B0OfField8(longlong param_1)`
 pub const GetField1B0OfField8: u64 = 39842;
-/// `GetField1C` at 0xf43940 (decompiler, high); signature (untiered): `undefined4 GetField1C(longlong param_1)`
+/// `GetField1C` at 0xf43940 (decompiler, high); signature (low): `undefined4 GetField1C(longlong param_1)`
 pub const GetField1C: u64 = 72275;
 /// `GetField1C0Locked` at 0xd80600 (decompiler, high); signature (high): `undefined4 GetField1C0Locked(longlong param_1)`
 pub const GetField1C0Locked: u64 = 85333;
-/// `GetField1C0OfField40` at 0x686640 (decompiler, high); signature (untiered): `undefined8 GetField1C0OfField40(longlong param_1)`
+/// `GetField1C0OfField40` at 0x686640 (decompiler, high); signature (low): `undefined8 GetField1C0OfField40(longlong param_1)`
 pub const GetField1C0OfField40: u64 = 37467;
-/// `GetField1C0OrField128ByFormType` at 0x1d2390 (decompiler, medium); signature (untiered): `longlong GetField1C0OrField128ByFormType(longlong param_1)`
+/// `GetField1C0OrField128ByFormType` at 0x1d2390 (decompiler, medium); signature (low): `longlong GetField1C0OrField128ByFormType(longlong param_1)`
 pub const GetField1C0OrField128ByFormType: u64 = 14128;
 /// `GetField1DOrField28NonNegative` at 0xe76fb0 (decompiler, medium); signature (medium): `int GetField1DOrField28NonNegative(int * param_1)`
 pub const GetField1DOrField28NonNegative: u64 = 89341;
-/// `GetField1E8IfFormType16` at 0x6d7090 (decompiler, high); signature (untiered): `longlong GetField1E8IfFormType16(longlong param_1)`
+/// `GetField1E8IfFormType16` at 0x6d7090 (decompiler, high); signature (low): `longlong GetField1E8IfFormType16(longlong param_1)`
 pub const GetField1E8IfFormType16: u64 = 38772;
 /// `GetField1E8UnderSpinLock` at 0x4d3f50 (decompiler, high); signature (high): `undefined4 GetField1E8UnderSpinLock(longlong param_1)`
 pub const GetField1E8UnderSpinLock: u64 = 30576;
 /// `GetField1F8Field108Bit9` at 0x6a03b0 (decompiler, high); signature (high): `uint GetField1F8Field108Bit9(longlong param_1)`
 pub const GetField1F8Field108Bit9: u64 = 37723;
-/// `GetField1F8Field14C` at 0x6874a0 (decompiler, high); signature (untiered): `undefined4 GetField1F8Field14C(longlong param_1)`
+/// `GetField1F8Field14C` at 0x6874a0 (decompiler, high); signature (low): `undefined4 GetField1F8Field14C(longlong param_1)`
 pub const GetField1F8Field14C: u64 = 37478;
-/// `GetField1F8Field268OrGlobalDefault` at 0x671af0 (decompiler, medium); signature (untiered): `longlong GetField1F8Field268OrGlobalDefault(longlong param_1)`
+/// `GetField1F8Field268OrGlobalDefault` at 0x671af0 (decompiler, medium); signature (low): `longlong GetField1F8Field268OrGlobalDefault(longlong param_1)`
 pub const GetField1F8Field268OrGlobalDefault: u64 = 37181;
-/// `GetField1FCOfField10` at 0x6fde30 (decompiler, high); signature (untiered): `undefined4 GetField1FCOfField10(longlong param_1)`
+/// `GetField1FCOfField10` at 0x6fde30 (decompiler, high); signature (low): `undefined4 GetField1FCOfField10(longlong param_1)`
 pub const GetField1FCOfField10: u64 = 39448;
 /// `GetField2` at 0x222d70 (decompiler, high); signature (high): `undefined2 GetField2(longlong param_1)`
 pub const GetField2: u64 = 15830;
@@ -1295,75 +895,75 @@ pub const GetField200UnderSpinLock: u64 = 30579;
 pub const GetField20Address: u64 = 62637;
 /// `GetField20Address_2` at 0xb86ba0 (decompiler, high); signature (high): `longlong GetField20Address_2(longlong param_1)`
 pub const GetField20Address_2: u64 = 62278;
-/// `GetField20AsRigidBody` at 0x2fa190 (decompiler, high); signature (untiered): `longlong * GetField20AsRigidBody(longlong param_1)`
+/// `GetField20AsRigidBody` at 0x2fa190 (decompiler, high); signature (low): `longlong * GetField20AsRigidBody(longlong param_1)`
 pub const GetField20AsRigidBody: u64 = 20014;
-/// `GetField20OfChainRoot` at 0x49f280 (decompiler, medium); signature (untiered): `undefined8 GetField20OfChainRoot(longlong param_1)`
+/// `GetField20OfChainRoot` at 0x49f280 (decompiler, medium); signature (low): `undefined8 GetField20OfChainRoot(longlong param_1)`
 pub const GetField20OfChainRoot: u64 = 29659;
 /// `GetField20OfField10` at 0x1093370 (decompiler, high); signature (high): `undefined GetField20OfField10(longlong param_1, undefined8 * param_2)`
 pub const GetField20OfField10: u64 = 79066;
-/// `GetField20OfField40` at 0x1257e50 (decompiler, high); signature (untiered): `undefined8 GetField20OfField40(longlong param_1)`
+/// `GetField20OfField40` at 0x1257e50 (decompiler, high); signature (low): `undefined8 GetField20OfField40(longlong param_1)`
 pub const GetField20OfField40: u64 = 524318;
 /// `GetField20OfPtrOrInline10` at 0x116f610 (decompiler, high); signature (high): `longlong GetField20OfPtrOrInline10(longlong * param_1)`
 pub const GetField20OfPtrOrInline10: u64 = 82322;
-/// `GetField20Ptr` at 0x11b7070 (decompiler, high); signature (untiered): `longlong GetField20Ptr(longlong param_1)`
+/// `GetField20Ptr` at 0x11b7070 (decompiler, high); signature (low): `longlong GetField20Ptr(longlong param_1)`
 pub const GetField20Ptr: u64 = 90364;
-/// `GetField20Ref` at 0x558e10 (decompiler, medium); signature (untiered): `bool GetField20Ref(longlong param_1, longlong * param_2)`
+/// `GetField20Ref` at 0x558e10 (decompiler, medium); signature (low): `bool GetField20Ref(longlong param_1, longlong * param_2)`
 pub const GetField20Ref: u64 = 33024;
-/// `GetField20RefPtr` at 0x45f4d0 (decompiler, high); signature (untiered): `undefined GetField20RefPtr(longlong param_1, longlong * param_2)`
+/// `GetField20RefPtr` at 0x45f4d0 (decompiler, high); signature (low): `undefined GetField20RefPtr(longlong param_1, longlong * param_2)`
 pub const GetField20RefPtr: u64 = 28312;
-/// `GetField20StringUnderSharedLock` at 0x1308740 (decompiler, medium); signature (untiered): `undefined1 * GetField20StringUnderSharedLock(longlong param_1)`
+/// `GetField20StringUnderSharedLock` at 0x1308740 (decompiler, medium); signature (low): `undefined1 * GetField20StringUnderSharedLock(longlong param_1)`
 pub const GetField20StringUnderSharedLock: u64 = 448083;
-/// `GetField20TargetPosition` at 0x6e81d0 (decompiler, medium); signature (untiered): `undefined4 * GetField20TargetPosition(longlong param_1, undefined4 * param_2, longlong * param_3)`
+/// `GetField20TargetPosition` at 0x6e81d0 (decompiler, medium); signature (low): `undefined4 * GetField20TargetPosition(longlong param_1, undefined4 * param_2, longlong * param_3)`
 pub const GetField20TargetPosition: u64 = 39113;
-/// `GetField20UnderWorldReadLock` at 0x1049b50 (decompiler, medium); signature (untiered): `undefined4 * GetField20UnderWorldReadLock(longlong * param_1)`
+/// `GetField20UnderWorldReadLock` at 0x1049b50 (decompiler, medium); signature (low): `undefined4 * GetField20UnderWorldReadLock(longlong * param_1)`
 pub const GetField20UnderWorldReadLock: u64 = 77838;
 /// `GetField20UnlessField10Set` at 0x12ed840 (decompiler, medium); signature (medium): `undefined8 GetField20UnlessField10Set(longlong param_1)`
 pub const GetField20UnlessField10Set: u64 = 446617;
 /// `GetField20_2` at 0xb98910 (decompiler, high); signature (high): `undefined8 GetField20_2(longlong param_1)`
 pub const GetField20_2: u64 = 62451;
-/// `GetField20_3` at 0x295600 (decompiler, high); signature (untiered): `undefined4 GetField20_3(longlong param_1)`
+/// `GetField20_3` at 0x295600 (decompiler, high); signature (low): `undefined4 GetField20_3(longlong param_1)`
 pub const GetField20_3: u64 = 18287;
 /// `GetField20_4` at 0x159b4f0 (decompiler, high); signature (high): `undefined2 GetField20_4(longlong param_1)`
 pub const GetField20_4: u64 = 109330;
-/// `GetField20_5` at 0xab19c0 (decompiler, high); signature (untiered): `undefined4 GetField20_5(longlong param_1)`
+/// `GetField20_5` at 0xab19c0 (decompiler, high); signature (low): `undefined4 GetField20_5(longlong param_1)`
 pub const GetField20_5: u64 = 57635;
 /// `GetField20_6` at 0xf43950 (decompiler, high); signature (high): `undefined4 GetField20_6(longlong param_1)`
 pub const GetField20_6: u64 = 72276;
-/// `GetField210StringOrGlobal400868` at 0x28c280 (decompiler, medium); signature (untiered): `undefined * GetField210StringOrGlobal400868(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetField210StringOrGlobal400868` at 0x28c280 (decompiler, medium); signature (low): `undefined * GetField210StringOrGlobal400868(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetField210StringOrGlobal400868: u64 = 18097;
-/// `GetField210ViaField158Chain` at 0x30de30 (decompiler, medium); signature (untiered): `undefined4 GetField210ViaField158Chain(longlong param_1)`
+/// `GetField210ViaField158Chain` at 0x30de30 (decompiler, medium); signature (low): `undefined4 GetField210ViaField158Chain(longlong param_1)`
 pub const GetField210ViaField158Chain: u64 = 20483;
-/// `GetField214FromParentChain` at 0x30de80 (decompiler, medium); signature (untiered): `undefined4 GetField214FromParentChain(longlong param_1)`
+/// `GetField214FromParentChain` at 0x30de80 (decompiler, medium); signature (low): `undefined4 GetField214FromParentChain(longlong param_1)`
 pub const GetField214FromParentChain: u64 = 20484;
-/// `GetField218` at 0xbd02e0 (decompiler, high); signature (untiered): `undefined8 GetField218(longlong param_1)`
+/// `GetField218` at 0xbd02e0 (decompiler, high); signature (low): `undefined8 GetField218(longlong param_1)`
 pub const GetField218: u64 = 63597;
 /// `GetField22` at 0x159b500 (decompiler, high); signature (high): `undefined2 GetField22(longlong param_1)`
 pub const GetField22: u64 = 109331;
-/// `GetField228OfField8` at 0x7252a0 (decompiler, high); signature (untiered): `undefined8 GetField228OfField8(longlong param_1)`
+/// `GetField228OfField8` at 0x7252a0 (decompiler, high); signature (low): `undefined8 GetField228OfField8(longlong param_1)`
 pub const GetField228OfField8: u64 = 39913;
-/// `GetField228OrResolveFromField220` at 0x30e3b0 (decompiler, medium); signature (untiered): `longlong GetField228OrResolveFromField220(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetField228OrResolveFromField220` at 0x30e3b0 (decompiler, medium); signature (low): `longlong GetField228OrResolveFromField220(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetField228OrResolveFromField220: u64 = 20498;
-/// `GetField24` at 0x295680 (decompiler, high); signature (untiered): `undefined4 GetField24(longlong param_1)`
+/// `GetField24` at 0x295680 (decompiler, high); signature (low): `undefined4 GetField24(longlong param_1)`
 pub const GetField24: u64 = 18289;
-/// `GetField240OfField8` at 0x71fe20 (decompiler, high); signature (untiered): `undefined8 GetField240OfField8(longlong param_1)`
+/// `GetField240OfField8` at 0x71fe20 (decompiler, high); signature (low): `undefined8 GetField240OfField8(longlong param_1)`
 pub const GetField240OfField8: u64 = 39793;
-/// `GetField24A0ViaVfuncA8` at 0xd33a90 (decompiler, medium); signature (untiered): `undefined8 GetField24A0ViaVfuncA8(longlong * param_1)`
+/// `GetField24A0ViaVfuncA8` at 0xd33a90 (decompiler, medium); signature (low): `undefined8 GetField24A0ViaVfuncA8(longlong * param_1)`
 pub const GetField24A0ViaVfuncA8: u64 = 83483;
 /// `GetField24Address` at 0xf43960 (decompiler, high); signature (high): `longlong GetField24Address(longlong param_1)`
 pub const GetField24Address: u64 = 72277;
 /// `GetField24Locked` at 0x643940 (decompiler, high); signature (high): `undefined4 GetField24Locked(longlong param_1)`
 pub const GetField24Locked: u64 = 36220;
-/// `GetField24Minus4000` at 0xd31370 (decompiler, medium); signature (untiered): `undefined GetField24Minus4000(longlong param_1)`
+/// `GetField24Minus4000` at 0xd31370 (decompiler, medium); signature (low): `undefined GetField24Minus4000(longlong param_1)`
 pub const GetField24Minus4000: u64 = 83431;
 /// `GetField25` at 0x498840 (decompiler, high); signature (high): `int GetField25(longlong param_1)`
 pub const GetField25: u64 = 29541;
-/// `GetField250OfField8` at 0x722110 (decompiler, high); signature (untiered): `undefined8 GetField250OfField8(longlong param_1)`
+/// `GetField250OfField8` at 0x722110 (decompiler, high); signature (low): `undefined8 GetField250OfField8(longlong param_1)`
 pub const GetField250OfField8: u64 = 39856;
-/// `GetField258Element` at 0x3bf300 (decompiler, high); signature (untiered): `undefined4 GetField258Element(longlong param_1, int param_2)`
+/// `GetField258Element` at 0x3bf300 (decompiler, high); signature (low): `undefined4 GetField258Element(longlong param_1, int param_2)`
 pub const GetField258Element: u64 = 24688;
 /// `GetField258IntArray4CEntry` at 0x3bf400 (decompiler, high); signature (high): `undefined4 GetField258IntArray4CEntry(longlong param_1, int param_2)`
 pub const GetField258IntArray4CEntry: u64 = 24690;
-/// `GetField258OfField10OrDefault` at 0x700c60 (decompiler, medium); signature (untiered): `undefined8 * GetField258OfField10OrDefault(longlong param_1)`
+/// `GetField258OfField10OrDefault` at 0x700c60 (decompiler, medium); signature (low): `undefined8 * GetField258OfField10OrDefault(longlong param_1)`
 pub const GetField258OfField10OrDefault: u64 = 39540;
 /// `GetField258OfField8` at 0x722210 (decompiler, medium); signature (medium): `bool GetField258OfField8(longlong param_1, longlong * param_2)`
 pub const GetField258OfField8: u64 = 39859;
@@ -1373,13 +973,13 @@ pub const GetField26: u64 = 29543;
 pub const GetField268OfField8: u64 = 39807;
 /// `GetField268OrDefault` at 0x3e6250 (decompiler, high); signature (high): `longlong GetField268OrDefault(longlong param_1)`
 pub const GetField268OrDefault: u64 = 25304;
-/// `GetField278IfType4Or5` at 0xb4d460 (decompiler, high); signature (untiered): `undefined8 GetField278IfType4Or5(longlong param_1)`
+/// `GetField278IfType4Or5` at 0xb4d460 (decompiler, high); signature (low): `undefined8 GetField278IfType4Or5(longlong param_1)`
 pub const GetField278IfType4Or5: u64 = 60909;
-/// `GetField28` at 0x1872c0 (decompiler, high); signature (untiered): `undefined8 GetField28(longlong param_1)`
+/// `GetField28` at 0x1872c0 (decompiler, high); signature (low): `undefined8 GetField28(longlong param_1)`
 pub const GetField28: u64 = 12711;
-/// `GetField28AndField20` at 0xf1c2c0 (decompiler, medium); signature (untiered): `undefined8 GetField28AndField20(longlong param_1, undefined4 * param_2)`
+/// `GetField28AndField20` at 0xf1c2c0 (decompiler, medium); signature (low): `undefined8 GetField28AndField20(longlong param_1, undefined4 * param_2)`
 pub const GetField28AndField20: u64 = 71727;
-/// `GetField28ArrayEntryOrOverride` at 0x2bc750 (decompiler, medium); signature (untiered): `undefined4 GetField28ArrayEntryOrOverride(longlong param_1, int param_2)`
+/// `GetField28ArrayEntryOrOverride` at 0x2bc750 (decompiler, medium); signature (low): `undefined4 GetField28ArrayEntryOrOverride(longlong param_1, int param_2)`
 pub const GetField28ArrayEntryOrOverride: u64 = 18965;
 /// `GetField28ClampedToGlobal188204Locked` at 0x13aa4f0 (decompiler, medium); signature (medium): `float GetField28ClampedToGlobal188204Locked(longlong param_1)`
 pub const GetField28ClampedToGlobal188204Locked: u64 = 450423;
@@ -1389,63 +989,63 @@ pub const GetField28ClampedToGlobal188204Locked_2: u64 = 450548;
 pub const GetField28ClampedToGlobal196511: u64 = 450424;
 /// `GetField28ElementAddress` at 0xab1b80 (decompiler, high); signature (high): `longlong GetField28ElementAddress(longlong param_1, int param_2)`
 pub const GetField28ElementAddress: u64 = 57641;
-/// `GetField28EntryAtIndex` at 0x9512c0 (decompiler, high); signature (untiered): `undefined8 GetField28EntryAtIndex(longlong param_1, char param_2)`
+/// `GetField28EntryAtIndex` at 0x9512c0 (decompiler, high); signature (low): `undefined8 GetField28EntryAtIndex(longlong param_1, char param_2)`
 pub const GetField28EntryAtIndex: u64 = 52008;
 /// `GetField28Field38` at 0xfc7a10 (decompiler, high); signature (high): `undefined4 GetField28Field38(longlong param_1)`
 pub const GetField28Field38: u64 = 75735;
-/// `GetField28Float34OrDefault` at 0x646000 (decompiler, high); signature (untiered): `longlong GetField28Float34OrDefault(longlong param_1)`
+/// `GetField28Float34OrDefault` at 0x646000 (decompiler, high); signature (low): `longlong GetField28Float34OrDefault(longlong param_1)`
 pub const GetField28Float34OrDefault: u64 = 36302;
-/// `GetField28IfFlag200` at 0xdfef80 (decompiler, medium); signature (untiered): `undefined8 * GetField28IfFlag200(longlong param_1)`
+/// `GetField28IfFlag200` at 0xdfef80 (decompiler, medium); signature (low): `undefined8 * GetField28IfFlag200(longlong param_1)`
 pub const GetField28IfFlag200: u64 = 87438;
-/// `GetField28NameOrFallback` at 0xad7c90 (decompiler, medium); signature (untiered): `undefined8 * GetField28NameOrFallback(longlong param_1, undefined8 * param_2)`
+/// `GetField28NameOrFallback` at 0xad7c90 (decompiler, medium); signature (low): `undefined8 * GetField28NameOrFallback(longlong param_1, undefined8 * param_2)`
 pub const GetField28NameOrFallback: u64 = 58457;
-/// `GetField28OfField10` at 0xb5b3c0 (decompiler, high); signature (untiered): `undefined4 GetField28OfField10(longlong param_1)`
+/// `GetField28OfField10` at 0xb5b3c0 (decompiler, high); signature (low): `undefined4 GetField28OfField10(longlong param_1)`
 pub const GetField28OfField10: u64 = 61421;
 /// `GetField28UnderGlobalLock` at 0x294130 (decompiler, medium); signature (medium): `undefined4 GetField28UnderGlobalLock(longlong param_1)`
 pub const GetField28UnderGlobalLock: u64 = 18262;
-/// `GetField28Vfunc30Result` at 0x32a7a0 (decompiler, medium); signature (untiered): `undefined8 GetField28Vfunc30Result(longlong param_1)`
+/// `GetField28Vfunc30Result` at 0x32a7a0 (decompiler, medium); signature (low): `undefined8 GetField28Vfunc30Result(longlong param_1)`
 pub const GetField28Vfunc30Result: u64 = 21254;
-/// `GetField28_2` at 0x295780 (decompiler, high); signature (untiered): `undefined4 GetField28_2(longlong param_1)`
+/// `GetField28_2` at 0x295780 (decompiler, high); signature (low): `undefined4 GetField28_2(longlong param_1)`
 pub const GetField28_2: u64 = 18294;
 /// `GetField28_3` at 0x11eaaa0 (decompiler, high); signature (high): `undefined8 GetField28_3(longlong param_1, undefined8 * param_2)`
 pub const GetField28_3: u64 = 91223;
-/// `GetField28_4` at 0xb42a40 (decompiler, high); signature (untiered): `undefined4 GetField28_4(longlong param_1)`
+/// `GetField28_4` at 0xb42a40 (decompiler, high); signature (low): `undefined4 GetField28_4(longlong param_1)`
 pub const GetField28_4: u64 = 60721;
-/// `GetField28_5` at 0xbfd1b0 (decompiler, high); signature (untiered): `undefined4 GetField28_5(longlong param_1)`
+/// `GetField28_5` at 0xbfd1b0 (decompiler, high); signature (low): `undefined4 GetField28_5(longlong param_1)`
 pub const GetField28_5: u64 = 64384;
-/// `GetField290` at 0xb5abe0 (decompiler, high); signature (untiered): `undefined8 GetField290(longlong param_1)`
+/// `GetField290` at 0xb5abe0 (decompiler, high); signature (low): `undefined8 GetField290(longlong param_1)`
 pub const GetField290: u64 = 61407;
-/// `GetField294OfField8` at 0x725380 (decompiler, high); signature (untiered): `undefined4 GetField294OfField8(longlong param_1)`
+/// `GetField294OfField8` at 0x725380 (decompiler, high); signature (low): `undefined4 GetField294OfField8(longlong param_1)`
 pub const GetField294OfField8: u64 = 39919;
-/// `GetField2A8OfMountOrSelf` at 0x6af0f0 (decompiler, medium); signature (untiered): `undefined8 GetField2A8OfMountOrSelf(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetField2A8OfMountOrSelf` at 0x6af0f0 (decompiler, medium); signature (low): `undefined8 GetField2A8OfMountOrSelf(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetField2A8OfMountOrSelf: u64 = 37958;
-/// `GetField2B0Field18` at 0x1066160 (decompiler, high); signature (untiered): `undefined8 GetField2B0Field18(longlong param_1)`
+/// `GetField2B0Field18` at 0x1066160 (decompiler, high); signature (low): `undefined8 GetField2B0Field18(longlong param_1)`
 pub const GetField2B0Field18: u64 = 78287;
-/// `GetField2B8OfField8` at 0x727e50 (decompiler, high); signature (untiered): `undefined4 GetField2B8OfField8(longlong param_1)`
+/// `GetField2B8OfField8` at 0x727e50 (decompiler, high); signature (low): `undefined4 GetField2B8OfField8(longlong param_1)`
 pub const GetField2B8OfField8: u64 = 40005;
-/// `GetField2BCOfFieldF8Target` at 0x6d8510 (decompiler, high); signature (untiered): `undefined4 GetField2BCOfFieldF8Target(longlong param_1)`
+/// `GetField2BCOfFieldF8Target` at 0x6d8510 (decompiler, high); signature (low): `undefined4 GetField2BCOfFieldF8Target(longlong param_1)`
 pub const GetField2BCOfFieldF8Target: u64 = 38791;
-/// `GetField2C` at 0x295880 (decompiler, high); signature (untiered): `undefined4 GetField2C(longlong param_1)`
+/// `GetField2C` at 0x295880 (decompiler, high); signature (low): `undefined4 GetField2C(longlong param_1)`
 pub const GetField2C: u64 = 18298;
-/// `GetField2C8` at 0x12fc9a0 (decompiler, high); signature (untiered): `undefined4 GetField2C8(longlong param_1)`
+/// `GetField2C8` at 0x12fc9a0 (decompiler, high); signature (low): `undefined4 GetField2C8(longlong param_1)`
 pub const GetField2C8: u64 = 446837;
-/// `GetField2C8OfField8` at 0x7270a0 (decompiler, medium); signature (untiered): `undefined4 GetField2C8OfField8(longlong param_1)`
+/// `GetField2C8OfField8` at 0x7270a0 (decompiler, medium); signature (low): `undefined4 GetField2C8OfField8(longlong param_1)`
 pub const GetField2C8OfField8: u64 = 39960;
-/// `GetField2CAsDouble` at 0x11a1d70 (decompiler, high); signature (untiered): `undefined8 GetField2CAsDouble(longlong param_1, longlong param_2, double * param_3)`
+/// `GetField2CAsDouble` at 0x11a1d70 (decompiler, high); signature (low): `undefined8 GetField2CAsDouble(longlong param_1, longlong param_2, double * param_3)`
 pub const GetField2CAsDouble: u64 = 89580;
 /// `GetField2CCOfField8` at 0x7270f0 (decompiler, high); signature (high): `undefined4 GetField2CCOfField8(longlong param_1)`
 pub const GetField2CCOfField8: u64 = 39962;
-/// `GetField2CLockedAt50` at 0x7a2e10 (decompiler, high); signature (untiered): `undefined4 GetField2CLockedAt50(longlong param_1)`
+/// `GetField2CLockedAt50` at 0x7a2e10 (decompiler, high); signature (low): `undefined4 GetField2CLockedAt50(longlong param_1)`
 pub const GetField2CLockedAt50: u64 = 41966;
 /// `GetField2D8OfFieldF8Field10` at 0x68cbc0 (decompiler, medium); signature (medium): `int GetField2D8OfFieldF8Field10(longlong param_1)`
 pub const GetField2D8OfFieldF8Field10: u64 = 37540;
-/// `GetField2E0Ptr` at 0x12fc600 (decompiler, high); signature (untiered): `longlong GetField2E0Ptr(longlong param_1)`
+/// `GetField2E0Ptr` at 0x12fc600 (decompiler, high); signature (low): `longlong GetField2E0Ptr(longlong param_1)`
 pub const GetField2E0Ptr: u64 = 446825;
 /// `GetField2E8OfField8` at 0x7252c0 (decompiler, high); signature (high): `undefined4 GetField2E8OfField8(longlong param_1)`
 pub const GetField2E8OfField8: u64 = 39914;
 /// `GetField2F0AsLocalSystemTime` at 0x1cb990 (decompiler, high); signature (high): `undefined GetField2F0AsLocalSystemTime(longlong param_1, LPSYSTEMTIME param_2)`
 pub const GetField2F0AsLocalSystemTime: u64 = 13942;
-/// `GetField30` at 0x1dcb20 (decompiler, high); signature (untiered): `undefined8 GetField30(longlong param_1)`
+/// `GetField30` at 0x1dcb20 (decompiler, high); signature (low): `undefined8 GetField30(longlong param_1)`
 pub const GetField30: u64 = 14369;
 /// `GetField300AsLocalSystemTime` at 0x1cb9d0 (decompiler, high); signature (high): `undefined GetField300AsLocalSystemTime(longlong param_1, LPSYSTEMTIME param_2)`
 pub const GetField300AsLocalSystemTime: u64 = 13943;
@@ -1453,119 +1053,119 @@ pub const GetField300AsLocalSystemTime: u64 = 13943;
 pub const GetField30Address: u64 = 62029;
 /// `GetField30Address_2` at 0xf43970 (decompiler, high); signature (high): `longlong GetField30Address_2(longlong param_1)`
 pub const GetField30Address_2: u64 = 72278;
-/// `GetField30ElementAfterIndex` at 0xbfc670 (decompiler, high); signature (untiered): `longlong GetField30ElementAfterIndex(longlong param_1, int param_2)`
+/// `GetField30ElementAfterIndex` at 0xbfc670 (decompiler, high); signature (low): `longlong GetField30ElementAfterIndex(longlong param_1, int param_2)`
 pub const GetField30ElementAfterIndex: u64 = 64366;
-/// `GetField30ElementAt` at 0x3b7b80 (decompiler, high); signature (untiered): `undefined8 GetField30ElementAt(longlong param_1, uint param_2)`
+/// `GetField30ElementAt` at 0x3b7b80 (decompiler, high); signature (low): `undefined8 GetField30ElementAt(longlong param_1, uint param_2)`
 pub const GetField30ElementAt: u64 = 24574;
-/// `GetField30EntryByType24` at 0x497530 (decompiler, medium); signature (untiered): `undefined8 GetField30EntryByType24(longlong param_1)`
+/// `GetField30EntryByType24` at 0x497530 (decompiler, medium); signature (low): `undefined8 GetField30EntryByType24(longlong param_1)`
 pub const GetField30EntryByType24: u64 = 29510;
-/// `GetField30Field10ForType0FOr1C` at 0x497680 (decompiler, medium); signature (untiered): `undefined8 GetField30Field10ForType0FOr1C(longlong param_1)`
+/// `GetField30Field10ForType0FOr1C` at 0x497680 (decompiler, medium); signature (low): `undefined8 GetField30Field10ForType0FOr1C(longlong param_1)`
 pub const GetField30Field10ForType0FOr1C: u64 = 29512;
-/// `GetField30Field10IfType2` at 0x49cf90 (decompiler, high); signature (untiered): `undefined4 GetField30Field10IfType2(longlong param_1)`
+/// `GetField30Field10IfType2` at 0x49cf90 (decompiler, high); signature (low): `undefined4 GetField30Field10IfType2(longlong param_1)`
 pub const GetField30Field10IfType2: u64 = 29584;
-/// `GetField30Field34` at 0x646160 (decompiler, high); signature (untiered): `undefined4 GetField30Field34(longlong param_1)`
+/// `GetField30Field34` at 0x646160 (decompiler, high); signature (low): `undefined4 GetField30Field34(longlong param_1)`
 pub const GetField30Field34: u64 = 36310;
-/// `GetField30FromField1C8OrSexSpecificField158Entry` at 0x3bf670 (decompiler, medium); signature (untiered): `undefined4 GetField30FromField1C8OrSexSpecificField158Entry(longlong param_1)`
+/// `GetField30FromField1C8OrSexSpecificField158Entry` at 0x3bf670 (decompiler, medium); signature (low): `undefined4 GetField30FromField1C8OrSexSpecificField158Entry(longlong param_1)`
 pub const GetField30FromField1C8OrSexSpecificField158Entry: u64 = 24701;
-/// `GetField30IfField24Is2` at 0x49b3c0 (decompiler, high); signature (untiered): `undefined8 GetField30IfField24Is2(longlong param_1)`
+/// `GetField30IfField24Is2` at 0x49b3c0 (decompiler, high); signature (low): `undefined8 GetField30IfField24Is2(longlong param_1)`
 pub const GetField30IfField24Is2: u64 = 29574;
-/// `GetField30IfFlag800` at 0xdfeb20 (decompiler, medium); signature (untiered): `int * GetField30IfFlag800(longlong param_1)`
+/// `GetField30IfFlag800` at 0xdfeb20 (decompiler, medium); signature (low): `int * GetField30IfFlag800(longlong param_1)`
 pub const GetField30IfFlag800: u64 = 87435;
-/// `GetField30IfType0E` at 0x49b3a0 (decompiler, high); signature (untiered): `undefined8 GetField30IfType0E(longlong param_1)`
+/// `GetField30IfType0E` at 0x49b3a0 (decompiler, high); signature (low): `undefined8 GetField30IfType0E(longlong param_1)`
 pub const GetField30IfType0E: u64 = 29573;
-/// `GetField30IfType1` at 0x49b380 (decompiler, high); signature (untiered): `undefined8 GetField30IfType1(longlong param_1)`
+/// `GetField30IfType1` at 0x49b380 (decompiler, high); signature (low): `undefined8 GetField30IfType1(longlong param_1)`
 pub const GetField30IfType1: u64 = 29572;
-/// `GetField30IfType10` at 0x49b340 (decompiler, high); signature (untiered): `undefined8 GetField30IfType10(longlong param_1)`
+/// `GetField30IfType10` at 0x49b340 (decompiler, high); signature (low): `undefined8 GetField30IfType10(longlong param_1)`
 pub const GetField30IfType10: u64 = 29570;
-/// `GetField30IfType12Or13` at 0x499c10 (decompiler, high); signature (untiered): `undefined8 GetField30IfType12Or13(longlong param_1)`
+/// `GetField30IfType12Or13` at 0x499c10 (decompiler, high); signature (low): `undefined8 GetField30IfType12Or13(longlong param_1)`
 pub const GetField30IfType12Or13: u64 = 29555;
-/// `GetField30IfType2` at 0x3e0030 (decompiler, high); signature (untiered): `undefined8 GetField30IfType2(longlong param_1)`
+/// `GetField30IfType2` at 0x3e0030 (decompiler, high); signature (low): `undefined8 GetField30IfType2(longlong param_1)`
 pub const GetField30IfType2: u64 = 25198;
-/// `GetField30IfTypeD` at 0x49b360 (decompiler, high); signature (untiered): `undefined8 GetField30IfTypeD(longlong param_1)`
+/// `GetField30IfTypeD` at 0x49b360 (decompiler, high); signature (low): `undefined8 GetField30IfTypeD(longlong param_1)`
 pub const GetField30IfTypeD: u64 = 29571;
-/// `GetField30IfVfunc48Returns2` at 0x82a170 (decompiler, medium); signature (untiered): `longlong GetField30IfVfunc48Returns2(longlong * param_1)`
+/// `GetField30IfVfunc48Returns2` at 0x82a170 (decompiler, medium); signature (low): `longlong GetField30IfVfunc48Returns2(longlong * param_1)`
 pub const GetField30IfVfunc48Returns2: u64 = 44910;
-/// `GetField30OfField28` at 0x7f7180 (decompiler, high); signature (untiered): `undefined4 GetField30OfField28(longlong param_1)`
+/// `GetField30OfField28` at 0x7f7180 (decompiler, high); signature (low): `undefined4 GetField30OfField28(longlong param_1)`
 pub const GetField30OfField28: u64 = 44081;
-/// `GetField30OfField30` at 0x2b7260 (decompiler, high); signature (untiered): `undefined4 GetField30OfField30(longlong param_1)`
+/// `GetField30OfField30` at 0x2b7260 (decompiler, high); signature (low): `undefined4 GetField30OfField30(longlong param_1)`
 pub const GetField30OfField30: u64 = 18849;
-/// `GetField30OrA0ByFormType` at 0x1d90d0 (decompiler, medium); signature (untiered): `longlong GetField30OrA0ByFormType(longlong param_1)`
+/// `GetField30OrA0ByFormType` at 0x1d90d0 (decompiler, medium); signature (low): `longlong GetField30OrA0ByFormType(longlong param_1)`
 pub const GetField30OrA0ByFormType: u64 = 14271;
 /// `GetField30Ptr` at 0xad9890 (decompiler, high); signature (high): `longlong GetField30Ptr(longlong param_1)`
 pub const GetField30Ptr: u64 = 58495;
-/// `GetField30RefPtr` at 0x12041b0 (decompiler, high); signature (untiered): `undefined8 GetField30RefPtr(longlong param_1, longlong * param_2)`
+/// `GetField30RefPtr` at 0x12041b0 (decompiler, high); signature (low): `undefined8 GetField30RefPtr(longlong param_1, longlong * param_2)`
 pub const GetField30RefPtr: u64 = 91697;
-/// `GetField30_2` at 0x2958a0 (decompiler, high); signature (untiered): `undefined4 GetField30_2(longlong param_1)`
+/// `GetField30_2` at 0x2958a0 (decompiler, high); signature (low): `undefined4 GetField30_2(longlong param_1)`
 pub const GetField30_2: u64 = 18299;
-/// `GetField30_3` at 0x82d6e0 (decompiler, high); signature (untiered): `undefined8 GetField30_3(longlong param_1)`
+/// `GetField30_3` at 0x82d6e0 (decompiler, high); signature (low): `undefined8 GetField30_3(longlong param_1)`
 pub const GetField30_3: u64 = 45023;
-/// `GetField30_4` at 0xe51d30 (decompiler, high); signature (untiered): `undefined8 GetField30_4(longlong param_1)`
+/// `GetField30_4` at 0xe51d30 (decompiler, high); signature (low): `undefined8 GetField30_4(longlong param_1)`
 pub const GetField30_4: u64 = 88977;
-/// `GetField30_5` at 0xab1ca0 (decompiler, high); signature (untiered): `undefined4 GetField30_5(longlong param_1)`
+/// `GetField30_5` at 0xab1ca0 (decompiler, high); signature (low): `undefined4 GetField30_5(longlong param_1)`
 pub const GetField30_5: u64 = 57644;
-/// `GetField30_6` at 0xb4a980 (decompiler, high); signature (untiered): `undefined8 GetField30_6(longlong param_1)`
+/// `GetField30_6` at 0xb4a980 (decompiler, high); signature (low): `undefined8 GetField30_6(longlong param_1)`
 pub const GetField30_6: u64 = 60838;
 /// `GetField30_7` at 0xc58a60 (decompiler, high); signature (high): `undefined4 GetField30_7(undefined8 param_1, longlong param_2)`
 pub const GetField30_7: u64 = 65738;
 /// `GetField30_8` at 0xcb89b0 (decompiler, high); signature (high): `undefined4 GetField30_8(longlong param_1)`
 pub const GetField30_8: u64 = 67338;
-/// `GetField30_9` at 0xeaf620 (decompiler, high); signature (untiered): `undefined8 GetField30_9(longlong param_1)`
+/// `GetField30_9` at 0xeaf620 (decompiler, high); signature (low): `undefined8 GetField30_9(longlong param_1)`
 pub const GetField30_9: u64 = 69091;
 /// `GetField311OfField8` at 0x724680 (decompiler, high); signature (high): `undefined1 GetField311OfField8(longlong param_1)`
 pub const GetField311OfField8: u64 = 39911;
-/// `GetField328IfVfunc168False` at 0xd612f0 (decompiler, medium); signature (untiered): `longlong GetField328IfVfunc168False(longlong * param_1)`
+/// `GetField328IfVfunc168False` at 0xd612f0 (decompiler, medium); signature (low): `longlong GetField328IfVfunc168False(longlong * param_1)`
 pub const GetField328IfVfunc168False: u64 = 84201;
 /// `GetField34` at 0x6e9a00 (decompiler, high); signature (high): `undefined4 GetField34(longlong param_1)`
 pub const GetField34: u64 = 39151;
-/// `GetField340OfField10` at 0x6f35b0 (decompiler, high); signature (untiered): `undefined4 GetField340OfField10(longlong param_1)`
+/// `GetField340OfField10` at 0x6f35b0 (decompiler, high); signature (low): `undefined4 GetField340OfField10(longlong param_1)`
 pub const GetField340OfField10: u64 = 39301;
 /// `GetField344` at 0x618230 (decompiler, high); signature (high): `undefined1 GetField344(longlong param_1)`
 pub const GetField344: u64 = 35597;
-/// `GetField34OfField28OrDefault` at 0x646020 (decompiler, high); signature (untiered): `undefined4 GetField34OfField28OrDefault(longlong param_1)`
+/// `GetField34OfField28OrDefault` at 0x646020 (decompiler, high); signature (low): `undefined4 GetField34OfField28OrDefault(longlong param_1)`
 pub const GetField34OfField28OrDefault: u64 = 36303;
-/// `GetField34_2` at 0x295700 (decompiler, high); signature (untiered): `undefined4 GetField34_2(longlong param_1)`
+/// `GetField34_2` at 0x295700 (decompiler, high); signature (low): `undefined4 GetField34_2(longlong param_1)`
 pub const GetField34_2: u64 = 18291;
-/// `GetField360Ref` at 0x6f4be0 (decompiler, medium); signature (untiered): `int * GetField360Ref(longlong param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetField360Ref` at 0x6f4be0 (decompiler, medium); signature (low): `int * GetField360Ref(longlong param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetField360Ref: u64 = 39341;
 /// `GetField38` at 0x186f90 (decompiler, high); signature (high): `undefined8 GetField38(longlong param_1)`
 pub const GetField38: u64 = 12704;
-/// `GetField38IfFlag1F` at 0x154d070 (decompiler, high); signature (untiered): `undefined8 GetField38IfFlag1F(longlong param_1)`
+/// `GetField38IfFlag1F` at 0x154d070 (decompiler, high); signature (low): `undefined8 GetField38IfFlag1F(longlong param_1)`
 pub const GetField38IfFlag1F: u64 = 107357;
 /// `GetField38OrOwnerField138` at 0xacae70 (decompiler, medium); signature (medium): `longlong GetField38OrOwnerField138(longlong * param_1)`
 pub const GetField38OrOwnerField138: u64 = 58316;
 /// `GetField38StringData` at 0xd07b80 (decompiler, high); signature (high): `longlong GetField38StringData(longlong param_1)`
 pub const GetField38StringData: u64 = 82789;
-/// `GetField38UnderWorldReadLock` at 0x104b6d0 (decompiler, medium); signature (untiered): `undefined8 GetField38UnderWorldReadLock(longlong * param_1)`
+/// `GetField38UnderWorldReadLock` at 0x104b6d0 (decompiler, medium); signature (low): `undefined8 GetField38UnderWorldReadLock(longlong * param_1)`
 pub const GetField38UnderWorldReadLock: u64 = 77855;
-/// `GetField38Vfunc128Result` at 0xfc1ef0 (decompiler, medium); signature (untiered): `longlong GetField38Vfunc128Result(longlong param_1)`
+/// `GetField38Vfunc128Result` at 0xfc1ef0 (decompiler, medium); signature (low): `longlong GetField38Vfunc128Result(longlong param_1)`
 pub const GetField38Vfunc128Result: u64 = 75610;
-/// `GetField38_2` at 0x6460a0 (decompiler, high); signature (untiered): `undefined4 GetField38_2(longlong param_1)`
+/// `GetField38_2` at 0x6460a0 (decompiler, high); signature (low): `undefined4 GetField38_2(longlong param_1)`
 pub const GetField38_2: u64 = 36305;
-/// `GetField38_3` at 0x295730 (decompiler, high); signature (untiered): `undefined4 GetField38_3(longlong param_1)`
+/// `GetField38_3` at 0x295730 (decompiler, high); signature (low): `undefined4 GetField38_3(longlong param_1)`
 pub const GetField38_3: u64 = 18292;
 /// `GetField38_4` at 0x2b72e0 (decompiler, high); signature (high): `undefined1 GetField38_4(longlong param_1)`
 pub const GetField38_4: u64 = 18852;
 /// `GetField38_5` at 0xd93fb0 (decompiler, high); signature (high): `undefined8 GetField38_5(longlong param_1)`
 pub const GetField38_5: u64 = 85664;
-/// `GetField3A8OfField10` at 0x6ff470 (decompiler, high); signature (untiered): `undefined4 GetField3A8OfField10(longlong param_1)`
+/// `GetField3A8OfField10` at 0x6ff470 (decompiler, high); signature (low): `undefined4 GetField3A8OfField10(longlong param_1)`
 pub const GetField3A8OfField10: u64 = 39509;
-/// `GetField3B8Field28IfKind2Or3` at 0x71e1f0 (decompiler, medium); signature (untiered): `undefined8 GetField3B8Field28IfKind2Or3(longlong param_1)`
+/// `GetField3B8Field28IfKind2Or3` at 0x71e1f0 (decompiler, medium); signature (low): `undefined8 GetField3B8Field28IfKind2Or3(longlong param_1)`
 pub const GetField3B8Field28IfKind2Or3: u64 = 39764;
-/// `GetField3B8Field28IfState3Or4` at 0x6f6070 (decompiler, medium); signature (untiered): `undefined8 GetField3B8Field28IfState3Or4(longlong param_1)`
+/// `GetField3B8Field28IfState3Or4` at 0x6f6070 (decompiler, medium); signature (low): `undefined8 GetField3B8Field28IfState3Or4(longlong param_1)`
 pub const GetField3B8Field28IfState3Or4: u64 = 39373;
-/// `GetField3CLockedAt28` at 0x7a7a80 (decompiler, high); signature (untiered): `undefined4 GetField3CLockedAt28(longlong param_1)`
+/// `GetField3CLockedAt28` at 0x7a7a80 (decompiler, high); signature (low): `undefined4 GetField3CLockedAt28(longlong param_1)`
 pub const GetField3CLockedAt28: u64 = 42138;
-/// `GetField3D8OfField10` at 0x6f2540 (decompiler, high); signature (untiered): `undefined8 GetField3D8OfField10(longlong param_1)`
+/// `GetField3D8OfField10` at 0x6f2540 (decompiler, high); signature (low): `undefined8 GetField3D8OfField10(longlong param_1)`
 pub const GetField3D8OfField10: u64 = 39285;
-/// `GetField3E8OrInline48` at 0xdd8870 (decompiler, medium); signature (untiered): `longlong GetField3E8OrInline48(longlong param_1)`
+/// `GetField3E8OrInline48` at 0xdd8870 (decompiler, medium); signature (low): `longlong GetField3E8OrInline48(longlong param_1)`
 pub const GetField3E8OrInline48: u64 = 86902;
-/// `GetField40` at 0x69dcd0 (decompiler, high); signature (untiered): `undefined8 GetField40(longlong param_1)`
+/// `GetField40` at 0x69dcd0 (decompiler, high); signature (low): `undefined8 GetField40(longlong param_1)`
 pub const GetField40: u64 = 37683;
-/// `GetField400OfField30Locked` at 0x1308620 (decompiler, high); signature (untiered): `undefined8 * GetField400OfField30Locked(longlong param_1, undefined8 * param_2)`
+/// `GetField400OfField30Locked` at 0x1308620 (decompiler, high); signature (low): `undefined8 * GetField400OfField30Locked(longlong param_1, undefined8 * param_2)`
 pub const GetField400OfField30Locked: u64 = 448081;
-/// `GetField408` at 0x12fc960 (decompiler, high); signature (untiered): `undefined4 GetField408(longlong param_1)`
+/// `GetField408` at 0x12fc960 (decompiler, high); signature (low): `undefined4 GetField408(longlong param_1)`
 pub const GetField408: u64 = 446834;
-/// `GetField408OfField30Locked` at 0x13086b0 (decompiler, high); signature (untiered): `undefined8 * GetField408OfField30Locked(longlong param_1, undefined8 * param_2)`
+/// `GetField408OfField30Locked` at 0x13086b0 (decompiler, high); signature (low): `undefined8 * GetField408OfField30Locked(longlong param_1, undefined8 * param_2)`
 pub const GetField408OfField30Locked: u64 = 448082;
 /// `GetField40Address` at 0x2b6f90 (decompiler, high); signature (high): `longlong GetField40Address(longlong param_1)`
 pub const GetField40Address: u64 = 18845;
@@ -1573,15 +1173,15 @@ pub const GetField40Address: u64 = 18845;
 pub const GetField40Address_2: u64 = 62275;
 /// `GetField40Address_3` at 0xb86b90 (decompiler, high); signature (high): `longlong GetField40Address_3(longlong param_1)`
 pub const GetField40Address_3: u64 = 62277;
-/// `GetField40AsBhkBlendCollisionObject` at 0x108d6c0 (decompiler, medium); signature (untiered): `longlong * GetField40AsBhkBlendCollisionObject(longlong param_1)`
+/// `GetField40AsBhkBlendCollisionObject` at 0x108d6c0 (decompiler, medium); signature (low): `longlong * GetField40AsBhkBlendCollisionObject(longlong param_1)`
 pub const GetField40AsBhkBlendCollisionObject: u64 = 78915;
-/// `GetField40AsBhkCollisionObject` at 0x1900a0 (decompiler, high); signature (untiered): `longlong * GetField40AsBhkCollisionObject(longlong param_1)`
+/// `GetField40AsBhkCollisionObject` at 0x1900a0 (decompiler, high); signature (low): `longlong * GetField40AsBhkCollisionObject(longlong param_1)`
 pub const GetField40AsBhkCollisionObject: u64 = 12923;
-/// `GetField40C` at 0x12fc940 (decompiler, high); signature (untiered): `undefined4 GetField40C(longlong param_1)`
+/// `GetField40C` at 0x12fc940 (decompiler, high); signature (low): `undefined4 GetField40C(longlong param_1)`
 pub const GetField40C: u64 = 446832;
 /// `GetField40ClampedToGlobal196511` at 0x13a52b0 (decompiler, medium); signature (medium): `float GetField40ClampedToGlobal196511(longlong param_1)`
 pub const GetField40ClampedToGlobal196511: u64 = 450283;
-/// `GetField40Field28OrOne` at 0x1253640 (decompiler, medium); signature (untiered): `undefined4 GetField40Field28OrOne(longlong param_1)`
+/// `GetField40Field28OrOne` at 0x1253640 (decompiler, medium); signature (low): `undefined4 GetField40Field28OrOne(longlong param_1)`
 pub const GetField40Field28OrOne: u64 = 443819;
 /// `GetField40FieldB8Bits2To4` at 0x679c50 (decompiler, high); signature (high): `uint GetField40FieldB8Bits2To4(longlong param_1)`
 pub const GetField40FieldB8Bits2To4: u64 = 37342;
@@ -1591,41 +1191,41 @@ pub const GetField40FieldB8BitsFrom15: u64 = 37345;
 pub const GetField40FieldB8LowTwoBits: u64 = 37341;
 /// `GetField40IfXma2Format` at 0xcdc210 (decompiler, medium); signature (medium): `undefined4 GetField40IfXma2Format(longlong param_1)`
 pub const GetField40IfXma2Format: u64 = 68045;
-/// `GetField40OfEntryByKey` at 0x11f6820 (decompiler, medium); signature (untiered): `undefined8 * GetField40OfEntryByKey(longlong param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetField40OfEntryByKey` at 0x11f6820 (decompiler, medium); signature (low): `undefined8 * GetField40OfEntryByKey(longlong param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetField40OfEntryByKey: u64 = 91446;
-/// `GetField40OrOwnerField130` at 0xacaec0 (decompiler, medium); signature (untiered): `longlong GetField40OrOwnerField130(longlong * param_1)`
+/// `GetField40OrOwnerField130` at 0xacaec0 (decompiler, medium); signature (low): `longlong GetField40OrOwnerField130(longlong * param_1)`
 pub const GetField40OrOwnerField130: u64 = 58318;
 /// `GetField40_2` at 0xd729a0 (decompiler, high); signature (high): `undefined8 GetField40_2(longlong param_1)`
 pub const GetField40_2: u64 = 84867;
 /// `GetField40_3` at 0xec6670 (decompiler, high); signature (high): `undefined4 GetField40_3(longlong param_1)`
 pub const GetField40_3: u64 = 69641;
-/// `GetField418AddrOfField10OrGlobal410468` at 0x7023c0 (decompiler, high); signature (untiered): `undefined4 * GetField418AddrOfField10OrGlobal410468(longlong param_1)`
+/// `GetField418AddrOfField10OrGlobal410468` at 0x7023c0 (decompiler, high); signature (low): `undefined4 * GetField418AddrOfField10OrGlobal410468(longlong param_1)`
 pub const GetField418AddrOfField10OrGlobal410468: u64 = 39589;
 /// `GetField430` at 0x403540 (decompiler, high); signature (high): `undefined8 GetField430(longlong param_1)`
 pub const GetField430: u64 = 25971;
-/// `GetField434` at 0x12fcb70 (decompiler, high); signature (untiered): `undefined1 GetField434(longlong param_1)`
+/// `GetField434` at 0x12fcb70 (decompiler, high); signature (low): `undefined1 GetField434(longlong param_1)`
 pub const GetField434: u64 = 446858;
 /// `GetField438OfField10` at 0x701420 (decompiler, high); signature (high): `undefined4 GetField438OfField10(longlong param_1)`
 pub const GetField438OfField10: u64 = 39565;
-/// `GetField44` at 0x2958c0 (decompiler, high); signature (untiered): `undefined4 GetField44(longlong param_1)`
+/// `GetField44` at 0x2958c0 (decompiler, high); signature (low): `undefined4 GetField44(longlong param_1)`
 pub const GetField44: u64 = 18300;
-/// `GetField440` at 0xcdd6a0 (decompiler, high); signature (untiered): `undefined8 GetField440(longlong param_1)`
+/// `GetField440` at 0xcdd6a0 (decompiler, high); signature (low): `undefined8 GetField440(longlong param_1)`
 pub const GetField440: u64 = 68081;
 /// `GetField44MinusField48Locked` at 0x196ff0 (decompiler, high); signature (high): `int GetField44MinusField48Locked(longlong param_1)`
 pub const GetField44MinusField48Locked: u64 = 13071;
-/// `GetField44OrOverride` at 0x2bcb70 (decompiler, medium); signature (untiered): `undefined4 GetField44OrOverride(longlong param_1)`
+/// `GetField44OrOverride` at 0x2bcb70 (decompiler, medium); signature (low): `undefined4 GetField44OrOverride(longlong param_1)`
 pub const GetField44OrOverride: u64 = 18967;
 /// `GetField48` at 0x692ea0 (decompiler, high); signature (high): `undefined4 GetField48(longlong param_1)`
 pub const GetField48: u64 = 37609;
-/// `GetField48AsNumber` at 0xdba430 (decompiler, medium); signature (untiered): `undefined GetField48AsNumber(longlong param_1)`
+/// `GetField48AsNumber` at 0xdba430 (decompiler, medium); signature (low): `undefined GetField48AsNumber(longlong param_1)`
 pub const GetField48AsNumber: u64 = 86302;
-/// `GetField48AsNumber_2` at 0xdbc380 (decompiler, medium); signature (untiered): `undefined GetField48AsNumber_2(longlong param_1)`
+/// `GetField48AsNumber_2` at 0xdbc380 (decompiler, medium); signature (low): `undefined GetField48AsNumber_2(longlong param_1)`
 pub const GetField48AsNumber_2: u64 = 86332;
-/// `GetField48Field10Field70IfByte1AIs4` at 0x5da320 (decompiler, medium); signature (untiered): `undefined GetField48Field10Field70IfByte1AIs4(longlong param_1)`
+/// `GetField48Field10Field70IfByte1AIs4` at 0x5da320 (decompiler, medium); signature (low): `undefined GetField48Field10Field70IfByte1AIs4(longlong param_1)`
 pub const GetField48Field10Field70IfByte1AIs4: u64 = 34741;
-/// `GetField48Pair` at 0x1010920 (decompiler, high); signature (untiered): `undefined GetField48Pair(longlong param_1, undefined8 * param_2)`
+/// `GetField48Pair` at 0x1010920 (decompiler, high); signature (low): `undefined GetField48Pair(longlong param_1, undefined8 * param_2)`
 pub const GetField48Pair: u64 = 77378;
-/// `GetField48Synced` at 0x1305620 (decompiler, medium); signature (untiered): `longlong GetField48Synced(longlong param_1)`
+/// `GetField48Synced` at 0x1305620 (decompiler, medium); signature (low): `longlong GetField48Synced(longlong param_1)`
 pub const GetField48Synced: u64 = 525859;
 /// `GetField49OrField4A` at 0xb002f0 (decompiler, high); signature (high): `int GetField49OrField4A(longlong param_1)`
 pub const GetField49OrField4A: u64 = 59491;
@@ -1637,45 +1237,45 @@ pub const GetField4CBits13To26: u64 = 39120;
 pub const GetField4CBits9To12: u64 = 39119;
 /// `GetField4CLow9Bits` at 0x6e8420 (decompiler, high); signature (high): `uint GetField4CLow9Bits(longlong param_1)`
 pub const GetField4CLow9Bits: u64 = 39118;
-/// `GetField4C_2` at 0xab2140 (decompiler, high); signature (untiered): `undefined4 GetField4C_2(longlong param_1)`
+/// `GetField4C_2` at 0xab2140 (decompiler, high); signature (low): `undefined4 GetField4C_2(longlong param_1)`
 pub const GetField4C_2: u64 = 57659;
 /// `GetField4IfTag6` at 0x14a2220 (decompiler, medium); signature (medium): `undefined GetField4IfTag6(int * param_1, int * param_2)`
 pub const GetField4IfTag6: u64 = 104525;
 /// `GetField4IfTag7` at 0x14a2240 (decompiler, medium); signature (medium): `undefined GetField4IfTag7(int * param_1, int * param_2)`
 pub const GetField4IfTag7: u64 = 104526;
-/// `GetField4UnlessFlagBit11Set` at 0x148900 (decompiler, medium); signature (untiered): `undefined4 GetField4UnlessFlagBit11Set(longlong param_1)`
+/// `GetField4UnlessFlagBit11Set` at 0x148900 (decompiler, medium); signature (low): `undefined4 GetField4UnlessFlagBit11Set(longlong param_1)`
 pub const GetField4UnlessFlagBit11Set: u64 = 11009;
 /// `GetField4Word` at 0xcfac60 (decompiler, high); signature (high): `undefined2 GetField4Word(longlong param_1)`
 pub const GetField4Word: u64 = 68664;
-/// `GetField50` at 0xb00070 (decompiler, high); signature (untiered): `undefined8 GetField50(longlong param_1)`
+/// `GetField50` at 0xb00070 (decompiler, high); signature (low): `undefined8 GetField50(longlong param_1)`
 pub const GetField50: u64 = 59483;
-/// `GetField50Address` at 0x38b6a0 (decompiler, high); signature (untiered): `longlong GetField50Address(longlong param_1)`
+/// `GetField50Address` at 0x38b6a0 (decompiler, high); signature (low): `longlong GetField50Address(longlong param_1)`
 pub const GetField50Address: u64 = 23471;
-/// `GetField518Field28Field18` at 0xd27aa0 (decompiler, medium); signature (untiered): `undefined8 GetField518Field28Field18(longlong param_1)`
+/// `GetField518Field28Field18` at 0xd27aa0 (decompiler, medium); signature (low): `undefined8 GetField518Field28Field18(longlong param_1)`
 pub const GetField518Field28Field18: u64 = 83292;
-/// `GetField54OrDefaultIfOnFlyingMount` at 0x75dd90 (decompiler, medium); signature (untiered): `undefined4 * GetField54OrDefaultIfOnFlyingMount(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetField54OrDefaultIfOnFlyingMount` at 0x75dd90 (decompiler, medium); signature (low): `undefined4 * GetField54OrDefaultIfOnFlyingMount(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetField54OrDefaultIfOnFlyingMount: u64 = 40724;
-/// `GetField55` at 0x3b2b10 (decompiler, high); signature (untiered): `undefined1 GetField55(longlong param_1)`
+/// `GetField55` at 0x3b2b10 (decompiler, high); signature (low): `undefined1 GetField55(longlong param_1)`
 pub const GetField55: u64 = 24450;
 /// `GetField58Element` at 0xfda6c0 (decompiler, high); signature (high): `undefined8 GetField58Element(longlong param_1, uint param_2)`
 pub const GetField58Element: u64 = 76136;
 /// `GetField58OrField170` at 0x61e980 (decompiler, high); signature (high): `int GetField58OrField170(longlong param_1)`
 pub const GetField58OrField170: u64 = 35667;
-/// `GetField58_2` at 0xbf1230 (decompiler, high); signature (untiered): `undefined8 GetField58_2(longlong param_1)`
+/// `GetField58_2` at 0xbf1230 (decompiler, high); signature (low): `undefined8 GetField58_2(longlong param_1)`
 pub const GetField58_2: u64 = 64102;
 /// `GetField5A0IfProfilingEnabled` at 0x9e21c0 (decompiler, high); signature (high): `longlong GetField5A0IfProfilingEnabled(longlong param_1)`
 pub const GetField5A0IfProfilingEnabled: u64 = 54024;
 /// `GetField60Address` at 0xb9ddd0 (decompiler, high); signature (high): `longlong GetField60Address(longlong param_1)`
 pub const GetField60Address: u64 = 62640;
-/// `GetField60OfField8` at 0x721f50 (decompiler, high); signature (untiered): `undefined8 GetField60OfField8(longlong param_1)`
+/// `GetField60OfField8` at 0x721f50 (decompiler, high); signature (low): `undefined8 GetField60OfField8(longlong param_1)`
 pub const GetField60OfField8: u64 = 39848;
 /// `GetField60OfField8OrField20` at 0x6e9a50 (decompiler, medium); signature (medium): `longlong GetField60OfField8OrField20(longlong param_1)`
 pub const GetField60OfField8OrField20: u64 = 39154;
-/// `GetField60OfField8_2` at 0x721f30 (decompiler, high); signature (untiered): `undefined8 GetField60OfField8_2(longlong param_1)`
+/// `GetField60OfField8_2` at 0x721f30 (decompiler, high); signature (low): `undefined8 GetField60OfField8_2(longlong param_1)`
 pub const GetField60OfField8_2: u64 = 39847;
-/// `GetField60OfMapEntryAt2F0` at 0x3e80f0 (decompiler, medium); signature (untiered): `undefined8 GetField60OfMapEntryAt2F0(longlong param_1, uint param_2)`
+/// `GetField60OfMapEntryAt2F0` at 0x3e80f0 (decompiler, medium); signature (low): `undefined8 GetField60OfMapEntryAt2F0(longlong param_1, uint param_2)`
 pub const GetField60OfMapEntryAt2F0: u64 = 25367;
-/// `GetField60StringOrEmpty` at 0xebb2a0 (decompiler, medium); signature (untiered): `undefined8 * GetField60StringOrEmpty(longlong * param_1)`
+/// `GetField60StringOrEmpty` at 0xebb2a0 (decompiler, medium); signature (low): `undefined8 * GetField60StringOrEmpty(longlong * param_1)`
 pub const GetField60StringOrEmpty: u64 = 69357;
 /// `GetField64MinusField68` at 0x30ea50 (decompiler, high); signature (high): `int GetField64MinusField68(longlong param_1)`
 pub const GetField64MinusField68: u64 = 20506;
@@ -1685,33 +1285,33 @@ pub const GetField66: u64 = 35542;
 pub const GetField68: u64 = 76137;
 /// `GetField68Coords` at 0x2bc6d0 (decompiler, medium); signature (medium): `undefined GetField68Coords(longlong param_1, undefined4 * param_2, undefined4 * param_3)`
 pub const GetField68Coords: u64 = 18963;
-/// `GetField68Dword5CForFile` at 0x2c3c90 (decompiler, medium); signature (untiered): `int GetField68Dword5CForFile(longlong param_1, longlong param_2)`
+/// `GetField68Dword5CForFile` at 0x2c3c90 (decompiler, medium); signature (low): `int GetField68Dword5CForFile(longlong param_1, longlong param_2)`
 pub const GetField68Dword5CForFile: u64 = 19082;
-/// `GetField68Field10IfBit0Clear` at 0x2cb250 (decompiler, medium); signature (untiered): `undefined8 GetField68Field10IfBit0Clear(longlong param_1)`
+/// `GetField68Field10IfBit0Clear` at 0x2cb250 (decompiler, medium); signature (low): `undefined8 GetField68Field10IfBit0Clear(longlong param_1)`
 pub const GetField68Field10IfBit0Clear: u64 = 19177;
 /// `GetField68FloatOrCellValue` at 0x2f5860 (decompiler, medium); signature (medium): `float GetField68FloatOrCellValue(longlong param_1)`
 pub const GetField68FloatOrCellValue: u64 = 19839;
-/// `GetField68OfField8` at 0x7220b0 (decompiler, high); signature (untiered): `undefined8 GetField68OfField8(longlong param_1)`
+/// `GetField68OfField8` at 0x7220b0 (decompiler, high); signature (low): `undefined8 GetField68OfField8(longlong param_1)`
 pub const GetField68OfField8: u64 = 39854;
-/// `GetField68_2` at 0x295790 (decompiler, high); signature (untiered): `undefined4 GetField68_2(longlong param_1)`
+/// `GetField68_2` at 0x295790 (decompiler, high); signature (low): `undefined4 GetField68_2(longlong param_1)`
 pub const GetField68_2: u64 = 18295;
-/// `GetField698EntriesFromPair` at 0x416a20 (decompiler, medium); signature (untiered): `undefined GetField698EntriesFromPair(undefined8 param_1, undefined4 * param_2, longlong param_3, longlong param_4, int param_5, int * param_6, int * param_7)`
+/// `GetField698EntriesFromPair` at 0x416a20 (decompiler, medium); signature (low): `undefined GetField698EntriesFromPair(undefined8 param_1, undefined4 * param_2, longlong param_3, longlong param_4, int param_5, int * param_6, int * param_7)`
 pub const GetField698EntriesFromPair: u64 = 26254;
 /// `GetField6A0Locked` at 0x9e36f0 (decompiler, high); signature (high): `undefined4 GetField6A0Locked(longlong param_1)`
 pub const GetField6A0Locked: u64 = 54034;
-/// `GetField6A4Locked` at 0x9e3770 (decompiler, medium); signature (untiered): `undefined4 GetField6A4Locked(longlong param_1)`
+/// `GetField6A4Locked` at 0x9e3770 (decompiler, medium); signature (low): `undefined4 GetField6A4Locked(longlong param_1)`
 pub const GetField6A4Locked: u64 = 54035;
 /// `GetField6A8Locked` at 0x9e37f0 (decompiler, high); signature (high): `undefined4 GetField6A8Locked(longlong param_1)`
 pub const GetField6A8Locked: u64 = 54036;
-/// `GetField6C` at 0x2958e0 (decompiler, high); signature (untiered): `undefined4 GetField6C(longlong param_1)`
+/// `GetField6C` at 0x2958e0 (decompiler, high); signature (low): `undefined4 GetField6C(longlong param_1)`
 pub const GetField6C: u64 = 18301;
-/// `GetField6CAsNumber` at 0xdb9fd0 (decompiler, medium); signature (untiered): `undefined GetField6CAsNumber(longlong param_1)`
+/// `GetField6CAsNumber` at 0xdb9fd0 (decompiler, medium); signature (low): `undefined GetField6CAsNumber(longlong param_1)`
 pub const GetField6CAsNumber: u64 = 86296;
-/// `GetField6CMinus1900` at 0xdba540 (decompiler, medium); signature (untiered): `undefined GetField6CMinus1900(longlong param_1)`
+/// `GetField6CMinus1900` at 0xdba540 (decompiler, medium); signature (low): `undefined GetField6CMinus1900(longlong param_1)`
 pub const GetField6CMinus1900: u64 = 86304;
-/// `GetField6C_2` at 0x6149b0 (decompiler, high); signature (untiered): `undefined4 GetField6C_2(longlong param_1)`
+/// `GetField6C_2` at 0x6149b0 (decompiler, high); signature (low): `undefined4 GetField6C_2(longlong param_1)`
 pub const GetField6C_2: u64 = 35544;
-/// `GetField70` at 0x295920 (decompiler, high); signature (untiered): `undefined4 GetField70(longlong param_1)`
+/// `GetField70` at 0x295920 (decompiler, high); signature (low): `undefined4 GetField70(longlong param_1)`
 pub const GetField70: u64 = 18303;
 /// `GetField70Address` at 0xc03970 (decompiler, high); signature (high): `longlong GetField70Address(longlong param_1)`
 pub const GetField70Address: u64 = 64578;
@@ -1723,19 +1323,19 @@ pub const GetField70IfByte1AIs4: u64 = 11071;
 pub const GetField70IfFormType29: u64 = 34232;
 /// `GetField70Ptr` at 0xc03980 (decompiler, high); signature (high): `longlong GetField70Ptr(longlong param_1)`
 pub const GetField70Ptr: u64 = 64579;
-/// `GetField718` at 0x1193f30 (decompiler, high); signature (untiered): `undefined8 GetField718(longlong param_1)`
+/// `GetField718` at 0x1193f30 (decompiler, high); signature (low): `undefined8 GetField718(longlong param_1)`
 pub const GetField718: u64 = 87838;
-/// `GetField74` at 0x295940 (decompiler, high); signature (untiered): `undefined4 GetField74(longlong param_1)`
+/// `GetField74` at 0x295940 (decompiler, high); signature (low): `undefined4 GetField74(longlong param_1)`
 pub const GetField74: u64 = 18304;
 /// `GetField74MinusField78Locked` at 0x197050 (decompiler, high); signature (high): `int GetField74MinusField78Locked(longlong param_1)`
 pub const GetField74MinusField78Locked: u64 = 13072;
-/// `GetField74OfField8` at 0x722070 (decompiler, high); signature (untiered): `undefined4 GetField74OfField8(longlong param_1)`
+/// `GetField74OfField8` at 0x722070 (decompiler, high); signature (low): `undefined4 GetField74OfField8(longlong param_1)`
 pub const GetField74OfField8: u64 = 39852;
-/// `GetField74OfField8OrField34` at 0x6e9ab0 (decompiler, medium); signature (untiered): `undefined4 GetField74OfField8OrField34(longlong param_1)`
+/// `GetField74OfField8OrField34` at 0x6e9ab0 (decompiler, medium); signature (low): `undefined4 GetField74OfField8OrField34(longlong param_1)`
 pub const GetField74OfField8OrField34: u64 = 39156;
-/// `GetField74WithB8Override` at 0xcd5c70 (decompiler, medium); signature (untiered): `ulonglong GetField74WithB8Override(longlong param_1)`
+/// `GetField74WithB8Override` at 0xcd5c70 (decompiler, medium); signature (low): `ulonglong GetField74WithB8Override(longlong param_1)`
 pub const GetField74WithB8Override: u64 = 67889;
-/// `GetField78` at 0xb58b00 (decompiler, high); signature (untiered): `undefined8 GetField78(longlong param_1)`
+/// `GetField78` at 0xb58b00 (decompiler, high); signature (low): `undefined8 GetField78(longlong param_1)`
 pub const GetField78: u64 = 61333;
 /// `GetField78AndString80` at 0x5f6720 (decompiler, medium); signature (medium): `undefined8 GetField78AndString80(longlong param_1, longlong * param_2, longlong * param_3)`
 pub const GetField78AndString80: u64 = 442281;
@@ -1745,19 +1345,19 @@ pub const GetField78Inherited: u64 = 83497;
 pub const GetField78OrInheritedField214: u64 = 19001;
 /// `GetField78Ptr` at 0xc3ac90 (decompiler, high); signature (high): `longlong GetField78Ptr(longlong param_1)`
 pub const GetField78Ptr: u64 = 65094;
-/// `GetField78WithB8Override` at 0xcd5c20 (decompiler, medium); signature (untiered): `ulonglong GetField78WithB8Override(longlong param_1)`
+/// `GetField78WithB8Override` at 0xcd5c20 (decompiler, medium); signature (low): `ulonglong GetField78WithB8Override(longlong param_1)`
 pub const GetField78WithB8Override: u64 = 67888;
-/// `GetField78_2` at 0xf17860 (decompiler, high); signature (untiered): `undefined8 GetField78_2(longlong param_1)`
+/// `GetField78_2` at 0xf17860 (decompiler, high); signature (low): `undefined8 GetField78_2(longlong param_1)`
 pub const GetField78_2: u64 = 71583;
-/// `GetField7F0OfField20Locked` at 0x1308b50 (decompiler, high); signature (untiered): `undefined4 GetField7F0OfField20Locked(longlong param_1)`
+/// `GetField7F0OfField20Locked` at 0x1308b50 (decompiler, high); signature (low): `undefined4 GetField7F0OfField20Locked(longlong param_1)`
 pub const GetField7F0OfField20Locked: u64 = 448090;
 /// `GetField8` at 0x15550b0 (decompiler, high); signature (high): `undefined4 GetField8(longlong param_1)`
 pub const GetField8: u64 = 107482;
 /// `GetField80` at 0x269780 (decompiler, high); signature (high): `undefined4 GetField80(longlong param_1)`
 pub const GetField80: u64 = 17278;
-/// `GetField80ArrayEntry` at 0x295960 (decompiler, high); signature (untiered): `undefined4 GetField80ArrayEntry(longlong param_1, int param_2)`
+/// `GetField80ArrayEntry` at 0x295960 (decompiler, high); signature (low): `undefined4 GetField80ArrayEntry(longlong param_1, int param_2)`
 pub const GetField80ArrayEntry: u64 = 18305;
-/// `GetField80Field30Field30Address` at 0xb9dd80 (decompiler, medium); signature (untiered): `longlong GetField80Field30Field30Address(longlong param_1)`
+/// `GetField80Field30Field30Address` at 0xb9dd80 (decompiler, medium); signature (low): `longlong GetField80Field30Field30Address(longlong param_1)`
 pub const GetField80Field30Field30Address: u64 = 62638;
 /// `GetField80Inherited` at 0xd35730 (decompiler, medium); signature (medium): `longlong GetField80Inherited(longlong * param_1, char param_2)`
 pub const GetField80Inherited: u64 = 83514;
@@ -1767,7 +1367,7 @@ pub const GetField80Ptr: u64 = 17022;
 pub const GetField80SlotByIndex: u64 = 20351;
 /// `GetField80Subobject` at 0x10488e0 (decompiler, medium); signature (medium): `longlong GetField80Subobject(longlong param_1)`
 pub const GetField80Subobject: u64 = 77821;
-/// `GetField80_2` at 0x2bcd60 (decompiler, high); signature (untiered): `undefined8 GetField80_2(longlong param_1)`
+/// `GetField80_2` at 0x2bcd60 (decompiler, high); signature (low): `undefined8 GetField80_2(longlong param_1)`
 pub const GetField80_2: u64 = 18973;
 /// `GetField80_4` at 0xf18fb0 (decompiler, high); signature (high): `undefined8 GetField80_4(longlong param_1)`
 pub const GetField80_4: u64 = 71636;
@@ -1775,17 +1375,17 @@ pub const GetField80_4: u64 = 71636;
 pub const GetField88: u64 = 20528;
 /// `GetField88Field18` at 0xacd730 (decompiler, high); signature (high): `undefined4 GetField88Field18(longlong param_1)`
 pub const GetField88Field18: u64 = 58347;
-/// `GetField88Inherited` at 0xd34010 (decompiler, medium); signature (untiered): `undefined4 GetField88Inherited(longlong * param_1, char param_2)`
+/// `GetField88Inherited` at 0xd34010 (decompiler, medium); signature (low): `undefined4 GetField88Inherited(longlong * param_1, char param_2)`
 pub const GetField88Inherited: u64 = 83498;
 /// `GetField8A0Bounded` at 0x756c90 (decompiler, high); signature (high): `int GetField8A0Bounded(longlong param_1)`
 pub const GetField8A0Bounded: u64 = 40601;
-/// `GetField8Address` at 0x159b4e0 (decompiler, high); signature (untiered): `longlong GetField8Address(longlong param_1)`
+/// `GetField8Address` at 0x159b4e0 (decompiler, high); signature (low): `longlong GetField8Address(longlong param_1)`
 pub const GetField8Address: u64 = 109329;
 /// `GetField8AsInt` at 0x4a3480 (decompiler, high); signature (high): `int GetField8AsInt(longlong param_1)`
 pub const GetField8AsInt: u64 = 29799;
-/// `GetField8Bits2To4` at 0x1dead0 (decompiler, high); signature (untiered): `uint GetField8Bits2To4(longlong param_1)`
+/// `GetField8Bits2To4` at 0x1dead0 (decompiler, high); signature (low): `uint GetField8Bits2To4(longlong param_1)`
 pub const GetField8Bits2To4: u64 = 14457;
-/// `GetField8BitsFrom15` at 0x1debb0 (decompiler, medium); signature (untiered): `uint GetField8BitsFrom15(longlong param_1)`
+/// `GetField8BitsFrom15` at 0x1debb0 (decompiler, medium); signature (low): `uint GetField8BitsFrom15(longlong param_1)`
 pub const GetField8BitsFrom15: u64 = 14463;
 /// `GetField8Byte323` at 0x727cf0 (decompiler, high); signature (high): `longlong GetField8Byte323(longlong param_1)`
 pub const GetField8Byte323: u64 = 39994;
@@ -1795,59 +1395,59 @@ pub const GetField8Byte324: u64 = 39996;
 pub const GetField8Byte327: u64 = 39891;
 /// `GetField8Byte32E` at 0x725ba0 (decompiler, high); signature (high): `longlong GetField8Byte32E(longlong param_1)`
 pub const GetField8Byte32E: u64 = 39930;
-/// `GetField8Byte4` at 0x561300 (decompiler, high); signature (untiered): `undefined1 GetField8Byte4(longlong param_1)`
+/// `GetField8Byte4` at 0x561300 (decompiler, high); signature (low): `undefined1 GetField8Byte4(longlong param_1)`
 pub const GetField8Byte4: u64 = 33232;
-/// `GetField8DataAndCount` at 0xdff010 (decompiler, medium); signature (untiered): `undefined4 * GetField8DataAndCount(longlong param_1, undefined4 * param_2)`
+/// `GetField8DataAndCount` at 0xdff010 (decompiler, medium); signature (low): `undefined4 * GetField8DataAndCount(longlong param_1, undefined4 * param_2)`
 pub const GetField8DataAndCount: u64 = 87439;
-/// `GetField8Field148OrLookupNamedNode` at 0x721580 (decompiler, medium); signature (untiered): `undefined8 GetField8Field148OrLookupNamedNode(longlong param_1, longlong * param_2)`
+/// `GetField8Field148OrLookupNamedNode` at 0x721580 (decompiler, medium); signature (low): `undefined8 GetField8Field148OrLookupNamedNode(longlong param_1, longlong * param_2)`
 pub const GetField8Field148OrLookupNamedNode: u64 = 39832;
-/// `GetField8Field150` at 0x721330 (decompiler, high); signature (untiered): `undefined8 GetField8Field150(longlong param_1)`
+/// `GetField8Field150` at 0x721330 (decompiler, high); signature (low): `undefined8 GetField8Field150(longlong param_1)`
 pub const GetField8Field150: u64 = 39825;
-/// `GetField8Field158` at 0x727440 (decompiler, high); signature (untiered): `undefined8 GetField8Field158(longlong param_1)`
+/// `GetField8Field158` at 0x727440 (decompiler, high); signature (low): `undefined8 GetField8Field158(longlong param_1)`
 pub const GetField8Field158: u64 = 39975;
 /// `GetField8Field160` at 0x727460 (decompiler, high); signature (high): `undefined8 GetField8Field160(longlong param_1)`
 pub const GetField8Field160: u64 = 39976;
-/// `GetField8Field220` at 0x720700 (decompiler, high); signature (untiered): `undefined8 GetField8Field220(longlong param_1)`
+/// `GetField8Field220` at 0x720700 (decompiler, high); signature (low): `undefined8 GetField8Field220(longlong param_1)`
 pub const GetField8Field220: u64 = 39809;
-/// `GetField8Field260` at 0x720720 (decompiler, high); signature (untiered): `undefined8 GetField8Field260(longlong param_1)`
+/// `GetField8Field260` at 0x720720 (decompiler, high); signature (low): `undefined8 GetField8Field260(longlong param_1)`
 pub const GetField8Field260: u64 = 39810;
 /// `GetField8Field2B0` at 0x727e10 (decompiler, high); signature (high): `undefined4 GetField8Field2B0(longlong param_1)`
 pub const GetField8Field2B0: u64 = 40003;
-/// `GetField8Field2E8` at 0x7253c0 (decompiler, high); signature (untiered): `undefined4 GetField8Field2E8(longlong param_1)`
+/// `GetField8Field2E8` at 0x7253c0 (decompiler, high); signature (low): `undefined4 GetField8Field2E8(longlong param_1)`
 pub const GetField8Field2E8: u64 = 39921;
-/// `GetField8FixedStringOrEmpty` at 0x1498b60 (decompiler, medium); signature (untiered): `undefined8 * GetField8FixedStringOrEmpty(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetField8FixedStringOrEmpty` at 0x1498b60 (decompiler, medium); signature (low): `undefined8 * GetField8FixedStringOrEmpty(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetField8FixedStringOrEmpty: u64 = 104409;
 /// `GetField8Form220Or260IfType1F` at 0x7206c0 (decompiler, medium); signature (medium): `longlong * GetField8Form220Or260IfType1F(longlong param_1, char param_2)`
 pub const GetField8Form220Or260IfType1F: u64 = 39808;
-/// `GetField8Form40Component` at 0x2310d0 (decompiler, medium); signature (untiered): `longlong GetField8Form40Component(longlong param_1)`
+/// `GetField8Form40Component` at 0x2310d0 (decompiler, medium); signature (low): `longlong GetField8Form40Component(longlong param_1)`
 pub const GetField8Form40Component: u64 = 16064;
-/// `GetField8Handle218` at 0x726eb0 (decompiler, high); signature (untiered): `undefined4 * GetField8Handle218(longlong param_1, undefined4 * param_2)`
+/// `GetField8Handle218` at 0x726eb0 (decompiler, high); signature (low): `undefined4 * GetField8Handle218(longlong param_1, undefined4 * param_2)`
 pub const GetField8Handle218: u64 = 39951;
-/// `GetField8HandleEC` at 0x727eb0 (decompiler, high); signature (untiered): `undefined4 * GetField8HandleEC(longlong param_1, undefined4 * param_2)`
+/// `GetField8HandleEC` at 0x727eb0 (decompiler, high); signature (low): `undefined4 * GetField8HandleEC(longlong param_1, undefined4 * param_2)`
 pub const GetField8HandleEC: u64 = 40008;
-/// `GetField8IfKind3` at 0x4a5bb0 (decompiler, medium); signature (untiered): `undefined8 GetField8IfKind3(char * param_1)`
+/// `GetField8IfKind3` at 0x4a5bb0 (decompiler, medium); signature (low): `undefined8 GetField8IfKind3(char * param_1)`
 pub const GetField8IfKind3: u64 = 29853;
-/// `GetField8IfKind4` at 0x4a5b60 (decompiler, medium); signature (untiered): `undefined4 GetField8IfKind4(char * param_1)`
+/// `GetField8IfKind4` at 0x4a5b60 (decompiler, medium); signature (low): `undefined4 GetField8IfKind4(char * param_1)`
 pub const GetField8IfKind4: u64 = 29850;
-/// `GetField8IfType1` at 0x4a5b20 (decompiler, high); signature (untiered): `undefined8 GetField8IfType1(char * param_1)`
+/// `GetField8IfType1` at 0x4a5b20 (decompiler, high); signature (low): `undefined8 GetField8IfType1(char * param_1)`
 pub const GetField8IfType1: u64 = 29848;
-/// `GetField8IfType2` at 0x4a5b40 (decompiler, high); signature (untiered): `undefined4 GetField8IfType2(char * param_1)`
+/// `GetField8IfType2` at 0x4a5b40 (decompiler, high); signature (low): `undefined4 GetField8IfType2(char * param_1)`
 pub const GetField8IfType2: u64 = 29849;
 /// `GetField8Low14Bits` at 0x6e14f0 (decompiler, high); signature (high): `ushort GetField8Low14Bits(longlong param_1)`
 pub const GetField8Low14Bits: u64 = 38985;
-/// `GetField8LowTwoBits` at 0x1de960 (decompiler, high); signature (untiered): `byte GetField8LowTwoBits(longlong param_1)`
+/// `GetField8LowTwoBits` at 0x1de960 (decompiler, high); signature (low): `byte GetField8LowTwoBits(longlong param_1)`
 pub const GetField8LowTwoBits: u64 = 14451;
-/// `GetField8OfField130` at 0x2be360 (decompiler, medium); signature (untiered): `undefined8 GetField8OfField130(longlong param_1)`
+/// `GetField8OfField130` at 0x2be360 (decompiler, medium); signature (low): `undefined8 GetField8OfField130(longlong param_1)`
 pub const GetField8OfField130: u64 = 18979;
-/// `GetField8OfGlobalTableEntry` at 0x3a4f10 (decompiler, medium); signature (untiered): `undefined4 GetField8OfGlobalTableEntry(int param_1)`
+/// `GetField8OfGlobalTableEntry` at 0x3a4f10 (decompiler, medium); signature (low): `undefined4 GetField8OfGlobalTableEntry(int param_1)`
 pub const GetField8OfGlobalTableEntry: u64 = 24080;
-/// `GetField8OrDefault` at 0xdfebb0 (decompiler, medium); signature (untiered): `undefined8 * GetField8OrDefault(longlong param_1)`
+/// `GetField8OrDefault` at 0xdfebb0 (decompiler, medium); signature (low): `undefined8 * GetField8OrDefault(longlong param_1)`
 pub const GetField8OrDefault: u64 = 87436;
-/// `GetField8Plus58OrSelfPlus18` at 0x7220d0 (decompiler, medium); signature (untiered): `longlong GetField8Plus58OrSelfPlus18(longlong param_1)`
+/// `GetField8Plus58OrSelfPlus18` at 0x7220d0 (decompiler, medium); signature (low): `longlong GetField8Plus58OrSelfPlus18(longlong param_1)`
 pub const GetField8Plus58OrSelfPlus18: u64 = 39855;
-/// `GetField8PlusC8OrDefault` at 0x725be0 (decompiler, high); signature (untiered): `undefined4 * GetField8PlusC8OrDefault(longlong param_1)`
+/// `GetField8PlusC8OrDefault` at 0x725be0 (decompiler, high); signature (low): `undefined4 * GetField8PlusC8OrDefault(longlong param_1)`
 pub const GetField8PlusC8OrDefault: u64 = 39932;
-/// `GetField8PlusE0IfField10Set` at 0x6f1390 (decompiler, medium); signature (untiered): `longlong GetField8PlusE0IfField10Set(longlong param_1)`
+/// `GetField8PlusE0IfField10Set` at 0x6f1390 (decompiler, medium); signature (low): `longlong GetField8PlusE0IfField10Set(longlong param_1)`
 pub const GetField8PlusE0IfField10Set: u64 = 39263;
 /// `GetField8PositionOrDefault` at 0x41cbb0 (decompiler, medium); signature (medium): `undefined GetField8PositionOrDefault(longlong param_1, undefined4 * param_2)`
 pub const GetField8PositionOrDefault: u64 = 26357;
@@ -1857,15 +1457,15 @@ pub const GetField8RefHandle: u64 = 39916;
 pub const GetField8Shr5: u64 = 14459;
 /// `GetField8UnderReadLock` at 0x240f90 (decompiler, high); signature (high): `undefined8 GetField8UnderReadLock(longlong param_1)`
 pub const GetField8UnderReadLock: u64 = 16213;
-/// `GetField8UnlessField10Flag200` at 0x148960 (decompiler, medium); signature (untiered): `undefined4 GetField8UnlessField10Flag200(longlong param_1)`
+/// `GetField8UnlessField10Flag200` at 0x148960 (decompiler, medium); signature (low): `undefined4 GetField8UnlessField10Flag200(longlong param_1)`
 pub const GetField8UnlessField10Flag200: u64 = 11011;
-/// `GetField8ValueAsIntOr77` at 0x645ef0 (decompiler, medium); signature (untiered): `longlong GetField8ValueAsIntOr77(longlong param_1)`
+/// `GetField8ValueAsIntOr77` at 0x645ef0 (decompiler, medium); signature (low): `longlong GetField8ValueAsIntOr77(longlong param_1)`
 pub const GetField8ValueAsIntOr77: u64 = 36292;
-/// `GetField8_2` at 0xab1040 (decompiler, high); signature (untiered): `undefined8 GetField8_2(longlong param_1)`
+/// `GetField8_2` at 0xab1040 (decompiler, high); signature (low): `undefined8 GetField8_2(longlong param_1)`
 pub const GetField8_2: u64 = 57609;
-/// `GetField8_3` at 0xd78110 (decompiler, high); signature (untiered): `undefined8 GetField8_3(longlong param_1)`
+/// `GetField8_3` at 0xd78110 (decompiler, high); signature (low): `undefined8 GetField8_3(longlong param_1)`
 pub const GetField8_3: u64 = 85171;
-/// `GetField8_4` at 0xab1030 (decompiler, high); signature (untiered): `undefined8 GetField8_4(longlong param_1)`
+/// `GetField8_4` at 0xab1030 (decompiler, high); signature (low): `undefined8 GetField8_4(longlong param_1)`
 pub const GetField8_4: u64 = 57608;
 /// `GetField8_5` at 0xab16e0 (decompiler, high); signature (high): `undefined8 GetField8_5(longlong param_1)`
 pub const GetField8_5: u64 = 57623;
@@ -1875,13 +1475,13 @@ pub const GetField8_6: u64 = 57556;
 pub const GetField8_7: u64 = 82713;
 /// `GetField9` at 0xd48340 (decompiler, high); signature (high): `undefined2 GetField9(longlong param_1)`
 pub const GetField9: u64 = 83822;
-/// `GetField90` at 0x6e9690 (decompiler, high); signature (untiered): `undefined4 GetField90(longlong param_1)`
+/// `GetField90` at 0x6e9690 (decompiler, high); signature (low): `undefined4 GetField90(longlong param_1)`
 pub const GetField90: u64 = 39132;
-/// `GetField90FollowingField158Chain` at 0x30db20 (decompiler, medium); signature (untiered): `undefined8 GetField90FollowingField158Chain(longlong param_1)`
+/// `GetField90FollowingField158Chain` at 0x30db20 (decompiler, medium); signature (low): `undefined8 GetField90FollowingField158Chain(longlong param_1)`
 pub const GetField90FollowingField158Chain: u64 = 20469;
 /// `GetField90_2` at 0x52c540 (decompiler, high); signature (high): `undefined8 GetField90_2(longlong param_1)`
 pub const GetField90_2: u64 = 32184;
-/// `GetField98Locked` at 0xdea670 (decompiler, high); signature (untiered): `undefined4 GetField98Locked(longlong param_1)`
+/// `GetField98Locked` at 0xdea670 (decompiler, high); signature (low): `undefined4 GetField98Locked(longlong param_1)`
 pub const GetField98Locked: u64 = 87191;
 /// `GetField98Ptr` at 0x260a20 (decompiler, high); signature (high): `longlong GetField98Ptr(longlong param_1)`
 pub const GetField98Ptr: u64 = 16977;
@@ -1889,9 +1489,9 @@ pub const GetField98Ptr: u64 = 16977;
 pub const GetField98Rect30Transformed: u64 = 83472;
 /// `GetField98Rect38Transformed` at 0xd34660 (decompiler, medium); signature (medium): `float * GetField98Rect38Transformed(longlong param_1, float * param_2, float * param_3)`
 pub const GetField98Rect38Transformed: u64 = 83502;
-/// `GetField9C` at 0x295980 (decompiler, high); signature (untiered): `undefined4 GetField9C(longlong param_1)`
+/// `GetField9C` at 0x295980 (decompiler, high); signature (low): `undefined4 GetField9C(longlong param_1)`
 pub const GetField9C: u64 = 18306;
-/// `GetField9C0OfField20Locked` at 0x13088b0 (decompiler, medium); signature (untiered): `undefined * GetField9C0OfField20Locked(longlong param_1)`
+/// `GetField9C0OfField20Locked` at 0x13088b0 (decompiler, medium); signature (low): `undefined * GetField9C0OfField20Locked(longlong param_1)`
 pub const GetField9C0OfField20Locked: u64 = 448086;
 /// `GetField9E0Field18` at 0x776fa0 (decompiler, high); signature (high): `undefined4 GetField9E0Field18(longlong param_1)`
 pub const GetField9E0Field18: u64 = 41245;
@@ -1901,45 +1501,45 @@ pub const GetFieldA: u64 = 83823;
 pub const GetFieldA08Entry: u64 = 41257;
 /// `GetFieldA0Squared` at 0x11e70b0 (decompiler, high); signature (high): `int GetFieldA0Squared(longlong param_1)`
 pub const GetFieldA0Squared: u64 = 91170;
-/// `GetFieldA8Locked` at 0xde9f00 (decompiler, high); signature (untiered): `undefined4 GetFieldA8Locked(longlong param_1)`
+/// `GetFieldA8Locked` at 0xde9f00 (decompiler, high); signature (low): `undefined4 GetFieldA8Locked(longlong param_1)`
 pub const GetFieldA8Locked: u64 = 87182;
-/// `GetFieldACLocked` at 0xdea630 (decompiler, high); signature (untiered): `undefined4 GetFieldACLocked(longlong param_1)`
+/// `GetFieldACLocked` at 0xdea630 (decompiler, high); signature (low): `undefined4 GetFieldACLocked(longlong param_1)`
 pub const GetFieldACLocked: u64 = 87190;
 /// `GetFieldB` at 0xd483a0 (decompiler, high); signature (high): `undefined2 GetFieldB(longlong param_1)`
 pub const GetFieldB: u64 = 83824;
-/// `GetFieldB0` at 0xace8d0 (decompiler, high); signature (untiered): `undefined8 GetFieldB0(longlong param_1)`
+/// `GetFieldB0` at 0xace8d0 (decompiler, high); signature (low): `undefined8 GetFieldB0(longlong param_1)`
 pub const GetFieldB0: u64 = 58368;
 /// `GetFieldB0AddressIfFormType1A` at 0x1df590 (decompiler, high); signature (high): `longlong GetFieldB0AddressIfFormType1A(longlong param_1)`
 pub const GetFieldB0AddressIfFormType1A: u64 = 14492;
-/// `GetFieldB0Locked` at 0xdea6b0 (decompiler, high); signature (untiered): `undefined4 GetFieldB0Locked(longlong param_1)`
+/// `GetFieldB0Locked` at 0xdea6b0 (decompiler, high); signature (low): `undefined4 GetFieldB0Locked(longlong param_1)`
 pub const GetFieldB0Locked: u64 = 87192;
-/// `GetFieldB4Locked` at 0xde9fd0 (decompiler, high); signature (untiered): `undefined4 GetFieldB4Locked(longlong param_1)`
+/// `GetFieldB4Locked` at 0xde9fd0 (decompiler, high); signature (low): `undefined4 GetFieldB4Locked(longlong param_1)`
 pub const GetFieldB4Locked: u64 = 87185;
-/// `GetFieldB8` at 0x2db270 (decompiler, high); signature (untiered): `undefined8 GetFieldB8(longlong param_1)`
+/// `GetFieldB8` at 0x2db270 (decompiler, high); signature (low): `undefined8 GetFieldB8(longlong param_1)`
 pub const GetFieldB8: u64 = 19444;
-/// `GetFieldB8Key2AsBhkCollisionObject` at 0x3fca90 (decompiler, medium); signature (untiered): `longlong * GetFieldB8Key2AsBhkCollisionObject(longlong param_1)`
+/// `GetFieldB8Key2AsBhkCollisionObject` at 0x3fca90 (decompiler, medium); signature (low): `longlong * GetFieldB8Key2AsBhkCollisionObject(longlong param_1)`
 pub const GetFieldB8Key2AsBhkCollisionObject: u64 = 25835;
-/// `GetFieldB8Locked` at 0xde9f80 (decompiler, high); signature (untiered): `undefined4 GetFieldB8Locked(longlong param_1)`
+/// `GetFieldB8Locked` at 0xde9f80 (decompiler, high); signature (low): `undefined4 GetFieldB8Locked(longlong param_1)`
 pub const GetFieldB8Locked: u64 = 87184;
-/// `GetFieldB8OfField8` at 0x7233d0 (decompiler, high); signature (untiered): `undefined4 GetFieldB8OfField8(longlong param_1)`
+/// `GetFieldB8OfField8` at 0x7233d0 (decompiler, high); signature (low): `undefined4 GetFieldB8OfField8(longlong param_1)`
 pub const GetFieldB8OfField8: u64 = 39877;
 /// `GetFieldB8Ptr` at 0x6eb550 (decompiler, high); signature (high): `longlong GetFieldB8Ptr(longlong param_1)`
 pub const GetFieldB8Ptr: u64 = 39200;
-/// `GetFieldB8ValueByKey` at 0x1047d80 (decompiler, medium); signature (untiered): `ulonglong * GetFieldB8ValueByKey(ulonglong * param_1, longlong param_2, int param_3)`
+/// `GetFieldB8ValueByKey` at 0x1047d80 (decompiler, medium); signature (low): `ulonglong * GetFieldB8ValueByKey(ulonglong * param_1, longlong param_2, int param_3)`
 pub const GetFieldB8ValueByKey: u64 = 77799;
-/// `GetFieldB8_2` at 0x1308a40 (decompiler, high); signature (untiered): `undefined8 GetFieldB8_2(longlong param_1)`
+/// `GetFieldB8_2` at 0x1308a40 (decompiler, high); signature (low): `undefined8 GetFieldB8_2(longlong param_1)`
 pub const GetFieldB8_2: u64 = 95577;
-/// `GetFieldBCLocked` at 0xde9f40 (decompiler, high); signature (untiered): `undefined4 GetFieldBCLocked(longlong param_1)`
+/// `GetFieldBCLocked` at 0xde9f40 (decompiler, high); signature (low): `undefined4 GetFieldBCLocked(longlong param_1)`
 pub const GetFieldBCLocked: u64 = 87183;
 /// `GetFieldC0` at 0xe67300 (decompiler, high); signature (high): `undefined4 GetFieldC0(longlong param_1)`
 pub const GetFieldC0: u64 = 89250;
-/// `GetFieldC0OfFormType3EByID` at 0x787f60 (decompiler, medium); signature (untiered): `longlong GetFieldC0OfFormType3EByID(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetFieldC0OfFormType3EByID` at 0x787f60 (decompiler, medium); signature (low): `longlong GetFieldC0OfFormType3EByID(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetFieldC0OfFormType3EByID: u64 = 41429;
-/// `GetFieldC8` at 0x267450 (decompiler, high); signature (untiered): `undefined8 GetFieldC8(longlong param_1)`
+/// `GetFieldC8` at 0x267450 (decompiler, high); signature (low): `undefined8 GetFieldC8(longlong param_1)`
 pub const GetFieldC8: u64 = 17185;
-/// `GetFieldC8OrField108Field30` at 0x14b6a0 (decompiler, medium); signature (untiered): `longlong GetFieldC8OrField108Field30(longlong param_1, char param_2)`
+/// `GetFieldC8OrField108Field30` at 0x14b6a0 (decompiler, medium); signature (low): `longlong GetFieldC8OrField108Field30(longlong param_1, char param_2)`
 pub const GetFieldC8OrField108Field30: u64 = 11075;
-/// `GetFieldCUnlessField8Is1OrFF` at 0x4a55e0 (decompiler, medium); signature (untiered): `undefined4 GetFieldCUnlessField8Is1OrFF(longlong param_1)`
+/// `GetFieldCUnlessField8Is1OrFF` at 0x4a55e0 (decompiler, medium); signature (low): `undefined4 GetFieldCUnlessField8Is1OrFF(longlong param_1)`
 pub const GetFieldCUnlessField8Is1OrFF: u64 = 29828;
 /// `GetFieldD0InGameUnits` at 0x261290 (decompiler, medium); signature (medium): `float GetFieldD0InGameUnits(longlong param_1)`
 pub const GetFieldD0InGameUnits: u64 = 16983;
@@ -1947,31 +1547,31 @@ pub const GetFieldD0InGameUnits: u64 = 16983;
 pub const GetFieldD0OrField108Sub38: u64 = 11076;
 /// `GetFieldD28EntryAt` at 0x1ba9d0 (decompiler, high); signature (high): `undefined8 GetFieldD28EntryAt(longlong param_1, uint param_2)`
 pub const GetFieldD28EntryAt: u64 = 13707;
-/// `GetFieldD70ForGlobalIndex` at 0x1015570 (decompiler, medium); signature (untiered): `undefined4 GetFieldD70ForGlobalIndex(longlong param_1)`
+/// `GetFieldD70ForGlobalIndex` at 0x1015570 (decompiler, medium); signature (low): `undefined4 GetFieldD70ForGlobalIndex(longlong param_1)`
 pub const GetFieldD70ForGlobalIndex: u64 = 77452;
-/// `GetFieldD74ForGlobalIndex` at 0x1015590 (decompiler, medium); signature (untiered): `undefined4 GetFieldD74ForGlobalIndex(longlong param_1)`
+/// `GetFieldD74ForGlobalIndex` at 0x1015590 (decompiler, medium); signature (low): `undefined4 GetFieldD74ForGlobalIndex(longlong param_1)`
 pub const GetFieldD74ForGlobalIndex: u64 = 77451;
 /// `GetFieldD8Ptr` at 0x11cbea0 (decompiler, high); signature (high): `longlong GetFieldD8Ptr(longlong param_1)`
 pub const GetFieldD8Ptr: u64 = 90647;
-/// `GetFieldE8` at 0x7b9430 (decompiler, high); signature (untiered): `undefined4 * GetFieldE8(longlong param_1, undefined4 * param_2)`
+/// `GetFieldE8` at 0x7b9430 (decompiler, high); signature (low): `undefined4 * GetFieldE8(longlong param_1, undefined4 * param_2)`
 pub const GetFieldE8: u64 = 42546;
 /// `GetFieldE8TransformTranslation` at 0x7fe350 (decompiler, medium); signature (medium): `undefined GetFieldE8TransformTranslation(longlong param_1, undefined4 * param_2)`
 pub const GetFieldE8TransformTranslation: u64 = 44172;
 /// `GetFieldE8_2` at 0x649020 (decompiler, high); signature (high): `undefined4 GetFieldE8_2(longlong param_1)`
 pub const GetFieldE8_2: u64 = 416400;
-/// `GetFieldEC` at 0x7b9450 (decompiler, high); signature (untiered): `undefined4 * GetFieldEC(longlong param_1, undefined4 * param_2)`
+/// `GetFieldEC` at 0x7b9450 (decompiler, high); signature (low): `undefined4 * GetFieldEC(longlong param_1, undefined4 * param_2)`
 pub const GetFieldEC: u64 = 42547;
 /// `GetFieldEC_2` at 0x7c1f30 (decompiler, high); signature (high): `undefined4 GetFieldEC_2(longlong param_1)`
 pub const GetFieldEC_2: u64 = 42665;
-/// `GetFieldF0` at 0xae9b50 (decompiler, high); signature (untiered): `undefined4 GetFieldF0(longlong param_1)`
+/// `GetFieldF0` at 0xae9b50 (decompiler, high); signature (low): `undefined4 GetFieldF0(longlong param_1)`
 pub const GetFieldF0: u64 = 59269;
-/// `GetFieldF8Byte137` at 0x675520 (decompiler, high); signature (untiered): `ulonglong GetFieldF8Byte137(longlong param_1)`
+/// `GetFieldF8Byte137` at 0x675520 (decompiler, high); signature (low): `ulonglong GetFieldF8Byte137(longlong param_1)`
 pub const GetFieldF8Byte137: u64 = 37269;
-/// `GetFieldF8Field10Dword` at 0x6d9250 (decompiler, high); signature (untiered): `undefined4 GetFieldF8Field10Dword(longlong param_1)`
+/// `GetFieldF8Field10Dword` at 0x6d9250 (decompiler, high); signature (low): `undefined4 GetFieldF8Field10Dword(longlong param_1)`
 pub const GetFieldF8Field10Dword: u64 = 38806;
-/// `GetFieldF8Field10Field8` at 0x6d9270 (decompiler, high); signature (untiered): `undefined8 GetFieldF8Field10Field8(longlong param_1)`
+/// `GetFieldF8Field10Field8` at 0x6d9270 (decompiler, high); signature (low): `undefined8 GetFieldF8Field10Field8(longlong param_1)`
 pub const GetFieldF8Field10Field8: u64 = 38807;
-/// `GetFieldF8Field8Field190` at 0x6cb820 (decompiler, high); signature (untiered): `undefined8 GetFieldF8Field8Field190(longlong param_1)`
+/// `GetFieldF8Field8Field190` at 0x6cb820 (decompiler, high); signature (low): `undefined8 GetFieldF8Field8Field190(longlong param_1)`
 pub const GetFieldF8Field8Field190: u64 = 38587;
 /// `GetFieldF8Field8Float2C8` at 0x6d45e0 (decompiler, medium); signature (medium): `undefined4 GetFieldF8Field8Float2C8(longlong param_1)`
 pub const GetFieldF8Field8Float2C8: u64 = 38724;
@@ -1981,71 +1581,71 @@ pub const GetFieldF8HandleEC: u64 = 38638;
 pub const GetFieldF8OrField108Field50: u64 = 11079;
 /// `GetFieldsACAndB8` at 0x11e22c0 (decompiler, medium); signature (medium): `longlong GetFieldsACAndB8(longlong param_1, undefined4 * param_2, undefined4 * param_3)`
 pub const GetFieldsACAndB8: u64 = 91113;
-/// `GetFileForFormID` at 0x1fc310 (decompiler, medium); signature (untiered): `longlong GetFileForFormID(undefined8 param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetFileForFormID` at 0x1fc310 (decompiler, medium); signature (low): `longlong GetFileForFormID(undefined8 param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetFileForFormID: u64 = 15152;
-/// `GetFileInfoAndCountTags` at 0xdf5750 (decompiler, medium); signature (untiered): `undefined GetFileInfoAndCountTags(longlong param_1, void * param_2, undefined8 * param_3, char param_4, char param_5)`
+/// `GetFileInfoAndCountTags` at 0xdf5750 (decompiler, medium); signature (low): `undefined GetFileInfoAndCountTags(longlong param_1, void * param_2, undefined8 * param_3, char param_4, char param_5)`
 pub const GetFileInfoAndCountTags: u64 = 84593;
 /// `GetFileLastWriteTime` at 0xec41e0 (decompiler, high); signature (high): `undefined1 GetFileLastWriteTime(LPCSTR param_1, FILETIME * param_2)`
 pub const GetFileLastWriteTime: u64 = 69589;
 /// `GetFileNameFromPath` at 0xe15b70 (decompiler, high); signature (high): `char * GetFileNameFromPath(char * param_1)`
 pub const GetFileNameFromPath: u64 = 88699;
-/// `GetFileNameOfField20Path` at 0xd810f0 (decompiler, medium); signature (untiered): `undefined8 * GetFileNameOfField20Path(longlong param_1, undefined8 * param_2)`
+/// `GetFileNameOfField20Path` at 0xd810f0 (decompiler, medium); signature (low): `undefined8 * GetFileNameOfField20Path(longlong param_1, undefined8 * param_2)`
 pub const GetFileNameOfField20Path: u64 = 85359;
-/// `GetFileTimeAsLocalSystemTime` at 0xebe820 (decompiler, medium); signature (untiered): `LPSYSTEMTIME GetFileTimeAsLocalSystemTime(longlong param_1, LPSYSTEMTIME param_2)`
+/// `GetFileTimeAsLocalSystemTime` at 0xebe820 (decompiler, medium); signature (low): `LPSYSTEMTIME GetFileTimeAsLocalSystemTime(longlong param_1, LPSYSTEMTIME param_2)`
 pub const GetFileTimeAsLocalSystemTime: u64 = 69414;
 /// `GetFileTimesAndSize` at 0xec08f0 (decompiler, high); signature (high): `undefined8 GetFileTimesAndSize(longlong param_1, LPFILETIME param_2)`
 pub const GetFileTimesAndSize: u64 = 69472;
-/// `GetFilterFlagForFormType` at 0x941170 (decompiler, medium); signature (untiered): `undefined8 GetFilterFlagForFormType(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetFilterFlagForFormType` at 0x941170 (decompiler, medium); signature (low): `undefined8 GetFilterFlagForFormType(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetFilterFlagForFormType: u64 = 51824;
 /// `GetFirstArrayElement8` at 0x806d70 (decompiler, high); signature (high): `undefined8 GetFirstArrayElement8(longlong param_1)`
 pub const GetFirstArrayElement8: u64 = 44292;
-/// `GetFirstArrayEntryForKeyInGlobalMap` at 0x3c8d00 (decompiler, medium); signature (untiered): `undefined8 GetFirstArrayEntryForKeyInGlobalMap(ulonglong param_1)`
+/// `GetFirstArrayEntryForKeyInGlobalMap` at 0x3c8d00 (decompiler, medium); signature (low): `undefined8 GetFirstArrayEntryForKeyInGlobalMap(ulonglong param_1)`
 pub const GetFirstArrayEntryForKeyInGlobalMap: u64 = 24791;
-/// `GetFirstChildOfField130Node` at 0x2d3b90 (decompiler, medium); signature (untiered): `undefined8 GetFirstChildOfField130Node(longlong param_1)`
+/// `GetFirstChildOfField130Node` at 0x2d3b90 (decompiler, medium); signature (low): `undefined8 GetFirstChildOfField130Node(longlong param_1)`
 pub const GetFirstChildOfField130Node: u64 = 19307;
-/// `GetFirstChildPropertyField108` at 0x2ad340 (decompiler, medium); signature (untiered): `undefined4 GetFirstChildPropertyField108(longlong param_1)`
+/// `GetFirstChildPropertyField108` at 0x2ad340 (decompiler, medium); signature (low): `undefined4 GetFirstChildPropertyField108(longlong param_1)`
 pub const GetFirstChildPropertyField108: u64 = 18745;
-/// `GetFirstDwordOfSmallArray` at 0x762090 (decompiler, medium); signature (untiered): `undefined4 GetFirstDwordOfSmallArray(int * param_1)`
+/// `GetFirstDwordOfSmallArray` at 0x762090 (decompiler, medium); signature (low): `undefined4 GetFirstDwordOfSmallArray(int * param_1)`
 pub const GetFirstDwordOfSmallArray: u64 = 40781;
-/// `GetFirstEntryField18OfSlot` at 0x824f60 (decompiler, medium); signature (untiered): `undefined4 GetFirstEntryField18OfSlot(longlong param_1, int param_2)`
+/// `GetFirstEntryField18OfSlot` at 0x824f60 (decompiler, medium); signature (low): `undefined4 GetFirstEntryField18OfSlot(longlong param_1, int param_2)`
 pub const GetFirstEntryField18OfSlot: u64 = 44869;
-/// `GetFirstEulerAngleOfNamedNodeOrSelf` at 0x106b720 (decompiler, medium); signature (untiered): `uint GetFirstEulerAngleOfNamedNodeOrSelf(longlong * param_1, char * param_2)`
+/// `GetFirstEulerAngleOfNamedNodeOrSelf` at 0x106b720 (decompiler, medium); signature (low): `uint GetFirstEulerAngleOfNamedNodeOrSelf(longlong * param_1, char * param_2)`
 pub const GetFirstEulerAngleOfNamedNodeOrSelf: u64 = 78388;
-/// `GetFirstExtraListOwner` at 0x228900 (decompiler, medium); signature (untiered): `longlong GetFirstExtraListOwner(longlong param_1)`
+/// `GetFirstExtraListOwner` at 0x228900 (decompiler, medium); signature (low): `longlong GetFirstExtraListOwner(longlong param_1)`
 pub const GetFirstExtraListOwner: u64 = 15993;
 /// `GetFirstExtraType8EField10` at 0x228760 (decompiler, medium); signature (medium): `undefined4 GetFirstExtraType8EField10(longlong param_1)`
 pub const GetFirstExtraType8EField10: u64 = 15989;
 /// `GetFirstField50StringPassingCheck` at 0xa6e040 (decompiler, medium); signature (medium): `char * GetFirstField50StringPassingCheck(longlong param_1)`
 pub const GetFirstField50StringPassingCheck: u64 = 505827;
-/// `GetFirstFieldE0Object` at 0x3fb930 (decompiler, medium); signature (untiered): `longlong * GetFirstFieldE0Object(longlong param_1)`
+/// `GetFirstFieldE0Object` at 0x3fb930 (decompiler, medium); signature (low): `longlong * GetFirstFieldE0Object(longlong param_1)`
 pub const GetFirstFieldE0Object: u64 = 25812;
-/// `GetFirstFilledSlotIndex` at 0x387e60 (decompiler, medium); signature (untiered): `ulonglong GetFirstFilledSlotIndex(longlong param_1)`
+/// `GetFirstFilledSlotIndex` at 0x387e60 (decompiler, medium); signature (low): `ulonglong GetFirstFilledSlotIndex(longlong param_1)`
 pub const GetFirstFilledSlotIndex: u64 = 23360;
 /// `GetFirstNonNullArrayElement` at 0x2d45c0 (decompiler, high); signature (high): `longlong GetFirstNonNullArrayElement(longlong param_1)`
 pub const GetFirstNonNullArrayElement: u64 = 19340;
 /// `GetFirstOccupiedIndex` at 0xab59a0 (decompiler, medium); signature (medium): `longlong GetFirstOccupiedIndex(undefined8 * param_1)`
 pub const GetFirstOccupiedIndex: u64 = 57763;
-/// `GetFirstOfField18` at 0x5ec790 (decompiler, high); signature (untiered): `undefined8 GetFirstOfField18(longlong param_1)`
+/// `GetFirstOfField18` at 0x5ec790 (decompiler, high); signature (low): `undefined8 GetFirstOfField18(longlong param_1)`
 pub const GetFirstOfField18: u64 = 35224;
-/// `GetFirstOfField40` at 0x5edf10 (decompiler, high); signature (untiered): `undefined8 GetFirstOfField40(longlong param_1)`
+/// `GetFirstOfField40` at 0x5edf10 (decompiler, high); signature (low): `undefined8 GetFirstOfField40(longlong param_1)`
 pub const GetFirstOfField40: u64 = 35262;
-/// `GetFirstPersonRenderContext` at 0x1537410 (semantic, high); signature (untiered): `undefined4 * GetFirstPersonRenderContext(void)`; semantic: returns &g_FirstPersonViewParams (0x34362c0) (high); signature `FirstPersonRenderContext* (void)`
+/// `GetFirstPersonRenderContext` at 0x1537410 (semantic, high); signature (low): `undefined4 * GetFirstPersonRenderContext(void)`; semantic: returns &g_FirstPersonViewParams (0x34362c0) (high); signature `FirstPersonRenderContext* (void)`
 pub const GetFirstPersonRenderContext: u64 = 107121;
 /// `GetFirstPersonRenderContext` as a function pointer type (high).
 pub type GetFirstPersonRenderContext_fn = unsafe extern "C" fn() -> *mut crate::FirstPersonRenderContext;
-/// `GetFixedBufferData` at 0x134b160 (decompiler, high); signature (untiered): `longlong * GetFixedBufferData(longlong * param_1)`
+/// `GetFixedBufferData` at 0x134b160 (decompiler, high); signature (low): `longlong * GetFixedBufferData(longlong * param_1)`
 pub const GetFixedBufferData: u64 = 526412;
-/// `GetFixedStringAt2D0OfField30Locked` at 0x13087b0 (decompiler, medium); signature (untiered): `undefined1 * GetFixedStringAt2D0OfField30Locked(longlong param_1)`
+/// `GetFixedStringAt2D0OfField30Locked` at 0x13087b0 (decompiler, medium); signature (low): `undefined1 * GetFixedStringAt2D0OfField30Locked(longlong param_1)`
 pub const GetFixedStringAt2D0OfField30Locked: u64 = 448084;
-/// `GetFixedStringAt48OfField30Locked` at 0x13089d0 (decompiler, medium); signature (untiered): `undefined1 * GetFixedStringAt48OfField30Locked(longlong param_1)`
+/// `GetFixedStringAt48OfField30Locked` at 0x13089d0 (decompiler, medium); signature (low): `undefined1 * GetFixedStringAt48OfField30Locked(longlong param_1)`
 pub const GetFixedStringAt48OfField30Locked: u64 = 525868;
-/// `GetFixedStringAt60Locked` at 0x1308af0 (decompiler, medium); signature (untiered): `longlong GetFixedStringAt60Locked(longlong param_1)`
+/// `GetFixedStringAt60Locked` at 0x1308af0 (decompiler, medium); signature (low): `longlong GetFixedStringAt60Locked(longlong param_1)`
 pub const GetFixedStringAt60Locked: u64 = 448089;
-/// `GetFixedStringAt60OfField18Locked` at 0x1305730 (decompiler, medium); signature (untiered): `undefined1 * GetFixedStringAt60OfField18Locked(longlong param_1)`
+/// `GetFixedStringAt60OfField18Locked` at 0x1305730 (decompiler, medium); signature (low): `undefined1 * GetFixedStringAt60OfField18Locked(longlong param_1)`
 pub const GetFixedStringAt60OfField18Locked: u64 = 446991;
-/// `GetFixedStringAt918OfField20Locked` at 0x1308960 (decompiler, medium); signature (untiered): `undefined1 * GetFixedStringAt918OfField20Locked(longlong param_1)`
+/// `GetFixedStringAt918OfField20Locked` at 0x1308960 (decompiler, medium); signature (low): `undefined1 * GetFixedStringAt918OfField20Locked(longlong param_1)`
 pub const GetFixedStringAt918OfField20Locked: u64 = 525867;
-/// `GetFixedStringAt960OfField20Locked` at 0x1308c90 (decompiler, medium); signature (untiered): `undefined1 * GetFixedStringAt960OfField20Locked(longlong param_1)`
+/// `GetFixedStringAt960OfField20Locked` at 0x1308c90 (decompiler, medium); signature (low): `undefined1 * GetFixedStringAt960OfField20Locked(longlong param_1)`
 pub const GetFixedStringAt960OfField20Locked: u64 = 448094;
 /// `GetFixedStringBuffer` at 0x12ea3f0 (decompiler, medium); signature (medium): `longlong * GetFixedStringBuffer(longlong * param_1)`
 pub const GetFixedStringBuffer: u64 = 444897;
@@ -2057,27 +1657,27 @@ pub const GetFixedStringData: u64 = 527154;
 pub const GetFixedStringData_2: u64 = 449329;
 /// `GetFixedStringForSlotF4` at 0x5c2100 (decompiler, medium); signature (medium): `undefined8 GetFixedStringForSlotF4(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetFixedStringForSlotF4: u64 = 34184;
-/// `GetFixedVector48End` at 0x1350c40 (decompiler, medium); signature (untiered): `longlong * GetFixedVector48End(longlong * param_1)`
+/// `GetFixedVector48End` at 0x1350c40 (decompiler, medium); signature (low): `longlong * GetFixedVector48End(longlong * param_1)`
 pub const GetFixedVector48End: u64 = 526481;
-/// `GetFixedVector4End` at 0x1350cd0 (decompiler, medium); signature (untiered): `longlong GetFixedVector4End(longlong * param_1)`
+/// `GetFixedVector4End` at 0x1350cd0 (decompiler, medium); signature (low): `longlong GetFixedVector4End(longlong * param_1)`
 pub const GetFixedVector4End: u64 = 526484;
-/// `GetFixedVector60End` at 0x1350c70 (decompiler, medium); signature (untiered): `longlong * GetFixedVector60End(longlong * param_1)`
+/// `GetFixedVector60End` at 0x1350c70 (decompiler, medium); signature (low): `longlong * GetFixedVector60End(longlong * param_1)`
 pub const GetFixedVector60End: u64 = 526482;
-/// `GetFixedVectorA0End` at 0x1350ca0 (decompiler, medium); signature (untiered): `longlong * GetFixedVectorA0End(longlong * param_1)`
+/// `GetFixedVectorA0End` at 0x1350ca0 (decompiler, medium); signature (low): `longlong * GetFixedVectorA0End(longlong * param_1)`
 pub const GetFixedVectorA0End: u64 = 526483;
-/// `GetFixedVectorEnd` at 0x12fc3a0 (decompiler, medium); signature (untiered): `longlong GetFixedVectorEnd(longlong param_1)`
+/// `GetFixedVectorEnd` at 0x12fc3a0 (decompiler, medium); signature (low): `longlong GetFixedVectorEnd(longlong param_1)`
 pub const GetFixedVectorEnd: u64 = 95925;
 /// `GetFloatByShortKeyFromField260OrField158` at 0x3c87b0 (decompiler, medium); signature (medium): `float GetFloatByShortKeyFromField260OrField158(longlong param_1, short param_2)`
 pub const GetFloatByShortKeyFromField260OrField158: u64 = 24784;
-/// `GetFlooredScaledField28Field34` at 0x646040 (decompiler, medium); signature (untiered): `longlong GetFlooredScaledField28Field34(longlong param_1)`
+/// `GetFlooredScaledField28Field34` at 0x646040 (decompiler, medium); signature (low): `longlong GetFlooredScaledField28Field34(longlong param_1)`
 pub const GetFlooredScaledField28Field34: u64 = 36304;
-/// `GetFlyLandRequestField138` at 0x6a5040 (decompiler, medium); signature (untiered): `undefined4 GetFlyLandRequestField138(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetFlyLandRequestField138` at 0x6a5040 (decompiler, medium); signature (low): `undefined4 GetFlyLandRequestField138(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetFlyLandRequestField138: u64 = 37790;
-/// `GetFlyingMountTargetSpeed` at 0x7628a0 (decompiler, medium); signature (untiered): `ulonglong GetFlyingMountTargetSpeed(undefined8 param_1)`
+/// `GetFlyingMountTargetSpeed` at 0x7628a0 (decompiler, medium); signature (low): `ulonglong GetFlyingMountTargetSpeed(undefined8 param_1)`
 pub const GetFlyingMountTargetSpeed: u64 = 40802;
-/// `GetFormAtCombinedIndex` at 0x320270 (decompiler, medium); signature (untiered): `longlong GetFormAtCombinedIndex(longlong param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetFormAtCombinedIndex` at 0x320270 (decompiler, medium); signature (low): `longlong GetFormAtCombinedIndex(longlong param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetFormAtCombinedIndex: u64 = 20908;
-/// `GetFormAtCombinedIndex_2` at 0x320a50 (decompiler, medium); signature (untiered): `longlong GetFormAtCombinedIndex_2(longlong param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetFormAtCombinedIndex_2` at 0x320a50 (decompiler, medium); signature (low): `longlong GetFormAtCombinedIndex_2(longlong param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetFormAtCombinedIndex_2: u64 = 20918;
 /// `GetFormGoldValue` at 0x1f3560 (semantic, medium); signature (untiered): `int GetFormGoldValue(undefined8 param_1)`; semantic: TESValueForm value (+8) when the form casts to TESValueForm, else the MagicItem/AlchemyItem value from 0x151780(item, 0) truncated, else -1 (medium); signature `i32 (TESForm* form)`
 pub const GetFormGoldValue: u64 = 14978;
@@ -2085,13 +1685,13 @@ pub const GetFormGoldValue: u64 = 14978;
 pub const GetFormModelPath: u64 = 14788;
 /// `GetFormModelPath` as a function pointer type (high).
 pub type GetFormModelPath_fn = unsafe extern "C" fn(form: *mut crate::TESForm) -> *const c_char;
-/// `GetFormModelPathWithGlobal187391Extension` at 0x5491e0 (decompiler, medium); signature (untiered): `bool GetFormModelPathWithGlobal187391Extension(longlong param_1, undefined1 * param_2)`
+/// `GetFormModelPathWithGlobal187391Extension` at 0x5491e0 (decompiler, medium); signature (low): `bool GetFormModelPathWithGlobal187391Extension(longlong param_1, undefined1 * param_2)`
 pub const GetFormModelPathWithGlobal187391Extension: u64 = 32707;
 /// `GetFormTypeByEditorID` at 0x1b7170 (decompiler, medium); signature (medium): `undefined1 GetFormTypeByEditorID(undefined8 param_1, char * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetFormTypeByEditorID: u64 = 13695;
 /// `GetFormTypeCategory` at 0x49e030 (decompiler, medium); signature (medium): `char GetFormTypeCategory(longlong * param_1)`
 pub const GetFormTypeCategory: u64 = 29622;
-/// `GetFormTypeComponent88OrB0` at 0x1d93c0 (decompiler, medium); signature (untiered): `longlong GetFormTypeComponent88OrB0(longlong param_1)`
+/// `GetFormTypeComponent88OrB0` at 0x1d93c0 (decompiler, medium); signature (low): `longlong GetFormTypeComponent88OrB0(longlong param_1)`
 pub const GetFormTypeComponent88OrB0: u64 = 14281;
 /// `GetFormWeight` at 0x1f37b0 (semantic, high); signature (untiered): `float GetFormWeight(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: the TESWeightForm weight (+8 of the component) chosen by form type, else the constant at 0x17e2820 (high); signature `float (TESForm* form)`
 pub const GetFormWeight: u64 = 14988;
@@ -2099,53 +1699,53 @@ pub const GetFormWeight: u64 = 14988;
 pub type GetFormWeight_fn = unsafe extern "C" fn(form: *mut crate::TESForm) -> f32;
 /// `GetFormatBitsPerPixel` at 0x101f150 (decompiler, medium); signature (medium): `undefined8 GetFormatBitsPerPixel(undefined4 param_1)`
 pub const GetFormatBitsPerPixel: u64 = 77537;
-/// `GetFormattedJsonErrorMessages` at 0xa848b0 (decompiler, high); signature (untiered): `undefined8 GetFormattedJsonErrorMessages(undefined8 param_1, undefined8 param_2)`
+/// `GetFormattedJsonErrorMessages` at 0xa848b0 (decompiler, high); signature (low): `undefined8 GetFormattedJsonErrorMessages(undefined8 param_1, undefined8 param_2)`
 pub const GetFormattedJsonErrorMessages: u64 = 443136;
-/// `GetFourthChildOfField130Node` at 0x2d6610 (decompiler, medium); signature (untiered): `undefined8 GetFourthChildOfField130Node(longlong param_1)`
+/// `GetFourthChildOfField130Node` at 0x2d6610 (decompiler, medium); signature (low): `undefined8 GetFourthChildOfField130Node(longlong param_1)`
 pub const GetFourthChildOfField130Node: u64 = 19385;
-/// `GetFurnitureMarkerExtraDataField28` at 0x26eb00 (decompiler, high); signature (untiered): `undefined4 GetFurnitureMarkerExtraDataField28(longlong param_1)`
+/// `GetFurnitureMarkerExtraDataField28` at 0x26eb00 (decompiler, high); signature (low): `undefined4 GetFurnitureMarkerExtraDataField28(longlong param_1)`
 pub const GetFurnitureMarkerExtraDataField28: u64 = 17407;
-/// `GetFurnitureMarkerNodeExtraData` at 0xff13d0 (semantic, high); signature (untiered): `longlong * GetFurnitureMarkerNodeExtraData(longlong param_1)`; semantic: the root's extra data named by the BSFixedString at 0x332e398 when its type node chain contains BSFurnitureMarkerNode, else null (high); signature `BSFurnitureMarkerNode* (NiAVObject* root3D)`
+/// `GetFurnitureMarkerNodeExtraData` at 0xff13d0 (semantic, high); signature (low): `longlong * GetFurnitureMarkerNodeExtraData(longlong param_1)`; semantic: the root's extra data named by the BSFixedString at 0x332e398 when its type node chain contains BSFurnitureMarkerNode, else null (high); signature `BSFurnitureMarkerNode* (NiAVObject* root3D)`
 pub const GetFurnitureMarkerNodeExtraData: u64 = 76647;
 /// `GetFurnitureMarkerNodeExtraData` as a function pointer type (high).
 pub type GetFurnitureMarkerNodeExtraData_fn = unsafe extern "C" fn(root3D: *mut crate::NiAVObject) -> *mut crate::BSFurnitureMarkerNode;
-/// `GetGFxStringMember` at 0x956da0 (decompiler, medium); signature (untiered): `longlong * GetGFxStringMember(longlong param_1)`
+/// `GetGFxStringMember` at 0x956da0 (decompiler, medium); signature (low): `longlong * GetGFxStringMember(longlong param_1)`
 pub const GetGFxStringMember: u64 = 52093;
-/// `GetGeometryByIndexInTree` at 0x2263c0 (decompiler, medium); signature (untiered): `longlong * GetGeometryByIndexInTree(longlong * param_1, int * param_2, char param_3, char param_4)`
+/// `GetGeometryByIndexInTree` at 0x2263c0 (decompiler, medium); signature (low): `longlong * GetGeometryByIndexInTree(longlong * param_1, int * param_2, char param_3, char param_4)`
 pub const GetGeometryByIndexInTree: u64 = 15924;
-/// `GetGeometryByIndexOrNull` at 0x224170 (decompiler, high); signature (untiered): `undefined8 GetGeometryByIndexOrNull(undefined8 param_1, int param_2)`
+/// `GetGeometryByIndexOrNull` at 0x224170 (decompiler, high); signature (low): `undefined8 GetGeometryByIndexOrNull(undefined8 param_1, int param_2)`
 pub const GetGeometryByIndexOrNull: u64 = 15889;
 /// `GetGeometryIndexInTree` at 0x2240f0 (decompiler, high); signature (high): `undefined4 GetGeometryIndexInTree(undefined8 param_1, undefined8 param_2, undefined1 param_3, undefined1 param_4)`
 pub const GetGeometryIndexInTree: u64 = 15887;
-/// `GetGlobal195873OrGlobal186632BySex` at 0x3bf5b0 (decompiler, medium); signature (untiered): `undefined4 GetGlobal195873OrGlobal186632BySex(longlong param_1)`
+/// `GetGlobal195873OrGlobal186632BySex` at 0x3bf5b0 (decompiler, medium); signature (low): `undefined4 GetGlobal195873OrGlobal186632BySex(longlong param_1)`
 pub const GetGlobal195873OrGlobal186632BySex: u64 = 24699;
-/// `GetGlobal242232` at 0xd0b190 (decompiler, medium); signature (untiered): `undefined8 GetGlobal242232(void)`
+/// `GetGlobal242232` at 0xd0b190 (decompiler, medium); signature (low): `undefined8 GetGlobal242232(void)`
 pub const GetGlobal242232: u64 = 82854;
-/// `GetGlobal242232_2` at 0xd0b1b0 (decompiler, medium); signature (untiered): `undefined8 GetGlobal242232_2(void)`
+/// `GetGlobal242232_2` at 0xd0b1b0 (decompiler, medium); signature (low): `undefined8 GetGlobal242232_2(void)`
 pub const GetGlobal242232_2: u64 = 82855;
-/// `GetGlobal242232_3` at 0xabfb50 (decompiler, medium); signature (untiered): `undefined8 GetGlobal242232_3(void)`
+/// `GetGlobal242232_3` at 0xabfb50 (decompiler, medium); signature (low): `undefined8 GetGlobal242232_3(void)`
 pub const GetGlobal242232_3: u64 = 58064;
 /// `GetGlobal388587` at 0xeec890 (decompiler, high); signature (high): `undefined2 GetGlobal388587(void)`
 pub const GetGlobal388587: u64 = 70548;
 /// `GetGlobal388951` at 0x101d730 (decompiler, high); signature (high): `undefined8 * GetGlobal388951(undefined8 param_1, undefined8 * param_2)`
 pub const GetGlobal388951: u64 = 77512;
-/// `GetGlobal389955` at 0xd75f80 (decompiler, high); signature (untiered): `undefined * * GetGlobal389955(void)`
+/// `GetGlobal389955` at 0xd75f80 (decompiler, high); signature (low): `undefined * * GetGlobal389955(void)`
 pub const GetGlobal389955: u64 = 85112;
-/// `GetGlobal389955_2` at 0xd76010 (decompiler, high); signature (untiered): `undefined * * GetGlobal389955_2(void)`
+/// `GetGlobal389955_2` at 0xd76010 (decompiler, high); signature (low): `undefined * * GetGlobal389955_2(void)`
 pub const GetGlobal389955_2: u64 = 85114;
 /// `GetGlobal400664` at 0x24a670 (decompiler, high); signature (high): `undefined4 GetGlobal400664(void)`
 pub const GetGlobal400664: u64 = 16368;
-/// `GetGlobal400936` at 0x2b2630 (decompiler, high); signature (untiered): `undefined8 GetGlobal400936(void)`
+/// `GetGlobal400936` at 0x2b2630 (decompiler, high); signature (low): `undefined8 GetGlobal400936(void)`
 pub const GetGlobal400936: u64 = 18779;
-/// `GetGlobal400936_2` at 0x2b2640 (decompiler, high); signature (untiered): `undefined8 GetGlobal400936_2(void)`
+/// `GetGlobal400936_2` at 0x2b2640 (decompiler, high); signature (low): `undefined8 GetGlobal400936_2(void)`
 pub const GetGlobal400936_2: u64 = 18780;
 /// `GetGlobal401022` at 0x2d6b10 (decompiler, high); signature (high): `undefined * GetGlobal401022(void)`
 pub const GetGlobal401022: u64 = 19406;
 /// `GetGlobal404288` at 0x76f150 (decompiler, high); signature (high): `undefined8 * GetGlobal404288(void)`
 pub const GetGlobal404288: u64 = 41070;
-/// `GetGlobal404855` at 0x8053c0 (decompiler, medium); signature (untiered): `undefined8 * GetGlobal404855(void)`
+/// `GetGlobal404855` at 0x8053c0 (decompiler, medium); signature (low): `undefined8 * GetGlobal404855(void)`
 pub const GetGlobal404855: u64 = 44266;
-/// `GetGlobal404912` at 0x810fc0 (decompiler, medium); signature (untiered): `undefined * GetGlobal404912(void)`
+/// `GetGlobal404912` at 0x810fc0 (decompiler, medium); signature (low): `undefined * GetGlobal404912(void)`
 pub const GetGlobal404912: u64 = 44532;
 /// `GetGlobal407508OrDummyMemoryTracker` at 0xac2240 (decompiler, high); signature (high): `hkDummyMemoryTrackerImpl * GetGlobal407508OrDummyMemoryTracker(void)`
 pub const GetGlobal407508OrDummyMemoryTracker: u64 = 58125;
@@ -2213,9 +1813,9 @@ pub const GetGlobal410596MaxBucketCount: u64 = 71687;
 pub const GetGlobal415557Address: u64 = 109681;
 /// `GetGlobal415557Address_2` at 0x15a972c (decompiler, high); signature (high): `undefined * GetGlobal415557Address_2(void)`
 pub const GetGlobal415557Address_2: u64 = 109682;
-/// `GetGlobal467331` at 0x1291010 (decompiler, high); signature (untiered): `undefined4 GetGlobal467331(void)`
+/// `GetGlobal467331` at 0x1291010 (decompiler, high); signature (low): `undefined4 GetGlobal467331(void)`
 pub const GetGlobal467331: u64 = 444483;
-/// `GetGlobal467332Address` at 0x1290ea0 (decompiler, high); signature (untiered): `undefined * GetGlobal467332Address(void)`
+/// `GetGlobal467332Address` at 0x1290ea0 (decompiler, high); signature (low): `undefined * GetGlobal467332Address(void)`
 pub const GetGlobal467332Address: u64 = 444472;
 /// `GetGlobal469508` at 0x13d67b0 (decompiler, high); signature (high): `undefined1 * GetGlobal469508(void)`
 pub const GetGlobal469508: u64 = 449381;
@@ -2235,35 +1835,35 @@ pub const GetGlobalArray505564Entry: u64 = 109263;
 pub const GetGlobalByte206557: u64 = 35740;
 /// `GetGlobalByte361074` at 0x3463a0 (decompiler, high); signature (high): `undefined1 GetGlobalByte361074(void)`
 pub const GetGlobalByte361074: u64 = 21921;
-/// `GetGlobalByte404238` at 0x74a4d0 (decompiler, high); signature (untiered): `undefined1 GetGlobalByte404238(void)`
+/// `GetGlobalByte404238` at 0x74a4d0 (decompiler, high); signature (low): `undefined1 GetGlobalByte404238(void)`
 pub const GetGlobalByte404238: u64 = 40501;
-/// `GetGlobalID219030` at 0xb86ac0 (decompiler, high); signature (untiered): `undefined * GetGlobalID219030(void)`
+/// `GetGlobalID219030` at 0xb86ac0 (decompiler, high); signature (low): `undefined * GetGlobalID219030(void)`
 pub const GetGlobalID219030: u64 = 62265;
-/// `GetGlobalID219030_2` at 0xb86ad0 (decompiler, high); signature (untiered): `undefined * GetGlobalID219030_2(void)`
+/// `GetGlobalID219030_2` at 0xb86ad0 (decompiler, high); signature (low): `undefined * GetGlobalID219030_2(void)`
 pub const GetGlobalID219030_2: u64 = 62266;
-/// `GetGlobalID219030_3` at 0xb86ae0 (decompiler, high); signature (untiered): `undefined * GetGlobalID219030_3(void)`
+/// `GetGlobalID219030_3` at 0xb86ae0 (decompiler, high); signature (low): `undefined * GetGlobalID219030_3(void)`
 pub const GetGlobalID219030_3: u64 = 62267;
 /// `GetGlobalMapEntryFlagBit2` at 0x29b070 (decompiler, medium); signature (medium): `ulonglong GetGlobalMapEntryFlagBit2(uint param_1)`
 pub const GetGlobalMapEntryFlagBit2: u64 = 18373;
-/// `GetGlobalMapRecordByte8AByName` at 0x590210 (decompiler, medium); signature (untiered): `undefined1 GetGlobalMapRecordByte8AByName(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetGlobalMapRecordByte8AByName` at 0x590210 (decompiler, medium); signature (low): `undefined1 GetGlobalMapRecordByte8AByName(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetGlobalMapRecordByte8AByName: u64 = 441888;
-/// `GetGlobalObjectField30190` at 0x65c8f0 (decompiler, high); signature (untiered): `undefined8 GetGlobalObjectField30190(void)`
+/// `GetGlobalObjectField30190` at 0x65c8f0 (decompiler, high); signature (low): `undefined8 GetGlobalObjectField30190(void)`
 pub const GetGlobalObjectField30190: u64 = 36617;
 /// `GetGlobalRefHandle401443` at 0x3d88c0 (decompiler, medium); signature (medium): `int * GetGlobalRefHandle401443(int * param_1)`
 pub const GetGlobalRefHandle401443: u64 = 25070;
-/// `GetGlobalString502487AndCollectNamedEntries` at 0x15c23c0 (decompiler, medium); signature (untiered): `undefined8 GetGlobalString502487AndCollectNamedEntries(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetGlobalString502487AndCollectNamedEntries` at 0x15c23c0 (decompiler, medium); signature (low): `undefined8 GetGlobalString502487AndCollectNamedEntries(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetGlobalString502487AndCollectNamedEntries: u64 = 453708;
 /// `GetGlobalTableEntry` at 0x14e9f60 (decompiler, medium); signature (medium): `undefined8 GetGlobalTableEntry(int param_1)`
 pub const GetGlobalTableEntry: u64 = 105622;
-/// `GetGlowFilterMember` at 0xde0970 (decompiler, medium); signature (untiered): `undefined8 GetGlowFilterMember(longlong * param_1, longlong param_2, undefined8 * param_3, byte * param_4)`
+/// `GetGlowFilterMember` at 0xde0970 (decompiler, medium); signature (low): `undefined8 GetGlowFilterMember(longlong * param_1, longlong param_2, undefined8 * param_3, byte * param_4)`
 pub const GetGlowFilterMember: u64 = 87028;
 /// `GetGpuTimerElapsed` at 0x1010cc0 (decompiler, medium); signature (medium): `undefined8 GetGpuTimerElapsed(undefined8 param_1, ulonglong * param_2, float * param_3)`
 pub const GetGpuTimerElapsed: u64 = 77383;
 /// `GetGpuTimerTicks` at 0x1010ba0 (decompiler, medium); signature (medium): `undefined8 GetGpuTimerTicks(undefined8 param_1, ulonglong * param_2, longlong * param_3)`
 pub const GetGpuTimerTicks: u64 = 77381;
-/// `GetGraphVariableBoolDirect` at 0x5553c0 (decompiler, medium); signature (untiered): `undefined1 GetGraphVariableBoolDirect(longlong * param_1, ulonglong * param_2, undefined8 param_3)`
+/// `GetGraphVariableBoolDirect` at 0x5553c0 (decompiler, medium); signature (low): `undefined1 GetGraphVariableBoolDirect(longlong * param_1, ulonglong * param_2, undefined8 param_3)`
 pub const GetGraphVariableBoolDirect: u64 = 32931;
-/// `GetGraphVariableIntDirect` at 0x555030 (decompiler, medium); signature (untiered): `undefined1 GetGraphVariableIntDirect(longlong * param_1, ulonglong * param_2, undefined4 * param_3)`
+/// `GetGraphVariableIntDirect` at 0x555030 (decompiler, medium); signature (low): `undefined1 GetGraphVariableIntDirect(longlong * param_1, ulonglong * param_2, undefined4 * param_3)`
 pub const GetGraphVariableIntDirect: u64 = 32928;
 /// `GetGridCellAtPoint` at 0x11dd270 (decompiler, medium); signature (medium): `undefined GetGridCellAtPoint(uint * param_1, float * param_2, longlong * param_3)`
 pub const GetGridCellAtPoint: u64 = 91040;
@@ -2273,19 +1873,19 @@ pub const GetGridCoordsAsWorldPosition: u64 = 18738;
 pub const GetGridSlotPtr: u64 = 15946;
 /// `GetGridValue` at 0x243ed0 (decompiler, medium); signature (medium): `undefined4 GetGridValue(int * param_1, int param_2, uint param_3)`
 pub const GetGridValue: u64 = 16273;
-/// `GetGridVertexHeight` at 0x2b0680 (decompiler, high); signature (untiered): `undefined1 GetGridVertexHeight(longlong param_1, int param_2, int param_3, undefined4 * param_4)`
+/// `GetGridVertexHeight` at 0x2b0680 (decompiler, high); signature (low): `undefined1 GetGridVertexHeight(longlong param_1, int param_2, int param_3, undefined4 * param_4)`
 pub const GetGridVertexHeight: u64 = 18764;
 /// `GetHandle118` at 0x6ea950 (decompiler, high); signature (high): `undefined4 * GetHandle118(longlong param_1, undefined4 * param_2)`
 pub const GetHandle118: u64 = 39177;
 /// `GetHandle17COfField10` at 0x6ff4b0 (decompiler, high); signature (high): `undefined4 * GetHandle17COfField10(longlong param_1, undefined4 * param_2)`
 pub const GetHandle17COfField10: u64 = 39511;
-/// `GetHandle9C8Actor` at 0x777b20 (decompiler, medium); signature (untiered): `undefined GetHandle9C8Actor(longlong param_1, undefined8 * param_2)`
+/// `GetHandle9C8Actor` at 0x777b20 (decompiler, medium); signature (low): `undefined GetHandle9C8Actor(longlong param_1, undefined8 * param_2)`
 pub const GetHandle9C8Actor: u64 = 41247;
 /// `GetHandleAt7F0ArrayIndex8A0` at 0x756cb0 (decompiler, medium); signature (medium): `undefined4 * GetHandleAt7F0ArrayIndex8A0(longlong param_1, undefined4 * param_2)`
 pub const GetHandleAt7F0ArrayIndex8A0: u64 = 40602;
 /// `GetHandleFromExtra19` at 0x164db0 (decompiler, medium); signature (medium): `undefined4 * GetHandleFromExtra19(longlong param_1, undefined4 * param_2)`
 pub const GetHandleFromExtra19: u64 = 11725;
-/// `GetHandleFromFieldF8` at 0x69c120 (decompiler, medium); signature (untiered): `undefined4 * GetHandleFromFieldF8(longlong param_1, undefined4 * param_2)`
+/// `GetHandleFromFieldF8` at 0x69c120 (decompiler, medium); signature (low): `undefined4 * GetHandleFromFieldF8(longlong param_1, undefined4 * param_2)`
 pub const GetHandleFromFieldF8: u64 = 37658;
 /// `GetHandleFromFieldF8Field30` at 0x67f580 (decompiler, high); signature (high): `undefined4 * GetHandleFromFieldF8Field30(longlong param_1, undefined4 * param_2)`
 pub const GetHandleFromFieldF8Field30: u64 = 37396;
@@ -2299,13 +1899,13 @@ pub const GetHashMapStorageBytes16: u64 = 57191;
 pub const GetHashMapValueAt24: u64 = 58040;
 /// `GetHavokVersionString` at 0xb34220 (decompiler, high); signature (high): `char * GetHavokVersionString(void)`
 pub const GetHavokVersionString: u64 = 60261;
-/// `GetHeadTrackTargetHandle` at 0x693b20 (decompiler, medium); signature (untiered): `uint * GetHeadTrackTargetHandle(longlong * param_1, uint * param_2)`
+/// `GetHeadTrackTargetHandle` at 0x693b20 (decompiler, medium); signature (low): `uint * GetHeadTrackTargetHandle(longlong * param_1, uint * param_2)`
 pub const GetHeadTrackTargetHandle: u64 = 37617;
 /// `GetHealthPercentage` at 0x679b50 (decompiler, medium); signature (medium): `float GetHealthPercentage(longlong param_1)`
 pub const GetHealthPercentage: u64 = 37339;
 /// `GetHeightAtPositionWithFallback` at 0x3121d0 (decompiler, medium); signature (medium): `undefined8 GetHeightAtPositionWithFallback(longlong param_1, float * param_2, float * param_3)`
 pub const GetHeightAtPositionWithFallback: u64 = 20551;
-/// `GetHidFeatureBytesReversed` at 0xea88b0 (decompiler, medium); signature (untiered): `undefined GetHidFeatureBytesReversed(longlong param_1, undefined1 * param_2, byte param_3, ushort param_4)`
+/// `GetHidFeatureBytesReversed` at 0xea88b0 (decompiler, medium); signature (low): `undefined GetHidFeatureBytesReversed(longlong param_1, undefined1 * param_2, byte param_3, ushort param_4)`
 pub const GetHidFeatureBytesReversed: u64 = 68939;
 /// `GetHidFeatureReportForDevice` at 0xea60f0 (decompiler, medium); signature (medium): `undefined GetHidFeatureReportForDevice(int param_1, void * param_2, ushort param_3)`
 pub const GetHidFeatureReportForDevice: u64 = 68923;
@@ -2315,51 +1915,51 @@ pub const GetHighestBitIndexOfSizeInKB: u64 = 68502;
 pub const GetHighestFilledSlotIndex: u64 = 23359;
 /// `GetHighestPriorityEntryString40ByName` at 0xa6d240 (decompiler, medium); signature (medium): `undefined1 * GetHighestPriorityEntryString40ByName(longlong param_1, char * param_2)`
 pub const GetHighestPriorityEntryString40ByName: u64 = 505820;
-/// `GetHkxAttributeValue128ByName` at 0xcc6bd0 (decompiler, medium); signature (untiered): `undefined8 GetHkxAttributeValue128ByName(ulonglong * param_1, undefined8 param_2, char param_3, undefined8 * param_4)`
+/// `GetHkxAttributeValue128ByName` at 0xcc6bd0 (decompiler, medium); signature (low): `undefined8 GetHkxAttributeValue128ByName(ulonglong * param_1, undefined8 param_2, char param_3, undefined8 * param_4)`
 pub const GetHkxAttributeValue128ByName: u64 = 67571;
-/// `GetHkxAttributeValue32ByName` at 0xcc6ad0 (decompiler, medium); signature (untiered): `undefined8 GetHkxAttributeValue32ByName(ulonglong * param_1, undefined8 param_2, char param_3, undefined4 * param_4)`
+/// `GetHkxAttributeValue32ByName` at 0xcc6ad0 (decompiler, medium); signature (low): `undefined8 GetHkxAttributeValue32ByName(ulonglong * param_1, undefined8 param_2, char param_3, undefined4 * param_4)`
 pub const GetHkxAttributeValue32ByName: u64 = 67570;
-/// `GetHoursOfTime68` at 0xdbb1f0 (decompiler, medium); signature (untiered): `undefined GetHoursOfTime68(longlong param_1)`
+/// `GetHoursOfTime68` at 0xdbb1f0 (decompiler, medium); signature (low): `undefined GetHoursOfTime68(longlong param_1)`
 pub const GetHoursOfTime68: u64 = 86317;
-/// `GetHullVectorArraySize` at 0x10f34f0 (decompiler, medium); signature (untiered): `ulonglong GetHullVectorArraySize(longlong param_1)`
+/// `GetHullVectorArraySize` at 0x10f34f0 (decompiler, medium); signature (low): `ulonglong GetHullVectorArraySize(longlong param_1)`
 pub const GetHullVectorArraySize: u64 = 80880;
-/// `GetHullVectorAt` at 0x10f35d0 (decompiler, medium); signature (untiered): `longlong GetHullVectorAt(longlong param_1, int param_2)`
+/// `GetHullVectorAt` at 0x10f35d0 (decompiler, medium); signature (low): `longlong GetHullVectorAt(longlong param_1, int param_2)`
 pub const GetHullVectorAt: u64 = 80881;
-/// `GetIfTypeInMask181010000` at 0x1051d10 (decompiler, medium); signature (untiered): `longlong GetIfTypeInMask181010000(longlong param_1)`
+/// `GetIfTypeInMask181010000` at 0x1051d10 (decompiler, medium); signature (low): `longlong GetIfTypeInMask181010000(longlong param_1)`
 pub const GetIfTypeInMask181010000: u64 = 77986;
-/// `GetImageSpaceEffect1Field18` at 0x14eedb0 (decompiler, medium); signature (untiered): `undefined8 GetImageSpaceEffect1Field18(void)`
+/// `GetImageSpaceEffect1Field18` at 0x14eedb0 (decompiler, medium); signature (low): `undefined8 GetImageSpaceEffect1Field18(void)`
 pub const GetImageSpaceEffect1Field18: u64 = 105693;
-/// `GetImageStorageEntry` at 0x1021930 (decompiler, medium); signature (untiered): `longlong GetImageStorageEntry(longlong param_1, ulonglong param_2, ulonglong param_3, ulonglong param_4)`
+/// `GetImageStorageEntry` at 0x1021930 (decompiler, medium); signature (low): `longlong GetImageStorageEntry(longlong param_1, ulonglong param_2, ulonglong param_3, ulonglong param_4)`
 pub const GetImageStorageEntry: u64 = 77565;
-/// `GetIndexedEntryValueWithFallback` at 0x3e3650 (decompiler, medium); signature (untiered): `undefined8 GetIndexedEntryValueWithFallback(longlong param_1, int param_2)`
+/// `GetIndexedEntryValueWithFallback` at 0x3e3650 (decompiler, medium); signature (low): `undefined8 GetIndexedEntryValueWithFallback(longlong param_1, int param_2)`
 pub const GetIndexedEntryValueWithFallback: u64 = 25299;
-/// `GetIndexedTableEntryField8` at 0x3a4ef0 (decompiler, high); signature (untiered): `undefined4 GetIndexedTableEntryField8(int param_1)`
+/// `GetIndexedTableEntryField8` at 0x3a4ef0 (decompiler, high); signature (low): `undefined4 GetIndexedTableEntryField8(int param_1)`
 pub const GetIndexedTableEntryField8: u64 = 24079;
-/// `GetInfoField0C` at 0x11a2100 (decompiler, high); signature (untiered): `undefined4 GetInfoField0C(longlong param_1, longlong param_2)`
+/// `GetInfoField0C` at 0x11a2100 (decompiler, high); signature (low): `undefined4 GetInfoField0C(longlong param_1, longlong param_2)`
 pub const GetInfoField0C: u64 = 89598;
-/// `GetInfoFieldsB8ToD9IfFlag400` at 0x11a1f40 (decompiler, medium); signature (untiered): `undefined8 GetInfoFieldsB8ToD9IfFlag400(longlong param_1, longlong param_2, undefined8 * param_3, undefined4 * param_4, undefined4 * param_5, uint * param_6, uint * param_7, undefined8 * param_8, undefined8 * param_9)`
+/// `GetInfoFieldsB8ToD9IfFlag400` at 0x11a1f40 (decompiler, medium); signature (low): `undefined8 GetInfoFieldsB8ToD9IfFlag400(longlong param_1, longlong param_2, undefined8 * param_3, undefined4 * param_4, undefined4 * param_5, uint * param_6, uint * param_7, undefined8 * param_8, undefined8 * param_9)`
 pub const GetInfoFieldsB8ToD9IfFlag400: u64 = 89588;
 /// `GetIngredientSkillUseModifier` at 0x14f510 (decompiler, medium); signature (medium): `float GetIngredientSkillUseModifier(void)`
 pub const GetIngredientSkillUseModifier: u64 = 11243;
-/// `GetInheritedField170OrDefault` at 0x30e490 (decompiler, medium); signature (untiered): `longlong GetInheritedField170OrDefault(longlong param_1)`
+/// `GetInheritedField170OrDefault` at 0x30e490 (decompiler, medium); signature (low): `longlong GetInheritedField170OrDefault(longlong param_1)`
 pub const GetInheritedField170OrDefault: u64 = 20500;
-/// `GetInheritedField188` at 0x30e0c0 (decompiler, medium); signature (untiered): `longlong GetInheritedField188(longlong param_1)`
+/// `GetInheritedField188` at 0x30e0c0 (decompiler, medium); signature (low): `longlong GetInheritedField188(longlong param_1)`
 pub const GetInheritedField188: u64 = 20493;
-/// `GetInheritedField310Value24` at 0xd60e70 (decompiler, medium); signature (untiered): `undefined4 GetInheritedField310Value24(longlong param_1)`
+/// `GetInheritedField310Value24` at 0xd60e70 (decompiler, medium); signature (low): `undefined4 GetInheritedField310Value24(longlong param_1)`
 pub const GetInheritedField310Value24: u64 = 84176;
-/// `GetInnerField10` at 0x1418010 (decompiler, medium); signature (untiered): `undefined8 GetInnerField10(longlong * param_1)`
+/// `GetInnerField10` at 0x1418010 (decompiler, medium); signature (low): `undefined8 GetInnerField10(longlong * param_1)`
 pub const GetInnerField10: u64 = 451820;
-/// `GetInnerField148Locked` at 0x1305310 (decompiler, medium); signature (untiered): `undefined4 GetInnerField148Locked(longlong param_1)`
+/// `GetInnerField148Locked` at 0x1305310 (decompiler, medium); signature (low): `undefined4 GetInnerField148Locked(longlong param_1)`
 pub const GetInnerField148Locked: u64 = 446980;
-/// `GetInnerField14CLocked` at 0x1305530 (decompiler, medium); signature (untiered): `undefined4 GetInnerField14CLocked(longlong param_1)`
+/// `GetInnerField14CLocked` at 0x1305530 (decompiler, medium); signature (low): `undefined4 GetInnerField14CLocked(longlong param_1)`
 pub const GetInnerField14CLocked: u64 = 446984;
-/// `GetInnerField7F8Locked` at 0x1308820 (decompiler, medium); signature (untiered): `undefined8 * GetInnerField7F8Locked(longlong param_1, undefined8 * param_2)`
+/// `GetInnerField7F8Locked` at 0x1308820 (decompiler, medium); signature (low): `undefined8 * GetInnerField7F8Locked(longlong param_1, undefined8 * param_2)`
 pub const GetInnerField7F8Locked: u64 = 448085;
-/// `GetInnerField800Locked` at 0x1308a60 (decompiler, medium); signature (untiered): `undefined8 * GetInnerField800Locked(longlong param_1, undefined8 * param_2)`
+/// `GetInnerField800Locked` at 0x1308a60 (decompiler, medium); signature (low): `undefined8 * GetInnerField800Locked(longlong param_1, undefined8 * param_2)`
 pub const GetInnerField800Locked: u64 = 448088;
-/// `GetInnerStringField20Locked` at 0x1305590 (decompiler, medium); signature (untiered): `undefined8 * GetInnerStringField20Locked(longlong param_1)`
+/// `GetInnerStringField20Locked` at 0x1305590 (decompiler, medium); signature (low): `undefined8 * GetInnerStringField20Locked(longlong param_1)`
 pub const GetInnerStringField20Locked: u64 = 446985;
-/// `GetInnermostWrapperNodeOfField20` at 0xb832a0 (decompiler, medium); signature (untiered): `ushort * GetInnermostWrapperNodeOfField20(longlong param_1)`
+/// `GetInnermostWrapperNodeOfField20` at 0xb832a0 (decompiler, medium); signature (low): `ushort * GetInnermostWrapperNodeOfField20(longlong param_1)`
 pub const GetInnermostWrapperNodeOfField20: u64 = 62255;
 /// `GetInt32AtIndex` at 0xcb2080 (decompiler, high); signature (high): `undefined4 GetInt32AtIndex(longlong param_1, int param_2)`
 pub const GetInt32AtIndex: u64 = 67258;
@@ -2371,53 +1971,53 @@ pub const GetIntAtPtrMinus8: u64 = 57057;
 pub const GetInteriorCellBufferSetting: u64 = 13386;
 /// `GetInteriorCellBufferSetting` as a function pointer type (high).
 pub type GetInteriorCellBufferSetting_fn = unsafe extern "C" fn() -> u32;
-/// `GetInternedStringRef` at 0xc61840 (decompiler, medium); signature (untiered): `undefined8 * GetInternedStringRef(longlong param_1, undefined8 * param_2, longlong param_3)`
+/// `GetInternedStringRef` at 0xc61840 (decompiler, medium); signature (low): `undefined8 * GetInternedStringRef(longlong param_1, undefined8 * param_2, longlong param_3)`
 pub const GetInternedStringRef: u64 = 66082;
-/// `GetInventoryCountOfFormID0F` at 0x300ef0 (decompiler, medium); signature (untiered): `undefined4 GetInventoryCountOfFormID0F(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetInventoryCountOfFormID0F` at 0x300ef0 (decompiler, medium); signature (low): `undefined4 GetInventoryCountOfFormID0F(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetInventoryCountOfFormID0F: u64 = 20213;
-/// `GetInventoryItemCount` at 0x68ab20 (decompiler, high); signature (untiered): `undefined GetInventoryItemCount(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetInventoryItemCount` at 0x68ab20 (decompiler, high); signature (low): `undefined GetInventoryItemCount(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetInventoryItemCount: u64 = 37514;
-/// `GetInventoryWeightAndCapacityForHandle` at 0x90fa80 (decompiler, medium); signature (untiered): `undefined GetInventoryWeightAndCapacityForHandle(undefined4 * param_1, uint * param_2, ulonglong param_3, float * param_4)`
+/// `GetInventoryWeightAndCapacityForHandle` at 0x90fa80 (decompiler, medium); signature (low): `undefined GetInventoryWeightAndCapacityForHandle(undefined4 * param_1, uint * param_2, ulonglong param_3, float * param_4)`
 pub const GetInventoryWeightAndCapacityForHandle: u64 = 51119;
 /// `GetInvisibilityMaxRefraction` at 0x1535c0 (decompiler, high); signature (high): `undefined4 GetInvisibilityMaxRefraction(void)`
 pub const GetInvisibilityMaxRefraction: u64 = 11412;
 /// `GetInvisibilityMinRefraction` at 0x1535d0 (decompiler, high); signature (high): `undefined4 GetInvisibilityMinRefraction(void)`
 pub const GetInvisibilityMinRefraction: u64 = 11413;
-/// `GetIteratorKeyString` at 0xa87ee0 (decompiler, medium); signature (untiered): `longlong * GetIteratorKeyString(longlong * param_1, longlong * param_2)`
+/// `GetIteratorKeyString` at 0xa87ee0 (decompiler, medium); signature (low): `longlong * GetIteratorKeyString(longlong * param_1, longlong * param_2)`
 pub const GetIteratorKeyString: u64 = 443192;
-/// `GetJsonArrayElementConst` at 0xa7da10 (decompiler, high); signature (untiered): `undefined8 * GetJsonArrayElementConst(undefined8 * param_1, uint param_2)`
+/// `GetJsonArrayElementConst` at 0xa7da10 (decompiler, high); signature (low): `undefined8 * GetJsonArrayElementConst(undefined8 * param_1, uint param_2)`
 pub const GetJsonArrayElementConst: u64 = 443004;
-/// `GetJsonArrayElementOrDefault` at 0xa84740 (decompiler, medium); signature (untiered): `undefined8 * GetJsonArrayElementOrDefault(undefined8 * param_1, undefined8 * param_2, undefined8 param_3, undefined8 * param_4)`
+/// `GetJsonArrayElementOrDefault` at 0xa84740 (decompiler, medium); signature (low): `undefined8 * GetJsonArrayElementOrDefault(undefined8 * param_1, undefined8 * param_2, undefined8 param_3, undefined8 * param_4)`
 pub const GetJsonArrayElementOrDefault: u64 = 443132;
-/// `GetJsonMemberCStrOrDefault` at 0xa847c0 (decompiler, medium); signature (untiered): `undefined8 * GetJsonMemberCStrOrDefault(undefined8 * param_1, undefined8 * param_2, void * param_3, undefined8 * param_4)`
+/// `GetJsonMemberCStrOrDefault` at 0xa847c0 (decompiler, medium); signature (low): `undefined8 * GetJsonMemberCStrOrDefault(undefined8 * param_1, undefined8 * param_2, void * param_3, undefined8 * param_4)`
 pub const GetJsonMemberCStrOrDefault: u64 = 443134;
-/// `GetJsonMemberOrDefault` at 0xa846e0 (decompiler, medium); signature (untiered): `undefined8 * GetJsonMemberOrDefault(undefined8 * param_1, undefined8 * param_2, undefined8 * param_3, undefined8 * param_4)`
+/// `GetJsonMemberOrDefault` at 0xa846e0 (decompiler, medium); signature (low): `undefined8 * GetJsonMemberOrDefault(undefined8 * param_1, undefined8 * param_2, undefined8 * param_3, undefined8 * param_4)`
 pub const GetJsonMemberOrDefault: u64 = 443131;
-/// `GetJsonMemberRangeOrDefault` at 0xa84780 (decompiler, medium); signature (untiered): `undefined8 * GetJsonMemberRangeOrDefault(undefined8 * param_1, undefined8 * param_2, void * param_3, undefined8 param_4, undefined8 * param_5)`
+/// `GetJsonMemberRangeOrDefault` at 0xa84780 (decompiler, medium); signature (low): `undefined8 * GetJsonMemberRangeOrDefault(undefined8 * param_1, undefined8 * param_2, void * param_3, undefined8 param_4, undefined8 * param_5)`
 pub const GetJsonMemberRangeOrDefault: u64 = 443133;
-/// `GetJsonValueAtIntIndex` at 0xa7d920 (decompiler, medium); signature (untiered): `undefined GetJsonValueAtIntIndex(undefined8 param_1, int param_2)`
+/// `GetJsonValueAtIntIndex` at 0xa7d920 (decompiler, medium); signature (low): `undefined GetJsonValueAtIntIndex(undefined8 param_1, int param_2)`
 pub const GetJsonValueAtIntIndex: u64 = 443003;
-/// `GetJsonValueDataByDottedPath` at 0x13e6db0 (decompiler, medium); signature (untiered): `undefined GetJsonValueDataByDottedPath(int * param_1, char * param_2, undefined8 * param_3, int param_4)`
+/// `GetJsonValueDataByDottedPath` at 0x13e6db0 (decompiler, medium); signature (low): `undefined GetJsonValueDataByDottedPath(int * param_1, char * param_2, undefined8 * param_3, int param_4)`
 pub const GetJsonValueDataByDottedPath: u64 = 449524;
-/// `GetJsonValueSize` at 0xa8ef90 (decompiler, medium); signature (untiered): `int GetJsonValueSize(longlong * param_1)`
+/// `GetJsonValueSize` at 0xa8ef90 (decompiler, medium); signature (low): `int GetJsonValueSize(longlong * param_1)`
 pub const GetJsonValueSize: u64 = 443311;
 /// `GetKeyedEntryField4` at 0x26ef60 (decompiler, medium); signature (medium): `undefined4 GetKeyedEntryField4(longlong param_1, int param_2)`
 pub const GetKeyedEntryField4: u64 = 17417;
-/// `GetKeyedValueFromField10Array` at 0x1048090 (decompiler, medium); signature (untiered): `ulonglong GetKeyedValueFromField10Array(longlong param_1, int param_2)`
+/// `GetKeyedValueFromField10Array` at 0x1048090 (decompiler, medium); signature (low): `ulonglong GetKeyedValueFromField10Array(longlong param_1, int param_2)`
 pub const GetKeyedValueFromField10Array: u64 = 77804;
-/// `GetKeywordDataValue` at 0x29a6f0 (decompiler, medium); signature (untiered): `undefined4 GetKeywordDataValue(longlong param_1, longlong param_2)`
+/// `GetKeywordDataValue` at 0x29a6f0 (decompiler, medium); signature (low): `undefined4 GetKeywordDataValue(longlong param_1, longlong param_2)`
 pub const GetKeywordDataValue: u64 = 18366;
 /// `GetLandHeightAtPoint` at 0x2b04b0 (decompiler, medium); signature (medium): `ulonglong GetLandHeightAtPoint(longlong param_1, float * param_2, float * param_3)`
 pub const GetLandHeightAtPoint: u64 = 18763;
 /// `GetLandVertexColor` at 0x2b39f0 (decompiler, medium); signature (medium): `undefined GetLandVertexColor(longlong param_1, int param_2, int param_3, float * param_4)`
 pub const GetLandVertexColor: u64 = 18795;
-/// `GetLandVertexColorForPoint` at 0x2b09c0 (decompiler, medium); signature (untiered): `undefined1 GetLandVertexColorForPoint(longlong param_1, longlong param_2, float * param_3)`
+/// `GetLandVertexColorForPoint` at 0x2b09c0 (decompiler, medium); signature (low): `undefined1 GetLandVertexColorForPoint(longlong param_1, longlong param_2, float * param_3)`
 pub const GetLandVertexColorForPoint: u64 = 18768;
 /// `GetLandVertexNormal` at 0x2b3950 (decompiler, medium); signature (medium): `undefined GetLandVertexNormal(longlong param_1, int param_2, int param_3, float * param_4)`
 pub const GetLandVertexNormal: u64 = 18794;
 /// `GetLanguageCodeString` at 0x128f360 (decompiler, high); signature (high): `char * GetLanguageCodeString(undefined4 param_1)`
 pub const GetLanguageCodeString: u64 = 445179;
-/// `GetLargestAreaFromArray58` at 0x151bd0 (decompiler, medium); signature (untiered): `ulonglong GetLargestAreaFromArray58(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetLargestAreaFromArray58` at 0x151bd0 (decompiler, medium); signature (low): `ulonglong GetLargestAreaFromArray58(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetLargestAreaFromArray58: u64 = 11338;
 /// `GetLastElementFixedVector0x48` at 0x1404360 (decompiler, high); signature (high): `longlong * GetLastElementFixedVector0x48(longlong * param_1)`
 pub const GetLastElementFixedVector0x48: u64 = 527440;
@@ -2437,35 +2037,35 @@ pub const GetLastElementFixedVector4: u64 = 527448;
 pub const GetLastElementFixedVector8: u64 = 527447;
 /// `GetLastElementFixedVector8_2` at 0x143b510 (decompiler, high); signature (high): `longlong * GetLastElementFixedVector8_2(longlong * param_1)`
 pub const GetLastElementFixedVector8_2: u64 = 452348;
-/// `GetLastEntryBlock7C` at 0x93e3d0 (decompiler, medium); signature (untiered): `undefined8 * GetLastEntryBlock7C(longlong param_1, undefined8 * param_2)`
+/// `GetLastEntryBlock7C` at 0x93e3d0 (decompiler, medium); signature (low): `undefined8 * GetLastEntryBlock7C(longlong param_1, undefined8 * param_2)`
 pub const GetLastEntryBlock7C: u64 = 51762;
 /// `GetLastEntryField24` at 0xd3ae20 (decompiler, medium); signature (medium): `undefined4 GetLastEntryField24(longlong * param_1)`
 pub const GetLastEntryField24: u64 = 83628;
-/// `GetLastEntryField78` at 0x93e430 (decompiler, medium); signature (untiered): `undefined4 GetLastEntryField78(longlong param_1)`
+/// `GetLastEntryField78` at 0x93e430 (decompiler, medium); signature (low): `undefined4 GetLastEntryField78(longlong param_1)`
 pub const GetLastEntryField78: u64 = 51763;
 /// `GetLastEntryOfArray90` at 0x11c7090 (decompiler, high); signature (high): `longlong GetLastEntryOfArray90(longlong param_1)`
 pub const GetLastEntryOfArray90: u64 = 90523;
 /// `GetLastEntryOfArray90_2` at 0x11dcbd0 (decompiler, high); signature (high): `longlong GetLastEntryOfArray90_2(longlong param_1)`
 pub const GetLastEntryOfArray90_2: u64 = 91026;
-/// `GetLastEntryVec3A0` at 0x93e360 (decompiler, medium); signature (untiered): `undefined4 * GetLastEntryVec3A0(longlong param_1, undefined4 * param_2)`
+/// `GetLastEntryVec3A0` at 0x93e360 (decompiler, medium); signature (low): `undefined4 * GetLastEntryVec3A0(longlong param_1, undefined4 * param_2)`
 pub const GetLastEntryVec3A0: u64 = 51761;
 /// `GetLastFixedVectorEntry0x760` at 0x13d06f0 (decompiler, medium); signature (medium): `longlong * GetLastFixedVectorEntry0x760(longlong * param_1)`
 pub const GetLastFixedVectorEntry0x760: u64 = 99697;
 /// `GetLastSampleCumulativeDistance` at 0x1574900 (decompiler, medium); signature (medium): `undefined4 GetLastSampleCumulativeDistance(longlong param_1)`
 pub const GetLastSampleCumulativeDistance: u64 = 108241;
-/// `GetLastWriteTimeOfFileOrArchive` at 0xeb3c60 (decompiler, medium); signature (untiered): `undefined GetLastWriteTimeOfFileOrArchive(longlong param_1, undefined8 * param_2)`
+/// `GetLastWriteTimeOfFileOrArchive` at 0xeb3c60 (decompiler, medium); signature (low): `undefined GetLastWriteTimeOfFileOrArchive(longlong param_1, undefined8 * param_2)`
 pub const GetLastWriteTimeOfFileOrArchive: u64 = 69218;
 /// `GetLastWriteTimeOfFileOrArchiveByType` at 0xeb3cb0 (decompiler, medium); signature (medium): `undefined GetLastWriteTimeOfFileOrArchiveByType(LPCSTR param_1, FILETIME * param_2, int param_3)`
 pub const GetLastWriteTimeOfFileOrArchiveByType: u64 = 69219;
 /// `GetLatentPlayerMoverSingleton` at 0xa228a0 (decompiler, high); signature (high): `LatentPlayerMover * GetLatentPlayerMoverSingleton(void)`
 pub const GetLatentPlayerMoverSingleton: u64 = 55429;
-/// `GetLazyInitHashMap404878` at 0x80dc90 (decompiler, medium); signature (untiered): `undefined * GetLazyInitHashMap404878(void)`
+/// `GetLazyInitHashMap404878` at 0x80dc90 (decompiler, medium); signature (low): `undefined * GetLazyInitHashMap404878(void)`
 pub const GetLazyInitHashMap404878: u64 = 44434;
-/// `GetLazyInitStatic402050` at 0x4d45c0 (decompiler, medium); signature (untiered): `undefined * GetLazyInitStatic402050(void)`
+/// `GetLazyInitStatic402050` at 0x4d45c0 (decompiler, medium); signature (low): `undefined * GetLazyInitStatic402050(void)`
 pub const GetLazyInitStatic402050: u64 = 30584;
-/// `GetLazyInitStringArray411160` at 0xfd8670 (decompiler, medium); signature (untiered): `undefined * GetLazyInitStringArray411160(void)`
+/// `GetLazyInitStringArray411160` at 0xfd8670 (decompiler, medium); signature (low): `undefined * GetLazyInitStringArray411160(void)`
 pub const GetLazyInitStringArray411160: u64 = 76086;
-/// `GetLazyStaticFieldBySlot` at 0x153670 (decompiler, medium); signature (untiered): `undefined * GetLazyStaticFieldBySlot(int param_1)`
+/// `GetLazyStaticFieldBySlot` at 0x153670 (decompiler, medium); signature (low): `undefined * GetLazyStaticFieldBySlot(int param_1)`
 pub const GetLazyStaticFieldBySlot: u64 = 11417;
 /// `GetLazyStaticHashMap` at 0x3276e0 (decompiler, medium); signature (medium): `undefined * GetLazyStaticHashMap(void)`
 pub const GetLazyStaticHashMap: u64 = 21138;
@@ -2473,77 +2073,77 @@ pub const GetLazyStaticHashMap: u64 = 21138;
 pub const GetLazyStaticHashMap_2: u64 = 27389;
 /// `GetLazyStaticHashMap_3` at 0x45adc0 (decompiler, medium); signature (medium): `undefined * GetLazyStaticHashMap_3(void)`
 pub const GetLazyStaticHashMap_3: u64 = 28138;
-/// `GetLazyStaticInstance` at 0x1544f0 (decompiler, medium); signature (untiered): `undefined * GetLazyStaticInstance(void)`
+/// `GetLazyStaticInstance` at 0x1544f0 (decompiler, medium); signature (low): `undefined * GetLazyStaticInstance(void)`
 pub const GetLazyStaticInstance: u64 = 11437;
-/// `GetLazyStaticInstance_2` at 0x36dc90 (decompiler, medium); signature (untiered): `undefined8 * GetLazyStaticInstance_2(void)`
+/// `GetLazyStaticInstance_2` at 0x36dc90 (decompiler, medium); signature (low): `undefined8 * GetLazyStaticInstance_2(void)`
 pub const GetLazyStaticInstance_2: u64 = 22790;
 /// `GetLazyStaticZeroedObject` at 0x2fb8f0 (decompiler, medium); signature (medium): `undefined8 * GetLazyStaticZeroedObject(void)`
 pub const GetLazyStaticZeroedObject: u64 = 20053;
-/// `GetLengthExcludingTrailingNull` at 0xe40870 (decompiler, medium); signature (untiered): `ulonglong GetLengthExcludingTrailingNull(longlong * param_1)`
+/// `GetLengthExcludingTrailingNull` at 0xe40870 (decompiler, medium); signature (low): `ulonglong GetLengthExcludingTrailingNull(longlong * param_1)`
 pub const GetLengthExcludingTrailingNull: u64 = 88433;
 /// `GetLengthFromField28ToOffset5C` at 0xd729b0 (decompiler, medium); signature (medium): `longlong GetLengthFromField28ToOffset5C(longlong param_1)`
 pub const GetLengthFromField28ToOffset5C: u64 = 84868;
 /// `GetLengthFromPrefixHeader` at 0xeb1380 (decompiler, medium); signature (medium): `uint GetLengthFromPrefixHeader(longlong * param_1)`
 pub const GetLengthFromPrefixHeader: u64 = 69173;
-/// `GetLeveledCreatureBaseOrField40` at 0x2f0b40 (decompiler, medium); signature (untiered): `longlong GetLeveledCreatureBaseOrField40(longlong param_1)`
+/// `GetLeveledCreatureBaseOrField40` at 0x2f0b40 (decompiler, medium); signature (low): `longlong GetLeveledCreatureBaseOrField40(longlong param_1)`
 pub const GetLeveledCreatureBaseOrField40: u64 = 19783;
 /// `GetLeveledListComponent` at 0x1e9fc0 (decompiler, medium); signature (medium): `longlong GetLeveledListComponent(longlong param_1)`
 pub const GetLeveledListComponent: u64 = 14762;
-/// `GetLightingMaterialAtPoint` at 0x516660 (decompiler, medium); signature (untiered): `undefined8 GetLightingMaterialAtPoint(longlong param_1, float * param_2)`
+/// `GetLightingMaterialAtPoint` at 0x516660 (decompiler, medium); signature (low): `undefined8 GetLightingMaterialAtPoint(longlong param_1, float * param_2)`
 pub const GetLightingMaterialAtPoint: u64 = 31805;
-/// `GetLightingMaterialField48Or58` at 0x511520 (decompiler, medium); signature (untiered): `undefined8 GetLightingMaterialField48Or58(longlong param_1, int param_2)`
+/// `GetLightingMaterialField48Or58` at 0x511520 (decompiler, medium); signature (low): `undefined8 GetLightingMaterialField48Or58(longlong param_1, int param_2)`
 pub const GetLightingMaterialField48Or58: u64 = 31740;
-/// `GetLightingMaterialFieldAtPoint` at 0x5166a0 (decompiler, medium); signature (untiered): `undefined8 GetLightingMaterialFieldAtPoint(longlong param_1, float * param_2)`
+/// `GetLightingMaterialFieldAtPoint` at 0x5166a0 (decompiler, medium); signature (low): `undefined8 GetLightingMaterialFieldAtPoint(longlong param_1, float * param_2)`
 pub const GetLightingMaterialFieldAtPoint: u64 = 31806;
 /// `GetLightingShaderFlagMaskRecursive` at 0x21cc90 (decompiler, medium); signature (medium): `uint GetLightingShaderFlagMaskRecursive(longlong * param_1)`
 pub const GetLightingShaderFlagMaskRecursive: u64 = 15709;
-/// `GetLightingShaderPropertyWithFlag400Or200000` at 0x21cc10 (decompiler, medium); signature (untiered): `longlong * GetLightingShaderPropertyWithFlag400Or200000(longlong * param_1)`
+/// `GetLightingShaderPropertyWithFlag400Or200000` at 0x21cc10 (decompiler, medium); signature (low): `longlong * GetLightingShaderPropertyWithFlag400Or200000(longlong * param_1)`
 pub const GetLightingShaderPropertyWithFlag400Or200000: u64 = 15708;
-/// `GetLineFromStream` at 0x13d680 (decompiler, medium); signature (untiered): `basic_istream<char,std::char_traits<char>_> * GetLineFromStream(basic_istream<char,std::char_traits<char>_> * param_1, undefined8 * param_2, undefined8 param_3)`
+/// `GetLineFromStream` at 0x13d680 (decompiler, medium); signature (low): `basic_istream<char,std::char_traits<char>_> * GetLineFromStream(basic_istream<char,std::char_traits<char>_> * param_1, undefined8 * param_2, undefined8 param_3)`
 pub const GetLineFromStream: u64 = 441482;
-/// `GetLineMetrics` at 0xd8a600 (decompiler, medium); signature (untiered): `undefined GetLineMetrics(longlong param_1)`
+/// `GetLineMetrics` at 0xd8a600 (decompiler, medium); signature (low): `undefined GetLineMetrics(longlong param_1)`
 pub const GetLineMetrics: u64 = 85523;
 /// `GetLineStartCharIndex` at 0xe4d8d0 (decompiler, medium); signature (medium): `ulonglong GetLineStartCharIndex(longlong param_1, uint param_2)`
 pub const GetLineStartCharIndex: u64 = 88600;
 /// `GetList150CountForKey` at 0x1a49f0 (decompiler, medium); signature (medium): `undefined2 GetList150CountForKey(longlong param_1, longlong param_2)`
 pub const GetList150CountForKey: u64 = 13338;
-/// `GetListE0EntryStringAtIndex` at 0x3b4840 (decompiler, medium); signature (untiered): `char * GetListE0EntryStringAtIndex(longlong param_1, int param_2, int param_3)`
+/// `GetListE0EntryStringAtIndex` at 0x3b4840 (decompiler, medium); signature (low): `char * GetListE0EntryStringAtIndex(longlong param_1, int param_2, int param_3)`
 pub const GetListE0EntryStringAtIndex: u64 = 24500;
-/// `GetListE0EntryTextureStringAtIndex` at 0x3b4970 (decompiler, medium); signature (untiered): `longlong GetListE0EntryTextureStringAtIndex(longlong param_1, int param_2)`
+/// `GetListE0EntryTextureStringAtIndex` at 0x3b4970 (decompiler, medium); signature (low): `longlong GetListE0EntryTextureStringAtIndex(longlong param_1, int param_2)`
 pub const GetListE0EntryTextureStringAtIndex: u64 = 24502;
-/// `GetListItemAtIndexInFieldB0Slot` at 0x7828c0 (decompiler, medium); signature (untiered): `longlong GetListItemAtIndexInFieldB0Slot(longlong param_1, int param_2, short param_3)`
+/// `GetListItemAtIndexInFieldB0Slot` at 0x7828c0 (decompiler, medium); signature (low): `longlong GetListItemAtIndexInFieldB0Slot(longlong param_1, int param_2, short param_3)`
 pub const GetListItemAtIndexInFieldB0Slot: u64 = 41362;
-/// `GetListenerPosition` at 0xcccf30 (semantic, high); signature (untiered): `undefined GetListenerPosition(void)`; semantic: listener+8 or a static zero vector (high); signature `const float* ()`
+/// `GetListenerPosition` at 0xcccf30 (semantic, high); signature (low): `undefined GetListenerPosition(void)`; semantic: listener+8 or a static zero vector (high); signature `const float* ()`
 pub const GetListenerPosition: u64 = 67710;
 /// `GetListenerPosition` as a function pointer type (high).
 pub type GetListenerPosition_fn = unsafe extern "C" fn() -> *const f32;
 /// `GetLoadCollatedAnimTextDataSetting` at 0x549d00 (decompiler, high); signature (high): `undefined1 GetLoadCollatedAnimTextDataSetting(void)`
 pub const GetLoadCollatedAnimTextDataSetting: u64 = 32721;
-/// `GetLoadVarsField48AsNumber` at 0xd86bf0 (decompiler, medium); signature (untiered): `undefined GetLoadVarsField48AsNumber(longlong param_1)`
+/// `GetLoadVarsField48AsNumber` at 0xd86bf0 (decompiler, medium); signature (low): `undefined GetLoadVarsField48AsNumber(longlong param_1)`
 pub const GetLoadVarsField48AsNumber: u64 = 85465;
-/// `GetLoadVarsField50AsNumber` at 0xd86c90 (decompiler, medium); signature (untiered): `undefined GetLoadVarsField50AsNumber(longlong param_1)`
+/// `GetLoadVarsField50AsNumber` at 0xd86c90 (decompiler, medium); signature (low): `undefined GetLoadVarsField50AsNumber(longlong param_1)`
 pub const GetLoadVarsField50AsNumber: u64 = 85466;
 /// `GetLoadedAreaNonActorMemoryBudgetCap` at 0x215a40 (decompiler, medium); signature (medium): `int GetLoadedAreaNonActorMemoryBudgetCap(void)`
 pub const GetLoadedAreaNonActorMemoryBudgetCap: u64 = 15596;
-/// `GetLocalRegister` at 0xd2b780 (decompiler, high); signature (untiered): `longlong GetLocalRegister(longlong param_1, ulonglong param_2)`
+/// `GetLocalRegister` at 0xd2b780 (decompiler, high); signature (low): `longlong GetLocalRegister(longlong param_1, ulonglong param_2)`
 pub const GetLocalRegister: u64 = 83323;
-/// `GetLocalizedJsonString` at 0x12ed0d0 (decompiler, medium); signature (untiered): `undefined8 GetLocalizedJsonString(undefined8 * param_1, longlong * param_2, void * param_3, undefined8 param_4)`
+/// `GetLocalizedJsonString` at 0x12ed0d0 (decompiler, medium); signature (low): `undefined8 GetLocalizedJsonString(undefined8 * param_1, longlong * param_2, void * param_3, undefined8 param_4)`
 pub const GetLocalizedJsonString: u64 = 445171;
-/// `GetLocationNameAtPosition` at 0x30e510 (decompiler, medium); signature (untiered): `undefined * GetLocationNameAtPosition(char * param_1, float * param_2)`
+/// `GetLocationNameAtPosition` at 0x30e510 (decompiler, medium); signature (low): `undefined * GetLocationNameAtPosition(char * param_1, float * param_2)`
 pub const GetLocationNameAtPosition: u64 = 20502;
-/// `GetLocationNameAtPositionOrEmpty` at 0x1a71c0 (decompiler, medium); signature (untiered): `undefined * GetLocationNameAtPositionOrEmpty(longlong param_1, float * param_2, char * param_3, char * param_4)`
+/// `GetLocationNameAtPositionOrEmpty` at 0x1a71c0 (decompiler, medium); signature (low): `undefined * GetLocationNameAtPositionOrEmpty(longlong param_1, float * param_2, char * param_3, char * param_4)`
 pub const GetLocationNameAtPositionOrEmpty: u64 = 13374;
 /// `GetLockLevel` at 0x180cd0 (decompiler, high); signature (high): `uint GetLockLevel(byte * param_1, longlong param_2)`
 pub const GetLockLevel: u64 = 12400;
-/// `GetLockedQueuesTotalCount` at 0x13487d0 (decompiler, medium); signature (untiered): `longlong GetLockedQueuesTotalCount(longlong param_1)`
+/// `GetLockedQueuesTotalCount` at 0x13487d0 (decompiler, medium); signature (low): `longlong GetLockedQueuesTotalCount(longlong param_1)`
 pub const GetLockedQueuesTotalCount: u64 = 447411;
-/// `GetLongestDurationInArray58` at 0x151b40 (decompiler, medium); signature (untiered): `ulonglong GetLongestDurationInArray58(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetLongestDurationInArray58` at 0x151b40 (decompiler, medium); signature (low): `ulonglong GetLongestDurationInArray58(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetLongestDurationInArray58: u64 = 11337;
 /// `GetLoopRegion` at 0xcdc0f0 (decompiler, medium); signature (medium): `undefined GetLoopRegion(longlong param_1, undefined4 * param_2, uint * param_3)`
 pub const GetLoopRegion: u64 = 68043;
 /// `GetMagicCasterTargetUpdateInterval` at 0x1537d0 (decompiler, high); signature (high): `undefined4 GetMagicCasterTargetUpdateInterval(void)`
 pub const GetMagicCasterTargetUpdateInterval: u64 = 11422;
-/// `GetMagicItemDescription` at 0x153980 (decompiler, medium); signature (untiered): `undefined GetMagicItemDescription(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetMagicItemDescription` at 0x153980 (decompiler, medium); signature (low): `undefined GetMagicItemDescription(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetMagicItemDescription: u64 = 11427;
 /// `GetMagicItemDescriptionFunctor::vdtor` at 0x1543d0 (layout_inference, medium); signature (low): `GetMagicItemDescriptionFunctor * vdtor(GetMagicItemDescriptionFunctor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const GetMagicItemDescriptionFunctor__vdtor: u64 = 11434;
@@ -2555,17 +2155,17 @@ pub const GetMagicItemDescriptionFunctor__vfunc_1_sub0: u64 = 11020;
 pub const GetMainCamera: u64 = 36609;
 /// `GetMainCamera` as a function pointer type (high).
 pub type GetMainCamera_fn = unsafe extern "C" fn() -> *mut crate::NiCamera;
-/// `GetManifestFilePath` at 0x603d10 (decompiler, medium); signature (untiered): `undefined GetManifestFilePath(undefined4 * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetManifestFilePath` at 0x603d10 (decompiler, medium); signature (low): `undefined GetManifestFilePath(undefined4 * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetManifestFilePath: u64 = 442383;
-/// `GetMap1F8EntryField60` at 0x28bff0 (decompiler, medium); signature (untiered): `undefined8 GetMap1F8EntryField60(longlong param_1, uint param_2)`
+/// `GetMap1F8EntryField60` at 0x28bff0 (decompiler, medium); signature (low): `undefined8 GetMap1F8EntryField60(longlong param_1, uint param_2)`
 pub const GetMap1F8EntryField60: u64 = 18089;
 /// `GetMapA8ValueField60` at 0x2624a0 (decompiler, medium); signature (medium): `undefined8 GetMapA8ValueField60(longlong param_1, uint param_2)`
 pub const GetMapA8ValueField60: u64 = 17028;
-/// `GetMapB0ValueField60` at 0x261400 (decompiler, medium); signature (untiered): `undefined8 GetMapB0ValueField60(longlong param_1)`
+/// `GetMapB0ValueField60` at 0x261400 (decompiler, medium); signature (low): `undefined8 GetMapB0ValueField60(longlong param_1)`
 pub const GetMapB0ValueField60: u64 = 16993;
-/// `GetMapWorldSpace` at 0x9a08d0 (decompiler, medium); signature (untiered): `longlong GetMapWorldSpace(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetMapWorldSpace` at 0x9a08d0 (decompiler, medium); signature (low): `longlong GetMapWorldSpace(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetMapWorldSpace: u64 = 53150;
-/// `GetMasterOnlyFileArray` at 0x1e2580 (decompiler, medium); signature (untiered): `longlong * GetMasterOnlyFileArray(longlong * param_1, undefined8 param_2, undefined8 param_3, longlong * param_4)`
+/// `GetMasterOnlyFileArray` at 0x1e2580 (decompiler, medium); signature (low): `longlong * GetMasterOnlyFileArray(longlong * param_1, undefined8 param_2, undefined8 param_3, longlong * param_4)`
 pub const GetMasterOnlyFileArray: u64 = 14571;
 /// `GetMatrixElement` at 0xcb8890 (decompiler, high); signature (high): `undefined4 GetMatrixElement(longlong * param_1, int param_2, int param_3)`
 pub const GetMatrixElement: u64 = 67333;
@@ -2573,11 +2173,11 @@ pub const GetMatrixElement: u64 = 67333;
 pub const GetMatrixElementPtr: u64 = 67331;
 /// `GetMatrixMembersWithDefaults` at 0xda2da0 (decompiler, medium); signature (medium): `byte * GetMatrixMembersWithDefaults(longlong param_1, longlong * param_2, byte * param_3)`
 pub const GetMatrixMembersWithDefaults: u64 = 85837;
-/// `GetMaxDistanceToHullPlanes` at 0x10f3170 (decompiler, medium); signature (untiered): `float GetMaxDistanceToHullPlanes(longlong param_1, float * param_2, int * param_3)`
+/// `GetMaxDistanceToHullPlanes` at 0x10f3170 (decompiler, medium); signature (low): `float GetMaxDistanceToHullPlanes(longlong param_1, float * param_2, int * param_3)`
 pub const GetMaxDistanceToHullPlanes: u64 = 80874;
-/// `GetMaxExtraHealthInList` at 0x2287c0 (decompiler, medium); signature (untiered): `ulonglong GetMaxExtraHealthInList(longlong param_1)`
+/// `GetMaxExtraHealthInList` at 0x2287c0 (decompiler, medium); signature (low): `ulonglong GetMaxExtraHealthInList(longlong param_1)`
 pub const GetMaxExtraHealthInList: u64 = 15990;
-/// `GetMaxField0C0OfTwoEntries` at 0x1383040 (decompiler, medium); signature (untiered): `undefined GetMaxField0C0OfTwoEntries(longlong param_1)`
+/// `GetMaxField0C0OfTwoEntries` at 0x1383040 (decompiler, medium); signature (low): `undefined GetMaxField0C0OfTwoEntries(longlong param_1)`
 pub const GetMaxField0C0OfTwoEntries: u64 = 449044;
 /// `GetMaxField20Recursive` at 0xe5b840 (decompiler, medium); signature (medium): `uint GetMaxField20Recursive(longlong param_1)`
 pub const GetMaxField20Recursive: u64 = 89130;
@@ -2585,111 +2185,111 @@ pub const GetMaxField20Recursive: u64 = 89130;
 pub const GetMaxPlayerRunes: u64 = 26521;
 /// `GetMaxTriangleField50Plus1` at 0x1140b80 (decompiler, medium); signature (medium): `int GetMaxTriangleField50Plus1(longlong param_1)`
 pub const GetMaxTriangleField50Plus1: u64 = 81746;
-/// `GetMaxVfunc30ResultInSlotArray` at 0x8298d0 (decompiler, medium); signature (untiered): `undefined8 GetMaxVfunc30ResultInSlotArray(longlong param_1, int param_2)`
+/// `GetMaxVfunc30ResultInSlotArray` at 0x8298d0 (decompiler, medium); signature (low): `undefined8 GetMaxVfunc30ResultInSlotArray(longlong param_1, int param_2)`
 pub const GetMaxVfunc30ResultInSlotArray: u64 = 44900;
-/// `GetMaxVfunc38ResultInSlotArray` at 0x829950 (decompiler, medium); signature (untiered): `undefined8 GetMaxVfunc38ResultInSlotArray(longlong param_1, int param_2)`
+/// `GetMaxVfunc38ResultInSlotArray` at 0x829950 (decompiler, medium); signature (low): `undefined8 GetMaxVfunc38ResultInSlotArray(longlong param_1, int param_2)`
 pub const GetMaxVfunc38ResultInSlotArray: u64 = 44901;
-/// `GetMemberAddMarker` at 0xdc6ce0 (decompiler, medium); signature (untiered): `undefined8 GetMemberAddMarker(longlong * param_1, longlong param_2, undefined8 * param_3, byte * param_4)`
+/// `GetMemberAddMarker` at 0xdc6ce0 (decompiler, medium); signature (low): `undefined8 GetMemberAddMarker(longlong * param_1, longlong param_2, undefined8 * param_3, byte * param_4)`
 pub const GetMemberAddMarker: u64 = 86569;
 /// `GetMemberBoxCenterAndDiagonalSq` at 0x81c560 (decompiler, medium); signature (medium): `float GetMemberBoxCenterAndDiagonalSq(undefined8 param_1, float * param_2)`
 pub const GetMemberBoxCenterAndDiagonalSq: u64 = 44750;
-/// `GetMemberByIndex` at 0xab19d0 (decompiler, medium); signature (untiered): `longlong GetMemberByIndex(longlong param_1, int param_2)`
+/// `GetMemberByIndex` at 0xab19d0 (decompiler, medium); signature (low): `longlong GetMemberByIndex(longlong param_1, int param_2)`
 pub const GetMemberByIndex: u64 = 57636;
 /// `GetMemberByIndex_2` at 0xab1a40 (decompiler, high); signature (untiered): `longlong GetMemberByIndex_2(longlong param_1, int param_2)`
 pub const GetMemberByIndex_2: u64 = 57637;
-/// `GetMemberCheckingKeys288And290` at 0xdd83f0 (decompiler, medium); signature (untiered): `undefined GetMemberCheckingKeys288And290(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberCheckingKeys288And290` at 0xdd83f0 (decompiler, medium); signature (low): `undefined GetMemberCheckingKeys288And290(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberCheckingKeys288And290: u64 = 86893;
-/// `GetMemberCheckingNames288And290` at 0xd93c10 (decompiler, medium); signature (untiered): `undefined GetMemberCheckingNames288And290(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberCheckingNames288And290` at 0xd93c10 (decompiler, medium); signature (low): `undefined GetMemberCheckingNames288And290(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberCheckingNames288And290: u64 = 85654;
-/// `GetMemberCheckingNames288And290_2` at 0xdac9e0 (decompiler, medium); signature (untiered): `undefined GetMemberCheckingNames288And290_2(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberCheckingNames288And290_2` at 0xdac9e0 (decompiler, medium); signature (low): `undefined GetMemberCheckingNames288And290_2(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberCheckingNames288And290_2: u64 = 85990;
-/// `GetMemberCheckingNames288And290_3` at 0xdddc60 (decompiler, medium); signature (untiered): `undefined GetMemberCheckingNames288And290_3(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberCheckingNames288And290_3` at 0xdddc60 (decompiler, medium); signature (low): `undefined GetMemberCheckingNames288And290_3(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberCheckingNames288And290_3: u64 = 86968;
-/// `GetMemberCheckingNames288And290_4` at 0xddee10 (decompiler, medium); signature (untiered): `undefined GetMemberCheckingNames288And290_4(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberCheckingNames288And290_4` at 0xddee10 (decompiler, medium); signature (low): `undefined GetMemberCheckingNames288And290_4(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberCheckingNames288And290_4: u64 = 86998;
-/// `GetMemberCheckingNames288And290_5` at 0xde0bc0 (decompiler, medium); signature (untiered): `undefined GetMemberCheckingNames288And290_5(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberCheckingNames288And290_5` at 0xde0bc0 (decompiler, medium); signature (low): `undefined GetMemberCheckingNames288And290_5(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberCheckingNames288And290_5: u64 = 87029;
-/// `GetMemberCheckingNames288And290_6` at 0xde2460 (decompiler, medium); signature (untiered): `undefined GetMemberCheckingNames288And290_6(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberCheckingNames288And290_6` at 0xde2460 (decompiler, medium); signature (low): `undefined GetMemberCheckingNames288And290_6(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberCheckingNames288And290_6: u64 = 87060;
-/// `GetMemberCheckingNames288And290_7` at 0xde39a0 (decompiler, medium); signature (untiered): `undefined GetMemberCheckingNames288And290_7(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberCheckingNames288And290_7` at 0xde39a0 (decompiler, medium); signature (low): `undefined GetMemberCheckingNames288And290_7(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberCheckingNames288And290_7: u64 = 87091;
-/// `GetMemberCheckingNames288And290_8` at 0xde5990 (decompiler, medium); signature (untiered): `undefined GetMemberCheckingNames288And290_8(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberCheckingNames288And290_8` at 0xde5990 (decompiler, medium); signature (low): `undefined GetMemberCheckingNames288And290_8(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberCheckingNames288And290_8: u64 = 87123;
-/// `GetMemberDefaultValue` at 0xab1ea0 (decompiler, medium); signature (untiered): `ulonglong GetMemberDefaultValue(undefined8 param_1, undefined8 param_2, int * param_3)`
+/// `GetMemberDefaultValue` at 0xab1ea0 (decompiler, medium); signature (low): `ulonglong GetMemberDefaultValue(undefined8 param_1, undefined8 param_2, int * param_3)`
 pub const GetMemberDefaultValue: u64 = 57655;
-/// `GetMemberHandlingKey248` at 0xd27d00 (decompiler, medium); signature (untiered): `undefined8 GetMemberHandlingKey248(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberHandlingKey248` at 0xd27d00 (decompiler, medium); signature (low): `undefined8 GetMemberHandlingKey248(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberHandlingKey248: u64 = 83295;
-/// `GetMemberHandlingKeys288And290` at 0xd128a0 (decompiler, medium); signature (untiered): `undefined GetMemberHandlingKeys288And290(longlong param_1, longlong * param_2, undefined8 * param_3, undefined8 param_4)`
+/// `GetMemberHandlingKeys288And290` at 0xd128a0 (decompiler, medium); signature (low): `undefined GetMemberHandlingKeys288And290(longlong param_1, longlong * param_2, undefined8 * param_3, undefined8 param_4)`
 pub const GetMemberHandlingKeys288And290: u64 = 83006;
-/// `GetMemberWithFallbackAt58` at 0xdcd950 (decompiler, medium); signature (untiered): `undefined GetMemberWithFallbackAt58(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberWithFallbackAt58` at 0xdcd950 (decompiler, medium); signature (low): `undefined GetMemberWithFallbackAt58(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberWithFallbackAt58: u64 = 86665;
-/// `GetMemberWithFallbackAt70` at 0xdd0230 (decompiler, medium); signature (untiered): `undefined GetMemberWithFallbackAt70(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberWithFallbackAt70` at 0xdd0230 (decompiler, medium); signature (low): `undefined GetMemberWithFallbackAt70(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberWithFallbackAt70: u64 = 86720;
-/// `GetMemberWithFallbackForTwoBuiltinNames48` at 0xda30a0 (decompiler, medium); signature (untiered): `undefined GetMemberWithFallbackForTwoBuiltinNames48(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberWithFallbackForTwoBuiltinNames48` at 0xda30a0 (decompiler, medium); signature (low): `undefined GetMemberWithFallbackForTwoBuiltinNames48(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberWithFallbackForTwoBuiltinNames48: u64 = 85839;
-/// `GetMemberWithFallbackForTwoBuiltinNames48_2` at 0xdaf1a0 (decompiler, medium); signature (untiered): `undefined GetMemberWithFallbackForTwoBuiltinNames48_2(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberWithFallbackForTwoBuiltinNames48_2` at 0xdaf1a0 (decompiler, medium); signature (low): `undefined GetMemberWithFallbackForTwoBuiltinNames48_2(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberWithFallbackForTwoBuiltinNames48_2: u64 = 86035;
-/// `GetMemberWithFallbackForTwoBuiltinNames48_3` at 0xdb0980 (decompiler, medium); signature (untiered): `undefined GetMemberWithFallbackForTwoBuiltinNames48_3(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberWithFallbackForTwoBuiltinNames48_3` at 0xdb0980 (decompiler, medium); signature (low): `undefined GetMemberWithFallbackForTwoBuiltinNames48_3(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberWithFallbackForTwoBuiltinNames48_3: u64 = 86071;
-/// `GetMemberWithFallbackForTwoBuiltinNames48_4` at 0xdb7c60 (decompiler, medium); signature (untiered): `undefined GetMemberWithFallbackForTwoBuiltinNames48_4(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberWithFallbackForTwoBuiltinNames48_4` at 0xdb7c60 (decompiler, medium); signature (low): `undefined GetMemberWithFallbackForTwoBuiltinNames48_4(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberWithFallbackForTwoBuiltinNames48_4: u64 = 86246;
-/// `GetMemberWithFallbackForTwoBuiltinNames48_5` at 0xdb9410 (decompiler, medium); signature (untiered): `undefined GetMemberWithFallbackForTwoBuiltinNames48_5(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberWithFallbackForTwoBuiltinNames48_5` at 0xdb9410 (decompiler, medium); signature (low): `undefined GetMemberWithFallbackForTwoBuiltinNames48_5(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberWithFallbackForTwoBuiltinNames48_5: u64 = 86283;
-/// `GetMemberWithFallbackForTwoBuiltinNames48_6` at 0xdbf250 (decompiler, medium); signature (untiered): `undefined GetMemberWithFallbackForTwoBuiltinNames48_6(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberWithFallbackForTwoBuiltinNames48_6` at 0xdbf250 (decompiler, medium); signature (low): `undefined GetMemberWithFallbackForTwoBuiltinNames48_6(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberWithFallbackForTwoBuiltinNames48_6: u64 = 86400;
-/// `GetMemberWithFallbackForTwoBuiltinNames48_7` at 0xdc05c0 (decompiler, medium); signature (untiered): `undefined GetMemberWithFallbackForTwoBuiltinNames48_7(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberWithFallbackForTwoBuiltinNames48_7` at 0xdc05c0 (decompiler, medium); signature (low): `undefined GetMemberWithFallbackForTwoBuiltinNames48_7(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberWithFallbackForTwoBuiltinNames48_7: u64 = 86446;
-/// `GetMemberWithFallbackForTwoBuiltinNames68` at 0xda55e0 (decompiler, medium); signature (untiered): `undefined GetMemberWithFallbackForTwoBuiltinNames68(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberWithFallbackForTwoBuiltinNames68` at 0xda55e0 (decompiler, medium); signature (low): `undefined GetMemberWithFallbackForTwoBuiltinNames68(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberWithFallbackForTwoBuiltinNames68: u64 = 85872;
-/// `GetMemberWithField288Or290NameCheck` at 0xdbd120 (decompiler, medium); signature (untiered): `undefined GetMemberWithField288Or290NameCheck(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberWithField288Or290NameCheck` at 0xdbd120 (decompiler, medium); signature (low): `undefined GetMemberWithField288Or290NameCheck(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberWithField288Or290NameCheck: u64 = 86359;
-/// `GetMemberWithKeys288And290FromField48` at 0xdc2c50 (decompiler, medium); signature (untiered): `undefined GetMemberWithKeys288And290FromField48(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberWithKeys288And290FromField48` at 0xdc2c50 (decompiler, medium); signature (low): `undefined GetMemberWithKeys288And290FromField48(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberWithKeys288And290FromField48: u64 = 86491;
-/// `GetMemberWithKeys288And290FromField48_2` at 0xdc5650 (decompiler, medium); signature (untiered): `undefined GetMemberWithKeys288And290FromField48_2(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberWithKeys288And290FromField48_2` at 0xdc5650 (decompiler, medium); signature (low): `undefined GetMemberWithKeys288And290FromField48_2(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberWithKeys288And290FromField48_2: u64 = 86535;
-/// `GetMemberWithKeys288And290FromField48_3` at 0xdc6d70 (decompiler, medium); signature (untiered): `undefined GetMemberWithKeys288And290FromField48_3(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberWithKeys288And290FromField48_3` at 0xdc6d70 (decompiler, medium); signature (low): `undefined GetMemberWithKeys288And290FromField48_3(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberWithKeys288And290FromField48_3: u64 = 86570;
-/// `GetMemberWithKeys288And290FromField48_4` at 0xdd2f90 (decompiler, medium); signature (untiered): `undefined GetMemberWithKeys288And290FromField48_4(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberWithKeys288And290FromField48_4` at 0xdd2f90 (decompiler, medium); signature (low): `undefined GetMemberWithKeys288And290FromField48_4(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberWithKeys288And290FromField48_4: u64 = 86764;
-/// `GetMemberWithKeys288And290FromFieldB0` at 0xdc8b40 (decompiler, medium); signature (untiered): `undefined GetMemberWithKeys288And290FromFieldB0(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberWithKeys288And290FromFieldB0` at 0xdc8b40 (decompiler, medium); signature (low): `undefined GetMemberWithKeys288And290FromFieldB0(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberWithKeys288And290FromFieldB0: u64 = 86600;
-/// `GetMemberWithSpecialNameFallback` at 0xd61ac0 (decompiler, medium); signature (untiered): `undefined GetMemberWithSpecialNameFallback(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberWithSpecialNameFallback` at 0xd61ac0 (decompiler, medium); signature (low): `undefined GetMemberWithSpecialNameFallback(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberWithSpecialNameFallback: u64 = 84206;
-/// `GetMemberWithSpecialNameFallback_2` at 0xd87df0 (decompiler, medium); signature (untiered): `undefined GetMemberWithSpecialNameFallback_2(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberWithSpecialNameFallback_2` at 0xd87df0 (decompiler, medium); signature (low): `undefined GetMemberWithSpecialNameFallback_2(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberWithSpecialNameFallback_2: u64 = 85495;
-/// `GetMemberWithSpecialNames` at 0xe55d40 (decompiler, medium); signature (untiered): `undefined GetMemberWithSpecialNames(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberWithSpecialNames` at 0xe55d40 (decompiler, medium); signature (low): `undefined GetMemberWithSpecialNames(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberWithSpecialNames: u64 = 89045;
-/// `GetMemberWithSpecialNames288And290` at 0xdaaf70 (decompiler, medium); signature (untiered): `undefined GetMemberWithSpecialNames288And290(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
+/// `GetMemberWithSpecialNames288And290` at 0xdaaf70 (decompiler, medium); signature (low): `undefined GetMemberWithSpecialNames288And290(longlong param_1, longlong * param_2, ulonglong * param_3, byte * param_4)`
 pub const GetMemberWithSpecialNames288And290: u64 = 85954;
-/// `GetMemoryLevelSettingsSingleton` at 0x19d810 (decompiler, medium); signature (untiered): `undefined * GetMemoryLevelSettingsSingleton(void)`
+/// `GetMemoryLevelSettingsSingleton` at 0x19d810 (decompiler, medium); signature (low): `undefined * GetMemoryLevelSettingsSingleton(void)`
 pub const GetMemoryLevelSettingsSingleton: u64 = 13255;
 /// `GetMemoryManager` at 0x10b9b0 (decompiler, high); signature (high): `undefined * GetMemoryManager(void)`
 pub const GetMemoryManager: u64 = 11141;
-/// `GetMessageIconField10OrBipedModelFieldA8ForSex` at 0x1f32b0 (decompiler, medium); signature (untiered): `undefined1 * GetMessageIconField10OrBipedModelFieldA8ForSex(undefined8 param_1, longlong param_2)`
+/// `GetMessageIconField10OrBipedModelFieldA8ForSex` at 0x1f32b0 (decompiler, medium); signature (low): `undefined1 * GetMessageIconField10OrBipedModelFieldA8ForSex(undefined8 param_1, longlong param_2)`
 pub const GetMessageIconField10OrBipedModelFieldA8ForSex: u64 = 14968;
-/// `GetMillisecondsOfTime68` at 0xdbb280 (decompiler, medium); signature (untiered): `undefined GetMillisecondsOfTime68(longlong param_1)`
+/// `GetMillisecondsOfTime68` at 0xdbb280 (decompiler, medium); signature (low): `undefined GetMillisecondsOfTime68(longlong param_1)`
 pub const GetMillisecondsOfTime68: u64 = 86318;
 /// `GetMinOfField28AndField30` at 0xb6e8a0 (decompiler, medium); signature (medium): `float GetMinOfField28AndField30(longlong param_1)`
 pub const GetMinOfField28AndField30: u64 = 61811;
 /// `GetMinQuadVertexHeight` at 0x2b06c0 (decompiler, medium); signature (medium): `ulonglong GetMinQuadVertexHeight(longlong param_1, int param_2)`
 pub const GetMinQuadVertexHeight: u64 = 18765;
-/// `GetMinutesOfTime68` at 0xdbb320 (decompiler, medium); signature (untiered): `undefined GetMinutesOfTime68(longlong param_1)`
+/// `GetMinutesOfTime68` at 0xdbb320 (decompiler, medium); signature (low): `undefined GetMinutesOfTime68(longlong param_1)`
 pub const GetMinutesOfTime68: u64 = 86319;
-/// `GetMiscStatValue` at 0x24a600 (decompiler, medium); signature (untiered): `undefined GetMiscStatValue(longlong * param_1, undefined4 * param_2)`
+/// `GetMiscStatValue` at 0x24a600 (decompiler, medium); signature (low): `undefined GetMiscStatValue(longlong * param_1, undefined4 * param_2)`
 pub const GetMiscStatValue: u64 = 16367;
 /// `GetModeFromField8Bits` at 0xd489a0 (decompiler, high); signature (high): `undefined8 GetModeFromField8Bits(longlong param_1)`
 pub const GetModeFromField8Bits: u64 = 83849;
 /// `GetModeFromField8Bits_2` at 0xd489d0 (decompiler, high); signature (high): `undefined8 GetModeFromField8Bits_2(longlong param_1)`
 pub const GetModeFromField8Bits_2: u64 = 83850;
-/// `GetModelForBoundObject` at 0x19ce40 (decompiler, medium); signature (untiered): `longlong GetModelForBoundObject(longlong param_1, longlong param_2)`
+/// `GetModelForBoundObject` at 0x19ce40 (decompiler, medium); signature (low): `longlong GetModelForBoundObject(longlong param_1, longlong param_2)`
 pub const GetModelForBoundObject: u64 = 13240;
-/// `GetModelPathStringByFormType` at 0x3b9ec0 (decompiler, medium); signature (untiered): `undefined GetModelPathStringByFormType(longlong param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
+/// `GetModelPathStringByFormType` at 0x3b9ec0 (decompiler, medium); signature (low): `undefined GetModelPathStringByFormType(longlong param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
 pub const GetModelPathStringByFormType: u64 = 24616;
 /// `GetMonthIndex` at 0x222ee0 (decompiler, medium); signature (medium): `short GetMonthIndex(ushort * param_1)`
 pub const GetMonthIndex: u64 = 15838;
-/// `GetMonthOfTime68` at 0xdbb3d0 (decompiler, medium); signature (untiered): `undefined GetMonthOfTime68(longlong param_1)`
+/// `GetMonthOfTime68` at 0xdbb3d0 (decompiler, medium); signature (low): `undefined GetMonthOfTime68(longlong param_1)`
 pub const GetMonthOfTime68: u64 = 86320;
-/// `GetMountOrSelf` at 0x6d3890 (decompiler, medium); signature (untiered): `bool GetMountOrSelf(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetMountOrSelf` at 0x6d3890 (decompiler, medium); signature (low): `bool GetMountOrSelf(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetMountOrSelf: u64 = 38707;
 /// `GetMovementMessageActivateDoorCrc` at 0x1217570 (decompiler, high); signature (high): `int GetMovementMessageActivateDoorCrc(void)`
 pub const GetMovementMessageActivateDoorCrc: u64 = 91961;
@@ -2701,47 +2301,47 @@ pub const GetMovementMessageWarpToLocationCrc: u64 = 91982;
 pub const GetMovementParametersCrc: u64 = 28674;
 /// `GetMsgDialogSystemUtilitySingleton` at 0x159daf0 (decompiler, high); signature (high): `undefined8 * GetMsgDialogSystemUtilitySingleton(void)`
 pub const GetMsgDialogSystemUtilitySingleton: u64 = 109382;
-/// `GetMultiBoundNodeForRefHandle` at 0x2da8d0 (decompiler, medium); signature (untiered): `longlong * GetMultiBoundNodeForRefHandle(longlong param_1, uint * param_2)`
+/// `GetMultiBoundNodeForRefHandle` at 0x2da8d0 (decompiler, medium); signature (low): `longlong * GetMultiBoundNodeForRefHandle(longlong param_1, uint * param_2)`
 pub const GetMultiBoundNodeForRefHandle: u64 = 19438;
-/// `GetMultiGoalPathingRequestField148` at 0x8eddc0 (decompiler, medium); signature (untiered): `undefined4 GetMultiGoalPathingRequestField148(longlong * param_1)`
+/// `GetMultiGoalPathingRequestField148` at 0x8eddc0 (decompiler, medium); signature (low): `undefined4 GetMultiGoalPathingRequestField148(longlong * param_1)`
 pub const GetMultiGoalPathingRequestField148: u64 = 50530;
-/// `GetMultiRayConvexClosestPoints` at 0xc88fc0 (decompiler, medium); signature (untiered): `undefined GetMultiRayConvexClosestPoints(longlong * param_1, undefined8 * param_2, undefined8 param_3, longlong * param_4)`
+/// `GetMultiRayConvexClosestPoints` at 0xc88fc0 (decompiler, medium); signature (low): `undefined GetMultiRayConvexClosestPoints(longlong * param_1, undefined8 * param_2, undefined8 param_3, longlong * param_4)`
 pub const GetMultiRayConvexClosestPoints: u64 = 66919;
-/// `GetMultiSphereTriangleClosestPoints` at 0xc87e50 (decompiler, medium); signature (untiered): `undefined GetMultiSphereTriangleClosestPoints(longlong * param_1, longlong * param_2, longlong param_3, longlong * param_4)`
+/// `GetMultiSphereTriangleClosestPoints` at 0xc87e50 (decompiler, medium); signature (low): `undefined GetMultiSphereTriangleClosestPoints(longlong * param_1, longlong * param_2, longlong param_3, longlong * param_4)`
 pub const GetMultiSphereTriangleClosestPoints: u64 = 66901;
-/// `GetMultiSphereTrianglePenetrations` at 0xc879e0 (decompiler, medium); signature (untiered): `undefined GetMultiSphereTrianglePenetrations(longlong * param_1, longlong * param_2, undefined8 param_3, longlong * param_4)`
+/// `GetMultiSphereTrianglePenetrations` at 0xc879e0 (decompiler, medium); signature (low): `undefined GetMultiSphereTrianglePenetrations(longlong * param_1, longlong * param_2, undefined8 param_3, longlong * param_4)`
 pub const GetMultiSphereTrianglePenetrations: u64 = 66899;
-/// `GetNPCSexSpecificStringFromField158` at 0x3be360 (decompiler, medium); signature (untiered): `ulonglong GetNPCSexSpecificStringFromField158(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetNPCSexSpecificStringFromField158` at 0x3be360 (decompiler, medium); signature (low): `ulonglong GetNPCSexSpecificStringFromField158(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetNPCSexSpecificStringFromField158: u64 = 24668;
-/// `GetNameStringByRefHandle` at 0x191910 (decompiler, high); signature (untiered): `undefined * GetNameStringByRefHandle(uint * param_1, undefined8 param_2, undefined8 param_3, char * param_4)`
+/// `GetNameStringByRefHandle` at 0x191910 (decompiler, high); signature (low): `undefined * GetNameStringByRefHandle(uint * param_1, undefined8 param_2, undefined8 param_3, char * param_4)`
 pub const GetNameStringByRefHandle: u64 = 12975;
-/// `GetNamedChildNodeOrRoot3D` at 0x5d58e0 (decompiler, medium); signature (untiered): `longlong * GetNamedChildNodeOrRoot3D(longlong * param_1)`
+/// `GetNamedChildNodeOrRoot3D` at 0x5d58e0 (decompiler, medium); signature (low): `longlong * GetNamedChildNodeOrRoot3D(longlong * param_1)`
 pub const GetNamedChildNodeOrRoot3D: u64 = 34618;
-/// `GetNamedEntryBitMask` at 0x1491ea0 (decompiler, medium); signature (untiered): `int GetNamedEntryBitMask(longlong param_1, undefined8 * param_2, char param_3)`
+/// `GetNamedEntryBitMask` at 0x1491ea0 (decompiler, medium); signature (low): `int GetNamedEntryBitMask(longlong param_1, undefined8 * param_2, char param_3)`
 pub const GetNamedEntryBitMask: u64 = 104301;
-/// `GetNamedNodeFieldA0OrDefault` at 0x6c9fa0 (decompiler, medium); signature (untiered): `undefined4 * GetNamedNodeFieldA0OrDefault(longlong * param_1, char param_2)`
+/// `GetNamedNodeFieldA0OrDefault` at 0x6c9fa0 (decompiler, medium); signature (low): `undefined4 * GetNamedNodeFieldA0OrDefault(longlong * param_1, char param_2)`
 pub const GetNamedNodeFieldA0OrDefault: u64 = 38572;
-/// `GetNeighborAcrossTriangleEdge` at 0x11dfb00 (decompiler, medium); signature (untiered): `undefined8 GetNeighborAcrossTriangleEdge(longlong param_1, ushort param_2, uint param_3, longlong * param_4, undefined2 * param_5)`
+/// `GetNeighborAcrossTriangleEdge` at 0x11dfb00 (decompiler, medium); signature (low): `undefined8 GetNeighborAcrossTriangleEdge(longlong param_1, ushort param_2, uint param_3, longlong * param_4, undefined2 * param_5)`
 pub const GetNeighborAcrossTriangleEdge: u64 = 91079;
-/// `GetNeighborCellLands` at 0x2aa440 (decompiler, medium); signature (untiered): `undefined GetNeighborCellLands(longlong param_1, longlong * param_2, char param_3, undefined1 * param_4)`
+/// `GetNeighborCellLands` at 0x2aa440 (decompiler, medium); signature (low): `undefined GetNeighborCellLands(longlong param_1, longlong * param_2, char param_3, undefined1 * param_4)`
 pub const GetNeighborCellLands: u64 = 18709;
-/// `GetNestedField18FromFieldE8` at 0xd277d0 (decompiler, medium); signature (untiered): `undefined8 GetNestedField18FromFieldE8(longlong param_1)`
+/// `GetNestedField18FromFieldE8` at 0xd277d0 (decompiler, medium); signature (low): `undefined8 GetNestedField18FromFieldE8(longlong param_1)`
 pub const GetNestedField18FromFieldE8: u64 = 83288;
-/// `GetNextBlock` at 0xcdff10 (decompiler, medium); signature (untiered): `longlong GetNextBlock(longlong param_1, ulonglong * param_2)`
+/// `GetNextBlock` at 0xcdff10 (decompiler, medium); signature (low): `longlong GetNextBlock(longlong param_1, ulonglong * param_2)`
 pub const GetNextBlock: u64 = 68154;
 /// `GetNextChildIndexOrInvalid` at 0x86fae0 (decompiler, high); signature (high): `uint GetNextChildIndexOrInvalid(undefined8 param_1, longlong param_2, int param_3)`
 pub const GetNextChildIndexOrInvalid: u64 = 47408;
-/// `GetNextHighestChildDepth` at 0xd58020 (decompiler, medium); signature (untiered): `undefined GetNextHighestChildDepth(longlong param_1)`
+/// `GetNextHighestChildDepth` at 0xd58020 (decompiler, medium); signature (low): `undefined GetNextHighestChildDepth(longlong param_1)`
 pub const GetNextHighestChildDepth: u64 = 84039;
-/// `GetNextJob` at 0xbf97f0 (decompiler, medium); signature (untiered): `undefined GetNextJob(undefined8 param_1, undefined8 param_2, undefined4 param_3)`
+/// `GetNextJob` at 0xbf97f0 (decompiler, medium); signature (low): `undefined GetNextJob(undefined8 param_1, undefined8 param_2, undefined4 param_3)`
 pub const GetNextJob: u64 = 64236;
-/// `GetNextMarker` at 0x5a3110 (decompiler, medium); signature (untiered): `ulonglong GetNextMarker(longlong * param_1)`
+/// `GetNextMarker` at 0x5a3110 (decompiler, medium); signature (low): `ulonglong GetNextMarker(longlong * param_1)`
 pub const GetNextMarker: u64 = 442086;
 /// `GetNextOccupiedIndex` at 0xab59e0 (decompiler, medium); signature (medium): `longlong GetNextOccupiedIndex(longlong * param_1, int param_2)`
 pub const GetNextOccupiedIndex: u64 = 57765;
-/// `GetNextResolvedObject` at 0xee5390 (decompiler, medium); signature (untiered): `undefined8 GetNextResolvedObject(longlong param_1)`
+/// `GetNextResolvedObject` at 0xee5390 (decompiler, medium); signature (low): `undefined8 GetNextResolvedObject(longlong param_1)`
 pub const GetNextResolvedObject: u64 = 70362;
-/// `GetNextRingSlot64` at 0x1010670 (decompiler, medium); signature (untiered): `undefined8 * GetNextRingSlot64(void)`
+/// `GetNextRingSlot64` at 0x1010670 (decompiler, medium); signature (low): `undefined8 * GetNextRingSlot64(void)`
 pub const GetNextRingSlot64: u64 = 77366;
 /// `GetNiSequenceAtIndex` at 0xf874e0 (decompiler, medium); signature (medium): `undefined GetNiSequenceAtIndex(longlong param_1, uint param_2, longlong * param_3, char * param_4)`
 pub const GetNiSequenceAtIndex: u64 = 73916;
@@ -2749,41 +2349,41 @@ pub const GetNiSequenceAtIndex: u64 = 73916;
 pub const GetNiTextureBoolMapSingleton: u64 = 15628;
 /// `GetNodeAabbFromEndpoints` at 0xc11e80 (decompiler, medium); signature (medium): `undefined GetNodeAabbFromEndpoints(longlong param_1, ushort * param_2, float * param_3)`
 pub const GetNodeAabbFromEndpoints: u64 = 64717;
-/// `GetNodeByIndexInTree` at 0x226060 (decompiler, medium); signature (untiered): `longlong * GetNodeByIndexInTree(longlong * param_1, int * param_2, char param_3)`
+/// `GetNodeByIndexInTree` at 0x226060 (decompiler, medium); signature (low): `longlong * GetNodeByIndexInTree(longlong * param_1, int * param_2, char param_3)`
 pub const GetNodeByIndexInTree: u64 = 15921;
-/// `GetNodeByIndexOrNull` at 0x223fc0 (decompiler, high); signature (untiered): `undefined8 GetNodeByIndexOrNull(undefined8 param_1, int param_2)`
+/// `GetNodeByIndexOrNull` at 0x223fc0 (decompiler, high); signature (low): `undefined8 GetNodeByIndexOrNull(undefined8 param_1, int param_2)`
 pub const GetNodeByIndexOrNull: u64 = 15885;
-/// `GetNodeEntryForClone` at 0xaef490 (decompiler, medium); signature (untiered): `longlong GetNodeEntryForClone(longlong * param_1, ulonglong param_2)`
+/// `GetNodeEntryForClone` at 0xaef490 (decompiler, medium); signature (low): `longlong GetNodeEntryForClone(longlong * param_1, ulonglong param_2)`
 pub const GetNodeEntryForClone: u64 = 59314;
 /// `GetNodeField0ByIdLocked` at 0x5f7b50 (decompiler, medium); signature (medium): `undefined4 GetNodeField0ByIdLocked(undefined8 * param_1, longlong param_2)`
 pub const GetNodeField0ByIdLocked: u64 = 442296;
-/// `GetNodeFromCollidable` at 0x1051de0 (semantic, medium); signature (untiered): `undefined8 GetNodeFromCollidable(longlong param_1)`; semantic: owner = collidable + (int8)collidable[+0x20]; returns the owner's property 2 value's +0x10, else the first keyed value of owner+0x18; the scene node of the hit body (medium); signature `NiAVObject* (const hkpCollidable* collidable)`
+/// `GetNodeFromCollidable` at 0x1051de0 (semantic, medium); signature (low): `undefined8 GetNodeFromCollidable(longlong param_1)`; semantic: owner = collidable + (int8)collidable[+0x20]; returns the owner's property 2 value's +0x10, else the first keyed value of owner+0x18; the scene node of the hit body (medium); signature `NiAVObject* (const hkpCollidable* collidable)`
 pub const GetNodeFromCollidable: u64 = 77988;
-/// `GetNodeFromCollidableOrLand` at 0x2236d0 (semantic, medium); signature (untiered): `longlong GetNodeFromCollidableOrLand(longlong param_1)`; semantic: for a collidable whose group (filterInfo +0x2c, high 16 bits) is 1 (landscape): the land's node from QueryLandAtPosition 0x1a5760 at the owner's position (+0x1a0, divided by the Havok scale), +0x30; otherwise GetNodeFromCollidable 0x1051de0 (medium); signature `NiAVObject* (const hkpCollidable* collidable)`
+/// `GetNodeFromCollidableOrLand` at 0x2236d0 (semantic, medium); signature (low): `longlong GetNodeFromCollidableOrLand(longlong param_1)`; semantic: for a collidable whose group (filterInfo +0x2c, high 16 bits) is 1 (landscape): the land's node from QueryLandAtPosition 0x1a5760 at the owner's position (+0x1a0, divided by the Havok scale), +0x30; otherwise GetNodeFromCollidable 0x1051de0 (medium); signature `NiAVObject* (const hkpCollidable* collidable)`
 pub const GetNodeFromCollidableOrLand: u64 = 15870;
 /// `GetNodeIndexInTree` at 0x223f80 (decompiler, high); signature (high): `undefined4 GetNodeIndexInTree(undefined8 param_1, undefined8 param_2, undefined1 param_3)`
 pub const GetNodeIndexInTree: u64 = 15884;
-/// `GetNodeOrRefPosition` at 0x28c330 (decompiler, medium); signature (untiered): `undefined GetNodeOrRefPosition(longlong param_1, undefined4 * param_2, longlong * param_3, undefined8 param_4)`
+/// `GetNodeOrRefPosition` at 0x28c330 (decompiler, medium); signature (low): `undefined GetNodeOrRefPosition(longlong param_1, undefined4 * param_2, longlong * param_3, undefined8 param_4)`
 pub const GetNodeOrRefPosition: u64 = 18099;
 /// `GetNonBuiltInFileCountMinusOne` at 0x5b1340 (decompiler, medium); signature (medium): `int GetNonBuiltInFileCountMinusOne(void)`
 pub const GetNonBuiltInFileCountMinusOne: u64 = 418951;
 /// `GetNonZeroOrMinInt` at 0xab33b0 (decompiler, high); signature (high): `int GetNonZeroOrMinInt(int param_1)`
 pub const GetNonZeroOrMinInt: u64 = 57698;
-/// `GetNthItemOfList60` at 0x347680 (decompiler, medium); signature (untiered): `longlong GetNthItemOfList60(longlong param_1, uint param_2)`
+/// `GetNthItemOfList60` at 0x347680 (decompiler, medium); signature (low): `longlong GetNthItemOfList60(longlong param_1, uint param_2)`
 pub const GetNthItemOfList60: u64 = 21947;
-/// `GetNthOccupiedEntryValueInField80Table` at 0x30e960 (decompiler, medium); signature (untiered): `undefined8 GetNthOccupiedEntryValueInField80Table(longlong param_1, int param_2)`
+/// `GetNthOccupiedEntryValueInField80Table` at 0x30e960 (decompiler, medium); signature (low): `undefined8 GetNthOccupiedEntryValueInField80Table(longlong param_1, int param_2)`
 pub const GetNthOccupiedEntryValueInField80Table: u64 = 523542;
 /// `GetNullPathBuilderTracker` at 0x11cc020 (decompiler, high); signature (high): `NullPathBuilderTracker * GetNullPathBuilderTracker(void)`
 pub const GetNullPathBuilderTracker: u64 = 90653;
 /// `GetNumberMembers418And420` at 0xdaf2a0 (decompiler, medium); signature (medium): `undefined GetNumberMembers418And420(longlong param_1, longlong param_2, undefined8 * param_3)`
 pub const GetNumberMembers418And420: u64 = 86037;
-/// `GetNumberObjectPrimitiveValue` at 0xdb4310 (decompiler, medium); signature (untiered): `undefined GetNumberObjectPrimitiveValue(longlong param_1)`
+/// `GetNumberObjectPrimitiveValue` at 0xdb4310 (decompiler, medium); signature (low): `undefined GetNumberObjectPrimitiveValue(longlong param_1)`
 pub const GetNumberObjectPrimitiveValue: u64 = 86134;
-/// `GetObjectListItemsBegin` at 0x451650 (decompiler, medium); signature (untiered): `undefined8 * GetObjectListItemsBegin(longlong * param_1, undefined8 * param_2)`
+/// `GetObjectListItemsBegin` at 0x451650 (decompiler, medium); signature (low): `undefined8 * GetObjectListItemsBegin(longlong * param_1, undefined8 * param_2)`
 pub const GetObjectListItemsBegin: u64 = 27695;
-/// `GetObjectListItemsEnd` at 0x451680 (decompiler, medium); signature (untiered): `longlong * GetObjectListItemsEnd(longlong * param_1, longlong * param_2)`
+/// `GetObjectListItemsEnd` at 0x451680 (decompiler, medium); signature (low): `longlong * GetObjectListItemsEnd(longlong * param_1, longlong * param_2)`
 pub const GetObjectListItemsEnd: u64 = 27696;
-/// `GetObjectMemberData` at 0x915110 (decompiler, medium); signature (untiered): `longlong * GetObjectMemberData(longlong param_1)`
+/// `GetObjectMemberData` at 0x915110 (decompiler, medium); signature (low): `longlong * GetObjectMemberData(longlong param_1)`
 pub const GetObjectMemberData: u64 = 51179;
 /// `GetObjectMinus20IfType6To44` at 0xd14790 (decompiler, medium); signature (medium): `longlong * GetObjectMinus20IfType6To44(longlong * param_1)`
 pub const GetObjectMinus20IfType6To44: u64 = 83036;
@@ -2791,111 +2391,111 @@ pub const GetObjectMinus20IfType6To44: u64 = 83036;
 pub const GetObjectMinus98IfType2To5: u64 = 83034;
 /// `GetObjectNumberMembers418And420` at 0xdaefc0 (decompiler, medium); signature (medium): `undefined GetObjectNumberMembers418And420(longlong param_1, longlong param_2, undefined8 * param_3)`
 pub const GetObjectNumberMembers418And420: u64 = 86031;
-/// `GetObjectTypeInfoForTypeId4` at 0xa19430 (decompiler, medium); signature (untiered): `undefined8 * GetObjectTypeInfoForTypeId4(undefined8 * param_1, longlong * param_2)`
+/// `GetObjectTypeInfoForTypeId4` at 0xa19430 (decompiler, medium); signature (low): `undefined8 * GetObjectTypeInfoForTypeId4(undefined8 * param_1, longlong * param_2)`
 pub const GetObjectTypeInfoForTypeId4: u64 = 55251;
-/// `GetObjectTypeInfoForTypeId68` at 0xa16b70 (decompiler, medium); signature (untiered): `undefined8 * GetObjectTypeInfoForTypeId68(undefined8 * param_1, longlong * param_2)`
+/// `GetObjectTypeInfoForTypeId68` at 0xa16b70 (decompiler, medium); signature (low): `undefined8 * GetObjectTypeInfoForTypeId68(undefined8 * param_1, longlong * param_2)`
 pub const GetObjectTypeInfoForTypeId68: u64 = 55187;
 /// `GetObjectTypeNameOrUnknown` at 0x275ac0 (decompiler, medium); signature (medium): `char * GetObjectTypeNameOrUnknown(int param_1)`
 pub const GetObjectTypeNameOrUnknown: u64 = 17638;
-/// `GetOpenState` at 0x1da110 (decompiler, medium); signature (untiered): `longlong * GetOpenState(longlong * param_1)`
+/// `GetOpenState` at 0x1da110 (decompiler, medium); signature (low): `longlong * GetOpenState(longlong * param_1)`
 pub const GetOpenState: u64 = 14288;
-/// `GetOptionalByteValue` at 0x12841e0 (decompiler, medium); signature (untiered): `longlong GetOptionalByteValue(longlong param_1)`
+/// `GetOptionalByteValue` at 0x12841e0 (decompiler, medium); signature (low): `longlong GetOptionalByteValue(longlong param_1)`
 pub const GetOptionalByteValue: u64 = 524613;
-/// `GetOptionalQwordValue` at 0x133a0c0 (decompiler, medium); signature (untiered): `longlong GetOptionalQwordValue(longlong param_1)`
+/// `GetOptionalQwordValue` at 0x133a0c0 (decompiler, medium); signature (low): `longlong GetOptionalQwordValue(longlong param_1)`
 pub const GetOptionalQwordValue: u64 = 526298;
 /// `GetOrAssignFormIDIndex` at 0x614cf0 (semantic, high); signature (medium): `ulonglong GetOrAssignFormIDIndex(longlong param_1, uint param_2)`; semantic: index of a form id, assigning the next one; 0xFF ids return themselves (high); signature `u32 (FormIDIndexMap* map, u32 formID)`
 pub const GetOrAssignFormIDIndex: u64 = 35554;
 /// `GetOrAssignFormIDIndex` as a function pointer type (high).
 pub type GetOrAssignFormIDIndex_fn = unsafe extern "C" fn(map: *mut c_void, formID: u32) -> u32;
-/// `GetOrComputeCachedFloatRange` at 0x2b0850 (decompiler, medium); signature (untiered): `undefined8 * GetOrComputeCachedFloatRange(longlong param_1, undefined8 * param_2)`
+/// `GetOrComputeCachedFloatRange` at 0x2b0850 (decompiler, medium); signature (low): `undefined8 * GetOrComputeCachedFloatRange(longlong param_1, undefined8 * param_2)`
 pub const GetOrComputeCachedFloatRange: u64 = 18767;
-/// `GetOrCreateActivatorAt220` at 0x307300 (decompiler, medium); signature (untiered): `longlong GetOrCreateActivatorAt220(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateActivatorAt220` at 0x307300 (decompiler, medium); signature (low): `longlong GetOrCreateActivatorAt220(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateActivatorAt220: u64 = 20371;
-/// `GetOrCreateActivatorAt228` at 0x3073b0 (decompiler, medium); signature (untiered): `longlong GetOrCreateActivatorAt228(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateActivatorAt228` at 0x3073b0 (decompiler, medium); signature (low): `longlong GetOrCreateActivatorAt228(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateActivatorAt228: u64 = 20372;
-/// `GetOrCreateActorValueStorageEntry` at 0x6e3590 (decompiler, medium); signature (untiered): `longlong GetOrCreateActorValueStorageEntry(longlong param_1, char param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateActorValueStorageEntry` at 0x6e3590 (decompiler, medium); signature (low): `longlong GetOrCreateActorValueStorageEntry(longlong param_1, char param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateActorValueStorageEntry: u64 = 39021;
 /// `GetOrCreateAnimationCallbacksForFormID` at 0x9afdc0 (decompiler, medium); signature (medium): `bool GetOrCreateAnimationCallbacksForFormID(longlong param_1, uint param_2, longlong * param_3, undefined8 param_4)`
 pub const GetOrCreateAnimationCallbacksForFormID: u64 = 53373;
-/// `GetOrCreateBoundsForListRoot` at 0x3130e0 (decompiler, medium); signature (untiered): `undefined8 * GetOrCreateBoundsForListRoot(longlong param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateBoundsForListRoot` at 0x3130e0 (decompiler, medium); signature (low): `undefined8 * GetOrCreateBoundsForListRoot(longlong param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateBoundsForListRoot: u64 = 20560;
 /// `GetOrCreateCachedAllCdPointCollector` at 0x3ff300 (decompiler, medium); signature (medium): `hkpAllCdPointCollector * GetOrCreateCachedAllCdPointCollector(int param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateCachedAllCdPointCollector: u64 = 25925;
-/// `GetOrCreateCachedHandle` at 0xcbea60 (decompiler, medium); signature (untiered): `longlong * GetOrCreateCachedHandle(undefined8 * param_1, longlong * param_2, longlong * param_3)`
+/// `GetOrCreateCachedHandle` at 0xcbea60 (decompiler, medium); signature (low): `longlong * GetOrCreateCachedHandle(undefined8 * param_1, longlong * param_2, longlong * param_3)`
 pub const GetOrCreateCachedHandle: u64 = 67410;
-/// `GetOrCreateCachedRefHandle` at 0x4e1d00 (decompiler, medium); signature (untiered): `uint * GetOrCreateCachedRefHandle(longlong param_1, uint * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateCachedRefHandle` at 0x4e1d00 (decompiler, medium); signature (low): `uint * GetOrCreateCachedRefHandle(longlong param_1, uint * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateCachedRefHandle: u64 = 30828;
-/// `GetOrCreateCallbackListAndInsert` at 0x9ae8b0 (decompiler, medium); signature (untiered): `undefined GetOrCreateCallbackListAndInsert(longlong param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateCallbackListAndInsert` at 0x9ae8b0 (decompiler, medium); signature (low): `undefined GetOrCreateCallbackListAndInsert(longlong param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateCallbackListAndInsert: u64 = 53358;
-/// `GetOrCreateCell88AndAddReference` at 0x3106f0 (decompiler, medium); signature (untiered): `undefined GetOrCreateCell88AndAddReference(longlong param_1, longlong * * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateCell88AndAddReference` at 0x3106f0 (decompiler, medium); signature (low): `undefined GetOrCreateCell88AndAddReference(longlong param_1, longlong * * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateCell88AndAddReference: u64 = 20526;
 /// `GetOrCreateCellF8` at 0x311640 (decompiler, medium); signature (medium): `longlong GetOrCreateCellF8(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateCellF8: u64 = 20543;
-/// `GetOrCreateCloneForNode` at 0xace3f0 (decompiler, medium); signature (untiered): `longlong * GetOrCreateCloneForNode(longlong param_1, longlong * param_2)`
+/// `GetOrCreateCloneForNode` at 0xace3f0 (decompiler, medium); signature (low): `longlong * GetOrCreateCloneForNode(longlong param_1, longlong * param_2)`
 pub const GetOrCreateCloneForNode: u64 = 58360;
-/// `GetOrCreateCombatObject` at 0x852060 (decompiler, medium); signature (untiered): `longlong * * * * * * GetOrCreateCombatObject(longlong param_1, longlong * * * * * * * param_2, longlong * * * * * * * param_3)`
+/// `GetOrCreateCombatObject` at 0x852060 (decompiler, medium); signature (low): `longlong * * * * * * GetOrCreateCombatObject(longlong param_1, longlong * * * * * * * param_2, longlong * * * * * * * param_3)`
 pub const GetOrCreateCombatObject: u64 = 46873;
-/// `GetOrCreateCombatObjectInGroup` at 0x8521a0 (decompiler, medium); signature (untiered): `longlong * * * * * * GetOrCreateCombatObjectInGroup(undefined8 param_1, longlong * * * * * * * param_2, longlong * * * * * param_3, undefined8 param_4)`
+/// `GetOrCreateCombatObjectInGroup` at 0x8521a0 (decompiler, medium); signature (low): `longlong * * * * * * GetOrCreateCombatObjectInGroup(undefined8 param_1, longlong * * * * * * * param_2, longlong * * * * * param_3, undefined8 param_4)`
 pub const GetOrCreateCombatObjectInGroup: u64 = 46874;
-/// `GetOrCreateConnection` at 0x13d67d0 (decompiler, medium); signature (untiered): `undefined GetOrCreateConnection(longlong param_1, undefined8 param_2, longlong * param_3, undefined8 param_4)`
+/// `GetOrCreateConnection` at 0x13d67d0 (decompiler, medium); signature (low): `undefined GetOrCreateConnection(longlong param_1, undefined8 param_2, longlong * param_3, undefined8 param_4)`
 pub const GetOrCreateConnection: u64 = 527144;
-/// `GetOrCreateDictObjectMemberValue` at 0xc5edb0 (decompiler, medium); signature (untiered): `longlong * GetOrCreateDictObjectMemberValue(longlong param_1, longlong * param_2, longlong param_3)`
+/// `GetOrCreateDictObjectMemberValue` at 0xc5edb0 (decompiler, medium); signature (low): `longlong * GetOrCreateDictObjectMemberValue(longlong param_1, longlong * param_2, longlong param_3)`
 pub const GetOrCreateDictObjectMemberValue: u64 = 65936;
-/// `GetOrCreateEdgeRecord40` at 0x11e4c50 (decompiler, medium); signature (untiered): `longlong GetOrCreateEdgeRecord40(longlong param_1, ulonglong param_2, uint param_3)`
+/// `GetOrCreateEdgeRecord40` at 0x11e4c50 (decompiler, medium); signature (low): `longlong GetOrCreateEdgeRecord40(longlong param_1, ulonglong param_2, uint param_3)`
 pub const GetOrCreateEdgeRecord40: u64 = 91140;
-/// `GetOrCreateEntryByCString` at 0x3b8ce0 (decompiler, high); signature (untiered): `undefined8 * GetOrCreateEntryByCString(longlong param_1, char * param_2, undefined8 * * param_3, undefined8 param_4)`
+/// `GetOrCreateEntryByCString` at 0x3b8ce0 (decompiler, high); signature (low): `undefined8 * GetOrCreateEntryByCString(longlong param_1, char * param_2, undefined8 * * param_3, undefined8 param_4)`
 pub const GetOrCreateEntryByCString: u64 = 24596;
-/// `GetOrCreateEntryByFormField48Name` at 0x3b8d40 (decompiler, high); signature (untiered): `undefined8 GetOrCreateEntryByFormField48Name(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateEntryByFormField48Name` at 0x3b8d40 (decompiler, high); signature (low): `undefined8 GetOrCreateEntryByFormField48Name(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateEntryByFormField48Name: u64 = 24597;
-/// `GetOrCreateEntryByName` at 0x3b9ce0 (decompiler, medium); signature (untiered): `undefined8 * GetOrCreateEntryByName(longlong param_1, ulonglong * param_2, undefined8 * * param_3, undefined8 param_4)`
+/// `GetOrCreateEntryByName` at 0x3b9ce0 (decompiler, medium); signature (low): `undefined8 * GetOrCreateEntryByName(longlong param_1, ulonglong * param_2, undefined8 * * param_3, undefined8 param_4)`
 pub const GetOrCreateEntryByName: u64 = 24613;
-/// `GetOrCreateExtraAction` at 0x15fcb0 (decompiler, medium); signature (untiered): `ExtraAction * GetOrCreateExtraAction(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateExtraAction` at 0x15fcb0 (decompiler, medium); signature (low): `ExtraAction * GetOrCreateExtraAction(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateExtraAction: u64 = 11608;
 /// `GetOrCreateExtraCellGrassData` at 0x173540 (decompiler, medium); signature (medium): `ExtraCellGrassData * GetOrCreateExtraCellGrassData(longlong param_1, char param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateExtraCellGrassData: u64 = 12069;
 /// `GetOrCreateExtraDismemberedLimbs` at 0x171280 (decompiler, high); signature (high): `ExtraDismemberedLimbs * GetOrCreateExtraDismemberedLimbs(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateExtraDismemberedLimbs: u64 = 12012;
-/// `GetOrCreateExtraFollowerSwimBreadcrumbs` at 0x16e2d0 (decompiler, high); signature (untiered): `ExtraFollowerSwimBreadcrumbs * GetOrCreateExtraFollowerSwimBreadcrumbs(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateExtraFollowerSwimBreadcrumbs` at 0x16e2d0 (decompiler, high); signature (low): `ExtraFollowerSwimBreadcrumbs * GetOrCreateExtraFollowerSwimBreadcrumbs(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateExtraFollowerSwimBreadcrumbs: u64 = 11916;
-/// `GetOrCreateExtraGuardedRefDataAndSet` at 0x1717c0 (decompiler, medium); signature (untiered): `undefined GetOrCreateExtraGuardedRefDataAndSet(longlong param_1, undefined8 param_2, ulonglong param_3, ulonglong param_4)`
+/// `GetOrCreateExtraGuardedRefDataAndSet` at 0x1717c0 (decompiler, medium); signature (low): `undefined GetOrCreateExtraGuardedRefDataAndSet(longlong param_1, undefined8 param_2, ulonglong param_3, ulonglong param_4)`
 pub const GetOrCreateExtraGuardedRefDataAndSet: u64 = 12021;
-/// `GetOrCreateExtraMissingRefIDs` at 0x1671c0 (decompiler, high); signature (untiered): `longlong * GetOrCreateExtraMissingRefIDs(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateExtraMissingRefIDs` at 0x1671c0 (decompiler, high); signature (low): `longlong * GetOrCreateExtraMissingRefIDs(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateExtraMissingRefIDs: u64 = 11775;
-/// `GetOrCreateExtraStartingPosition` at 0x15f5a0 (decompiler, medium); signature (untiered): `ExtraStartingPosition * GetOrCreateExtraStartingPosition(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateExtraStartingPosition` at 0x15f5a0 (decompiler, medium); signature (low): `ExtraStartingPosition * GetOrCreateExtraStartingPosition(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateExtraStartingPosition: u64 = 11602;
-/// `GetOrCreateExtraStartingPositionField10` at 0x170620 (decompiler, medium); signature (untiered): `undefined4 * GetOrCreateExtraStartingPositionField10(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateExtraStartingPositionField10` at 0x170620 (decompiler, medium); signature (low): `undefined4 * GetOrCreateExtraStartingPositionField10(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateExtraStartingPositionField10: u64 = 11989;
-/// `GetOrCreateExtraStartingPositionField1C` at 0x1705e0 (decompiler, medium); signature (untiered): `undefined4 * GetOrCreateExtraStartingPositionField1C(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateExtraStartingPositionField1C` at 0x1705e0 (decompiler, medium); signature (low): `undefined4 * GetOrCreateExtraStartingPositionField1C(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateExtraStartingPositionField1C: u64 = 11988;
-/// `GetOrCreateExtraType2AData` at 0x301160 (decompiler, medium); signature (untiered): `undefined1 * GetOrCreateExtraType2AData(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateExtraType2AData` at 0x301160 (decompiler, medium); signature (low): `undefined1 * GetOrCreateExtraType2AData(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateExtraType2AData: u64 = 20221;
-/// `GetOrCreateExtraWaterDataField20` at 0x174330 (decompiler, medium); signature (untiered): `longlong * GetOrCreateExtraWaterDataField20(longlong param_1, char param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateExtraWaterDataField20` at 0x174330 (decompiler, medium); signature (low): `longlong * GetOrCreateExtraWaterDataField20(longlong param_1, char param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateExtraWaterDataField20: u64 = 12087;
-/// `GetOrCreateField10` at 0xe3e8f0 (decompiler, medium); signature (untiered): `undefined8 * GetOrCreateField10(longlong param_1)`
+/// `GetOrCreateField10` at 0xe3e8f0 (decompiler, medium); signature (low): `undefined8 * GetOrCreateField10(longlong param_1)`
 pub const GetOrCreateField10: u64 = 88422;
-/// `GetOrCreateField10Record` at 0xe04690 (decompiler, medium); signature (untiered): `undefined2 * GetOrCreateField10Record(longlong param_1)`
+/// `GetOrCreateField10Record` at 0xe04690 (decompiler, medium); signature (low): `undefined2 * GetOrCreateField10Record(longlong param_1)`
 pub const GetOrCreateField10Record: u64 = 87514;
-/// `GetOrCreateField148Object` at 0xdd7ef0 (decompiler, medium); signature (untiered): `undefined8 * GetOrCreateField148Object(longlong * param_1)`
+/// `GetOrCreateField148Object` at 0xdd7ef0 (decompiler, medium); signature (low): `undefined8 * GetOrCreateField148Object(longlong * param_1)`
 pub const GetOrCreateField148Object: u64 = 86887;
-/// `GetOrCreateField18` at 0xe6c880 (decompiler, medium); signature (untiered): `longlong GetOrCreateField18(longlong param_1, longlong * param_2)`
+/// `GetOrCreateField18` at 0xe6c880 (decompiler, medium); signature (low): `longlong GetOrCreateField18(longlong param_1, longlong * param_2)`
 pub const GetOrCreateField18: u64 = 87741;
-/// `GetOrCreateField180` at 0xe48c00 (decompiler, high); signature (untiered): `longlong GetOrCreateField180(longlong param_1)`
+/// `GetOrCreateField180` at 0xe48c00 (decompiler, high); signature (low): `longlong GetOrCreateField180(longlong param_1)`
 pub const GetOrCreateField180: u64 = 88574;
-/// `GetOrCreateField1A8Object` at 0xd94160 (decompiler, medium); signature (untiered): `undefined8 * GetOrCreateField1A8Object(longlong * param_1)`
+/// `GetOrCreateField1A8Object` at 0xd94160 (decompiler, medium); signature (low): `undefined8 * GetOrCreateField1A8Object(longlong * param_1)`
 pub const GetOrCreateField1A8Object: u64 = 85667;
-/// `GetOrCreateField1E0` at 0xe08c30 (decompiler, medium); signature (untiered): `undefined8 * GetOrCreateField1E0(longlong * param_1)`
+/// `GetOrCreateField1E0` at 0xe08c30 (decompiler, medium); signature (low): `undefined8 * GetOrCreateField1E0(longlong * param_1)`
 pub const GetOrCreateField1E0: u64 = 87584;
-/// `GetOrCreateField28` at 0xe48c80 (decompiler, medium); signature (untiered): `undefined8 * GetOrCreateField28(longlong param_1)`
+/// `GetOrCreateField28` at 0xe48c80 (decompiler, medium); signature (low): `undefined8 * GetOrCreateField28(longlong param_1)`
 pub const GetOrCreateField28: u64 = 88575;
-/// `GetOrCreateField2B8SecondArray` at 0x4041b0 (decompiler, medium); signature (untiered): `undefined8 * GetOrCreateField2B8SecondArray(longlong param_1)`
+/// `GetOrCreateField2B8SecondArray` at 0x4041b0 (decompiler, medium); signature (low): `undefined8 * GetOrCreateField2B8SecondArray(longlong param_1)`
 pub const GetOrCreateField2B8SecondArray: u64 = 25985;
 /// `GetOrCreateField30` at 0xd90780 (decompiler, medium); signature (medium): `undefined8 * GetOrCreateField30(longlong param_1)`
 pub const GetOrCreateField30: u64 = 85609;
-/// `GetOrCreateField30Object` at 0xdf1d60 (decompiler, medium); signature (untiered): `undefined8 * GetOrCreateField30Object(longlong param_1)`
+/// `GetOrCreateField30Object` at 0xdf1d60 (decompiler, medium); signature (low): `undefined8 * GetOrCreateField30Object(longlong param_1)`
 pub const GetOrCreateField30Object: u64 = 87308;
-/// `GetOrCreateField88Cell` at 0x310830 (decompiler, medium); signature (untiered): `undefined8 GetOrCreateField88Cell(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateField88Cell` at 0x310830 (decompiler, medium); signature (low): `undefined8 GetOrCreateField88Cell(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateField88Cell: u64 = 20529;
-/// `GetOrCreateGlobal400607` at 0x222b20 (decompiler, medium); signature (untiered): `undefined8 * GetOrCreateGlobal400607(char param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateGlobal400607` at 0x222b20 (decompiler, medium); signature (low): `undefined8 * GetOrCreateGlobal400607(char param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateGlobal400607: u64 = 15824;
 /// `GetOrCreateGlobal401401NPC` at 0x3c9110 (decompiler, medium)
 pub const GetOrCreateGlobal401401NPC: u64 = 24796;
@@ -2903,55 +2503,55 @@ pub const GetOrCreateGlobal401401NPC: u64 = 24796;
 pub const GetOrCreateGlobalCharacter: u64 = 25068;
 /// `GetOrCreateGlobalRefr401500` at 0x3d8790 (decompiler, medium); signature (medium): `longlong * GetOrCreateGlobalRefr401500(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateGlobalRefr401500: u64 = 25069;
-/// `GetOrCreateHkxQueuedHandles` at 0x19b980 (decompiler, high); signature (untiered): `longlong GetOrCreateHkxQueuedHandles(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateHkxQueuedHandles` at 0x19b980 (decompiler, high); signature (low): `longlong GetOrCreateHkxQueuedHandles(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateHkxQueuedHandles: u64 = 13179;
-/// `GetOrCreateImagesObject` at 0xd80480 (decompiler, medium); signature (untiered): `longlong GetOrCreateImagesObject(longlong param_1)`
+/// `GetOrCreateImagesObject` at 0xd80480 (decompiler, medium); signature (low): `longlong GetOrCreateImagesObject(longlong param_1)`
 pub const GetOrCreateImagesObject: u64 = 85330;
 /// `GetOrCreateIntSeenData` at 0x2c8fe0 (decompiler, medium); signature (medium): `IntSeenData * GetOrCreateIntSeenData(longlong * param_1, char param_2, byte param_3, char param_4)`
 pub const GetOrCreateIntSeenData: u64 = 19143;
-/// `GetOrCreateInventoryChanges` at 0x22b2e0 (decompiler, medium); signature (untiered): `undefined8 * GetOrCreateInventoryChanges(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateInventoryChanges` at 0x22b2e0 (decompiler, medium); signature (low): `undefined8 * GetOrCreateInventoryChanges(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateInventoryChanges: u64 = 16040;
 /// `GetOrCreateLand` at 0x2bcbf0 (decompiler, medium); signature (medium): `longlong GetOrCreateLand(longlong param_1)`
 pub const GetOrCreateLand: u64 = 18970;
-/// `GetOrCreateMirroredSkeleton` at 0xaffeb0 (decompiler, high); signature (untiered): `undefined8 GetOrCreateMirroredSkeleton(longlong param_1)`
+/// `GetOrCreateMirroredSkeleton` at 0xaffeb0 (decompiler, high); signature (low): `undefined8 GetOrCreateMirroredSkeleton(longlong param_1)`
 pub const GetOrCreateMirroredSkeleton: u64 = 59480;
-/// `GetOrCreateModelAndAnimationHandles` at 0x152160 (decompiler, medium); signature (untiered): `longlong GetOrCreateModelAndAnimationHandles(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateModelAndAnimationHandles` at 0x152160 (decompiler, medium); signature (low): `longlong GetOrCreateModelAndAnimationHandles(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateModelAndAnimationHandles: u64 = 11360;
-/// `GetOrCreateMultiBoundNode` at 0x2bd4b0 (decompiler, medium); signature (untiered): `BSMultiBoundNode * GetOrCreateMultiBoundNode(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateMultiBoundNode` at 0x2bd4b0 (decompiler, medium); signature (low): `BSMultiBoundNode * GetOrCreateMultiBoundNode(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateMultiBoundNode: u64 = 18978;
 /// `GetOrCreateMultiBoundRoomForRef` at 0x301be0 (decompiler, medium); signature (medium): `longlong * GetOrCreateMultiBoundRoomForRef(uint * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateMultiBoundRoomForRef: u64 = 20242;
-/// `GetOrCreateNamedNodeByKindByte13` at 0xac1010 (decompiler, medium); signature (untiered): `undefined GetOrCreateNamedNodeByKindByte13(undefined8 * param_1, longlong param_2)`
+/// `GetOrCreateNamedNodeByKindByte13` at 0xac1010 (decompiler, medium); signature (low): `undefined GetOrCreateNamedNodeByKindByte13(undefined8 * param_1, longlong param_2)`
 pub const GetOrCreateNamedNodeByKindByte13: u64 = 58093;
-/// `GetOrCreateNamedNodeFromRange` at 0xabe1e0 (decompiler, medium); signature (untiered): `undefined8 GetOrCreateNamedNodeFromRange(undefined8 param_1, undefined4 param_2, int * param_3)`
+/// `GetOrCreateNamedNodeFromRange` at 0xabe1e0 (decompiler, medium); signature (low): `undefined8 GetOrCreateNamedNodeFromRange(undefined8 param_1, undefined4 param_2, int * param_3)`
 pub const GetOrCreateNamedNodeFromRange: u64 = 57994;
 /// `GetOrCreateNavMeshInfoMap` at 0x1a9290 (decompiler, high); signature (high): `longlong GetOrCreateNavMeshInfoMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateNavMeshInfoMap: u64 = 13403;
-/// `GetOrCreateNoRTTI1A2AC58AtField28` at 0xd48da0 (decompiler, medium); signature (untiered): `undefined8 GetOrCreateNoRTTI1A2AC58AtField28(longlong param_1)`
+/// `GetOrCreateNoRTTI1A2AC58AtField28` at 0xd48da0 (decompiler, medium); signature (low): `undefined8 GetOrCreateNoRTTI1A2AC58AtField28(longlong param_1)`
 pub const GetOrCreateNoRTTI1A2AC58AtField28: u64 = 83861;
 /// `GetOrCreateNodeForIndex` at 0xef4af0 (decompiler, medium); signature (medium): `NiNode * GetOrCreateNodeForIndex(NiNode * param_1, int param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateNodeForIndex: u64 = 70735;
-/// `GetOrCreateObjectAtField318` at 0xd61be0 (decompiler, medium); signature (untiered): `undefined8 * GetOrCreateObjectAtField318(longlong * param_1)`
+/// `GetOrCreateObjectAtField318` at 0xd61be0 (decompiler, medium); signature (low): `undefined8 * GetOrCreateObjectAtField318(longlong * param_1)`
 pub const GetOrCreateObjectAtField318: u64 = 84208;
 /// `GetOrCreateObstacleTaskData` at 0x4ce6f0 (decompiler, medium); signature (medium): `ObstacleTaskData * GetOrCreateObstacleTaskData(longlong param_1, uint * param_2, ulonglong param_3, undefined8 param_4)`
 pub const GetOrCreateObstacleTaskData: u64 = 30478;
-/// `GetOrCreatePapyrusLogFile` at 0x9bbd70 (decompiler, medium); signature (untiered): `longlong * GetOrCreatePapyrusLogFile(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreatePapyrusLogFile` at 0x9bbd70 (decompiler, medium); signature (low): `longlong * GetOrCreatePapyrusLogFile(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreatePapyrusLogFile: u64 = 53552;
-/// `GetOrCreateParamsCopyAtC0` at 0x14eeb20 (decompiler, medium); signature (untiered): `undefined8 * GetOrCreateParamsCopyAtC0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateParamsCopyAtC0` at 0x14eeb20 (decompiler, medium); signature (low): `undefined8 * GetOrCreateParamsCopyAtC0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateParamsCopyAtC0: u64 = 105686;
-/// `GetOrCreatePathingCell` at 0x4db240 (decompiler, medium); signature (untiered): `bool GetOrCreatePathingCell(longlong param_1, ulonglong * param_2, longlong * param_3)`
+/// `GetOrCreatePathingCell` at 0x4db240 (decompiler, medium); signature (low): `bool GetOrCreatePathingCell(longlong param_1, ulonglong * param_2, longlong * param_3)`
 pub const GetOrCreatePathingCell: u64 = 30684;
-/// `GetOrCreatePathingCellForLocation` at 0x4db170 (decompiler, medium); signature (untiered): `undefined GetOrCreatePathingCellForLocation(longlong param_1, float * param_2, longlong * param_3)`
+/// `GetOrCreatePathingCellForLocation` at 0x4db170 (decompiler, medium); signature (low): `undefined GetOrCreatePathingCellForLocation(longlong param_1, float * param_2, longlong * param_3)`
 pub const GetOrCreatePathingCellForLocation: u64 = 30683;
-/// `GetOrCreatePerThreadInstanceViaTls` at 0x19cd20 (decompiler, medium); signature (untiered): `LPVOID GetOrCreatePerThreadInstanceViaTls(longlong * param_1)`
+/// `GetOrCreatePerThreadInstanceViaTls` at 0x19cd20 (decompiler, medium); signature (low): `LPVOID GetOrCreatePerThreadInstanceViaTls(longlong * param_1)`
 pub const GetOrCreatePerThreadInstanceViaTls: u64 = 13238;
-/// `GetOrCreatePortalGraph` at 0x2caf40 (decompiler, medium); signature (untiered): `undefined8 GetOrCreatePortalGraph(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreatePortalGraph` at 0x2caf40 (decompiler, medium); signature (low): `undefined8 GetOrCreatePortalGraph(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreatePortalGraph: u64 = 19169;
-/// `GetOrCreateQueuedHandles` at 0x1b3120 (decompiler, medium); signature (untiered): `longlong GetOrCreateQueuedHandles(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateQueuedHandles` at 0x1b3120 (decompiler, medium); signature (low): `longlong GetOrCreateQueuedHandles(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateQueuedHandles: u64 = 13602;
-/// `GetOrCreateQueuedHelmet` at 0x195980 (decompiler, medium); signature (untiered): `undefined GetOrCreateQueuedHelmet(longlong param_1, longlong * param_2, longlong * param_3, undefined8 param_4)`
+/// `GetOrCreateQueuedHelmet` at 0x195980 (decompiler, medium); signature (low): `undefined GetOrCreateQueuedHelmet(longlong param_1, longlong * param_2, longlong * param_3, undefined8 param_4)`
 pub const GetOrCreateQueuedHelmet: u64 = 13056;
-/// `GetOrCreateQueuedHelmetForSlot` at 0x21bca0 (decompiler, medium); signature (untiered): `undefined GetOrCreateQueuedHelmetForSlot(int * param_1, uint param_2, undefined8 param_3, int param_4)`
+/// `GetOrCreateQueuedHelmetForSlot` at 0x21bca0 (decompiler, medium); signature (low): `undefined GetOrCreateQueuedHelmetForSlot(int * param_1, uint param_2, undefined8 param_3, int param_4)`
 pub const GetOrCreateQueuedHelmetForSlot: u64 = 15698;
 /// `GetOrCreateRefCountedProxyAtField10` at 0xcf31f0 (decompiler, medium); signature (medium): `undefined8 GetOrCreateRefCountedProxyAtField10(longlong param_1)`
 pub const GetOrCreateRefCountedProxyAtField10: u64 = 82196;
@@ -2961,35 +2561,35 @@ pub const GetOrCreateRefHandle: u64 = 43884;
 pub const GetOrCreateRefHandle_2: u64 = 36435;
 /// `GetOrCreateRefHandle_3` at 0x5c8a80 (decompiler, high); signature (high): `uint * GetOrCreateRefHandle_3(uint * param_1, longlong param_2)`
 pub const GetOrCreateRefHandle_3: u64 = 34361;
-/// `GetOrCreateRegionList` at 0x2bec60 (decompiler, medium); signature (untiered): `TESRegionList * GetOrCreateRegionList(longlong param_1, char param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateRegionList` at 0x2bec60 (decompiler, medium); signature (low): `TESRegionList * GetOrCreateRegionList(longlong param_1, char param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateRegionList: u64 = 18999;
-/// `GetOrCreateStackById` at 0x14bcd00 (semantic, high); signature (untiered): `int * GetOrCreateStackById(longlong param_1, uint param_2, undefined4 param_3, undefined4 * * param_4, int * * param_5)`; semantic: finds the id in runningStacks or allocates 0xa0, constructs (page policy VM+0x88, profiler VM+0xb0) and inserts it (high); signature `void (BSScript::Internal::VirtualMachine* vm, u32 stackID, u32 kind, BSTSmartPointer<BSScript::IStackCallbackFunctor>* callback, BSTSmartPointer<BSScript::Stack>* out)`
+/// `GetOrCreateStackById` at 0x14bcd00 (semantic, high); signature (low): `int * GetOrCreateStackById(longlong param_1, uint param_2, undefined4 param_3, undefined4 * * param_4, int * * param_5)`; semantic: finds the id in runningStacks or allocates 0xa0, constructs (page policy VM+0x88, profiler VM+0xb0) and inserts it (high); signature `void (BSScript::Internal::VirtualMachine* vm, u32 stackID, u32 kind, BSTSmartPointer<BSScript::IStackCallbackFunctor>* callback, BSTSmartPointer<BSScript::Stack>* out)`
 pub const GetOrCreateStackById: u64 = 104871;
 /// `GetOrCreateStackById` as a function pointer type (high).
 pub type GetOrCreateStackById_fn = unsafe extern "C" fn(vm: *mut crate::BSScript__Internal__VirtualMachine, stackID: u32, kind: u32, callback: *mut c_void, out: *mut c_void);
-/// `GetOrCreateThreadLocalBlock668` at 0x3c9480 (decompiler, medium); signature (untiered): `undefined8 * GetOrCreateThreadLocalBlock668(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateThreadLocalBlock668` at 0x3c9480 (decompiler, medium); signature (low): `undefined8 * GetOrCreateThreadLocalBlock668(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateThreadLocalBlock668: u64 = 24804;
-/// `GetOrCreateThreadLocalInstance` at 0x19cdb0 (decompiler, medium); signature (untiered): `LPVOID GetOrCreateThreadLocalInstance(longlong * param_1)`
+/// `GetOrCreateThreadLocalInstance` at 0x19cdb0 (decompiler, medium); signature (low): `LPVOID GetOrCreateThreadLocalInstance(longlong * param_1)`
 pub const GetOrCreateThreadLocalInstance: u64 = 13239;
-/// `GetOrCreateThreadLocalInstance_2` at 0x59e280 (decompiler, medium); signature (untiered): `LPVOID GetOrCreateThreadLocalInstance_2(longlong * param_1)`
+/// `GetOrCreateThreadLocalInstance_2` at 0x59e280 (decompiler, medium); signature (low): `LPVOID GetOrCreateThreadLocalInstance_2(longlong * param_1)`
 pub const GetOrCreateThreadLocalInstance_2: u64 = 442053;
-/// `GetOrCreateThreadLocalSlot` at 0xfc4fb0 (decompiler, medium); signature (untiered): `LPVOID GetOrCreateThreadLocalSlot(longlong * param_1)`
+/// `GetOrCreateThreadLocalSlot` at 0xfc4fb0 (decompiler, medium); signature (low): `LPVOID GetOrCreateThreadLocalSlot(longlong * param_1)`
 pub const GetOrCreateThreadLocalSlot: u64 = 75681;
-/// `GetOrCreateThreadUpdateTracker` at 0xf02360 (decompiler, medium); signature (untiered): `longlong * GetOrCreateThreadUpdateTracker(undefined8 param_1, undefined8 param_2, size_t param_3, undefined8 param_4)`
+/// `GetOrCreateThreadUpdateTracker` at 0xf02360 (decompiler, medium); signature (low): `longlong * GetOrCreateThreadUpdateTracker(undefined8 param_1, undefined8 param_2, size_t param_3, undefined8 param_4)`
 pub const GetOrCreateThreadUpdateTracker: u64 = 71036;
-/// `GetOrCreateU32NestedMapRef` at 0x9b5c20 (decompiler, medium); signature (untiered): `undefined GetOrCreateU32NestedMapRef(longlong param_1, uint param_2, longlong * param_3, undefined8 param_4)`
+/// `GetOrCreateU32NestedMapRef` at 0x9b5c20 (decompiler, medium); signature (low): `undefined GetOrCreateU32NestedMapRef(longlong param_1, uint param_2, longlong * param_3, undefined8 param_4)`
 pub const GetOrCreateU32NestedMapRef: u64 = 53453;
-/// `GetOrCreateU32StringPairMapRef` at 0x9b5ff0 (decompiler, medium); signature (untiered): `undefined GetOrCreateU32StringPairMapRef(longlong param_1, uint param_2, longlong * param_3, undefined8 param_4)`
+/// `GetOrCreateU32StringPairMapRef` at 0x9b5ff0 (decompiler, medium); signature (low): `undefined GetOrCreateU32StringPairMapRef(longlong param_1, uint param_2, longlong * param_3, undefined8 param_4)`
 pub const GetOrCreateU32StringPairMapRef: u64 = 53456;
-/// `GetOrCreateWeaponBloodEffect` at 0x4b5b30 (decompiler, medium); signature (untiered): `BSTempEffect * GetOrCreateWeaponBloodEffect(BSTempEffect_vtbl * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrCreateWeaponBloodEffect` at 0x4b5b30 (decompiler, medium); signature (low): `BSTempEffect * GetOrCreateWeaponBloodEffect(BSTempEffect_vtbl * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateWeaponBloodEffect: u64 = 30153;
-/// `GetOrCreateWideStringPoolEntry` at 0xeb2cd0 (decompiler, medium); signature (untiered): `longlong * GetOrCreateWideStringPoolEntry(undefined8 * param_1, wchar_t * param_2, uint param_3, uint param_4)`
+/// `GetOrCreateWideStringPoolEntry` at 0xeb2cd0 (decompiler, medium); signature (low): `longlong * GetOrCreateWideStringPoolEntry(undefined8 * param_1, wchar_t * param_2, uint param_3, uint param_4)`
 pub const GetOrCreateWideStringPoolEntry: u64 = 69202;
-/// `GetOrDecompressRecordData` at 0x1cee10 (decompiler, medium); signature (untiered): `longlong GetOrDecompressRecordData(longlong param_1)`
+/// `GetOrDecompressRecordData` at 0x1cee10 (decompiler, medium); signature (low): `longlong GetOrDecompressRecordData(longlong param_1)`
 pub const GetOrDecompressRecordData: u64 = 14029;
-/// `GetOrFetchCachedField148` at 0xd33de0 (decompiler, medium); signature (untiered): `undefined8 GetOrFetchCachedField148(longlong * param_1)`
+/// `GetOrFetchCachedField148` at 0xd33de0 (decompiler, medium); signature (low): `undefined8 GetOrFetchCachedField148(longlong * param_1)`
 pub const GetOrFetchCachedField148: u64 = 83489;
-/// `GetOrInitGlobal405289TypeName` at 0x871420 (decompiler, medium); signature (untiered): `undefined * GetOrInitGlobal405289TypeName(void)`
+/// `GetOrInitGlobal405289TypeName` at 0x871420 (decompiler, medium); signature (low): `undefined * GetOrInitGlobal405289TypeName(void)`
 pub const GetOrInitGlobal405289TypeName: u64 = 47448;
 /// `GetOrInitStaticHashMap401328` at 0x98eb30 (decompiler, medium); signature (medium): `undefined * GetOrInitStaticHashMap401328(void)`
 pub const GetOrInitStaticHashMap401328: u64 = 52875;
@@ -2997,41 +2597,41 @@ pub const GetOrInitStaticHashMap401328: u64 = 52875;
 pub const GetOrInitStaticHashMap402077: u64 = 48502;
 /// `GetOrInitStaticHashMap402090` at 0x4fa1b0 (decompiler, medium); signature (medium): `undefined * GetOrInitStaticHashMap402090(void)`
 pub const GetOrInitStaticHashMap402090: u64 = 31491;
-/// `GetOrInitStaticHashMap412298` at 0x1220500 (decompiler, medium); signature (untiered): `undefined * GetOrInitStaticHashMap412298(void)`
+/// `GetOrInitStaticHashMap412298` at 0x1220500 (decompiler, medium); signature (low): `undefined * GetOrInitStaticHashMap412298(void)`
 pub const GetOrInitStaticHashMap412298: u64 = 92246;
-/// `GetOrInitStaticHashMap412305` at 0x1220d00 (decompiler, medium); signature (untiered): `undefined * GetOrInitStaticHashMap412305(void)`
+/// `GetOrInitStaticHashMap412305` at 0x1220d00 (decompiler, medium); signature (low): `undefined * GetOrInitStaticHashMap412305(void)`
 pub const GetOrInitStaticHashMap412305: u64 = 92268;
-/// `GetOrInsertJsonArrayElement` at 0xa7d610 (decompiler, medium); signature (untiered): `undefined8 * GetOrInsertJsonArrayElement(undefined8 * param_1, ulonglong param_2, size_t param_3, undefined8 param_4)`
+/// `GetOrInsertJsonArrayElement` at 0xa7d610 (decompiler, medium); signature (low): `undefined8 * GetOrInsertJsonArrayElement(undefined8 * param_1, ulonglong param_2, size_t param_3, undefined8 param_4)`
 pub const GetOrInsertJsonArrayElement: u64 = 443000;
-/// `GetOrInsertStaticStringMap505592` at 0x110730 (decompiler, medium); signature (untiered): `undefined8 * GetOrInsertStaticStringMap505592(undefined8 * param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrInsertStaticStringMap505592` at 0x110730 (decompiler, medium); signature (low): `undefined8 * GetOrInsertStaticStringMap505592(undefined8 * param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrInsertStaticStringMap505592: u64 = 439935;
-/// `GetOrInsertStaticU64StringMap505605` at 0x113c00 (decompiler, medium); signature (untiered): `ulonglong * GetOrInsertStaticU64StringMap505605(ulonglong param_1, ulonglong * param_2)`
+/// `GetOrInsertStaticU64StringMap505605` at 0x113c00 (decompiler, medium); signature (low): `ulonglong * GetOrInsertStaticU64StringMap505605(ulonglong param_1, ulonglong * param_2)`
 pub const GetOrInsertStaticU64StringMap505605: u64 = 440106;
-/// `GetOrInsertStringHashMapValue` at 0xabf480 (decompiler, medium); signature (untiered): `undefined8 GetOrInsertStringHashMapValue(longlong * param_1, byte * param_2, undefined8 param_3)`
+/// `GetOrInsertStringHashMapValue` at 0xabf480 (decompiler, medium); signature (low): `undefined8 GetOrInsertStringHashMapValue(longlong * param_1, byte * param_2, undefined8 param_3)`
 pub const GetOrInsertStringHashMapValue: u64 = 58038;
-/// `GetOrInsertStringKeyValue` at 0xab5a20 (decompiler, medium); signature (untiered): `undefined8 GetOrInsertStringKeyValue(longlong * param_1, byte * param_2, undefined8 param_3)`
+/// `GetOrInsertStringKeyValue` at 0xab5a20 (decompiler, medium); signature (low): `undefined8 GetOrInsertStringKeyValue(longlong * param_1, byte * param_2, undefined8 param_3)`
 pub const GetOrInsertStringKeyValue: u64 = 57766;
-/// `GetOrInsertStringTree505630Value` at 0x1240f0 (decompiler, medium); signature (untiered): `undefined8 * GetOrInsertStringTree505630Value(undefined8 * param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrInsertStringTree505630Value` at 0x1240f0 (decompiler, medium); signature (low): `undefined8 * GetOrInsertStringTree505630Value(undefined8 * param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrInsertStringTree505630Value: u64 = 440425;
 /// `GetOrLoadExteriorCellAtCoords` at 0x30d0e0 (decompiler, medium); signature (medium): `TESObjectCELL * GetOrLoadExteriorCellAtCoords(TESObjectCELL * param_1, short param_2, ushort param_3)`
 pub const GetOrLoadExteriorCellAtCoords: u64 = 20460;
-/// `GetOrLoadFaceGenModel` at 0x432630 (decompiler, medium); signature (untiered): `undefined GetOrLoadFaceGenModel(longlong param_1, char * param_2, undefined8 param_3, longlong * param_4, char param_5, byte param_6)`
+/// `GetOrLoadFaceGenModel` at 0x432630 (decompiler, medium); signature (low): `undefined GetOrLoadFaceGenModel(longlong param_1, char * param_2, undefined8 param_3, longlong * param_4, char param_5, byte param_6)`
 pub const GetOrLoadFaceGenModel: u64 = 26825;
-/// `GetOrLoadGrassMesh` at 0x209c60 (decompiler, medium); signature (untiered): `longlong GetOrLoadGrassMesh(longlong param_1, undefined8 * param_2, int param_3, int param_4, ulonglong * param_5, longlong * param_6)`
+/// `GetOrLoadGrassMesh` at 0x209c60 (decompiler, medium); signature (low): `longlong GetOrLoadGrassMesh(longlong param_1, undefined8 * param_2, int param_3, int param_4, ulonglong * param_5, longlong * param_6)`
 pub const GetOrLoadGrassMesh: u64 = 15383;
-/// `GetOrLoadLocalizedStringTableIndex` at 0x210ea0 (decompiler, medium); signature (untiered): `uint GetOrLoadLocalizedStringTableIndex(ulonglong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetOrLoadLocalizedStringTableIndex` at 0x210ea0 (decompiler, medium); signature (low): `uint GetOrLoadLocalizedStringTableIndex(ulonglong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrLoadLocalizedStringTableIndex: u64 = 15507;
-/// `GetOrLoadObjectTypeInfo` at 0x14bc440 (decompiler, medium); signature (untiered): `undefined8 GetOrLoadObjectTypeInfo(longlong param_1, undefined8 param_2, longlong * param_3, undefined8 param_4)`
+/// `GetOrLoadObjectTypeInfo` at 0x14bc440 (decompiler, medium); signature (low): `undefined8 GetOrLoadObjectTypeInfo(longlong param_1, undefined8 param_2, longlong * param_3, undefined8 param_4)`
 pub const GetOrLoadObjectTypeInfo: u64 = 104864;
-/// `GetOrLoadResponseTableLocked` at 0x7c8730 (decompiler, medium); signature (untiered): `undefined8 GetOrLoadResponseTableLocked(longlong param_1, ulonglong * param_2, ulonglong * param_3)`
+/// `GetOrLoadResponseTableLocked` at 0x7c8730 (decompiler, medium); signature (low): `undefined8 GetOrLoadResponseTableLocked(longlong param_1, ulonglong * param_2, ulonglong * param_3)`
 pub const GetOrLoadResponseTableLocked: u64 = 42807;
-/// `GetOrLoadSpeedSamplerData` at 0xbdd660 (decompiler, medium); signature (untiered): `undefined1 GetOrLoadSpeedSamplerData(longlong param_1, ulonglong * param_2, undefined8 * param_3)`
+/// `GetOrLoadSpeedSamplerData` at 0xbdd660 (decompiler, medium); signature (low): `undefined1 GetOrLoadSpeedSamplerData(longlong param_1, ulonglong * param_2, undefined8 * param_3)`
 pub const GetOrLoadSpeedSamplerData: u64 = 63822;
-/// `GetOriginalForClone` at 0xace660 (decompiler, medium); signature (untiered): `ulonglong GetOriginalForClone(longlong param_1, ulonglong param_2)`
+/// `GetOriginalForClone` at 0xace660 (decompiler, medium); signature (low): `ulonglong GetOriginalForClone(longlong param_1, ulonglong param_2)`
 pub const GetOriginalForClone: u64 = 58364;
-/// `GetOuterObjectIfVfunc3` at 0x5d26e0 (decompiler, medium); signature (untiered): `longlong * GetOuterObjectIfVfunc3(longlong * param_1)`
+/// `GetOuterObjectIfVfunc3` at 0x5d26e0 (decompiler, medium); signature (low): `longlong * GetOuterObjectIfVfunc3(longlong * param_1)`
 pub const GetOuterObjectIfVfunc3: u64 = 34529;
-/// `GetPackageDataFactoryManager` at 0x450ac0 (decompiler, medium); signature (untiered): `undefined * GetPackageDataFactoryManager(void)`
+/// `GetPackageDataFactoryManager` at 0x450ac0 (decompiler, medium); signature (low): `undefined * GetPackageDataFactoryManager(void)`
 pub const GetPackageDataFactoryManager: u64 = 27669;
 /// `GetPackageDataTypeCheckAITargetRef` at 0x472ad0 (decompiler, high); signature (high): `BGSPackageDataTypeCheck<IAITarget,BGSPackageDataRef> * GetPackageDataTypeCheckAITargetRef(void)`
 pub const GetPackageDataTypeCheckAITargetRef: u64 = 28687;
@@ -3041,39 +2641,39 @@ pub const GetPackageDataTypeCheckFloatFloat: u64 = 28488;
 pub const GetPackageDataTypeCheckIntInt: u64 = 29375;
 /// `GetPackageDataTypeCheckWorldLocationHandleLocation` at 0x4732d0 (decompiler, high); signature (high): `BGSPackageDataTypeCheck<IPackageDataAIWorldLocationHandle,BGSPackageDataLocation> * GetPackageDataTypeCheckWorldLocationHandleLocation(void)`
 pub const GetPackageDataTypeCheckWorldLocationHandleLocation: u64 = 28715;
-/// `GetPackageLocationCell` at 0x499f50 (decompiler, medium); signature (untiered): `longlong GetPackageLocationCell(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetPackageLocationCell` at 0x499f50 (decompiler, medium); signature (low): `longlong GetPackageLocationCell(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetPackageLocationCell: u64 = 29558;
-/// `GetPackageLocationFieldC` at 0x49e750 (decompiler, medium); signature (untiered): `undefined4 GetPackageLocationFieldC(longlong param_1)`
+/// `GetPackageLocationFieldC` at 0x49e750 (decompiler, medium); signature (low): `undefined4 GetPackageLocationFieldC(longlong param_1)`
 pub const GetPackageLocationFieldC: u64 = 29628;
-/// `GetPackageLocationPosition` at 0x49ad10 (decompiler, medium); signature (untiered): `undefined4 * GetPackageLocationPosition(longlong param_1, undefined4 * param_2, longlong * param_3)`
+/// `GetPackageLocationPosition` at 0x49ad10 (decompiler, medium); signature (low): `undefined4 * GetPackageLocationPosition(longlong param_1, undefined4 * param_2, longlong * param_3)`
 pub const GetPackageLocationPosition: u64 = 29565;
-/// `GetPackageLocationRef` at 0x49b050 (decompiler, medium); signature (untiered): `longlong GetPackageLocationRef(longlong param_1, longlong param_2)`
+/// `GetPackageLocationRef` at 0x49b050 (decompiler, medium); signature (low): `longlong GetPackageLocationRef(longlong param_1, longlong param_2)`
 pub const GetPackageLocationRef: u64 = 29566;
-/// `GetPackageLocationWorldspace` at 0x499cf0 (decompiler, medium); signature (untiered): `longlong GetPackageLocationWorldspace(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetPackageLocationWorldspace` at 0x499cf0 (decompiler, medium); signature (low): `longlong GetPackageLocationWorldspace(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetPackageLocationWorldspace: u64 = 29557;
-/// `GetPackageLocationWorldspace_2` at 0x49a7e0 (decompiler, medium); signature (untiered): `longlong GetPackageLocationWorldspace_2(longlong param_1, longlong * param_2)`
+/// `GetPackageLocationWorldspace_2` at 0x49a7e0 (decompiler, medium); signature (low): `longlong GetPackageLocationWorldspace_2(longlong param_1, longlong * param_2)`
 pub const GetPackageLocationWorldspace_2: u64 = 29563;
-/// `GetPackageStartLocationIfFormType3C` at 0x303b30 (decompiler, medium); signature (untiered): `longlong GetPackageStartLocationIfFormType3C(longlong param_1)`
+/// `GetPackageStartLocationIfFormType3C` at 0x303b30 (decompiler, medium); signature (low): `longlong GetPackageStartLocationIfFormType3C(longlong param_1)`
 pub const GetPackageStartLocationIfFormType3C: u64 = 20278;
-/// `GetPackageStartLocationIfFormType47` at 0x303b00 (decompiler, medium); signature (untiered): `longlong GetPackageStartLocationIfFormType47(longlong param_1)`
+/// `GetPackageStartLocationIfFormType47` at 0x303b00 (decompiler, medium); signature (low): `longlong GetPackageStartLocationIfFormType47(longlong param_1)`
 pub const GetPackageStartLocationIfFormType47: u64 = 20277;
-/// `GetPackageStartPositionOrCurrent` at 0x303b60 (decompiler, medium); signature (untiered): `longlong GetPackageStartPositionOrCurrent(longlong param_1)`
+/// `GetPackageStartPositionOrCurrent` at 0x303b60 (decompiler, medium); signature (low): `longlong GetPackageStartPositionOrCurrent(longlong param_1)`
 pub const GetPackageStartPositionOrCurrent: u64 = 20279;
-/// `GetPackedEquippedItemTypes` at 0x6ca290 (decompiler, medium); signature (untiered): `uint GetPackedEquippedItemTypes(longlong param_1)`
+/// `GetPackedEquippedItemTypes` at 0x6ca290 (decompiler, medium); signature (low): `uint GetPackedEquippedItemTypes(longlong param_1)`
 pub const GetPackedEquippedItemTypes: u64 = 38579;
 /// `GetPackedField16OrField18` at 0xe33200 (decompiler, high); signature (high): `uint GetPackedField16OrField18(int * param_1)`
 pub const GetPackedField16OrField18: u64 = 88322;
-/// `GetPaddedMatrixColumn` at 0xbf7030 (decompiler, medium); signature (untiered): `undefined GetPaddedMatrixColumn(longlong * param_1, int param_2, longlong * param_3)`
+/// `GetPaddedMatrixColumn` at 0xbf7030 (decompiler, medium); signature (low): `undefined GetPaddedMatrixColumn(longlong * param_1, int param_2, longlong * param_3)`
 pub const GetPaddedMatrixColumn: u64 = 64205;
-/// `GetPaddedMatrixRow` at 0xbf70c0 (decompiler, medium); signature (untiered): `undefined GetPaddedMatrixRow(longlong * param_1, int param_2, undefined8 * param_3)`
+/// `GetPaddedMatrixRow` at 0xbf70c0 (decompiler, medium); signature (low): `undefined GetPaddedMatrixRow(longlong * param_1, int param_2, undefined8 * param_3)`
 pub const GetPaddedMatrixRow: u64 = 64206;
-/// `GetPairKeyHashMap0x20ValueOrDefault` at 0xc67130 (decompiler, high); signature (untiered): `ulonglong * GetPairKeyHashMap0x20ValueOrDefault(longlong * param_1, ulonglong * param_2, ulonglong * param_3, ulonglong * param_4)`
+/// `GetPairKeyHashMap0x20ValueOrDefault` at 0xc67130 (decompiler, high); signature (low): `ulonglong * GetPairKeyHashMap0x20ValueOrDefault(longlong * param_1, ulonglong * param_2, ulonglong * param_3, ulonglong * param_4)`
 pub const GetPairKeyHashMap0x20ValueOrDefault: u64 = 66290;
-/// `GetPairKeyHashMapIntOrDefault` at 0xc670b0 (decompiler, medium); signature (untiered): `undefined4 GetPairKeyHashMapIntOrDefault(longlong * param_1, ulonglong * param_2, undefined4 param_3)`
+/// `GetPairKeyHashMapIntOrDefault` at 0xc670b0 (decompiler, medium); signature (low): `undefined4 GetPairKeyHashMapIntOrDefault(longlong * param_1, ulonglong * param_2, undefined4 param_3)`
 pub const GetPairKeyHashMapIntOrDefault: u64 = 66289;
-/// `GetParallelValueForField18` at 0x3cc660 (decompiler, medium); signature (untiered): `undefined4 GetParallelValueForField18(longlong param_1)`
+/// `GetParallelValueForField18` at 0x3cc660 (decompiler, medium); signature (low): `undefined4 GetParallelValueForField18(longlong param_1)`
 pub const GetParallelValueForField18: u64 = 24906;
-/// `GetParentCellField128OrCell` at 0x2f3d30 (decompiler, medium); signature (untiered): `longlong GetParentCellField128OrCell(longlong param_1)`
+/// `GetParentCellField128OrCell` at 0x2f3d30 (decompiler, medium); signature (low): `longlong GetParentCellField128OrCell(longlong param_1)`
 pub const GetParentCellField128OrCell: u64 = 19814;
 /// `GetPathBuilderTrackerOrNull` at 0x120a5c0 (decompiler, medium); signature (medium): `NullPathBuilderTracker * GetPathBuilderTrackerOrNull(longlong param_1)`
 pub const GetPathBuilderTrackerOrNull: u64 = 91755;
@@ -3119,11 +2719,11 @@ pub const GetPathingRequestStopMovingCrc: u64 = 31475;
 pub const GetPatrolWaitSecondsAtRef: u64 = 28942;
 /// `GetPendingAudioLoads` at 0xccd650 (decompiler, high); signature (high): `undefined4 GetPendingAudioLoads(void)`
 pub const GetPendingAudioLoads: u64 = 67722;
-/// `GetPenetrationsAtPosition` at 0x105e0a0 (decompiler, medium); signature (untiered): `undefined GetPenetrationsAtPosition(longlong param_1, longlong * param_2, float * param_3, longlong * param_4)`
+/// `GetPenetrationsAtPosition` at 0x105e0a0 (decompiler, medium); signature (low): `undefined GetPenetrationsAtPosition(longlong param_1, longlong * param_2, float * param_3, longlong * param_4)`
 pub const GetPenetrationsAtPosition: u64 = 78201;
-/// `GetPenetrationsSymmetricFlipped` at 0xc8baa0 (decompiler, medium); signature (untiered): `undefined GetPenetrationsSymmetricFlipped(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetPenetrationsSymmetricFlipped` at 0xc8baa0 (decompiler, medium); signature (low): `undefined GetPenetrationsSymmetricFlipped(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetPenetrationsSymmetricFlipped: u64 = 66987;
-/// `GetPixelBoundsOrTransformMember` at 0xdaaaf0 (decompiler, medium); signature (untiered): `undefined GetPixelBoundsOrTransformMember(longlong * param_1, longlong param_2, undefined8 * param_3, byte * param_4)`
+/// `GetPixelBoundsOrTransformMember` at 0xdaaaf0 (decompiler, medium); signature (low): `undefined GetPixelBoundsOrTransformMember(longlong * param_1, longlong param_2, undefined8 * param_3, byte * param_4)`
 pub const GetPixelBoundsOrTransformMember: u64 = 85953;
 /// `GetPlatformName` at 0x13d2850 (decompiler, high); signature (high): `char * GetPlatformName(undefined8 param_1)`
 pub const GetPlatformName: u64 = 527102;
@@ -3135,9 +2735,9 @@ pub const GetPlatformName_3: u64 = 446699;
 pub const GetPlayerControlsEGMClearInstance: u64 = 41077;
 /// `GetPlayerXPAndLevelUpThreshold` at 0x78dc60 (decompiler, medium); signature (medium): `undefined GetPlayerXPAndLevelUpThreshold(undefined8 * param_1, undefined4 * param_2, float * param_3)`
 pub const GetPlayerXPAndLevelUpThreshold: u64 = 41560;
-/// `GetPointLengthOrMember` at 0xdaf120 (decompiler, medium); signature (untiered): `undefined8 GetPointLengthOrMember(longlong * param_1, longlong param_2, longlong * param_3, byte * param_4)`
+/// `GetPointLengthOrMember` at 0xdaf120 (decompiler, medium); signature (low): `undefined8 GetPointLengthOrMember(longlong * param_1, longlong param_2, longlong * param_3, byte * param_4)`
 pub const GetPointLengthOrMember: u64 = 86034;
-/// `GetPointeeDwordField8` at 0xb1d280 (decompiler, high); signature (untiered): `undefined4 GetPointeeDwordField8(longlong * param_1)`
+/// `GetPointeeDwordField8` at 0xb1d280 (decompiler, high); signature (low): `undefined4 GetPointeeDwordField8(longlong * param_1)`
 pub const GetPointeeDwordField8: u64 = 59997;
 /// `GetPointeeField10` at 0xebb180 (decompiler, high); signature (high): `undefined4 GetPointeeField10(longlong * param_1)`
 pub const GetPointeeField10: u64 = 69351;
@@ -3151,47 +2751,47 @@ pub const GetPointerAtField10Index: u64 = 62445;
 pub const GetPointerMinus28: u64 = 62370;
 /// `GetPositionWithHeightOffset` at 0x6a30c0 (decompiler, medium); signature (medium): `undefined4 * GetPositionWithHeightOffset(longlong * param_1, undefined4 * param_2, int param_3, undefined8 param_4)`
 pub const GetPositionWithHeightOffset: u64 = 37771;
-/// `GetPositionWithParentSpace` at 0x2f0b70 (decompiler, medium); signature (untiered): `undefined4 * GetPositionWithParentSpace(longlong param_1, undefined4 * param_2)`
+/// `GetPositionWithParentSpace` at 0x2f0b70 (decompiler, medium); signature (low): `undefined4 * GetPositionWithParentSpace(longlong param_1, undefined4 * param_2)`
 pub const GetPositionWithParentSpace: u64 = 19784;
-/// `GetProcessCachedNavmeshLocation` at 0x6a68f0 (decompiler, high); signature (untiered): `undefined GetProcessCachedNavmeshLocation(longlong param_1, undefined8 param_2)`
+/// `GetProcessCachedNavmeshLocation` at 0x6a68f0 (decompiler, high); signature (low): `undefined GetProcessCachedNavmeshLocation(longlong param_1, undefined8 param_2)`
 pub const GetProcessCachedNavmeshLocation: u64 = 37824;
-/// `GetProcessEntryField20ByFormID` at 0x6a22d0 (decompiler, medium); signature (untiered): `undefined8 GetProcessEntryField20ByFormID(longlong param_1, longlong param_2)`
+/// `GetProcessEntryField20ByFormID` at 0x6a22d0 (decompiler, medium); signature (low): `undefined8 GetProcessEntryField20ByFormID(longlong param_1, longlong param_2)`
 pub const GetProcessEntryField20ByFormID: u64 = 37757;
-/// `GetProcessField10Field258PtrOrDefault` at 0x6ca270 (decompiler, medium); signature (untiered): `undefined8 * GetProcessField10Field258PtrOrDefault(longlong param_1)`
+/// `GetProcessField10Field258PtrOrDefault` at 0x6ca270 (decompiler, medium); signature (low): `undefined8 * GetProcessField10Field258PtrOrDefault(longlong param_1)`
 pub const GetProcessField10Field258PtrOrDefault: u64 = 38578;
-/// `GetProcessField8Field2B4` at 0x6cf3e0 (decompiler, high); signature (untiered): `undefined4 GetProcessField8Field2B4(longlong param_1)`
+/// `GetProcessField8Field2B4` at 0x6cf3e0 (decompiler, high); signature (low): `undefined4 GetProcessField8Field2B4(longlong param_1)`
 pub const GetProcessField8Field2B4: u64 = 38636;
-/// `GetProcessTargetPositionOrDefault` at 0x67f390 (decompiler, medium); signature (untiered): `undefined4 * GetProcessTargetPositionOrDefault(longlong * param_1, undefined4 * param_2)`
+/// `GetProcessTargetPositionOrDefault` at 0x67f390 (decompiler, medium); signature (low): `undefined4 * GetProcessTargetPositionOrDefault(longlong * param_1, undefined4 * param_2)`
 pub const GetProcessTargetPositionOrDefault: u64 = 37390;
-/// `GetProcessorCountAndTimerFrequency` at 0xeadac0 (decompiler, high); signature (untiered): `DWORD * GetProcessorCountAndTimerFrequency(DWORD * param_1)`
+/// `GetProcessorCountAndTimerFrequency` at 0xeadac0 (decompiler, high); signature (low): `DWORD * GetProcessorCountAndTimerFrequency(DWORD * param_1)`
 pub const GetProcessorCountAndTimerFrequency: u64 = 69016;
 /// `GetProjectedNodeScreenSize` at 0x9668f0 (decompiler, medium); signature (medium): `undefined GetProjectedNodeScreenSize(longlong param_1, float * param_2)`
 pub const GetProjectedNodeScreenSize: u64 = 52326;
-/// `GetPropertyByNumber24Or45` at 0xdd8690 (decompiler, medium); signature (untiered): `undefined8 GetPropertyByNumber24Or45(longlong * param_1, uint param_2, byte * param_3, undefined8 param_4)`
+/// `GetPropertyByNumber24Or45` at 0xdd8690 (decompiler, medium); signature (low): `undefined8 GetPropertyByNumber24Or45(longlong * param_1, uint param_2, byte * param_3, undefined8 param_4)`
 pub const GetPropertyByNumber24Or45: u64 = 86900;
-/// `GetPtrToField20LockedAt50` at 0x7a2dc0 (decompiler, medium); signature (untiered): `longlong GetPtrToField20LockedAt50(longlong param_1)`
+/// `GetPtrToField20LockedAt50` at 0x7a2dc0 (decompiler, medium); signature (low): `longlong GetPtrToField20LockedAt50(longlong param_1)`
 pub const GetPtrToField20LockedAt50: u64 = 41965;
-/// `GetPtrToField30LockedAt28` at 0x7a7a30 (decompiler, medium); signature (untiered): `longlong GetPtrToField30LockedAt28(longlong param_1)`
+/// `GetPtrToField30LockedAt28` at 0x7a7a30 (decompiler, medium); signature (low): `longlong GetPtrToField30LockedAt28(longlong param_1)`
 pub const GetPtrToField30LockedAt28: u64 = 42137;
-/// `GetPtrToField30LockedAt50` at 0x7a2e70 (decompiler, medium); signature (untiered): `longlong GetPtrToField30LockedAt50(longlong param_1)`
+/// `GetPtrToField30LockedAt50` at 0x7a2e70 (decompiler, medium); signature (low): `longlong GetPtrToField30LockedAt50(longlong param_1)`
 pub const GetPtrToField30LockedAt50: u64 = 41967;
-/// `GetPtrToField40LockedAt28` at 0x7a7ae0 (decompiler, medium); signature (untiered): `longlong GetPtrToField40LockedAt28(longlong param_1)`
+/// `GetPtrToField40LockedAt28` at 0x7a7ae0 (decompiler, medium); signature (low): `longlong GetPtrToField40LockedAt28(longlong param_1)`
 pub const GetPtrToField40LockedAt28: u64 = 42139;
-/// `GetPtrToFieldD4OfField8` at 0x725330 (decompiler, high); signature (untiered): `undefined4 * GetPtrToFieldD4OfField8(longlong param_1)`
+/// `GetPtrToFieldD4OfField8` at 0x725330 (decompiler, high); signature (low): `undefined4 * GetPtrToFieldD4OfField8(longlong param_1)`
 pub const GetPtrToFieldD4OfField8: u64 = 39917;
-/// `GetQuadCorners` at 0xfe88c0 (decompiler, medium); signature (untiered): `undefined GetQuadCorners(longlong param_1, undefined8 * param_2)`
+/// `GetQuadCorners` at 0xfe88c0 (decompiler, medium); signature (low): `undefined GetQuadCorners(longlong param_1, undefined8 * param_2)`
 pub const GetQuadCorners: u64 = 76427;
 /// `GetQuadCornersRelativeTo` at 0xfe8950 (decompiler, medium); signature (medium): `undefined GetQuadCornersRelativeTo(longlong param_1, float * param_2, float * param_3)`
 pub const GetQuadCornersRelativeTo: u64 = 76428;
-/// `GetQuadEntryFirstItem` at 0x2b0fc0 (decompiler, medium); signature (untiered): `undefined8 GetQuadEntryFirstItem(longlong param_1, uint param_2)`
+/// `GetQuadEntryFirstItem` at 0x2b0fc0 (decompiler, medium); signature (low): `undefined8 GetQuadEntryFirstItem(longlong param_1, uint param_2)`
 pub const GetQuadEntryFirstItem: u64 = 18771;
 /// `GetQuadLayerVertexWeight` at 0x2aaf00 (decompiler, medium); signature (medium): `float GetQuadLayerVertexWeight(longlong param_1, byte param_2, ushort param_3, ushort param_4)`
 pub const GetQuadLayerVertexWeight: u64 = 18724;
-/// `GetQueuedAttachMap` at 0x2dcbf0 (decompiler, high); signature (untiered): `NiTMap<NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH> * GetQueuedAttachMap(void)`
+/// `GetQueuedAttachMap` at 0x2dcbf0 (decompiler, high); signature (low): `NiTMap<NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH> * GetQueuedAttachMap(void)`
 pub const GetQueuedAttachMap: u64 = 19482;
-/// `GetQuotedHexValueByKey` at 0xcc0e60 (decompiler, medium); signature (untiered): `undefined8 GetQuotedHexValueByKey(longlong param_1, undefined8 param_2, uint * param_3)`
+/// `GetQuotedHexValueByKey` at 0xcc0e60 (decompiler, medium); signature (low): `undefined8 GetQuotedHexValueByKey(longlong param_1, undefined8 param_2, uint * param_3)`
 pub const GetQuotedHexValueByKey: u64 = 67499;
-/// `GetQuotedValueAsInternedString` at 0xc6e2f0 (decompiler, medium); signature (untiered): `byte * GetQuotedValueAsInternedString(longlong param_1, undefined8 param_2)`
+/// `GetQuotedValueAsInternedString` at 0xc6e2f0 (decompiler, medium); signature (low): `byte * GetQuotedValueAsInternedString(longlong param_1, undefined8 param_2)`
 pub const GetQuotedValueAsInternedString: u64 = 66410;
 /// `GetQwordAt0OfField0` at 0x142b890 (decompiler, high); signature (high): `undefined8 GetQwordAt0OfField0(longlong * param_1)`
 pub const GetQwordAt0OfField0: u64 = 452135;
@@ -3201,7 +2801,7 @@ pub const GetQwordEntryAt: u64 = 32333;
 pub const GetQwordEntryAt_2: u64 = 32334;
 /// `GetQwordEntryAt_3` at 0x532a40 (decompiler, high); signature (high): `undefined8 GetQwordEntryAt_3(longlong param_1, uint param_2)`
 pub const GetQwordEntryAt_3: u64 = 32336;
-/// `GetRandomByteInRange28To29` at 0x3b77d0 (decompiler, medium); signature (untiered): `byte GetRandomByteInRange28To29(longlong param_1)`
+/// `GetRandomByteInRange28To29` at 0x3b77d0 (decompiler, medium); signature (low): `byte GetRandomByteInRange28To29(longlong param_1)`
 pub const GetRandomByteInRange28To29: u64 = 24568;
 /// `GetRandomFloatInRange` at 0x1d6e40 (decompiler, high); signature (high): `float GetRandomFloatInRange(float param_1, float param_2)`
 pub const GetRandomFloatInRange: u64 = 14206;
@@ -3211,15 +2811,15 @@ pub const GetRandomFloatInRange_2: u64 = 26433;
 pub const GetRandomFloatInSymmetricRange: u64 = 32119;
 /// `GetRandomFloatInWrappedRange` at 0x41ccf0 (decompiler, medium); signature (medium): `float GetRandomFloatInWrappedRange(float param_1, float param_2)`
 pub const GetRandomFloatInWrappedRange: u64 = 26363;
-/// `GetRandomNumberResult` at 0xdb6f90 (decompiler, medium); signature (untiered): `undefined GetRandomNumberResult(longlong param_1)`
+/// `GetRandomNumberResult` at 0xdb6f90 (decompiler, medium); signature (low): `undefined GetRandomNumberResult(longlong param_1)`
 pub const GetRandomNumberResult: u64 = 86222;
-/// `GetRandomPointOnRandomTriangle` at 0x11e3f00 (decompiler, medium); signature (untiered): `ulonglong GetRandomPointOnRandomTriangle(longlong param_1)`
+/// `GetRandomPointOnRandomTriangle` at 0x11e3f00 (decompiler, medium); signature (low): `ulonglong GetRandomPointOnRandomTriangle(longlong param_1)`
 pub const GetRandomPointOnRandomTriangle: u64 = 91135;
-/// `GetRangeIteratorAtPos` at 0xd928b0 (decompiler, medium); signature (untiered): `undefined8 * GetRangeIteratorAtPos(longlong * param_1, undefined8 * param_2, longlong param_3)`
+/// `GetRangeIteratorAtPos` at 0xd928b0 (decompiler, medium); signature (low): `undefined8 * GetRangeIteratorAtPos(longlong * param_1, undefined8 * param_2, longlong param_3)`
 pub const GetRangeIteratorAtPos: u64 = 85651;
-/// `GetRangeIteratorAtPosition` at 0xd92840 (decompiler, medium); signature (untiered): `undefined8 * GetRangeIteratorAtPosition(longlong * param_1, undefined8 * param_2, longlong param_3)`
+/// `GetRangeIteratorAtPosition` at 0xd92840 (decompiler, medium); signature (low): `undefined8 * GetRangeIteratorAtPosition(longlong * param_1, undefined8 * param_2, longlong param_3)`
 pub const GetRangeIteratorAtPosition: u64 = 85650;
-/// `GetRankFromRelationship` at 0x3a4a80 (decompiler, medium); signature (untiered): `uint GetRankFromRelationship(longlong param_1)`
+/// `GetRankFromRelationship` at 0x3a4a80 (decompiler, medium); signature (low): `uint GetRankFromRelationship(longlong param_1)`
 pub const GetRankFromRelationship: u64 = 24070;
 /// `GetReciprocalOfEntryField0CMinusOne` at 0xfbe0f0 (decompiler, medium); signature (medium): `float GetReciprocalOfEntryField0CMinusOne(longlong param_1, ushort param_2)`
 pub const GetReciprocalOfEntryField0CMinusOne: u64 = 75499;
@@ -3227,47 +2827,47 @@ pub const GetReciprocalOfEntryField0CMinusOne: u64 = 75499;
 pub const GetReciprocalOfField1F8Field120: u64 = 37458;
 /// `GetReciprocalOfField1F8Field124` at 0x6861e0 (decompiler, medium); signature (medium): `float GetReciprocalOfField1F8Field124(longlong param_1)`
 pub const GetReciprocalOfField1F8Field124: u64 = 37459;
-/// `GetRecordField68ByIdAndName` at 0xa6d2f0 (decompiler, medium); signature (untiered): `undefined8 GetRecordField68ByIdAndName(undefined8 param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetRecordField68ByIdAndName` at 0xa6d2f0 (decompiler, medium); signature (low): `undefined8 GetRecordField68ByIdAndName(undefined8 param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetRecordField68ByIdAndName: u64 = 442810;
-/// `GetRecordString40ByIdAndName` at 0xa6d280 (decompiler, medium); signature (untiered): `undefined1 * GetRecordString40ByIdAndName(longlong param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetRecordString40ByIdAndName` at 0xa6d280 (decompiler, medium); signature (low): `undefined1 * GetRecordString40ByIdAndName(longlong param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetRecordString40ByIdAndName: u64 = 505821;
-/// `GetRecordStringArrayByIdAndName` at 0xa6d190 (decompiler, medium); signature (untiered): `undefined4 GetRecordStringArrayByIdAndName(longlong param_1, undefined4 * param_2, longlong * param_3, ulonglong param_4)`
+/// `GetRecordStringArrayByIdAndName` at 0xa6d190 (decompiler, medium); signature (low): `undefined4 GetRecordStringArrayByIdAndName(longlong param_1, undefined4 * param_2, longlong * param_3, ulonglong param_4)`
 pub const GetRecordStringArrayByIdAndName: u64 = 442807;
 /// `GetRecordTypeIndexAtOffset` at 0x1cdb10 (decompiler, medium); signature (medium): `uint GetRecordTypeIndexAtOffset(longlong param_1, uint param_2)`
 pub const GetRecordTypeIndexAtOffset: u64 = 13986;
 /// `GetRectFromXYWidthHeight` at 0xda8cf0 (decompiler, medium); signature (medium): `undefined GetRectFromXYWidthHeight(longlong param_1, longlong param_2, double * param_3)`
 pub const GetRectFromXYWidthHeight: u64 = 85918;
-/// `GetRectangleObjectXYWidthHeight` at 0xda8f10 (decompiler, medium); signature (untiered): `undefined GetRectangleObjectXYWidthHeight(longlong param_1, longlong * param_2, longlong param_3)`
+/// `GetRectangleObjectXYWidthHeight` at 0xda8f10 (decompiler, medium); signature (low): `undefined GetRectangleObjectXYWidthHeight(longlong param_1, longlong * param_2, longlong param_3)`
 pub const GetRectangleObjectXYWidthHeight: u64 = 85919;
-/// `GetRefCountedFieldF8Field8Field258` at 0x675330 (decompiler, medium); signature (untiered): `bool GetRefCountedFieldF8Field8Field258(longlong param_1, longlong * param_2)`
+/// `GetRefCountedFieldF8Field8Field258` at 0x675330 (decompiler, medium); signature (low): `bool GetRefCountedFieldF8Field8Field258(longlong param_1, longlong * param_2)`
 pub const GetRefCountedFieldF8Field8Field258: u64 = 37259;
-/// `GetRefEncounterZone` at 0x300ab0 (decompiler, medium); signature (untiered): `longlong GetRefEncounterZone(longlong param_1)`
+/// `GetRefEncounterZone` at 0x300ab0 (decompiler, medium); signature (low): `longlong GetRefEncounterZone(longlong param_1)`
 pub const GetRefEncounterZone: u64 = 20202;
-/// `GetRefExtraType2AValue` at 0x301410 (decompiler, high); signature (untiered): `undefined GetRefExtraType2AValue(longlong param_1)`
+/// `GetRefExtraType2AValue` at 0x301410 (decompiler, high); signature (low): `undefined GetRefExtraType2AValue(longlong param_1)`
 pub const GetRefExtraType2AValue: u64 = 20224;
-/// `GetRefField60ByHandle` at 0x1918a0 (decompiler, medium); signature (untiered): `undefined8 GetRefField60ByHandle(uint * param_1)`
+/// `GetRefField60ByHandle` at 0x1918a0 (decompiler, medium); signature (low): `undefined8 GetRefField60ByHandle(uint * param_1)`
 pub const GetRefField60ByHandle: u64 = 12974;
-/// `GetRefFromExtraType38Handle` at 0x1660c0 (decompiler, high); signature (untiered): `longlong GetRefFromExtraType38Handle(longlong param_1)`
+/// `GetRefFromExtraType38Handle` at 0x1660c0 (decompiler, high); signature (low): `longlong GetRefFromExtraType38Handle(longlong param_1)`
 pub const GetRefFromExtraType38Handle: u64 = 11756;
-/// `GetRefFromHandleF8IfFormType3E` at 0x7e59f0 (decompiler, medium); signature (untiered): `longlong GetRefFromHandleF8IfFormType3E(longlong param_1)`
+/// `GetRefFromHandleF8IfFormType3E` at 0x7e59f0 (decompiler, medium); signature (low): `longlong GetRefFromHandleF8IfFormType3E(longlong param_1)`
 pub const GetRefFromHandleF8IfFormType3E: u64 = 43845;
-/// `GetRefHandleMapSingleton` at 0x2fb710 (decompiler, high); signature (untiered): `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_> * GetRefHandleMapSingleton(void)`
+/// `GetRefHandleMapSingleton` at 0x2fb710 (decompiler, high); signature (low): `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_> * GetRefHandleMapSingleton(void)`
 pub const GetRefHandleMapSingleton: u64 = 20044;
-/// `GetRefHealth` at 0x2ffba0 (decompiler, medium); signature (untiered): `ulonglong GetRefHealth(longlong param_1)`
+/// `GetRefHealth` at 0x2ffba0 (decompiler, medium); signature (low): `ulonglong GetRefHealth(longlong param_1)`
 pub const GetRefHealth: u64 = 20170;
-/// `GetRefItemCount` at 0x2e8630 (decompiler, high); signature (untiered): `undefined GetRefItemCount(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetRefItemCount` at 0x2e8630 (decompiler, high); signature (low): `undefined GetRefItemCount(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetRefItemCount: u64 = 19701;
-/// `GetRefPairForHandle` at 0xd93e90 (decompiler, medium); signature (untiered): `longlong * GetRefPairForHandle(longlong param_1, longlong * param_2, int * param_3)`
+/// `GetRefPairForHandle` at 0xd93e90 (decompiler, medium); signature (low): `longlong * GetRefPairForHandle(longlong param_1, longlong * param_2, int * param_3)`
 pub const GetRefPairForHandle: u64 = 85659;
 /// `GetReferenceEffectPosition` at 0x5dbc40 (decompiler, medium); signature (medium): `undefined GetReferenceEffectPosition(longlong * param_1, undefined4 * param_2)`
 pub const GetReferenceEffectPosition: u64 = 34776;
-/// `GetReferenceFromHandle10` at 0x4a3550 (decompiler, medium); signature (untiered): `longlong GetReferenceFromHandle10(longlong param_1)`
+/// `GetReferenceFromHandle10` at 0x4a3550 (decompiler, medium); signature (low): `longlong GetReferenceFromHandle10(longlong param_1)`
 pub const GetReferenceFromHandle10: u64 = 29802;
-/// `GetReferenceModel` at 0x2eebe0 (semantic, high); signature (untiered): `longlong GetReferenceModel(longlong param_1)`; semantic: the TESModel a reference loads: extra data type 0x58's +0x10 if present (a per-reference override; Cmd::ClearDestruction also uses this extra, so it is the destruction-stage model), else for an NPC base the sex-specific skin, else the base form's (ref+0x40) TESModel subobject (dynamic cast), else the biped model (high); signature `TESModel* (TESObjectREFR* ref)`
+/// `GetReferenceModel` at 0x2eebe0 (semantic, high); signature (low): `longlong GetReferenceModel(longlong param_1)`; semantic: the TESModel a reference loads: extra data type 0x58's +0x10 if present (a per-reference override; Cmd::ClearDestruction also uses this extra, so it is the destruction-stage model), else for an NPC base the sex-specific skin, else the base form's (ref+0x40) TESModel subobject (dynamic cast), else the biped model (high); signature `TESModel* (TESObjectREFR* ref)`
 pub const GetReferenceModel: u64 = 19749;
 /// `GetReferenceModel` as a function pointer type (high).
 pub type GetReferenceModel_fn = unsafe extern "C" fn(ref_: *mut crate::TESObjectREFR) -> *mut crate::TESModel;
-/// `GetReferenceModelPath` at 0x2eeb70 (semantic, high); signature (untiered): `undefined GetReferenceModelPath(longlong param_1)`; semantic: GetReferenceModel(ref) then its slot 4 (null without a model): the per-reference path the 3D loader tries first (high); signature `const char* (TESObjectREFR* ref)`
+/// `GetReferenceModelPath` at 0x2eeb70 (semantic, high); signature (low): `undefined GetReferenceModelPath(longlong param_1)`; semantic: GetReferenceModel(ref) then its slot 4 (null without a model): the per-reference path the 3D loader tries first (high); signature `const char* (TESObjectREFR* ref)`
 pub const GetReferenceModelPath: u64 = 19746;
 /// `GetReferenceModelPath` as a function pointer type (high).
 pub type GetReferenceModelPath_fn = unsafe extern "C" fn(ref_: *mut crate::TESObjectREFR) -> *const c_char;
@@ -3275,33 +2875,33 @@ pub type GetReferenceModelPath_fn = unsafe extern "C" fn(ref_: *mut crate::TESOb
 pub const GetReferenceRadius: u64 = 20185;
 /// `GetRegSettingCollectionSingleton` at 0x662d80 (decompiler, high); signature (high): `undefined8 * GetRegSettingCollectionSingleton(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetRegSettingCollectionSingleton: u64 = 36779;
-/// `GetRelationshipRankBetween` at 0x3a4e00 (decompiler, medium); signature (untiered): `uint GetRelationshipRankBetween(longlong param_1, longlong param_2)`
+/// `GetRelationshipRankBetween` at 0x3a4e00 (decompiler, medium); signature (low): `uint GetRelationshipRankBetween(longlong param_1, longlong param_2)`
 pub const GetRelationshipRankBetween: u64 = 24076;
 /// `GetRelaunchInterval` at 0x266090 (decompiler, high); signature (high): `undefined4 GetRelaunchInterval(longlong param_1)`
 pub const GetRelaunchInterval: u64 = 17135;
-/// `GetResolvedHandleField18` at 0xe054f0 (decompiler, medium); signature (untiered): `undefined8 GetResolvedHandleField18(byte * param_1, longlong param_2)`
+/// `GetResolvedHandleField18` at 0xe054f0 (decompiler, medium); signature (low): `undefined8 GetResolvedHandleField18(byte * param_1, longlong param_2)`
 pub const GetResolvedHandleField18: u64 = 87523;
 /// `GetRestoreRestrictTime` at 0x8f2700 (decompiler, high); signature (high): `undefined4 GetRestoreRestrictTime(int param_1)`
 pub const GetRestoreRestrictTime: u64 = 50673;
 /// `GetRestoreThresholdPercent` at 0x8f26a0 (decompiler, medium); signature (medium): `float GetRestoreThresholdPercent(longlong param_1, int param_2)`
 pub const GetRestoreThresholdPercent: u64 = 50672;
-/// `GetRigidBodyField4CFrom3D` at 0x690c40 (decompiler, medium); signature (untiered): `undefined4 * GetRigidBodyField4CFrom3D(TESObjectREFR * param_1, undefined4 * param_2)`
+/// `GetRigidBodyField4CFrom3D` at 0x690c40 (decompiler, medium); signature (low): `undefined4 * GetRigidBodyField4CFrom3D(TESObjectREFR * param_1, undefined4 * param_2)`
 pub const GetRigidBodyField4CFrom3D: u64 = 37561;
 /// `GetRingBufferFreeSpace` at 0xffa6f0 (decompiler, medium); signature (medium): `int GetRingBufferFreeSpace(longlong param_1)`
 pub const GetRingBufferFreeSpace: u64 = 76860;
-/// `GetRotationMatrixColumn1FromAngles` at 0x120e310 (decompiler, medium); signature (untiered): `undefined GetRotationMatrixColumn1FromAngles(undefined4 param_1, undefined4 * param_2)`
+/// `GetRotationMatrixColumn1FromAngles` at 0x120e310 (decompiler, medium); signature (low): `undefined GetRotationMatrixColumn1FromAngles(undefined4 param_1, undefined4 * param_2)`
 pub const GetRotationMatrixColumn1FromAngles: u64 = 91790;
 /// `GetRotationMatrixFromVfunc20Angles` at 0x11d66a0 (decompiler, medium); signature (medium): `undefined GetRotationMatrixFromVfunc20Angles(longlong * param_1, float * param_2)`
 pub const GetRotationMatrixFromVfunc20Angles: u64 = 90919;
 /// `GetRunRefAndField18AtPosition` at 0xe41ca0 (decompiler, medium); signature (medium): `undefined8 GetRunRefAndField18AtPosition(longlong param_1, undefined8 * param_2, undefined8 * param_3, ulonglong param_4)`
 pub const GetRunRefAndField18AtPosition: u64 = 88445;
-/// `GetRunRefAtPosition` at 0xe42450 (decompiler, medium); signature (untiered): `longlong GetRunRefAtPosition(undefined8 param_1, undefined8 param_2)`
+/// `GetRunRefAtPosition` at 0xe42450 (decompiler, medium); signature (low): `longlong GetRunRefAtPosition(undefined8 param_1, undefined8 param_2)`
 pub const GetRunRefAtPosition: u64 = 88447;
 /// `GetSafeZoneX` at 0x11703b0 (decompiler, high); signature (high): `undefined4 GetSafeZoneX(void)`
 pub const GetSafeZoneX: u64 = 82329;
 /// `GetSafeZoneY` at 0x1170400 (decompiler, high); signature (high): `undefined4 GetSafeZoneY(void)`
 pub const GetSafeZoneY: u64 = 82330;
-/// `GetScaledBoundsRect158` at 0x1182630 (decompiler, medium); signature (untiered): `undefined1[16] * GetScaledBoundsRect158(longlong param_1, undefined1[16] * param_2)`
+/// `GetScaledBoundsRect158` at 0x1182630 (decompiler, medium); signature (low): `undefined1[16] * GetScaledBoundsRect158(longlong param_1, undefined1[16] * param_2)`
 pub const GetScaledBoundsRect158: u64 = 84737;
 /// `GetScaledByteField28` at 0x2b7280 (decompiler, medium); signature (medium): `float GetScaledByteField28(longlong param_1)`
 pub const GetScaledByteField28: u64 = 18850;
@@ -3317,27 +2917,27 @@ pub const GetScaledExtentY: u64 = 47274;
 pub const GetScaledField158OfField1F8: u64 = 37440;
 /// `GetScaledPosition` at 0xe28410 (decompiler, medium); signature (medium): `undefined GetScaledPosition(longlong * param_1, float * param_2, float * param_3)`
 pub const GetScaledPosition: u64 = 88226;
-/// `GetScriptTypeForFormType0` at 0xa13140 (decompiler, medium); signature (untiered): `undefined8 * GetScriptTypeForFormType0(undefined8 * param_1, longlong * param_2)`
+/// `GetScriptTypeForFormType0` at 0xa13140 (decompiler, medium); signature (low): `undefined8 * GetScriptTypeForFormType0(undefined8 * param_1, longlong * param_2)`
 pub const GetScriptTypeForFormType0: u64 = 55109;
-/// `GetScriptTypeForFormType16` at 0xa12fc0 (decompiler, medium); signature (untiered): `undefined8 * GetScriptTypeForFormType16(undefined8 * param_1, longlong * param_2)`
+/// `GetScriptTypeForFormType16` at 0xa12fc0 (decompiler, medium); signature (low): `undefined8 * GetScriptTypeForFormType16(undefined8 * param_1, longlong * param_2)`
 pub const GetScriptTypeForFormType16: u64 = 55107;
-/// `GetScriptTypeForFormType3D` at 0x9fece0 (decompiler, medium); signature (untiered): `undefined8 * GetScriptTypeForFormType3D(undefined8 * param_1, longlong * param_2)`
+/// `GetScriptTypeForFormType3D` at 0x9fece0 (decompiler, medium); signature (low): `undefined8 * GetScriptTypeForFormType3D(undefined8 * param_1, longlong * param_2)`
 pub const GetScriptTypeForFormType3D: u64 = 54635;
-/// `GetScriptTypeForFormType5C` at 0xa12f00 (decompiler, medium); signature (untiered): `undefined8 * GetScriptTypeForFormType5C(undefined8 * param_1, longlong * param_2)`
+/// `GetScriptTypeForFormType5C` at 0xa12f00 (decompiler, medium); signature (low): `undefined8 * GetScriptTypeForFormType5C(undefined8 * param_1, longlong * param_2)`
 pub const GetScriptTypeForFormType5C: u64 = 55106;
-/// `GetScriptTypeForFormType76` at 0xa2e9b0 (decompiler, medium); signature (untiered): `undefined8 * GetScriptTypeForFormType76(undefined8 * param_1, longlong * param_2)`
+/// `GetScriptTypeForFormType76` at 0xa2e9b0 (decompiler, medium); signature (low): `undefined8 * GetScriptTypeForFormType76(undefined8 * param_1, longlong * param_2)`
 pub const GetScriptTypeForFormType76: u64 = 55647;
-/// `GetScriptTypeForFormType77` at 0xa13440 (decompiler, medium); signature (untiered): `undefined8 * GetScriptTypeForFormType77(undefined8 * param_1, longlong * param_2)`
+/// `GetScriptTypeForFormType77` at 0xa13440 (decompiler, medium); signature (low): `undefined8 * GetScriptTypeForFormType77(undefined8 * param_1, longlong * param_2)`
 pub const GetScriptTypeForFormType77: u64 = 55113;
-/// `GetScriptTypeForFormTypeB` at 0xa13080 (decompiler, medium); signature (untiered): `undefined8 * GetScriptTypeForFormTypeB(undefined8 * param_1, longlong * param_2)`
+/// `GetScriptTypeForFormTypeB` at 0xa13080 (decompiler, medium); signature (low): `undefined8 * GetScriptTypeForFormTypeB(undefined8 * param_1, longlong * param_2)`
 pub const GetScriptTypeForFormTypeB: u64 = 55108;
 /// `GetScriptVariableBool` at 0x14d65b0 (decompiler, medium); signature (medium): `longlong GetScriptVariableBool(uint * param_1)`
 pub const GetScriptVariableBool: u64 = 105227;
-/// `GetScriptVariableFloat` at 0x14d6570 (decompiler, medium); signature (untiered): `uint GetScriptVariableFloat(uint * param_1)`
+/// `GetScriptVariableFloat` at 0x14d6570 (decompiler, medium); signature (low): `uint GetScriptVariableFloat(uint * param_1)`
 pub const GetScriptVariableFloat: u64 = 105226;
 /// `GetScriptVariableInt` at 0x14d6530 (decompiler, medium); signature (medium): `uint GetScriptVariableInt(uint * param_1)`
 pub const GetScriptVariableInt: u64 = 105225;
-/// `GetSecondsOfTime68` at 0xdbb520 (decompiler, medium); signature (untiered): `undefined GetSecondsOfTime68(longlong param_1)`
+/// `GetSecondsOfTime68` at 0xdbb520 (decompiler, medium); signature (low): `undefined GetSecondsOfTime68(longlong param_1)`
 pub const GetSecondsOfTime68: u64 = 86321;
 /// `GetSecondsSinceFirstCall` at 0xeace20 (decompiler, medium); signature (medium): `float GetSecondsSinceFirstCall(void)`
 pub const GetSecondsSinceFirstCall: u64 = 69009;
@@ -3345,15 +2945,15 @@ pub const GetSecondsSinceFirstCall: u64 = 69009;
 pub const GetSegmentDirectionAtDistance: u64 = 108240;
 /// `GetSegmentIndicesForParameter` at 0x11d95d0 (decompiler, medium); signature (medium): `undefined GetSegmentIndicesForParameter(longlong param_1, float param_2, uint * param_3, int * param_4)`
 pub const GetSegmentIndicesForParameter: u64 = 90989;
-/// `GetSegmentListStats` at 0x1193f40 (decompiler, medium); signature (untiered): `undefined GetSegmentListStats(longlong param_1, longlong * param_2)`
+/// `GetSegmentListStats` at 0x1193f40 (decompiler, medium); signature (low): `undefined GetSegmentListStats(longlong param_1, longlong * param_2)`
 pub const GetSegmentListStats: u64 = 87839;
 /// `GetSegmentPointAtParameter` at 0xf4e950 (decompiler, high); signature (high): `float * GetSegmentPointAtParameter(float * param_1, float * param_2, float param_3)`
 pub const GetSegmentPointAtParameter: u64 = 72335;
 /// `GetSelectFirstIdleFilter` at 0x1236cd0 (decompiler, high); signature (high): `SelectFirstIdleFilter * GetSelectFirstIdleFilter(void)`
 pub const GetSelectFirstIdleFilter: u64 = 92930;
-/// `GetSelectedCandidateOrDefaultLocation` at 0x85d190 (decompiler, medium); signature (untiered): `undefined8 GetSelectedCandidateOrDefaultLocation(longlong param_1, undefined4 * param_2)`
+/// `GetSelectedCandidateOrDefaultLocation` at 0x85d190 (decompiler, medium); signature (low): `undefined8 GetSelectedCandidateOrDefaultLocation(longlong param_1, undefined4 * param_2)`
 pub const GetSelectedCandidateOrDefaultLocation: u64 = 47053;
-/// `GetSelectedEntryField18` at 0x956cf0 (decompiler, medium); signature (untiered): `undefined8 GetSelectedEntryField18(longlong param_1)`
+/// `GetSelectedEntryField18` at 0x956cf0 (decompiler, medium); signature (low): `undefined8 GetSelectedEntryField18(longlong param_1)`
 pub const GetSelectedEntryField18: u64 = 52090;
 /// `GetSelfIfBaseFormType33` at 0x2f39c0 (decompiler, high); signature (high): `longlong GetSelfIfBaseFormType33(longlong param_1)`
 pub const GetSelfIfBaseFormType33: u64 = 19807;
@@ -3361,43 +2961,43 @@ pub const GetSelfIfBaseFormType33: u64 = 19807;
 pub const GetSettingTypeFromNamePrefix: u64 = 75621;
 /// `GetSettingValueSize` at 0xfc2530 (decompiler, medium); signature (medium): `int GetSettingValueSize(longlong param_1)`
 pub const GetSettingValueSize: u64 = 75620;
-/// `GetSexSpecificDwordF8OfField158` at 0x3c6570 (decompiler, medium); signature (untiered): `undefined4 GetSexSpecificDwordF8OfField158(longlong param_1)`
+/// `GetSexSpecificDwordF8OfField158` at 0x3c6570 (decompiler, medium); signature (low): `undefined4 GetSexSpecificDwordF8OfField158(longlong param_1)`
 pub const GetSexSpecificDwordF8OfField158: u64 = 24762;
-/// `GetSexSpecificField158String` at 0x3be2e0 (decompiler, medium); signature (untiered): `undefined GetSexSpecificField158String(longlong param_1, longlong * param_2)`
+/// `GetSexSpecificField158String` at 0x3be2e0 (decompiler, medium); signature (low): `undefined GetSexSpecificField158String(longlong param_1, longlong * param_2)`
 pub const GetSexSpecificField158String: u64 = 24667;
-/// `GetSexSpecificStringFromField158` at 0x3be2a0 (decompiler, medium); signature (untiered): `undefined1 * GetSexSpecificStringFromField158(longlong param_1)`
+/// `GetSexSpecificStringFromField158` at 0x3be2a0 (decompiler, medium); signature (low): `undefined1 * GetSexSpecificStringFromField158(longlong param_1)`
 pub const GetSexSpecificStringFromField158: u64 = 24666;
 /// `GetShaderPropertyGeometryIndexInTree` at 0x224130 (decompiler, high); signature (high): `undefined4 GetShaderPropertyGeometryIndexInTree(undefined8 param_1, undefined8 param_2, undefined1 param_3, undefined1 param_4)`
 pub const GetShaderPropertyGeometryIndexInTree: u64 = 15888;
-/// `GetShadowSceneNodeFogProperty` at 0x14ec040 (decompiler, high); signature (untiered): `undefined8 GetShadowSceneNodeFogProperty(int param_1)`
+/// `GetShadowSceneNodeFogProperty` at 0x14ec040 (decompiler, high); signature (low): `undefined8 GetShadowSceneNodeFogProperty(int param_1)`
 pub const GetShadowSceneNodeFogProperty: u64 = 105637;
-/// `GetShapeCollectionClosestPoints` at 0xc8dc00 (decompiler, medium); signature (untiered): `undefined GetShapeCollectionClosestPoints(undefined8 * param_1, longlong * param_2, longlong * param_3, undefined8 param_4)`
+/// `GetShapeCollectionClosestPoints` at 0xc8dc00 (decompiler, medium); signature (low): `undefined GetShapeCollectionClosestPoints(undefined8 * param_1, longlong * param_2, longlong * param_3, undefined8 param_4)`
 pub const GetShapeCollectionClosestPoints: u64 = 67028;
-/// `GetShapeCollectionPenetrations` at 0xc8df00 (decompiler, medium); signature (untiered): `undefined GetShapeCollectionPenetrations(undefined8 * param_1, longlong * param_2, longlong * param_3, longlong param_4)`
+/// `GetShapeCollectionPenetrations` at 0xc8df00 (decompiler, medium); signature (low): `undefined GetShapeCollectionPenetrations(undefined8 * param_1, longlong * param_2, longlong * param_3, longlong param_4)`
 pub const GetShapeCollectionPenetrations: u64 = 67030;
-/// `GetSharedField18DataPointer` at 0xec68f0 (decompiler, medium); signature (untiered): `int * GetSharedField18DataPointer(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
+/// `GetSharedField18DataPointer` at 0xec68f0 (decompiler, medium); signature (low): `int * GetSharedField18DataPointer(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
 pub const GetSharedField18DataPointer: u64 = 69647;
-/// `GetSharedField18Value18` at 0xec6940 (decompiler, medium); signature (untiered): `undefined8 GetSharedField18Value18(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
+/// `GetSharedField18Value18` at 0xec6940 (decompiler, medium); signature (low): `undefined8 GetSharedField18Value18(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
 pub const GetSharedField18Value18: u64 = 69648;
 /// `GetSharedPtrField8` at 0x1305700 (decompiler, high); signature (high): `undefined8 * GetSharedPtrField8(longlong param_1, undefined8 * param_2)`
 pub const GetSharedPtrField8: u64 = 446990;
-/// `GetShortArrayField10Entry` at 0xbfc700 (decompiler, high); signature (untiered): `ulonglong GetShortArrayField10Entry(longlong param_1, short param_2)`
+/// `GetShortArrayField10Entry` at 0xbfc700 (decompiler, high); signature (low): `ulonglong GetShortArrayField10Entry(longlong param_1, short param_2)`
 pub const GetShortArrayField10Entry: u64 = 64369;
 /// `GetShortArrayField20Entry` at 0xbfcec0 (decompiler, high); signature (high): `int GetShortArrayField20Entry(longlong param_1, int param_2)`
 pub const GetShortArrayField20Entry: u64 = 64381;
-/// `GetShortField8OfEntryInArrayA8` at 0xfbe0d0 (decompiler, high); signature (untiered): `undefined2 GetShortField8OfEntryInArrayA8(longlong param_1, ushort param_2)`
+/// `GetShortField8OfEntryInArrayA8` at 0xfbe0d0 (decompiler, high); signature (low): `undefined2 GetShortField8OfEntryInArrayA8(longlong param_1, ushort param_2)`
 pub const GetShortField8OfEntryInArrayA8: u64 = 75498;
 /// `GetShortVec20AsFloat3` at 0x277a00 (decompiler, high); signature (high): `float * GetShortVec20AsFloat3(longlong param_1, float * param_2)`
 pub const GetShortVec20AsFloat3: u64 = 17660;
 /// `GetShortVec26AsFloat3` at 0x277a40 (decompiler, high); signature (high): `float * GetShortVec26AsFloat3(longlong param_1, float * param_2)`
 pub const GetShortVec26AsFloat3: u64 = 17661;
-/// `GetShoutLookAtHeadingMaxAngle` at 0x6a4150 (semantic, high); signature (untiered): `float GetShoutLookAtHeadingMaxAngle(longlong param_1)`; semantic: when race flag bit 15: 2.0 * graph float 'LookAtHeadingMaxAngle' (g_AnimationVariableNames+0x410, holder slot 16) else 0; used by the CastShout combat node (high); signature `float (Actor* actor)`
+/// `GetShoutLookAtHeadingMaxAngle` at 0x6a4150 (semantic, high); signature (low): `float GetShoutLookAtHeadingMaxAngle(longlong param_1)`; semantic: when race flag bit 15: 2.0 * graph float 'LookAtHeadingMaxAngle' (g_AnimationVariableNames+0x410, holder slot 16) else 0; used by the CastShout combat node (high); signature `float (Actor* actor)`
 pub const GetShoutLookAtHeadingMaxAngle: u64 = 37776;
 /// `GetShoutLookAtHeadingMaxAngle` as a function pointer type (high).
 pub type GetShoutLookAtHeadingMaxAngle_fn = unsafe extern "C" fn(actor: *mut crate::Actor) -> f32;
 /// `GetShoutTimeForLevel` at 0x6d9310 (decompiler, high); signature (high): `undefined4 GetShoutTimeForLevel(undefined8 param_1, int param_2)`
 pub const GetShoutTimeForLevel: u64 = 38811;
-/// `GetSingleton410129` at 0xcd3540 (decompiler, high); signature (untiered): `undefined8 GetSingleton410129(void)`
+/// `GetSingleton410129` at 0xcd3540 (decompiler, high); signature (low): `undefined8 GetSingleton410129(void)`
 pub const GetSingleton410129: u64 = 67807;
 /// `GetSizeCodeForValue` at 0x6141a0 (decompiler, high); signature (high): `char GetSizeCodeForValue(uint param_1)`
 pub const GetSizeCodeForValue: u64 = 35522;
@@ -3407,75 +3007,75 @@ pub const GetSizerItemHeight: u64 = 454759;
 pub const GetSizerItemWidth: u64 = 454760;
 /// `GetSlot40ByIndex` at 0x32d630 (decompiler, high); signature (high): `longlong GetSlot40ByIndex(longlong param_1, int param_2)`
 pub const GetSlot40ByIndex: u64 = 21356;
-/// `GetSlotArray98Element` at 0x3e8610 (decompiler, high); signature (untiered): `undefined8 GetSlotArray98Element(longlong param_1, int param_2, uint param_3)`
+/// `GetSlotArray98Element` at 0x3e8610 (decompiler, high); signature (low): `undefined8 GetSlotArray98Element(longlong param_1, int param_2, uint param_3)`
 pub const GetSlotArray98Element: u64 = 25380;
 /// `GetSlotEntryField30` at 0x27d200 (decompiler, high); signature (high): `undefined4 GetSlotEntryField30(longlong param_1, int param_2)`
 pub const GetSlotEntryField30: u64 = 17765;
-/// `GetSlotEntryWithFallback` at 0x1df8d0 (decompiler, medium); signature (untiered): `longlong GetSlotEntryWithFallback(longlong param_1, int param_2)`
+/// `GetSlotEntryWithFallback` at 0x1df8d0 (decompiler, medium); signature (low): `longlong GetSlotEntryWithFallback(longlong param_1, int param_2)`
 pub const GetSlotEntryWithFallback: u64 = 14497;
-/// `GetSlotField48ByHandle` at 0xea4b80 (decompiler, high); signature (untiered): `undefined8 GetSlotField48ByHandle(undefined8 param_1, undefined4 * param_2)`
+/// `GetSlotField48ByHandle` at 0xea4b80 (decompiler, high); signature (low): `undefined8 GetSlotField48ByHandle(undefined8 param_1, undefined4 * param_2)`
 pub const GetSlotField48ByHandle: u64 = 68889;
-/// `GetSlotField4ByIndex` at 0xe7b2a0 (decompiler, medium); signature (untiered): `int GetSlotField4ByIndex(int param_1, int param_2, int param_3)`
+/// `GetSlotField4ByIndex` at 0xe7b2a0 (decompiler, medium); signature (low): `int GetSlotField4ByIndex(int param_1, int param_2, int param_3)`
 pub const GetSlotField4ByIndex: u64 = 68816;
-/// `GetSlotLengthOrFirstSlotLength` at 0x3e35f0 (decompiler, medium); signature (untiered): `uint GetSlotLengthOrFirstSlotLength(longlong param_1, int param_2)`
+/// `GetSlotLengthOrFirstSlotLength` at 0x3e35f0 (decompiler, medium); signature (low): `uint GetSlotLengthOrFirstSlotLength(longlong param_1, int param_2)`
 pub const GetSlotLengthOrFirstSlotLength: u64 = 25298;
-/// `GetSlotObjectByIndex` at 0x117d590 (decompiler, medium); signature (untiered): `longlong GetSlotObjectByIndex(longlong param_1, longlong param_2)`
+/// `GetSlotObjectByIndex` at 0x117d590 (decompiler, medium); signature (low): `longlong GetSlotObjectByIndex(longlong param_1, longlong param_2)`
 pub const GetSlotObjectByIndex: u64 = 84533;
-/// `GetSlotObjectForType1FForm` at 0x21b6f0 (decompiler, medium); signature (untiered): `undefined GetSlotObjectForType1FForm(longlong param_1, char param_2, longlong * param_3)`
+/// `GetSlotObjectForType1FForm` at 0x21b6f0 (decompiler, medium); signature (low): `undefined GetSlotObjectForType1FForm(longlong param_1, char param_2, longlong * param_3)`
 pub const GetSlotObjectForType1FForm: u64 = 15693;
-/// `GetSlotStringAt80WithFallback` at 0x1df920 (decompiler, medium); signature (untiered): `undefined8 GetSlotStringAt80WithFallback(longlong param_1, int param_2)`
+/// `GetSlotStringAt80WithFallback` at 0x1df920 (decompiler, medium); signature (low): `undefined8 GetSlotStringAt80WithFallback(longlong param_1, int param_2)`
 pub const GetSlotStringAt80WithFallback: u64 = 14498;
-/// `GetSlotStringAtA8WithFallback` at 0x1df970 (decompiler, medium); signature (untiered): `undefined8 GetSlotStringAtA8WithFallback(longlong param_1, int param_2)`
+/// `GetSlotStringAtA8WithFallback` at 0x1df970 (decompiler, medium); signature (low): `undefined8 GetSlotStringAtA8WithFallback(longlong param_1, int param_2)`
 pub const GetSlotStringAtA8WithFallback: u64 = 14499;
 /// `GetSlotStringLength` at 0x3070b0 (decompiler, medium); signature (medium): `uint GetSlotStringLength(longlong param_1, int param_2)`
 pub const GetSlotStringLength: u64 = 20350;
 /// `GetSmallArrayElementA8` at 0x124a450 (decompiler, high); signature (high): `int * GetSmallArrayElementA8(int * param_1, uint param_2)`
 pub const GetSmallArrayElementA8: u64 = 93282;
-/// `GetSneakSkillUsagePerSecond` at 0x421800 (decompiler, medium); signature (untiered): `undefined4 GetSneakSkillUsagePerSecond(int param_1)`
+/// `GetSneakSkillUsagePerSecond` at 0x421800 (decompiler, medium); signature (low): `undefined4 GetSneakSkillUsagePerSecond(int param_1)`
 pub const GetSneakSkillUsagePerSecond: u64 = 26491;
 /// `GetSnorm8PaletteValue` at 0x1039c40 (decompiler, medium); signature (medium): `float GetSnorm8PaletteValue(char * param_1, longlong param_2)`
 pub const GetSnorm8PaletteValue: u64 = 77726;
-/// `GetSortedBlockListHeads` at 0xabbef0 (decompiler, medium); signature (untiered): `uint GetSortedBlockListHeads(longlong param_1, longlong * param_2)`
+/// `GetSortedBlockListHeads` at 0xabbef0 (decompiler, medium); signature (low): `uint GetSortedBlockListHeads(longlong param_1, longlong * param_2)`
 pub const GetSortedBlockListHeads: u64 = 57947;
-/// `GetSoulLevel` at 0x228b40 (decompiler, medium); signature (untiered): `uint GetSoulLevel(longlong * param_1)`
+/// `GetSoulLevel` at 0x228b40 (decompiler, medium); signature (low): `uint GetSoulLevel(longlong * param_1)`
 pub const GetSoulLevel: u64 = 15996;
 /// `GetSoulLevelForActorLevel` at 0x4221e0 (decompiler, high); signature (high): `int GetSoulLevelForActorLevel(uint param_1, char param_2)`
 pub const GetSoulLevelForActorLevel: u64 = 26520;
 /// `GetSoulLevelValue` at 0x28ef80 (decompiler, high); signature (high): `undefined4 GetSoulLevelValue(int param_1)`
 pub const GetSoulLevelValue: u64 = 18166;
-/// `GetSoundLevelFromField245` at 0x3c6160 (decompiler, medium); signature (untiered): `undefined GetSoundLevelFromField245(longlong param_1)`
+/// `GetSoundLevelFromField245` at 0x3c6160 (decompiler, medium); signature (low): `undefined GetSoundLevelFromField245(longlong param_1)`
 pub const GetSoundLevelFromField245: u64 = 24753;
 /// `GetSoundLevelGameSettingValue` at 0x41d3f0 (decompiler, high); signature (high): `undefined4 GetSoundLevelGameSettingValue(int param_1)`
 pub const GetSoundLevelGameSettingValue: u64 = 26367;
-/// `GetSoundLevelValueForField58` at 0x31def0 (decompiler, high); signature (untiered): `undefined GetSoundLevelValueForField58(longlong param_1)`
+/// `GetSoundLevelValueForField58` at 0x31def0 (decompiler, high); signature (low): `undefined GetSoundLevelValueForField58(longlong param_1)`
 pub const GetSoundLevelValueForField58: u64 = 20842;
-/// `GetSoundLevelValueOfFieldE0` at 0x261310 (decompiler, high); signature (untiered): `undefined GetSoundLevelValueOfFieldE0(longlong param_1)`
+/// `GetSoundLevelValueOfFieldE0` at 0x261310 (decompiler, high); signature (low): `undefined GetSoundLevelValueOfFieldE0(longlong param_1)`
 pub const GetSoundLevelValueOfFieldE0: u64 = 16987;
-/// `GetSourceTextureField20` at 0xfde200 (decompiler, medium); signature (untiered): `longlong GetSourceTextureField20(longlong * param_1)`
+/// `GetSourceTextureField20` at 0xfde200 (decompiler, medium); signature (low): `longlong GetSourceTextureField20(longlong * param_1)`
 pub const GetSourceTextureField20: u64 = 76211;
-/// `GetSpanBetweenColonAndSlash` at 0x13dc0c0 (decompiler, medium); signature (untiered): `longlong * GetSpanBetweenColonAndSlash(longlong * param_1, longlong * param_2)`
+/// `GetSpanBetweenColonAndSlash` at 0x13dc0c0 (decompiler, medium); signature (low): `longlong * GetSpanBetweenColonAndSlash(longlong * param_1, longlong * param_2)`
 pub const GetSpanBetweenColonAndSlash: u64 = 449409;
 /// `GetSpeechDelay` at 0x423e20 (semantic, high); signature (high): `float GetSpeechDelay(void)`; semantic: returns fSpeechDelay (GameSetting value 0x20b0330) (high); signature `float (void)`
 pub const GetSpeechDelay: u64 = 26565;
 /// `GetSpeechDelay` as a function pointer type (high).
 pub type GetSpeechDelay_fn = unsafe extern "C" fn() -> f32;
-/// `GetSphereBoxClosestPoints` at 0xc86da0 (decompiler, medium); signature (untiered): `undefined GetSphereBoxClosestPoints(longlong * param_1, longlong * param_2, longlong param_3, longlong * param_4)`
+/// `GetSphereBoxClosestPoints` at 0xc86da0 (decompiler, medium); signature (low): `undefined GetSphereBoxClosestPoints(longlong * param_1, longlong * param_2, longlong param_3, longlong * param_4)`
 pub const GetSphereBoxClosestPoints: u64 = 66882;
-/// `GetSphereCapsuleClosestPoint` at 0xc82600 (decompiler, medium); signature (untiered): `undefined8 GetSphereCapsuleClosestPoint(longlong * param_1, longlong * param_2, longlong param_3, float * param_4)`
+/// `GetSphereCapsuleClosestPoint` at 0xc82600 (decompiler, medium); signature (low): `undefined8 GetSphereCapsuleClosestPoint(longlong * param_1, longlong * param_2, longlong param_3, float * param_4)`
 pub const GetSphereCapsuleClosestPoint: u64 = 66814;
-/// `GetSphereCapsuleClosestPoints` at 0xc81ff0 (decompiler, medium); signature (untiered): `undefined GetSphereCapsuleClosestPoints(longlong * param_1, longlong * param_2, longlong param_3, longlong * param_4)`
+/// `GetSphereCapsuleClosestPoints` at 0xc81ff0 (decompiler, medium); signature (low): `undefined GetSphereCapsuleClosestPoints(longlong * param_1, longlong * param_2, longlong param_3, longlong * param_4)`
 pub const GetSphereCapsuleClosestPoints: u64 = 66808;
-/// `GetSphereSphereClosestPoints` at 0xc817c0 (decompiler, medium); signature (untiered): `undefined GetSphereSphereClosestPoints(longlong * param_1, longlong * param_2, longlong param_3, longlong * param_4)`
+/// `GetSphereSphereClosestPoints` at 0xc817c0 (decompiler, medium); signature (low): `undefined GetSphereSphereClosestPoints(longlong * param_1, longlong * param_2, longlong param_3, longlong * param_4)`
 pub const GetSphereSphereClosestPoints: u64 = 66800;
-/// `GetSphereTriangleClosestPoint` at 0xc83ad0 (decompiler, medium); signature (untiered): `char GetSphereTriangleClosestPoint(longlong * param_1, longlong * param_2, longlong param_3, float * param_4, float * param_5)`
+/// `GetSphereTriangleClosestPoint` at 0xc83ad0 (decompiler, medium); signature (low): `char GetSphereTriangleClosestPoint(longlong * param_1, longlong * param_2, longlong param_3, float * param_4, float * param_5)`
 pub const GetSphereTriangleClosestPoint: u64 = 66836;
-/// `GetSphereTriangleClosestPoints` at 0xc833e0 (decompiler, medium); signature (untiered): `undefined GetSphereTriangleClosestPoints(longlong * param_1, longlong * param_2, longlong param_3, longlong * param_4)`
+/// `GetSphereTriangleClosestPoints` at 0xc833e0 (decompiler, medium); signature (low): `undefined GetSphereTriangleClosestPoints(longlong * param_1, longlong * param_2, longlong param_3, longlong * param_4)`
 pub const GetSphereTriangleClosestPoints: u64 = 66830;
-/// `GetSphereTrianglePenetrations` at 0xc83800 (decompiler, medium); signature (untiered): `undefined GetSphereTrianglePenetrations(longlong * param_1, longlong * param_2, undefined8 param_3, longlong * param_4)`
+/// `GetSphereTrianglePenetrations` at 0xc83800 (decompiler, medium); signature (low): `undefined GetSphereTrianglePenetrations(longlong * param_1, longlong * param_2, undefined8 param_3, longlong * param_4)`
 pub const GetSphereTrianglePenetrations: u64 = 66832;
 /// `GetSpriteIfType2` at 0xd14810 (decompiler, medium); signature (medium): `longlong * GetSpriteIfType2(longlong * param_1)`
 pub const GetSpriteIfType2: u64 = 83039;
-/// `GetSpritePropertyByNumber` at 0xd62090 (decompiler, medium); signature (untiered): `undefined8 GetSpritePropertyByNumber(longlong * param_1, uint param_2, byte * param_3, undefined8 param_4)`
+/// `GetSpritePropertyByNumber` at 0xd62090 (decompiler, medium); signature (low): `undefined8 GetSpritePropertyByNumber(longlong * param_1, uint param_2, byte * param_3, undefined8 param_4)`
 pub const GetSpritePropertyByNumber: u64 = 84223;
 /// `GetSquareGridEntry` at 0x11e70c0 (decompiler, medium); signature (medium): `longlong GetSquareGridEntry(longlong param_1, uint param_2)`
 pub const GetSquareGridEntry: u64 = 91171;
@@ -3483,49 +3083,49 @@ pub const GetSquareGridEntry: u64 = 91171;
 pub const GetSquaredDistanceTo: u64 = 19824;
 /// `GetSquaredLengthOfField20Field10Vec230` at 0x6bdec0 (decompiler, medium); signature (medium): `undefined8 GetSquaredLengthOfField20Field10Vec230(longlong param_1)`
 pub const GetSquaredLengthOfField20Field10Vec230: u64 = 38294;
-/// `GetStackEntryFromTop` at 0xd0c7f0 (decompiler, medium); signature (untiered): `longlong GetStackEntryFromTop(longlong param_1, int param_2)`
+/// `GetStackEntryFromTop` at 0xd0c7f0 (decompiler, medium); signature (low): `longlong GetStackEntryFromTop(longlong param_1, int param_2)`
 pub const GetStackEntryFromTop: u64 = 82881;
-/// `GetStageLogTextIntoString` at 0x3d8d30 (decompiler, medium); signature (untiered): `undefined GetStageLogTextIntoString(longlong * param_1, longlong * param_2, short param_3, undefined8 param_4)`
+/// `GetStageLogTextIntoString` at 0x3d8d30 (decompiler, medium); signature (low): `undefined GetStageLogTextIntoString(longlong * param_1, longlong * param_2, short param_3, undefined8 param_4)`
 pub const GetStageLogTextIntoString: u64 = 25079;
 /// `GetStaggerARForWeaponType` at 0x28c140 (decompiler, high); signature (high): `undefined4 GetStaggerARForWeaponType(longlong param_1)`
 pub const GetStaggerARForWeaponType: u64 = 18093;
 /// `GetStaticDwordTableEntry` at 0x6141c0 (decompiler, medium); signature (medium): `undefined4 GetStaticDwordTableEntry(int param_1)`
 pub const GetStaticDwordTableEntry: u64 = 35523;
-/// `GetStaticEmptyEntry` at 0x1177190 (decompiler, medium); signature (untiered): `undefined * GetStaticEmptyEntry(void)`
+/// `GetStaticEmptyEntry` at 0x1177190 (decompiler, medium); signature (low): `undefined * GetStaticEmptyEntry(void)`
 pub const GetStaticEmptyEntry: u64 = 82471;
 /// `GetStaticEmptyFixedString` at 0xcdb420 (decompiler, high); signature (high): `undefined8 * GetStaticEmptyFixedString(void)`
 pub const GetStaticEmptyFixedString: u64 = 68031;
-/// `GetStaticEmptyFixedStringPair` at 0x14aa440 (decompiler, medium); signature (untiered): `undefined8 * GetStaticEmptyFixedStringPair(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetStaticEmptyFixedStringPair` at 0x14aa440 (decompiler, medium); signature (low): `undefined8 * GetStaticEmptyFixedStringPair(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetStaticEmptyFixedStringPair: u64 = 104659;
 /// `GetStaticEmptyFixedString_2` at 0x314a60 (decompiler, high); signature (high): `undefined * GetStaticEmptyFixedString_2(undefined8 param_1, undefined8 param_2, undefined8 param_3, char * param_4)`
 pub const GetStaticEmptyFixedString_2: u64 = 20602;
-/// `GetStaticEventSource` at 0x6c0ea0 (decompiler, medium); signature (untiered): `undefined8 * GetStaticEventSource(void)`
+/// `GetStaticEventSource` at 0x6c0ea0 (decompiler, medium); signature (low): `undefined8 * GetStaticEventSource(void)`
 pub const GetStaticEventSource: u64 = 38341;
-/// `GetStaticEventSourceInstance_2` at 0xcdeea0 (decompiler, medium); signature (untiered): `undefined * GetStaticEventSourceInstance_2(void)`
+/// `GetStaticEventSourceInstance_2` at 0xcdeea0 (decompiler, medium); signature (low): `undefined * GetStaticEventSourceInstance_2(void)`
 pub const GetStaticEventSourceInstance_2: u64 = 68132;
-/// `GetStaticFixedStringByIndex` at 0x2887e0 (decompiler, medium); signature (untiered): `undefined8 * GetStaticFixedStringByIndex(uint param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetStaticFixedStringByIndex` at 0x2887e0 (decompiler, medium); signature (low): `undefined8 * GetStaticFixedStringByIndex(uint param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetStaticFixedStringByIndex: u64 = 18062;
-/// `GetStaticFixedStringFAD` at 0x423bc0 (decompiler, high); signature (untiered): `undefined * GetStaticFixedStringFAD(void)`
+/// `GetStaticFixedStringFAD` at 0x423bc0 (decompiler, high); signature (low): `undefined * GetStaticFixedStringFAD(void)`
 pub const GetStaticFixedStringFAD: u64 = 26559;
-/// `GetStaticHashMapInstance` at 0x7a6e20 (decompiler, medium); signature (untiered): `undefined * GetStaticHashMapInstance(void)`
+/// `GetStaticHashMapInstance` at 0x7a6e20 (decompiler, medium); signature (low): `undefined * GetStaticHashMapInstance(void)`
 pub const GetStaticHashMapInstance: u64 = 42101;
-/// `GetStaticHashMapInstance_2` at 0x792e60 (decompiler, medium); signature (untiered): `undefined * GetStaticHashMapInstance_2(void)`
+/// `GetStaticHashMapInstance_2` at 0x792e60 (decompiler, medium); signature (low): `undefined * GetStaticHashMapInstance_2(void)`
 pub const GetStaticHashMapInstance_2: u64 = 41652;
-/// `GetStaticInstance400854` at 0x285e20 (decompiler, high); signature (untiered): `undefined8 * GetStaticInstance400854(void)`
+/// `GetStaticInstance400854` at 0x285e20 (decompiler, high); signature (low): `undefined8 * GetStaticInstance400854(void)`
 pub const GetStaticInstance400854: u64 = 17969;
-/// `GetStaticRandomGenerator` at 0x1ea850 (decompiler, medium); signature (untiered): `undefined * GetStaticRandomGenerator(void)`
+/// `GetStaticRandomGenerator` at 0x1ea850 (decompiler, medium); signature (low): `undefined * GetStaticRandomGenerator(void)`
 pub const GetStaticRandomGenerator: u64 = 14774;
 /// `GetStaticRefHandleUIntMap` at 0x1d6d50 (decompiler, medium); signature (medium): `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int> * GetStaticRefHandleUIntMap(void)`
 pub const GetStaticRefHandleUIntMap: u64 = 14205;
-/// `GetStaticStartAllowRotationEntry` at 0x549800 (decompiler, medium); signature (untiered): `undefined * GetStaticStartAllowRotationEntry(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetStaticStartAllowRotationEntry` at 0x549800 (decompiler, medium); signature (low): `undefined * GetStaticStartAllowRotationEntry(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetStaticStartAllowRotationEntry: u64 = 32718;
-/// `GetStaticStartAnimationDrivenEntry` at 0x549720 (decompiler, medium); signature (untiered): `undefined * GetStaticStartAnimationDrivenEntry(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetStaticStartAnimationDrivenEntry` at 0x549720 (decompiler, medium); signature (low): `undefined * GetStaticStartAnimationDrivenEntry(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetStaticStartAnimationDrivenEntry: u64 = 32717;
-/// `GetStaticStartMotionDrivenEntry` at 0x549640 (decompiler, medium); signature (untiered): `undefined * GetStaticStartMotionDrivenEntry(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetStaticStartMotionDrivenEntry` at 0x549640 (decompiler, medium); signature (low): `undefined * GetStaticStartMotionDrivenEntry(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetStaticStartMotionDrivenEntry: u64 = 32716;
-/// `GetStaticStringForField0F4` at 0x5c12a0 (decompiler, medium); signature (untiered): `undefined8 * GetStaticStringForField0F4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetStaticStringForField0F4` at 0x5c12a0 (decompiler, medium); signature (low): `undefined8 * GetStaticStringForField0F4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetStaticStringForField0F4: u64 = 34162;
-/// `GetStaticTypeNameString` at 0x8712e0 (decompiler, medium); signature (untiered): `undefined * GetStaticTypeNameString(void)`
+/// `GetStaticTypeNameString` at 0x8712e0 (decompiler, medium); signature (low): `undefined * GetStaticTypeNameString(void)`
 pub const GetStaticTypeNameString: u64 = 47447;
 /// `GetStaticVec3Ptr` at 0x53fff0 (decompiler, medium); signature (medium): `undefined4 * GetStaticVec3Ptr(void)`
 pub const GetStaticVec3Ptr: u64 = 32580;
@@ -3533,73 +3133,73 @@ pub const GetStaticVec3Ptr: u64 = 32580;
 pub const GetStatusName: u64 = 449902;
 /// `GetStoredActorValue` at 0x6e2de0 (decompiler, medium); signature (medium): `undefined1 GetStoredActorValue(undefined8 * param_1, char param_2, undefined4 * param_3)`
 pub const GetStoredActorValue: u64 = 39016;
-/// `GetStreamObjectAsControllerSequence` at 0xf55750 (decompiler, medium); signature (untiered): `undefined GetStreamObjectAsControllerSequence(longlong param_1, uint param_2, longlong * param_3)`
+/// `GetStreamObjectAsControllerSequence` at 0xf55750 (decompiler, medium); signature (low): `undefined GetStreamObjectAsControllerSequence(longlong param_1, uint param_2, longlong * param_3)`
 pub const GetStreamObjectAsControllerSequence: u64 = 72435;
-/// `GetStringAtSlotWithFallback` at 0x27d090 (decompiler, medium); signature (untiered): `undefined GetStringAtSlotWithFallback(longlong param_1, int param_2)`
+/// `GetStringAtSlotWithFallback` at 0x27d090 (decompiler, medium); signature (low): `undefined GetStringAtSlotWithFallback(longlong param_1, int param_2)`
 pub const GetStringAtSlotWithFallback: u64 = 17762;
 /// `GetStringCharAt` at 0xcfea00 (decompiler, medium); signature (medium): `uint GetStringCharAt(ulonglong * param_1, longlong param_2)`
 pub const GetStringCharAt: u64 = 82615;
 /// `GetStringCharAtAndPosition` at 0xcfea80 (decompiler, medium); signature (medium): `uint GetStringCharAtAndPosition(ulonglong * param_1, longlong param_2, longlong * param_3)`
 pub const GetStringCharAtAndPosition: u64 = 82616;
-/// `GetStringCharAt_2` at 0xdb18c0 (decompiler, medium); signature (untiered): `undefined GetStringCharAt_2(longlong param_1)`
+/// `GetStringCharAt_2` at 0xdb18c0 (decompiler, medium); signature (low): `undefined GetStringCharAt_2(longlong param_1)`
 pub const GetStringCharAt_2: u64 = 86081;
-/// `GetStringCharCodeAt` at 0xdb19e0 (decompiler, medium); signature (untiered): `undefined GetStringCharCodeAt(longlong param_1)`
+/// `GetStringCharCodeAt` at 0xdb19e0 (decompiler, medium); signature (low): `undefined GetStringCharCodeAt(longlong param_1)`
 pub const GetStringCharCodeAt: u64 = 86082;
-/// `GetStringCharCount` at 0xcfeb40 (decompiler, medium); signature (untiered): `ulonglong GetStringCharCount(ulonglong * param_1)`
+/// `GetStringCharCount` at 0xcfeb40 (decompiler, medium); signature (low): `ulonglong GetStringCharCount(ulonglong * param_1)`
 pub const GetStringCharCount: u64 = 82621;
-/// `GetStringCharLength` at 0xd0a470 (decompiler, medium); signature (untiered): `ulonglong GetStringCharLength(longlong * param_1)`
+/// `GetStringCharLength` at 0xd0a470 (decompiler, medium); signature (low): `ulonglong GetStringCharLength(longlong * param_1)`
 pub const GetStringCharLength: u64 = 82836;
-/// `GetStringField20Locked` at 0x1308c10 (decompiler, medium); signature (untiered): `undefined8 * GetStringField20Locked(longlong param_1)`
+/// `GetStringField20Locked` at 0x1308c10 (decompiler, medium); signature (low): `undefined8 * GetStringField20Locked(longlong param_1)`
 pub const GetStringField20Locked: u64 = 448092;
 /// `GetStringField8OrDefault` at 0x125b070 (decompiler, medium); signature (medium): `undefined1 * GetStringField8OrDefault(longlong param_1)`
 pub const GetStringField8OrDefault: u64 = 524363;
 /// `GetStringFromPairTableWithFallback` at 0x389790 (decompiler, medium); signature (medium): `char * GetStringFromPairTableWithFallback(longlong param_1, int param_2, int param_3)`
 pub const GetStringFromPairTableWithFallback: u64 = 23437;
-/// `GetStringLength` at 0x149ae0 (decompiler, high); signature (untiered): `ulonglong GetStringLength(longlong * param_1)`
+/// `GetStringLength` at 0x149ae0 (decompiler, high); signature (low): `ulonglong GetStringLength(longlong * param_1)`
 pub const GetStringLength: u64 = 11041;
-/// `GetStringLengthWithoutIDPrefix` at 0x20dbd0 (decompiler, high); signature (untiered): `uint GetStringLengthWithoutIDPrefix(longlong * param_1)`
+/// `GetStringLengthWithoutIDPrefix` at 0x20dbd0 (decompiler, high); signature (low): `uint GetStringLengthWithoutIDPrefix(longlong * param_1)`
 pub const GetStringLengthWithoutIDPrefix: u64 = 15465;
-/// `GetStringLengthWithoutIdPrefix` at 0x20d280 (decompiler, high); signature (untiered): `uint GetStringLengthWithoutIdPrefix(longlong * param_1)`
+/// `GetStringLengthWithoutIdPrefix` at 0x20d280 (decompiler, high); signature (low): `uint GetStringLengthWithoutIdPrefix(longlong * param_1)`
 pub const GetStringLengthWithoutIdPrefix: u64 = 15454;
 /// `GetStringPoolBucketTable` at 0xeb2af0 (decompiler, medium); signature (medium): `undefined * GetStringPoolBucketTable(void)`
 pub const GetStringPoolBucketTable: u64 = 69200;
-/// `GetStringValueForKeyGlobal537778` at 0x13e0620 (decompiler, medium); signature (untiered): `undefined GetStringValueForKeyGlobal537778(undefined8 param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetStringValueForKeyGlobal537778` at 0x13e0620 (decompiler, medium); signature (low): `undefined GetStringValueForKeyGlobal537778(undefined8 param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetStringValueForKeyGlobal537778: u64 = 527213;
-/// `GetStyleSheetStyle` at 0xe53c80 (decompiler, medium); signature (untiered): `undefined GetStyleSheetStyle(longlong param_1)`
+/// `GetStyleSheetStyle` at 0xe53c80 (decompiler, medium); signature (low): `undefined GetStyleSheetStyle(longlong param_1)`
 pub const GetStyleSheetStyle: u64 = 89009;
-/// `GetStyleSheetStyleNames` at 0xe54a10 (decompiler, medium); signature (untiered): `undefined GetStyleSheetStyleNames(longlong param_1)`
+/// `GetStyleSheetStyleNames` at 0xe54a10 (decompiler, medium); signature (low): `undefined GetStyleSheetStyleNames(longlong param_1)`
 pub const GetStyleSheetStyleNames: u64 = 89010;
 /// `GetSubEntryField78` at 0xfbe280 (decompiler, high); signature (high): `longlong GetSubEntryField78(longlong param_1, ushort param_2, ushort param_3)`
 pub const GetSubEntryField78: u64 = 75505;
-/// `GetSubEntryField9C` at 0xfbe1b0 (decompiler, medium); signature (untiered): `undefined4 * GetSubEntryField9C(longlong param_1, ushort param_2, ushort param_3)`
+/// `GetSubEntryField9C` at 0xfbe1b0 (decompiler, medium); signature (low): `undefined4 * GetSubEntryField9C(longlong param_1, ushort param_2, ushort param_3)`
 pub const GetSubEntryField9C: u64 = 75501;
-/// `GetSubEntryInArrayA8` at 0xfbe250 (decompiler, high); signature (untiered): `longlong GetSubEntryInArrayA8(longlong param_1, ushort param_2, ushort param_3)`
+/// `GetSubEntryInArrayA8` at 0xfbe250 (decompiler, high); signature (low): `longlong GetSubEntryInArrayA8(longlong param_1, ushort param_2, ushort param_3)`
 pub const GetSubEntryInArrayA8: u64 = 75504;
-/// `GetSubObject50Fields18And14` at 0x95f6f0 (decompiler, high); signature (untiered): `undefined GetSubObject50Fields18And14(longlong param_1, undefined4 * param_2, undefined4 * param_3)`
+/// `GetSubObject50Fields18And14` at 0x95f6f0 (decompiler, high); signature (low): `undefined GetSubObject50Fields18And14(longlong param_1, undefined4 * param_2, undefined4 * param_3)`
 pub const GetSubObject50Fields18And14: u64 = 52207;
-/// `GetSubobjectByFormType` at 0x1d3490 (decompiler, medium); signature (untiered): `longlong GetSubobjectByFormType(longlong param_1)`
+/// `GetSubobjectByFormType` at 0x1d3490 (decompiler, medium); signature (low): `longlong GetSubobjectByFormType(longlong param_1)`
 pub const GetSubobjectByFormType: u64 = 14152;
 /// `GetSubobjectField8Dword` at 0x1d3460 (decompiler, medium); signature (medium): `undefined4 GetSubobjectField8Dword(longlong param_1)`
 pub const GetSubobjectField8Dword: u64 = 14151;
-/// `GetSubstring` at 0xdb40d0 (decompiler, medium); signature (untiered): `longlong * GetSubstring(longlong * param_1, ulonglong * param_2, int param_3, int param_4)`
+/// `GetSubstring` at 0xdb40d0 (decompiler, medium); signature (low): `longlong * GetSubstring(longlong * param_1, ulonglong * param_2, int param_3, int param_4)`
 pub const GetSubstring: u64 = 86131;
-/// `GetSubstringBeforeGlobalPattern` at 0x13dc180 (decompiler, medium); signature (untiered): `undefined8 * GetSubstringBeforeGlobalPattern(undefined8 * param_1, undefined8 * param_2)`
+/// `GetSubstringBeforeGlobalPattern` at 0x13dc180 (decompiler, medium); signature (low): `undefined8 * GetSubstringBeforeGlobalPattern(undefined8 * param_1, undefined8 * param_2)`
 pub const GetSubstringBeforeGlobalPattern: u64 = 449410;
-/// `GetSubstring_2` at 0xcff530 (decompiler, medium); signature (untiered): `undefined8 * GetSubstring_2(ulonglong * param_1, undefined8 * param_2, ulonglong param_3, ulonglong param_4)`
+/// `GetSubstring_2` at 0xcff530 (decompiler, medium); signature (low): `undefined8 * GetSubstring_2(ulonglong * param_1, undefined8 * param_2, ulonglong param_3, ulonglong param_4)`
 pub const GetSubstring_2: u64 = 82632;
 /// `GetSumOfField108AndField118` at 0xb4b270 (decompiler, high); signature (high): `int GetSumOfField108AndField118(longlong param_1)`
 pub const GetSumOfField108AndField118: u64 = 60854;
-/// `GetSurfaceNormalAtPoint` at 0x11bc210 (decompiler, medium); signature (untiered): `bool GetSurfaceNormalAtPoint(undefined8 param_1, undefined8 * * param_2, undefined8 * * param_3, undefined8 param_4)`
+/// `GetSurfaceNormalAtPoint` at 0x11bc210 (decompiler, medium); signature (low): `bool GetSurfaceNormalAtPoint(undefined8 param_1, undefined8 * * param_2, undefined8 * * param_3, undefined8 param_4)`
 pub const GetSurfaceNormalAtPoint: u64 = 90417;
-/// `GetTESFileForCurrentThread` at 0x1ce7e0 (decompiler, medium); signature (untiered): `undefined4 * GetTESFileForCurrentThread(undefined4 * param_1, undefined4 param_2)`
+/// `GetTESFileForCurrentThread` at 0x1ce7e0 (decompiler, medium); signature (low): `undefined4 * GetTESFileForCurrentThread(undefined4 * param_1, undefined4 param_2)`
 pub const GetTESFileForCurrentThread: u64 = 14018;
-/// `GetTESPackageVariableType` at 0xa5f3c0 (decompiler, medium); signature (untiered): `undefined8 * GetTESPackageVariableType(undefined8 * param_1, longlong * param_2)`
+/// `GetTESPackageVariableType` at 0xa5f3c0 (decompiler, medium); signature (low): `undefined8 * GetTESPackageVariableType(undefined8 * param_1, longlong * param_2)`
 pub const GetTESPackageVariableType: u64 = 56674;
-/// `GetTESTextureField8LengthFromForm` at 0x1f3200 (decompiler, medium); signature (untiered): `undefined GetTESTextureField8LengthFromForm(undefined8 param_1)`
+/// `GetTESTextureField8LengthFromForm` at 0x1f3200 (decompiler, medium); signature (low): `undefined GetTESTextureField8LengthFromForm(undefined8 param_1)`
 pub const GetTESTextureField8LengthFromForm: u64 = 14966;
-/// `GetTESTextureField8OrBipedModelField80ForSex` at 0x1f3240 (decompiler, medium); signature (untiered): `undefined1 * GetTESTextureField8OrBipedModelField80ForSex(undefined8 param_1, longlong param_2)`
+/// `GetTESTextureField8OrBipedModelField80ForSex` at 0x1f3240 (decompiler, medium); signature (low): `undefined1 * GetTESTextureField8OrBipedModelField80ForSex(undefined8 param_1, longlong param_2)`
 pub const GetTESTextureField8OrBipedModelField80ForSex: u64 = 14967;
-/// `GetTable369636NameForSign` at 0x3bf460 (decompiler, medium); signature (untiered): `undefined * GetTable369636NameForSign(int param_1, float param_2)`
+/// `GetTable369636NameForSign` at 0x3bf460 (decompiler, medium); signature (low): `undefined * GetTable369636NameForSign(int param_1, float param_2)`
 pub const GetTable369636NameForSign: u64 = 24691;
 /// `GetTable378659Entry` at 0x43ad00 (decompiler, high); signature (high): `undefined * GetTable378659Entry(int param_1)`
 pub const GetTable378659Entry: u64 = 27010;
@@ -3609,33 +3209,33 @@ pub const GetTable378660Entry: u64 = 27007;
 pub const GetTable378660Entry_2: u64 = 27008;
 /// `GetTable378694Entry` at 0x43ace0 (decompiler, high); signature (high): `undefined * GetTable378694Entry(uint param_1)`
 pub const GetTable378694Entry: u64 = 27009;
-/// `GetTable382277Field8ByVfunc48` at 0x82ce60 (decompiler, medium); signature (untiered): `undefined4 GetTable382277Field8ByVfunc48(longlong * param_1)`
+/// `GetTable382277Field8ByVfunc48` at 0x82ce60 (decompiler, medium); signature (low): `undefined4 GetTable382277Field8ByVfunc48(longlong * param_1)`
 pub const GetTable382277Field8ByVfunc48: u64 = 44994;
 /// `GetTable384045Entry` at 0xab1570 (decompiler, medium); signature (medium): `undefined * GetTable384045Entry(int param_1)`
 pub const GetTable384045Entry: u64 = 57617;
 /// `GetTable391910Entry` at 0x159a1d0 (decompiler, medium); signature (medium): `undefined * GetTable391910Entry(uint param_1)`
 pub const GetTable391910Entry: u64 = 109264;
-/// `GetTableEntryForKey` at 0x10e60e0 (decompiler, medium); signature (untiered): `longlong GetTableEntryForKey(longlong param_1, uint param_2)`
+/// `GetTableEntryForKey` at 0x10e60e0 (decompiler, medium); signature (low): `longlong GetTableEntryForKey(longlong param_1, uint param_2)`
 pub const GetTableEntryForKey: u64 = 80704;
-/// `GetTableValueForField10` at 0x184a80 (decompiler, medium); signature (untiered): `undefined4 GetTableValueForField10(longlong param_1)`
+/// `GetTableValueForField10` at 0x184a80 (decompiler, medium); signature (low): `undefined4 GetTableValueForField10(longlong param_1)`
 pub const GetTableValueForField10: u64 = 12581;
-/// `GetTableValueForField19D` at 0x28c410 (decompiler, medium); signature (untiered): `undefined4 GetTableValueForField19D(longlong param_1)`
+/// `GetTableValueForField19D` at 0x28c410 (decompiler, medium); signature (low): `undefined4 GetTableValueForField19D(longlong param_1)`
 pub const GetTableValueForField19D: u64 = 18100;
 /// `GetTaggedStringLength` at 0xaa7850 (decompiler, medium); signature (medium): `longlong GetTaggedStringLength(ulonglong * param_1)`
 pub const GetTaggedStringLength: u64 = 57233;
 /// `GetTargetBoxCenterAndDiagonalSq` at 0x81c650 (decompiler, medium); signature (medium): `float GetTargetBoxCenterAndDiagonalSq(longlong param_1, float * param_2)`
 pub const GetTargetBoxCenterAndDiagonalSq: u64 = 44751;
-/// `GetTargetCenterPoint` at 0x866d90 (decompiler, medium); signature (untiered): `float * GetTargetCenterPoint(float * param_1, longlong * param_2, int param_3)`
+/// `GetTargetCenterPoint` at 0x866d90 (decompiler, medium); signature (low): `float * GetTargetCenterPoint(float * param_1, longlong * param_2, int param_3)`
 pub const GetTargetCenterPoint: u64 = 47282;
-/// `GetTargetDetectionValue` at 0x8210f0 (decompiler, medium); signature (untiered): `undefined4 GetTargetDetectionValue(undefined8 param_1, longlong param_2, longlong param_3)`
+/// `GetTargetDetectionValue` at 0x8210f0 (decompiler, medium); signature (low): `undefined4 GetTargetDetectionValue(undefined8 param_1, longlong param_2, longlong param_3)`
 pub const GetTargetDetectionValue: u64 = 44787;
-/// `GetTargetKnowledgeByte14` at 0x6a2400 (decompiler, medium); signature (untiered): `ulonglong GetTargetKnowledgeByte14(longlong param_1, longlong param_2)`
+/// `GetTargetKnowledgeByte14` at 0x6a2400 (decompiler, medium); signature (low): `ulonglong GetTargetKnowledgeByte14(longlong param_1, longlong param_2)`
 pub const GetTargetKnowledgeByte14: u64 = 37761;
-/// `GetTargetKnowledgeByte15` at 0x6a2460 (decompiler, medium); signature (untiered): `ulonglong GetTargetKnowledgeByte15(longlong param_1, longlong param_2)`
+/// `GetTargetKnowledgeByte15` at 0x6a2460 (decompiler, medium); signature (low): `ulonglong GetTargetKnowledgeByte15(longlong param_1, longlong param_2)`
 pub const GetTargetKnowledgeByte15: u64 = 37762;
-/// `GetTargetKnowledgeByte15_2` at 0x80a310 (decompiler, medium); signature (untiered): `undefined1 GetTargetKnowledgeByte15_2(longlong param_1)`
+/// `GetTargetKnowledgeByte15_2` at 0x80a310 (decompiler, medium); signature (low): `undefined1 GetTargetKnowledgeByte15_2(longlong param_1)`
 pub const GetTargetKnowledgeByte15_2: u64 = 44358;
-/// `GetTargetKnowledgeField10` at 0x6a2520 (decompiler, medium); signature (untiered): `undefined4 GetTargetKnowledgeField10(longlong param_1, longlong param_2)`
+/// `GetTargetKnowledgeField10` at 0x6a2520 (decompiler, medium); signature (low): `undefined4 GetTargetKnowledgeField10(longlong param_1, longlong param_2)`
 pub const GetTargetKnowledgeField10: u64 = 37764;
 /// `GetTargetPointForRefHandle` at 0x7f6b00 (decompiler, medium); signature (medium): `undefined GetTargetPointForRefHandle(uint * param_1, longlong param_2, float * param_3, undefined8 param_4)`
 pub const GetTargetPointForRefHandle: u64 = 44075;
@@ -3643,35 +3243,35 @@ pub const GetTargetPointForRefHandle: u64 = 44075;
 pub const GetTargetRefHandleOrLinkedRef: u64 = 42602;
 /// `GetTaskletManagerSingleton` at 0xec3870 (decompiler, high); signature (high): `undefined * GetTaskletManagerSingleton(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetTaskletManagerSingleton: u64 = 69554;
-/// `GetTextColorStyleAsObject` at 0xd1a140 (decompiler, medium); signature (untiered): `undefined GetTextColorStyleAsObject(longlong param_1)`
+/// `GetTextColorStyleAsObject` at 0xd1a140 (decompiler, medium); signature (low): `undefined GetTextColorStyleAsObject(longlong param_1)`
 pub const GetTextColorStyleAsObject: u64 = 83145;
-/// `GetTgaMetadataFromFile` at 0x10245a0 (decompiler, medium); signature (untiered): `HANDLE GetTgaMetadataFromFile(LPCWSTR param_1, ulonglong * param_2)`
+/// `GetTgaMetadataFromFile` at 0x10245a0 (decompiler, medium); signature (low): `HANDLE GetTgaMetadataFromFile(LPCWSTR param_1, ulonglong * param_2)`
 pub const GetTgaMetadataFromFile: u64 = 77595;
-/// `GetThisIfObjectType1B` at 0xd87ef0 (decompiler, medium); signature (untiered): `undefined GetThisIfObjectType1B(longlong param_1)`
+/// `GetThisIfObjectType1B` at 0xd87ef0 (decompiler, medium); signature (low): `undefined GetThisIfObjectType1B(longlong param_1)`
 pub const GetThisIfObjectType1B: u64 = 85497;
-/// `GetThisObjectIfType24` at 0xdb9510 (decompiler, medium); signature (untiered): `undefined GetThisObjectIfType24(longlong param_1)`
+/// `GetThisObjectIfType24` at 0xdb9510 (decompiler, medium); signature (low): `undefined GetThisObjectIfType24(longlong param_1)`
 pub const GetThisObjectIfType24: u64 = 86285;
-/// `GetThisStringValue` at 0xdb2820 (decompiler, medium); signature (untiered): `undefined GetThisStringValue(longlong param_1)`
+/// `GetThisStringValue` at 0xdb2820 (decompiler, medium); signature (low): `undefined GetThisStringValue(longlong param_1)`
 pub const GetThisStringValue: u64 = 86092;
-/// `GetThisStringValue_2` at 0xdb2930 (decompiler, medium); signature (untiered): `undefined GetThisStringValue_2(longlong param_1)`
+/// `GetThisStringValue_2` at 0xdb2930 (decompiler, medium); signature (low): `undefined GetThisStringValue_2(longlong param_1)`
 pub const GetThisStringValue_2: u64 = 86094;
-/// `GetThreadContextField158Field20` at 0x86ec00 (decompiler, high); signature (untiered): `undefined8 GetThreadContextField158Field20(void)`
+/// `GetThreadContextField158Field20` at 0x86ec00 (decompiler, high); signature (low): `undefined8 GetThreadContextField158Field20(void)`
 pub const GetThreadContextField158Field20: u64 = 47378;
 /// `GetThreadLocalDword880` at 0xec1e40 (decompiler, high); signature (high): `undefined4 GetThreadLocalDword880(void)`
 pub const GetThreadLocalDword880: u64 = 69518;
 /// `GetTimeMicroseconds` at 0xdf0ed0 (decompiler, high); signature (high): `ulonglong GetTimeMicroseconds(void)`
 pub const GetTimeMicroseconds: u64 = 87276;
-/// `GetTlsCombatState` at 0x86eb40 (decompiler, medium); signature (untiered): `undefined8 GetTlsCombatState(void)`
+/// `GetTlsCombatState` at 0x86eb40 (decompiler, medium); signature (low): `undefined8 GetTlsCombatState(void)`
 pub const GetTlsCombatState: u64 = 47375;
-/// `GetTopActiveSlotHandle` at 0x6ff050 (decompiler, medium); signature (untiered): `int * GetTopActiveSlotHandle(longlong param_1, int * param_2)`
+/// `GetTopActiveSlotHandle` at 0x6ff050 (decompiler, medium); signature (low): `int * GetTopActiveSlotHandle(longlong param_1, int * param_2)`
 pub const GetTopActiveSlotHandle: u64 = 39484;
-/// `GetTopActiveSlotIndex` at 0x6ff0e0 (decompiler, medium); signature (untiered): `int GetTopActiveSlotIndex(longlong param_1)`
+/// `GetTopActiveSlotIndex` at 0x6ff0e0 (decompiler, medium); signature (low): `int GetTopActiveSlotIndex(longlong param_1)`
 pub const GetTopActiveSlotIndex: u64 = 39486;
-/// `GetTotalField20CountInParentChain` at 0xab18f0 (decompiler, medium); signature (untiered): `int GetTotalField20CountInParentChain(longlong param_1)`
+/// `GetTotalField20CountInParentChain` at 0xab18f0 (decompiler, medium); signature (low): `int GetTotalField20CountInParentChain(longlong param_1)`
 pub const GetTotalField20CountInParentChain: u64 = 57632;
 /// `GetTotalInventoryCount` at 0x2e8520 (decompiler, medium); signature (medium): `ulonglong GetTotalInventoryCount(longlong param_1, char param_2, undefined8 param_3)`
 pub const GetTotalInventoryCount: u64 = 19700;
-/// `GetTotalMemberCount` at 0xab1b50 (decompiler, medium); signature (untiered): `int GetTotalMemberCount(longlong param_1)`
+/// `GetTotalMemberCount` at 0xab1b50 (decompiler, medium); signature (low): `int GetTotalMemberCount(longlong param_1)`
 pub const GetTotalMemberCount: u64 = 57640;
 /// `GetTotalQueuedCount` at 0x12fe260 (decompiler, medium); signature (medium): `longlong GetTotalQueuedCount(longlong param_1)`
 pub const GetTotalQueuedCount: u64 = 446894;
@@ -3679,11 +3279,11 @@ pub const GetTotalQueuedCount: u64 = 446894;
 pub const GetTotalSampleCount: u64 = 68044;
 /// `GetTotalTriangleCount` at 0xcc7520 (decompiler, medium); signature (medium): `int GetTotalTriangleCount(longlong param_1)`
 pub const GetTotalTriangleCount: u64 = 67588;
-/// `GetTreeSuccessor` at 0xced8f0 (decompiler, medium); signature (untiered): `ulonglong GetTreeSuccessor(ulonglong param_1)`
+/// `GetTreeSuccessor` at 0xced8f0 (decompiler, medium); signature (low): `ulonglong GetTreeSuccessor(ulonglong param_1)`
 pub const GetTreeSuccessor: u64 = 68518;
 /// `GetTriangleEdgeVertexIndices` at 0x11df730 (decompiler, medium); signature (medium): `undefined2 * GetTriangleEdgeVertexIndices(longlong param_1, undefined2 * param_2, ushort param_3, uint param_4)`
 pub const GetTriangleEdgeVertexIndices: u64 = 91073;
-/// `GetTriangleEdgeVertices` at 0x11df780 (decompiler, medium); signature (untiered): `longlong * GetTriangleEdgeVertices(longlong param_1, longlong * param_2, ushort param_3, uint param_4)`
+/// `GetTriangleEdgeVertices` at 0x11df780 (decompiler, medium); signature (low): `longlong * GetTriangleEdgeVertices(longlong param_1, longlong * param_2, ushort param_3, uint param_4)`
 pub const GetTriangleEdgeVertices: u64 = 91074;
 /// `GetTriangleEdgeVertices_2` at 0x11df7f0 (decompiler, medium); signature (medium): `undefined8 GetTriangleEdgeVertices_2(longlong param_1, ushort param_2, uint param_3, undefined4 * param_4, undefined4 * param_5)`
 pub const GetTriangleEdgeVertices_2: u64 = 91075;
@@ -3699,15 +3299,15 @@ pub const GetTriangleVertexIndicesByGlobalIndex: u64 = 67589;
 pub const GetTurningSpeed: u64 = 37449;
 /// `GetTwoBitStateForId` at 0x3a7340 (decompiler, medium); signature (medium): `uint GetTwoBitStateForId(longlong param_1, int param_2, int param_3)`
 pub const GetTwoBitStateForId: u64 = 24119;
-/// `GetType12RefPair` at 0xd0ea60 (decompiler, medium); signature (untiered): `longlong * GetType12RefPair(char * param_1, longlong * param_2)`
+/// `GetType12RefPair` at 0xd0ea60 (decompiler, medium); signature (low): `longlong * GetType12RefPair(char * param_1, longlong * param_2)`
 pub const GetType12RefPair: u64 = 82920;
 /// `GetTypeForIndex0To4` at 0x153900 (decompiler, medium); signature (medium): `undefined4 GetTypeForIndex0To4(int param_1)`
 pub const GetTypeForIndex0To4: u64 = 11425;
-/// `GetTypeName` at 0x14acfb0 (decompiler, medium); signature (untiered): `undefined8 GetTypeName(ulonglong * param_1, ulonglong * param_2)`
+/// `GetTypeName` at 0x14acfb0 (decompiler, medium); signature (low): `undefined8 GetTypeName(ulonglong * param_1, ulonglong * param_2)`
 pub const GetTypeName: u64 = 104721;
-/// `GetTypeSizeCached` at 0xac2cb0 (decompiler, medium); signature (untiered): `longlong GetTypeSizeCached(longlong param_1, int * param_2)`
+/// `GetTypeSizeCached` at 0xac2cb0 (decompiler, medium); signature (low): `longlong GetTypeSizeCached(longlong param_1, int * param_2)`
 pub const GetTypeSizeCached: u64 = 58146;
-/// `GetTypedListForFormType` at 0x2967b0 (decompiler, medium); signature (untiered): `longlong GetTypedListForFormType(longlong param_1, undefined4 param_2)`
+/// `GetTypedListForFormType` at 0x2967b0 (decompiler, medium); signature (low): `longlong GetTypedListForFormType(longlong param_1, undefined4 param_2)`
 pub const GetTypedListForFormType: u64 = 18324;
 /// `GetUIntBTreeKeyAndRightChild` at 0x14c9760 (decompiler, medium); signature (medium): `undefined GetUIntBTreeKeyAndRightChild(undefined4 * param_1, longlong param_2, uint param_3)`
 pub const GetUIntBTreeKeyAndRightChild: u64 = 105057;
@@ -3715,7 +3315,7 @@ pub const GetUIntBTreeKeyAndRightChild: u64 = 105057;
 pub const GetUIntKeyedGlobalMapEntryField40: u64 = 26002;
 /// `GetUShortAtFieldCByIndex` at 0x1dee20 (decompiler, high); signature (high): `undefined2 GetUShortAtFieldCByIndex(longlong param_1, uint param_2)`
 pub const GetUShortAtFieldCByIndex: u64 = 14469;
-/// `GetUnorderedPairIndexOfField34` at 0xf241d0 (decompiler, medium); signature (untiered): `undefined8 GetUnorderedPairIndexOfField34(longlong param_1, longlong param_2)`
+/// `GetUnorderedPairIndexOfField34` at 0xf241d0 (decompiler, medium); signature (low): `undefined8 GetUnorderedPairIndexOfField34(longlong param_1, longlong param_2)`
 pub const GetUnorderedPairIndexOfField34: u64 = 71961;
 /// `GetUnorm8PaletteValue` at 0x1039d60 (decompiler, medium); signature (medium): `float GetUnorm8PaletteValue(byte * param_1, longlong param_2)`
 pub const GetUnorm8PaletteValue: u64 = 77727;
@@ -3733,11 +3333,11 @@ pub const GetUpStartHandler__vfunc_1: u64 = 42879;
 pub const GetUpsellContentIdString: u64 = 93402;
 /// `GetUpsellContentIdString_2` at 0x611ef0 (decompiler, medium); signature (medium): `char * GetUpsellContentIdString_2(void)`
 pub const GetUpsellContentIdString_2: u64 = 35480;
-/// `GetUserContentCollectionsBlocking` at 0x132df90 (decompiler, medium); signature (untiered): `undefined4 GetUserContentCollectionsBlocking(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetUserContentCollectionsBlocking` at 0x132df90 (decompiler, medium); signature (low): `undefined4 GetUserContentCollectionsBlocking(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetUserContentCollectionsBlocking: u64 = 448569;
-/// `GetUtf8ByteOffsetOfCharIndex` at 0xd05260 (decompiler, medium); signature (untiered): `longlong GetUtf8ByteOffsetOfCharIndex(longlong param_1, byte * param_2, longlong param_3)`
+/// `GetUtf8ByteOffsetOfCharIndex` at 0xd05260 (decompiler, medium); signature (low): `longlong GetUtf8ByteOffsetOfCharIndex(longlong param_1, byte * param_2, longlong param_3)`
 pub const GetUtf8ByteOffsetOfCharIndex: u64 = 82744;
-/// `GetUtf8CharAtCharIndex` at 0xd05680 (decompiler, medium); signature (untiered): `uint GetUtf8CharAtCharIndex(longlong param_1, byte * param_2, longlong param_3)`
+/// `GetUtf8CharAtCharIndex` at 0xd05680 (decompiler, medium); signature (low): `uint GetUtf8CharAtCharIndex(longlong param_1, byte * param_2, longlong param_3)`
 pub const GetUtf8CharAtCharIndex: u64 = 82745;
 /// `GetUtf8EncodedLength` at 0xd05a60 (decompiler, high); signature (high): `undefined8 GetUtf8EncodedLength(uint param_1)`
 pub const GetUtf8EncodedLength: u64 = 82746;
@@ -3747,49 +3347,49 @@ pub const GetUtf8LengthOfUtf16: u64 = 82747;
 pub const GetVATSTimeMultiplier: u64 = 44302;
 /// `GetValidHandleForKeyOrRemove` at 0x1820a0 (decompiler, medium); signature (medium): `uint * GetValidHandleForKeyOrRemove(longlong param_1, uint * param_2, int param_3)`
 pub const GetValidHandleForKeyOrRemove: u64 = 12511;
-/// `GetValidatedNeighborAcrossEdge` at 0x11dfbe0 (decompiler, medium); signature (untiered): `undefined8 GetValidatedNeighborAcrossEdge(longlong param_1, longlong param_2, undefined8 * param_3)`
+/// `GetValidatedNeighborAcrossEdge` at 0x11dfbe0 (decompiler, medium); signature (low): `undefined8 GetValidatedNeighborAcrossEdge(longlong param_1, longlong param_2, undefined8 * param_3)`
 pub const GetValidatedNeighborAcrossEdge: u64 = 524284;
-/// `GetValue20AdjustedByEntryPoint10` at 0x685f70 (decompiler, medium); signature (untiered): `undefined4 GetValue20AdjustedByEntryPoint10(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetValue20AdjustedByEntryPoint10` at 0x685f70 (decompiler, medium); signature (low): `undefined4 GetValue20AdjustedByEntryPoint10(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetValue20AdjustedByEntryPoint10: u64 = 37452;
-/// `GetValueAtIndex` at 0xab5aa0 (decompiler, high); signature (untiered): `undefined8 GetValueAtIndex(longlong * param_1, int param_2)`
+/// `GetValueAtIndex` at 0xab5aa0 (decompiler, high); signature (low): `undefined8 GetValueAtIndex(longlong * param_1, int param_2)`
 pub const GetValueAtIndex: u64 = 57768;
 /// `GetValueAtIndex_2` at 0xf11870 (decompiler, high); signature (high): `undefined4 GetValueAtIndex_2(longlong param_1, uint param_2)`
 pub const GetValueAtIndex_2: u64 = 71413;
-/// `GetValueByByteKey` at 0x44cda0 (decompiler, medium); signature (untiered): `ulonglong GetValueByByteKey(longlong param_1, char param_2)`
+/// `GetValueByByteKey` at 0x44cda0 (decompiler, medium); signature (low): `ulonglong GetValueByByteKey(longlong param_1, char param_2)`
 pub const GetValueByByteKey: u64 = 27451;
-/// `GetValueByShortKeyFromField260OrField158` at 0x3c8700 (decompiler, medium); signature (untiered): `undefined4 GetValueByShortKeyFromField260OrField158(longlong param_1, short param_2)`
+/// `GetValueByShortKeyFromField260OrField158` at 0x3c8700 (decompiler, medium); signature (low): `undefined4 GetValueByShortKeyFromField260OrField158(longlong param_1, short param_2)`
 pub const GetValueByShortKeyFromField260OrField158: u64 = 24783;
-/// `GetValueDirectOrViaPointer8` at 0x4a7a30 (decompiler, medium); signature (untiered): `undefined4 GetValueDirectOrViaPointer8(longlong param_1)`
+/// `GetValueDirectOrViaPointer8` at 0x4a7a30 (decompiler, medium); signature (low): `undefined4 GetValueDirectOrViaPointer8(longlong param_1)`
 pub const GetValueDirectOrViaPointer8: u64 = 29919;
-/// `GetValueForKey` at 0xca23e0 (decompiler, medium); signature (untiered): `ulonglong GetValueForKey(longlong param_1, byte * param_2)`
+/// `GetValueForKey` at 0xca23e0 (decompiler, medium); signature (low): `ulonglong GetValueForKey(longlong param_1, byte * param_2)`
 pub const GetValueForKey: u64 = 67159;
-/// `GetValueForKeyInMap68` at 0x538210 (decompiler, medium); signature (untiered): `undefined4 GetValueForKeyInMap68(longlong param_1, ulonglong param_2)`
+/// `GetValueForKeyInMap68` at 0x538210 (decompiler, medium); signature (low): `undefined4 GetValueForKeyInMap68(longlong param_1, ulonglong param_2)`
 pub const GetValueForKeyInMap68: u64 = 32446;
-/// `GetValueFromPairHashMap` at 0xb712c0 (decompiler, medium); signature (untiered): `undefined8 GetValueFromPairHashMap(longlong * param_1, longlong * param_2, undefined8 param_3)`
+/// `GetValueFromPairHashMap` at 0xb712c0 (decompiler, medium); signature (low): `undefined8 GetValueFromPairHashMap(longlong * param_1, longlong * param_2, undefined8 param_3)`
 pub const GetValueFromPairHashMap: u64 = 61874;
-/// `GetValueFromPairKeyHashMap` at 0xc6bf10 (decompiler, medium); signature (untiered): `undefined4 GetValueFromPairKeyHashMap(longlong * param_1, ulonglong * param_2, undefined4 param_3)`
+/// `GetValueFromPairKeyHashMap` at 0xc6bf10 (decompiler, medium); signature (low): `undefined4 GetValueFromPairKeyHashMap(longlong * param_1, ulonglong * param_2, undefined4 param_3)`
 pub const GetValueFromPairKeyHashMap: u64 = 66378;
-/// `GetValueFromPairKeyHashMap_2` at 0xc711d0 (decompiler, medium); signature (untiered): `undefined4 GetValueFromPairKeyHashMap_2(longlong * param_1, ulonglong * param_2, undefined4 param_3)`
+/// `GetValueFromPairKeyHashMap_2` at 0xc711d0 (decompiler, medium); signature (low): `undefined4 GetValueFromPairKeyHashMap_2(longlong * param_1, ulonglong * param_2, undefined4 param_3)`
 pub const GetValueFromPairKeyHashMap_2: u64 = 66469;
 /// `GetValueIfTypeIs4` at 0x14a21e0 (decompiler, medium); signature (medium): `undefined GetValueIfTypeIs4(int * param_1, int * param_2)`
 pub const GetValueIfTypeIs4: u64 = 104523;
 /// `GetValueKindFromTag` at 0x142acc0 (decompiler, medium); signature (medium): `undefined8 GetValueKindFromTag(undefined4 * param_1)`
 pub const GetValueKindFromTag: u64 = 452113;
-/// `GetValueOrGlobal410391` at 0xec8ed0 (decompiler, high); signature (untiered): `undefined * GetValueOrGlobal410391(undefined * param_1)`
+/// `GetValueOrGlobal410391` at 0xec8ed0 (decompiler, high); signature (low): `undefined * GetValueOrGlobal410391(undefined * param_1)`
 pub const GetValueOrGlobal410391: u64 = 69699;
-/// `GetValueViaVfunc1OrZero` at 0xc5adb0 (decompiler, medium); signature (untiered): `undefined8 * GetValueViaVfunc1OrZero(longlong * param_1, undefined8 * param_2)`
+/// `GetValueViaVfunc1OrZero` at 0xc5adb0 (decompiler, medium); signature (low): `undefined8 * GetValueViaVfunc1OrZero(longlong * param_1, undefined8 * param_2)`
 pub const GetValueViaVfunc1OrZero: u64 = 65810;
-/// `GetValueViaVfunc2` at 0xc5ae00 (decompiler, medium); signature (untiered): `undefined8 * GetValueViaVfunc2(undefined8 * param_1, undefined8 * param_2)`
+/// `GetValueViaVfunc2` at 0xc5ae00 (decompiler, medium); signature (low): `undefined8 * GetValueViaVfunc2(undefined8 * param_1, undefined8 * param_2)`
 pub const GetValueViaVfunc2: u64 = 65811;
 /// `GetVarLengthUIntSize` at 0x6143c0 (decompiler, high); signature (high): `undefined8 GetVarLengthUIntSize(uint param_1)`
 pub const GetVarLengthUIntSize: u64 = 35528;
-/// `GetVariableArrayElements` at 0xd49150 (decompiler, medium); signature (untiered): `ulonglong GetVariableArrayElements(longlong param_1, undefined4 param_2, longlong param_3, int param_4, float * param_5, uint param_6)`
+/// `GetVariableArrayElements` at 0xd49150 (decompiler, medium); signature (low): `ulonglong GetVariableArrayElements(longlong param_1, undefined4 param_2, longlong param_3, int param_4, float * param_5, uint param_6)`
 pub const GetVariableArrayElements: u64 = 83865;
-/// `GetVariableArrayPtr` at 0x14909a0 (decompiler, medium); signature (untiered): `uint * GetVariableArrayPtr(uint * param_1)`
+/// `GetVariableArrayPtr` at 0x14909a0 (decompiler, medium); signature (low): `uint * GetVariableArrayPtr(uint * param_1)`
 pub const GetVariableArrayPtr: u64 = 104290;
-/// `GetVariableAsCString` at 0xcffee0 (decompiler, medium); signature (untiered): `undefined8 GetVariableAsCString(longlong param_1, longlong param_2)`
+/// `GetVariableAsCString` at 0xcffee0 (decompiler, medium); signature (low): `undefined8 GetVariableAsCString(longlong param_1, longlong param_2)`
 pub const GetVariableAsCString: u64 = 82662;
-/// `GetVariableAsWideString` at 0xd00080 (decompiler, medium); signature (untiered): `undefined2 * GetVariableAsWideString(longlong param_1, longlong param_2)`
+/// `GetVariableAsWideString` at 0xd00080 (decompiler, medium); signature (low): `undefined2 * GetVariableAsWideString(longlong param_1, longlong param_2)`
 pub const GetVariableAsWideString: u64 = 82663;
 /// `GetVariableBaseType` at 0x14cb060 (decompiler, medium); signature (medium): `uint GetVariableBaseType(uint * param_1)`
 pub const GetVariableBaseType: u64 = 105112;
@@ -3799,43 +3399,43 @@ pub const GetVariantBoolIfType5: u64 = 104389;
 pub const GetVariantDwordIfType3: u64 = 104386;
 /// `GetVariantDwordIfType4` at 0x1497680 (decompiler, high); signature (high): `undefined GetVariantDwordIfType4(short * param_1, undefined4 * param_2)`
 pub const GetVariantDwordIfType4: u64 = 104387;
-/// `GetVariantSerializedSize` at 0x148b7c0 (decompiler, medium); signature (untiered): `int GetVariantSerializedSize(undefined8 param_1, uint * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetVariantSerializedSize` at 0x148b7c0 (decompiler, medium); signature (low): `int GetVariantSerializedSize(undefined8 param_1, uint * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetVariantSerializedSize: u64 = 104200;
-/// `GetVariantStringIfType2` at 0x14976a0 (decompiler, high); signature (untiered): `undefined GetVariantStringIfType2(short * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetVariantStringIfType2` at 0x14976a0 (decompiler, high); signature (low): `undefined GetVariantStringIfType2(short * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetVariantStringIfType2: u64 = 104388;
 /// `GetVariantValueIfType1` at 0x1497640 (decompiler, high); signature (high): `undefined GetVariantValueIfType1(short * param_1, undefined8 * param_2)`
 pub const GetVariantValueIfType1: u64 = 104385;
-/// `GetVfunc190StringLength` at 0x2f9fe0 (decompiler, medium); signature (untiered): `longlong GetVfunc190StringLength(longlong * param_1)`
+/// `GetVfunc190StringLength` at 0x2f9fe0 (decompiler, medium); signature (low): `longlong GetVfunc190StringLength(longlong * param_1)`
 pub const GetVfunc190StringLength: u64 = 19995;
-/// `GetVfunc760ResultCachedInProcess` at 0x6923d0 (decompiler, medium); signature (untiered): `ulonglong GetVfunc760ResultCachedInProcess(longlong * param_1)`
+/// `GetVfunc760ResultCachedInProcess` at 0x6923d0 (decompiler, medium); signature (low): `ulonglong GetVfunc760ResultCachedInProcess(longlong * param_1)`
 pub const GetVfunc760ResultCachedInProcess: u64 = 37589;
-/// `GetVfunc768ResultCachedInProcess` at 0x692460 (decompiler, medium); signature (untiered): `ulonglong GetVfunc768ResultCachedInProcess(longlong * param_1)`
+/// `GetVfunc768ResultCachedInProcess` at 0x692460 (decompiler, medium); signature (low): `ulonglong GetVfunc768ResultCachedInProcess(longlong * param_1)`
 pub const GetVfunc768ResultCachedInProcess: u64 = 37590;
-/// `GetVolumetricLightingParams` at 0x1530c50 (decompiler, medium); signature (untiered): `undefined * GetVolumetricLightingParams(void)`
+/// `GetVolumetricLightingParams` at 0x1530c50 (decompiler, medium); signature (low): `undefined * GetVolumetricLightingParams(void)`
 pub const GetVolumetricLightingParams: u64 = 107014;
-/// `GetWalletBalance` at 0x1257640 (decompiler, medium); signature (untiered): `undefined8 GetWalletBalance(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GetWalletBalance` at 0x1257640 (decompiler, medium); signature (low): `undefined8 GetWalletBalance(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetWalletBalance: u64 = 443917;
-/// `GetWarmthRating` at 0x41dda0 (decompiler, medium); signature (untiered): `float GetWarmthRating(longlong param_1)`
+/// `GetWarmthRating` at 0x41dda0 (decompiler, medium); signature (low): `float GetWarmthRating(longlong param_1)`
 pub const GetWarmthRating: u64 = 26393;
 /// `GetWaveFormatChannelMask` at 0x1794 (decompiler, medium); signature (medium): `uint GetWaveFormatChannelMask(short * param_1, int param_2)`
 pub const GetWaveFormatChannelMask: u64 = 28;
-/// `GetWaveFormatSubFormatGuid` at 0x1f64 (decompiler, medium); signature (untiered): `undefined8 * GetWaveFormatSubFormatGuid(undefined8 * param_1, ushort * param_2)`
+/// `GetWaveFormatSubFormatGuid` at 0x1f64 (decompiler, medium); signature (low): `undefined8 * GetWaveFormatSubFormatGuid(undefined8 * param_1, ushort * param_2)`
 pub const GetWaveFormatSubFormatGuid: u64 = 53;
-/// `GetWideStringLength` at 0xcfc570 (decompiler, medium); signature (untiered): `undefined GetWideStringLength(longlong param_1)`
+/// `GetWideStringLength` at 0xcfc570 (decompiler, medium); signature (low): `undefined GetWideStringLength(longlong param_1)`
 pub const GetWideStringLength: u64 = 82556;
-/// `GetWorldUpVector` at 0xacaea0 (semantic, medium); signature (untiered): `longlong GetWorldUpVector(longlong * param_1)`; semantic: (character+0x78)+0x120 when the character has a world, else (character+0x60)+0x10 (medium); signature `const hkVector4* (const hkbContext* ctx)`
+/// `GetWorldUpVector` at 0xacaea0 (semantic, medium); signature (low): `longlong GetWorldUpVector(longlong * param_1)`; semantic: (character+0x78)+0x120 when the character has a world, else (character+0x60)+0x10 (medium); signature `const hkVector4* (const hkbContext* ctx)`
 pub const GetWorldUpVector: u64 = 58317;
 /// `GetWornMask` at 0x22b5a0 (decompiler, high); signature (high): `undefined4 GetWornMask(undefined8 * param_1)`
 pub const GetWornMask: u64 = 16044;
 /// `GetXXHash32StateDigest` at 0x15b88e0 (decompiler, high); signature (high): `uint GetXXHash32StateDigest(ulonglong * param_1)`
 pub const GetXXHash32StateDigest: u64 = 110083;
-/// `GetXYWidthHeightMembers` at 0xda8620 (decompiler, medium); signature (untiered): `undefined GetXYWidthHeightMembers(longlong param_1, longlong param_2, longlong param_3)`
+/// `GetXYWidthHeightMembers` at 0xda8620 (decompiler, medium); signature (low): `undefined GetXYWidthHeightMembers(longlong param_1, longlong param_2, longlong param_3)`
 pub const GetXYWidthHeightMembers: u64 = 85913;
-/// `GetYearMinus1900OfTime68` at 0xdbb5d0 (decompiler, medium); signature (untiered): `undefined GetYearMinus1900OfTime68(longlong param_1)`
+/// `GetYearMinus1900OfTime68` at 0xdbb5d0 (decompiler, medium); signature (low): `undefined GetYearMinus1900OfTime68(longlong param_1)`
 pub const GetYearMinus1900OfTime68: u64 = 86322;
-/// `GetYearOfTime68` at 0xdbb170 (decompiler, medium); signature (untiered): `undefined GetYearOfTime68(longlong param_1)`
+/// `GetYearOfTime68` at 0xdbb170 (decompiler, medium); signature (low): `undefined GetYearOfTime68(longlong param_1)`
 pub const GetYearOfTime68: u64 = 86316;
-/// `GetZeroInitializedStatic_2` at 0x2792b0 (decompiler, medium); signature (untiered): `undefined * GetZeroInitializedStatic_2(void)`
+/// `GetZeroInitializedStatic_2` at 0x2792b0 (decompiler, medium); signature (low): `undefined * GetZeroInitializedStatic_2(void)`
 pub const GetZeroInitializedStatic_2: u64 = 17681;
 /// `GiftMenu::ctor` at 0x92eb30 (layout_inference, high); signature (high): `GiftMenu * ctor(GiftMenu * this)`
 pub const GiftMenu__ctor: u64 = 51563;
@@ -3873,9 +3473,9 @@ pub const GlobalDataAfterChangeForms: u64 = 35644;
 pub const GlobalDataFinishLoad: u64 = 35646;
 /// `GlobalQwordMapListContains` at 0x3f2e80 (decompiler, medium); signature (medium): `ulonglong GlobalQwordMapListContains(ulonglong param_1, longlong param_2)`
 pub const GlobalQwordMapListContains: u64 = 25620;
-/// `GotoButtonStateFrameAndQueueEvent` at 0xd63740 (decompiler, medium); signature (untiered): `undefined8 GotoButtonStateFrameAndQueueEvent(longlong * param_1, ulonglong * param_2)`
+/// `GotoButtonStateFrameAndQueueEvent` at 0xd63740 (decompiler, medium); signature (low): `undefined8 GotoButtonStateFrameAndQueueEvent(longlong * param_1, ulonglong * param_2)`
 pub const GotoButtonStateFrameAndQueueEvent: u64 = 84256;
-/// `GotoLabeledFrame` at 0xd62c30 (decompiler, medium); signature (untiered): `undefined8 GotoLabeledFrame(longlong * param_1, undefined8 param_2, int param_3)`
+/// `GotoLabeledFrame` at 0xd62c30 (decompiler, medium); signature (low): `undefined8 GotoLabeledFrame(longlong * param_1, undefined8 param_2, int param_3)`
 pub const GotoLabeledFrame: u64 = 84233;
 /// `GrabActorEffect::vdtor` at 0x5c74a0 (slot_propagation, medium); signature (low): `GrabActorEffect * vdtor(GrabActorEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const GrabActorEffect__vdtor: u64 = 34337;
@@ -3895,13 +3495,13 @@ pub const GrabActorEffect__vfunc_4: u64 = 34334;
 pub const GrabActorEffect__vfunc_4_sub0: u64 = 34341;
 /// `GrabActorEffect::vfunc_8` at 0x5c7470 (rtti, high); signature (low): `undefined vfunc_8(GrabActorEffect * this, longlong param_1)`
 pub const GrabActorEffect__vfunc_8: u64 = 34336;
-/// `GrabOrReleaseFlightTarget` at 0x7cf6d0 (decompiler, medium); signature (untiered): `undefined8 GrabOrReleaseFlightTarget(TESObjectREFR * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrabOrReleaseFlightTarget` at 0x7cf6d0 (decompiler, medium); signature (low): `undefined8 GrabOrReleaseFlightTarget(TESObjectREFR * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrabOrReleaseFlightTarget: u64 = 42907;
-/// `GrandTheftHorse::GetEventSource` at 0x6c0f90 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; semantic: the one source of GrandTheftHorse::Event events (medium); signature `BSTEventSource<GrandTheftHorse::Event>* ()`
+/// `GrandTheftHorse::GetEventSource` at 0x6c0f90 (semantic, medium); signature (low): `undefined8 * GetEventSource(void)`; semantic: the one source of GrandTheftHorse::Event events (medium); signature `BSTEventSource<GrandTheftHorse::Event>* ()`
 pub const GrandTheftHorse__GetEventSource: u64 = 38342;
 /// `GrandTheftHorse::RegisterSink` at 0x66fb20 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; semantic: registers a GrandTheftHorse::Event sink with the singleton source (medium); signature `void (BSTEventSink<GrandTheftHorse::Event>* sink)`
 pub const GrandTheftHorse__RegisterSink: u64 = 37160;
-/// `GrandTheftHorse::UnregisterSink` at 0x66fb50 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a GrandTheftHorse::Event sink with the singleton source (medium); signature `void (BSTEventSink<GrandTheftHorse::Event>* sink)`
+/// `GrandTheftHorse::UnregisterSink` at 0x66fb50 (semantic, medium); signature (low): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a GrandTheftHorse::Event sink with the singleton source (medium); signature `void (BSTEventSink<GrandTheftHorse::Event>* sink)`
 pub const GrandTheftHorse__UnregisterSink: u64 = 37161;
 /// `GraphPhysicsStepListener::ApplyRagdollPose` at 0xbcab40 (semantic, medium); signature (untiered): `undefined ApplyRagdollPose(longlong param_1, ulonglong * param_2)`; semantic: after a physics step: blends outputs, drives the ragdoll (ID_58293), copies the driven pose into the character pose and writes the bones (0xbdfa20) (medium); signature `void (BShkbAnimationGraph* graph, void* scratch)`
 pub const GraphPhysicsStepListener__ApplyRagdollPose: u64 = 63563;
@@ -3909,9 +3509,9 @@ pub const GraphPhysicsStepListener__ApplyRagdollPose: u64 = 63563;
 pub const GraphPhysicsStepListener__PostStep: u64 = 63552;
 /// `GraphPhysicsStepListener::PostStep` as a function pointer type (high).
 pub type GraphPhysicsStepListener__PostStep_fn = unsafe extern "C" fn(this: *mut c_void);
-/// `GraphPhysicsStepListener::PreStep` at 0xbc9810 (semantic, medium); signature (untiered): `undefined PreStep(GraphPhysicsStepListener * this, undefined4 param_2, undefined4 param_3)`; semantic: bhkIWorldStepListener slot 1, per substep: under the read lock, for every registered graph adds missing ragdoll bodies to the world and drives the ragdoll toward the current animation pose (0xbca840 -> hkbRagdollDriver drive 0xac6fb0 / 0xac8590) (medium); signature `void (GraphPhysicsStepListener* this, float a, float b)`
+/// `GraphPhysicsStepListener::PreStep` at 0xbc9810 (semantic, medium); signature (low): `undefined PreStep(GraphPhysicsStepListener * this, undefined4 param_2, undefined4 param_3)`; semantic: bhkIWorldStepListener slot 1, per substep: under the read lock, for every registered graph adds missing ragdoll bodies to the world and drives the ragdoll toward the current animation pose (0xbca840 -> hkbRagdollDriver drive 0xac6fb0 / 0xac8590) (medium); signature `void (GraphPhysicsStepListener* this, float a, float b)`
 pub const GraphPhysicsStepListener__PreStep: u64 = 63551;
-/// `GraphPhysicsStepListener::ShouldDriveRagdoll` at 0xbda2c0 (semantic, medium); signature (untiered): `char ShouldDriveRagdoll(longlong * param_1, int param_2)`; semantic: returns true at once when INI bAlwaysDriveRagdoll:Animation is set; otherwise true when any of the graph's ragdoll control weights (data +0x58/+0x98/+0xa8/+0x78, per-bone weights) is non-zero (medium); signature `bool (void** data, int boneCount)`
+/// `GraphPhysicsStepListener::ShouldDriveRagdoll` at 0xbda2c0 (semantic, medium); signature (low): `char ShouldDriveRagdoll(longlong * param_1, int param_2)`; semantic: returns true at once when INI bAlwaysDriveRagdoll:Animation is set; otherwise true when any of the graph's ragdoll control weights (data +0x58/+0x98/+0xa8/+0x78, per-bone weights) is non-zero (medium); signature `bool (void** data, int boneCount)`
 pub const GraphPhysicsStepListener__ShouldDriveRagdoll: u64 = 63776;
 /// `GrenadeProjectile::BSHandleRefObject_vdtor` at 0x7eccfc (slot_propagation, medium); signature (high): `undefined BSHandleRefObject_vdtor(GrenadeProjectile * this)`
 pub const GrenadeProjectile__BSHandleRefObject_vdtor: u64 = 43937;
@@ -3919,9 +3519,9 @@ pub const GrenadeProjectile__BSHandleRefObject_vdtor: u64 = 43937;
 pub const GrenadeProjectile__BSTEventSink_BSAnimationGraphEvent_vdtor: u64 = 43938;
 /// `GrenadeProjectile::IAnimationGraphManagerHolder_vdtor` at 0x7ecd14 (slot_propagation, medium); signature (high): `undefined IAnimationGraphManagerHolder_vdtor(GrenadeProjectile * this)`
 pub const GrenadeProjectile__IAnimationGraphManagerHolder_vdtor: u64 = 43939;
-/// `GrenadeProjectile::LoadGame` at 0x7ec780 (slot_propagation, medium); signature (untiered): `undefined LoadGame(GrenadeProjectile * this, TESObjectREFR_vtbl * param_1, ulonglong param_2, TypeDescriptor * param_3)`
+/// `GrenadeProjectile::LoadGame` at 0x7ec780 (slot_propagation, medium); signature (low): `undefined LoadGame(GrenadeProjectile * this, TESObjectREFR_vtbl * param_1, ulonglong param_2, TypeDescriptor * param_3)`
 pub const GrenadeProjectile__LoadGame: u64 = 43926;
-/// `GrenadeProjectile::SaveGame` at 0x7ec740 (slot_propagation, medium); signature (untiered): `undefined SaveGame(GrenadeProjectile * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+/// `GrenadeProjectile::SaveGame` at 0x7ec740 (slot_propagation, medium); signature (low): `undefined SaveGame(GrenadeProjectile * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const GrenadeProjectile__SaveGame: u64 = 43925;
 /// `GrenadeProjectile::ctor` at 0x7eb550 (layout_inference, high); signature (low): `GrenadeProjectile * ctor(GrenadeProjectile * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const GrenadeProjectile__ctor: u64 = 43910;
@@ -4029,11 +3629,11 @@ pub const GroundPathRayValidator__vdtor: u64 = 93138;
 pub const GroundPathRayValidator__vfunc_1: u64 = 93104;
 /// `GroundPathRayValidator::vfunc_2` at 0x1241490 (rtti, high); signature (low): `bool vfunc_2(GroundPathRayValidator * this, longlong param_1, longlong param_2)`
 pub const GroundPathRayValidator__vfunc_2: u64 = 93105;
-/// `GroupCoplanarTriangles` at 0x11477a0 (decompiler, medium); signature (untiered): `undefined4 GroupCoplanarTriangles(longlong param_1, float param_2, float param_3, char param_4)`
+/// `GroupCoplanarTriangles` at 0x11477a0 (decompiler, medium); signature (low): `undefined4 GroupCoplanarTriangles(longlong param_1, float param_2, float param_3, char param_4)`
 pub const GroupCoplanarTriangles: u64 = 81789;
-/// `GrowAndInsertIntoStringHashTable18` at 0xd3d2a0 (decompiler, medium); signature (untiered): `undefined GrowAndInsertIntoStringHashTable18(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
+/// `GrowAndInsertIntoStringHashTable18` at 0xd3d2a0 (decompiler, medium); signature (low): `undefined GrowAndInsertIntoStringHashTable18(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
 pub const GrowAndInsertIntoStringHashTable18: u64 = 83653;
-/// `GrowAndInsertIntoStringHashTable38` at 0xd3d460 (decompiler, medium); signature (untiered): `undefined GrowAndInsertIntoStringHashTable38(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
+/// `GrowAndInsertIntoStringHashTable38` at 0xd3d460 (decompiler, medium); signature (low): `undefined GrowAndInsertIntoStringHashTable38(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
 pub const GrowAndInsertIntoStringHashTable38: u64 = 83654;
 /// `GrowAndInsertQwordVector` at 0x12ffca0 (decompiler, medium); signature (medium): `longlong GrowAndInsertQwordVector(ulonglong * param_1, undefined8 * param_2, undefined8 * param_3)`
 pub const GrowAndInsertQwordVector: u64 = 99883;
@@ -4047,57 +3647,57 @@ pub const GrowAndRehashCrc32HashMap_3: u64 = 15509;
 pub const GrowAndRehashCrc32HashMap_4: u64 = 67913;
 /// `GrowAndRehashCrc32HashMap_5` at 0x11d5d60 (decompiler, medium); signature (medium): `undefined GrowAndRehashCrc32HashMap_5(longlong param_1)`
 pub const GrowAndRehashCrc32HashMap_5: u64 = 90915;
-/// `GrowAndRehashDwordKeyHashMap20` at 0x9c2d80 (decompiler, medium); signature (untiered): `undefined GrowAndRehashDwordKeyHashMap20(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowAndRehashDwordKeyHashMap20` at 0x9c2d80 (decompiler, medium); signature (low): `undefined GrowAndRehashDwordKeyHashMap20(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashDwordKeyHashMap20: u64 = 53654;
 /// `GrowAndRehashDwordKeyTable16` at 0x89e420 (decompiler, medium); signature (medium): `undefined GrowAndRehashDwordKeyTable16(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashDwordKeyTable16: u64 = 48503;
 /// `GrowAndRehashDwordKeyTable48` at 0x892ea0 (decompiler, medium); signature (medium): `undefined GrowAndRehashDwordKeyTable48(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashDwordKeyTable48: u64 = 48254;
-/// `GrowAndRehashHashMap` at 0x613d60 (decompiler, medium); signature (untiered): `undefined GrowAndRehashHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowAndRehashHashMap` at 0x613d60 (decompiler, medium); signature (low): `undefined GrowAndRehashHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashHashMap: u64 = 35517;
-/// `GrowAndRehashHashMap18` at 0x19d910 (decompiler, medium); signature (untiered): `undefined GrowAndRehashHashMap18(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowAndRehashHashMap18` at 0x19d910 (decompiler, medium); signature (low): `undefined GrowAndRehashHashMap18(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashHashMap18: u64 = 13259;
-/// `GrowAndRehashHashMap18_2` at 0x1d0fc0 (decompiler, medium); signature (untiered): `undefined GrowAndRehashHashMap18_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowAndRehashHashMap18_2` at 0x1d0fc0 (decompiler, medium); signature (low): `undefined GrowAndRehashHashMap18_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashHashMap18_2: u64 = 14076;
-/// `GrowAndRehashHashMap18_3` at 0x1fdc50 (decompiler, medium); signature (untiered): `undefined GrowAndRehashHashMap18_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowAndRehashHashMap18_3` at 0x1fdc50 (decompiler, medium); signature (low): `undefined GrowAndRehashHashMap18_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashHashMap18_3: u64 = 15192;
-/// `GrowAndRehashHashMap18_4` at 0x1fded0 (decompiler, medium); signature (untiered): `undefined GrowAndRehashHashMap18_4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowAndRehashHashMap18_4` at 0x1fded0 (decompiler, medium); signature (low): `undefined GrowAndRehashHashMap18_4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashHashMap18_4: u64 = 15193;
-/// `GrowAndRehashHashMap18_5` at 0x1fe150 (decompiler, medium); signature (untiered): `undefined GrowAndRehashHashMap18_5(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowAndRehashHashMap18_5` at 0x1fe150 (decompiler, medium); signature (low): `undefined GrowAndRehashHashMap18_5(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashHashMap18_5: u64 = 15194;
-/// `GrowAndRehashHashMap18_6` at 0x1fe3d0 (decompiler, medium); signature (untiered): `undefined GrowAndRehashHashMap18_6(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowAndRehashHashMap18_6` at 0x1fe3d0 (decompiler, medium); signature (low): `undefined GrowAndRehashHashMap18_6(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashHashMap18_6: u64 = 15195;
-/// `GrowAndRehashHashMap_2` at 0x641140 (decompiler, medium); signature (untiered): `undefined GrowAndRehashHashMap_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowAndRehashHashMap_2` at 0x641140 (decompiler, medium); signature (low): `undefined GrowAndRehashHashMap_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashHashMap_2: u64 = 36200;
 /// `GrowAndRehashHashMap_3` at 0x20c3d0 (decompiler, medium); signature (medium): `undefined GrowAndRehashHashMap_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashHashMap_3: u64 = 15442;
 /// `GrowAndRehashHashTable` at 0x4037f0 (decompiler, medium); signature (medium): `undefined GrowAndRehashHashTable(longlong param_1)`
 pub const GrowAndRehashHashTable: u64 = 25975;
-/// `GrowAndRehashMap32ByteEntries` at 0x116d830 (decompiler, medium); signature (untiered): `undefined GrowAndRehashMap32ByteEntries(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowAndRehashMap32ByteEntries` at 0x116d830 (decompiler, medium); signature (low): `undefined GrowAndRehashMap32ByteEntries(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashMap32ByteEntries: u64 = 82148;
-/// `GrowAndRehashQwordHashMap` at 0xf539a0 (decompiler, medium); signature (untiered): `undefined GrowAndRehashQwordHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowAndRehashQwordHashMap` at 0xf539a0 (decompiler, medium); signature (low): `undefined GrowAndRehashQwordHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashQwordHashMap: u64 = 72416;
-/// `GrowAndRehashQwordHashMap_2` at 0xfe0630 (decompiler, medium); signature (untiered): `undefined GrowAndRehashQwordHashMap_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowAndRehashQwordHashMap_2` at 0xfe0630 (decompiler, medium); signature (low): `undefined GrowAndRehashQwordHashMap_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashQwordHashMap_2: u64 = 76272;
-/// `GrowAndRehashQwordHashMap_3` at 0x1014c00 (decompiler, medium); signature (untiered): `undefined GrowAndRehashQwordHashMap_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowAndRehashQwordHashMap_3` at 0x1014c00 (decompiler, medium); signature (low): `undefined GrowAndRehashQwordHashMap_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashQwordHashMap_3: u64 = 77440;
-/// `GrowAndRehashQwordKeyHashMap` at 0xc44a00 (decompiler, medium); signature (untiered): `undefined GrowAndRehashQwordKeyHashMap(longlong param_1)`
+/// `GrowAndRehashQwordKeyHashMap` at 0xc44a00 (decompiler, medium); signature (low): `undefined GrowAndRehashQwordKeyHashMap(longlong param_1)`
 pub const GrowAndRehashQwordKeyHashMap: u64 = 65240;
-/// `GrowAndRehashQwordKeyHashMap20` at 0x9c1410 (decompiler, medium); signature (untiered): `undefined GrowAndRehashQwordKeyHashMap20(longlong param_1)`
+/// `GrowAndRehashQwordKeyHashMap20` at 0x9c1410 (decompiler, medium); signature (low): `undefined GrowAndRehashQwordKeyHashMap20(longlong param_1)`
 pub const GrowAndRehashQwordKeyHashMap20: u64 = 53623;
-/// `GrowAndRehashQwordKeyHashMap_2` at 0xef5720 (decompiler, medium); signature (untiered): `undefined GrowAndRehashQwordKeyHashMap_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowAndRehashQwordKeyHashMap_2` at 0xef5720 (decompiler, medium); signature (low): `undefined GrowAndRehashQwordKeyHashMap_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashQwordKeyHashMap_2: u64 = 70758;
 /// `GrowAndRehashQwordKeyTable40` at 0x8ddc50 (decompiler, medium); signature (medium): `undefined GrowAndRehashQwordKeyTable40(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashQwordKeyTable40: u64 = 50046;
 /// `GrowAndRehashStringKeyedTable` at 0xfd2b20 (decompiler, medium); signature (medium): `undefined GrowAndRehashStringKeyedTable(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashStringKeyedTable: u64 = 75971;
-/// `GrowAndRehashU32HashMap` at 0x1c85f0 (decompiler, medium); signature (untiered): `undefined GrowAndRehashU32HashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowAndRehashU32HashMap` at 0x1c85f0 (decompiler, medium); signature (low): `undefined GrowAndRehashU32HashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashU32HashMap: u64 = 13896;
 /// `GrowAndRehashU32HashMap_2` at 0x1202850 (decompiler, medium); signature (medium): `undefined GrowAndRehashU32HashMap_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashU32HashMap_2: u64 = 91654;
-/// `GrowAndRehashU32KeyHashMap` at 0xf0cc10 (decompiler, medium); signature (untiered): `undefined GrowAndRehashU32KeyHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowAndRehashU32KeyHashMap` at 0xf0cc10 (decompiler, medium); signature (low): `undefined GrowAndRehashU32KeyHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashU32KeyHashMap: u64 = 524208;
-/// `GrowAndRehashU64HashMap` at 0x446f20 (decompiler, medium); signature (untiered): `undefined GrowAndRehashU64HashMap(longlong param_1)`
+/// `GrowAndRehashU64HashMap` at 0x446f20 (decompiler, medium); signature (low): `undefined GrowAndRehashU64HashMap(longlong param_1)`
 pub const GrowAndRehashU64HashMap: u64 = 27282;
 /// `GrowAndRehashUIntKeyHashMap` at 0x865e50 (decompiler, medium); signature (medium): `undefined GrowAndRehashUIntKeyHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashUIntKeyHashMap: u64 = 47269;
@@ -4105,95 +3705,95 @@ pub const GrowAndRehashUIntKeyHashMap: u64 = 47269;
 pub const GrowAndRehashUIntKeyHashMap_2: u64 = 104458;
 /// `GrowAndRehashUIntKeyHashMap_3` at 0x1564400 (decompiler, medium); signature (medium): `undefined GrowAndRehashUIntKeyHashMap_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowAndRehashUIntKeyHashMap_3: u64 = 107724;
-/// `GrowArrayBuffer` at 0xce0d50 (decompiler, medium); signature (untiered): `bool GrowArrayBuffer(longlong * param_1, uint param_2, undefined8 param_3, undefined8 param_4, int param_5, int param_6)`
+/// `GrowArrayBuffer` at 0xce0d50 (decompiler, medium); signature (low): `bool GrowArrayBuffer(longlong * param_1, uint param_2, undefined8 param_3, undefined8 param_4, int param_5, int param_6)`
 pub const GrowArrayBuffer: u64 = 68169;
 /// `GrowArrayCapacity8` at 0xdeb3a0 (decompiler, medium); signature (medium): `undefined GrowArrayCapacity8(longlong * param_1, undefined8 param_2, ulonglong param_3)`
 pub const GrowArrayCapacity8: u64 = 87206;
-/// `GrowBTreeRoot` at 0x210d70 (decompiler, medium); signature (untiered): `undefined GrowBTreeRoot(undefined8 * param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowBTreeRoot` at 0x210d70 (decompiler, medium); signature (low): `undefined GrowBTreeRoot(undefined8 * param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowBTreeRoot: u64 = 15504;
-/// `GrowBufferAndContinueSecureSocketHandshake` at 0x1485870 (decompiler, medium); signature (untiered): `undefined GrowBufferAndContinueSecureSocketHandshake(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowBufferAndContinueSecureSocketHandshake` at 0x1485870 (decompiler, medium); signature (low): `undefined GrowBufferAndContinueSecureSocketHandshake(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowBufferAndContinueSecureSocketHandshake: u64 = 453427;
 /// `GrowByteKeyHashMap318` at 0x12205b0 (decompiler, medium); signature (medium): `undefined GrowByteKeyHashMap318(longlong param_1)`
 pub const GrowByteKeyHashMap318: u64 = 92247;
 /// `GrowByteKeyHashMapD8` at 0x1220db0 (decompiler, medium); signature (medium): `undefined GrowByteKeyHashMapD8(longlong param_1)`
 pub const GrowByteKeyHashMapD8: u64 = 92269;
-/// `GrowCaseInsensitiveStringHashSetIfNeeded` at 0xd7ea20 (decompiler, high); signature (untiered): `undefined GrowCaseInsensitiveStringHashSetIfNeeded(longlong * param_1, undefined8 param_2)`
+/// `GrowCaseInsensitiveStringHashSetIfNeeded` at 0xd7ea20 (decompiler, high); signature (low): `undefined GrowCaseInsensitiveStringHashSetIfNeeded(longlong * param_1, undefined8 param_2)`
 pub const GrowCaseInsensitiveStringHashSetIfNeeded: u64 = 85299;
-/// `GrowCrcUIntHashMap24` at 0x632630 (decompiler, medium); signature (untiered): `undefined GrowCrcUIntHashMap24(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowCrcUIntHashMap24` at 0x632630 (decompiler, medium); signature (low): `undefined GrowCrcUIntHashMap24(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowCrcUIntHashMap24: u64 = 35917;
-/// `GrowCrcUIntHashMap24_2` at 0x6328b0 (decompiler, medium); signature (untiered): `undefined GrowCrcUIntHashMap24_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowCrcUIntHashMap24_2` at 0x6328b0 (decompiler, medium); signature (low): `undefined GrowCrcUIntHashMap24_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowCrcUIntHashMap24_2: u64 = 35918;
 /// `GrowDequeMap` at 0xa7ef90 (decompiler, medium); signature (medium): `undefined GrowDequeMap(longlong param_1, ulonglong param_2)`
 pub const GrowDequeMap: u64 = 443047;
-/// `GrowDequeMap_2` at 0xa7f170 (decompiler, medium); signature (untiered): `undefined GrowDequeMap_2(longlong param_1, ulonglong param_2)`
+/// `GrowDequeMap_2` at 0xa7f170 (decompiler, medium); signature (low): `undefined GrowDequeMap_2(longlong param_1, ulonglong param_2)`
 pub const GrowDequeMap_2: u64 = 443048;
-/// `GrowDequeMap_3` at 0xa7f350 (decompiler, medium); signature (untiered): `undefined GrowDequeMap_3(longlong param_1, ulonglong param_2)`
+/// `GrowDequeMap_3` at 0xa7f350 (decompiler, medium); signature (low): `undefined GrowDequeMap_3(longlong param_1, ulonglong param_2)`
 pub const GrowDequeMap_3: u64 = 443049;
-/// `GrowDwordHashMap` at 0x4c7bb0 (decompiler, medium); signature (untiered): `undefined GrowDwordHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowDwordHashMap` at 0x4c7bb0 (decompiler, medium); signature (low): `undefined GrowDwordHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowDwordHashMap: u64 = 30425;
-/// `GrowDwordHashMap_2` at 0x4d4650 (decompiler, medium); signature (untiered): `undefined GrowDwordHashMap_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowDwordHashMap_2` at 0x4d4650 (decompiler, medium); signature (low): `undefined GrowDwordHashMap_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowDwordHashMap_2: u64 = 30585;
-/// `GrowDwordHashMap_3` at 0x4d4b20 (decompiler, medium); signature (untiered): `undefined GrowDwordHashMap_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowDwordHashMap_3` at 0x4d4b20 (decompiler, medium); signature (low): `undefined GrowDwordHashMap_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowDwordHashMap_3: u64 = 30587;
-/// `GrowDwordHashMap_4` at 0x50f270 (decompiler, medium); signature (untiered): `undefined GrowDwordHashMap_4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowDwordHashMap_4` at 0x50f270 (decompiler, medium); signature (low): `undefined GrowDwordHashMap_4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowDwordHashMap_4: u64 = 31715;
-/// `GrowDwordHashMap_5` at 0x50f4f0 (decompiler, medium); signature (untiered): `undefined GrowDwordHashMap_5(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowDwordHashMap_5` at 0x50f4f0 (decompiler, medium); signature (low): `undefined GrowDwordHashMap_5(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowDwordHashMap_5: u64 = 31716;
-/// `GrowDwordHashMap_6` at 0x53db20 (decompiler, medium); signature (untiered): `undefined GrowDwordHashMap_6(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowDwordHashMap_6` at 0x53db20 (decompiler, medium); signature (low): `undefined GrowDwordHashMap_6(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowDwordHashMap_6: u64 = 32535;
-/// `GrowDwordKeyHashMap` at 0x2a2ec0 (decompiler, medium); signature (untiered): `undefined GrowDwordKeyHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowDwordKeyHashMap` at 0x2a2ec0 (decompiler, medium); signature (low): `undefined GrowDwordKeyHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowDwordKeyHashMap: u64 = 18560;
-/// `GrowDwordKeyHashMap_2` at 0x314d70 (decompiler, medium); signature (untiered): `undefined GrowDwordKeyHashMap_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowDwordKeyHashMap_2` at 0x314d70 (decompiler, medium); signature (low): `undefined GrowDwordKeyHashMap_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowDwordKeyHashMap_2: u64 = 20604;
-/// `GrowDwordKeyHashMap_3` at 0x854cb0 (decompiler, medium); signature (untiered): `undefined GrowDwordKeyHashMap_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowDwordKeyHashMap_3` at 0x854cb0 (decompiler, medium); signature (low): `undefined GrowDwordKeyHashMap_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowDwordKeyHashMap_3: u64 = 46915;
-/// `GrowDwordKeyHashMap_4` at 0x855510 (decompiler, medium); signature (untiered): `undefined GrowDwordKeyHashMap_4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowDwordKeyHashMap_4` at 0x855510 (decompiler, medium); signature (low): `undefined GrowDwordKeyHashMap_4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowDwordKeyHashMap_4: u64 = 46925;
 /// `GrowDwordKeyHashMap_5` at 0x62fa80 (decompiler, medium); signature (medium): `undefined GrowDwordKeyHashMap_5(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowDwordKeyHashMap_5: u64 = 35878;
-/// `GrowDwordKeyHashMap_6` at 0x5eb600 (decompiler, medium); signature (untiered): `undefined GrowDwordKeyHashMap_6(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowDwordKeyHashMap_6` at 0x5eb600 (decompiler, medium); signature (low): `undefined GrowDwordKeyHashMap_6(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowDwordKeyHashMap_6: u64 = 35183;
-/// `GrowDwordKeyHashMap_7` at 0x811080 (decompiler, medium); signature (untiered): `undefined GrowDwordKeyHashMap_7(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowDwordKeyHashMap_7` at 0x811080 (decompiler, medium); signature (low): `undefined GrowDwordKeyHashMap_7(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowDwordKeyHashMap_7: u64 = 44533;
-/// `GrowDwordKeyHashMap_8` at 0x812d50 (decompiler, medium); signature (untiered): `undefined GrowDwordKeyHashMap_8(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowDwordKeyHashMap_8` at 0x812d50 (decompiler, medium); signature (low): `undefined GrowDwordKeyHashMap_8(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowDwordKeyHashMap_8: u64 = 44563;
-/// `GrowDwordKeyHashMap_9` at 0x8615d0 (decompiler, medium); signature (untiered): `undefined GrowDwordKeyHashMap_9(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowDwordKeyHashMap_9` at 0x8615d0 (decompiler, medium); signature (low): `undefined GrowDwordKeyHashMap_9(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowDwordKeyHashMap_9: u64 = 47169;
-/// `GrowDwordKeyHashTable` at 0x314af0 (decompiler, medium); signature (untiered): `undefined GrowDwordKeyHashTable(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowDwordKeyHashTable` at 0x314af0 (decompiler, medium); signature (low): `undefined GrowDwordKeyHashTable(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowDwordKeyHashTable: u64 = 20603;
-/// `GrowEntryArrays` at 0xf5e490 (decompiler, medium); signature (untiered): `undefined GrowEntryArrays(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowEntryArrays` at 0xf5e490 (decompiler, medium); signature (low): `undefined GrowEntryArrays(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowEntryArrays: u64 = 72591;
-/// `GrowEntryArraysAt20And28` at 0xf5a200 (decompiler, medium); signature (untiered): `undefined8 GrowEntryArraysAt20And28(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowEntryArraysAt20And28` at 0xf5a200 (decompiler, medium); signature (low): `undefined8 GrowEntryArraysAt20And28(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowEntryArraysAt20And28: u64 = 72496;
-/// `GrowFixedStringMap28` at 0xbdab80 (decompiler, medium); signature (untiered): `undefined GrowFixedStringMap28(longlong param_1)`
+/// `GrowFixedStringMap28` at 0xbdab80 (decompiler, medium); signature (low): `undefined GrowFixedStringMap28(longlong param_1)`
 pub const GrowFixedStringMap28: u64 = 63786;
-/// `GrowFixedStringMap28_2` at 0xbdade0 (decompiler, medium); signature (untiered): `undefined GrowFixedStringMap28_2(longlong param_1)`
+/// `GrowFixedStringMap28_2` at 0xbdade0 (decompiler, medium); signature (low): `undefined GrowFixedStringMap28_2(longlong param_1)`
 pub const GrowFixedStringMap28_2: u64 = 63787;
-/// `GrowFixedStringMap50` at 0xbda8c0 (decompiler, medium); signature (untiered): `undefined GrowFixedStringMap50(longlong param_1)`
+/// `GrowFixedStringMap50` at 0xbda8c0 (decompiler, medium); signature (low): `undefined GrowFixedStringMap50(longlong param_1)`
 pub const GrowFixedStringMap50: u64 = 63785;
 /// `GrowFloatArrayAt160FilledWithOne` at 0x151dbf0 (decompiler, medium); signature (medium): `undefined GrowFloatArrayAt160FilledWithOne(longlong param_1, int param_2)`
 pub const GrowFloatArrayAt160FilledWithOne: u64 = 106556;
-/// `GrowHashMap` at 0x2d5940 (decompiler, medium); signature (untiered): `undefined GrowHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowHashMap` at 0x2d5940 (decompiler, medium); signature (low): `undefined GrowHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMap: u64 = 19368;
-/// `GrowHashMap0x18Entries` at 0x148d570 (decompiler, medium); signature (untiered): `undefined GrowHashMap0x18Entries(longlong param_1)`
+/// `GrowHashMap0x18Entries` at 0x148d570 (decompiler, medium); signature (low): `undefined GrowHashMap0x18Entries(longlong param_1)`
 pub const GrowHashMap0x18Entries: u64 = 104235;
-/// `GrowHashMap0x18Entries_2` at 0x14a8780 (decompiler, medium); signature (untiered): `undefined GrowHashMap0x18Entries_2(longlong param_1)`
+/// `GrowHashMap0x18Entries_2` at 0x14a8780 (decompiler, medium); signature (low): `undefined GrowHashMap0x18Entries_2(longlong param_1)`
 pub const GrowHashMap0x18Entries_2: u64 = 104624;
-/// `GrowHashMap0x18Entries_3` at 0x14e43e0 (decompiler, medium); signature (untiered): `undefined GrowHashMap0x18Entries_3(longlong param_1)`
+/// `GrowHashMap0x18Entries_3` at 0x14e43e0 (decompiler, medium); signature (low): `undefined GrowHashMap0x18Entries_3(longlong param_1)`
 pub const GrowHashMap0x18Entries_3: u64 = 105441;
-/// `GrowHashMap0x20Entries` at 0x148d7c0 (decompiler, medium); signature (untiered): `undefined GrowHashMap0x20Entries(longlong param_1)`
+/// `GrowHashMap0x20Entries` at 0x148d7c0 (decompiler, medium); signature (low): `undefined GrowHashMap0x20Entries(longlong param_1)`
 pub const GrowHashMap0x20Entries: u64 = 104236;
-/// `GrowHashMap0x20EntriesGlobalHeap` at 0x148dc70 (decompiler, medium); signature (untiered): `undefined GrowHashMap0x20EntriesGlobalHeap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowHashMap0x20EntriesGlobalHeap` at 0x148dc70 (decompiler, medium); signature (low): `undefined GrowHashMap0x20EntriesGlobalHeap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMap0x20EntriesGlobalHeap: u64 = 104238;
-/// `GrowHashMap0x28Entries` at 0x148da10 (decompiler, medium); signature (untiered): `undefined GrowHashMap0x28Entries(longlong param_1)`
+/// `GrowHashMap0x28Entries` at 0x148da10 (decompiler, medium); signature (low): `undefined GrowHashMap0x28Entries(longlong param_1)`
 pub const GrowHashMap0x28Entries: u64 = 104237;
-/// `GrowHashMap16` at 0x29d510 (decompiler, medium); signature (untiered): `undefined GrowHashMap16(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowHashMap16` at 0x29d510 (decompiler, medium); signature (low): `undefined GrowHashMap16(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMap16: u64 = 18437;
-/// `GrowHashMap32` at 0x14cc250 (decompiler, medium); signature (untiered): `undefined GrowHashMap32(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowHashMap32` at 0x14cc250 (decompiler, medium); signature (low): `undefined GrowHashMap32(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMap32: u64 = 105121;
-/// `GrowHashMap48` at 0xbdb440 (decompiler, medium); signature (untiered): `undefined GrowHashMap48(longlong param_1)`
+/// `GrowHashMap48` at 0xbdb440 (decompiler, medium); signature (low): `undefined GrowHashMap48(longlong param_1)`
 pub const GrowHashMap48: u64 = 63789;
-/// `GrowHashMapA8` at 0xbdb040 (decompiler, medium); signature (untiered): `undefined GrowHashMapA8(longlong param_1)`
+/// `GrowHashMapA8` at 0xbdb040 (decompiler, medium); signature (low): `undefined GrowHashMapA8(longlong param_1)`
 pub const GrowHashMapA8: u64 = 63788;
 /// `GrowHashMapAndRehash` at 0x6c2190 (decompiler, medium); signature (medium): `undefined GrowHashMapAndRehash(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMapAndRehash: u64 = 38358;
@@ -4209,35 +3809,35 @@ pub const GrowHashMapAndRehash_5: u64 = 47400;
 pub const GrowHashMapAndRehash_6: u64 = 53547;
 /// `GrowHashMapAndRehash_7` at 0x9bb8a0 (decompiler, medium); signature (medium): `undefined GrowHashMapAndRehash_7(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMapAndRehash_7: u64 = 53548;
-/// `GrowHashMapAndRehash_8` at 0x450b70 (decompiler, medium); signature (untiered): `undefined GrowHashMapAndRehash_8(longlong param_1)`
+/// `GrowHashMapAndRehash_8` at 0x450b70 (decompiler, medium); signature (low): `undefined GrowHashMapAndRehash_8(longlong param_1)`
 pub const GrowHashMapAndRehash_8: u64 = 27670;
-/// `GrowHashMapAndRehash_9` at 0x45d310 (decompiler, medium); signature (untiered): `undefined GrowHashMapAndRehash_9(longlong param_1)`
+/// `GrowHashMapAndRehash_9` at 0x45d310 (decompiler, medium); signature (low): `undefined GrowHashMapAndRehash_9(longlong param_1)`
 pub const GrowHashMapAndRehash_9: u64 = 28248;
-/// `GrowHashMapDwordKey` at 0x1e7d30 (decompiler, medium); signature (untiered): `undefined GrowHashMapDwordKey(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowHashMapDwordKey` at 0x1e7d30 (decompiler, medium); signature (low): `undefined GrowHashMapDwordKey(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMapDwordKey: u64 = 14709;
-/// `GrowHashMapDwordKey_2` at 0xcd37d0 (decompiler, medium); signature (untiered): `undefined GrowHashMapDwordKey_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowHashMapDwordKey_2` at 0xcd37d0 (decompiler, medium); signature (low): `undefined GrowHashMapDwordKey_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMapDwordKey_2: u64 = 67809;
-/// `GrowHashMapDwordKey_3` at 0xcd3cd0 (decompiler, medium); signature (untiered): `undefined GrowHashMapDwordKey_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowHashMapDwordKey_3` at 0xcd3cd0 (decompiler, medium); signature (low): `undefined GrowHashMapDwordKey_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMapDwordKey_3: u64 = 67811;
-/// `GrowHashMapQwordKey` at 0x1c8d20 (decompiler, medium); signature (untiered): `undefined GrowHashMapQwordKey(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowHashMapQwordKey` at 0x1c8d20 (decompiler, medium); signature (low): `undefined GrowHashMapQwordKey(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMapQwordKey: u64 = 13899;
 /// `GrowHashMapQwordKeyMin256` at 0xedd120 (decompiler, medium); signature (medium): `undefined GrowHashMapQwordKeyMin256(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMapQwordKeyMin256: u64 = 76157;
 /// `GrowHashMapQwordKey_2` at 0xcd3f50 (decompiler, medium); signature (medium): `undefined GrowHashMapQwordKey_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMapQwordKey_2: u64 = 67812;
-/// `GrowHashMapQwordKey_3` at 0x62ff80 (decompiler, medium); signature (untiered): `undefined GrowHashMapQwordKey_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowHashMapQwordKey_3` at 0x62ff80 (decompiler, medium); signature (low): `undefined GrowHashMapQwordKey_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMapQwordKey_3: u64 = 35880;
-/// `GrowHashMapStride10Heap` at 0x2062a0 (decompiler, medium); signature (untiered): `undefined GrowHashMapStride10Heap(longlong param_1)`
+/// `GrowHashMapStride10Heap` at 0x2062a0 (decompiler, medium); signature (low): `undefined GrowHashMapStride10Heap(longlong param_1)`
 pub const GrowHashMapStride10Heap: u64 = 15362;
-/// `GrowHashMapStride18U64Key` at 0x1fe8e0 (decompiler, medium); signature (untiered): `undefined GrowHashMapStride18U64Key(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowHashMapStride18U64Key` at 0x1fe8e0 (decompiler, medium); signature (low): `undefined GrowHashMapStride18U64Key(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMapStride18U64Key: u64 = 15197;
-/// `GrowHashMapStride20` at 0x1fe650 (decompiler, medium); signature (untiered): `undefined GrowHashMapStride20(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowHashMapStride20` at 0x1fe650 (decompiler, medium); signature (low): `undefined GrowHashMapStride20(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMapStride20: u64 = 15196;
-/// `GrowHashMapU32` at 0x61b3e0 (decompiler, medium); signature (untiered): `undefined GrowHashMapU32(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowHashMapU32` at 0x61b3e0 (decompiler, medium); signature (low): `undefined GrowHashMapU32(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMapU32: u64 = 35635;
-/// `GrowHashMapU32Key8ByteValue` at 0x7711e0 (decompiler, medium); signature (untiered): `undefined GrowHashMapU32Key8ByteValue(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowHashMapU32Key8ByteValue` at 0x7711e0 (decompiler, medium); signature (low): `undefined GrowHashMapU32Key8ByteValue(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMapU32Key8ByteValue: u64 = 41096;
-/// `GrowHashMapU64Key16ByteValue` at 0x7716e0 (decompiler, medium); signature (untiered): `undefined GrowHashMapU64Key16ByteValue(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowHashMapU64Key16ByteValue` at 0x7716e0 (decompiler, medium); signature (low): `undefined GrowHashMapU64Key16ByteValue(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMapU64Key16ByteValue: u64 = 41098;
 /// `GrowHashMapUIntKey` at 0xcd3a50 (decompiler, medium); signature (medium): `undefined GrowHashMapUIntKey(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMapUIntKey: u64 = 67810;
@@ -4245,79 +3845,79 @@ pub const GrowHashMapUIntKey: u64 = 67810;
 pub const GrowHashMapWithHeapAllocator: u64 = 104358;
 /// `GrowHashMapWithInlineStorage` at 0x98ebe0 (decompiler, medium); signature (medium): `undefined GrowHashMapWithInlineStorage(longlong param_1)`
 pub const GrowHashMapWithInlineStorage: u64 = 52876;
-/// `GrowHashMap_2` at 0x3f6a30 (decompiler, medium); signature (untiered): `undefined GrowHashMap_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowHashMap_2` at 0x3f6a30 (decompiler, medium); signature (low): `undefined GrowHashMap_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMap_2: u64 = 25691;
-/// `GrowHashMap_3` at 0x771460 (decompiler, medium); signature (untiered): `undefined GrowHashMap_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowHashMap_3` at 0x771460 (decompiler, medium); signature (low): `undefined GrowHashMap_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMap_3: u64 = 41097;
-/// `GrowHashMap_4` at 0x811300 (decompiler, medium); signature (untiered): `undefined GrowHashMap_4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowHashMap_4` at 0x811300 (decompiler, medium); signature (low): `undefined GrowHashMap_4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMap_4: u64 = 44534;
-/// `GrowHashMap_5` at 0x850f80 (decompiler, medium); signature (untiered): `undefined GrowHashMap_5(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowHashMap_5` at 0x850f80 (decompiler, medium); signature (low): `undefined GrowHashMap_5(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashMap_5: u64 = 46862;
-/// `GrowHashTable` at 0x211480 (decompiler, medium); signature (untiered): `undefined GrowHashTable(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowHashTable` at 0x211480 (decompiler, medium); signature (low): `undefined GrowHashTable(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashTable: u64 = 15508;
-/// `GrowHashTableAndRehash` at 0x14fd90 (decompiler, medium); signature (untiered): `undefined GrowHashTableAndRehash(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowHashTableAndRehash` at 0x14fd90 (decompiler, medium); signature (low): `undefined GrowHashTableAndRehash(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashTableAndRehash: u64 = 11277;
-/// `GrowHashTableAndRehash_2` at 0x158a210 (decompiler, medium); signature (untiered): `undefined GrowHashTableAndRehash_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowHashTableAndRehash_2` at 0x158a210 (decompiler, medium); signature (low): `undefined GrowHashTableAndRehash_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowHashTableAndRehash_2: u64 = 108732;
 /// `GrowHashTableIfNeeded` at 0xd8f930 (decompiler, high); signature (high): `undefined GrowHashTableIfNeeded(longlong * param_1, undefined8 param_2)`
 pub const GrowHashTableIfNeeded: u64 = 85597;
-/// `GrowHashTableIfNeeded_2` at 0xe19910 (decompiler, high); signature (untiered): `undefined GrowHashTableIfNeeded_2(longlong * param_1, undefined8 param_2)`
+/// `GrowHashTableIfNeeded_2` at 0xe19910 (decompiler, high); signature (low): `undefined GrowHashTableIfNeeded_2(longlong * param_1, undefined8 param_2)`
 pub const GrowHashTableIfNeeded_2: u64 = 88779;
 /// `GrowHashTableIfNeeded_3` at 0xe48890 (decompiler, high); signature (high): `undefined GrowHashTableIfNeeded_3(longlong * param_1, undefined8 param_2)`
 pub const GrowHashTableIfNeeded_3: u64 = 88564;
-/// `GrowHeapHashMap24` at 0x294ce0 (decompiler, medium); signature (untiered): `undefined GrowHeapHashMap24(longlong param_1)`
+/// `GrowHeapHashMap24` at 0x294ce0 (decompiler, medium); signature (low): `undefined GrowHeapHashMap24(longlong param_1)`
 pub const GrowHeapHashMap24: u64 = 18273;
-/// `GrowInterpolatorAndTargetArrays` at 0xf5f2c0 (decompiler, medium); signature (untiered): `undefined GrowInterpolatorAndTargetArrays(longlong param_1, undefined8 param_2, ulonglong param_3, undefined8 param_4)`
+/// `GrowInterpolatorAndTargetArrays` at 0xf5f2c0 (decompiler, medium); signature (low): `undefined GrowInterpolatorAndTargetArrays(longlong param_1, undefined8 param_2, ulonglong param_3, undefined8 param_4)`
 pub const GrowInterpolatorAndTargetArrays: u64 = 72624;
-/// `GrowNodePoolF16` at 0x1137fa0 (decompiler, medium); signature (untiered): `undefined GrowNodePoolF16(longlong * param_1, ushort param_2, longlong * param_3, ushort * param_4)`
+/// `GrowNodePoolF16` at 0x1137fa0 (decompiler, medium); signature (low): `undefined GrowNodePoolF16(longlong * param_1, ushort param_2, longlong * param_3, ushort * param_4)`
 pub const GrowNodePoolF16: u64 = 81638;
-/// `GrowNodePoolF32` at 0x11380b0 (decompiler, medium); signature (untiered): `undefined GrowNodePoolF32(longlong * param_1, int param_2, longlong * param_3, int * param_4)`
+/// `GrowNodePoolF32` at 0x11380b0 (decompiler, medium); signature (low): `undefined GrowNodePoolF32(longlong * param_1, int param_2, longlong * param_3, int * param_4)`
 pub const GrowNodePoolF32: u64 = 81639;
-/// `GrowNodePoolQ16` at 0x1137d80 (decompiler, medium); signature (untiered): `undefined GrowNodePoolQ16(longlong * param_1, ushort param_2, longlong * param_3, ushort * param_4)`
+/// `GrowNodePoolQ16` at 0x1137d80 (decompiler, medium); signature (low): `undefined GrowNodePoolQ16(longlong * param_1, ushort param_2, longlong * param_3, ushort * param_4)`
 pub const GrowNodePoolQ16: u64 = 81636;
-/// `GrowNodePoolQ32` at 0x1137e90 (decompiler, medium); signature (untiered): `undefined GrowNodePoolQ32(longlong * param_1, int param_2, longlong * param_3, int * param_4)`
+/// `GrowNodePoolQ32` at 0x1137e90 (decompiler, medium); signature (low): `undefined GrowNodePoolQ32(longlong * param_1, int param_2, longlong * param_3, int * param_4)`
 pub const GrowNodePoolQ32: u64 = 81637;
-/// `GrowOutputBuffer` at 0x5a7590 (decompiler, medium); signature (untiered): `undefined8 GrowOutputBuffer(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowOutputBuffer` at 0x5a7590 (decompiler, medium); signature (low): `undefined8 GrowOutputBuffer(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowOutputBuffer: u64 = 442107;
-/// `GrowOutputBuffer_2` at 0x57b180 (decompiler, medium); signature (untiered): `undefined8 GrowOutputBuffer_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowOutputBuffer_2` at 0x57b180 (decompiler, medium); signature (low): `undefined8 GrowOutputBuffer_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowOutputBuffer_2: u64 = 33747;
-/// `GrowOutputBuffer_3` at 0x15d92f0 (decompiler, medium); signature (untiered): `undefined8 GrowOutputBuffer_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowOutputBuffer_3` at 0x15d92f0 (decompiler, medium); signature (low): `undefined8 GrowOutputBuffer_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowOutputBuffer_3: u64 = 453870;
-/// `GrowPointerHashSet` at 0x66cc50 (decompiler, medium); signature (untiered): `undefined GrowPointerHashSet(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowPointerHashSet` at 0x66cc50 (decompiler, medium); signature (low): `undefined GrowPointerHashSet(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowPointerHashSet: u64 = 37005;
-/// `GrowPointerKeyedHashMap` at 0x1563640 (decompiler, medium); signature (untiered): `undefined GrowPointerKeyedHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowPointerKeyedHashMap` at 0x1563640 (decompiler, medium); signature (low): `undefined GrowPointerKeyedHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowPointerKeyedHashMap: u64 = 107708;
-/// `GrowPointerKeyedU32HashMap` at 0x1563880 (decompiler, medium); signature (untiered): `undefined GrowPointerKeyedU32HashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowPointerKeyedU32HashMap` at 0x1563880 (decompiler, medium); signature (low): `undefined GrowPointerKeyedU32HashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowPointerKeyedU32HashMap: u64 = 107709;
-/// `GrowQWordKeyedHashMap` at 0x14cbd50 (decompiler, medium); signature (untiered): `undefined GrowQWordKeyedHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowQWordKeyedHashMap` at 0x14cbd50 (decompiler, medium); signature (low): `undefined GrowQWordKeyedHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQWordKeyedHashMap: u64 = 105119;
-/// `GrowQWordKeyedHashMap_2` at 0x14cbfd0 (decompiler, medium); signature (untiered): `undefined GrowQWordKeyedHashMap_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowQWordKeyedHashMap_2` at 0x14cbfd0 (decompiler, medium); signature (low): `undefined GrowQWordKeyedHashMap_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQWordKeyedHashMap_2: u64 = 105120;
-/// `GrowQwordHashMap` at 0x4b5820 (decompiler, medium); signature (untiered): `undefined GrowQwordHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowQwordHashMap` at 0x4b5820 (decompiler, medium); signature (low): `undefined GrowQwordHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordHashMap: u64 = 30151;
-/// `GrowQwordHashMap_2` at 0x4c7e30 (decompiler, medium); signature (untiered): `undefined GrowQwordHashMap_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowQwordHashMap_2` at 0x4c7e30 (decompiler, medium); signature (low): `undefined GrowQwordHashMap_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordHashMap_2: u64 = 30426;
-/// `GrowQwordHashMap_3` at 0x4d4da0 (decompiler, medium); signature (untiered): `undefined GrowQwordHashMap_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowQwordHashMap_3` at 0x4d4da0 (decompiler, medium); signature (low): `undefined GrowQwordHashMap_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordHashMap_3: u64 = 30588;
-/// `GrowQwordHashMap_4` at 0x524610 (decompiler, medium); signature (untiered): `undefined GrowQwordHashMap_4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowQwordHashMap_4` at 0x524610 (decompiler, medium); signature (low): `undefined GrowQwordHashMap_4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordHashMap_4: u64 = 32074;
-/// `GrowQwordHashMap_5` at 0x539a10 (decompiler, medium); signature (untiered): `undefined GrowQwordHashMap_5(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowQwordHashMap_5` at 0x539a10 (decompiler, medium); signature (low): `undefined GrowQwordHashMap_5(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordHashMap_5: u64 = 32475;
-/// `GrowQwordHashMap_6` at 0x539c90 (decompiler, medium); signature (untiered): `undefined GrowQwordHashMap_6(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowQwordHashMap_6` at 0x539c90 (decompiler, medium); signature (low): `undefined GrowQwordHashMap_6(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordHashMap_6: u64 = 32476;
-/// `GrowQwordHashMap_7` at 0x11f2260 (decompiler, medium); signature (untiered): `undefined GrowQwordHashMap_7(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowQwordHashMap_7` at 0x11f2260 (decompiler, medium); signature (low): `undefined GrowQwordHashMap_7(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordHashMap_7: u64 = 91372;
-/// `GrowQwordHashMap_8` at 0x11f7f50 (decompiler, medium); signature (untiered): `undefined GrowQwordHashMap_8(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowQwordHashMap_8` at 0x11f7f50 (decompiler, medium); signature (low): `undefined GrowQwordHashMap_8(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordHashMap_8: u64 = 91488;
 /// `GrowQwordHashMap_9` at 0x123fa10 (decompiler, medium); signature (medium): `undefined GrowQwordHashMap_9(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordHashMap_9: u64 = 93077;
-/// `GrowQwordKeyHashMap` at 0x7c84b0 (decompiler, medium); signature (untiered): `undefined GrowQwordKeyHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowQwordKeyHashMap` at 0x7c84b0 (decompiler, medium); signature (low): `undefined GrowQwordKeyHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordKeyHashMap: u64 = 42806;
-/// `GrowQwordKeyHashMapInline` at 0x7a37b0 (decompiler, medium); signature (untiered): `undefined GrowQwordKeyHashMapInline(longlong param_1)`
+/// `GrowQwordKeyHashMapInline` at 0x7a37b0 (decompiler, medium); signature (low): `undefined GrowQwordKeyHashMapInline(longlong param_1)`
 pub const GrowQwordKeyHashMapInline: u64 = 41981;
-/// `GrowQwordKeyHashMap_10` at 0x4e6710 (decompiler, medium); signature (untiered): `undefined GrowQwordKeyHashMap_10(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowQwordKeyHashMap_10` at 0x4e6710 (decompiler, medium); signature (low): `undefined GrowQwordKeyHashMap_10(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordKeyHashMap_10: u64 = 30971;
-/// `GrowQwordKeyHashMap_11` at 0x4ea560 (decompiler, medium); signature (untiered): `undefined GrowQwordKeyHashMap_11(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowQwordKeyHashMap_11` at 0x4ea560 (decompiler, medium); signature (low): `undefined GrowQwordKeyHashMap_11(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordKeyHashMap_11: u64 = 31052;
 /// `GrowQwordKeyHashMap_12` at 0x4b6580 (decompiler, medium); signature (medium): `undefined GrowQwordKeyHashMap_12(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordKeyHashMap_12: u64 = 30167;
@@ -4329,57 +3929,57 @@ pub const GrowQwordKeyHashMap_14: u64 = 63833;
 pub const GrowQwordKeyHashMap_15: u64 = 63957;
 /// `GrowQwordKeyHashMap_16` at 0x11c9f70 (decompiler, medium); signature (medium): `undefined GrowQwordKeyHashMap_16(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordKeyHashMap_16: u64 = 90585;
-/// `GrowQwordKeyHashMap_17` at 0x106a720 (decompiler, medium); signature (untiered): `undefined GrowQwordKeyHashMap_17(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowQwordKeyHashMap_17` at 0x106a720 (decompiler, medium); signature (low): `undefined GrowQwordKeyHashMap_17(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordKeyHashMap_17: u64 = 78363;
-/// `GrowQwordKeyHashMap_2` at 0xf00b50 (decompiler, medium); signature (untiered): `undefined GrowQwordKeyHashMap_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowQwordKeyHashMap_2` at 0xf00b50 (decompiler, medium); signature (low): `undefined GrowQwordKeyHashMap_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordKeyHashMap_2: u64 = 71008;
-/// `GrowQwordKeyHashMap_3` at 0xfdb2c0 (decompiler, medium); signature (untiered): `undefined GrowQwordKeyHashMap_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowQwordKeyHashMap_3` at 0xfdb2c0 (decompiler, medium); signature (low): `undefined GrowQwordKeyHashMap_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordKeyHashMap_3: u64 = 524238;
-/// `GrowQwordKeyHashMap_4` at 0xfef040 (decompiler, medium); signature (untiered): `undefined GrowQwordKeyHashMap_4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowQwordKeyHashMap_4` at 0xfef040 (decompiler, medium); signature (low): `undefined GrowQwordKeyHashMap_4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordKeyHashMap_4: u64 = 524243;
-/// `GrowQwordKeyHashMap_5` at 0x2dccc0 (decompiler, medium); signature (untiered): `undefined GrowQwordKeyHashMap_5(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowQwordKeyHashMap_5` at 0x2dccc0 (decompiler, medium); signature (low): `undefined GrowQwordKeyHashMap_5(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordKeyHashMap_5: u64 = 19483;
-/// `GrowQwordKeyHashMap_6` at 0x3cd460 (decompiler, medium); signature (untiered): `undefined GrowQwordKeyHashMap_6(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowQwordKeyHashMap_6` at 0x3cd460 (decompiler, medium); signature (low): `undefined GrowQwordKeyHashMap_6(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordKeyHashMap_6: u64 = 24928;
-/// `GrowQwordKeyHashMap_7` at 0x44b180 (decompiler, medium); signature (untiered): `undefined GrowQwordKeyHashMap_7(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowQwordKeyHashMap_7` at 0x44b180 (decompiler, medium); signature (low): `undefined GrowQwordKeyHashMap_7(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordKeyHashMap_7: u64 = 27422;
-/// `GrowQwordKeyHashMap_8` at 0x4eca90 (decompiler, medium); signature (untiered): `undefined GrowQwordKeyHashMap_8(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowQwordKeyHashMap_8` at 0x4eca90 (decompiler, medium); signature (low): `undefined GrowQwordKeyHashMap_8(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordKeyHashMap_8: u64 = 31101;
-/// `GrowQwordKeyHashMap_9` at 0x639310 (decompiler, medium); signature (untiered): `undefined GrowQwordKeyHashMap_9(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowQwordKeyHashMap_9` at 0x639310 (decompiler, medium); signature (low): `undefined GrowQwordKeyHashMap_9(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowQwordKeyHashMap_9: u64 = 36034;
-/// `GrowQwordKeyedHashMap` at 0x14aeae0 (decompiler, medium); signature (untiered): `undefined GrowQwordKeyedHashMap(longlong param_1)`
+/// `GrowQwordKeyedHashMap` at 0x14aeae0 (decompiler, medium); signature (low): `undefined GrowQwordKeyedHashMap(longlong param_1)`
 pub const GrowQwordKeyedHashMap: u64 = 104751;
 /// `GrowReverseByteBuffer` at 0x112b220 (decompiler, high); signature (high): `undefined GrowReverseByteBuffer(longlong param_1)`
 pub const GrowReverseByteBuffer: u64 = 81461;
-/// `GrowStringAndAppend` at 0x115830 (decompiler, medium); signature (untiered): `undefined8 * GrowStringAndAppend(undefined8 * param_1, ulonglong param_2, undefined8 param_3, void * param_4, size_t param_5)`
+/// `GrowStringAndAppend` at 0x115830 (decompiler, medium); signature (low): `undefined8 * GrowStringAndAppend(undefined8 * param_1, ulonglong param_2, undefined8 param_3, void * param_4, size_t param_5)`
 pub const GrowStringAndAppend: u64 = 440934;
-/// `GrowStringAndAppendChar` at 0x115710 (decompiler, medium); signature (untiered): `undefined8 * GrowStringAndAppendChar(undefined8 * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowStringAndAppendChar` at 0x115710 (decompiler, medium); signature (low): `undefined8 * GrowStringAndAppendChar(undefined8 * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowStringAndAppendChar: u64 = 440160;
-/// `GrowStringAndInsert` at 0x13ff80 (decompiler, high); signature (untiered): `undefined8 * GrowStringAndInsert(undefined8 * param_1, ulonglong param_2, undefined8 param_3, size_t param_4, void * param_5, size_t param_6)`
+/// `GrowStringAndInsert` at 0x13ff80 (decompiler, high); signature (low): `undefined8 * GrowStringAndInsert(undefined8 * param_1, ulonglong param_2, undefined8 param_3, size_t param_4, void * param_5, size_t param_6)`
 pub const GrowStringAndInsert: u64 = 441124;
-/// `GrowStringHashTable2IfNeeded` at 0xd857b0 (decompiler, high); signature (untiered): `undefined GrowStringHashTable2IfNeeded(longlong * param_1, undefined8 param_2)`
+/// `GrowStringHashTable2IfNeeded` at 0xd857b0 (decompiler, high); signature (low): `undefined GrowStringHashTable2IfNeeded(longlong * param_1, undefined8 param_2)`
 pub const GrowStringHashTable2IfNeeded: u64 = 85442;
-/// `GrowStringHashTableIfNeeded` at 0x117b390 (decompiler, medium); signature (untiered): `undefined GrowStringHashTableIfNeeded(longlong * param_1, undefined8 param_2)`
+/// `GrowStringHashTableIfNeeded` at 0x117b390 (decompiler, medium); signature (low): `undefined GrowStringHashTableIfNeeded(longlong * param_1, undefined8 param_2)`
 pub const GrowStringHashTableIfNeeded: u64 = 82657;
 /// `GrowStringKeyedHashMap` at 0x107bd20 (decompiler, medium); signature (medium): `undefined GrowStringKeyedHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowStringKeyedHashMap: u64 = 78544;
-/// `GrowStringKeyedHashTableIfNeeded` at 0xd7e9d0 (decompiler, high); signature (untiered): `undefined GrowStringKeyedHashTableIfNeeded(longlong * param_1, undefined8 param_2)`
+/// `GrowStringKeyedHashTableIfNeeded` at 0xd7e9d0 (decompiler, high); signature (low): `undefined GrowStringKeyedHashTableIfNeeded(longlong * param_1, undefined8 param_2)`
 pub const GrowStringKeyedHashTableIfNeeded: u64 = 85298;
-/// `GrowTable40ByteEntriesIfNeeded` at 0xe6e410 (decompiler, high); signature (untiered): `undefined GrowTable40ByteEntriesIfNeeded(longlong * param_1, undefined8 param_2)`
+/// `GrowTable40ByteEntriesIfNeeded` at 0xe6e410 (decompiler, high); signature (low): `undefined GrowTable40ByteEntriesIfNeeded(longlong * param_1, undefined8 param_2)`
 pub const GrowTable40ByteEntriesIfNeeded: u64 = 88028;
-/// `GrowTable48ByteEntriesIfNeeded` at 0xe2c850 (decompiler, high); signature (untiered): `undefined GrowTable48ByteEntriesIfNeeded(longlong * param_1, undefined8 param_2)`
+/// `GrowTable48ByteEntriesIfNeeded` at 0xe2c850 (decompiler, high); signature (low): `undefined GrowTable48ByteEntriesIfNeeded(longlong * param_1, undefined8 param_2)`
 pub const GrowTable48ByteEntriesIfNeeded: u64 = 88890;
-/// `GrowTable64ByteEntriesIfNeeded` at 0xe6e3c0 (decompiler, high); signature (untiered): `undefined GrowTable64ByteEntriesIfNeeded(longlong * param_1, undefined8 param_2)`
+/// `GrowTable64ByteEntriesIfNeeded` at 0xe6e3c0 (decompiler, high); signature (low): `undefined GrowTable64ByteEntriesIfNeeded(longlong * param_1, undefined8 param_2)`
 pub const GrowTable64ByteEntriesIfNeeded: u64 = 88027;
-/// `GrowTreeRoot` at 0x210c60 (decompiler, medium); signature (untiered): `undefined GrowTreeRoot(undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
+/// `GrowTreeRoot` at 0x210c60 (decompiler, medium); signature (low): `undefined GrowTreeRoot(undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
 pub const GrowTreeRoot: u64 = 15503;
-/// `GrowTreeRoot_2` at 0xecc1d0 (decompiler, medium); signature (untiered): `undefined GrowTreeRoot_2(undefined8 * param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowTreeRoot_2` at 0xecc1d0 (decompiler, medium); signature (low): `undefined GrowTreeRoot_2(undefined8 * param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowTreeRoot_2: u64 = 69777;
-/// `GrowU16HashMap` at 0x4c08c0 (decompiler, medium); signature (untiered): `undefined GrowU16HashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowU16HashMap` at 0x4c08c0 (decompiler, medium); signature (low): `undefined GrowU16HashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowU16HashMap: u64 = 30301;
-/// `GrowU32HashMap` at 0x1562030 (decompiler, medium); signature (untiered): `undefined GrowU32HashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowU32HashMap` at 0x1562030 (decompiler, medium); signature (low): `undefined GrowU32HashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowU32HashMap: u64 = 107684;
-/// `GrowU32HashMapAndRehash` at 0xd6f7c0 (decompiler, medium); signature (untiered): `undefined GrowU32HashMapAndRehash(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowU32HashMapAndRehash` at 0xd6f7c0 (decompiler, medium); signature (low): `undefined GrowU32HashMapAndRehash(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowU32HashMapAndRehash: u64 = 71272;
 /// `GrowU32KeyHashMap_5` at 0x314ff0 (decompiler, medium); signature (medium): `undefined GrowU32KeyHashMap_5(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowU32KeyHashMap_5: u64 = 20605;
@@ -4413,29 +4013,29 @@ pub const GrowU64KeyHashMap_9: u64 = 25662;
 pub const GrowU64KeyHashSet: u64 = 23302;
 /// `GrowU64KeyedHashMap` at 0x10bf460 (decompiler, medium); signature (medium): `undefined GrowU64KeyedHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowU64KeyedHashMap: u64 = 79945;
-/// `GrowUInt32HashMapInline` at 0x792f10 (decompiler, medium); signature (untiered): `undefined GrowUInt32HashMapInline(longlong param_1)`
+/// `GrowUInt32HashMapInline` at 0x792f10 (decompiler, medium); signature (low): `undefined GrowUInt32HashMapInline(longlong param_1)`
 pub const GrowUInt32HashMapInline: u64 = 41653;
-/// `GrowUInt32HashMapInline_2` at 0x7a6ed0 (decompiler, medium); signature (untiered): `undefined GrowUInt32HashMapInline_2(longlong param_1)`
+/// `GrowUInt32HashMapInline_2` at 0x7a6ed0 (decompiler, medium); signature (low): `undefined GrowUInt32HashMapInline_2(longlong param_1)`
 pub const GrowUInt32HashMapInline_2: u64 = 42102;
-/// `GrowUIntHashMap16` at 0x63da50 (decompiler, medium); signature (untiered): `undefined GrowUIntHashMap16(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowUIntHashMap16` at 0x63da50 (decompiler, medium); signature (low): `undefined GrowUIntHashMap16(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowUIntHashMap16: u64 = 36150;
-/// `GrowUIntHashMap24` at 0x63dc90 (decompiler, medium); signature (untiered): `undefined GrowUIntHashMap24(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowUIntHashMap24` at 0x63dc90 (decompiler, medium); signature (low): `undefined GrowUIntHashMap24(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowUIntHashMap24: u64 = 36151;
-/// `GrowUIntKeyHashMap` at 0x27ae00 (decompiler, medium); signature (untiered): `undefined GrowUIntKeyHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowUIntKeyHashMap` at 0x27ae00 (decompiler, medium); signature (low): `undefined GrowUIntKeyHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowUIntKeyHashMap: u64 = 17724;
-/// `GrowUIntKeyHashMap_2` at 0x27b080 (decompiler, medium); signature (untiered): `undefined GrowUIntKeyHashMap_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowUIntKeyHashMap_2` at 0x27b080 (decompiler, medium); signature (low): `undefined GrowUIntKeyHashMap_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowUIntKeyHashMap_2: u64 = 17725;
-/// `GrowUIntKeyHashMap_3` at 0x294a60 (decompiler, medium); signature (untiered): `undefined GrowUIntKeyHashMap_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowUIntKeyHashMap_3` at 0x294a60 (decompiler, medium); signature (low): `undefined GrowUIntKeyHashMap_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowUIntKeyHashMap_3: u64 = 18272;
-/// `GrowUIntKeyHashMap_4` at 0x294f30 (decompiler, medium); signature (untiered): `undefined GrowUIntKeyHashMap_4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowUIntKeyHashMap_4` at 0x294f30 (decompiler, medium); signature (low): `undefined GrowUIntKeyHashMap_4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowUIntKeyHashMap_4: u64 = 18274;
-/// `GrowUIntKeyedHashMap` at 0x14cb380 (decompiler, medium); signature (untiered): `undefined GrowUIntKeyedHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowUIntKeyedHashMap` at 0x14cb380 (decompiler, medium); signature (low): `undefined GrowUIntKeyedHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowUIntKeyedHashMap: u64 = 105115;
-/// `GrowUIntKeyedHashMapWithHeap` at 0x14cb600 (decompiler, medium); signature (untiered): `undefined GrowUIntKeyedHashMapWithHeap(longlong param_1)`
+/// `GrowUIntKeyedHashMapWithHeap` at 0x14cb600 (decompiler, medium); signature (low): `undefined GrowUIntKeyedHashMapWithHeap(longlong param_1)`
 pub const GrowUIntKeyedHashMapWithHeap: u64 = 105116;
-/// `GrowUIntKeyedHashTable` at 0x1173c50 (decompiler, medium); signature (untiered): `undefined GrowUIntKeyedHashTable(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `GrowUIntKeyedHashTable` at 0x1173c50 (decompiler, medium); signature (low): `undefined GrowUIntKeyedHashTable(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrowUIntKeyedHashTable: u64 = 84488;
-/// `GrowUIntKeyedStringHashTableIfNeeded` at 0xd7e930 (decompiler, high); signature (untiered): `undefined GrowUIntKeyedStringHashTableIfNeeded(longlong * param_1, undefined8 param_2)`
+/// `GrowUIntKeyedStringHashTableIfNeeded` at 0xd7e930 (decompiler, high); signature (low): `undefined GrowUIntKeyedStringHashTableIfNeeded(longlong * param_1, undefined8 param_2)`
 pub const GrowUIntKeyedStringHashTableIfNeeded: u64 = 85296;
 /// `GuardActorPackageData::ctor` at 0x7bbb50 (layout_inference, medium); signature (high): `GuardActorPackageData * ctor(GuardActorPackageData * this)`
 pub const GuardActorPackageData__ctor: u64 = 42582;
@@ -4455,7 +4055,7 @@ pub const GuardPackageData__vdtor: u64 = 42589;
 pub const GuardPackageData__vfunc_4: u64 = 42580;
 /// `GuardPackageData::vfunc_5` at 0x7bbaf0 (rtti, high); signature (low): `undefined vfunc_5(GuardPackageData * this, longlong param_1)`
 pub const GuardPackageData__vfunc_5: u64 = 42581;
-/// `GuessMedianQwordsWithPredicate` at 0x12bc20 (decompiler, medium); signature (untiered): `undefined GuessMedianQwordsWithPredicate(undefined8 * param_1, undefined8 * param_2, undefined8 * param_3, undefined * param_4)`
+/// `GuessMedianQwordsWithPredicate` at 0x12bc20 (decompiler, medium); signature (low): `undefined GuessMedianQwordsWithPredicate(undefined8 * param_1, undefined8 * param_2, undefined8 * param_3, undefined * param_4)`
 pub const GuessMedianQwordsWithPredicate: u64 = 440693;
 /// `GuideEffect::vdtor` at 0x5c8210 (slot_propagation, medium); signature (low): `GuideEffect * vdtor(GuideEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const GuideEffect__vdtor: u64 = 34354;
@@ -4481,9 +4081,9 @@ pub const HUDChargeMeter__vfunc_1: u64 = 51666;
 pub const HUDChargeMeter__vfunc_2: u64 = 51667;
 /// `HUDData::vdtor` at 0x98d420 (layout_inference, medium); signature (low): `HUDData * vdtor(HUDData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const HUDData__vdtor: u64 = 52820;
-/// `HUDMenu::Accept` at 0x934cc0 (semantic, medium); signature (untiered): `undefined Accept(HUDMenu * this, longlong * param_1)`
+/// `HUDMenu::Accept` at 0x934cc0 (semantic, medium); signature (low): `undefined Accept(HUDMenu * this, longlong * param_1)`
 pub const HUDMenu__Accept: u64 = 51615;
-/// `HUDMenu::AdvanceMovie` at 0x934a50 (semantic, high); signature (untiered): `undefined AdvanceMovie(HUDMenu * this, float param_1, longlong * param_2, undefined8 param_3)`
+/// `HUDMenu::AdvanceMovie` at 0x934a50 (semantic, high); signature (low): `undefined AdvanceMovie(HUDMenu * this, float param_1, longlong * param_2, undefined8 param_3)`
 pub const HUDMenu__AdvanceMovie: u64 = 51613;
 /// `HUDMenu::BSTEventSink_BSRemoteGamepadEvent_vdtor` at 0x93bbc4 (slot_propagation, medium); signature (high): `undefined BSTEventSink_BSRemoteGamepadEvent_vdtor(HUDMenu * this)`
 pub const HUDMenu__BSTEventSink_BSRemoteGamepadEvent_vdtor: u64 = 51708;
@@ -4493,13 +4093,13 @@ pub const HUDMenu__BSTEventSink_BSRemoteGamepadEvent_vfunc_1: u64 = 51644;
 pub const HUDMenu__BSTEventSink_UserEventEnabledEvent_vdtor: u64 = 51707;
 /// `HUDMenu::BSTEventSink_UserEventEnabledEvent_vfunc_1` at 0x936410 (rtti, high); signature (low): `undefined8 BSTEventSink_UserEventEnabledEvent_vfunc_1(HUDMenu * this, byte * param_1, undefined8 param_2, undefined8 param_3)`
 pub const HUDMenu__BSTEventSink_UserEventEnabledEvent_vfunc_1: u64 = 51643;
-/// `HUDMenu::Create` at 0x93c8a0 (semantic, high); signature (untiered): `void Create(void)`; semantic: menu creator registered under 'HUD Menu' (high); signature `IMenu* ()`
+/// `HUDMenu::Create` at 0x93c8a0 (semantic, high); signature (high): `void Create(void)`; semantic: menu creator registered under 'HUD Menu' (high); signature `IMenu* ()`
 pub const HUDMenu__Create: u64 = 51730;
 /// `HUDMenu::Create` as a function pointer type (high).
 pub type HUDMenu__Create_fn = unsafe extern "C" fn() -> *mut crate::IMenu;
-/// `HUDMenu::Dtor` at 0x93be70 (semantic, high); signature (untiered): `HUDMenu * Dtor(HUDMenu * this, uint param_1, longlong * param_2, undefined8 param_3)`
+/// `HUDMenu::Dtor` at 0x93be70 (semantic, high); signature (low): `HUDMenu * Dtor(HUDMenu * this, uint param_1, longlong * param_2, undefined8 param_3)`
 pub const HUDMenu__Dtor: u64 = 51715;
-/// `HUDMenu::ProcessMessage` at 0x933180 (semantic, high); signature (untiered): `undefined8 ProcessMessage(HUDMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+/// `HUDMenu::ProcessMessage` at 0x933180 (semantic, high); signature (low): `undefined8 ProcessMessage(HUDMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const HUDMenu__ProcessMessage: u64 = 51612;
 /// `HUDMenu::RegisterHUDComponents` at 0x934e20 (semantic, high); signature (untiered): `undefined RegisterHUDComponents(longlong param_1)`; semantic: FxDelegate callback: stores args[0] as the HUD root (+0x78) and gives the args to every HUDObject's slot 3 (high); signature `void (FxDelegateArgs* args)`
 pub const HUDMenu__RegisterHUDComponents: u64 = 51616;
@@ -4513,7 +4113,7 @@ pub type HUDMenu__ctor_fn = unsafe extern "C" fn(this: *mut crate::HUDMenu) -> *
 pub const HUDMenu__ctor_sub0: u64 = 51677;
 /// `HUDMenu::ctor_sub1` at 0x93b710 (callgraph, medium); signature (untiered): `undefined ctor_sub1(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const HUDMenu__ctor_sub1: u64 = 51694;
-/// `HUDMenu::dtor` at 0x933000 (semantic, high); signature (untiered): `undefined dtor(HUDMenu * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`; semantic: destructor (currently named HUDMenu::ctor): deletes the objects, removes the sinks, releases the root (high); signature `void (HUDMenu* this)`
+/// `HUDMenu::dtor` at 0x933000 (semantic, high); signature (low): `undefined dtor(HUDMenu * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`; semantic: destructor (currently named HUDMenu::ctor): deletes the objects, removes the sinks, releases the root (high); signature `void (HUDMenu* this)`
 pub const HUDMenu__dtor: u64 = 51611;
 /// `HUDMenu::dtor` as a function pointer type (high).
 pub type HUDMenu__dtor_fn = unsafe extern "C" fn(this: *mut crate::HUDMenu);
@@ -4537,13 +4137,13 @@ pub const HUDMeter__vfunc_1: u64 = 51743;
 pub const HUDMeter__vfunc_2: u64 = 51658;
 /// `HUDMeter::vfunc_5` at 0x937d60 (rtti, high); signature (low): `undefined4 vfunc_5(void)`
 pub const HUDMeter__vfunc_5: u64 = 51657;
-/// `HUDNotifications::Cleanup` at 0x936b10 (semantic, high); signature (untiered): `undefined Cleanup(HUDNotifications * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+/// `HUDNotifications::Cleanup` at 0x936b10 (semantic, high); signature (low): `undefined Cleanup(HUDNotifications * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const HUDNotifications__Cleanup: u64 = 51651;
-/// `HUDNotifications::ProcessMessage` at 0x937570 (semantic, high); signature (untiered): `undefined1 * ProcessMessage(HUDNotifications * this, void * * param_1)`
+/// `HUDNotifications::ProcessMessage` at 0x937570 (semantic, high); signature (low): `undefined1 * ProcessMessage(HUDNotifications * this, void * * param_1)`
 pub const HUDNotifications__ProcessMessage: u64 = 51653;
-/// `HUDNotifications::RegisterHUDComponent` at 0x936a80 (semantic, high); signature (untiered): `undefined RegisterHUDComponent(HUDNotifications * this, longlong param_1)`
+/// `HUDNotifications::RegisterHUDComponent` at 0x936a80 (semantic, high); signature (low): `undefined RegisterHUDComponent(HUDNotifications * this, longlong param_1)`
 pub const HUDNotifications__RegisterHUDComponent: u64 = 51650;
-/// `HUDNotifications::Update` at 0x936de0 (semantic, high); signature (untiered): `undefined Update(HUDNotifications * this)`
+/// `HUDNotifications::Update` at 0x936de0 (semantic, high); signature (high): `undefined Update(HUDNotifications * this)`
 pub const HUDNotifications__Update: u64 = 51652;
 /// `HUDNotifications::vfunc_0` at 0x93c080 (rtti, high); signature (low): `HUDNotifications * vfunc_0(HUDNotifications * this, HUDNotifications * param_1, HUDNotifications_vtbl * param_2, undefined8 param_3)`
 pub const HUDNotifications__vfunc_0: u64 = 51717;
@@ -4557,13 +4157,13 @@ pub const HUDNotifications__vfunc_2_sub2: u64 = 51704;
 pub const HUDNotifications__vfunc_2_sub3: u64 = 51705;
 /// `HUDNotifications::vfunc_2_sub4` at 0x93c370 (callgraph, medium); signature (untiered): `uint vfunc_2_sub4(longlong * param_1, longlong * param_2)`
 pub const HUDNotifications__vfunc_2_sub4: u64 = 51723;
-/// `HUDObject::Cleanup` at 0x93cb10 (semantic, medium); signature (untiered): `undefined Cleanup(void)`
+/// `HUDObject::Cleanup` at 0x93cb10 (semantic, medium); signature (low): `undefined Cleanup(void)`
 pub const HUDObject__Cleanup: u64 = 51734;
-/// `HUDObject::Dtor` at 0x93c120 (semantic, high); signature (untiered): `HUDObject * Dtor(HUDObject * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+/// `HUDObject::Dtor` at 0x93c120 (semantic, high); signature (low): `HUDObject * Dtor(HUDObject * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const HUDObject__Dtor: u64 = 51718;
-/// `HUDObject::ProcessMessage` at 0x93c980 (semantic, high); signature (untiered): `undefined1 ProcessMessage(void)`
+/// `HUDObject::ProcessMessage` at 0x93c980 (semantic, high); signature (low): `undefined1 ProcessMessage(void)`
 pub const HUDObject__ProcessMessage: u64 = 51732;
-/// `HUDObject::RegisterHUDComponent` at 0x936490 (semantic, high); signature (untiered): `undefined RegisterHUDComponent(HUDObject * this, longlong param_1)`
+/// `HUDObject::RegisterHUDComponent` at 0x936490 (semantic, high); signature (low): `undefined RegisterHUDComponent(HUDObject * this, longlong param_1)`
 pub const HUDObject__RegisterHUDComponent: u64 = 51645;
 /// `HUDObject::dtor` at 0x93ba60 (layout_inference, high); signature (high): `undefined dtor(HUDObject * this)`
 pub const HUDObject__dtor: u64 = 51703;
@@ -4571,123 +4171,123 @@ pub const HUDObject__dtor: u64 = 51703;
 pub const HalfToFloatBits: u64 = 76218;
 /// `HalfToFloatBits_2` at 0x909100 (decompiler, high); signature (high): `uint HalfToFloatBits_2(ushort param_1)`
 pub const HalfToFloatBits_2: u64 = 51077;
-/// `HandIkSolveArm` at 0xb12700 (semantic, medium); signature (untiered): `undefined HandIkSolveArm(longlong param_1, int param_2, undefined4 param_3, undefined8 param_4, undefined4 param_5, undefined8 * param_6, float * param_7, longlong * param_8)`; semantic: hkbHandIkModifier per-hand solve through TwoJointSolve (medium); signature `void (hkbHandIkModifier* this, ...)`
+/// `HandIkSolveArm` at 0xb12700 (semantic, medium); signature (low): `undefined HandIkSolveArm(longlong param_1, int param_2, undefined4 param_3, undefined8 param_4, undefined4 param_5, undefined8 * param_6, float * param_7, longlong * param_8)`; semantic: hkbHandIkModifier per-hand solve through TwoJointSolve (medium); signature `void (hkbHandIkModifier* this, ...)`
 pub const HandIkSolveArm: u64 = 59790;
-/// `HandleBNetLoginResult` at 0x574460 (decompiler, medium); signature (untiered): `undefined HandleBNetLoginResult(longlong param_1, longlong * param_2, undefined1 * param_3)`
+/// `HandleBNetLoginResult` at 0x574460 (decompiler, medium); signature (low): `undefined HandleBNetLoginResult(longlong param_1, longlong * param_2, undefined1 * param_3)`
 pub const HandleBNetLoginResult: u64 = 418689;
-/// `HandleCommerceResponseWithoutBody` at 0x13741c0 (decompiler, medium); signature (untiered): `longlong * HandleCommerceResponseWithoutBody(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
+/// `HandleCommerceResponseWithoutBody` at 0x13741c0 (decompiler, medium); signature (low): `longlong * HandleCommerceResponseWithoutBody(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
 pub const HandleCommerceResponseWithoutBody: u64 = 449027;
-/// `HandleCompletionAndStartNextPrimaryOperation` at 0x599410 (decompiler, medium); signature (untiered): `undefined8 HandleCompletionAndStartNextPrimaryOperation(longlong * param_1, undefined8 param_2, undefined1 * param_3, undefined4 * param_4)`
+/// `HandleCompletionAndStartNextPrimaryOperation` at 0x599410 (decompiler, medium); signature (low): `undefined8 HandleCompletionAndStartNextPrimaryOperation(longlong * param_1, undefined8 param_2, undefined1 * param_3, undefined4 * param_4)`
 pub const HandleCompletionAndStartNextPrimaryOperation: u64 = 441990;
-/// `HandleCompletionAndStartNextSecondaryOperation` at 0x5994b0 (decompiler, medium); signature (untiered): `undefined8 HandleCompletionAndStartNextSecondaryOperation(longlong * param_1, undefined8 param_2, undefined1 * param_3, undefined4 * param_4)`
+/// `HandleCompletionAndStartNextSecondaryOperation` at 0x5994b0 (decompiler, medium); signature (low): `undefined8 HandleCompletionAndStartNextSecondaryOperation(longlong * param_1, undefined8 param_2, undefined1 * param_3, undefined4 * param_4)`
 pub const HandleCompletionAndStartNextSecondaryOperation: u64 = 441991;
-/// `HandleConsoleMacroCommand` at 0x90d680 (semantic, medium); signature (untiered): `bool HandleConsoleMacroCommand(char * param_1, char * param_2, uint param_3, undefined8 param_4)`; semantic: console macro/hotkey/reload preprocessor; returns whether the (expanded) line still has to run (medium); signature `bool (const char* line, char* expanded, uint size)`
+/// `HandleConsoleMacroCommand` at 0x90d680 (semantic, medium); signature (low): `bool HandleConsoleMacroCommand(char * param_1, char * param_2, uint param_3, undefined8 param_4)`; semantic: console macro/hotkey/reload preprocessor; returns whether the (expanded) line still has to run (medium); signature `bool (const char* line, char* expanded, uint size)`
 pub const HandleConsoleMacroCommand: u64 = 442699;
-/// `HandleContentInfoResultForPrimaryOperation` at 0x59a480 (decompiler, medium); signature (untiered): `undefined8 HandleContentInfoResultForPrimaryOperation(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
+/// `HandleContentInfoResultForPrimaryOperation` at 0x59a480 (decompiler, medium); signature (low): `undefined8 HandleContentInfoResultForPrimaryOperation(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
 pub const HandleContentInfoResultForPrimaryOperation: u64 = 441999;
-/// `HandleContentInfoResultForSecondaryOperation` at 0x59a5e0 (decompiler, medium); signature (untiered): `undefined8 HandleContentInfoResultForSecondaryOperation(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
+/// `HandleContentInfoResultForSecondaryOperation` at 0x59a5e0 (decompiler, medium); signature (low): `undefined8 HandleContentInfoResultForSecondaryOperation(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
 pub const HandleContentInfoResultForSecondaryOperation: u64 = 442000;
-/// `HandleCreateTwitchAccountDataResponse` at 0x13bd9a0 (decompiler, medium); signature (untiered): `undefined HandleCreateTwitchAccountDataResponse(longlong * param_1, longlong * param_2, longlong param_3, ulonglong param_4)`
+/// `HandleCreateTwitchAccountDataResponse` at 0x13bd9a0 (decompiler, medium); signature (low): `undefined HandleCreateTwitchAccountDataResponse(longlong * param_1, longlong * param_2, longlong param_3, ulonglong param_4)`
 pub const HandleCreateTwitchAccountDataResponse: u64 = 99137;
-/// `HandleCreationsMenuSettingRequest` at 0x581ba0 (decompiler, medium); signature (untiered): `undefined HandleCreationsMenuSettingRequest(int param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
+/// `HandleCreationsMenuSettingRequest` at 0x581ba0 (decompiler, medium); signature (low): `undefined HandleCreationsMenuSettingRequest(int param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
 pub const HandleCreationsMenuSettingRequest: u64 = 441739;
-/// `HandleEntitlementsConfigurationResponse_2` at 0x1435880 (decompiler, medium); signature (untiered): `longlong * HandleEntitlementsConfigurationResponse_2(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
+/// `HandleEntitlementsConfigurationResponse_2` at 0x1435880 (decompiler, medium); signature (low): `longlong * HandleEntitlementsConfigurationResponse_2(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
 pub const HandleEntitlementsConfigurationResponse_2: u64 = 452275;
-/// `HandleEntryPoint` at 0x38cff0 (decompiler, medium); signature (untiered): `undefined HandleEntryPoint(uint param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+/// `HandleEntryPoint` at 0x38cff0 (decompiler, medium); signature (low): `undefined HandleEntryPoint(uint param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const HandleEntryPoint: u64 = 23526;
-/// `HandleEntryPoint54ForItem` at 0x913ac0 (decompiler, medium); signature (untiered): `undefined HandleEntryPoint54ForItem(undefined8 param_1, longlong * param_2)`
+/// `HandleEntryPoint54ForItem` at 0x913ac0 (decompiler, medium); signature (low): `undefined HandleEntryPoint54ForItem(undefined8 param_1, longlong * param_2)`
 pub const HandleEntryPoint54ForItem: u64 = 51151;
-/// `HandleFileChunkResult_2` at 0x1423be0 (decompiler, medium); signature (untiered): `undefined HandleFileChunkResult_2(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+/// `HandleFileChunkResult_2` at 0x1423be0 (decompiler, medium); signature (low): `undefined HandleFileChunkResult_2(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const HandleFileChunkResult_2: u64 = 101664;
-/// `HandleFriendlyHitFromActor` at 0x6ccc50 (decompiler, medium); signature (untiered): `undefined HandleFriendlyHitFromActor(Actor * param_1, Actor * param_2, undefined8 param_3, ulonglong param_4)`
+/// `HandleFriendlyHitFromActor` at 0x6ccc50 (decompiler, medium); signature (low): `undefined HandleFriendlyHitFromActor(Actor * param_1, Actor * param_2, undefined8 param_3, ulonglong param_4)`
 pub const HandleFriendlyHitFromActor: u64 = 38626;
-/// `HandleGetAuthorContentStatsResponse` at 0x1353200 (decompiler, medium); signature (untiered): `undefined HandleGetAuthorContentStatsResponse(longlong * param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
+/// `HandleGetAuthorContentStatsResponse` at 0x1353200 (decompiler, medium); signature (low): `undefined HandleGetAuthorContentStatsResponse(longlong * param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
 pub const HandleGetAuthorContentStatsResponse: u64 = 447778;
-/// `HandleGetBundlePreviewResponse` at 0x143fa90 (decompiler, medium); signature (untiered): `undefined HandleGetBundlePreviewResponse(longlong * param_1, longlong * param_2, longlong param_3, ulonglong param_4)`
+/// `HandleGetBundlePreviewResponse` at 0x143fa90 (decompiler, medium); signature (low): `undefined HandleGetBundlePreviewResponse(longlong * param_1, longlong * param_2, longlong param_3, ulonglong param_4)`
 pub const HandleGetBundlePreviewResponse: u64 = 452417;
-/// `HandleGetCollectionIdFromLegacyIdResponse` at 0x1355900 (decompiler, medium); signature (untiered): `undefined HandleGetCollectionIdFromLegacyIdResponse(longlong * param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
+/// `HandleGetCollectionIdFromLegacyIdResponse` at 0x1355900 (decompiler, medium); signature (low): `undefined HandleGetCollectionIdFromLegacyIdResponse(longlong * param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
 pub const HandleGetCollectionIdFromLegacyIdResponse: u64 = 526538;
-/// `HandleGetContentIdFromLegacyIdResponse` at 0x1356e40 (decompiler, medium); signature (untiered): `undefined HandleGetContentIdFromLegacyIdResponse(longlong * param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
+/// `HandleGetContentIdFromLegacyIdResponse` at 0x1356e40 (decompiler, medium); signature (low): `undefined HandleGetContentIdFromLegacyIdResponse(longlong * param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
 pub const HandleGetContentIdFromLegacyIdResponse: u64 = 526565;
-/// `HandleGetContentResponse` at 0x1357a20 (decompiler, medium); signature (untiered): `undefined HandleGetContentResponse(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
+/// `HandleGetContentResponse` at 0x1357a20 (decompiler, medium); signature (low): `undefined HandleGetContentResponse(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
 pub const HandleGetContentResponse: u64 = 447505;
-/// `HandleGetContentStatusMinimalResponse` at 0x13584c0 (decompiler, medium); signature (untiered): `undefined HandleGetContentStatusMinimalResponse(longlong * param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
+/// `HandleGetContentStatusMinimalResponse` at 0x13584c0 (decompiler, medium); signature (low): `undefined HandleGetContentStatusMinimalResponse(longlong * param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
 pub const HandleGetContentStatusMinimalResponse: u64 = 526594;
-/// `HandleGrenadeCollisionContact` at 0x7ebe00 (decompiler, medium); signature (untiered): `undefined HandleGrenadeCollisionContact(longlong * param_1, longlong param_2)`
+/// `HandleGrenadeCollisionContact` at 0x7ebe00 (decompiler, medium); signature (low): `undefined HandleGrenadeCollisionContact(longlong * param_1, longlong param_2)`
 pub const HandleGrenadeCollisionContact: u64 = 43917;
-/// `HandleGrenadeCollisionContactIfEligible` at 0x3fc360 (decompiler, medium); signature (untiered): `undefined HandleGrenadeCollisionContactIfEligible(undefined8 param_1, longlong * param_2, undefined8 param_3)`
+/// `HandleGrenadeCollisionContactIfEligible` at 0x3fc360 (decompiler, medium); signature (low): `undefined HandleGrenadeCollisionContactIfEligible(undefined8 param_1, longlong * param_2, undefined8 param_3)`
 pub const HandleGrenadeCollisionContactIfEligible: u64 = 25820;
-/// `HandleKeyDownEvent` at 0xd63e00 (decompiler, medium); signature (untiered): `ulonglong HandleKeyDownEvent(longlong * param_1, int * param_2, uint * param_3)`
+/// `HandleKeyDownEvent` at 0xd63e00 (decompiler, medium); signature (low): `ulonglong HandleKeyDownEvent(longlong * param_1, int * param_2, uint * param_3)`
 pub const HandleKeyDownEvent: u64 = 84265;
-/// `HandleLegalDocsItemsResponse` at 0x1424930 (decompiler, medium); signature (untiered): `undefined HandleLegalDocsItemsResponse(longlong * param_1, longlong * param_2, longlong param_3, ulonglong param_4)`
+/// `HandleLegalDocsItemsResponse` at 0x1424930 (decompiler, medium); signature (low): `undefined HandleLegalDocsItemsResponse(longlong * param_1, longlong * param_2, longlong param_3, ulonglong param_4)`
 pub const HandleLegalDocsItemsResponse: u64 = 101678;
-/// `HandleLegalDocumentListResult` at 0x574a60 (decompiler, medium); signature (untiered): `undefined HandleLegalDocumentListResult(longlong param_1, longlong * param_2, undefined1 * param_3, undefined8 param_4)`
+/// `HandleLegalDocumentListResult` at 0x574a60 (decompiler, medium); signature (low): `undefined HandleLegalDocumentListResult(longlong param_1, longlong * param_2, undefined1 * param_3, undefined8 param_4)`
 pub const HandleLegalDocumentListResult: u64 = 418693;
-/// `HandleListBundlesResponse` at 0x1367810 (decompiler, medium); signature (untiered): `undefined HandleListBundlesResponse(longlong * param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
+/// `HandleListBundlesResponse` at 0x1367810 (decompiler, medium); signature (low): `undefined HandleListBundlesResponse(longlong * param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
 pub const HandleListBundlesResponse: u64 = 526738;
-/// `HandleListCollectionResponse` at 0x13687f0 (decompiler, medium); signature (untiered): `undefined HandleListCollectionResponse(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
+/// `HandleListCollectionResponse` at 0x13687f0 (decompiler, medium); signature (low): `undefined HandleListCollectionResponse(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
 pub const HandleListCollectionResponse: u64 = 447621;
-/// `HandleListContentResponse` at 0x1369280 (decompiler, medium); signature (untiered): `undefined HandleListContentResponse(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
+/// `HandleListContentResponse` at 0x1369280 (decompiler, medium); signature (low): `undefined HandleListContentResponse(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
 pub const HandleListContentResponse: u64 = 447652;
-/// `HandleListSubscribedContentResponse` at 0x135f6d0 (decompiler, medium); signature (untiered): `undefined HandleListSubscribedContentResponse(longlong * param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
+/// `HandleListSubscribedContentResponse` at 0x135f6d0 (decompiler, medium); signature (low): `undefined HandleListSubscribedContentResponse(longlong * param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
 pub const HandleListSubscribedContentResponse: u64 = 447801;
-/// `HandleListSubscribedContentResponse_2` at 0x1362040 (decompiler, medium); signature (untiered): `undefined HandleListSubscribedContentResponse_2(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
+/// `HandleListSubscribedContentResponse_2` at 0x1362040 (decompiler, medium); signature (low): `undefined HandleListSubscribedContentResponse_2(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
 pub const HandleListSubscribedContentResponse_2: u64 = 447835;
-/// `HandleLoginResultCode` at 0x573bd0 (decompiler, medium); signature (untiered): `undefined HandleLoginResultCode(undefined8 * param_1, int param_2, undefined8 param_3, undefined8 param_4)`
+/// `HandleLoginResultCode` at 0x573bd0 (decompiler, medium); signature (low): `undefined HandleLoginResultCode(undefined8 * param_1, int param_2, undefined8 param_3, undefined8 param_4)`
 pub const HandleLoginResultCode: u64 = 418680;
-/// `HandleLoginResultCodeWithErrorBox` at 0x573b00 (decompiler, medium); signature (untiered): `undefined HandleLoginResultCodeWithErrorBox(undefined8 * param_1, int param_2, undefined8 param_3, undefined8 param_4)`
+/// `HandleLoginResultCodeWithErrorBox` at 0x573b00 (decompiler, medium); signature (low): `undefined HandleLoginResultCodeWithErrorBox(undefined8 * param_1, int param_2, undefined8 param_3, undefined8 param_4)`
 pub const HandleLoginResultCodeWithErrorBox: u64 = 418679;
-/// `HandleLoginSuccess` at 0x5738d0 (decompiler, medium); signature (untiered): `undefined HandleLoginSuccess(longlong param_1)`
+/// `HandleLoginSuccess` at 0x5738d0 (decompiler, medium); signature (low): `undefined HandleLoginSuccess(longlong param_1)`
 pub const HandleLoginSuccess: u64 = 418677;
-/// `HandleMediaUploadCompleteResponse` at 0x1363a60 (decompiler, medium); signature (untiered): `undefined HandleMediaUploadCompleteResponse(longlong * param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
+/// `HandleMediaUploadCompleteResponse` at 0x1363a60 (decompiler, medium); signature (low): `undefined HandleMediaUploadCompleteResponse(longlong * param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
 pub const HandleMediaUploadCompleteResponse: u64 = 526690;
-/// `HandleMediaUploadInitiateResponse` at 0x1364bf0 (decompiler, medium); signature (untiered): `undefined HandleMediaUploadInitiateResponse(longlong * param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
+/// `HandleMediaUploadInitiateResponse` at 0x1364bf0 (decompiler, medium); signature (low): `undefined HandleMediaUploadInitiateResponse(longlong * param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
 pub const HandleMediaUploadInitiateResponse: u64 = 526711;
-/// `HandleMenuRequest49Or4B` at 0x585fb0 (decompiler, medium); signature (untiered): `undefined8 HandleMenuRequest49Or4B(int param_1)`
+/// `HandleMenuRequest49Or4B` at 0x585fb0 (decompiler, medium); signature (low): `undefined8 HandleMenuRequest49Or4B(int param_1)`
 pub const HandleMenuRequest49Or4B: u64 = 441761;
-/// `HandleMenuRequestWithVirtualKeyboard` at 0x57f900 (decompiler, medium); signature (untiered): `undefined HandleMenuRequestWithVirtualKeyboard(longlong param_1, int param_2, longlong * param_3)`
+/// `HandleMenuRequestWithVirtualKeyboard` at 0x57f900 (decompiler, medium); signature (low): `undefined HandleMenuRequestWithVirtualKeyboard(longlong param_1, int param_2, longlong * param_3)`
 pub const HandleMenuRequestWithVirtualKeyboard: u64 = 441716;
 /// `HandleMotdAndMarketplaceHash` at 0x600970 (decompiler, medium); signature (medium): `undefined HandleMotdAndMarketplaceHash(int param_1, undefined8 param_2, char * param_3, undefined8 param_4)`
 pub const HandleMotdAndMarketplaceHash: u64 = 442360;
-/// `HandleMousePressSelection` at 0xe52cb0 (decompiler, medium); signature (untiered): `undefined HandleMousePressSelection(longlong param_1, float param_2, float param_3, ulonglong param_4)`
+/// `HandleMousePressSelection` at 0xe52cb0 (decompiler, medium); signature (low): `undefined HandleMousePressSelection(longlong param_1, float param_2, float param_3, ulonglong param_4)`
 pub const HandleMousePressSelection: u64 = 88990;
-/// `HandleNotificationTerminatedResult` at 0x13961a0 (decompiler, medium); signature (untiered): `undefined HandleNotificationTerminatedResult(longlong param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
+/// `HandleNotificationTerminatedResult` at 0x13961a0 (decompiler, medium); signature (low): `undefined HandleNotificationTerminatedResult(longlong param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
 pub const HandleNotificationTerminatedResult: u64 = 450181;
-/// `HandleOpenCloseAnimEvent` at 0x1d9d90 (decompiler, medium); signature (untiered): `char HandleOpenCloseAnimEvent(longlong * param_1, longlong param_2)`
+/// `HandleOpenCloseAnimEvent` at 0x1d9d90 (decompiler, medium); signature (low): `char HandleOpenCloseAnimEvent(longlong * param_1, longlong param_2)`
 pub const HandleOpenCloseAnimEvent: u64 = 14286;
 /// `HandlePlayerEncounterZoneChange` at 0x773100 (decompiler, medium); signature (medium): `undefined HandlePlayerEncounterZoneChange(longlong * param_1)`
 pub const HandlePlayerEncounterZoneChange: u64 = 41143;
-/// `HandlePurchasePreviewResponse` at 0x13a1cc0 (decompiler, medium); signature (untiered): `undefined HandlePurchasePreviewResponse(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
+/// `HandlePurchasePreviewResponse` at 0x13a1cc0 (decompiler, medium); signature (low): `undefined HandlePurchasePreviewResponse(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
 pub const HandlePurchasePreviewResponse: u64 = 100331;
-/// `HandlePurchaseRequestResponse` at 0x13a0fb0 (decompiler, medium); signature (untiered): `undefined HandlePurchaseRequestResponse(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
+/// `HandlePurchaseRequestResponse` at 0x13a0fb0 (decompiler, medium); signature (low): `undefined HandlePurchaseRequestResponse(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
 pub const HandlePurchaseRequestResponse: u64 = 526926;
-/// `HandlePurchaseResponse` at 0x1373660 (decompiler, medium); signature (untiered): `undefined HandlePurchaseResponse(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
+/// `HandlePurchaseResponse` at 0x1373660 (decompiler, medium); signature (low): `undefined HandlePurchaseResponse(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
 pub const HandlePurchaseResponse: u64 = 526805;
-/// `HandleQueuedKeyEvent` at 0xd4dc80 (decompiler, medium); signature (untiered): `undefined HandleQueuedKeyEvent(longlong param_1, undefined8 param_2, longlong param_3, undefined8 param_4)`
+/// `HandleQueuedKeyEvent` at 0xd4dc80 (decompiler, medium); signature (low): `undefined HandleQueuedKeyEvent(longlong param_1, undefined8 param_2, longlong param_3, undefined8 param_4)`
 pub const HandleQueuedKeyEvent: u64 = 83914;
-/// `HandleQueuedPointerEvent` at 0xd4efc0 (decompiler, medium); signature (untiered): `undefined HandleQueuedPointerEvent(longlong param_1, longlong param_2, longlong param_3, uint * param_4)`
+/// `HandleQueuedPointerEvent` at 0xd4efc0 (decompiler, medium); signature (low): `undefined HandleQueuedPointerEvent(longlong param_1, longlong param_2, longlong param_3, uint * param_4)`
 pub const HandleQueuedPointerEvent: u64 = 83920;
-/// `HandleRecordEventType5` at 0x16181d0 (decompiler, medium); signature (untiered): `undefined HandleRecordEventType5(longlong param_1, undefined8 param_2, undefined8 * param_3, undefined8 param_4)`
+/// `HandleRecordEventType5` at 0x16181d0 (decompiler, medium); signature (low): `undefined HandleRecordEventType5(longlong param_1, undefined8 param_2, undefined8 * param_3, undefined8 param_4)`
 pub const HandleRecordEventType5: u64 = 527975;
-/// `HandleResponseAndMoveOutResult` at 0x13bb710 (decompiler, medium); signature (untiered): `longlong * HandleResponseAndMoveOutResult(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
+/// `HandleResponseAndMoveOutResult` at 0x13bb710 (decompiler, medium); signature (low): `longlong * HandleResponseAndMoveOutResult(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
 pub const HandleResponseAndMoveOutResult: u64 = 450808;
-/// `HandleResponseAndMoveOutResult_2` at 0x13bb7c0 (decompiler, medium); signature (untiered): `longlong * HandleResponseAndMoveOutResult_2(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
+/// `HandleResponseAndMoveOutResult_2` at 0x13bb7c0 (decompiler, medium); signature (low): `longlong * HandleResponseAndMoveOutResult_2(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
 pub const HandleResponseAndMoveOutResult_2: u64 = 450809;
-/// `HandleResponseAndTakeField23028` at 0x13d7820 (decompiler, medium); signature (untiered): `longlong * HandleResponseAndTakeField23028(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
+/// `HandleResponseAndTakeField23028` at 0x13d7820 (decompiler, medium); signature (low): `longlong * HandleResponseAndTakeField23028(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
 pub const HandleResponseAndTakeField23028: u64 = 451351;
-/// `HandleSpellCastFailure` at 0x5c0760 (decompiler, medium); signature (untiered): `undefined HandleSpellCastFailure(longlong * param_1, int param_2, undefined8 param_3)`
+/// `HandleSpellCastFailure` at 0x5c0760 (decompiler, medium); signature (low): `undefined HandleSpellCastFailure(longlong * param_1, int param_2, undefined8 param_3)`
 pub const HandleSpellCastFailure: u64 = 34147;
-/// `HandleUpdateContentResponse` at 0x1366280 (decompiler, medium); signature (untiered): `undefined HandleUpdateContentResponse(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
+/// `HandleUpdateContentResponse` at 0x1366280 (decompiler, medium); signature (low): `undefined HandleUpdateContentResponse(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
 pub const HandleUpdateContentResponse: u64 = 526715;
-/// `HandleUpdateContentResponse_2` at 0x136ded0 (decompiler, medium); signature (untiered): `undefined HandleUpdateContentResponse_2(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
+/// `HandleUpdateContentResponse_2` at 0x136ded0 (decompiler, medium); signature (low): `undefined HandleUpdateContentResponse_2(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
 pub const HandleUpdateContentResponse_2: u64 = 526773;
-/// `HandleWinHttpStatusCallback` at 0x13440c0 (decompiler, medium); signature (untiered): `ulonglong HandleWinHttpStatusCallback(longlong * param_1, uint param_2, ulonglong * param_3, undefined8 param_4)`
+/// `HandleWinHttpStatusCallback` at 0x13440c0 (decompiler, medium); signature (low): `ulonglong HandleWinHttpStatusCallback(longlong * param_1, uint param_2, ulonglong * param_3, undefined8 param_4)`
 pub const HandleWinHttpStatusCallback: u64 = 526397;
-/// `HandleWinHttpStatusCallback_2` at 0x14474f0 (decompiler, medium); signature (untiered): `ulonglong HandleWinHttpStatusCallback_2(longlong * param_1, ulonglong param_2, ulonglong * param_3, undefined8 param_4)`
+/// `HandleWinHttpStatusCallback_2` at 0x14474f0 (decompiler, medium); signature (low): `ulonglong HandleWinHttpStatusCallback_2(longlong * param_1, ulonglong param_2, ulonglong * param_3, undefined8 param_4)`
 pub const HandleWinHttpStatusCallback_2: u64 = 527629;
 /// `HandlerCreationMissPolicy<BSTSmartPointer<IHandlerFunctor<Actor,BSFixedStringCI>,BSTSmartPointerIntrusiveRefCount>,BSFixedStringCI>::vdtor` at 0x7db100 (layout_inference, medium); signature (low): `HandlerCreationMissPolicy<BSTSmartPointer<IHandlerFunctor<Actor,BSFixedStringCI>,BSTSmartPointerIntrusiveRefCount>,BSFixedStringCI> * vdtor(HandlerCreationMissPolicy<BSTSmartPointer<IHandlerFunctor<Actor,BSFixedStringCI>,BSTSmartPointerIntrusiveRefCount>,BSFixedStringCI> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const HandlerCreationMissPolicy_BSTSmartPointer_IHandlerFunctor_Actor_BSFixedStringCI_BSTSmartPointerI_1bbf49d2990a: u64 = 43641;
-/// `HarvestIntoReference` at 0x1ee5b0 (decompiler, medium); signature (untiered): `undefined1 HarvestIntoReference(longlong param_1, longlong * param_2, longlong * param_3)`
+/// `HarvestIntoReference` at 0x1ee5b0 (decompiler, medium); signature (low): `undefined1 HarvestIntoReference(longlong param_1, longlong * param_2, longlong * param_3)`
 pub const HarvestIntoReference: u64 = 14864;
 /// `HasAllMastersAndNoneAllowedByPlatform` at 0x5b5970 (decompiler, medium); signature (medium): `ulonglong HasAllMastersAndNoneAllowedByPlatform(longlong param_1)`
 pub const HasAllMastersAndNoneAllowedByPlatform: u64 = 442223;
@@ -4695,9 +4295,9 @@ pub const HasAllMastersAndNoneAllowedByPlatform: u64 = 442223;
 pub const HasAllRequiredItems: u64 = 16916;
 /// `HasAnyEntryWithField20AndByte2C` at 0xad4160 (decompiler, medium); signature (medium): `char * HasAnyEntryWithField20AndByte2C(longlong param_1, char * param_2)`
 pub const HasAnyEntryWithField20AndByte2C: u64 = 58426;
-/// `HasAnyEntryWithLowFlagBitsCached` at 0xe77090 (decompiler, medium); signature (untiered): `ulonglong HasAnyEntryWithLowFlagBitsCached(longlong * param_1)`
+/// `HasAnyEntryWithLowFlagBitsCached` at 0xe77090 (decompiler, medium); signature (low): `ulonglong HasAnyEntryWithLowFlagBitsCached(longlong * param_1)`
 pub const HasAnyEntryWithLowFlagBitsCached: u64 = 89344;
-/// `HasAnyFamilyRelationship` at 0x3bed50 (decompiler, medium); signature (untiered): `undefined1 HasAnyFamilyRelationship(longlong param_1)`
+/// `HasAnyFamilyRelationship` at 0x3bed50 (decompiler, medium); signature (low): `undefined1 HasAnyFamilyRelationship(longlong param_1)`
 pub const HasAnyFamilyRelationship: u64 = 24677;
 /// `HasAnyField15CBits` at 0x570280 (decompiler, high); signature (high): `bool HasAnyField15CBits(longlong param_1, uint param_2)`
 pub const HasAnyField15CBits: u64 = 441623;
@@ -4713,25 +4313,25 @@ pub const HasArray58EntryWithFieldC4OrE0: u64 = 11318;
 pub const HasArray590EntryWithFieldDCBit11: u64 = 40511;
 /// `HasArrayEntryWithField10` at 0x8247e0 (decompiler, medium); signature (medium): `undefined8 HasArrayEntryWithField10(longlong param_1, longlong param_2)`
 pub const HasArrayEntryWithField10: u64 = 44862;
-/// `HasArrayIndexOrMember` at 0xd6c6a0 (decompiler, medium); signature (untiered): `undefined1 HasArrayIndexOrMember(longlong param_1, undefined8 param_2, ulonglong * param_3, char param_4)`
+/// `HasArrayIndexOrMember` at 0xd6c6a0 (decompiler, medium); signature (low): `undefined1 HasArrayIndexOrMember(longlong param_1, undefined8 param_2, ulonglong * param_3, char param_4)`
 pub const HasArrayIndexOrMember: u64 = 84404;
-/// `HasAtLeastItemCount` at 0x234560 (decompiler, medium); signature (untiered): `undefined8 HasAtLeastItemCount(undefined8 * param_1, longlong param_2, int param_3, int param_4, undefined4 * param_5, int param_6, ulonglong param_7)`
+/// `HasAtLeastItemCount` at 0x234560 (decompiler, medium); signature (low): `undefined8 HasAtLeastItemCount(undefined8 * param_1, longlong param_2, int param_3, int param_4, undefined4 * param_5, int param_6, ulonglong param_7)`
 pub const HasAtLeastItemCount: u64 = 16079;
-/// `HasBit0EffectFromActor` at 0x5d1820 (decompiler, medium); signature (untiered): `undefined8 HasBit0EffectFromActor(longlong * param_1, longlong param_2)`
+/// `HasBit0EffectFromActor` at 0x5d1820 (decompiler, medium); signature (low): `undefined8 HasBit0EffectFromActor(longlong * param_1, longlong param_2)`
 pub const HasBit0EffectFromActor: u64 = 34519;
 /// `HasBitsInMask0xFFC00` at 0x940f40 (decompiler, high); signature (high): `bool HasBitsInMask0xFFC00(uint param_1)`
 pub const HasBitsInMask0xFFC00: u64 = 51820;
-/// `HasCachedActiveFactionEntryFieldC8` at 0x6919a0 (decompiler, medium); signature (untiered): `bool HasCachedActiveFactionEntryFieldC8(longlong * param_1, undefined8 param_2, longlong * param_3, undefined8 param_4)`
+/// `HasCachedActiveFactionEntryFieldC8` at 0x6919a0 (decompiler, medium); signature (low): `bool HasCachedActiveFactionEntryFieldC8(longlong * param_1, undefined8 param_2, longlong * param_3, undefined8 param_4)`
 pub const HasCachedActiveFactionEntryFieldC8: u64 = 37573;
-/// `HasChainedEntryWithField138Bit` at 0x922f90 (decompiler, medium); signature (untiered): `char HasChainedEntryWithField138Bit(longlong * param_1, uint param_2)`
+/// `HasChainedEntryWithField138Bit` at 0x922f90 (decompiler, medium); signature (low): `char HasChainedEntryWithField138Bit(longlong * param_1, uint param_2)`
 pub const HasChainedEntryWithField138Bit: u64 = 51374;
 /// `HasDifferingField0CInArray10` at 0x10eadf0 (decompiler, medium); signature (medium): `ulonglong HasDifferingField0CInArray10(longlong param_1)`
 pub const HasDifferingField0CInArray10: u64 = 80752;
-/// `HasEffectCausingDamage` at 0x5d18b0 (decompiler, medium); signature (untiered): `undefined1 HasEffectCausingDamage(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `HasEffectCausingDamage` at 0x5d18b0 (decompiler, medium); signature (low): `undefined1 HasEffectCausingDamage(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const HasEffectCausingDamage: u64 = 34520;
-/// `HasEffectFromEnchantmentAndItem` at 0x5d1630 (decompiler, medium); signature (untiered): `ulonglong HasEffectFromEnchantmentAndItem(longlong * param_1, longlong param_2, longlong param_3)`
+/// `HasEffectFromEnchantmentAndItem` at 0x5d1630 (decompiler, medium); signature (low): `ulonglong HasEffectFromEnchantmentAndItem(longlong * param_1, longlong param_2, longlong param_3)`
 pub const HasEffectFromEnchantmentAndItem: u64 = 34516;
-/// `HasElementByKeyInByteIndexList` at 0x438550 (decompiler, medium); signature (untiered): `bool HasElementByKeyInByteIndexList(longlong param_1, longlong * param_2)`
+/// `HasElementByKeyInByteIndexList` at 0x438550 (decompiler, medium); signature (low): `bool HasElementByKeyInByteIndexList(longlong param_1, longlong * param_2)`
 pub const HasElementByKeyInByteIndexList: u64 = 26928;
 /// `HasEntryAt68Or80Or98` at 0x387ff0 (decompiler, medium); signature (medium): `undefined1 HasEntryAt68Or80Or98(longlong param_1, longlong param_2)`
 pub const HasEntryAt68Or80Or98: u64 = 23364;
@@ -4739,15 +4339,15 @@ pub const HasEntryAt68Or80Or98: u64 = 23364;
 pub const HasEntryForId: u64 = 67694;
 /// `HasEntryForKey` at 0x55b740 (decompiler, medium); signature (medium): `undefined8 HasEntryForKey(longlong param_1, ulonglong param_2)`
 pub const HasEntryForKey: u64 = 33077;
-/// `HasEntryForObjectModelPath` at 0x3b92a0 (decompiler, medium); signature (untiered): `bool HasEntryForObjectModelPath(longlong param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
+/// `HasEntryForObjectModelPath` at 0x3b92a0 (decompiler, medium); signature (low): `bool HasEntryForObjectModelPath(longlong param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
 pub const HasEntryForObjectModelPath: u64 = 24604;
 /// `HasEntryInHashTableE0` at 0xd359f0 (decompiler, medium); signature (medium): `undefined8 HasEntryInHashTableE0(longlong param_1, ulonglong * param_2)`
 pub const HasEntryInHashTableE0: u64 = 83523;
 /// `HasEntryInRange` at 0x1560940 (decompiler, medium); signature (medium): `ulonglong HasEntryInRange(longlong param_1, uint param_2, uint param_3)`
 pub const HasEntryInRange: u64 = 107655;
-/// `HasEntryMatchingField32AndField38` at 0x3daf50 (decompiler, medium); signature (untiered): `undefined1 HasEntryMatchingField32AndField38(undefined8 param_1, undefined4 param_2, undefined8 param_3)`
+/// `HasEntryMatchingField32AndField38` at 0x3daf50 (decompiler, medium); signature (low): `undefined1 HasEntryMatchingField32AndField38(undefined8 param_1, undefined4 param_2, undefined8 param_3)`
 pub const HasEntryMatchingField32AndField38: u64 = 25094;
-/// `HasEntryMatchingPathRecord` at 0x58dca0 (decompiler, medium); signature (untiered): `undefined8 HasEntryMatchingPathRecord(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+/// `HasEntryMatchingPathRecord` at 0x58dca0 (decompiler, medium); signature (low): `undefined8 HasEntryMatchingPathRecord(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const HasEntryMatchingPathRecord: u64 = 523702;
 /// `HasEntryMeetingDangerousExplosionThresholds` at 0x1d5c60 (decompiler, medium); signature (medium): `undefined8 HasEntryMeetingDangerousExplosionThresholds(longlong param_1)`
 pub const HasEntryMeetingDangerousExplosionThresholds: u64 = 14175;
@@ -4757,7 +4357,7 @@ pub const HasEntryWithByteDCBit4Clear: u64 = 12732;
 pub const HasEntryWithField4: u64 = 12509;
 /// `HasEntryWithFlag6BBit0` at 0x151330 (decompiler, medium); signature (medium): `ulonglong HasEntryWithFlag6BBit0(longlong param_1)`
 pub const HasEntryWithFlag6BBit0: u64 = 11311;
-/// `HasEntryWithFlagMask` at 0x1f9a80 (decompiler, medium); signature (untiered): `ulonglong HasEntryWithFlagMask(longlong param_1, uint param_2)`
+/// `HasEntryWithFlagMask` at 0x1f9a80 (decompiler, medium); signature (low): `ulonglong HasEntryWithFlagMask(longlong param_1, uint param_2)`
 pub const HasEntryWithFlagMask: u64 = 15128;
 /// `HasEntryWithFlags` at 0x151480 (decompiler, medium); signature (medium): `ulonglong HasEntryWithFlags(longlong param_1, uint param_2)`
 pub const HasEntryWithFlags: u64 = 11314;
@@ -4771,7 +4371,7 @@ pub const HasExtra12Or7EEntryForIndex: u64 = 20157;
 pub const HasExtraDataDifferingFrom: u64 = 11594;
 /// `HasExtraDataType88` at 0x2e6a40 (decompiler, high); signature (high): `undefined1 HasExtraDataType88(longlong param_1)`
 pub const HasExtraDataType88: u64 = 19655;
-/// `HasExtraListWithType2EValue` at 0x23ca70 (decompiler, medium); signature (untiered): `char HasExtraListWithType2EValue(longlong * param_1, int param_2)`
+/// `HasExtraListWithType2EValue` at 0x23ca70 (decompiler, medium); signature (low): `char HasExtraListWithType2EValue(longlong * param_1, int param_2)`
 pub const HasExtraListWithType2EValue: u64 = 16132;
 /// `HasExtraType2D` at 0x169600 (decompiler, high); signature (high): `byte HasExtraType2D(longlong param_1)`
 pub const HasExtraType2D: u64 = 11809;
@@ -4789,9 +4389,9 @@ pub const HasExtraTypeA9: u64 = 38296;
 pub const HasExtraTypeDFlag: u64 = 11996;
 /// `HasExtraTypeLocked` at 0x2410c0 (decompiler, high); signature (high): `ulonglong HasExtraTypeLocked(longlong param_1, uint param_2)`
 pub const HasExtraTypeLocked: u64 = 16216;
-/// `HasFanVertexUsedOnce` at 0x11ee8a0 (decompiler, medium); signature (untiered): `ulonglong HasFanVertexUsedOnce(undefined8 param_1, longlong param_2)`
+/// `HasFanVertexUsedOnce` at 0x11ee8a0 (decompiler, medium); signature (low): `ulonglong HasFanVertexUsedOnce(undefined8 param_1, longlong param_2)`
 pub const HasFanVertexUsedOnce: u64 = 91308;
-/// `HasField0xF8Field8Field60` at 0x696a40 (decompiler, medium); signature (untiered): `undefined HasField0xF8Field8Field60(longlong param_1)`
+/// `HasField0xF8Field8Field60` at 0x696a40 (decompiler, medium); signature (low): `undefined HasField0xF8Field8Field60(longlong param_1)`
 pub const HasField0xF8Field8Field60: u64 = 37626;
 /// `HasField10` at 0x5564d0 (decompiler, high); signature (high): `bool HasField10(longlong param_1)`
 pub const HasField10: u64 = 32967;
@@ -4819,11 +4419,11 @@ pub const HasField388: u64 = 446889;
 pub const HasField38Field18Field20: u64 = 64397;
 /// `HasField38WithFlags6` at 0x3efe60 (decompiler, medium); signature (medium): `longlong HasField38WithFlags6(longlong param_1)`
 pub const HasField38WithFlags6: u64 = 25552;
-/// `HasField40InSubtree` at 0xf20200 (decompiler, medium); signature (untiered): `undefined8 HasField40InSubtree(longlong * param_1, char param_2)`
+/// `HasField40InSubtree` at 0xf20200 (decompiler, medium); signature (low): `undefined8 HasField40InSubtree(longlong * param_1, char param_2)`
 pub const HasField40InSubtree: u64 = 71872;
 /// `HasField6D0` at 0x756930 (decompiler, high); signature (high): `bool HasField6D0(longlong param_1)`
 pub const HasField6D0: u64 = 40592;
-/// `HasField70InChainOrAnyChildVfunc10` at 0xd62cd0 (decompiler, medium); signature (untiered): `undefined8 HasField70InChainOrAnyChildVfunc10(longlong param_1)`
+/// `HasField70InChainOrAnyChildVfunc10` at 0xd62cd0 (decompiler, medium); signature (low): `undefined8 HasField70InChainOrAnyChildVfunc10(longlong param_1)`
 pub const HasField70InChainOrAnyChildVfunc10: u64 = 84234;
 /// `HasField70InParentChain` at 0xd35f00 (decompiler, medium); signature (medium): `bool HasField70InParentChain(longlong param_1, char param_2)`
 pub const HasField70InParentChain: u64 = 83529;
@@ -4833,31 +4433,31 @@ pub const HasField8: u64 = 418812;
 pub const HasField8Byte317Or318: u64 = 39837;
 /// `HasField8Field2F8` at 0x728690 (decompiler, high); signature (high): `longlong HasField8Field2F8(longlong param_1)`
 pub const HasField8Field2F8: u64 = 40037;
-/// `HasField8Field60` at 0x7231e0 (decompiler, high); signature (untiered): `undefined8 HasField8Field60(longlong param_1)`
+/// `HasField8Field60` at 0x7231e0 (decompiler, high); signature (low): `undefined8 HasField8Field60(longlong param_1)`
 pub const HasField8Field60: u64 = 39867;
 /// `HasField930OfField20Locked` at 0x1308dc0 (decompiler, medium); signature (medium): `bool HasField930OfField20Locked(longlong param_1)`
 pub const HasField930OfField20Locked: u64 = 448096;
-/// `HasFieldC8EntryWithField60` at 0x782550 (decompiler, medium); signature (untiered): `char HasFieldC8EntryWithField60(longlong param_1, longlong param_2, longlong param_3)`
+/// `HasFieldC8EntryWithField60` at 0x782550 (decompiler, medium); signature (low): `char HasFieldC8EntryWithField60(longlong param_1, longlong param_2, longlong param_3)`
 pub const HasFieldC8EntryWithField60: u64 = 41357;
 /// `HasFlag0x10OfField0x136` at 0x6ea1a0 (decompiler, high); signature (high): `byte HasFlag0x10OfField0x136(longlong param_1)`
 pub const HasFlag0x10OfField0x136: u64 = 39168;
-/// `HasFlag400000OrExtraType88` at 0x2ebc60 (decompiler, medium); signature (untiered): `ulonglong HasFlag400000OrExtraType88(longlong param_1)`
+/// `HasFlag400000OrExtraType88` at 0x2ebc60 (decompiler, medium); signature (low): `ulonglong HasFlag400000OrExtraType88(longlong param_1)`
 pub const HasFlag400000OrExtraType88: u64 = 19732;
 /// `HasFlag8000OrBaseFormFlag8000` at 0x2e49c0 (decompiler, high); signature (high): `undefined8 HasFlag8000OrBaseFormFlag8000(longlong param_1)`
 pub const HasFlag8000OrBaseFormFlag8000: u64 = 19587;
 /// `HasFlagsEInByteBEA` at 0x7517d0 (decompiler, high); signature (high): `bool HasFlagsEInByteBEA(longlong param_1)`
 pub const HasFlagsEInByteBEA: u64 = 40550;
-/// `HasFlagsForFormLocked` at 0x616de0 (decompiler, high); signature (untiered): `bool HasFlagsForFormLocked(longlong param_1, longlong param_2, uint param_3)`
+/// `HasFlagsForFormLocked` at 0x616de0 (decompiler, high); signature (low): `bool HasFlagsForFormLocked(longlong param_1, longlong param_2, uint param_3)`
 pub const HasFlagsForFormLocked: u64 = 35578;
 /// `HasFlagsForKeyLocked` at 0x613400 (decompiler, medium); signature (medium): `bool HasFlagsForKeyLocked(longlong param_1, uint param_2, uint param_3)`
 pub const HasFlagsForKeyLocked: u64 = 35505;
-/// `HasFreeArcForAngle` at 0x85bfa0 (decompiler, medium); signature (untiered): `undefined8 HasFreeArcForAngle(longlong param_1, uint param_2, int * param_3, float * param_4)`
+/// `HasFreeArcForAngle` at 0x85bfa0 (decompiler, medium); signature (low): `undefined8 HasFreeArcForAngle(longlong param_1, uint param_2, int * param_3, float * param_4)`
 pub const HasFreeArcForAngle: u64 = 47044;
-/// `HasFreeArcForAngleIgnoringId` at 0x85afe0 (decompiler, medium); signature (untiered): `undefined8 HasFreeArcForAngleIgnoringId(longlong param_1, int * param_2, float * param_3)`
+/// `HasFreeArcForAngleIgnoringId` at 0x85afe0 (decompiler, medium); signature (low): `undefined8 HasFreeArcForAngleIgnoringId(longlong param_1, int * param_2, float * param_3)`
 pub const HasFreeArcForAngleIgnoringId: u64 = 47033;
-/// `HasGridCellAtPoint` at 0x10f3000 (decompiler, medium); signature (untiered): `undefined1 * HasGridCellAtPoint(longlong param_1, undefined1 * param_2, float * param_3)`
+/// `HasGridCellAtPoint` at 0x10f3000 (decompiler, medium); signature (low): `undefined1 * HasGridCellAtPoint(longlong param_1, undefined1 * param_2, float * param_3)`
 pub const HasGridCellAtPoint: u64 = 80871;
-/// `HasHostileActorNearPlayer` at 0x785b30 (decompiler, medium); signature (untiered): `undefined8 HasHostileActorNearPlayer(longlong param_1, longlong param_2)`
+/// `HasHostileActorNearPlayer` at 0x785b30 (decompiler, medium); signature (low): `undefined8 HasHostileActorNearPlayer(longlong param_1, longlong param_2)`
 pub const HasHostileActorNearPlayer: u64 = 41402;
 /// `HasHttpContentLength` at 0x1466f10 (decompiler, medium); signature (medium): `bool HasHttpContentLength(longlong param_1)`
 pub const HasHttpContentLength: u64 = 103092;
@@ -4865,27 +4465,27 @@ pub const HasHttpContentLength: u64 = 103092;
 pub const HasHttpContentLength_2: u64 = 103094;
 /// `HasIdInArray38` at 0x3a7520 (decompiler, medium); signature (medium): `undefined8 HasIdInArray38(longlong param_1, int param_2)`
 pub const HasIdInArray38: u64 = 24122;
-/// `HasIncomingWardableAttack` at 0x834660 (decompiler, medium); signature (untiered): `undefined1 HasIncomingWardableAttack(undefined8 param_1, longlong * param_2, char param_3)`
+/// `HasIncomingWardableAttack` at 0x834660 (decompiler, medium); signature (low): `undefined1 HasIncomingWardableAttack(undefined8 param_1, longlong * param_2, char param_3)`
 pub const HasIncomingWardableAttack: u64 = 45367;
 /// `HasInventoryEntryWithPositiveCountAndMatchingSubitem` at 0x2e5a60 (decompiler, medium); signature (medium): `undefined8 HasInventoryEntryWithPositiveCountAndMatchingSubitem(longlong param_1)`
 pub const HasInventoryEntryWithPositiveCountAndMatchingSubitem: u64 = 19627;
-/// `HasInventoryExtraType8EForForm` at 0x2e7fc0 (decompiler, medium); signature (untiered): `undefined8 HasInventoryExtraType8EForForm(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+/// `HasInventoryExtraType8EForForm` at 0x2e7fc0 (decompiler, medium); signature (low): `undefined8 HasInventoryExtraType8EForForm(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const HasInventoryExtraType8EForForm: u64 = 19691;
 /// `HasInventoryItemWithFormID` at 0x2e8440 (decompiler, medium); signature (medium): `undefined8 HasInventoryItemWithFormID(longlong param_1, int param_2)`
 pub const HasInventoryItemWithFormID: u64 = 19698;
-/// `HasItemOrRefWithFormID` at 0x2343b0 (decompiler, medium); signature (untiered): `undefined8 HasItemOrRefWithFormID(undefined8 * param_1, int param_2)`
+/// `HasItemOrRefWithFormID` at 0x2343b0 (decompiler, medium); signature (low): `undefined8 HasItemOrRefWithFormID(undefined8 * param_1, int param_2)`
 pub const HasItemOrRefWithFormID: u64 = 16078;
-/// `HasKey4CB2FOnField10` at 0x405c30 (decompiler, medium); signature (untiered): `undefined1 HasKey4CB2FOnField10(longlong param_1)`
+/// `HasKey4CB2FOnField10` at 0x405c30 (decompiler, medium); signature (low): `undefined1 HasKey4CB2FOnField10(longlong param_1)`
 pub const HasKey4CB2FOnField10: u64 = 26027;
 /// `HasKeyAtField14UnderReadLock` at 0x2a19f0 (decompiler, medium); signature (medium): `ulonglong HasKeyAtField14UnderReadLock(DWORD * param_1, longlong param_2)`
 pub const HasKeyAtField14UnderReadLock: u64 = 18538;
 /// `HasKeyInFieldB8Array` at 0x1047ea0 (decompiler, medium); signature (medium): `ulonglong HasKeyInFieldB8Array(longlong param_1, int param_2)`
 pub const HasKeyInFieldB8Array: u64 = 77801;
-/// `HasKeyInHashSetAtD0` at 0x616910 (decompiler, medium); signature (untiered): `undefined8 HasKeyInHashSetAtD0(longlong param_1, ulonglong param_2)`
+/// `HasKeyInHashSetAtD0` at 0x616910 (decompiler, medium); signature (low): `undefined8 HasKeyInHashSetAtD0(longlong param_1, ulonglong param_2)`
 pub const HasKeyInHashSetAtD0: u64 = 35573;
-/// `HasLineOfSightToRef` at 0x74bbe0 (semantic, medium); signature (untiered): `char HasLineOfSightToRef(longlong param_1, longlong * param_2, char * param_3)`; semantic: when the target is inside the main camera frustum, casts up to three LOS rays (layer 0x29, looker's group) from the scene-graph camera position to three heights on the target and returns true when one hits nothing or the target; else the looker's knowledge byte (medium); signature `bool (Actor* looker, TESObjectREFR* target, bool* inFrustumOut)`
+/// `HasLineOfSightToRef` at 0x74bbe0 (semantic, medium); signature (low): `char HasLineOfSightToRef(longlong param_1, longlong * param_2, char * param_3)`; semantic: when the target is inside the main camera frustum, casts up to three LOS rays (layer 0x29, looker's group) from the scene-graph camera position to three heights on the target and returns true when one hits nothing or the target; else the looker's knowledge byte (medium); signature `bool (Actor* looker, TESObjectREFR* target, bool* inFrustumOut)`
 pub const HasLineOfSightToRef: u64 = 40520;
-/// `HasLineOfSightToRef_2` at 0x6a2710 (decompiler, medium); signature (untiered): `bool HasLineOfSightToRef_2(longlong param_1, longlong * param_2, float param_3, undefined8 param_4)`
+/// `HasLineOfSightToRef_2` at 0x6a2710 (decompiler, medium); signature (low): `bool HasLineOfSightToRef_2(longlong param_1, longlong * param_2, float param_3, undefined8 param_4)`
 pub const HasLineOfSightToRef_2: u64 = 37767;
 /// `HasListItemWithByte16Set` at 0x3e1970 (decompiler, medium); signature (medium): `undefined HasListItemWithByte16Set(longlong param_1)`
 pub const HasListItemWithByte16Set: u64 = 25251;
@@ -4895,13 +4495,13 @@ pub const HasMappedEntryWithField32: u64 = 23521;
 pub const HasMappedRefWithField14: u64 = 25061;
 /// `HasMaskBitsUnsetInKeyedEntry` at 0x26e9a0 (decompiler, medium); signature (medium): `bool HasMaskBitsUnsetInKeyedEntry(longlong param_1, longlong param_2, int param_3, uint * param_4)`
 pub const HasMaskBitsUnsetInKeyedEntry: u64 = 17405;
-/// `HasMatchingCrimeEntry` at 0x7820d0 (decompiler, medium); signature (untiered): `undefined8 HasMatchingCrimeEntry(longlong param_1, longlong param_2, longlong param_3, longlong param_4, uint param_5, undefined8 param_6, int param_7)`
+/// `HasMatchingCrimeEntry` at 0x7820d0 (decompiler, medium); signature (low): `undefined8 HasMatchingCrimeEntry(longlong param_1, longlong param_2, longlong param_3, longlong param_4, uint param_5, undefined8 param_6, int param_7)`
 pub const HasMatchingCrimeEntry: u64 = 41354;
-/// `HasMatchingFlaggedExtraType88Entry` at 0x2292f0 (decompiler, medium); signature (untiered): `undefined8 HasMatchingFlaggedExtraType88Entry(longlong param_1, longlong param_2)`
+/// `HasMatchingFlaggedExtraType88Entry` at 0x2292f0 (decompiler, medium); signature (low): `undefined8 HasMatchingFlaggedExtraType88Entry(longlong param_1, longlong param_2)`
 pub const HasMatchingFlaggedExtraType88Entry: u64 = 16014;
 /// `HasMatchingTypeId` at 0x1216030 (decompiler, medium); signature (medium): `undefined8 HasMatchingTypeId(longlong * param_1, longlong * param_2)`
 pub const HasMatchingTypeId: u64 = 91895;
-/// `HasMemberDefault` at 0xab1d20 (decompiler, medium); signature (untiered): `bool HasMemberDefault(undefined8 param_1, undefined8 param_2)`
+/// `HasMemberDefault` at 0xab1d20 (decompiler, medium); signature (low): `bool HasMemberDefault(undefined8 param_1, undefined8 param_2)`
 pub const HasMemberDefault: u64 = 57648;
 /// `HasMoreThanNinePipeTokens` at 0x1295800 (decompiler, high); signature (high): `ulonglong HasMoreThanNinePipeTokens(char * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const HasMoreThanNinePipeTokens: u64 = 444994;
@@ -4911,7 +4511,7 @@ pub const HasMultiTargetEmitterCtlr: u64 = 76895;
 pub const HasNodeWithField0Locked: u64 = 442295;
 /// `HasNodeWithKeyLocked` at 0x5f7f60 (decompiler, medium); signature (medium): `undefined8 HasNodeWithKeyLocked(undefined8 * param_1, int param_2)`
 pub const HasNodeWithKeyLocked: u64 = 419089;
-/// `HasNonEmptyEntryForField14Key` at 0x53c2e0 (decompiler, medium); signature (untiered): `ulonglong HasNonEmptyEntryForField14Key(longlong param_1, longlong param_2)`
+/// `HasNonEmptyEntryForField14Key` at 0x53c2e0 (decompiler, medium); signature (low): `ulonglong HasNonEmptyEntryForField14Key(longlong param_1, longlong param_2)`
 pub const HasNonEmptyEntryForField14Key: u64 = 32497;
 /// `HasNonEmptyExtraAliasInstanceArrayViaType1CRef` at 0x172e00 (decompiler, medium); signature (medium): `undefined8 HasNonEmptyExtraAliasInstanceArrayViaType1CRef(longlong param_1)`
 pub const HasNonEmptyExtraAliasInstanceArrayViaType1CRef: u64 = 12053;
@@ -4925,7 +4525,7 @@ pub const HasNonEmptyStringAtField50: u64 = 24569;
 pub const HasNonNullEntryInArraysC8OrD0: u64 = 13297;
 /// `HasNonZeroField28` at 0x7bc510 (decompiler, high); signature (high): `bool HasNonZeroField28(longlong param_1)`
 pub const HasNonZeroField28: u64 = 42595;
-/// `HasNonZeroField2F8InProcess` at 0x6cc970 (decompiler, medium); signature (untiered): `ulonglong HasNonZeroField2F8InProcess(longlong param_1)`
+/// `HasNonZeroField2F8InProcess` at 0x6cc970 (decompiler, medium); signature (low): `ulonglong HasNonZeroField2F8InProcess(longlong param_1)`
 pub const HasNonZeroField2F8InProcess: u64 = 38619;
 /// `HasNonZeroFieldC8` at 0x284a70 (decompiler, high); signature (high): `bool HasNonZeroFieldC8(longlong param_1)`
 pub const HasNonZeroFieldC8: u64 = 17935;
@@ -4939,37 +4539,37 @@ pub const HasNonZeroWeightType3EntryForKey: u64 = 16450;
 pub const HasOuterObjectIfVfunc3: u64 = 34051;
 /// `HasPackedShortPairKeyUnderReadLock` at 0x2a1950 (decompiler, medium); signature (medium): `undefined8 HasPackedShortPairKeyUnderReadLock(DWORD * param_1, undefined2 param_2, undefined2 param_3)`
 pub const HasPackedShortPairKeyUnderReadLock: u64 = 18537;
-/// `HasParticleSystemInSubtree` at 0xfdf410 (decompiler, medium); signature (untiered): `ulonglong HasParticleSystemInSubtree(longlong * param_1, byte * param_2)`
+/// `HasParticleSystemInSubtree` at 0xfdf410 (decompiler, medium); signature (low): `ulonglong HasParticleSystemInSubtree(longlong * param_1, byte * param_2)`
 pub const HasParticleSystemInSubtree: u64 = 76225;
-/// `HasPathToNode` at 0xc74c60 (decompiler, medium); signature (untiered): `undefined8 HasPathToNode(int param_1, int param_2, longlong * param_3, longlong * param_4)`
+/// `HasPathToNode` at 0xc74c60 (decompiler, medium); signature (low): `undefined8 HasPathToNode(int param_1, int param_2, longlong * param_3, longlong * param_4)`
 pub const HasPathToNode: u64 = 66517;
-/// `HasPendingRequestOfType` at 0x5f3cf0 (decompiler, medium); signature (untiered): `undefined8 HasPendingRequestOfType(longlong param_1, int param_2)`
+/// `HasPendingRequestOfType` at 0x5f3cf0 (decompiler, medium); signature (low): `undefined8 HasPendingRequestOfType(longlong param_1, int param_2)`
 pub const HasPendingRequestOfType: u64 = 442254;
 /// `HasPointerMapKey` at 0xaa69c0 (decompiler, medium); signature (medium): `undefined8 HasPointerMapKey(longlong * param_1, undefined8 param_2, ulonglong param_3)`
 pub const HasPointerMapKey: u64 = 57196;
 /// `HasPositiveField2AOfField68` at 0x2f5930 (decompiler, high); signature (high): `bool HasPositiveField2AOfField68(longlong param_1)`
 pub const HasPositiveField2AOfField68: u64 = 19842;
-/// `HasPositiveSavedGridCellByte` at 0x1201f60 (decompiler, medium); signature (untiered): `bool HasPositiveSavedGridCellByte(longlong param_1, longlong param_2)`
+/// `HasPositiveSavedGridCellByte` at 0x1201f60 (decompiler, medium); signature (low): `bool HasPositiveSavedGridCellByte(longlong param_1, longlong param_2)`
 pub const HasPositiveSavedGridCellByte: u64 = 91639;
-/// `HasRangeOverlapping` at 0xe774e0 (decompiler, medium); signature (untiered): `ulonglong HasRangeOverlapping(undefined8 * param_1, ulonglong param_2, ulonglong param_3)`
+/// `HasRangeOverlapping` at 0xe774e0 (decompiler, medium); signature (low): `ulonglong HasRangeOverlapping(undefined8 * param_1, ulonglong param_2, ulonglong param_3)`
 pub const HasRangeOverlapping: u64 = 89348;
 /// `HasRefWithFlagBit5Clear` at 0x2d6b80 (decompiler, medium); signature (medium): `char HasRefWithFlagBit5Clear(longlong param_1)`
 pub const HasRefWithFlagBit5Clear: u64 = 19408;
-/// `HasRelationshipWithAssociation` at 0x3bed00 (decompiler, medium); signature (untiered): `undefined1 HasRelationshipWithAssociation(longlong param_1, longlong param_2)`
+/// `HasRelationshipWithAssociation` at 0x3bed00 (decompiler, medium); signature (low): `undefined1 HasRelationshipWithAssociation(longlong param_1, longlong param_2)`
 pub const HasRelationshipWithAssociation: u64 = 24676;
 /// `HasRepeatedIndexInTriple` at 0x1111510 (decompiler, high); signature (high): `undefined1 * HasRepeatedIndexInTriple(undefined1 * param_1, int * param_2)`
 pub const HasRepeatedIndexInTriple: u64 = 81159;
 /// `HasRespawnTimeElapsed` at 0x2c4080 (decompiler, medium); signature (medium): `bool HasRespawnTimeElapsed(uint param_1, uint param_2, char param_3)`
 pub const HasRespawnTimeElapsed: u64 = 19086;
-/// `HasRespawnTimeElapsedForRef` at 0x6a0e40 (decompiler, medium); signature (untiered): `bool HasRespawnTimeElapsedForRef(longlong param_1, uint param_2, char param_3)`
+/// `HasRespawnTimeElapsedForRef` at 0x6a0e40 (decompiler, medium); signature (low): `bool HasRespawnTimeElapsedForRef(longlong param_1, uint param_2, char param_3)`
 pub const HasRespawnTimeElapsedForRef: u64 = 37730;
 /// `HasRespawnTimeElapsedForRef_2` at 0x6761e0 (decompiler, high); signature (high): `bool HasRespawnTimeElapsedForRef_2(longlong param_1, uint param_2, char param_3)`
 pub const HasRespawnTimeElapsedForRef_2: u64 = 37290;
 /// `HasRespawnTimeElapsedSinceField38` at 0x28fb20 (decompiler, medium); signature (medium): `bool HasRespawnTimeElapsedSinceField38(longlong param_1)`
 pub const HasRespawnTimeElapsedSinceField38: u64 = 18200;
-/// `HasRigidBodyWithField160Not4Or5Recursive` at 0x4051e0 (decompiler, medium); signature (untiered): `ulonglong HasRigidBodyWithField160Not4Or5Recursive(longlong * param_1)`
+/// `HasRigidBodyWithField160Not4Or5Recursive` at 0x4051e0 (decompiler, medium); signature (low): `ulonglong HasRigidBodyWithField160Not4Or5Recursive(longlong * param_1)`
 pub const HasRigidBodyWithField160Not4Or5Recursive: u64 = 26016;
-/// `HasRunOncePack` at 0x165460 (decompiler, medium); signature (untiered): `undefined8 HasRunOncePack(longlong param_1, longlong param_2)`
+/// `HasRunOncePack` at 0x165460 (decompiler, medium); signature (low): `undefined8 HasRunOncePack(longlong param_1, longlong param_2)`
 pub const HasRunOncePack: u64 = 11737;
 /// `HasSameField48Field10Field70` at 0x5da340 (decompiler, medium); signature (medium): `undefined8 HasSameField48Field10Field70(longlong param_1, longlong param_2)`
 pub const HasSameField48Field10Field70: u64 = 34742;
@@ -4985,7 +4585,7 @@ pub const HasSpell: u64 = 38782;
 pub const HasSpellVisitor__vdtor: u64 = 38860;
 /// `HasSpellVisitor::vfunc_1` at 0x6da950 (rtti, high); signature (low): `bool vfunc_1(HasSpellVisitor * this, HasSpellVisitor_vtbl * param_1)`
 pub const HasSpellVisitor__vfunc_1: u64 = 38850;
-/// `HasSublistEntryWithVfunc18Value` at 0x2556f0 (decompiler, medium); signature (untiered): `undefined8 HasSublistEntryWithVfunc18Value(longlong param_1, int param_2, char param_3)`
+/// `HasSublistEntryWithVfunc18Value` at 0x2556f0 (decompiler, medium); signature (low): `undefined8 HasSublistEntryWithVfunc18Value(longlong param_1, int param_2, char param_3)`
 pub const HasSublistEntryWithVfunc18Value: u64 = 16623;
 /// `HasTriangleAtPoint` at 0x11e3850 (decompiler, high); signature (high): `bool HasTriangleAtPoint(longlong param_1, float * param_2)`
 pub const HasTriangleAtPoint: u64 = 91128;
@@ -5001,11 +4601,11 @@ pub const HasValidField28: u64 = 90365;
 pub const HasValueInArray180: u64 = 41435;
 /// `HasValueInArray1A0` at 0x7885d0 (decompiler, high); signature (high): `undefined8 HasValueInArray1A0(longlong param_1, int * param_2)`
 pub const HasValueInArray1A0: u64 = 41436;
-/// `HasValueInExtraRoomRefDataList10` at 0x16b9c0 (decompiler, medium); signature (untiered): `undefined8 HasValueInExtraRoomRefDataList10(longlong param_1, int * param_2)`
+/// `HasValueInExtraRoomRefDataList10` at 0x16b9c0 (decompiler, medium); signature (low): `undefined8 HasValueInExtraRoomRefDataList10(longlong param_1, int * param_2)`
 pub const HasValueInExtraRoomRefDataList10: u64 = 11860;
-/// `HasValueRangeForKey` at 0xcc0ed0 (decompiler, medium); signature (untiered): `undefined8 HasValueRangeForKey(longlong param_1, undefined8 param_2, undefined8 param_3)`
+/// `HasValueRangeForKey` at 0xcc0ed0 (decompiler, medium); signature (low): `undefined8 HasValueRangeForKey(longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const HasValueRangeForKey: u64 = 67500;
-/// `HasVariableAtPath` at 0xd2b240 (decompiler, medium); signature (untiered): `ulonglong HasVariableAtPath(longlong param_1, ulonglong * param_2, longlong * param_3)`
+/// `HasVariableAtPath` at 0xd2b240 (decompiler, medium); signature (low): `ulonglong HasVariableAtPath(longlong param_1, ulonglong * param_2, longlong * param_3)`
 pub const HasVariableAtPath: u64 = 83312;
 /// `HashBytes16` at 0xde77a0 (decompiler, medium); signature (medium): `longlong HashBytes16(undefined8 param_1, byte * param_2)`
 pub const HashBytes16: u64 = 87147;
@@ -5015,41 +4615,41 @@ pub const HashBytes16_2: u64 = 87148;
 pub const HashBytesTimes33Xor: u64 = 82606;
 /// `HashEncodedRecordBytes` at 0xe7dc40 (decompiler, medium); signature (medium): `uint HashEncodedRecordBytes(longlong param_1, uint param_2)`
 pub const HashEncodedRecordBytes: u64 = 89804;
-/// `HashField10AndPointedFields10To50` at 0xd79f40 (decompiler, medium); signature (untiered): `ulonglong HashField10AndPointedFields10To50(undefined8 param_1, longlong param_2)`
+/// `HashField10AndPointedFields10To50` at 0xd79f40 (decompiler, medium); signature (low): `ulonglong HashField10AndPointedFields10To50(undefined8 param_1, longlong param_2)`
 pub const HashField10AndPointedFields10To50: u64 = 85215;
-/// `HashFileNameAndExtension` at 0xed3d50 (decompiler, medium); signature (untiered): `undefined8 * HashFileNameAndExtension(undefined8 * param_1, char * param_2)`
+/// `HashFileNameAndExtension` at 0xed3d50 (decompiler, medium); signature (low): `undefined8 * HashFileNameAndExtension(undefined8 * param_1, char * param_2)`
 pub const HashFileNameAndExtension: u64 = 69970;
 /// `HashFourBytes` at 0xe03dd0 (decompiler, high); signature (high): `longlong HashFourBytes(undefined8 param_1, byte * param_2)`
 pub const HashFourBytes: u64 = 87505;
-/// `HashKeyFields10To28` at 0xe73ad0 (decompiler, medium); signature (untiered): `ulonglong HashKeyFields10To28(undefined8 param_1, longlong param_2)`
+/// `HashKeyFields10To28` at 0xe73ad0 (decompiler, medium); signature (low): `ulonglong HashKeyFields10To28(undefined8 param_1, longlong param_2)`
 pub const HashKeyFields10To28: u64 = 524194;
 /// `HashMapAtC8ContainsValueLocked` at 0x3d5df0 (decompiler, medium); signature (medium): `char HashMapAtC8ContainsValueLocked(longlong param_1, longlong param_2)`
 pub const HashMapAtC8ContainsValueLocked: u64 = 25062;
 /// `HashMapEraseAtIterator` at 0x9b22c0 (decompiler, medium); signature (medium): `longlong * HashMapEraseAtIterator(longlong param_1, longlong * param_2, undefined8 * param_3, undefined8 param_4)`
 pub const HashMapEraseAtIterator: u64 = 53411;
-/// `HashMapEraseQwordKey` at 0x14ccd70 (decompiler, medium); signature (untiered): `undefined8 HashMapEraseQwordKey(longlong param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
+/// `HashMapEraseQwordKey` at 0x14ccd70 (decompiler, medium); signature (low): `undefined8 HashMapEraseQwordKey(longlong param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const HashMapEraseQwordKey: u64 = 105129;
 /// `HashMapEraseStringKeyRefPtr` at 0x9b2150 (decompiler, medium); signature (medium): `undefined8 HashMapEraseStringKeyRefPtr(longlong param_1, ulonglong * param_2)`
 pub const HashMapEraseStringKeyRefPtr: u64 = 53410;
-/// `HashMapEraseU32Key` at 0x9c6040 (decompiler, medium); signature (untiered): `undefined8 HashMapEraseU32Key(longlong param_1, uint * param_2)`
+/// `HashMapEraseU32Key` at 0x9c6040 (decompiler, medium); signature (low): `undefined8 HashMapEraseU32Key(longlong param_1, uint * param_2)`
 pub const HashMapEraseU32Key: u64 = 53699;
 /// `HashMapEraseU32RefPtr` at 0x9b1ff0 (decompiler, medium); signature (medium): `undefined8 HashMapEraseU32RefPtr(longlong param_1, uint * param_2)`
 pub const HashMapEraseU32RefPtr: u64 = 53409;
 /// `HashMapEraseU32ToMapHolder` at 0x9cc6d0 (decompiler, medium); signature (medium): `undefined8 HashMapEraseU32ToMapHolder(longlong param_1, uint * param_2, undefined8 param_3, undefined8 param_4)`
 pub const HashMapEraseU32ToMapHolder: u64 = 53776;
-/// `HashMapEraseU32ToRefPtr` at 0x19dfa0 (decompiler, medium); signature (untiered): `undefined8 HashMapEraseU32ToRefPtr(longlong param_1, uint * param_2)`
+/// `HashMapEraseU32ToRefPtr` at 0x19dfa0 (decompiler, medium); signature (low): `undefined8 HashMapEraseU32ToRefPtr(longlong param_1, uint * param_2)`
 pub const HashMapEraseU32ToRefPtr: u64 = 13262;
-/// `HashMapEraseU64` at 0x9bbb20 (decompiler, medium); signature (untiered): `undefined8 HashMapEraseU64(longlong param_1, ulonglong * param_2)`
+/// `HashMapEraseU64` at 0x9bbb20 (decompiler, medium); signature (low): `undefined8 HashMapEraseU64(longlong param_1, ulonglong * param_2)`
 pub const HashMapEraseU64: u64 = 53549;
-/// `HashMapExtractQwordKey` at 0x14ccf20 (decompiler, medium); signature (untiered): `undefined8 HashMapExtractQwordKey(longlong param_1, ulonglong * param_2, int * param_3, undefined8 param_4)`
+/// `HashMapExtractQwordKey` at 0x14ccf20 (decompiler, medium); signature (low): `undefined8 HashMapExtractQwordKey(longlong param_1, ulonglong * param_2, int * param_3, undefined8 param_4)`
 pub const HashMapExtractQwordKey: u64 = 105131;
-/// `HashMapFindQwordKeyCopyValue` at 0x14ca280 (decompiler, medium); signature (untiered): `undefined1 HashMapFindQwordKeyCopyValue(longlong param_1, ulonglong * param_2, int * param_3, undefined8 param_4)`
+/// `HashMapFindQwordKeyCopyValue` at 0x14ca280 (decompiler, medium); signature (low): `undefined1 HashMapFindQwordKeyCopyValue(longlong param_1, ulonglong * param_2, int * param_3, undefined8 param_4)`
 pub const HashMapFindQwordKeyCopyValue: u64 = 105080;
 /// `HashMapFindU32RefPtr` at 0x9b1600 (decompiler, high); signature (high): `undefined1 HashMapFindU32RefPtr(longlong param_1, uint * param_2, longlong * param_3)`
 pub const HashMapFindU32RefPtr: u64 = 53400;
-/// `HashMapFindU32ToRefPtr` at 0x19cb50 (decompiler, medium); signature (untiered): `undefined1 HashMapFindU32ToRefPtr(longlong param_1, uint * param_2, longlong * param_3)`
+/// `HashMapFindU32ToRefPtr` at 0x19cb50 (decompiler, medium); signature (low): `undefined1 HashMapFindU32ToRefPtr(longlong param_1, uint * param_2, longlong * param_3)`
 pub const HashMapFindU32ToRefPtr: u64 = 13233;
-/// `HashMapFindU32ToRefPtr_2` at 0x19cc20 (decompiler, medium); signature (untiered): `undefined1 HashMapFindU32ToRefPtr_2(longlong param_1, uint * param_2, longlong * param_3)`
+/// `HashMapFindU32ToRefPtr_2` at 0x19cc20 (decompiler, medium); signature (low): `undefined1 HashMapFindU32ToRefPtr_2(longlong param_1, uint * param_2, longlong * param_3)`
 pub const HashMapFindU32ToRefPtr_2: u64 = 13234;
 /// `HashMapFindU64RefPtr` at 0x9b16c0 (decompiler, high); signature (high): `undefined1 HashMapFindU64RefPtr(longlong param_1, ulonglong * param_2, ulonglong * param_3)`
 pub const HashMapFindU64RefPtr: u64 = 53401;
@@ -5077,9 +4677,9 @@ pub const HashMapGrowU32Keyed_7: u64 = 53500;
 pub const HashMapGrowU32Keyed_8: u64 = 53770;
 /// `HashMapGrowU32Keyed_9` at 0x9cbd30 (decompiler, medium); signature (medium): `undefined HashMapGrowU32Keyed_9(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const HashMapGrowU32Keyed_9: u64 = 53771;
-/// `HashMapGrowU32ToRefPtr` at 0x19db90 (decompiler, medium); signature (untiered): `undefined HashMapGrowU32ToRefPtr(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `HashMapGrowU32ToRefPtr` at 0x19db90 (decompiler, medium); signature (low): `undefined HashMapGrowU32ToRefPtr(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const HashMapGrowU32ToRefPtr: u64 = 13260;
-/// `HashMapGrowU32ToRefPtr_2` at 0x29d9f0 (decompiler, medium); signature (untiered): `undefined HashMapGrowU32ToRefPtr_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `HashMapGrowU32ToRefPtr_2` at 0x29d9f0 (decompiler, medium); signature (low): `undefined HashMapGrowU32ToRefPtr_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const HashMapGrowU32ToRefPtr_2: u64 = 18439;
 /// `HashMapGrowU64Keyed` at 0x9b1af0 (decompiler, medium); signature (medium): `undefined HashMapGrowU64Keyed(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const HashMapGrowU64Keyed: u64 = 53407;
@@ -5091,51 +4691,51 @@ pub const HashMapGrowU64Keyed_3: u64 = 53698;
 pub const HashMapGrowU64Keyed_4: u64 = 54467;
 /// `HashMapGrowU64Keyed_5` at 0x9f5f00 (decompiler, medium); signature (medium): `undefined HashMapGrowU64Keyed_5(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const HashMapGrowU64Keyed_5: u64 = 54468;
-/// `HashMapInsertOrAssign` at 0xecfb80 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssign(longlong param_1, uint * param_2, undefined8 * param_3)`
+/// `HashMapInsertOrAssign` at 0xecfb80 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssign(longlong param_1, uint * param_2, undefined8 * param_3)`
 pub const HashMapInsertOrAssign: u64 = 69867;
-/// `HashMapInsertOrAssignFixedStringToFixedString` at 0x62b560 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssignFixedStringToFixedString(longlong param_1, ulonglong * param_2, longlong * param_3)`
+/// `HashMapInsertOrAssignFixedStringToFixedString` at 0x62b560 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssignFixedStringToFixedString(longlong param_1, ulonglong * param_2, longlong * param_3)`
 pub const HashMapInsertOrAssignFixedStringToFixedString: u64 = 35807;
-/// `HashMapInsertOrAssignFixedStringToPointer` at 0x9eba60 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssignFixedStringToPointer(longlong param_1, ulonglong * param_2, ulonglong * param_3)`
+/// `HashMapInsertOrAssignFixedStringToPointer` at 0x9eba60 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssignFixedStringToPointer(longlong param_1, ulonglong * param_2, ulonglong * param_3)`
 pub const HashMapInsertOrAssignFixedStringToPointer: u64 = 54101;
-/// `HashMapInsertOrAssignFixedStringToU32` at 0x20e3d0 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssignFixedStringToU32(longlong param_1, ulonglong * param_2, uint * param_3)`
+/// `HashMapInsertOrAssignFixedStringToU32` at 0x20e3d0 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssignFixedStringToU32(longlong param_1, ulonglong * param_2, uint * param_3)`
 pub const HashMapInsertOrAssignFixedStringToU32: u64 = 15474;
-/// `HashMapInsertOrAssignQwordKey` at 0x14c5c50 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssignQwordKey(longlong param_1, ulonglong * param_2, int * param_3, ulonglong param_4)`
+/// `HashMapInsertOrAssignQwordKey` at 0x14c5c50 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssignQwordKey(longlong param_1, ulonglong * param_2, int * param_3, ulonglong param_4)`
 pub const HashMapInsertOrAssignQwordKey: u64 = 104937;
-/// `HashMapInsertOrAssignStringToRefPtr` at 0x9b08e0 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssignStringToRefPtr(longlong param_1, ulonglong * param_2, ulonglong * param_3)`
+/// `HashMapInsertOrAssignStringToRefPtr` at 0x9b08e0 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssignStringToRefPtr(longlong param_1, ulonglong * param_2, ulonglong * param_3)`
 pub const HashMapInsertOrAssignStringToRefPtr: u64 = 53379;
-/// `HashMapInsertOrAssignU16ToRefPtr` at 0x4bfd30 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssignU16ToRefPtr(longlong param_1, ushort * param_2, longlong * param_3)`
+/// `HashMapInsertOrAssignU16ToRefPtr` at 0x4bfd30 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssignU16ToRefPtr(longlong param_1, ushort * param_2, longlong * param_3)`
 pub const HashMapInsertOrAssignU16ToRefPtr: u64 = 30272;
-/// `HashMapInsertOrAssignU32ToArrayHolder` at 0x9ca490 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssignU32ToArrayHolder(longlong param_1, uint * param_2, undefined8 * param_3)`
+/// `HashMapInsertOrAssignU32ToArrayHolder` at 0x9ca490 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssignU32ToArrayHolder(longlong param_1, uint * param_2, undefined8 * param_3)`
 pub const HashMapInsertOrAssignU32ToArrayHolder: u64 = 53733;
-/// `HashMapInsertOrAssignU32ToArrayHolder_2` at 0x9caa60 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssignU32ToArrayHolder_2(longlong param_1, uint * param_2, undefined8 * param_3)`
+/// `HashMapInsertOrAssignU32ToArrayHolder_2` at 0x9caa60 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssignU32ToArrayHolder_2(longlong param_1, uint * param_2, undefined8 * param_3)`
 pub const HashMapInsertOrAssignU32ToArrayHolder_2: u64 = 53736;
-/// `HashMapInsertOrAssignU32ToArrayHolder_3` at 0x9ce0d0 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssignU32ToArrayHolder_3(longlong param_1, uint * param_2, undefined8 * param_3)`
+/// `HashMapInsertOrAssignU32ToArrayHolder_3` at 0x9ce0d0 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssignU32ToArrayHolder_3(longlong param_1, uint * param_2, undefined8 * param_3)`
 pub const HashMapInsertOrAssignU32ToArrayHolder_3: u64 = 53797;
-/// `HashMapInsertOrAssignU32ToDwordRefPtrPair` at 0x9c2810 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssignU32ToDwordRefPtrPair(longlong param_1, uint * param_2, uint * param_3)`
+/// `HashMapInsertOrAssignU32ToDwordRefPtrPair` at 0x9c2810 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssignU32ToDwordRefPtrPair(longlong param_1, uint * param_2, uint * param_3)`
 pub const HashMapInsertOrAssignU32ToDwordRefPtrPair: u64 = 53643;
-/// `HashMapInsertOrAssignU32ToMapHolder` at 0x9ca870 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssignU32ToMapHolder(longlong param_1, uint * param_2, undefined8 * param_3)`
+/// `HashMapInsertOrAssignU32ToMapHolder` at 0x9ca870 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssignU32ToMapHolder(longlong param_1, uint * param_2, undefined8 * param_3)`
 pub const HashMapInsertOrAssignU32ToMapHolder: u64 = 53735;
-/// `HashMapInsertOrAssignU32ToMapHolder_2` at 0x9b6e70 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssignU32ToMapHolder_2(longlong param_1, uint * param_2, undefined8 * param_3)`
+/// `HashMapInsertOrAssignU32ToMapHolder_2` at 0x9b6e70 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssignU32ToMapHolder_2(longlong param_1, uint * param_2, undefined8 * param_3)`
 pub const HashMapInsertOrAssignU32ToMapHolder_2: u64 = 53464;
-/// `HashMapInsertOrAssignU32ToObject58` at 0x9ca680 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssignU32ToObject58(longlong param_1, uint * param_2, undefined8 * param_3)`
+/// `HashMapInsertOrAssignU32ToObject58` at 0x9ca680 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssignU32ToObject58(longlong param_1, uint * param_2, undefined8 * param_3)`
 pub const HashMapInsertOrAssignU32ToObject58: u64 = 53734;
-/// `HashMapInsertOrAssignU32ToPtr` at 0xd6f630 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssignU32ToPtr(longlong param_1, uint * param_2, undefined8 * param_3)`
+/// `HashMapInsertOrAssignU32ToPtr` at 0xd6f630 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssignU32ToPtr(longlong param_1, uint * param_2, undefined8 * param_3)`
 pub const HashMapInsertOrAssignU32ToPtr: u64 = 71263;
-/// `HashMapInsertOrAssignU32ToRefPtr` at 0x199db0 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssignU32ToRefPtr(longlong param_1, uint * param_2, longlong * param_3)`
+/// `HashMapInsertOrAssignU32ToRefPtr` at 0x199db0 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssignU32ToRefPtr(longlong param_1, uint * param_2, longlong * param_3)`
 pub const HashMapInsertOrAssignU32ToRefPtr: u64 = 13128;
-/// `HashMapInsertOrAssignU32ToRefPtr_2` at 0x9b0700 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssignU32ToRefPtr_2(longlong param_1, uint * param_2, longlong * param_3)`
+/// `HashMapInsertOrAssignU32ToRefPtr_2` at 0x9b0700 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssignU32ToRefPtr_2(longlong param_1, uint * param_2, longlong * param_3)`
 pub const HashMapInsertOrAssignU32ToRefPtr_2: u64 = 53378;
-/// `HashMapInsertOrAssignU32ToTriplePairHolder` at 0x9b66e0 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssignU32ToTriplePairHolder(longlong param_1, uint * param_2, undefined8 * param_3)`
+/// `HashMapInsertOrAssignU32ToTriplePairHolder` at 0x9b66e0 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssignU32ToTriplePairHolder(longlong param_1, uint * param_2, undefined8 * param_3)`
 pub const HashMapInsertOrAssignU32ToTriplePairHolder: u64 = 53460;
-/// `HashMapInsertOrAssignU32ToU32` at 0x61abb0 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssignU32ToU32(longlong param_1, uint * param_2, uint * param_3)`
+/// `HashMapInsertOrAssignU32ToU32` at 0x61abb0 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssignU32ToU32(longlong param_1, uint * param_2, uint * param_3)`
 pub const HashMapInsertOrAssignU32ToU32: u64 = 35617;
-/// `HashMapInsertOrAssignU64ToObject68` at 0x9ebc00 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssignU64ToObject68(longlong param_1, ulonglong * param_2, ulonglong * param_3)`
+/// `HashMapInsertOrAssignU64ToObject68` at 0x9ebc00 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssignU64ToObject68(longlong param_1, ulonglong * param_2, ulonglong * param_3)`
 pub const HashMapInsertOrAssignU64ToObject68: u64 = 54102;
-/// `HashMapInsertOrAssignU64ToStringHolder` at 0x9b0ae0 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssignU64ToStringHolder(longlong param_1, ulonglong * param_2, ulonglong * param_3)`
+/// `HashMapInsertOrAssignU64ToStringHolder` at 0x9b0ae0 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssignU64ToStringHolder(longlong param_1, ulonglong * param_2, ulonglong * param_3)`
 pub const HashMapInsertOrAssignU64ToStringHolder: u64 = 53380;
-/// `HashMapInsertOrAssignU64ToU32` at 0x9bafd0 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssignU64ToU32(longlong param_1, ulonglong * param_2, uint * param_3)`
+/// `HashMapInsertOrAssignU64ToU32` at 0x9bafd0 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssignU64ToU32(longlong param_1, ulonglong * param_2, uint * param_3)`
 pub const HashMapInsertOrAssignU64ToU32: u64 = 53531;
-/// `HashMapInsertOrAssignU64ToU8` at 0x9bb160 (decompiler, medium); signature (untiered): `undefined8 HashMapInsertOrAssignU64ToU8(longlong param_1, ulonglong * param_2, undefined1 * param_3)`
+/// `HashMapInsertOrAssignU64ToU8` at 0x9bb160 (decompiler, medium); signature (low): `undefined8 HashMapInsertOrAssignU64ToU8(longlong param_1, ulonglong * param_2, undefined1 * param_3)`
 pub const HashMapInsertOrAssignU64ToU8: u64 = 53532;
 /// `HashMapLookupU32ToArray10Holder` at 0x9ce370 (decompiler, medium); signature (medium): `undefined1 HashMapLookupU32ToArray10Holder(longlong param_1, uint * param_2, undefined8 * param_3)`
 pub const HashMapLookupU32ToArray10Holder: u64 = 53800;
@@ -5155,65 +4755,65 @@ pub const HashMapTryGetU32ToMapHolder: u64 = 53484;
 pub const HashMapTryGetU32ToTriplePairHolder: u64 = 53480;
 /// `HashStringAndField10` at 0xd07b90 (decompiler, medium); signature (medium): `ulonglong HashStringAndField10(longlong param_1)`
 pub const HashStringAndField10: u64 = 82790;
-/// `HashStringAndFields18To30` at 0xd79df0 (decompiler, medium); signature (untiered): `ulonglong HashStringAndFields18To30(undefined8 param_1, longlong param_2)`
+/// `HashStringAndFields18To30` at 0xd79df0 (decompiler, medium); signature (low): `ulonglong HashStringAndFields18To30(undefined8 param_1, longlong param_2)`
 pub const HashStringAndFields18To30: u64 = 85208;
-/// `HashStringAndIntKey` at 0xe16310 (decompiler, medium); signature (untiered): `ulonglong HashStringAndIntKey(undefined8 param_1, longlong param_2)`
+/// `HashStringAndIntKey` at 0xe16310 (decompiler, medium); signature (low): `ulonglong HashStringAndIntKey(undefined8 param_1, longlong param_2)`
 pub const HashStringAndIntKey: u64 = 88727;
 /// `HashStringNoCase24` at 0xd0a4c0 (decompiler, high); signature (high): `uint HashStringNoCase24(longlong param_1, longlong param_2)`
 pub const HashStringNoCase24: u64 = 82837;
 /// `HashStringNoCaseDjb2` at 0xcfe240 (decompiler, high); signature (high): `ulonglong HashStringNoCaseDjb2(longlong param_1, longlong param_2, ulonglong param_3)`
 pub const HashStringNoCaseDjb2: u64 = 82607;
-/// `HashTableAddEntry18` at 0xd1bc20 (decompiler, medium); signature (untiered): `undefined HashTableAddEntry18(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
+/// `HashTableAddEntry18` at 0xd1bc20 (decompiler, medium); signature (low): `undefined HashTableAddEntry18(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
 pub const HashTableAddEntry18: u64 = 83160;
-/// `HashTableAddEntry20` at 0xd1b680 (decompiler, medium); signature (untiered): `undefined HashTableAddEntry20(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
+/// `HashTableAddEntry20` at 0xd1b680 (decompiler, medium); signature (low): `undefined HashTableAddEntry20(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
 pub const HashTableAddEntry20: u64 = 83156;
-/// `HashTableAddEntryStride28` at 0xde66e0 (decompiler, medium); signature (untiered): `undefined HashTableAddEntryStride28(longlong * param_1, undefined8 param_2, longlong * param_3, ulonglong param_4)`
+/// `HashTableAddEntryStride28` at 0xde66e0 (decompiler, medium); signature (low): `undefined HashTableAddEntryStride28(longlong * param_1, undefined8 param_2, longlong * param_3, ulonglong param_4)`
 pub const HashTableAddEntryStride28: u64 = 87132;
-/// `HashTableAddRefPtrEntry` at 0xde6870 (decompiler, medium); signature (untiered): `undefined HashTableAddRefPtrEntry(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
+/// `HashTableAddRefPtrEntry` at 0xde6870 (decompiler, medium); signature (low): `undefined HashTableAddRefPtrEntry(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
 pub const HashTableAddRefPtrEntry: u64 = 87133;
-/// `HashTableAddRefPtrEntry_2` at 0xde6a70 (decompiler, medium); signature (untiered): `undefined HashTableAddRefPtrEntry_2(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
+/// `HashTableAddRefPtrEntry_2` at 0xde6a70 (decompiler, medium); signature (low): `undefined HashTableAddRefPtrEntry_2(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
 pub const HashTableAddRefPtrEntry_2: u64 = 87134;
-/// `HashTableAddStringKeyEntry` at 0xde6e20 (decompiler, medium); signature (untiered): `undefined HashTableAddStringKeyEntry(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
+/// `HashTableAddStringKeyEntry` at 0xde6e20 (decompiler, medium); signature (low): `undefined HashTableAddStringKeyEntry(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
 pub const HashTableAddStringKeyEntry: u64 = 87136;
-/// `HashTableAddStringValueEntry` at 0xde6c70 (decompiler, medium); signature (untiered): `undefined HashTableAddStringValueEntry(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
+/// `HashTableAddStringValueEntry` at 0xde6c70 (decompiler, medium); signature (low): `undefined HashTableAddStringValueEntry(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
 pub const HashTableAddStringValueEntry: u64 = 87135;
-/// `HashTableFindByQwordKey` at 0xde9b70 (decompiler, medium); signature (untiered): `undefined8 * HashTableFindByQwordKey(longlong * param_1, undefined8 * param_2, byte * param_3)`
+/// `HashTableFindByQwordKey` at 0xde9b70 (decompiler, medium); signature (low): `undefined8 * HashTableFindByQwordKey(longlong * param_1, undefined8 * param_2, byte * param_3)`
 pub const HashTableFindByQwordKey: u64 = 87179;
-/// `HashTableFindByQwordKey_2` at 0xde9dd0 (decompiler, medium); signature (untiered): `undefined8 * HashTableFindByQwordKey_2(longlong * param_1, undefined8 * param_2, byte * param_3)`
+/// `HashTableFindByQwordKey_2` at 0xde9dd0 (decompiler, medium); signature (low): `undefined8 * HashTableFindByQwordKey_2(longlong * param_1, undefined8 * param_2, byte * param_3)`
 pub const HashTableFindByQwordKey_2: u64 = 87181;
-/// `HashTableInsertEntry20` at 0xd1af70 (decompiler, medium); signature (untiered): `undefined HashTableInsertEntry20(longlong * param_1, undefined8 param_2, longlong * param_3, ulonglong param_4)`
+/// `HashTableInsertEntry20` at 0xd1af70 (decompiler, medium); signature (low): `undefined HashTableInsertEntry20(longlong * param_1, undefined8 param_2, longlong * param_3, ulonglong param_4)`
 pub const HashTableInsertEntry20: u64 = 83151;
-/// `HashTableInsertEntry28` at 0xd1b110 (decompiler, medium); signature (untiered): `undefined HashTableInsertEntry28(longlong * param_1, undefined8 param_2, longlong * param_3, ulonglong param_4)`
+/// `HashTableInsertEntry28` at 0xd1b110 (decompiler, medium); signature (low): `undefined HashTableInsertEntry28(longlong * param_1, undefined8 param_2, longlong * param_3, ulonglong param_4)`
 pub const HashTableInsertEntry28: u64 = 83152;
-/// `HashTableInsertEntry30FromRefs` at 0xd1ba40 (decompiler, medium); signature (untiered): `undefined HashTableInsertEntry30FromRefs(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
+/// `HashTableInsertEntry30FromRefs` at 0xd1ba40 (decompiler, medium); signature (low): `undefined HashTableInsertEntry30FromRefs(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
 pub const HashTableInsertEntry30FromRefs: u64 = 83158;
-/// `HashTableInsertRefPtrEntry` at 0xde63a0 (decompiler, medium); signature (untiered): `undefined HashTableInsertRefPtrEntry(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
+/// `HashTableInsertRefPtrEntry` at 0xde63a0 (decompiler, medium); signature (low): `undefined HashTableInsertRefPtrEntry(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
 pub const HashTableInsertRefPtrEntry: u64 = 87130;
-/// `HashTableInsertRefPtrEntry_2` at 0xde6540 (decompiler, medium); signature (untiered): `undefined HashTableInsertRefPtrEntry_2(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
+/// `HashTableInsertRefPtrEntry_2` at 0xde6540 (decompiler, medium); signature (low): `undefined HashTableInsertRefPtrEntry_2(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
 pub const HashTableInsertRefPtrEntry_2: u64 = 87131;
-/// `HashTableInsertStringIntEntry` at 0xd59ac0 (decompiler, medium); signature (untiered): `undefined HashTableInsertStringIntEntry(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
+/// `HashTableInsertStringIntEntry` at 0xd59ac0 (decompiler, medium); signature (low): `undefined HashTableInsertStringIntEntry(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
 pub const HashTableInsertStringIntEntry: u64 = 84067;
-/// `HashTableInsertUIntKeyEntry18` at 0xd1b480 (decompiler, medium); signature (untiered): `undefined HashTableInsertUIntKeyEntry18(longlong * param_1, undefined8 param_2, undefined4 * param_3, ulonglong param_4)`
+/// `HashTableInsertUIntKeyEntry18` at 0xd1b480 (decompiler, medium); signature (low): `undefined HashTableInsertUIntKeyEntry18(longlong * param_1, undefined8 param_2, undefined4 * param_3, ulonglong param_4)`
 pub const HashTableInsertUIntKeyEntry18: u64 = 83155;
-/// `HashTableInsertValueEntry30` at 0xd1b2e0 (decompiler, medium); signature (untiered): `undefined HashTableInsertValueEntry30(longlong * param_1, undefined8 param_2, longlong * param_3, ulonglong param_4)`
+/// `HashTableInsertValueEntry30` at 0xd1b2e0 (decompiler, medium); signature (low): `undefined HashTableInsertValueEntry30(longlong * param_1, undefined8 param_2, longlong * param_3, ulonglong param_4)`
 pub const HashTableInsertValueEntry30: u64 = 83153;
-/// `HashTableResizeRefPtrEntries` at 0xdec190 (decompiler, medium); signature (untiered): `undefined HashTableResizeRefPtrEntries(longlong * param_1, undefined8 param_2, ulonglong param_3)`
+/// `HashTableResizeRefPtrEntries` at 0xdec190 (decompiler, medium); signature (low): `undefined HashTableResizeRefPtrEntries(longlong * param_1, undefined8 param_2, ulonglong param_3)`
 pub const HashTableResizeRefPtrEntries: u64 = 87219;
-/// `HashTableResizeRefPtrEntries_2` at 0xdec410 (decompiler, medium); signature (untiered): `undefined HashTableResizeRefPtrEntries_2(longlong * param_1, undefined8 param_2, ulonglong param_3)`
+/// `HashTableResizeRefPtrEntries_2` at 0xdec410 (decompiler, medium); signature (low): `undefined HashTableResizeRefPtrEntries_2(longlong * param_1, undefined8 param_2, ulonglong param_3)`
 pub const HashTableResizeRefPtrEntries_2: u64 = 87220;
-/// `HashTableResizeStride28` at 0xdebbe0 (decompiler, medium); signature (untiered): `undefined HashTableResizeStride28(longlong * param_1, undefined8 param_2, ulonglong param_3)`
+/// `HashTableResizeStride28` at 0xdebbe0 (decompiler, medium); signature (low): `undefined HashTableResizeStride28(longlong * param_1, undefined8 param_2, ulonglong param_3)`
 pub const HashTableResizeStride28: u64 = 87217;
-/// `HashTableResizeStride30` at 0xdebed0 (decompiler, medium); signature (untiered): `undefined HashTableResizeStride30(longlong * param_1, undefined8 param_2, ulonglong param_3)`
+/// `HashTableResizeStride30` at 0xdebed0 (decompiler, medium); signature (low): `undefined HashTableResizeStride30(longlong * param_1, undefined8 param_2, ulonglong param_3)`
 pub const HashTableResizeStride30: u64 = 87218;
-/// `HashTableSetStringValue` at 0xdeb840 (decompiler, medium); signature (untiered): `undefined HashTableSetStringValue(longlong * param_1, ulonglong * param_2, ulonglong * param_3)`
+/// `HashTableSetStringValue` at 0xdeb840 (decompiler, medium); signature (low): `undefined HashTableSetStringValue(longlong * param_1, ulonglong * param_2, ulonglong * param_3)`
 pub const HashTableSetStringValue: u64 = 87212;
 /// `HashTwoBytes` at 0xe7d560 (decompiler, high); signature (high): `longlong HashTwoBytes(undefined8 param_1, byte * param_2)`
 pub const HashTwoBytes: u64 = 89794;
 /// `HaveListedFileSizesChanged` at 0x1cc400 (decompiler, medium)
 pub const HaveListedFileSizesChanged: u64 = 13958;
-/// `HaveSameCurrentLocationAncestor` at 0x340650 (decompiler, medium); signature (untiered): `bool HaveSameCurrentLocationAncestor(longlong * param_1, longlong * param_2, longlong param_3)`
+/// `HaveSameCurrentLocationAncestor` at 0x340650 (decompiler, medium); signature (low): `bool HaveSameCurrentLocationAncestor(longlong * param_1, longlong * param_2, longlong param_3)`
 pub const HaveSameCurrentLocationAncestor: u64 = 21801;
-/// `HaveSameEditorLocationAncestor` at 0x3406e0 (decompiler, medium); signature (untiered): `bool HaveSameEditorLocationAncestor(longlong * param_1, longlong * param_2, longlong param_3)`
+/// `HaveSameEditorLocationAncestor` at 0x3406e0 (decompiler, medium); signature (low): `bool HaveSameEditorLocationAncestor(longlong * param_1, longlong * param_2, longlong param_3)`
 pub const HaveSameEditorLocationAncestor: u64 = 21802;
 /// `HavokError::ctor` at 0x3fdfb0 (layout_inference, medium); signature (high): `HavokError * ctor(HavokError * this)`
 pub const HavokError__ctor: u64 = 25888;
@@ -5317,9 +4917,9 @@ pub const Hazard__BSTEventSink_BSAnimationGraphEvent_vdtor: u64 = 43989;
 pub const Hazard__BSTEventSink_BSAnimationGraphEvent_vfunc_1: u64 = 43965;
 /// `Hazard::IAnimationGraphManagerHolder_vdtor` at 0x7ef6cc (slot_propagation, medium); signature (high): `undefined IAnimationGraphManagerHolder_vdtor(Hazard * this)`
 pub const Hazard__IAnimationGraphManagerHolder_vdtor: u64 = 43990;
-/// `Hazard::LoadGame` at 0x7ee4b0 (slot_propagation, medium); signature (untiered): `undefined LoadGame(Hazard * this, TESObjectREFR_vtbl * param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
+/// `Hazard::LoadGame` at 0x7ee4b0 (slot_propagation, medium); signature (low): `undefined LoadGame(Hazard * this, TESObjectREFR_vtbl * param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
 pub const Hazard__LoadGame: u64 = 43962;
-/// `Hazard::SaveGame` at 0x7ee360 (slot_propagation, medium); signature (untiered): `undefined SaveGame(Hazard * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+/// `Hazard::SaveGame` at 0x7ee360 (slot_propagation, medium); signature (low): `undefined SaveGame(Hazard * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const Hazard__SaveGame: u64 = 43961;
 /// `Hazard::ctor` at 0x7ed880 (layout_inference, high); signature (low): `Hazard * ctor(Hazard * this, undefined8 param_1, uint * param_2, longlong * param_3)`
 pub const Hazard__ctor: u64 = 43951;
@@ -5347,11 +4947,11 @@ pub const Hazard__vfunc_18: u64 = 43964;
 pub const Hazard__vfunc_19: u64 = 43960;
 /// `Hazard::vfunc_80` at 0x7ee740 (rtti, high); signature (low): `undefined vfunc_80(Hazard * this, undefined4 * param_1)`
 pub const Hazard__vfunc_80: u64 = 43966;
-/// `HeadTrackData::ClearSlot` at 0x71dcf0 (runtime, high); signature (untiered): `undefined ClearSlot(longlong param_1, int param_2, char param_3, undefined8 param_4)`; semantic: clears slot (handle invalid, active byte 0); with keepAsDefault and a target that resolved, moves that target into slot 0; else RetargetHeadTrack (high); signature `void (HighProcessData* data, i32 slot, bool keepAsDefault)`
+/// `HeadTrackData::ClearSlot` at 0x71dcf0 (runtime, high); signature (low): `undefined ClearSlot(longlong param_1, int param_2, char param_3, undefined8 param_4)`; semantic: clears slot (handle invalid, active byte 0); with keepAsDefault and a target that resolved, moves that target into slot 0; else RetargetHeadTrack (high); signature `void (HighProcessData* data, i32 slot, bool keepAsDefault)`
 pub const HeadTrackData__ClearSlot: u64 = 39756;
 /// `HeadTrackData::ClearSlot` as a function pointer type (high).
 pub type HeadTrackData__ClearSlot_fn = unsafe extern "C" fn(data: *mut crate::HighProcessData, slot: i32, keepAsDefault: bool);
-/// `HeadTrackData::Retarget` at 0x71ea00 (semantic, high); signature (untiered): `undefined Retarget(longlong param_1)`; semantic: takes the highest active slot's handle (5 down to 0); when it differs from +0x178: +0x46a = 0, +0x178 = handle, +0x164..+0x16c = the target's look position (slot 91), +0x174 = 0, +0x170 = fAIHeadTrackDialogueStayInOffsetMin (high); signature `void (HighProcessData* data)`
+/// `HeadTrackData::Retarget` at 0x71ea00 (semantic, high); signature (low): `undefined Retarget(longlong param_1)`; semantic: takes the highest active slot's handle (5 down to 0); when it differs from +0x178: +0x46a = 0, +0x178 = handle, +0x164..+0x16c = the target's look position (slot 91), +0x174 = 0, +0x170 = fAIHeadTrackDialogueStayInOffsetMin (high); signature `void (HighProcessData* data)`
 pub const HeadTrackData__Retarget: u64 = 39770;
 /// `HeadTrackData::Retarget` as a function pointer type (high).
 pub type HeadTrackData__Retarget_fn = unsafe extern "C" fn(data: *mut crate::HighProcessData);
@@ -5359,13 +4959,13 @@ pub type HeadTrackData__Retarget_fn = unsafe extern "C" fn(data: *mut crate::Hig
 pub const HeadTrackData__SetSlot: u64 = 39783;
 /// `HeadTrackData::SetSlot` as a function pointer type (high).
 pub type HeadTrackData__SetSlot_fn = unsafe extern "C" fn(data: *mut crate::HighProcessData, slot: i32, ref_: *mut crate::TESObjectREFR);
-/// `HeadTrackingOffHandler::Handle` at 0x7cd5b0 (semantic, high); signature (untiered): `undefined1 Handle(HeadTrackingOffHandler * this, longlong param_1)`; semantic: animation event 'HeadTrackingOff': Actor::HeadTrackingOff(actor) (high); signature `bool (HeadTrackingOffHandler* this, Actor* actor)`
+/// `HeadTrackingOffHandler::Handle` at 0x7cd5b0 (semantic, high); signature (low): `undefined1 Handle(HeadTrackingOffHandler * this, longlong param_1)`; semantic: animation event 'HeadTrackingOff': Actor::HeadTrackingOff(actor) (high); signature `bool (HeadTrackingOffHandler* this, Actor* actor)`
 pub const HeadTrackingOffHandler__Handle: u64 = 42841;
 /// `HeadTrackingOffHandler::Handle` as a function pointer type (high).
 pub type HeadTrackingOffHandler__Handle_fn = unsafe extern "C" fn(this: *mut crate::HeadTrackingOffHandler, actor: *mut crate::Actor) -> bool;
 /// `HeadTrackingOffHandler::vdtor` at 0x7d40f0 (layout_inference, medium); signature (low): `HeadTrackingOffHandler * vdtor(HeadTrackingOffHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const HeadTrackingOffHandler__vdtor: u64 = 43335;
-/// `HeadTrackingOnHandler::Handle` at 0x7cd5a0 (semantic, high); signature (untiered): `undefined1 Handle(HeadTrackingOnHandler * this, longlong param_1)`; semantic: animation event 'HeadTrackingOn': actor flags2 (+0xcc) |= 8; returns true (high); signature `bool (HeadTrackingOnHandler* this, Actor* actor)`
+/// `HeadTrackingOnHandler::Handle` at 0x7cd5a0 (semantic, high); signature (low): `undefined1 Handle(HeadTrackingOnHandler * this, longlong param_1)`; semantic: animation event 'HeadTrackingOn': actor flags2 (+0xcc) |= 8; returns true (high); signature `bool (HeadTrackingOnHandler* this, Actor* actor)`
 pub const HeadTrackingOnHandler__Handle: u64 = 42840;
 /// `HeadTrackingOnHandler::Handle` as a function pointer type (high).
 pub type HeadTrackingOnHandler__Handle_fn = unsafe extern "C" fn(this: *mut crate::HeadTrackingOnHandler, actor: *mut crate::Actor) -> bool;
@@ -5375,19 +4975,19 @@ pub const HeadTrackingOnHandler__vdtor: u64 = 43336;
 pub const HealthDamageFunctor__vdtor: u64 = 44254;
 /// `HealthDamageFunctor::vfunc_1` at 0x803c50 (rtti, high); signature (low): `undefined8 vfunc_1(HealthDamageFunctor * this, undefined4 * param_1)`
 pub const HealthDamageFunctor__vfunc_1: u64 = 44230;
-/// `HeapAllocateAligned` at 0xcdf660 (decompiler, medium); signature (untiered): `ulonglong * HeapAllocateAligned(longlong param_1, ulonglong param_2, ulonglong * param_3)`
+/// `HeapAllocateAligned` at 0xcdf660 (decompiler, medium); signature (low): `ulonglong * HeapAllocateAligned(longlong param_1, ulonglong param_2, ulonglong * param_3)`
 pub const HeapAllocateAligned: u64 = 68144;
-/// `HeapFree` at 0xcdfc60 (decompiler, medium); signature (untiered): `undefined HeapFree(longlong param_1, ulonglong param_2)`
+/// `HeapFree` at 0xcdfc60 (decompiler, medium); signature (low): `undefined HeapFree(longlong param_1, ulonglong param_2)`
 pub const HeapFree: u64 = 68146;
 /// `HeapFreeBlock` at 0x11c4d70 (decompiler, high); signature (high): `undefined HeapFreeBlock(ulonglong param_1, longlong param_2)`
 pub const HeapFreeBlock: u64 = 90490;
-/// `HeapSortQwordArray` at 0x53cb30 (decompiler, high); signature (untiered): `undefined HeapSortQwordArray(longlong * param_1, undefined * param_2)`
+/// `HeapSortQwordArray` at 0x53cb30 (decompiler, high); signature (low): `undefined HeapSortQwordArray(longlong * param_1, undefined * param_2)`
 pub const HeapSortQwordArray: u64 = 32509;
-/// `HeapSortRefCountedEntries` at 0xca3460 (decompiler, medium); signature (untiered): `undefined HeapSortRefCountedEntries(longlong * param_1, int param_2, undefined1 param_3)`
+/// `HeapSortRefCountedEntries` at 0xca3460 (decompiler, medium); signature (low): `undefined HeapSortRefCountedEntries(longlong * param_1, int param_2, undefined1 param_3)`
 pub const HeapSortRefCountedEntries: u64 = 67184;
-/// `HeldStateHandler::SetHeldState` at 0x7b4e40 (semantic, high); signature (untiered): `undefined SetHeldState(HeldStateHandler * this, undefined1 param_1)`
+/// `HeldStateHandler::SetHeldState` at 0x7b4e40 (semantic, high); signature (low): `undefined SetHeldState(HeldStateHandler * this, undefined1 param_1)`
 pub const HeldStateHandler__SetHeldState: u64 = 42452;
-/// `HeldStateHandler::UpdateHeldState` at 0x7ad430 (semantic, high); signature (untiered): `undefined UpdateHeldState(HeldStateHandler * this, longlong param_1)`
+/// `HeldStateHandler::UpdateHeldState` at 0x7ad430 (semantic, high); signature (low): `undefined UpdateHeldState(HeldStateHandler * this, longlong param_1)`
 pub const HeldStateHandler__UpdateHeldState: u64 = 42335;
 /// `HeldStateHandler::vdtor` at 0x7b1ae0 (layout_inference, medium); signature (low): `HeldStateHandler * vdtor(HeldStateHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const HeldStateHandler__vdtor: u64 = 42398;
@@ -5395,13 +4995,13 @@ pub const HeldStateHandler__vdtor: u64 = 42398;
 pub const HelpMessageManager__vdtor: u64 = 51719;
 /// `HelpMessageManager::vfunc_1` at 0x931e80 (rtti, high); signature (low): `undefined8 vfunc_1(HelpMessageManager * this, longlong * param_1)`
 pub const HelpMessageManager__vfunc_1: u64 = 51596;
-/// `HideDismemberSlotForRefAt2770` at 0x21de50 (decompiler, medium); signature (untiered): `undefined HideDismemberSlotForRefAt2770(longlong param_1, int param_2)`
+/// `HideDismemberSlotForRefAt2770` at 0x21de50 (decompiler, medium); signature (low): `undefined HideDismemberSlotForRefAt2770(longlong param_1, int param_2)`
 pub const HideDismemberSlotForRefAt2770: u64 = 15716;
-/// `HideDismemberSlotRecursive` at 0x21df20 (decompiler, medium); signature (untiered): `undefined HideDismemberSlotRecursive(undefined8 param_1, longlong * param_2, int param_3)`
+/// `HideDismemberSlotRecursive` at 0x21df20 (decompiler, medium); signature (low): `undefined HideDismemberSlotRecursive(undefined8 param_1, longlong * param_2, int param_3)`
 pub const HideDismemberSlotRecursive: u64 = 15717;
-/// `HideDismemberSlotRecursive_2` at 0x38a560 (decompiler, medium); signature (untiered): `undefined HideDismemberSlotRecursive_2(undefined4 param_1, longlong * param_2)`
+/// `HideDismemberSlotRecursive_2` at 0x38a560 (decompiler, medium); signature (low): `undefined HideDismemberSlotRecursive_2(undefined4 param_1, longlong * param_2)`
 pub const HideDismemberSlotRecursive_2: u64 = 23449;
-/// `HighActorCuller::Visit` at 0x73c5c0 (runtime, high); signature (untiered): `undefined Visit(HighActorCuller * this, TESObjectREFR * param_1)`; semantic: per high actor, each frame: the actor's 3D gets NiAVObject flags bit 20 when it is not a fade node, when its world bound is outside the camera frustum (BSFadeNodeCuller slot 22 0x1555fd0 sets or clears the bit) or when it fails the portal-graph test (TestAgainstPortalGraphPlanes); result bits into Actor+0x27c (high); signature `void (HighActorCuller* this, Actor* actor)`
+/// `HighActorCuller::Visit` at 0x73c5c0 (runtime, high); signature (low): `undefined Visit(HighActorCuller * this, TESObjectREFR * param_1)`; semantic: per high actor, each frame: the actor's 3D gets NiAVObject flags bit 20 when it is not a fade node, when its world bound is outside the camera frustum (BSFadeNodeCuller slot 22 0x1555fd0 sets or clears the bit) or when it fails the portal-graph test (TestAgainstPortalGraphPlanes); result bits into Actor+0x27c (high); signature `void (HighActorCuller* this, Actor* actor)`
 pub const HighActorCuller__Visit: u64 = 40335;
 /// `HighActorCuller::Visit` as a function pointer type (high).
 pub type HighActorCuller__Visit_fn = unsafe extern "C" fn(this: *mut crate::HighActorCuller, actor: *mut crate::Actor);
@@ -5411,21 +5011,21 @@ pub const HighActorCuller__ctor: u64 = 40332;
 pub const HighActorCuller__dtor: u64 = 40333;
 /// `HighActorCuller::vdtor` at 0x73c770 (slot_propagation, medium); signature (low): `HighActorCuller * vdtor(HighActorCuller * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const HighActorCuller__vdtor: u64 = 40337;
-/// `HitFrameHandler::Handle` at 0x7cccc0 (semantic, high); signature (untiered): `longlong Handle(HitFrameHandler * this, Actor * param_1, longlong * param_2, undefined8 param_3)`; semantic: processes the melee hit frame and moves attack state 2 (Swing) to 3 (Hit) (high); signature `bool (HitFrameHandler* this, Actor* actor, BSFixedString* tag)`
+/// `HitFrameHandler::Handle` at 0x7cccc0 (semantic, high); signature (low): `longlong Handle(HitFrameHandler * this, Actor * param_1, longlong * param_2, undefined8 param_3)`; semantic: processes the melee hit frame and moves attack state 2 (Swing) to 3 (Hit) (high); signature `bool (HitFrameHandler* this, Actor* actor, BSFixedString* tag)`
 pub const HitFrameHandler__Handle: u64 = 42828;
 /// `HitFrameHandler::Handle` as a function pointer type (high).
 pub type HitFrameHandler__Handle_fn = unsafe extern "C" fn(this: *mut crate::HitFrameHandler, actor: *mut crate::Actor, tag: *mut crate::BSFixedString) -> bool;
 /// `HitFrameHandler::vdtor` at 0x7d4150 (layout_inference, medium); signature (low): `HitFrameHandler * vdtor(HitFrameHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const HitFrameHandler__vdtor: u64 = 43337;
-/// `HitTestChildrenAtPoint` at 0xd64200 (decompiler, medium); signature (untiered): `undefined HitTestChildrenAtPoint(longlong * param_1, float * param_2, byte param_3)`
+/// `HitTestChildrenAtPoint` at 0xd64200 (decompiler, medium); signature (low): `undefined HitTestChildrenAtPoint(longlong * param_1, float * param_2, byte param_3)`
 pub const HitTestChildrenAtPoint: u64 = 84268;
-/// `HitTestPackedPathEdges` at 0xe227b0 (decompiler, medium); signature (untiered): `undefined HitTestPackedPathEdges(longlong * param_1, longlong param_2, longlong param_3, float param_4, float param_5)`
+/// `HitTestPackedPathEdges` at 0xe227b0 (decompiler, medium); signature (low): `undefined HitTestPackedPathEdges(longlong * param_1, longlong param_2, longlong param_3, float param_4, float param_5)`
 pub const HitTestPackedPathEdges: u64 = 88127;
 /// `HitTestPoint` at 0xe21180 (decompiler, medium); signature (medium): `byte HitTestPoint(longlong * param_1, float * param_2, char param_3, longlong param_4)`
 pub const HitTestPoint: u64 = 88120;
 /// `HitTestPointPacked` at 0xe21390 (decompiler, medium); signature (medium): `byte HitTestPointPacked(longlong * param_1, float * param_2, char param_3, longlong param_4)`
 pub const HitTestPointPacked: u64 = 88121;
-/// `HitTestSpriteAgainstArgBoundsOrPoint` at 0xd57860 (decompiler, medium); signature (untiered): `undefined HitTestSpriteAgainstArgBoundsOrPoint(longlong param_1)`
+/// `HitTestSpriteAgainstArgBoundsOrPoint` at 0xd57860 (decompiler, medium); signature (low): `undefined HitTestSpriteAgainstArgBoundsOrPoint(longlong param_1)`
 pub const HitTestSpriteAgainstArgBoundsOrPoint: u64 = 84037;
 /// `HoldWardSpellsActiveEffectVisitor::vdtor` at 0x6c7360 (layout_inference, medium); signature (low): `HoldWardSpellsActiveEffectVisitor * vdtor(HoldWardSpellsActiveEffectVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const HoldWardSpellsActiveEffectVisitor__vdtor: u64 = 38516;
@@ -5433,11 +5033,11 @@ pub const HoldWardSpellsActiveEffectVisitor__vdtor: u64 = 38516;
 pub const HoldWardSpellsActiveEffectVisitor__vfunc_1: u64 = 38515;
 /// `HoldWardSpellsActiveEffectVisitor::vfunc_1_sub0` at 0x5ba3d0 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub0(longlong param_1)`
 pub const HoldWardSpellsActiveEffectVisitor__vfunc_1_sub0: u64 = 34033;
-/// `HorseCameraState::Begin` at 0x8f6c50 (semantic, high); signature (untiered): `undefined Begin(HorseCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+/// `HorseCameraState::Begin` at 0x8f6c50 (semantic, high); signature (low): `undefined Begin(HorseCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const HorseCameraState__Begin: u64 = 50760;
-/// `HorseCameraState::Destroy` at 0x8f7650 (semantic, high); signature (untiered): `HorseCameraState * Destroy(HorseCameraState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+/// `HorseCameraState::Destroy` at 0x8f7650 (semantic, high); signature (low): `HorseCameraState * Destroy(HorseCameraState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const HorseCameraState__Destroy: u64 = 50774;
-/// `HorseCameraState::End` at 0x8f6ce0 (semantic, high); signature (untiered): `undefined End(HorseCameraState * this)`
+/// `HorseCameraState::End` at 0x8f6ce0 (semantic, high); signature (high): `undefined End(HorseCameraState * this)`
 pub const HorseCameraState__End: u64 = 50761;
 /// `HorseCameraState::InputHandler::Destroy` at 0x8f763c (semantic, high); signature (untiered): `undefined Destroy(void * this)`; semantic: slot 0 adjustor thunk: rcx -= 0x20, jump to HorseCameraState::vdtor 0x8f7650 (high); signature `HorseCameraState* (PlayerInputHandler* this, u32 flags)`
 pub const HorseCameraState__InputHandler__Destroy: u64 = 50773;
@@ -5447,35 +5047,35 @@ pub type HorseCameraState__InputHandler__Destroy_fn = unsafe extern "C" fn(this:
 pub const HorseCameraState__InputHandler__ProcessButton: u64 = 50763;
 /// `HorseCameraState::InputHandler::ProcessButton` as a function pointer type (high).
 pub type HorseCameraState__InputHandler__ProcessButton_fn = unsafe extern "C" fn(this: *mut crate::PlayerInputHandler, event: *mut crate::ButtonEvent, data: *mut c_void);
-/// `HorseCameraState::IsFreeLookActive` at 0x8f76a0 (semantic, high); signature (untiered): `undefined8 IsFreeLookActive(HorseCameraState * this)`
+/// `HorseCameraState::IsFreeLookActive` at 0x8f76a0 (semantic, high); signature (high): `undefined8 IsFreeLookActive(HorseCameraState * this)`
 pub const HorseCameraState__IsFreeLookActive: u64 = 50775;
-/// `HorseCameraState::LoadGame` at 0x8f6eb0 (semantic, high); signature (untiered): `undefined LoadGame(HorseCameraState * this, longlong param_1)`
+/// `HorseCameraState::LoadGame` at 0x8f6eb0 (semantic, high); signature (low): `undefined LoadGame(HorseCameraState * this, longlong param_1)`
 pub const HorseCameraState__LoadGame: u64 = 50765;
-/// `HorseCameraState::ProcessLookInput` at 0x8f71e0 (semantic, high); signature (untiered): `undefined ProcessLookInput(HorseCameraState * this, undefined8 * param_1)`
+/// `HorseCameraState::ProcessLookInput` at 0x8f71e0 (semantic, high); signature (low): `undefined ProcessLookInput(HorseCameraState * this, undefined8 * param_1)`
 pub const HorseCameraState__ProcessLookInput: u64 = 50770;
-/// `HorseCameraState::ResetOffsets` at 0x8f7110 (runtime, high); signature (untiered): `undefined ResetOffsets(HorseCameraState * this)`
+/// `HorseCameraState::ResetOffsets` at 0x8f7110 (runtime, high); signature (high): `undefined ResetOffsets(HorseCameraState * this)`
 pub const HorseCameraState__ResetOffsets: u64 = 50769;
-/// `HorseCameraState::Revert` at 0x8f6fd0 (semantic, high); signature (untiered): `undefined Revert(HorseCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+/// `HorseCameraState::Revert` at 0x8f6fd0 (semantic, high); signature (low): `undefined Revert(HorseCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const HorseCameraState__Revert: u64 = 50766;
-/// `HorseCameraState::SaveGame` at 0x8f6dd0 (semantic, high); signature (untiered): `undefined SaveGame(HorseCameraState * this, longlong param_1)`
+/// `HorseCameraState::SaveGame` at 0x8f6dd0 (semantic, high); signature (low): `undefined SaveGame(HorseCameraState * this, longlong param_1)`
 pub const HorseCameraState__SaveGame: u64 = 50764;
-/// `HorseCameraState::SetCombatOffsets` at 0x8f7010 (semantic, high); signature (untiered): `undefined SetCombatOffsets(HorseCameraState * this, char param_1)`
+/// `HorseCameraState::SetCombatOffsets` at 0x8f7010 (semantic, high); signature (low): `undefined SetCombatOffsets(HorseCameraState * this, char param_1)`
 pub const HorseCameraState__SetCombatOffsets: u64 = 50767;
-/// `HorseCameraState::SetFreeRotationMode` at 0x8f6d10 (semantic, high); signature (untiered): `undefined SetFreeRotationMode(void)`
+/// `HorseCameraState::SetFreeRotationMode` at 0x8f6d10 (semantic, high); signature (low): `undefined SetFreeRotationMode(void)`
 pub const HorseCameraState__SetFreeRotationMode: u64 = 50762;
-/// `HorseCameraState::SetTargetHandle` at 0x8f7100 (semantic, high); signature (untiered): `undefined SetTargetHandle(HorseCameraState * this, undefined4 * param_1)`
+/// `HorseCameraState::SetTargetHandle` at 0x8f7100 (semantic, high); signature (low): `undefined SetTargetHandle(HorseCameraState * this, undefined4 * param_1)`
 pub const HorseCameraState__SetTargetHandle: u64 = 50768;
-/// `HorseCameraState::UpdateRotation` at 0x8f7360 (semantic, high); signature (untiered): `undefined UpdateRotation(HorseCameraState * this)`
+/// `HorseCameraState::UpdateRotation` at 0x8f7360 (semantic, high); signature (high): `undefined UpdateRotation(HorseCameraState * this)`
 pub const HorseCameraState__UpdateRotation: u64 = 50771;
 /// `HorseCameraState::ctor` at 0x8f6c00 (layout_inference, high); signature (low): `HorseCameraState * ctor(HorseCameraState * this, undefined8 param_1, undefined4 param_2)`; semantic: ThirdPersonState::ctor, own vtables, mountHandle invalid, mountHeading 0, turning 0 (high); signature `HorseCameraState* (HorseCameraState* this, PlayerCamera* camera, CameraState id)`
 pub const HorseCameraState__ctor: u64 = 50759;
 /// `HorseCameraState::ctor` as a function pointer type (high).
 pub type HorseCameraState__ctor_fn = unsafe extern "C" fn(this: *mut crate::HorseCameraState, camera: *mut crate::PlayerCamera, id: u32) -> *mut crate::HorseCameraState;
-/// `HoursPassed::GetEventSource` at 0x975b40 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; semantic: the one source of HoursPassed::Event events (medium); signature `BSTEventSource<HoursPassed::Event>* ()`
+/// `HoursPassed::GetEventSource` at 0x975b40 (semantic, medium); signature (low): `undefined8 * GetEventSource(void)`; semantic: the one source of HoursPassed::Event events (medium); signature `BSTEventSource<HoursPassed::Event>* ()`
 pub const HoursPassed__GetEventSource: u64 = 52501;
 /// `HoursPassed::RegisterSink` at 0x974c20 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; semantic: registers a HoursPassed::Event sink with the singleton source (medium); signature `void (BSTEventSink<HoursPassed::Event>* sink)`
 pub const HoursPassed__RegisterSink: u64 = 52482;
-/// `HoursPassed::UnregisterSink` at 0x974c50 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a HoursPassed::Event sink with the singleton source (medium); signature `void (BSTEventSink<HoursPassed::Event>* sink)`
+/// `HoursPassed::UnregisterSink` at 0x974c50 (semantic, medium); signature (low): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a HoursPassed::Event sink with the singleton source (medium); signature `void (BSTEventSink<HoursPassed::Event>* sink)`
 pub const HoursPassed__UnregisterSink: u64 = 52483;
 /// `IAITarget::IPackageData_vdtor` at 0x44e7d8 (slot_propagation, medium); signature (low): `undefined IPackageData_vdtor(IAITarget * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const IAITarget__IPackageData_vdtor: u64 = 27546;
@@ -5501,73 +5101,73 @@ pub const IAllowEGMCacheClear__vdtor: u64 = 40945;
 pub const IAnimationClipLoaderSingleton__dtor: u64 = 64028;
 /// `IAnimationClipLoaderSingleton::vdtor` at 0xbeb350 (layout_inference, medium); signature (low): `IAnimationClipLoaderSingleton * vdtor(IAnimationClipLoaderSingleton * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const IAnimationClipLoaderSingleton__vdtor: u64 = 64032;
-/// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
+/// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (low): `undefined1 CreateAnimationChannels(void)`
 pub const IAnimationGraphManagerHolder__CreateAnimationChannels: u64 = 32907;
 /// `IAnimationGraphManagerHolder::CreateAnimationGraph` at 0x6b00b0 (semantic, medium); signature (untiered): `bool CreateAnimationGraph(IAnimationGraphManagerHolder * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const IAnimationGraphManagerHolder__CreateAnimationGraph: u64 = 37979;
 /// `IAnimationGraphManagerHolder::GetAnimationGraphManager` at 0x6b60b0 (semantic, high); signature (untiered): `bool GetAnimationGraphManager(IAnimationGraphManagerHolder * this, longlong * param_1)`
 pub const IAnimationGraphManagerHolder__GetAnimationGraphManager: u64 = 38046;
-/// `IAnimationGraphManagerHolder::GetGraphRootNodes` at 0x554330 (semantic, medium); signature (untiered): `undefined1 GetGraphRootNodes(void)`
+/// `IAnimationGraphManagerHolder::GetGraphRootNodes` at 0x554330 (semantic, medium); signature (low): `undefined1 GetGraphRootNodes(void)`
 pub const IAnimationGraphManagerHolder__GetGraphRootNodes: u64 = 32903;
-/// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+/// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (low): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
 pub const IAnimationGraphManagerHolder__GetGraphVariableBool: u64 = 32914;
-/// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
+/// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (low): `undefined8 GetGraphVariableCacheSize(void)`
 pub const IAnimationGraphManagerHolder__GetGraphVariableCacheSize: u64 = 32913;
-/// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+/// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (low): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
 pub const IAnimationGraphManagerHolder__GetGraphVariableFloat: u64 = 32916;
-/// `IAnimationGraphManagerHolder::GetGraphVariableFloatDirect` at 0x555160 (semantic, medium); signature (untiered): `undefined1 GetGraphVariableFloatDirect(longlong * param_1, ulonglong * param_2, undefined4 * param_3)`; semantic: non-virtual copy of the base slot-16 body (active graph, no actor cache) (medium); signature `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, float& out)`
+/// `IAnimationGraphManagerHolder::GetGraphVariableFloatDirect` at 0x555160 (semantic, medium); signature (low): `undefined1 GetGraphVariableFloatDirect(longlong * param_1, ulonglong * param_2, undefined4 * param_3)`; semantic: non-virtual copy of the base slot-16 body (active graph, no actor cache) (medium); signature `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, float& out)`
 pub const IAnimationGraphManagerHolder__GetGraphVariableFloatDirect: u64 = 32929;
-/// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+/// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (low): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
 pub const IAnimationGraphManagerHolder__GetGraphVariableInt: u64 = 32915;
-/// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
+/// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (low): `undefined1 InitializeGraphVariables(void)`
 pub const IAnimationGraphManagerHolder__InitializeGraphVariables: u64 = 32904;
-/// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+/// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (low): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const IAnimationGraphManagerHolder__NotifyAnimationGraph: u64 = 32901;
-/// `IAnimationGraphManagerHolder::OnAnimationGraphManagerChanged` at 0x5543c0 (semantic, medium); signature (untiered): `undefined OnAnimationGraphManagerChanged(void)`
+/// `IAnimationGraphManagerHolder::OnAnimationGraphManagerChanged` at 0x5543c0 (semantic, medium); signature (low): `undefined OnAnimationGraphManagerChanged(void)`
 pub const IAnimationGraphManagerHolder__OnAnimationGraphManagerChanged: u64 = 32911;
-/// `IAnimationGraphManagerHolder::OnGraphLoadFailed` at 0x554360 (semantic, medium); signature (untiered): `undefined OnGraphLoadFailed(void)`
+/// `IAnimationGraphManagerHolder::OnGraphLoadFailed` at 0x554360 (semantic, medium); signature (low): `undefined OnGraphLoadFailed(void)`
 pub const IAnimationGraphManagerHolder__OnGraphLoadFailed: u64 = 32906;
-/// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
+/// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (low): `undefined PostBuildAnimationGraphManager(void)`
 pub const IAnimationGraphManagerHolder__PostBuildAnimationGraphManager: u64 = 32909;
-/// `IAnimationGraphManagerHolder::RegisterGraphEventSinks` at 0x554350 (semantic, high); signature (untiered): `undefined1 RegisterGraphEventSinks(void)`
+/// `IAnimationGraphManagerHolder::RegisterGraphEventSinks` at 0x554350 (semantic, high); signature (low): `undefined1 RegisterGraphEventSinks(void)`
 pub const IAnimationGraphManagerHolder__RegisterGraphEventSinks: u64 = 32905;
-/// `IAnimationGraphManagerHolder::SetAnimationGraphManagerAndNotify` at 0x554060 (semantic, high); signature (untiered): `char SetAnimationGraphManagerAndNotify(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; semantic: installs a manager through slot 3 and, when it changed, calls slot 13(new, old) (high); signature `bool (IAnimationGraphManagerHolder* this, BSTSmartPointer<BSAnimationGraphManager>& newMgr)`
+/// `IAnimationGraphManagerHolder::SetAnimationGraphManagerAndNotify` at 0x554060 (semantic, high); signature (low): `char SetAnimationGraphManagerAndNotify(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; semantic: installs a manager through slot 3 and, when it changed, calls slot 13(new, old) (high); signature `bool (IAnimationGraphManagerHolder* this, BSTSmartPointer<BSAnimationGraphManager>& newMgr)`
 pub const IAnimationGraphManagerHolder__SetAnimationGraphManagerAndNotify: u64 = 32900;
 /// `IAnimationGraphManagerHolder::SetAnimationGraphManagerAndNotify` as a function pointer type (high).
 pub type IAnimationGraphManagerHolder__SetAnimationGraphManagerAndNotify_fn = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, newMgr: *mut c_void) -> bool;
-/// `IAnimationGraphManagerHolder::SetGraphVariableBool` at 0x553560 (semantic, high); signature (untiered): `undefined SetGraphVariableBool(undefined8 param_1, undefined8 param_2, undefined1 param_3)`; semantic: sets a bool variable on every graph of the manager; returns true whenever the holder yields a manager (the result starts at 1 and is only ORed) (high); signature `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, bool value)`
+/// `IAnimationGraphManagerHolder::SetGraphVariableBool` at 0x553560 (semantic, high); signature (low): `undefined SetGraphVariableBool(undefined8 param_1, undefined8 param_2, undefined1 param_3)`; semantic: sets a bool variable on every graph of the manager; returns true whenever the holder yields a manager (the result starts at 1 and is only ORed) (high); signature `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, bool value)`
 pub const IAnimationGraphManagerHolder__SetGraphVariableBool: u64 = 32885;
 /// `IAnimationGraphManagerHolder::SetGraphVariableBool` as a function pointer type (high).
 pub type IAnimationGraphManagerHolder__SetGraphVariableBool_fn = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, name: *const crate::BSFixedString, value: bool) -> bool;
-/// `IAnimationGraphManagerHolder::SetGraphVariableBoolOnAllGraphs` at 0x555ac0 (semantic, high); signature (untiered): `char SetGraphVariableBoolOnAllGraphs(longlong * param_1, longlong * param_2, undefined1 * param_3)`; semantic: implementation of 0x553560 (high); signature `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, bool* value)`
+/// `IAnimationGraphManagerHolder::SetGraphVariableBoolOnAllGraphs` at 0x555ac0 (semantic, high); signature (low): `char SetGraphVariableBoolOnAllGraphs(longlong * param_1, longlong * param_2, undefined1 * param_3)`; semantic: implementation of 0x553560 (high); signature `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, bool* value)`
 pub const IAnimationGraphManagerHolder__SetGraphVariableBoolOnAllGraphs: u64 = 32936;
 /// `IAnimationGraphManagerHolder::SetGraphVariableBoolOnAllGraphs` as a function pointer type (high).
 pub type IAnimationGraphManagerHolder__SetGraphVariableBoolOnAllGraphs_fn = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, name: *const crate::BSFixedString, value: *mut bool) -> bool;
-/// `IAnimationGraphManagerHolder::SetGraphVariableFloat` at 0x5535a0 (semantic, high); signature (untiered): `undefined SetGraphVariableFloat(undefined8 param_1, undefined8 param_2, undefined4 param_3)`; semantic: sets a float variable on every graph (high); signature `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, float value)`
+/// `IAnimationGraphManagerHolder::SetGraphVariableFloat` at 0x5535a0 (semantic, high); signature (low): `undefined SetGraphVariableFloat(undefined8 param_1, undefined8 param_2, undefined4 param_3)`; semantic: sets a float variable on every graph (high); signature `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, float value)`
 pub const IAnimationGraphManagerHolder__SetGraphVariableFloat: u64 = 32887;
 /// `IAnimationGraphManagerHolder::SetGraphVariableFloat` as a function pointer type (high).
 pub type IAnimationGraphManagerHolder__SetGraphVariableFloat_fn = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, name: *const crate::BSFixedString, value: f32) -> bool;
-/// `IAnimationGraphManagerHolder::SetGraphVariableFloatOnAllGraphs` at 0x555650 (semantic, high); signature (untiered): `char SetGraphVariableFloatOnAllGraphs(longlong * param_1, longlong * param_2, undefined4 * param_3)`; semantic: implementation of 0x5535a0 (high); signature `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, float* value)`
+/// `IAnimationGraphManagerHolder::SetGraphVariableFloatOnAllGraphs` at 0x555650 (semantic, high); signature (low): `char SetGraphVariableFloatOnAllGraphs(longlong * param_1, longlong * param_2, undefined4 * param_3)`; semantic: implementation of 0x5535a0 (high); signature `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, float* value)`
 pub const IAnimationGraphManagerHolder__SetGraphVariableFloatOnAllGraphs: u64 = 32933;
 /// `IAnimationGraphManagerHolder::SetGraphVariableFloatOnAllGraphs` as a function pointer type (high).
 pub type IAnimationGraphManagerHolder__SetGraphVariableFloatOnAllGraphs_fn = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, name: *const crate::BSFixedString, value: *mut f32) -> bool;
-/// `IAnimationGraphManagerHolder::SetGraphVariableInt` at 0x553580 (semantic, high); signature (untiered): `undefined SetGraphVariableInt(undefined8 param_1, undefined8 param_2, undefined4 param_3)`; semantic: sets an int variable on every graph (high); signature `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, int value)`
+/// `IAnimationGraphManagerHolder::SetGraphVariableInt` at 0x553580 (semantic, high); signature (low): `undefined SetGraphVariableInt(undefined8 param_1, undefined8 param_2, undefined4 param_3)`; semantic: sets an int variable on every graph (high); signature `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, int value)`
 pub const IAnimationGraphManagerHolder__SetGraphVariableInt: u64 = 32886;
 /// `IAnimationGraphManagerHolder::SetGraphVariableInt` as a function pointer type (high).
 pub type IAnimationGraphManagerHolder__SetGraphVariableInt_fn = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, name: *const crate::BSFixedString, value: i32) -> bool;
-/// `IAnimationGraphManagerHolder::SetGraphVariableIntOnAllGraphs` at 0x5554f0 (semantic, high); signature (untiered): `char SetGraphVariableIntOnAllGraphs(longlong * param_1, longlong * param_2, undefined4 * param_3)`; semantic: implementation of 0x553580 (high); signature `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, int* value)`
+/// `IAnimationGraphManagerHolder::SetGraphVariableIntOnAllGraphs` at 0x5554f0 (semantic, high); signature (low): `char SetGraphVariableIntOnAllGraphs(longlong * param_1, longlong * param_2, undefined4 * param_3)`; semantic: implementation of 0x553580 (high); signature `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, int* value)`
 pub const IAnimationGraphManagerHolder__SetGraphVariableIntOnAllGraphs: u64 = 32932;
 /// `IAnimationGraphManagerHolder::SetGraphVariableIntOnAllGraphs` as a function pointer type (high).
 pub type IAnimationGraphManagerHolder__SetGraphVariableIntOnAllGraphs_fn = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, name: *const crate::BSFixedString, value: *mut i32) -> bool;
-/// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
+/// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (low): `undefined1 ShouldUpdateAnimation(void)`
 pub const IAnimationGraphManagerHolder__ShouldUpdateAnimation: u64 = 32912;
-/// `IAnimationGraphManagerHolder::UpdateAnimationGraphManager` at 0x553fc0 (semantic, high); signature (untiered): `undefined1 UpdateAnimationGraphManager(longlong * param_1, longlong param_2)`; semantic: gets the manager (slot 2) and calls BSAnimationGraphManager::Update, gated by slot 14 unless data+0x2a (high); signature `bool (IAnimationGraphManagerHolder* this, BSAnimationUpdateData* data)`
+/// `IAnimationGraphManagerHolder::UpdateAnimationGraphManager` at 0x553fc0 (semantic, high); signature (low): `undefined1 UpdateAnimationGraphManager(longlong * param_1, longlong param_2)`; semantic: gets the manager (slot 2) and calls BSAnimationGraphManager::Update, gated by slot 14 unless data+0x2a (high); signature `bool (IAnimationGraphManagerHolder* this, BSAnimationUpdateData* data)`
 pub const IAnimationGraphManagerHolder__UpdateAnimationGraphManager: u64 = 32899;
 /// `IAnimationGraphManagerHolder::UpdateAnimationGraphManager` as a function pointer type (high).
 pub type IAnimationGraphManagerHolder__UpdateAnimationGraphManager_fn = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, data: *mut crate::BSAnimationUpdateData) -> bool;
 /// `IAnimationGraphManagerHolder::dtor` at 0x553600 (layout_inference, high); signature (high): `undefined dtor(IAnimationGraphManagerHolder * this)`
 pub const IAnimationGraphManagerHolder__dtor: u64 = 32891;
-/// `IAnimationGraphManagerHolder::dtor` at 0x555d90 (semantic, high); signature (untiered): `IAnimationGraphManagerHolder * dtor(IAnimationGraphManagerHolder * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+/// `IAnimationGraphManagerHolder::dtor` at 0x555d90 (semantic, high); signature (low): `IAnimationGraphManagerHolder * dtor(IAnimationGraphManagerHolder * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const IAnimationGraphManagerHolder__dtor_2: u64 = 32947;
 /// `IAnimationGraphManagerLoadingTask::BSResource_IEntryDB_PostFlushNotify_vdtor` at 0x555d78 (slot_propagation, medium); signature (high): `undefined BSResource_IEntryDB_PostFlushNotify_vdtor(IAnimationGraphManagerLoadingTask * this)`
 pub const IAnimationGraphManagerLoadingTask__BSResource_IEntryDB_PostFlushNotify_vdtor: u64 = 32946;
@@ -6835,7 +6435,7 @@ pub const IGamebryoSequenceGeneratorHolderSingleton__vdtor: u64 = 32779;
 pub const IGiftMenuScriptCallback__vdtor: u64 = 54912;
 /// `IHandlerFunctor<Actor,BSFixedStringCI>::vdtor` at 0x7d3700 (layout_inference, medium); signature (low): `IHandlerFunctor<Actor,BSFixedStringCI> * vdtor(IHandlerFunctor<Actor,BSFixedStringCI> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const IHandlerFunctor_Actor_BSFixedStringCI__vdtor: u64 = 43282;
-/// `IMapCameraCallbacks::Destroy` at 0x997210 (semantic, high); signature (untiered): `IMapCameraCallbacks * Destroy(IMapCameraCallbacks * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+/// `IMapCameraCallbacks::Destroy` at 0x997210 (semantic, high); signature (low): `IMapCameraCallbacks * Destroy(IMapCameraCallbacks * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const IMapCameraCallbacks__Destroy: u64 = 53029;
 /// `IMapCameraCallbacks::dtor` at 0x9971d0 (layout_inference, high); signature (high): `undefined dtor(IMapCameraCallbacks * this)`; semantic: resets the vtable (high); signature `void (IMapCameraCallbacks* this)`
 pub const IMapCameraCallbacks__dtor: u64 = 53027;
@@ -6869,23 +6469,23 @@ pub const IMemoryStoreBase__dtor: u64 = 68470;
 pub const IMemoryStoreBase__dtor_2: u64 = 68472;
 /// `IMemoryStoreBase::vdtor` at 0xcebde0 (layout_inference, medium); signature (low): `IMemoryStoreBase * vdtor(IMemoryStoreBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const IMemoryStoreBase__vdtor: u64 = 68475;
-/// `IMenu::Accept` at 0x57b460 (semantic, high); signature (untiered): `undefined Accept(void)`
+/// `IMenu::Accept` at 0x57b460 (semantic, high); signature (low): `undefined Accept(void)`
 pub const IMenu__Accept: u64 = 33615;
-/// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (untiered): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
+/// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (low): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
 pub const IMenu__AdvanceMovie: u64 = 82307;
 /// `IMenu::CreateFxDelegate` at 0x116f2a0 (semantic, medium); signature (untiered): `undefined CreateFxDelegate(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; semantic: creates the FxDelegate at +0x28, registers the menu with it (slot 1 Accept) and installs it on the movie (medium); signature `void (IMenu* menu, GFxMovieView* movie)`
 pub const IMenu__CreateFxDelegate: u64 = 82313;
-/// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
+/// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (low): `undefined PostCreate(void)`
 pub const IMenu__PostCreate: u64 = 33639;
-/// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (untiered): `undefined PostDisplay(IMenu * this)`
+/// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (high): `undefined PostDisplay(IMenu * this)`
 pub const IMenu__PostDisplay: u64 = 33632;
-/// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
+/// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (low): `undefined PreDisplay(void)`
 pub const IMenu__PreDisplay: u64 = 82308;
-/// `IMenu::ProcessMessage` at 0x116ede0 (semantic, high); signature (untiered): `undefined8 ProcessMessage(IMenu * this, longlong param_1)`
+/// `IMenu::ProcessMessage` at 0x116ede0 (semantic, high); signature (low): `undefined8 ProcessMessage(IMenu * this, longlong param_1)`
 pub const IMenu__ProcessMessage: u64 = 82306;
-/// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (untiered): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
+/// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (low): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
 pub const IMenu__RefreshPlatform: u64 = 524269;
-/// `IMenu::RegisterNativeFunction` at 0x929ca0 (semantic, medium); signature (untiered): `undefined RegisterNativeFunction(longlong param_1, longlong param_2, int param_3, undefined8 * param_4)`; semantic: view->CreateFunction(&fn, menu+0x30 handler, userData) then target.SetMember(name, fn) (medium); signature `void (IMenu* menu, const char* name, int userData, GFxValue* target)`
+/// `IMenu::RegisterNativeFunction` at 0x929ca0 (semantic, medium); signature (low): `undefined RegisterNativeFunction(longlong param_1, longlong param_2, int param_3, undefined8 * param_4)`; semantic: view->CreateFunction(&fn, menu+0x30 handler, userData) then target.SetMember(name, fn) (medium); signature `void (IMenu* menu, const char* name, int userData, GFxValue* target)`
 pub const IMenu__RegisterNativeFunction: u64 = 524002;
 /// `IMenu::ctor` at 0x116ed40 (layout_inference, high); signature (high): `IMenu * ctor(IMenu * this)`
 pub const IMenu__ctor: u64 = 82304;
@@ -6893,7 +6493,7 @@ pub const IMenu__ctor: u64 = 82304;
 pub const IMenu__dtor: u64 = 82305;
 /// `IMenu::vdtor` at 0x116f370 (semantic, high); signature (low): `IMenu * vdtor(IMenu * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const IMenu__vdtor: u64 = 82314;
-/// `IMessageBoxCallback::Dtor` at 0x575ad0 (semantic, high); signature (untiered): `IMessageBoxCallback * Dtor(IMessageBoxCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+/// `IMessageBoxCallback::Dtor` at 0x575ad0 (semantic, high); signature (low): `IMessageBoxCallback * Dtor(IMessageBoxCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const IMessageBoxCallback__Dtor: u64 = 33609;
 /// `IMessageBoxCallback::dtor` at 0x5759a0 (layout_inference, high); signature (high): `undefined dtor(IMessageBoxCallback * this)`
 pub const IMessageBoxCallback__dtor: u64 = 418713;
@@ -9109,3 +8709,417 @@ pub const INISetting_bVATSProjectileDebug_Combat__atexit: u64 = 171855;
 pub const INISetting_bVATSProjectileDebug_Combat__init: u64 = 6523;
 /// `INISetting_bVATSRangedSelective_VATS__atexit` at 0x179d040 (crt_init, medium); signature (high): `void INISetting_bVATSRangedSelective_VATS__atexit(void)`
 pub const INISetting_bVATSRangedSelective_VATS__atexit: u64 = 171547;
+/// `INISetting_bVATSRangedSelective_VATS__init` at 0xa71f0 (crt_init, medium); signature (high): `void INISetting_bVATSRangedSelective_VATS__init(void)`
+pub const INISetting_bVATSRangedSelective_VATS__init: u64 = 6331;
+/// `INISetting_bVATSSmartCameraCheckDebug_VATS__atexit` at 0x1798830 (crt_init, medium); signature (high): `void INISetting_bVATSSmartCameraCheckDebug_VATS__atexit(void)`
+pub const INISetting_bVATSSmartCameraCheckDebug_VATS__atexit: u64 = 171195;
+/// `INISetting_bVATSSmartCameraCheckDebug_VATS__init` at 0xa1660 (crt_init, medium); signature (high): `void INISetting_bVATSSmartCameraCheckDebug_VATS__init(void)`
+pub const INISetting_bVATSSmartCameraCheckDebug_VATS__init: u64 = 6022;
+/// `INISetting_bValidateRenderTargets_Display__atexit` at 0x17b3020 (crt_init, medium); signature (high): `void INISetting_bValidateRenderTargets_Display__atexit(void)`
+pub const INISetting_bValidateRenderTargets_Display__atexit: u64 = 173821;
+/// `INISetting_bValidateRenderTargets_Display__init` at 0xe9c80 (crt_init, medium); signature (high): `void INISetting_bValidateRenderTargets_Display__init(void)`
+pub const INISetting_bValidateRenderTargets_Display__init: u64 = 9561;
+/// `INISetting_bVatsDebug_VATS__atexit` at 0x17a0ce0 (crt_init, medium); signature (high): `void INISetting_bVatsDebug_VATS__atexit(void)`
+pub const INISetting_bVatsDebug_VATS__atexit: u64 = 171858;
+/// `INISetting_bVatsDebug_VATS__init` at 0xaceb0 (crt_init, medium); signature (high): `void INISetting_bVatsDebug_VATS__init(void)`
+pub const INISetting_bVatsDebug_VATS__init: u64 = 6525;
+/// `INISetting_bVolumetricLightingDisableInterior_Display__atexit` at 0x17c2340 (crt_init, medium); signature (high): `void INISetting_bVolumetricLightingDisableInterior_Display__atexit(void)`
+pub const INISetting_bVolumetricLightingDisableInterior_Display__atexit: u64 = 174524;
+/// `INISetting_bVolumetricLightingDisableInterior_Display__init` at 0x101c80 (crt_init, medium); signature (high): `void INISetting_bVolumetricLightingDisableInterior_Display__init(void)`
+pub const INISetting_bVolumetricLightingDisableInterior_Display__init: u64 = 10368;
+/// `INISetting_bVolumetricLightingEnableTemporalAccumulation_Display__atexit` at 0x17c23e0 (crt_init, medium); signature (high): `void INISetting_bVolumetricLightingEnableTemporalAccumulation_Display__atexit(void)`
+pub const INISetting_bVolumetricLightingEnableTemporalAccumulation_Display__atexit: u64 = 174526;
+/// `INISetting_bVolumetricLightingEnableTemporalAccumulation_Display__init` at 0x101d60 (crt_init, medium); signature (high): `void INISetting_bVolumetricLightingEnableTemporalAccumulation_Display__init(void)`
+pub const INISetting_bVolumetricLightingEnableTemporalAccumulation_Display__init: u64 = 10370;
+/// `INISetting_bVolumetricLightingUpdateWeather_Display__atexit` at 0x17c2430 (crt_init, medium); signature (high): `void INISetting_bVolumetricLightingUpdateWeather_Display__atexit(void)`
+pub const INISetting_bVolumetricLightingUpdateWeather_Display__atexit: u64 = 174527;
+/// `INISetting_bVolumetricLightingUpdateWeather_Display__init` at 0x101dd0 (crt_init, medium); signature (high): `void INISetting_bVolumetricLightingUpdateWeather_Display__init(void)`
+pub const INISetting_bVolumetricLightingUpdateWeather_Display__init: u64 = 10371;
+/// `INISetting_bWONameSync_Havok__atexit` at 0x17b3f00 (crt_init, medium); signature (high): `void INISetting_bWONameSync_Havok__atexit(void)`
+pub const INISetting_bWONameSync_Havok__atexit: u64 = 173875;
+/// `INISetting_bWONameSync_Havok__init` at 0xeb380 (crt_init, medium); signature (high): `void INISetting_bWONameSync_Havok__init(void)`
+pub const INISetting_bWONameSync_Havok__init: u64 = 9621;
+/// `INISetting_bWarnIfHighLevelSearchFails_Pathfinding__atexit` at 0x17b5c50 (crt_init, medium); signature (high): `void INISetting_bWarnIfHighLevelSearchFails_Pathfinding__atexit(void)`
+pub const INISetting_bWarnIfHighLevelSearchFails_Pathfinding__atexit: u64 = 174061;
+/// `INISetting_bWarnIfHighLevelSearchFails_Pathfinding__init` at 0xf0df0 (crt_init, medium); signature (high): `void INISetting_bWarnIfHighLevelSearchFails_Pathfinding__init(void)`
+pub const INISetting_bWarnIfHighLevelSearchFails_Pathfinding__init: u64 = 9948;
+/// `INISetting_bWarnOnMaterialCollisions_General__atexit` at 0x17c6780 (crt_init, medium); signature (high): `void INISetting_bWarnOnMaterialCollisions_General__atexit(void)`
+pub const INISetting_bWarnOnMaterialCollisions_General__atexit: u64 = 174837;
+/// `INISetting_bWarnOnMaterialCollisions_General__init` at 0x108e60 (crt_init, medium); signature (high): `void INISetting_bWarnOnMaterialCollisions_General__init(void)`
+pub const INISetting_bWarnOnMaterialCollisions_General__init: u64 = 10703;
+/// `INISetting_bWarnOnMissingFileEntry_General__atexit` at 0x1741240 (crt_init, medium); signature (high): `void INISetting_bWarnOnMissingFileEntry_General__atexit(void)`
+pub const INISetting_bWarnOnMissingFileEntry_General__atexit: u64 = 165634;
+/// `INISetting_bWarnOnMissingFileEntry_General__init` at 0xf5c0 (crt_init, medium); signature (high): `void INISetting_bWarnOnMissingFileEntry_General__init(void)`
+pub const INISetting_bWarnOnMissingFileEntry_General__init: u64 = 437;
+/// `INISetting_bWarpOnConsecutiveFailures_Pathfinding__atexit` at 0x179dfa0 (crt_init, medium); signature (high): `void INISetting_bWarpOnConsecutiveFailures_Pathfinding__atexit(void)`
+pub const INISetting_bWarpOnConsecutiveFailures_Pathfinding__atexit: u64 = 171631;
+/// `INISetting_bWarpOnConsecutiveFailures_Pathfinding__init` at 0xa9490 (crt_init, medium); signature (high): `void INISetting_bWarpOnConsecutiveFailures_Pathfinding__init(void)`
+pub const INISetting_bWarpOnConsecutiveFailures_Pathfinding__init: u64 = 6404;
+/// `INISetting_bWorldMapNoSkyDepthBlur_MapMenu__atexit` at 0x17c69c0 (crt_init, medium); signature (high): `void INISetting_bWorldMapNoSkyDepthBlur_MapMenu__atexit(void)`
+pub const INISetting_bWorldMapNoSkyDepthBlur_MapMenu__atexit: u64 = 174845;
+/// `INISetting_bWorldMapNoSkyDepthBlur_MapMenu__init` at 0x109250 (crt_init, medium); signature (high): `void INISetting_bWorldMapNoSkyDepthBlur_MapMenu__init(void)`
+pub const INISetting_bWorldMapNoSkyDepthBlur_MapMenu__init: u64 = 10713;
+/// `INISetting_bWriteTACOutputToFile_Debug__atexit` at 0x173edd0 (crt_init, medium); signature (high): `void INISetting_bWriteTACOutputToFile_Debug__atexit(void)`
+pub const INISetting_bWriteTACOutputToFile_Debug__atexit: u64 = 165458;
+/// `INISetting_bWriteTACOutputToFile_Debug__init` at 0xba00 (crt_init, medium); signature (high): `void INISetting_bWriteTACOutputToFile_Debug__init(void)`
+pub const INISetting_bWriteTACOutputToFile_Debug__init: u64 = 263;
+/// `INISetting_bWriteTranslationFile_Interface__atexit` at 0x17b5a00 (crt_init, medium); signature (high): `void INISetting_bWriteTranslationFile_Interface__atexit(void)`
+pub const INISetting_bWriteTranslationFile_Interface__atexit: u64 = 174028;
+/// `INISetting_bWriteTranslationFile_Interface__init` at 0xf06e0 (crt_init, medium); signature (high): `void INISetting_bWriteTranslationFile_Interface__init(void)`
+pub const INISetting_bWriteTranslationFile_Interface__init: u64 = 9922;
+/// `INISetting_f1PArrowTiltUpAngle_Combat__atexit` at 0x17472f0 (crt_init, medium); signature (high): `void INISetting_f1PArrowTiltUpAngle_Combat__atexit(void)`
+pub const INISetting_f1PArrowTiltUpAngle_Combat__atexit: u64 = 166095;
+/// `INISetting_f1PArrowTiltUpAngle_Combat__init` at 0x18780 (crt_init, medium); signature (high): `void INISetting_f1PArrowTiltUpAngle_Combat__init(void)`
+pub const INISetting_f1PArrowTiltUpAngle_Combat__init: u64 = 891;
+/// `INISetting_f1PBoltTiltUpAngle_Combat__atexit` at 0x1747340 (crt_init, medium); signature (high): `void INISetting_f1PBoltTiltUpAngle_Combat__atexit(void)`
+pub const INISetting_f1PBoltTiltUpAngle_Combat__atexit: u64 = 166096;
+/// `INISetting_f1PBoltTiltUpAngle_Combat__init` at 0x18800 (crt_init, medium); signature (high): `void INISetting_f1PBoltTiltUpAngle_Combat__init(void)`
+pub const INISetting_f1PBoltTiltUpAngle_Combat__init: u64 = 892;
+/// `INISetting_f1st3rdSwitchDelay_Camera__atexit` at 0x17a2ef0 (crt_init, medium); signature (high): `void INISetting_f1st3rdSwitchDelay_Camera__atexit(void)`
+pub const INISetting_f1st3rdSwitchDelay_Camera__atexit: u64 = 172146;
+/// `INISetting_f1st3rdSwitchDelay_Camera__init` at 0xb1490 (crt_init, medium); signature (high): `void INISetting_f1st3rdSwitchDelay_Camera__init(void)`
+pub const INISetting_f1st3rdSwitchDelay_Camera__init: u64 = 6686;
+/// `INISetting_f1stHorzDampeningSpringConstant_Camera__atexit` at 0x17a2f40 (crt_init, medium); signature (high): `void INISetting_f1stHorzDampeningSpringConstant_Camera__atexit(void)`
+pub const INISetting_f1stHorzDampeningSpringConstant_Camera__atexit: u64 = 172147;
+/// `INISetting_f1stHorzDampeningSpringConstant_Camera__init` at 0xb1510 (crt_init, medium); signature (high): `void INISetting_f1stHorzDampeningSpringConstant_Camera__init(void)`
+pub const INISetting_f1stHorzDampeningSpringConstant_Camera__init: u64 = 6687;
+/// `INISetting_f1stHorzDampeningVelocityDampening_Camera__atexit` at 0x17a2f90 (crt_init, medium); signature (high): `void INISetting_f1stHorzDampeningVelocityDampening_Camera__atexit(void)`
+pub const INISetting_f1stHorzDampeningVelocityDampening_Camera__atexit: u64 = 172148;
+/// `INISetting_f1stHorzDampeningVelocityDampening_Camera__init` at 0xb1590 (crt_init, medium); signature (high): `void INISetting_f1stHorzDampeningVelocityDampening_Camera__init(void)`
+pub const INISetting_f1stHorzDampeningVelocityDampening_Camera__init: u64 = 6688;
+/// `INISetting_f1stPersonFarDepthRangeControlDriven_Display__atexit` at 0x17b30c0 (crt_init, medium); signature (high): `void INISetting_f1stPersonFarDepthRangeControlDriven_Display__atexit(void)`
+pub const INISetting_f1stPersonFarDepthRangeControlDriven_Display__atexit: u64 = 173823;
+/// `INISetting_f1stPersonFarDepthRangeControlDriven_Display__init` at 0xe9d70 (crt_init, medium); signature (high): `void INISetting_f1stPersonFarDepthRangeControlDriven_Display__init(void)`
+pub const INISetting_f1stPersonFarDepthRangeControlDriven_Display__init: u64 = 9563;
+/// `INISetting_f1stPersonFarDepthRange_Display__atexit` at 0x17b3070 (crt_init, medium); signature (high): `void INISetting_f1stPersonFarDepthRange_Display__atexit(void)`
+pub const INISetting_f1stPersonFarDepthRange_Display__atexit: u64 = 173822;
+/// `INISetting_f1stPersonFarDepthRange_Display__init` at 0xe9cf0 (crt_init, medium); signature (high): `void INISetting_f1stPersonFarDepthRange_Display__init(void)`
+pub const INISetting_f1stPersonFarDepthRange_Display__init: u64 = 9562;
+/// `INISetting_f1stPitchOffsetMouseFollowSpeed_Camera__atexit` at 0x17a2fe0 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMouseFollowSpeed_Camera__atexit(void)`
+pub const INISetting_f1stPitchOffsetMouseFollowSpeed_Camera__atexit: u64 = 172149;
+/// `INISetting_f1stPitchOffsetMouseFollowSpeed_Camera__init` at 0xb1610 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMouseFollowSpeed_Camera__init(void)`
+pub const INISetting_f1stPitchOffsetMouseFollowSpeed_Camera__init: u64 = 6689;
+/// `INISetting_f1stPitchOffsetMouseMaxLag_Camera__atexit` at 0x17a3030 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMouseMaxLag_Camera__atexit(void)`
+pub const INISetting_f1stPitchOffsetMouseMaxLag_Camera__atexit: u64 = 172150;
+/// `INISetting_f1stPitchOffsetMouseMaxLag_Camera__init` at 0xb1690 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMouseMaxLag_Camera__init(void)`
+pub const INISetting_f1stPitchOffsetMouseMaxLag_Camera__init: u64 = 6690;
+/// `INISetting_f1stPitchOffsetMultOffAccel_Camera__atexit` at 0x17a3080 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMultOffAccel_Camera__atexit(void)`
+pub const INISetting_f1stPitchOffsetMultOffAccel_Camera__atexit: u64 = 172151;
+/// `INISetting_f1stPitchOffsetMultOffAccel_Camera__init` at 0xb1710 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMultOffAccel_Camera__init(void)`
+pub const INISetting_f1stPitchOffsetMultOffAccel_Camera__init: u64 = 6691;
+/// `INISetting_f1stPitchOffsetMultOffMaxSpeed_Camera__atexit` at 0x17a30d0 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMultOffMaxSpeed_Camera__atexit(void)`
+pub const INISetting_f1stPitchOffsetMultOffMaxSpeed_Camera__atexit: u64 = 172152;
+/// `INISetting_f1stPitchOffsetMultOffMaxSpeed_Camera__init` at 0xb1790 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMultOffMaxSpeed_Camera__init(void)`
+pub const INISetting_f1stPitchOffsetMultOffMaxSpeed_Camera__init: u64 = 6692;
+/// `INISetting_f1stPitchOffsetMultOnAccel_Camera__atexit` at 0x17a3120 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMultOnAccel_Camera__atexit(void)`
+pub const INISetting_f1stPitchOffsetMultOnAccel_Camera__atexit: u64 = 172153;
+/// `INISetting_f1stPitchOffsetMultOnAccel_Camera__init` at 0xb1810 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMultOnAccel_Camera__init(void)`
+pub const INISetting_f1stPitchOffsetMultOnAccel_Camera__init: u64 = 6693;
+/// `INISetting_f1stPitchOffsetMultOnMaxSpeed_Camera__atexit` at 0x17a3170 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMultOnMaxSpeed_Camera__atexit(void)`
+pub const INISetting_f1stPitchOffsetMultOnMaxSpeed_Camera__atexit: u64 = 172154;
+/// `INISetting_f1stPitchOffsetMultOnMaxSpeed_Camera__init` at 0xb1890 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMultOnMaxSpeed_Camera__init(void)`
+pub const INISetting_f1stPitchOffsetMultOnMaxSpeed_Camera__init: u64 = 6694;
+/// `INISetting_f1stPitchOffsetSixaxisMaxLag_Camera__atexit` at 0x17a31c0 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetSixaxisMaxLag_Camera__atexit(void)`
+pub const INISetting_f1stPitchOffsetSixaxisMaxLag_Camera__atexit: u64 = 534956;
+/// `INISetting_f1stPitchOffsetSixaxisMaxLag_Camera__init` at 0xb1910 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetSixaxisMaxLag_Camera__init(void)`
+pub const INISetting_f1stPitchOffsetSixaxisMaxLag_Camera__init: u64 = 522637;
+/// `INISetting_f1stPitchOffsetSixaxisMaxSnapDelta_Camera__atexit` at 0x17a3210 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetSixaxisMaxSnapDelta_Camera__atexit(void)`
+pub const INISetting_f1stPitchOffsetSixaxisMaxSnapDelta_Camera__atexit: u64 = 534957;
+/// `INISetting_f1stPitchOffsetSixaxisMaxSnapDelta_Camera__init` at 0xb1990 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetSixaxisMaxSnapDelta_Camera__init(void)`
+pub const INISetting_f1stPitchOffsetSixaxisMaxSnapDelta_Camera__init: u64 = 522638;
+/// `INISetting_f1stPitchOffsetTarget_Camera__atexit` at 0x17a3260 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetTarget_Camera__atexit(void)`
+pub const INISetting_f1stPitchOffsetTarget_Camera__atexit: u64 = 172155;
+/// `INISetting_f1stPitchOffsetTarget_Camera__init` at 0xb1a10 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetTarget_Camera__init(void)`
+pub const INISetting_f1stPitchOffsetTarget_Camera__init: u64 = 6695;
+/// `INISetting_f1stVertDampeningSpringConstant_Camera__atexit` at 0x17a32b0 (crt_init, medium); signature (high): `void INISetting_f1stVertDampeningSpringConstant_Camera__atexit(void)`
+pub const INISetting_f1stVertDampeningSpringConstant_Camera__atexit: u64 = 172156;
+/// `INISetting_f1stVertDampeningSpringConstant_Camera__init` at 0xb1a90 (crt_init, medium); signature (high): `void INISetting_f1stVertDampeningSpringConstant_Camera__init(void)`
+pub const INISetting_f1stVertDampeningSpringConstant_Camera__init: u64 = 6696;
+/// `INISetting_f1stVertDampeningVelocityDampening_Camera__atexit` at 0x17a3300 (crt_init, medium); signature (high): `void INISetting_f1stVertDampeningVelocityDampening_Camera__atexit(void)`
+pub const INISetting_f1stVertDampeningVelocityDampening_Camera__atexit: u64 = 172157;
+/// `INISetting_f1stVertDampeningVelocityDampening_Camera__init` at 0xb1b10 (crt_init, medium); signature (high): `void INISetting_f1stVertDampeningVelocityDampening_Camera__init(void)`
+pub const INISetting_f1stVertDampeningVelocityDampening_Camera__init: u64 = 6697;
+/// `INISetting_f3PArrowTiltUpAngle_Combat__atexit` at 0x1747390 (crt_init, medium); signature (high): `void INISetting_f3PArrowTiltUpAngle_Combat__atexit(void)`
+pub const INISetting_f3PArrowTiltUpAngle_Combat__atexit: u64 = 166097;
+/// `INISetting_f3PArrowTiltUpAngle_Combat__init` at 0x18880 (crt_init, medium); signature (high): `void INISetting_f3PArrowTiltUpAngle_Combat__init(void)`
+pub const INISetting_f3PArrowTiltUpAngle_Combat__init: u64 = 893;
+/// `INISetting_fAICombatTurnSpeedScale_Pathfinding__atexit` at 0x179d8c0 (crt_init, medium); signature (high): `void INISetting_fAICombatTurnSpeedScale_Pathfinding__atexit(void)`
+pub const INISetting_fAICombatTurnSpeedScale_Pathfinding__atexit: u64 = 171585;
+/// `INISetting_fAICombatTurnSpeedScale_Pathfinding__init` at 0xa8120 (crt_init, medium); signature (high): `void INISetting_fAICombatTurnSpeedScale_Pathfinding__init(void)`
+pub const INISetting_fAICombatTurnSpeedScale_Pathfinding__init: u64 = 6371;
+/// `INISetting_fAITurnSpeedScale_Pathfinding__atexit` at 0x179d910 (crt_init, medium); signature (high): `void INISetting_fAITurnSpeedScale_Pathfinding__atexit(void)`
+pub const INISetting_fAITurnSpeedScale_Pathfinding__atexit: u64 = 171586;
+/// `INISetting_fAITurnSpeedScale_Pathfinding__init` at 0xa81a0 (crt_init, medium); signature (high): `void INISetting_fAITurnSpeedScale_Pathfinding__init(void)`
+pub const INISetting_fAITurnSpeedScale_Pathfinding__init: u64 = 6372;
+/// `INISetting_fASFadeInTime_Audio__atexit` at 0x1792160 (crt_init, medium); signature (high): `void INISetting_fASFadeInTime_Audio__atexit(void)`
+pub const INISetting_fASFadeInTime_Audio__atexit: u64 = 170669;
+/// `INISetting_fASFadeInTime_Audio__init` at 0x93170 (crt_init, medium); signature (high): `void INISetting_fASFadeInTime_Audio__init(void)`
+pub const INISetting_fASFadeInTime_Audio__init: u64 = 5493;
+/// `INISetting_fASFadeOutTime_Audio__atexit` at 0x17921b0 (crt_init, medium); signature (high): `void INISetting_fASFadeOutTime_Audio__atexit(void)`
+pub const INISetting_fASFadeOutTime_Audio__atexit: u64 = 170670;
+/// `INISetting_fASFadeOutTime_Audio__init` at 0x931f0 (crt_init, medium); signature (high): `void INISetting_fASFadeOutTime_Audio__init(void)`
+pub const INISetting_fASFadeOutTime_Audio__init: u64 = 5494;
+/// `INISetting_fAccelerationGain_RagdollAnim__atexit` at 0x17b4240 (crt_init, medium); signature (high): `void INISetting_fAccelerationGain_RagdollAnim__atexit(void)`
+pub const INISetting_fAccelerationGain_RagdollAnim__atexit: u64 = 173887;
+/// `INISetting_fAccelerationGain_RagdollAnim__init` at 0xeb820 (crt_init, medium); signature (high): `void INISetting_fAccelerationGain_RagdollAnim__init(void)`
+pub const INISetting_fAccelerationGain_RagdollAnim__init: u64 = 9634;
+/// `INISetting_fAcceptableErrorRatio_Pathfinding__atexit` at 0x17b6bf0 (crt_init, medium); signature (high): `void INISetting_fAcceptableErrorRatio_Pathfinding__atexit(void)`
+pub const INISetting_fAcceptableErrorRatio_Pathfinding__atexit: u64 = 174147;
+/// `INISetting_fAcceptableErrorRatio_Pathfinding__init` at 0xf31c0 (crt_init, medium); signature (high): `void INISetting_fAcceptableErrorRatio_Pathfinding__init(void)`
+pub const INISetting_fAcceptableErrorRatio_Pathfinding__init: u64 = 10024;
+/// `INISetting_fActivatePickLength_Interface__atexit` at 0x174dd70 (crt_init, medium); signature (high): `void INISetting_fActivatePickLength_Interface__atexit(void)`
+pub const INISetting_fActivatePickLength_Interface__atexit: u64 = 166721;
+/// `INISetting_fActivatePickLength_Interface__init` at 0x235e0 (crt_init, medium); signature (high): `void INISetting_fActivatePickLength_Interface__init(void)`
+pub const INISetting_fActivatePickLength_Interface__init: u64 = 1509;
+/// `INISetting_fActivatePickRadius_Interface__atexit` at 0x174ddc0 (crt_init, medium); signature (high): `void INISetting_fActivatePickRadius_Interface__atexit(void)`
+pub const INISetting_fActivatePickRadius_Interface__atexit: u64 = 166722;
+/// `INISetting_fActivatePickRadius_Interface__init` at 0x23660 (crt_init, medium); signature (high): `void INISetting_fActivatePickRadius_Interface__init(void)`
+pub const INISetting_fActivatePickRadius_Interface__init: u64 = 1510;
+/// `INISetting_fActorFadeOutLimit_Camera__atexit` at 0x17902e0 (crt_init, medium); signature (high): `void INISetting_fActorFadeOutLimit_Camera__atexit(void)`
+pub const INISetting_fActorFadeOutLimit_Camera__atexit: u64 = 170533;
+/// `INISetting_fActorFadeOutLimit_Camera__init` at 0x903e0 (crt_init, medium); signature (high): `void INISetting_fActorFadeOutLimit_Camera__init(void)`
+pub const INISetting_fActorFadeOutLimit_Camera__init: u64 = 5300;
+/// `INISetting_fActorLODMax_LOD__atexit` at 0x17ad0c0 (crt_init, medium); signature (high): `void INISetting_fActorLODMax_LOD__atexit(void)`
+pub const INISetting_fActorLODMax_LOD__atexit: u64 = 173000;
+/// `INISetting_fActorLODMax_LOD__init` at 0xc3680 (crt_init, medium); signature (high): `void INISetting_fActorLODMax_LOD__init(void)`
+pub const INISetting_fActorLODMax_LOD__init: u64 = 7569;
+/// `INISetting_fActorLODMin_LOD__atexit` at 0x17ad110 (crt_init, medium); signature (high): `void INISetting_fActorLODMin_LOD__atexit(void)`
+pub const INISetting_fActorLODMin_LOD__atexit: u64 = 173001;
+/// `INISetting_fActorLODMin_LOD__init` at 0xc3700 (crt_init, medium); signature (high): `void INISetting_fActorLODMin_LOD__init(void)`
+pub const INISetting_fActorLODMin_LOD__init: u64 = 7570;
+/// `INISetting_fAimChaseLookingMult_Combat__atexit` at 0x179a6f0 (crt_init, medium); signature (high): `void INISetting_fAimChaseLookingMult_Combat__atexit(void)`
+pub const INISetting_fAimChaseLookingMult_Combat__atexit: u64 = 171360;
+/// `INISetting_fAimChaseLookingMult_Combat__init` at 0xa3ea0 (crt_init, medium); signature (high): `void INISetting_fAimChaseLookingMult_Combat__init(void)`
+pub const INISetting_fAimChaseLookingMult_Combat__init: u64 = 6164;
+/// `INISetting_fAimDownDegrees_Combat__atexit` at 0x179a740 (crt_init, medium); signature (high): `void INISetting_fAimDownDegrees_Combat__atexit(void)`
+pub const INISetting_fAimDownDegrees_Combat__atexit: u64 = 171361;
+/// `INISetting_fAimDownDegrees_Combat__init` at 0xa3f20 (crt_init, medium); signature (high): `void INISetting_fAimDownDegrees_Combat__init(void)`
+pub const INISetting_fAimDownDegrees_Combat__init: u64 = 6165;
+/// `INISetting_fAimUpDegrees_Combat__atexit` at 0x179a790 (crt_init, medium); signature (high): `void INISetting_fAimUpDegrees_Combat__atexit(void)`
+pub const INISetting_fAimUpDegrees_Combat__atexit: u64 = 171362;
+/// `INISetting_fAimUpDegrees_Combat__init` at 0xa3fa0 (crt_init, medium); signature (high): `void INISetting_fAimUpDegrees_Combat__init(void)`
+pub const INISetting_fAimUpDegrees_Combat__init: u64 = 6166;
+/// `INISetting_fAlphaReduce_Weather__atexit` at 0x173ee20 (crt_init, medium); signature (high): `void INISetting_fAlphaReduce_Weather__atexit(void)`
+pub const INISetting_fAlphaReduce_Weather__atexit: u64 = 165459;
+/// `INISetting_fAlphaReduce_Weather__init` at 0xba70 (crt_init, medium); signature (high): `void INISetting_fAlphaReduce_Weather__init(void)`
+pub const INISetting_fAlphaReduce_Weather__init: u64 = 264;
+/// `INISetting_fAlphaWeight_Display__atexit` at 0x17c42f0 (crt_init, medium); signature (high): `void INISetting_fAlphaWeight_Display__atexit(void)`
+pub const INISetting_fAlphaWeight_Display__atexit: u64 = 174674;
+/// `INISetting_fAlphaWeight_Display__init` at 0x104e40 (crt_init, medium); signature (high): `void INISetting_fAlphaWeight_Display__init(void)`
+pub const INISetting_fAlphaWeight_Display__init: u64 = 10524;
+/// `INISetting_fAngleMaxEase_LookIK__atexit` at 0x17b42e0 (crt_init, medium); signature (high): `void INISetting_fAngleMaxEase_LookIK__atexit(void)`
+pub const INISetting_fAngleMaxEase_LookIK__atexit: u64 = 173889;
+/// `INISetting_fAngleMaxEase_LookIK__init` at 0xeb920 (crt_init, medium); signature (high): `void INISetting_fAngleMaxEase_LookIK__init(void)`
+pub const INISetting_fAngleMaxEase_LookIK__init: u64 = 9636;
+/// `INISetting_fAngleMax_LookIK__atexit` at 0x17b4290 (crt_init, medium); signature (high): `void INISetting_fAngleMax_LookIK__atexit(void)`
+pub const INISetting_fAngleMax_LookIK__atexit: u64 = 173888;
+/// `INISetting_fAngleMax_LookIK__init` at 0xeb8a0 (crt_init, medium); signature (high): `void INISetting_fAngleMax_LookIK__init(void)`
+pub const INISetting_fAngleMax_LookIK__init: u64 = 9635;
+/// `INISetting_fAnimInterpFarDist_Animation__atexit` at 0x17b0870 (crt_init, medium); signature (high): `void INISetting_fAnimInterpFarDist_Animation__atexit(void)`
+pub const INISetting_fAnimInterpFarDist_Animation__atexit: u64 = 173614;
+/// `INISetting_fAnimInterpFarDist_Animation__init` at 0xddfe0 (crt_init, medium); signature (high): `void INISetting_fAnimInterpFarDist_Animation__init(void)`
+pub const INISetting_fAnimInterpFarDist_Animation__init: u64 = 8856;
+/// `INISetting_fAnimInterpMaxTime_Animation__atexit` at 0x17b08c0 (crt_init, medium); signature (high): `void INISetting_fAnimInterpMaxTime_Animation__atexit(void)`
+pub const INISetting_fAnimInterpMaxTime_Animation__atexit: u64 = 173615;
+/// `INISetting_fAnimInterpMaxTime_Animation__init` at 0xde060 (crt_init, medium); signature (high): `void INISetting_fAnimInterpMaxTime_Animation__init(void)`
+pub const INISetting_fAnimInterpMaxTime_Animation__init: u64 = 8857;
+/// `INISetting_fAnimInterpMinTime_Animation__atexit` at 0x17b0910 (crt_init, medium); signature (high): `void INISetting_fAnimInterpMinTime_Animation__atexit(void)`
+pub const INISetting_fAnimInterpMinTime_Animation__atexit: u64 = 173616;
+/// `INISetting_fAnimInterpMinTime_Animation__init` at 0xde0e0 (crt_init, medium); signature (high): `void INISetting_fAnimInterpMinTime_Animation__init(void)`
+pub const INISetting_fAnimInterpMinTime_Animation__init: u64 = 8858;
+/// `INISetting_fAnimInterpNearDist_Animation__atexit` at 0x17b0960 (crt_init, medium); signature (high): `void INISetting_fAnimInterpNearDist_Animation__atexit(void)`
+pub const INISetting_fAnimInterpNearDist_Animation__atexit: u64 = 173617;
+/// `INISetting_fAnimInterpNearDist_Animation__init` at 0xde160 (crt_init, medium); signature (high): `void INISetting_fAnimInterpNearDist_Animation__init(void)`
+pub const INISetting_fAnimInterpNearDist_Animation__init: u64 = 8859;
+/// `INISetting_fAnimInterpSlop_Animation__atexit` at 0x17b09b0 (crt_init, medium); signature (high): `void INISetting_fAnimInterpSlop_Animation__atexit(void)`
+pub const INISetting_fAnimInterpSlop_Animation__atexit: u64 = 173618;
+/// `INISetting_fAnimInterpSlop_Animation__init` at 0xde1e0 (crt_init, medium); signature (high): `void INISetting_fAnimInterpSlop_Animation__init(void)`
+pub const INISetting_fAnimInterpSlop_Animation__init: u64 = 8860;
+/// `INISetting_fAnkleOffset_FootIK__atexit` at 0x17b4330 (crt_init, medium); signature (high): `void INISetting_fAnkleOffset_FootIK__atexit(void)`
+pub const INISetting_fAnkleOffset_FootIK__atexit: u64 = 173890;
+/// `INISetting_fAnkleOffset_FootIK__init` at 0xeb9a0 (crt_init, medium); signature (high): `void INISetting_fAnkleOffset_FootIK__init(void)`
+pub const INISetting_fAnkleOffset_FootIK__init: u64 = 9637;
+/// `INISetting_fArchiveInitBufferMB_Papyrus__atexit` at 0x1794830 (crt_init, medium); signature (high): `void INISetting_fArchiveInitBufferMB_Papyrus__atexit(void)`
+pub const INISetting_fArchiveInitBufferMB_Papyrus__atexit: u64 = 170831;
+/// `INISetting_fArchiveInitBufferMB_Papyrus__init` at 0x9b210 (crt_init, medium); signature (high): `void INISetting_fArchiveInitBufferMB_Papyrus__init(void)`
+pub const INISetting_fArchiveInitBufferMB_Papyrus__init: u64 = 5657;
+/// `INISetting_fAudioRumbleBigDeadZone_audio__atexit` at 0x17903e0 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigDeadZone_audio__atexit(void)`
+pub const INISetting_fAudioRumbleBigDeadZone_audio__atexit: u64 = 170537;
+/// `INISetting_fAudioRumbleBigDeadZone_audio__init` at 0x90610 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigDeadZone_audio__init(void)`
+pub const INISetting_fAudioRumbleBigDeadZone_audio__init: u64 = 5305;
+/// `INISetting_fAudioRumbleBigExponent_audio__atexit` at 0x1790430 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigExponent_audio__atexit(void)`
+pub const INISetting_fAudioRumbleBigExponent_audio__atexit: u64 = 170538;
+/// `INISetting_fAudioRumbleBigExponent_audio__init` at 0x90690 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigExponent_audio__init(void)`
+pub const INISetting_fAudioRumbleBigExponent_audio__init: u64 = 5306;
+/// `INISetting_fAudioRumbleBigLerpMax_audio__atexit` at 0x1790480 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigLerpMax_audio__atexit(void)`
+pub const INISetting_fAudioRumbleBigLerpMax_audio__atexit: u64 = 170539;
+/// `INISetting_fAudioRumbleBigLerpMax_audio__init` at 0x90710 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigLerpMax_audio__init(void)`
+pub const INISetting_fAudioRumbleBigLerpMax_audio__init: u64 = 5307;
+/// `INISetting_fAudioRumbleBigLerpMin_audio__atexit` at 0x17904d0 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigLerpMin_audio__atexit(void)`
+pub const INISetting_fAudioRumbleBigLerpMin_audio__atexit: u64 = 170540;
+/// `INISetting_fAudioRumbleBigLerpMin_audio__init` at 0x90790 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigLerpMin_audio__init(void)`
+pub const INISetting_fAudioRumbleBigLerpMin_audio__init: u64 = 5308;
+/// `INISetting_fAudioRumblePowerAttackAdj_audio__atexit` at 0x1790520 (crt_init, medium); signature (high): `void INISetting_fAudioRumblePowerAttackAdj_audio__atexit(void)`
+pub const INISetting_fAudioRumblePowerAttackAdj_audio__atexit: u64 = 170541;
+/// `INISetting_fAudioRumblePowerAttackAdj_audio__init` at 0x90810 (crt_init, medium); signature (high): `void INISetting_fAudioRumblePowerAttackAdj_audio__init(void)`
+pub const INISetting_fAudioRumblePowerAttackAdj_audio__init: u64 = 5309;
+/// `INISetting_fAudioRumbleSmallDeadZone_audio__atexit` at 0x1790570 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallDeadZone_audio__atexit(void)`
+pub const INISetting_fAudioRumbleSmallDeadZone_audio__atexit: u64 = 170542;
+/// `INISetting_fAudioRumbleSmallDeadZone_audio__init` at 0x90890 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallDeadZone_audio__init(void)`
+pub const INISetting_fAudioRumbleSmallDeadZone_audio__init: u64 = 5310;
+/// `INISetting_fAudioRumbleSmallExponent_audio__atexit` at 0x17905c0 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallExponent_audio__atexit(void)`
+pub const INISetting_fAudioRumbleSmallExponent_audio__atexit: u64 = 170543;
+/// `INISetting_fAudioRumbleSmallExponent_audio__init` at 0x90910 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallExponent_audio__init(void)`
+pub const INISetting_fAudioRumbleSmallExponent_audio__init: u64 = 5311;
+/// `INISetting_fAudioRumbleSmallLerpMax_audio__atexit` at 0x1790610 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallLerpMax_audio__atexit(void)`
+pub const INISetting_fAudioRumbleSmallLerpMax_audio__atexit: u64 = 170544;
+/// `INISetting_fAudioRumbleSmallLerpMax_audio__init` at 0x90990 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallLerpMax_audio__init(void)`
+pub const INISetting_fAudioRumbleSmallLerpMax_audio__init: u64 = 5312;
+/// `INISetting_fAudioRumbleSmallLerpMin_audio__atexit` at 0x1790660 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallLerpMin_audio__atexit(void)`
+pub const INISetting_fAudioRumbleSmallLerpMin_audio__atexit: u64 = 170545;
+/// `INISetting_fAudioRumbleSmallLerpMin_audio__init` at 0x90a10 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallLerpMin_audio__init(void)`
+pub const INISetting_fAudioRumbleSmallLerpMin_audio__init: u64 = 5313;
+/// `INISetting_fAutoDoorFadeSecs_General__atexit` at 0x1746f40 (crt_init, medium); signature (high): `void INISetting_fAutoDoorFadeSecs_General__atexit(void)`
+pub const INISetting_fAutoDoorFadeSecs_General__atexit: u64 = 166080;
+/// `INISetting_fAutoDoorFadeSecs_General__init` at 0x18230 (crt_init, medium); signature (high): `void INISetting_fAutoDoorFadeSecs_General__init(void)`
+pub const INISetting_fAutoDoorFadeSecs_General__init: u64 = 876;
+/// `INISetting_fAutoVanityIncrement_Camera__atexit` at 0x17a2e00 (crt_init, medium); signature (high): `void INISetting_fAutoVanityIncrement_Camera__atexit(void)`
+pub const INISetting_fAutoVanityIncrement_Camera__atexit: u64 = 172143;
+/// `INISetting_fAutoVanityIncrement_Camera__init` at 0xb1320 (crt_init, medium); signature (high): `void INISetting_fAutoVanityIncrement_Camera__init(void)`
+pub const INISetting_fAutoVanityIncrement_Camera__init: u64 = 6683;
+/// `INISetting_fAutoVanityModeDelay_Camera__atexit` at 0x17a3b90 (crt_init, medium); signature (high): `void INISetting_fAutoVanityModeDelay_Camera__atexit(void)`
+pub const INISetting_fAutoVanityModeDelay_Camera__atexit: u64 = 172190;
+/// `INISetting_fAutoVanityModeDelay_Camera__init` at 0xb2970 (crt_init, medium); signature (high): `void INISetting_fAutoVanityModeDelay_Camera__init(void)`
+pub const INISetting_fAutoVanityModeDelay_Camera__init: u64 = 6731;
+/// `INISetting_fAvoidNodeCost_Pathfinding__atexit` at 0x17b6e60 (crt_init, medium); signature (high): `void INISetting_fAvoidNodeCost_Pathfinding__atexit(void)`
+pub const INISetting_fAvoidNodeCost_Pathfinding__atexit: u64 = 174158;
+/// `INISetting_fAvoidNodeCost_Pathfinding__init` at 0xf3670 (crt_init, medium); signature (high): `void INISetting_fAvoidNodeCost_Pathfinding__init(void)`
+pub const INISetting_fAvoidNodeCost_Pathfinding__init: u64 = 10033;
+/// `INISetting_fAvoidNodeRadiusAdd_Pathfinding__atexit` at 0x17b6eb0 (crt_init, medium); signature (high): `void INISetting_fAvoidNodeRadiusAdd_Pathfinding__atexit(void)`
+pub const INISetting_fAvoidNodeRadiusAdd_Pathfinding__atexit: u64 = 174159;
+/// `INISetting_fAvoidNodeRadiusAdd_Pathfinding__init` at 0xf36f0 (crt_init, medium); signature (high): `void INISetting_fAvoidNodeRadiusAdd_Pathfinding__init(void)`
+pub const INISetting_fAvoidNodeRadiusAdd_Pathfinding__init: u64 = 10034;
+/// `INISetting_fAvoidPreferredTriangleCrossingMultiplier_Pathfinding__atexit` at 0x17b63d0 (crt_init, medium); signature (high): `void INISetting_fAvoidPreferredTriangleCrossingMultiplier_Pathfinding__atexit(void)`
+pub const INISetting_fAvoidPreferredTriangleCrossingMultiplier_Pathfinding__atexit: u64 = 174105;
+/// `INISetting_fAvoidPreferredTriangleCrossingMultiplier_Pathfinding__init` at 0xf1ef0 (crt_init, medium); signature (high): `void INISetting_fAvoidPreferredTriangleCrossingMultiplier_Pathfinding__init(void)`
+pub const INISetting_fAvoidPreferredTriangleCrossingMultiplier_Pathfinding__init: u64 = 9985;
+/// `INISetting_fAvoidPreferredTriangleMultiplier_Pathfinding__atexit` at 0x17b6420 (crt_init, medium); signature (high): `void INISetting_fAvoidPreferredTriangleMultiplier_Pathfinding__atexit(void)`
+pub const INISetting_fAvoidPreferredTriangleMultiplier_Pathfinding__atexit: u64 = 174106;
+/// `INISetting_fAvoidPreferredTriangleMultiplier_Pathfinding__init` at 0xf1f70 (crt_init, medium); signature (high): `void INISetting_fAvoidPreferredTriangleMultiplier_Pathfinding__init(void)`
+pub const INISetting_fAvoidPreferredTriangleMultiplier_Pathfinding__init: u64 = 9986;
+/// `INISetting_fAvoidanceDistanceRadiusMult_Pathfinding__atexit` at 0x17b5d80 (crt_init, medium); signature (high): `void INISetting_fAvoidanceDistanceRadiusMult_Pathfinding__atexit(void)`
+pub const INISetting_fAvoidanceDistanceRadiusMult_Pathfinding__atexit: u64 = 174072;
+/// `INISetting_fAvoidanceDistanceRadiusMult_Pathfinding__init` at 0xf12e0 (crt_init, medium); signature (high): `void INISetting_fAvoidanceDistanceRadiusMult_Pathfinding__init(void)`
+pub const INISetting_fAvoidanceDistanceRadiusMult_Pathfinding__init: u64 = 9957;
+/// `INISetting_fAvoidanceTimeDelta_Pathfinding__atexit` at 0x17b6f00 (crt_init, medium); signature (high): `void INISetting_fAvoidanceTimeDelta_Pathfinding__atexit(void)`
+pub const INISetting_fAvoidanceTimeDelta_Pathfinding__atexit: u64 = 174160;
+/// `INISetting_fAvoidanceTimeDelta_Pathfinding__init` at 0xf3770 (crt_init, medium); signature (high): `void INISetting_fAvoidanceTimeDelta_Pathfinding__init(void)`
+pub const INISetting_fAvoidanceTimeDelta_Pathfinding__init: u64 = 10035;
+/// `INISetting_fBSTaskTime_General__atexit` at 0x17b21c0 (crt_init, medium); signature (high): `void INISetting_fBSTaskTime_General__atexit(void)`
+pub const INISetting_fBSTaskTime_General__atexit: u64 = 173734;
+/// `INISetting_fBSTaskTime_General__init` at 0xe7cf0 (crt_init, medium); signature (high): `void INISetting_fBSTaskTime_General__init(void)`
+pub const INISetting_fBSTaskTime_General__init: u64 = 9416;
+/// `INISetting_fBackPedalAngle_Pathfinding__atexit` at 0x17b75c0 (crt_init, medium); signature (high): `void INISetting_fBackPedalAngle_Pathfinding__atexit(void)`
+pub const INISetting_fBackPedalAngle_Pathfinding__atexit: u64 = 174212;
+/// `INISetting_fBackPedalAngle_Pathfinding__init` at 0xf4d50 (crt_init, medium); signature (high): `void INISetting_fBackPedalAngle_Pathfinding__init(void)`
+pub const INISetting_fBackPedalAngle_Pathfinding__init: u64 = 10070;
+/// `INISetting_fBadTriangleMultiplier_Pathfinding__atexit` at 0x17b6470 (crt_init, medium); signature (high): `void INISetting_fBadTriangleMultiplier_Pathfinding__atexit(void)`
+pub const INISetting_fBadTriangleMultiplier_Pathfinding__atexit: u64 = 174107;
+/// `INISetting_fBadTriangleMultiplier_Pathfinding__init` at 0xf1ff0 (crt_init, medium); signature (high): `void INISetting_fBadTriangleMultiplier_Pathfinding__init(void)`
+pub const INISetting_fBadTriangleMultiplier_Pathfinding__init: u64 = 9987;
+/// `INISetting_fBetaDeferredKillTimer_General__atexit` at 0x179a7e0 (crt_init, medium); signature (high): `void INISetting_fBetaDeferredKillTimer_General__atexit(void)`
+pub const INISetting_fBetaDeferredKillTimer_General__atexit: u64 = 171363;
+/// `INISetting_fBetaDeferredKillTimer_General__init` at 0xa4020 (crt_init, medium); signature (high): `void INISetting_fBetaDeferredKillTimer_General__init(void)`
+pub const INISetting_fBetaDeferredKillTimer_General__init: u64 = 6167;
+/// `INISetting_fBoneLODDistanceScale_Animation__atexit` at 0x17b0a00 (crt_init, medium); signature (high): `void INISetting_fBoneLODDistanceScale_Animation__atexit(void)`
+pub const INISetting_fBoneLODDistanceScale_Animation__atexit: u64 = 173619;
+/// `INISetting_fBoneLODDistanceScale_Animation__init` at 0xde260 (crt_init, medium); signature (high): `void INISetting_fBoneLODDistanceScale_Animation__init(void)`
+pub const INISetting_fBoneLODDistanceScale_Animation__init: u64 = 8861;
+/// `INISetting_fBookDistance_Interface__atexit` at 0x17a4a60 (crt_init, medium); signature (high): `void INISetting_fBookDistance_Interface__atexit(void)`
+pub const INISetting_fBookDistance_Interface__atexit: u64 = 172256;
+/// `INISetting_fBookDistance_Interface__init` at 0xb41c0 (crt_init, medium); signature (high): `void INISetting_fBookDistance_Interface__init(void)`
+pub const INISetting_fBookDistance_Interface__init: u64 = 6800;
+/// `INISetting_fBookLight2DiffuseColorB_Interface__atexit` at 0x17aa0b0 (crt_init, medium); signature (high): `void INISetting_fBookLight2DiffuseColorB_Interface__atexit(void)`
+pub const INISetting_fBookLight2DiffuseColorB_Interface__atexit: u64 = 172816;
+/// `INISetting_fBookLight2DiffuseColorB_Interface__init` at 0xbe4e0 (crt_init, medium); signature (high): `void INISetting_fBookLight2DiffuseColorB_Interface__init(void)`
+pub const INISetting_fBookLight2DiffuseColorB_Interface__init: u64 = 7384;
+/// `INISetting_fBookLight2DiffuseColorG_Interface__atexit` at 0x17aa100 (crt_init, medium); signature (high): `void INISetting_fBookLight2DiffuseColorG_Interface__atexit(void)`
+pub const INISetting_fBookLight2DiffuseColorG_Interface__atexit: u64 = 172817;
+/// `INISetting_fBookLight2DiffuseColorG_Interface__init` at 0xbe560 (crt_init, medium); signature (high): `void INISetting_fBookLight2DiffuseColorG_Interface__init(void)`
+pub const INISetting_fBookLight2DiffuseColorG_Interface__init: u64 = 7385;
+/// `INISetting_fBookLight2DiffuseColorR_Interface__atexit` at 0x17aa150 (crt_init, medium); signature (high): `void INISetting_fBookLight2DiffuseColorR_Interface__atexit(void)`
+pub const INISetting_fBookLight2DiffuseColorR_Interface__atexit: u64 = 172818;
+/// `INISetting_fBookLight2DiffuseColorR_Interface__init` at 0xbe5e0 (crt_init, medium); signature (high): `void INISetting_fBookLight2DiffuseColorR_Interface__init(void)`
+pub const INISetting_fBookLight2DiffuseColorR_Interface__init: u64 = 7386;
+/// `INISetting_fBookLight2DimmerValue_Interface__atexit` at 0x17aa1a0 (crt_init, medium); signature (high): `void INISetting_fBookLight2DimmerValue_Interface__atexit(void)`
+pub const INISetting_fBookLight2DimmerValue_Interface__atexit: u64 = 172819;
+/// `INISetting_fBookLight2DimmerValue_Interface__init` at 0xbe660 (crt_init, medium); signature (high): `void INISetting_fBookLight2DimmerValue_Interface__init(void)`
+pub const INISetting_fBookLight2DimmerValue_Interface__init: u64 = 7387;
+/// `INISetting_fBookLight2Radius_Interface__atexit` at 0x17aa1f0 (crt_init, medium); signature (high): `void INISetting_fBookLight2Radius_Interface__atexit(void)`
+pub const INISetting_fBookLight2Radius_Interface__atexit: u64 = 172820;
+/// `INISetting_fBookLight2Radius_Interface__init` at 0xbe6e0 (crt_init, medium); signature (high): `void INISetting_fBookLight2Radius_Interface__init(void)`
+pub const INISetting_fBookLight2Radius_Interface__init: u64 = 7388;
+/// `INISetting_fBookLight2X_Interface__atexit` at 0x17aa240 (crt_init, medium); signature (high): `void INISetting_fBookLight2X_Interface__atexit(void)`
+pub const INISetting_fBookLight2X_Interface__atexit: u64 = 172821;
+/// `INISetting_fBookLight2X_Interface__init` at 0xbe760 (crt_init, medium); signature (high): `void INISetting_fBookLight2X_Interface__init(void)`
+pub const INISetting_fBookLight2X_Interface__init: u64 = 7389;
+/// `INISetting_fBookLight2Y_Interface__atexit` at 0x17aa290 (crt_init, medium); signature (high): `void INISetting_fBookLight2Y_Interface__atexit(void)`
+pub const INISetting_fBookLight2Y_Interface__atexit: u64 = 172822;
+/// `INISetting_fBookLight2Y_Interface__init` at 0xbe7e0 (crt_init, medium); signature (high): `void INISetting_fBookLight2Y_Interface__init(void)`
+pub const INISetting_fBookLight2Y_Interface__init: u64 = 7390;
+/// `INISetting_fBookLight2Z_Interface__atexit` at 0x17aa2e0 (crt_init, medium); signature (high): `void INISetting_fBookLight2Z_Interface__atexit(void)`
+pub const INISetting_fBookLight2Z_Interface__atexit: u64 = 172823;
+/// `INISetting_fBookLight2Z_Interface__init` at 0xbe860 (crt_init, medium); signature (high): `void INISetting_fBookLight2Z_Interface__init(void)`
+pub const INISetting_fBookLight2Z_Interface__init: u64 = 7391;
+/// `INISetting_fBookLightDiffuseColorB_Interface__atexit` at 0x17aa330 (crt_init, medium); signature (high): `void INISetting_fBookLightDiffuseColorB_Interface__atexit(void)`
+pub const INISetting_fBookLightDiffuseColorB_Interface__atexit: u64 = 172824;
+/// `INISetting_fBookLightDiffuseColorB_Interface__init` at 0xbe8e0 (crt_init, medium); signature (high): `void INISetting_fBookLightDiffuseColorB_Interface__init(void)`
+pub const INISetting_fBookLightDiffuseColorB_Interface__init: u64 = 7392;
+/// `INISetting_fBookLightDiffuseColorG_Interface__atexit` at 0x17aa380 (crt_init, medium); signature (high): `void INISetting_fBookLightDiffuseColorG_Interface__atexit(void)`
+pub const INISetting_fBookLightDiffuseColorG_Interface__atexit: u64 = 172825;
+/// `INISetting_fBookLightDiffuseColorG_Interface__init` at 0xbe960 (crt_init, medium); signature (high): `void INISetting_fBookLightDiffuseColorG_Interface__init(void)`
+pub const INISetting_fBookLightDiffuseColorG_Interface__init: u64 = 7393;
+/// `INISetting_fBookLightDiffuseColorR_Interface__atexit` at 0x17aa3d0 (crt_init, medium); signature (high): `void INISetting_fBookLightDiffuseColorR_Interface__atexit(void)`
+pub const INISetting_fBookLightDiffuseColorR_Interface__atexit: u64 = 172826;
+/// `INISetting_fBookLightDiffuseColorR_Interface__init` at 0xbe9e0 (crt_init, medium); signature (high): `void INISetting_fBookLightDiffuseColorR_Interface__init(void)`
+pub const INISetting_fBookLightDiffuseColorR_Interface__init: u64 = 7394;
+/// `INISetting_fBookLightDimmerValue_Interface__atexit` at 0x17aa420 (crt_init, medium); signature (high): `void INISetting_fBookLightDimmerValue_Interface__atexit(void)`
+pub const INISetting_fBookLightDimmerValue_Interface__atexit: u64 = 172827;
+/// `INISetting_fBookLightDimmerValue_Interface__init` at 0xbea60 (crt_init, medium); signature (high): `void INISetting_fBookLightDimmerValue_Interface__init(void)`
+pub const INISetting_fBookLightDimmerValue_Interface__init: u64 = 7395;
+/// `INISetting_fBookLightRadius_Interface__atexit` at 0x17aa470 (crt_init, medium); signature (high): `void INISetting_fBookLightRadius_Interface__atexit(void)`
+pub const INISetting_fBookLightRadius_Interface__atexit: u64 = 172828;
+/// `INISetting_fBookLightRadius_Interface__init` at 0xbeae0 (crt_init, medium); signature (high): `void INISetting_fBookLightRadius_Interface__init(void)`
+pub const INISetting_fBookLightRadius_Interface__init: u64 = 7396;
+/// `INISetting_fBookLightX_Interface__atexit` at 0x17aa4c0 (crt_init, medium); signature (high): `void INISetting_fBookLightX_Interface__atexit(void)`
+pub const INISetting_fBookLightX_Interface__atexit: u64 = 172829;
+/// `INISetting_fBookLightX_Interface__init` at 0xbeb60 (crt_init, medium); signature (high): `void INISetting_fBookLightX_Interface__init(void)`
+pub const INISetting_fBookLightX_Interface__init: u64 = 7397;
+/// `INISetting_fBookLightY_Interface__atexit` at 0x17aa510 (crt_init, medium); signature (high): `void INISetting_fBookLightY_Interface__atexit(void)`
+pub const INISetting_fBookLightY_Interface__atexit: u64 = 172830;
+/// `INISetting_fBookLightY_Interface__init` at 0xbebe0 (crt_init, medium); signature (high): `void INISetting_fBookLightY_Interface__init(void)`
+pub const INISetting_fBookLightY_Interface__init: u64 = 7398;
+/// `INISetting_fBookLightZ_Interface__atexit` at 0x17aa560 (crt_init, medium); signature (high): `void INISetting_fBookLightZ_Interface__atexit(void)`
+pub const INISetting_fBookLightZ_Interface__atexit: u64 = 172831;
+/// `INISetting_fBookLightZ_Interface__init` at 0xbec60 (crt_init, medium); signature (high): `void INISetting_fBookLightZ_Interface__init(void)`
+pub const INISetting_fBookLightZ_Interface__init: u64 = 7399;
+/// `INISetting_fBookOpenTime_Interface__atexit` at 0x17a4ab0 (crt_init, medium); signature (high): `void INISetting_fBookOpenTime_Interface__atexit(void)`
+pub const INISetting_fBookOpenTime_Interface__atexit: u64 = 172257;
+/// `INISetting_fBookOpenTime_Interface__init` at 0xb4240 (crt_init, medium); signature (high): `void INISetting_fBookOpenTime_Interface__init(void)`
+pub const INISetting_fBookOpenTime_Interface__init: u64 = 6801;
+/// `INISetting_fBookPosHeightPercentage_Interface__atexit` at 0x17a4b00 (crt_init, medium); signature (high): `void INISetting_fBookPosHeightPercentage_Interface__atexit(void)`
+pub const INISetting_fBookPosHeightPercentage_Interface__atexit: u64 = 172258;
+/// `INISetting_fBookPosHeightPercentage_Interface__init` at 0xb42c0 (crt_init, medium); signature (high): `void INISetting_fBookPosHeightPercentage_Interface__init(void)`
+pub const INISetting_fBookPosHeightPercentage_Interface__init: u64 = 6802;
+/// `INISetting_fBookPosWidthPercentage_Interface__atexit` at 0x17a4b50 (crt_init, medium); signature (high): `void INISetting_fBookPosWidthPercentage_Interface__atexit(void)`
+pub const INISetting_fBookPosWidthPercentage_Interface__atexit: u64 = 172259;
+/// `INISetting_fBookPosWidthPercentage_Interface__init` at 0xb4340 (crt_init, medium); signature (high): `void INISetting_fBookPosWidthPercentage_Interface__init(void)`
+pub const INISetting_fBookPosWidthPercentage_Interface__init: u64 = 6803;
+/// `INISetting_fBookXRotation_Interface__atexit` at 0x17a4ba0 (crt_init, medium); signature (high): `void INISetting_fBookXRotation_Interface__atexit(void)`
+pub const INISetting_fBookXRotation_Interface__atexit: u64 = 172260;
+/// `INISetting_fBookXRotation_Interface__init` at 0xb43c0 (crt_init, medium); signature (high): `void INISetting_fBookXRotation_Interface__init(void)`
+pub const INISetting_fBookXRotation_Interface__init: u64 = 6804;
+/// `INISetting_fCameraAboveMaxHeightThreshold_TerrainManager__atexit` at 0x178e560 (crt_init, medium); signature (high): `void INISetting_fCameraAboveMaxHeightThreshold_TerrainManager__atexit(void)`
+pub const INISetting_fCameraAboveMaxHeightThreshold_TerrainManager__atexit: u64 = 170301;
+/// `INISetting_fCameraAboveMaxHeightThreshold_TerrainManager__init` at 0x8ad10 (crt_init, medium); signature (high): `void INISetting_fCameraAboveMaxHeightThreshold_TerrainManager__init(void)`
+pub const INISetting_fCameraAboveMaxHeightThreshold_TerrainManager__init: u64 = 5032;

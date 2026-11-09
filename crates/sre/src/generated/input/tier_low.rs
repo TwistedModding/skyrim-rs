@@ -142,6 +142,13 @@ impl crate::BSWin32KeyboardDevice {
 }
 
 impl crate::BSWin32MouseDevice {
+    /// `BSWin32MouseDevice::Reinitialize` (decompiler signature, tier low; ledger semantic evidence, name high; id 68805, rva 0xe132e0).
+    /// `DWORD Reinitialize(BSWin32MouseDevice * this, undefined1 param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn reinitialize(&self, param_1: u8) -> u32 { unsafe { function!(68805, (*const Self, u8) -> u32)(core::ptr::from_ref(self), param_1) } }
     /// `BSWin32MouseDevice::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 71187, rva 0xd6edb0).
     /// `BSWin32MouseDevice * vdtor(BSWin32MouseDevice * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -172,6 +179,13 @@ impl crate::CharEvent {
 }
 
 impl crate::ClickHandler {
+    /// `ClickHandler::ProcessButtonEvent` (decompiler signature, tier low; ledger semantic evidence, name high; id 52243, rva 0x960d30).
+    /// `undefined8 ProcessButtonEvent(ClickHandler * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn process_button_event(&self, param_1: i64) -> u64 { unsafe { function!(52243, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `ClickHandler::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 52233, rva 0x960b20).
     /// `ClickHandler * vdtor(ClickHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -182,6 +196,13 @@ impl crate::ClickHandler {
 }
 
 impl crate::ConsoleOpenHandler {
+    /// `ConsoleOpenHandler::ProcessButtonEvent` (decompiler signature, tier low; ledger semantic evidence, name high; id 52244, rva 0x960e20).
+    /// `undefined1 ProcessButtonEvent(ConsoleOpenHandler * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn process_button_event(&self, param_1: i64, param_2: u64, param_3: u64) -> u8 { unsafe { function!(52244, (*const Self, i64, u64, u64) -> u8)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `ConsoleOpenHandler::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 52234, rva 0x960b50).
     /// `ConsoleOpenHandler * vdtor(ConsoleOpenHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -251,6 +272,30 @@ impl crate::KinectEvent {
     pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(68653, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
+impl crate::LookHandler {
+    /// `LookHandler::Destroy` (decompiler signature, tier low; ledger semantic evidence, name high; id 42402, rva 0x7b1bc0).
+    /// `LookHandler * Destroy(LookHandler * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn destroy(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42402, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `LookHandler::ProcessMouseMove` (decompiler signature, tier low; ledger runtime evidence, name high; id 42424, rva 0x7b3270).
+    /// `undefined ProcessMouseMove(LookHandler * this, longlong param_1, longlong param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn process_mouse_move(&self, param_1: i64, param_2: i64) -> u64 { unsafe { function!(42424, (*const Self, i64, i64) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    /// `LookHandler::ProcessThumbstick` (decompiler signature, tier low; ledger semantic evidence, name high; id 523968, rva 0x7b37b0).
+    /// `undefined ProcessThumbstick(LookHandler * this, longlong param_1, longlong param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn process_thumbstick(&self, param_1: i64, param_2: i64) -> u64 { unsafe { function!(523968, (*const Self, i64, i64) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
+}
+
 impl crate::MotionGestureEvent {
     /// `MotionGestureEvent::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 524143, rva 0xcfb230).
     /// `MotionGestureEvent * ctor(MotionGestureEvent * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
@@ -289,6 +334,13 @@ impl crate::MovementHandler {
 }
 
 impl crate::PlayerControls {
+    /// `PlayerControls::ApplyPendingHandlerChanges` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 42369, rva 0x7b02f0).
+    /// `undefined ApplyPendingHandlerChanges(longlong param_1, BSTArrayAllocatorFunctor<BSTArrayHeapAllocator>_vtbl * param_2, ulonglong param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn apply_pending_handler_changes(param_1: i64, param_2: *mut c_void, param_3: u64, param_4: u64) -> u64 { unsafe { function!(42369, (i64, *mut c_void, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
     /// `PlayerControls::BSTEventSink_MenuModeChangeEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 42340, rva 0x7adfc0).
     /// `undefined8 BSTEventSink_MenuModeChangeEvent_vfunc_1(PlayerControls * this, longlong param_1)`
     ///
@@ -327,6 +379,13 @@ impl crate::PlayerControls {
 }
 
 impl crate::QuickSaveLoadHandler {
+    /// `QuickSaveLoadHandler::ProcessButtonEvent` (decompiler signature, tier low; ledger semantic evidence, name high; id 52251, rva 0x961dd0).
+    /// `undefined8 ProcessButtonEvent(QuickSaveLoadHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn process_button_event(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(52251, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `QuickSaveLoadHandler::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 52239, rva 0x960c50).
     /// `QuickSaveLoadHandler * vdtor(QuickSaveLoadHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -431,6 +490,23 @@ impl crate::ThumbstickEvent {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52451, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
+impl crate::TogglePOVHandler {
+    /// `TogglePOVHandler::Destroy` (decompiler signature, tier low; ledger semantic evidence, name high; id 42410, rva 0x7b1de0).
+    /// `TogglePOVHandler * Destroy(TogglePOVHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn destroy(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42410, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `TogglePOVHandler::ProcessButton` (decompiler signature, tier low; ledger semantic evidence, name high; id 42433, rva 0x7b3bc0).
+    /// `undefined ProcessButton(TogglePOVHandler * this, longlong param_1, longlong param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn process_button(&self, param_1: i64, param_2: i64) -> u64 { unsafe { function!(42433, (*const Self, i64, i64) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
 }
 
 impl crate::ToggleRunHandler {

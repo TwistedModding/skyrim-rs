@@ -7,6 +7,20 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `Papyrus::ActiveMagicEffect::GetCasterActor` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54577, rva 0x9fbb50).
+/// `Actor * GetCasterActor(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn papyrus__active_magic_effect__get_caster_actor(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect) -> *mut crate::Actor { unsafe { function!(54577, (*mut c_void, u32, *mut crate::ActiveEffect) -> *mut crate::Actor)(vm, stackId, self_) } }
+/// `Papyrus::ActiveMagicEffect::GetTargetActor` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54578, rva 0x9fbbc0).
+/// `Actor * GetTargetActor(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn papyrus__active_magic_effect__get_target_actor(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect) -> *mut crate::Actor { unsafe { function!(54578, (*mut c_void, u32, *mut crate::ActiveEffect) -> *mut crate::Actor)(vm, stackId, self_) } }
 /// `Papyrus::ActiveMagicEffect::RegisterForAnimationEvent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54579, rva 0x9fbbe0).
 /// `bool RegisterForAnimationEvent(IVirtualMachine * vm, uint stackId, ActiveEffect * self, TESObjectREFR * a0, BSFixedString * a1)`
 ///
@@ -13489,17 +13503,3 @@ pub unsafe fn rotate_tree_node_left(param_1: *mut i64, param_2: i64) -> u64 { un
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn rotate_tree_node_right(param_1: *mut i64, param_2: *mut i64) -> u64 { unsafe { function!(441867, (*mut i64, *mut i64) -> u64)(param_1, param_2) } }
-/// `RotateTreeNodeRight_2` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 419726, rva 0x12b40e0).
-/// `undefined RotateTreeNodeRight_2(longlong * param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn rotate_tree_node_right_2(param_1: *mut i64, param_2: *mut i64) -> u64 { unsafe { function!(419726, (*mut i64, *mut i64) -> u64)(param_1, param_2) } }
-/// `RotateVectorAroundZByCellAngle` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 19138, rva 0x2c85f0).
-/// `undefined RotateVectorAroundZByCellAngle(longlong param_1, float * param_2, float * param_3, char param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn rotate_vector_around_z_by_cell_angle(param_1: i64, param_2: *mut f32, param_3: *mut f32, param_4: c_char) -> u64 { unsafe { function!(19138, (i64, *mut f32, *mut f32, c_char) -> u64)(param_1, param_2, param_3, param_4) } }

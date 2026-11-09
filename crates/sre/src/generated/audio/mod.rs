@@ -13,6 +13,8 @@ mod api;
 pub use api::*;
 #[cfg(all(feature = "audio", feature = "tier-high"))]
 mod tier_high;
+#[cfg(all(feature = "audio", feature = "tier-medium"))]
+mod tier_medium;
 #[cfg(all(feature = "audio", feature = "tier-low"))]
 mod tier_low;
 #[cfg(all(feature = "audio", feature = "untiered"))]

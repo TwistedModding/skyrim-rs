@@ -7,6 +7,56 @@
 
 use core::ffi::{c_char, c_void};
 
+impl crate::BSTEventSink_MenuOpenCloseEvent {
+    /// `BSTEventSink<MenuOpenCloseEvent>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 24882, rva 0x3cbb10).
+    /// `BSTEventSink<MenuOpenCloseEvent> * vdtor(BSTEventSink<MenuOpenCloseEvent> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
+impl crate::BSTEventSink_MurderCrime__Event {
+    /// `BSTEventSink<MurderCrime::Event>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 37121, rva 0x66eab0).
+    /// `BSTEventSink<MurderCrime::Event> * vdtor(BSTEventSink<MurderCrime::Event> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
+impl crate::BSTEventSink_ObjectiveState__Event {
+    /// `BSTEventSink<ObjectiveState::Event>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 37043, rva 0x66dbc0).
+    /// `BSTEventSink<ObjectiveState::Event> * vdtor(BSTEventSink<ObjectiveState::Event> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
+impl crate::BSTEventSink_Pickpocket__Event {
+    /// `BSTEventSink<Pickpocket::Event>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 37016, rva 0x66d2c0).
+    /// `BSTEventSink<Pickpocket::Event> * vdtor(BSTEventSink<Pickpocket::Event> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
+impl crate::BSTEventSink_PoisonedWeapon__Event {
+    /// `BSTEventSink<PoisonedWeapon::Event>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 37106, rva 0x66e830).
+    /// `BSTEventSink<PoisonedWeapon::Event> * vdtor(BSTEventSink<PoisonedWeapon::Event> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
 impl crate::BSTEventSink_PositionPlayerEvent {
     /// `BSTEventSink<PositionPlayerEvent>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 13621, rva 0x1b44d0).
     /// `BSTEventSink<PositionPlayerEvent> * vdtor(BSTEventSink<PositionPlayerEvent> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -1412,6 +1462,16 @@ impl crate::BSTreadTransfInterpolator {
     pub unsafe fn vdtor(&self, param_1: u32, param_2: i64, param_3: *mut u8) -> *mut Self { unsafe { function!(74115, (*const Self, u32, i64, *mut u8) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
+impl crate::BSTreeManager__IQueryCullingCamera {
+    /// `BSTreeManager::IQueryCullingCamera::Destroy`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 36737, rva 0x661cf0).
+    /// `IQueryCullingCamera * Destroy(IQueryCullingCamera * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn destroy_2(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
 impl crate::BSTreeNode {
     /// `BSTreeNode::Create` (decompiler signature, tier low; ledger string evidence, name medium; id 105609, rva 0x14e98d0).
     /// `BSTreeNode * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -1492,6 +1552,13 @@ impl crate::BSTweenerModifier {
 }
 
 impl crate::BSUtilityShader {
+    /// `BSUtilityShader::SetupTechnique`, vtable slot 2, through the object's vtable (decompiler signature, tier low; ledger runtime evidence, name high; id 107759, rva 0x1566710).
+    /// `char SetupTechnique(BSUtilityShader * this, int param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn setup_technique(&self, param_1: i32) -> c_char { unsafe { virtual_function!(self, 2, (*const Self, i32) -> c_char)(core::ptr::from_ref(self), param_1) } }
     /// `BSUtilityShader::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 107771, rva 0x1568e18).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSUtilityShader * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -1598,6 +1665,13 @@ impl crate::BSWArray {
 }
 
 impl crate::BSWaterShader {
+    /// `BSWaterShader::SetupTechnique`, vtable slot 2, through the object's vtable (decompiler signature, tier low; ledger runtime evidence, name high; id 107362, rva 0x154d330).
+    /// `ulonglong SetupTechnique(BSWaterShader * this, int param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn setup_technique(&self, param_1: i32) -> u64 { unsafe { virtual_function!(self, 2, (*const Self, i32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSWaterShader::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 107374, rva 0x154f9d0).
     /// `BSWaterShader * vdtor(BSWaterShader * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -1840,3 +1914,10 @@ impl crate::_anon_3D37F7D5__BSResourceAssetLoader {
     pub unsafe fn vdtor(&self, param_1: *mut *mut c_void, param_2: *mut *mut c_void, param_3: u64) -> *mut c_void { unsafe { function!(63924, (*const Self, *mut *mut c_void, *mut *mut c_void, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
+/// `BSFixedStringVectorDeletingDtor` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 70441, rva 0xee8d80).
+/// `void * BSFixedStringVectorDeletingDtor(void * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn bs_fixed_string_vector_deleting_dtor(param_1: *mut c_void, param_2: u32, param_3: u64, param_4: u64) -> *mut c_void { unsafe { function!(70441, (*mut c_void, u32, u64, u64) -> *mut c_void)(param_1, param_2, param_3, param_4) } }

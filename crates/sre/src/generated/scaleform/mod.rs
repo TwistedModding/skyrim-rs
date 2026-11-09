@@ -17,5 +17,3 @@ mod tier_low;
 pub use tier_low::*;
 #[cfg(all(feature = "scaleform", feature = "untiered"))]
 mod untiered;
-#[cfg(all(feature = "scaleform", feature = "untiered"))]
-pub use untiered::*;

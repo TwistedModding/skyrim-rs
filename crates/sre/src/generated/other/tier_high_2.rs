@@ -7,6 +7,27 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GetClientOrServerString` (decompiler signature, tier high; ledger decompiler evidence, name high; id 449894, rva 0x13d2940).
+/// `char * GetClientOrServerString(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_client_or_server_string(param_1: i64) -> *mut c_char { unsafe { function!(449894, (i64) -> *mut c_char)(param_1) } }
+/// `GetColorField20AsFloat3` (decompiler signature, tier high; ledger decompiler evidence, name high; id 18288, rva 0x295610).
+/// `undefined GetColorField20AsFloat3(longlong param_1, float * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_color_field20_as_float3(param_1: i64, param_2: *mut f32) -> u64 { unsafe { function!(18288, (i64, *mut f32) -> u64)(param_1, param_2) } }
+/// `GetColorField24AsFloat3` (decompiler signature, tier high; ledger decompiler evidence, name high; id 18290, rva 0x295690).
+/// `undefined GetColorField24AsFloat3(longlong param_1, float * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_color_field24_as_float3(param_1: i64, param_2: *mut f32) -> u64 { unsafe { function!(18290, (i64, *mut f32) -> u64)(param_1, param_2) } }
 /// `GetColorField28AsFloat3` (decompiler signature, tier high; ledger decompiler evidence, name high; id 18296, rva 0x2957a0).
 /// `undefined GetColorField28AsFloat3(longlong param_1, float * param_2)`
 ///
@@ -16324,24 +16345,3 @@ pub unsafe fn set_shadow_scene_node(param_1: i32, param_2: u64) -> u64 { unsafe 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_slot_pointers(param_1: i64, param_2: u8, param_3: i64) -> u64 { unsafe { function!(107490, (i64, u8, i64) -> u64)(param_1, param_2, param_3) } }
-/// `SetStaggerTimeToMaxDuration` (decompiler signature, tier high; ledger decompiler evidence, name high; id 40040, rva 0x7286f0).
-/// `undefined SetStaggerTimeToMaxDuration(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_stagger_time_to_max_duration(param_1: i64) -> u64 { unsafe { function!(40040, (i64) -> u64)(param_1) } }
-/// `SetStringField8` (decompiler signature, tier high; ledger decompiler evidence, name high; id 12951, rva 0x190aa0).
-/// `undefined SetStringField8(longlong param_1, char * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_string_field8(param_1: i64, param_2: *mut c_char) -> u64 { unsafe { function!(12951, (i64, *mut c_char) -> u64)(param_1, param_2) } }
-/// `SetThreadPriorityLevel_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 69068, rva 0xeaedf0).
-/// `undefined8 SetThreadPriorityLevel_2(longlong param_1, int param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_thread_priority_level_2(param_1: i64, param_2: i32) -> u64 { unsafe { function!(69068, (i64, i32) -> u64)(param_1, param_2) } }

@@ -5036,3 +5036,10 @@ impl crate::_anon_DF2AE3C3__ActorValueFormFactory {
     pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(27189, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
+/// `ReleaseViaKeyedFactory` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 28121, rva 0x45ab50).
+/// `undefined ReleaseViaKeyedFactory(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_via_keyed_factory(param_1: *mut i64) -> u64 { unsafe { function!(28121, (*mut i64) -> u64)(param_1) } }

@@ -1895,7 +1895,7 @@ impl crate::RenderPass {
     ///
     /// Semantic field, frame pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn property(&self) -> Option<&crate::BSShaderProperty> { unsafe { Self::__member_property(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    pub fn property(&self) -> Option<&crate::BSShaderProperty> { unsafe { { self.property }.as_ref() } }
     /// `RenderPass::sceneLights` at +0x38: pointer to this pass's 16-slot BSLight* array (first numLights used); preassigned per pool entry
     ///
     /// Semantic field, frame pass, high; `None` while the pointer is null.
@@ -1956,16 +1956,6 @@ impl crate::RenderPass {
     pub fn set_poolIndex(&mut self, value: u32) { unsafe { Self::__member_poolIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn poolIndex_ptr(&self) -> *mut u32 { Self::__member_poolIndex(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_property(this: *const Self) -> *mut *mut crate::BSShaderProperty { unsafe { member!(this, "RenderPass.property", 0x8, *mut crate::BSShaderProperty) } }
-    /// `RenderPass::property`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn property_field(&self) -> *mut crate::BSShaderProperty { unsafe { Self::__member_property(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_property(&mut self, value: *mut crate::BSShaderProperty) { unsafe { Self::__member_property(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn property_ptr(&self) -> *mut *mut crate::BSShaderProperty { Self::__member_property(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_sceneLights(this: *const Self) -> *mut *mut crate::BSLight { unsafe { member!(this, "RenderPass.sceneLights", 0x38, *mut crate::BSLight) } }
@@ -2049,16 +2039,6 @@ impl crate::RenderStateCache {
     pub fn set_depthStencilSlice(&mut self, value: u32) { unsafe { Self::__member_depthStencilSlice(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn depthStencilSlice_ptr(&self) -> *mut u32 { Self::__member_depthStencilSlice(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_dirty(this: *const Self) -> *mut u32 { unsafe { member!(this, "RenderStateCache.dirty", 0x0, u32) } }
-    /// `RenderStateCache::dirty`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn dirty(&self) -> u32 { unsafe { Self::__member_dirty(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_dirty(&mut self, value: u32) { unsafe { Self::__member_dirty(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn dirty_ptr(&self) -> *mut u32 { Self::__member_dirty(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_dirtySamplers(this: *const Self) -> *mut u32 { unsafe { member!(this, "RenderStateCache.dirtySamplers", 0x8, u32) } }

@@ -23,8 +23,7 @@ pub struct BGSFootIkRaycastInterfaceDB {
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
     /// +0x40 `undefined1`, semantic; 0x38-byte records (+0x40 data, +0x50 size), grown by 50 (high)
-    #[doc(hidden)]
-    pub __records: [u8; 16],
+    pub records: [u8; 16],
     unknown_50: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -33,7 +32,7 @@ const _: () = assert!(size_of::<BGSFootIkRaycastInterfaceDB>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSFootIkRaycastInterfaceDB, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSFootIkRaycastInterfaceDB, __characterMap) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSFootIkRaycastInterfaceDB, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BGSFootIkRaycastInterfaceDB, __records) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BGSFootIkRaycastInterfaceDB, records) == 0x40);
 
 /// `BGSFootIkRaycastRecord`: size 0x38 (exact).
 /// Meaning: per-graph foot IK raycast record in BGSFootIkRaycastInterfaceDB (static-W) (medium, ik pass).
@@ -69,51 +68,41 @@ pub struct BSAnimationUpdateData {
     pub __delta: [u8; 4],
     unknown_4: [u8; 4],
     /// +0x8 `pointer`, semantic; set to &ID_37999 by PrepareAnimationUpdate (low)
-    #[doc(hidden)]
-    pub __postUpdateFunctor: [u8; 8],
+    pub postUpdateFunctor: *mut c_void,
     /// +0x10 `ptr:Actor`, semantic; the actor being updated (high)
-    #[doc(hidden)]
-    pub __actor: [u8; 8],
+    pub actor: *mut crate::Actor,
     /// +0x18 `ptr:NiPoint3`, semantic; main camera world translation (camera+0xa0) used for bone LOD and interpolation distances; null for the player (high)
-    #[doc(hidden)]
-    pub __cameraPosition: [u8; 8],
+    pub cameraPosition: *mut crate::NiPoint3,
     /// +0x20 `pointer`, semantic; &actor->IPostAnimationChannelUpdateFunctor (Actor+0xe0); slot 1 called after the channels (high)
-    #[doc(hidden)]
-    pub __postChannelFunctor: [u8; 8],
+    pub postChannelFunctor: *mut c_void,
     /// +0x28 `u16`, semantic; bones generated when the actor is not visible: 0 normally, 0xffff when ID_37491 (ragdoll/knock/flag) is true, INI iMinBonesToGenerateWhileSitting:Animation (5) while sitSleepState == 3, 3 with boolFlags2 bit 23 (synchronized animation) (high)
-    #[doc(hidden)]
-    pub __bonesWhenNotVisible: [u8; 2],
+    pub bonesWhenNotVisible: u16,
     /// +0x2A `u8`, semantic; update even when the holder's slot 14 says no, never interpolate, skip bone LOD (all bones, foot IK flag stays 1) (high)
-    #[doc(hidden)]
-    pub __forceUpdate: [u8; 1],
+    pub forceUpdate: u8,
     /// +0x2B `u8`, semantic; INI bAnimInterpEnable:Animation (1) and not sitting/sleeping and none of the graph bools at g_AnimationVariableNames+0x578/+0x580/+0x588 true on the active graph (high)
-    #[doc(hidden)]
-    pub __allowInterpolation: [u8; 1],
+    pub allowInterpolation: u8,
     /// +0x2C `u8`, semantic; actor counted as on screen: 3D present and (race flags bit 7 or 3D flags bit 20 clear); otherwise its body shader property was drawn in the current render frame count (high)
-    #[doc(hidden)]
-    pub __visible: [u8; 1],
+    pub visible: u8,
     /// +0x2D `u8`, semantic; INI bUseSPUGenerate:Animation (0 shipped) and not ID_37491 (high)
-    #[doc(hidden)]
-    pub __spuGenerate: [u8; 1],
+    pub spuGenerate: u8,
     /// +0x2E `u8`, semantic; foot IK allowed this frame; copied into graph+0x249 by Update (high)
-    #[doc(hidden)]
-    pub __doFootIK: [u8; 1],
+    pub doFootIK: u8,
     unknown_2F: [u8; 1],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSAnimationUpdateData>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSAnimationUpdateData, __delta) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSAnimationUpdateData, __postUpdateFunctor) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSAnimationUpdateData, __actor) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSAnimationUpdateData, __cameraPosition) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSAnimationUpdateData, __postChannelFunctor) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSAnimationUpdateData, __bonesWhenNotVisible) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSAnimationUpdateData, __forceUpdate) == 0x2A);
-const _: () = assert!(core::mem::offset_of!(BSAnimationUpdateData, __allowInterpolation) == 0x2B);
-const _: () = assert!(core::mem::offset_of!(BSAnimationUpdateData, __visible) == 0x2C);
-const _: () = assert!(core::mem::offset_of!(BSAnimationUpdateData, __spuGenerate) == 0x2D);
-const _: () = assert!(core::mem::offset_of!(BSAnimationUpdateData, __doFootIK) == 0x2E);
+const _: () = assert!(core::mem::offset_of!(BSAnimationUpdateData, postUpdateFunctor) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSAnimationUpdateData, actor) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSAnimationUpdateData, cameraPosition) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSAnimationUpdateData, postChannelFunctor) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSAnimationUpdateData, bonesWhenNotVisible) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSAnimationUpdateData, forceUpdate) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(BSAnimationUpdateData, allowInterpolation) == 0x2B);
+const _: () = assert!(core::mem::offset_of!(BSAnimationUpdateData, visible) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(BSAnimationUpdateData, spuGenerate) == 0x2D);
+const _: () = assert!(core::mem::offset_of!(BSAnimationUpdateData, doFootIK) == 0x2E);
 
 /// `BSDirectAtModifier`: size 0xE0 (exact, high); primary base `hkbModifier`.
 /// Meaning: Bethesda aim modifier (bow/magic aim, dragon rider head) (high, ik pass).
@@ -125,110 +114,81 @@ pub struct BSDirectAtModifier {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSDirectAtModifier_vtable,
     /// +0x8 `u16`, base hkbBindable, semantic; 0 = static / not counted (add and remove do nothing) (high)
-    #[doc(hidden)]
-    pub __memSizeAndFlags: [u8; 2],
+    pub memSizeAndFlags: u16,
     /// +0xA `i16`, semantic; reference count (high)
     #[doc(hidden)]
     pub __referenceCount: [u8; 2],
     unknown_C: [u8; 4],
     /// +0x10 `ptr:hkbVariableBindingSet`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __variableBindingSet: [u8; 8],
+    pub variableBindingSet: *mut crate::hkbVariableBindingSet,
     /// +0x18 `undefined1`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __cachedBindables: [u8; 16],
+    pub cachedBindables: [u8; 16],
     /// +0x28 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __areBindablesCached: [u8; 1],
+    pub areBindablesCached: u8,
     unknown_29: [u8; 7],
     /// +0x30 `u64`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __userData: [u8; 8],
+    pub userData: u64,
     /// +0x38 `undefined1`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __name: [u8; 8],
+    pub name: [u8; 8],
     /// +0x40 `i16`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __id: [u8; 2],
+    pub id: u16,
     /// +0x42 `u8`, semantic (high)
-    #[doc(hidden)]
-    pub __cloneState: [u8; 1],
+    pub cloneState: u8,
     /// +0x43 `u8`, semantic (high)
     #[doc(hidden)]
     pub __padNode: [u8; 1],
     /// +0x44 `undefined4`, base hkBaseObject
     pub field_44: u32,
     /// +0x48 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __enable: [u8; 1],
+    pub enable: u8,
     /// +0x49 `u8`, semantic (high)
     #[doc(hidden)]
     pub __padModifier: [u8; 3],
     /// +0x4C `undefined4`, base hkBaseObject
     pub field_4C: u32,
     /// +0x50 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __directAtTarget: [u8; 1],
+    pub directAtTarget: u8,
     unknown_51: [u8; 1],
     /// +0x52 `i16`, semantic (high)
-    #[doc(hidden)]
-    pub __sourceBoneIndex: [u8; 2],
+    pub sourceBoneIndex: u16,
     /// +0x54 `i16`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __startBoneIndex: [u8; 2],
+    pub startBoneIndex: u16,
     /// +0x56 `i16`, semantic (high)
-    #[doc(hidden)]
-    pub __endBoneIndex: [u8; 2],
+    pub endBoneIndex: u16,
     /// +0x58 `float`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __limitHeadingDegrees: [u8; 4],
+    pub limitHeadingDegrees: f32,
     /// +0x5C `float`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __limitPitchDegrees: [u8; 4],
+    pub limitPitchDegrees: f32,
     /// +0x60 `float`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __offsetHeadingDegrees: [u8; 4],
+    pub offsetHeadingDegrees: f32,
     /// +0x64 `float`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __offsetPitchDegrees: [u8; 4],
+    pub offsetPitchDegrees: f32,
     /// +0x68 `float`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __onGain: [u8; 4],
+    pub onGain: f32,
     /// +0x6C `float`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __offGain: [u8; 4],
+    pub offGain: f32,
     /// +0x70 `class:hkVector4`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __targetLocation: [u8; 16],
+    pub targetLocation: crate::hkVector4,
     /// +0x80 `u32`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __userInfo: [u8; 4],
+    pub userInfo: u32,
     /// +0x84 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __directAtCamera: [u8; 1],
+    pub directAtCamera: u8,
     unknown_85: [u8; 3],
     /// +0x88 `float`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __directAtCameraX: [u8; 4],
+    pub directAtCameraX: f32,
     /// +0x8C `float`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __directAtCameraY: [u8; 4],
+    pub directAtCameraY: f32,
     /// +0x90 `float`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __directAtCameraZ: [u8; 4],
+    pub directAtCameraZ: f32,
     /// +0x94 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __active: [u8; 1],
+    pub active: u8,
     unknown_95: [u8; 3],
     /// +0x98 `float`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __currentHeadingOffset: [u8; 4],
+    pub currentHeadingOffset: f32,
     /// +0x9C `float`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __currentPitchOffset: [u8; 4],
+    pub currentPitchOffset: f32,
     /// +0xA0 `float`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __timeStep: [u8; 4],
+    pub timeStep: f32,
     /// +0xA4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_A4: [u8; 4],
@@ -249,54 +209,53 @@ pub struct BSDirectAtModifier {
     #[doc(hidden)]
     pub __directAtTargetLocation: [u8; 16],
     /// +0xD0 `undefined1`, semantic (high)
-    #[doc(hidden)]
-    pub __boneChainIndices: [u8; 16],
+    pub boneChainIndices: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSDirectAtModifier>() == 0xE0);
 const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __memSizeAndFlags) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, memSizeAndFlags) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __referenceCount) == 0xA);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __variableBindingSet) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __cachedBindables) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __areBindablesCached) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __userData) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __name) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __id) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __cloneState) == 0x42);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, variableBindingSet) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, cachedBindables) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, areBindablesCached) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, userData) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, name) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, id) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, cloneState) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __padNode) == 0x43);
 const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __enable) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, enable) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __padModifier) == 0x49);
 const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __directAtTarget) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __sourceBoneIndex) == 0x52);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __startBoneIndex) == 0x54);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __endBoneIndex) == 0x56);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __limitHeadingDegrees) == 0x58);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __limitPitchDegrees) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __offsetHeadingDegrees) == 0x60);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __offsetPitchDegrees) == 0x64);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __onGain) == 0x68);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __offGain) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __targetLocation) == 0x70);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __userInfo) == 0x80);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __directAtCamera) == 0x84);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __directAtCameraX) == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __directAtCameraY) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __directAtCameraZ) == 0x90);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __active) == 0x94);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __currentHeadingOffset) == 0x98);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __currentPitchOffset) == 0x9C);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __timeStep) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, directAtTarget) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, sourceBoneIndex) == 0x52);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, startBoneIndex) == 0x54);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, endBoneIndex) == 0x56);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, limitHeadingDegrees) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, limitPitchDegrees) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, offsetHeadingDegrees) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, offsetPitchDegrees) == 0x64);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, onGain) == 0x68);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, offGain) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, targetLocation) == 0x70);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, userInfo) == 0x80);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, directAtCamera) == 0x84);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, directAtCameraX) == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, directAtCameraY) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, directAtCameraZ) == 0x90);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, active) == 0x94);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, currentHeadingOffset) == 0x98);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, currentPitchOffset) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, timeStep) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __field_A4) == 0xA4);
 const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __pSkeletonMemory) == 0xA8);
 const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __hasTarget) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __field_B4) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __field_B8) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __directAtTargetLocation) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __boneChainIndices) == 0xD0);
+const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, boneChainIndices) == 0xD0);
 
 /// `BSFlattenedBoneTree::Entry`: size 0x80 (exact).
 /// Meaning: one flattened bone (high, ik pass).
@@ -344,41 +303,36 @@ const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree__Entry, __name) 
 /// Meaning: animation note (BSAnimNote type 1) that drives the grab IK of RagdollAnimation (UpdateGrabIk 0x1072160 -> TwoJointSolve) (high, ik pass).
 /// Evidence: ik pass (semantic): ctors 0xf8b310 (float time, u32, float, u32), 0xf8b380, 0xf8b3d0; Create 0xf8b560, CreateBSGrabIKNote 0xf8b150.; size: vdtor 0xf8b820 frees 0x28.
 /// Bases: `BSAnimNote`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct BSGrabIKNote {
     /// +0x0 `vtbl:BSGrabIKNote:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSGrabIKNote_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `u32`, semantic; 1 = grab IK (high)
-    #[doc(hidden)]
-    pub __noteType: [u8; 4],
+    pub noteType: u32,
     /// +0x14 `float`, semantic (medium)
-    #[doc(hidden)]
-    pub __time: [u8; 4],
+    pub time: f32,
     /// +0x18 `u32`, semantic; 1 right, 0 left (high)
-    #[doc(hidden)]
-    pub __hand: [u8; 4],
+    pub hand: u32,
     /// +0x1C `float`, semantic; float argument (high)
-    #[doc(hidden)]
-    pub __value: [u8; 4],
+    pub value: f32,
     /// +0x20 `u32`, semantic; 1 Start, 2 Stop (high)
-    #[doc(hidden)]
-    pub __action: [u8; 4],
-    unknown_24: [u8; 4],
+    pub action: u32,
+    pub unknown_24: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSGrabIKNote>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, __noteType) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, __time) == 0x14);
-const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, __hand) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, __value) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, __action) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, noteType) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, time) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, hand) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, value) == 0x1C);
+const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, action) == 0x20);
 
 /// `BSIFootIkRaycastInterfaceDB`: size 0x8 (exact, medium).
 /// Meaning: Bethesda interface: per-character foot IK raycast provider (high, ik pass).
@@ -432,77 +386,58 @@ pub struct BSIsActiveModifier {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSIsActiveModifier_vtable,
     /// +0x8 `u16`, base hkbBindable, semantic; 0 = static / not counted (add and remove do nothing) (high)
-    #[doc(hidden)]
-    pub __memSizeAndFlags: [u8; 2],
+    pub memSizeAndFlags: u16,
     /// +0xA `i16`, semantic; reference count (high)
     #[doc(hidden)]
     pub __referenceCount: [u8; 2],
     unknown_C: [u8; 4],
     /// +0x10 `ptr:hkbVariableBindingSet`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __variableBindingSet: [u8; 8],
+    pub variableBindingSet: *mut crate::hkbVariableBindingSet,
     /// +0x18 `undefined1`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __cachedBindables: [u8; 16],
+    pub cachedBindables: [u8; 16],
     /// +0x28 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __areBindablesCached: [u8; 1],
+    pub areBindablesCached: u8,
     unknown_29: [u8; 7],
     /// +0x30 `u64`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __userData: [u8; 8],
+    pub userData: u64,
     /// +0x38 `undefined1`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __name: [u8; 8],
+    pub name: [u8; 8],
     /// +0x40 `i16`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __id: [u8; 2],
+    pub id: u16,
     /// +0x42 `u8`, semantic (high)
-    #[doc(hidden)]
-    pub __cloneState: [u8; 1],
+    pub cloneState: u8,
     /// +0x43 `u8`, semantic (high)
     #[doc(hidden)]
     pub __padNode: [u8; 1],
     /// +0x44 `undefined4`, base hkBaseObject
     pub field_44: u32,
     /// +0x48 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __enable: [u8; 1],
+    pub enable: u8,
     /// +0x49 `u8`, semantic (high)
     #[doc(hidden)]
     pub __padModifier: [u8; 3],
     /// +0x4C `undefined4`, base hkBaseObject
     pub field_4C: u32,
     /// +0x50 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __bIsActive0: [u8; 1],
+    pub bIsActive0: u8,
     /// +0x51 `u8`, semantic (high)
-    #[doc(hidden)]
-    pub __bInvertActive0: [u8; 1],
+    pub bInvertActive0: u8,
     /// +0x52 `u8`, semantic (high)
-    #[doc(hidden)]
-    pub __bIsActive1: [u8; 1],
+    pub bIsActive1: u8,
     /// +0x53 `u8`, semantic (high)
-    #[doc(hidden)]
-    pub __bInvertActive1: [u8; 1],
+    pub bInvertActive1: u8,
     /// +0x54 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __bIsActive2: [u8; 1],
+    pub bIsActive2: u8,
     /// +0x55 `u8`, semantic (high)
-    #[doc(hidden)]
-    pub __bInvertActive2: [u8; 1],
+    pub bInvertActive2: u8,
     /// +0x56 `u8`, semantic (high)
-    #[doc(hidden)]
-    pub __bIsActive3: [u8; 1],
+    pub bIsActive3: u8,
     /// +0x57 `u8`, semantic (high)
-    #[doc(hidden)]
-    pub __bInvertActive3: [u8; 1],
+    pub bInvertActive3: u8,
     /// +0x58 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __bIsActive4: [u8; 1],
+    pub bIsActive4: u8,
     /// +0x59 `u8`, semantic (high)
-    #[doc(hidden)]
-    pub __bInvertActive4: [u8; 1],
+    pub bInvertActive4: u8,
     unknown_5A: [u8; 2],
     /// +0x5C `undefined4`, base hkBaseObject
     pub field_5C: u32,
@@ -511,30 +446,30 @@ pub struct BSIsActiveModifier {
 }
 const _: () = assert!(size_of::<BSIsActiveModifier>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __memSizeAndFlags) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, memSizeAndFlags) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __referenceCount) == 0xA);
-const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __variableBindingSet) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __cachedBindables) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __areBindablesCached) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __userData) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __name) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __id) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __cloneState) == 0x42);
+const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, variableBindingSet) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, cachedBindables) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, areBindablesCached) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, userData) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, name) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, id) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, cloneState) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __padNode) == 0x43);
 const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __enable) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, enable) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __padModifier) == 0x49);
 const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __bIsActive0) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __bInvertActive0) == 0x51);
-const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __bIsActive1) == 0x52);
-const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __bInvertActive1) == 0x53);
-const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __bIsActive2) == 0x54);
-const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __bInvertActive2) == 0x55);
-const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __bIsActive3) == 0x56);
-const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __bInvertActive3) == 0x57);
-const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __bIsActive4) == 0x58);
-const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, __bInvertActive4) == 0x59);
+const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, bIsActive0) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, bInvertActive0) == 0x51);
+const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, bIsActive1) == 0x52);
+const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, bInvertActive1) == 0x53);
+const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, bIsActive2) == 0x54);
+const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, bInvertActive2) == 0x55);
+const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, bIsActive3) == 0x56);
+const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, bInvertActive3) == 0x57);
+const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, bIsActive4) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, bInvertActive4) == 0x59);
 const _: () = assert!(core::mem::offset_of!(BSIsActiveModifier, field_5C) == 0x5C);
 
 /// `BSLimbIKModifier`: size 0x78 (exact, high); primary base `hkbModifier`.
@@ -547,105 +482,87 @@ pub struct BSLimbIKModifier {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSLimbIKModifier_vtable,
     /// +0x8 `u16`, base hkbBindable, semantic; 0 = static / not counted (add and remove do nothing) (high)
-    #[doc(hidden)]
-    pub __memSizeAndFlags: [u8; 2],
+    pub memSizeAndFlags: u16,
     /// +0xA `i16`, semantic; reference count (high)
     #[doc(hidden)]
     pub __referenceCount: [u8; 2],
     unknown_C: [u8; 4],
     /// +0x10 `ptr:hkbVariableBindingSet`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __variableBindingSet: [u8; 8],
+    pub variableBindingSet: *mut crate::hkbVariableBindingSet,
     /// +0x18 `undefined1`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __cachedBindables: [u8; 16],
+    pub cachedBindables: [u8; 16],
     /// +0x28 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __areBindablesCached: [u8; 1],
+    pub areBindablesCached: u8,
     unknown_29: [u8; 7],
     /// +0x30 `u64`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __userData: [u8; 8],
+    pub userData: u64,
     /// +0x38 `undefined1`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __name: [u8; 8],
+    pub name: [u8; 8],
     /// +0x40 `i16`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __id: [u8; 2],
+    pub id: u16,
     /// +0x42 `u8`, semantic (high)
-    #[doc(hidden)]
-    pub __cloneState: [u8; 1],
+    pub cloneState: u8,
     /// +0x43 `u8`, semantic (high)
     #[doc(hidden)]
     pub __padNode: [u8; 1],
     /// +0x44 `undefined4`, base hkBaseObject
     pub field_44: u32,
     /// +0x48 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __enable: [u8; 1],
+    pub enable: u8,
     /// +0x49 `u8`, semantic (high)
     #[doc(hidden)]
     pub __padModifier: [u8; 3],
     /// +0x4C `undefined4`, base hkBaseObject
     pub field_4C: u32,
     /// +0x50 `float`, base hkBaseObject, semantic; Maximum pitch angle that the limb may be raised, in degrees. (medium)
-    #[doc(hidden)]
-    pub __limitAngleDegrees: [u8; 4],
+    pub limitAngleDegrees: f32,
     /// +0x54 `float`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __currentAngle: [u8; 4],
+    pub currentAngle: f32,
     /// +0x58 `i16`, base hkBaseObject, semantic; Index of the first bone in the limb chain (medium)
-    #[doc(hidden)]
-    pub __startBoneIndex: [u8; 2],
+    pub startBoneIndex: u16,
     /// +0x5A `i16`, semantic; Index of the last bone in the limb chain (medium)
-    #[doc(hidden)]
-    pub __endBoneIndex: [u8; 2],
+    pub endBoneIndex: u16,
     /// +0x5C `float`, base hkBaseObject, semantic; Gain used to smooth out the motion when the limb is raised to a target angle. (medium)
-    #[doc(hidden)]
-    pub __gain: [u8; 4],
+    pub gain: f32,
     /// +0x60 `float`, base hkBaseObject, semantic; The radius for the bones within the limb. (medium)
-    #[doc(hidden)]
-    pub __boneRadius: [u8; 4],
+    pub boneRadius: f32,
     /// +0x64 `float`, base hkBaseObject, semantic; The offset above the bones in the limb from which to begin the downward ray-cast from. (medium)
-    #[doc(hidden)]
-    pub __castOffset: [u8; 4],
+    pub castOffset: f32,
     /// +0x68 `float`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __timeStep: [u8; 4],
+    pub timeStep: f32,
     /// +0x6C `undefined4`, base hkBaseObject
     pub field_6C: u32,
     /// +0x70 `pointer`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __pSkeletonMemory: [u8; 8],
+    pub pSkeletonMemory: *mut c_void,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSLimbIKModifier>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __memSizeAndFlags) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, memSizeAndFlags) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __referenceCount) == 0xA);
-const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __variableBindingSet) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __cachedBindables) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __areBindablesCached) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __userData) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __name) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __id) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __cloneState) == 0x42);
+const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, variableBindingSet) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, cachedBindables) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, areBindablesCached) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, userData) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, name) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, id) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, cloneState) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __padNode) == 0x43);
 const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __enable) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, enable) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __padModifier) == 0x49);
 const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __limitAngleDegrees) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __currentAngle) == 0x54);
-const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __startBoneIndex) == 0x58);
-const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __endBoneIndex) == 0x5A);
-const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __gain) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __boneRadius) == 0x60);
-const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __castOffset) == 0x64);
-const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __timeStep) == 0x68);
+const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, limitAngleDegrees) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, currentAngle) == 0x54);
+const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, startBoneIndex) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, endBoneIndex) == 0x5A);
+const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, gain) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, boneRadius) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, castOffset) == 0x64);
+const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, timeStep) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, __pSkeletonMemory) == 0x70);
+const _: () = assert!(core::mem::offset_of!(BSLimbIKModifier, pSkeletonMemory) == 0x70);
 
 /// `BSLimbIKModifierUtility`: size 0x10 (exact, high); primary base `BSILimbIKModifierSingleton`.
 /// Meaning: limb IK cast singleton (vtable at +0, an empty BSTSingletonSDM base at +8) (high, ik pass).
@@ -667,34 +584,30 @@ const _: () = assert!(core::mem::offset_of!(BSLimbIKModifierUtility, __vftable) 
 /// Meaning: the game's BSLimbIKModifierCastInfo, created by BSLimbIKModifierUtility slot 2 0x5527d0 (medium, ik pass).
 /// Evidence: ik pass (semantic): vtable 0x18eab48.; size: .
 /// Bases: `BSLimbIKModifierCastInfo`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct BSLimbIKModifierUtilityCastInfo {
     /// +0x0 `vtbl:BSLimbIKModifierUtilityCastInfo:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSLimbIKModifierUtilityCastInfo_vtable,
     /// +0x8 `u32`, semantic; the actor's collision group (high word of its filter info) (high)
-    #[doc(hidden)]
-    pub __collisionGroup: [u8; 4],
-    unknown_C: [u8; 4],
+    pub collisionGroup: u32,
+    pub unknown_C: [u8; 4],
     /// +0x10 `ptr:bhkWorld`, semantic; the actor cell's bhkWorld (high)
-    #[doc(hidden)]
-    pub __world: [u8; 8],
+    pub world: *mut crate::bhkWorld,
     /// +0x18 `pointer`, semantic; stack-allocated AABB query result, used as the pick's collector input (medium)
-    #[doc(hidden)]
-    pub __collectedBodies: [u8; 8],
+    pub collectedBodies: *mut c_void,
     /// +0x20 `i32`, semantic; byte size of +0x18 (medium)
-    #[doc(hidden)]
-    pub __collectedSize: [u8; 4],
-    unknown_24: [u8; 4],
+    pub collectedSize: u32,
+    pub unknown_24: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSLimbIKModifierUtilityCastInfo>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSLimbIKModifierUtilityCastInfo, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSLimbIKModifierUtilityCastInfo, __collisionGroup) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSLimbIKModifierUtilityCastInfo, __world) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSLimbIKModifierUtilityCastInfo, __collectedBodies) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSLimbIKModifierUtilityCastInfo, __collectedSize) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSLimbIKModifierUtilityCastInfo, collisionGroup) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSLimbIKModifierUtilityCastInfo, world) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSLimbIKModifierUtilityCastInfo, collectedBodies) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSLimbIKModifierUtilityCastInfo, collectedSize) == 0x20);
 
 /// `BSLookAtModifier`: size 0xE0 (exact, high); primary base `hkbModifier`.
 /// Meaning: Bethesda look-at modifier (bone chain + eyes, toward a target or the camera point); the graph's head tracking (high, ik pass).
@@ -706,85 +619,65 @@ pub struct BSLookAtModifier {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSLookAtModifier_vtable,
     /// +0x8 `u16`, base hkbBindable, semantic; 0 = static / not counted (add and remove do nothing) (high)
-    #[doc(hidden)]
-    pub __memSizeAndFlags: [u8; 2],
+    pub memSizeAndFlags: u16,
     /// +0xA `i16`, semantic; reference count (high)
     #[doc(hidden)]
     pub __referenceCount: [u8; 2],
     unknown_C: [u8; 4],
     /// +0x10 `ptr:hkbVariableBindingSet`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __variableBindingSet: [u8; 8],
+    pub variableBindingSet: *mut crate::hkbVariableBindingSet,
     /// +0x18 `undefined1`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __cachedBindables: [u8; 16],
+    pub cachedBindables: [u8; 16],
     /// +0x28 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __areBindablesCached: [u8; 1],
+    pub areBindablesCached: u8,
     unknown_29: [u8; 7],
     /// +0x30 `u64`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __userData: [u8; 8],
+    pub userData: u64,
     /// +0x38 `undefined1`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __name: [u8; 8],
+    pub name: [u8; 8],
     /// +0x40 `i16`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __id: [u8; 2],
+    pub id: u16,
     /// +0x42 `u8`, semantic (high)
-    #[doc(hidden)]
-    pub __cloneState: [u8; 1],
+    pub cloneState: u8,
     /// +0x43 `u8`, semantic (high)
     #[doc(hidden)]
     pub __padNode: [u8; 1],
     /// +0x44 `undefined4`, base hkBaseObject
     pub field_44: u32,
     /// +0x48 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __enable: [u8; 1],
+    pub enable: u8,
     /// +0x49 `u8`, semantic (high)
     #[doc(hidden)]
     pub __padModifier: [u8; 3],
     /// +0x4C `undefined4`, base hkBaseObject
     pub field_4C: u32,
     /// +0x50 `u8`, base hkBaseObject, semantic; Whether or not to look at target. (medium)
-    #[doc(hidden)]
-    pub __lookAtTarget: [u8; 1],
+    pub lookAtTarget: u8,
     unknown_51: [u8; 3],
     /// +0x54 `undefined4`, base hkBaseObject
     pub field_54: u32,
     /// +0x58 `undefined1`, base hkBaseObject, semantic; The properties of each bone in the look chain. (medium)
-    #[doc(hidden)]
-    pub __bones: [u8; 16],
+    pub bones: [u8; 16],
     /// +0x68 `undefined1`, base hkBaseObject, semantic; The properties of each eye bone in the look chain. (medium)
-    #[doc(hidden)]
-    pub __eyeBones: [u8; 16],
+    pub eyeBones: [u8; 16],
     /// +0x78 `float`, base hkBaseObject, semantic; The LookAt range is limited by a cone having this angle, in degrees, between its center and its side. (medium)
-    #[doc(hidden)]
-    pub __limitAngleDegrees: [u8; 4],
+    pub limitAngleDegrees: f32,
     /// +0x7C `float`, base hkBaseObject, semantic; Angle offset, from m_limitAngleDegrees, at which the modifier should no longer be active. (medium)
-    #[doc(hidden)]
-    pub __limitAngleThresholdDegrees: [u8; 4],
+    pub limitAngleThresholdDegrees: f32,
     /// +0x80 `u8`, base hkBaseObject, semantic; Whether or not to continue the look when the target is outside of the limit. (medium)
-    #[doc(hidden)]
-    pub __continueLookOutsideOfLimit: [u8; 1],
+    pub continueLookOutsideOfLimit: u8,
     unknown_81: [u8; 3],
     /// +0x84 `float`, base hkBaseObject, semantic; Gain used to smooth out the motion when the character starts looking at a target. (medium)
-    #[doc(hidden)]
-    pub __onGain: [u8; 4],
+    pub onGain: f32,
     /// +0x88 `float`, base hkBaseObject, semantic; Gain used to smooth out the motion when the character stops looking at a target. (medium)
-    #[doc(hidden)]
-    pub __offGain: [u8; 4],
+    pub offGain: f32,
     /// +0x8C `u8`, base hkBaseObject, semantic; Whether or not to use the individual bone gains for interpolation. (medium)
-    #[doc(hidden)]
-    pub __useBoneGains: [u8; 1],
+    pub useBoneGains: u8,
     unknown_8D: [u8; 3],
     /// +0x90 `class:hkVector4`, base hkBaseObject, semantic; The position in the world that is being looked at. (medium)
-    #[doc(hidden)]
-    pub __targetLocation: [u8; 16],
+    pub targetLocation: crate::hkVector4,
     /// +0xA0 `u8`, base hkBaseObject, semantic; Whether or not the target is outside of the limits for keeping the modifier active. (medium)
-    #[doc(hidden)]
-    pub __targetOutsideLimits: [u8; 1],
+    pub targetOutsideLimits: u8,
     unknown_A1: [u8; 3],
     /// +0xA4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
@@ -797,8 +690,7 @@ pub struct BSLookAtModifier {
     pub __lookAtCamera: [u8; 1],
     unknown_B9: [u8; 3],
     /// +0xBC `float`, semantic; The X coordinate of the camera position. (medium)
-    #[doc(hidden)]
-    pub __lookAtCameraX: [u8; 4],
+    pub lookAtCameraX: f32,
     /// +0xC0 `float`, base hkBaseObject, semantic; The Y coordinate of the camera position. (medium)
     #[doc(hidden)]
     pub __lookAtCameraY: [u8; 4],
@@ -806,56 +698,54 @@ pub struct BSLookAtModifier {
     #[doc(hidden)]
     pub __lookAtCameraZ: [u8; 4],
     /// +0xC8 `float`, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __timeStep: [u8; 4],
+    pub timeStep: f32,
     /// +0xCC `u8`, semantic; reflected member (no description in the binary) (medium)
     #[doc(hidden)]
     pub __ballBonesValid: [u8; 1],
     unknown_CD: [u8; 3],
     /// +0xD0 `pointer`, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __pSkeletonMemory: [u8; 8],
+    pub pSkeletonMemory: *mut c_void,
     unknown_D8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSLookAtModifier>() == 0xE0);
 const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __memSizeAndFlags) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, memSizeAndFlags) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __referenceCount) == 0xA);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __variableBindingSet) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __cachedBindables) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __areBindablesCached) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __userData) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __name) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __id) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __cloneState) == 0x42);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, variableBindingSet) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, cachedBindables) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, areBindablesCached) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, userData) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, name) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, id) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, cloneState) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __padNode) == 0x43);
 const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __enable) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, enable) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __padModifier) == 0x49);
 const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __lookAtTarget) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, lookAtTarget) == 0x50);
 const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, field_54) == 0x54);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __bones) == 0x58);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __eyeBones) == 0x68);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __limitAngleDegrees) == 0x78);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __limitAngleThresholdDegrees) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __continueLookOutsideOfLimit) == 0x80);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __onGain) == 0x84);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __offGain) == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __useBoneGains) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __targetLocation) == 0x90);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __targetOutsideLimits) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, bones) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, eyeBones) == 0x68);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, limitAngleDegrees) == 0x78);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, limitAngleThresholdDegrees) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, continueLookOutsideOfLimit) == 0x80);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, onGain) == 0x84);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, offGain) == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, useBoneGains) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, targetLocation) == 0x90);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, targetOutsideLimits) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __field_A4) == 0xA4);
 const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __targetOutOfLimitEvent) == 0xA8);
 const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __lookAtCamera) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __lookAtCameraX) == 0xBC);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, lookAtCameraX) == 0xBC);
 const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __lookAtCameraY) == 0xC0);
 const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __lookAtCameraZ) == 0xC4);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __timeStep) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, timeStep) == 0xC8);
 const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __ballBonesValid) == 0xCC);
-const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, __pSkeletonMemory) == 0xD0);
+const _: () = assert!(core::mem::offset_of!(BSLookAtModifier, pSkeletonMemory) == 0xD0);
 
 /// `BSLookAtModifierBoneData`: size 0x40 (exact).
 /// Meaning: one bone of BSLookAtModifier.bones / eyeBones (0x40) (high, ik pass).
@@ -901,49 +791,45 @@ const _: () = assert!(core::mem::offset_of!(BSLookAtModifierBoneData, __currentF
 /// Meaning: animation note (BSAnimNote type 2) for look IK (high, ik pass).
 /// Evidence: ik pass (semantic): ctors 0xf8bbe0 (float, float, u32), 0xf8bc50, 0xf8bca0; Create 0xf8be20, CreateBSLookIKNote 0xf8ba20.; size: vdtor 0xf8bfe0 frees 0x20.
 /// Bases: `BSAnimNote`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct BSLookIKNote {
     /// +0x0 `vtbl:BSLookIKNote:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSLookIKNote_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `u32`, semantic; 2 = look IK (high)
-    #[doc(hidden)]
-    pub __noteType: [u8; 4],
+    pub noteType: u32,
     /// +0x14 `float`, semantic (medium)
-    #[doc(hidden)]
-    pub __time: [u8; 4],
+    pub time: f32,
     /// +0x18 `float`, semantic; the float after 'LookIK ' (high)
-    #[doc(hidden)]
-    pub __value: [u8; 4],
+    pub value: f32,
     /// +0x1C `u32`, semantic; 1 Start, 2 Stop (high)
-    #[doc(hidden)]
-    pub __action: [u8; 4],
+    pub action: u32,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSLookIKNote>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSLookIKNote, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSLookIKNote, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSLookIKNote, __noteType) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSLookIKNote, __time) == 0x14);
-const _: () = assert!(core::mem::offset_of!(BSLookIKNote, __value) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSLookIKNote, __action) == 0x1C);
+const _: () = assert!(core::mem::offset_of!(BSLookIKNote, noteType) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSLookIKNote, time) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BSLookIKNote, value) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSLookIKNote, action) == 0x1C);
 
 /// `BSRagdollContactListenerModifier`: size 0x88 (exact, high); primary base `hkbModifier`.
 /// Meaning: sends contactEvent when the listed ragdoll bodies touch the environment (also an hkpContactListener) (high, ik pass).
 /// Evidence: ik pass (semantic): Reflected: hkClass object 0x3267000, parent hkbModifier, members 0x19fe780 x4, defaults none, version 0, declared enums none. vdtor 0xbb28d0 frees 0x88.; size: hkClass BSRagdollContactListenerModifier (object 0x3267000, built by 0xdd700 at 0xdd75d) objectSize = 0x88.
 /// Bases: `hkbModifier`@0x0, `hkbNode`@0x0, `hkbBindable`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0, `hkpContactListener`@0x50.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct BSRagdollContactListenerModifier {
     /// +0x0 `vtbl:BSRagdollContactListenerModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSRagdollContactListenerModifier_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -972,20 +858,16 @@ pub struct BSRagdollContactListenerModifier {
     #[doc(hidden)]
     pub __vftable_50: *const crate::raw::vtables::BSRagdollContactListenerModifier_vtable_50,
     /// +0x58 `undefined1`, base hkBaseObject, semantic; The event to send when the ragdoll collides with it's environment. (medium)
-    #[doc(hidden)]
-    pub __contactEvent: [u8; 16],
+    pub contactEvent: [u8; 16],
     /// +0x68 `ptr:hkbBoneIndexArray`, base hkBaseObject, semantic; The rigid bodies to watch for collision in the ragdoll. (medium)
-    #[doc(hidden)]
-    pub __bones: [u8; 8],
+    pub bones: *mut crate::hkbBoneIndexArray,
     /// +0x70 `u8`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __throwEvent: [u8; 1],
-    unknown_71: [u8; 3],
+    pub throwEvent: u8,
+    pub unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base hkBaseObject
     pub field_74: u32,
     /// +0x78 `undefined1`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __ragdollRigidBodies: [u8; 16],
+    pub ragdollRigidBodies: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1005,11 +887,11 @@ const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, fi
 const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, field_4C) == 0x4C);
 const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, __vftable_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, __contactEvent) == 0x58);
-const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, __bones) == 0x68);
-const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, __throwEvent) == 0x70);
+const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, contactEvent) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, bones) == 0x68);
+const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, throwEvent) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, __ragdollRigidBodies) == 0x78);
+const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, ragdollRigidBodies) == 0x78);
 
 /// `BSSpeedSamplerModifier`: size 0x60 (exact, high); primary base `hkbModifier`.
 /// Meaning: writes speedOut (FLAG_OUTPUT), bound to SpeedSampled / HorseSpeedSampled (high, ik pass).
@@ -1021,82 +903,69 @@ pub struct BSSpeedSamplerModifier {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSSpeedSamplerModifier_vtable,
     /// +0x8 `u16`, base hkbBindable, semantic; 0 = static / not counted (add and remove do nothing) (high)
-    #[doc(hidden)]
-    pub __memSizeAndFlags: [u8; 2],
+    pub memSizeAndFlags: u16,
     /// +0xA `i16`, semantic; reference count (high)
     #[doc(hidden)]
     pub __referenceCount: [u8; 2],
     unknown_C: [u8; 4],
     /// +0x10 `ptr:hkbVariableBindingSet`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __variableBindingSet: [u8; 8],
+    pub variableBindingSet: *mut crate::hkbVariableBindingSet,
     /// +0x18 `undefined1`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __cachedBindables: [u8; 16],
+    pub cachedBindables: [u8; 16],
     /// +0x28 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __areBindablesCached: [u8; 1],
+    pub areBindablesCached: u8,
     unknown_29: [u8; 7],
     /// +0x30 `u64`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __userData: [u8; 8],
+    pub userData: u64,
     /// +0x38 `undefined1`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __name: [u8; 8],
+    pub name: [u8; 8],
     /// +0x40 `i16`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __id: [u8; 2],
+    pub id: u16,
     /// +0x42 `u8`, semantic (high)
-    #[doc(hidden)]
-    pub __cloneState: [u8; 1],
+    pub cloneState: u8,
     /// +0x43 `u8`, semantic (high)
     #[doc(hidden)]
     pub __padNode: [u8; 1],
     /// +0x44 `undefined4`, base hkBaseObject
     pub field_44: u32,
     /// +0x48 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __enable: [u8; 1],
+    pub enable: u8,
     /// +0x49 `u8`, semantic (high)
     #[doc(hidden)]
     pub __padModifier: [u8; 3],
     /// +0x4C `undefined4`, base hkBaseObject
     pub field_4C: u32,
     /// +0x50 `i32`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __state: [u8; 4],
+    pub state: u32,
     /// +0x54 `float`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __direction: [u8; 4],
+    pub direction: f32,
     /// +0x58 `float`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __goalSpeed: [u8; 4],
+    pub goalSpeed: f32,
     /// +0x5C `float`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __speedOut: [u8; 4],
+    pub speedOut: f32,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSSpeedSamplerModifier>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __memSizeAndFlags) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, memSizeAndFlags) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __referenceCount) == 0xA);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __variableBindingSet) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __cachedBindables) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __areBindablesCached) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __userData) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __name) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __id) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __cloneState) == 0x42);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, variableBindingSet) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, cachedBindables) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, areBindablesCached) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, userData) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, name) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, id) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, cloneState) == 0x42);
 const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __padNode) == 0x43);
 const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __enable) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, enable) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __padModifier) == 0x49);
 const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __state) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __direction) == 0x54);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __goalSpeed) == 0x58);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __speedOut) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, state) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, direction) == 0x54);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, goalSpeed) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, speedOut) == 0x5C);
 
 /// `ExtraHeadTrackingWeight`: size 0x18 (exact, medium); primary base `BSExtraData`.
 /// Meaning: reference extra data 0x94: a head tracking weight (high, ik pass).
@@ -1608,8 +1477,7 @@ const _: () = assert!(core::mem::offset_of!(bhkRagdollController, field_396) == 
 #[repr(C, align(8))]
 pub struct hkClass {
     /// +0x0 `pointer`, semantic; class name (char*) (high)
-    #[doc(hidden)]
-    pub __name: [u8; 8],
+    pub name: *mut c_void,
     /// +0x8 `ptr:hkClass`, semantic; parent class record (0 for roots) (high)
     #[doc(hidden)]
     pub __parent: [u8; 8],
@@ -1649,7 +1517,7 @@ pub struct hkClass {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkClass>() == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkClass, __name) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkClass, name) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkClass, __parent) == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkClass, __objectSize) == 0x10);
 const _: () = assert!(core::mem::offset_of!(hkClass, __numInterfaces) == 0x14);
@@ -1772,11 +1640,9 @@ pub struct hkaFootPlacementIkSolver {
     pub field_8: u32,
     unknown_C: [u8; 4],
     /// +0x10 `ptr:hkaSkeleton`, base hkBaseObject, semantic; setup +0 (high)
-    #[doc(hidden)]
-    pub __skeleton: [u8; 8],
+    pub skeleton: *mut crate::hkaSkeleton,
     /// +0x18 `i16`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __hipIndex: [u8; 2],
+    pub hipIndex: u16,
     /// +0x1A `i16`, semantic (high)
     #[doc(hidden)]
     pub __kneeIndex: [u8; 2],
@@ -1785,65 +1651,48 @@ pub struct hkaFootPlacementIkSolver {
     pub __ankleIndex: [u8; 2],
     unknown_1E: [u8; 2],
     /// +0x20 `class:hkVector4`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __kneeAxisLS: [u8; 16],
+    pub kneeAxisLS: crate::hkVector4,
     /// +0x30 `class:hkVector4`, base hkBaseObject, semantic; toe point in ankle space, pre-scaled (high)
-    #[doc(hidden)]
-    pub __footEndLS: [u8; 16],
+    pub footEndLS: crate::hkVector4,
     /// +0x40 `class:hkVector4`, base hkBaseObject, semantic; ray direction; rewritten by Run every frame (high)
-    #[doc(hidden)]
-    pub __worldUpWS: [u8; 16],
+    pub worldUpWS: crate::hkVector4,
     /// +0x50 `class:hkVector4`, base hkBaseObject, semantic; height axis in model space (high)
-    #[doc(hidden)]
-    pub __modelUpMS: [u8; 16],
+    pub modelUpMS: crate::hkVector4,
     /// +0x60 `float`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __originalGroundHeightMS: [u8; 4],
+    pub originalGroundHeightMS: f32,
     /// +0x64 `float`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __footPlantedAnkleHeightMS: [u8; 4],
+    pub footPlantedAnkleHeightMS: f32,
     /// +0x68 `float`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __footRaisedAnkleHeightMS: [u8; 4],
+    pub footRaisedAnkleHeightMS: f32,
     /// +0x6C `float`, base hkBaseObject, semantic; clamp of the target (high)
-    #[doc(hidden)]
-    pub __maxAnkleHeightMS: [u8; 4],
+    pub maxAnkleHeightMS: f32,
     /// +0x70 `float`, base hkBaseObject, semantic; below it the hit is rejected (high)
-    #[doc(hidden)]
-    pub __minAnkleHeightMS: [u8; 4],
+    pub minAnkleHeightMS: f32,
     /// +0x74 `float`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __cosineMaxKneeAngle: [u8; 4],
+    pub cosineMaxKneeAngle: f32,
     /// +0x78 `float`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __cosineMinKneeAngle: [u8; 4],
+    pub cosineMinKneeAngle: f32,
     /// +0x7C `float`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __raycastDistanceUp: [u8; 4],
+    pub raycastDistanceUp: f32,
     /// +0x80 `float`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __raycastDistanceDown: [u8; 4],
+    pub raycastDistanceDown: f32,
     /// +0x84 `u8`, base hkBaseObject, semantic; info lockFeetWhenPlanted (high)
-    #[doc(hidden)]
-    pub __useFootLocking: [u8; 1],
+    pub useFootLocking: u8,
     unknown_85: [u8; 3],
     /// +0x88 `undefined4`, base hkBaseObject
     pub field_88: u32,
     /// +0x8C `undefined4`, base hkBaseObject
     pub field_8C: u32,
     /// +0x90 `float`, base hkBaseObject, semantic; on/off weight, eased by onOffGain toward 1 on a hit, 0 otherwise; scales the leg IK and the ankle rotation (high)
-    #[doc(hidden)]
-    pub __currentWeight: [u8; 4],
+    pub currentWeight: f32,
     /// +0x94 `float`, base hkBaseObject, semantic; smoothed ground height along up (high)
-    #[doc(hidden)]
-    pub __previousGroundHeightWS: [u8; 4],
+    pub previousGroundHeightWS: f32,
     /// +0x98 `undefined4`, base hkBaseObject
     pub field_98: u32,
     /// +0x9C `undefined4`, base hkBaseObject
     pub field_9C: u32,
     /// +0xA0 `class:hkVector4`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __previousGroundNormalWS: [u8; 16],
+    pub previousGroundNormalWS: crate::hkVector4,
     /// +0xB0 `float`, base hkBaseObject, semantic; ankle offset along model up (medium)
     #[doc(hidden)]
     pub __previousVerticalDisplacement: [u8; 4],
@@ -1858,48 +1707,46 @@ pub struct hkaFootPlacementIkSolver {
     #[doc(hidden)]
     pub __lockedAnkleWS: [u8; 16],
     /// +0xD0 `class:hkVector4`, semantic (high)
-    #[doc(hidden)]
-    pub __lockedFootEndWS: [u8; 16],
+    pub lockedFootEndWS: crate::hkVector4,
     /// +0xE0 `class:hkVector4`, semantic; decays by (1 - footUnlockGain) per frame after unlocking (high)
-    #[doc(hidden)]
-    pub __unlockOffsetWS: [u8; 16],
+    pub unlockOffsetWS: crate::hkVector4,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkaFootPlacementIkSolver>() == 0xF0);
 const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __skeleton) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __hipIndex) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, skeleton) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, hipIndex) == 0x18);
 const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __kneeIndex) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __ankleIndex) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __kneeAxisLS) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __footEndLS) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __worldUpWS) == 0x40);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __modelUpMS) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __originalGroundHeightMS) == 0x60);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __footPlantedAnkleHeightMS) == 0x64);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __footRaisedAnkleHeightMS) == 0x68);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __maxAnkleHeightMS) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __minAnkleHeightMS) == 0x70);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __cosineMaxKneeAngle) == 0x74);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __cosineMinKneeAngle) == 0x78);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __raycastDistanceUp) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __raycastDistanceDown) == 0x80);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __useFootLocking) == 0x84);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, kneeAxisLS) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, footEndLS) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, worldUpWS) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, modelUpMS) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, originalGroundHeightMS) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, footPlantedAnkleHeightMS) == 0x64);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, footRaisedAnkleHeightMS) == 0x68);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, maxAnkleHeightMS) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, minAnkleHeightMS) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, cosineMaxKneeAngle) == 0x74);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, cosineMinKneeAngle) == 0x78);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, raycastDistanceUp) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, raycastDistanceDown) == 0x80);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, useFootLocking) == 0x84);
 const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, field_8C) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __currentWeight) == 0x90);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __previousGroundHeightWS) == 0x94);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, currentWeight) == 0x90);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, previousGroundHeightWS) == 0x94);
 const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, field_98) == 0x98);
 const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, field_9C) == 0x9C);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __previousGroundNormalWS) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, previousGroundNormalWS) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __previousVerticalDisplacement) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __isFootLocked) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __field_B8) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __lockedAnkleWS) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __lockedFootEndWS) == 0xD0);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, __unlockOffsetWS) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, lockedFootEndWS) == 0xD0);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver, unlockOffsetWS) == 0xE0);
 
 /// `hkaFootPlacementIkSolver::Input`: size 0x98 (exact).
 /// Meaning: per-frame solver input (stack struct) (high, ik pass).
@@ -1910,36 +1757,27 @@ pub struct hkaFootPlacementIkSolver__Input {
     #[doc(hidden)]
     pub __originalAnkleTransformMS: [u8; 48],
     /// +0x30 `class:hkQsTransform`, semantic (high)
-    #[doc(hidden)]
-    pub __worldFromModel: [u8; 48],
+    pub worldFromModel: crate::hkQsTransform,
     /// +0x60 `u8`, semantic; 0 skips the rays and fades out (high)
-    #[doc(hidden)]
-    pub __footIkOn: [u8; 1],
+    pub footIkOn: u8,
     unknown_61: [u8; 7],
     /// +0x68 `ptr:hkaRaycastInterface`, semantic (high)
     #[doc(hidden)]
     pub __raycastInterface: [u8; 8],
     /// +0x70 `float`, semantic (high)
-    #[doc(hidden)]
-    pub __onOffGain: [u8; 4],
+    pub onOffGain: f32,
     /// +0x74 `float`, semantic (high)
-    #[doc(hidden)]
-    pub __groundAscendingGain: [u8; 4],
+    pub groundAscendingGain: f32,
     /// +0x78 `float`, semantic (high)
-    #[doc(hidden)]
-    pub __groundDescendingGain: [u8; 4],
+    pub groundDescendingGain: f32,
     /// +0x7C `float`, semantic (high)
-    #[doc(hidden)]
-    pub __footPlantedGain: [u8; 4],
+    pub footPlantedGain: f32,
     /// +0x80 `float`, semantic (high)
-    #[doc(hidden)]
-    pub __footRaisedGain: [u8; 4],
+    pub footRaisedGain: f32,
     /// +0x84 `float`, semantic (high)
-    #[doc(hidden)]
-    pub __footUnlockGain: [u8; 4],
+    pub footUnlockGain: f32,
     /// +0x88 `float`, semantic; gains +0x28 (not time-scaled) (medium)
-    #[doc(hidden)]
-    pub __maxKneeAngleDifference: [u8; 4],
+    pub maxKneeAngleDifference: f32,
     /// +0x8C `u32`, semantic (high)
     #[doc(hidden)]
     pub __collisionFilterInfo: [u8; 4],
@@ -1952,16 +1790,16 @@ pub struct hkaFootPlacementIkSolver__Input {
 }
 const _: () = assert!(size_of::<hkaFootPlacementIkSolver__Input>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Input, __originalAnkleTransformMS) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Input, __worldFromModel) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Input, __footIkOn) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Input, worldFromModel) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Input, footIkOn) == 0x60);
 const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Input, __raycastInterface) == 0x68);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Input, __onOffGain) == 0x70);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Input, __groundAscendingGain) == 0x74);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Input, __groundDescendingGain) == 0x78);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Input, __footPlantedGain) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Input, __footRaisedGain) == 0x80);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Input, __footUnlockGain) == 0x84);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Input, __maxKneeAngleDifference) == 0x88);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Input, onOffGain) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Input, groundAscendingGain) == 0x74);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Input, groundDescendingGain) == 0x78);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Input, footPlantedGain) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Input, footRaisedGain) == 0x80);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Input, footUnlockGain) == 0x84);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Input, maxKneeAngleDifference) == 0x88);
 const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Input, __collisionFilterInfo) == 0x8C);
 const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Input, __useCollisionFilterInfo) == 0x90);
 
@@ -1977,8 +1815,7 @@ pub struct hkaFootPlacementIkSolver__Output {
     #[doc(hidden)]
     pub __verticalError: [u8; 4],
     /// +0x14 `u8`, semantic (high)
-    #[doc(hidden)]
-    pub __hitSomething: [u8; 1],
+    pub hitSomething: u8,
     unknown_15: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -1986,7 +1823,7 @@ pub struct hkaFootPlacementIkSolver__Output {
 const _: () = assert!(size_of::<hkaFootPlacementIkSolver__Output>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Output, __groundNormalWS) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Output, __verticalError) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Output, __hitSomething) == 0x14);
+const _: () = assert!(core::mem::offset_of!(hkaFootPlacementIkSolver__Output, hitSomething) == 0x14);
 
 /// `hkaFootPlacementIkSolver::Setup`: size 0x80 (exact).
 /// Meaning: solver setup (stack struct of the setup functions; no RTTI) (high, ik pass).
@@ -2061,36 +1898,32 @@ const _: () = assert!(core::mem::offset_of!(hkaKeyFrameHierarchyUtilityControlDa
 /// Meaning: ragdoll bodies, constraints, bone->body map and skeleton (high, ik pass).
 /// Evidence: ik pass (semantic): Reflected: hkClass object 0x3270700, parent hkReferencedObject, members 0x1a0c2b0 x4, defaults none, version 0, declared enums none. vdtor 0xbf53e0 frees 0x48.; size: hkClass hkaRagdollInstance (object 0x3270700, built by 0xdfa60 at 0xdfab7) objectSize = 0x48.
 /// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct hkaRagdollInstance {
     /// +0x0 `vtbl:hkaRagdollInstance:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkaRagdollInstance_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __rigidBodies: [u8; 16],
+    pub rigidBodies: [u8; 16],
     /// +0x20 `undefined1`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __constraints: [u8; 16],
+    pub constraints: [u8; 16],
     /// +0x30 `undefined1`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __boneToRigidBodyMap: [u8; 16],
+    pub boneToRigidBodyMap: [u8; 16],
     /// +0x40 `ptr:hkaSkeleton`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __skeleton: [u8; 8],
+    pub skeleton: *mut crate::hkaSkeleton,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkaRagdollInstance>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(hkaRagdollInstance, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkaRagdollInstance, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(hkaRagdollInstance, __rigidBodies) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkaRagdollInstance, __constraints) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkaRagdollInstance, __boneToRigidBodyMap) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkaRagdollInstance, __skeleton) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkaRagdollInstance, rigidBodies) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkaRagdollInstance, constraints) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkaRagdollInstance, boneToRigidBodyMap) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkaRagdollInstance, skeleton) == 0x40);
 
 /// `hkaRagdollRaycastInterface`: size 0x8 (exact, medium).
 /// Meaning: ragdoll ray cast interface (embedded in bhkRagdollPenetrationUtil, whose dtor 0x105e870 rewrites this vtable) (medium, ik pass).
@@ -2124,14 +1957,14 @@ const _: () = assert!(core::mem::offset_of!(hkaRaycastInterface, __vftable) == 0
 /// Meaning: bindable array of bone indices (high, ik pass).
 /// Evidence: ik pass (semantic): Reflected: hkClass object 0x325bef0, parent hkbBindable, members 0x19c1578 x1, defaults none, version 0, declared enums none. Reflection only.; size: hkClass hkbBoneIndexArray (object 0x325bef0, built by 0xcd6b0 at 0xcd707) objectSize = 0x40.
 /// Bases: `hkbBindable`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct hkbBoneIndexArray {
     /// +0x0 `vtbl:hkbBoneIndexArray:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkbBoneIndexArray_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -2141,8 +1974,7 @@ pub struct hkbBoneIndexArray {
     /// +0x28 `undefined8`, base hkBaseObject
     pub m_hkpRayCollidableFilter_28: u64,
     /// +0x30 `undefined1`, base hkBaseObject, semantic; A list of bone indices. (medium)
-    #[doc(hidden)]
-    pub __boneIndices: [u8; 16],
+    pub boneIndices: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2153,20 +1985,20 @@ const _: () = assert!(core::mem::offset_of!(hkbBoneIndexArray, m_hkpCollidableCo
 const _: () = assert!(core::mem::offset_of!(hkbBoneIndexArray, m_hkpShapeCollectionFilter_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(hkbBoneIndexArray, m_hkpRayShapeCollectionFilter_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(hkbBoneIndexArray, m_hkpRayCollidableFilter_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkbBoneIndexArray, __boneIndices) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbBoneIndexArray, boneIndices) == 0x30);
 
 /// `hkbBoneWeightArray`: size 0x40 (exact, high); primary base `hkbBindable`.
 /// Meaning: bindable array of per-bone weights (high, ik pass).
 /// Evidence: ik pass (semantic): Reflected: hkClass object 0x325bf70, parent hkbBindable, members 0x19c49f8 x1, defaults none, version 0, declared enums none. RTTI not in the task list; reflection only.; size: hkClass hkbBoneWeightArray (object 0x325bf70, built by 0xcd780 at 0xcd7d7) objectSize = 0x40.
 /// Bases: `hkbBindable`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct hkbBoneWeightArray {
     /// +0x0 `vtbl:hkbBoneWeightArray:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkbBoneWeightArray_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -2176,8 +2008,7 @@ pub struct hkbBoneWeightArray {
     /// +0x28 `undefined8`, base hkBaseObject
     pub m_hkpRayCollidableFilter_28: u64,
     /// +0x30 `undefined1`, base hkBaseObject, semantic; A weight for each bone. If the list is too short, missing bones are assumed to have weight 1. (medium)
-    #[doc(hidden)]
-    pub __boneWeights: [u8; 16],
+    pub boneWeights: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2188,7 +2019,7 @@ const _: () = assert!(core::mem::offset_of!(hkbBoneWeightArray, m_hkpCollidableC
 const _: () = assert!(core::mem::offset_of!(hkbBoneWeightArray, m_hkpShapeCollectionFilter_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(hkbBoneWeightArray, m_hkpRayShapeCollectionFilter_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(hkbBoneWeightArray, m_hkpRayCollidableFilter_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkbBoneWeightArray, __boneWeights) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbBoneWeightArray, boneWeights) == 0x30);
 
 /// `hkbCharacterData`: size 0xB0 (exact, high); primary base `hkReferencedObject`.
 /// Meaning: character data: model axes, foot/hand IK driver infos, scale (high, ik pass).
@@ -2207,49 +2038,35 @@ pub struct hkbCharacterData {
     pub __referenceCount: [u8; 2],
     unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __characterControllerInfo: [u8; 24],
+    pub characterControllerInfo: [u8; 24],
     /// +0x28 `undefined8`, base hkBaseObject
     pub m_hkpRayCollidableFilter_28: u64,
     /// +0x30 `class:hkVector4`, base hkBaseObject, semantic; reflected member (no description in the binary) (high)
-    #[doc(hidden)]
-    pub __modelUpMS: [u8; 16],
+    pub modelUpMS: crate::hkVector4,
     /// +0x40 `class:hkVector4`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __modelForwardMS: [u8; 16],
+    pub modelForwardMS: crate::hkVector4,
     /// +0x50 `class:hkVector4`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __modelRightMS: [u8; 16],
+    pub modelRightMS: crate::hkVector4,
     /// +0x60 `undefined1`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __characterPropertyInfos: [u8; 16],
+    pub characterPropertyInfos: [u8; 16],
     /// +0x70 `undefined1`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __numBonesPerLod: [u8; 16],
+    pub numBonesPerLod: [u8; 16],
     /// +0x80 `ptr:hkbVariableValueSet`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __characterPropertyValues: [u8; 8],
+    pub characterPropertyValues: *mut crate::hkbVariableValueSet,
     /// +0x88 `ptr:hkbFootIkDriverInfo`, base hkBaseObject, semantic, runtime; reflected member (no description in the binary) (high)
-    #[doc(hidden)]
-    pub __footIkDriverInfo: [u8; 8],
+    pub footIkDriverInfo: *mut crate::hkbFootIkDriverInfo,
     /// +0x90 `ptr:hkbHandIkDriverInfo`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __handIkDriverInfo: [u8; 8],
+    pub handIkDriverInfo: *mut crate::hkbHandIkDriverInfo,
     /// +0x98 `ptr:hkbCharacterStringData`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __stringData: [u8; 8],
+    pub stringData: *mut crate::hkbCharacterStringData,
     /// +0xA0 `ptr:hkbMirroredSkeletonInfo`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __mirroredSkeletonInfo: [u8; 8],
+    pub mirroredSkeletonInfo: *mut crate::hkbMirroredSkeletonInfo,
     /// +0xA8 `float`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __scale: [u8; 4],
+    pub scale: f32,
     /// +0xAC `i16`, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __numHands: [u8; 2],
+    pub numHands: u16,
     /// +0xAE `i16`, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __numFloatSlots: [u8; 2],
+    pub numFloatSlots: u16,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2257,21 +2074,21 @@ const _: () = assert!(size_of::<hkbCharacterData>() == 0xB0);
 const _: () = assert!(core::mem::offset_of!(hkbCharacterData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkbCharacterData, __memSizeAndFlags) == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkbCharacterData, __referenceCount) == 0xA);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterData, __characterControllerInfo) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterData, characterControllerInfo) == 0x10);
 const _: () = assert!(core::mem::offset_of!(hkbCharacterData, m_hkpRayCollidableFilter_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterData, __modelUpMS) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterData, __modelForwardMS) == 0x40);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterData, __modelRightMS) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterData, __characterPropertyInfos) == 0x60);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterData, __numBonesPerLod) == 0x70);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterData, __characterPropertyValues) == 0x80);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterData, __footIkDriverInfo) == 0x88);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterData, __handIkDriverInfo) == 0x90);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterData, __stringData) == 0x98);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterData, __mirroredSkeletonInfo) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterData, __scale) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterData, __numHands) == 0xAC);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterData, __numFloatSlots) == 0xAE);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterData, modelUpMS) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterData, modelForwardMS) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterData, modelRightMS) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterData, characterPropertyInfos) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterData, numBonesPerLod) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterData, characterPropertyValues) == 0x80);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterData, footIkDriverInfo) == 0x88);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterData, handIkDriverInfo) == 0x90);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterData, stringData) == 0x98);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterData, mirroredSkeletonInfo) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterData, scale) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterData, numHands) == 0xAC);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterData, numFloatSlots) == 0xAE);
 
 /// `hkbCharacterSetup`: size 0x58 (exact, high); primary base `hkReferencedObject`.
 /// Meaning: character setup: skeletons, mappers, character data (high, ik pass).
@@ -2283,96 +2100,84 @@ pub struct hkbCharacterSetup {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkbCharacterSetup_vtable,
     /// +0x8 `u16`, semantic; 0 = static / not counted (add and remove do nothing) (high)
-    #[doc(hidden)]
-    pub __memSizeAndFlags: [u8; 2],
+    pub memSizeAndFlags: u16,
     /// +0xA `i16`, semantic; reference count (high)
     #[doc(hidden)]
     pub __referenceCount: [u8; 2],
     unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __retargetingSkeletonMappers: [u8; 16],
+    pub retargetingSkeletonMappers: [u8; 16],
     /// +0x20 `ptr:hkaSkeleton`, base hkBaseObject, semantic, runtime; reflected member (no description in the binary) (high)
-    #[doc(hidden)]
-    pub __animationSkeleton: [u8; 8],
+    pub animationSkeleton: *mut crate::hkaSkeleton,
     /// +0x28 `ptr:hkaSkeletonMapper`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __ragdollToAnimationSkeletonMapper: [u8; 8],
+    pub ragdollToAnimationSkeletonMapper: *mut crate::hkaSkeletonMapper,
     /// +0x30 `ptr:hkaSkeletonMapper`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __animationToRagdollSkeletonMapper: [u8; 8],
+    pub animationToRagdollSkeletonMapper: *mut crate::hkaSkeletonMapper,
     /// +0x38 `pointer`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __animationBindingSet: [u8; 8],
+    pub animationBindingSet: *mut c_void,
     /// +0x40 `ptr:hkbCharacterData`, base hkBaseObject, semantic, runtime; reflected member (no description in the binary) (high)
-    #[doc(hidden)]
-    pub __data: [u8; 8],
+    pub data: *mut crate::hkbCharacterData,
     /// +0x48 `pointer`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __mirroredSkeleton: [u8; 8],
+    pub mirroredSkeleton: *mut c_void,
     /// +0x50 `pointer`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __characterPropertyIdMap: [u8; 8],
+    pub characterPropertyIdMap: *mut c_void,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbCharacterSetup>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(hkbCharacterSetup, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterSetup, __memSizeAndFlags) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterSetup, memSizeAndFlags) == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkbCharacterSetup, __referenceCount) == 0xA);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterSetup, __retargetingSkeletonMappers) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterSetup, __animationSkeleton) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterSetup, __ragdollToAnimationSkeletonMapper) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterSetup, __animationToRagdollSkeletonMapper) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterSetup, __animationBindingSet) == 0x38);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterSetup, __data) == 0x40);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterSetup, __mirroredSkeleton) == 0x48);
-const _: () = assert!(core::mem::offset_of!(hkbCharacterSetup, __characterPropertyIdMap) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterSetup, retargetingSkeletonMappers) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterSetup, animationSkeleton) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterSetup, ragdollToAnimationSkeletonMapper) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterSetup, animationToRagdollSkeletonMapper) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterSetup, animationBindingSet) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterSetup, data) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterSetup, mirroredSkeleton) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterSetup, characterPropertyIdMap) == 0x50);
 
 /// `hkbDefaultRaycastInterface`: size 0x28 (exact, high); primary base `hkReferencedObject`.
 /// Meaning: Havok's default raycast interface over an hkpWorld (hkbWorld's) (high, ik pass).
 /// Evidence: ik pass (semantic): ctor 0xb2a650, called only by hkbWorld::ctor 0xad8ca0 (stored as hkbWorld+0x148, which GetCharacterRaycastInterface 0xad7f70 returns when hkbCharacter+0x70 is null and +0x78 is set). Secondary vtable (hkaRaycastInterface) at +0x10: slot 1 0xb2a690 casts with hkpClosestRayHitCollector through 0xb599e0 ('TtworldCastRay') on world +0x18, rejects hits whose normal . up < +0x20 (cos of a max slope), and for shapes of type 0xb subtracts the shape radius from the fraction. Secondary vtable at +0x10: 0x19e56a8, slots 0xb2a998, 0xb2a690, 0xa9dc40.; size: vdtor 0xb2a9b0 frees 0x28.
 /// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0, `hkaRaycastInterface`@0x10.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct hkbDefaultRaycastInterface {
     /// +0x0 `vtbl:hkbDefaultRaycastInterface:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkbDefaultRaycastInterface_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `pointer`, semantic; secondary vtable 0x19e56a8 (high)
-    #[doc(hidden)]
-    pub __hkaRaycastInterface: [u8; 8],
+    pub hkaRaycastInterface: *mut c_void,
     /// +0x18 `pointer`, base hkBaseObject, semantic; hkpWorld (medium)
-    #[doc(hidden)]
-    pub __world: [u8; 8],
+    pub world: *mut c_void,
     /// +0x20 `float`, base hkBaseObject, semantic; hits with normal . up below this are rejected (when > 0) (medium)
-    #[doc(hidden)]
-    pub __minNormalUpDot: [u8; 4],
-    unknown_24: [u8; 4],
+    pub minNormalUpDot: f32,
+    pub unknown_24: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbDefaultRaycastInterface>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(hkbDefaultRaycastInterface, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkbDefaultRaycastInterface, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(hkbDefaultRaycastInterface, __hkaRaycastInterface) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkbDefaultRaycastInterface, __world) == 0x18);
-const _: () = assert!(core::mem::offset_of!(hkbDefaultRaycastInterface, __minNormalUpDot) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbDefaultRaycastInterface, hkaRaycastInterface) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbDefaultRaycastInterface, world) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkbDefaultRaycastInterface, minNormalUpDot) == 0x20);
 
 /// `hkbDetectCloseToGroundModifier`: size 0x78 (exact, high); primary base `hkbModifier`.
 /// Meaning: sends an event when a bone is within closeToGroundHeight of the ground (ray cast down) (high, ik pass).
 /// Evidence: ik pass (semantic): Reflected: hkClass object 0x325dd90, parent hkbModifier, members 0x19cdff0 x7, defaults 0x19c1540, version 2, declared enums none. vdtor 0xae2d10 frees 0x78.; size: hkClass hkbDetectCloseToGroundModifier (object 0x325dd90, built by 0xcef00 at 0xcef62) objectSize = 0x78.
 /// Bases: `hkbModifier`@0x0, `hkbNode`@0x0, `hkbBindable`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct hkbDetectCloseToGroundModifier {
     /// +0x0 `vtbl:hkbDetectCloseToGroundModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkbDetectCloseToGroundModifier_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -2398,27 +2203,20 @@ pub struct hkbDetectCloseToGroundModifier {
     /// +0x4C `undefined4`, base hkBaseObject
     pub field_4C: u32,
     /// +0x50 `undefined1`, base hkBaseObject, semantic; Event to send when the bone is below the m_closeToGroundHeight. (medium)
-    #[doc(hidden)]
-    pub __closeToGroundEvent: [u8; 16],
+    pub closeToGroundEvent: [u8; 16],
     /// +0x60 `float`, base hkBaseObject, semantic; If the specified bone is below this height it is considered to be close to the ground. (medium)
-    #[doc(hidden)]
-    pub __closeToGroundHeight: [u8; 4],
+    pub closeToGroundHeight: f32,
     /// +0x64 `float`, base hkBaseObject, semantic; When ray casting from the bone towards the ground, the distance below the bone where the ray ends. (medium)
-    #[doc(hidden)]
-    pub __raycastDistanceDown: [u8; 4],
+    pub raycastDistanceDown: f32,
     /// +0x68 `u32`, base hkBaseObject, semantic; The collision filter info to use when raycasting the ground.  Normally, you should set this to a layer that collides with your ground terrain. (medium)
-    #[doc(hidden)]
-    pub __collisionFilterInfo: [u8; 4],
+    pub collisionFilterInfo: u32,
     /// +0x6C `i16`, base hkBaseObject, semantic; The bone used to cast ray for determining the ground height. (medium)
-    #[doc(hidden)]
-    pub __boneIndex: [u8; 2],
+    pub boneIndex: u16,
     /// +0x6E `i16`, semantic; The bone used to cast ray for determining the ground height. (medium)
-    #[doc(hidden)]
-    pub __animBoneIndex: [u8; 2],
+    pub animBoneIndex: u16,
     /// +0x70 `u8`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __isCloseToGround: [u8; 1],
-    unknown_71: [u8; 3],
+    pub isCloseToGround: u8,
+    pub unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base hkBaseObject
     pub field_74: u32,
     #[doc(hidden)]
@@ -2439,48 +2237,47 @@ const _: () = assert!(core::mem::offset_of!(hkbDetectCloseToGroundModifier, fiel
 const _: () = assert!(core::mem::offset_of!(hkbDetectCloseToGroundModifier, field_44) == 0x44);
 const _: () = assert!(core::mem::offset_of!(hkbDetectCloseToGroundModifier, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(hkbDetectCloseToGroundModifier, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(hkbDetectCloseToGroundModifier, __closeToGroundEvent) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkbDetectCloseToGroundModifier, __closeToGroundHeight) == 0x60);
-const _: () = assert!(core::mem::offset_of!(hkbDetectCloseToGroundModifier, __raycastDistanceDown) == 0x64);
-const _: () = assert!(core::mem::offset_of!(hkbDetectCloseToGroundModifier, __collisionFilterInfo) == 0x68);
-const _: () = assert!(core::mem::offset_of!(hkbDetectCloseToGroundModifier, __boneIndex) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(hkbDetectCloseToGroundModifier, __animBoneIndex) == 0x6E);
-const _: () = assert!(core::mem::offset_of!(hkbDetectCloseToGroundModifier, __isCloseToGround) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkbDetectCloseToGroundModifier, closeToGroundEvent) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbDetectCloseToGroundModifier, closeToGroundHeight) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkbDetectCloseToGroundModifier, raycastDistanceDown) == 0x64);
+const _: () = assert!(core::mem::offset_of!(hkbDetectCloseToGroundModifier, collisionFilterInfo) == 0x68);
+const _: () = assert!(core::mem::offset_of!(hkbDetectCloseToGroundModifier, boneIndex) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(hkbDetectCloseToGroundModifier, animBoneIndex) == 0x6E);
+const _: () = assert!(core::mem::offset_of!(hkbDetectCloseToGroundModifier, isCloseToGround) == 0x70);
 const _: () = assert!(core::mem::offset_of!(hkbDetectCloseToGroundModifier, field_74) == 0x74);
 
 /// `hkbDetectCloseToGroundModifierInternalState`: size 0x18 (exact, high); primary base `hkReferencedObject`.
 /// Meaning: saved state (high, ik pass).
 /// Evidence: ik pass (semantic): Reflected: hkClass object 0x325de10, parent hkReferencedObject, members 0x19c4a38 x1, defaults none, version 0, declared enums none. vdtor 0xae2db0 frees 0x18.; size: hkClass hkbDetectCloseToGroundModifierInternalState (object 0x325de10, built by 0xcef70 at 0xcefc7) objectSize = 0x18.
 /// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct hkbDetectCloseToGroundModifierInternalState {
     /// +0x0 `vtbl:hkbDetectCloseToGroundModifierInternalState:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkbDetectCloseToGroundModifierInternalState_vtable,
-    unknown_8: [u8; 8],
+    pub unknown_8: [u8; 8],
     /// +0x10 `u8`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __isCloseToGround: [u8; 1],
-    unknown_11: [u8; 7],
+    pub isCloseToGround: u8,
+    pub unknown_11: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbDetectCloseToGroundModifierInternalState>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(hkbDetectCloseToGroundModifierInternalState, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkbDetectCloseToGroundModifierInternalState, __isCloseToGround) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbDetectCloseToGroundModifierInternalState, isCloseToGround) == 0x10);
 
 /// `hkbExtractRagdollPoseModifier`: size 0x58 (exact, high); primary base `hkbModifier`.
 /// Meaning: extracts the ragdoll pose into the animation pose (and optionally the world-from-model) (high, ik pass).
 /// Evidence: ik pass (semantic): Reflected: hkClass object 0x325eed0, parent hkbModifier, members 0x19cadd0 x4, defaults 0x19cb610, version 1, declared enums none. vdtor 0xae3630 frees 0x58.; size: hkClass hkbExtractRagdollPoseModifier (object 0x325eed0, built by 0xcfec0 at 0xcff22) objectSize = 0x58.
 /// Bases: `hkbModifier`@0x0, `hkbNode`@0x0, `hkbBindable`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct hkbExtractRagdollPoseModifier {
     /// +0x0 `vtbl:hkbExtractRagdollPoseModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkbExtractRagdollPoseModifier_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -2506,18 +2303,14 @@ pub struct hkbExtractRagdollPoseModifier {
     /// +0x4C `undefined4`, base hkBaseObject
     pub field_4C: u32,
     /// +0x50 `i16`, base hkBaseObject, semantic; A bone to use for pose matching when computing the world-from-model. (medium)
-    #[doc(hidden)]
-    pub __poseMatchingBone0: [u8; 2],
+    pub poseMatchingBone0: u16,
     /// +0x52 `i16`, semantic; A bone to use for pose matching when computing the world-from-model. (medium)
-    #[doc(hidden)]
-    pub __poseMatchingBone1: [u8; 2],
+    pub poseMatchingBone1: u16,
     /// +0x54 `i16`, base hkBaseObject, semantic; A bone to use for pose matching when computing the world-from-model. (medium)
-    #[doc(hidden)]
-    pub __poseMatchingBone2: [u8; 2],
+    pub poseMatchingBone2: u16,
     /// +0x56 `u8`, semantic; Whether to enable the computation of the world-from-model from the ragdoll pose. (medium)
-    #[doc(hidden)]
-    pub __enableComputeWorldFromModel: [u8; 1],
-    unknown_57: [u8; 1],
+    pub enableComputeWorldFromModel: u8,
+    pub unknown_57: [u8; 1],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2536,10 +2329,10 @@ const _: () = assert!(core::mem::offset_of!(hkbExtractRagdollPoseModifier, field
 const _: () = assert!(core::mem::offset_of!(hkbExtractRagdollPoseModifier, field_44) == 0x44);
 const _: () = assert!(core::mem::offset_of!(hkbExtractRagdollPoseModifier, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(hkbExtractRagdollPoseModifier, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(hkbExtractRagdollPoseModifier, __poseMatchingBone0) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkbExtractRagdollPoseModifier, __poseMatchingBone1) == 0x52);
-const _: () = assert!(core::mem::offset_of!(hkbExtractRagdollPoseModifier, __poseMatchingBone2) == 0x54);
-const _: () = assert!(core::mem::offset_of!(hkbExtractRagdollPoseModifier, __enableComputeWorldFromModel) == 0x56);
+const _: () = assert!(core::mem::offset_of!(hkbExtractRagdollPoseModifier, poseMatchingBone0) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbExtractRagdollPoseModifier, poseMatchingBone1) == 0x52);
+const _: () = assert!(core::mem::offset_of!(hkbExtractRagdollPoseModifier, poseMatchingBone2) == 0x54);
+const _: () = assert!(core::mem::offset_of!(hkbExtractRagdollPoseModifier, enableComputeWorldFromModel) == 0x56);
 
 /// `hkbFootIkControlData`: size 0x30 (exact).
 /// Meaning: controls data: the gains (high, ik pass).
@@ -2565,31 +2358,24 @@ pub struct hkbFootIkControlsModifier {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkbFootIkControlsModifier_vtable,
     /// +0x8 `u16`, base hkbBindable, semantic; 0 = static / not counted (add and remove do nothing) (high)
-    #[doc(hidden)]
-    pub __memSizeAndFlags: [u8; 2],
+    pub memSizeAndFlags: u16,
     /// +0xA `i16`, semantic; reference count (high)
     #[doc(hidden)]
     pub __referenceCount: [u8; 2],
     unknown_C: [u8; 4],
     /// +0x10 `ptr:hkbVariableBindingSet`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __variableBindingSet: [u8; 8],
+    pub variableBindingSet: *mut crate::hkbVariableBindingSet,
     /// +0x18 `undefined1`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __cachedBindables: [u8; 16],
+    pub cachedBindables: [u8; 16],
     /// +0x28 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __areBindablesCached: [u8; 1],
+    pub areBindablesCached: u8,
     unknown_29: [u8; 7],
     /// +0x30 `u64`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __userData: [u8; 8],
+    pub userData: u64,
     /// +0x38 `undefined1`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __name: [u8; 8],
+    pub name: [u8; 8],
     /// +0x40 `i16`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __id: [u8; 2],
+    pub id: u16,
     /// +0x42 `u8`, semantic (high)
     #[doc(hidden)]
     pub __cloneState: [u8; 1],
@@ -2599,135 +2385,116 @@ pub struct hkbFootIkControlsModifier {
     /// +0x44 `undefined4`, base hkBaseObject
     pub field_44: u32,
     /// +0x48 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __enable: [u8; 1],
+    pub enable: u8,
     /// +0x49 `u8`, semantic (high)
     #[doc(hidden)]
     pub __padModifier: [u8; 3],
     /// +0x4C `undefined4`, base hkBaseObject
     pub field_4C: u32,
     /// +0x50 `class:hkbFootIkControlData`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __controlData: [u8; 48],
+    pub controlData: crate::hkbFootIkControlData,
     /// +0x80 `undefined1`, base hkBaseObject, semantic; The output properties of each leg of the character. (high)
-    #[doc(hidden)]
-    pub __legs: [u8; 16],
+    pub legs: [u8; 16],
     /// +0x90 `class:hkVector4`, base hkBaseObject, semantic; This is the world space vector applied to the character world from model transform as a result of FootIK error. (medium)
-    #[doc(hidden)]
-    pub __errorOutTranslation: [u8; 16],
+    pub errorOutTranslation: crate::hkVector4,
     /// +0xA0 `class:hkQuaternion`, base hkBaseObject, semantic; The current orientation applied by the FootIK modifier to the world from model. You should bind this to a variable. (medium)
-    #[doc(hidden)]
-    pub __alignWithGroundRotation: [u8; 16],
+    pub alignWithGroundRotation: crate::hkQuaternion,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbFootIkControlsModifier>() == 0xB0);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, __memSizeAndFlags) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, memSizeAndFlags) == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, __referenceCount) == 0xA);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, __variableBindingSet) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, __cachedBindables) == 0x18);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, __areBindablesCached) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, __userData) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, __name) == 0x38);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, __id) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, variableBindingSet) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, cachedBindables) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, areBindablesCached) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, userData) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, name) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, id) == 0x40);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, __cloneState) == 0x42);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, __padNode) == 0x43);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, __enable) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, enable) == 0x48);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, __padModifier) == 0x49);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, __controlData) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, __legs) == 0x80);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, __errorOutTranslation) == 0x90);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, __alignWithGroundRotation) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, controlData) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, legs) == 0x80);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, errorOutTranslation) == 0x90);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifier, alignWithGroundRotation) == 0xA0);
 
 /// `hkbFootIkControlsModifierLeg`: size 0x30 (exact).
 /// Meaning: per-leg output of the controls modifier (0x30, the same stride as the driver's internal legs, which slots 4/5 copy into it) (high, ik pass).
 /// Evidence: per-leg output of the controls modifier (0x30, the same stride as the driver's internal legs, which slots 4/5 copy into it); Reflected: hkClass object 0x325e450, parent None, members 0x19cd7d0 x5, defaults 0x19cddb8, version 0, declared enums none. No RTTI.; size: hkClass hkbFootIkControlsModifierLeg (object 0x325e450, built by 0xd0060 at 0xd00ba) objectSize = 0x30.
-#[repr(C, align(4))]
+#[repr(C)]
 pub struct hkbFootIkControlsModifierLeg {
     /// +0x0 `class:hkVector4`, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __groundPosition: [u8; 16],
+    pub groundPosition: crate::hkVector4,
     /// +0x10 `undefined1`, semantic; This event is sent if any of the foot raycasts do not find a hit. (high)
-    #[doc(hidden)]
-    pub __ungroundedEvent: [u8; 16],
+    pub ungroundedEvent: [u8; 16],
     /// +0x20 `float`, semantic; The distance between the input foot height and the ground. (medium)
-    #[doc(hidden)]
-    pub __verticalError: [u8; 4],
+    pub verticalError: f32,
     /// +0x24 `u8`, semantic; Whether or not the ground was hit by the raycast. (high)
-    #[doc(hidden)]
-    pub __hitSomething: [u8; 1],
+    pub hitSomething: u8,
     /// +0x25 `u8`, semantic; Whether or not the foot is planted in model space in the incoming animation. If the height of the ankle goes below m_footPlantedAnkleHeightMS the foot is considered planted. (high)
-    #[doc(hidden)]
-    pub __isPlantedMS: [u8; 1],
-    unknown_26: [u8; 10],
+    pub isPlantedMS: u8,
+    pub unknown_26: [u8; 10],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbFootIkControlsModifierLeg>() == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifierLeg, __groundPosition) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifierLeg, __ungroundedEvent) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifierLeg, __verticalError) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifierLeg, __hitSomething) == 0x24);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifierLeg, __isPlantedMS) == 0x25);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifierLeg, groundPosition) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifierLeg, ungroundedEvent) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifierLeg, verticalError) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifierLeg, hitSomething) == 0x24);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkControlsModifierLeg, isPlantedMS) == 0x25);
 
 /// `hkbFootIkDriver`: size 0x50 (exact, high); primary base `hkReferencedObject`.
 /// Meaning: behaviour-graph foot IK driver (hkbCharacter+0x40 = graph+0x100) (high, ik pass).
 /// Evidence: ik pass (semantic): Corrects static-W: +0x20 errorOutTranslation (was 'scale of +0x20'), +0x30 alignWithGroundRotation (was errorOutTranslation), +0x40 vertical error.; size: fields to +0x4c (ctor 0xad21f0).
 /// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct hkbFootIkDriver {
     /// +0x0 `vtbl:hkbFootIkDriver:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkbFootIkDriver_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `pointer`, base hkBaseObject, semantic; 0x30-byte legs {data +0x10, size +0x18} (high)
-    #[doc(hidden)]
-    pub __internalLegs: [u8; 16],
+    pub internalLegs: [u8; 16],
     /// +0x20 `class:hkVector4`, base hkBaseObject, semantic; vertical error * world up; read by the feedback (high)
-    #[doc(hidden)]
-    pub __errorOutTranslation: [u8; 16],
+    pub errorOutTranslation: crate::hkVector4,
     /// +0x30 `class:hkQuaternion`, base hkBaseObject, semantic; identity each run, set by the alignment (high)
-    #[doc(hidden)]
-    pub __alignWithGroundRotation: [u8; 16],
+    pub alignWithGroundRotation: crate::hkQuaternion,
     /// +0x40 `float`, base hkBaseObject, semantic; ComputeVerticalError * worldFromModelFeedbackGain (dt-scaled), used next frame (high)
-    #[doc(hidden)]
-    pub __verticalError: [u8; 4],
+    pub verticalError: f32,
     /// +0x44 `float`, base hkBaseObject, semantic; last weight of output track 11 (high)
-    #[doc(hidden)]
-    pub __previousGainsWeight: [u8; 4],
+    pub previousGainsWeight: f32,
     /// +0x48 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __legsInitialized: [u8; 1],
+    pub legsInitialized: u8,
     /// +0x49 `u8`, semantic; set when alignWorldFromModelGain > 0 wrote leg +0; enables the alignment (high)
-    #[doc(hidden)]
-    pub __hasGroundPoints: [u8; 1],
+    pub hasGroundPoints: u8,
     /// +0x4A `u8`, semantic, runtime (high)
-    #[doc(hidden)]
-    pub __disabled: [u8; 1],
-    unknown_4B: [u8; 1],
+    pub disabled: u8,
+    pub unknown_4B: [u8; 1],
     /// +0x4C `float`, base hkBaseObject, semantic; frame delta used to scale the gains (high)
-    #[doc(hidden)]
-    pub __deltaTime: [u8; 4],
+    pub deltaTime: f32,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbFootIkDriver>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver, __internalLegs) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver, __errorOutTranslation) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver, __alignWithGroundRotation) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver, __verticalError) == 0x40);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver, __previousGainsWeight) == 0x44);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver, __legsInitialized) == 0x48);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver, __hasGroundPoints) == 0x49);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver, __disabled) == 0x4A);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver, __deltaTime) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver, internalLegs) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver, errorOutTranslation) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver, alignWithGroundRotation) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver, verticalError) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver, previousGainsWeight) == 0x44);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver, legsInitialized) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver, hasGroundPoints) == 0x49);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver, disabled) == 0x4A);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver, deltaTime) == 0x4C);
 
 /// `hkbFootIkDriverInfo`: size 0x48 (exact, high); primary base `hkReferencedObject`.
 /// Meaning: per-character foot IK data (in hkbCharacterData.footIkDriverInfo +0x88, loaded from the character's HKX) (high, ik pass).
@@ -2746,41 +2513,29 @@ pub struct hkbFootIkDriverInfo {
     pub __referenceCount: [u8; 2],
     unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base hkBaseObject, semantic, runtime; The properties of each leg of the character. (high)
-    #[doc(hidden)]
-    pub __legs: [u8; 16],
+    pub legs: [u8; 16],
     /// +0x20 `float`, base hkBaseObject, semantic, runtime; When ray casting from the foot towards the ground, the distance above the foot where the ray starts. (high)
-    #[doc(hidden)]
-    pub __raycastDistanceUp: [u8; 4],
+    pub raycastDistanceUp: f32,
     /// +0x24 `float`, semantic, runtime; When ray casting from the foot towards the ground, the distance below the foot where the ray ends. (high)
-    #[doc(hidden)]
-    pub __raycastDistanceDown: [u8; 4],
+    pub raycastDistanceDown: f32,
     /// +0x28 `float`, base hkBaseObject, semantic; The height of the ground where the model was created/animated, in model space. (high)
-    #[doc(hidden)]
-    pub __originalGroundHeightMS: [u8; 4],
+    pub originalGroundHeightMS: f32,
     /// +0x2C `float`, semantic; The extra vertical distance the character is offset during IK.  Useful for crouching the character. (high)
-    #[doc(hidden)]
-    pub __verticalOffset: [u8; 4],
+    pub verticalOffset: f32,
     /// +0x30 `u32`, base hkBaseObject, semantic; The collision filter info to use when raycasting the ground.  Normally, you should set this to a layer that collides with your ground terrain. (high)
-    #[doc(hidden)]
-    pub __collisionFilterInfo: [u8; 4],
+    pub collisionFilterInfo: u32,
     /// +0x34 `float`, base hkBaseObject, semantic; How much to align the character to the ground normal in the forward direction. (medium)
-    #[doc(hidden)]
-    pub __forwardAlignFraction: [u8; 4],
+    pub forwardAlignFraction: f32,
     /// +0x38 `float`, base hkBaseObject, semantic; How much to align the character to the ground normal in the sideways direction. (medium)
-    #[doc(hidden)]
-    pub __sidewaysAlignFraction: [u8; 4],
+    pub sidewaysAlignFraction: f32,
     /// +0x3C `float`, base hkBaseObject, semantic; How far from the world-from-model in the sideways direction to cast the rays to compute the ground slope in the sideways direction. This applies only when the m_isQuadrupedNarrow is set to true. (medium)
-    #[doc(hidden)]
-    pub __sidewaysSampleWidth: [u8; 4],
+    pub sidewaysSampleWidth: f32,
     /// +0x40 `u8`, base hkBaseObject, semantic; Whether to lock the feet on the ground. (high)
-    #[doc(hidden)]
-    pub __lockFeetWhenPlanted: [u8; 1],
+    pub lockFeetWhenPlanted: u8,
     /// +0x41 `u8`, semantic; Whether to use the character up-vector as the up-vector instead of world up vector. If this is set to true the rays are cast in the direction opposite to model up vector instead of in the direction of gravity. This is useful if you want the character to be in any orientation. When this is set to true you would probably want the m_hipOrientationGain to be zero and  m_alignWorldFromModelGain to be greater than zero. (high)
-    #[doc(hidden)]
-    pub __useCharacterUpVector: [u8; 1],
+    pub useCharacterUpVector: u8,
     /// +0x42 `u8`, semantic, runtime; This works for any character with more the two legs. If the character is such that in the sideways direction the feet are really close then set this to true. (high)
-    #[doc(hidden)]
-    pub __isQuadrupedNarrow: [u8; 1],
+    pub isQuadrupedNarrow: u8,
     unknown_43: [u8; 1],
     /// +0x44 `undefined4`, base hkBaseObject
     pub field_44: u32,
@@ -2791,18 +2546,18 @@ const _: () = assert!(size_of::<hkbFootIkDriverInfo>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, __memSizeAndFlags) == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, __referenceCount) == 0xA);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, __legs) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, __raycastDistanceUp) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, __raycastDistanceDown) == 0x24);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, __originalGroundHeightMS) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, __verticalOffset) == 0x2C);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, __collisionFilterInfo) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, __forwardAlignFraction) == 0x34);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, __sidewaysAlignFraction) == 0x38);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, __sidewaysSampleWidth) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, __lockFeetWhenPlanted) == 0x40);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, __useCharacterUpVector) == 0x41);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, __isQuadrupedNarrow) == 0x42);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, legs) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, raycastDistanceUp) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, raycastDistanceDown) == 0x24);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, originalGroundHeightMS) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, verticalOffset) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, collisionFilterInfo) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, forwardAlignFraction) == 0x34);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, sidewaysAlignFraction) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, sidewaysSampleWidth) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, lockFeetWhenPlanted) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, useCharacterUpVector) == 0x41);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, isQuadrupedNarrow) == 0x42);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfo, field_44) == 0x44);
 
 /// `hkbFootIkModifier`: size 0x100 (exact, high); primary base `hkbModifier`.
@@ -2815,68 +2570,52 @@ pub struct hkbFootIkModifier {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkbFootIkModifier_vtable,
     /// +0x8 `u16`, base hkbBindable, semantic; 0 = static / not counted (add and remove do nothing) (high)
-    #[doc(hidden)]
-    pub __memSizeAndFlags: [u8; 2],
+    pub memSizeAndFlags: u16,
     /// +0xA `i16`, semantic; reference count (high)
     #[doc(hidden)]
     pub __referenceCount: [u8; 2],
     unknown_C: [u8; 4],
     /// +0x10 `ptr:hkbVariableBindingSet`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __variableBindingSet: [u8; 8],
+    pub variableBindingSet: *mut crate::hkbVariableBindingSet,
     /// +0x18 `undefined1`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __cachedBindables: [u8; 16],
+    pub cachedBindables: [u8; 16],
     /// +0x28 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __areBindablesCached: [u8; 1],
+    pub areBindablesCached: u8,
     unknown_29: [u8; 7],
     /// +0x30 `u64`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __userData: [u8; 8],
+    pub userData: u64,
     /// +0x38 `undefined1`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __name: [u8; 8],
+    pub name: [u8; 8],
     /// +0x40 `i16`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __id: [u8; 2],
+    pub id: u16,
     /// +0x42 `u8`, semantic (high)
-    #[doc(hidden)]
-    pub __cloneState: [u8; 1],
+    pub cloneState: u8,
     /// +0x43 `u8`, semantic (high)
     #[doc(hidden)]
     pub __padNode: [u8; 1],
     /// +0x44 `undefined4`, base hkBaseObject
     pub field_44: u32,
     /// +0x48 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __enable: [u8; 1],
+    pub enable: u8,
     /// +0x49 `u8`, semantic (high)
     #[doc(hidden)]
     pub __padModifier: [u8; 3],
     /// +0x4C `undefined4`, base hkBaseObject
     pub field_4C: u32,
     /// +0x50 `class:hkbFootIkGains`, base hkBaseObject, semantic; The gains that can be used to smooth out the foot IK, avoiding abrupt changes from one frame to the next. (medium)
-    #[doc(hidden)]
-    pub __gains: [u8; 48],
+    pub gains: crate::hkbFootIkGains,
     /// +0x80 `undefined1`, base hkBaseObject, semantic; The properties of each leg of the character. (high)
-    #[doc(hidden)]
-    pub __legs: [u8; 16],
+    pub legs: [u8; 16],
     /// +0x90 `float`, base hkBaseObject, semantic; When ray casting from the foot towards the ground, the distance above the foot where the ray starts. (medium)
-    #[doc(hidden)]
-    pub __raycastDistanceUp: [u8; 4],
+    pub raycastDistanceUp: f32,
     /// +0x94 `float`, base hkBaseObject, semantic; When ray casting from the foot towards the ground, the distance below the foot where the ray ends. (medium)
-    #[doc(hidden)]
-    pub __raycastDistanceDown: [u8; 4],
+    pub raycastDistanceDown: f32,
     /// +0x98 `float`, base hkBaseObject, semantic; The height of the ground where the model was created/animated, in model space. (medium)
-    #[doc(hidden)]
-    pub __originalGroundHeightMS: [u8; 4],
+    pub originalGroundHeightMS: f32,
     /// +0x9C `float`, base hkBaseObject, semantic; This is the weighted average of the min and the max distance between the actual feet position relative to the ground and the desired feet position relative to the ground based on m_gains.m_errorUpDownBias. The modifier computes this information and stores it in this property. Based on m_gains.m_worldFromModelFeedbackGain property it then decides whether to apply it or not. (high)
-    #[doc(hidden)]
-    pub __errorOut: [u8; 4],
+    pub errorOut: f32,
     /// +0xA0 `class:hkVector4`, base hkBaseObject, semantic; This is the world space vector applied to the character world from model transform as a result of FootIK error. (medium)
-    #[doc(hidden)]
-    pub __errorOutTranslation: [u8; 16],
+    pub errorOutTranslation: crate::hkVector4,
     /// +0xB0 `class:hkQuaternion`, base hkBaseObject, semantic; The current orientation applied by the FootIK modifier to the world from model. You should bind this to a variable. (medium)
     #[doc(hidden)]
     pub __alignWithGroundRotation: [u8; 16],
@@ -2887,14 +2626,12 @@ pub struct hkbFootIkModifier {
     #[doc(hidden)]
     pub __collisionFilterInfo: [u8; 4],
     /// +0xC8 `float`, semantic; How much to align the character to the ground normal in the forward direction. This works only when the m_alignMode is set to ALIGN_MODE_FORWARD. (medium)
-    #[doc(hidden)]
-    pub __forwardAlignFraction: [u8; 4],
+    pub forwardAlignFraction: f32,
     /// +0xCC `float`, semantic; How much to align the character to the ground normal in the sideways direction. This works only when the m_alignMode is set to ALIGN_MODE_FORWARD. (medium)
     #[doc(hidden)]
     pub __sidewaysAlignFraction: [u8; 4],
     /// +0xD0 `float`, semantic; How far from the world-from-model in the sideways direction to cast the rays to compute the ground slope in the sideways direction. This works only when the m_alignMode is set to ALIGN_MODE_FORWARD. (medium)
-    #[doc(hidden)]
-    pub __sidewaysSampleWidth: [u8; 4],
+    pub sidewaysSampleWidth: f32,
     /// +0xD4 `u8`, semantic; Set this to true if you are using the Foot IK Controls Modifier to turn on foot IK.  Set this to false if you just want foot IK to be on all the time. (medium)
     #[doc(hidden)]
     pub __useTrackData: [u8; 1],
@@ -2908,82 +2645,75 @@ pub struct hkbFootIkModifier {
     #[doc(hidden)]
     pub __alignMode: [u8; 1],
     /// +0xD8 `undefined1`, semantic; per-leg runtime data (ground position, solver) (high)
-    #[doc(hidden)]
-    pub __internalLegData: [u8; 16],
+    pub internalLegData: [u8; 16],
     /// +0xE8 `float`, semantic; previous on/off value (runtime) (high)
-    #[doc(hidden)]
-    pub __prevIsFootIkEnabled: [u8; 4],
+    pub prevIsFootIkEnabled: f32,
     /// +0xEC `u8`, semantic; reflected member (no description in the binary) (high)
-    #[doc(hidden)]
-    pub __isSetUp: [u8; 1],
+    pub isSetUp: u8,
     /// +0xED `u8`, semantic; reflected member (no description in the binary) (high)
-    #[doc(hidden)]
-    pub __isGroundPositionValid: [u8; 1],
+    pub isGroundPositionValid: u8,
     unknown_EE: [u8; 2],
     /// +0xF0 `float`, semantic; reflected member (no description in the binary) (high)
-    #[doc(hidden)]
-    pub __timeStep: [u8; 4],
+    pub timeStep: f32,
     unknown_F4: [u8; 12],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbFootIkModifier>() == 0x100);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __memSizeAndFlags) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, memSizeAndFlags) == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __referenceCount) == 0xA);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __variableBindingSet) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __cachedBindables) == 0x18);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __areBindablesCached) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __userData) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __name) == 0x38);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __id) == 0x40);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __cloneState) == 0x42);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, variableBindingSet) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, cachedBindables) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, areBindablesCached) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, userData) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, name) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, id) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, cloneState) == 0x42);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __padNode) == 0x43);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __enable) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, enable) == 0x48);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __padModifier) == 0x49);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __gains) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __legs) == 0x80);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __raycastDistanceUp) == 0x90);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __raycastDistanceDown) == 0x94);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __originalGroundHeightMS) == 0x98);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __errorOut) == 0x9C);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __errorOutTranslation) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, gains) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, legs) == 0x80);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, raycastDistanceUp) == 0x90);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, raycastDistanceDown) == 0x94);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, originalGroundHeightMS) == 0x98);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, errorOut) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, errorOutTranslation) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __alignWithGroundRotation) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __verticalOffset) == 0xC0);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __collisionFilterInfo) == 0xC4);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __forwardAlignFraction) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, forwardAlignFraction) == 0xC8);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __sidewaysAlignFraction) == 0xCC);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __sidewaysSampleWidth) == 0xD0);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, sidewaysSampleWidth) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __useTrackData) == 0xD4);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __lockFeetWhenPlanted) == 0xD5);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __useCharacterUpVector) == 0xD6);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __alignMode) == 0xD7);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __internalLegData) == 0xD8);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __prevIsFootIkEnabled) == 0xE8);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __isSetUp) == 0xEC);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __isGroundPositionValid) == 0xED);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, __timeStep) == 0xF0);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, internalLegData) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, prevIsFootIkEnabled) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, isSetUp) == 0xEC);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, isGroundPositionValid) == 0xED);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifier, timeStep) == 0xF0);
 
 /// `hkbFootIkModifierInternalLegData`: size 0x20 (exact).
 /// Meaning: hkbFootIkModifier runtime leg data (0x20) (high, ik pass).
 /// Evidence: hkbFootIkModifier runtime leg data (0x20); Reflected: hkClass object 0x325e5c0, parent None, members 0x19c6700 x2, defaults none, version 1, declared enums none. No RTTI.; size: hkClass hkbFootIkModifierInternalLegData (object 0x325e5c0, built by 0xd0360 at 0xd03b7) objectSize = 0x20.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct hkbFootIkModifierInternalLegData {
     /// +0x0 `class:hkVector4`, semantic; reflected member (no description in the binary) (high)
-    #[doc(hidden)]
-    pub __groundPosition: [u8; 16],
+    pub groundPosition: crate::hkVector4,
     /// +0x10 `pointer`, semantic; reflected member (no description in the binary) (high)
-    #[doc(hidden)]
-    pub __footIkSolver: [u8; 8],
-    unknown_18: [u8; 8],
+    pub footIkSolver: *mut c_void,
+    pub unknown_18: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbFootIkModifierInternalLegData>() == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierInternalLegData, __groundPosition) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierInternalLegData, __footIkSolver) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierInternalLegData, groundPosition) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierInternalLegData, footIkSolver) == 0x10);
 
 /// `hkbFootIkModifierLeg`: size 0xA0 (exact).
 /// Meaning: one leg of hkbFootIkModifier (0xa0) (high, ik pass).
@@ -2997,53 +2727,39 @@ pub struct hkbFootIkModifierLeg {
     #[doc(hidden)]
     pub __prevAnkleRotLS: [u8; 16],
     /// +0x40 `class:hkVector4`, semantic; The axis of rotation of the knee, in local space of the knee. (high)
-    #[doc(hidden)]
-    pub __kneeAxisLS: [u8; 16],
+    pub kneeAxisLS: crate::hkVector4,
     /// +0x50 `class:hkVector4`, semantic; The end of the foot, in the local space of the ankle/foot. If this is zero the length of the foot won't be considered, so only one raycast will be used. (medium)
     #[doc(hidden)]
     pub __footEndLS: [u8; 16],
     /// +0x60 `undefined1`, semantic; This event is sent if any of the foot raycasts do not find a hit. (high)
-    #[doc(hidden)]
-    pub __ungroundedEvent: [u8; 16],
+    pub ungroundedEvent: [u8; 16],
     /// +0x70 `float`, semantic; The height of the ankle below which the foot is considered planted. Used to calculate gains. (high)
-    #[doc(hidden)]
-    pub __footPlantedAnkleHeightMS: [u8; 4],
+    pub footPlantedAnkleHeightMS: f32,
     /// +0x74 `float`, semantic; The height of the ankle above which the foot is considered fully raised. Used to calculate gains. (high)
-    #[doc(hidden)]
-    pub __footRaisedAnkleHeightMS: [u8; 4],
+    pub footRaisedAnkleHeightMS: f32,
     /// +0x78 `float`, semantic; The maximum height the ankle can reach, in model space, as a result of foot IK. (high)
-    #[doc(hidden)]
-    pub __maxAnkleHeightMS: [u8; 4],
+    pub maxAnkleHeightMS: f32,
     /// +0x7C `float`, semantic; The minimum height the ankle can reach, in model space, as a result of foot IK. (high)
-    #[doc(hidden)]
-    pub __minAnkleHeightMS: [u8; 4],
+    pub minAnkleHeightMS: f32,
     /// +0x80 `float`, semantic; The maximum knee angle that is allowed as a result of foot IK. (high)
-    #[doc(hidden)]
-    pub __maxKneeAngleDegrees: [u8; 4],
+    pub maxKneeAngleDegrees: f32,
     /// +0x84 `float`, semantic; The minimum knee angle that is allowed as a result of foot IK. (high)
-    #[doc(hidden)]
-    pub __minKneeAngleDegrees: [u8; 4],
+    pub minKneeAngleDegrees: f32,
     /// +0x88 `float`, semantic; The distance between the input foot height and the ground. (high)
-    #[doc(hidden)]
-    pub __verticalError: [u8; 4],
+    pub verticalError: f32,
     /// +0x8C `float`, semantic; The maximum ankle angle that is allowed as a result of foot IK. (medium)
     #[doc(hidden)]
     pub __maxAnkleAngleDegrees: [u8; 4],
     /// +0x90 `i16`, semantic; The hip bone. (high)
-    #[doc(hidden)]
-    pub __hipIndex: [u8; 2],
+    pub hipIndex: u16,
     /// +0x92 `i16`, semantic; The knee bone. (high)
-    #[doc(hidden)]
-    pub __kneeIndex: [u8; 2],
+    pub kneeIndex: u16,
     /// +0x94 `i16`, semantic; The ankle bone. (high)
-    #[doc(hidden)]
-    pub __ankleIndex: [u8; 2],
+    pub ankleIndex: u16,
     /// +0x96 `u8`, semantic; Whether or not the ground was hit by the raycast. (high)
-    #[doc(hidden)]
-    pub __hitSomething: [u8; 1],
+    pub hitSomething: u8,
     /// +0x97 `u8`, semantic; Whether or not the foot is planted in model space in the incoming animation. If the height of the ankle goes below m_footPlantedAnkleHeightMS the foot is considered planted. (high)
-    #[doc(hidden)]
-    pub __isPlantedMS: [u8; 1],
+    pub isPlantedMS: u8,
     /// +0x98 `u8`, semantic; reflected member (no description in the binary) (medium)
     #[doc(hidden)]
     pub __isOriginalAnkleTransformMSSet: [u8; 1],
@@ -3054,22 +2770,22 @@ pub struct hkbFootIkModifierLeg {
 const _: () = assert!(size_of::<hkbFootIkModifierLeg>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, __originalAnkleTransformMS) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, __prevAnkleRotLS) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, __kneeAxisLS) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, kneeAxisLS) == 0x40);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, __footEndLS) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, __ungroundedEvent) == 0x60);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, __footPlantedAnkleHeightMS) == 0x70);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, __footRaisedAnkleHeightMS) == 0x74);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, __maxAnkleHeightMS) == 0x78);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, __minAnkleHeightMS) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, __maxKneeAngleDegrees) == 0x80);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, __minKneeAngleDegrees) == 0x84);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, __verticalError) == 0x88);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, ungroundedEvent) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, footPlantedAnkleHeightMS) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, footRaisedAnkleHeightMS) == 0x74);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, maxAnkleHeightMS) == 0x78);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, minAnkleHeightMS) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, maxKneeAngleDegrees) == 0x80);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, minKneeAngleDegrees) == 0x84);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, verticalError) == 0x88);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, __maxAnkleAngleDegrees) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, __hipIndex) == 0x90);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, __kneeIndex) == 0x92);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, __ankleIndex) == 0x94);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, __hitSomething) == 0x96);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, __isPlantedMS) == 0x97);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, hipIndex) == 0x90);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, kneeIndex) == 0x92);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, ankleIndex) == 0x94);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, hitSomething) == 0x96);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, isPlantedMS) == 0x97);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkModifierLeg, __isOriginalAnkleTransformMSSet) == 0x98);
 
 /// `hkbFootIkSceneModifier`: size 0x10 (exact, high); primary base `hkbSceneModifier`.
@@ -3170,14 +2886,14 @@ const _: () = assert!(core::mem::offset_of!(hkbHandIkControlData, __fixUp) == 0x
 /// Meaning: behaviour node that feeds hand IK targets to the driver (high, ik pass).
 /// Evidence: ik pass (semantic): Reflected: hkClass object 0x325e9b0, parent hkbModifier, members 0x19c62a8 x1, defaults none, version 0, declared enums none. vdtor 0xae3cb0 frees 0x60; Modify is an empty 8-byte body (0xb11260).; size: hkClass hkbHandIkControlsModifier (object 0x325e9b0, built by 0xd0c90 at 0xd0ce7) objectSize = 0x60.
 /// Bases: `hkbModifier`@0x0, `hkbNode`@0x0, `hkbBindable`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct hkbHandIkControlsModifier {
     /// +0x0 `vtbl:hkbHandIkControlsModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkbHandIkControlsModifier_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -3203,8 +2919,7 @@ pub struct hkbHandIkControlsModifier {
     /// +0x4C `undefined4`, base hkBaseObject
     pub field_4C: u32,
     /// +0x50 `undefined1`, base hkBaseObject, semantic; The array of control data for each hand. (medium)
-    #[doc(hidden)]
-    pub __hands: [u8; 16],
+    pub hands: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3223,7 +2938,7 @@ const _: () = assert!(core::mem::offset_of!(hkbHandIkControlsModifier, field_40)
 const _: () = assert!(core::mem::offset_of!(hkbHandIkControlsModifier, field_44) == 0x44);
 const _: () = assert!(core::mem::offset_of!(hkbHandIkControlsModifier, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(hkbHandIkControlsModifier, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(hkbHandIkControlsModifier, __hands) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbHandIkControlsModifier, hands) == 0x50);
 
 /// `hkbHandIkControlsModifierHand`: size 0x70 (exact).
 /// Meaning: one hand's controls (0x70) (high, ik pass).
@@ -3252,29 +2967,27 @@ const _: () = assert!(core::mem::offset_of!(hkbHandIkControlsModifierHand, __ena
 /// Meaning: per-character hand IK state (hkbCharacter+0x48) (high, ik pass).
 /// Evidence: ik pass (semantic): ctor 0xaf9b90 (only caller hkbCharacter::ctor 0xad72f0). Run: 0xaf9bc0 'TtHandIkDriver' (args: driver, ctx, output, timestep, fixup), called only by hkbHandIkSceneModifier / hkbHandIkFixupSceneModifier (hkbWorld path); per hand ComputeHandIkTargetForIndex 0xafadb0 -> TwoJointSolve 0xaa0a10.; size: hkbCharacter::ctor allocates 0x28; vdtor 0xafbe30 frees 0x28.
 /// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct hkbHandIkDriver {
     /// +0x0 `vtbl:hkbHandIkDriver:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkbHandIkDriver_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base hkBaseObject, semantic; per-hand runtime data (ctor: size 0, capacity flags 0x80000000) (medium)
-    #[doc(hidden)]
-    pub __internalHandData: [u8; 16],
+    pub internalHandData: [u8; 16],
     /// +0x20 `u8`, base hkBaseObject, semantic (low)
-    #[doc(hidden)]
-    pub __field_20: [u8; 1],
-    unknown_21: [u8; 7],
+    pub field_20: u8,
+    pub unknown_21: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbHandIkDriver>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(hkbHandIkDriver, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkbHandIkDriver, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(hkbHandIkDriver, __internalHandData) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkbHandIkDriver, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbHandIkDriver, internalHandData) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbHandIkDriver, field_20) == 0x20);
 
 /// `hkbHandIkDriverInfo`: size 0x28 (exact, high); primary base `hkReferencedObject`.
 /// Meaning: per-character hand IK data (hkbCharacterData.handIkDriverInfo +0x90) (high, ik pass).
@@ -3293,11 +3006,9 @@ pub struct hkbHandIkDriverInfo {
     pub __referenceCount: [u8; 2],
     unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __hands: [u8; 16],
+    pub hands: [u8; 16],
     /// +0x20 `i8`, base hkBaseObject, semantic; This blend curve is applied when fading in and out the IK. (medium)
-    #[doc(hidden)]
-    pub __fadeInOutCurve: [u8; 1],
+    pub fadeInOutCurve: u8,
     unknown_21: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -3306,8 +3017,8 @@ const _: () = assert!(size_of::<hkbHandIkDriverInfo>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(hkbHandIkDriverInfo, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkbHandIkDriverInfo, __memSizeAndFlags) == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkbHandIkDriverInfo, __referenceCount) == 0xA);
-const _: () = assert!(core::mem::offset_of!(hkbHandIkDriverInfo, __hands) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkbHandIkDriverInfo, __fadeInOutCurve) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbHandIkDriverInfo, hands) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbHandIkDriverInfo, fadeInOutCurve) == 0x20);
 
 /// `hkbHandIkDriverInfoHand`: size 0x60 (exact).
 /// Meaning: one hand of hkbHandIkDriverInfo (0x60) (high, ik pass).
@@ -3396,14 +3107,14 @@ const _: () = assert!(core::mem::offset_of!(hkbHandIkFixupSceneModifier, __vftab
 /// Meaning: behaviour-graph hand IK modifier (high, ik pass).
 /// Evidence: ik pass (semantic): Reflected: hkClass object 0x325ea80, parent hkbModifier, members 0x20c07b0 x3, defaults 0x19c5e70, version 0, declared enums none. vdtor 0xae3e00 frees 0x78.; size: hkClass hkbHandIkModifier (object 0x325ea80, built by 0xd0f20 at 0xd0f7e) objectSize = 0x78.
 /// Bases: `hkbModifier`@0x0, `hkbNode`@0x0, `hkbBindable`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct hkbHandIkModifier {
     /// +0x0 `vtbl:hkbHandIkModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkbHandIkModifier_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -3429,17 +3140,14 @@ pub struct hkbHandIkModifier {
     /// +0x4C `undefined4`, base hkBaseObject
     pub field_4C: u32,
     /// +0x50 `undefined1`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __hands: [u8; 16],
+    pub hands: [u8; 16],
     /// +0x60 `i8`, base hkBaseObject, semantic; This blend curve is applied when fading in and out the IK. (medium)
-    #[doc(hidden)]
-    pub __fadeInOutCurve: [u8; 1],
-    unknown_61: [u8; 3],
+    pub fadeInOutCurve: u8,
+    pub unknown_61: [u8; 3],
     /// +0x64 `undefined4`, base hkBaseObject
     pub field_64: u32,
     /// +0x68 `undefined1`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __internalHandData: [u8; 16],
+    pub internalHandData: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3458,10 +3166,10 @@ const _: () = assert!(core::mem::offset_of!(hkbHandIkModifier, field_40) == 0x40
 const _: () = assert!(core::mem::offset_of!(hkbHandIkModifier, field_44) == 0x44);
 const _: () = assert!(core::mem::offset_of!(hkbHandIkModifier, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(hkbHandIkModifier, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(hkbHandIkModifier, __hands) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkbHandIkModifier, __fadeInOutCurve) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkbHandIkModifier, hands) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbHandIkModifier, fadeInOutCurve) == 0x60);
 const _: () = assert!(core::mem::offset_of!(hkbHandIkModifier, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(hkbHandIkModifier, __internalHandData) == 0x68);
+const _: () = assert!(core::mem::offset_of!(hkbHandIkModifier, internalHandData) == 0x68);
 
 /// `hkbHandIkModifierHand`: size 0x60 (exact).
 /// Meaning: one hand of hkbHandIkModifier (0x60) (high, ik pass).
@@ -3550,14 +3258,14 @@ const _: () = assert!(core::mem::offset_of!(hkbHandIkSceneModifier, __vftable) =
 /// Meaning: keyframes ragdoll bones to explicit targets (high, ik pass).
 /// Evidence: ik pass (semantic): Reflected: hkClass object 0x325efa0, parent hkbModifier, members 0x19c6a50 x2, defaults none, version 3, declared enums none. vdtor 0xae4070 frees 0x68; Modify 0xb166c0 is a timer-only body.; size: hkClass hkbKeyframeBonesModifier (object 0x325efa0, built by 0xd1340 at 0xd139b) objectSize = 0x68.
 /// Bases: `hkbModifier`@0x0, `hkbNode`@0x0, `hkbBindable`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct hkbKeyframeBonesModifier {
     /// +0x0 `vtbl:hkbKeyframeBonesModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkbKeyframeBonesModifier_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -3583,11 +3291,9 @@ pub struct hkbKeyframeBonesModifier {
     /// +0x4C `undefined4`, base hkBaseObject
     pub field_4C: u32,
     /// +0x50 `undefined1`, base hkBaseObject, semantic; The bones that will be keyframed to explicit targets, not the pose. (medium)
-    #[doc(hidden)]
-    pub __keyframeInfo: [u8; 16],
+    pub keyframeInfo: [u8; 16],
     /// +0x60 `ptr:hkbBoneIndexArray`, base hkBaseObject, semantic; The bones that will be keyframed to the pose. (medium)
-    #[doc(hidden)]
-    pub __keyframedBonesList: [u8; 8],
+    pub keyframedBonesList: *mut crate::hkbBoneIndexArray,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3606,8 +3312,8 @@ const _: () = assert!(core::mem::offset_of!(hkbKeyframeBonesModifier, field_40) 
 const _: () = assert!(core::mem::offset_of!(hkbKeyframeBonesModifier, field_44) == 0x44);
 const _: () = assert!(core::mem::offset_of!(hkbKeyframeBonesModifier, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(hkbKeyframeBonesModifier, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(hkbKeyframeBonesModifier, __keyframeInfo) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkbKeyframeBonesModifier, __keyframedBonesList) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkbKeyframeBonesModifier, keyframeInfo) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbKeyframeBonesModifier, keyframedBonesList) == 0x60);
 
 /// `hkbKeyframeBonesModifierKeyframeInfo`: size 0x30 (exact).
 /// Meaning: one keyframed bone (0x30) (high, ik pass).
@@ -3673,23 +3379,17 @@ pub struct hkbLookAtModifier {
     /// +0x4C `undefined4`, base hkBaseObject
     pub field_4C: u32,
     /// +0x50 `class:hkVector4`, base hkBaseObject, semantic; The position in the world that is being looked at. This is used only when m_target is not attached to any variable. (medium)
-    #[doc(hidden)]
-    pub __targetWS: [u8; 16],
+    pub targetWS: crate::hkVector4,
     /// +0x60 `class:hkVector4`, base hkBaseObject, semantic; The forward direction of the head, in the coordinate system of the head. (medium)
-    #[doc(hidden)]
-    pub __headForwardLS: [u8; 16],
+    pub headForwardLS: crate::hkVector4,
     /// +0x70 `class:hkVector4`, base hkBaseObject, semantic; The forward direction of the neck, in the coordinate system of the neck. (medium)
-    #[doc(hidden)]
-    pub __neckForwardLS: [u8; 16],
+    pub neckForwardLS: crate::hkVector4,
     /// +0x80 `class:hkVector4`, base hkBaseObject, semantic; The rightward direction of the neck, in the coordinate system of the neck. (medium)
-    #[doc(hidden)]
-    pub __neckRightLS: [u8; 16],
+    pub neckRightLS: crate::hkVector4,
     /// +0x90 `class:hkVector4`, base hkBaseObject, semantic; The eye position in the coordinates of the head. (medium)
-    #[doc(hidden)]
-    pub __eyePositionHS: [u8; 16],
+    pub eyePositionHS: crate::hkVector4,
     /// +0xA0 `float`, base hkBaseObject, semantic; Gain used to smooth out the motion when a new target is selected. (medium)
-    #[doc(hidden)]
-    pub __newTargetGain: [u8; 4],
+    pub newTargetGain: f32,
     /// +0xA4 `float`, base hkBaseObject, semantic; Gain used to smooth out the motion when the character starts looking at a target. (medium)
     #[doc(hidden)]
     pub __onGain: [u8; 4],
@@ -3697,8 +3397,7 @@ pub struct hkbLookAtModifier {
     #[doc(hidden)]
     pub __offGain: [u8; 4],
     /// +0xAC `float`, semantic; The forward vector of the head is limited by a cone having this angle, in degrees, between its center and its side. (medium)
-    #[doc(hidden)]
-    pub __limitAngleDegrees: [u8; 4],
+    pub limitAngleDegrees: f32,
     /// +0xB0 `float`, base hkBaseObject, semantic; The maximum angle to look left (medium)
     #[doc(hidden)]
     pub __limitAngleLeft: [u8; 4],
@@ -3709,14 +3408,12 @@ pub struct hkbLookAtModifier {
     #[doc(hidden)]
     pub __limitAngleUp: [u8; 4],
     /// +0xBC `float`, semantic; The maximum angle to look up (medium)
-    #[doc(hidden)]
-    pub __limitAngleDown: [u8; 4],
+    pub limitAngleDown: f32,
     /// +0xC0 `i16`, base hkBaseObject, semantic; The head bone. (high)
     #[doc(hidden)]
     pub __headIndex: [u8; 2],
     /// +0xC2 `i16`, semantic; The neck bone. (high)
-    #[doc(hidden)]
-    pub __neckIndex: [u8; 2],
+    pub neckIndex: u16,
     /// +0xC4 `u8`, base hkBaseObject, semantic; Use this to turn on and off the IK (medium)
     #[doc(hidden)]
     pub __isOn: [u8; 1],
@@ -3724,15 +3421,12 @@ pub struct hkbLookAtModifier {
     #[doc(hidden)]
     pub __individualLimitsOn: [u8; 1],
     /// +0xC6 `u8`, semantic; Whether the target point was found to be inside the target cone. This also becomes false if IK is not run at all because it is turned off or the target is behind the character. (high)
-    #[doc(hidden)]
-    pub __isTargetInsideLimitCone: [u8; 1],
+    pub isTargetInsideLimitCone: u8,
     unknown_C7: [u8; 9],
     /// +0xD0 `class:hkVector4`, semantic; reflected member (no description in the binary) (high)
-    #[doc(hidden)]
-    pub __lookAtLastTargetWS: [u8; 16],
+    pub lookAtLastTargetWS: crate::hkVector4,
     /// +0xE0 `float`, semantic; reflected member (no description in the binary) (high)
-    #[doc(hidden)]
-    pub __lookAtWeight: [u8; 4],
+    pub lookAtWeight: f32,
     unknown_E4: [u8; 12],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -3752,26 +3446,26 @@ const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, field_40) == 0x40
 const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, field_44) == 0x44);
 const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, __targetWS) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, __headForwardLS) == 0x60);
-const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, __neckForwardLS) == 0x70);
-const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, __neckRightLS) == 0x80);
-const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, __eyePositionHS) == 0x90);
-const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, __newTargetGain) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, targetWS) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, headForwardLS) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, neckForwardLS) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, neckRightLS) == 0x80);
+const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, eyePositionHS) == 0x90);
+const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, newTargetGain) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, __onGain) == 0xA4);
 const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, __offGain) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, __limitAngleDegrees) == 0xAC);
+const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, limitAngleDegrees) == 0xAC);
 const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, __limitAngleLeft) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, __limitAngleRight) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, __limitAngleUp) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, __limitAngleDown) == 0xBC);
+const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, limitAngleDown) == 0xBC);
 const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, __headIndex) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, __neckIndex) == 0xC2);
+const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, neckIndex) == 0xC2);
 const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, __isOn) == 0xC4);
 const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, __individualLimitsOn) == 0xC5);
-const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, __isTargetInsideLimitCone) == 0xC6);
-const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, __lookAtLastTargetWS) == 0xD0);
-const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, __lookAtWeight) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, isTargetInsideLimitCone) == 0xC6);
+const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, lookAtLastTargetWS) == 0xD0);
+const _: () = assert!(core::mem::offset_of!(hkbLookAtModifier, lookAtWeight) == 0xE0);
 
 /// `hkbLookAtModifierInternalState`: size 0x30 (exact, high); primary base `hkReferencedObject`.
 /// Meaning: saved runtime state of hkbLookAtModifier (high, ik pass).
@@ -3784,11 +3478,9 @@ pub struct hkbLookAtModifierInternalState {
     pub __vftable: *const crate::raw::vtables::hkbLookAtModifierInternalState_vtable,
     unknown_8: [u8; 8],
     /// +0x10 `class:hkVector4`, base hkBaseObject, semantic; reflected member (no description in the binary) (high)
-    #[doc(hidden)]
-    pub __lookAtLastTargetWS: [u8; 16],
+    pub lookAtLastTargetWS: crate::hkVector4,
     /// +0x20 `float`, base hkBaseObject, semantic; reflected member (no description in the binary) (high)
-    #[doc(hidden)]
-    pub __lookAtWeight: [u8; 4],
+    pub lookAtWeight: f32,
     /// +0x24 `u8`, semantic; reflected member (no description in the binary) (high)
     #[doc(hidden)]
     pub __isTargetInsideLimitCone: [u8; 1],
@@ -3800,8 +3492,8 @@ pub struct hkbLookAtModifierInternalState {
 }
 const _: () = assert!(size_of::<hkbLookAtModifierInternalState>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(hkbLookAtModifierInternalState, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkbLookAtModifierInternalState, __lookAtLastTargetWS) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkbLookAtModifierInternalState, __lookAtWeight) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbLookAtModifierInternalState, lookAtLastTargetWS) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbLookAtModifierInternalState, lookAtWeight) == 0x20);
 const _: () = assert!(core::mem::offset_of!(hkbLookAtModifierInternalState, __isTargetInsideLimitCone) == 0x24);
 const _: () = assert!(core::mem::offset_of!(hkbLookAtModifierInternalState, m_hkpRayCollidableFilter_28) == 0x28);
 
@@ -3882,8 +3574,7 @@ pub struct hkbPoseMatchingGenerator {
     /// +0x9C `undefined4`, base hkBaseObject
     pub field_9C: u32,
     /// +0xA0 `class:hkQuaternion`, base hkBaseObject, semantic; The rotation of the frame of reference used for pose matching. (medium)
-    #[doc(hidden)]
-    pub __worldFromModelRotation: [u8; 16],
+    pub worldFromModelRotation: crate::hkQuaternion,
     /// +0xB0 `float`, base hkBaseObject, semantic; The speed at which to blend in and out the blend weights, in weight units per second, when the best match changes. (medium)
     #[doc(hidden)]
     pub __blendSpeed: [u8; 4],
@@ -3915,28 +3606,21 @@ pub struct hkbPoseMatchingGenerator {
     #[doc(hidden)]
     pub __pelvisIndex: [u8; 2],
     /// +0xD0 `i8`, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __mode: [u8; 1],
+    pub mode: u8,
     unknown_D1: [u8; 3],
     /// +0xD4 `i32`, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __currentMatch: [u8; 4],
+    pub currentMatch: u32,
     /// +0xD8 `i32`, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __bestMatch: [u8; 4],
+    pub bestMatch: u32,
     /// +0xDC `float`, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __timeSinceBetterMatch: [u8; 4],
+    pub timeSinceBetterMatch: f32,
     /// +0xE0 `float`, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __error: [u8; 4],
+    pub error: f32,
     /// +0xE4 `u8`, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __resetCurrentMatchLocalTime: [u8; 1],
+    pub resetCurrentMatchLocalTime: u8,
     unknown_E5: [u8; 3],
     /// +0xE8 `pointer`, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __poseMatchingUtility: [u8; 8],
+    pub poseMatchingUtility: *mut c_void,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3975,7 +3659,7 @@ const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, field_90) 
 const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, field_94) == 0x94);
 const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, field_98) == 0x98);
 const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, field_9C) == 0x9C);
-const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, __worldFromModelRotation) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, worldFromModelRotation) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, __blendSpeed) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, __minSpeedToSwitch) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, __minSwitchTimeNoError) == 0xB8);
@@ -3986,13 +3670,13 @@ const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, __rootBone
 const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, __otherBoneIndex) == 0xCA);
 const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, __anotherBoneIndex) == 0xCC);
 const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, __pelvisIndex) == 0xCE);
-const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, __mode) == 0xD0);
-const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, __currentMatch) == 0xD4);
-const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, __bestMatch) == 0xD8);
-const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, __timeSinceBetterMatch) == 0xDC);
-const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, __error) == 0xE0);
-const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, __resetCurrentMatchLocalTime) == 0xE4);
-const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, __poseMatchingUtility) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, mode) == 0xD0);
+const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, currentMatch) == 0xD4);
+const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, bestMatch) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, timeSinceBetterMatch) == 0xDC);
+const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, error) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, resetCurrentMatchLocalTime) == 0xE4);
+const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGenerator, poseMatchingUtility) == 0xE8);
 
 /// `hkbPoseMatchingGeneratorInternalState`: size 0x28 (exact, high); primary base `hkReferencedObject`.
 /// Meaning: saved state (high, ik pass).
@@ -4005,31 +3689,28 @@ pub struct hkbPoseMatchingGeneratorInternalState {
     pub __vftable: *const crate::raw::vtables::hkbPoseMatchingGeneratorInternalState_vtable,
     unknown_8: [u8; 8],
     /// +0x10 `i32`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __currentMatch: [u8; 4],
+    pub currentMatch: u32,
     /// +0x14 `i32`, semantic; reflected member (no description in the binary) (medium)
     #[doc(hidden)]
     pub __bestMatch: [u8; 4],
     /// +0x18 `float`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __timeSinceBetterMatch: [u8; 4],
+    pub timeSinceBetterMatch: f32,
     /// +0x1C `float`, semantic; reflected member (no description in the binary) (medium)
     #[doc(hidden)]
     pub __error: [u8; 4],
     /// +0x20 `u8`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __resetCurrentMatchLocalTime: [u8; 1],
+    pub resetCurrentMatchLocalTime: u8,
     unknown_21: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbPoseMatchingGeneratorInternalState>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGeneratorInternalState, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGeneratorInternalState, __currentMatch) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGeneratorInternalState, currentMatch) == 0x10);
 const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGeneratorInternalState, __bestMatch) == 0x14);
-const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGeneratorInternalState, __timeSinceBetterMatch) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGeneratorInternalState, timeSinceBetterMatch) == 0x18);
 const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGeneratorInternalState, __error) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGeneratorInternalState, __resetCurrentMatchLocalTime) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGeneratorInternalState, resetCurrentMatchLocalTime) == 0x20);
 
 /// `hkbPoweredRagdollControlData`: size 0x20 (exact).
 /// Meaning: motor parameters (0x20) (high, ik pass).
@@ -4066,14 +3747,14 @@ const _: () = assert!(core::mem::offset_of!(hkbPoweredRagdollControlData, __cons
 /// Meaning: powered ragdoll control parameters (high, ik pass).
 /// Evidence: ik pass (semantic): Reflected: hkClass object 0x325f070, parent hkbModifier, members 0x19c9ea0 x4, defaults none, version 5, declared enums none. vdtor 0xae4b60 frees 0x90.; size: hkClass hkbPoweredRagdollControlsModifier (object 0x325f070, built by 0xd25a0 at 0xd25fd) objectSize = 0x90.
 /// Bases: `hkbModifier`@0x0, `hkbNode`@0x0, `hkbBindable`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct hkbPoweredRagdollControlsModifier {
     /// +0x0 `vtbl:hkbPoweredRagdollControlsModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkbPoweredRagdollControlsModifier_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -4099,17 +3780,13 @@ pub struct hkbPoweredRagdollControlsModifier {
     /// +0x4C `undefined4`, base hkBaseObject
     pub field_4C: u32,
     /// +0x50 `class:hkbPoweredRagdollControlData`, base hkBaseObject, semantic; The control parameters that influence the Powered Ragdoll Modifier. (medium)
-    #[doc(hidden)]
-    pub __controlData: [u8; 32],
+    pub controlData: crate::hkbPoweredRagdollControlData,
     /// +0x70 `ptr:hkbBoneIndexArray`, base hkBaseObject, semantic; The bones to be driven by the rigid body ragdoll controller.  If this is empty, all bones will be driven. (medium)
-    #[doc(hidden)]
-    pub __bones: [u8; 8],
+    pub bones: *mut crate::hkbBoneIndexArray,
     /// +0x78 `class:hkbWorldFromModelModeData`, base hkBaseObject, semantic; How to process the world-from-model. (medium)
-    #[doc(hidden)]
-    pub __worldFromModelModeData: [u8; 8],
+    pub worldFromModelModeData: crate::hkbWorldFromModelModeData,
     /// +0x80 `ptr:hkbBoneWeightArray`, base hkBaseObject, semantic; DEPRECATED: The bone weights that determine what fraction of the maximum force to apply to each bone. (medium)
-    #[doc(hidden)]
-    pub __boneWeights: [u8; 8],
+    pub boneWeights: *mut crate::hkbBoneWeightArray,
     /// +0x88 `undefined4`, base hkBaseObject
     pub field_88: u32,
     /// +0x8C `undefined4`, base hkBaseObject
@@ -4132,10 +3809,10 @@ const _: () = assert!(core::mem::offset_of!(hkbPoweredRagdollControlsModifier, f
 const _: () = assert!(core::mem::offset_of!(hkbPoweredRagdollControlsModifier, field_44) == 0x44);
 const _: () = assert!(core::mem::offset_of!(hkbPoweredRagdollControlsModifier, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(hkbPoweredRagdollControlsModifier, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(hkbPoweredRagdollControlsModifier, __controlData) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkbPoweredRagdollControlsModifier, __bones) == 0x70);
-const _: () = assert!(core::mem::offset_of!(hkbPoweredRagdollControlsModifier, __worldFromModelModeData) == 0x78);
-const _: () = assert!(core::mem::offset_of!(hkbPoweredRagdollControlsModifier, __boneWeights) == 0x80);
+const _: () = assert!(core::mem::offset_of!(hkbPoweredRagdollControlsModifier, controlData) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbPoweredRagdollControlsModifier, bones) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkbPoweredRagdollControlsModifier, worldFromModelModeData) == 0x78);
+const _: () = assert!(core::mem::offset_of!(hkbPoweredRagdollControlsModifier, boneWeights) == 0x80);
 const _: () = assert!(core::mem::offset_of!(hkbPoweredRagdollControlsModifier, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(hkbPoweredRagdollControlsModifier, field_8C) == 0x8C);
 
@@ -4143,28 +3820,26 @@ const _: () = assert!(core::mem::offset_of!(hkbPoweredRagdollControlsModifier, f
 /// Meaning: hkbWorld scene modifier: ragdoll drive, physics step, pose blend (high, ik pass).
 /// Evidence: ik pass (semantic): ctor 0xafea40, called by hkbWorld::ctor 0xad8ca0.; size: vdtor 0xaff280 frees 0x20.
 /// Bases: `hkbSceneModifier`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct hkbRagdollSceneModifier {
     /// +0x0 `vtbl:hkbRagdollSceneModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkbRagdollSceneModifier_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `pointer`, base hkBaseObject, semantic; stepped when non-null (medium)
-    #[doc(hidden)]
-    pub __physicsWorld: [u8; 8],
+    pub physicsWorld: *mut c_void,
     /// +0x18 `pointer`, base hkBaseObject, semantic; optional object whose slot 0 steps the world (medium)
-    #[doc(hidden)]
-    pub __stepper: [u8; 8],
+    pub stepper: *mut c_void,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbRagdollSceneModifier>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(hkbRagdollSceneModifier, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkbRagdollSceneModifier, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(hkbRagdollSceneModifier, __physicsWorld) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkbRagdollSceneModifier, __stepper) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollSceneModifier, physicsWorld) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollSceneModifier, stepper) == 0x18);
 
 /// `hkbRigidBodyRagdollControlData`: size 0x40 (exact).
 /// Meaning: control data (0x40) (high, ik pass).
@@ -4189,14 +3864,14 @@ const _: () = assert!(core::mem::offset_of!(hkbRigidBodyRagdollControlData, __du
 /// Meaning: keyframed-hierarchy ragdoll control parameters (high, ik pass).
 /// Evidence: ik pass (semantic): Reflected: hkClass object 0x325f140, parent hkbModifier, members 0x19c4490 x2, defaults none, version 3, declared enums none. vdtor 0xae4fe0 frees 0xa0.; size: hkClass hkbRigidBodyRagdollControlsModifier (object 0x325f140, built by 0xd2d90 at 0xd2ded) objectSize = 0xa0.
 /// Bases: `hkbModifier`@0x0, `hkbNode`@0x0, `hkbBindable`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct hkbRigidBodyRagdollControlsModifier {
     /// +0x0 `vtbl:hkbRigidBodyRagdollControlsModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkbRigidBodyRagdollControlsModifier_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -4222,11 +3897,9 @@ pub struct hkbRigidBodyRagdollControlsModifier {
     /// +0x4C `undefined4`, base hkBaseObject
     pub field_4C: u32,
     /// +0x50 `class:hkbRigidBodyRagdollControlData`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __controlData: [u8; 64],
+    pub controlData: crate::hkbRigidBodyRagdollControlData,
     /// +0x90 `ptr:hkbBoneIndexArray`, base hkBaseObject, semantic; The bones to be driven by the rigid body ragdoll controller.  If this is empty, all bones will be driven. (medium)
-    #[doc(hidden)]
-    pub __bones: [u8; 8],
+    pub bones: *mut crate::hkbBoneIndexArray,
     /// +0x98 `undefined4`, base hkBaseObject
     pub field_98: u32,
     /// +0x9C `undefined4`, base hkBaseObject
@@ -4249,8 +3922,8 @@ const _: () = assert!(core::mem::offset_of!(hkbRigidBodyRagdollControlsModifier,
 const _: () = assert!(core::mem::offset_of!(hkbRigidBodyRagdollControlsModifier, field_44) == 0x44);
 const _: () = assert!(core::mem::offset_of!(hkbRigidBodyRagdollControlsModifier, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(hkbRigidBodyRagdollControlsModifier, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(hkbRigidBodyRagdollControlsModifier, __controlData) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkbRigidBodyRagdollControlsModifier, __bones) == 0x90);
+const _: () = assert!(core::mem::offset_of!(hkbRigidBodyRagdollControlsModifier, controlData) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbRigidBodyRagdollControlsModifier, bones) == 0x90);
 const _: () = assert!(core::mem::offset_of!(hkbRigidBodyRagdollControlsModifier, field_98) == 0x98);
 const _: () = assert!(core::mem::offset_of!(hkbRigidBodyRagdollControlsModifier, field_9C) == 0x9C);
 
@@ -4264,106 +3937,89 @@ pub struct hkbTwistModifier {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkbTwistModifier_vtable,
     /// +0x8 `u16`, base hkbBindable, semantic; 0 = static / not counted (add and remove do nothing) (high)
-    #[doc(hidden)]
-    pub __memSizeAndFlags: [u8; 2],
+    pub memSizeAndFlags: u16,
     /// +0xA `i16`, semantic; reference count (high)
     #[doc(hidden)]
     pub __referenceCount: [u8; 2],
     unknown_C: [u8; 4],
     /// +0x10 `ptr:hkbVariableBindingSet`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __variableBindingSet: [u8; 8],
+    pub variableBindingSet: *mut crate::hkbVariableBindingSet,
     /// +0x18 `undefined1`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __cachedBindables: [u8; 16],
+    pub cachedBindables: [u8; 16],
     /// +0x28 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __areBindablesCached: [u8; 1],
+    pub areBindablesCached: u8,
     unknown_29: [u8; 7],
     /// +0x30 `u64`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __userData: [u8; 8],
+    pub userData: u64,
     /// +0x38 `undefined1`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __name: [u8; 8],
+    pub name: [u8; 8],
     /// +0x40 `i16`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __id: [u8; 2],
+    pub id: u16,
     /// +0x42 `u8`, semantic (high)
-    #[doc(hidden)]
-    pub __cloneState: [u8; 1],
+    pub cloneState: u8,
     /// +0x43 `u8`, semantic (high)
     #[doc(hidden)]
     pub __padNode: [u8; 1],
     /// +0x44 `undefined4`, base hkBaseObject
     pub field_44: u32,
     /// +0x48 `u8`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __enable: [u8; 1],
+    pub enable: u8,
     /// +0x49 `u8`, semantic (high)
     #[doc(hidden)]
     pub __padModifier: [u8; 3],
     /// +0x4C `undefined4`, base hkBaseObject
     pub field_4C: u32,
     /// +0x50 `class:hkVector4`, base hkBaseObject, semantic; Defines the axis of rotation along the chain (medium)
-    #[doc(hidden)]
-    pub __axisOfRotation: [u8; 16],
+    pub axisOfRotation: crate::hkVector4,
     /// +0x60 `float`, base hkBaseObject, semantic; The total twist angle in degrees distributed along the chain (medium)
-    #[doc(hidden)]
-    pub __twistAngle: [u8; 4],
+    pub twistAngle: f32,
     /// +0x64 `i16`, base hkBaseObject, semantic; The first bone in the chain.  This bone must be closer to the root than endBoneIndex. (medium)
-    #[doc(hidden)]
-    pub __startBoneIndex: [u8; 2],
+    pub startBoneIndex: u16,
     /// +0x66 `i16`, semantic; The last bone in the chain.  This bone must be farther from the root than startBoneIndex. (medium)
-    #[doc(hidden)]
-    pub __endBoneIndex: [u8; 2],
+    pub endBoneIndex: u16,
     /// +0x68 `i8`, base hkBaseObject, semantic; How the rotations are distibuted along the bone chain. Ramped distibutes the angles exponentially whereas linear distributes the angles equally (medium)
-    #[doc(hidden)]
-    pub __setAngleMethod: [u8; 1],
+    pub setAngleMethod: u8,
     /// +0x69 `i8`, semantic; Whether the m_axisOfRotation is in model space or local space. (medium)
     #[doc(hidden)]
     pub __rotationAxisCoordinates: [u8; 1],
     /// +0x6A `u8`, semantic; If true the twist angle per bone adds to the existing rotation, otherwise it replaces it (medium)
-    #[doc(hidden)]
-    pub __isAdditive: [u8; 1],
+    pub isAdditive: u8,
     unknown_6B: [u8; 1],
     /// +0x6C `undefined4`, base hkBaseObject
     pub field_6C: u32,
     /// +0x70 `undefined1`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __boneChainIndices: [u8; 16],
+    pub boneChainIndices: [u8; 16],
     /// +0x80 `undefined1`, base hkBaseObject, semantic; reflected member (no description in the binary) (medium)
-    #[doc(hidden)]
-    pub __parentBoneIndices: [u8; 16],
+    pub parentBoneIndices: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbTwistModifier>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, __memSizeAndFlags) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, memSizeAndFlags) == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, __referenceCount) == 0xA);
-const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, __variableBindingSet) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, __cachedBindables) == 0x18);
-const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, __areBindablesCached) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, __userData) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, __name) == 0x38);
-const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, __id) == 0x40);
-const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, __cloneState) == 0x42);
+const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, variableBindingSet) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, cachedBindables) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, areBindablesCached) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, userData) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, name) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, id) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, cloneState) == 0x42);
 const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, __padNode) == 0x43);
 const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, __enable) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, enable) == 0x48);
 const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, __padModifier) == 0x49);
 const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, __axisOfRotation) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, __twistAngle) == 0x60);
-const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, __startBoneIndex) == 0x64);
-const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, __endBoneIndex) == 0x66);
-const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, __setAngleMethod) == 0x68);
+const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, axisOfRotation) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, twistAngle) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, startBoneIndex) == 0x64);
+const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, endBoneIndex) == 0x66);
+const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, setAngleMethod) == 0x68);
 const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, __rotationAxisCoordinates) == 0x69);
-const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, __isAdditive) == 0x6A);
+const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, isAdditive) == 0x6A);
 const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, __boneChainIndices) == 0x70);
-const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, __parentBoneIndices) == 0x80);
+const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, boneChainIndices) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkbTwistModifier, parentBoneIndices) == 0x80);
 
 /// `hkbVariableBindingSet`: size 0x28 (exact, high); primary base `hkReferencedObject`.
 /// Meaning: a node's bindings of members to graph variables or character properties (high, ik pass).
@@ -4382,11 +4038,9 @@ pub struct hkbVariableBindingSet {
     pub __referenceCount: [u8; 2],
     unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __bindings: [u8; 16],
+    pub bindings: [u8; 16],
     /// +0x20 `i32`, base hkBaseObject, semantic (high)
-    #[doc(hidden)]
-    pub __indexOfBindingToEnable: [u8; 4],
+    pub indexOfBindingToEnable: u32,
     /// +0x24 `u8`, semantic (high)
     #[doc(hidden)]
     pub __hasOutputBinding: [u8; 1],
@@ -4398,8 +4052,8 @@ const _: () = assert!(size_of::<hkbVariableBindingSet>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(hkbVariableBindingSet, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkbVariableBindingSet, __memSizeAndFlags) == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkbVariableBindingSet, __referenceCount) == 0xA);
-const _: () = assert!(core::mem::offset_of!(hkbVariableBindingSet, __bindings) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkbVariableBindingSet, __indexOfBindingToEnable) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbVariableBindingSet, bindings) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbVariableBindingSet, indexOfBindingToEnable) == 0x20);
 const _: () = assert!(core::mem::offset_of!(hkbVariableBindingSet, __hasOutputBinding) == 0x24);
 
 /// `hkbVariableBindingSetBinding`: size 0x28 (exact).

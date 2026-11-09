@@ -7,58 +7,7 @@
 
 use core::ffi::{c_char, c_void};
 
-impl crate::BGSKeyword {
-    /// `BGSKeyword::GetFormEditorID` (decompiler signature, tier untiered; ledger slot_propagation evidence, name high; id 18468, rva 0x29e710).
-    /// `undefined8 GetFormEditorID(BGSKeyword * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn get_form_editor_id(&self) -> u64 { unsafe { function!(18468, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-    /// `BGSKeyword::SetFormEditorID` (decompiler signature, tier untiered; ledger slot_propagation evidence, name high; id 18469, rva 0x29e720).
-    /// `undefined8 SetFormEditorID(BGSKeyword * this, char * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn set_form_editor_id(&self, param_1: *mut c_char) -> u64 { unsafe { function!(18469, (*const Self, *mut c_char) -> u64)(core::ptr::from_ref(self), param_1) } }
-}
-
-impl crate::BGSListForm {
-    /// `BGSListForm::LoadGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 20916, rva 0x320860).
-    /// `undefined LoadGame(BGSListForm * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn load_game(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(20916, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `BGSListForm::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 20915, rva 0x320770).
-    /// `undefined SaveGame(BGSListForm * this, longlong param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(20915, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
-}
-
-impl crate::TESDataHandler {
-    /// `TESDataHandler::LoadFiles` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 13753, rva 0x1bec90).
-    /// `undefined8 LoadFiles(longlong param_1, char param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn load_files(param_1: i64, param_2: c_char) -> u64 { unsafe { function!(13753, (i64, c_char) -> u64)(param_1, param_2) } }
-}
-
 impl crate::TESForm {
-    /// `TESForm::SetDelete`, vtable slot 35, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 14636, rva 0x1e6070).
-    /// `undefined SetDelete(TESForm * this, byte param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn set_delete(&self, param_1: u8) -> u64 { unsafe { virtual_function!(self, 35, (*const Self, u8) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `TESForm::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 13840, rva 0x1c69e0).
     /// `undefined dtor(TESForm * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -66,22 +15,5 @@ impl crate::TESForm {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn dtor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(13840, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
-impl crate::TESGlobal {
-    /// `TESGlobal::GetFormEditorID` (decompiler signature, tier untiered; ledger slot_propagation evidence, name high; id 21816, rva 0x340be0).
-    /// `undefined1 * GetFormEditorID(TESGlobal * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn get_form_editor_id(&self) -> *mut u8 { unsafe { function!(21816, (*const Self) -> *mut u8)(core::ptr::from_ref(self)) } }
-    /// `TESGlobal::SetFormEditorID` (decompiler signature, tier untiered; ledger slot_propagation evidence, name high; id 21817, rva 0x340c00).
-    /// `undefined1 SetFormEditorID(TESGlobal * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn set_form_editor_id(&self, param_1: *mut u8, param_2: u64, param_3: u64) -> u8 { unsafe { function!(21817, (*const Self, *mut u8, u64, u64) -> u8)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 

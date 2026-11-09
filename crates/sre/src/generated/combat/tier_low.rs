@@ -4283,6 +4283,13 @@ impl crate::CombatNavmeshSearch {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor(&self, param_1: u64, param_2: *mut i64) -> *mut Self { unsafe { function!(50086, (*const Self, u64, *mut i64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2) } }
+    /// `CombatNavmeshSearch::dtor` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 47142, rva 0x860940).
+    /// `undefined dtor(AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3> * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn dtor(param_1: *mut crate::AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(47142, (*mut crate::AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
     /// `CombatNavmeshSearch::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 50107, rva 0x8e3810).
     /// `CombatNavmeshSearch * vdtor(CombatNavmeshSearch * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///

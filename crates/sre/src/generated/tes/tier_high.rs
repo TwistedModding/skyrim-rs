@@ -58,7 +58,38 @@ impl crate::TESAIForm {
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(14444, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
+impl crate::TESActionData {
+    /// `TESActionData::Perform`, vtable slot 5, through the object's vtable (decompiler signature, tier high; ledger semantic evidence, name high; id 41557, rva 0x78db80).
+    /// `undefined Perform(TESActionData * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn perform(&self) -> u64 { unsafe { virtual_function!(self, 5, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+}
+
 impl crate::TESActorBase {
+    /// `TESActorBase::ActorValueOwner_GetBaseActorValue` (decompiler signature, tier high; ledger slot_propagation evidence, name high; id 24904, rva 0x3cc640).
+    /// `undefined ActorValueOwner_GetBaseActorValue(TESActorBase * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn actor_value_owner_get_base_actor_value(&self) -> u64 { unsafe { function!(24904, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xE8)) } }
+    /// `TESActorBase::ActorValueOwner_GetPermanentActorValue` (decompiler signature, tier high; ledger slot_propagation evidence, name high; id 24910, rva 0x3cc700).
+    /// `undefined ActorValueOwner_GetPermanentActorValue(TESActorBase * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn actor_value_owner_get_permanent_actor_value(&self) -> u64 { unsafe { function!(24910, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xE8)) } }
+    /// `TESActorBase::ActorValueOwner_SetActorValue` (decompiler signature, tier high; ledger slot_propagation evidence, name high; id 24933, rva 0x3cd860).
+    /// `undefined ActorValueOwner_SetActorValue(TESActorBase * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn actor_value_owner_set_actor_value(&self) -> u64 { unsafe { function!(24933, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xE8)) } }
     /// `TESActorBase::BGSKeywordForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 24858, rva 0x3cb9e8).
     /// `undefined BGSKeywordForm_vdtor(TESActorBase * this)`
     ///
@@ -460,6 +491,16 @@ impl crate::TESImageSpaceModifiableForm {
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(14732, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
+impl crate::TESImageSpaceModifier {
+    /// `TESImageSpaceModifier::GetFormEditorID` (decompiler signature, tier high; ledger slot_propagation evidence, name high; id 18691, rva 0x2a8e30).
+    /// `undefined1 * GetFormEditorID(TESImageSpaceModifier * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_form_editor_id(&self) -> *mut u8 { unsafe { function!(18691, (*const Self) -> *mut u8)(core::ptr::from_ref(self)) } }
+}
+
 impl crate::TESKey {
     /// `TESKey::BGSDestructibleObjectForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17514, rva 0x270f20).
     /// `undefined BGSDestructibleObjectForm_vdtor(TESKey * this)`
@@ -718,6 +759,13 @@ impl crate::TESObjectACTI {
 }
 
 impl crate::TESObjectANIO {
+    /// `TESObjectANIO::GetFormEditorID` (decompiler signature, tier high; ledger slot_propagation evidence, name high; id 17743, rva 0x27bb70).
+    /// `undefined1 * GetFormEditorID(TESObjectANIO * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_form_editor_id(&self) -> *mut u8 { unsafe { function!(17743, (*const Self) -> *mut u8)(core::ptr::from_ref(self)) } }
     /// `TESObjectANIO::TESModelTextureSwap_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17741, rva 0x27bad4).
     /// `undefined TESModelTextureSwap_vdtor(TESObjectANIO * this)`
     ///
@@ -787,6 +835,13 @@ impl crate::TESObjectARMO {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn bgs_pickup_putdown_sounds_vdtor(&self) -> u64 { unsafe { function!(17813, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x98)) } }
+    /// `TESObjectARMO::GetLastFile` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17817, rva 0x27f1b0).
+    /// `undefined GetLastFile(TESObjectARMO * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_last_file(&self) -> u64 { unsafe { function!(17817, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `TESObjectARMO::TESBipedModelForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17814, rva 0x27ef6c).
     /// `undefined TESBipedModelForm_vdtor(TESObjectARMO * this)`
     ///
@@ -919,6 +974,13 @@ impl crate::TESObjectBOOK {
 }
 
 impl crate::TESObjectCELL {
+    /// `TESObjectCELL::GetFormEditorID` (decompiler signature, tier high; ledger slot_propagation evidence, name high; id 18901, rva 0x2bb060).
+    /// `undefined1 * GetFormEditorID(TESObjectCELL * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_form_editor_id(&self) -> *mut u8 { unsafe { function!(18901, (*const Self) -> *mut u8)(core::ptr::from_ref(self)) } }
     /// `TESObjectCELL::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 19288, rva 0x2d3410).
     /// `undefined TESFullName_vdtor(TESObjectCELL * this)`
     ///
@@ -1403,6 +1465,13 @@ impl crate::TESShout {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn bgs_menu_display_object_vdtor(&self) -> u64 { unsafe { function!(23377, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
+    /// `TESShout::PlayerKnows` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 23361, rva 0x387ea0).
+    /// `ulonglong PlayerKnows(TESShout * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn player_knows(&self) -> u64 { unsafe { function!(23361, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `TESShout::TESDescription_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 23379, rva 0x388388).
     /// `undefined TESDescription_vdtor(TESShout * this)`
     ///
@@ -1513,6 +1582,27 @@ impl crate::TESTexture {
 }
 
 impl crate::TESTopic {
+    /// `TESTopic::GetFormEditorID` (decompiler signature, tier high; ledger slot_propagation evidence, name high; id 25548, rva 0x3efd00).
+    /// `undefined1 * GetFormEditorID(TESTopic * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_form_editor_id(&self) -> *mut u8 { unsafe { function!(25548, (*const Self) -> *mut u8)(core::ptr::from_ref(self)) } }
+    /// `TESTopic::TESFullName_GetFullName` (decompiler signature, tier high; ledger slot_propagation evidence, name high; id 25529, rva 0x3ee420).
+    /// `char * TESFullName_GetFullName(TESTopic * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn tes_full_name_get_full_name(&self) -> *mut c_char { unsafe { function!(25529, (*const Self) -> *mut c_char)(core::ptr::from_ref(self).byte_add(0x20)) } }
+    /// `TESTopic::TESFullName_GetFullNameLength` (decompiler signature, tier high; ledger slot_propagation evidence, name high; id 25528, rva 0x3ee3d0).
+    /// `undefined TESFullName_GetFullNameLength(TESTopic * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn tes_full_name_get_full_name_length(&self) -> u64 { unsafe { function!(25528, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `TESTopic::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 25569, rva 0x3f0874).
     /// `undefined TESFullName_vdtor(TESTopic * this)`
     ///
@@ -1624,6 +1714,13 @@ impl crate::TESWordOfPower {
 }
 
 impl crate::TESWorldSpace {
+    /// `TESWorldSpace::GetFormEditorID` (decompiler signature, tier high; ledger slot_propagation evidence, name high; id 20450, rva 0x30b710).
+    /// `undefined1 * GetFormEditorID(TESWorldSpace * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_form_editor_id(&self) -> *mut u8 { unsafe { function!(20450, (*const Self) -> *mut u8)(core::ptr::from_ref(self)) } }
     /// `TESWorldSpace::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 20588, rva 0x314840).
     /// `undefined TESFullName_vdtor(TESWorldSpace * this)`
     ///

@@ -1711,6 +1711,13 @@ impl crate::bhkRagdollTemplateData {
 }
 
 impl crate::bhkRefObject {
+    /// `bhkRefObject::SetReferencedObject`, vtable slot 37, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 78649, rva 0x10825d0).
+    /// `undefined SetReferencedObject(bhkRefObject * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn set_referenced_object(&self, param_1: i64) -> u64 { unsafe { virtual_function!(self, 37, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `bhkRefObject::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 78651, rva 0x1082690).
     /// `bhkRefObject * vdtor(bhkRefObject * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -2202,6 +2209,13 @@ impl crate::bhkWorldM {
 }
 
 impl crate::bhkWorldObject {
+    /// `bhkWorldObject::LinkHavokObject`, vtable slot 38, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 77810, rva 0x10483b0).
+    /// `undefined LinkHavokObject(bhkWorldObject * this, char param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn link_havok_object(&self, param_1: c_char) -> u64 { unsafe { virtual_function!(self, 38, (*const Self, c_char) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `bhkWorldObject::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 77814, rva 0x10485f0).
     /// `bhkWorldObject * vdtor(bhkWorldObject * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -4521,6 +4535,13 @@ impl crate::hkTypeInfoRegistry {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `hkTypeInfoRegistry::vfunc_4_sub0` (decompiler signature, tier low; ledger runtime evidence, name medium; id 65586, rva 0xc50480).
+    /// `undefined vfunc_4_sub0(longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_4_sub0(param_1: i64) -> u64 { unsafe { function!(65586, (i64) -> u64)(param_1) } }
 }
 
 impl crate::hkVersionPatchManager {
@@ -6954,6 +6975,13 @@ impl crate::hkpAabbPhantom {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor(&self, param_1: *mut u64, param_2: u32) -> *mut Self { unsafe { function!(60938, (*const Self, *mut u64, u32) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2) } }
+    /// `hkpAabbPhantom::ctor_2` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 61185, rva 0xb51560).
+    /// `undefined8 * ctor_2(undefined8 * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_2(param_1: *mut u64) -> *mut u64 { unsafe { function!(61185, (*mut u64) -> *mut u64)(param_1) } }
     /// `hkpAabbPhantom::linearCast` (decompiler signature, tier low; ledger string evidence, name medium; id 60943, rva 0xb4e8e0).
     /// `undefined linearCast(hkpAabbPhantom * this, longlong * param_1, float * param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -7430,6 +7458,13 @@ impl crate::hkpCachingShapePhantom {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor_2(&self, param_1: i64, param_2: *mut f32, param_3: u32) -> *mut Self { unsafe { function!(61658, (*const Self, i64, *mut f32, u32) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `hkpCachingShapePhantom::ctor_2` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 61186, rva 0xb515d0).
+    /// `hkpWorldObject * ctor_2(hkpWorldObject * param_1, int param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_2_2(param_1: *mut crate::hkpWorldObject, param_2: i32) -> *mut crate::hkpWorldObject { unsafe { function!(61186, (*mut crate::hkpWorldObject, i32) -> *mut crate::hkpWorldObject)(param_1, param_2) } }
     /// `hkpCachingShapePhantom::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 61203, rva 0xb51a10).
     /// `hkpCachingShapePhantom * vdtor(hkpCachingShapePhantom * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -10206,6 +10241,13 @@ impl crate::hkpReportContactMgr__Factory {
 }
 
 impl crate::hkpRigidBody {
+    /// `hkpRigidBody::SetShape`, vtable slot 3, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 60913, rva 0xb4d590).
+    /// `undefined8 SetShape(hkpRigidBody * this, longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn set_shape(&self, param_1: *mut i64) -> u64 { unsafe { virtual_function!(self, 3, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `hkpRigidBody::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 60887, rva 0xb4c880).
     /// `hkpRigidBody * ctor(hkpRigidBody * this, undefined4 * param_1)`
     ///
@@ -10388,6 +10430,13 @@ impl crate::hkpShapeInfo {
 }
 
 impl crate::hkpShapePhantom {
+    /// `hkpShapePhantom::SetShape`, vtable slot 3, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 61654, rva 0xb65f20).
+    /// `undefined8 SetShape(hkpShapePhantom * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn set_shape(&self, param_1: i64) -> u64 { unsafe { virtual_function!(self, 3, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `hkpShapePhantom::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 61651, rva 0xb65d80).
     /// `hkpShapePhantom * ctor(hkpShapePhantom * this, longlong param_1, float * param_2)`
     ///
@@ -10511,6 +10560,13 @@ impl crate::hkpSimpleShapePhantom {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor(&self, param_1: u64, param_2: u64, param_3: u32) -> *mut Self { unsafe { function!(61535, (*const Self, u64, u64, u32) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `hkpSimpleShapePhantom::ctor_2` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 61187, rva 0xb51640).
+    /// `hkpWorldObject * ctor_2(hkpWorldObject * param_1, int param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_2(param_1: *mut crate::hkpWorldObject, param_2: i32) -> *mut crate::hkpWorldObject { unsafe { function!(61187, (*mut crate::hkpWorldObject, i32) -> *mut crate::hkpWorldObject)(param_1, param_2) } }
     /// `hkpSimpleShapePhantom::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 61230, rva 0xb52870).
     /// `hkpSimpleShapePhantom * vdtor(hkpSimpleShapePhantom * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///

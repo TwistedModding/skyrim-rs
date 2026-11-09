@@ -2072,3 +2072,10 @@ impl crate::ExtraWornLeft {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(12310, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
+/// `ExtraType1DContainsRef` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 37714, rva 0x69ff10).
+/// `ulonglong ExtraType1DContainsRef(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn extra_type1_d_contains_ref(param_1: i64, param_2: i64) -> u64 { unsafe { function!(37714, (i64, i64) -> u64)(param_1, param_2) } }

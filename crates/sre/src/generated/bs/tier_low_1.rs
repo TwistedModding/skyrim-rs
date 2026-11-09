@@ -772,6 +772,13 @@ impl crate::BSDynamicTriShape {
 }
 
 impl crate::BSEffectShader {
+    /// `BSEffectShader::SetupTechnique`, vtable slot 2, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 107524, rva 0x1556840).
+    /// `ulonglong SetupTechnique(BSEffectShader * this, int param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn setup_technique(&self, param_1: i32) -> u64 { unsafe { virtual_function!(self, 2, (*const Self, i32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSEffectShader::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 107532, rva 0x1558844).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSEffectShader * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -1040,6 +1047,13 @@ impl crate::BSFaceGenMorphDataHead {
 }
 
 impl crate::BSFadeNodeCuller {
+    /// `BSFadeNodeCuller::TestFrustum`, vtable slot 22, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 107507, rva 0x1555fd0).
+    /// `undefined TestFrustum(BSFadeNodeCuller * this, longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn test_frustum(&self, param_1: *mut i64) -> u64 { unsafe { virtual_function!(self, 22, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSFadeNodeCuller::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 27123, rva 0x4411f0).
     /// `BSFadeNodeCuller * vdtor(BSFadeNodeCuller * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -2049,6 +2063,26 @@ impl crate::BSImagespaceShaderISSAOBlurVCS {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(106118, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
+impl crate::BSImagespaceShaderISSAOCameraZ {
+    /// `BSImagespaceShaderISSAOCameraZ::GetShaderMacros`, vtable slot 13, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 106243, rva 0x150aaa0).
+    /// `undefined8 * GetShaderMacros(BSImagespaceShaderISSAOCameraZ * this, undefined8 * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_shader_macros(&self, param_1: *mut u64) -> *mut u64 { unsafe { virtual_function!(self, 13, (*const Self, *mut u64) -> *mut u64)(core::ptr::from_ref(self), param_1) } }
+}
+
+impl crate::BSImagespaceShaderISSAOCameraZAndMipsCS {
+    /// `BSImagespaceShaderISSAOCameraZAndMipsCS::GetShaderMacros`, vtable slot 13, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 106244, rva 0x150aab0).
+    /// `undefined8 * GetShaderMacros(BSImagespaceShaderISSAOCameraZAndMipsCS * this, undefined8 * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_shader_macros(&self, param_1: *mut u64) -> *mut u64 { unsafe { virtual_function!(self, 13, (*const Self, *mut u64) -> *mut u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::BSImagespaceShaderISSAOCompositeFog {
@@ -4440,6 +4474,13 @@ impl crate::BSPassByTargetTriggerModifier {
 }
 
 impl crate::BSPassByTargetTriggerModifierInterface {
+    /// `BSPassByTargetTriggerModifierInterface::GetTargetPosition`, vtable slot 2, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 43662, rva 0x7dbb40).
+    /// `undefined GetTargetPosition(BSPassByTargetTriggerModifierInterface * this, float * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_target_position(&self, param_1: *mut f32) -> u64 { unsafe { virtual_function!(self, 2, (*const Self, *mut f32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSPassByTargetTriggerModifierInterface::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 43664, rva 0x7dbc30).
     /// `BSPassByTargetTriggerModifierInterface * vdtor(BSPassByTargetTriggerModifierInterface * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -6668,6 +6709,13 @@ impl crate::BSSkinnedDecalTriShape {
 }
 
 impl crate::BSSkyShader {
+    /// `BSSkyShader::SetupTechnique`, vtable slot 2, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 107402, rva 0x1552280).
+    /// `ulonglong SetupTechnique(BSSkyShader * this, uint param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn setup_technique(&self, param_1: u32) -> u64 { unsafe { virtual_function!(self, 2, (*const Self, u32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSSkyShader::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 107425, rva 0x1552ef0).
     /// `BSSkyShader * vdtor(BSSkyShader * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -12543,56 +12591,6 @@ impl crate::BSTEventSink_LocksPicked__Event {
 impl crate::BSTEventSink_MenuModeChangeEvent {
     /// `BSTEventSink<MenuModeChangeEvent>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 35102, rva 0x5e80a0).
     /// `BSTEventSink<MenuModeChangeEvent> * vdtor(BSTEventSink<MenuModeChangeEvent> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
-impl crate::BSTEventSink_MenuOpenCloseEvent {
-    /// `BSTEventSink<MenuOpenCloseEvent>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 24882, rva 0x3cbb10).
-    /// `BSTEventSink<MenuOpenCloseEvent> * vdtor(BSTEventSink<MenuOpenCloseEvent> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
-impl crate::BSTEventSink_MurderCrime__Event {
-    /// `BSTEventSink<MurderCrime::Event>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 37121, rva 0x66eab0).
-    /// `BSTEventSink<MurderCrime::Event> * vdtor(BSTEventSink<MurderCrime::Event> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
-impl crate::BSTEventSink_ObjectiveState__Event {
-    /// `BSTEventSink<ObjectiveState::Event>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 37043, rva 0x66dbc0).
-    /// `BSTEventSink<ObjectiveState::Event> * vdtor(BSTEventSink<ObjectiveState::Event> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
-impl crate::BSTEventSink_Pickpocket__Event {
-    /// `BSTEventSink<Pickpocket::Event>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 37016, rva 0x66d2c0).
-    /// `BSTEventSink<Pickpocket::Event> * vdtor(BSTEventSink<Pickpocket::Event> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
-impl crate::BSTEventSink_PoisonedWeapon__Event {
-    /// `BSTEventSink<PoisonedWeapon::Event>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 37106, rva 0x66e830).
-    /// `BSTEventSink<PoisonedWeapon::Event> * vdtor(BSTEventSink<PoisonedWeapon::Event> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.

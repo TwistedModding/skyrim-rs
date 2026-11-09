@@ -1413,8 +1413,7 @@ pub struct RenderPass {
     #[doc(hidden)]
     pub __shader: [u8; 8],
     /// +0x8 `ptr:BSShaderProperty`, semantic; owning shader property (high)
-    #[doc(hidden)]
-    pub __property: [u8; 8],
+    pub property: *mut crate::BSShaderProperty,
     /// +0x10 `ptr:BSGeometry`, semantic; geometry drawn (high)
     pub geometry: *mut crate::BSGeometry,
     /// +0x18 `undefined4`, semantic; global technique id; the batch key (ranges per shader, see enum TechniqueIdRanges); 0 = skipped (high)
@@ -1450,7 +1449,7 @@ pub struct RenderPass {
 }
 const _: () = assert!(size_of::<RenderPass>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(RenderPass, __shader) == 0x0);
-const _: () = assert!(core::mem::offset_of!(RenderPass, __property) == 0x8);
+const _: () = assert!(core::mem::offset_of!(RenderPass, property) == 0x8);
 const _: () = assert!(core::mem::offset_of!(RenderPass, geometry) == 0x10);
 const _: () = assert!(core::mem::offset_of!(RenderPass, techniqueId) == 0x18);
 const _: () = assert!(core::mem::offset_of!(RenderPass, __accumulationHint) == 0x1C);
@@ -1469,8 +1468,7 @@ const _: () = assert!(core::mem::offset_of!(RenderPass, __poolIndex) == 0x40);
 #[repr(C, align(4))]
 pub struct RenderStateCache {
     /// +0x0 `undefined4`, semantic; dirty bits: 1 targets, 2 viewport, 0xc depth-stencil state, 0x1070 rasterizer, 0x80 blend (high)
-    #[doc(hidden)]
-    pub __dirty: [u8; 4],
+    pub dirty: u32,
     /// +0x4 `undefined4`, semantic; 16-bit per-slot dirty mask (medium)
     #[doc(hidden)]
     pub __dirtyShaderResources: [u8; 4],
@@ -1510,7 +1508,7 @@ pub struct RenderStateCache {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RenderStateCache>() == 0x340);
-const _: () = assert!(core::mem::offset_of!(RenderStateCache, __dirty) == 0x0);
+const _: () = assert!(core::mem::offset_of!(RenderStateCache, dirty) == 0x0);
 const _: () = assert!(core::mem::offset_of!(RenderStateCache, __dirtyShaderResources) == 0x4);
 const _: () = assert!(core::mem::offset_of!(RenderStateCache, __dirtySamplers) == 0x8);
 const _: () = assert!(core::mem::offset_of!(RenderStateCache, __renderTargets) == 0x18);

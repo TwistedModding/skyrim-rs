@@ -5124,6 +5124,16 @@ impl crate::BSScaleformMovieLoadTask {
     pub unsafe fn ctor(&self) -> u64 { unsafe { function!(84664, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
+impl crate::BSSceneGraph {
+    /// `BSSceneGraph::GetFarDistance`, vtable slot 62, through the object's vtable (decompiler signature, tier high; ledger semantic evidence, name high; id 76749, rva 0xff4b70).
+    /// `float GetFarDistance(BSSceneGraph * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_far_distance(&self) -> f32 { unsafe { virtual_function!(self, 62, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
+}
+
 impl crate::BSShaderProperty__ForEachVisitor {
     /// `BSShaderProperty::ForEachVisitor::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 15607, rva 0x216150).
     /// `undefined dtor(ForEachVisitor * this)`

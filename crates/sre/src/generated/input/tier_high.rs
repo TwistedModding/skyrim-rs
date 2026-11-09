@@ -8,6 +8,13 @@
 use core::ffi::{c_char, c_void};
 
 impl crate::BSGamepadDevice {
+    /// `BSGamepadDevice::IsEnabled` (decompiler signature, tier high; ledger semantic evidence, name high; id 68710, rva 0xcfc150).
+    /// `undefined1 IsEnabled(BSGamepadDevice * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn is_enabled(&self) -> u8 { unsafe { function!(68710, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
     /// `BSGamepadDevice::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 68695, rva 0xcfba80).
     /// `BSGamepadDevice * ctor(BSGamepadDevice * this)`
     ///

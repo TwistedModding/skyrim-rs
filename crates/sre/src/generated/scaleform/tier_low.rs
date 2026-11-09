@@ -184,3 +184,10 @@ impl crate::ScaleformFile__MemoryFile {
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn g_fx_movie_root__display(param_1: u32) -> *mut c_char { unsafe { function!(87188, (u32) -> *mut c_char)(param_1) } }
+/// `GFx_DefineFontInfoLoader` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 87621, rva 0xe0b840).
+/// `undefined GFx_DefineFontInfoLoader(longlong param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn g_fx_define_font_info_loader(param_1: i64, param_2: *mut u32, param_3: u64, param_4: u64) -> u64 { unsafe { function!(87621, (i64, *mut u32, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }

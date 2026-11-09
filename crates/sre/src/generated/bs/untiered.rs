@@ -133,13 +133,6 @@ impl crate::BSDistantTreeShader {
 }
 
 impl crate::BSEffectShader {
-    /// `BSEffectShader::SetupTechnique`, vtable slot 2, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 107524, rva 0x1556840).
-    /// `ulonglong SetupTechnique(BSEffectShader * this, int param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn setup_technique(&self, param_1: i32) -> u64 { unsafe { virtual_function!(self, 2, (*const Self, i32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSEffectShader::vfunc_2_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 108972, rva 0x158dab0).
     /// `uint vfunc_2_sub0(uint param_1)`
     ///
@@ -181,16 +174,6 @@ impl crate::BSFaceGenMorphDataHead {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor_sub0(param_1: *mut i32, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(26945, (*mut i32, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-}
-
-impl crate::BSFadeNodeCuller {
-    /// `BSFadeNodeCuller::TestFrustum`, vtable slot 22, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 107507, rva 0x1555fd0).
-    /// `undefined TestFrustum(BSFadeNodeCuller * this, longlong * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn test_frustum(&self, param_1: *mut i64) -> u64 { unsafe { virtual_function!(self, 22, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::BSFogProperty {
@@ -245,26 +228,6 @@ impl crate::BSIStateManagerModifier__BSIStateManagerStateListener {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_3_sub0(param_1: i64, param_2: *mut i64, param_3: u64) -> u64 { unsafe { function!(63106, (i64, *mut i64, u64) -> u64)(param_1, param_2, param_3) } }
-}
-
-impl crate::BSImagespaceShaderISSAOCameraZ {
-    /// `BSImagespaceShaderISSAOCameraZ::GetShaderMacros`, vtable slot 13, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 106243, rva 0x150aaa0).
-    /// `undefined8 * GetShaderMacros(BSImagespaceShaderISSAOCameraZ * this, undefined8 * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn get_shader_macros(&self, param_1: *mut u64) -> *mut u64 { unsafe { virtual_function!(self, 13, (*const Self, *mut u64) -> *mut u64)(core::ptr::from_ref(self), param_1) } }
-}
-
-impl crate::BSImagespaceShaderISSAOCameraZAndMipsCS {
-    /// `BSImagespaceShaderISSAOCameraZAndMipsCS::GetShaderMacros`, vtable slot 13, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 106244, rva 0x150aab0).
-    /// `undefined8 * GetShaderMacros(BSImagespaceShaderISSAOCameraZAndMipsCS * this, undefined8 * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn get_shader_macros(&self, param_1: *mut u64) -> *mut u64 { unsafe { virtual_function!(self, 13, (*const Self, *mut u64) -> *mut u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::BSLODMultiIndexTriShape {
@@ -512,16 +475,6 @@ impl crate::BSParticleShaderGeometryEmitter {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_4_sub1(param_1: *mut i64, param_2: *mut i64) -> *mut i64 { unsafe { function!(107099, (*mut i64, *mut i64) -> *mut i64)(param_1, param_2) } }
-}
-
-impl crate::BSPassByTargetTriggerModifierInterface {
-    /// `BSPassByTargetTriggerModifierInterface::GetTargetPosition`, vtable slot 2, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 43662, rva 0x7dbb40).
-    /// `undefined GetTargetPosition(BSPassByTargetTriggerModifierInterface * this, float * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn get_target_position(&self, param_1: *mut f32) -> u64 { unsafe { virtual_function!(self, 2, (*const Self, *mut f32) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::BSPathEventManager {
@@ -1323,13 +1276,6 @@ impl crate::BSScaleformTranslator {
 }
 
 impl crate::BSSceneGraph {
-    /// `BSSceneGraph::GetFarDistance`, vtable slot 62, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 76749, rva 0xff4b70).
-    /// `float GetFarDistance(BSSceneGraph * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn get_far_distance(&self) -> f32 { unsafe { virtual_function!(self, 62, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `BSSceneGraph::GetNearDistance`, vtable slot 63, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 76750, rva 0xff4bb0).
     /// `float GetNearDistance(BSSceneGraph * this)`
     ///
@@ -1542,13 +1488,6 @@ impl crate::BSShapeConstructor {
 }
 
 impl crate::BSSkyShader {
-    /// `BSSkyShader::SetupTechnique`, vtable slot 2, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 107402, rva 0x1552280).
-    /// `ulonglong SetupTechnique(BSSkyShader * this, uint param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn setup_technique(&self, param_1: u32) -> u64 { unsafe { virtual_function!(self, 2, (*const Self, u32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSSkyShader::vfunc_2_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 108900, rva 0x158d440).
     /// `undefined4 vfunc_2_sub0(undefined4 param_1)`
     ///
@@ -2171,16 +2110,6 @@ impl crate::BSTreadTransfInterpolator {
     pub unsafe fn vfunc_23_sub0(param_1: i64, param_2: i64, param_3: i64, param_4: *mut u8) -> u64 { unsafe { function!(74098, (i64, i64, i64, *mut u8) -> u64)(param_1, param_2, param_3, param_4) } }
 }
 
-impl crate::BSTreeManager__IQueryCullingCamera {
-    /// `BSTreeManager::IQueryCullingCamera::Destroy`, vtable slot 0, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 36737, rva 0x661cf0).
-    /// `IQueryCullingCamera * Destroy(IQueryCullingCamera * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn destroy_2(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
 impl crate::BSTriShape {
     /// `BSTriShape::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 76342, rva 0xfe4230).
     /// `undefined dtor(BSTriShape * this)`
@@ -2202,13 +2131,6 @@ impl crate::BSTweenerModifier {
 }
 
 impl crate::BSUtilityShader {
-    /// `BSUtilityShader::SetupTechnique`, vtable slot 2, through the object's vtable (decompiler signature, tier untiered; ledger runtime evidence, name high; id 107759, rva 0x1566710).
-    /// `char SetupTechnique(BSUtilityShader * this, int param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn setup_technique(&self, param_1: i32) -> c_char { unsafe { virtual_function!(self, 2, (*const Self, i32) -> c_char)(core::ptr::from_ref(self), param_1) } }
     /// `BSUtilityShader::vfunc_2_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 109050, rva 0x158e990).
     /// `uint vfunc_2_sub0(uint param_1)`
     ///
@@ -2240,13 +2162,6 @@ impl crate::BSUtilityShader {
 }
 
 impl crate::BSWaterShader {
-    /// `BSWaterShader::SetupTechnique`, vtable slot 2, through the object's vtable (decompiler signature, tier untiered; ledger runtime evidence, name high; id 107362, rva 0x154d330).
-    /// `ulonglong SetupTechnique(BSWaterShader * this, int param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn setup_technique(&self, param_1: i32) -> u64 { unsafe { virtual_function!(self, 2, (*const Self, i32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSWaterShader::vfunc_2_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 108859, rva 0x158d0b0).
     /// `undefined4 vfunc_2_sub0(undefined4 param_1)`
     ///
@@ -2355,10 +2270,3 @@ impl crate::_anon_3D37F7D5__BSResourceAssetLoader {
     pub unsafe fn vfunc_3_sub1(param_1: i64, param_2: *mut u64) -> u8 { unsafe { function!(63959, (i64, *mut u64) -> u8)(param_1, param_2) } }
 }
 
-/// `BSFixedStringVectorDeletingDtor` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 70441, rva 0xee8d80).
-/// `void * BSFixedStringVectorDeletingDtor(void * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn bs_fixed_string_vector_deleting_dtor(param_1: *mut c_void, param_2: u32, param_3: u64, param_4: u64) -> *mut c_void { unsafe { function!(70441, (*mut c_void, u32, u64, u64) -> *mut c_void)(param_1, param_2, param_3, param_4) } }

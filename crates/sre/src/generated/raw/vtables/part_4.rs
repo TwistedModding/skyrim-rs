@@ -7,40 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `BGSPackageDataRefOLD::vftable_8` at 0x18c4cd8, id 200904 (rtti, high); 13 slots.
-#[repr(C)]
-pub struct BGSPackageDataRefOLD_vtable_8 {
-    /// `BGSPackageDataRefOLD::IPackageData_vdtor` at 0x44e914 (slot_propagation, medium); signature (high): `undefined IPackageData_vdtor(BGSPackageDataRefOLD * this)`
-    pub slot_0: *const c_void,
-    /// `BGSPackageDataRefOLD::IPackageData_vfunc_1` at 0x44db40 (rtti, high); signature (low): `undefined IPackageData_vfunc_1(BGSPackageDataRefOLD * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0>::IPackageData_vfunc_2` at 0x44ef20 (rtti, medium); signature (low): `undefined IPackageData_vfunc_2(BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0> * this, longlong param_1, undefined8 param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
-    /// `BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0>::IPackageData_vfunc_3` at 0x44ee50 (rtti, medium); signature (low): `undefined IPackageData_vfunc_3(BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0> * this, undefined8 param_1)`
-    pub slot_3: *const c_void,
-    /// `BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0>::IPackageData_vfunc_4` at 0x44ee90 (rtti, medium); signature (low): `longlong IPackageData_vfunc_4(BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0> * this, undefined8 param_1)`
-    pub slot_4: *const c_void,
-    /// `BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0>::IPackageData_vfunc_5` at 0x44f020 (rtti, medium); signature (low): `undefined1 IPackageData_vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `IPackageData::vfunc_6` at 0x44d510 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `IPackageData::vfunc_7` at 0x44d520 (rtti, medium); signature (low): `undefined vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `IPackageData::vfunc_8` at 0x44d530 (rtti, medium); signature (low): `undefined vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `IPackageData::vfunc_9` at 0x44d540 (rtti, medium); signature (low): `undefined vfunc_9(void)`
-    pub slot_9: *const c_void,
-    /// `BGSPackageDataRefOLD::IPackageData_vfunc_10` at 0x44dd90 (rtti, high); signature (low): `undefined IPackageData_vfunc_10(BGSPackageDataRefOLD * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_10: *const c_void,
-    /// `BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0>::IPackageData_vfunc_11` at 0x44f030 (rtti, medium); signature (low): `undefined * IPackageData_vfunc_11(void)`
-    pub slot_11: *const c_void,
-    /// `IPackageData::vfunc_12` at 0x44d550 (rtti, medium); signature (low): `undefined1 vfunc_12(void)`
-    pub slot_12: *const c_void,
-}
-impl BGSPackageDataRefOLD_vtable_8 {
-    pub const ID: u64 = 200904;
-}
-
 /// `BGSPackageDataSaveableTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault>::vftable` at 0x18c4858, id 200821 (rtti, high); 14 slots.
 #[repr(C)]
 pub struct BGSPackageDataSaveableTemplate_IPackageData_float_class_BSFixedString_const_kPackageDataFloatTyp_0cb254898459_vtable {
@@ -438,9 +404,9 @@ pub struct BGSPerk_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -450,13 +416,13 @@ pub struct BGSPerk_vtable {
     pub slot_18: *const c_void,
     /// `BGSPerk::vfunc_19` at 0x396bf0 (rtti, high); signature (low): `undefined vfunc_19(BGSPerk * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -480,7 +446,7 @@ pub struct BGSPerk_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -498,7 +464,7 @@ pub struct BGSPerk_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -510,9 +476,9 @@ pub struct BGSPerk_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -522,7 +488,7 @@ pub struct BGSPerk_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -544,9 +510,9 @@ pub struct BGSPerk_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl BGSPerk_vtable_20 {
@@ -690,7 +656,7 @@ impl BGSPickupPutdownSounds_vtable {
 pub struct BGSPlayerMusicChanger_vtable {
     /// `BGSPlayerMusicChanger::vdtor` at 0x5eaf20 (layout_inference, medium); signature (low): `BGSPlayerMusicChanger * vdtor(BGSPlayerMusicChanger * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BGSPlayerMusicChanger::ProcessActorCellEvent` at 0x737360 (semantic, medium); signature (untiered): `undefined8 ProcessActorCellEvent(BGSPlayerMusicChanger * this, uint * param_1, undefined8 param_2, TypeDescriptor * param_3)`
+    /// `BGSPlayerMusicChanger::ProcessActorCellEvent` at 0x737360 (semantic, medium); signature (low): `undefined8 ProcessActorCellEvent(BGSPlayerMusicChanger * this, uint * param_1, undefined8 param_2, TypeDescriptor * param_3)`
     pub slot_1: *const c_void,
 }
 impl BGSPlayerMusicChanger_vtable {
@@ -702,7 +668,7 @@ impl BGSPlayerMusicChanger_vtable {
 pub struct BGSPlayerMusicChanger_vtable_8 {
     /// `BGSPlayerMusicChanger::BSTEventSink_BGSActorDeathEvent_vdtor` at 0x5eaedc (slot_propagation, medium); signature (high): `undefined BSTEventSink_BGSActorDeathEvent_vdtor(BGSPlayerMusicChanger * this)`
     pub slot_0: *const c_void,
-    /// `BGSPlayerMusicChanger::ProcessActorDeathEvent` at 0x737470 (semantic, medium); signature (untiered): `undefined8 ProcessActorDeathEvent(BGSPlayerMusicChanger * this, uint * param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BGSPlayerMusicChanger::ProcessActorDeathEvent` at 0x737470 (semantic, medium); signature (low): `undefined8 ProcessActorDeathEvent(BGSPlayerMusicChanger * this, uint * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
 }
 impl BGSPlayerMusicChanger_vtable_8 {
@@ -7274,9 +7240,9 @@ pub struct BGSProjectile_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -7286,13 +7252,13 @@ pub struct BGSProjectile_vtable {
     pub slot_18: *const c_void,
     /// `BGSProjectile::vfunc_19` at 0x265a90 (rtti, high); signature (low): `undefined vfunc_19(BGSProjectile * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -7316,7 +7282,7 @@ pub struct BGSProjectile_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -7334,7 +7300,7 @@ pub struct BGSProjectile_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -7346,9 +7312,9 @@ pub struct BGSProjectile_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -7358,7 +7324,7 @@ pub struct BGSProjectile_vtable {
     pub slot_54: *const c_void,
     /// `BGSProjectile::vfunc_55` at 0x266260 (rtti, high); signature (low): `undefined1 vfunc_55(BGSProjectile * this, longlong * param_1, longlong * * * * * * * param_2, ulonglong param_3, ulonglong param_4, uint param_5)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -7428,9 +7394,9 @@ pub struct BGSProjectile_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl BGSProjectile_vtable_30 {
@@ -7442,15 +7408,15 @@ impl BGSProjectile_vtable_30 {
 pub struct BGSProjectile_vtable_40 {
     /// `BGSProjectile::TESModel_vdtor` at 0x266750 (slot_propagation, medium); signature (high): `undefined TESModel_vdtor(BGSProjectile * this)`
     pub slot_0: *const c_void,
-    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (untiered): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (low): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (untiered): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (low): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
     pub slot_2: *const c_void,
-    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (untiered): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
+    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (low): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModel::vfunc_6` at 0x1dfd80 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -7756,9 +7722,9 @@ pub struct BGSRagdoll_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -7768,13 +7734,13 @@ pub struct BGSRagdoll_vtable {
     pub slot_18: *const c_void,
     /// `BGSRagdoll::vfunc_19` at 0x39e610 (rtti, high); signature (low): `undefined vfunc_19(BGSRagdoll * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -7798,7 +7764,7 @@ pub struct BGSRagdoll_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -7816,7 +7782,7 @@ pub struct BGSRagdoll_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -7828,9 +7794,9 @@ pub struct BGSRagdoll_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -7840,7 +7806,7 @@ pub struct BGSRagdoll_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -7856,15 +7822,15 @@ impl BGSRagdoll_vtable {
 pub struct BGSRagdoll_vtable_20 {
     /// `BGSRagdoll::TESModel_vdtor` at 0x39e998 (slot_propagation, medium); signature (high): `undefined TESModel_vdtor(BGSRagdoll * this)`
     pub slot_0: *const c_void,
-    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (untiered): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (low): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (untiered): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (low): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
     pub slot_2: *const c_void,
-    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (untiered): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
+    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (low): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModel::vfunc_6` at 0x1dfd80 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -7920,9 +7886,9 @@ pub struct BGSReferenceEffect_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -7932,13 +7898,13 @@ pub struct BGSReferenceEffect_vtable {
     pub slot_18: *const c_void,
     /// `BGSReferenceEffect::vfunc_19` at 0x29eb40 (rtti, high); signature (low): `undefined vfunc_19(BGSReferenceEffect * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -7962,7 +7928,7 @@ pub struct BGSReferenceEffect_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -7980,7 +7946,7 @@ pub struct BGSReferenceEffect_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -7992,9 +7958,9 @@ pub struct BGSReferenceEffect_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -8004,7 +7970,7 @@ pub struct BGSReferenceEffect_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -8046,9 +8012,9 @@ pub struct BGSRelationship_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `BGSRelationship::SaveGame` at 0x3a4f30 (slot_propagation, medium); signature (untiered): `undefined SaveGame(BGSRelationship * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BGSRelationship::SaveGame` at 0x3a4f30 (slot_propagation, medium); signature (low): `undefined SaveGame(BGSRelationship * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_14: *const c_void,
-    /// `BGSRelationship::LoadGame` at 0x3a4fc0 (slot_propagation, medium); signature (untiered): `undefined LoadGame(BGSRelationship * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BGSRelationship::LoadGame` at 0x3a4fc0 (slot_propagation, medium); signature (low): `undefined LoadGame(BGSRelationship * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_15: *const c_void,
     /// `BGSRelationship::vfunc_16` at 0x3a5140 (rtti, high); signature (low): `undefined vfunc_16(BGSRelationship * this, undefined8 param_1, undefined8 param_2, TypeDescriptor * param_3)`
     pub slot_16: *const c_void,
@@ -8058,13 +8024,13 @@ pub struct BGSRelationship_vtable {
     pub slot_18: *const c_void,
     /// `BGSRelationship::vfunc_19` at 0x3a48c0 (rtti, high); signature (low): `undefined vfunc_19(BGSRelationship * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -8088,7 +8054,7 @@ pub struct BGSRelationship_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -8106,7 +8072,7 @@ pub struct BGSRelationship_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -8118,9 +8084,9 @@ pub struct BGSRelationship_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -8130,7 +8096,7 @@ pub struct BGSRelationship_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -8172,9 +8138,9 @@ pub struct BGSReverbParameters_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -8184,13 +8150,13 @@ pub struct BGSReverbParameters_vtable {
     pub slot_18: *const c_void,
     /// `TESForm::vfunc_19` at 0x1c7db0 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -8214,7 +8180,7 @@ pub struct BGSReverbParameters_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -8232,7 +8198,7 @@ pub struct BGSReverbParameters_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -8244,9 +8210,9 @@ pub struct BGSReverbParameters_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -8256,7 +8222,7 @@ pub struct BGSReverbParameters_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -8302,11 +8268,11 @@ impl BGSReverbParameters_vtable_20 {
 pub struct BGSSaveFormBuffer_vtable {
     /// `BGSSaveFormBuffer::vdtor` at 0x6398b0 (slot_propagation, medium); signature (low): `BGSSaveFormBuffer * vdtor(BGSSaveFormBuffer * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BGSSaveFormBuffer::GetForm` at 0x6398f0 (semantic, high); signature (untiered): `undefined8 GetForm(BGSSaveFormBuffer * this)`; `GetForm`: the form being saved (high); semantic signature: `TESForm* (BGSSaveFormBuffer* this)`
+    /// `BGSSaveFormBuffer::GetForm` at 0x6398f0 (semantic, high); signature (high): `undefined8 GetForm(BGSSaveFormBuffer * this)`; `GetForm`: the form being saved (high); semantic signature: `TESForm* (BGSSaveFormBuffer* this)`
     pub slot_1: *const c_void,
-    /// `BGSSaveFormBuffer::GetReference` at 0x639830 (semantic, medium); signature (untiered): `undefined GetReference(BGSSaveFormBuffer * this)`; `GetReference`: slot 1 then TESForm slot 44 (0x160) (medium); semantic signature: `TESObjectREFR* (BGSSaveFormBuffer* this)`
+    /// `BGSSaveFormBuffer::GetReference` at 0x639830 (semantic, medium); signature (high): `undefined GetReference(BGSSaveFormBuffer * this)`; `GetReference`: slot 1 then TESForm slot 44 (0x160) (medium); semantic signature: `TESObjectREFR* (BGSSaveFormBuffer* this)`
     pub slot_2: *const c_void,
-    /// `BGSSaveFormBuffer::GetActor` at 0x639860 (semantic, high); signature (untiered): `longlong GetActor(BGSSaveFormBuffer * this)`; `GetActor`: slot 2 when formType == 0x3e (high); semantic signature: `Actor* (BGSSaveFormBuffer* this)`
+    /// `BGSSaveFormBuffer::GetActor` at 0x639860 (semantic, high); signature (high): `longlong GetActor(BGSSaveFormBuffer * this)`; `GetActor`: slot 2 when formType == 0x3e (high); semantic signature: `Actor* (BGSSaveFormBuffer* this)`
     pub slot_3: *const c_void,
 }
 impl BGSSaveFormBuffer_vtable {
@@ -8351,7 +8317,7 @@ impl BGSSaveGameBuffer_vtable {
 pub struct BGSSaveLoadManager_vtable {
     /// `BGSSaveLoadManager::vdtor` at 0x62dd90 (semantic, high); signature (low): `BGSSaveLoadManager * vdtor(BGSSaveLoadManager * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: destructor (high); semantic signature: `void* (BGSSaveLoadManager*, u32)`
     pub slot_0: *const c_void,
-    /// `BGSSaveLoadManager::ProcessSaveDataEvent` at 0x626380 (semantic, high); signature (untiered): `undefined8 ProcessSaveDataEvent(BGSSaveLoadManager * this, LoadRequest * param_1, ulonglong param_2, ulonglong param_3)`; `ProcessSaveDataEvent`: completion of a BSSaveDataSystemUtility operation: op 0 (file read) -> build LoadRequest 0xd0000010 and queue it, notify {2,1}; op 1 (file written) -> rotate .bak copies (iSaveGameBackupCount), rename '<name>.ess.tmp' to '<name>.ess', add the list entry, SetCurrentSaveName, queue deletion of the replaced autosave/quicksave (0x40000004), notify {1,1}; op 2 (delete) -> nothing (high); semantic signature: `BSEventNotifyControl (BGSSaveLoadManager*, const BSSaveDataEvent*, BSTEventSource<BSSaveDataEvent>*)`
+    /// `BGSSaveLoadManager::ProcessSaveDataEvent` at 0x626380 (semantic, high); signature (low): `undefined8 ProcessSaveDataEvent(BGSSaveLoadManager * this, LoadRequest * param_1, ulonglong param_2, ulonglong param_3)`; `ProcessSaveDataEvent`: completion of a BSSaveDataSystemUtility operation: op 0 (file read) -> build LoadRequest 0xd0000010 and queue it, notify {2,1}; op 1 (file written) -> rotate .bak copies (iSaveGameBackupCount), rename '<name>.ess.tmp' to '<name>.ess', add the list entry, SetCurrentSaveName, queue deletion of the replaced autosave/quicksave (0x40000004), notify {1,1}; op 2 (delete) -> nothing (high); semantic signature: `BSEventNotifyControl (BGSSaveLoadManager*, const BSSaveDataEvent*, BSTEventSource<BSSaveDataEvent>*)`
     pub slot_1: *const c_void,
 }
 impl BGSSaveLoadManager_vtable {
@@ -8403,7 +8369,7 @@ impl BGSSaveLoadManager_vtable_10 {
 pub struct BGSSaveLoadManager__Thread_vtable {
     /// `BGSSaveLoadManager::Thread::vdtor` at 0x62e290 (semantic, high); signature (low): `Thread * vdtor(Thread * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: destructor (high); semantic signature: ``
     pub slot_0: *const c_void,
-    /// `BGSSaveLoadManager::Thread::Run` at 0x62a030 (semantic, high); signature (untiered): `undefined8 Run(Thread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Run`: thread body (high); semantic signature: `u32 (Thread*)`
+    /// `BGSSaveLoadManager::Thread::Run` at 0x62a030 (semantic, high); signature (low): `undefined8 Run(Thread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Run`: thread body (high); semantic signature: `u32 (Thread*)`
     pub slot_1: *const c_void,
     /// `BGSSaveLoadManager::Thread::vfunc_2` at 0x630420 (rtti, high); signature (high): `undefined vfunc_2(Thread * this)`; `vfunc_2` (low); semantic signature: ``
     pub slot_2: *const c_void,
@@ -8475,9 +8441,9 @@ pub struct BGSScene_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `BGSScene::SaveGame` at 0x3a8c60 (slot_propagation, medium); signature (untiered): `undefined SaveGame(BGSScene * this, longlong param_1)`
+    /// `BGSScene::SaveGame` at 0x3a8c60 (slot_propagation, medium); signature (low): `undefined SaveGame(BGSScene * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `BGSScene::LoadGame` at 0x3a8eb0 (slot_propagation, medium); signature (untiered): `undefined LoadGame(BGSScene * this, longlong param_1)`
+    /// `BGSScene::LoadGame` at 0x3a8eb0 (slot_propagation, medium); signature (low): `undefined LoadGame(BGSScene * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `BGSScene::vfunc_16` at 0x3a9250 (rtti, high); signature (low): `undefined vfunc_16(BGSScene * this, undefined8 param_1)`
     pub slot_16: *const c_void,
@@ -8487,13 +8453,13 @@ pub struct BGSScene_vtable {
     pub slot_18: *const c_void,
     /// `BGSScene::vfunc_19` at 0x3a6e30 (rtti, high); signature (low): `undefined vfunc_19(BGSScene * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -8517,7 +8483,7 @@ pub struct BGSScene_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -8535,7 +8501,7 @@ pub struct BGSScene_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -8547,9 +8513,9 @@ pub struct BGSScene_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -8559,7 +8525,7 @@ pub struct BGSScene_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -8815,9 +8781,9 @@ pub struct BGSShaderParticleGeometryData_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -8827,13 +8793,13 @@ pub struct BGSShaderParticleGeometryData_vtable {
     pub slot_18: *const c_void,
     /// `BGSShaderParticleGeometryData::vfunc_19` at 0x2a0c60 (rtti, high); signature (untiered): `undefined vfunc_19(longlong param_1, char param_2)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -8857,7 +8823,7 @@ pub struct BGSShaderParticleGeometryData_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -8875,7 +8841,7 @@ pub struct BGSShaderParticleGeometryData_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -8887,9 +8853,9 @@ pub struct BGSShaderParticleGeometryData_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -8899,7 +8865,7 @@ pub struct BGSShaderParticleGeometryData_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -8947,11 +8913,11 @@ pub struct BGSSoundCategory_vtable {
     pub slot_2: *const c_void,
     /// `TESForm::vfunc_3` at 0x1e6930 (rtti, medium); signature (low): `undefined vfunc_3(TESForm * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `BGSSoundCategory::InitializeData` at 0x329790 (semantic, medium); signature (untiered): `undefined InitializeData(BGSSoundCategory * this)`; `InitializeData`: resets +0x4c = 0xffff/0xffff, flags and parent (medium); semantic signature: `void (BGSSoundCategory* this)`
+    /// `BGSSoundCategory::InitializeData` at 0x329790 (semantic, medium); signature (high): `undefined InitializeData(BGSSoundCategory * this)`; `InitializeData`: resets +0x4c = 0xffff/0xffff, flags and parent (medium); semantic signature: `void (BGSSoundCategory* this)`
     pub slot_4: *const c_void,
     /// `TESForm::vfunc_5` at 0x1e36b0 (rtti, medium); signature (low): `undefined vfunc_5(void)`
     pub slot_5: *const c_void,
-    /// `BGSSoundCategory::Load` at 0x329350 (semantic, high); signature (untiered): `undefined8 Load(BGSSoundCategory * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `Load`: checks the record type is 0x82, then FNAM, VMAD, EDID, OBND, FULL, PNAM, SNAM, UNAM, VNAM (high); semantic signature: `bool (BGSSoundCategory* this, TESFile* file)`
+    /// `BGSSoundCategory::Load` at 0x329350 (semantic, high); signature (low): `undefined8 Load(BGSSoundCategory * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `Load`: checks the record type is 0x82, then FNAM, VMAD, EDID, OBND, FULL, PNAM, SNAM, UNAM, VNAM (high); semantic signature: `bool (BGSSoundCategory* this, TESFile* file)`
     pub slot_6: *const c_void,
     /// `TESForm::vfunc_7` at 0x1469b0 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
     pub slot_7: *const c_void,
@@ -8967,9 +8933,9 @@ pub struct BGSSoundCategory_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -8977,15 +8943,15 @@ pub struct BGSSoundCategory_vtable {
     pub slot_17: *const c_void,
     /// `TESForm::vfunc_18` at 0x1e5850 (rtti, medium); signature (low): `undefined vfunc_18(void)`
     pub slot_18: *const c_void,
-    /// `BGSSoundCategory::InitItemImpl` at 0x329640 (semantic, high); signature (untiered): `undefined InitItemImpl(BGSSoundCategory * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `InitItemImpl`: once: clears menu slots whose form is missing/not SNCT/not flag bit 1; resolves the parent; for menu categories restores the saved volume from the slot table or applies the default menu volume (high); semantic signature: `void (BGSSoundCategory* this)`
+    /// `BGSSoundCategory::InitItemImpl` at 0x329640 (semantic, high); signature (low): `undefined InitItemImpl(BGSSoundCategory * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `InitItemImpl`: once: clears menu slots whose form is missing/not SNCT/not flag bit 1; resolves the parent; for menu categories restores the saved volume from the slot table or applies the default menu volume (high); semantic signature: `void (BGSSoundCategory* this)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -9009,7 +8975,7 @@ pub struct BGSSoundCategory_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -9027,7 +8993,7 @@ pub struct BGSSoundCategory_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -9039,9 +9005,9 @@ pub struct BGSSoundCategory_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -9051,7 +9017,7 @@ pub struct BGSSoundCategory_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -9090,9 +9056,9 @@ pub struct BGSSoundCategory_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl BGSSoundCategory_vtable_20 {
@@ -9108,11 +9074,11 @@ pub struct BGSSoundCategory_vtable_30 {
     pub slot_1: *const c_void,
     /// `BSISoundCategory::GetEffectiveVolume` at 0x329870 (semantic, high); signature (untiered): `float GetEffectiveVolume(BSISoundCategory * this)`
     pub slot_2: *const c_void,
-    /// `BSISoundCategory::SetVolume` at 0x3298d0 (semantic, high); signature (untiered): `undefined SetVolume(BGSSoundCategory * this, undefined4 param_2)`
+    /// `BSISoundCategory::SetVolume` at 0x3298d0 (semantic, high); signature (low): `undefined SetVolume(BGSSoundCategory * this, undefined4 param_2)`
     pub slot_3: *const c_void,
     /// `BSISoundCategory::GetEffectiveFrequency` at 0x329920 (semantic, high); signature (untiered): `float GetEffectiveFrequency(BSISoundCategory * this)`
     pub slot_4: *const c_void,
-    /// `BSISoundCategory::SetFrequency` at 0x329970 (semantic, high); signature (untiered): `undefined SetFrequency(BGSSoundCategory * this, undefined4 param_2)`
+    /// `BSISoundCategory::SetFrequency` at 0x329970 (semantic, high); signature (low): `undefined SetFrequency(BGSSoundCategory * this, undefined4 param_2)`
     pub slot_5: *const c_void,
     /// `BSISoundCategory::GetEffectiveAttenuation` at 0x329980 (semantic, medium); signature (untiered): `ushort GetEffectiveAttenuation(BSISoundCategory * this)`
     pub slot_6: *const c_void,
@@ -9140,9 +9106,9 @@ pub struct BGSSoundDescriptor_vtable {
     pub slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_2: *const c_void,
-    /// `BGSSoundDescriptor::InitItem` at 0x329eb0 (semantic, high); signature (untiered): `undefined InitItem(BGSSoundDescriptor * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `InitItem`: resolves the category form id and initialises the category (high); semantic signature: `void (BGSSoundDescriptor* this, TESForm* owner)`
+    /// `BGSSoundDescriptor::InitItem` at 0x329eb0 (semantic, high); signature (low): `undefined InitItem(BGSSoundDescriptor * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `InitItem`: resolves the category form id and initialises the category (high); semantic signature: `void (BGSSoundDescriptor* this, TESForm* owner)`
     pub slot_3: *const c_void,
-    /// `BGSSoundDescriptor::LoadChunk` at 0x329f40 (semantic, high); signature (untiered): `undefined LoadChunk(BGSSoundDescriptor * this, longlong param_1)`; `LoadChunk`: reads GNAM (category id) and SNAM (linked id) (high); semantic signature: `void (BGSSoundDescriptor* this, TESFile* file)`
+    /// `BGSSoundDescriptor::LoadChunk` at 0x329f40 (semantic, high); signature (low): `undefined LoadChunk(BGSSoundDescriptor * this, longlong param_1)`; `LoadChunk`: reads GNAM (category id) and SNAM (linked id) (high); semantic signature: `void (BGSSoundDescriptor* this, TESFile* file)`
     pub slot_4: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_5: *const c_void,
@@ -9182,9 +9148,9 @@ pub struct BGSSoundDescriptorForm_vtable {
     pub slot_3: *const c_void,
     /// `TESForm::vfunc_4` at 0x1e35b0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
     pub slot_4: *const c_void,
-    /// `BGSSoundDescriptorForm::ClearData` at 0x32a3e0 (semantic, medium); signature (untiered): `undefined ClearData(BGSSoundDescriptorForm * this)`; `ClearData`: destroys the descriptor through its creator and nulls +0x28 (medium); semantic signature: `void (BGSSoundDescriptorForm* this)`
+    /// `BGSSoundDescriptorForm::ClearData` at 0x32a3e0 (semantic, medium); signature (high): `undefined ClearData(BGSSoundDescriptorForm * this)`; `ClearData`: destroys the descriptor through its creator and nulls +0x28 (medium); semantic signature: `void (BGSSoundDescriptorForm* this)`
     pub slot_5: *const c_void,
-    /// `BGSSoundDescriptorForm::Load` at 0x32a4a0 (semantic, high); signature (untiered): `undefined8 Load(BGSSoundDescriptorForm * this, longlong param_1)`; `Load`: reads VMAD, EDID, OBND, CNAM; CNAM picks the descriptor class; returns false when the CNAM type is unknown (high); semantic signature: `bool (BGSSoundDescriptorForm* this, TESFile* file)`
+    /// `BGSSoundDescriptorForm::Load` at 0x32a4a0 (semantic, high); signature (low): `undefined8 Load(BGSSoundDescriptorForm * this, longlong param_1)`; `Load`: reads VMAD, EDID, OBND, CNAM; CNAM picks the descriptor class; returns false when the CNAM type is unknown (high); semantic signature: `bool (BGSSoundDescriptorForm* this, TESFile* file)`
     pub slot_6: *const c_void,
     /// `TESForm::vfunc_7` at 0x1469b0 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
     pub slot_7: *const c_void,
@@ -9200,9 +9166,9 @@ pub struct BGSSoundDescriptorForm_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -9210,15 +9176,15 @@ pub struct BGSSoundDescriptorForm_vtable {
     pub slot_17: *const c_void,
     /// `TESForm::vfunc_18` at 0x1e5850 (rtti, medium); signature (low): `undefined vfunc_18(void)`
     pub slot_18: *const c_void,
-    /// `BGSSoundDescriptorForm::InitItemImpl` at 0x32a2a0 (semantic, medium); signature (untiered): `undefined InitItemImpl(BGSSoundDescriptorForm * this)`; `InitItemImpl`: resolves the descriptor's form references (descriptor slot 3) once; if this form's id is in the SNAM-id list 0x31df9d8 it is removed and the descriptor is precached via ID_67720(audio manager, this+0x20, 0x200) (medium); semantic signature: `void (BGSSoundDescriptorForm* this)`
+    /// `BGSSoundDescriptorForm::InitItemImpl` at 0x32a2a0 (semantic, medium); signature (high): `undefined InitItemImpl(BGSSoundDescriptorForm * this)`; `InitItemImpl`: resolves the descriptor's form references (descriptor slot 3) once; if this form's id is in the SNAM-id list 0x31df9d8 it is removed and the descriptor is precached via ID_67720(audio manager, this+0x20, 0x200) (medium); semantic signature: `void (BGSSoundDescriptorForm* this)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -9242,7 +9208,7 @@ pub struct BGSSoundDescriptorForm_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -9260,7 +9226,7 @@ pub struct BGSSoundDescriptorForm_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -9272,9 +9238,9 @@ pub struct BGSSoundDescriptorForm_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `BGSSoundDescriptorForm::SetFormEditorID` at 0x32a7c0 (semantic, high); signature (untiered): `undefined8 SetFormEditorID(BGSSoundDescriptorForm * this, undefined8 param_1)`; `SetFormEditorID`: registers the editor id in the global editor-id map (AddFormToEditorIDMap), so SNDR forms are findable by editor id (high); semantic signature: `bool (BGSSoundDescriptorForm* this, const char* id)`
+    /// `BGSSoundDescriptorForm::SetFormEditorID` at 0x32a7c0 (semantic, high); signature (low): `undefined8 SetFormEditorID(BGSSoundDescriptorForm * this, undefined8 param_1)`; `SetFormEditorID`: registers the editor id in the global editor-id map (AddFormToEditorIDMap), so SNDR forms are findable by editor id (high); semantic signature: `bool (BGSSoundDescriptorForm* this, const char* id)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -9284,13 +9250,13 @@ pub struct BGSSoundDescriptorForm_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
     /// `TESForm::vfunc_58` at 0x146a00 (rtti, medium); signature (low): `undefined1 vfunc_58(void)`
     pub slot_58: *const c_void,
-    /// `BGSSoundDescriptorForm::GetDescriptorTypeCRC` at 0x32a7e0 (semantic, high); signature (untiered): `undefined GetDescriptorTypeCRC(BGSSoundDescriptorForm * this)`; `GetDescriptorTypeCRC`: forwards to descriptor slot 5 (crc32 of the descriptor class name) (high); semantic signature: `u32 (BGSSoundDescriptorForm* this)`
+    /// `BGSSoundDescriptorForm::GetDescriptorTypeCRC` at 0x32a7e0 (semantic, high); signature (high): `undefined GetDescriptorTypeCRC(BGSSoundDescriptorForm * this)`; `GetDescriptorTypeCRC`: forwards to descriptor slot 5 (crc32 of the descriptor class name) (high); semantic signature: `u32 (BGSSoundDescriptorForm* this)`
     pub slot_59: *const c_void,
 }
 impl BGSSoundDescriptorForm_vtable {
@@ -9350,9 +9316,9 @@ pub struct BGSSoundOutput_vtable {
     pub slot_3: *const c_void,
     /// `TESForm::vfunc_4` at 0x1e35b0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
     pub slot_4: *const c_void,
-    /// `BGSSoundOutput::ClearData` at 0x32b530 (semantic, high); signature (untiered): `undefined ClearData(BGSSoundOutput * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `ClearData`: frees the attenuation object and the speaker table (high); semantic signature: `void (BGSSoundOutput* this)`
+    /// `BGSSoundOutput::ClearData` at 0x32b530 (semantic, high); signature (low): `undefined ClearData(BGSSoundOutput * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `ClearData`: frees the attenuation object and the speaker table (high); semantic signature: `void (BGSSoundOutput* this)`
     pub slot_5: *const c_void,
-    /// `BGSSoundOutput::Load` at 0x32afa0 (semantic, high); signature (untiered): `undefined8 Load(BGSSoundOutput * this, longlong param_1, uint * param_2, uint * param_3)`; `Load`: type gate 0x83, then ANAM, NAM1, VMAD, EDID, OBND, FNAM, MNAM, ONAM, SNAM (high); semantic signature: `bool (BGSSoundOutput* this, TESFile* file)`
+    /// `BGSSoundOutput::Load` at 0x32afa0 (semantic, high); signature (low): `undefined8 Load(BGSSoundOutput * this, longlong param_1, uint * param_2, uint * param_3)`; `Load`: type gate 0x83, then ANAM, NAM1, VMAD, EDID, OBND, FNAM, MNAM, ONAM, SNAM (high); semantic signature: `bool (BGSSoundOutput* this, TESFile* file)`
     pub slot_6: *const c_void,
     /// `TESForm::vfunc_7` at 0x1469b0 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
     pub slot_7: *const c_void,
@@ -9368,9 +9334,9 @@ pub struct BGSSoundOutput_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -9378,15 +9344,15 @@ pub struct BGSSoundOutput_vtable {
     pub slot_17: *const c_void,
     /// `TESForm::vfunc_18` at 0x1e5850 (rtti, medium); signature (low): `undefined vfunc_18(void)`
     pub slot_18: *const c_void,
-    /// `BGSSoundOutput::InitItemImpl` at 0x32b510 (semantic, high); signature (untiered): `undefined InitItemImpl(BGSSoundOutput * this)`; `InitItemImpl`: only sets the initialised bit (high); semantic signature: `void (BGSSoundOutput* this)`
+    /// `BGSSoundOutput::InitItemImpl` at 0x32b510 (semantic, high); signature (high): `undefined InitItemImpl(BGSSoundOutput * this)`; `InitItemImpl`: only sets the initialised bit (high); semantic signature: `void (BGSSoundOutput* this)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -9410,7 +9376,7 @@ pub struct BGSSoundOutput_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -9428,7 +9394,7 @@ pub struct BGSSoundOutput_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -9440,9 +9406,9 @@ pub struct BGSSoundOutput_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -9452,7 +9418,7 @@ pub struct BGSSoundOutput_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -9502,7 +9468,7 @@ pub struct BGSSoundOutput_vtable_20 {
     pub slot_4: *const c_void,
     /// `BSISoundOutputModel::IsWithinMaxDistance` at 0x32b860 (semantic, high); signature (untiered): `bool IsWithinMaxDistance(BSISoundOutputModel * this, float param_1)`
     pub slot_5: *const c_void,
-    /// `BSISoundOutputModel::Unk06` at 0x32b610 (semantic, high); signature (untiered): `undefined8 Unk06(void)`
+    /// `BSISoundOutputModel::Unk06` at 0x32b610 (semantic, high); signature (low): `undefined8 Unk06(void)`
     pub slot_6: *const c_void,
     /// `BSISoundOutputModel::GetAttenuationCharacteristics` at 0x32b630 (semantic, high); signature (untiered): `undefined8 GetAttenuationCharacteristics(BSISoundOutputModel * this)`
     pub slot_7: *const c_void,
@@ -9520,11 +9486,11 @@ impl BGSSoundOutput_vtable_20 {
 pub struct BGSSoundOutput__DynamicAttenuationCharacteristics_vtable {
     /// `BGSSoundOutput::DynamicAttenuationCharacteristics::vdtor` at 0x32bad0 (layout_inference, medium); signature (low): `DynamicAttenuationCharacteristics * vdtor(DynamicAttenuationCharacteristics * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BGSSoundOutput::DynamicAttenuationCharacteristics::GetMaxDistance` at 0x32b5b0 (semantic, high); signature (untiered): `undefined4 GetMaxDistance(DynamicAttenuationCharacteristics * this)`; `GetMaxDistance`: +0xc (high); semantic signature: `float (this)`
+    /// `BGSSoundOutput::DynamicAttenuationCharacteristics::GetMaxDistance` at 0x32b5b0 (semantic, high); signature (low): `undefined4 GetMaxDistance(DynamicAttenuationCharacteristics * this)`; `GetMaxDistance`: +0xc (high); semantic signature: `float (this)`
     pub slot_1: *const c_void,
-    /// `BGSSoundOutput::DynamicAttenuationCharacteristics::GetMinDistance` at 0x32b5c0 (semantic, medium); signature (untiered): `undefined4 GetMinDistance(DynamicAttenuationCharacteristics * this)`; `GetMinDistance`: +8 (medium); semantic signature: `float (this)`
+    /// `BGSSoundOutput::DynamicAttenuationCharacteristics::GetMinDistance` at 0x32b5c0 (semantic, medium); signature (low): `undefined4 GetMinDistance(DynamicAttenuationCharacteristics * this)`; `GetMinDistance`: +8 (medium); semantic signature: `float (this)`
     pub slot_2: *const c_void,
-    /// `BGSSoundOutput::DynamicAttenuationCharacteristics::GetCurveValue` at 0x32b5d0 (semantic, high); signature (untiered): `ulonglong GetCurveValue(DynamicAttenuationCharacteristics * this, uint param_1)`; `GetCurveValue`: +0x10[i] for i < 5 (high); semantic signature: `u8 (this, u32 i)`
+    /// `BGSSoundOutput::DynamicAttenuationCharacteristics::GetCurveValue` at 0x32b5d0 (semantic, high); signature (low): `ulonglong GetCurveValue(DynamicAttenuationCharacteristics * this, uint param_1)`; `GetCurveValue`: +0x10[i] for i < 5 (high); semantic signature: `u8 (this, u32 i)`
     pub slot_3: *const c_void,
 }
 impl BGSSoundOutput__DynamicAttenuationCharacteristics_vtable {
@@ -9553,17 +9519,17 @@ pub type BGSSoundOutput__DynamicAttenuationCharacteristics_vtable_GetCurveValue 
 pub struct BGSStandardSoundDef_vtable {
     /// `BGSStandardSoundDef::vdtor` at 0x32c8d0 (layout_inference, medium); signature (low): `BGSStandardSoundDef * vdtor(BGSStandardSoundDef * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BGSStandardSoundDef::FillPlayData` at 0x32c330 (semantic, high); signature (untiered): `ulonglong FillPlayData(BGSStandardSoundDef * this, undefined4 * param_1)`; `FillPlayData`: picks a file (random, no immediate repeat), checks conditions, fills file id, linked id, flags, playback characteristics, output model, category and the send list (high); semantic signature: `bool (BGSStandardSoundDef* this, SoundPlayData* out)`
+    /// `BGSStandardSoundDef::FillPlayData` at 0x32c330 (semantic, high); signature (low): `ulonglong FillPlayData(BGSStandardSoundDef * this, undefined4 * param_1)`; `FillPlayData`: picks a file (random, no immediate repeat), checks conditions, fills file id, linked id, flags, playback characteristics, output model, category and the send list (high); semantic signature: `bool (BGSStandardSoundDef* this, SoundPlayData* out)`
     pub slot_1: *const c_void,
-    /// `BGSStandardSoundDef::ShouldPlayAtDistance` at 0x32c2d0 (semantic, high); signature (untiered): `undefined8 ShouldPlayAtDistance(BGSStandardSoundDef * this, float param_1)`; `ShouldPlayAtDistance`: output model present and (not attenuating or distance < attenuation max distance) and conditions pass (high); semantic signature: `bool (BGSStandardSoundDef* this, float distance)`
+    /// `BGSStandardSoundDef::ShouldPlayAtDistance` at 0x32c2d0 (semantic, high); signature (medium): `undefined8 ShouldPlayAtDistance(BGSStandardSoundDef * this, float param_1)`; `ShouldPlayAtDistance`: output model present and (not attenuating or distance < attenuation max distance) and conditions pass (high); semantic signature: `bool (BGSStandardSoundDef* this, float distance)`
     pub slot_2: *const c_void,
-    /// `BGSStandardSoundDef::InitItem` at 0x32bdf0 (semantic, high); signature (untiered): `undefined InitItem(BGSStandardSoundDef * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `InitItem`: base InitItem plus output model resolution and the conditions' InitItem (high); semantic signature: `void (BGSStandardSoundDef* this, TESForm* owner)`
+    /// `BGSStandardSoundDef::InitItem` at 0x32bdf0 (semantic, high); signature (low): `undefined InitItem(BGSStandardSoundDef * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `InitItem`: base InitItem plus output model resolution and the conditions' InitItem (high); semantic signature: `void (BGSStandardSoundDef* this, TESForm* owner)`
     pub slot_3: *const c_void,
-    /// `BGSStandardSoundDef::LoadChunk` at 0x32be90 (semantic, high); signature (untiered): `undefined LoadChunk(BGSStandardSoundDef * this, longlong param_1, ulonglong param_2, undefined8 param_3)`; `LoadChunk`: chunk loop: ANAM files, CTDA conditions, BNAM playback, FNAM/LNAM flags, GNAM/SNAM (base), ONAM output (high); semantic signature: `void (BGSStandardSoundDef* this, TESFile* file)`
+    /// `BGSStandardSoundDef::LoadChunk` at 0x32be90 (semantic, high); signature (low): `undefined LoadChunk(BGSStandardSoundDef * this, longlong param_1, ulonglong param_2, undefined8 param_3)`; `LoadChunk`: chunk loop: ANAM files, CTDA conditions, BNAM playback, FNAM/LNAM flags, GNAM/SNAM (base), ONAM output (high); semantic signature: `void (BGSStandardSoundDef* this, TESFile* file)`
     pub slot_4: *const c_void,
-    /// `BGSStandardSoundDef::GetTypeCRC` at 0x32c290 (semantic, high); signature (untiered): `int GetTypeCRC(void)`; `GetTypeCRC`: crc32 of 'BGSStandardSoundDef', the CNAM key of this class (high); semantic signature: `u32 ()`
+    /// `BGSStandardSoundDef::GetTypeCRC` at 0x32c290 (semantic, high); signature (low): `int GetTypeCRC(void)`; `GetTypeCRC`: crc32 of 'BGSStandardSoundDef', the CNAM key of this class (high); semantic signature: `u32 ()`
     pub slot_5: *const c_void,
-    /// `BGSStandardSoundDef::GetMaxDistance` at 0x32c260 (semantic, high); signature (untiered): `undefined GetMaxDistance(BGSStandardSoundDef * this)`; `GetMaxDistance`: attenuation max distance when the output model attenuates, else FLT_MAX (high); semantic signature: `float (BGSStandardSoundDef* this)`
+    /// `BGSStandardSoundDef::GetMaxDistance` at 0x32c260 (semantic, high); signature (high): `undefined GetMaxDistance(BGSStandardSoundDef * this)`; `GetMaxDistance`: attenuation max distance when the output model attenuates, else FLT_MAX (high); semantic signature: `float (BGSStandardSoundDef* this)`
     pub slot_6: *const c_void,
 }
 impl BGSStandardSoundDef_vtable {
@@ -9623,15 +9589,15 @@ pub type BGSStandardSoundDef_vtable_GetMaxDistance = unsafe extern "C" fn(this: 
 pub struct BGSStandardSoundDef__SoundPlaybackCharacteristics_vtable {
     /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::vdtor` at 0x32c9c0 (layout_inference, medium); signature (low): `SoundPlaybackCharacteristics * vdtor(SoundPlaybackCharacteristics * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetFrequencyShift` at 0x32c210 (semantic, high); signature (untiered): `undefined1 GetFrequencyShift(SoundPlaybackCharacteristics * this)`; `GetFrequencyShift`: returns +8 (descriptor +0x38) (high); semantic signature: `i8 (this)`
+    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetFrequencyShift` at 0x32c210 (semantic, high); signature (high): `undefined1 GetFrequencyShift(SoundPlaybackCharacteristics * this)`; `GetFrequencyShift`: returns +8 (descriptor +0x38) (high); semantic signature: `i8 (this)`
     pub slot_1: *const c_void,
-    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetFrequencyVariance` at 0x32c220 (semantic, low); signature (untiered): `undefined1 GetFrequencyVariance(SoundPlaybackCharacteristics * this)`; `GetFrequencyVariance`: returns +9 (descriptor +0x39) (low); semantic signature: `u8 (this)`
+    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetFrequencyVariance` at 0x32c220 (semantic, low); signature (high): `undefined1 GetFrequencyVariance(SoundPlaybackCharacteristics * this)`; `GetFrequencyVariance`: returns +9 (descriptor +0x39) (low); semantic signature: `u8 (this)`
     pub slot_2: *const c_void,
-    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetPriority` at 0x32c230 (semantic, low); signature (untiered): `undefined1 GetPriority(SoundPlaybackCharacteristics * this)`; `GetPriority`: returns +0xa (descriptor +0x3a) (low); semantic signature: `u8 (this)`
+    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetPriority` at 0x32c230 (semantic, low); signature (high): `undefined1 GetPriority(SoundPlaybackCharacteristics * this)`; `GetPriority`: returns +0xa (descriptor +0x3a) (low); semantic signature: `u8 (this)`
     pub slot_3: *const c_void,
-    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetStaticAttenuation` at 0x32c250 (semantic, medium); signature (untiered): `undefined2 GetStaticAttenuation(SoundPlaybackCharacteristics * this)`; `GetStaticAttenuation`: returns +0xc (descriptor +0x3c) (medium); semantic signature: `u16 (this)`
+    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetStaticAttenuation` at 0x32c250 (semantic, medium); signature (high): `undefined2 GetStaticAttenuation(SoundPlaybackCharacteristics * this)`; `GetStaticAttenuation`: returns +0xc (descriptor +0x3c) (medium); semantic signature: `u16 (this)`
     pub slot_4: *const c_void,
-    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetStaticAttenuationVariance` at 0x32c240 (semantic, high); signature (untiered): `undefined1 GetStaticAttenuationVariance(SoundPlaybackCharacteristics * this)`; `GetStaticAttenuationVariance`: returns +0xb (descriptor +0x3b) (high); semantic signature: `u8 (this)`
+    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetStaticAttenuationVariance` at 0x32c240 (semantic, high); signature (high): `undefined1 GetStaticAttenuationVariance(SoundPlaybackCharacteristics * this)`; `GetStaticAttenuationVariance`: returns +0xb (descriptor +0x3b) (high); semantic signature: `u8 (this)`
     pub slot_5: *const c_void,
 }
 impl BGSStandardSoundDef__SoundPlaybackCharacteristics_vtable {
@@ -9688,9 +9654,9 @@ pub struct BGSStaticCollection_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -9700,13 +9666,13 @@ pub struct BGSStaticCollection_vtable {
     pub slot_18: *const c_void,
     /// `BGSStaticCollection::vfunc_19` at 0x266d70 (rtti, high); signature (low): `undefined vfunc_19(BGSStaticCollection * this, undefined8 param_1, longlong param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -9730,7 +9696,7 @@ pub struct BGSStaticCollection_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -9748,7 +9714,7 @@ pub struct BGSStaticCollection_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -9760,9 +9726,9 @@ pub struct BGSStaticCollection_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -9772,7 +9738,7 @@ pub struct BGSStaticCollection_vtable {
     pub slot_54: *const c_void,
     /// `TESBoundObject::vfunc_55` at 0x278e50 (rtti, medium); signature (low): `undefined1 vfunc_55(TESBoundObject * this, longlong param_1, undefined8 param_2, undefined1 param_3, undefined8 param_4, undefined4 param_5)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -9788,7 +9754,7 @@ pub struct BGSStaticCollection_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -9842,9 +9808,9 @@ pub struct BGSStaticCollection_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
     pub slot_6: *const c_void,
@@ -9894,9 +9860,9 @@ pub struct BGSStoryManagerBranchNode_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -9906,13 +9872,13 @@ pub struct BGSStoryManagerBranchNode_vtable {
     pub slot_18: *const c_void,
     /// `BGSStoryManagerBranchNode::vfunc_19` at 0x5358d0 (rtti, high); signature (high): `undefined vfunc_19(BGSStoryManagerBranchNode * this)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -9936,7 +9902,7 @@ pub struct BGSStoryManagerBranchNode_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -9954,7 +9920,7 @@ pub struct BGSStoryManagerBranchNode_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -9966,9 +9932,9 @@ pub struct BGSStoryManagerBranchNode_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -9978,7 +9944,7 @@ pub struct BGSStoryManagerBranchNode_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -10028,9 +9994,9 @@ pub struct BGSStoryManagerEventNode_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -10040,13 +10006,13 @@ pub struct BGSStoryManagerEventNode_vtable {
     pub slot_18: *const c_void,
     /// `BGSStoryManagerEventNode::vfunc_19` at 0x535ce0 (rtti, high); signature (high): `undefined vfunc_19(BGSStoryManagerEventNode * this)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -10070,7 +10036,7 @@ pub struct BGSStoryManagerEventNode_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -10088,7 +10054,7 @@ pub struct BGSStoryManagerEventNode_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -10100,9 +10066,9 @@ pub struct BGSStoryManagerEventNode_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `BGSStoryManagerEventNode::GetFormEditorID` at 0x535d60 (slot_propagation, high); signature (untiered): `char * GetFormEditorID(BGSStoryManagerEventNode * this)`
+    /// `BGSStoryManagerEventNode::GetFormEditorID` at 0x535d60 (slot_propagation, high); signature (high): `char * GetFormEditorID(BGSStoryManagerEventNode * this)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -10112,7 +10078,7 @@ pub struct BGSStoryManagerEventNode_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -10162,9 +10128,9 @@ pub struct BGSStoryManagerNodeBase_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -10174,13 +10140,13 @@ pub struct BGSStoryManagerNodeBase_vtable {
     pub slot_18: *const c_void,
     /// `BGSStoryManagerNodeBase::vfunc_19` at 0x5363e0 (rtti, high); signature (low): `undefined vfunc_19(BGSStoryManagerNodeBase * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -10204,7 +10170,7 @@ pub struct BGSStoryManagerNodeBase_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -10222,7 +10188,7 @@ pub struct BGSStoryManagerNodeBase_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -10234,9 +10200,9 @@ pub struct BGSStoryManagerNodeBase_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -10246,7 +10212,7 @@ pub struct BGSStoryManagerNodeBase_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -10314,9 +10280,9 @@ pub struct BGSStoryManagerQuestNode_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `BGSStoryManagerQuestNode::SaveGame` at 0x539050 (slot_propagation, medium); signature (untiered): `undefined SaveGame(BGSStoryManagerQuestNode * this, longlong param_1)`
+    /// `BGSStoryManagerQuestNode::SaveGame` at 0x539050 (slot_propagation, medium); signature (low): `undefined SaveGame(BGSStoryManagerQuestNode * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `BGSStoryManagerQuestNode::LoadGame` at 0x5390f0 (slot_propagation, medium); signature (untiered): `undefined LoadGame(BGSStoryManagerQuestNode * this, longlong param_1)`
+    /// `BGSStoryManagerQuestNode::LoadGame` at 0x5390f0 (slot_propagation, medium); signature (low): `undefined LoadGame(BGSStoryManagerQuestNode * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -10326,13 +10292,13 @@ pub struct BGSStoryManagerQuestNode_vtable {
     pub slot_18: *const c_void,
     /// `BGSStoryManagerQuestNode::vfunc_19` at 0x538710 (rtti, high); signature (low): `undefined vfunc_19(BGSStoryManagerQuestNode * this, ulonglong * param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -10356,7 +10322,7 @@ pub struct BGSStoryManagerQuestNode_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -10374,7 +10340,7 @@ pub struct BGSStoryManagerQuestNode_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -10386,9 +10352,9 @@ pub struct BGSStoryManagerQuestNode_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -10398,7 +10364,7 @@ pub struct BGSStoryManagerQuestNode_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -10448,9 +10414,9 @@ pub struct BGSStoryManagerTreeForm_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -10460,13 +10426,13 @@ pub struct BGSStoryManagerTreeForm_vtable {
     pub slot_18: *const c_void,
     /// `TESForm::vfunc_19` at 0x1c7db0 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -10490,7 +10456,7 @@ pub struct BGSStoryManagerTreeForm_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -10508,7 +10474,7 @@ pub struct BGSStoryManagerTreeForm_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -10520,9 +10486,9 @@ pub struct BGSStoryManagerTreeForm_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -10532,7 +10498,7 @@ pub struct BGSStoryManagerTreeForm_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -10640,9 +10606,9 @@ pub struct BGSTalkingActivator_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `BGSTalkingActivator::SaveGame` at 0x267460 (slot_propagation, medium); signature (untiered): `undefined SaveGame(BGSTalkingActivator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BGSTalkingActivator::SaveGame` at 0x267460 (slot_propagation, medium); signature (low): `undefined SaveGame(BGSTalkingActivator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_14: *const c_void,
-    /// `BGSTalkingActivator::LoadGame` at 0x2674b0 (slot_propagation, medium); signature (untiered): `undefined LoadGame(BGSTalkingActivator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BGSTalkingActivator::LoadGame` at 0x2674b0 (slot_propagation, medium); signature (low): `undefined LoadGame(BGSTalkingActivator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -10652,13 +10618,13 @@ pub struct BGSTalkingActivator_vtable {
     pub slot_18: *const c_void,
     /// `BGSTalkingActivator::vfunc_19` at 0x2672c0 (rtti, high); signature (low): `undefined vfunc_19(BGSTalkingActivator * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -10682,7 +10648,7 @@ pub struct BGSTalkingActivator_vtable {
     pub slot_33: *const c_void,
     /// `TESObjectACTI::vfunc_34` at 0x267690 (rtti, medium); signature (high): `byte vfunc_34(TESObjectACTI * this)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -10700,7 +10666,7 @@ pub struct BGSTalkingActivator_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -10712,9 +10678,9 @@ pub struct BGSTalkingActivator_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -10724,7 +10690,7 @@ pub struct BGSTalkingActivator_vtable {
     pub slot_54: *const c_void,
     /// `BGSTalkingActivator::vfunc_55` at 0x267360 (rtti, high); signature (low): `undefined8 vfunc_55(BGSTalkingActivator * this, longlong * param_1, longlong param_2)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -10740,7 +10706,7 @@ pub struct BGSTalkingActivator_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -10796,9 +10762,9 @@ pub struct BGSTalkingActivator_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl BGSTalkingActivator_vtable_30 {
@@ -10816,9 +10782,9 @@ pub struct BGSTalkingActivator_vtable_40 {
     pub slot_2: *const c_void,
     /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
     pub slot_6: *const c_void,
@@ -10870,7 +10836,7 @@ pub struct BGSTalkingActivator_vtable_90 {
     pub slot_2: *const c_void,
     /// `BGSKeywordForm::vfunc_3` at 0x1d86b0 (rtti, medium); signature (low): `undefined vfunc_3(BGSKeywordForm * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (untiered): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
+    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (low): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
     pub slot_4: *const c_void,
     /// `BGSKeywordForm::vfunc_5` at 0x14c8b0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
     pub slot_5: *const c_void,
@@ -10884,13 +10850,13 @@ impl BGSTalkingActivator_vtable_90 {
 pub struct BGSTextureModel_vtable {
     /// `BGSTextureModel::vdtor` at 0x3eb800 (slot_propagation, medium); signature (low): `BGSTextureModel * vdtor(BGSTextureModel * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
     pub slot_0: *const c_void,
-    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (untiered): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (low): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (untiered): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (low): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
     pub slot_2: *const c_void,
-    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (untiered): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
+    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (low): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
     /// `BGSTextureModel::vfunc_5` at 0x1dbae0 (rtti, high); signature (low): `undefined vfunc_5(BGSTextureModel * this, char * param_1)`
     pub slot_5: *const c_void,
@@ -10932,9 +10898,9 @@ pub struct BGSTextureSet_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -10944,13 +10910,13 @@ pub struct BGSTextureSet_vtable {
     pub slot_18: *const c_void,
     /// `TESForm::vfunc_19` at 0x1c7db0 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -10974,7 +10940,7 @@ pub struct BGSTextureSet_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -10992,7 +10958,7 @@ pub struct BGSTextureSet_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -11004,9 +10970,9 @@ pub struct BGSTextureSet_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -11016,7 +10982,7 @@ pub struct BGSTextureSet_vtable {
     pub slot_54: *const c_void,
     /// `TESBoundObject::vfunc_55` at 0x278e50 (rtti, medium); signature (low): `undefined1 vfunc_55(TESBoundObject * this, longlong param_1, undefined8 param_2, undefined1 param_3, undefined8 param_4, undefined4 param_5)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -12472,9 +12438,9 @@ pub struct BGSVoiceType_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -12484,13 +12450,13 @@ pub struct BGSVoiceType_vtable {
     pub slot_18: *const c_void,
     /// `TESForm::vfunc_19` at 0x1c7db0 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -12514,7 +12480,7 @@ pub struct BGSVoiceType_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -12532,7 +12498,7 @@ pub struct BGSVoiceType_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -12544,9 +12510,9 @@ pub struct BGSVoiceType_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `BGSVoiceType::GetFormEditorID` at 0x3aee10 (slot_propagation, high); signature (untiered): `undefined1 * GetFormEditorID(BGSVoiceType * this)`
+    /// `BGSVoiceType::GetFormEditorID` at 0x3aee10 (slot_propagation, high); signature (high): `undefined1 * GetFormEditorID(BGSVoiceType * this)`
     pub slot_50: *const c_void,
-    /// `BGSVoiceType::SetFormEditorID` at 0x3aee30 (slot_propagation, high); signature (untiered): `undefined1 SetFormEditorID(BGSVoiceType * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BGSVoiceType::SetFormEditorID` at 0x3aee30 (slot_propagation, high); signature (low): `undefined1 SetFormEditorID(BGSVoiceType * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -12556,7 +12522,7 @@ pub struct BGSVoiceType_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,

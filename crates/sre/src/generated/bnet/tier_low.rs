@@ -8,6 +8,13 @@
 use core::ffi::{c_char, c_void};
 
 impl crate::bnet__AsyncOperationProxy {
+    /// `bnet::AsyncOperationProxy::InitAndDispatch` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 525377, rva 0x12da290).
+    /// `AsyncOperationProxy * InitAndDispatch(AsyncOperationProxy * param_1, undefined8 param_2, longlong * param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn init_and_dispatch(param_1: *mut c_void, param_2: u64, param_3: *mut i64) -> *mut c_void { unsafe { function!(525377, (*mut c_void, u64, *mut i64) -> *mut c_void)(param_1, param_2, param_3) } }
     /// `bnet::AsyncOperationProxy::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 446609, rva 0x12ed4b0).
     /// `AsyncOperationProxy * ctor(AsyncOperationProxy * this, longlong * param_1)`
     ///
@@ -46,6 +53,20 @@ impl crate::bnet__Callback_bnet__Telemetry__EventResponse_bnet__HttpResponseInfo
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor_2(&self, param_1: i64) -> *mut c_void { unsafe { function!(525724, (*const Self, i64) -> *mut c_void)(core::ptr::from_ref(self), param_1) } }
+    /// `bnet::Callback<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>::ctor_sub0` (decompiler signature, tier low; ledger runtime evidence, name medium; id 452225, rva 0x14330e0).
+    /// `undefined8 * ctor_sub0(undefined8 param_1, undefined8 * param_2, undefined8 * param_3, ulonglong param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_sub0(param_1: u64, param_2: *mut u64, param_3: *mut u64, param_4: u64) -> *mut u64 { unsafe { function!(452225, (u64, *mut u64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+    /// `bnet::Callback<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>::ctor_sub0` (decompiler signature, tier low; ledger runtime evidence, name medium; id 452240, rva 0x1433d10).
+    /// `undefined8 * ctor_sub0(longlong param_1, undefined8 * param_2, undefined8 * param_3, ulonglong param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_sub0_2(param_1: i64, param_2: *mut u64, param_3: *mut u64, param_4: u64) -> *mut u64 { unsafe { function!(452240, (i64, *mut u64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
 }
 
 impl crate::bnet__Mods__BaseUpdatePreferenceInfo {

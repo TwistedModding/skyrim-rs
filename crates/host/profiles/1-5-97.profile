@@ -22313,7 +22313,6 @@ id 32743 31989
 id-unverified 32744
 id 32745 31991
 id-unverified 32747
-id-unverified 32749
 id-unverified 32750
 id-unverified 32751
 id-unverified 32752
@@ -79667,8 +79666,6 @@ id 129347 132647
 id 129348 132648
 id 129349 132649
 id-unverified 129350
-id 129357 531430
-id 129358 132663
 id 129359 132664
 id 129360 132665
 id 129361 132666
@@ -96972,6 +96969,7 @@ id 220285 275300
 id 220287 275301
 id 220289 275302
 id 220334 275346
+id 220338 275350
 id 220343 275354
 id 220345 275355
 id 220348 275357
@@ -104719,6 +104717,7 @@ id 385928 511554
 id 385930 511555
 id 385933 511557
 id 385939 511563
+id-unverified 385940
 id 385942 511565
 id 385945 511567
 id 385948 511569
@@ -104820,6 +104819,7 @@ id 389031 512198
 id 389034 512200
 id 389037 512202
 id 389040 512204
+id 389089 512261
 id-unverified 389093
 id 389102 512269
 id 389105 512271
@@ -104837,6 +104837,7 @@ id 389130 512285
 id 389132 512286
 id 389135 512288
 id 389138 512290
+id-unverified 389139
 id 389141 512292
 id 389144 512294
 id 389149 512299
@@ -105407,6 +105408,9 @@ id-unverified 402390
 id 402595 516424
 id 402596 516425
 id 402597 516426
+id-unverified 402604
+id-unverified 402605
+id-unverified 402606
 id-unverified 402609
 id-unverified 402622
 id-unverified 402623
@@ -105495,6 +105499,7 @@ id-unverified 404421
 id 404422 517906
 id-unverified 404424
 id 404442 517926
+id-unverified 404469
 id 404489 517964
 id 404513 517990
 id 404516 517993
@@ -105591,7 +105596,11 @@ id 404802 518281
 id-unverified 404803
 id-unverified 404811
 id-unverified 404824
+id 404827 518299
+id 404828 518300
+id 404829 518301
 id 404830 518302
+id 404831 518303
 id 404864 518336
 id 404865 518337
 id 404866 518338
@@ -105661,6 +105670,7 @@ id 406362 519819
 id-unverified 406365
 id-unverified 406392
 id-unverified 406397
+id 406417 519886
 id 406458 519928
 id-unverified 406573
 id-unverified 406574
@@ -105681,11 +105691,25 @@ id 406751 520221
 id 407374 520856
 id-unverified 407375
 id 407383 520865
+id 407511 520993
+id-unverified 407570
+id-unverified 407578
+id-unverified 407622
+id-unverified 407623
+id-unverified 407631
+id-unverified 408006
+id-unverified 408013
+id-unverified 408014
+id-unverified 408016
 id 408437 521919
+id-unverified 409426
+id-unverified 409433
+id-unverified 409440
 id 409516 522999
 id-unverified 409517
 id 409554 523015
 id-unverified 409559
+id-unverified 409654
 id-unverified 409740
 id-unverified 410098
 id-unverified 410104
@@ -105954,6 +105978,7 @@ id-unverified 411318
 id-unverified 411323
 id-unverified 411324
 id-unverified 411326
+id 411327 524707
 id-unverified 411328
 id-unverified 411329
 id-unverified 411330
@@ -106836,6 +106861,7 @@ id 465790 562022
 id 465791 562024
 id 465962 295878
 id 469455 564915
+id 470032 232795
 id 502100 508545
 id 502189 512862
 id 502197 512870
@@ -107505,7 +107531,7 @@ member-unverified Actor.healthModifiers
 member Actor.magicCasters 1a0
 member-unverified Actor.magickaModifiers
 member Actor.movementController 148
-member-unverified Actor.preCullState
+member Actor.preCullState 274
 member Actor.race 1f0
 member Actor.refScale 90
 member-unverified Actor.selectedSpells
@@ -107692,7 +107718,6 @@ member-unverified BGSExplosion.field_28
 member-unverified BGSExplosion.field_2A
 member-unverified BGSExplosion.model
 member-unverified BGSFootIkRaycastInterfaceDB.characterMap
-member-unverified BGSFootIkRaycastInterfaceDB.records
 member-unverified BGSFootIkRaycastRecord.footIkEnable
 member-unverified BGSFootIkRaycastRecord.isSynced
 member-unverified BGSFootIkRaycastRecord.legCastResults
@@ -107918,17 +107943,7 @@ member-unverified BSAnimationGraphManager.dependentManagers
 member-unverified BSAnimationGraphManager.dependentsLock
 member-unverified BSAnimationGraphManager.graphsLock
 member-unverified BSAnimationGraphManager.variableCache
-member-unverified BSAnimationUpdateData.actor
-member-unverified BSAnimationUpdateData.allowInterpolation
-member-unverified BSAnimationUpdateData.bonesWhenNotVisible
-member-unverified BSAnimationUpdateData.cameraPosition
 member-unverified BSAnimationUpdateData.delta
-member-unverified BSAnimationUpdateData.doFootIK
-member-unverified BSAnimationUpdateData.forceUpdate
-member-unverified BSAnimationUpdateData.postChannelFunctor
-member-unverified BSAnimationUpdateData.postUpdateFunctor
-member-unverified BSAnimationUpdateData.spuGenerate
-member-unverified BSAnimationUpdateData.visible
 member-unverified BSAudioListener.field_10
 member-unverified BSAudioListener.field_14
 member-unverified BSAudioListener.field_18
@@ -108073,45 +108088,15 @@ member-unverified BSDecomposeVectorModifier.field_B4
 member-unverified BSDecomposeVectorModifier.field_B8
 member-unverified BSDecomposeVectorModifier.field_C0
 member-unverified BSDecomposeVectorModifier.field_C4
-member-unverified BSDirectAtModifier.active
-member-unverified BSDirectAtModifier.areBindablesCached
-member-unverified BSDirectAtModifier.boneChainIndices
-member-unverified BSDirectAtModifier.cachedBindables
-member-unverified BSDirectAtModifier.cloneState
-member-unverified BSDirectAtModifier.currentHeadingOffset
-member-unverified BSDirectAtModifier.currentPitchOffset
-member-unverified BSDirectAtModifier.directAtCamera
-member-unverified BSDirectAtModifier.directAtCameraX
-member-unverified BSDirectAtModifier.directAtCameraY
-member-unverified BSDirectAtModifier.directAtCameraZ
-member-unverified BSDirectAtModifier.directAtTarget
 member-unverified BSDirectAtModifier.directAtTargetLocation
-member-unverified BSDirectAtModifier.enable
-member-unverified BSDirectAtModifier.endBoneIndex
 member-unverified BSDirectAtModifier.field_A4
 member-unverified BSDirectAtModifier.field_B4
 member-unverified BSDirectAtModifier.field_B8
 member-unverified BSDirectAtModifier.hasTarget
-member-unverified BSDirectAtModifier.id
-member-unverified BSDirectAtModifier.limitHeadingDegrees
-member-unverified BSDirectAtModifier.limitPitchDegrees
-member-unverified BSDirectAtModifier.memSizeAndFlags
-member-unverified BSDirectAtModifier.name
-member-unverified BSDirectAtModifier.offGain
-member-unverified BSDirectAtModifier.offsetHeadingDegrees
-member-unverified BSDirectAtModifier.offsetPitchDegrees
-member-unverified BSDirectAtModifier.onGain
 member-unverified BSDirectAtModifier.pSkeletonMemory
 member-unverified BSDirectAtModifier.padModifier
 member-unverified BSDirectAtModifier.padNode
 member-unverified BSDirectAtModifier.referenceCount
-member-unverified BSDirectAtModifier.sourceBoneIndex
-member-unverified BSDirectAtModifier.startBoneIndex
-member-unverified BSDirectAtModifier.targetLocation
-member-unverified BSDirectAtModifier.timeStep
-member-unverified BSDirectAtModifier.userData
-member-unverified BSDirectAtModifier.userInfo
-member-unverified BSDirectAtModifier.variableBindingSet
 member-unverified BSDismemberSkinInstance.paletteLock
 member-unverified BSDismemberSkinInstance.paletteRowsPerBone
 member-unverified BSDistTriggerModifier.field_108
@@ -108182,8 +108167,6 @@ member-unverified BSFaceGenAnimationData.expression
 member-unverified BSFaceGenAnimationData.expressionInput
 member-unverified BSFaceGenAnimationData.expressionOutput
 member-unverified BSFaceGenAnimationData.expressionTarget
-member-unverified BSFaceGenAnimationData.eyeHeading
-member-unverified BSFaceGenAnimationData.eyePitch
 member-unverified BSFaceGenAnimationData.eyesClosed
 member-unverified BSFaceGenAnimationData.field_1AC
 member-unverified BSFaceGenAnimationData.field_1DC
@@ -108287,11 +108270,6 @@ member-unverified BSGetTimeStepModifier.field_B4
 member-unverified BSGetTimeStepModifier.field_B8
 member-unverified BSGetTimeStepModifier.field_C0
 member-unverified BSGetTimeStepModifier.field_C4
-member-unverified BSGrabIKNote.action
-member-unverified BSGrabIKNote.hand
-member-unverified BSGrabIKNote.noteType
-member-unverified BSGrabIKNote.time
-member-unverified BSGrabIKNote.value
 member-unverified BSGrassShaderProperty.depthPassLists
 member-unverified BSGrassShaderProperty.extraDataCapacity
 member-unverified BSGrassShaderProperty.lightDataStorage
@@ -108333,28 +108311,9 @@ member-unverified BSInterpValueModifier.field_B4
 member-unverified BSInterpValueModifier.field_B8
 member-unverified BSInterpValueModifier.field_C0
 member-unverified BSInterpValueModifier.field_C4
-member-unverified BSIsActiveModifier.areBindablesCached
-member-unverified BSIsActiveModifier.bInvertActive0
-member-unverified BSIsActiveModifier.bInvertActive1
-member-unverified BSIsActiveModifier.bInvertActive2
-member-unverified BSIsActiveModifier.bInvertActive3
-member-unverified BSIsActiveModifier.bInvertActive4
-member-unverified BSIsActiveModifier.bIsActive0
-member-unverified BSIsActiveModifier.bIsActive1
-member-unverified BSIsActiveModifier.bIsActive2
-member-unverified BSIsActiveModifier.bIsActive3
-member-unverified BSIsActiveModifier.bIsActive4
-member-unverified BSIsActiveModifier.cachedBindables
-member-unverified BSIsActiveModifier.cloneState
-member-unverified BSIsActiveModifier.enable
-member-unverified BSIsActiveModifier.id
-member-unverified BSIsActiveModifier.memSizeAndFlags
-member-unverified BSIsActiveModifier.name
 member-unverified BSIsActiveModifier.padModifier
 member-unverified BSIsActiveModifier.padNode
 member-unverified BSIsActiveModifier.referenceCount
-member-unverified BSIsActiveModifier.userData
-member-unverified BSIsActiveModifier.variableBindingSet
 member-unverified BSJobs::JobThread.field_104
 member-unverified BSJobs::JobThread.field_108
 member-unverified BSJobs::JobThread.field_110
@@ -108729,67 +108688,22 @@ member-unverified BSLightingShaderPropertyFloatController.field_20
 member-unverified BSLightingShaderPropertyFloatController.field_2C
 member-unverified BSLightingShaderPropertyUShortController.field_20
 member-unverified BSLightingShaderPropertyUShortController.field_2C
-member-unverified BSLimbIKModifier.areBindablesCached
-member-unverified BSLimbIKModifier.boneRadius
-member-unverified BSLimbIKModifier.cachedBindables
-member-unverified BSLimbIKModifier.castOffset
-member-unverified BSLimbIKModifier.cloneState
-member-unverified BSLimbIKModifier.currentAngle
-member-unverified BSLimbIKModifier.enable
-member-unverified BSLimbIKModifier.endBoneIndex
-member-unverified BSLimbIKModifier.gain
-member-unverified BSLimbIKModifier.id
-member-unverified BSLimbIKModifier.limitAngleDegrees
-member-unverified BSLimbIKModifier.memSizeAndFlags
-member-unverified BSLimbIKModifier.name
-member-unverified BSLimbIKModifier.pSkeletonMemory
 member-unverified BSLimbIKModifier.padModifier
 member-unverified BSLimbIKModifier.padNode
 member-unverified BSLimbIKModifier.referenceCount
-member-unverified BSLimbIKModifier.startBoneIndex
-member-unverified BSLimbIKModifier.timeStep
-member-unverified BSLimbIKModifier.userData
-member-unverified BSLimbIKModifier.variableBindingSet
-member-unverified BSLimbIKModifierUtilityCastInfo.collectedBodies
-member-unverified BSLimbIKModifierUtilityCastInfo.collectedSize
-member-unverified BSLimbIKModifierUtilityCastInfo.collisionGroup
-member-unverified BSLimbIKModifierUtilityCastInfo.world
 member-unverified BSLines.extraDataCapacity
 member-unverified BSLines.flags2
 member-unverified BSLines.local
 member-unverified BSLines.previousWorldFrame
-member-unverified BSLookAtModifier.areBindablesCached
 member-unverified BSLookAtModifier.ballBonesValid
-member-unverified BSLookAtModifier.bones
-member-unverified BSLookAtModifier.cachedBindables
-member-unverified BSLookAtModifier.cloneState
-member-unverified BSLookAtModifier.continueLookOutsideOfLimit
-member-unverified BSLookAtModifier.enable
-member-unverified BSLookAtModifier.eyeBones
 member-unverified BSLookAtModifier.field_A4
-member-unverified BSLookAtModifier.id
-member-unverified BSLookAtModifier.limitAngleDegrees
-member-unverified BSLookAtModifier.limitAngleThresholdDegrees
 member-unverified BSLookAtModifier.lookAtCamera
-member-unverified BSLookAtModifier.lookAtCameraX
 member-unverified BSLookAtModifier.lookAtCameraY
 member-unverified BSLookAtModifier.lookAtCameraZ
-member-unverified BSLookAtModifier.lookAtTarget
-member-unverified BSLookAtModifier.memSizeAndFlags
-member-unverified BSLookAtModifier.name
-member-unverified BSLookAtModifier.offGain
-member-unverified BSLookAtModifier.onGain
-member-unverified BSLookAtModifier.pSkeletonMemory
 member-unverified BSLookAtModifier.padModifier
 member-unverified BSLookAtModifier.padNode
 member-unverified BSLookAtModifier.referenceCount
-member-unverified BSLookAtModifier.targetLocation
 member-unverified BSLookAtModifier.targetOutOfLimitEvent
-member-unverified BSLookAtModifier.targetOutsideLimits
-member-unverified BSLookAtModifier.timeStep
-member-unverified BSLookAtModifier.useBoneGains
-member-unverified BSLookAtModifier.userData
-member-unverified BSLookAtModifier.variableBindingSet
 member-unverified BSLookAtModifierBoneData.currentFwdAxisLS
 member-unverified BSLookAtModifierBoneData.enabled
 member-unverified BSLookAtModifierBoneData.fwdAxisLS
@@ -108797,10 +108711,6 @@ member-unverified BSLookAtModifierBoneData.index
 member-unverified BSLookAtModifierBoneData.limitAngleDegrees
 member-unverified BSLookAtModifierBoneData.offGain
 member-unverified BSLookAtModifierBoneData.onGain
-member-unverified BSLookIKNote.action
-member-unverified BSLookIKNote.noteType
-member-unverified BSLookIKNote.time
-member-unverified BSLookIKNote.value
 member-unverified BSMasterParticleSystem.extraDataCapacity
 member-unverified BSMasterParticleSystem.flags2
 member-unverified BSMasterParticleSystem.local
@@ -109369,10 +109279,6 @@ member-unverified BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTr
 member-unverified BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2>.field_20
 member-unverified BSQueuedResourceCollection<BSResource::EntryDB<BShkbHkxDB::DBTraits>,2>.field_20
 member-unverified BSQueuedResourceCollectionBase.field_20
-member-unverified BSRagdollContactListenerModifier.bones
-member-unverified BSRagdollContactListenerModifier.contactEvent
-member-unverified BSRagdollContactListenerModifier.ragdollRigidBodies
-member-unverified BSRagdollContactListenerModifier.throwEvent
 member-unverified BSRangeNode.extraDataCapacity
 member-unverified BSRangeNode.flags2
 member-unverified BSRangeNode.local
@@ -112122,22 +112028,9 @@ member-unverified BSSmallBlockAllocatorUtil::UserPoolBase.field_20
 member-unverified BSSmallBlockAllocatorUtil::UserPoolBase.field_28
 member-unverified BSSmallBlockAllocatorUtil::UserPoolBase.field_30
 member-unverified BSSmallBlockAllocatorUtil::UserPoolBase.field_8
-member-unverified BSSpeedSamplerModifier.areBindablesCached
-member-unverified BSSpeedSamplerModifier.cachedBindables
-member-unverified BSSpeedSamplerModifier.cloneState
-member-unverified BSSpeedSamplerModifier.direction
-member-unverified BSSpeedSamplerModifier.enable
-member-unverified BSSpeedSamplerModifier.goalSpeed
-member-unverified BSSpeedSamplerModifier.id
-member-unverified BSSpeedSamplerModifier.memSizeAndFlags
-member-unverified BSSpeedSamplerModifier.name
 member-unverified BSSpeedSamplerModifier.padModifier
 member-unverified BSSpeedSamplerModifier.padNode
 member-unverified BSSpeedSamplerModifier.referenceCount
-member-unverified BSSpeedSamplerModifier.speedOut
-member-unverified BSSpeedSamplerModifier.state
-member-unverified BSSpeedSamplerModifier.userData
-member-unverified BSSpeedSamplerModifier.variableBindingSet
 member-unverified BSStream.field_234
 member-unverified BSStripPSysData.field_A0
 member-unverified BSStripParticleSystem.extraDataCapacity
@@ -112491,10 +112384,7 @@ member-unverified BSXAudio2GameSound.field_40
 member-unverified BSXAudio2GameSound.field_44
 member-unverified BSXAudio2GameSound.field_48
 member-unverified BSXAudio2GameSound.field_54
-member-unverified BShkbAnimationGraph.boneLODEnabled
-member-unverified BShkbAnimationGraph.boneLODTable
 member-unverified BShkbAnimationGraph.eventsSuppressed
-member-unverified BShkbAnimationGraph.interpTimerA
 member-unverified BShkbAnimationGraph.ownedNodeData
 member-unverified BShkbAnimationGraph.updateBehaviorThisFrame
 member-unverified BShkbHkxDB::QueuedHandles.field_20
@@ -112682,17 +112572,10 @@ member-missing CCallback<BSWin32SystemUtility,FloatingGamepadTextInputDismissed_
 member-missing CCallback<BSWin32SystemUtility,GamepadTextInputDismissed_t,0>.__vftable
 member-missing CCallbackImpl<1>.__vftable
 member-missing CCallbackImpl<8>.__vftable
-member-unverified CachedRaycastData.cachingPhantom
-member-unverified CachedRaycastData.collectedBodies
-member-unverified CachedRaycastData.collisionGroup
 member-unverified CachedRaycastData.graphIsSynced
-member-unverified CachedRaycastData.handle
-member-unverified CachedRaycastData.hitThisFrame
 member-unverified CachedRaycastData.isFree
 member-unverified CachedRaycastData.legCastResults
 member-unverified CachedRaycastData.needsRefresh
-member-unverified CachedRaycastData.useWorldOnly
-member-unverified CachedRaycastData.world
 member-unverified Calendar.daysAdvanced
 member-unverified Calendar.field_3c
 member-unverified Calendar.gameDay
@@ -115687,7 +115570,6 @@ member-unverified RenderPass.field_1D
 member-unverified RenderPass.field_20
 member-unverified RenderPass.lodMode
 member-unverified RenderPass.poolIndex
-member-unverified RenderPass.property
 member-unverified RenderPass.sceneLights
 member-unverified RenderPass.shader
 member-unverified RenderStateCache.cubeMapFace
@@ -115696,7 +115578,6 @@ member-unverified RenderStateCache.cubeMapRenderTarget
 member-unverified RenderStateCache.depthStencil
 member-unverified RenderStateCache.depthStencilMode
 member-unverified RenderStateCache.depthStencilSlice
-member-unverified RenderStateCache.dirty
 member-unverified RenderStateCache.dirtySamplers
 member-unverified RenderStateCache.dirtyShaderResources
 member-unverified RenderStateCache.renderTargetModes
@@ -116505,7 +116386,6 @@ member-unverified TESQuestStageEvent.stage
 member-unverified TESQuestStageItemDoneEvent.formID
 member-unverified TESQuestStartStopEvent.formID
 member-unverified TESQuestStartStopEvent.started
-member-unverified TESRace.dataFlags
 member-unverified TESRace.field_168
 member-unverified TESRace.field_170
 member-unverified TESRace.field_178
@@ -118390,7 +118270,6 @@ member-unverified hkClass.defaults
 member-unverified hkClass.enums
 member-unverified hkClass.flags
 member-unverified hkClass.members
-member-unverified hkClass.name
 member-unverified hkClass.numEnums
 member-unverified hkClass.numInterfaces
 member-unverified hkClass.numMembers
@@ -119321,47 +119200,16 @@ member-unverified hkaDetectRagdollPenetration.field_B8
 member-unverified hkaDetectRagdollPenetration.field_C0
 member-unverified hkaDetectRagdollPenetration.field_C4
 member-unverified hkaFootPlacementIkSolver.ankleIndex
-member-unverified hkaFootPlacementIkSolver.cosineMaxKneeAngle
-member-unverified hkaFootPlacementIkSolver.cosineMinKneeAngle
-member-unverified hkaFootPlacementIkSolver.currentWeight
 member-unverified hkaFootPlacementIkSolver.field_B8
-member-unverified hkaFootPlacementIkSolver.footEndLS
-member-unverified hkaFootPlacementIkSolver.footPlantedAnkleHeightMS
-member-unverified hkaFootPlacementIkSolver.footRaisedAnkleHeightMS
-member-unverified hkaFootPlacementIkSolver.hipIndex
 member-unverified hkaFootPlacementIkSolver.isFootLocked
-member-unverified hkaFootPlacementIkSolver.kneeAxisLS
 member-unverified hkaFootPlacementIkSolver.kneeIndex
 member-unverified hkaFootPlacementIkSolver.lockedAnkleWS
-member-unverified hkaFootPlacementIkSolver.lockedFootEndWS
-member-unverified hkaFootPlacementIkSolver.maxAnkleHeightMS
-member-unverified hkaFootPlacementIkSolver.minAnkleHeightMS
-member-unverified hkaFootPlacementIkSolver.modelUpMS
-member-unverified hkaFootPlacementIkSolver.originalGroundHeightMS
-member-unverified hkaFootPlacementIkSolver.previousGroundHeightWS
-member-unverified hkaFootPlacementIkSolver.previousGroundNormalWS
 member-unverified hkaFootPlacementIkSolver.previousVerticalDisplacement
-member-unverified hkaFootPlacementIkSolver.raycastDistanceDown
-member-unverified hkaFootPlacementIkSolver.raycastDistanceUp
-member-unverified hkaFootPlacementIkSolver.skeleton
-member-unverified hkaFootPlacementIkSolver.unlockOffsetWS
-member-unverified hkaFootPlacementIkSolver.useFootLocking
-member-unverified hkaFootPlacementIkSolver.worldUpWS
 member-unverified hkaFootPlacementIkSolver::Input.collisionFilterInfo
-member-unverified hkaFootPlacementIkSolver::Input.footIkOn
-member-unverified hkaFootPlacementIkSolver::Input.footPlantedGain
-member-unverified hkaFootPlacementIkSolver::Input.footRaisedGain
-member-unverified hkaFootPlacementIkSolver::Input.footUnlockGain
-member-unverified hkaFootPlacementIkSolver::Input.groundAscendingGain
-member-unverified hkaFootPlacementIkSolver::Input.groundDescendingGain
-member-unverified hkaFootPlacementIkSolver::Input.maxKneeAngleDifference
-member-unverified hkaFootPlacementIkSolver::Input.onOffGain
 member-unverified hkaFootPlacementIkSolver::Input.originalAnkleTransformMS
 member-unverified hkaFootPlacementIkSolver::Input.raycastInterface
 member-unverified hkaFootPlacementIkSolver::Input.useCollisionFilterInfo
-member-unverified hkaFootPlacementIkSolver::Input.worldFromModel
 member-unverified hkaFootPlacementIkSolver::Output.groundNormalWS
-member-unverified hkaFootPlacementIkSolver::Output.hitSomething
 member-unverified hkaFootPlacementIkSolver::Output.verticalError
 member-unverified hkaFootstepAnalysisInfo.field_108
 member-unverified hkaFootstepAnalysisInfo.field_110
@@ -119435,15 +119283,8 @@ member-unverified hkaQuantizedAnimation.field_B4
 member-unverified hkaQuantizedAnimation.field_B8
 member-unverified hkaQuantizedAnimation.field_C0
 member-unverified hkaQuantizedAnimation.field_C4
-member-unverified hkaRagdollInstance.boneToRigidBodyMap
-member-unverified hkaRagdollInstance.constraints
-member-unverified hkaRagdollInstance.rigidBodies
-member-unverified hkaRagdollInstance.skeleton
-member-unverified hkaSkeleton.localFrames
 member-unverified hkaSkeleton.memSizeAndFlags
-member-unverified hkaSkeleton.name
 member-unverified hkaSkeleton.referenceCount
-member-unverified hkaSkeleton.referenceFloats
 member-unverified hkaSkeletonMapper.field_108
 member-unverified hkaSkeletonMapper.field_110
 member-unverified hkaSkeletonMapper.field_114
@@ -119664,8 +119505,6 @@ member-unverified hkbBlendingTransitionEffect.field_B4
 member-unverified hkbBlendingTransitionEffect.field_B8
 member-unverified hkbBlendingTransitionEffect.field_C0
 member-unverified hkbBlendingTransitionEffect.field_C4
-member-unverified hkbBoneIndexArray.boneIndices
-member-unverified hkbBoneWeightArray.boneWeights
 member-unverified hkbBoolVariableSequencedData.field_108
 member-unverified hkbBoolVariableSequencedData.field_110
 member-unverified hkbBoolVariableSequencedData.field_114
@@ -119686,17 +119525,7 @@ member-unverified hkbCameraShakeEventPayload.field_B4
 member-unverified hkbCameraShakeEventPayload.field_B8
 member-unverified hkbCameraShakeEventPayload.field_C0
 member-unverified hkbCameraShakeEventPayload.field_C4
-member-unverified hkbCharacter.characterControllerDriver
-member-unverified hkbCharacter.currentLod
-member-unverified hkbCharacter.deletePoseLocal
-member-unverified hkbCharacter.deleteWorldFromModel
-member-unverified hkbCharacter.eventQueue
-member-unverified hkbCharacter.memSizeAndFlags
-member-unverified hkbCharacter.numTracksInLod
-member-unverified hkbCharacter.projectData
-member-unverified hkbCharacter.raycastInterface
 member-unverified hkbCharacter.referenceCount
-member-unverified hkbCharacter.world
 member-unverified hkbCharacterAddedInfo.field_108
 member-unverified hkbCharacterAddedInfo.field_110
 member-unverified hkbCharacterAddedInfo.field_114
@@ -119737,22 +119566,8 @@ member-unverified hkbCharacterControllerSceneModifier.field_B4
 member-unverified hkbCharacterControllerSceneModifier.field_B8
 member-unverified hkbCharacterControllerSceneModifier.field_C0
 member-unverified hkbCharacterControllerSceneModifier.field_C4
-member-unverified hkbCharacterData.characterControllerInfo
-member-unverified hkbCharacterData.characterPropertyInfos
-member-unverified hkbCharacterData.characterPropertyValues
-member-unverified hkbCharacterData.footIkDriverInfo
-member-unverified hkbCharacterData.handIkDriverInfo
 member-unverified hkbCharacterData.memSizeAndFlags
-member-unverified hkbCharacterData.mirroredSkeletonInfo
-member-unverified hkbCharacterData.modelForwardMS
-member-unverified hkbCharacterData.modelRightMS
-member-unverified hkbCharacterData.modelUpMS
-member-unverified hkbCharacterData.numBonesPerLod
-member-unverified hkbCharacterData.numFloatSlots
-member-unverified hkbCharacterData.numHands
 member-unverified hkbCharacterData.referenceCount
-member-unverified hkbCharacterData.scale
-member-unverified hkbCharacterData.stringData
 member-unverified hkbCharacterInfo.field_108
 member-unverified hkbCharacterInfo.field_110
 member-unverified hkbCharacterInfo.field_114
@@ -119763,16 +119578,7 @@ member-unverified hkbCharacterInfo.field_B4
 member-unverified hkbCharacterInfo.field_B8
 member-unverified hkbCharacterInfo.field_C0
 member-unverified hkbCharacterInfo.field_C4
-member-unverified hkbCharacterSetup.animationBindingSet
-member-unverified hkbCharacterSetup.animationSkeleton
-member-unverified hkbCharacterSetup.animationToRagdollSkeletonMapper
-member-unverified hkbCharacterSetup.characterPropertyIdMap
-member-unverified hkbCharacterSetup.data
-member-unverified hkbCharacterSetup.memSizeAndFlags
-member-unverified hkbCharacterSetup.mirroredSkeleton
-member-unverified hkbCharacterSetup.ragdollToAnimationSkeletonMapper
 member-unverified hkbCharacterSetup.referenceCount
-member-unverified hkbCharacterSetup.retargetingSkeletonMappers
 member-unverified hkbCharacterSkinInfo.field_108
 member-unverified hkbCharacterSkinInfo.field_110
 member-unverified hkbCharacterSkinInfo.field_114
@@ -119903,9 +119709,6 @@ member-unverified hkbDampingModifier.field_B4
 member-unverified hkbDampingModifier.field_B8
 member-unverified hkbDampingModifier.field_C0
 member-unverified hkbDampingModifier.field_C4
-member-unverified hkbDefaultRaycastInterface.hkaRaycastInterface
-member-unverified hkbDefaultRaycastInterface.minNormalUpDot
-member-unverified hkbDefaultRaycastInterface.world
 member-unverified hkbDelayedModifier.field_108
 member-unverified hkbDelayedModifier.field_110
 member-unverified hkbDelayedModifier.field_114
@@ -119916,14 +119719,6 @@ member-unverified hkbDelayedModifier.field_B4
 member-unverified hkbDelayedModifier.field_B8
 member-unverified hkbDelayedModifier.field_C0
 member-unverified hkbDelayedModifier.field_C4
-member-unverified hkbDetectCloseToGroundModifier.animBoneIndex
-member-unverified hkbDetectCloseToGroundModifier.boneIndex
-member-unverified hkbDetectCloseToGroundModifier.closeToGroundEvent
-member-unverified hkbDetectCloseToGroundModifier.closeToGroundHeight
-member-unverified hkbDetectCloseToGroundModifier.collisionFilterInfo
-member-unverified hkbDetectCloseToGroundModifier.isCloseToGround
-member-unverified hkbDetectCloseToGroundModifier.raycastDistanceDown
-member-unverified hkbDetectCloseToGroundModifierInternalState.isCloseToGround
 member-unverified hkbEvaluateExpressionModifier.field_108
 member-unverified hkbEvaluateExpressionModifier.field_110
 member-unverified hkbEvaluateExpressionModifier.field_114
@@ -120034,141 +119829,29 @@ member-unverified hkbExpressionDataArray.field_B4
 member-unverified hkbExpressionDataArray.field_B8
 member-unverified hkbExpressionDataArray.field_C0
 member-unverified hkbExpressionDataArray.field_C4
-member-unverified hkbExtractRagdollPoseModifier.enableComputeWorldFromModel
-member-unverified hkbExtractRagdollPoseModifier.poseMatchingBone0
-member-unverified hkbExtractRagdollPoseModifier.poseMatchingBone1
-member-unverified hkbExtractRagdollPoseModifier.poseMatchingBone2
 member-unverified hkbFootIkControlData.gains
-member-unverified hkbFootIkControlsModifier.alignWithGroundRotation
-member-unverified hkbFootIkControlsModifier.areBindablesCached
-member-unverified hkbFootIkControlsModifier.cachedBindables
 member-unverified hkbFootIkControlsModifier.cloneState
-member-unverified hkbFootIkControlsModifier.controlData
-member-unverified hkbFootIkControlsModifier.enable
-member-unverified hkbFootIkControlsModifier.errorOutTranslation
-member-unverified hkbFootIkControlsModifier.id
-member-unverified hkbFootIkControlsModifier.legs
-member-unverified hkbFootIkControlsModifier.memSizeAndFlags
-member-unverified hkbFootIkControlsModifier.name
 member-unverified hkbFootIkControlsModifier.padModifier
 member-unverified hkbFootIkControlsModifier.padNode
 member-unverified hkbFootIkControlsModifier.referenceCount
-member-unverified hkbFootIkControlsModifier.userData
-member-unverified hkbFootIkControlsModifier.variableBindingSet
-member-unverified hkbFootIkControlsModifierLeg.groundPosition
-member-unverified hkbFootIkControlsModifierLeg.hitSomething
-member-unverified hkbFootIkControlsModifierLeg.isPlantedMS
-member-unverified hkbFootIkControlsModifierLeg.ungroundedEvent
-member-unverified hkbFootIkControlsModifierLeg.verticalError
-member-unverified hkbFootIkDriver.alignWithGroundRotation
-member-unverified hkbFootIkDriver.deltaTime
-member-unverified hkbFootIkDriver.disabled
-member-unverified hkbFootIkDriver.errorOutTranslation
-member-unverified hkbFootIkDriver.hasGroundPoints
-member-unverified hkbFootIkDriver.internalLegs
-member-unverified hkbFootIkDriver.legsInitialized
-member-unverified hkbFootIkDriver.previousGainsWeight
-member-unverified hkbFootIkDriver.verticalError
-member-unverified hkbFootIkDriver::InternalLeg.groundHeight
-member-unverified hkbFootIkDriver::InternalLeg.groundNormalWS
-member-unverified hkbFootIkDriver::InternalLeg.groundPositionWS
-member-unverified hkbFootIkDriver::InternalLeg.hit
-member-unverified hkbFootIkDriver::InternalLeg.isPlanted
-member-unverified hkbFootIkDriver::InternalLeg.solver
-member-unverified hkbFootIkDriverInfo.collisionFilterInfo
-member-unverified hkbFootIkDriverInfo.forwardAlignFraction
-member-unverified hkbFootIkDriverInfo.isQuadrupedNarrow
-member-unverified hkbFootIkDriverInfo.legs
-member-unverified hkbFootIkDriverInfo.lockFeetWhenPlanted
 member-unverified hkbFootIkDriverInfo.memSizeAndFlags
-member-unverified hkbFootIkDriverInfo.originalGroundHeightMS
-member-unverified hkbFootIkDriverInfo.raycastDistanceDown
-member-unverified hkbFootIkDriverInfo.raycastDistanceUp
 member-unverified hkbFootIkDriverInfo.referenceCount
-member-unverified hkbFootIkDriverInfo.sidewaysAlignFraction
-member-unverified hkbFootIkDriverInfo.sidewaysSampleWidth
-member-unverified hkbFootIkDriverInfo.useCharacterUpVector
-member-unverified hkbFootIkDriverInfo.verticalOffset
-member-unverified hkbFootIkDriverInfoLeg.ankleIndex
-member-unverified hkbFootIkDriverInfoLeg.footEndLS
-member-unverified hkbFootIkDriverInfoLeg.footPlantedAnkleHeightMS
-member-unverified hkbFootIkDriverInfoLeg.footRaisedAnkleHeightMS
-member-unverified hkbFootIkDriverInfoLeg.hipIndex
-member-unverified hkbFootIkDriverInfoLeg.kneeAxisLS
-member-unverified hkbFootIkDriverInfoLeg.kneeIndex
-member-unverified hkbFootIkDriverInfoLeg.maxAnkleAngleDegrees
-member-unverified hkbFootIkDriverInfoLeg.maxAnkleHeightMS
-member-unverified hkbFootIkDriverInfoLeg.maxKneeAngleDegrees
-member-unverified hkbFootIkDriverInfoLeg.minAnkleHeightMS
-member-unverified hkbFootIkDriverInfoLeg.minKneeAngleDegrees
-member-unverified hkbFootIkDriverInfoLeg.prevAnkleRotLS
-member-unverified hkbFootIkGains.alignWorldFromModelGain
-member-unverified hkbFootIkGains.ankleOrientationGain
-member-unverified hkbFootIkGains.errorUpDownBias
-member-unverified hkbFootIkGains.footPlantedGain
-member-unverified hkbFootIkGains.footRaisedGain
-member-unverified hkbFootIkGains.footUnlockGain
-member-unverified hkbFootIkGains.groundAscendingGain
-member-unverified hkbFootIkGains.groundDescendingGain
-member-unverified hkbFootIkGains.hipOrientationGain
-member-unverified hkbFootIkGains.maxKneeAngleDifference
-member-unverified hkbFootIkGains.onOffGain
-member-unverified hkbFootIkGains.worldFromModelFeedbackGain
 member-unverified hkbFootIkModifier.alignMode
 member-unverified hkbFootIkModifier.alignWithGroundRotation
-member-unverified hkbFootIkModifier.areBindablesCached
-member-unverified hkbFootIkModifier.cachedBindables
-member-unverified hkbFootIkModifier.cloneState
 member-unverified hkbFootIkModifier.collisionFilterInfo
-member-unverified hkbFootIkModifier.enable
-member-unverified hkbFootIkModifier.errorOut
-member-unverified hkbFootIkModifier.errorOutTranslation
-member-unverified hkbFootIkModifier.forwardAlignFraction
-member-unverified hkbFootIkModifier.gains
-member-unverified hkbFootIkModifier.id
-member-unverified hkbFootIkModifier.internalLegData
-member-unverified hkbFootIkModifier.isGroundPositionValid
-member-unverified hkbFootIkModifier.isSetUp
-member-unverified hkbFootIkModifier.legs
 member-unverified hkbFootIkModifier.lockFeetWhenPlanted
-member-unverified hkbFootIkModifier.memSizeAndFlags
-member-unverified hkbFootIkModifier.name
-member-unverified hkbFootIkModifier.originalGroundHeightMS
 member-unverified hkbFootIkModifier.padModifier
 member-unverified hkbFootIkModifier.padNode
-member-unverified hkbFootIkModifier.prevIsFootIkEnabled
-member-unverified hkbFootIkModifier.raycastDistanceDown
-member-unverified hkbFootIkModifier.raycastDistanceUp
 member-unverified hkbFootIkModifier.referenceCount
 member-unverified hkbFootIkModifier.sidewaysAlignFraction
-member-unverified hkbFootIkModifier.sidewaysSampleWidth
-member-unverified hkbFootIkModifier.timeStep
 member-unverified hkbFootIkModifier.useCharacterUpVector
 member-unverified hkbFootIkModifier.useTrackData
-member-unverified hkbFootIkModifier.userData
-member-unverified hkbFootIkModifier.variableBindingSet
 member-unverified hkbFootIkModifier.verticalOffset
-member-unverified hkbFootIkModifierInternalLegData.footIkSolver
-member-unverified hkbFootIkModifierInternalLegData.groundPosition
-member-unverified hkbFootIkModifierLeg.ankleIndex
 member-unverified hkbFootIkModifierLeg.footEndLS
-member-unverified hkbFootIkModifierLeg.footPlantedAnkleHeightMS
-member-unverified hkbFootIkModifierLeg.footRaisedAnkleHeightMS
-member-unverified hkbFootIkModifierLeg.hipIndex
-member-unverified hkbFootIkModifierLeg.hitSomething
 member-unverified hkbFootIkModifierLeg.isOriginalAnkleTransformMSSet
-member-unverified hkbFootIkModifierLeg.isPlantedMS
-member-unverified hkbFootIkModifierLeg.kneeAxisLS
-member-unverified hkbFootIkModifierLeg.kneeIndex
 member-unverified hkbFootIkModifierLeg.maxAnkleAngleDegrees
-member-unverified hkbFootIkModifierLeg.maxAnkleHeightMS
-member-unverified hkbFootIkModifierLeg.maxKneeAngleDegrees
-member-unverified hkbFootIkModifierLeg.minAnkleHeightMS
-member-unverified hkbFootIkModifierLeg.minKneeAngleDegrees
 member-unverified hkbFootIkModifierLeg.originalAnkleTransformMS
 member-unverified hkbFootIkModifierLeg.prevAnkleRotLS
-member-unverified hkbFootIkModifierLeg.ungroundedEvent
-member-unverified hkbFootIkModifierLeg.verticalError
 member-unverified hkbGenerator.field_108
 member-unverified hkbGenerator.field_110
 member-unverified hkbGenerator.field_114
@@ -120233,14 +119916,9 @@ member-unverified hkbHandIkControlData.targetNormal
 member-unverified hkbHandIkControlData.targetPosition
 member-unverified hkbHandIkControlData.targetRotation
 member-unverified hkbHandIkControlData.transformOnFraction
-member-unverified hkbHandIkControlsModifier.hands
 member-unverified hkbHandIkControlsModifierHand.controlData
 member-unverified hkbHandIkControlsModifierHand.enable
 member-unverified hkbHandIkControlsModifierHand.handIndex
-member-unverified hkbHandIkDriver.field_20
-member-unverified hkbHandIkDriver.internalHandData
-member-unverified hkbHandIkDriverInfo.fadeInOutCurve
-member-unverified hkbHandIkDriverInfo.hands
 member-unverified hkbHandIkDriverInfo.memSizeAndFlags
 member-unverified hkbHandIkDriverInfo.referenceCount
 member-unverified hkbHandIkDriverInfoHand.backHandNormalLS
@@ -120257,9 +119935,6 @@ member-unverified hkbHandIkDriverInfoHand.minElbowAngleDegrees
 member-unverified hkbHandIkDriverInfoHand.shoulderIndex
 member-unverified hkbHandIkDriverInfoHand.shoulderSiblingIndex
 member-unverified hkbHandIkDriverInfoHand.wristIndex
-member-unverified hkbHandIkModifier.fadeInOutCurve
-member-unverified hkbHandIkModifier.hands
-member-unverified hkbHandIkModifier.internalHandData
 member-unverified hkbHandIkModifierHand.backHandNormalLS
 member-unverified hkbHandIkModifierHand.elbowAxisLS
 member-unverified hkbHandIkModifierHand.elbowIndex
@@ -120304,8 +119979,6 @@ member-unverified hkbIntVariableSequencedData.field_B4
 member-unverified hkbIntVariableSequencedData.field_B8
 member-unverified hkbIntVariableSequencedData.field_C0
 member-unverified hkbIntVariableSequencedData.field_C4
-member-unverified hkbKeyframeBonesModifier.keyframeInfo
-member-unverified hkbKeyframeBonesModifier.keyframedBonesList
 member-unverified hkbKeyframeBonesModifierKeyframeInfo.boneIndex
 member-unverified hkbKeyframeBonesModifierKeyframeInfo.isValid
 member-unverified hkbKeyframeBonesModifierKeyframeInfo.keyframedPosition
@@ -120320,29 +119993,15 @@ member-unverified hkbLinkedSymbolInfo.field_B4
 member-unverified hkbLinkedSymbolInfo.field_B8
 member-unverified hkbLinkedSymbolInfo.field_C0
 member-unverified hkbLinkedSymbolInfo.field_C4
-member-unverified hkbLookAtModifier.eyePositionHS
-member-unverified hkbLookAtModifier.headForwardLS
 member-unverified hkbLookAtModifier.headIndex
 member-unverified hkbLookAtModifier.individualLimitsOn
 member-unverified hkbLookAtModifier.isOn
-member-unverified hkbLookAtModifier.isTargetInsideLimitCone
-member-unverified hkbLookAtModifier.limitAngleDegrees
-member-unverified hkbLookAtModifier.limitAngleDown
 member-unverified hkbLookAtModifier.limitAngleLeft
 member-unverified hkbLookAtModifier.limitAngleRight
 member-unverified hkbLookAtModifier.limitAngleUp
-member-unverified hkbLookAtModifier.lookAtLastTargetWS
-member-unverified hkbLookAtModifier.lookAtWeight
-member-unverified hkbLookAtModifier.neckForwardLS
-member-unverified hkbLookAtModifier.neckIndex
-member-unverified hkbLookAtModifier.neckRightLS
-member-unverified hkbLookAtModifier.newTargetGain
 member-unverified hkbLookAtModifier.offGain
 member-unverified hkbLookAtModifier.onGain
-member-unverified hkbLookAtModifier.targetWS
 member-unverified hkbLookAtModifierInternalState.isTargetInsideLimitCone
-member-unverified hkbLookAtModifierInternalState.lookAtLastTargetWS
-member-unverified hkbLookAtModifierInternalState.lookAtWeight
 member-unverified hkbManualSelectorGenerator.field_108
 member-unverified hkbManualSelectorGenerator.field_110
 member-unverified hkbManualSelectorGenerator.field_114
@@ -120484,37 +120143,22 @@ member-unverified hkbParticleSystemEventPayload.field_B8
 member-unverified hkbParticleSystemEventPayload.field_C0
 member-unverified hkbParticleSystemEventPayload.field_C4
 member-unverified hkbPoseMatchingGenerator.anotherBoneIndex
-member-unverified hkbPoseMatchingGenerator.bestMatch
 member-unverified hkbPoseMatchingGenerator.blendSpeed
-member-unverified hkbPoseMatchingGenerator.currentMatch
-member-unverified hkbPoseMatchingGenerator.error
 member-unverified hkbPoseMatchingGenerator.minSpeedToSwitch
 member-unverified hkbPoseMatchingGenerator.minSwitchTimeFullError
 member-unverified hkbPoseMatchingGenerator.minSwitchTimeNoError
-member-unverified hkbPoseMatchingGenerator.mode
 member-unverified hkbPoseMatchingGenerator.otherBoneIndex
 member-unverified hkbPoseMatchingGenerator.pelvisIndex
-member-unverified hkbPoseMatchingGenerator.poseMatchingUtility
-member-unverified hkbPoseMatchingGenerator.resetCurrentMatchLocalTime
 member-unverified hkbPoseMatchingGenerator.rootBoneIndex
 member-unverified hkbPoseMatchingGenerator.startMatchingEventId
 member-unverified hkbPoseMatchingGenerator.startPlayingEventId
-member-unverified hkbPoseMatchingGenerator.timeSinceBetterMatch
-member-unverified hkbPoseMatchingGenerator.worldFromModelRotation
 member-unverified hkbPoseMatchingGeneratorInternalState.bestMatch
-member-unverified hkbPoseMatchingGeneratorInternalState.currentMatch
 member-unverified hkbPoseMatchingGeneratorInternalState.error
-member-unverified hkbPoseMatchingGeneratorInternalState.resetCurrentMatchLocalTime
-member-unverified hkbPoseMatchingGeneratorInternalState.timeSinceBetterMatch
 member-unverified hkbPoweredRagdollControlData.constantRecoveryVelocity
 member-unverified hkbPoweredRagdollControlData.damping
 member-unverified hkbPoweredRagdollControlData.maxForce
 member-unverified hkbPoweredRagdollControlData.proportionalRecoveryVelocity
 member-unverified hkbPoweredRagdollControlData.tau
-member-unverified hkbPoweredRagdollControlsModifier.boneWeights
-member-unverified hkbPoweredRagdollControlsModifier.bones
-member-unverified hkbPoweredRagdollControlsModifier.controlData
-member-unverified hkbPoweredRagdollControlsModifier.worldFromModelModeData
 member-unverified hkbProjectData.field_108
 member-unverified hkbProjectData.field_110
 member-unverified hkbProjectData.field_114
@@ -120551,10 +120195,6 @@ member-unverified hkbRagdollDriver.field_B4
 member-unverified hkbRagdollDriver.field_B8
 member-unverified hkbRagdollDriver.field_C0
 member-unverified hkbRagdollDriver.field_C4
-member-unverified hkbRagdollDriver.flag_1c
-member-unverified hkbRagdollDriver.worldFromModel
-member-unverified hkbRagdollSceneModifier.physicsWorld
-member-unverified hkbRagdollSceneModifier.stepper
 member-unverified hkbRaiseEventCommand.field_108
 member-unverified hkbRaiseEventCommand.field_110
 member-unverified hkbRaiseEventCommand.field_114
@@ -120607,8 +120247,6 @@ member-unverified hkbRegisteredGenerator.field_C0
 member-unverified hkbRegisteredGenerator.field_C4
 member-unverified hkbRigidBodyRagdollControlData.durationToBlend
 member-unverified hkbRigidBodyRagdollControlData.keyFrameHierarchyControlData
-member-unverified hkbRigidBodyRagdollControlsModifier.bones
-member-unverified hkbRigidBodyRagdollControlsModifier.controlData
 member-unverified hkbRotateCharacterModifier.field_108
 member-unverified hkbRotateCharacterModifier.field_110
 member-unverified hkbRotateCharacterModifier.field_114
@@ -120829,30 +120467,11 @@ member-unverified hkbTransitionEffect.field_B4
 member-unverified hkbTransitionEffect.field_B8
 member-unverified hkbTransitionEffect.field_C0
 member-unverified hkbTransitionEffect.field_C4
-member-unverified hkbTwistModifier.areBindablesCached
-member-unverified hkbTwistModifier.axisOfRotation
-member-unverified hkbTwistModifier.boneChainIndices
-member-unverified hkbTwistModifier.cachedBindables
-member-unverified hkbTwistModifier.cloneState
-member-unverified hkbTwistModifier.enable
-member-unverified hkbTwistModifier.endBoneIndex
-member-unverified hkbTwistModifier.id
-member-unverified hkbTwistModifier.isAdditive
-member-unverified hkbTwistModifier.memSizeAndFlags
-member-unverified hkbTwistModifier.name
 member-unverified hkbTwistModifier.padModifier
 member-unverified hkbTwistModifier.padNode
-member-unverified hkbTwistModifier.parentBoneIndices
 member-unverified hkbTwistModifier.referenceCount
 member-unverified hkbTwistModifier.rotationAxisCoordinates
-member-unverified hkbTwistModifier.setAngleMethod
-member-unverified hkbTwistModifier.startBoneIndex
-member-unverified hkbTwistModifier.twistAngle
-member-unverified hkbTwistModifier.userData
-member-unverified hkbTwistModifier.variableBindingSet
-member-unverified hkbVariableBindingSet.bindings
 member-unverified hkbVariableBindingSet.hasOutputBinding
-member-unverified hkbVariableBindingSet.indexOfBindingToEnable
 member-unverified hkbVariableBindingSet.memSizeAndFlags
 member-unverified hkbVariableBindingSet.referenceCount
 member-unverified hkbVariableBindingSetBinding.bindingType
@@ -134069,7 +133688,6 @@ size-unverified BSList<TriggerEntry::TriggerEvent*___ptr64>
 size-unverified BSListBase<BSTempEffectDebris*___ptr64>
 size-unverified BSListBase<TriggerEntry::TriggerEvent*___ptr64>
 size-unverified BSLookAtModifier
-size-unverified BSLookAtModifierBoneData
 size-unverified BSLookIKNote
 size-unverified BSMap<BSFadeNode_const*___ptr64,unsigned_int>
 size-unverified BSMapBase<BGSImpactData*___ptr64,bool>
@@ -138475,7 +138093,6 @@ size-unverified hkaFootPlacementIkSolver::Setup
 size-unverified hkaFootstepAnalysisInfo
 size-unverified hkaFootstepAnalysisInfoContainer
 size-unverified hkaInterleavedUncompressedAnimation
-size-unverified hkaKeyFrameHierarchyUtilityControlData
 size-unverified hkaMeshBinding
 size-unverified hkaMirroredSkeleton
 size-unverified hkaQuantizedAnimation
@@ -138565,16 +138182,12 @@ size-unverified hkbEventsFromRangeModifierInternalState
 size-unverified hkbExpressionCondition
 size-unverified hkbExpressionDataArray
 size-unverified hkbExtractRagdollPoseModifier
-size-unverified hkbFootIkControlData
 size-unverified hkbFootIkControlsModifier
-size-unverified hkbFootIkControlsModifierLeg
 size-unverified hkbFootIkDriver
 size-unverified hkbFootIkDriver::InternalLeg
 size-unverified hkbFootIkDriverInfo
 size-unverified hkbFootIkGains
 size-unverified hkbFootIkModifier
-size-unverified hkbFootIkModifierInternalLegData
-size-unverified hkbFootIkModifierLeg
 size-unverified hkbFootIkSceneModifier
 size-unverified hkbGenerator
 size-unverified hkbGeneratorOutput
@@ -138585,21 +138198,16 @@ size-unverified hkbGetUpModifier
 size-unverified hkbGetUpModifierInternalState
 size-unverified hkbGetWorldFromModelModifier
 size-unverified hkbGetWorldFromModelModifierInternalState
-size-unverified hkbHandIkControlData
 size-unverified hkbHandIkControlsModifier
-size-unverified hkbHandIkControlsModifierHand
 size-unverified hkbHandIkDriver
 size-unverified hkbHandIkDriverInfo
-size-unverified hkbHandIkDriverInfoHand
 size-unverified hkbHandIkFixupSceneModifier
 size-unverified hkbHandIkModifier
-size-unverified hkbHandIkModifierHand
 size-unverified hkbHandIkSceneModifier
 size-unverified hkbHandle
 size-unverified hkbIntEventPayload
 size-unverified hkbIntVariableSequencedData
 size-unverified hkbKeyframeBonesModifier
-size-unverified hkbKeyframeBonesModifierKeyframeInfo
 size-unverified hkbLinkedSymbolInfo
 size-unverified hkbLookAtModifier
 size-unverified hkbLookAtModifierInternalState
@@ -138623,7 +138231,6 @@ size-unverified hkbNodeInternalStateInfo
 size-unverified hkbParticleSystemEventPayload
 size-unverified hkbPoseMatchingGenerator
 size-unverified hkbPoseMatchingGeneratorInternalState
-size-unverified hkbPoweredRagdollControlData
 size-unverified hkbPoweredRagdollControlsModifier
 size-unverified hkbProjectData
 size-unverified hkbProjectStringData
@@ -138635,7 +138242,6 @@ size-unverified hkbRealEventPayload
 size-unverified hkbRealVariableSequencedData
 size-unverified hkbReferencePoseGenerator
 size-unverified hkbRegisteredGenerator
-size-unverified hkbRigidBodyRagdollControlData
 size-unverified hkbRigidBodyRagdollControlsModifier
 size-unverified hkbRotateCharacterModifier
 size-unverified hkbRotateCharacterModifierInternalState
@@ -140245,6 +139851,7 @@ base-unverified std::basic_stringstream<char,std::char_traits<char>,std::allocat
 base-unverified std::basic_stringstream<char,std::char_traits<char>,std::allocator<char>_>:std::ios_base
 site 19165 7a 7c ff9068040000
 site 26229 0 0 4c8bdc5556
+site 32744 67 67 e814e68e00
 site-missing 33007 4ba
 site-missing 33007 4ca
 site 34142 51 51 ff9088030000
@@ -140266,6 +139873,7 @@ site 37334 4 4 4883 4883
 site-missing 37356 b64
 site 37610 78 77 7710
 site-missing 37611 7f
+site 38054 0 0 48895c241048896c2418
 site 40450 69 69 e8d265e5ff
 site 40476 0 0 4055564883ec78
 site-missing 40476 bc
@@ -140273,8 +139881,12 @@ site 40476 c5 123 41838ef400000001 0f1f840000000000
 site 40522 94 94 e8171c5b00
 site 40522 d7 d7 e8d41b5b00
 site 40620 1e7 214 e8b7a0cfff
+site 40846 0 0 4c8bdc5556574154
 site 41996 303 2ea ff9088030000
 site 42773 cf cf e8ac26f3ff
+site 43690 0 0 488bc45556574154
+site 43693 0 0 48895c2408574883ec50
+site 43693 167 131 e88a203c00
 site 50784 1a6 1a6 e825aecaff
 site 50832 38e 300 e87b7acaff
 site 50832 4dd 431 f30f1035576a5a01 eb58909090909090
@@ -140284,6 +139896,18 @@ site 53016 5 5 e99669c1ff
 site 53919 cfb c7f e86cf00500
 site 55564 0 0 488b0d21c55402e9641dedff
 site 55565 0 0 488b0d11c55402e9a41eedff
+site 56977 0 0 488bc4555356574156
+site 57005 0 0 48894c2408555357
+site 58423 0 0 4c8bdc4d89431849895310
+site 63563 285 287 e804560100
+site-missing 63568 382
+site 63575 0 0 48895c24084889742410
+site 63581 0 0 488bc46689501055
+site 63581 2d6 316 e8958ef0ff
+site 63581 43f 4ae e8fd8cf0ff
+site 63587 0 0 4c8bdc535741574881ecb0000000
+site 63589 c1 110 e81b170100
+site 63856 0 0 405641564883ec58
 site 68542 3cc 3d8 8b8018010000 8b801801000080e1df
 site 68617 7b 7b e8d00c0000
 site-missing 77226 275

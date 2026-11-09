@@ -95,6 +95,13 @@ impl crate::BGSMusicType {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn bsi_music_type_vfunc_7(&self) -> u64 { unsafe { function!(21166, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
+    /// `BGSMusicType::GetFormEditorID` (decompiler signature, tier high; ledger semantic evidence, name high; id 21160, rva 0x328550).
+    /// `undefined1 * GetFormEditorID(BGSMusicType * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_form_editor_id(&self) -> *mut u8 { unsafe { function!(21160, (*const Self) -> *mut u8)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BGSSoundCategory {

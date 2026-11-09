@@ -4031,6 +4031,23 @@ impl crate::hkpFastMeshShape {
     pub unsafe fn hkp_shape_container_vdtor(&self) -> u64 { unsafe { function!(64883, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
 }
 
+impl crate::hkpFirstPersonGun {
+    /// `hkpFirstPersonGun::GetName`, vtable slot 7, through the object's vtable (decompiler signature, tier high; ledger semantic evidence, name high; id 62780, rva 0xba6be0).
+    /// `ulonglong GetName(hkpFirstPersonGun * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_name(&self) -> u64 { unsafe { virtual_function!(self, 7, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    /// `hkpFirstPersonGun::Slot6_ForwardToSlot8`, vtable slot 6, through the object's vtable (decompiler signature, tier high; ledger semantic evidence, name high; id 62779, rva 0xba6bd0).
+    /// `undefined Slot6_ForwardToSlot8(hkpFirstPersonGun * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn slot6_forward_to_slot8(&self) -> u64 { unsafe { virtual_function!(self, 6, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+}
+
 impl crate::hkpFixedRigidMotion {
     /// `hkpFixedRigidMotion::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 61712, rva 0xb68f30).
     /// `hkpFixedRigidMotion * ctor(hkpFixedRigidMotion * this)`

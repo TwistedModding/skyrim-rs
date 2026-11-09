@@ -529,6 +529,13 @@ impl crate::BGSHazard {
 }
 
 impl crate::BGSHeadPart {
+    /// `BGSHeadPart::GetFormEditorID` (decompiler signature, tier high; ledger slot_propagation evidence, name high; id 23650, rva 0x391020).
+    /// `undefined1 * GetFormEditorID(BGSHeadPart * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_form_editor_id(&self) -> *mut u8 { unsafe { function!(23650, (*const Self) -> *mut u8)(core::ptr::from_ref(self)) } }
     /// `BGSHeadPart::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 23645, rva 0x390e18).
     /// `undefined TESFullName_vdtor(BGSHeadPart * this)`
     ///
@@ -1655,6 +1662,16 @@ impl crate::BGSStaticCollection {
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17163, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
+impl crate::BGSStoryManagerEventNode {
+    /// `BGSStoryManagerEventNode::GetFormEditorID`, vtable slot 50, through the object's vtable (decompiler signature, tier high; ledger slot_propagation evidence, name high; id 32411, rva 0x535d60).
+    /// `char * GetFormEditorID(BGSStoryManagerEventNode * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_form_editor_id(&self) -> *mut c_char { unsafe { virtual_function!(self, 50, (*const Self) -> *mut c_char)(core::ptr::from_ref(self)) } }
+}
+
 impl crate::BGSStoryTeller {
     /// `BGSStoryTeller::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 32478, rva 0x539f70).
     /// `BGSStoryTeller * ctor(BGSStoryTeller * this)`
@@ -1735,6 +1752,16 @@ impl crate::BGSVisitProceduresInitActorLocation {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(29471, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+}
+
+impl crate::BGSVoiceType {
+    /// `BGSVoiceType::GetFormEditorID` (decompiler signature, tier high; ledger slot_propagation evidence, name high; id 24345, rva 0x3aee10).
+    /// `undefined1 * GetFormEditorID(BGSVoiceType * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_form_editor_id(&self) -> *mut u8 { unsafe { function!(24345, (*const Self) -> *mut u8)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BGSWaterCollisionManager__BGSWaterUpdateI {

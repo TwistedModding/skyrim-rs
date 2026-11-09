@@ -7,476 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `SkyrimScript::Logger::vftable` at 0x198b170, id 216736 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct SkyrimScript__Logger_vtable {
-    /// `SkyrimScript::Logger::vdtor` at 0x9bbe20 (layout_inference, medium); signature (low): `Logger * vdtor(Logger * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::Logger::vfunc_1` at 0x9bbca0 (rtti, high); signature (low): `undefined vfunc_1(Logger * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `BSScript::ErrorLogger::vfunc_2` at 0x9bbeb0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
-    pub slot_2: *const c_void,
-}
-impl SkyrimScript__Logger_vtable {
-    pub const ID: u64 = 216736;
-}
-
-/// `SkyrimScript::ObjectBindPolicy::vftable` at 0x1990fd0, id 216939 (rtti, high); 13 slots.
-#[repr(C)]
-pub struct SkyrimScript__ObjectBindPolicy_vtable {
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_0` at 0x9f0aa0 (rtti, high); signature (low): `ObjectBindPolicy * vfunc_0(ObjectBindPolicy * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_1` at 0x9bc830 (rtti, high); signature (low): `ObjectBindPolicy_vtbl * vfunc_1(ObjectBindPolicy * this, void * param_1)`
-    pub slot_1: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_2` at 0x9bc980 (rtti, high); signature (low): `undefined vfunc_2(ObjectBindPolicy * this, void * param_1)`
-    pub slot_2: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_3` at 0x9bcba0 (rtti, high); signature (low): `undefined vfunc_3(ObjectBindPolicy * this, void * param_1)`
-    pub slot_3: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_4` at 0x9bce70 (rtti, high); signature (low): `undefined vfunc_4(ObjectBindPolicy * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_5` at 0x9f1510 (rtti, high); signature (low): `undefined8 vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_6` at 0x9fb930 (rtti, high); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_7` at 0x9bcf60 (rtti, high); signature (low): `undefined vfunc_7(ObjectBindPolicy * this, undefined8 param_1, ushort param_2, uint * param_3, ulonglong * param_4, undefined8 param_5)`
-    pub slot_7: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_8` at 0x9bd1a0 (rtti, high); signature (high): `undefined1 vfunc_8(ObjectBindPolicy * this)`
-    pub slot_8: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_9` at 0x9bd300 (rtti, high); signature (low): `undefined vfunc_9(ObjectBindPolicy * this, undefined8 param_1, undefined8 param_2, longlong * param_3)`
-    pub slot_9: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_10` at 0x9bd220 (rtti, high); signature (low): `undefined vfunc_10(ObjectBindPolicy * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_10: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_11` at 0x9bd620 (rtti, high); signature (low): `undefined vfunc_11(ObjectBindPolicy * this, int * param_1, int * * param_2, longlong * param_3, undefined4 * param_4)`
-    pub slot_11: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_12` at 0x9bd3b0 (rtti, high); signature (low): `undefined vfunc_12(ObjectBindPolicy * this, undefined8 param_1, longlong * param_2, ulonglong param_3, undefined4 * param_4)`
-    pub slot_12: *const c_void,
-}
-impl SkyrimScript__ObjectBindPolicy_vtable {
-    pub const ID: u64 = 216939;
-}
-
-/// `SkyrimScript::PathingCallbackMgr::vftable` at 0x198be40, id 216755 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript__PathingCallbackMgr_vtable {
-    /// `SkyrimScript::PathingCallbackMgr::vdtor` at 0x9c2ab0 (layout_inference, medium); signature (low): `PathingCallbackMgr * vdtor(PathingCallbackMgr * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::PathingCallbackMgr::vfunc_1` at 0x9c2260 (rtti, high); signature (low): `undefined8 vfunc_1(PathingCallbackMgr * this, uint * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript__PathingCallbackMgr_vtable {
-    pub const ID: u64 = 216755;
-}
-
-/// `SkyrimScript::Profiler::vftable` at 0x198c2e0, id 216767 (rtti, high); 5 slots.
-#[repr(C)]
-pub struct SkyrimScript__Profiler_vtable {
-    /// `SkyrimScript::Profiler::vdtor` at 0x9c55a0 (layout_inference, medium); signature (low): `Profiler * vdtor(Profiler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::Profiler::vfunc_1` at 0x9c4030 (rtti, high); signature (low): `undefined vfunc_1(Profiler * this, uint param_1, uint param_2, longlong * param_3)`
-    pub slot_1: *const c_void,
-    /// `SkyrimScript::Profiler::vfunc_2` at 0x9c4190 (rtti, high); signature (low): `undefined vfunc_2(Profiler * this, uint param_1, ulonglong param_2, ulonglong * param_3, longlong * param_4, longlong * param_5, longlong * param_6)`
-    pub slot_2: *const c_void,
-    /// `SkyrimScript::Profiler::vfunc_3` at 0x9c42c0 (rtti, high); signature (low): `undefined vfunc_3(Profiler * this, uint param_1, ulonglong param_2, ulonglong * param_3, longlong * param_4, longlong * param_5, longlong * param_6)`
-    pub slot_3: *const c_void,
-    /// `SkyrimScript::Profiler::vfunc_4` at 0x9c43f0 (rtti, high); signature (low): `undefined vfunc_4(Profiler * this, uint param_1, ulonglong param_2, ulonglong * param_3, longlong * param_4, longlong * param_5, longlong * param_6)`
-    pub slot_4: *const c_void,
-}
-impl SkyrimScript__Profiler_vtable {
-    pub const ID: u64 = 216767;
-}
-
-/// `SkyrimScript::QuestCallbackMgr::vftable` at 0x198c9f8, id 216789 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript__QuestCallbackMgr_vtable {
-    /// `SkyrimScript::QuestCallbackMgr::vdtor` at 0x9cb120 (slot_propagation, medium); signature (low): `QuestCallbackMgr * vdtor(QuestCallbackMgr * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::QuestCallbackMgr::vfunc_1` at 0x9c6800 (rtti, high); signature (low): `undefined8 vfunc_1(QuestCallbackMgr * this, uint * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript__QuestCallbackMgr_vtable {
-    pub const ID: u64 = 216789;
-}
-
-/// `SkyrimScript::QuestCallbackMgr::vftable_8` at 0x198ca10, id 216791 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript__QuestCallbackMgr_vtable_8 {
-    /// `SkyrimScript::QuestCallbackMgr::BSTEventSink_TESQuestStartStopEvent_vdtor` at 0x9cb0d4 (slot_propagation, medium); signature (high): `undefined BSTEventSink_TESQuestStartStopEvent_vdtor(QuestCallbackMgr * this)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::QuestCallbackMgr::BSTEventSink_TESQuestStartStopEvent_vfunc_1` at 0x9c69e0 (rtti, high); signature (low): `undefined8 BSTEventSink_TESQuestStartStopEvent_vfunc_1(QuestCallbackMgr * this, uint * param_1, undefined8 param_2, ulonglong param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript__QuestCallbackMgr_vtable_8 {
-    pub const ID: u64 = 216791;
-}
-
-/// `SkyrimScript::QuestCallbackMgr::vftable_10` at 0x198ca28, id 216793 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript__QuestCallbackMgr_vtable_10 {
-    /// `SkyrimScript::QuestCallbackMgr::BSTEventSink_BGSEventProcessedEvent_vdtor` at 0x9cb0e0 (slot_propagation, medium); signature (high): `undefined BSTEventSink_BGSEventProcessedEvent_vdtor(QuestCallbackMgr * this)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::QuestCallbackMgr::BSTEventSink_BGSEventProcessedEvent_vfunc_1` at 0x9c6d30 (rtti, high); signature (low): `undefined8 BSTEventSink_BGSEventProcessedEvent_vfunc_1(QuestCallbackMgr * this, uint * param_1, undefined8 param_2, longlong * param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript__QuestCallbackMgr_vtable_10 {
-    pub const ID: u64 = 216793;
-}
-
-/// `SkyrimScript::SaveFileHandleReaderWriter::vftable` at 0x1990f98, id 216937 (rtti, high); 6 slots.
-#[repr(C)]
-pub struct SkyrimScript__SaveFileHandleReaderWriter_vtable {
-    /// `SkyrimScript::SaveFileHandleReaderWriter::vfunc_0` at 0x9f0ba0 (rtti, high); signature (low): `SaveFileHandleReaderWriter * vfunc_0(SaveFileHandleReaderWriter * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::BaseHandleReaderWriter::vfunc_1` at 0x9ba870 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `BaseHandleReaderWriter::WriteHandle` at 0x9ba880 (semantic, high); signature (untiered): `undefined8 WriteHandle(void * this, longlong * param_1, ulonglong param_2)`
-    pub slot_2: *const c_void,
-    /// `BaseHandleReaderWriter::ReadHandle` at 0x9ba920 (semantic, high); signature (untiered): `undefined8 ReadHandle(void * this, longlong * param_1, ulonglong * param_2)`
-    pub slot_3: *const c_void,
-    /// `SkyrimScript::SaveFileHandleReaderWriter::vfunc_4` at 0x9bab70 (rtti, high); signature (low): `undefined vfunc_4(SaveFileHandleReaderWriter * this, longlong * param_1, uint param_2)`
-    pub slot_4: *const c_void,
-    /// `SkyrimScript::SaveFileHandleReaderWriter::vfunc_5` at 0x9bab90 (rtti, high); signature (low): `undefined vfunc_5(SaveFileHandleReaderWriter * this, longlong * param_1, undefined4 * param_2)`
-    pub slot_5: *const c_void,
-}
-impl SkyrimScript__SaveFileHandleReaderWriter_vtable {
-    pub const ID: u64 = 216937;
-}
-
-/// `SkyrimScript::SavePatcher::vftable` at 0x198cae0, id 216795 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript__SavePatcher_vtable {
-    /// `SkyrimScript::SavePatcher::vdtor` at 0x9cd280 (layout_inference, medium); signature (low): `SavePatcher * vdtor(SavePatcher * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::SavePatcher::vfunc_1` at 0x9ccc50 (rtti, high); signature (low): `undefined vfunc_1(SavePatcher * this, uint * * param_1, uint * * param_2, ulonglong * param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript__SavePatcher_vtable {
-    pub const ID: u64 = 216795;
-}
-
-/// `SkyrimScript::SoundCallbackMgr::vftable` at 0x198cd18, id 216802 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct SkyrimScript__SoundCallbackMgr_vtable {
-    /// `SkyrimScript::SoundCallbackMgr::vdtor` at 0x9ce300 (layout_inference, medium); signature (low): `SoundCallbackMgr * vdtor(SoundCallbackMgr * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl SkyrimScript__SoundCallbackMgr_vtable {
-    pub const ID: u64 = 216802;
-}
-
-/// `SkyrimScript::Store::vftable` at 0x198cf18, id 216811 (rtti, high); 12 slots.
-#[repr(C)]
-pub struct SkyrimScript__Store_vtable {
-    /// `SkyrimScript::Store::vdtor` at 0x9cf0a0 (slot_propagation, medium); signature (low): `Store * vdtor(Store * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::Store::vfunc_1` at 0x9cee30 (rtti, high); signature (high): `undefined4 vfunc_1(Store * this)`
-    pub slot_1: *const c_void,
-    /// `SkyrimScript::Store::vfunc_2` at 0x9cee70 (rtti, high); signature (high): `undefined4 vfunc_2(Store * this)`
-    pub slot_2: *const c_void,
-    /// `SkyrimScript::Store::vfunc_3` at 0x9ceeb0 (rtti, high); signature (low): `bool vfunc_3(Store * this, int param_1, int param_2)`
-    pub slot_3: *const c_void,
-    /// `SkyrimScript::Store::vfunc_4` at 0x9cef50 (rtti, high); signature (low): `bool vfunc_4(Store * this, uint param_1, void * param_2)`
-    pub slot_4: *const c_void,
-    /// `BSScript::IStore::vfunc_5` at 0x9cf200 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `SkyrimScript::Store::vfunc_6` at 0x9ceac0 (rtti, high); signature (high): `undefined1 vfunc_6(Store * this)`
-    pub slot_6: *const c_void,
-    /// `SkyrimScript::Store::vfunc_7` at 0x9ceca0 (rtti, high); signature (low): `undefined vfunc_7(Store * this, undefined8 param_1, ulonglong param_2, undefined8 param_3)`
-    pub slot_7: *const c_void,
-    /// `SkyrimScript::Store::vfunc_8` at 0x9cf1f0 (rtti, high); signature (high): `Store * vfunc_8(Store * this)`
-    pub slot_8: *const c_void,
-    /// `SkyrimScript::Store::vfunc_9` at 0x9cf0f0 (rtti, high); signature (high): `undefined1 vfunc_9(Store * this)`
-    pub slot_9: *const c_void,
-    /// `SkyrimScript::Store::vfunc_10` at 0x9cf0e0 (rtti, high); signature (high): `undefined1 vfunc_10(Store * this)`
-    pub slot_10: *const c_void,
-    /// `SkyrimScript::Store::vfunc_11` at 0x9cede0 (rtti, high); signature (high): `undefined8 vfunc_11(Store * this)`
-    pub slot_11: *const c_void,
-}
-impl SkyrimScript__Store_vtable {
-    pub const ID: u64 = 216811;
-}
-
-/// `SkyrimScript::_anon_0B1D96E2::ScriptMessageBoxCallback::vftable` at 0x199b750, id 217737 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback_vtable {
-    /// `SkyrimScript::_anon_0B1D96E2::ScriptMessageBoxCallback::vdtor` at 0xa1a600 (layout_inference, medium); signature (low): `ScriptMessageBoxCallback * vdtor(ScriptMessageBoxCallback * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_0B1D96E2::ScriptMessageBoxCallback::Run` at 0xa1a4a0 (semantic, high); signature (untiered): `undefined Run(ScriptMessageBoxCallback * this, char param_1)`; `Run`: returns Variable{type 3, value button} to the stack via vm->vtbl[0x158/8] (high); semantic signature: `void (ScriptMessageBoxCallback* this, u8 button)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback_vtable {
-    pub const ID: u64 = 217737;
-    pub const SLOT_Run: usize = 1;
-    /// Slot 1 as `SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback_vtable_Run`, `None` when the slot is null.
-    #[must_use]
-    pub fn Run(&self) -> Option<SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback_vtable_Run> {
-        unsafe { core::mem::transmute::<*const c_void, Option<SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback_vtable_Run>>(self.slot_1) }
-    }
-}
-/// `SkyrimScript::_anon_0B1D96E2::ScriptMessageBoxCallback::Run`, slot 1: returns Variable{type 3, value button} to the stack via vm->vtbl[0x158/8] (high).
-pub type SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback_vtable_Run = unsafe extern "C" fn(this: *mut c_void, button: u8);
-
-/// `SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor::vftable` at 0x19937b8, id 217344 (rtti, high); 7 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_0D8D4B7E__AttachAshPileFunctor_vtable {
-    /// `SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor::vdtor` at 0xa09030 (slot_propagation, medium); signature (low): `AttachAshPileFunctor * vdtor(AttachAshPileFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor::vfunc_1` at 0x9feda0 (rtti, high); signature (low): `ulonglong * vfunc_1(AttachAshPileFunctor * this, ulonglong * param_1)`
-    pub slot_1: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor::vfunc_2` at 0xa09010 (rtti, high); signature (low): `undefined1 vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `SkyrimScript::DelayFunctor::vfunc_3` at 0x9b2670 (rtti, medium); signature (low): `undefined1 vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor::vfunc_4` at 0x9ff330 (rtti, high); signature (low): `undefined8 vfunc_4(AttachAshPileFunctor * this, longlong * param_1)`
-    pub slot_4: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor::vfunc_5` at 0xa09020 (rtti, high); signature (low): `undefined8 vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor::vfunc_6` at 0x9ff400 (rtti, high); signature (low): `undefined8 vfunc_6(AttachAshPileFunctor * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
-}
-impl SkyrimScript___anon_0D8D4B7E__AttachAshPileFunctor_vtable {
-    pub const ID: u64 = 217344;
-}
-
-/// `SkyrimScript::_anon_0D8D4B7E::MoveToPackLocFunctor::vftable` at 0x1993cb8, id 217353 (rtti, high); 7 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_0D8D4B7E__MoveToPackLocFunctor_vtable {
-    /// `SkyrimScript::_anon_0D8D4B7E::MoveToPackLocFunctor::vdtor` at 0xa093c0 (slot_propagation, medium); signature (low): `MoveToPackLocFunctor * vdtor(MoveToPackLocFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::MoveToPackLocFunctor::vfunc_1` at 0xa01410 (rtti, high); signature (low): `ulonglong * vfunc_1(MoveToPackLocFunctor * this, ulonglong * param_1, ulonglong param_2, ulonglong param_3)`
-    pub slot_1: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::MoveToPackLocFunctor::vfunc_2` at 0xa093a0 (rtti, high); signature (low): `undefined1 vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `SkyrimScript::DelayFunctor::vfunc_3` at 0x9b2670 (rtti, medium); signature (low): `undefined1 vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::MoveToPackLocFunctor::vfunc_4` at 0xa014e0 (rtti, high); signature (low): `ulonglong vfunc_4(MoveToPackLocFunctor * this, longlong * param_1)`
-    pub slot_4: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::MoveToPackLocFunctor::vfunc_5` at 0xa093b0 (rtti, high); signature (low): `undefined8 vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::MoveToPackLocFunctor::vfunc_6` at 0xa01580 (rtti, high); signature (low): `bool vfunc_6(MoveToPackLocFunctor * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
-}
-impl SkyrimScript___anon_0D8D4B7E__MoveToPackLocFunctor_vtable {
-    pub const ID: u64 = 217353;
-}
-
-/// `SkyrimScript::_anon_0D8D4B7E::ResurrectFunctor::vftable` at 0x1993c58, id 217348 (rtti, high); 7 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_0D8D4B7E__ResurrectFunctor_vtable {
-    /// `SkyrimScript::_anon_0D8D4B7E::ResurrectFunctor::vdtor` at 0xa09200 (slot_propagation, medium); signature (low): `ResurrectFunctor * vdtor(ResurrectFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::ResurrectFunctor::vfunc_1` at 0x9ff500 (rtti, high); signature (low): `ulonglong * vfunc_1(ResurrectFunctor * this, ulonglong * param_1, undefined8 param_2, ulonglong param_3)`
-    pub slot_1: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::ResurrectFunctor::vfunc_2` at 0xa091e0 (rtti, high); signature (low): `undefined1 vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `SkyrimScript::DelayFunctor::vfunc_3` at 0x9b2670 (rtti, medium); signature (low): `undefined1 vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::ResurrectFunctor::vfunc_4` at 0x9ff5e0 (rtti, high); signature (low): `undefined8 vfunc_4(ResurrectFunctor * this, longlong * param_1)`
-    pub slot_4: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::ResurrectFunctor::vfunc_5` at 0xa091f0 (rtti, high); signature (low): `undefined8 vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::ResurrectFunctor::vfunc_6` at 0x9ff690 (rtti, high); signature (low): `undefined8 vfunc_6(ResurrectFunctor * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
-}
-impl SkyrimScript___anon_0D8D4B7E__ResurrectFunctor_vtable {
-    pub const ID: u64 = 217348;
-}
-
-/// `SkyrimScript::_anon_0D8D4B7E::_anon_0D8D4B7E::GiftMenuCallbackFunc::vftable` at 0x1995be8, id 217429 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_0D8D4B7E___anon_0D8D4B7E__GiftMenuCallbackFunc_vtable {
-    /// `SkyrimScript::_anon_0D8D4B7E::_anon_0D8D4B7E::GiftMenuCallbackFunc::vdtor` at 0xa0d3b0 (layout_inference, medium); signature (low): `GiftMenuCallbackFunc * vdtor(GiftMenuCallbackFunc * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::_anon_0D8D4B7E::GiftMenuCallbackFunc::vfunc_1` at 0xa0c350 (rtti, high); signature (low): `undefined vfunc_1(GiftMenuCallbackFunc * this, ulonglong param_1)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_0D8D4B7E___anon_0D8D4B7E__GiftMenuCallbackFunc_vtable {
-    pub const ID: u64 = 217429;
-}
-
-/// `SkyrimScript::_anon_3A897AB3::LatentPlayerMover::vftable` at 0x199d7a0, id 217808 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_3A897AB3__LatentPlayerMover_vtable {
-    /// `SkyrimScript::_anon_3A897AB3::LatentPlayerMover::vdtor` at 0xa21830 (layout_inference, medium); signature (low): `LatentPlayerMover * vdtor(LatentPlayerMover * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_3A897AB3::LatentPlayerMover::vfunc_1` at 0xa227b0 (rtti, high); signature (low): `undefined8 vfunc_1(LatentPlayerMover * this, longlong param_1, longlong * param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_3A897AB3__LatentPlayerMover_vtable {
-    pub const ID: u64 = 217808;
-}
-
-/// `SkyrimScript::_anon_74852251::FindActiveEffectFunctor::vftable` at 0x198aed8, id 216721 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_74852251__FindActiveEffectFunctor_vtable {
-    /// `SkyrimScript::_anon_74852251::FindActiveEffectFunctor::vdtor` at 0x9bb490 (layout_inference, medium); signature (low): `FindActiveEffectFunctor * vdtor(FindActiveEffectFunctor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_74852251::FindActiveEffectFunctor::vfunc_1` at 0x9bb470 (rtti, high); signature (low): `bool vfunc_1(FindActiveEffectFunctor * this, FindActiveEffectFunctor_vtbl * param_1)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_74852251__FindActiveEffectFunctor_vtable {
-    pub const ID: u64 = 216721;
-}
-
-/// `SkyrimScript::_anon_74852251::FindBaseObjVisitor::vftable` at 0x198ae88, id 216717 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_74852251__FindBaseObjVisitor_vtable {
-    /// `SkyrimScript::_anon_74852251::FindBaseObjVisitor::vdtor` at 0x9bb4c0 (layout_inference, medium); signature (low): `FindBaseObjVisitor * vdtor(FindBaseObjVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_74852251::FindBaseObjVisitor::vfunc_1` at 0x9babb0 (rtti, high); signature (low): `undefined vfunc_1(FindBaseObjVisitor * this, undefined8 * param_1)`
-    pub slot_1: *const c_void,
-    /// `InventoryChanges::IItemChangeVisitor::vfunc_2` at 0x2410b0 (rtti, medium); signature (low): `undefined1 vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `InventoryChanges::IItemChangeVisitor::vfunc_3` at 0x242500 (rtti, medium); signature (low): `undefined vfunc_3(IItemChangeVisitor * this, undefined8 param_1, undefined8 param_2, undefined1 * param_3)`
-    pub slot_3: *const c_void,
-}
-impl SkyrimScript___anon_74852251__FindBaseObjVisitor_vtable {
-    pub const ID: u64 = 216717;
-}
-
-/// `SkyrimScript::_anon_74852251::FindRefrObjVisitor::vftable` at 0x198aeb0, id 216719 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_74852251__FindRefrObjVisitor_vtable {
-    /// `SkyrimScript::_anon_74852251::FindRefrObjVisitor::vdtor` at 0x9bb4f0 (layout_inference, medium); signature (low): `FindRefrObjVisitor * vdtor(FindRefrObjVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_74852251::FindRefrObjVisitor::vfunc_1` at 0x9bac30 (rtti, high); signature (low): `bool vfunc_1(FindRefrObjVisitor * this, longlong param_1)`
-    pub slot_1: *const c_void,
-    /// `InventoryChanges::IItemChangeVisitor::vfunc_2` at 0x2410b0 (rtti, medium); signature (low): `undefined1 vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `InventoryChanges::IItemChangeVisitor::vfunc_3` at 0x242500 (rtti, medium); signature (low): `undefined vfunc_3(IItemChangeVisitor * this, undefined8 param_1, undefined8 param_2, undefined1 * param_3)`
-    pub slot_3: *const c_void,
-}
-impl SkyrimScript___anon_74852251__FindRefrObjVisitor_vtable {
-    pub const ID: u64 = 216719;
-}
-
-/// `SkyrimScript::_anon_91892E59::ProfileCallQueryTranslator::vftable` at 0x198c338, id 216771 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_91892E59__ProfileCallQueryTranslator_vtable {
-    /// `SkyrimScript::_anon_91892E59::ProfileCallQueryTranslator::vfunc_0` at 0x9c5820 (rtti, high); signature (low): `undefined vfunc_0(ProfileCallQueryTranslator * this, ulonglong * param_1, undefined8 param_2, ulonglong param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_91892E59::ProfileCallQueryTranslator::vfunc_1` at 0x9c57f0 (rtti, high); signature (high): `ProfileCallQueryTranslator * vfunc_1(ProfileCallQueryTranslator * this)`
-    pub slot_1: *const c_void,
-    /// `SkyrimScript::_anon_91892E59::ProfileCallQueryTranslator::vfunc_2` at 0x9c5860 (rtti, high); signature (high): `ProfileCallQueryTranslator * vfunc_2(ProfileCallQueryTranslator * this)`
-    pub slot_2: *const c_void,
-    /// `SkyrimScript::_anon_91892E59::ProfileCallQueryTranslator::vfunc_3` at 0x9c57c0 (rtti, high); signature (high): `ProfileCallQueryTranslator * vfunc_3(ProfileCallQueryTranslator * this)`
-    pub slot_3: *const c_void,
-}
-impl SkyrimScript___anon_91892E59__ProfileCallQueryTranslator_vtable {
-    pub const ID: u64 = 216771;
-}
-
-/// `SkyrimScript::_anon_91892E59::RawProfileCallQuery::vftable` at 0x198c310, id 216769 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_91892E59__RawProfileCallQuery_vtable {
-    /// `SkyrimScript::_anon_91892E59::RawProfileCallQuery::vfunc_0` at 0x9c5850 (rtti, high); signature (low): `undefined vfunc_0(RawProfileCallQuery * this, ulonglong * param_1, undefined8 param_2, ulonglong param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_91892E59::RawProfileCallQuery::vfunc_1` at 0x9c5810 (rtti, high); signature (high): `RawProfileCallQuery * vfunc_1(RawProfileCallQuery * this)`
-    pub slot_1: *const c_void,
-    /// `SkyrimScript::_anon_91892E59::RawProfileCallQuery::vfunc_2` at 0x9c5880 (rtti, high); signature (high): `RawProfileCallQuery * vfunc_2(RawProfileCallQuery * this)`
-    pub slot_2: *const c_void,
-    /// `SkyrimScript::_anon_91892E59::RawProfileCallQuery::vfunc_3` at 0x9c57e0 (rtti, high); signature (high): `RawProfileCallQuery * vfunc_3(RawProfileCallQuery * this)`
-    pub slot_3: *const c_void,
-}
-impl SkyrimScript___anon_91892E59__RawProfileCallQuery_vtable {
-    pub const ID: u64 = 216769;
-}
-
-/// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::ActorValueStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vftable` at 0x198d850, id 216841 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__ActorValueStoryE_af99f9266903_vtable {
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::ActorValueStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_0` at 0x9d4e20 (rtti, high); signature (low): `StoryEventArguments<SkyrimScript::_anon_946BA6A1::ActorValueStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * vfunc_0(StoryEventArguments<SkyrimScript::_anon_946BA6A1::ActorValueStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::ActorValueStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_1` at 0x9d2ac0 (rtti, high); signature (low): `undefined8 vfunc_1(StoryEventArguments<SkyrimScript::_anon_946BA6A1::ActorValueStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, longlong param_1, undefined8 param_2, ulonglong param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__ActorValueStoryE_af99f9266903_vtable {
-    pub const ID: u64 = 216841;
-}
-
-/// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vftable` at 0x198d820, id 216837 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__FormStoryEventAr_76dadb036768_vtable {
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_0` at 0x9d4e60 (rtti, high); signature (low): `StoryEventArguments<SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * vfunc_0(StoryEventArguments<SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_1` at 0x9d2c90 (rtti, high); signature (low): `undefined8 vfunc_1(StoryEventArguments<SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__FormStoryEventAr_76dadb036768_vtable {
-    pub const ID: u64 = 216837;
-}
-
-/// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::KeywordStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter>::vftable` at 0x198d778, id 216823 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__KeywordStoryEven_bed702ed6dde_vtable {
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::KeywordStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter>::vfunc_0` at 0x9d4ea0 (rtti, high); signature (low): `StoryEventArguments<SkyrimScript::_anon_946BA6A1::KeywordStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter> * vfunc_0(StoryEventArguments<SkyrimScript::_anon_946BA6A1::KeywordStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::KeywordStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter>::vfunc_1` at 0x9d2df0 (rtti, high); signature (low): `undefined8 vfunc_1(StoryEventArguments<SkyrimScript::_anon_946BA6A1::KeywordStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter> * this, longlong * param_1, undefined8 param_2, ulonglong * param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__KeywordStoryEven_bed702ed6dde_vtable {
-    pub const ID: u64 = 216823;
-}
-
-/// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vftable` at 0x198d910, id 216857 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__LocationStoryEve_28c6de510d72_vtable {
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_0` at 0x9d4ee0 (rtti, high); signature (low): `StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * vfunc_0(StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_1` at 0x9d2fd0 (rtti, high); signature (low): `undefined8 vfunc_1(StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__LocationStoryEve_28c6de510d72_vtable {
-    pub const ID: u64 = 216857;
-}
-
-/// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vftable` at 0x198d8f8, id 216855 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__LocationStoryEve_2c9afb76c017_vtable {
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_0` at 0x9d4f20 (rtti, high); signature (low): `StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * vfunc_0(StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_1` at 0x9d3160 (rtti, high); signature (low): `undefined8 vfunc_1(StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__LocationStoryEve_2c9afb76c017_vtable {
-    pub const ID: u64 = 216855;
-}
-
-/// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vftable` at 0x198d7a8, id 216827 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__LocationStoryEve_d3b2b77c97f0_vtable {
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_0` at 0x9d4fa0 (rtti, high); signature (low): `StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * vfunc_0(StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_1` at 0x9d34a0 (rtti, high); signature (low): `undefined8 vfunc_1(StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__LocationStoryEve_d3b2b77c97f0_vtable {
-    pub const ID: u64 = 216827;
-}
-
-/// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vftable` at 0x198d790, id 216825 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__LocationStoryEve_135e964d24f7_vtable {
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_0` at 0x9d4f60 (rtti, high); signature (low): `StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * vfunc_0(StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_1` at 0x9d3340 (rtti, high); signature (low): `undefined8 vfunc_1(StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__LocationStoryEve_135e964d24f7_vtable {
-    pub const ID: u64 = 216825;
-}
-
-/// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vftable` at 0x198d898, id 216847 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_8cf892f296e9_vtable {
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_0` at 0x9d5220 (rtti, high); signature (low): `StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * vfunc_0(StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_1` at 0x9d4400 (rtti, high); signature (low): `undefined8 vfunc_1(StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_8cf892f296e9_vtable {
-    pub const ID: u64 = 216847;
-}
-
 /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vftable` at 0x198d808, id 216835 (rtti, high); 2 slots.
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_48b7f123e6e2_vtable {
@@ -1268,7 +798,7 @@ impl SkyrimVM_vtable_8 {
 pub struct SkyrimVM_vtable_10 {
     /// `SkyrimVM::BSTEventSink_TESActivateEvent_vdtor` at 0x9ef6dc (slot_propagation, medium); signature (high): `undefined BSTEventSink_TESActivateEvent_vdtor(SkyrimVM * this)`
     pub slot_0: *const c_void,
-    /// `SkyrimVM::ProcessActivateEvent` at 0x9db090 (runtime, high); signature (untiered): `undefined8 ProcessActivateEvent(SkyrimVM * this, longlong * param_1)`
+    /// `SkyrimVM::ProcessActivateEvent` at 0x9db090 (runtime, high); signature (low): `undefined8 ProcessActivateEvent(SkyrimVM * this, longlong * param_1)`
     pub slot_1: *const c_void,
 }
 impl SkyrimVM_vtable_10 {
@@ -1352,7 +882,7 @@ impl SkyrimVM_vtable_40 {
 pub struct SkyrimVM_vtable_48 {
     /// `SkyrimVM::BSTEventSink_TESContainerChangedEvent_vdtor` at 0x9ef838 (slot_propagation, medium); signature (low): `undefined BSTEventSink_TESContainerChangedEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `SkyrimVM::ProcessContainerChangedEvent` at 0x9dbac0 (runtime, high); signature (untiered): `undefined8 ProcessContainerChangedEvent(SkyrimVM * this, uint * param_1, undefined8 param_2, longlong param_3)`
+    /// `SkyrimVM::ProcessContainerChangedEvent` at 0x9dbac0 (runtime, high); signature (low): `undefined8 ProcessContainerChangedEvent(SkyrimVM * this, uint * param_1, undefined8 param_2, longlong param_3)`
     pub slot_1: *const c_void,
 }
 impl SkyrimVM_vtable_48 {
@@ -1400,7 +930,7 @@ impl SkyrimVM_vtable_60 {
 pub struct SkyrimVM_vtable_68 {
     /// `SkyrimVM::BSTEventSink_TESEquipEvent_vdtor` at 0x9ef868 (slot_propagation, medium); signature (low): `undefined BSTEventSink_TESEquipEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `SkyrimVM::ProcessEquipEvent` at 0x9dc4a0 (runtime, high); signature (untiered): `undefined8 ProcessEquipEvent(SkyrimVM * this, longlong * param_1)`
+    /// `SkyrimVM::ProcessEquipEvent` at 0x9dc4a0 (runtime, high); signature (low): `undefined8 ProcessEquipEvent(SkyrimVM * this, longlong * param_1)`
     pub slot_1: *const c_void,
 }
 impl SkyrimVM_vtable_68 {
@@ -1448,7 +978,7 @@ impl SkyrimVM_vtable_80 {
 pub struct SkyrimVM_vtable_88 {
     /// `SkyrimVM::BSTEventSink_TESHitEvent_vdtor` at 0x9ef898 (slot_propagation, medium); signature (low): `undefined BSTEventSink_TESHitEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `SkyrimVM::ProcessHitEvent` at 0x9dce00 (runtime, high); signature (untiered): `undefined8 ProcessHitEvent(SkyrimVM * this, longlong * param_1)`
+    /// `SkyrimVM::ProcessHitEvent` at 0x9dce00 (runtime, high); signature (low): `undefined8 ProcessHitEvent(SkyrimVM * this, longlong * param_1)`
     pub slot_1: *const c_void,
 }
 impl SkyrimVM_vtable_88 {
@@ -1974,19 +1504,19 @@ pub struct SleepWaitMenu_vtable {
     pub slot_0: *const c_void,
     /// `SleepWaitMenu::vfunc_1` at 0x975190 (rtti, high); signature (low): `undefined vfunc_1(SleepWaitMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
+    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (low): `undefined PostCreate(void)`
     pub slot_2: *const c_void,
-    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
+    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (low): `undefined Refresh(void)`
     pub slot_3: *const c_void,
     /// `SleepWaitMenu::vfunc_4` at 0x974e00 (rtti, high); signature (low): `undefined8 vfunc_4(SleepWaitMenu * this, longlong param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_4: *const c_void,
-    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (untiered): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
+    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (low): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
     pub slot_5: *const c_void,
-    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (untiered): `undefined PostDisplay(IMenu * this)`
+    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (high): `undefined PostDisplay(IMenu * this)`
     pub slot_6: *const c_void,
-    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
+    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (low): `undefined PreDisplay(void)`
     pub slot_7: *const c_void,
-    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (untiered): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
+    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (low): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
     pub slot_8: *const c_void,
 }
 impl SleepWaitMenu_vtable {
@@ -2006,7 +1536,7 @@ pub struct SlowTimeEffect_vtable {
     pub slot_3: *const c_void,
     /// `ScriptEffect::vfunc_4` at 0x5dd590 (rtti, medium); signature (low): `undefined vfunc_4(ScriptEffect * this, undefined4 param_2)`
     pub slot_4: *const c_void,
-    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (low): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `ActiveEffect::vfunc_6` at 0x5bb9c0 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -2056,18 +1586,18 @@ impl SlowTimeEffect_vtable {
 pub struct SneakHandler_vtable {
     /// `SneakHandler::vdtor` at 0x7b1d80 (layout_inference, medium); signature (low): `SneakHandler * vdtor(SneakHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `SneakHandler::CanProcess` at 0x7b5140 (semantic, high); signature (untiered): `bool CanProcess(SneakHandler * this, longlong * param_1)`; `CanProcess`: Sneak (high); semantic signature: `bool (SneakHandler* this, InputEvent* event)`
+    /// `SneakHandler::CanProcess` at 0x7b5140 (semantic, high); signature (low): `bool CanProcess(SneakHandler * this, longlong * param_1)`; `CanProcess`: Sneak (high); semantic signature: `bool (SneakHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (untiered): `undefined ProcessMotionGesture(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (low): `undefined ProcessMotionGesture(void)`
     #[doc(hidden)]
     pub __slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, high); signature (untiered): `undefined ProcessSixaxis(void)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, high); signature (low): `undefined ProcessSixaxis(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
-    /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, high); signature (untiered): `undefined ProcessThumbstick(void)`
+    /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, high); signature (low): `undefined ProcessThumbstick(void)`
     #[doc(hidden)]
     pub __slot_4: *const c_void,
-    /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, high); signature (untiered): `undefined ProcessMouseMove(void)`
+    /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, high); signature (low): `undefined ProcessMouseMove(void)`
     #[doc(hidden)]
     pub __slot_5: *const c_void,
     /// `SneakHandler::vfunc_6` at 0x7b3a80 (rtti, high); signature (low): `undefined vfunc_6(SneakHandler * this, longlong param_1)`
@@ -2099,7 +1629,7 @@ pub struct SoulTrapEffect_vtable {
     pub slot_3: *const c_void,
     /// `SoulTrapEffect::vfunc_4` at 0x5e2a10 (rtti, high); signature (high): `undefined vfunc_4(SoulTrapEffect * this)`
     pub slot_4: *const c_void,
-    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (low): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `ActiveEffect::vfunc_6` at 0x5bb9c0 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -2157,7 +1687,7 @@ pub struct SpawnHazardEffect_vtable {
     pub slot_3: *const c_void,
     /// `ActiveEffect::vfunc_4` at 0x5bf0c0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
     pub slot_4: *const c_void,
-    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (low): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `ActiveEffect::vfunc_6` at 0x5bb9c0 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -2245,9 +1775,9 @@ pub struct SpectatorPackage_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `SpectatorPackage::SaveGame` at 0x7c1f40 (slot_propagation, medium); signature (untiered): `undefined SaveGame(SpectatorPackage * this, longlong param_1)`
+    /// `SpectatorPackage::SaveGame` at 0x7c1f40 (slot_propagation, medium); signature (low): `undefined SaveGame(SpectatorPackage * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `SpectatorPackage::LoadGame` at 0x7c2210 (slot_propagation, medium); signature (untiered): `undefined LoadGame(SpectatorPackage * this, longlong param_1)`
+    /// `SpectatorPackage::LoadGame` at 0x7c2210 (slot_propagation, medium); signature (low): `undefined LoadGame(SpectatorPackage * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -2257,13 +1787,13 @@ pub struct SpectatorPackage_vtable {
     pub slot_18: *const c_void,
     /// `TESPackage::vfunc_19` at 0x4996e0 (rtti, medium); signature (low): `undefined vfunc_19(TESPackage * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -2287,7 +1817,7 @@ pub struct SpectatorPackage_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -2305,7 +1835,7 @@ pub struct SpectatorPackage_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESPackage::vfunc_45` at 0x49e8d0 (rtti, medium); signature (high): `undefined4 vfunc_45(TESPackage * this)`
     pub slot_45: *const c_void,
@@ -2317,9 +1847,9 @@ pub struct SpectatorPackage_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -2329,7 +1859,7 @@ pub struct SpectatorPackage_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESPackage::vfunc_57` at 0x49e270 (rtti, medium); signature (high): `undefined * vfunc_57(TESPackage * this)`
     pub slot_57: *const c_void,
@@ -2381,9 +1911,9 @@ pub struct SpellItem_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -2393,13 +1923,13 @@ pub struct SpellItem_vtable {
     pub slot_18: *const c_void,
     /// `SpellItem::vfunc_19` at 0x155260 (rtti, high); signature (low): `undefined vfunc_19(SpellItem * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -2423,7 +1953,7 @@ pub struct SpellItem_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -2441,7 +1971,7 @@ pub struct SpellItem_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -2453,9 +1983,9 @@ pub struct SpellItem_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -2465,7 +1995,7 @@ pub struct SpellItem_vtable {
     pub slot_54: *const c_void,
     /// `TESBoundObject::vfunc_55` at 0x278e50 (rtti, medium); signature (low): `undefined1 vfunc_55(TESBoundObject * this, longlong param_1, undefined8 param_2, undefined1 param_3, undefined8 param_4, undefined4 param_5)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -2481,7 +2011,7 @@ pub struct SpellItem_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -2595,9 +2125,9 @@ pub struct SpellItem_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl SpellItem_vtable_30 {
@@ -2615,7 +2145,7 @@ pub struct SpellItem_vtable_40 {
     pub slot_2: *const c_void,
     /// `BGSKeywordForm::vfunc_3` at 0x1d86b0 (rtti, medium); signature (low): `undefined vfunc_3(BGSKeywordForm * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `MagicItem::BGSKeywordForm_HasKeyword` at 0x151aa0 (slot_propagation, high); signature (untiered): `ulonglong BGSKeywordForm_HasKeyword(MagicItem * this, longlong param_1)`
+    /// `MagicItem::BGSKeywordForm_HasKeyword` at 0x151aa0 (slot_propagation, high); signature (low): `ulonglong BGSKeywordForm_HasKeyword(MagicItem * this, longlong param_1)`
     pub slot_4: *const c_void,
     /// `BGSKeywordForm::vfunc_5` at 0x14c8b0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
     pub slot_5: *const c_void,
@@ -2683,27 +2213,27 @@ impl SpellItem_vtable_B0 {
 pub struct SprintHandler_vtable {
     /// `SprintHandler::vdtor` at 0x7b1db0 (layout_inference, medium); signature (low): `SprintHandler * vdtor(SprintHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `SprintHandler::CanProcess` at 0x7b5170 (semantic, high); signature (untiered): `bool CanProcess(SprintHandler * this, longlong * param_1)`; `CanProcess`: Sprint (high); semantic signature: `bool (SprintHandler* this, InputEvent* event)`
+    /// `SprintHandler::CanProcess` at 0x7b5170 (semantic, high); signature (low): `bool CanProcess(SprintHandler * this, longlong * param_1)`; `CanProcess`: Sprint (high); semantic signature: `bool (SprintHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (untiered): `undefined ProcessMotionGesture(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (low): `undefined ProcessMotionGesture(void)`
     #[doc(hidden)]
     pub __slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, high); signature (untiered): `undefined ProcessSixaxis(void)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, high); signature (low): `undefined ProcessSixaxis(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
-    /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, high); signature (untiered): `undefined ProcessThumbstick(void)`
+    /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, high); signature (low): `undefined ProcessThumbstick(void)`
     #[doc(hidden)]
     pub __slot_4: *const c_void,
-    /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, high); signature (untiered): `undefined ProcessMouseMove(void)`
+    /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, high); signature (low): `undefined ProcessMouseMove(void)`
     #[doc(hidden)]
     pub __slot_5: *const c_void,
     /// `SprintHandler::vfunc_6` at 0x7b3b40 (rtti, high); signature (low): `undefined vfunc_6(SprintHandler * this, longlong param_1)`
     #[doc(hidden)]
     pub __slot_6: *const c_void,
-    /// `HeldStateHandler::UpdateHeldState` at 0x7ad430 (semantic, high); signature (untiered): `undefined UpdateHeldState(HeldStateHandler * this, longlong param_1)`
+    /// `HeldStateHandler::UpdateHeldState` at 0x7ad430 (semantic, high); signature (low): `undefined UpdateHeldState(HeldStateHandler * this, longlong param_1)`
     #[doc(hidden)]
     pub __slot_7: *const c_void,
-    /// `HeldStateHandler::SetHeldState` at 0x7b4e40 (semantic, high); signature (untiered): `undefined SetHeldState(HeldStateHandler * this, undefined1 param_1)`
+    /// `HeldStateHandler::SetHeldState` at 0x7b4e40 (semantic, high); signature (low): `undefined SetHeldState(HeldStateHandler * this, undefined1 param_1)`
     #[doc(hidden)]
     pub __slot_8: *const c_void,
 }
@@ -2732,7 +2262,7 @@ pub struct StaggerEffect_vtable {
     pub slot_3: *const c_void,
     /// `ActiveEffect::vfunc_4` at 0x5bf0c0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
     pub slot_4: *const c_void,
-    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (low): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `ActiveEffect::vfunc_6` at 0x5bb9c0 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -2782,7 +2312,7 @@ impl StaggerEffect_vtable {
 pub struct StaggeredStopHandler_vtable {
     /// `StaggeredStopHandler::vdtor` at 0x7d46c0 (layout_inference, medium); signature (low): `StaggeredStopHandler * vdtor(StaggeredStopHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `StaggeredStopHandler::Handle` at 0x7ccd90 (semantic, high); signature (untiered): `undefined1 Handle(StaggeredStopHandler * this, longlong param_1)`
+    /// `StaggeredStopHandler::Handle` at 0x7ccd90 (semantic, high); signature (low): `undefined1 Handle(StaggeredStopHandler * this, longlong param_1)`
     pub slot_1: *const c_void,
 }
 impl StaggeredStopHandler_vtable {
@@ -2794,17 +2324,17 @@ impl StaggeredStopHandler_vtable {
 pub struct StandardItemData_vtable {
     /// `StandardItemData::vdtor` at 0x904d50 (layout_inference, medium); signature (low): `StandardItemData * vdtor(StandardItemData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `StandardItemData::GetName` at 0x93fd20 (semantic, high); signature (untiered): `undefined GetName(StandardItemData * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `GetName`: display name -> 'text' (high); semantic signature: `const char* (StandardItemData* this)`
+    /// `StandardItemData::GetName` at 0x93fd20 (semantic, high); signature (low): `undefined GetName(StandardItemData * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `GetName`: display name -> 'text' (high); semantic signature: `const char* (StandardItemData* this)`
     pub slot_1: *const c_void,
-    /// `StandardItemData::GetCount` at 0x93fd30 (semantic, high); signature (untiered): `undefined GetCount(StandardItemData * this)`; `GetCount`: stack count -> 'count' (high); semantic signature: `i32 (StandardItemData* this)`
+    /// `StandardItemData::GetCount` at 0x93fd30 (semantic, high); signature (high): `undefined GetCount(StandardItemData * this)`; `GetCount`: stack count -> 'count' (high); semantic signature: `i32 (StandardItemData* this)`
     pub slot_2: *const c_void,
-    /// `StandardItemData::GetEquipState` at 0x93fd40 (semantic, high); signature (untiered): `ulonglong GetEquipState(StandardItemData * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `GetEquipState`: 0..4 worn/hand state -> 'equipState' (high); semantic signature: `i32 (StandardItemData* this)`
+    /// `StandardItemData::GetEquipState` at 0x93fd40 (semantic, high); signature (low): `ulonglong GetEquipState(StandardItemData * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `GetEquipState`: 0..4 worn/hand state -> 'equipState' (high); semantic signature: `i32 (StandardItemData* this)`
     pub slot_3: *const c_void,
-    /// `StandardItemData::GetFilterFlag` at 0x93fef0 (semantic, high); signature (untiered): `uint GetFilterFlag(StandardItemData * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `GetFilterFlag`: category bits by form type (<< 10 when not the player's) -> 'filterFlag' (high); semantic signature: `u32 (StandardItemData* this)`
+    /// `StandardItemData::GetFilterFlag` at 0x93fef0 (semantic, high); signature (low): `uint GetFilterFlag(StandardItemData * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `GetFilterFlag`: category bits by form type (<< 10 when not the player's) -> 'filterFlag' (high); semantic signature: `u32 (StandardItemData* this)`
     pub slot_4: *const c_void,
-    /// `StandardItemData::GetFavorite` at 0x940040 (semantic, high); signature (untiered): `bool GetFavorite(StandardItemData * this)`; `GetFavorite`: entry has a hotkey/favorite extra -> 'favorite' (high); semantic signature: `bool (StandardItemData* this)`
+    /// `StandardItemData::GetFavorite` at 0x940040 (semantic, high); signature (high): `bool GetFavorite(StandardItemData * this)`; `GetFavorite`: entry has a hotkey/favorite extra -> 'favorite' (high); semantic signature: `bool (StandardItemData* this)`
     pub slot_5: *const c_void,
-    /// `StandardItemData::GetEnabled` at 0x905390 (semantic, high); signature (untiered): `undefined1 GetEnabled(void)`; `GetEnabled`: always true -> 'enabled' (high); semantic signature: `bool (StandardItemData* this)`
+    /// `StandardItemData::GetEnabled` at 0x905390 (semantic, high); signature (low): `undefined1 GetEnabled(void)`; `GetEnabled`: always true -> 'enabled' (high); semantic signature: `bool (StandardItemData* this)`
     pub slot_6: *const c_void,
 }
 impl StandardItemData_vtable {
@@ -2944,19 +2474,19 @@ pub struct StatsMenu_vtable {
     pub slot_0: *const c_void,
     /// `StatsMenu::vfunc_1` at 0x978020 (rtti, high); signature (low): `undefined vfunc_1(StatsMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
+    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (low): `undefined PostCreate(void)`
     pub slot_2: *const c_void,
     /// `StatsMenu::vfunc_3` at 0x97bd20 (rtti, high); signature (high): `undefined vfunc_3(StatsMenu * this)`
     pub slot_3: *const c_void,
-    /// `StatsMenu::ProcessMessage` at 0x976a50 (runtime, high); signature (untiered): `longlong * ProcessMessage(StatsMenu * this, longlong param_1, char * param_2, longlong * param_3)`; `ProcessMessage`: the message handler (see the function row) (high); semantic signature: `UIMessageResult (StatsMenu* this, UIMessage* message)`
+    /// `StatsMenu::ProcessMessage` at 0x976a50 (runtime, high); signature (low): `longlong * ProcessMessage(StatsMenu * this, longlong param_1, char * param_2, longlong * param_3)`; `ProcessMessage`: the message handler (see the function row) (high); semantic signature: `UIMessageResult (StatsMenu* this, UIMessage* message)`
     pub slot_4: *const c_void,
-    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (untiered): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
+    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (low): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
     pub slot_5: *const c_void,
-    /// `StatsMenu::PostDisplay` at 0x977fd0 (semantic, high); signature (untiered): `undefined PostDisplay(StatsMenu * this)`; `PostDisplay`: draws the stats 3D scene with the menu camera (UI3DScene mode 6), then the movie (high); semantic signature: `void (StatsMenu* this)`
+    /// `StatsMenu::PostDisplay` at 0x977fd0 (semantic, high); signature (high): `undefined PostDisplay(StatsMenu * this)`; `PostDisplay`: draws the stats 3D scene with the menu camera (UI3DScene mode 6), then the movie (high); semantic signature: `void (StatsMenu* this)`
     pub slot_6: *const c_void,
-    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
+    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (low): `undefined PreDisplay(void)`
     pub slot_7: *const c_void,
-    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (untiered): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
+    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (low): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
     pub slot_8: *const c_void,
 }
 impl StatsMenu_vtable {
@@ -2986,19 +2516,19 @@ pub struct StatsMenu_vtable_30 {
     pub slot_0: *const c_void,
     /// `StatsMenu::MenuEventHandler_vfunc_1` at 0x978370 (rtti, high); signature (low): `undefined8 MenuEventHandler_vfunc_1(StatsMenu * this, longlong * param_1)`
     pub slot_1: *const c_void,
-    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
+    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (low): `undefined1 Unk2(void)`
     #[doc(hidden)]
     pub __slot_2: *const c_void,
-    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
+    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (low): `undefined1 ProcessSixaxisEvent(void)`
     #[doc(hidden)]
     pub __slot_3: *const c_void,
-    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (untiered): `undefined1 ProcessKinectEvent(void)`
+    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (low): `undefined1 ProcessKinectEvent(void)`
     #[doc(hidden)]
     pub __slot_4: *const c_void,
     /// `StatsMenu::MenuEventHandler_vfunc_5` at 0x978550 (rtti, high); signature (low): `undefined1 MenuEventHandler_vfunc_5(StatsMenu * this, longlong param_1, undefined8 param_2, undefined * param_3)`
     #[doc(hidden)]
     pub __slot_5: *const c_void,
-    /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (untiered): `undefined1 ProcessMouseMoveEvent(void)`
+    /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (low): `undefined1 ProcessMouseMoveEvent(void)`
     #[doc(hidden)]
     pub __slot_6: *const c_void,
     /// `StatsMenu::MenuEventHandler_vfunc_7` at 0x978580 (rtti, high); signature (low): `undefined8 MenuEventHandler_vfunc_7(StatsMenu * this, longlong * param_1, undefined8 param_2, undefined * param_3)`
@@ -3014,41 +2544,41 @@ impl StatsMenu_vtable_30 {
 pub struct StatsNode_vtable {
     /// `StatsNode::vdtor` at 0x983870 (slot_propagation, medium); signature (low): `StatsNode * vdtor(StatsNode * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (low): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_2` at 0x556610 (rtti, medium); signature (low): `bool vfunc_2(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_2: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_3` at 0x556670 (rtti, medium); signature (low): `undefined8 vfunc_3(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_3: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphRootNodes` at 0x554330 (semantic, medium); signature (untiered): `undefined1 GetGraphRootNodes(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphRootNodes` at 0x554330 (semantic, medium); signature (low): `undefined1 GetGraphRootNodes(void)`
     pub slot_4: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_5` at 0x5566c0 (rtti, medium); signature (low): `bool vfunc_5(SimpleAnimationGraphManagerHolder * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (low): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (low): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
     /// `StatsNode::vfunc_8` at 0x9809f0 (rtti, high); signature (low): `undefined8 vfunc_8(StatsNode * this, longlong * param_1)`
     pub slot_8: *const c_void,
-    /// `IAnimationGraphManagerHolder::OnGraphLoadFailed` at 0x554360 (semantic, medium); signature (untiered): `undefined OnGraphLoadFailed(void)`
+    /// `IAnimationGraphManagerHolder::OnGraphLoadFailed` at 0x554360 (semantic, medium); signature (low): `undefined OnGraphLoadFailed(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (low): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (low): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
     /// `StatsNode::vfunc_12` at 0x980950 (rtti, high); signature (low): `undefined vfunc_12(StatsNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_12: *const c_void,
-    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerChanged` at 0x5543c0 (semantic, medium); signature (untiered): `undefined OnAnimationGraphManagerChanged(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerChanged` at 0x5543c0 (semantic, medium); signature (low): `undefined OnAnimationGraphManagerChanged(void)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (low): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (low): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (low): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (low): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (low): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_19` at 0x556770 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
@@ -3074,13 +2604,13 @@ impl StatsNode_vtable_18 {
 pub struct StealthMeter_vtable {
     /// `StealthMeter::vfunc_0` at 0x93c220 (rtti, high); signature (low): `StealthMeter * vfunc_0(StealthMeter * this, uint param_1, longlong * param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `StealthMeter::Update` at 0x93a7e0 (semantic, high); signature (untiered): `undefined Update(StealthMeter * this)`; `Update`: steps displayedLevel toward targetLevel; on reaching 0 or 100 sets '$HIDDEN'/'$DETECTED', plays 'Start' on flashClip and calls vfunc_1_sub0(player, level == 0); sets the meter frame (high); semantic signature: `void (StealthMeter* this)`
+    /// `StealthMeter::Update` at 0x93a7e0 (semantic, high); signature (high): `undefined Update(StealthMeter * this)`; `Update`: steps displayedLevel toward targetLevel; on reaching 0 or 100 sets '$HIDDEN'/'$DETECTED', plays 'Start' on flashClip and calls vfunc_1_sub0(player, level == 0); sets the meter frame (high); semantic signature: `void (StealthMeter* this)`
     pub slot_1: *const c_void,
-    /// `StealthMeter::ProcessMessage` at 0x93a700 (semantic, high); signature (untiered): `undefined8 ProcessMessage(StealthMeter * this, longlong param_1)`; `ProcessMessage`: takes HUDData type 0x18: shown = +0x40, targetLevel = +0x44; a change of shown plays FadeIn/FadeOut on fadeClip and SetHUDMode('StealthMode', shown); returns true for type 0x18 (high); semantic signature: `bool (StealthMeter* this, UIMessage* msg)`
+    /// `StealthMeter::ProcessMessage` at 0x93a700 (semantic, high); signature (low): `undefined8 ProcessMessage(StealthMeter * this, longlong param_1)`; `ProcessMessage`: takes HUDData type 0x18: shown = +0x40, targetLevel = +0x44; a change of shown plays FadeIn/FadeOut on fadeClip and SetHUDMode('StealthMode', shown); returns true for type 0x18 (high); semantic signature: `bool (StealthMeter* this, UIMessage* msg)`
     pub slot_2: *const c_void,
-    /// `StealthMeter::RegisterHUDComponent` at 0x93a680 (semantic, high); signature (untiered): `undefined RegisterHUDComponent(StealthMeter * this, longlong param_1)`; `RegisterHUDComponent`: with more than 9 arguments: clip (+0x10) = args[0], fadeClip = args[4], meterClip = args[5], flashClip = args[8], textField = args[9] (high); semantic signature: `void (StealthMeter* this, FxDelegateArgs* args)`
+    /// `StealthMeter::RegisterHUDComponent` at 0x93a680 (semantic, high); signature (low): `undefined RegisterHUDComponent(StealthMeter * this, longlong param_1)`; `RegisterHUDComponent`: with more than 9 arguments: clip (+0x10) = args[0], fadeClip = args[4], meterClip = args[5], flashClip = args[8], textField = args[9] (high); semantic signature: `void (StealthMeter* this, FxDelegateArgs* args)`
     pub slot_3: *const c_void,
-    /// `HUDObject::Cleanup` at 0x93cb10 (semantic, medium); signature (untiered): `undefined Cleanup(void)`
+    /// `HUDObject::Cleanup` at 0x93cb10 (semantic, medium); signature (low): `undefined Cleanup(void)`
     pub slot_4: *const c_void,
 }
 impl StealthMeter_vtable {
@@ -3114,9 +2644,9 @@ pub type StealthMeter_vtable_RegisterHUDComponent = unsafe extern "C" fn(this: *
 /// `StopMountCameraHandler::vftable` at 0x19383a0, id 208923 (rtti, high); 2 slots.
 #[repr(C)]
 pub struct StopMountCameraHandler_vtable {
-    /// `StopMountCameraHandler::Destroy` at 0x7d46f0 (semantic, high); signature (untiered): `StopMountCameraHandler * Destroy(StopMountCameraHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: scalar deleting destructor: restores IHandlerFunctor<Actor,BSFixedStringCI>::vftable 0x1937e30, frees 0x10 when flags & 1 (high); semantic signature: `StopMountCameraHandler* (StopMountCameraHandler* this, u32 flags)`
+    /// `StopMountCameraHandler::Destroy` at 0x7d46f0 (semantic, high); signature (low): `StopMountCameraHandler * Destroy(StopMountCameraHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: scalar deleting destructor: restores IHandlerFunctor<Actor,BSFixedStringCI>::vftable 0x1937e30, frees 0x10 when flags & 1 (high); semantic signature: `StopMountCameraHandler* (StopMountCameraHandler* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `StopMountCameraHandler::Handle` at 0x7ce260 (semantic, high); signature (untiered): `undefined8 Handle(StopMountCameraHandler * this, TESObjectREFR * param_1, longlong param_2, uint * param_3)`; `Handle`: no camera call: when the actor's sit/sleep state (+0xc8 & 0x3c000) == 0x10000, finish the furniture/mount state (UpdateFurnitureState(process, actor, null, invalid, -1) when the process (+0xf8) exists and its byte 0x137 <= 1, else ActorState slot 20 (+0xc0 vtable +0xa0)(0)); then PlaceAtDismountPosition(actor) 0x6d25c0 (also called by MountInteraction slot 15) (high); semantic signature: `bool (StopMountCameraHandler* this, Actor* actor, const BSFixedStringCI* payload)`
+    /// `StopMountCameraHandler::Handle` at 0x7ce260 (semantic, high); signature (low): `undefined8 Handle(StopMountCameraHandler * this, TESObjectREFR * param_1, longlong param_2, uint * param_3)`; `Handle`: no camera call: when the actor's sit/sleep state (+0xc8 & 0x3c000) == 0x10000, finish the furniture/mount state (UpdateFurnitureState(process, actor, null, invalid, -1) when the process (+0xf8) exists and its byte 0x137 <= 1, else ActorState slot 20 (+0xc0 vtable +0xa0)(0)); then PlaceAtDismountPosition(actor) 0x6d25c0 (also called by MountInteraction slot 15) (high); semantic signature: `bool (StopMountCameraHandler* this, Actor* actor, const BSFixedStringCI* payload)`
     pub slot_1: *const c_void,
 }
 impl StopMountCameraHandler_vtable {
@@ -3379,7 +2909,7 @@ pub struct SummonCreatureEffect_vtable {
     pub slot_3: *const c_void,
     /// `SummonCreatureEffect::vfunc_4` at 0x5e3740 (rtti, high); signature (low): `undefined vfunc_4(SummonCreatureEffect * this, undefined8 param_1, longlong * param_2, SummonCreatureEffect * param_3)`
     pub slot_4: *const c_void,
-    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (low): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `ActiveEffect::vfunc_6` at 0x5bb9c0 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -3563,41 +3093,41 @@ impl SummonPlacementEffect_vtable {
 pub struct SummonPlacementEffect_vtable_48 {
     /// `SummonPlacementEffect::SimpleAnimationGraphManagerHolder_vdtor` at 0x5e51fc (slot_propagation, medium); signature (high): `undefined SimpleAnimationGraphManagerHolder_vdtor(SummonPlacementEffect * this)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (low): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_2` at 0x556610 (rtti, medium); signature (low): `bool vfunc_2(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_2: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_3` at 0x556670 (rtti, medium); signature (low): `undefined8 vfunc_3(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_3: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphRootNodes` at 0x554330 (semantic, medium); signature (untiered): `undefined1 GetGraphRootNodes(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphRootNodes` at 0x554330 (semantic, medium); signature (low): `undefined1 GetGraphRootNodes(void)`
     pub slot_4: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_5` at 0x5566c0 (rtti, medium); signature (low): `bool vfunc_5(SimpleAnimationGraphManagerHolder * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (low): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (low): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
     /// `SummonPlacementEffect::SimpleAnimationGraphManagerHolder_vfunc_8` at 0x5e5080 (rtti, high); signature (low): `undefined8 SimpleAnimationGraphManagerHolder_vfunc_8(SummonPlacementEffect * this, longlong * param_1)`
     pub slot_8: *const c_void,
-    /// `IAnimationGraphManagerHolder::OnGraphLoadFailed` at 0x554360 (semantic, medium); signature (untiered): `undefined OnGraphLoadFailed(void)`
+    /// `IAnimationGraphManagerHolder::OnGraphLoadFailed` at 0x554360 (semantic, medium); signature (low): `undefined OnGraphLoadFailed(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (low): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (low): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (low): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
-    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerChanged` at 0x5543c0 (semantic, medium); signature (untiered): `undefined OnAnimationGraphManagerChanged(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerChanged` at 0x5543c0 (semantic, medium); signature (low): `undefined OnAnimationGraphManagerChanged(void)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (low): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (low): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (low): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (low): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (low): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_19` at 0x556770 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
@@ -3625,9 +3155,9 @@ pub struct Sun_vtable {
     pub slot_0: *const c_void,
     /// `SkyObject::vfunc_1` at 0x41a200 (rtti, medium); signature (high): `undefined8 vfunc_1(SkyObject * this)`
     pub slot_1: *const c_void,
-    /// `Sun::Init` at 0x41b290 (semantic, medium); signature (untiered): `undefined Init(Sun * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`; `Init`: creates nodes, geometry and lights (medium); semantic signature: `void (Sun* this, NiNode* skyRoot)`
+    /// `Sun::Init` at 0x41b290 (semantic, medium); signature (low): `undefined Init(Sun * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`; `Init`: creates nodes, geometry and lights (medium); semantic signature: `void (Sun* this, NiNode* skyRoot)`
     pub slot_2: *const c_void,
-    /// `Sun::Update` at 0x41bd90 (semantic, high); signature (untiered): `undefined Update(Sun * this, longlong param_1, float param_2)`; `Update`: per-frame sun placement and light direction from sky+0x1b0 (high); semantic signature: `void (Sun* this, Sky* sky, float delta)`
+    /// `Sun::Update` at 0x41bd90 (semantic, high); signature (low): `undefined Update(Sun * this, longlong param_1, float param_2)`; `Update`: per-frame sun placement and light direction from sky+0x1b0 (high); semantic signature: `void (Sun* this, Sky* sky, float delta)`
     pub slot_3: *const c_void,
 }
 impl Sun_vtable {
@@ -3871,7 +3401,7 @@ pub struct TESActionData_vtable {
     pub slot_3: *const c_void,
     /// `TESActionData::vfunc_4` at 0x78da40 (rtti, high); signature (low): `BGSActionData * vfunc_4(TESActionData * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_4: *const c_void,
-    /// `TESActionData::Perform` at 0x78db80 (semantic, high); signature (untiered): `undefined Perform(TESActionData * this)`
+    /// `TESActionData::Perform` at 0x78db80 (semantic, high); signature (high): `undefined Perform(TESActionData * this)`
     pub slot_5: *const c_void,
 }
 impl TESActionData_vtable {
@@ -3909,9 +3439,9 @@ pub struct TESActorBase_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESActorBase::SaveGame` at 0x3b0550 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESActorBase * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESActorBase::SaveGame` at 0x3b0550 (slot_propagation, medium); signature (low): `undefined SaveGame(TESActorBase * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_14: *const c_void,
-    /// `TESActorBase::LoadGame` at 0x3b05d0 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESActorBase * this, longlong param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
+    /// `TESActorBase::LoadGame` at 0x3b05d0 (slot_propagation, medium); signature (low): `undefined LoadGame(TESActorBase * this, longlong param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -3921,13 +3451,13 @@ pub struct TESActorBase_vtable {
     pub slot_18: *const c_void,
     /// `TESForm::vfunc_19` at 0x1c7db0 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -3951,7 +3481,7 @@ pub struct TESActorBase_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -3969,7 +3499,7 @@ pub struct TESActorBase_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -3981,9 +3511,9 @@ pub struct TESActorBase_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -3993,7 +3523,7 @@ pub struct TESActorBase_vtable {
     pub slot_54: *const c_void,
     /// `TESBoundObject::vfunc_55` at 0x278e50 (rtti, medium); signature (low): `undefined1 vfunc_55(TESBoundObject * this, longlong param_1, undefined8 param_2, undefined1 param_3, undefined8 param_4, undefined4 param_5)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -4009,7 +3539,7 @@ pub struct TESActorBase_vtable {
     pub slot_62: *const c_void,
     /// `TESActorBase::vfunc_63` at 0x3afef0 (rtti, medium); signature (low): `undefined vfunc_63(TESActorBase * this, char param_1)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -4145,9 +3675,9 @@ pub struct TESActorBase_vtable_D8 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESActorBase_vtable_D8 {
@@ -4159,21 +3689,21 @@ impl TESActorBase_vtable_D8 {
 pub struct TESActorBase_vtable_E8 {
     /// `TESActorBase::ActorValueOwner_vdtor` at 0x3cba48 (slot_propagation, medium); signature (low): `undefined ActorValueOwner_vdtor(TESActorBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `TESActorBase::ActorValueOwner_GetActorValue` at 0x3b00c0 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_GetActorValue(TESActorBase * this, undefined4 param_1)`
+    /// `TESActorBase::ActorValueOwner_GetActorValue` at 0x3b00c0 (slot_propagation, high); signature (low): `undefined ActorValueOwner_GetActorValue(TESActorBase * this, undefined4 param_1)`
     pub slot_1: *const c_void,
-    /// `TESActorBase::ActorValueOwner_GetPermanentActorValue` at 0x3cc700 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_GetPermanentActorValue(TESActorBase * this)`
+    /// `TESActorBase::ActorValueOwner_GetPermanentActorValue` at 0x3cc700 (slot_propagation, high); signature (high): `undefined ActorValueOwner_GetPermanentActorValue(TESActorBase * this)`
     pub slot_2: *const c_void,
-    /// `TESActorBase::ActorValueOwner_GetBaseActorValue` at 0x3cc640 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_GetBaseActorValue(TESActorBase * this)`
+    /// `TESActorBase::ActorValueOwner_GetBaseActorValue` at 0x3cc640 (slot_propagation, high); signature (high): `undefined ActorValueOwner_GetBaseActorValue(TESActorBase * this)`
     pub slot_3: *const c_void,
-    /// `TESActorBase::ActorValueOwner_StoreBaseActorValue` at 0x3b0240 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_StoreBaseActorValue(TESActorBase * this, undefined4 param_1, float param_2)`
+    /// `TESActorBase::ActorValueOwner_StoreBaseActorValue` at 0x3b0240 (slot_propagation, high); signature (low): `undefined ActorValueOwner_StoreBaseActorValue(TESActorBase * this, undefined4 param_1, float param_2)`
     pub slot_4: *const c_void,
-    /// `TESActorBase::ActorValueOwner_AddBaseActorValue` at 0x3b0350 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_AddBaseActorValue(TESActorBase * this, undefined4 param_1, float param_2)`
+    /// `TESActorBase::ActorValueOwner_AddBaseActorValue` at 0x3b0350 (slot_propagation, high); signature (low): `undefined ActorValueOwner_AddBaseActorValue(TESActorBase * this, undefined4 param_1, float param_2)`
     pub slot_5: *const c_void,
-    /// `TESActorBase::ActorValueOwner_ModActorValue` at 0x3ccb50 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_ModActorValue(void)`
+    /// `TESActorBase::ActorValueOwner_ModActorValue` at 0x3ccb50 (slot_propagation, high); signature (low): `undefined ActorValueOwner_ModActorValue(void)`
     pub slot_6: *const c_void,
-    /// `TESActorBase::ActorValueOwner_SetActorValue` at 0x3cd860 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_SetActorValue(TESActorBase * this)`
+    /// `TESActorBase::ActorValueOwner_SetActorValue` at 0x3cd860 (slot_propagation, high); signature (high): `undefined ActorValueOwner_SetActorValue(TESActorBase * this)`
     pub slot_7: *const c_void,
-    /// `TESActorBase::ActorValueOwner_IsPlayer` at 0x3b03a0 (slot_propagation, low); signature (untiered): `bool ActorValueOwner_IsPlayer(TESActorBase * this)`
+    /// `TESActorBase::ActorValueOwner_IsPlayer` at 0x3b03a0 (slot_propagation, low); signature (high): `bool ActorValueOwner_IsPlayer(TESActorBase * this)`
     pub slot_8: *const c_void,
 }
 impl TESActorBase_vtable_E8 {
@@ -4223,7 +3753,7 @@ pub struct TESActorBase_vtable_110 {
     pub slot_2: *const c_void,
     /// `BGSKeywordForm::vfunc_3` at 0x1d86b0 (rtti, medium); signature (low): `undefined vfunc_3(BGSKeywordForm * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (untiered): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
+    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (low): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
     pub slot_4: *const c_void,
     /// `BGSKeywordForm::vfunc_5` at 0x14c8b0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
     pub slot_5: *const c_void,
@@ -4341,9 +3871,9 @@ pub struct TESAmmo_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESAmmo::SaveGame` at 0x2692c0 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESAmmo * this, longlong param_1)`
+    /// `TESAmmo::SaveGame` at 0x2692c0 (slot_propagation, medium); signature (low): `undefined SaveGame(TESAmmo * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESAmmo::LoadGame` at 0x269300 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESAmmo * this, longlong param_1)`
+    /// `TESAmmo::LoadGame` at 0x269300 (slot_propagation, medium); signature (low): `undefined LoadGame(TESAmmo * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -4353,13 +3883,13 @@ pub struct TESAmmo_vtable {
     pub slot_18: *const c_void,
     /// `TESAmmo::vfunc_19` at 0x268f30 (rtti, high); signature (low): `undefined vfunc_19(TESAmmo * this, undefined8 param_1, longlong param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -4383,7 +3913,7 @@ pub struct TESAmmo_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -4401,7 +3931,7 @@ pub struct TESAmmo_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -4413,9 +3943,9 @@ pub struct TESAmmo_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -4425,7 +3955,7 @@ pub struct TESAmmo_vtable {
     pub slot_54: *const c_void,
     /// `TESBoundObject::vfunc_55` at 0x278e50 (rtti, medium); signature (low): `undefined1 vfunc_55(TESBoundObject * this, longlong param_1, undefined8 param_2, undefined1 param_3, undefined8 param_4, undefined4 param_5)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -4495,9 +4025,9 @@ pub struct TESAmmo_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESAmmo_vtable_30 {
@@ -4515,9 +4045,9 @@ pub struct TESAmmo_vtable_40 {
     pub slot_2: *const c_void,
     /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
     pub slot_6: *const c_void,
@@ -4655,7 +4185,7 @@ pub struct TESAmmo_vtable_F8 {
     pub slot_2: *const c_void,
     /// `BGSKeywordForm::vfunc_3` at 0x1d86b0 (rtti, medium); signature (low): `undefined vfunc_3(BGSKeywordForm * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (untiered): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
+    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (low): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
     pub slot_4: *const c_void,
     /// `TESAmmo::BGSKeywordForm_vfunc_5` at 0x269230 (rtti, high); signature (low): `undefined8 BGSKeywordForm_vfunc_5(TESAmmo * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
@@ -4751,9 +4281,9 @@ pub struct TESBoundAnimObject_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -4763,13 +4293,13 @@ pub struct TESBoundAnimObject_vtable {
     pub slot_18: *const c_void,
     /// `TESForm::vfunc_19` at 0x1c7db0 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -4793,7 +4323,7 @@ pub struct TESBoundAnimObject_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -4811,7 +4341,7 @@ pub struct TESBoundAnimObject_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -4823,9 +4353,9 @@ pub struct TESBoundAnimObject_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -4835,7 +4365,7 @@ pub struct TESBoundAnimObject_vtable {
     pub slot_54: *const c_void,
     /// `TESBoundObject::vfunc_55` at 0x278e50 (rtti, medium); signature (low): `undefined1 vfunc_55(TESBoundObject * this, longlong param_1, undefined8 param_2, undefined1 param_3, undefined8 param_4, undefined4 param_5)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -4851,7 +4381,7 @@ pub struct TESBoundAnimObject_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -4925,9 +4455,9 @@ pub struct TESBoundObject_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -4937,13 +4467,13 @@ pub struct TESBoundObject_vtable {
     pub slot_18: *const c_void,
     /// `TESForm::vfunc_19` at 0x1c7db0 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -4967,7 +4497,7 @@ pub struct TESBoundObject_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -4985,7 +4515,7 @@ pub struct TESBoundObject_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -4997,9 +4527,9 @@ pub struct TESBoundObject_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -5009,7 +4539,7 @@ pub struct TESBoundObject_vtable {
     pub slot_54: *const c_void,
     /// `TESBoundObject::vfunc_55` at 0x278e50 (rtti, medium); signature (low): `undefined1 vfunc_55(TESBoundObject * this, longlong param_1, undefined8 param_2, undefined1 param_3, undefined8 param_4, undefined4 param_5)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -5025,7 +4555,7 @@ pub struct TESBoundObject_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -5071,11 +4601,11 @@ impl TESBoundObject_vtable {
 /// `TESCamera::vftable` at 0x18ebbe0, id 205197 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct TESCamera_vtable {
-    /// `TESCamera::Destroy` at 0x559060 (semantic, high); signature (untiered): `TESCamera * Destroy(TESCamera * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: releases currentState and cameraRoot, frees 0x38 when flags & 1 (high); semantic signature: `TESCamera* (TESCamera* this, u32 flags)`
+    /// `TESCamera::Destroy` at 0x559060 (semantic, high); signature (low): `TESCamera * Destroy(TESCamera * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: releases currentState and cameraRoot, frees 0x38 when flags & 1 (high); semantic signature: `TESCamera* (TESCamera* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `TESCamera::SetCameraRoot` at 0x558dd0 (semantic, high); signature (untiered): `undefined SetCameraRoot(TESCamera * this, longlong * param_1)`; `SetCameraRoot`: refcounted assignment of cameraRoot (+0x20) (high); semantic signature: `void (TESCamera* this, NiNode* root)`
+    /// `TESCamera::SetCameraRoot` at 0x558dd0 (semantic, high); signature (low): `undefined SetCameraRoot(TESCamera * this, longlong * param_1)`; `SetCameraRoot`: refcounted assignment of cameraRoot (+0x20) (high); semantic signature: `void (TESCamera* this, NiNode* root)`
     pub slot_1: *const c_void,
-    /// `TESCamera::Update` at 0x558e70 (semantic, high); signature (untiered): `undefined Update(TESCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Update`: if a state is current and enabled: calls the state's slot 3 Update(&next); when next is set, End (slot 2) on the old state, swap currentState, Begin (slot 1) on the new one; then zeroes the input accumulators +0x8..+0x1c (high); semantic signature: `void (TESCamera* this)`
+    /// `TESCamera::Update` at 0x558e70 (semantic, high); signature (low): `undefined Update(TESCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Update`: if a state is current and enabled: calls the state's slot 3 Update(&next); when next is set, End (slot 2) on the old state, swap currentState, Begin (slot 1) on the new one; then zeroes the input accumulators +0x8..+0x1c (high); semantic signature: `void (TESCamera* this)`
     pub slot_2: *const c_void,
 }
 impl TESCamera_vtable {
@@ -5109,23 +4639,23 @@ pub type TESCamera_vtable_Update = unsafe extern "C" fn(this: *mut crate::TESCam
 /// `TESCameraState::vftable` at 0x1806460, id 188657 (rtti, high); 9 slots.
 #[repr(C)]
 pub struct TESCameraState_vtable {
-    /// `TESCameraState::Destroy` at 0x249fd0 (semantic, high); signature (untiered): `TESCameraState * Destroy(TESCameraState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: destructor (high); semantic signature: `TESCameraState* (TESCameraState* this, u32 flags)`
+    /// `TESCameraState::Destroy` at 0x249fd0 (semantic, high); signature (low): `TESCameraState * Destroy(TESCameraState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: destructor (high); semantic signature: `TESCameraState* (TESCameraState* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `TESCameraState::Begin` at 0x24a000 (semantic, high); signature (untiered): `undefined Begin(void)`; `Begin`: called on the state that becomes current (high); semantic signature: `void (TESCameraState* this)`
+    /// `TESCameraState::Begin` at 0x24a000 (semantic, high); signature (low): `undefined Begin(void)`; `Begin`: called on the state that becomes current (high); semantic signature: `void (TESCameraState* this)`
     pub slot_1: *const c_void,
-    /// `TESCameraState::End` at 0x24a010 (semantic, high); signature (untiered): `undefined End(void)`; `End`: called on the state that stops being current (high); semantic signature: `void (TESCameraState* this)`
+    /// `TESCameraState::End` at 0x24a010 (semantic, high); signature (low): `undefined End(void)`; `End`: called on the state that stops being current (high); semantic signature: `void (TESCameraState* this)`
     pub slot_2: *const c_void,
-    /// `TESCameraState::Update` at 0x24a090 (semantic, high); signature (untiered): `undefined Update(TESCameraState * this, longlong * param_1)`; `Update`: per-frame update: computes the pose, writes it to camera->cameraRoot's local transform and updates the node; may return the next state in *next (base: clears *next) (high); semantic signature: `void (TESCameraState* this, BSTSmartPointer<TESCameraState>* next)`
+    /// `TESCameraState::Update` at 0x24a090 (semantic, high); signature (low): `undefined Update(TESCameraState * this, longlong * param_1)`; `Update`: per-frame update: computes the pose, writes it to camera->cameraRoot's local transform and updates the node; may return the next state in *next (base: clears *next) (high); semantic signature: `void (TESCameraState* this, BSTSmartPointer<TESCameraState>* next)`
     pub slot_3: *const c_void,
-    /// `TESCameraState::GetRotation` at 0x24a020 (semantic, high); signature (untiered): `undefined GetRotation(TESCameraState * this, undefined8 * param_1)`; `GetRotation`: the state's camera rotation (base: the identity constant 0x331d790) (high); semantic signature: `void (TESCameraState* this, NiQuaternion* out)`
+    /// `TESCameraState::GetRotation` at 0x24a020 (semantic, high); signature (low): `undefined GetRotation(TESCameraState * this, undefined8 * param_1)`; `GetRotation`: the state's camera rotation (base: the identity constant 0x331d790) (high); semantic signature: `void (TESCameraState* this, NiQuaternion* out)`
     pub slot_4: *const c_void,
-    /// `TESCameraState::GetTranslation` at 0x24a030 (semantic, high); signature (untiered): `undefined GetTranslation(TESCameraState * this, undefined4 * param_1)`; `GetTranslation`: the state's camera position (base: the zero point 0x331c458) (high); semantic signature: `void (TESCameraState* this, NiPoint3* out)`
+    /// `TESCameraState::GetTranslation` at 0x24a030 (semantic, high); signature (low): `undefined GetTranslation(TESCameraState * this, undefined4 * param_1)`; `GetTranslation`: the state's camera position (base: the zero point 0x331c458) (high); semantic signature: `void (TESCameraState* this, NiPoint3* out)`
     pub slot_5: *const c_void,
-    /// `TESCameraState::SaveGame` at 0x24a080 (semantic, high); signature (untiered): `undefined SaveGame(void)`; `SaveGame`: base: does nothing (high); semantic signature: `void (TESCameraState* this, BGSSaveFormBuffer* buffer)`
+    /// `TESCameraState::SaveGame` at 0x24a080 (semantic, high); signature (low): `undefined SaveGame(void)`; `SaveGame`: base: does nothing (high); semantic signature: `void (TESCameraState* this, BGSSaveFormBuffer* buffer)`
     pub slot_6: *const c_void,
-    /// `TESCameraState::LoadGame` at 0x24a060 (semantic, high); signature (untiered): `undefined LoadGame(void)`; `LoadGame`: base: does nothing (high); semantic signature: `void (TESCameraState* this, BGSLoadFormBuffer* buffer)`
+    /// `TESCameraState::LoadGame` at 0x24a060 (semantic, high); signature (low): `undefined LoadGame(void)`; `LoadGame`: base: does nothing (high); semantic signature: `void (TESCameraState* this, BGSLoadFormBuffer* buffer)`
     pub slot_7: *const c_void,
-    /// `TESCameraState::Revert` at 0x24a070 (semantic, high); signature (untiered): `undefined Revert(void)`; `Revert`: base: does nothing (high); semantic signature: `void (TESCameraState* this, BGSLoadFormBuffer* buffer)`
+    /// `TESCameraState::Revert` at 0x24a070 (semantic, high); signature (low): `undefined Revert(void)`; `Revert`: base: does nothing (high); semantic signature: `void (TESCameraState* this, BGSLoadFormBuffer* buffer)`
     pub slot_8: *const c_void,
 }
 impl TESCameraState_vtable {
@@ -5259,13 +4789,13 @@ pub struct TESClass_vtable {
     pub slot_18: *const c_void,
     /// `TESForm::vfunc_19` at 0x1c7db0 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -5289,7 +4819,7 @@ pub struct TESClass_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -5307,7 +4837,7 @@ pub struct TESClass_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -5319,9 +4849,9 @@ pub struct TESClass_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -5331,7 +4861,7 @@ pub struct TESClass_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -5353,9 +4883,9 @@ pub struct TESClass_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESClass_vtable_20 {
@@ -5431,9 +4961,9 @@ pub struct TESClimate_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -5443,13 +4973,13 @@ pub struct TESClimate_vtable {
     pub slot_18: *const c_void,
     /// `TESForm::vfunc_19` at 0x1c7db0 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -5473,7 +5003,7 @@ pub struct TESClimate_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -5491,7 +5021,7 @@ pub struct TESClimate_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -5503,9 +5033,9 @@ pub struct TESClimate_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -5515,7 +5045,7 @@ pub struct TESClimate_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -5557,9 +5087,9 @@ pub struct TESCombatStyle_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -5569,13 +5099,13 @@ pub struct TESCombatStyle_vtable {
     pub slot_18: *const c_void,
     /// `TESCombatStyle::vfunc_19` at 0x26a160 (rtti, high); signature (high): `undefined vfunc_19(TESCombatStyle * this)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -5599,7 +5129,7 @@ pub struct TESCombatStyle_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -5617,7 +5147,7 @@ pub struct TESCombatStyle_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -5629,9 +5159,9 @@ pub struct TESCombatStyle_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -5641,7 +5171,7 @@ pub struct TESCombatStyle_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -5775,9 +5305,9 @@ pub struct TESEffectShader_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -5787,13 +5317,13 @@ pub struct TESEffectShader_vtable {
     pub slot_18: *const c_void,
     /// `TESEffectShader::vfunc_19` at 0x26b760 (rtti, high); signature (low): `undefined vfunc_19(TESEffectShader * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -5817,7 +5347,7 @@ pub struct TESEffectShader_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -5835,7 +5365,7 @@ pub struct TESEffectShader_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -5847,9 +5377,9 @@ pub struct TESEffectShader_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -5859,7 +5389,7 @@ pub struct TESEffectShader_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -5939,9 +5469,9 @@ pub struct TESEyes_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -5951,13 +5481,13 @@ pub struct TESEyes_vtable {
     pub slot_18: *const c_void,
     /// `TESForm::vfunc_19` at 0x1c7db0 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -5981,7 +5511,7 @@ pub struct TESEyes_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -5999,7 +5529,7 @@ pub struct TESEyes_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -6011,9 +5541,9 @@ pub struct TESEyes_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -6023,7 +5553,7 @@ pub struct TESEyes_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -6045,9 +5575,9 @@ pub struct TESEyes_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESEyes_vtable_20 {
@@ -6107,9 +5637,9 @@ pub struct TESFaction_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESFaction::SaveGame` at 0x3b4fd0 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESFaction * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESFaction::SaveGame` at 0x3b4fd0 (slot_propagation, medium); signature (low): `undefined SaveGame(TESFaction * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_14: *const c_void,
-    /// `TESFaction::LoadGame` at 0x3b50a0 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESFaction * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESFaction::LoadGame` at 0x3b50a0 (slot_propagation, medium); signature (low): `undefined LoadGame(TESFaction * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -6119,13 +5649,13 @@ pub struct TESFaction_vtable {
     pub slot_18: *const c_void,
     /// `TESFaction::vfunc_19` at 0x3b43a0 (rtti, high); signature (low): `undefined vfunc_19(TESFaction * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -6149,7 +5679,7 @@ pub struct TESFaction_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -6167,7 +5697,7 @@ pub struct TESFaction_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -6179,9 +5709,9 @@ pub struct TESFaction_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -6191,7 +5721,7 @@ pub struct TESFaction_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -6213,9 +5743,9 @@ pub struct TESFaction_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESFaction_vtable_20 {
@@ -6269,9 +5799,9 @@ pub struct TESFlora_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESObjectACTI::SaveGame` at 0x27a5a0 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESObjectACTI * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESObjectACTI::SaveGame` at 0x27a5a0 (slot_propagation, medium); signature (low): `undefined SaveGame(TESObjectACTI * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_14: *const c_void,
-    /// `TESObjectACTI::LoadGame` at 0x27a5f0 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESObjectACTI * this, longlong param_1, undefined8 param_2, char * param_3)`
+    /// `TESObjectACTI::LoadGame` at 0x27a5f0 (slot_propagation, medium); signature (low): `undefined LoadGame(TESObjectACTI * this, longlong param_1, undefined8 param_2, char * param_3)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -6281,13 +5811,13 @@ pub struct TESFlora_vtable {
     pub slot_18: *const c_void,
     /// `TESFlora::vfunc_19` at 0x26da40 (rtti, high); signature (low): `undefined vfunc_19(TESFlora * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -6311,7 +5841,7 @@ pub struct TESFlora_vtable {
     pub slot_33: *const c_void,
     /// `TESObjectACTI::vfunc_34` at 0x267690 (rtti, medium); signature (high): `byte vfunc_34(TESObjectACTI * this)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -6329,7 +5859,7 @@ pub struct TESFlora_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -6341,9 +5871,9 @@ pub struct TESFlora_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -6353,7 +5883,7 @@ pub struct TESFlora_vtable {
     pub slot_54: *const c_void,
     /// `TESFlora::vfunc_55` at 0x26da90 (rtti, high); signature (low): `undefined vfunc_55(TESFlora * this, longlong * param_1, longlong * param_2)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -6369,7 +5899,7 @@ pub struct TESFlora_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -6423,9 +5953,9 @@ pub struct TESFlora_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESFlora_vtable_30 {
@@ -6443,9 +5973,9 @@ pub struct TESFlora_vtable_40 {
     pub slot_2: *const c_void,
     /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
     pub slot_6: *const c_void,
@@ -6497,7 +6027,7 @@ pub struct TESFlora_vtable_90 {
     pub slot_2: *const c_void,
     /// `BGSKeywordForm::vfunc_3` at 0x1d86b0 (rtti, medium); signature (low): `undefined vfunc_3(BGSKeywordForm * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (untiered): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
+    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (low): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
     pub slot_4: *const c_void,
     /// `BGSKeywordForm::vfunc_5` at 0x14c8b0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
     pub slot_5: *const c_void,
@@ -6573,9 +6103,9 @@ pub struct TESForm_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`; `SaveGame`: serialises the base form state (medium); semantic signature: `void SaveGame(TESForm* this, void* buf)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`; `SaveGame`: serialises the base form state (medium); semantic signature: `void SaveGame(TESForm* this, void* buf)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`; `LoadGame`: restores the base form state (medium); semantic signature: `void LoadGame(TESForm* this, void* buf)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`; `LoadGame`: restores the base form state (medium); semantic signature: `void LoadGame(TESForm* this, void* buf)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -6585,13 +6115,13 @@ pub struct TESForm_vtable {
     pub slot_18: *const c_void,
     /// `TESForm::vfunc_19` at 0x1c7db0 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`; `GetLastFile`: the file that last defined the form (medium); semantic signature: `TESFile* GetLastFile(TESForm* this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`; `GetLastFile`: the file that last defined the form (medium); semantic signature: `TESFile* GetLastFile(TESForm* this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`; `GetFormType`: the record type (high); semantic signature: `FormType GetFormType(const TESForm* this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`; `GetFormType`: the record type (high); semantic signature: `FormType GetFormType(const TESForm* this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`; `GetFormDetailedString`: debug description of the form (high); semantic signature: `void GetFormDetailedString(const TESForm* this, char* buf, uint size)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`; `GetFormDetailedString`: debug description of the form (high); semantic signature: `void GetFormDetailedString(const TESForm* this, char* buf, uint size)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`; `PlayerKnows`: whether the player knows the form (medium); semantic signature: `bool PlayerKnows(const TESForm* this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`; `PlayerKnows`: whether the player knows the form (medium); semantic signature: `bool PlayerKnows(const TESForm* this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -6615,7 +6145,7 @@ pub struct TESForm_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -6633,7 +6163,7 @@ pub struct TESForm_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`; `AsReference`: the form as a reference, null for non-references (medium); semantic signature: `TESObjectREFR* AsReference(TESForm* this)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`; `AsReference`: the form as a reference, null for non-references (medium); semantic signature: `TESObjectREFR* AsReference(TESForm* this)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -6645,9 +6175,9 @@ pub struct TESForm_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`; `GetFormEditorID`: editor id of the form, empty unless the class keeps it (high); semantic signature: `const char* GetFormEditorID(const TESForm* this)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`; `GetFormEditorID`: editor id of the form, empty unless the class keeps it (high); semantic signature: `const char* GetFormEditorID(const TESForm* this)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`; `SetFormEditorID`: sets the editor id where the class keeps one (high); semantic signature: `bool SetFormEditorID(TESForm* this, const char* editorID)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`; `SetFormEditorID`: sets the editor id where the class keeps one (high); semantic signature: `bool SetFormEditorID(TESForm* this, const char* editorID)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -6657,7 +6187,7 @@ pub struct TESForm_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`; `SetFormID`: changes the form id and re-registers the form (high); semantic signature: `void SetFormID(TESForm* this, uint formID, bool updateFile)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`; `SetFormID`: changes the form id and re-registers the form (high); semantic signature: `void SetFormID(TESForm* this, uint formID, bool updateFile)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -6742,9 +6272,9 @@ pub struct TESFullName_vtable {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`; `GetFullNameLength`: length of the name (high); semantic signature: `uint GetFullNameLength(const TESFullName* this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`; `GetFullNameLength`: length of the name (high); semantic signature: `uint GetFullNameLength(const TESFullName* this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`; `GetFullName`: the name (high); semantic signature: `const char* GetFullName(const TESFullName* this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`; `GetFullName`: the name (high); semantic signature: `const char* GetFullName(const TESFullName* this)`
     pub slot_5: *const c_void,
 }
 impl TESFullName_vtable {
@@ -6782,7 +6312,7 @@ pub struct TESFurniture_vtable {
     pub slot_4: *const c_void,
     /// `TESFurniture::vfunc_5` at 0x26e130 (rtti, high); signature (low): `undefined vfunc_5(TESFurniture * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `TESFurniture::Load` at 0x26e170 (semantic, high); signature (untiered): `undefined8 Load(TESFurniture * this, int * param_1, undefined8 param_2, char * param_3)`; `Load`: see the function row (high); semantic signature: `bool (TESFurniture* this, TESFile* file)`
+    /// `TESFurniture::Load` at 0x26e170 (semantic, high); signature (low): `undefined8 Load(TESFurniture * this, int * param_1, undefined8 param_2, char * param_3)`; `Load`: see the function row (high); semantic signature: `bool (TESFurniture* this, TESFile* file)`
     pub slot_6: *const c_void,
     /// `TESForm::vfunc_7` at 0x1469b0 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
     pub slot_7: *const c_void,
@@ -6798,9 +6328,9 @@ pub struct TESFurniture_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESObjectACTI::SaveGame` at 0x27a5a0 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESObjectACTI * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESObjectACTI::SaveGame` at 0x27a5a0 (slot_propagation, medium); signature (low): `undefined SaveGame(TESObjectACTI * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_14: *const c_void,
-    /// `TESObjectACTI::LoadGame` at 0x27a5f0 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESObjectACTI * this, longlong param_1, undefined8 param_2, char * param_3)`
+    /// `TESObjectACTI::LoadGame` at 0x27a5f0 (slot_propagation, medium); signature (low): `undefined LoadGame(TESObjectACTI * this, longlong param_1, undefined8 param_2, char * param_3)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -6810,13 +6340,13 @@ pub struct TESFurniture_vtable {
     pub slot_18: *const c_void,
     /// `TESFurniture::vfunc_19` at 0x26e3e0 (rtti, high); signature (low): `undefined vfunc_19(TESFurniture * this, ulonglong param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -6840,7 +6370,7 @@ pub struct TESFurniture_vtable {
     pub slot_33: *const c_void,
     /// `TESObjectACTI::vfunc_34` at 0x267690 (rtti, medium); signature (high): `byte vfunc_34(TESObjectACTI * this)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -6858,7 +6388,7 @@ pub struct TESFurniture_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -6870,9 +6400,9 @@ pub struct TESFurniture_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -6880,9 +6410,9 @@ pub struct TESFurniture_vtable {
     pub slot_53: *const c_void,
     /// `TESForm::vfunc_54` at 0x1468f0 (rtti, medium); signature (low): `undefined1 vfunc_54(void)`
     pub slot_54: *const c_void,
-    /// `TESFurniture::Activate` at 0x26f340 (semantic, high); signature (untiered): `undefined1 * Activate(TESFurniture * this, longlong * param_1, TESFurniture_vtbl_90 * param_2, undefined8 param_3)`; `Activate`: existing high row; IC2: a sleep marker 0 (IsSleepMarker) opens the sleep menu, else the sit path and EnterFurnitureCamera (high); semantic signature: `bool (TESFurniture* this, TESObjectREFR* target, TESObjectREFR* activator, u8 activateFlag, TESBoundObject* object, i32 count)`
+    /// `TESFurniture::Activate` at 0x26f340 (semantic, high); signature (low): `undefined1 * Activate(TESFurniture * this, longlong * param_1, TESFurniture_vtbl_90 * param_2, undefined8 param_3)`; `Activate`: existing high row; IC2: a sleep marker 0 (IsSleepMarker) opens the sleep menu, else the sit path and EnterFurnitureCamera (high); semantic signature: `bool (TESFurniture* this, TESObjectREFR* target, TESObjectREFR* activator, u8 activateFlag, TESBoundObject* object, i32 count)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -6898,7 +6428,7 @@ pub struct TESFurniture_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -6968,9 +6498,9 @@ pub struct TESFurniture_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESFurniture_vtable_30 {
@@ -6988,9 +6518,9 @@ pub struct TESFurniture_vtable_40 {
     pub slot_2: *const c_void,
     /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
     pub slot_6: *const c_void,
@@ -7042,7 +6572,7 @@ pub struct TESFurniture_vtable_90 {
     pub slot_2: *const c_void,
     /// `BGSKeywordForm::vfunc_3` at 0x1d86b0 (rtti, medium); signature (low): `undefined vfunc_3(BGSKeywordForm * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (untiered): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
+    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (low): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
     pub slot_4: *const c_void,
     /// `BGSKeywordForm::vfunc_5` at 0x14c8b0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
     pub slot_5: *const c_void,
@@ -7082,9 +6612,9 @@ pub struct TESGlobal_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -7094,13 +6624,13 @@ pub struct TESGlobal_vtable {
     pub slot_18: *const c_void,
     /// `TESForm::vfunc_19` at 0x1c7db0 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -7124,7 +6654,7 @@ pub struct TESGlobal_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -7142,7 +6672,7 @@ pub struct TESGlobal_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -7154,9 +6684,9 @@ pub struct TESGlobal_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESGlobal::GetFormEditorID` at 0x340be0 (slot_propagation, high); signature (untiered): `undefined1 * GetFormEditorID(TESGlobal * this)`
+    /// `TESGlobal::GetFormEditorID` at 0x340be0 (slot_propagation, high); signature (high): `undefined1 * GetFormEditorID(TESGlobal * this)`
     pub slot_50: *const c_void,
-    /// `TESGlobal::SetFormEditorID` at 0x340c00 (slot_propagation, high); signature (untiered): `undefined1 SetFormEditorID(TESGlobal * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESGlobal::SetFormEditorID` at 0x340c00 (slot_propagation, high); signature (low): `undefined1 SetFormEditorID(TESGlobal * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -7166,7 +6696,7 @@ pub struct TESGlobal_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -7208,9 +6738,9 @@ pub struct TESGrass_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -7220,13 +6750,13 @@ pub struct TESGrass_vtable {
     pub slot_18: *const c_void,
     /// `TESGrass::vfunc_19` at 0x270740 (rtti, high); signature (high): `undefined vfunc_19(TESGrass * this)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -7250,7 +6780,7 @@ pub struct TESGrass_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -7268,7 +6798,7 @@ pub struct TESGrass_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -7280,9 +6810,9 @@ pub struct TESGrass_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -7292,7 +6822,7 @@ pub struct TESGrass_vtable {
     pub slot_54: *const c_void,
     /// `TESBoundObject::vfunc_55` at 0x278e50 (rtti, medium); signature (low): `undefined1 vfunc_55(TESBoundObject * this, longlong param_1, undefined8 param_2, undefined1 param_3, undefined8 param_4, undefined4 param_5)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -7308,7 +6838,7 @@ pub struct TESGrass_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -7408,15 +6938,15 @@ impl TESGrass_vtable {
 pub struct TESGrass_vtable_30 {
     /// `TESGrass::TESModel_vdtor` at 0x270884 (slot_propagation, medium); signature (high): `undefined TESModel_vdtor(TESGrass * this)`
     pub slot_0: *const c_void,
-    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (untiered): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (low): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (untiered): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (low): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
     pub slot_2: *const c_void,
-    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (untiered): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
+    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (low): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModel::vfunc_6` at 0x1dfd80 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -7476,11 +7006,11 @@ pub struct TESIdleForm_vtable {
     pub slot_2: *const c_void,
     /// `TESForm::vfunc_3` at 0x1e6930 (rtti, medium); signature (low): `undefined vfunc_3(TESForm * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESIdleForm::InitializeData` at 0x3b6be0 (semantic, high); signature (untiered): `undefined InitializeData(TESIdleForm * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESIdleForm::InitializeData` at 0x3b6be0 (semantic, high); signature (low): `undefined InitializeData(TESIdleForm * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_4: *const c_void,
-    /// `TESIdleForm::ClearData` at 0x3b6c80 (semantic, high); signature (untiered): `undefined ClearData(TESIdleForm * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESIdleForm::ClearData` at 0x3b6c80 (semantic, high); signature (low): `undefined ClearData(TESIdleForm * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `TESIdleForm::Load` at 0x3b6f40 (semantic, high); signature (untiered): `undefined8 Load(TESIdleForm * this, uint * param_1, undefined1 * param_2, undefined8 param_3)`
+    /// `TESIdleForm::Load` at 0x3b6f40 (semantic, high); signature (low): `undefined8 Load(TESIdleForm * this, uint * param_1, undefined1 * param_2, undefined8 param_3)`
     pub slot_6: *const c_void,
     /// `TESForm::vfunc_7` at 0x1469b0 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
     pub slot_7: *const c_void,
@@ -7496,9 +7026,9 @@ pub struct TESIdleForm_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -7506,15 +7036,15 @@ pub struct TESIdleForm_vtable {
     pub slot_17: *const c_void,
     /// `TESForm::vfunc_18` at 0x1e5850 (rtti, medium); signature (low): `undefined vfunc_18(void)`
     pub slot_18: *const c_void,
-    /// `TESIdleForm::InitItem` at 0x3b7240 (semantic, high); signature (untiered): `undefined InitItem(TESIdleForm * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
+    /// `TESIdleForm::InitItem` at 0x3b7240 (semantic, high); signature (low): `undefined InitItem(TESIdleForm * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -7538,7 +7068,7 @@ pub struct TESIdleForm_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -7556,7 +7086,7 @@ pub struct TESIdleForm_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -7568,9 +7098,9 @@ pub struct TESIdleForm_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESIdleForm::GetFormEditorID` at 0x3b82d0 (semantic, high); signature (untiered): `undefined1 * GetFormEditorID(TESIdleForm * this)`
+    /// `TESIdleForm::GetFormEditorID` at 0x3b82d0 (semantic, high); signature (high): `undefined1 * GetFormEditorID(TESIdleForm * this)`
     pub slot_50: *const c_void,
-    /// `TESIdleForm::SetFormEditorID` at 0x3b8110 (slot_propagation, high); signature (untiered): `ulonglong SetFormEditorID(TESIdleForm * this, char * param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESIdleForm::SetFormEditorID` at 0x3b8110 (slot_propagation, high); signature (low): `ulonglong SetFormEditorID(TESIdleForm * this, char * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -7580,7 +7110,7 @@ pub struct TESIdleForm_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -7622,9 +7152,9 @@ pub struct TESImageSpace_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -7634,13 +7164,13 @@ pub struct TESImageSpace_vtable {
     pub slot_18: *const c_void,
     /// `TESForm::vfunc_19` at 0x1c7db0 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -7664,7 +7194,7 @@ pub struct TESImageSpace_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -7682,7 +7212,7 @@ pub struct TESImageSpace_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -7694,9 +7224,9 @@ pub struct TESImageSpace_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -7706,7 +7236,7 @@ pub struct TESImageSpace_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -7764,9 +7294,9 @@ pub struct TESImageSpaceModifier_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -7776,13 +7306,13 @@ pub struct TESImageSpaceModifier_vtable {
     pub slot_18: *const c_void,
     /// `TESForm::vfunc_19` at 0x1c7db0 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -7806,7 +7336,7 @@ pub struct TESImageSpaceModifier_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -7824,7 +7354,7 @@ pub struct TESImageSpaceModifier_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -7836,9 +7366,9 @@ pub struct TESImageSpaceModifier_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESImageSpaceModifier::GetFormEditorID` at 0x2a8e30 (slot_propagation, high); signature (untiered): `undefined1 * GetFormEditorID(TESImageSpaceModifier * this)`
+    /// `TESImageSpaceModifier::GetFormEditorID` at 0x2a8e30 (slot_propagation, high); signature (high): `undefined1 * GetFormEditorID(TESImageSpaceModifier * this)`
     pub slot_50: *const c_void,
-    /// `TESImageSpaceModifier::SetFormEditorID` at 0x2a8e70 (slot_propagation, high); signature (untiered): `undefined1 SetFormEditorID(TESImageSpaceModifier * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESImageSpaceModifier::SetFormEditorID` at 0x2a8e70 (slot_propagation, high); signature (low): `undefined1 SetFormEditorID(TESImageSpaceModifier * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -7848,7 +7378,7 @@ pub struct TESImageSpaceModifier_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -7890,9 +7420,9 @@ pub struct TESKey_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESObjectMISC::SaveGame` at 0x286eb0 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESObjectMISC * this, longlong param_1)`
+    /// `TESObjectMISC::SaveGame` at 0x286eb0 (slot_propagation, medium); signature (low): `undefined SaveGame(TESObjectMISC * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESObjectMISC::LoadGame` at 0x286ef0 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESObjectMISC * this, longlong param_1)`
+    /// `TESObjectMISC::LoadGame` at 0x286ef0 (slot_propagation, medium); signature (low): `undefined LoadGame(TESObjectMISC * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -7902,13 +7432,13 @@ pub struct TESKey_vtable {
     pub slot_18: *const c_void,
     /// `TESObjectMISC::vfunc_19` at 0x286d20 (rtti, medium); signature (low): `undefined vfunc_19(TESObjectMISC * this, undefined8 param_1, longlong param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -7932,7 +7462,7 @@ pub struct TESKey_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -7950,7 +7480,7 @@ pub struct TESKey_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -7962,9 +7492,9 @@ pub struct TESKey_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -7974,7 +7504,7 @@ pub struct TESKey_vtable {
     pub slot_54: *const c_void,
     /// `TESBoundObject::vfunc_55` at 0x278e50 (rtti, medium); signature (low): `undefined1 vfunc_55(TESBoundObject * this, longlong param_1, undefined8 param_2, undefined1 param_3, undefined8 param_4, undefined4 param_5)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -7990,7 +7520,7 @@ pub struct TESKey_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -8050,9 +7580,9 @@ pub struct TESKey_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESKey_vtable_30 {
@@ -8070,9 +7600,9 @@ pub struct TESKey_vtable_40 {
     pub slot_2: *const c_void,
     /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
     pub slot_6: *const c_void,
@@ -8194,7 +7724,7 @@ pub struct TESKey_vtable_E8 {
     pub slot_2: *const c_void,
     /// `BGSKeywordForm::vfunc_3` at 0x1d86b0 (rtti, medium); signature (low): `undefined vfunc_3(BGSKeywordForm * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (untiered): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
+    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (low): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
     pub slot_4: *const c_void,
     /// `TESKey::BGSKeywordForm_vfunc_5` at 0x270e20 (rtti, high); signature (low): `undefined8 BGSKeywordForm_vfunc_5(TESKey * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
@@ -8234,9 +7764,9 @@ pub struct TESLandTexture_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -8246,13 +7776,13 @@ pub struct TESLandTexture_vtable {
     pub slot_18: *const c_void,
     /// `TESLandTexture::vfunc_19` at 0x2b6cc0 (rtti, high); signature (low): `undefined vfunc_19(TESLandTexture * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -8276,7 +7806,7 @@ pub struct TESLandTexture_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -8294,7 +7824,7 @@ pub struct TESLandTexture_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -8306,9 +7836,9 @@ pub struct TESLandTexture_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -8318,7 +7848,7 @@ pub struct TESLandTexture_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -8360,9 +7890,9 @@ pub struct TESLevCharacter_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESLevCharacter::SaveGame` at 0x271840 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESLevCharacter * this, longlong param_1)`
+    /// `TESLevCharacter::SaveGame` at 0x271840 (slot_propagation, medium); signature (low): `undefined SaveGame(TESLevCharacter * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESLevCharacter::LoadGame` at 0x271880 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESLevCharacter * this, longlong param_1)`
+    /// `TESLevCharacter::LoadGame` at 0x271880 (slot_propagation, medium); signature (low): `undefined LoadGame(TESLevCharacter * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -8372,13 +7902,13 @@ pub struct TESLevCharacter_vtable {
     pub slot_18: *const c_void,
     /// `TESLevCharacter::vfunc_19` at 0x2717b0 (rtti, high); signature (low): `undefined vfunc_19(TESLevCharacter * this, undefined8 param_1, longlong param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -8402,7 +7932,7 @@ pub struct TESLevCharacter_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -8420,7 +7950,7 @@ pub struct TESLevCharacter_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -8432,9 +7962,9 @@ pub struct TESLevCharacter_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -8444,7 +7974,7 @@ pub struct TESLevCharacter_vtable {
     pub slot_54: *const c_void,
     /// `TESBoundObject::vfunc_55` at 0x278e50 (rtti, medium); signature (low): `undefined1 vfunc_55(TESBoundObject * this, longlong param_1, undefined8 param_2, undefined1 param_3, undefined8 param_4, undefined4 param_5)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -8460,7 +7990,7 @@ pub struct TESLevCharacter_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESLevCharacter::vfunc_65` at 0x271810 (rtti, high); signature (low): `undefined vfunc_65(void)`
     pub slot_65: *const c_void,
@@ -8538,9 +8068,9 @@ pub struct TESLevCharacter_vtable_58 {
     pub slot_2: *const c_void,
     /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
     pub slot_6: *const c_void,
@@ -8580,9 +8110,9 @@ pub struct TESLevItem_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESLevItem::SaveGame` at 0x272130 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESLevItem * this, longlong param_1)`
+    /// `TESLevItem::SaveGame` at 0x272130 (slot_propagation, medium); signature (low): `undefined SaveGame(TESLevItem * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESLevItem::LoadGame` at 0x272170 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESLevItem * this, longlong param_1)`
+    /// `TESLevItem::LoadGame` at 0x272170 (slot_propagation, medium); signature (low): `undefined LoadGame(TESLevItem * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -8592,13 +8122,13 @@ pub struct TESLevItem_vtable {
     pub slot_18: *const c_void,
     /// `TESLevItem::vfunc_19` at 0x272030 (rtti, high); signature (low): `undefined vfunc_19(TESLevItem * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -8622,7 +8152,7 @@ pub struct TESLevItem_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -8640,7 +8170,7 @@ pub struct TESLevItem_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -8652,9 +8182,9 @@ pub struct TESLevItem_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -8664,7 +8194,7 @@ pub struct TESLevItem_vtable {
     pub slot_54: *const c_void,
     /// `TESBoundObject::vfunc_55` at 0x278e50 (rtti, medium); signature (low): `undefined1 vfunc_55(TESBoundObject * this, longlong param_1, undefined8 param_2, undefined1 param_3, undefined8 param_4, undefined4 param_5)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -8680,7 +8210,7 @@ pub struct TESLevItem_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -8778,9 +8308,9 @@ pub struct TESLevSpell_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESLevSpell::SaveGame` at 0x272ee0 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESLevSpell * this, longlong param_1)`
+    /// `TESLevSpell::SaveGame` at 0x272ee0 (slot_propagation, medium); signature (low): `undefined SaveGame(TESLevSpell * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESLevSpell::LoadGame` at 0x272f20 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESLevSpell * this, longlong param_1)`
+    /// `TESLevSpell::LoadGame` at 0x272f20 (slot_propagation, medium); signature (low): `undefined LoadGame(TESLevSpell * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -8790,13 +8320,13 @@ pub struct TESLevSpell_vtable {
     pub slot_18: *const c_void,
     /// `TESLevSpell::vfunc_19` at 0x272910 (rtti, high); signature (low): `undefined vfunc_19(TESLevSpell * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -8820,7 +8350,7 @@ pub struct TESLevSpell_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -8838,7 +8368,7 @@ pub struct TESLevSpell_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -8850,9 +8380,9 @@ pub struct TESLevSpell_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -8862,7 +8392,7 @@ pub struct TESLevSpell_vtable {
     pub slot_54: *const c_void,
     /// `TESBoundObject::vfunc_55` at 0x278e50 (rtti, medium); signature (low): `undefined1 vfunc_55(TESBoundObject * this, longlong param_1, undefined8 param_2, undefined1 param_3, undefined8 param_4, undefined4 param_5)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -8878,7 +8408,7 @@ pub struct TESLevSpell_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -9000,9 +8530,9 @@ pub struct TESLoadScreen_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -9012,13 +8542,13 @@ pub struct TESLoadScreen_vtable {
     pub slot_18: *const c_void,
     /// `TESLoadScreen::vfunc_19` at 0x3414c0 (rtti, high); signature (low): `undefined vfunc_19(TESLoadScreen * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -9042,7 +8572,7 @@ pub struct TESLoadScreen_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -9060,7 +8590,7 @@ pub struct TESLoadScreen_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -9072,9 +8602,9 @@ pub struct TESLoadScreen_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -9084,7 +8614,7 @@ pub struct TESLoadScreen_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -9100,15 +8630,15 @@ impl TESLoadScreen_vtable {
 pub struct TESModel_vtable {
     /// `TESModel::vdtor` at 0x1ec350 (slot_propagation, medium); signature (low): `TESModel * vdtor(TESModel * this, uint param_1, undefined8 param_2, undefined1 * param_3)`
     pub slot_0: *const c_void,
-    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (untiered): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (low): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (untiered): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (low): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
     pub slot_2: *const c_void,
-    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (untiered): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`; `CopyFromTemplate`: copies the source's model path (high); semantic signature: `void (TESModel*, TESForm* source)`
+    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (low): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`; `CopyFromTemplate`: copies the source's model path (high); semantic signature: `void (TESModel*, TESForm* source)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`; `GetModel`: model path text (high); semantic signature: `const char* (TESModel*)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`; `GetModel`: model path text (high); semantic signature: `const char* (TESModel*)`
     pub slot_4: *const c_void,
-    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`; `SetModel`: sets the path (high); semantic signature: `void (TESModel*, const char*)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`; `SetModel`: sets the path (high); semantic signature: `void (TESModel*, const char*)`
     pub slot_5: *const c_void,
     /// `TESModel::vfunc_6` at 0x1dfd80 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -9234,15 +8764,15 @@ impl TESModelLODList_vtable {
 pub struct TESModelPSA_vtable {
     /// `TESModelPSA::vdtor` at 0x38af60 (slot_propagation, medium); signature (low): `TESModelPSA * vdtor(TESModelPSA * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
     pub slot_0: *const c_void,
-    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (untiered): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (low): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (untiered): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (low): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
     pub slot_2: *const c_void,
-    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (untiered): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
+    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (low): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModel::vfunc_6` at 0x1dfd80 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -9256,15 +8786,15 @@ impl TESModelPSA_vtable {
 pub struct TESModelRDT_vtable {
     /// `TESModelRDT::vdtor` at 0x1dfd40 (slot_propagation, medium); signature (low): `TESModelRDT * vdtor(TESModelRDT * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
     pub slot_0: *const c_void,
-    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (untiered): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (low): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (untiered): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (low): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
     pub slot_2: *const c_void,
-    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (untiered): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
+    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (low): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModel::vfunc_6` at 0x1dfd80 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -9284,9 +8814,9 @@ pub struct TESModelTextureSwap_vtable {
     pub slot_2: *const c_void,
     /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
     pub slot_6: *const c_void,
@@ -9300,13 +8830,13 @@ impl TESModelTextureSwap_vtable {
 pub struct TESModelTri_vtable {
     /// `TESModelTri::vdtor` at 0x390fa0 (slot_propagation, medium); signature (low): `TESModelTri * vdtor(TESModelTri * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
     pub slot_0: *const c_void,
-    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (untiered): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (low): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (untiered): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (low): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
     pub slot_2: *const c_void,
-    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (untiered): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
+    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (low): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
     /// `TESModelTri::vfunc_5` at 0x1ee380 (rtti, high); signature (low): `undefined vfunc_5(TESModelTri * this, char * param_1)`
     pub slot_5: *const c_void,
@@ -9348,9 +8878,9 @@ pub struct TESNPC_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESNPC::SaveGame` at 0x3c7640 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESNPC * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESNPC::SaveGame` at 0x3c7640 (slot_propagation, medium); signature (low): `undefined SaveGame(TESNPC * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_14: *const c_void,
-    /// `TESNPC::LoadGame` at 0x3c7b10 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESNPC * this, undefined8 * param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
+    /// `TESNPC::LoadGame` at 0x3c7b10 (slot_propagation, medium); signature (low): `undefined LoadGame(TESNPC * this, undefined8 * param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -9360,13 +8890,13 @@ pub struct TESNPC_vtable {
     pub slot_18: *const c_void,
     /// `TESNPC::vfunc_19` at 0x3c1570 (rtti, high); signature (low): `undefined vfunc_19(TESNPC * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -9390,7 +8920,7 @@ pub struct TESNPC_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -9408,7 +8938,7 @@ pub struct TESNPC_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -9420,9 +8950,9 @@ pub struct TESNPC_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -9432,7 +8962,7 @@ pub struct TESNPC_vtable {
     pub slot_54: *const c_void,
     /// `TESNPC::vfunc_55` at 0x3c05c0 (rtti, high); signature (low): `undefined8 vfunc_55(TESNPC * this, longlong * * * * * * * param_1, longlong * * * * * * * param_2, longlong * * * * * * * param_3, longlong param_4, undefined4 param_5)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -9448,7 +8978,7 @@ pub struct TESNPC_vtable {
     pub slot_62: *const c_void,
     /// `TESActorBase::vfunc_63` at 0x3afef0 (rtti, medium); signature (low): `undefined vfunc_63(TESActorBase * this, char param_1)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESNPC::vfunc_65` at 0x3c28b0 (rtti, high); signature (low): `undefined vfunc_65(TESNPC * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -9584,9 +9114,9 @@ pub struct TESNPC_vtable_D8 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESNPC_vtable_D8 {
@@ -9598,21 +9128,21 @@ impl TESNPC_vtable_D8 {
 pub struct TESNPC_vtable_E8 {
     /// `TESNPC::ActorValueOwner_vdtor` at 0x3cbaf0 (slot_propagation, medium); signature (high): `undefined ActorValueOwner_vdtor(TESNPC * this)`
     pub slot_0: *const c_void,
-    /// `TESNPC::ActorValueOwner_GetActorValue` at 0x3c71f0 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_GetActorValue(TESNPC * this, int param_1)`
+    /// `TESNPC::ActorValueOwner_GetActorValue` at 0x3c71f0 (slot_propagation, high); signature (low): `undefined ActorValueOwner_GetActorValue(TESNPC * this, int param_1)`
     pub slot_1: *const c_void,
-    /// `TESActorBase::ActorValueOwner_GetPermanentActorValue` at 0x3cc700 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_GetPermanentActorValue(TESActorBase * this)`
+    /// `TESActorBase::ActorValueOwner_GetPermanentActorValue` at 0x3cc700 (slot_propagation, high); signature (high): `undefined ActorValueOwner_GetPermanentActorValue(TESActorBase * this)`
     pub slot_2: *const c_void,
-    /// `TESActorBase::ActorValueOwner_GetBaseActorValue` at 0x3cc640 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_GetBaseActorValue(TESActorBase * this)`
+    /// `TESActorBase::ActorValueOwner_GetBaseActorValue` at 0x3cc640 (slot_propagation, high); signature (high): `undefined ActorValueOwner_GetBaseActorValue(TESActorBase * this)`
     pub slot_3: *const c_void,
-    /// `TESActorBase::ActorValueOwner_StoreBaseActorValue` at 0x3b0240 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_StoreBaseActorValue(TESActorBase * this, undefined4 param_1, float param_2)`
+    /// `TESActorBase::ActorValueOwner_StoreBaseActorValue` at 0x3b0240 (slot_propagation, high); signature (low): `undefined ActorValueOwner_StoreBaseActorValue(TESActorBase * this, undefined4 param_1, float param_2)`
     pub slot_4: *const c_void,
-    /// `TESActorBase::ActorValueOwner_AddBaseActorValue` at 0x3b0350 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_AddBaseActorValue(TESActorBase * this, undefined4 param_1, float param_2)`
+    /// `TESActorBase::ActorValueOwner_AddBaseActorValue` at 0x3b0350 (slot_propagation, high); signature (low): `undefined ActorValueOwner_AddBaseActorValue(TESActorBase * this, undefined4 param_1, float param_2)`
     pub slot_5: *const c_void,
-    /// `TESActorBase::ActorValueOwner_ModActorValue` at 0x3ccb50 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_ModActorValue(void)`
+    /// `TESActorBase::ActorValueOwner_ModActorValue` at 0x3ccb50 (slot_propagation, high); signature (low): `undefined ActorValueOwner_ModActorValue(void)`
     pub slot_6: *const c_void,
-    /// `TESNPC::ActorValueOwner_SetActorValue` at 0x3c7460 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_SetActorValue(TESNPC * this, int param_1, float param_2)`
+    /// `TESNPC::ActorValueOwner_SetActorValue` at 0x3c7460 (slot_propagation, high); signature (low): `undefined ActorValueOwner_SetActorValue(TESNPC * this, int param_1, float param_2)`
     pub slot_7: *const c_void,
-    /// `TESActorBase::ActorValueOwner_IsPlayer` at 0x3b03a0 (slot_propagation, low); signature (untiered): `bool ActorValueOwner_IsPlayer(TESActorBase * this)`
+    /// `TESActorBase::ActorValueOwner_IsPlayer` at 0x3b03a0 (slot_propagation, low); signature (high): `bool ActorValueOwner_IsPlayer(TESActorBase * this)`
     pub slot_8: *const c_void,
 }
 impl TESNPC_vtable_E8 {
@@ -9662,7 +9192,7 @@ pub struct TESNPC_vtable_110 {
     pub slot_2: *const c_void,
     /// `BGSKeywordForm::vfunc_3` at 0x1d86b0 (rtti, medium); signature (low): `undefined vfunc_3(BGSKeywordForm * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (untiered): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
+    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (low): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
     pub slot_4: *const c_void,
     /// `BGSKeywordForm::vfunc_5` at 0x14c8b0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
     pub slot_5: *const c_void,
@@ -9778,9 +9308,9 @@ pub struct TESObject_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -9790,13 +9320,13 @@ pub struct TESObject_vtable {
     pub slot_18: *const c_void,
     /// `TESForm::vfunc_19` at 0x1c7db0 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -9820,7 +9350,7 @@ pub struct TESObject_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -9838,7 +9368,7 @@ pub struct TESObject_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -9850,9 +9380,9 @@ pub struct TESObject_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -9862,7 +9392,7 @@ pub struct TESObject_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -9930,9 +9460,9 @@ pub struct TESObjectACTI_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESObjectACTI::SaveGame` at 0x27a5a0 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESObjectACTI * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESObjectACTI::SaveGame` at 0x27a5a0 (slot_propagation, medium); signature (low): `undefined SaveGame(TESObjectACTI * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_14: *const c_void,
-    /// `TESObjectACTI::LoadGame` at 0x27a5f0 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESObjectACTI * this, longlong param_1, undefined8 param_2, char * param_3)`
+    /// `TESObjectACTI::LoadGame` at 0x27a5f0 (slot_propagation, medium); signature (low): `undefined LoadGame(TESObjectACTI * this, longlong param_1, undefined8 param_2, char * param_3)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -9942,13 +9472,13 @@ pub struct TESObjectACTI_vtable {
     pub slot_18: *const c_void,
     /// `TESObjectACTI::vfunc_19` at 0x279ce0 (rtti, high); signature (low): `undefined vfunc_19(TESObjectACTI * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -9972,7 +9502,7 @@ pub struct TESObjectACTI_vtable {
     pub slot_33: *const c_void,
     /// `TESObjectACTI::vfunc_34` at 0x267690 (rtti, medium); signature (high): `byte vfunc_34(TESObjectACTI * this)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -9990,7 +9520,7 @@ pub struct TESObjectACTI_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -10002,9 +9532,9 @@ pub struct TESObjectACTI_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -10014,7 +9544,7 @@ pub struct TESObjectACTI_vtable {
     pub slot_54: *const c_void,
     /// `TESObjectACTI::vfunc_55` at 0x27a130 (rtti, high); signature (low): `undefined8 vfunc_55(TESObjectACTI * this, longlong * param_1, uint * param_2, uint * param_3, undefined8 param_4, undefined4 param_5)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -10030,7 +9560,7 @@ pub struct TESObjectACTI_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -10084,9 +9614,9 @@ pub struct TESObjectACTI_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESObjectACTI_vtable_30 {
@@ -10104,9 +9634,9 @@ pub struct TESObjectACTI_vtable_40 {
     pub slot_2: *const c_void,
     /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
     pub slot_6: *const c_void,
@@ -10158,7 +9688,7 @@ pub struct TESObjectACTI_vtable_90 {
     pub slot_2: *const c_void,
     /// `BGSKeywordForm::vfunc_3` at 0x1d86b0 (rtti, medium); signature (low): `undefined vfunc_3(BGSKeywordForm * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (untiered): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
+    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (low): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
     pub slot_4: *const c_void,
     /// `BGSKeywordForm::vfunc_5` at 0x14c8b0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
     pub slot_5: *const c_void,
@@ -10198,9 +9728,9 @@ pub struct TESObjectANIO_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -10210,13 +9740,13 @@ pub struct TESObjectANIO_vtable {
     pub slot_18: *const c_void,
     /// `TESObjectANIO::vfunc_19` at 0x27b9b0 (rtti, high); signature (low): `undefined vfunc_19(TESObjectANIO * this, undefined8 param_1, longlong param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -10240,7 +9770,7 @@ pub struct TESObjectANIO_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -10258,7 +9788,7 @@ pub struct TESObjectANIO_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -10270,9 +9800,9 @@ pub struct TESObjectANIO_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESObjectANIO::GetFormEditorID` at 0x27bb70 (slot_propagation, high); signature (untiered): `undefined1 * GetFormEditorID(TESObjectANIO * this)`
+    /// `TESObjectANIO::GetFormEditorID` at 0x27bb70 (slot_propagation, high); signature (high): `undefined1 * GetFormEditorID(TESObjectANIO * this)`
     pub slot_50: *const c_void,
-    /// `TESObjectANIO::SetFormEditorID` at 0x27b9f0 (slot_propagation, high); signature (untiered): `undefined8 SetFormEditorID(TESObjectANIO * this, char * param_1, undefined8 param_2, ulonglong param_3)`
+    /// `TESObjectANIO::SetFormEditorID` at 0x27b9f0 (slot_propagation, high); signature (low): `undefined8 SetFormEditorID(TESObjectANIO * this, char * param_1, undefined8 param_2, ulonglong param_3)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -10282,7 +9812,7 @@ pub struct TESObjectANIO_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -10304,9 +9834,9 @@ pub struct TESObjectANIO_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
     pub slot_6: *const c_void,
@@ -10346,9 +9876,9 @@ pub struct TESObjectARMA_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -10358,13 +9888,13 @@ pub struct TESObjectARMA_vtable {
     pub slot_18: *const c_void,
     /// `TESObjectARMA::vfunc_19` at 0x27cad0 (rtti, high); signature (low): `undefined vfunc_19(TESObjectARMA * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -10388,7 +9918,7 @@ pub struct TESObjectARMA_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -10406,7 +9936,7 @@ pub struct TESObjectARMA_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -10418,9 +9948,9 @@ pub struct TESObjectARMA_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -10430,7 +9960,7 @@ pub struct TESObjectARMA_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -10530,9 +10060,9 @@ pub struct TESObjectARMO_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESObjectARMO::SaveGame` at 0x27ee20 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESObjectARMO * this, longlong param_1)`
+    /// `TESObjectARMO::SaveGame` at 0x27ee20 (slot_propagation, medium); signature (low): `undefined SaveGame(TESObjectARMO * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESObjectARMO::LoadGame` at 0x27ee60 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESObjectARMO * this, longlong param_1)`
+    /// `TESObjectARMO::LoadGame` at 0x27ee60 (slot_propagation, medium); signature (low): `undefined LoadGame(TESObjectARMO * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -10542,13 +10072,13 @@ pub struct TESObjectARMO_vtable {
     pub slot_18: *const c_void,
     /// `TESObjectARMO::vfunc_19` at 0x27e780 (rtti, high); signature (low): `undefined vfunc_19(TESObjectARMO * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESObjectARMO::GetLastFile` at 0x27f1b0 (slot_propagation, medium); signature (untiered): `undefined GetLastFile(TESObjectARMO * this)`
+    /// `TESObjectARMO::GetLastFile` at 0x27f1b0 (slot_propagation, medium); signature (high): `undefined GetLastFile(TESObjectARMO * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -10572,7 +10102,7 @@ pub struct TESObjectARMO_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -10590,7 +10120,7 @@ pub struct TESObjectARMO_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -10602,9 +10132,9 @@ pub struct TESObjectARMO_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -10614,7 +10144,7 @@ pub struct TESObjectARMO_vtable {
     pub slot_54: *const c_void,
     /// `TESBoundObject::vfunc_55` at 0x278e50 (rtti, medium); signature (low): `undefined1 vfunc_55(TESBoundObject * this, longlong param_1, undefined8 param_2, undefined1 param_3, undefined8 param_4, undefined4 param_5)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -10630,7 +10160,7 @@ pub struct TESObjectARMO_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -10684,9 +10214,9 @@ pub struct TESObjectARMO_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESObjectARMO_vtable_30 {
@@ -10870,7 +10400,7 @@ pub struct TESObjectARMO_vtable_1D8 {
     pub slot_2: *const c_void,
     /// `BGSKeywordForm::vfunc_3` at 0x1d86b0 (rtti, medium); signature (low): `undefined vfunc_3(BGSKeywordForm * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (untiered): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
+    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (low): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
     pub slot_4: *const c_void,
     /// `TESObjectARMO::BGSKeywordForm_vfunc_5` at 0x27ed60 (rtti, high); signature (low): `undefined8 BGSKeywordForm_vfunc_5(TESObjectARMO * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
@@ -10926,9 +10456,9 @@ pub struct TESObjectBOOK_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESObjectBOOK::SaveGame` at 0x2804e0 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESObjectBOOK * this, longlong param_1)`
+    /// `TESObjectBOOK::SaveGame` at 0x2804e0 (slot_propagation, medium); signature (low): `undefined SaveGame(TESObjectBOOK * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESObjectBOOK::LoadGame` at 0x280540 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESObjectBOOK * this, longlong param_1)`
+    /// `TESObjectBOOK::LoadGame` at 0x280540 (slot_propagation, medium); signature (low): `undefined LoadGame(TESObjectBOOK * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -10938,13 +10468,13 @@ pub struct TESObjectBOOK_vtable {
     pub slot_18: *const c_void,
     /// `TESObjectBOOK::vfunc_19` at 0x27fcc0 (rtti, high); signature (low): `undefined vfunc_19(TESObjectBOOK * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -10968,7 +10498,7 @@ pub struct TESObjectBOOK_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -10986,7 +10516,7 @@ pub struct TESObjectBOOK_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -10998,9 +10528,9 @@ pub struct TESObjectBOOK_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -11010,7 +10540,7 @@ pub struct TESObjectBOOK_vtable {
     pub slot_54: *const c_void,
     /// `TESObjectBOOK::vfunc_55` at 0x27ffd0 (rtti, high); signature (low): `undefined1 * vfunc_55(TESObjectBOOK * this, longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4, undefined4 param_5)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -11026,7 +10556,7 @@ pub struct TESObjectBOOK_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -11080,9 +10610,9 @@ pub struct TESObjectBOOK_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESObjectBOOK_vtable_30 {
@@ -11100,9 +10630,9 @@ pub struct TESObjectBOOK_vtable_40 {
     pub slot_2: *const c_void,
     /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
     pub slot_6: *const c_void,
@@ -11240,7 +10770,7 @@ pub struct TESObjectBOOK_vtable_F8 {
     pub slot_2: *const c_void,
     /// `BGSKeywordForm::vfunc_3` at 0x1d86b0 (rtti, medium); signature (low): `undefined vfunc_3(BGSKeywordForm * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (untiered): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
+    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (low): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
     pub slot_4: *const c_void,
     /// `TESObjectBOOK::BGSKeywordForm_vfunc_5` at 0x27fe20 (rtti, high); signature (low): `undefined8 BGSKeywordForm_vfunc_5(TESObjectBOOK * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
@@ -11280,9 +10810,9 @@ pub struct TESObjectCELL_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESObjectCELL::SaveGame` at 0x2c8010 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESObjectCELL * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESObjectCELL::SaveGame` at 0x2c8010 (slot_propagation, medium); signature (low): `undefined SaveGame(TESObjectCELL * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_14: *const c_void,
-    /// `TESObjectCELL::LoadGame` at 0x2c80e0 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESObjectCELL * this, longlong param_1, undefined8 param_2, char * param_3)`
+    /// `TESObjectCELL::LoadGame` at 0x2c80e0 (slot_propagation, medium); signature (low): `undefined LoadGame(TESObjectCELL * this, longlong param_1, undefined8 param_2, char * param_3)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -11292,13 +10822,13 @@ pub struct TESObjectCELL_vtable {
     pub slot_18: *const c_void,
     /// `TESObjectCELL::vfunc_19` at 0x2b8e70 (rtti, high); signature (low): `undefined vfunc_19(TESObjectCELL * this, undefined8 param_1, undefined8 param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESObjectCELL::GetFormDetailedString` at 0x2bba70 (slot_propagation, high); signature (untiered): `undefined GetFormDetailedString(TESObjectCELL * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESObjectCELL::GetFormDetailedString` at 0x2bba70 (slot_propagation, high); signature (low): `undefined GetFormDetailedString(TESObjectCELL * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -11322,7 +10852,7 @@ pub struct TESObjectCELL_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESObjectCELL::vfunc_36` at 0x2c4cc0 (rtti, high); signature (low): `undefined vfunc_36(TESObjectCELL * this, char param_1)`
     pub slot_36: *const c_void,
@@ -11340,7 +10870,7 @@ pub struct TESObjectCELL_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -11352,9 +10882,9 @@ pub struct TESObjectCELL_vtable {
     pub slot_48: *const c_void,
     /// `TESObjectCELL::vfunc_49` at 0x2b94b0 (rtti, high); signature (low): `undefined vfunc_49(TESObjectCELL * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESObjectCELL::GetFormEditorID` at 0x2bb060 (slot_propagation, high); signature (untiered): `undefined1 * GetFormEditorID(TESObjectCELL * this)`
+    /// `TESObjectCELL::GetFormEditorID` at 0x2bb060 (slot_propagation, high); signature (high): `undefined1 * GetFormEditorID(TESObjectCELL * this)`
     pub slot_50: *const c_void,
-    /// `TESObjectCELL::SetFormEditorID` at 0x2bb0c0 (slot_propagation, high); signature (untiered): `undefined8 SetFormEditorID(TESObjectCELL * this, char * param_1)`
+    /// `TESObjectCELL::SetFormEditorID` at 0x2bb0c0 (slot_propagation, high); signature (low): `undefined8 SetFormEditorID(TESObjectCELL * this, char * param_1)`
     pub slot_51: *const c_void,
     /// `TESObjectCELL::vfunc_52` at 0x2c4c10 (rtti, high); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -11364,7 +10894,7 @@ pub struct TESObjectCELL_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -11386,9 +10916,9 @@ pub struct TESObjectCELL_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESObjectCELL_vtable_20 {
@@ -11438,9 +10968,9 @@ pub struct TESObjectCONT_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -11450,13 +10980,13 @@ pub struct TESObjectCONT_vtable {
     pub slot_18: *const c_void,
     /// `TESObjectCONT::vfunc_19` at 0x281a30 (rtti, high); signature (low): `undefined vfunc_19(TESObjectCONT * this, undefined8 param_1, longlong param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -11480,7 +11010,7 @@ pub struct TESObjectCONT_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -11498,7 +11028,7 @@ pub struct TESObjectCONT_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -11510,9 +11040,9 @@ pub struct TESObjectCONT_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -11522,7 +11052,7 @@ pub struct TESObjectCONT_vtable {
     pub slot_54: *const c_void,
     /// `TESObjectCONT::vfunc_55` at 0x281c10 (rtti, high); signature (low): `undefined8 vfunc_55(TESObjectCONT * this, longlong * * * * * * * param_1, longlong * * * * * * * param_2, undefined8 param_3, longlong param_4, uint param_5)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -11538,7 +11068,7 @@ pub struct TESObjectCONT_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -11608,9 +11138,9 @@ pub struct TESObjectCONT_vtable_48 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESObjectCONT_vtable_48 {
@@ -11628,9 +11158,9 @@ pub struct TESObjectCONT_vtable_58 {
     pub slot_2: *const c_void,
     /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
     pub slot_6: *const c_void,
@@ -11718,9 +11248,9 @@ pub struct TESObjectDOOR_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -11730,13 +11260,13 @@ pub struct TESObjectDOOR_vtable {
     pub slot_18: *const c_void,
     /// `TESObjectDOOR::vfunc_19` at 0x282ea0 (rtti, high); signature (low): `undefined vfunc_19(TESObjectDOOR * this, undefined8 param_1, ulonglong param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -11760,7 +11290,7 @@ pub struct TESObjectDOOR_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -11778,7 +11308,7 @@ pub struct TESObjectDOOR_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -11790,9 +11320,9 @@ pub struct TESObjectDOOR_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -11802,7 +11332,7 @@ pub struct TESObjectDOOR_vtable {
     pub slot_54: *const c_void,
     /// `TESObjectDOOR::vfunc_55` at 0x283210 (rtti, high); signature (low): `undefined8 vfunc_55(TESObjectDOOR * this, TESObjectCELL * param_1, TESObjectCELL * param_2, undefined8 param_3)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -11818,7 +11348,7 @@ pub struct TESObjectDOOR_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -11872,9 +11402,9 @@ pub struct TESObjectDOOR_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESObjectDOOR_vtable_30 {
@@ -11892,9 +11422,9 @@ pub struct TESObjectDOOR_vtable_40 {
     pub slot_2: *const c_void,
     /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
     pub slot_6: *const c_void,
@@ -11966,9 +11496,9 @@ pub struct TESObjectLAND_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -11978,13 +11508,13 @@ pub struct TESObjectLAND_vtable {
     pub slot_18: *const c_void,
     /// `TESForm::vfunc_19` at 0x1c7db0 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -12008,7 +11538,7 @@ pub struct TESObjectLAND_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESObjectLAND::vfunc_36` at 0x2aa2e0 (rtti, high); signature (low): `undefined vfunc_36(TESObjectLAND * this, char param_1)`
     pub slot_36: *const c_void,
@@ -12026,7 +11556,7 @@ pub struct TESObjectLAND_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -12038,9 +11568,9 @@ pub struct TESObjectLAND_vtable {
     pub slot_48: *const c_void,
     /// `TESObjectLAND::vfunc_49` at 0x2aa390 (rtti, high); signature (low): `undefined vfunc_49(TESObjectLAND * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -12050,7 +11580,7 @@ pub struct TESObjectLAND_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -12088,7 +11618,7 @@ pub struct TESObjectLIGH_vtable {
     pub slot_4: *const c_void,
     /// `TESForm::vfunc_5` at 0x1e36b0 (rtti, medium); signature (low): `undefined vfunc_5(void)`
     pub slot_5: *const c_void,
-    /// `TESObjectLIGH::Load` at 0x273ae0 (semantic, high); signature (untiered): `undefined8 Load(TESObjectLIGH * this, uint * param_1, TESObjectLIGH * param_2, ulonglong param_3)`; `Load`: record load (high); semantic signature: `bool (TESObjectLIGH*, TESFile*)`
+    /// `TESObjectLIGH::Load` at 0x273ae0 (semantic, high); signature (low): `undefined8 Load(TESObjectLIGH * this, uint * param_1, TESObjectLIGH * param_2, ulonglong param_3)`; `Load`: record load (high); semantic signature: `bool (TESObjectLIGH*, TESFile*)`
     pub slot_6: *const c_void,
     /// `TESForm::vfunc_7` at 0x1469b0 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
     pub slot_7: *const c_void,
@@ -12104,9 +11634,9 @@ pub struct TESObjectLIGH_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESObjectLIGH::SaveGame` at 0x275210 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESObjectLIGH * this, longlong param_1)`
+    /// `TESObjectLIGH::SaveGame` at 0x275210 (slot_propagation, medium); signature (low): `undefined SaveGame(TESObjectLIGH * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESObjectLIGH::LoadGame` at 0x275250 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESObjectLIGH * this, longlong param_1)`
+    /// `TESObjectLIGH::LoadGame` at 0x275250 (slot_propagation, medium); signature (low): `undefined LoadGame(TESObjectLIGH * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -12116,13 +11646,13 @@ pub struct TESObjectLIGH_vtable {
     pub slot_18: *const c_void,
     /// `TESObjectLIGH::vfunc_19` at 0x273fb0 (rtti, high); signature (low): `undefined vfunc_19(TESObjectLIGH * this, undefined8 param_1, longlong param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -12146,7 +11676,7 @@ pub struct TESObjectLIGH_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -12164,7 +11694,7 @@ pub struct TESObjectLIGH_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -12176,9 +11706,9 @@ pub struct TESObjectLIGH_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -12188,7 +11718,7 @@ pub struct TESObjectLIGH_vtable {
     pub slot_54: *const c_void,
     /// `TESObjectLIGH::vfunc_55` at 0x275080 (rtti, high); signature (high): `ulonglong vfunc_55(TESObjectLIGH * this)`; `vfunc_55`: returns false unless flags bit 0x2 (carriable), then TESBoundObject slot 55 (high); semantic signature: `bool (TESObjectLIGH*, ...)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -12204,7 +11734,7 @@ pub struct TESObjectLIGH_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObjectLIGH::vfunc_65` at 0x2742d0 (rtti, high); signature (low): `undefined vfunc_65(TESObjectLIGH * this, longlong param_1)`
     pub slot_65: *const c_void,
@@ -12267,9 +11797,9 @@ pub struct TESObjectLIGH_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESObjectLIGH_vtable_30 {
@@ -12287,9 +11817,9 @@ pub struct TESObjectLIGH_vtable_40 {
     pub slot_2: *const c_void,
     /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
     pub slot_6: *const c_void,
@@ -12435,9 +11965,9 @@ pub struct TESObjectMISC_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESObjectMISC::SaveGame` at 0x286eb0 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESObjectMISC * this, longlong param_1)`
+    /// `TESObjectMISC::SaveGame` at 0x286eb0 (slot_propagation, medium); signature (low): `undefined SaveGame(TESObjectMISC * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESObjectMISC::LoadGame` at 0x286ef0 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESObjectMISC * this, longlong param_1)`
+    /// `TESObjectMISC::LoadGame` at 0x286ef0 (slot_propagation, medium); signature (low): `undefined LoadGame(TESObjectMISC * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -12447,13 +11977,13 @@ pub struct TESObjectMISC_vtable {
     pub slot_18: *const c_void,
     /// `TESObjectMISC::vfunc_19` at 0x286d20 (rtti, medium); signature (low): `undefined vfunc_19(TESObjectMISC * this, undefined8 param_1, longlong param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -12477,7 +12007,7 @@ pub struct TESObjectMISC_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -12495,7 +12025,7 @@ pub struct TESObjectMISC_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -12507,9 +12037,9 @@ pub struct TESObjectMISC_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -12519,7 +12049,7 @@ pub struct TESObjectMISC_vtable {
     pub slot_54: *const c_void,
     /// `TESBoundObject::vfunc_55` at 0x278e50 (rtti, medium); signature (low): `undefined1 vfunc_55(TESBoundObject * this, longlong param_1, undefined8 param_2, undefined1 param_3, undefined8 param_4, undefined4 param_5)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -12535,7 +12065,7 @@ pub struct TESObjectMISC_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -12595,9 +12125,9 @@ pub struct TESObjectMISC_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESObjectMISC_vtable_30 {
@@ -12615,9 +12145,9 @@ pub struct TESObjectMISC_vtable_40 {
     pub slot_2: *const c_void,
     /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
     pub slot_6: *const c_void,
@@ -12739,7 +12269,7 @@ pub struct TESObjectMISC_vtable_E8 {
     pub slot_2: *const c_void,
     /// `BGSKeywordForm::vfunc_3` at 0x1d86b0 (rtti, medium); signature (low): `undefined vfunc_3(BGSKeywordForm * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (untiered): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
+    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (low): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
     pub slot_4: *const c_void,
     /// `TESObjectMISC::BGSKeywordForm_vfunc_5` at 0x286e20 (rtti, medium); signature (low): `undefined8 BGSKeywordForm_vfunc_5(TESObjectMISC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
@@ -12779,9 +12309,9 @@ pub struct TESObjectREFR_vtable {
     pub slot_12: *const c_void,
     /// `TESObjectREFR::vfunc_13` at 0x2e0a40 (rtti, medium); signature (low): `undefined1 vfunc_13(TESObjectREFR * this, longlong param_1)`
     pub slot_13: *const c_void,
-    /// `TESObjectREFR::SaveGame` at 0x2e0b10 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESObjectREFR::SaveGame` at 0x2e0b10 (slot_propagation, medium); signature (low): `undefined SaveGame(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_14: *const c_void,
-    /// `TESObjectREFR::LoadGame` at 0x2e0c70 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESObjectREFR * this, TESObjectREFR_vtbl * param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
+    /// `TESObjectREFR::LoadGame` at 0x2e0c70 (slot_propagation, medium); signature (low): `undefined LoadGame(TESObjectREFR * this, TESObjectREFR_vtbl * param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_15: *const c_void,
     /// `TESObjectREFR::vfunc_16` at 0x2e1020 (rtti, medium); signature (low): `undefined vfunc_16(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_16: *const c_void,
@@ -12791,13 +12321,13 @@ pub struct TESObjectREFR_vtable {
     pub slot_18: *const c_void,
     /// `TESObjectREFR::vfunc_19` at 0x2dec90 (rtti, medium); signature (low): `undefined vfunc_19(TESObjectREFR * this, undefined8 param_1, longlong param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESObjectREFR::GetFormType` at 0x2e39d0 (slot_propagation, high); signature (untiered): `undefined4 GetFormType(TESObjectREFR * this)`
+    /// `TESObjectREFR::GetFormType` at 0x2e39d0 (slot_propagation, high); signature (high): `undefined4 GetFormType(TESObjectREFR * this)`
     pub slot_21: *const c_void,
-    /// `TESObjectREFR::GetFormDetailedString` at 0x2f0730 (slot_propagation, high); signature (untiered): `undefined GetFormDetailedString(TESObjectREFR * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESObjectREFR::GetFormDetailedString` at 0x2f0730 (slot_propagation, high); signature (low): `undefined GetFormDetailedString(TESObjectREFR * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESObjectREFR::vfunc_24` at 0x2ee6b0 (rtti, medium); signature (high): `undefined vfunc_24(TESObjectREFR * this)`
     pub slot_24: *const c_void,
@@ -12839,7 +12369,7 @@ pub struct TESObjectREFR_vtable {
     pub slot_42: *const c_void,
     /// `TESObjectREFR::vfunc_43` at 0x2fa360 (rtti, medium); signature (high): `TESObjectREFR * vfunc_43(TESObjectREFR * this)`
     pub slot_43: *const c_void,
-    /// `TESObjectREFR::AsReference` at 0x2fa350 (slot_propagation, medium); signature (untiered): `TESObjectREFR * AsReference(TESObjectREFR * this)`
+    /// `TESObjectREFR::AsReference` at 0x2fa350 (slot_propagation, medium); signature (high): `TESObjectREFR * AsReference(TESObjectREFR * this)`
     pub slot_44: *const c_void,
     /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -12851,9 +12381,9 @@ pub struct TESObjectREFR_vtable {
     pub slot_48: *const c_void,
     /// `TESObjectREFR::vfunc_49` at 0x2df750 (rtti, medium); signature (low): `undefined vfunc_49(TESObjectREFR * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESObjectREFR::GetFormEditorID` at 0x2f0670 (slot_propagation, high); signature (untiered): `char * GetFormEditorID(TESObjectREFR * this)`
+    /// `TESObjectREFR::GetFormEditorID` at 0x2f0670 (slot_propagation, high); signature (high): `char * GetFormEditorID(TESObjectREFR * this)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -12863,7 +12393,7 @@ pub struct TESObjectREFR_vtable {
     pub slot_54: *const c_void,
     /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -12895,7 +12425,7 @@ pub struct TESObjectREFR_vtable {
     pub slot_70: *const c_void,
     /// `TESObjectREFR::vfunc_71` at 0x2e4f80 (rtti, medium); signature (low): `undefined1 vfunc_71(void)`
     pub slot_71: *const c_void,
-    /// `TESObjectREFR::HasKeyword` at 0x2e6620 (runtime, high); signature (untiered): `undefined HasKeyword(TESObjectREFR * this, undefined8 param_1, longlong param_2, undefined8 param_3)`; `HasKeyword`: whether the reference or its base carries the keyword (high); semantic signature: `bool HasKeyword(const TESObjectREFR* this, const BGSKeyword* keyword)`
+    /// `TESObjectREFR::HasKeyword` at 0x2e6620 (runtime, high); signature (low): `undefined HasKeyword(TESObjectREFR * this, undefined8 param_1, longlong param_2, undefined8 param_3)`; `HasKeyword`: whether the reference or its base carries the keyword (high); semantic signature: `bool HasKeyword(const TESObjectREFR* this, const BGSKeyword* keyword)`
     pub slot_72: *const c_void,
     /// `TESObjectREFR::vfunc_73` at 0x2f9e70 (rtti, medium); signature (low): `undefined8 vfunc_73(void)`
     pub slot_73: *const c_void,
@@ -12939,7 +12469,7 @@ pub struct TESObjectREFR_vtable {
     pub slot_92: *const c_void,
     /// `TESObjectREFR::vfunc_93` at 0x2e8dd0 (rtti, medium); signature (high): `longlong * vfunc_93(TESObjectREFR * this)`
     pub slot_93: *const c_void,
-    /// `TESObjectREFR::IsChild` at 0x2e8f70 (slot_propagation, high); signature (untiered): `undefined1 IsChild(void)`
+    /// `TESObjectREFR::IsChild` at 0x2e8f70 (slot_propagation, high); signature (low): `undefined1 IsChild(void)`
     pub slot_94: *const c_void,
     /// `TESObjectREFR::vfunc_95` at 0x2fa250 (rtti, medium); signature (low): `undefined8 vfunc_95(void)`
     pub slot_95: *const c_void,
@@ -12975,7 +12505,7 @@ pub struct TESObjectREFR_vtable {
     pub slot_110: *const c_void,
     /// `TESObjectREFR::vfunc_111` at 0x2f9f40 (rtti, medium); signature (high): `undefined vfunc_111(TESObjectREFR * this)`
     pub slot_111: *const c_void,
-    /// `TESObjectREFR::Get3D` at 0x2ebce0 (runtime, high); signature (untiered): `undefined8 Get3D(TESObjectREFR * this)`; `Get3D`: root 3D node, null when not loaded (high); semantic signature: `NiNode* Get3D(const TESObjectREFR* this)`
+    /// `TESObjectREFR::Get3D` at 0x2ebce0 (runtime, high); signature (high): `undefined8 Get3D(TESObjectREFR * this)`; `Get3D`: root 3D node, null when not loaded (high); semantic signature: `NiNode* Get3D(const TESObjectREFR* this)`
     pub slot_112: *const c_void,
     /// `TESObjectREFR::vfunc_113` at 0x2fa2d0 (rtti, medium); signature (low): `undefined1 vfunc_113(void)`
     pub slot_113: *const c_void,
@@ -13017,7 +12547,7 @@ pub struct TESObjectREFR_vtable {
     pub slot_131: *const c_void,
     /// `TESObjectREFR::vfunc_132` at 0x2f0c00 (rtti, medium); signature (low): `undefined vfunc_132(TESObjectREFR * this, undefined8 param_1)`
     pub slot_132: *const c_void,
-    /// `TESObjectREFR::Update3DCollision` at 0x2f10d0 (semantic, medium); signature (untiered): `undefined Update3DCollision(TESObjectREFR * this, byte param_1)`
+    /// `TESObjectREFR::Update3DCollision` at 0x2f10d0 (semantic, medium); signature (low): `undefined Update3DCollision(TESObjectREFR * this, byte param_1)`
     pub slot_133: *const c_void,
     /// `TESObjectREFR::vfunc_134` at 0x2f1100 (rtti, medium); signature (low): `undefined vfunc_134(TESObjectREFR * this, float * param_1)`
     pub slot_134: *const c_void,
@@ -13025,7 +12555,7 @@ pub struct TESObjectREFR_vtable {
     pub slot_135: *const c_void,
     /// `TESObjectREFR::vfunc_136` at 0x2fbdb0 (rtti, medium); signature (low): `undefined vfunc_136(void)`
     pub slot_136: *const c_void,
-    /// `TESObjectREFR::Disable` at 0x2f2d70 (semantic, high); signature (untiered): `undefined Disable(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESObjectREFR::Disable` at 0x2f2d70 (semantic, high); signature (low): `undefined Disable(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_137: *const c_void,
     /// `TESObjectREFR::vfunc_138` at 0x2f3330 (rtti, medium); signature (low): `undefined vfunc_138(TESObjectREFR * this, longlong * param_1, undefined8 param_2, longlong * param_3)`
     pub slot_138: *const c_void,
@@ -13057,7 +12587,7 @@ pub struct TESObjectREFR_vtable {
     pub slot_151: *const c_void,
     /// `TESObjectREFR::vfunc_152` at 0x2f3e70 (rtti, medium); signature (low): `undefined vfunc_152(TESObjectREFR * this, longlong param_1)`
     pub slot_152: *const c_void,
-    /// `TESObjectREFR::IsDead` at 0x2f4060 (slot_propagation, high); signature (untiered): `uint IsDead(TESObjectREFR * this)`
+    /// `TESObjectREFR::IsDead` at 0x2f4060 (slot_propagation, high); signature (high): `uint IsDead(TESObjectREFR * this)`
     pub slot_153: *const c_void,
     /// `TESObjectREFR::vfunc_154` at 0x2f5520 (rtti, medium); signature (low): `longlong vfunc_154(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_154: *const c_void,
@@ -13125,7 +12655,7 @@ impl TESObjectREFR_vtable_30 {
 pub struct TESObjectREFR_vtable_38 {
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vdtor` at 0x2f8c00 (slot_propagation, medium); signature (high): `undefined IAnimationGraphManagerHolder_vdtor(TESObjectREFR * this)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (low): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_2` at 0x2fd720 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_2(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_2: *const c_void,
@@ -13135,31 +12665,31 @@ pub struct TESObjectREFR_vtable_38 {
     pub slot_4: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_5` at 0x2fd570 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_5(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (low): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (low): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_8` at 0x2fd750 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_8(TESObjectREFR * this, longlong * param_1)`
     pub slot_8: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_9` at 0x2fd790 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (low): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (low): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (low): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_13` at 0x2fd630 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_13(TESObjectREFR * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (low): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (low): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (low): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (low): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (low): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
 }
 impl TESObjectREFR_vtable_38 {
@@ -13323,9 +12853,9 @@ pub struct TESObjectSTAT_vtable {
     pub slot_12: *const c_void,
     /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
     pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
     pub slot_15: *const c_void,
     /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
     pub slot_16: *const c_void,
@@ -13335,13 +12865,13 @@ pub struct TESObjectSTAT_vtable {
     pub slot_18: *const c_void,
     /// `TESObjectSTAT::vfunc_19` at 0x287850 (rtti, high); signature (low): `undefined vfunc_19(TESObjectSTAT * this, undefined8 param_1, longlong param_2, TypeDescriptor * param_3)`
     pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
     pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
     pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
     pub slot_23: *const c_void,
     /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
     pub slot_24: *const c_void,
@@ -13365,7 +12895,7 @@ pub struct TESObjectSTAT_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -13383,7 +12913,7 @@ pub struct TESObjectSTAT_vtable {
     pub slot_42: *const c_void,
     /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
     pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
     pub slot_44: *const c_void,
     /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
     pub slot_45: *const c_void,
@@ -13395,9 +12925,9 @@ pub struct TESObjectSTAT_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -13407,7 +12937,7 @@ pub struct TESObjectSTAT_vtable {
     pub slot_54: *const c_void,
     /// `TESBoundObject::vfunc_55` at 0x278e50 (rtti, medium); signature (low): `undefined1 vfunc_55(TESBoundObject * this, longlong param_1, undefined8 param_2, undefined1 param_3, undefined8 param_4, undefined4 param_5)`
     pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
     /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
     pub slot_57: *const c_void,
@@ -13423,7 +12953,7 @@ pub struct TESObjectSTAT_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -13477,14 +13007,874 @@ pub struct TESObjectSTAT_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
     pub slot_6: *const c_void,
 }
 impl TESObjectSTAT_vtable_30 {
     pub const ID: u64 = 189717;
+}
+
+/// `TESObjectTREE::vftable` at 0x1819390, id 189725 (rtti, high); 83 slots.
+#[repr(C)]
+pub struct TESObjectTREE_vtable {
+    /// `TESObjectTREE::vdtor` at 0x288530 (slot_propagation, medium); signature (low): `TESObjectTREE * vdtor(TESObjectTREE * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
+    pub slot_0: *const c_void,
+    /// `TESForm::vfunc_1` at 0x1e35c0 (rtti, medium); signature (low): `undefined vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `TESForm::vfunc_2` at 0x1e36c0 (rtti, medium); signature (high): `undefined vfunc_2(TESForm * this)`
+    pub slot_2: *const c_void,
+    /// `TESForm::vfunc_3` at 0x1e6930 (rtti, medium); signature (low): `undefined vfunc_3(TESForm * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+    /// `TESObjectTREE::vfunc_4` at 0x2882a0 (rtti, high); signature (high): `undefined vfunc_4(TESObjectTREE * this)`
+    pub slot_4: *const c_void,
+    /// `TESForm::vfunc_5` at 0x1e36b0 (rtti, medium); signature (low): `undefined vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `TESObjectTREE::vfunc_6` at 0x287f60 (rtti, high); signature (low): `undefined8 vfunc_6(TESObjectTREE * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_6: *const c_void,
+    /// `TESForm::vfunc_7` at 0x1469b0 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `TESForm::vfunc_8` at 0x1469a0 (rtti, medium); signature (high): `undefined vfunc_8(TESForm * this)`
+    pub slot_8: *const c_void,
+    /// `TESForm::vfunc_9` at 0x1e51a0 (rtti, medium); signature (low): `longlong * vfunc_9(TESForm * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`
+    pub slot_9: *const c_void,
+    /// `TESForm::vfunc_10` at 0x1e5650 (rtti, medium); signature (low): `ulonglong vfunc_10(TESForm * this, undefined4 param_1)`
+    pub slot_10: *const c_void,
+    /// `TESForm::vfunc_11` at 0x1e56b0 (rtti, medium); signature (low): `undefined vfunc_11(TESForm * this, undefined4 param_1)`
+    pub slot_11: *const c_void,
+    /// `TESForm::vfunc_12` at 0x1e56e0 (rtti, medium); signature (low): `undefined1 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (low): `undefined SaveGame(TESForm * this, longlong param_1)`
+    pub slot_14: *const c_void,
+    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (low): `undefined LoadGame(TESForm * this, longlong param_1)`
+    pub slot_15: *const c_void,
+    /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `TESForm::vfunc_17` at 0x1e5840 (rtti, medium); signature (low): `undefined vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `TESForm::vfunc_18` at 0x1e5850 (rtti, medium); signature (low): `undefined vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `TESObjectTREE::vfunc_19` at 0x288260 (rtti, high); signature (low): `undefined vfunc_19(TESObjectTREE * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_19: *const c_void,
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
+    pub slot_20: *const c_void,
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
+    pub slot_21: *const c_void,
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    pub slot_22: *const c_void,
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
+    pub slot_23: *const c_void,
+    /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
+    pub slot_24: *const c_void,
+    /// `TESForm::vfunc_25` at 0x1467f0 (rtti, medium); signature (high): `uint vfunc_25(TESForm * this)`
+    pub slot_25: *const c_void,
+    /// `TESForm::vfunc_26` at 0x1467a0 (rtti, medium); signature (low): `undefined1 vfunc_26(void)`
+    pub slot_26: *const c_void,
+    /// `TESForm::vfunc_27` at 0x1466a0 (rtti, medium); signature (high): `uint vfunc_27(TESForm * this)`
+    pub slot_27: *const c_void,
+    /// `TESForm::vfunc_28` at 0x146a10 (rtti, medium); signature (high): `uint vfunc_28(TESForm * this)`
+    pub slot_28: *const c_void,
+    /// `TESForm::vfunc_29` at 0x1467d0 (rtti, medium); signature (high): `uint vfunc_29(TESForm * this)`
+    pub slot_29: *const c_void,
+    /// `TESForm::vfunc_30` at 0x146a20 (rtti, medium); signature (low): `undefined1 vfunc_30(void)`
+    pub slot_30: *const c_void,
+    /// `TESForm::vfunc_31` at 0x1467e0 (rtti, medium); signature (high): `uint vfunc_31(TESForm * this)`
+    pub slot_31: *const c_void,
+    /// `TESForm::vfunc_32` at 0x146790 (rtti, medium); signature (high): `uint vfunc_32(TESForm * this)`
+    pub slot_32: *const c_void,
+    /// `TESForm::vfunc_33` at 0x1e5fd0 (rtti, medium); signature (low): `undefined vfunc_33(TESForm * this, char param_1)`
+    pub slot_33: *const c_void,
+    /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
+    pub slot_35: *const c_void,
+    /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
+    pub slot_36: *const c_void,
+    /// `TESForm::vfunc_37` at 0x146a30 (rtti, medium); signature (low): `undefined vfunc_37(void)`
+    pub slot_37: *const c_void,
+    /// `TESBoundObject::vfunc_38` at 0x277b10 (rtti, medium); signature (low): `undefined vfunc_38(TESBoundObject * this, longlong param_1)`
+    pub slot_38: *const c_void,
+    /// `TESBoundObject::vfunc_39` at 0x1468a0 (rtti, medium); signature (low): `undefined1 vfunc_39(void)`
+    pub slot_39: *const c_void,
+    /// `TESObject::vfunc_40` at 0x146930 (rtti, medium); signature (low): `undefined1 vfunc_40(void)`
+    pub slot_40: *const c_void,
+    /// `TESForm::vfunc_41` at 0x147560 (rtti, medium); signature (low): `undefined1 vfunc_41(void)`
+    pub slot_41: *const c_void,
+    /// `TESForm::vfunc_42` at 0x146980 (rtti, medium); signature (low): `undefined1 vfunc_42(void)`
+    pub slot_42: *const c_void,
+    /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
+    pub slot_43: *const c_void,
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
+    pub slot_44: *const c_void,
+    /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
+    pub slot_45: *const c_void,
+    /// `TESForm::vfunc_46` at 0x1e68f0 (rtti, medium); signature (untiered): `undefined1 * vfunc_46(undefined8 param_1)`
+    pub slot_46: *const c_void,
+    /// `TESForm::vfunc_47` at 0x1e6920 (rtti, medium); signature (low): `undefined vfunc_47(void)`
+    pub slot_47: *const c_void,
+    /// `TESForm::vfunc_48` at 0x1e6ab0 (rtti, medium); signature (low): `undefined1 vfunc_48(TESForm * this, int * param_1)`
+    pub slot_48: *const c_void,
+    /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
+    pub slot_49: *const c_void,
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
+    pub slot_50: *const c_void,
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
+    pub slot_51: *const c_void,
+    /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
+    pub slot_52: *const c_void,
+    /// `TESForm::vfunc_53` at 0x1e6b50 (rtti, medium); signature (low): `undefined1 vfunc_53(void)`
+    pub slot_53: *const c_void,
+    /// `TESForm::vfunc_54` at 0x1468f0 (rtti, medium); signature (low): `undefined1 vfunc_54(void)`
+    pub slot_54: *const c_void,
+    /// `TESObjectTREE::vfunc_55` at 0x288330 (rtti, high); signature (low): `undefined1 vfunc_55(TESObjectTREE * this, longlong * param_1, longlong * param_2)`
+    pub slot_55: *const c_void,
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    pub slot_56: *const c_void,
+    /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
+    pub slot_57: *const c_void,
+    /// `TESForm::vfunc_58` at 0x146a00 (rtti, medium); signature (low): `undefined1 vfunc_58(void)`
+    pub slot_58: *const c_void,
+    /// `TESObject::vfunc_59` at 0x146990 (rtti, medium); signature (low): `undefined8 vfunc_59(void)`
+    pub slot_59: *const c_void,
+    /// `TESObject::vfunc_60` at 0x146890 (rtti, medium); signature (low): `undefined1 vfunc_60(void)`
+    pub slot_60: *const c_void,
+    /// `TESObject::vfunc_61` at 0x146840 (rtti, medium); signature (low): `undefined8 vfunc_61(void)`
+    pub slot_61: *const c_void,
+    /// `TESObject::vfunc_62` at 0x147550 (rtti, medium); signature (low): `undefined1 vfunc_62(void)`
+    pub slot_62: *const c_void,
+    /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
+    pub slot_63: *const c_void,
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    pub slot_64: *const c_void,
+    /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_65: *const c_void,
+    /// `TESObject::vfunc_66` at 0x275e10 (rtti, medium); signature (high): `byte vfunc_66(TESObject * this)`
+    pub slot_66: *const c_void,
+    /// `TESObject::vfunc_67` at 0x275ee0 (rtti, medium); signature (high): `undefined1 vfunc_67(TESObject * this)`
+    pub slot_67: *const c_void,
+    /// `TESObjectTREE::vfunc_68` at 0x288420 (rtti, high); signature (low): `undefined vfunc_68(TESObjectTREE * this, undefined8 param_1, undefined8 param_2)`
+    pub slot_68: *const c_void,
+    /// `TESObject::vfunc_69` at 0x146860 (rtti, medium); signature (low): `undefined8 vfunc_69(void)`
+    pub slot_69: *const c_void,
+    /// `TESObject::vfunc_70` at 0x146640 (rtti, medium); signature (low): `undefined8 vfunc_70(void)`
+    pub slot_70: *const c_void,
+    /// `TESObject::vfunc_71` at 0x276430 (rtti, medium); signature (low): `BSFadeNode_vtbl * vfunc_71(TESObject * this, longlong param_1, undefined8 param_2, undefined1 * param_3)`
+    pub slot_71: *const c_void,
+    /// `TESBoundObject::vfunc_72` at 0x146a70 (rtti, medium); signature (low): `undefined vfunc_72(void)`
+    pub slot_72: *const c_void,
+    /// `TESBoundObject::vfunc_73` at 0x1467c0 (rtti, medium); signature (low): `undefined8 vfunc_73(void)`
+    pub slot_73: *const c_void,
+    /// `TESBoundObject::vfunc_74` at 0x277e00 (rtti, medium); signature (low): `undefined vfunc_74(TESBoundObject * this, undefined8 param_1)`
+    pub slot_74: *const c_void,
+    /// `TESBoundObject::vfunc_75` at 0x278e40 (rtti, medium); signature (low): `undefined1 vfunc_75(void)`
+    pub slot_75: *const c_void,
+    /// `TESObjectTREE::vfunc_76` at 0x288390 (rtti, high); signature (low): `undefined8 vfunc_76(TESObjectTREE * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_76: *const c_void,
+    /// `TESBoundObject::vfunc_77` at 0x278f90 (rtti, medium); signature (low): `undefined8 vfunc_77(TESBoundObject * this, longlong param_1, char param_2, undefined8 param_3, float param_4)`
+    pub slot_77: *const c_void,
+    /// `TESBoundObject::vfunc_78` at 0x146850 (rtti, medium); signature (low): `undefined vfunc_78(void)`
+    pub slot_78: *const c_void,
+    /// `TESObjectTREE::vfunc_79` at 0x288480 (rtti, high); signature (low): `undefined vfunc_79(void)`
+    pub slot_79: *const c_void,
+    /// `TESObjectTREE::vfunc_80` at 0x2884a0 (rtti, high); signature (low): `undefined vfunc_80(void)`
+    pub slot_80: *const c_void,
+    /// `TESObjectTREE::vfunc_81` at 0x2884b0 (rtti, high); signature (low): `undefined vfunc_81(void)`
+    pub slot_81: *const c_void,
+    /// `TESObjectTREE::vfunc_82` at 0x2884c0 (rtti, high); signature (low): `undefined vfunc_82(void)`
+    pub slot_82: *const c_void,
+}
+impl TESObjectTREE_vtable {
+    pub const ID: u64 = 189725;
+}
+
+/// `TESObjectTREE::vftable_30` at 0x1819630, id 189727 (rtti, high); 7 slots.
+#[repr(C)]
+pub struct TESObjectTREE_vtable_30 {
+    /// `TESObjectTREE::TESModel_vdtor` at 0x288504 (slot_propagation, medium); signature (high): `undefined TESModel_vdtor(TESObjectTREE * this)`
+    pub slot_0: *const c_void,
+    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (low): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (low): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    pub slot_2: *const c_void,
+    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (low): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
+    pub slot_4: *const c_void,
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
+    pub slot_5: *const c_void,
+    /// `TESModel::vfunc_6` at 0x1dfd80 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+}
+impl TESObjectTREE_vtable_30 {
+    pub const ID: u64 = 189727;
+}
+
+/// `TESObjectTREE::vftable_58` at 0x1819670, id 189729 (rtti, high); 6 slots.
+#[repr(C)]
+pub struct TESObjectTREE_vtable_58 {
+    /// `TESObjectTREE::TESFullName_vdtor` at 0x288510 (slot_propagation, medium); signature (high): `undefined TESFullName_vdtor(TESObjectTREE * this)`
+    pub slot_0: *const c_void,
+    /// `TESFullName::vfunc_1` at 0x1e81f0 (rtti, medium); signature (low): `undefined vfunc_1(TESFullName * this, undefined8 param_1, undefined8 param_2, char * param_3)`
+    pub slot_1: *const c_void,
+    /// `TESFullName::vfunc_2` at 0x1e82c0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
+    pub slot_4: *const c_void,
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
+    pub slot_5: *const c_void,
+}
+impl TESObjectTREE_vtable_58 {
+    pub const ID: u64 = 189729;
+}
+
+/// `TESObjectTREE::vftable_68` at 0x18196a8, id 189731 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct TESObjectTREE_vtable_68 {
+    /// `TESObjectTREE::TESProduceForm_vdtor` at 0x28851c (slot_propagation, medium); signature (high): `undefined TESProduceForm_vdtor(TESObjectTREE * this)`
+    pub slot_0: *const c_void,
+    /// `TESProduceForm::vfunc_1` at 0x1ee470 (rtti, medium); signature (high): `undefined vfunc_1(TESProduceForm * this)`
+    pub slot_1: *const c_void,
+    /// `TESProduceForm::vfunc_2` at 0x1ee490 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `TESProduceForm::vfunc_3` at 0x1ee4a0 (rtti, medium); signature (low): `undefined vfunc_3(TESProduceForm * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+}
+impl TESObjectTREE_vtable_68 {
+    pub const ID: u64 = 189731;
+}
+
+/// `TESObjectWEAP::vftable` at 0x181a620, id 189786 (rtti, high); 83 slots.
+#[repr(C)]
+pub struct TESObjectWEAP_vtable {
+    /// `TESObjectWEAP::vdtor` at 0x28e500 (slot_propagation, medium); signature (low): `TESObjectWEAP * vdtor(TESObjectWEAP * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
+    pub slot_0: *const c_void,
+    /// `TESForm::vfunc_1` at 0x1e35c0 (rtti, medium); signature (low): `undefined vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `TESForm::vfunc_2` at 0x1e36c0 (rtti, medium); signature (high): `undefined vfunc_2(TESForm * this)`
+    pub slot_2: *const c_void,
+    /// `TESForm::vfunc_3` at 0x1e6930 (rtti, medium); signature (low): `undefined vfunc_3(TESForm * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+    /// `TESObjectWEAP::vfunc_4` at 0x2895c0 (rtti, high); signature (low): `undefined vfunc_4(TESObjectWEAP * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    pub slot_4: *const c_void,
+    /// `TESObjectWEAP::vfunc_5` at 0x289750 (rtti, high); signature (low): `undefined vfunc_5(TESObjectWEAP * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
+    pub slot_5: *const c_void,
+    /// `TESObjectWEAP::vfunc_6` at 0x289810 (rtti, high); signature (low): `ulonglong vfunc_6(TESObjectWEAP * this, uint * param_1, IMAGE_DOS_HEADER * param_2, ulonglong param_3)`
+    pub slot_6: *const c_void,
+    /// `TESForm::vfunc_7` at 0x1469b0 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `TESForm::vfunc_8` at 0x1469a0 (rtti, medium); signature (high): `undefined vfunc_8(TESForm * this)`
+    pub slot_8: *const c_void,
+    /// `TESForm::vfunc_9` at 0x1e51a0 (rtti, medium); signature (low): `longlong * vfunc_9(TESForm * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`
+    pub slot_9: *const c_void,
+    /// `TESForm::vfunc_10` at 0x1e5650 (rtti, medium); signature (low): `ulonglong vfunc_10(TESForm * this, undefined4 param_1)`
+    pub slot_10: *const c_void,
+    /// `TESForm::vfunc_11` at 0x1e56b0 (rtti, medium); signature (low): `undefined vfunc_11(TESForm * this, undefined4 param_1)`
+    pub slot_11: *const c_void,
+    /// `TESForm::vfunc_12` at 0x1e56e0 (rtti, medium); signature (low): `undefined1 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `TESObjectWEAP::SaveGame` at 0x28d770 (slot_propagation, medium); signature (low): `undefined SaveGame(TESObjectWEAP * this, longlong param_1)`
+    pub slot_14: *const c_void,
+    /// `TESObjectWEAP::LoadGame` at 0x28d7b0 (slot_propagation, medium); signature (low): `undefined LoadGame(TESObjectWEAP * this, longlong param_1)`
+    pub slot_15: *const c_void,
+    /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `TESForm::vfunc_17` at 0x1e5840 (rtti, medium); signature (low): `undefined vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `TESForm::vfunc_18` at 0x1e5850 (rtti, medium); signature (low): `undefined vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `TESObjectWEAP::vfunc_19` at 0x28b110 (rtti, high); signature (low): `undefined vfunc_19(TESObjectWEAP * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
+    pub slot_19: *const c_void,
+    /// `TESObjectWEAP::GetLastFile` at 0x28e7b0 (slot_propagation, medium); signature (high): `undefined GetLastFile(TESObjectWEAP * this)`
+    pub slot_20: *const c_void,
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
+    pub slot_21: *const c_void,
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    pub slot_22: *const c_void,
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
+    pub slot_23: *const c_void,
+    /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
+    pub slot_24: *const c_void,
+    /// `TESObjectWEAP::vfunc_25` at 0x28e810 (rtti, high); signature (high): `byte vfunc_25(TESObjectWEAP * this)`
+    pub slot_25: *const c_void,
+    /// `TESForm::vfunc_26` at 0x1467a0 (rtti, medium); signature (low): `undefined1 vfunc_26(void)`
+    pub slot_26: *const c_void,
+    /// `TESForm::vfunc_27` at 0x1466a0 (rtti, medium); signature (high): `uint vfunc_27(TESForm * this)`
+    pub slot_27: *const c_void,
+    /// `TESForm::vfunc_28` at 0x146a10 (rtti, medium); signature (high): `uint vfunc_28(TESForm * this)`
+    pub slot_28: *const c_void,
+    /// `TESForm::vfunc_29` at 0x1467d0 (rtti, medium); signature (high): `uint vfunc_29(TESForm * this)`
+    pub slot_29: *const c_void,
+    /// `TESForm::vfunc_30` at 0x146a20 (rtti, medium); signature (low): `undefined1 vfunc_30(void)`
+    pub slot_30: *const c_void,
+    /// `TESForm::vfunc_31` at 0x1467e0 (rtti, medium); signature (high): `uint vfunc_31(TESForm * this)`
+    pub slot_31: *const c_void,
+    /// `TESForm::vfunc_32` at 0x146790 (rtti, medium); signature (high): `uint vfunc_32(TESForm * this)`
+    pub slot_32: *const c_void,
+    /// `TESForm::vfunc_33` at 0x1e5fd0 (rtti, medium); signature (low): `undefined vfunc_33(TESForm * this, char param_1)`
+    pub slot_33: *const c_void,
+    /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
+    pub slot_35: *const c_void,
+    /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
+    pub slot_36: *const c_void,
+    /// `TESForm::vfunc_37` at 0x146a30 (rtti, medium); signature (low): `undefined vfunc_37(void)`
+    pub slot_37: *const c_void,
+    /// `TESBoundObject::vfunc_38` at 0x277b10 (rtti, medium); signature (low): `undefined vfunc_38(TESBoundObject * this, longlong param_1)`
+    pub slot_38: *const c_void,
+    /// `TESBoundObject::vfunc_39` at 0x1468a0 (rtti, medium); signature (low): `undefined1 vfunc_39(void)`
+    pub slot_39: *const c_void,
+    /// `TESObject::vfunc_40` at 0x146930 (rtti, medium); signature (low): `undefined1 vfunc_40(void)`
+    pub slot_40: *const c_void,
+    /// `TESForm::vfunc_41` at 0x147560 (rtti, medium); signature (low): `undefined1 vfunc_41(void)`
+    pub slot_41: *const c_void,
+    /// `TESForm::vfunc_42` at 0x146980 (rtti, medium); signature (low): `undefined1 vfunc_42(void)`
+    pub slot_42: *const c_void,
+    /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
+    pub slot_43: *const c_void,
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
+    pub slot_44: *const c_void,
+    /// `TESObject::vfunc_45` at 0x146810 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
+    pub slot_45: *const c_void,
+    /// `TESForm::vfunc_46` at 0x1e68f0 (rtti, medium); signature (untiered): `undefined1 * vfunc_46(undefined8 param_1)`
+    pub slot_46: *const c_void,
+    /// `TESForm::vfunc_47` at 0x1e6920 (rtti, medium); signature (low): `undefined vfunc_47(void)`
+    pub slot_47: *const c_void,
+    /// `TESForm::vfunc_48` at 0x1e6ab0 (rtti, medium); signature (low): `undefined1 vfunc_48(TESForm * this, int * param_1)`
+    pub slot_48: *const c_void,
+    /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
+    pub slot_49: *const c_void,
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
+    pub slot_50: *const c_void,
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
+    pub slot_51: *const c_void,
+    /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
+    pub slot_52: *const c_void,
+    /// `TESForm::vfunc_53` at 0x1e6b50 (rtti, medium); signature (low): `undefined1 vfunc_53(void)`
+    pub slot_53: *const c_void,
+    /// `TESForm::vfunc_54` at 0x1468f0 (rtti, medium); signature (low): `undefined1 vfunc_54(void)`
+    pub slot_54: *const c_void,
+    /// `TESObjectWEAP::vfunc_55` at 0x28c440 (rtti, high); signature (untiered): `undefined1 vfunc_55(TESObjectWEAP * this, longlong param_1, undefined8 param_2, undefined1 param_3, undefined8 param_4, undefined4 param_5)`
+    pub slot_55: *const c_void,
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    pub slot_56: *const c_void,
+    /// `TESObjectWEAP::GetWeaponTypeName` at 0x28e7f0 (semantic, high); signature (high): `undefined * GetWeaponTypeName(TESObjectWEAP * this)`; `GetWeaponTypeName`: long type name from 0x207b200 (high); semantic signature: `const char* (TESObjectWEAP* this)`
+    pub slot_57: *const c_void,
+    /// `TESForm::vfunc_58` at 0x146a00 (rtti, medium); signature (low): `undefined1 vfunc_58(void)`
+    pub slot_58: *const c_void,
+    /// `TESObject::vfunc_59` at 0x146990 (rtti, medium); signature (low): `undefined8 vfunc_59(void)`
+    pub slot_59: *const c_void,
+    /// `TESObject::vfunc_60` at 0x146890 (rtti, medium); signature (low): `undefined1 vfunc_60(void)`
+    pub slot_60: *const c_void,
+    /// `TESObject::vfunc_61` at 0x146840 (rtti, medium); signature (low): `undefined8 vfunc_61(void)`
+    pub slot_61: *const c_void,
+    /// `TESObject::vfunc_62` at 0x147550 (rtti, medium); signature (low): `undefined1 vfunc_62(void)`
+    pub slot_62: *const c_void,
+    /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
+    pub slot_63: *const c_void,
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (low): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    pub slot_64: *const c_void,
+    /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_65: *const c_void,
+    /// `TESObject::vfunc_66` at 0x275e10 (rtti, medium); signature (high): `byte vfunc_66(TESObject * this)`
+    pub slot_66: *const c_void,
+    /// `TESObject::vfunc_67` at 0x275ee0 (rtti, medium); signature (high): `undefined1 vfunc_67(TESObject * this)`
+    pub slot_67: *const c_void,
+    /// `TESBoundObject::vfunc_68` at 0x278e00 (rtti, medium); signature (high): `undefined vfunc_68(TESBoundObject * this)`
+    pub slot_68: *const c_void,
+    /// `TESObject::vfunc_69` at 0x146860 (rtti, medium); signature (low): `undefined8 vfunc_69(void)`
+    pub slot_69: *const c_void,
+    /// `TESObject::vfunc_70` at 0x146640 (rtti, medium); signature (low): `undefined8 vfunc_70(void)`
+    pub slot_70: *const c_void,
+    /// `TESObject::vfunc_71` at 0x276430 (rtti, medium); signature (low): `BSFadeNode_vtbl * vfunc_71(TESObject * this, longlong param_1, undefined8 param_2, undefined1 * param_3)`
+    pub slot_71: *const c_void,
+    /// `TESBoundObject::vfunc_72` at 0x146a70 (rtti, medium); signature (low): `undefined vfunc_72(void)`
+    pub slot_72: *const c_void,
+    /// `TESBoundObject::vfunc_73` at 0x1467c0 (rtti, medium); signature (low): `undefined8 vfunc_73(void)`
+    pub slot_73: *const c_void,
+    /// `TESBoundObject::vfunc_74` at 0x277e00 (rtti, medium); signature (low): `undefined vfunc_74(TESBoundObject * this, undefined8 param_1)`
+    pub slot_74: *const c_void,
+    /// `TESBoundObject::vfunc_75` at 0x278e40 (rtti, medium); signature (low): `undefined1 vfunc_75(void)`
+    pub slot_75: *const c_void,
+    /// `TESBoundObject::vfunc_76` at 0x278ed0 (rtti, medium); signature (low): `undefined8 vfunc_76(TESBoundObject * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_76: *const c_void,
+    /// `TESBoundObject::vfunc_77` at 0x278f90 (rtti, medium); signature (low): `undefined8 vfunc_77(TESBoundObject * this, longlong param_1, char param_2, undefined8 param_3, float param_4)`
+    pub slot_77: *const c_void,
+    /// `TESBoundObject::vfunc_78` at 0x146850 (rtti, medium); signature (low): `undefined vfunc_78(void)`
+    pub slot_78: *const c_void,
+    /// `TESBoundObject::vfunc_79` at 0x1469f0 (rtti, medium); signature (low): `undefined vfunc_79(void)`
+    pub slot_79: *const c_void,
+    /// `TESBoundObject::vfunc_80` at 0x1469c0 (rtti, medium); signature (low): `undefined vfunc_80(void)`
+    pub slot_80: *const c_void,
+    /// `TESBoundObject::vfunc_81` at 0x1469d0 (rtti, medium); signature (low): `undefined vfunc_81(void)`
+    pub slot_81: *const c_void,
+    /// `TESBoundObject::vfunc_82` at 0x1469e0 (rtti, medium); signature (low): `undefined vfunc_82(void)`
+    pub slot_82: *const c_void,
+}
+impl TESObjectWEAP_vtable {
+    pub const ID: u64 = 189786;
+    pub const SLOT_GetWeaponTypeName: usize = 57;
+    /// Slot 57 as `TESObjectWEAP_vtable_GetWeaponTypeName`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetWeaponTypeName(&self) -> Option<TESObjectWEAP_vtable_GetWeaponTypeName> {
+        unsafe { core::mem::transmute::<*const c_void, Option<TESObjectWEAP_vtable_GetWeaponTypeName>>(self.slot_57) }
+    }
+}
+/// `TESObjectWEAP::GetWeaponTypeName`, slot 57: long type name from 0x207b200 (high).
+pub type TESObjectWEAP_vtable_GetWeaponTypeName = unsafe extern "C" fn(this: *mut crate::TESObjectWEAP) -> *const c_char;
+
+/// `TESObjectWEAP::vftable_30` at 0x181a8c0, id 189788 (rtti, high); 6 slots.
+#[repr(C)]
+pub struct TESObjectWEAP_vtable_30 {
+    /// `TESObjectWEAP::TESFullName_vdtor` at 0x28e478 (slot_propagation, medium); signature (low): `undefined TESFullName_vdtor(TESObjectWEAP * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
+    pub slot_0: *const c_void,
+    /// `TESFullName::vfunc_1` at 0x1e81f0 (rtti, medium); signature (low): `undefined vfunc_1(TESFullName * this, undefined8 param_1, undefined8 param_2, char * param_3)`
+    pub slot_1: *const c_void,
+    /// `TESFullName::vfunc_2` at 0x1e82c0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (high): `undefined GetFullNameLength(TESFullName * this)`
+    pub slot_4: *const c_void,
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (high): `undefined GetFullName(TESFullName * this)`
+    pub slot_5: *const c_void,
+}
+impl TESObjectWEAP_vtable_30 {
+    pub const ID: u64 = 189788;
+}
+
+/// `TESObjectWEAP::vftable_40` at 0x181a8f8, id 189790 (rtti, high); 7 slots.
+#[repr(C)]
+pub struct TESObjectWEAP_vtable_40 {
+    /// `TESObjectWEAP::TESModelTextureSwap_vdtor` at 0x28e484 (slot_propagation, medium); signature (low): `undefined TESModelTextureSwap_vdtor(TESObjectWEAP * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
+    pub slot_0: *const c_void,
+    /// `TESModelTextureSwap::vfunc_1` at 0x1ecd70 (rtti, medium); signature (low): `undefined vfunc_1(TESModelTextureSwap * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `TESModelTextureSwap::vfunc_2` at 0x1ecd90 (rtti, medium); signature (low): `undefined vfunc_2(TESModelTextureSwap * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    pub slot_2: *const c_void,
+    /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (high): `undefined8 GetModel(TESModel * this)`
+    pub slot_4: *const c_void,
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (low): `undefined SetModel(TESModel * this, char * param_1)`
+    pub slot_5: *const c_void,
+    /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
+    pub slot_6: *const c_void,
+}
+impl TESObjectWEAP_vtable_40 {
+    pub const ID: u64 = 189790;
+}
+
+/// `TESObjectWEAP::vftable_78` at 0x181a938, id 189792 (rtti, high); 7 slots.
+#[repr(C)]
+pub struct TESObjectWEAP_vtable_78 {
+    /// `TESObjectWEAP::TESIcon_vdtor` at 0x28e490 (slot_propagation, medium); signature (low): `undefined TESIcon_vdtor(TESObjectWEAP * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
+    pub slot_0: *const c_void,
+    /// `TESTexture::vfunc_1` at 0x1f2a60 (rtti, medium); signature (low): `undefined vfunc_1(TESTexture * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `TESTexture::vfunc_2` at 0x1f2b20 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `TESTexture::vfunc_3` at 0x1f2b30 (rtti, medium); signature (low): `undefined vfunc_3(TESTexture * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+    /// `TESTexture::vfunc_4` at 0x146760 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `TESTexture::vfunc_5` at 0x1f2c80 (rtti, medium); signature (low): `undefined1 * vfunc_5(TESTexture * this, longlong * param_1)`
+    pub slot_5: *const c_void,
+    /// `TESIcon::vfunc_6` at 0x1e85e0 (rtti, medium); signature (low): `char * vfunc_6(void)`
+    pub slot_6: *const c_void,
+}
+impl TESObjectWEAP_vtable_78 {
+    pub const ID: u64 = 189792;
+}
+
+/// `TESObjectWEAP::vftable_88` at 0x181a978, id 189794 (rtti, high); 5 slots.
+#[repr(C)]
+pub struct TESObjectWEAP_vtable_88 {
+    /// `TESObjectWEAP::TESEnchantableForm_vdtor` at 0x28e49c (slot_propagation, medium); signature (low): `undefined TESEnchantableForm_vdtor(TESObjectWEAP * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
+    pub slot_0: *const c_void,
+    /// `TESEnchantableForm::vfunc_1` at 0x1e1e60 (rtti, medium); signature (high): `undefined vfunc_1(TESEnchantableForm * this)`
+    pub slot_1: *const c_void,
+    /// `TESEnchantableForm::vfunc_2` at 0x1e1e80 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `TESEnchantableForm::vfunc_3` at 0x1e1f70 (rtti, medium); signature (low): `undefined vfunc_3(TESEnchantableForm * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+    /// `TESEnchantableForm::vfunc_4` at 0x1e20d0 (rtti, medium); signature (high): `undefined2 vfunc_4(TESEnchantableForm * this)`
+    pub slot_4: *const c_void,
+}
+impl TESObjectWEAP_vtable_88 {
+    pub const ID: u64 = 189794;
+}
+
+/// `TESObjectWEAP::vftable_A0` at 0x181a9a8, id 189796 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct TESObjectWEAP_vtable_A0 {
+    /// `TESObjectWEAP::TESValueForm_vdtor` at 0x28e4a8 (slot_propagation, medium); signature (low): `undefined TESValueForm_vdtor(TESObjectWEAP * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
+    pub slot_0: *const c_void,
+    /// `TESValueForm::vfunc_1` at 0x1f34c0 (rtti, medium); signature (high): `undefined vfunc_1(TESValueForm * this)`
+    pub slot_1: *const c_void,
+    /// `TESValueForm::vfunc_2` at 0x1f34d0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `TESValueForm::vfunc_3` at 0x1f34e0 (rtti, medium); signature (low): `undefined vfunc_3(TESValueForm * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+}
+impl TESObjectWEAP_vtable_A0 {
+    pub const ID: u64 = 189796;
+}
+
+/// `TESObjectWEAP::vftable_B0` at 0x181a9d0, id 189798 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct TESObjectWEAP_vtable_B0 {
+    /// `TESObjectWEAP::TESWeightForm_vdtor` at 0x28e4b4 (slot_propagation, medium); signature (low): `undefined TESWeightForm_vdtor(TESObjectWEAP * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
+    pub slot_0: *const c_void,
+    /// `TESWeightForm::vfunc_1` at 0x1f3740 (rtti, medium); signature (high): `undefined vfunc_1(TESWeightForm * this)`
+    pub slot_1: *const c_void,
+    /// `TESWeightForm::vfunc_2` at 0x1f3750 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `TESWeightForm::vfunc_3` at 0x1f3760 (rtti, medium); signature (low): `undefined vfunc_3(TESWeightForm * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+}
+impl TESObjectWEAP_vtable_B0 {
+    pub const ID: u64 = 189798;
+}
+
+/// `TESObjectWEAP::vftable_C0` at 0x181a9f8, id 189800 (rtti, high); 5 slots.
+#[repr(C)]
+pub struct TESObjectWEAP_vtable_C0 {
+    /// `TESObjectWEAP::TESAttackDamageForm_vdtor` at 0x28e4c0 (slot_propagation, medium); signature (low): `undefined TESAttackDamageForm_vdtor(TESObjectWEAP * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
+    pub slot_0: *const c_void,
+    /// `TESAttackDamageForm::vfunc_1` at 0x1df0c0 (rtti, medium); signature (high): `undefined vfunc_1(TESAttackDamageForm * this)`
+    pub slot_1: *const c_void,
+    /// `TESAttackDamageForm::vfunc_2` at 0x1df0d0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `TESAttackDamageForm::vfunc_3` at 0x1df0e0 (rtti, medium); signature (low): `undefined vfunc_3(TESAttackDamageForm * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+    /// `TESAttackDamageForm::vfunc_4` at 0x1df130 (rtti, medium); signature (high): `undefined2 vfunc_4(TESAttackDamageForm * this)`
+    pub slot_4: *const c_void,
+}
+impl TESObjectWEAP_vtable_C0 {
+    pub const ID: u64 = 189800;
+}
+
+/// `TESObjectWEAP::vftable_D0` at 0x181aa28, id 189802 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct TESObjectWEAP_vtable_D0 {
+    /// `TESObjectWEAP::BGSDestructibleObjectForm_vdtor` at 0x28e4cc (slot_propagation, medium); signature (low): `undefined BGSDestructibleObjectForm_vdtor(TESObjectWEAP * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
+    pub slot_0: *const c_void,
+    /// `BGSDestructibleObjectForm::vfunc_1` at 0x1d2750 (rtti, medium); signature (high): `undefined vfunc_1(BGSDestructibleObjectForm * this)`
+    pub slot_1: *const c_void,
+    /// `BGSDestructibleObjectForm::vfunc_2` at 0x1d2760 (rtti, medium); signature (low): `undefined vfunc_2(BGSDestructibleObjectForm * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_2: *const c_void,
+    /// `BGSDestructibleObjectForm::vfunc_3` at 0x1d2af0 (rtti, medium); signature (low): `undefined vfunc_3(BGSDestructibleObjectForm * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+}
+impl TESObjectWEAP_vtable_D0 {
+    pub const ID: u64 = 189802;
+}
+
+/// `TESObjectWEAP::vftable_E0` at 0x181aa50, id 189804 (rtti, high); 6 slots.
+#[repr(C)]
+pub struct TESObjectWEAP_vtable_E0 {
+    /// `TESObjectWEAP::BGSEquipType_vdtor` at 0x28e4d8 (slot_propagation, medium); signature (low): `undefined BGSEquipType_vdtor(TESObjectWEAP * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
+    pub slot_0: *const c_void,
+    /// `BGSEquipType::vfunc_1` at 0x1d7220 (rtti, medium); signature (high): `undefined vfunc_1(BGSEquipType * this)`
+    pub slot_1: *const c_void,
+    /// `BGSEquipType::vfunc_2` at 0x1d7230 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `BGSEquipType::vfunc_3` at 0x1d72b0 (rtti, medium); signature (low): `undefined vfunc_3(BGSEquipType * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+    /// `BGSEquipType::vfunc_4` at 0x146700 (rtti, medium); signature (high): `undefined8 vfunc_4(BGSEquipType * this)`
+    pub slot_4: *const c_void,
+    /// `BGSEquipType::vfunc_5` at 0x146a50 (rtti, medium); signature (low): `undefined vfunc_5(BGSEquipType * this, undefined8 param_1)`
+    pub slot_5: *const c_void,
+}
+impl TESObjectWEAP_vtable_E0 {
+    pub const ID: u64 = 189804;
+}
+
+/// `TESObjectWEAP::vftable_F0` at 0x181aa88, id 189806 (rtti, high); 5 slots.
+#[repr(C)]
+pub struct TESObjectWEAP_vtable_F0 {
+    /// `TESObjectWEAP::BGSPreloadable_vdtor` at 0x28e4e4 (slot_propagation, medium); signature (low): `undefined BGSPreloadable_vdtor(TESObjectWEAP * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
+    pub slot_0: *const c_void,
+    /// `BGSPreloadable::vfunc_1` at 0x2601f0 (rtti, medium); signature (low): `undefined vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `BGSPreloadable::vfunc_2` at 0x2601d0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `BGSPreloadable::vfunc_3` at 0x2601e0 (rtti, medium); signature (low): `undefined vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `TESObjectWEAP::BGSPreloadable_vfunc_4` at 0x28d7f0 (rtti, high); signature (low): `undefined BGSPreloadable_vfunc_4(TESObjectWEAP * this, longlong param_1, ulonglong param_2, undefined8 param_3)`
+    pub slot_4: *const c_void,
+}
+impl TESObjectWEAP_vtable_F0 {
+    pub const ID: u64 = 189806;
+}
+
+/// `TESObjectWEAP::vftable_F8` at 0x181aab8, id 189808 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct TESObjectWEAP_vtable_F8 {
+    /// `TESObjectWEAP::BGSMessageIcon_vdtor` at 0x28e4f0 (slot_propagation, medium); signature (low): `undefined BGSMessageIcon_vdtor(TESObjectWEAP * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
+    pub slot_0: *const c_void,
+    /// `BGSMessageIcon::vfunc_1` at 0x1d9200 (rtti, medium); signature (high): `undefined vfunc_1(BGSMessageIcon * this)`
+    pub slot_1: *const c_void,
+    /// `BGSMessageIcon::vfunc_2` at 0x1d9220 (rtti, medium); signature (high): `undefined vfunc_2(BGSMessageIcon * this)`
+    pub slot_2: *const c_void,
+    /// `BGSMessageIcon::vfunc_3` at 0x1d9250 (rtti, medium); signature (low): `undefined vfunc_3(BGSMessageIcon * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+}
+impl TESObjectWEAP_vtable_F8 {
+    pub const ID: u64 = 189808;
+}
+
+/// `TESObjectWEAP::vftable_110` at 0x181aae0, id 189810 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct TESObjectWEAP_vtable_110 {
+    /// `TESObjectWEAP::BGSPickupPutdownSounds_vdtor` at 0x28e448 (slot_propagation, medium); signature (high): `undefined BGSPickupPutdownSounds_vdtor(TESObjectWEAP * this)`
+    pub slot_0: *const c_void,
+    /// `BGSPickupPutdownSounds::vfunc_1` at 0x1db6f0 (rtti, medium); signature (high): `undefined vfunc_1(BGSPickupPutdownSounds * this)`
+    pub slot_1: *const c_void,
+    /// `BGSPickupPutdownSounds::vfunc_2` at 0x1db710 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `BGSPickupPutdownSounds::vfunc_3` at 0x1db720 (rtti, medium); signature (low): `undefined vfunc_3(BGSPickupPutdownSounds * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+}
+impl TESObjectWEAP_vtable_110 {
+    pub const ID: u64 = 189810;
+}
+
+/// `TESObjectWEAP::vftable_128` at 0x181ab08, id 189812 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct TESObjectWEAP_vtable_128 {
+    /// `TESObjectWEAP::BGSBlockBashData_vdtor` at 0x28e454 (slot_propagation, medium); signature (high): `undefined BGSBlockBashData_vdtor(TESObjectWEAP * this)`
+    pub slot_0: *const c_void,
+    /// `BGSBlockBashData::vfunc_1` at 0x1d2240 (rtti, medium); signature (high): `undefined vfunc_1(BGSBlockBashData * this)`
+    pub slot_1: *const c_void,
+    /// `BGSBlockBashData::vfunc_2` at 0x1d2260 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `BGSBlockBashData::vfunc_3` at 0x1d2340 (rtti, medium); signature (low): `undefined vfunc_3(BGSBlockBashData * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+}
+impl TESObjectWEAP_vtable_128 {
+    pub const ID: u64 = 189812;
+}
+
+/// `TESObjectWEAP::vftable_140` at 0x181ab30, id 189814 (rtti, high); 6 slots.
+#[repr(C)]
+pub struct TESObjectWEAP_vtable_140 {
+    /// `TESObjectWEAP::BGSKeywordForm_vdtor` at 0x28e460 (slot_propagation, medium); signature (high): `undefined BGSKeywordForm_vdtor(TESObjectWEAP * this)`
+    pub slot_0: *const c_void,
+    /// `BGSKeywordForm::vfunc_1` at 0x1d8690 (rtti, medium); signature (low): `undefined vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `BGSKeywordForm::vfunc_2` at 0x1d86a0 (rtti, medium); signature (untiered): `undefined vfunc_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    pub slot_2: *const c_void,
+    /// `BGSKeywordForm::vfunc_3` at 0x1d86b0 (rtti, medium); signature (low): `undefined vfunc_3(BGSKeywordForm * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (low): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
+    pub slot_4: *const c_void,
+    /// `TESObjectWEAP::BGSKeywordForm_vfunc_5` at 0x28bac0 (rtti, high); signature (low): `undefined BGSKeywordForm_vfunc_5(TESObjectWEAP * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_5: *const c_void,
+}
+impl TESObjectWEAP_vtable_140 {
+    pub const ID: u64 = 189814;
+}
+
+/// `TESObjectWEAP::vftable_158` at 0x181ab68, id 189816 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct TESObjectWEAP_vtable_158 {
+    /// `TESObjectWEAP::TESDescription_vdtor` at 0x28e46c (slot_propagation, medium); signature (low): `undefined TESDescription_vdtor(TESObjectWEAP * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
+    pub slot_0: *const c_void,
+    /// `TESDescription::vfunc_1` at 0x1e1240 (rtti, medium); signature (high): `undefined vfunc_1(TESDescription * this)`
+    pub slot_1: *const c_void,
+    /// `TESDescription::vfunc_2` at 0x1e1250 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `TESDescription::vfunc_3` at 0x1e1260 (rtti, medium); signature (low): `undefined vfunc_3(TESDescription * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+}
+impl TESObjectWEAP_vtable_158 {
+    pub const ID: u64 = 189816;
+}
+
+/// `TESPackage::vftable` at 0x18d5260, id 203948 (rtti, high); 64 slots.
+#[repr(C)]
+pub struct TESPackage_vtable {
+    /// `TESPackage::vdtor` at 0x49e890 (slot_propagation, medium); signature (low): `TESPackage * vdtor(TESPackage * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `TESForm::vfunc_1` at 0x1e35c0 (rtti, medium); signature (low): `undefined vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `TESForm::vfunc_2` at 0x1e36c0 (rtti, medium); signature (high): `undefined vfunc_2(TESForm * this)`
+    pub slot_2: *const c_void,
+    /// `TESForm::vfunc_3` at 0x1e6930 (rtti, medium); signature (low): `undefined vfunc_3(TESForm * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+    /// `TESPackage::vfunc_4` at 0x498880 (rtti, medium); signature (low): `undefined vfunc_4(TESPackage * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_4: *const c_void,
+    /// `TESPackage::vfunc_5` at 0x498940 (rtti, medium); signature (low): `undefined vfunc_5(TESPackage * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_5: *const c_void,
+    /// `TESPackage::vfunc_6` at 0x4989d0 (rtti, medium); signature (low): `undefined8 vfunc_6(TESPackage * this, uint * param_1, uint * param_2, undefined8 param_3)`
+    pub slot_6: *const c_void,
+    /// `TESForm::vfunc_7` at 0x1469b0 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `TESForm::vfunc_8` at 0x1469a0 (rtti, medium); signature (high): `undefined vfunc_8(TESForm * this)`
+    pub slot_8: *const c_void,
+    /// `TESForm::vfunc_9` at 0x1e51a0 (rtti, medium); signature (low): `longlong * vfunc_9(TESForm * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`
+    pub slot_9: *const c_void,
+    /// `TESForm::vfunc_10` at 0x1e5650 (rtti, medium); signature (low): `ulonglong vfunc_10(TESForm * this, undefined4 param_1)`
+    pub slot_10: *const c_void,
+    /// `TESForm::vfunc_11` at 0x1e56b0 (rtti, medium); signature (low): `undefined vfunc_11(TESForm * this, undefined4 param_1)`
+    pub slot_11: *const c_void,
+    /// `TESForm::vfunc_12` at 0x1e56e0 (rtti, medium); signature (low): `undefined1 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `TESPackage::SaveGame` at 0x49d500 (slot_propagation, medium); signature (low): `undefined SaveGame(TESPackage * this, longlong param_1)`
+    pub slot_14: *const c_void,
+    /// `TESPackage::LoadGame` at 0x49d600 (slot_propagation, medium); signature (low): `undefined LoadGame(TESPackage * this, longlong param_1)`
+    pub slot_15: *const c_void,
+    /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `TESForm::vfunc_17` at 0x1e5840 (rtti, medium); signature (low): `undefined vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `TESPackage::vfunc_18` at 0x49d7a0 (rtti, medium); signature (low): `undefined vfunc_18(TESPackage * this, longlong param_1)`
+    pub slot_18: *const c_void,
+    /// `TESPackage::vfunc_19` at 0x4996e0 (rtti, medium); signature (low): `undefined vfunc_19(TESPackage * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
+    pub slot_19: *const c_void,
+    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
+    pub slot_20: *const c_void,
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (high): `undefined1 GetFormType(TESForm * this)`
+    pub slot_21: *const c_void,
+    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (low): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
+    pub slot_22: *const c_void,
+    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (high): `uint PlayerKnows(TESForm * this)`
+    pub slot_23: *const c_void,
+    /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
+    pub slot_24: *const c_void,
+    /// `TESForm::vfunc_25` at 0x1467f0 (rtti, medium); signature (high): `uint vfunc_25(TESForm * this)`
+    pub slot_25: *const c_void,
+    /// `TESForm::vfunc_26` at 0x1467a0 (rtti, medium); signature (low): `undefined1 vfunc_26(void)`
+    pub slot_26: *const c_void,
+    /// `TESForm::vfunc_27` at 0x1466a0 (rtti, medium); signature (high): `uint vfunc_27(TESForm * this)`
+    pub slot_27: *const c_void,
+    /// `TESForm::vfunc_28` at 0x146a10 (rtti, medium); signature (high): `uint vfunc_28(TESForm * this)`
+    pub slot_28: *const c_void,
+    /// `TESForm::vfunc_29` at 0x1467d0 (rtti, medium); signature (high): `uint vfunc_29(TESForm * this)`
+    pub slot_29: *const c_void,
+    /// `TESForm::vfunc_30` at 0x146a20 (rtti, medium); signature (low): `undefined1 vfunc_30(void)`
+    pub slot_30: *const c_void,
+    /// `TESForm::vfunc_31` at 0x1467e0 (rtti, medium); signature (high): `uint vfunc_31(TESForm * this)`
+    pub slot_31: *const c_void,
+    /// `TESForm::vfunc_32` at 0x146790 (rtti, medium); signature (high): `uint vfunc_32(TESForm * this)`
+    pub slot_32: *const c_void,
+    /// `TESForm::vfunc_33` at 0x1e5fd0 (rtti, medium); signature (low): `undefined vfunc_33(TESForm * this, char param_1)`
+    pub slot_33: *const c_void,
+    /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (low): `undefined SetDelete(TESForm * this, byte param_1)`
+    pub slot_35: *const c_void,
+    /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
+    pub slot_36: *const c_void,
+    /// `TESForm::vfunc_37` at 0x146a30 (rtti, medium); signature (low): `undefined vfunc_37(void)`
+    pub slot_37: *const c_void,
+    /// `TESForm::vfunc_38` at 0x14c900 (rtti, medium); signature (low): `undefined vfunc_38(void)`
+    pub slot_38: *const c_void,
+    /// `TESForm::vfunc_39` at 0x14c8e0 (rtti, medium); signature (low): `undefined1 vfunc_39(void)`
+    pub slot_39: *const c_void,
+    /// `TESForm::vfunc_40` at 0x14c8f0 (rtti, medium); signature (low): `undefined1 vfunc_40(void)`
+    pub slot_40: *const c_void,
+    /// `TESForm::vfunc_41` at 0x147560 (rtti, medium); signature (low): `undefined1 vfunc_41(void)`
+    pub slot_41: *const c_void,
+    /// `TESForm::vfunc_42` at 0x146980 (rtti, medium); signature (low): `undefined1 vfunc_42(void)`
+    pub slot_42: *const c_void,
+    /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
+    pub slot_43: *const c_void,
+    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (low): `undefined8 AsReference(void)`
+    pub slot_44: *const c_void,
+    /// `TESPackage::vfunc_45` at 0x49e8d0 (rtti, medium); signature (high): `undefined4 vfunc_45(TESPackage * this)`
+    pub slot_45: *const c_void,
+    /// `TESForm::vfunc_46` at 0x1e68f0 (rtti, medium); signature (untiered): `undefined1 * vfunc_46(undefined8 param_1)`
+    pub slot_46: *const c_void,
+    /// `TESForm::vfunc_47` at 0x1e6920 (rtti, medium); signature (low): `undefined vfunc_47(void)`
+    pub slot_47: *const c_void,
+    /// `TESForm::vfunc_48` at 0x1e6ab0 (rtti, medium); signature (low): `undefined1 vfunc_48(TESForm * this, int * param_1)`
+    pub slot_48: *const c_void,
+    /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
+    pub slot_49: *const c_void,
+    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (low): `undefined1 * GetFormEditorID(void)`
+    pub slot_50: *const c_void,
+    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (low): `undefined1 SetFormEditorID(void)`
+    pub slot_51: *const c_void,
+    /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
+    pub slot_52: *const c_void,
+    /// `TESForm::vfunc_53` at 0x1e6b50 (rtti, medium); signature (low): `undefined1 vfunc_53(void)`
+    pub slot_53: *const c_void,
+    /// `TESForm::vfunc_54` at 0x1468f0 (rtti, medium); signature (low): `undefined1 vfunc_54(void)`
+    pub slot_54: *const c_void,
+    /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
+    pub slot_55: *const c_void,
+    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (low): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
+    pub slot_56: *const c_void,
+    /// `TESPackage::vfunc_57` at 0x49e270 (rtti, medium); signature (high): `undefined * vfunc_57(TESPackage * this)`
+    pub slot_57: *const c_void,
+    /// `TESForm::vfunc_58` at 0x146a00 (rtti, medium); signature (low): `undefined1 vfunc_58(void)`
+    pub slot_58: *const c_void,
+    /// `TESPackage::vfunc_59` at 0x49b3e0 (rtti, medium); signature (low): `undefined1 vfunc_59(TESPackage * this, longlong * param_1, undefined8 param_2, float param_3, char param_4)`
+    pub slot_59: *const c_void,
+    /// `TESPackage::vfunc_60` at 0x49b7d0 (rtti, medium); signature (low): `undefined1 vfunc_60(TESPackage * this, longlong * param_1, longlong * param_2, char param_3, float param_4, byte param_5)`
+    pub slot_60: *const c_void,
+    /// `TESPackage::vfunc_61` at 0x49bc80 (rtti, medium); signature (low): `ulonglong vfunc_61(TESPackage * this, longlong * param_2, undefined4 param_3, undefined8 param_4)`
+    pub slot_61: *const c_void,
+    /// `TESPackage::vfunc_62` at 0x49c070 (rtti, medium); signature (low): `ulonglong vfunc_62(TESPackage * this, longlong * param_2, longlong * param_3, byte * param_4)`
+    pub slot_62: *const c_void,
+    /// `TESPackage::vfunc_63` at 0x49e8e0 (rtti, medium); signature (low): `undefined1 vfunc_63(void)`
+    pub slot_63: *const c_void,
+}
+impl TESPackage_vtable {
+    pub const ID: u64 = 203948;
+}
+
+/// `TESPackageData::vftable` at 0x18d5730, id 203954 (rtti, high); 6 slots.
+#[repr(C)]
+pub struct TESPackageData_vtable {
+    /// `TESPackageData::vdtor` at 0x49ec20 (layout_inference, medium); signature (low): `TESPackageData * vdtor(TESPackageData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `TESPackageData::vfunc_1` at 0x49ec60 (rtti, medium); signature (low): `undefined vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `TESPackageData::vfunc_2` at 0x49ec50 (rtti, medium); signature (low): `undefined1 vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `TESPackageData::vfunc_3` at 0x49ec70 (rtti, medium); signature (low): `undefined vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `TESPackageData::vfunc_4` at 0x49ec90 (rtti, high); signature (low): `undefined vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `TESPackageData::vfunc_5` at 0x49ec80 (rtti, high); signature (low): `undefined vfunc_5(void)`
+    pub slot_5: *const c_void,
+}
+impl TESPackageData_vtable {
+    pub const ID: u64 = 203954;
+}
+
+/// `TESPatrolPackageData::vftable` at 0x18d5bc8, id 203975 (rtti, high); 6 slots.
+#[repr(C)]
+pub struct TESPatrolPackageData_vtable {
+    /// `TESPatrolPackageData::vdtor` at 0x4a1350 (layout_inference, medium); signature (low): `TESPatrolPackageData * vdtor(TESPatrolPackageData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `TESPatrolPackageData::vfunc_1` at 0x4a10d0 (rtti, high); signature (low): `undefined vfunc_1(TESPatrolPackageData * this, undefined8 param_1)`
+    pub slot_1: *const c_void,
+    /// `TESPatrolPackageData::vfunc_2` at 0x4a1120 (rtti, high); signature (low): `undefined8 vfunc_2(TESPatrolPackageData * this, undefined8 param_1)`
+    pub slot_2: *const c_void,
+    /// `TESPatrolPackageData::vfunc_3` at 0x4a1180 (rtti, high); signature (low): `undefined vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `TESPatrolPackageData::vfunc_4` at 0x4a1190 (rtti, high); signature (low): `undefined vfunc_4(TESPatrolPackageData * this, longlong param_1)`
+    pub slot_4: *const c_void,
+    /// `TESPatrolPackageData::vfunc_5` at 0x4a11f0 (rtti, high); signature (low): `undefined vfunc_5(TESPatrolPackageData * this, longlong param_1)`
+    pub slot_5: *const c_void,
+}
+impl TESPatrolPackageData_vtable {
+    pub const ID: u64 = 203975;
 }
 

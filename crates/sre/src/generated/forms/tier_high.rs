@@ -7,6 +7,16 @@
 
 use core::ffi::{c_char, c_void};
 
+impl crate::BGSKeyword {
+    /// `BGSKeyword::GetFormEditorID` (decompiler signature, tier high; ledger slot_propagation evidence, name high; id 18468, rva 0x29e710).
+    /// `undefined8 GetFormEditorID(BGSKeyword * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_form_editor_id(&self) -> u64 { unsafe { function!(18468, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+}
+
 impl crate::BGSKeywordForm {
     /// `BGSKeywordForm::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 14250, rva 0x1d85e0).
     /// `BGSKeywordForm * ctor(BGSKeywordForm * this)`
@@ -15,5 +25,15 @@ impl crate::BGSKeywordForm {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(14250, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
+}
+
+impl crate::TESGlobal {
+    /// `TESGlobal::GetFormEditorID` (decompiler signature, tier high; ledger slot_propagation evidence, name high; id 21816, rva 0x340be0).
+    /// `undefined1 * GetFormEditorID(TESGlobal * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_form_editor_id(&self) -> *mut u8 { unsafe { function!(21816, (*const Self) -> *mut u8)(core::ptr::from_ref(self)) } }
 }
 

@@ -17,7 +17,7 @@ mod tier_medium;
 pub use tier_medium::*;
 #[cfg(all(feature = "extra", feature = "tier-low"))]
 mod tier_low;
+#[cfg(all(feature = "extra", feature = "tier-low"))]
+pub use tier_low::*;
 #[cfg(all(feature = "extra", feature = "untiered"))]
 mod untiered;
-#[cfg(all(feature = "extra", feature = "untiered"))]
-pub use untiered::*;

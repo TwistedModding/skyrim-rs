@@ -10274,6 +10274,13 @@ pub unsafe fn create_scene_graph_global403514(param_1: u64, param_2: u64, param_
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn create_scene_graph_global403515(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(36613, (u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `CreateScreenQuadShape` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 90283, rva 0x11b37b0).
+/// `undefined CreateScreenQuadShape(float param_1, float param_2, float param_3, float param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn create_screen_quad_shape(param_1: f32, param_2: f32, param_3: f32, param_4: f32) -> u64 { unsafe { function!(90283, (f32, f32, f32, f32) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `CreateSimpleMeshShapeFromGeometry` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 81123, rva 0x110d1b0).
 /// `longlong CreateSimpleMeshShapeFromGeometry(longlong * param_1)`
 ///
@@ -13767,10 +13774,3 @@ pub unsafe fn detach_result_set_field90_13(param_1: i64, param_2: *mut u64, para
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn detach_result_set_field90_14(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447601, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
-/// `DetachResultSetField90_15` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447829, rva 0x13618a0).
-/// `undefined8 * DetachResultSetField90_15(longlong param_1, undefined8 * param_2, undefined8 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn detach_result_set_field90_15(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447829, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }

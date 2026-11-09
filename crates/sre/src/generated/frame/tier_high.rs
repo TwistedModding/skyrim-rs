@@ -106,6 +106,13 @@ impl crate::BSShaderMaterial {
 }
 
 impl crate::ImageSpaceEffectDepthOfField {
+    /// `ImageSpaceEffectDepthOfField::Render`, vtable slot 7, through the object's vtable (decompiler signature, tier high; ledger semantic evidence, name medium; id 107388, rva 0x15512f0).
+    /// `undefined8 Render(ImageSpaceEffectDepthOfField * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn render(&self) -> u64 { unsafe { virtual_function!(self, 7, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `ImageSpaceEffectDepthOfField::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 107383, rva 0x15504c0).
     /// `ImageSpaceEffectDepthOfField * ctor(ImageSpaceEffectDepthOfField * this)`
     ///
@@ -123,6 +130,16 @@ impl crate::ImageSpaceEffectHDR {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(107180, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
+}
+
+impl crate::NiCamera {
+    /// `NiCamera::UpdateWorldBound` (decompiler signature, tier high; ledger semantic evidence, name high; id 70644, rva 0xef1950).
+    /// `undefined UpdateWorldBound(NiCamera * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn update_world_bound(&self) -> u64 { unsafe { function!(70644, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::NiExtraData {

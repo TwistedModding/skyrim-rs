@@ -380,26 +380,6 @@ impl crate::BSFaceGenAnimationData {
     pub fn expressionTarget_ptr(&self) -> *mut *mut crate::BSFaceGenKeyframeMultiple { Self::__member_expressionTarget(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_eyeHeading(this: *const Self) -> *mut f32 { unsafe { member!(this, "BSFaceGenAnimationData.eyeHeading", 0x1BC, f32) } }
-    /// `BSFaceGenAnimationData::eyeHeading`, at +0x1BC on 1.7.104.
-    #[inline]
-    pub fn eyeHeading(&self) -> f32 { unsafe { Self::__member_eyeHeading(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_eyeHeading(&mut self, value: f32) { unsafe { Self::__member_eyeHeading(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn eyeHeading_ptr(&self) -> *mut f32 { Self::__member_eyeHeading(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_eyePitch(this: *const Self) -> *mut f32 { unsafe { member!(this, "BSFaceGenAnimationData.eyePitch", 0x1C0, f32) } }
-    /// `BSFaceGenAnimationData::eyePitch`, at +0x1C0 on 1.7.104.
-    #[inline]
-    pub fn eyePitch(&self) -> f32 { unsafe { Self::__member_eyePitch(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_eyePitch(&mut self, value: f32) { unsafe { Self::__member_eyePitch(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn eyePitch_ptr(&self) -> *mut f32 { Self::__member_eyePitch(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_eyesClosed(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSFaceGenAnimationData.eyesClosed", 0x21A, u8) } }
     /// `BSFaceGenAnimationData::eyesClosed`, at +0x21A on 1.7.104.
     #[inline]
@@ -852,24 +832,6 @@ impl crate::BShkbAnimationGraph {
     pub fn root_node(&self) -> Option<&crate::NiNode> { unsafe { { self.rootNode }.as_ref() } }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_boneLODEnabled(this: *const Self) -> *mut u8 { unsafe { member!(this, "BShkbAnimationGraph.boneLODEnabled", 0x247, u8) } }
-    /// `BShkbAnimationGraph::boneLODEnabled`, at +0x247 on 1.7.104.
-    #[inline]
-    pub fn boneLODEnabled(&self) -> u8 { unsafe { Self::__member_boneLODEnabled(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_boneLODEnabled(&mut self, value: u8) { unsafe { Self::__member_boneLODEnabled(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn boneLODEnabled_ptr(&self) -> *mut u8 { Self::__member_boneLODEnabled(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_boneLODTable(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "BShkbAnimationGraph.boneLODTable", 0x190, crate::BSTArray) } }
-    /// `BShkbAnimationGraph::boneLODTable`, at +0x190 on 1.7.104.
-    #[inline]
-    pub fn boneLODTable(&self) -> &crate::BSTArray { unsafe { &*Self::__member_boneLODTable(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn boneLODTable_ptr(&self) -> *mut crate::BSTArray { Self::__member_boneLODTable(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_eventsSuppressed(this: *const Self) -> *mut u8 { unsafe { member!(this, "BShkbAnimationGraph.eventsSuppressed", 0x243, u8) } }
     /// `BShkbAnimationGraph::eventsSuppressed`, at +0x243 on 1.7.104.
     #[inline]
@@ -878,16 +840,6 @@ impl crate::BShkbAnimationGraph {
     pub fn set_eventsSuppressed(&mut self, value: u8) { unsafe { Self::__member_eventsSuppressed(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn eventsSuppressed_ptr(&self) -> *mut u8 { Self::__member_eventsSuppressed(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_interpTimerA(this: *const Self) -> *mut f32 { unsafe { member!(this, "BShkbAnimationGraph.interpTimerA", 0x1E8, f32) } }
-    /// `BShkbAnimationGraph::interpTimerA`, at +0x1E8 on 1.7.104.
-    #[inline]
-    pub fn interpTimerA(&self) -> f32 { unsafe { Self::__member_interpTimerA(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_interpTimerA(&mut self, value: f32) { unsafe { Self::__member_interpTimerA(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn interpTimerA_ptr(&self) -> *mut f32 { Self::__member_interpTimerA(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_ownedNodeData(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "BShkbAnimationGraph.ownedNodeData", 0x178, crate::BSTArray) } }
@@ -1415,16 +1367,6 @@ impl crate::hkaSkeleton {
     pub fn reference_pose(&self) -> Option<&crate::hkQsTransform> { unsafe { { self.referencePose }.as_ref() } }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_localFrames(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "hkaSkeleton.localFrames", 0x68, [u8; 16]) } }
-    /// `hkaSkeleton::localFrames`, at +0x68 on 1.7.104.
-    #[inline]
-    pub fn localFrames(&self) -> [u8; 16] { unsafe { Self::__member_localFrames(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_localFrames(&mut self, value: [u8; 16]) { unsafe { Self::__member_localFrames(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn localFrames_ptr(&self) -> *mut [u8; 16] { Self::__member_localFrames(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_memSizeAndFlags(this: *const Self) -> *mut u16 { unsafe { member!(this, "hkaSkeleton.memSizeAndFlags", 0x8, u16) } }
     /// `hkaSkeleton::memSizeAndFlags`, at +0x8 on 1.7.104.
     #[inline]
@@ -1435,16 +1377,6 @@ impl crate::hkaSkeleton {
     pub fn memSizeAndFlags_ptr(&self) -> *mut u16 { Self::__member_memSizeAndFlags(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_name(this: *const Self) -> *mut [u8; 8] { unsafe { member!(this, "hkaSkeleton.name", 0x10, [u8; 8]) } }
-    /// `hkaSkeleton::name`, at +0x10 on 1.7.104.
-    #[inline]
-    pub fn name(&self) -> [u8; 8] { unsafe { Self::__member_name(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_name(&mut self, value: [u8; 8]) { unsafe { Self::__member_name(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn name_ptr(&self) -> *mut [u8; 8] { Self::__member_name(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_referenceCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "hkaSkeleton.referenceCount", 0xA, u16) } }
     /// `hkaSkeleton::referenceCount`, at +0xA on 1.7.104.
     #[inline]
@@ -1453,16 +1385,6 @@ impl crate::hkaSkeleton {
     pub fn set_referenceCount(&mut self, value: u16) { unsafe { Self::__member_referenceCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn referenceCount_ptr(&self) -> *mut u16 { Self::__member_referenceCount(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_referenceFloats(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "hkaSkeleton.referenceFloats", 0x48, [u8; 16]) } }
-    /// `hkaSkeleton::referenceFloats`, at +0x48 on 1.7.104.
-    #[inline]
-    pub fn referenceFloats(&self) -> [u8; 16] { unsafe { Self::__member_referenceFloats(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_referenceFloats(&mut self, value: [u8; 16]) { unsafe { Self::__member_referenceFloats(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn referenceFloats_ptr(&self) -> *mut [u8; 16] { Self::__member_referenceFloats(core::ptr::from_ref(self)) }
 }
 
 impl crate::hkbBehaviorGraph {
@@ -1721,7 +1643,7 @@ impl crate::hkbCharacter {
     ///
     /// Semantic field, animation pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn project_data(&self) -> Option<&crate::hkbProjectData> { unsafe { Self::__member_projectData(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    pub fn project_data(&self) -> Option<&crate::hkbProjectData> { unsafe { { self.projectData }.as_ref() } }
     /// `hkbCharacter::ragdollDriver` at +0x30: ragdoll driver; its +0x88 is the hkaRagdollInstance
     ///
     /// Semantic field, animation pass, high; `None` while the pointer is null.
@@ -1739,96 +1661,6 @@ impl crate::hkbCharacter {
     pub fn world_from_model(&self) -> Option<&crate::hkQsTransform> { unsafe { { self.worldFromModel }.as_ref() } }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_characterControllerDriver(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "hkbCharacter.characterControllerDriver", 0x38, *mut c_void) } }
-    /// `hkbCharacter::characterControllerDriver`, at +0x38 on 1.7.104.
-    #[inline]
-    pub fn characterControllerDriver(&self) -> *mut c_void { unsafe { Self::__member_characterControllerDriver(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_characterControllerDriver(&mut self, value: *mut c_void) { unsafe { Self::__member_characterControllerDriver(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn characterControllerDriver_ptr(&self) -> *mut *mut c_void { Self::__member_characterControllerDriver(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_currentLod(this: *const Self) -> *mut u16 { unsafe { member!(this, "hkbCharacter.currentLod", 0x20, u16) } }
-    /// `hkbCharacter::currentLod`, at +0x20 on 1.7.104.
-    #[inline]
-    pub fn currentLod(&self) -> u16 { unsafe { Self::__member_currentLod(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_currentLod(&mut self, value: u16) { unsafe { Self::__member_currentLod(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn currentLod_ptr(&self) -> *mut u16 { Self::__member_currentLod(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_deletePoseLocal(this: *const Self) -> *mut u8 { unsafe { member!(this, "hkbCharacter.deletePoseLocal", 0x9D, u8) } }
-    /// `hkbCharacter::deletePoseLocal`, at +0x9D on 1.7.104.
-    #[inline]
-    pub fn deletePoseLocal(&self) -> u8 { unsafe { Self::__member_deletePoseLocal(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_deletePoseLocal(&mut self, value: u8) { unsafe { Self::__member_deletePoseLocal(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn deletePoseLocal_ptr(&self) -> *mut u8 { Self::__member_deletePoseLocal(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_deleteWorldFromModel(this: *const Self) -> *mut u8 { unsafe { member!(this, "hkbCharacter.deleteWorldFromModel", 0x9C, u8) } }
-    /// `hkbCharacter::deleteWorldFromModel`, at +0x9C on 1.7.104.
-    #[inline]
-    pub fn deleteWorldFromModel(&self) -> u8 { unsafe { Self::__member_deleteWorldFromModel(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_deleteWorldFromModel(&mut self, value: u8) { unsafe { Self::__member_deleteWorldFromModel(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn deleteWorldFromModel_ptr(&self) -> *mut u8 { Self::__member_deleteWorldFromModel(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_eventQueue(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "hkbCharacter.eventQueue", 0x80, *mut c_void) } }
-    /// `hkbCharacter::eventQueue`, at +0x80 on 1.7.104.
-    #[inline]
-    pub fn eventQueue(&self) -> *mut c_void { unsafe { Self::__member_eventQueue(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_eventQueue(&mut self, value: *mut c_void) { unsafe { Self::__member_eventQueue(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn eventQueue_ptr(&self) -> *mut *mut c_void { Self::__member_eventQueue(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_memSizeAndFlags(this: *const Self) -> *mut u16 { unsafe { member!(this, "hkbCharacter.memSizeAndFlags", 0x8, u16) } }
-    /// `hkbCharacter::memSizeAndFlags`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn memSizeAndFlags(&self) -> u16 { unsafe { Self::__member_memSizeAndFlags(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_memSizeAndFlags(&mut self, value: u16) { unsafe { Self::__member_memSizeAndFlags(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn memSizeAndFlags_ptr(&self) -> *mut u16 { Self::__member_memSizeAndFlags(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_numTracksInLod(this: *const Self) -> *mut u16 { unsafe { member!(this, "hkbCharacter.numTracksInLod", 0x22, u16) } }
-    /// `hkbCharacter::numTracksInLod`, at +0x22 on 1.7.104.
-    #[inline]
-    pub fn numTracksInLod(&self) -> u16 { unsafe { Self::__member_numTracksInLod(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_numTracksInLod(&mut self, value: u16) { unsafe { Self::__member_numTracksInLod(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn numTracksInLod_ptr(&self) -> *mut u16 { Self::__member_numTracksInLod(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_projectData(this: *const Self) -> *mut *mut crate::hkbProjectData { unsafe { member!(this, "hkbCharacter.projectData", 0x60, *mut crate::hkbProjectData) } }
-    /// `hkbCharacter::projectData`, at +0x60 on 1.7.104.
-    #[inline]
-    pub fn projectData(&self) -> *mut crate::hkbProjectData { unsafe { Self::__member_projectData(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_projectData(&mut self, value: *mut crate::hkbProjectData) { unsafe { Self::__member_projectData(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn projectData_ptr(&self) -> *mut *mut crate::hkbProjectData { Self::__member_projectData(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_raycastInterface(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "hkbCharacter.raycastInterface", 0x70, *mut c_void) } }
-    /// `hkbCharacter::raycastInterface`, at +0x70 on 1.7.104.
-    #[inline]
-    pub fn raycastInterface(&self) -> *mut c_void { unsafe { Self::__member_raycastInterface(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_raycastInterface(&mut self, value: *mut c_void) { unsafe { Self::__member_raycastInterface(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn raycastInterface_ptr(&self) -> *mut *mut c_void { Self::__member_raycastInterface(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_referenceCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "hkbCharacter.referenceCount", 0xA, u16) } }
     /// `hkbCharacter::referenceCount`, at +0xA on 1.7.104.
     #[inline]
@@ -1837,16 +1669,6 @@ impl crate::hkbCharacter {
     pub fn set_referenceCount(&mut self, value: u16) { unsafe { Self::__member_referenceCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn referenceCount_ptr(&self) -> *mut u16 { Self::__member_referenceCount(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_world(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "hkbCharacter.world", 0x78, *mut c_void) } }
-    /// `hkbCharacter::world`, at +0x78 on 1.7.104.
-    #[inline]
-    pub fn world(&self) -> *mut c_void { unsafe { Self::__member_world(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_world(&mut self, value: *mut c_void) { unsafe { Self::__member_world(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn world_ptr(&self) -> *mut *mut c_void { Self::__member_world(core::ptr::from_ref(self)) }
 }
 
 impl crate::hkbRagdollDriver {
@@ -1973,24 +1795,6 @@ impl crate::hkbRagdollDriver {
     pub fn set_field_C4(&mut self, value: u32) { unsafe { Self::__member_field_C4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_C4_ptr(&self) -> *mut u32 { Self::__member_field_C4(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_flag_1c(this: *const Self) -> *mut u8 { unsafe { member!(this, "hkbRagdollDriver.flag_1c", 0x1C, u8) } }
-    /// `hkbRagdollDriver::flag_1c`, at +0x1C on 1.7.104.
-    #[inline]
-    pub fn flag_1c(&self) -> u8 { unsafe { Self::__member_flag_1c(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_flag_1c(&mut self, value: u8) { unsafe { Self::__member_flag_1c(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn flag_1c_ptr(&self) -> *mut u8 { Self::__member_flag_1c(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_worldFromModel(this: *const Self) -> *mut crate::hkQsTransform { unsafe { member!(this, "hkbRagdollDriver.worldFromModel", 0x30, crate::hkQsTransform) } }
-    /// `hkbRagdollDriver::worldFromModel`, at +0x30 on 1.7.104.
-    #[inline]
-    pub fn worldFromModel(&self) -> &crate::hkQsTransform { unsafe { &*Self::__member_worldFromModel(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn worldFromModel_ptr(&self) -> *mut crate::hkQsTransform { Self::__member_worldFromModel(core::ptr::from_ref(self)) }
 }
 
 /// `ApplyFaceMorphJob`: job body: ApplyMorphs(node, faceFlags bit 0), then drops the queue's reference

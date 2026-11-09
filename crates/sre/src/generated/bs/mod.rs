@@ -25,7 +25,7 @@ mod tier_high;
 mod tier_low_1;
 #[cfg(all(feature = "bs", feature = "tier-low"))]
 mod tier_low_2;
+#[cfg(all(feature = "bs", feature = "tier-low"))]
+pub use tier_low_2::*;
 #[cfg(all(feature = "bs", feature = "untiered"))]
 mod untiered;
-#[cfg(all(feature = "bs", feature = "untiered"))]
-pub use untiered::*;

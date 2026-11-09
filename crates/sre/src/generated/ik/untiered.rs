@@ -17,16 +17,6 @@ impl crate::BSDirectAtModifier {
     pub unsafe fn vfunc_23_sub0(param_1: i64, param_2: i64, param_3: *mut c_void, param_4: *mut f32, param_5: *mut i64) -> u64 { unsafe { function!(63345, (i64, i64, *mut c_void, *mut f32, *mut i64) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
 }
 
-impl crate::BSGrabIKNote {
-    /// `BSGrabIKNote::ParseText`, vtable slot 37, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 74039, rva 0xf8b410).
-    /// `ulonglong ParseText(BSGrabIKNote * this, undefined4 * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn parse_text(&self, param_1: *mut u32) -> u64 { unsafe { virtual_function!(self, 37, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
-}
-
 impl crate::BSLookAtModifier {
     /// `BSLookAtModifier::vfunc_4_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 63269, rva 0xbb9c00).
     /// `undefined vfunc_4_sub0(longlong param_1)`
@@ -35,16 +25,6 @@ impl crate::BSLookAtModifier {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_4_sub0(param_1: i64) -> u64 { unsafe { function!(63269, (i64) -> u64)(param_1) } }
-}
-
-impl crate::BSLookIKNote {
-    /// `BSLookIKNote::ParseText`, vtable slot 37, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 74063, rva 0xf8bce0).
-    /// `ulonglong ParseText(BSLookIKNote * this, undefined4 * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn parse_text(&self, param_1: *mut u32) -> u64 { unsafe { virtual_function!(self, 37, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::bhkRagdollController {

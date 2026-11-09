@@ -17,6 +17,16 @@ impl crate::BSCullingProcess {
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(76551, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
+impl crate::BSGeometry {
+    /// `BSGeometry::UpdateWorldBound` (decompiler signature, tier high; ledger semantic evidence, name high; id 70925, rva 0xefc810).
+    /// `undefined UpdateWorldBound(BSGeometry * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn update_world_bound(&self) -> u64 { unsafe { function!(70925, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+}
+
 impl crate::BSLightingShaderProperty {
     /// `BSLightingShaderProperty::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 106499, rva 0x1518dd0).
     /// `BSLightingShaderProperty * ctor(BSLightingShaderProperty * this)`
@@ -35,6 +45,16 @@ impl crate::BSShaderProperty {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(105521, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
+}
+
+impl crate::BSShadowDirectionalLight {
+    /// `BSShadowDirectionalLight::ReleaseShadowMaps` (decompiler signature, tier high; ledger semantic evidence, name high; id 108491, rva 0x157ed20).
+    /// `undefined ReleaseShadowMaps(BSShadowDirectionalLight * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn release_shadow_maps(&self) -> u64 { unsafe { function!(108491, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSShadowLight {
