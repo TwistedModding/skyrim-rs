@@ -7,20 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `DetachResultSetField90_14` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447601, rva 0x1360380).
-/// `undefined8 * DetachResultSetField90_14(longlong param_1, undefined8 * param_2, undefined8 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn detach_result_set_field90_14(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447601, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
-/// `DetachResultSetField90_15` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447829, rva 0x13618a0).
-/// `undefined8 * DetachResultSetField90_15(longlong param_1, undefined8 * param_2, undefined8 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn detach_result_set_field90_15(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447829, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
 /// `DetachResultSetField90_16` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 526748, rva 0x1368030).
 /// `undefined8 * DetachResultSetField90_16(longlong param_1, undefined8 * param_2, undefined8 param_3)`
 ///
@@ -1547,13 +1533,6 @@ pub unsafe fn find_entry_by_name_2(param_1: i64, param_2: *mut i64) -> i64 { uns
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn find_entry_by_name_4(param_1: i64, param_2: *mut c_char) -> u64 { unsafe { function!(524104, (i64, *mut c_char) -> u64)(param_1, param_2) } }
-/// `FindEntryByRefHandle` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 32741, rva 0x54abe0).
-/// `char FindEntryByRefHandle(longlong param_1, longlong param_2, undefined1 * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn find_entry_by_ref_handle(param_1: i64, param_2: i64, param_3: *mut u8) -> c_char { unsafe { function!(32741, (i64, i64, *mut u8) -> c_char)(param_1, param_2, param_3) } }
 /// `FindEntryByRefHandleInListAt10` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 12547, rva 0x183020).
 /// `int * FindEntryByRefHandleInListAt10(longlong param_1, longlong param_2)`
 ///
@@ -12523,13 +12502,6 @@ pub unsafe fn is_within_heading_cone(param_1: i64, param_2: *mut f32, param_3: *
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn is_within_scaled_distance_2(param_1: i64, param_2: i64, param_3: f32) -> u8 { unsafe { function!(105490, (i64, i64, f32) -> u8)(param_1, param_2, param_3) } }
-/// `IsWithinSceneDialogueAngle` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 37250, rva 0x674dc0).
-/// `bool IsWithinSceneDialogueAngle(longlong param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn is_within_scene_dialogue_angle(param_1: i64, param_2: i64) -> u8 { unsafe { function!(37250, (i64, i64) -> u8)(param_1, param_2) } }
 /// `JoinPath_2` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 69122, rva 0xead4c0).
 /// `longlong JoinPath_2(char * param_1, ulonglong param_2, char * param_3, char * param_4)`
 ///
@@ -14147,3 +14119,24 @@ pub unsafe fn pad_writer_byte_array_to_alignment(param_1: *mut i64, param_2: i32
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__active_magic_effect__add_inventory_event_filter(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: *mut crate::TESForm) { unsafe { function!(54576, (*mut c_void, u32, *mut crate::ActiveEffect, *mut crate::TESForm))(vm, stackId, self_, a0) } }
+/// `Papyrus::ActiveMagicEffect::GetBaseObject` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54615, rva 0x9fdee0).
+/// `EffectSetting * GetBaseObject(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn papyrus__active_magic_effect__get_base_object(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect) -> *mut crate::EffectSetting { unsafe { function!(54615, (*mut c_void, u32, *mut crate::ActiveEffect) -> *mut crate::EffectSetting)(vm, stackId, self_) } }
+/// `Papyrus::ActiveMagicEffect::GetCasterActor` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54577, rva 0x9fbb50).
+/// `Actor * GetCasterActor(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn papyrus__active_magic_effect__get_caster_actor(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect) -> *mut crate::Actor { unsafe { function!(54577, (*mut c_void, u32, *mut crate::ActiveEffect) -> *mut crate::Actor)(vm, stackId, self_) } }
+/// `Papyrus::ActiveMagicEffect::GetTargetActor` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54578, rva 0x9fbbc0).
+/// `Actor * GetTargetActor(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn papyrus__active_magic_effect__get_target_actor(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect) -> *mut crate::Actor { unsafe { function!(54578, (*mut c_void, u32, *mut crate::ActiveEffect) -> *mut crate::Actor)(vm, stackId, self_) } }

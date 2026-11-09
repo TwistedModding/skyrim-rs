@@ -7,34 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `RotateTreeNodeLeft` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 419725, rva 0x12b3fa0).
-/// `undefined RotateTreeNodeLeft(longlong * param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn rotate_tree_node_left(param_1: *mut i64, param_2: i64) -> u64 { unsafe { function!(419725, (*mut i64, i64) -> u64)(param_1, param_2) } }
-/// `RotateTreeNodeRight` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 441867, rva 0x58fce0).
-/// `undefined RotateTreeNodeRight(longlong * param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn rotate_tree_node_right(param_1: *mut i64, param_2: *mut i64) -> u64 { unsafe { function!(441867, (*mut i64, *mut i64) -> u64)(param_1, param_2) } }
-/// `RotateTreeNodeRight_2` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 419726, rva 0x12b40e0).
-/// `undefined RotateTreeNodeRight_2(longlong * param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn rotate_tree_node_right_2(param_1: *mut i64, param_2: *mut i64) -> u64 { unsafe { function!(419726, (*mut i64, *mut i64) -> u64)(param_1, param_2) } }
-/// `RotateVectorAroundZByCellAngle` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 19138, rva 0x2c85f0).
-/// `undefined RotateVectorAroundZByCellAngle(longlong param_1, float * param_2, float * param_3, char param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn rotate_vector_around_z_by_cell_angle(param_1: i64, param_2: *mut f32, param_3: *mut f32, param_4: c_char) -> u64 { unsafe { function!(19138, (i64, *mut f32, *mut f32, c_char) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `RotateVectorArrayByQuaternions` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 67232, rva 0xca6640).
 /// `undefined RotateVectorArrayByQuaternions(longlong param_1, longlong param_2, longlong param_3, int param_4)`
 ///
@@ -2065,13 +2037,6 @@ pub unsafe fn set_extra_flags_bits(param_1: i64, param_2: u32, param_3: u64) -> 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_extra_ghost(param_1: i64, param_2: u8, param_3: u64, param_4: u64) -> u64 { unsafe { function!(11614, (i64, u8, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `SetExtraHeadTrackingWeight` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 12026, rva 0x171bb0).
-/// `undefined SetExtraHeadTrackingWeight(longlong param_1, float param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_extra_head_tracking_weight(param_1: i64, param_2: f32, param_3: u64, param_4: u64) -> u64 { unsafe { function!(12026, (i64, f32, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `SetExtraHealthPerc` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 12003, rva 0x170c80).
 /// `undefined SetExtraHealthPerc(longlong param_1, float param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -3479,13 +3444,6 @@ pub unsafe fn set_quest_completed(param_1: *mut i64, param_2: c_char) -> u64 { u
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_queued_attach_for3_d(param_1: *mut crate::TESObjectREFR, param_2: *mut i64) -> u64 { unsafe { function!(19415, (*mut crate::TESObjectREFR, *mut i64) -> u64)(param_1, param_2) } }
-/// `SetRagdollAnimSettingInverted` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 13376, rva 0x1a72d0).
-/// `undefined SetRagdollAnimSettingInverted(undefined8 param_1, byte param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_ragdoll_anim_setting_inverted(param_1: u64, param_2: u8) -> u64 { unsafe { function!(13376, (u64, u8) -> u64)(param_1, param_2) } }
 /// `SetRangeMaxByteField16` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 16671, rva 0x257d50).
 /// `undefined8 SetRangeMaxByteField16(longlong param_1, byte param_2)`
 ///

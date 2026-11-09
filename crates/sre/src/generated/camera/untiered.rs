@@ -329,6 +329,13 @@ impl crate::CachedRaycastData {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn cast_ray(&self, param_1: *mut c_char, param_2: *mut f32, param_3: *mut f32, param_4: *mut u32, param_5: *mut f32) -> *mut c_char { unsafe { function!(32744, (*const Self, *mut c_char, *mut f32, *mut f32, *mut u32, *mut f32) -> *mut c_char)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5) } }
+    /// `CachedRaycastData::CastRayFiltered` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 32745, rva 0x54b1e0).
+    /// `undefined8 CastRayFiltered(CachedRaycastData * this, undefined8 param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn cast_ray_filtered(&self, param_1: u64) -> u64 { unsafe { function!(32745, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::DragonCameraState {

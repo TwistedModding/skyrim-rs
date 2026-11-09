@@ -896,7 +896,7 @@ pub struct Actor_vtable {
     pub slot_198: *const c_void,
     /// `Actor::vfunc_199` at 0x6bdd60 (rtti, medium); signature (low): `undefined4 vfunc_199(void)`
     pub slot_199: *const c_void,
-    /// `Actor::vfunc_200` at 0x689370 (rtti, medium); signature (low): `longlong * vfunc_200(Actor * this, float param_1, float * param_2)`
+    /// `Actor::UpdateQuadrupedGroundPitch` at 0x689370 (semantic, low); signature (untiered): `longlong * UpdateQuadrupedGroundPitch(Actor * this, float param_1, float * param_2)`
     pub slot_200: *const c_void,
     /// `Actor::vfunc_201` at 0x6d3d30 (rtti, medium); signature (low): `undefined vfunc_201(Actor * this, undefined8 param_1, undefined8 * param_2, undefined8 * param_3)`
     pub slot_201: *const c_void,
@@ -1232,7 +1232,7 @@ pub struct Actor_vtable_38 {
     pub slot_5: *const c_void,
     /// `Actor::IAnimationGraphManagerHolder_vfunc_6` at 0x6b0330 (rtti, medium); signature (low): `undefined1 IAnimationGraphManagerHolder_vfunc_6(void)`
     pub slot_6: *const c_void,
-    /// `Actor::IAnimationGraphManagerHolder_vfunc_7` at 0x6b0340 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_7(Actor * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    /// `Actor::InitGraphVariables` at 0x6b0340 (semantic, high); signature (untiered): `undefined8 InitGraphVariables(Actor * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_7: *const c_void,
     /// `Actor::IAnimationGraphManagerHolder_vfunc_8` at 0x6b05f0 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_8(Actor * this, longlong * param_1)`
     pub slot_8: *const c_void,
@@ -2241,7 +2241,7 @@ impl AddCellGrassTask_vtable {
 pub struct AddRagdollHandler_vtable {
     /// `AddRagdollHandler::vdtor` at 0x7d3760 (layout_inference, medium); signature (low): `AddRagdollHandler * vdtor(AddRagdollHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `AddRagdollHandler::vfunc_1` at 0x7ce470 (rtti, high); signature (low): `undefined8 vfunc_1(AddRagdollHandler * this, longlong * param_1)`
+    /// `AddRagdollHandler::Handle` at 0x7ce470 (semantic, medium); signature (untiered): `undefined8 Handle(AddRagdollHandler * this, longlong * param_1)`
     pub slot_1: *const c_void,
 }
 impl AddRagdollHandler_vtable {

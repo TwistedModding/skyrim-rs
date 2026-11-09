@@ -7,20 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `InitHitData_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 44002, rva 0x7f0030).
-/// `undefined InitHitData_2(float * param_1, longlong * param_2, float * param_3, longlong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_hit_data_2(param_1: *mut f32, param_2: *mut i64, param_3: *mut f32, param_4: i64) -> u64 { unsafe { function!(44002, (*mut f32, *mut i64, *mut f32, i64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `InitHkArraysAndDefaults` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 65251, rva 0xc45020).
-/// `undefined8 * InitHkArraysAndDefaults(undefined8 * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_hk_arrays_and_defaults(param_1: *mut u64) -> *mut u64 { unsafe { function!(65251, (*mut u64) -> *mut u64)(param_1) } }
 /// `InitHkThreadMemoryEntry` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 79336, rva 0x10a0d10).
 /// `undefined4 * InitHkThreadMemoryEntry(undefined4 * param_1, longlong * param_2, undefined4 param_3, char param_4, undefined4 param_5)`
 ///
@@ -12831,3 +12817,17 @@ pub unsafe fn papyrus__actor__show_gift_menu_sub1(param_1: *mut i64) -> u64 { un
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__actor__start_combat_sub0(param_1: i64, param_2: i64, param_3: i64) -> u64 { unsafe { function!(36959, (i64, i64, i64) -> u64)(param_1, param_2, param_3) } }
+/// `Papyrus::Actor::StartVampireFeed_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 54012, rva 0x9e1560).
+/// `undefined StartVampireFeed_sub0(longlong param_1, longlong param_2, longlong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn papyrus__actor__start_vampire_feed_sub0(param_1: i64, param_2: i64, param_3: i64) -> u64 { unsafe { function!(54012, (i64, i64, i64) -> u64)(param_1, param_2, param_3) } }
+/// `Papyrus::Cell::SetFogColor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 18942, rva 0x2bc2d0).
+/// `undefined SetFogColor_sub0(longlong param_1, undefined4 param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn papyrus__cell__set_fog_color_sub0(param_1: i64, param_2: u32) -> u64 { unsafe { function!(18942, (i64, u32) -> u64)(param_1, param_2) } }

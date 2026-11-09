@@ -200,7 +200,7 @@ impl crate::BeamProjectile {
 }
 
 impl crate::CachedRaycastData {
-    /// `CachedRaycastData::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 32763, rva 0x54c2e0).
+    /// `CachedRaycastData::vdtor` (decompiler signature, tier low; ledger semantic evidence, name high; id 32763, rva 0x54c2e0).
     /// `CachedRaycastData * vdtor(CachedRaycastData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety

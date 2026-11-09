@@ -5112,6 +5112,3 @@ pub fn g_anon_d351_a927_main_culling_camera() -> *mut c_void { address!(403569) 
 /// `g_anon_D74036DD_HavokThreadMemorySink` at 0x3338720, id 411651 (layout_inference, medium)
 #[inline]
 pub fn g_anon_d74036_dd_havok_thread_memory_sink() -> *mut c_void { address!(411651) as *mut c_void }
-/// `g_anon_FA78E63F_GraphPhysicsStepListener` at 0x20c5b40, id 385965 (layout_inference, medium)
-#[inline]
-pub fn g_anon_fa78_e63_f_graph_physics_step_listener() -> *mut c_void { address!(385965) as *mut c_void }

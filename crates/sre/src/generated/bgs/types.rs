@@ -1691,36 +1691,6 @@ const _: () = assert!(core::mem::offset_of!(BGSExplosion, field_D0) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(BGSExplosion, field_D8) == 0xD8);
 const _: () = assert!(core::mem::offset_of!(BGSExplosion, field_E0) == 0xE0);
 
-/// `BGSFootIkRaycastInterfaceDB`: size >= 0x40 (lower bound); partial, the struct stops at the lower bound; primary base `BSIFootIkRaycastInterfaceDB`.
-/// Evidence: field field_38.
-/// Bases: `BSIFootIkRaycastInterfaceDB`@0x0, `BSTSingletonSDM<BGSFootIkRaycastInterfaceDB,BSTSingletonSDMOpStaticBuffer>`@0x8, `BSTSingletonSDMBase<BSTSDMTraits<BGSFootIkRaycastInterfaceDB,BSTSingletonSDMOpStaticBuffer<BGSFootIkRaycastInterfaceDB>_>_>`@0x8, `BSTSDMTraits<BGSFootIkRaycastInterfaceDB,BSTSingletonSDMOpStaticBuffer<BGSFootIkRaycastInterfaceDB>_>`@0x8, `BSTSingletonSDMOpStaticBuffer<BGSFootIkRaycastInterfaceDB>`@0x9.
-#[repr(C)]
-pub struct BGSFootIkRaycastInterfaceDB {
-    /// +0x0 `vtbl:BGSFootIkRaycastInterfaceDB:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BGSFootIkRaycastInterfaceDB_vtable,
-    pub unknown_8: [u8; 20],
-    /// +0x1C `undefined4`, ctor store
-    pub field_1C: u32,
-    /// +0x20 `undefined4`, ctor store
-    pub field_20: u32,
-    /// +0x24 `undefined4`, ctor store
-    pub field_24: u32,
-    /// +0x28 `undefined8`, ctor store
-    pub field_28: u64,
-    pub unknown_30: [u8; 8],
-    /// +0x38 `undefined8`, ctor store
-    pub field_38: u64,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(BGSFootIkRaycastInterfaceDB, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSFootIkRaycastInterfaceDB, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(BGSFootIkRaycastInterfaceDB, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BGSFootIkRaycastInterfaceDB, field_24) == 0x24);
-const _: () = assert!(core::mem::offset_of!(BGSFootIkRaycastInterfaceDB, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BGSFootIkRaycastInterfaceDB, field_38) == 0x38);
-
 /// `BGSFootstep`: size 0x30 (exact, medium); primary base `TESForm`.
 /// Evidence: runtime: 0x30 at 1 allocation sites.
 /// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0.

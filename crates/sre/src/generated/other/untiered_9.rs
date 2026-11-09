@@ -7,27 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `SetBlenderChildGenerator` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 59532, rva 0xb02510).
-/// `undefined SetBlenderChildGenerator(longlong param_1, int param_2, longlong param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_blender_child_generator(param_1: i64, param_2: i32, param_3: i64) -> u64 { unsafe { function!(59532, (i64, i32, i64) -> u64)(param_1, param_2, param_3) } }
-/// `SetBlurFilterMember` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 87065, rva 0xde2be0).
-/// `undefined1 SetBlurFilterMember(byte * param_1, longlong * param_2, ulonglong * param_3, byte * param_4, byte * param_5)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_blur_filter_member(param_1: *mut u8, param_2: *mut i64, param_3: *mut u64, param_4: *mut u8, param_5: *mut u8) -> u8 { unsafe { function!(87065, (*mut u8, *mut i64, *mut u64, *mut u8, *mut u8) -> u8)(param_1, param_2, param_3, param_4, param_5) } }
-/// `SetBodyField4AFromBoneList` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 78461, rva 0x1073830).
-/// `undefined SetBodyField4AFromBoneList(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_body_field4_a_from_bone_list(param_1: i64) -> u64 { unsafe { function!(78461, (i64) -> u64)(param_1) } }
 /// `SetBodySpaceAxesAndPivots` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 61895, rva 0xb721f0).
 /// `undefined SetBodySpaceAxesAndPivots(longlong param_1, undefined8 * param_2, undefined8 * param_3, undefined4 param_4, undefined8 * param_5, undefined8 * param_6, undefined4 param_7)`
 ///
@@ -6531,13 +6510,6 @@ pub unsafe fn set_year_of_time68(param_1: i64) -> u64 { unsafe { function!(86324
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_year_of_time80(param_1: i64) -> u64 { unsafe { function!(86306, (i64) -> u64)(param_1) } }
-/// `SetupFootIkLegs` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 78435, rva 0x106fcc0).
-/// `undefined SetupFootIkLegs(longlong param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn setup_foot_ik_legs(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(78435, (i64, *mut i64) -> u64)(param_1, param_2) } }
 /// `SetupItem3DNodeAndAddToUI3DScene` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 51772, rva 0x93e720).
 /// `undefined SetupItem3DNodeAndAddToUI3DScene(longlong param_1, longlong * param_2, undefined8 param_3, longlong * param_4)`
 ///
@@ -13923,3 +13895,24 @@ pub unsafe fn unescape_json_string_into_fixed_string128(param_1: *mut u64, param
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn unescape_json_string_into_fixed_string200(param_1: *mut u64, param_2: *mut u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(451771, (*mut u64, *mut u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `UnescapeJsonStringIntoFixedString256` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 449592, rva 0x13efce0).
+/// `undefined UnescapeJsonStringIntoFixedString256(undefined8 * param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn unescape_json_string_into_fixed_string256(param_1: *mut u64, param_2: *mut u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(449592, (*mut u64, *mut u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `UnescapeJsonStringToFixedString2000` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 450928, rva 0x13c3890).
+/// `undefined UnescapeJsonStringToFixedString2000(undefined8 * param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn unescape_json_string_to_fixed_string2000(param_1: *mut u64, param_2: *mut u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(450928, (*mut u64, *mut u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `UnescapeJsonStringToFixedString512` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 449206, rva 0x13768e0).
+/// `byte * UnescapeJsonStringToFixedString512(undefined8 * param_1, byte * param_2, undefined8 param_3, char * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn unescape_json_string_to_fixed_string512(param_1: *mut u64, param_2: *mut u8, param_3: u64, param_4: *mut c_char) -> *mut u8 { unsafe { function!(449206, (*mut u64, *mut u8, u64, *mut c_char) -> *mut u8)(param_1, param_2, param_3, param_4) } }

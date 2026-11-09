@@ -1967,6 +1967,8 @@ impl NiAVObject_flags {
     pub const FADE_COMPLETE: Self = Self(0x4000);
     /// FadeStateBit15 (low)
     pub const FADE_STATE_BIT15: Self = Self(0x8000);
+    /// preCulled (high)
+    pub const PRE_CULLED: Self = Self(0x100000);
     /// FirstPersonRootBit21 (low)
     pub const FIRST_PERSON_ROOT_BIT21: Self = Self(0x200000);
     /// lightsAssigned (medium)

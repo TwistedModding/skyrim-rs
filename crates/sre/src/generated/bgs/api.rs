@@ -265,12 +265,6 @@ impl core::ops::Deref for crate::BGSExplosion {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `BGSFootIkRaycastInterfaceDB` is laid out from its primary base `BSIFootIkRaycastInterfaceDB`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::BGSFootIkRaycastInterfaceDB {
-    type Target = crate::BSIFootIkRaycastInterfaceDB;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `BGSFootstep` is laid out from its primary base `TESForm`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BGSFootstep {
     type Target = crate::TESForm;

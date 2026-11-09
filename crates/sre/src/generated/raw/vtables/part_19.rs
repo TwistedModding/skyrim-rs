@@ -7,6 +7,272 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `bhkBallSocketConstraintChain::vftable` at 0x1a8e688, id 240726 (rtti, high); 56 slots.
+#[repr(C)]
+pub struct bhkBallSocketConstraintChain_vtable {
+    /// `bhkBallSocketConstraintChain::vdtor` at 0x10b6ed0 (layout_inference, medium); signature (low): `bhkBallSocketConstraintChain * vdtor(bhkBallSocketConstraintChain * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `bhkBallSocketConstraintChain::vfunc_2` at 0x10b7050 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
+    pub slot_22: *const c_void,
+    /// `bhkBallSocketConstraintChain::vfunc_23` at 0x10b6880 (rtti, high); signature (low): `bhkRefObject * vfunc_23(bhkBallSocketConstraintChain * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_23: *const c_void,
+    /// `bhkConstraintChain::vfunc_24` at 0x10ecc40 (rtti, medium); signature (untiered): `undefined vfunc_24(bhkConstraintChain * this, undefined8 param_1)`
+    pub slot_24: *const c_void,
+    /// `bhkConstraintChain::vfunc_25` at 0x10ecc50 (rtti, medium); signature (low): `undefined vfunc_25(bhkConstraintChain * this, longlong param_1)`
+    pub slot_25: *const c_void,
+    /// `bhkConstraintChain::vfunc_26` at 0x10ecd50 (rtti, medium); signature (low): `undefined vfunc_26(bhkConstraintChain * this, longlong * param_1)`
+    pub slot_26: *const c_void,
+    /// `bhkConstraintChain::vfunc_27` at 0x10ecde0 (rtti, medium); signature (untiered): `undefined vfunc_27(bhkConstraintChain * this, undefined8 param_1)`
+    pub slot_27: *const c_void,
+    /// `bhkConstraintChain::vfunc_28` at 0x10ecdf0 (rtti, medium); signature (low): `undefined vfunc_28(bhkConstraintChain * this, longlong * param_1)`
+    pub slot_28: *const c_void,
+    /// `NiObject::vfunc_29` at 0xedca00 (rtti, medium); signature (low): `undefined vfunc_29(NiObject * this, longlong param_1)`
+    pub slot_29: *const c_void,
+    /// `NiObject::vfunc_30` at 0xedcb50 (rtti, medium); signature (low): `undefined vfunc_30(void)`
+    pub slot_30: *const c_void,
+    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
+    pub slot_31: *const c_void,
+    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
+    pub slot_32: *const c_void,
+    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
+    pub slot_33: *const c_void,
+    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
+    pub slot_35: *const c_void,
+    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
+    pub slot_36: *const c_void,
+    /// `bhkConstraint::vfunc_37` at 0x10918c0 (rtti, medium); signature (low): `undefined vfunc_37(bhkConstraint * this, longlong param_1)`
+    pub slot_37: *const c_void,
+    /// `bhkConstraint::vfunc_38` at 0x10923e0 (rtti, medium); signature (low): `undefined vfunc_38(bhkConstraint * this, char param_1)`
+    pub slot_38: *const c_void,
+    /// `bhkConstraint::vfunc_39` at 0x1091870 (rtti, medium); signature (high): `undefined8 vfunc_39(bhkConstraint * this)`
+    pub slot_39: *const c_void,
+    /// `bhkConstraint::vfunc_40` at 0x10918b0 (rtti, medium); signature (high): `undefined vfunc_40(bhkConstraint * this)`
+    pub slot_40: *const c_void,
+    /// `bhkConstraintChain::vfunc_41` at 0x10ed2c0 (rtti, medium); signature (low): `undefined8 vfunc_41(bhkConstraintChain * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_41: *const c_void,
+    /// `bhkConstraintChain::vfunc_42` at 0x10ed3a0 (rtti, medium); signature (high): `undefined1 vfunc_42(bhkConstraintChain * this)`
+    pub slot_42: *const c_void,
+    /// `bhkBallSocketConstraintChain::vfunc_43` at 0x10b6b70 (rtti, high); signature (low): `undefined vfunc_43(bhkBallSocketConstraintChain * this, char param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_43: *const c_void,
+    /// `bhkBallSocketConstraintChain::vfunc_44` at 0x10b7070 (rtti, high); signature (low): `undefined8 vfunc_44(void)`
+    pub slot_44: *const c_void,
+    /// `bhkConstraint::vfunc_45` at 0x1092190 (rtti, medium); signature (low): `undefined vfunc_45(bhkConstraint * this, undefined8 param_1)`
+    pub slot_45: *const c_void,
+    /// `bhkConstraintChain::vfunc_46` at 0x10ecf30 (rtti, medium); signature (low): `undefined vfunc_46(bhkConstraintChain * this, longlong * param_1)`
+    pub slot_46: *const c_void,
+    /// `bhkBallSocketConstraintChain::vfunc_47` at 0x10b6990 (rtti, high); signature (low): `bhkBallSocketConstraintChain_vtbl * vfunc_47(bhkBallSocketConstraintChain * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_47: *const c_void,
+    /// `bhkSerializable::vfunc_48` at 0x1082b90 (rtti, medium); signature (high): `undefined vfunc_48(bhkSerializable * this)`
+    pub slot_48: *const c_void,
+    /// `bhkSerializable::vfunc_49` at 0x1082bd0 (rtti, medium); signature (high): `undefined vfunc_49(bhkSerializable * this)`
+    pub slot_49: *const c_void,
+    /// `bhkConstraint::vfunc_50` at 0x1091970 (rtti, medium); signature (low): `undefined vfunc_50(bhkConstraint * this, longlong param_1)`
+    pub slot_50: *const c_void,
+    /// `bhkConstraint::vfunc_51` at 0x1091a10 (rtti, medium); signature (low): `undefined vfunc_51(bhkConstraint * this, longlong param_1)`
+    pub slot_51: *const c_void,
+    /// `bhkConstraint::vfunc_52` at 0x1091ab0 (rtti, medium); signature (high): `undefined8 vfunc_52(bhkConstraint * this)`
+    pub slot_52: *const c_void,
+    /// `bhkConstraint::vfunc_53` at 0x1091ad0 (rtti, medium); signature (high): `undefined8 vfunc_53(bhkConstraint * this)`
+    pub slot_53: *const c_void,
+    /// `bhkConstraint::vfunc_54` at 0x1091f80 (rtti, medium); signature (low): `undefined8 vfunc_54(bhkConstraint * this, longlong * param_1, char param_2)`
+    pub slot_54: *const c_void,
+    /// `bhkConstraintChain::vfunc_55` at 0x10ed450 (rtti, medium); signature (low): `undefined1 vfunc_55(bhkConstraintChain * this, longlong * param_1, char param_2)`
+    pub slot_55: *const c_void,
+}
+impl bhkBallSocketConstraintChain_vtable {
+    pub const ID: u64 = 240726;
+}
+
+/// `bhkBinaryAction::vftable` at 0x1a90450, id 240768 (rtti, high); 54 slots.
+#[repr(C)]
+pub struct bhkBinaryAction_vtable {
+    /// `bhkBinaryAction::vdtor` at 0x10bd120 (slot_propagation, medium); signature (low): `bhkBinaryAction * vdtor(bhkBinaryAction * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `bhkBinaryAction::vfunc_2` at 0x10bd170 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
+    pub slot_22: *const c_void,
+    /// `NiAVObject::CreateClone` at 0xedc740 (semantic, high); signature (untiered): `NiObject * CreateClone(NiAVObject * this)`
+    pub slot_23: *const c_void,
+    /// `bhkBinaryAction::vfunc_24` at 0x10ed830 (rtti, high); signature (low): `undefined vfunc_24(bhkBinaryAction * this, longlong param_1)`
+    pub slot_24: *const c_void,
+    /// `bhkBinaryAction::vfunc_25` at 0x10ed890 (rtti, medium); signature (low): `undefined vfunc_25(bhkBinaryAction * this, longlong param_1)`
+    pub slot_25: *const c_void,
+    /// `bhkBinaryAction::vfunc_26` at 0x10ed920 (rtti, medium); signature (low): `undefined vfunc_26(bhkBinaryAction * this, longlong * param_1)`
+    pub slot_26: *const c_void,
+    /// `bhkBinaryAction::vfunc_27` at 0x10ed970 (rtti, high); signature (low): `undefined vfunc_27(bhkBinaryAction * this, longlong * param_1)`
+    pub slot_27: *const c_void,
+    /// `bhkBinaryAction::vfunc_28` at 0x10eda00 (rtti, medium); signature (low): `ulonglong vfunc_28(bhkBinaryAction * this, longlong * param_1)`
+    pub slot_28: *const c_void,
+    /// `NiObject::vfunc_29` at 0xedca00 (rtti, medium); signature (low): `undefined vfunc_29(NiObject * this, longlong param_1)`
+    pub slot_29: *const c_void,
+    /// `NiObject::vfunc_30` at 0xedcb50 (rtti, medium); signature (low): `undefined vfunc_30(void)`
+    pub slot_30: *const c_void,
+    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
+    pub slot_31: *const c_void,
+    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
+    pub slot_32: *const c_void,
+    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
+    pub slot_33: *const c_void,
+    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
+    pub slot_35: *const c_void,
+    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
+    pub slot_36: *const c_void,
+    /// `bhkShape::SetReferencedObject` at 0x10829c0 (semantic, high); signature (untiered): `undefined SetReferencedObject(bhkShape * this, longlong param_1)`
+    pub slot_37: *const c_void,
+    /// `bhkAction::vfunc_38` at 0x1093350 (rtti, medium); signature (low): `undefined vfunc_38(bhkAction * this, char param_1)`
+    pub slot_38: *const c_void,
+    /// `bhkAction::vfunc_39` at 0x10931a0 (rtti, medium); signature (high): `undefined8 vfunc_39(bhkAction * this)`
+    pub slot_39: *const c_void,
+    /// `bhkAction::vfunc_40` at 0x10931c0 (rtti, medium); signature (high): `undefined8 vfunc_40(bhkAction * this)`
+    pub slot_40: *const c_void,
+    /// `bhkBinaryAction::vfunc_41` at 0x10edc80 (rtti, medium); signature (low): `undefined1 vfunc_41(bhkBinaryAction * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_41: *const c_void,
+    /// `bhkBinaryAction::vfunc_42` at 0x10edd40 (rtti, medium); signature (high): `undefined1 vfunc_42(bhkBinaryAction * this)`
+    pub slot_42: *const c_void,
+    /// `bhkSerializable::vfunc_43` at 0x1082a20 (rtti, medium); signature (low): `undefined vfunc_43(bhkSerializable * this, char param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_43: *const c_void,
+    /// `bhkSerializable::vfunc_44` at 0x2fb840 (rtti, medium); signature (low): `undefined8 vfunc_44(void)`
+    pub slot_44: *const c_void,
+    /// `bhkSerializable::vfunc_45` at 0x1082b10 (rtti, medium); signature (low): `undefined4 vfunc_45(bhkSerializable * this, longlong param_1)`
+    pub slot_45: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_46: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_47: *const c_void,
+    /// `bhkSerializable::vfunc_48` at 0x1082b90 (rtti, medium); signature (high): `undefined vfunc_48(bhkSerializable * this)`
+    pub slot_48: *const c_void,
+    /// `bhkSerializable::vfunc_49` at 0x1082bd0 (rtti, medium); signature (high): `undefined vfunc_49(bhkSerializable * this)`
+    pub slot_49: *const c_void,
+    /// `bhkAction::vfunc_50` at 0x3fa000 (rtti, medium); signature (low): `undefined vfunc_50(void)`
+    pub slot_50: *const c_void,
+    /// `bhkBinaryAction::vfunc_51` at 0x10edac0 (rtti, medium); signature (low): `undefined vfunc_51(bhkBinaryAction * this, longlong param_1)`
+    pub slot_51: *const c_void,
+    /// `bhkBinaryAction::vfunc_52` at 0x10edae0 (rtti, medium); signature (low): `undefined vfunc_52(bhkBinaryAction * this, longlong param_1)`
+    pub slot_52: *const c_void,
+    /// `bhkBinaryAction::vfunc_53` at 0x10edb40 (rtti, medium); signature (low): `undefined vfunc_53(bhkBinaryAction * this, longlong * param_1, longlong param_2)`
+    pub slot_53: *const c_void,
+}
+impl bhkBinaryAction_vtable {
+    pub const ID: u64 = 240768;
+}
+
+/// `bhkBipedOrientationController::vftable` at 0x1a8ab30, id 240610 (rtti, high); 11 slots.
+#[repr(C)]
+pub struct bhkBipedOrientationController_vtable {
+    /// `bhkBipedOrientationController::vdtor` at 0x10a0b70 (layout_inference, medium); signature (low): `bhkBipedOrientationController * vdtor(bhkBipedOrientationController * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `bhkBipedOrientationController::vfunc_1` at 0x10a07f0 (rtti, high); signature (low): `undefined vfunc_1(bhkBipedOrientationController * this, longlong * param_1, float param_2)`
+    pub slot_1: *const c_void,
+    /// `bhkBipedOrientationController::vfunc_2` at 0x10a0880 (rtti, high); signature (low): `undefined vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `bhkBipedOrientationController::vfunc_3` at 0x10a0890 (rtti, high); signature (low): `undefined vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `bhkBipedOrientationController::vfunc_4` at 0x10a08a0 (rtti, high); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `bhkBipedOrientationController::vfunc_5` at 0x10a08b0 (rtti, high); signature (low): `undefined vfunc_5(bhkBipedOrientationController * this, longlong * param_1, longlong param_2, undefined8 param_3, float * param_4)`
+    pub slot_5: *const c_void,
+    /// `bhkBipedOrientationController::vfunc_6` at 0x10a09a0 (rtti, high); signature (low): `undefined vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `bhkBipedOrientationController::vfunc_7` at 0x10a09b0 (rtti, high); signature (low): `undefined1 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `bhkBipedOrientationController::vfunc_8` at 0x10a09c0 (rtti, high); signature (low): `undefined vfunc_8(bhkBipedOrientationController * this, longlong * param_1)`
+    pub slot_8: *const c_void,
+    /// `bhkBipedOrientationController::vfunc_9` at 0x10a0b50 (rtti, high); signature (low): `undefined vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `bhkBipedOrientationController::vfunc_10` at 0x10a0b60 (rtti, high); signature (low): `undefined1 vfunc_10(void)`
+    pub slot_10: *const c_void,
+}
+impl bhkBipedOrientationController_vtable {
+    pub const ID: u64 = 240610;
+}
+
 /// `bhkBlendCollisionObject::vftable` at 0x1a85198, id 239339 (rtti, high); 49 slots.
 #[repr(C)]
 pub struct bhkBlendCollisionObject_vtable {
@@ -6626,7 +6892,7 @@ impl bhkRagdollConstraint_vtable {
 pub struct bhkRagdollController_vtable {
     /// `bhkRagdollController::vdtor` at 0x107b110 (slot_propagation, medium); signature (low): `bhkRagdollController * vdtor(bhkRagdollController * this, ulonglong param_1, undefined8 param_2, char * * param_3)`
     pub slot_0: *const c_void,
-    /// `hkaRaycastInterface::vfunc_1` at 0xa9dc50 (rtti, medium); signature (low): `undefined1 * vfunc_1(hkaRaycastInterface * this, undefined1 * param_1)`
+    /// `hkaRaycastInterface::CastRayFiltered` at 0xa9dc50 (semantic, high); signature (untiered): `undefined1 * CastRayFiltered(hkaRaycastInterface * this, undefined1 * param_1)`
     pub slot_1: *const c_void,
     /// `bhkRagdollController::vfunc_2` at 0x1071ad0 (rtti, high); signature (low): `undefined vfunc_2(bhkRagdollController * this, char * param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
     pub slot_2: *const c_void,
@@ -12297,125 +12563,5 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5912d381f85a_vtable {
     pub const ID: u64 = 466464;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vftable` at 0x1ad5710, id 466467 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1f07fb75429c_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x129e7a0 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    #[doc(hidden)]
-    pub __slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    #[doc(hidden)]
-    pub __slot_2: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    #[doc(hidden)]
-    pub __slot_3: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1f07fb75429c_vtable {
-    pub const ID: u64 = 466467;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_>::vftable` at 0x1aefee8, id 537473 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a586519434b0_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_>::vfunc_0` at 0x1337e10 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_>::vfunc_1` at 0x133a500 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    #[doc(hidden)]
-    pub __slot_2: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    #[doc(hidden)]
-    pub __slot_3: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a586519434b0_vtable {
-    pub const ID: u64 = 537473;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_47af9f2ced50f6065f1eccf21d3e4629>_>::vftable` at 0x1aefe48, id 537468 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_37a46b686ea9_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_47af9f2ced50f6065f1eccf21d3e4629>_>::vfunc_0` at 0x1337e50 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_47af9f2ced50f6065f1eccf21d3e4629>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_47af9f2ced50f6065f1eccf21d3e4629>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_47af9f2ced50f6065f1eccf21d3e4629>_>::vfunc_1` at 0x133a5c0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_47af9f2ced50f6065f1eccf21d3e4629>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    #[doc(hidden)]
-    pub __slot_2: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    #[doc(hidden)]
-    pub __slot_3: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_37a46b686ea9_vtable {
-    pub const ID: u64 = 537468;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_>::vftable` at 0x1aefda8, id 537460 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_268a060425ab_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_>::vfunc_0` at 0x1337ed0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_>::vfunc_1` at 0x133a5f0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    #[doc(hidden)]
-    pub __slot_2: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    #[doc(hidden)]
-    pub __slot_3: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_268a060425ab_vtable {
-    pub const ID: u64 = 537460;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_>::vftable` at 0x1af00c8, id 537482 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d91aefc204e7_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_>::vfunc_0` at 0x1337f00 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_>::vfunc_1` at 0x133a660 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    #[doc(hidden)]
-    pub __slot_2: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    #[doc(hidden)]
-    pub __slot_3: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d91aefc204e7_vtable {
-    pub const ID: u64 = 537482;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_>::vftable` at 0x1aeff10, id 537475 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b598d94cad70_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_>::vfunc_0` at 0x1338680 (rtti, high); signature (low): `CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_> * vfunc_0(CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_>::vfunc_1` at 0x133a500 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_1: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_>::vfunc_2` at 0x1339560 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    #[doc(hidden)]
-    pub __slot_2: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_>::vfunc_3` at 0x133afc0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    #[doc(hidden)]
-    pub __slot_3: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b598d94cad70_vtable {
-    pub const ID: u64 = 537475;
 }
 

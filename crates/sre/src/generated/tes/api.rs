@@ -646,6 +646,15 @@ impl crate::TES {
     /// `pick` must point to what the engine expects.
     #[inline]
     pub unsafe fn pick(&self, pick: *mut crate::bhkPickData) -> *mut crate::NiAVObject { unsafe { function!(13371, (*const Self, *mut crate::bhkPickData) -> *mut crate::NiAVObject)(core::ptr::from_ref(self), pick) } }
+    /// `TES::UpdateHavokWorlds`: exterior: appends StepExteriorWorld 0x2b79a0 to job list ID_400397, runs it (0xebb1b0) and waits (WaitForJobListCompletion 0xebb1d0); interior: steps the cell's world inline through 0x2b9750 (cell extra type 1 world, vtable +0x190 = bhkWorld::Step)
+    ///
+    /// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 13291, rva 0x1a1500.
+    /// `void (TES* tes, float delta)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn update_havok_worlds(&self, delta: f32) { unsafe { function!(13291, (*const Self, f32))(core::ptr::from_ref(self), delta) } }
     /// `TES::UpdateSkyModeForCell`: picks the sky mode for the cell: no cell or an exterior -> 3 (2 or 1 when the worldspace has a +0x160 override and its +0xa0 bit 5); an interior (cell+0x40 bit 0) -> 1, or for an interior flagged +0x40 bit 7 (sky-like interior) -> 3 when bit 8 else 2; skipped while the mode is 0 (sky toggled off); also Sky+0x28 = the worldspace +0x160 value
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 13326, rva 0x1a3f40.

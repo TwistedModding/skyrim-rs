@@ -7013,16 +7013,40 @@ impl BGSExplosion_vtable_88 {
 /// `BGSFootIkRaycastInterfaceDB::vftable` at 0x18e9d20, id 205118 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct BGSFootIkRaycastInterfaceDB_vtable {
-    /// `BGSFootIkRaycastInterfaceDB::vdtor` at 0x54c250 (layout_inference, medium); signature (low): `BGSFootIkRaycastInterfaceDB * vdtor(BGSFootIkRaycastInterfaceDB * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BGSFootIkRaycastInterfaceDB::vdtor` at 0x54c250 (semantic, high); signature (low): `BGSFootIkRaycastInterfaceDB * vdtor(BGSFootIkRaycastInterfaceDB * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: 0x54c250: destroys the record array and map, clears g_FootIkRaycastInterfaceDB 0x31df418, frees 0x58 (high); semantic signature: `BGSFootIkRaycastInterfaceDB* (BGSFootIkRaycastInterfaceDB* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `BGSFootIkRaycastInterfaceDB::GetRaycastInterface` at 0x54ac90 (semantic, medium); signature (untiered): `ulonglong GetRaycastInterface(BGSFootIkRaycastInterfaceDB * this, ulonglong param_1, ulonglong param_2)`
+    /// `BGSFootIkRaycastInterfaceDB::GetRaycastInterface` at 0x54ac90 (semantic, medium); signature (untiered): `ulonglong GetRaycastInterface(BGSFootIkRaycastInterfaceDB * this, ulonglong param_1, ulonglong param_2)`; `GetRaycastInterface`: 0x54ac90: key = the hkbCharacter* (Run passes ctx->character); returns the CachedRaycastData record for it, creating one on a miss (high); semantic signature: `hkaRaycastInterface* (BGSFootIkRaycastInterfaceDB* this, hkbCharacter* key)`
     pub slot_1: *const c_void,
-    /// `BGSFootIkRaycastInterfaceDB::vfunc_2` at 0x54aef0 (rtti, high); signature (low): `undefined4 vfunc_2(void)`
+    /// `BGSFootIkRaycastInterfaceDB::GetScale` at 0x54aef0 (semantic, high); signature (untiered): `undefined4 GetScale(void)`; `GetScale`: 0x54aef0 returns 1.0 (0x1b5be28); SetupLegs 0xad42b0 multiplies worldFromModel.scale.x by it to scale the leg lengths (high); semantic signature: `float (BGSFootIkRaycastInterfaceDB* this)`
     pub slot_2: *const c_void,
 }
 impl BGSFootIkRaycastInterfaceDB_vtable {
     pub const ID: u64 = 205118;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `BGSFootIkRaycastInterfaceDB_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<BGSFootIkRaycastInterfaceDB_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSFootIkRaycastInterfaceDB_vtable_vdtor>>(self.slot_0) }
+    }
+    pub const SLOT_GetRaycastInterface: usize = 1;
+    /// Slot 1 as `BGSFootIkRaycastInterfaceDB_vtable_GetRaycastInterface`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetRaycastInterface(&self) -> Option<BGSFootIkRaycastInterfaceDB_vtable_GetRaycastInterface> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSFootIkRaycastInterfaceDB_vtable_GetRaycastInterface>>(self.slot_1) }
+    }
+    pub const SLOT_GetScale: usize = 2;
+    /// Slot 2 as `BGSFootIkRaycastInterfaceDB_vtable_GetScale`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetScale(&self) -> Option<BGSFootIkRaycastInterfaceDB_vtable_GetScale> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSFootIkRaycastInterfaceDB_vtable_GetScale>>(self.slot_2) }
+    }
 }
+/// `BGSFootIkRaycastInterfaceDB::vdtor`, slot 0: 0x54c250: destroys the record array and map, clears g_FootIkRaycastInterfaceDB 0x31df418, frees 0x58 (high).
+pub type BGSFootIkRaycastInterfaceDB_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::BGSFootIkRaycastInterfaceDB, flags: u32) -> *mut crate::BGSFootIkRaycastInterfaceDB;
+/// `BGSFootIkRaycastInterfaceDB::GetRaycastInterface`, slot 1: 0x54ac90: key = the hkbCharacter* (Run passes ctx->character); returns the CachedRaycastData record for it, creating one on a miss (high).
+pub type BGSFootIkRaycastInterfaceDB_vtable_GetRaycastInterface = unsafe extern "C" fn(this: *mut crate::BGSFootIkRaycastInterfaceDB, key: *mut crate::hkbCharacter) -> *mut crate::hkaRaycastInterface;
+/// `BGSFootIkRaycastInterfaceDB::GetScale`, slot 2: 0x54aef0 returns 1.0 (0x1b5be28); SetupLegs 0xad42b0 multiplies worldFromModel.scale.x by it to scale the leg lengths (high).
+pub type BGSFootIkRaycastInterfaceDB_vtable_GetScale = unsafe extern "C" fn(this: *mut crate::BGSFootIkRaycastInterfaceDB) -> f32;
 
 /// `BGSFootstep::vftable` at 0x1830ba0, id 190887 (rtti, high); 59 slots.
 #[repr(C)]
@@ -12135,39 +12159,5 @@ pub struct BGSPackageDataRefOLD_vtable {
 }
 impl BGSPackageDataRefOLD_vtable {
     pub const ID: u64 = 200902;
-}
-
-/// `BGSPackageDataRefOLD::vftable_8` at 0x18c4cd8, id 200904 (rtti, high); 13 slots.
-#[repr(C)]
-pub struct BGSPackageDataRefOLD_vtable_8 {
-    /// `BGSPackageDataRefOLD::IPackageData_vdtor` at 0x44e914 (slot_propagation, medium); signature (high): `undefined IPackageData_vdtor(BGSPackageDataRefOLD * this)`
-    pub slot_0: *const c_void,
-    /// `BGSPackageDataRefOLD::IPackageData_vfunc_1` at 0x44db40 (rtti, high); signature (low): `undefined IPackageData_vfunc_1(BGSPackageDataRefOLD * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0>::IPackageData_vfunc_2` at 0x44ef20 (rtti, medium); signature (low): `undefined IPackageData_vfunc_2(BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0> * this, longlong param_1, undefined8 param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
-    /// `BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0>::IPackageData_vfunc_3` at 0x44ee50 (rtti, medium); signature (low): `undefined IPackageData_vfunc_3(BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0> * this, undefined8 param_1)`
-    pub slot_3: *const c_void,
-    /// `BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0>::IPackageData_vfunc_4` at 0x44ee90 (rtti, medium); signature (low): `longlong IPackageData_vfunc_4(BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0> * this, undefined8 param_1)`
-    pub slot_4: *const c_void,
-    /// `BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0>::IPackageData_vfunc_5` at 0x44f020 (rtti, medium); signature (low): `undefined1 IPackageData_vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `IPackageData::vfunc_6` at 0x44d510 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `IPackageData::vfunc_7` at 0x44d520 (rtti, medium); signature (low): `undefined vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `IPackageData::vfunc_8` at 0x44d530 (rtti, medium); signature (low): `undefined vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `IPackageData::vfunc_9` at 0x44d540 (rtti, medium); signature (low): `undefined vfunc_9(void)`
-    pub slot_9: *const c_void,
-    /// `BGSPackageDataRefOLD::IPackageData_vfunc_10` at 0x44dd90 (rtti, high); signature (low): `undefined IPackageData_vfunc_10(BGSPackageDataRefOLD * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_10: *const c_void,
-    /// `BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0>::IPackageData_vfunc_11` at 0x44f030 (rtti, medium); signature (low): `undefined * IPackageData_vfunc_11(void)`
-    pub slot_11: *const c_void,
-    /// `IPackageData::vfunc_12` at 0x44d550 (rtti, medium); signature (low): `undefined1 vfunc_12(void)`
-    pub slot_12: *const c_void,
-}
-impl BGSPackageDataRefOLD_vtable_8 {
-    pub const ID: u64 = 200904;
 }
 

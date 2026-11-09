@@ -5211,6 +5211,8 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0xca7a0, id: 8019, confidence: Confidence::Medium, name: "INISetting_fKinectMinReportShoutConfidence_Kinect__init" },
     Function { rva: 0xca820, id: 8020, confidence: Confidence::Medium, name: "INISetting_fKinectMinRuleConfidence_Kinect__init" },
     Function { rva: 0xca8a0, id: 8021, confidence: Confidence::Medium, name: "INISetting_fKinectMinShoutConfidence_Kinect__init" },
+    Function { rva: 0xd01a0, id: 8284, confidence: Confidence::High, name: "StaticInit_hkbFootIkDriverInfoLegClass" },
+    Function { rva: 0xd0210, id: 8285, confidence: Confidence::Medium, name: "StaticInit_hkbFootIkDriverInfoTypeInfo" },
     Function { rva: 0xd47e0, id: 8461, confidence: Confidence::Medium, name: "g_hkStaticClassNameRegistry__init" },
     Function { rva: 0xd4d10, id: 8972, confidence: Confidence::Medium, name: "g_hkpNullAgent__init" },
     Function { rva: 0xddbe0, id: 8844, confidence: Confidence::Medium, name: "INISetting_bMultiThreadBoneUpdate_Animation__init" },
@@ -7684,6 +7686,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x14ea90, id: 11222, confidence: Confidence::Medium, name: "ConcreteObjectFormFactory<IngredientItem,30,5,1>::vdtor" },
     Function { rva: 0x14eaf0, id: 11223, confidence: Confidence::Medium, name: "IngredientItem::ctor" },
     Function { rva: 0x14ec60, id: 11224, confidence: Confidence::High, name: "IngredientItem::dtor" },
-    Function { rva: 0x14edb0, id: 11225, confidence: Confidence::High, name: "IngredientItem::vfunc_4" },
-    Function { rva: 0x14edd0, id: 11226, confidence: Confidence::High, name: "IngredientItem::vfunc_5" },
 ];

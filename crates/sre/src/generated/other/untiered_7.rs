@@ -7,20 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `Papyrus::Actor::StartVampireFeed_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 54012, rva 0x9e1560).
-/// `undefined StartVampireFeed_sub0(longlong param_1, longlong param_2, longlong param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__actor__start_vampire_feed_sub0(param_1: i64, param_2: i64, param_3: i64) -> u64 { unsafe { function!(54012, (i64, i64, i64) -> u64)(param_1, param_2, param_3) } }
-/// `Papyrus::Cell::SetFogColor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 18942, rva 0x2bc2d0).
-/// `undefined SetFogColor_sub0(longlong param_1, undefined4 param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__cell__set_fog_color_sub0(param_1: i64, param_2: u32) -> u64 { unsafe { function!(18942, (i64, u32) -> u64)(param_1, param_2) } }
 /// `Papyrus::Cell::SetFogColor_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 18943, rva 0x2bc2f0).
 /// `undefined SetFogColor_sub1(longlong param_1, undefined4 param_2)`
 ///
@@ -1323,13 +1309,6 @@ pub unsafe fn populate_content_collection_from_record(param_1: i64, param_2: *mu
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn populate_eula_list_or_request_documents(param_1: c_char, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(441671, (c_char, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `PopulateFromREFRHandle` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 32747, rva 0x54b280).
-/// `undefined PopulateFromREFRHandle(longlong param_1, uint * param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn populate_from_refr_handle(param_1: i64, param_2: *mut u32, param_3: u64, param_4: u64) -> u64 { unsafe { function!(32747, (i64, *mut u32, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `PopulateHitData` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 44001, rva 0x7efca0).
 /// `undefined PopulateHitData(longlong param_1, longlong * param_2, float * param_3, longlong * param_4, char param_5)`
 ///
@@ -9135,13 +9114,6 @@ pub unsafe fn release_entry_lists_and_owned_object(param_1: i64, param_2: u64, p
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn release_entry_members(param_1: *mut u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(442864, (*mut u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ReleaseEntryObjectsAndReset` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 58427, rva 0xad41c0).
-/// `undefined ReleaseEntryObjectsAndReset(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_entry_objects_and_reset(param_1: i64) -> u64 { unsafe { function!(58427, (i64) -> u64)(param_1) } }
 /// `ReleaseEntryRefs` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 72462, rva 0xf57cb0).
 /// `undefined ReleaseEntryRefs(longlong * param_1)`
 ///
@@ -13594,3 +13566,31 @@ pub unsafe fn remove_all_map_items_5(param_1: *mut i64) -> u64 { unsafe { functi
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn remove_all_open_hash_map_key_entries(param_1: *mut i64, param_2: i64) -> i32 { unsafe { function!(58256, (*mut i64, i64) -> i32)(param_1, param_2) } }
+/// `RemoveAllPtrKeyEntries` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 58255, rva 0xac5990).
+/// `int RemoveAllPtrKeyEntries(longlong * param_1, ulonglong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn remove_all_ptr_key_entries(param_1: *mut i64, param_2: u64) -> i32 { unsafe { function!(58255, (*mut i64, u64) -> i32)(param_1, param_2) } }
+/// `RemoveAllTreeKeys` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 26997, rva 0x43a4c0).
+/// `undefined RemoveAllTreeKeys(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn remove_all_tree_keys(param_1: *mut i64) -> u64 { unsafe { function!(26997, (*mut i64) -> u64)(param_1) } }
+/// `RemoveAllWithUnlink` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 107775, rva 0x1568f90).
+/// `undefined RemoveAllWithUnlink(longlong * param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn remove_all_with_unlink(param_1: *mut i64, param_2: *mut i64) -> u64 { unsafe { function!(107775, (*mut i64, *mut i64) -> u64)(param_1, param_2) } }
+/// `RemoveAndDeleteEntriesMatchingField50` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 25038, rva 0x3d3100).
+/// `undefined RemoveAndDeleteEntriesMatchingField50(longlong param_1, undefined8 param_2, undefined8 param_3, ulonglong param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn remove_and_delete_entries_matching_field50(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(25038, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }

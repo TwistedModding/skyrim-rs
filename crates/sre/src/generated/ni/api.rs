@@ -451,18 +451,6 @@ impl core::ops::Deref for crate::NiLightDimmerController {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `NiLookAtController` is laid out from its primary base `NiTimeController`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::NiLookAtController {
-    type Target = crate::NiTimeController;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `NiLookAtInterpolator` is laid out from its primary base `NiInterpolator`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::NiLookAtInterpolator {
-    type Target = crate::NiInterpolator;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `NiMemStream` is laid out from its primary base `NiBinaryStream`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::NiMemStream {
     type Target = crate::NiBinaryStream;
@@ -2534,29 +2522,6 @@ impl crate::NiLightDimmerController {
     #[inline]
     pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiLightDimmerController.field_2C", 0x2C, u32) } }
     /// `NiLightDimmerController::field_2C`, at +0x2C on 1.7.104.
-    #[inline]
-    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
-}
-
-impl crate::NiLookAtController {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiLookAtController.field_20", 0x20, u32) } }
-    /// `NiLookAtController::field_20`, at +0x20 on 1.7.104.
-    #[inline]
-    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiLookAtController.field_2C", 0x2C, u32) } }
-    /// `NiLookAtController::field_2C`, at +0x2C on 1.7.104.
     #[inline]
     pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
     #[inline]

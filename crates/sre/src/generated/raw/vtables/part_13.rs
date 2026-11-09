@@ -7,6 +7,64 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ConcussionEffect::vftable` at 0x18f7a90, id 205885 (rtti, high); 25 slots.
+#[repr(C)]
+pub struct ConcussionEffect_vtable {
+    /// `ActiveEffect::vfunc_0` at 0x5baed0 (rtti, medium); signature (low): `undefined vfunc_0(ActiveEffect * this, longlong * param_1, longlong * param_2)`
+    pub slot_0: *const c_void,
+    /// `ActiveEffect::vfunc_1` at 0x5baf80 (rtti, medium); signature (high): `undefined vfunc_1(ActiveEffect * this)`
+    pub slot_1: *const c_void,
+    /// `ActiveEffect::vfunc_2` at 0x5ba080 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `ActiveEffect::vfunc_3` at 0x5bb070 (rtti, medium); signature (high): `undefined8 vfunc_3(ActiveEffect * this)`
+    pub slot_3: *const c_void,
+    /// `ActiveEffect::vfunc_4` at 0x5bf0c0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_5: *const c_void,
+    /// `ActiveEffect::vfunc_6` at 0x5bb9c0 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `ActiveEffect::vfunc_7` at 0x5ba0a0 (rtti, medium); signature (low): `undefined vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `ActiveEffect::vfunc_8` at 0x5bb9d0 (rtti, medium); signature (low): `undefined vfunc_8(ActiveEffect * this, longlong param_1)`
+    pub slot_8: *const c_void,
+    /// `ActiveEffect::vfunc_9` at 0x5bbc00 (rtti, medium); signature (low): `undefined vfunc_9(ActiveEffect * this, longlong param_1)`
+    pub slot_9: *const c_void,
+    /// `ActiveEffect::vfunc_10` at 0x5bc030 (rtti, medium); signature (low): `undefined vfunc_10(ActiveEffect * this, undefined8 param_1)`
+    pub slot_10: *const c_void,
+    /// `ActiveEffect::vfunc_11` at 0x5bc0b0 (rtti, medium); signature (high): `undefined vfunc_11(ActiveEffect * this)`
+    pub slot_11: *const c_void,
+    /// `ActiveEffect::vfunc_12` at 0x5bc8a0 (rtti, medium); signature (low): `undefined vfunc_12(ActiveEffect * this, longlong param_1)`
+    pub slot_12: *const c_void,
+    /// `ActiveEffect::vfunc_13` at 0x5ba060 (rtti, medium); signature (low): `undefined vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `ActiveEffect::vfunc_14` at 0x5ba0b0 (rtti, medium); signature (low): `undefined vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `ActiveEffect::vfunc_15` at 0x5ba070 (rtti, medium); signature (low): `undefined vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `ActiveEffect::vfunc_16` at 0x5bcb70 (rtti, medium); signature (high): `byte vfunc_16(ActiveEffect * this)`
+    pub slot_16: *const c_void,
+    /// `ActiveEffect::vfunc_17` at 0x5bcb90 (rtti, medium); signature (low): `undefined1 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `ActiveEffect::vfunc_18` at 0x5bcc10 (rtti, medium); signature (low): `undefined vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `ConcussionEffect::vdtor` at 0x5c7d70 (slot_propagation, medium); signature (low): `ConcussionEffect * vdtor(ConcussionEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_19: *const c_void,
+    /// `ActiveEffect::vfunc_20` at 0x5bf0b0 (rtti, medium); signature (low): `undefined vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `ActiveEffect::vfunc_21` at 0x5bedb0 (rtti, medium); signature (low): `undefined vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `ActiveEffect::vfunc_22` at 0x5bcda0 (rtti, medium); signature (high): `undefined8 vfunc_22(ActiveEffect * this)`
+    pub slot_22: *const c_void,
+    /// `ActiveEffect::vfunc_23` at 0x5bdc00 (rtti, medium); signature (low): `undefined1 vfunc_23(void)`
+    pub slot_23: *const c_void,
+    /// `ActiveEffect::vfunc_24` at 0x5bdc10 (rtti, medium); signature (low): `undefined4 vfunc_24(void)`
+    pub slot_24: *const c_void,
+}
+impl ConcussionEffect_vtable {
+    pub const ID: u64 = 205885;
+}
+
 /// `ConeProjectile::vftable` at 0x193dea0, id 209925 (rtti, high); 195 slots.
 #[repr(C)]
 pub struct ConeProjectile_vtable {
@@ -4602,16 +4660,40 @@ impl ExtraHavok_vtable {
 /// `ExtraHeadTrackingWeight::vftable` at 0x17ea5b8, id 186847 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct ExtraHeadTrackingWeight_vtable {
-    /// `ExtraHeadTrackingWeight::vdtor` at 0x17cc70 (layout_inference, medium); signature (low): `ExtraHeadTrackingWeight * vdtor(ExtraHeadTrackingWeight * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ExtraHeadTrackingWeight::vdtor` at 0x17cc70 (semantic, high); signature (low): `ExtraHeadTrackingWeight * vdtor(ExtraHeadTrackingWeight * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: 0x17cc70, frees 0x18 (high); semantic signature: `ExtraHeadTrackingWeight* (ExtraHeadTrackingWeight* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `ExtraHeadTrackingWeight::vfunc_1` at 0x189380 (rtti, high); signature (low): `undefined8 vfunc_1(void)`
+    /// `ExtraHeadTrackingWeight::GetType` at 0x189380 (semantic, high); signature (untiered): `undefined8 GetType(void)`; `GetType`: 0x189380 returns 0x94 (extra data type) (high); semantic signature: `u32 (ExtraHeadTrackingWeight* this)`
     pub slot_1: *const c_void,
-    /// `ExtraHeadTrackingWeight::vfunc_2` at 0x189360 (rtti, high); signature (low): `undefined1 vfunc_2(ExtraHeadTrackingWeight * this, longlong param_1)`
+    /// `ExtraHeadTrackingWeight::IsNotEqual` at 0x189360 (semantic, high); signature (untiered): `undefined1 IsNotEqual(ExtraHeadTrackingWeight * this, longlong param_1)`; `IsNotEqual`: 0x189360: weight floats at +0x10 differ (high); semantic signature: `bool (ExtraHeadTrackingWeight* this, const BSExtraData* other)`
     pub slot_2: *const c_void,
 }
 impl ExtraHeadTrackingWeight_vtable {
     pub const ID: u64 = 186847;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `ExtraHeadTrackingWeight_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<ExtraHeadTrackingWeight_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ExtraHeadTrackingWeight_vtable_vdtor>>(self.slot_0) }
+    }
+    pub const SLOT_GetType: usize = 1;
+    /// Slot 1 as `ExtraHeadTrackingWeight_vtable_GetType`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetType(&self) -> Option<ExtraHeadTrackingWeight_vtable_GetType> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ExtraHeadTrackingWeight_vtable_GetType>>(self.slot_1) }
+    }
+    pub const SLOT_IsNotEqual: usize = 2;
+    /// Slot 2 as `ExtraHeadTrackingWeight_vtable_IsNotEqual`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsNotEqual(&self) -> Option<ExtraHeadTrackingWeight_vtable_IsNotEqual> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ExtraHeadTrackingWeight_vtable_IsNotEqual>>(self.slot_2) }
+    }
 }
+/// `ExtraHeadTrackingWeight::vdtor`, slot 0: 0x17cc70, frees 0x18 (high).
+pub type ExtraHeadTrackingWeight_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::ExtraHeadTrackingWeight, flags: u32) -> *mut crate::ExtraHeadTrackingWeight;
+/// `ExtraHeadTrackingWeight::GetType`, slot 1: 0x189380 returns 0x94 (extra data type) (high).
+pub type ExtraHeadTrackingWeight_vtable_GetType = unsafe extern "C" fn(this: *mut crate::ExtraHeadTrackingWeight) -> u32;
+/// `ExtraHeadTrackingWeight::IsNotEqual`, slot 2: 0x189360: weight floats at +0x10 differ (high).
+pub type ExtraHeadTrackingWeight_vtable_IsNotEqual = unsafe extern "C" fn(this: *mut crate::ExtraHeadTrackingWeight, other: *const crate::BSExtraData) -> bool;
 
 /// `ExtraHeadingTarget::vftable` at 0x17ea158, id 186777 (rtti, high); 3 slots.
 #[repr(C)]
@@ -9907,7 +9989,7 @@ impl Hazard_vtable_38 {
 pub struct HeadTrackingOffHandler_vtable {
     /// `HeadTrackingOffHandler::vdtor` at 0x7d40f0 (layout_inference, medium); signature (low): `HeadTrackingOffHandler * vdtor(HeadTrackingOffHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `HeadTrackingOffHandler::vfunc_1` at 0x7cd5b0 (rtti, high); signature (low): `undefined1 vfunc_1(HeadTrackingOffHandler * this, longlong param_1)`
+    /// `HeadTrackingOffHandler::Handle` at 0x7cd5b0 (semantic, high); signature (untiered): `undefined1 Handle(HeadTrackingOffHandler * this, longlong param_1)`
     pub slot_1: *const c_void,
 }
 impl HeadTrackingOffHandler_vtable {
@@ -10010,7 +10092,7 @@ impl HelpMessageManager_vtable {
 pub struct HighActorCuller_vtable {
     /// `HighActorCuller::vdtor` at 0x73c770 (slot_propagation, medium); signature (low): `HighActorCuller * vdtor(HighActorCuller * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `HighActorCuller::vfunc_1` at 0x73c5c0 (rtti, high); signature (low): `undefined vfunc_1(HighActorCuller * this, TESObjectREFR * param_1)`
+    /// `HighActorCuller::Visit` at 0x73c5c0 (semantic, high); signature (untiered): `undefined Visit(HighActorCuller * this, TESObjectREFR * param_1)`
     pub slot_1: *const c_void,
 }
 impl HighActorCuller_vtable {
@@ -15333,150 +15415,5 @@ pub struct JumpAnimEventHandler_vtable {
 }
 impl JumpAnimEventHandler_vtable {
     pub const ID: u64 = 208973;
-}
-
-/// `JumpHandler::vftable` at 0x19354a8, id 208731 (rtti, high); 7 slots.
-#[repr(C)]
-pub struct JumpHandler_vtable {
-    /// `JumpHandler::vdtor` at 0x7b1b90 (layout_inference, medium); signature (low): `JumpHandler * vdtor(JumpHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `JumpHandler::CanProcess` at 0x7b4f10 (semantic, high); signature (untiered): `bool CanProcess(JumpHandler * this, longlong * param_1)`; `CanProcess`: Jump (high); semantic signature: `bool (JumpHandler* this, InputEvent* event)`
-    pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (untiered): `undefined ProcessMotionGesture(void)`
-    #[doc(hidden)]
-    pub __slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, high); signature (untiered): `undefined ProcessSixaxis(void)`
-    #[doc(hidden)]
-    pub __slot_3: *const c_void,
-    /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, high); signature (untiered): `undefined ProcessThumbstick(void)`
-    #[doc(hidden)]
-    pub __slot_4: *const c_void,
-    /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, high); signature (untiered): `undefined ProcessMouseMove(void)`
-    #[doc(hidden)]
-    pub __slot_5: *const c_void,
-    /// `JumpHandler::vfunc_6` at 0x7b3150 (rtti, high); signature (low): `undefined vfunc_6(JumpHandler * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_6: *const c_void,
-}
-impl JumpHandler_vtable {
-    pub const ID: u64 = 208731;
-    pub const SLOT_CanProcess: usize = 1;
-    /// Slot 1 as `JumpHandler_vtable_CanProcess`, `None` when the slot is null.
-    #[must_use]
-    pub fn CanProcess(&self) -> Option<JumpHandler_vtable_CanProcess> {
-        unsafe { core::mem::transmute::<*const c_void, Option<JumpHandler_vtable_CanProcess>>(self.slot_1) }
-    }
-}
-/// `JumpHandler::CanProcess`, slot 1: Jump (high).
-pub type JumpHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::JumpHandler, event: *mut crate::InputEvent) -> bool;
-
-/// `KeywordDispelFunctor::vftable` at 0x18f8d48, id 205916 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct KeywordDispelFunctor_vtable {
-    /// `KeywordDispelFunctor::vdtor` at 0x5d4980 (layout_inference, medium); signature (low): `KeywordDispelFunctor * vdtor(KeywordDispelFunctor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `KeywordDispelFunctor::vfunc_1` at 0x5d4570 (rtti, high); signature (low): `undefined8 vfunc_1(KeywordDispelFunctor * this, longlong param_1)`
-    pub slot_1: *const c_void,
-}
-impl KeywordDispelFunctor_vtable {
-    pub const ID: u64 = 205916;
-}
-
-/// `KillActorHandler::vftable` at 0x19380e8, id 208865 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct KillActorHandler_vtable {
-    /// `KillActorHandler::vdtor` at 0x7d4240 (layout_inference, medium); signature (low): `KillActorHandler * vdtor(KillActorHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `KillActorHandler::vfunc_1` at 0x7cd430 (rtti, high); signature (low): `undefined8 vfunc_1(KillActorHandler * this, longlong param_1)`
-    pub slot_1: *const c_void,
-}
-impl KillActorHandler_vtable {
-    pub const ID: u64 = 208865;
-}
-
-/// `KillMoveEndHandler::vftable` at 0x1938400, id 208931 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct KillMoveEndHandler_vtable {
-    /// `KillMoveEndHandler::vdtor` at 0x7d4270 (layout_inference, medium); signature (low): `KillMoveEndHandler * vdtor(KillMoveEndHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `KillMoveEndHandler::vfunc_1` at 0x7ce420 (rtti, high); signature (low): `undefined1 vfunc_1(KillMoveEndHandler * this, longlong param_1)`
-    pub slot_1: *const c_void,
-}
-impl KillMoveEndHandler_vtable {
-    pub const ID: u64 = 208931;
-}
-
-/// `KillMoveStartHandler::vftable` at 0x19383e8, id 208929 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct KillMoveStartHandler_vtable {
-    /// `KillMoveStartHandler::vdtor` at 0x7d42a0 (layout_inference, medium); signature (low): `KillMoveStartHandler * vdtor(KillMoveStartHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `KillMoveStartHandler::vfunc_1` at 0x7ce410 (rtti, high); signature (low): `undefined1 vfunc_1(void)`
-    pub slot_1: *const c_void,
-}
-impl KillMoveStartHandler_vtable {
-    pub const ID: u64 = 208929;
-}
-
-/// `KinectEvent::vftable` at 0x1a23c20, id 236709 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct KinectEvent_vtable {
-    /// `KinectEvent::vdtor` at 0xcfa560 (layout_inference, medium); signature (low): `KinectEvent * vdtor(KinectEvent * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `IDEvent::vfunc_1` at 0x7b4470 (rtti, medium); signature (low): `undefined1 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `IDEvent::vfunc_2` at 0x7b4830 (rtti, medium); signature (high): `IDEvent * vfunc_2(IDEvent * this)`
-    pub slot_2: *const c_void,
-}
-impl KinectEvent_vtable {
-    pub const ID: u64 = 236709;
-}
-
-/// `KinectMenu::vftable` at 0x18f4df0, id 205770 (rtti, high); 9 slots.
-#[repr(C)]
-pub struct KinectMenu_vtable {
-    /// `KinectMenu::vdtor` at 0x5b8a40 (layout_inference, medium); signature (low): `KinectMenu * vdtor(KinectMenu * this, uint param_1, longlong * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `IMenu::Accept` at 0x57b460 (semantic, high); signature (untiered): `undefined Accept(void)`
-    pub slot_1: *const c_void,
-    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
-    pub slot_2: *const c_void,
-    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
-    pub slot_3: *const c_void,
-    /// `KinectMenu::vfunc_4` at 0x5b83f0 (rtti, high); signature (low): `longlong * vfunc_4(KinectMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
-    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (untiered): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
-    pub slot_5: *const c_void,
-    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (untiered): `undefined PostDisplay(IMenu * this)`
-    pub slot_6: *const c_void,
-    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
-    pub slot_7: *const c_void,
-    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (untiered): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
-    pub slot_8: *const c_void,
-}
-impl KinectMenu_vtable {
-    pub const ID: u64 = 205770;
-}
-
-/// `KinectMenu::vftable_30` at 0x18f4e40, id 205772 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct KinectMenu_vtable_30 {
-    /// `KinectMenu::BSTEventSink_MenuOpenCloseEvent_vdtor` at 0x5b8a34 (slot_propagation, medium); signature (high): `undefined BSTEventSink_MenuOpenCloseEvent_vdtor(KinectMenu * this)`
-    pub slot_0: *const c_void,
-    /// `KinectMenu::BSTEventSink_MenuOpenCloseEvent_vfunc_1` at 0x5b8600 (rtti, high); signature (high): `undefined8 BSTEventSink_MenuOpenCloseEvent_vfunc_1(KinectMenu * this)`
-    pub slot_1: *const c_void,
-}
-impl KinectMenu_vtable_30 {
-    pub const ID: u64 = 205772;
-}
-
-/// `KinectStateChangeData::vftable` at 0x19849b8, id 216354 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct KinectStateChangeData_vtable {
-    /// `KinectStateChangeData::vdtor` at 0x98d960 (layout_inference, medium); signature (low): `KinectStateChangeData * vdtor(KinectStateChangeData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl KinectStateChangeData_vtable {
-    pub const ID: u64 = 216354;
 }
 

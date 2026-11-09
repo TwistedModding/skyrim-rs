@@ -7,34 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `RemoveAllPtrKeyEntries` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 58255, rva 0xac5990).
-/// `int RemoveAllPtrKeyEntries(longlong * param_1, ulonglong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn remove_all_ptr_key_entries(param_1: *mut i64, param_2: u64) -> i32 { unsafe { function!(58255, (*mut i64, u64) -> i32)(param_1, param_2) } }
-/// `RemoveAllTreeKeys` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 26997, rva 0x43a4c0).
-/// `undefined RemoveAllTreeKeys(longlong * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn remove_all_tree_keys(param_1: *mut i64) -> u64 { unsafe { function!(26997, (*mut i64) -> u64)(param_1) } }
-/// `RemoveAllWithUnlink` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 107775, rva 0x1568f90).
-/// `undefined RemoveAllWithUnlink(longlong * param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn remove_all_with_unlink(param_1: *mut i64, param_2: *mut i64) -> u64 { unsafe { function!(107775, (*mut i64, *mut i64) -> u64)(param_1, param_2) } }
-/// `RemoveAndDeleteEntriesMatchingField50` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 25038, rva 0x3d3100).
-/// `undefined RemoveAndDeleteEntriesMatchingField50(longlong param_1, undefined8 param_2, undefined8 param_3, ulonglong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn remove_and_delete_entries_matching_field50(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(25038, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `RemoveAndDeleteEntryByKey` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 442871, rva 0xa76a60).
 /// `undefined RemoveAndDeleteEntryByKey(int * param_1, longlong * param_2, ulonglong param_3, ulonglong param_4)`
 ///
@@ -14154,3 +14126,24 @@ pub unsafe fn set_blend_collision_field38_recursive(param_1: *mut i64, param_2: 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_blender_child_bone_weight(param_1: i64, param_2: i32, param_3: i32, param_4: f32) -> u64 { unsafe { function!(59533, (i64, i32, i32, f32) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `SetBlenderChildGenerator` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 59532, rva 0xb02510).
+/// `undefined SetBlenderChildGenerator(longlong param_1, int param_2, longlong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_blender_child_generator(param_1: i64, param_2: i32, param_3: i64) -> u64 { unsafe { function!(59532, (i64, i32, i64) -> u64)(param_1, param_2, param_3) } }
+/// `SetBlurFilterMember` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 87065, rva 0xde2be0).
+/// `undefined1 SetBlurFilterMember(byte * param_1, longlong * param_2, ulonglong * param_3, byte * param_4, byte * param_5)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_blur_filter_member(param_1: *mut u8, param_2: *mut i64, param_3: *mut u64, param_4: *mut u8, param_5: *mut u8) -> u8 { unsafe { function!(87065, (*mut u8, *mut i64, *mut u64, *mut u8, *mut u8) -> u8)(param_1, param_2, param_3, param_4, param_5) } }
+/// `SetBodyField4AFromBoneList` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 78461, rva 0x1073830).
+/// `undefined SetBodyField4AFromBoneList(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_body_field4_a_from_bone_list(param_1: i64) -> u64 { unsafe { function!(78461, (i64) -> u64)(param_1) } }

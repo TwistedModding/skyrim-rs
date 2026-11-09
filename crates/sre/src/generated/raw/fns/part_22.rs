@@ -7,6 +7,382 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `hkpCharacterProxyListener::vfunc_3` at 0x1099890 (rtti, high); signature (low): `undefined vfunc_3(void)`
+pub const hkpCharacterProxyListener__vfunc_3: u64 = 79173;
+/// `hkpCharacterProxyListener::vfunc_4` at 0x1099870 (rtti, high); signature (low): `undefined vfunc_4(void)`
+pub const hkpCharacterProxyListener__vfunc_4: u64 = 79171;
+/// `hkpCharacterProxyListener::vfunc_5` at 0x10998a0 (rtti, high); signature (low): `undefined vfunc_5(void)`
+pub const hkpCharacterProxyListener__vfunc_5: u64 = 79174;
+/// `hkpCharacterRigidBody::ctor` at 0xb985e0 (layout_inference, medium); signature (low): `hkpCharacterRigidBody * ctor(hkpCharacterRigidBody * this, longlong param_1)`
+pub const hkpCharacterRigidBody__ctor: u64 = 62447;
+/// `hkpCharacterRigidBody::dtor` at 0xb987a0 (layout_inference, high); signature (high): `undefined dtor(hkpCharacterRigidBody * this)`
+pub const hkpCharacterRigidBody__dtor: u64 = 62448;
+/// `hkpCharacterRigidBody::hkpEntityListener_vdtor` at 0xb99924 (slot_propagation, medium); signature (high): `undefined hkpEntityListener_vdtor(hkpCharacterRigidBody * this)`
+pub const hkpCharacterRigidBody__hkpEntityListener_vdtor: u64 = 62463;
+/// `hkpCharacterRigidBody::hkpEntityListener_vfunc_1` at 0xb99860 (rtti, medium); signature (low): `undefined hkpEntityListener_vfunc_1(hkpCharacterRigidBody * this, longlong param_1)`
+pub const hkpCharacterRigidBody__hkpEntityListener_vfunc_1: u64 = 62460;
+/// `hkpCharacterRigidBody::hkpEntityListener_vfunc_2` at 0xb998c0 (rtti, medium); signature (low): `undefined hkpEntityListener_vfunc_2(hkpCharacterRigidBody * this, longlong param_1)`
+pub const hkpCharacterRigidBody__hkpEntityListener_vfunc_2: u64 = 62461;
+/// `hkpCharacterRigidBody::hkpWorldPostSimulationListener_vdtor` at 0xb99930 (slot_propagation, medium); signature (high): `undefined hkpWorldPostSimulationListener_vdtor(hkpCharacterRigidBody * this)`
+pub const hkpCharacterRigidBody__hkpWorldPostSimulationListener_vdtor: u64 = 62464;
+/// `hkpCharacterRigidBody::hkpWorldPostSimulationListener_vfunc_1` at 0xb99910 (rtti, medium); signature (low): `undefined hkpWorldPostSimulationListener_vfunc_1(hkpCharacterRigidBody * this, undefined8 param_1)`
+pub const hkpCharacterRigidBody__hkpWorldPostSimulationListener_vfunc_1: u64 = 62462;
+/// `hkpCharacterRigidBody::vdtor` at 0xb99940 (slot_propagation, medium); signature (low): `hkpCharacterRigidBody * vdtor(hkpCharacterRigidBody * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCharacterRigidBody__vdtor: u64 = 62465;
+/// `hkpCharacterRigidBody::vfunc_3` at 0xb98920 (rtti, medium); signature (low): `undefined vfunc_3(hkpCharacterRigidBody * this, undefined8 param_1, int * param_2)`
+pub const hkpCharacterRigidBody__vfunc_3: u64 = 62452;
+/// `hkpCharacterRigidBody::vfunc_4` at 0xb98af0 (rtti, medium); signature (low): `int vfunc_4(hkpCharacterRigidBody * this, longlong param_1, longlong * param_2)`
+pub const hkpCharacterRigidBody__vfunc_4: u64 = 62453;
+/// `hkpCharacterRigidBody::vfunc_5` at 0xb994e0 (rtti, medium); signature (low): `undefined vfunc_5(hkpCharacterRigidBody * this, longlong * param_1, char param_2, longlong param_3)`
+pub const hkpCharacterRigidBody__vfunc_5: u64 = 62454;
+/// `hkpCharacterRigidBodyCinfo::vdtor` at 0xb9bf30 (layout_inference, medium); signature (low): `hkpCharacterRigidBodyCinfo * vdtor(hkpCharacterRigidBodyCinfo * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCharacterRigidBodyCinfo__vdtor: u64 = 62581;
+/// `hkpCharacterRigidBodyListener::vdtor` at 0x109c3f0 (layout_inference, medium); signature (low): `hkpCharacterRigidBodyListener * vdtor(hkpCharacterRigidBodyListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCharacterRigidBodyListener__vdtor: u64 = 79216;
+/// `hkpCharacterRigidBodyListener::vfunc_3` at 0x10df6d0 (rtti, high); signature (low): `undefined vfunc_3(hkpCharacterRigidBodyListener * this, longlong param_1, undefined8 param_2)`
+pub const hkpCharacterRigidBodyListener__vfunc_3: u64 = 80567;
+/// `hkpCharacterRigidBodyListener::vfunc_3_sub0` at 0x10df7d0 (callgraph, medium); signature (untiered): `undefined vfunc_3_sub0(undefined8 param_1, longlong param_2)`
+pub const hkpCharacterRigidBodyListener__vfunc_3_sub0: u64 = 80568;
+/// `hkpCharacterRigidBodyListener::vfunc_3_sub1` at 0x10dfb20 (callgraph, medium); signature (untiered): `undefined vfunc_3_sub1(longlong * param_1, undefined8 param_2, longlong param_3)`
+pub const hkpCharacterRigidBodyListener__vfunc_3_sub1: u64 = 80569;
+/// `hkpCharacterRigidBodyListener::vfunc_4` at 0x10dfd60 (rtti, high); signature (low): `undefined vfunc_4(hkpCharacterRigidBodyListener * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5)`
+pub const hkpCharacterRigidBodyListener__vfunc_4: u64 = 80570;
+/// `hkpCharacterRigidBodyListener::vfunc_5` at 0x10dfdf0 (rtti, medium); signature (low): `undefined vfunc_5(hkpCharacterRigidBodyListener * this, longlong param_1, longlong * param_2, longlong * param_3, longlong * param_4)`
+pub const hkpCharacterRigidBodyListener__vfunc_5: u64 = 80571;
+/// `hkpCharacterRigidBodyListener::vfunc_6` at 0x10e01e0 (rtti, high); signature (low): `undefined vfunc_6(hkpCharacterRigidBodyListener * this, longlong param_1, longlong param_2, longlong * param_3)`
+pub const hkpCharacterRigidBodyListener__vfunc_6: u64 = 80572;
+/// `hkpCharacterRigidBodyListener::vfunc_7` at 0x10e0580 (rtti, medium); signature (low): `undefined vfunc_7(hkpCharacterRigidBodyListener * this, undefined8 param_1, longlong param_2, longlong * param_3, longlong * param_4, longlong * param_5)`
+pub const hkpCharacterRigidBodyListener__vfunc_7: u64 = 80573;
+/// `hkpCharacterState::vdtor` at 0x1069b50 (layout_inference, medium); signature (low): `hkpCharacterState * vdtor(hkpCharacterState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCharacterState__vdtor: u64 = 78351;
+/// `hkpCharacterState::vfunc_4` at 0x10c7bf0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
+pub const hkpCharacterState__vfunc_4: u64 = 80090;
+/// `hkpCharacterState::vfunc_5` at 0x10c7c00 (rtti, medium); signature (low): `undefined vfunc_5(void)`
+pub const hkpCharacterState__vfunc_5: u64 = 80091;
+/// `hkpCharacterStateManager::ctor` at 0xb98450 (layout_inference, medium); signature (high): `hkpCharacterStateManager * ctor(hkpCharacterStateManager * this)`
+pub const hkpCharacterStateManager__ctor: u64 = 62442;
+/// `hkpCharacterStateManager::dtor` at 0xb98490 (layout_inference, high); signature (high): `undefined dtor(hkpCharacterStateManager * this)`
+pub const hkpCharacterStateManager__dtor: u64 = 62443;
+/// `hkpCharacterStateManager::vdtor` at 0xb98560 (slot_propagation, medium); signature (low): `hkpCharacterStateManager * vdtor(hkpCharacterStateManager * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCharacterStateManager__vdtor: u64 = 62446;
+/// `hkpClosestCdPointCollector::vdtor` at 0x86d670 (layout_inference, medium); signature (low): `hkpClosestCdPointCollector * vdtor(hkpClosestCdPointCollector * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpClosestCdPointCollector__vdtor: u64 = 47351;
+/// `hkpClosestCdPointCollector::vfunc_1` at 0xb3b650 (rtti, high); signature (low): `undefined vfunc_1(hkpClosestCdPointCollector * this, undefined8 * param_1)`
+pub const hkpClosestCdPointCollector__vfunc_1: u64 = 60373;
+/// `hkpClosestCdPointCollector::vfunc_2` at 0x86d6e0 (rtti, high); signature (high): `undefined vfunc_2(hkpClosestCdPointCollector * this)`
+pub const hkpClosestCdPointCollector__vfunc_2: u64 = 47352;
+/// `hkpClosestRayHitCollector::vdtor` at 0x404410 (layout_inference, medium); signature (low): `hkpClosestRayHitCollector * vdtor(hkpClosestRayHitCollector * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpClosestRayHitCollector__vdtor: u64 = 25991;
+/// `hkpClosestRayHitCollector::vfunc_0` at 0xb3a200 (rtti, high); signature (low): `undefined vfunc_0(hkpClosestRayHitCollector * this, longlong param_1, undefined4 * param_2)`
+pub const hkpClosestRayHitCollector__vfunc_0: u64 = 60338;
+/// `hkpCogWheelConstraintData::vdtor` at 0xb51b20 (layout_inference, medium); signature (low): `hkpCogWheelConstraintData * vdtor(hkpCogWheelConstraintData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCogWheelConstraintData__vdtor: u64 = 61205;
+/// `hkpCogWheelConstraintData::vfunc_10` at 0xb726d0 (rtti, high); signature (low): `undefined1 * vfunc_10(hkpCogWheelConstraintData * this, undefined1 * param_1)`
+pub const hkpCogWheelConstraintData__vfunc_10: u64 = 61898;
+/// `hkpCogWheelConstraintData::vfunc_11` at 0xb72780 (rtti, high); signature (low): `undefined8 vfunc_11(void)`
+pub const hkpCogWheelConstraintData__vfunc_11: u64 = 61899;
+/// `hkpCogWheelConstraintData::vfunc_12` at 0xb727b0 (rtti, high); signature (low): `undefined vfunc_12(hkpCogWheelConstraintData * this, undefined8 param_1, undefined4 * param_2)`
+pub const hkpCogWheelConstraintData__vfunc_12: u64 = 61901;
+/// `hkpCogWheelConstraintData::vfunc_18` at 0xb72790 (rtti, high); signature (low): `undefined vfunc_18(hkpCogWheelConstraintData * this, int * param_1)`
+pub const hkpCogWheelConstraintData__vfunc_18: u64 = 61900;
+/// `hkpCollidableCollidableFilter::vdtor` at 0xb36530 (layout_inference, medium); signature (low): `hkpCollidableCollidableFilter * vdtor(hkpCollidableCollidableFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCollidableCollidableFilter__vdtor: u64 = 60406;
+/// `hkpCollidableMediator::ctor` at 0x1160c70 (layout_inference, medium); signature (low): `hkpCollidableMediator * ctor(hkpCollidableMediator * this, longlong param_1, longlong param_2)`
+pub const hkpCollidableMediator__ctor: u64 = 82012;
+/// `hkpCollidableMediator::vdtor` at 0x1160f30 (layout_inference, medium); signature (low): `hkpCollidableMediator * vdtor(hkpCollidableMediator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCollidableMediator__vdtor: u64 = 82017;
+/// `hkpCollidableMediator::vfunc_3` at 0x1160d70 (rtti, high); signature (high): `undefined4 vfunc_3(hkpCollidableMediator * this)`
+pub const hkpCollidableMediator__vfunc_3: u64 = 82013;
+/// `hkpCollidableMediator::vfunc_4` at 0x1160e90 (rtti, high); signature (low): `undefined8 vfunc_4(hkpCollidableMediator * this, int param_1)`
+pub const hkpCollidableMediator__vfunc_4: u64 = 82015;
+/// `hkpCollidableMediator::vfunc_5` at 0x1160d80 (rtti, high); signature (low): `undefined vfunc_5(hkpCollidableMediator * this, undefined8 * param_1, undefined2 * param_2)`
+pub const hkpCollidableMediator__vfunc_5: u64 = 82014;
+/// `hkpCollisionAgent::vdtor` at 0xb3cc00 (layout_inference, medium); signature (low): `hkpCollisionAgent * vdtor(hkpCollisionAgent * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCollisionAgent__vdtor: u64 = 64624;
+/// `hkpCollisionAgent::vfunc_10` at 0xb3f890 (rtti, medium); signature (low): `undefined vfunc_10(void)`
+pub const hkpCollisionAgent__vfunc_10: u64 = 65677;
+/// `hkpCollisionAgent::vfunc_11` at 0xb3f8a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+pub const hkpCollisionAgent__vfunc_11: u64 = 65678;
+/// `hkpCollisionAgent::vfunc_12` at 0xb3f8b0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+pub const hkpCollisionAgent__vfunc_12: u64 = 65679;
+/// `hkpCollisionAgent::vfunc_13` at 0xb3f8c0 (rtti, medium); signature (low): `undefined vfunc_13(void)`
+pub const hkpCollisionAgent__vfunc_13: u64 = 65680;
+/// `hkpCollisionAgent::vfunc_8` at 0xb3cd70 (rtti, medium); signature (low): `undefined vfunc_8(void)`
+pub const hkpCollisionAgent__vfunc_8: u64 = 64631;
+/// `hkpCollisionAgent::vfunc_9` at 0xb3f880 (rtti, medium); signature (low): `undefined vfunc_9(void)`
+pub const hkpCollisionAgent__vfunc_9: u64 = 65676;
+/// `hkpCollisionCallbackUtil::hkpConstraintListener_vdtor` at 0xb5c7f0 (slot_propagation, medium); signature (high): `undefined hkpConstraintListener_vdtor(hkpCollisionCallbackUtil * this)`
+pub const hkpCollisionCallbackUtil__hkpConstraintListener_vdtor: u64 = 61444;
+/// `hkpCollisionCallbackUtil::hkpConstraintListener_vfunc_1` at 0xb81f60 (rtti, high); signature (low): `undefined hkpConstraintListener_vfunc_1(hkpCollisionCallbackUtil * this, longlong param_1)`
+pub const hkpCollisionCallbackUtil__hkpConstraintListener_vfunc_1: u64 = 62242;
+/// `hkpCollisionCallbackUtil::hkpConstraintListener_vfunc_1_sub0` at 0xb68660 (callgraph, medium); signature (untiered): `undefined hkpConstraintListener_vfunc_1_sub0(longlong param_1, undefined8 param_2)`
+pub const hkpCollisionCallbackUtil__hkpConstraintListener_vfunc_1_sub0: u64 = 61706;
+/// `hkpCollisionCallbackUtil::hkpConstraintListener_vfunc_1_sub1` at 0xb6b200 (callgraph, medium); signature (untiered): `undefined hkpConstraintListener_vfunc_1_sub1(longlong param_1, undefined8 param_2)`
+pub const hkpCollisionCallbackUtil__hkpConstraintListener_vfunc_1_sub1: u64 = 61772;
+/// `hkpCollisionCallbackUtil::hkpConstraintListener_vfunc_2` at 0xb82060 (rtti, high); signature (low): `undefined hkpConstraintListener_vfunc_2(hkpCollisionCallbackUtil * this, longlong param_1)`
+pub const hkpCollisionCallbackUtil__hkpConstraintListener_vfunc_2: u64 = 62243;
+/// `hkpCollisionCallbackUtil::hkpConstraintListener_vfunc_2_sub0` at 0xb687d0 (callgraph, medium); signature (untiered): `undefined hkpConstraintListener_vfunc_2_sub0(longlong param_1, undefined8 param_2)`
+pub const hkpCollisionCallbackUtil__hkpConstraintListener_vfunc_2_sub0: u64 = 61707;
+/// `hkpCollisionCallbackUtil::hkpConstraintListener_vfunc_2_sub1` at 0xb6b360 (callgraph, medium); signature (untiered): `undefined hkpConstraintListener_vfunc_2_sub1(longlong param_1, undefined8 param_2)`
+pub const hkpCollisionCallbackUtil__hkpConstraintListener_vfunc_2_sub1: u64 = 61773;
+/// `hkpCollisionCallbackUtil::vdtor` at 0xb5c900 (layout_inference, medium); signature (low): `hkpCollisionCallbackUtil * vdtor(hkpCollisionCallbackUtil * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCollisionCallbackUtil__vdtor: u64 = 61449;
+/// `hkpCollisionCallbackUtil::vfunc_3` at 0xb81ea0 (rtti, high); signature (low): `undefined vfunc_3(hkpCollisionCallbackUtil * this, longlong param_1)`
+pub const hkpCollisionCallbackUtil__vfunc_3: u64 = 62240;
+/// `hkpCollisionCallbackUtil::vfunc_4` at 0xb81f00 (rtti, high); signature (low): `undefined vfunc_4(hkpCollisionCallbackUtil * this, longlong param_1)`
+pub const hkpCollisionCallbackUtil__vfunc_4: u64 = 62241;
+/// `hkpCollisionDispatcher::ctor` at 0xb34430 (layout_inference, medium); signature (low): `hkpCollisionDispatcher * ctor(hkpCollisionDispatcher * this, undefined8 param_1, longlong param_2)`
+pub const hkpCollisionDispatcher__ctor: u64 = 64589;
+/// `hkpCollisionDispatcher::debugPrintTable` at 0xb349d0 (string, medium); signature (high): `undefined debugPrintTable(hkpCollisionDispatcher * this)`
+pub const hkpCollisionDispatcher__debugPrintTable: u64 = 64595;
+/// `hkpCollisionDispatcher::debugPrintTable_sub0` at 0xaad470 (callgraph, medium); signature (untiered): `undefined8 * debugPrintTable_sub0(undefined8 * param_1)`
+pub const hkpCollisionDispatcher__debugPrintTable_sub0: u64 = 57460;
+/// `hkpCollisionDispatcher::dtor` at 0xb345a0 (layout_inference, high); signature (high): `undefined dtor(hkpCollisionDispatcher * this)`
+pub const hkpCollisionDispatcher__dtor: u64 = 64590;
+/// `hkpCollisionDispatcher::dtor_sub0` at 0xb34e40 (callgraph, medium); signature (untiered): `undefined dtor_sub0(longlong param_1)`
+pub const hkpCollisionDispatcher__dtor_sub0: u64 = 64596;
+/// `hkpCollisionDispatcher::vdtor` at 0xb36560 (slot_propagation, medium); signature (low): `hkpCollisionDispatcher * vdtor(hkpCollisionDispatcher * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCollisionDispatcher__vdtor: u64 = 64610;
+/// `hkpCollisionDispatcher::vfunc_2` at 0xb35a30 (rtti, high); signature (low): `undefined vfunc_2(hkpCollisionDispatcher * this, longlong * param_1)`
+pub const hkpCollisionDispatcher__vfunc_2: u64 = 64601;
+/// `hkpCollisionFilter::ctor` at 0xb3cda0 (layout_inference, medium); signature (high): `hkpCollisionFilter * ctor(hkpCollisionFilter * this)`
+pub const hkpCollisionFilter__ctor: u64 = 60623;
+/// `hkpCollisionFilter::hkpCollidableCollidableFilter_vdtor` at 0xb3cdf8 (slot_propagation, medium); signature (high): `undefined hkpCollidableCollidableFilter_vdtor(hkpCollisionFilter * this)`
+pub const hkpCollisionFilter__hkpCollidableCollidableFilter_vdtor: u64 = 60510;
+/// `hkpCollisionFilter::hkpRayCollidableFilter_vdtor` at 0xb3ce1c (slot_propagation, medium); signature (high): `undefined hkpRayCollidableFilter_vdtor(hkpCollisionFilter * this)`
+pub const hkpCollisionFilter__hkpRayCollidableFilter_vdtor: u64 = 60513;
+/// `hkpCollisionFilter::hkpRayShapeCollectionFilter_vdtor` at 0xb3ce10 (slot_propagation, medium); signature (high): `undefined hkpRayShapeCollectionFilter_vdtor(hkpCollisionFilter * this)`
+pub const hkpCollisionFilter__hkpRayShapeCollectionFilter_vdtor: u64 = 60512;
+/// `hkpCollisionFilter::hkpShapeCollectionFilter_vdtor` at 0xb3ce04 (slot_propagation, medium); signature (high): `undefined hkpShapeCollectionFilter_vdtor(hkpCollisionFilter * this)`
+pub const hkpCollisionFilter__hkpShapeCollectionFilter_vdtor: u64 = 60511;
+/// `hkpCollisionFilter::hkpShapeCollectionFilter_vfunc_2` at 0xb3cdf0 (rtti, medium); signature (low): `undefined4 hkpShapeCollectionFilter_vfunc_2(void)`
+pub const hkpCollisionFilter__hkpShapeCollectionFilter_vfunc_2: u64 = 60624;
+/// `hkpCollisionFilter::vdtor` at 0xb3ce30 (layout_inference, medium); signature (low): `hkpCollisionFilter * vdtor(hkpCollisionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCollisionFilter__vdtor: u64 = 60526;
+/// `hkpCollisionFilter::vfunc_3` at 0xb36810 (rtti, medium); signature (low): `undefined vfunc_3(void)`
+pub const hkpCollisionFilter__vfunc_3: u64 = 60412;
+/// `hkpCollisionFilterList::ctor` at 0xb3f8d0 (layout_inference, high); signature (high): `hkpCollisionFilterList * ctor(hkpCollisionFilterList * this)`
+pub const hkpCollisionFilterList__ctor: u64 = 60626;
+/// `hkpCollisionFilterList::ctor` at 0xb3f940 (layout_inference, high); signature (low): `hkpCollisionFilterList * ctor(hkpCollisionFilterList * this, longlong * param_1)`
+pub const hkpCollisionFilterList__ctor_2: u64 = 60627;
+/// `hkpCollisionFilterList::dtor` at 0xb3fa90 (layout_inference, high); signature (high): `undefined dtor(hkpCollisionFilterList * this)`
+pub const hkpCollisionFilterList__dtor: u64 = 60628;
+/// `hkpCollisionFilterList::hkpCollidableCollidableFilter_vdtor` at 0xb3db2c (slot_propagation, medium); signature (high): `undefined hkpCollidableCollidableFilter_vdtor(hkpCollisionFilterList * this)`
+pub const hkpCollisionFilterList__hkpCollidableCollidableFilter_vdtor: u64 = 60514;
+/// `hkpCollisionFilterList::hkpCollidableCollidableFilter_vfunc_1` at 0xb3fc60 (rtti, high); signature (low): `undefined1 * hkpCollidableCollidableFilter_vfunc_1(hkpCollisionFilterList * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCollisionFilterList__hkpCollidableCollidableFilter_vfunc_1: u64 = 60636;
+/// `hkpCollisionFilterList::hkpRayCollidableFilter_vdtor` at 0xb3db50 (slot_propagation, medium); signature (high): `undefined hkpRayCollidableFilter_vdtor(hkpCollisionFilterList * this)`
+pub const hkpCollisionFilterList__hkpRayCollidableFilter_vdtor: u64 = 60517;
+/// `hkpCollisionFilterList::hkpRayCollidableFilter_vfunc_1` at 0xb3ff20 (rtti, high); signature (low): `undefined1 * hkpRayCollidableFilter_vfunc_1(hkpCollisionFilterList * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCollisionFilterList__hkpRayCollidableFilter_vfunc_1: u64 = 60640;
+/// `hkpCollisionFilterList::hkpRayShapeCollectionFilter_vdtor` at 0xb3db44 (slot_propagation, medium); signature (high): `undefined hkpRayShapeCollectionFilter_vdtor(hkpCollisionFilterList * this)`
+pub const hkpCollisionFilterList__hkpRayShapeCollectionFilter_vdtor: u64 = 60516;
+/// `hkpCollisionFilterList::hkpRayShapeCollectionFilter_vfunc_0` at 0xb3fe80 (rtti, high); signature (low): `undefined1 * hkpRayShapeCollectionFilter_vfunc_0(hkpCollisionFilterList * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined4 param_5)`
+pub const hkpCollisionFilterList__hkpRayShapeCollectionFilter_vfunc_0: u64 = 60639;
+/// `hkpCollisionFilterList::hkpShapeCollectionFilter_vdtor` at 0xb3db38 (slot_propagation, medium); signature (high): `undefined hkpShapeCollectionFilter_vdtor(hkpCollisionFilterList * this)`
+pub const hkpCollisionFilterList__hkpShapeCollectionFilter_vdtor: u64 = 60515;
+/// `hkpCollisionFilterList::hkpShapeCollectionFilter_vfunc_0` at 0xb3fda0 (rtti, high); signature (low): `undefined1 * hkpShapeCollectionFilter_vfunc_0(hkpCollisionFilterList * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined8 param_6, undefined4 param_7, undefined4 param_8)`
+pub const hkpCollisionFilterList__hkpShapeCollectionFilter_vfunc_0: u64 = 60638;
+/// `hkpCollisionFilterList::hkpShapeCollectionFilter_vfunc_1` at 0xb3fce0 (rtti, high); signature (low): `undefined1 * hkpShapeCollectionFilter_vfunc_1(hkpCollisionFilterList * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined4 param_6)`
+pub const hkpCollisionFilterList__hkpShapeCollectionFilter_vfunc_1: u64 = 60637;
+/// `hkpCollisionFilterList::vdtor` at 0xb3dcb0 (slot_propagation, medium); signature (low): `hkpCollisionFilterList * vdtor(hkpCollisionFilterList * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCollisionFilterList__vdtor: u64 = 60527;
+/// `hkpCompressedMeshShape::ctor` at 0x10e55b0 (layout_inference, high); signature (low): `hkpCompressedMeshShape * ctor(hkpCompressedMeshShape * this, int param_2, undefined4 param_3)`
+pub const hkpCompressedMeshShape__ctor: u64 = 80696;
+/// `hkpCompressedMeshShape::ctor` at 0x10e6e20 (layout_inference, high); signature (low): `hkpCompressedMeshShape * ctor(hkpCompressedMeshShape * this, int param_1)`
+pub const hkpCompressedMeshShape__ctor_2: u64 = 80722;
+/// `hkpCompressedMeshShape::ctor_caller` at 0x10e7000 (callgraph, medium); signature (untiered): `undefined ctor_caller(undefined4 * param_1, undefined4 param_2, undefined1 param_3, undefined4 param_4)`
+pub const hkpCompressedMeshShape__ctor_caller: u64 = 80726;
+/// `hkpCompressedMeshShape::hkpShapeContainer_vdtor` at 0x10e6ea0 (slot_propagation, medium); signature (high): `undefined hkpShapeContainer_vdtor(hkpCompressedMeshShape * this)`
+pub const hkpCompressedMeshShape__hkpShapeContainer_vdtor: u64 = 80723;
+/// `hkpCompressedMeshShape::hkpShapeContainer_vfunc_2` at 0x10e5710 (rtti, medium); signature (high): `undefined hkpShapeContainer_vfunc_2(hkpCompressedMeshShape * this)`
+pub const hkpCompressedMeshShape__hkpShapeContainer_vfunc_2: u64 = 80697;
+/// `hkpCompressedMeshShape::hkpShapeContainer_vfunc_3` at 0x10e5720 (rtti, medium); signature (low): `uint hkpShapeContainer_vfunc_3(hkpCompressedMeshShape * this, uint param_1)`
+pub const hkpCompressedMeshShape__hkpShapeContainer_vfunc_3: u64 = 80698;
+/// `hkpCompressedMeshShape::hkpShapeContainer_vfunc_4` at 0x10e5f50 (rtti, medium); signature (low): `undefined4 hkpShapeContainer_vfunc_4(hkpCompressedMeshShape * this, uint param_1)`
+pub const hkpCompressedMeshShape__hkpShapeContainer_vfunc_4: u64 = 80700;
+/// `hkpCompressedMeshShape::hkpShapeContainer_vfunc_5` at 0x10e5950 (rtti, medium); signature (low): `hkpConvexVerticesShape * hkpShapeContainer_vfunc_5(hkpCompressedMeshShape * this, uint param_1, hkpConvexVerticesShape * param_2)`
+pub const hkpCompressedMeshShape__hkpShapeContainer_vfunc_5: u64 = 80699;
+/// `hkpCompressedMeshShape::vdtor` at 0x10e6eb0 (slot_propagation, medium); signature (low): `hkpCompressedMeshShape * vdtor(hkpCompressedMeshShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCompressedMeshShape__vdtor: u64 = 80724;
+/// `hkpCompressedMeshShape::vfunc_11` at 0x10e6030 (rtti, medium); signature (low): `undefined vfunc_11(hkpCompressedMeshShape * this, int param_1)`
+pub const hkpCompressedMeshShape__vfunc_11: u64 = 80703;
+/// `hkpCompressedMeshShape::vfunc_12` at 0x10e5fb0 (rtti, medium); signature (low): `undefined vfunc_12(hkpCompressedMeshShape * this, uint param_1, undefined2 param_2)`
+pub const hkpCompressedMeshShape__vfunc_12: u64 = 80702;
+/// `hkpCompressedMeshShape::vfunc_2` at 0x10e6300 (rtti, medium); signature (low): `undefined vfunc_2(hkpCompressedMeshShape * this, undefined8 param_1)`
+pub const hkpCompressedMeshShape__vfunc_2: u64 = 80707;
+/// `hkpCompressedMeshShape::vfunc_6` at 0x10e6320 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+pub const hkpCompressedMeshShape__vfunc_6: u64 = 80708;
+/// `hkpCompressedMeshShape::vfunc_7` at 0x10e6220 (rtti, medium); signature (low): `undefined vfunc_7(hkpCompressedMeshShape * this, float * param_1, float param_2, float * param_3)`
+pub const hkpCompressedMeshShape__vfunc_7: u64 = 80706;
+/// `hkpCompressedSampledHeightFieldShape::ctor` at 0xb48490 (layout_inference, medium); signature (low): `hkpCompressedSampledHeightFieldShape * ctor(hkpCompressedSampledHeightFieldShape * this, longlong * param_1)`
+pub const hkpCompressedSampledHeightFieldShape__ctor: u64 = 60802;
+/// `hkpCompressedSampledHeightFieldShape::ctor` at 0xb48660 (layout_inference, high); signature (low): `hkpCompressedSampledHeightFieldShape * ctor(hkpCompressedSampledHeightFieldShape * this, float * param_2, longlong * param_3, undefined4 param_4, undefined4 param_5)`
+pub const hkpCompressedSampledHeightFieldShape__ctor_2: u64 = 60803;
+/// `hkpCompressedSampledHeightFieldShape::vdtor` at 0xb3f3e0 (slot_propagation, medium); signature (low): `hkpCompressedSampledHeightFieldShape * vdtor(hkpCompressedSampledHeightFieldShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCompressedSampledHeightFieldShape__vdtor: u64 = 60606;
+/// `hkpCompressedSampledHeightFieldShape::vfunc_11` at 0xb48770 (rtti, high); signature (low): `undefined vfunc_11(hkpCompressedSampledHeightFieldShape * this, undefined8 * param_1, float * param_2)`
+pub const hkpCompressedSampledHeightFieldShape__vfunc_11: u64 = 60804;
+/// `hkpCompressedSampledHeightFieldShape::vfunc_13` at 0xb3f7b0 (rtti, high); signature (low): `float vfunc_13(hkpCompressedSampledHeightFieldShape * this, int param_1, int param_2)`
+pub const hkpCompressedSampledHeightFieldShape__vfunc_13: u64 = 60613;
+/// `hkpCompressedSampledHeightFieldShape::vfunc_14` at 0xb3f800 (rtti, high); signature (low): `undefined1 * vfunc_14(hkpCompressedSampledHeightFieldShape * this, undefined1 * param_1)`
+pub const hkpCompressedSampledHeightFieldShape__vfunc_14: u64 = 60615;
+/// `hkpCompressedSampledHeightFieldShape::vfunc_6` at 0xb48b80 (rtti, high); signature (low): `undefined8 vfunc_6(hkpCompressedSampledHeightFieldShape * this, undefined8 param_1, int param_2)`
+pub const hkpCompressedSampledHeightFieldShape__vfunc_6: u64 = 60805;
+/// `hkpConstrainedSystemFilter::ctor` at 0xba5620 (layout_inference, high); signature (low): `hkpConstrainedSystemFilter * ctor(hkpConstrainedSystemFilter * this, longlong param_1)`
+pub const hkpConstrainedSystemFilter__ctor: u64 = 62732;
+/// `hkpConstrainedSystemFilter::dtor` at 0xba56a0 (layout_inference, high); signature (high): `undefined dtor(hkpConstrainedSystemFilter * this)`
+pub const hkpConstrainedSystemFilter__dtor: u64 = 62733;
+/// `hkpConstrainedSystemFilter::hkpCollidableCollidableFilter_vdtor` at 0xb9bc54 (slot_propagation, medium); signature (high): `undefined hkpCollidableCollidableFilter_vdtor(hkpConstrainedSystemFilter * this)`
+pub const hkpConstrainedSystemFilter__hkpCollidableCollidableFilter_vdtor: u64 = 62563;
+/// `hkpConstrainedSystemFilter::hkpCollidableCollidableFilter_vfunc_1` at 0xba5750 (rtti, high); signature (low): `undefined1 * hkpCollidableCollidableFilter_vfunc_1(hkpConstrainedSystemFilter * this, undefined1 * param_1, longlong param_2, longlong param_3)`
+pub const hkpConstrainedSystemFilter__hkpCollidableCollidableFilter_vfunc_1: u64 = 62734;
+/// `hkpConstrainedSystemFilter::hkpConstraintListener_vdtor` at 0xb9bc84 (slot_propagation, medium); signature (low): `undefined hkpConstraintListener_vdtor(hkpConstrainedSystemFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstrainedSystemFilter__hkpConstraintListener_vdtor: u64 = 62567;
+/// `hkpConstrainedSystemFilter::hkpConstraintListener_vfunc_1` at 0xba5a40 (rtti, high); signature (low): `undefined hkpConstraintListener_vfunc_1(hkpConstrainedSystemFilter * this, longlong param_1)`
+pub const hkpConstrainedSystemFilter__hkpConstraintListener_vfunc_1: u64 = 62739;
+/// `hkpConstrainedSystemFilter::hkpConstraintListener_vfunc_2` at 0xba5a90 (rtti, high); signature (low): `undefined hkpConstraintListener_vfunc_2(void)`
+pub const hkpConstrainedSystemFilter__hkpConstraintListener_vfunc_2: u64 = 62740;
+/// `hkpConstrainedSystemFilter::hkpRayCollidableFilter_vdtor` at 0xb9bc78 (slot_propagation, medium); signature (low): `undefined hkpRayCollidableFilter_vdtor(hkpConstrainedSystemFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstrainedSystemFilter__hkpRayCollidableFilter_vdtor: u64 = 62566;
+/// `hkpConstrainedSystemFilter::hkpRayCollidableFilter_vfunc_1` at 0xba59f0 (rtti, high); signature (low): `undefined1 * hkpRayCollidableFilter_vfunc_1(hkpConstrainedSystemFilter * this, undefined1 * param_1)`
+pub const hkpConstrainedSystemFilter__hkpRayCollidableFilter_vfunc_1: u64 = 62738;
+/// `hkpConstrainedSystemFilter::hkpRayShapeCollectionFilter_vdtor` at 0xb9bc6c (slot_propagation, medium); signature (low): `undefined hkpRayShapeCollectionFilter_vdtor(hkpConstrainedSystemFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstrainedSystemFilter__hkpRayShapeCollectionFilter_vdtor: u64 = 62565;
+/// `hkpConstrainedSystemFilter::hkpRayShapeCollectionFilter_vfunc_0` at 0xba5990 (rtti, high); signature (low): `undefined1 * hkpRayShapeCollectionFilter_vfunc_0(hkpConstrainedSystemFilter * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined4 param_5)`
+pub const hkpConstrainedSystemFilter__hkpRayShapeCollectionFilter_vfunc_0: u64 = 62737;
+/// `hkpConstrainedSystemFilter::hkpShapeCollectionFilter_vdtor` at 0xb9bc60 (slot_propagation, medium); signature (high): `undefined hkpShapeCollectionFilter_vdtor(hkpConstrainedSystemFilter * this)`
+pub const hkpConstrainedSystemFilter__hkpShapeCollectionFilter_vdtor: u64 = 62564;
+/// `hkpConstrainedSystemFilter::hkpShapeCollectionFilter_vfunc_0` at 0xba5900 (rtti, high); signature (low): `undefined1 * hkpShapeCollectionFilter_vfunc_0(hkpConstrainedSystemFilter * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined8 param_6, undefined4 param_7, undefined4 param_8)`
+pub const hkpConstrainedSystemFilter__hkpShapeCollectionFilter_vfunc_0: u64 = 62736;
+/// `hkpConstrainedSystemFilter::hkpShapeCollectionFilter_vfunc_1` at 0xba5890 (rtti, high); signature (low): `undefined1 * hkpShapeCollectionFilter_vfunc_1(hkpConstrainedSystemFilter * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined4 param_6)`
+pub const hkpConstrainedSystemFilter__hkpShapeCollectionFilter_vfunc_1: u64 = 62735;
+/// `hkpConstrainedSystemFilter::vdtor` at 0xb9bfc0 (slot_propagation, medium); signature (low): `hkpConstrainedSystemFilter * vdtor(hkpConstrainedSystemFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstrainedSystemFilter__vdtor: u64 = 62582;
+/// `hkpConstrainedSystemFilter::vfunc_1` at 0xb9c7a0 (rtti, high); signature (low): `undefined * vfunc_1(void)`
+pub const hkpConstrainedSystemFilter__vfunc_1: u64 = 62598;
+/// `hkpConstraintChainData::vdtor` at 0xb76e50 (layout_inference, medium); signature (low): `hkpConstraintChainData * vdtor(hkpConstraintChainData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintChainData__vdtor: u64 = 61985;
+/// `hkpConstraintChainInstance::ctor` at 0xb50d60 (layout_inference, high); signature (high): `undefined ctor(hkpConstraintChainInstance * this)`
+pub const hkpConstraintChainInstance__ctor: u64 = 61098;
+/// `hkpConstraintChainInstance::ctor` at 0xb783b0 (layout_inference, high); signature (low): `hkpConstraintChainInstance * ctor(hkpConstraintChainInstance * this, longlong param_1)`
+pub const hkpConstraintChainInstance__ctor_2: u64 = 62015;
+/// `hkpConstraintChainInstance::ctor` at 0xb78480 (layout_inference, medium); signature (high): `undefined ctor(hkpConstraintChainInstance * this)`
+pub const hkpConstraintChainInstance__ctor_3: u64 = 62016;
+/// `hkpConstraintChainInstance::vdtor` at 0xb51bb0 (slot_propagation, medium); signature (low): `hkpConstraintChainInstance * vdtor(hkpConstraintChainInstance * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintChainInstance__vdtor: u64 = 61206;
+/// `hkpConstraintChainInstance::vfunc_4` at 0xb78530 (rtti, high); signature (low): `undefined vfunc_4(hkpConstraintChainInstance * this, longlong param_1)`
+pub const hkpConstraintChainInstance__vfunc_4: u64 = 62017;
+/// `hkpConstraintChainInstance::vfunc_6` at 0xb52c50 (rtti, high); signature (low): `undefined8 vfunc_6(void)`
+pub const hkpConstraintChainInstance__vfunc_6: u64 = 61246;
+/// `hkpConstraintChainInstanceAction::ctor` at 0xb50dd0 (layout_inference, high); signature (high): `undefined ctor(hkpConstraintChainInstanceAction * this)`
+pub const hkpConstraintChainInstanceAction__ctor: u64 = 61100;
+/// `hkpConstraintChainInstanceAction::vdtor` at 0xb51c30 (layout_inference, medium); signature (low): `hkpConstraintChainInstanceAction * vdtor(hkpConstraintChainInstanceAction * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintChainInstanceAction__vdtor: u64 = 61207;
+/// `hkpConstraintChainInstanceAction::vfunc_3` at 0xb78630 (rtti, high); signature (low): `undefined vfunc_3(void)`
+pub const hkpConstraintChainInstanceAction__vfunc_3: u64 = 62019;
+/// `hkpConstraintChainInstanceAction::vfunc_4` at 0xb78670 (rtti, high); signature (low): `undefined vfunc_4(hkpConstraintChainInstanceAction * this, longlong * param_1)`
+pub const hkpConstraintChainInstanceAction__vfunc_4: u64 = 62022;
+/// `hkpConstraintChainInstanceAction::vfunc_6` at 0xb78650 (rtti, high); signature (high): `undefined vfunc_6(hkpConstraintChainInstanceAction * this)`
+pub const hkpConstraintChainInstanceAction__vfunc_6: u64 = 62021;
+/// `hkpConstraintChainInstanceAction::vfunc_7` at 0xb78640 (rtti, high); signature (low): `undefined8 vfunc_7(void)`
+pub const hkpConstraintChainInstanceAction__vfunc_7: u64 = 62020;
+/// `hkpConstraintCollisionFilter::ctor` at 0xb717e0 (layout_inference, high); signature (low): `hkpConstraintCollisionFilter * ctor(hkpConstraintCollisionFilter * this, longlong param_1)`
+pub const hkpConstraintCollisionFilter__ctor: u64 = 61884;
+/// `hkpConstraintCollisionFilter::ctor` at 0xb71850 (layout_inference, medium); signature (high): `undefined ctor(hkpConstraintCollisionFilter * this)`
+pub const hkpConstraintCollisionFilter__ctor_2: u64 = 61885;
+/// `hkpConstraintCollisionFilter::hkpCollidableCollidableFilter_vdtor` at 0xb51884 (slot_propagation, medium); signature (high): `undefined hkpCollidableCollidableFilter_vdtor(hkpConstraintCollisionFilter * this)`
+pub const hkpConstraintCollisionFilter__hkpCollidableCollidableFilter_vdtor: u64 = 61192;
+/// `hkpConstraintCollisionFilter::hkpConstraintListener_vdtor` at 0xb518b4 (slot_propagation, medium); signature (high): `undefined hkpConstraintListener_vdtor(hkpConstraintCollisionFilter * this)`
+pub const hkpConstraintCollisionFilter__hkpConstraintListener_vdtor: u64 = 61196;
+/// `hkpConstraintCollisionFilter::hkpConstraintListener_vfunc_1` at 0xb71a50 (rtti, high); signature (low): `undefined hkpConstraintListener_vfunc_1(hkpConstraintCollisionFilter * this, longlong param_1)`
+pub const hkpConstraintCollisionFilter__hkpConstraintListener_vfunc_1: u64 = 61888;
+/// `hkpConstraintCollisionFilter::hkpConstraintListener_vfunc_1_sub0` at 0xb70bb0 (callgraph, medium); signature (untiered): `int hkpConstraintListener_vfunc_1_sub0(longlong param_1, ulonglong param_2, ulonglong param_3)`
+pub const hkpConstraintCollisionFilter__hkpConstraintListener_vfunc_1_sub0: u64 = 61852;
+/// `hkpConstraintCollisionFilter::hkpConstraintListener_vfunc_2` at 0xb71b30 (rtti, high); signature (low): `undefined hkpConstraintListener_vfunc_2(hkpConstraintCollisionFilter * this, longlong param_1)`
+pub const hkpConstraintCollisionFilter__hkpConstraintListener_vfunc_2: u64 = 61889;
+/// `hkpConstraintCollisionFilter::hkpConstraintListener_vfunc_2_sub0` at 0xb70af0 (callgraph, medium); signature (untiered): `ulonglong hkpConstraintListener_vfunc_2_sub0(longlong param_1, ulonglong param_2, ulonglong param_3)`
+pub const hkpConstraintCollisionFilter__hkpConstraintListener_vfunc_2_sub0: u64 = 61851;
+/// `hkpConstraintCollisionFilter::hkpConstraintListener_vfunc_5` at 0xb71c40 (rtti, high); signature (low): `undefined hkpConstraintListener_vfunc_5(hkpConstraintCollisionFilter * this, longlong * param_1)`
+pub const hkpConstraintCollisionFilter__hkpConstraintListener_vfunc_5: u64 = 61890;
+/// `hkpConstraintCollisionFilter::hkpConstraintListener_vfunc_6` at 0xb71ca0 (rtti, high); signature (low): `undefined hkpConstraintListener_vfunc_6(hkpConstraintCollisionFilter * this, longlong * param_1)`
+pub const hkpConstraintCollisionFilter__hkpConstraintListener_vfunc_6: u64 = 61891;
+/// `hkpConstraintCollisionFilter::hkpRayCollidableFilter_vdtor` at 0xb518a8 (slot_propagation, medium); signature (high): `undefined hkpRayCollidableFilter_vdtor(hkpConstraintCollisionFilter * this)`
+pub const hkpConstraintCollisionFilter__hkpRayCollidableFilter_vdtor: u64 = 61195;
+/// `hkpConstraintCollisionFilter::hkpRayShapeCollectionFilter_vdtor` at 0xb5189c (slot_propagation, medium); signature (high): `undefined hkpRayShapeCollectionFilter_vdtor(hkpConstraintCollisionFilter * this)`
+pub const hkpConstraintCollisionFilter__hkpRayShapeCollectionFilter_vdtor: u64 = 61194;
+/// `hkpConstraintCollisionFilter::hkpShapeCollectionFilter_vdtor` at 0xb51890 (slot_propagation, medium); signature (high): `undefined hkpShapeCollectionFilter_vdtor(hkpConstraintCollisionFilter * this)`
+pub const hkpConstraintCollisionFilter__hkpShapeCollectionFilter_vdtor: u64 = 61193;
+/// `hkpConstraintCollisionFilter::vdtor` at 0xb51cd0 (slot_propagation, medium); signature (low): `hkpConstraintCollisionFilter * vdtor(hkpConstraintCollisionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintCollisionFilter__vdtor: u64 = 61208;
+/// `hkpConstraintCollisionFilter::vfunc_3` at 0xb719e0 (rtti, high); signature (low): `undefined vfunc_3(hkpConstraintCollisionFilter * this, longlong param_1)`
+pub const hkpConstraintCollisionFilter__vfunc_3: u64 = 61887;
+/// `hkpConstraintData::vdtor` at 0xb4ff10 (layout_inference, medium); signature (low): `hkpConstraintData * vdtor(hkpConstraintData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintData__vdtor: u64 = 60986;
+/// `hkpConstraintData::vfunc_13` at 0xb70050 (rtti, medium); signature (low): `undefined8 vfunc_13(hkpConstraintData * this, undefined8 param_1)`
+pub const hkpConstraintData__vfunc_13: u64 = 61832;
+/// `hkpConstraintData::vfunc_14` at 0xb70060 (rtti, medium); signature (low): `undefined vfunc_14(hkpConstraintData * this, undefined8 param_1, void * param_2, uint param_3)`
+pub const hkpConstraintData__vfunc_14: u64 = 61833;
+/// `hkpConstraintData::vfunc_15` at 0xb50020 (rtti, medium); signature (low): `undefined vfunc_15(void)`
+pub const hkpConstraintData__vfunc_15: u64 = 60988;
+/// `hkpConstraintData::vfunc_16` at 0xb50070 (rtti, medium); signature (low): `undefined1 * vfunc_16(hkpConstraintData * this, undefined1 * param_1)`
+pub const hkpConstraintData__vfunc_16: u64 = 60993;
+/// `hkpConstraintData::vfunc_17` at 0xb50030 (rtti, medium); signature (low): `undefined vfunc_17(void)`
+pub const hkpConstraintData__vfunc_17: u64 = 60989;
+/// `hkpConstraintData::vfunc_3` at 0xb500a0 (rtti, medium); signature (low): `undefined vfunc_3(void)`
+pub const hkpConstraintData__vfunc_3: u64 = 60996;
+/// `hkpConstraintData::vfunc_4` at 0xb50050 (rtti, medium); signature (low): `undefined4 vfunc_4(void)`
+pub const hkpConstraintData__vfunc_4: u64 = 60991;
+/// `hkpConstraintData::vfunc_5` at 0xb500b0 (rtti, medium); signature (low): `undefined vfunc_5(void)`
+pub const hkpConstraintData__vfunc_5: u64 = 60997;
+/// `hkpConstraintData::vfunc_6` at 0xb50040 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+pub const hkpConstraintData__vfunc_6: u64 = 60990;
+/// `hkpConstraintData::vfunc_7` at 0xb50090 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+pub const hkpConstraintData__vfunc_7: u64 = 60995;
+/// `hkpConstraintData::vfunc_8` at 0xb50080 (rtti, medium); signature (low): `undefined vfunc_8(void)`
+pub const hkpConstraintData__vfunc_8: u64 = 60994;
+/// `hkpConstraintData::vfunc_9` at 0xb50060 (rtti, medium); signature (low): `undefined1 vfunc_9(void)`
+pub const hkpConstraintData__vfunc_9: u64 = 60992;
+/// `hkpConstraintInstance::ctor` at 0xb51050 (layout_inference, medium); signature (high): `undefined ctor(hkpConstraintInstance * this)`
+pub const hkpConstraintInstance__ctor: u64 = 61127;
+/// `hkpConstraintInstance::ctor` at 0xb63680 (layout_inference, medium); signature (low): `hkpConstraintInstance * ctor(hkpConstraintInstance * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined1 param_4)`
+pub const hkpConstraintInstance__ctor_2: u64 = 61566;
+/// `hkpConstraintInstance::ctor` at 0xb63980 (layout_inference, medium); signature (low): `hkpConstraintInstance * ctor(hkpConstraintInstance * this, undefined1 param_1)`
+pub const hkpConstraintInstance__ctor_3: u64 = 61569;
+/// `hkpConstraintInstance::dtor` at 0xb63740 (layout_inference, high); signature (high): `undefined dtor(hkpConstraintInstance * this)`
+pub const hkpConstraintInstance__dtor: u64 = 61567;
+/// `hkpConstraintInstance::dtor_sub0` at 0xb82400 (callgraph, medium); signature (untiered): `undefined dtor_sub0(longlong param_1)`
+pub const hkpConstraintInstance__dtor_sub0: u64 = 62246;
+/// `hkpConstraintInstance::vdtor` at 0xb51d50 (slot_propagation, medium); signature (low): `hkpConstraintInstance * vdtor(hkpConstraintInstance * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintInstance__vdtor: u64 = 61209;
+/// `hkpConstraintInstance::vfunc_3` at 0xb642f0 (rtti, medium); signature (low): `undefined vfunc_3(void)`
+pub const hkpConstraintInstance__vfunc_3: u64 = 61583;
+/// `hkpConstraintInstance::vfunc_4` at 0xb64300 (rtti, high); signature (low): `undefined vfunc_4(hkpConstraintInstance * this, longlong param_1)`
+pub const hkpConstraintInstance__vfunc_4: u64 = 61584;
+/// `hkpConstraintInstance::vfunc_5` at 0xb64330 (rtti, medium); signature (low): `undefined vfunc_5(void)`
+pub const hkpConstraintInstance__vfunc_5: u64 = 61585;
+/// `hkpConstraintInstance::vfunc_6` at 0xb52c60 (rtti, high); signature (low): `undefined8 vfunc_6(void)`
+pub const hkpConstraintInstance__vfunc_6: u64 = 61247;
+/// `hkpConstraintListener::dtor` at 0xb516e0 (layout_inference, high); signature (high): `undefined dtor(hkpConstraintListener * this)`
+pub const hkpConstraintListener__dtor: u64 = 61189;
+/// `hkpConstraintListener::dtor` at 0x1050f70 (layout_inference, high); signature (low): `undefined dtor(hkpConstraintListener * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintListener__dtor_2: u64 = 77957;
+/// `hkpConstraintListener::vdtor` at 0xb51dd0 (layout_inference, medium); signature (low): `hkpConstraintListener * vdtor(hkpConstraintListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintListener__vdtor: u64 = 61210;
+/// `hkpConstraintListener::vfunc_1` at 0xb52bd0 (rtti, medium); signature (low): `undefined vfunc_1(void)`
+pub const hkpConstraintListener__vfunc_1: u64 = 61238;
+/// `hkpConstraintListener::vfunc_2` at 0xb52c00 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+pub const hkpConstraintListener__vfunc_2: u64 = 61241;
+/// `hkpConstraintListener::vfunc_3` at 0xb52bf0 (rtti, medium); signature (low): `undefined vfunc_3(void)`
+pub const hkpConstraintListener__vfunc_3: u64 = 61240;
+/// `hkpConstraintListener::vfunc_4` at 0xb52c20 (rtti, medium); signature (low): `undefined vfunc_4(void)`
+pub const hkpConstraintListener__vfunc_4: u64 = 61243;
+/// `hkpConstraintListener::vfunc_5` at 0xb52be0 (rtti, medium); signature (low): `undefined vfunc_5(void)`
+pub const hkpConstraintListener__vfunc_5: u64 = 61239;
+/// `hkpConstraintListener::vfunc_6` at 0xb52c10 (rtti, medium); signature (low): `undefined vfunc_6(void)`
+pub const hkpConstraintListener__vfunc_6: u64 = 61242;
+/// `hkpConstraintMotor::vdtor` at 0xb51e30 (layout_inference, medium); signature (low): `hkpConstraintMotor * vdtor(hkpConstraintMotor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintMotor__vdtor: u64 = 61211;
 /// `hkpConstraintOwner::vdtor` at 0xb66eb0 (layout_inference, medium); signature (low): `hkpConstraintOwner * vdtor(hkpConstraintOwner * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkpConstraintOwner__vdtor: u64 = 61674;
 /// `hkpConstraintOwner::vfunc_3` at 0xb66f50 (rtti, high); signature (low): `undefined vfunc_3(void)`
@@ -5049,119 +5425,3 @@ pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_407b4391a4cb964
 pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_407b4391a4cb964ac5cc57d63e7e618f____vfunc_2: u64 = 444253;
 /// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_>::vfunc_3` at 0x1285690 (rtti, high); signature (low): `_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_> * vfunc_3(_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_> * this, longlong param_1)`
 pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_407b4391a4cb964ac5cc57d63e7e618f____vfunc_3: u64 = 444337;
-/// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_8116ba4fa2d997d4c55ff5306dc2e0ef>_>::vfunc_0` at 0x577f40 (rtti, high); signature (low): `undefined vfunc_0(_Ref_count_resource<unsigned_char*___ptr64,<lambda_8116ba4fa2d997d4c55ff5306dc2e0ef>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_8116ba4fa2d997d4c55ff5306dc2e0ef____vfunc_0: u64 = 418834;
-/// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_8116ba4fa2d997d4c55ff5306dc2e0ef>_>::vfunc_1` at 0x577f20 (rtti, high); signature (high): `undefined vfunc_1(_Ref_count_resource<unsigned_char*___ptr64,<lambda_8116ba4fa2d997d4c55ff5306dc2e0ef>_> * this)`
-pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_8116ba4fa2d997d4c55ff5306dc2e0ef____vfunc_1: u64 = 418833;
-/// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_8116ba4fa2d997d4c55ff5306dc2e0ef>_>::vfunc_2` at 0x577da0 (rtti, high); signature (low): `_Ref_count_resource<unsigned_char*___ptr64,<lambda_8116ba4fa2d997d4c55ff5306dc2e0ef>_> * vfunc_2(_Ref_count_resource<unsigned_char*___ptr64,<lambda_8116ba4fa2d997d4c55ff5306dc2e0ef>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_8116ba4fa2d997d4c55ff5306dc2e0ef____vfunc_2: u64 = 418829;
-/// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_8116ba4fa2d997d4c55ff5306dc2e0ef>_>::vfunc_3` at 0x577f90 (rtti, high); signature (low): `_Ref_count_resource<unsigned_char*___ptr64,<lambda_8116ba4fa2d997d4c55ff5306dc2e0ef>_> * vfunc_3(_Ref_count_resource<unsigned_char*___ptr64,<lambda_8116ba4fa2d997d4c55ff5306dc2e0ef>_> * this, longlong param_1)`
-pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_8116ba4fa2d997d4c55ff5306dc2e0ef____vfunc_3: u64 = 418835;
-/// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_d87e5165e8580a06382cfba18d28ca5f>_>::vfunc_0` at 0x5ff7f0 (rtti, high); signature (low): `undefined vfunc_0(_Ref_count_resource<unsigned_char*___ptr64,<lambda_d87e5165e8580a06382cfba18d28ca5f>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_d87e5165e8580a06382cfba18d28ca5f____vfunc_0: u64 = 523870;
-/// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_d87e5165e8580a06382cfba18d28ca5f>_>::vfunc_1` at 0x5ff7d0 (rtti, high); signature (high): `undefined vfunc_1(_Ref_count_resource<unsigned_char*___ptr64,<lambda_d87e5165e8580a06382cfba18d28ca5f>_> * this)`
-pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_d87e5165e8580a06382cfba18d28ca5f____vfunc_1: u64 = 523869;
-/// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_d87e5165e8580a06382cfba18d28ca5f>_>::vfunc_2` at 0x5ff3a0 (rtti, high); signature (low): `_Ref_count_resource<unsigned_char*___ptr64,<lambda_d87e5165e8580a06382cfba18d28ca5f>_> * vfunc_2(_Ref_count_resource<unsigned_char*___ptr64,<lambda_d87e5165e8580a06382cfba18d28ca5f>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_d87e5165e8580a06382cfba18d28ca5f____vfunc_2: u64 = 523862;
-/// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_d87e5165e8580a06382cfba18d28ca5f>_>::vfunc_3` at 0x5ff8b0 (rtti, high); signature (low): `_Ref_count_resource<unsigned_char*___ptr64,<lambda_d87e5165e8580a06382cfba18d28ca5f>_> * vfunc_3(_Ref_count_resource<unsigned_char*___ptr64,<lambda_d87e5165e8580a06382cfba18d28ca5f>_> * this, longlong param_1)`
-pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_d87e5165e8580a06382cfba18d28ca5f____vfunc_3: u64 = 523873;
-/// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_dc2c6e289b47090a5dc26099a3758499>_>::vfunc_0` at 0x12ec760 (rtti, high); signature (low): `undefined vfunc_0(_Ref_count_resource<unsigned_char*___ptr64,<lambda_dc2c6e289b47090a5dc26099a3758499>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_dc2c6e289b47090a5dc26099a3758499____vfunc_0: u64 = 444951;
-/// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_dc2c6e289b47090a5dc26099a3758499>_>::vfunc_1` at 0x12ec730 (rtti, high); signature (high): `undefined vfunc_1(_Ref_count_resource<unsigned_char*___ptr64,<lambda_dc2c6e289b47090a5dc26099a3758499>_> * this)`
-pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_dc2c6e289b47090a5dc26099a3758499____vfunc_1: u64 = 419519;
-/// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_dc2c6e289b47090a5dc26099a3758499>_>::vfunc_2` at 0x12ebee0 (rtti, high); signature (low): `_Ref_count_resource<unsigned_char*___ptr64,<lambda_dc2c6e289b47090a5dc26099a3758499>_> * vfunc_2(_Ref_count_resource<unsigned_char*___ptr64,<lambda_dc2c6e289b47090a5dc26099a3758499>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_dc2c6e289b47090a5dc26099a3758499____vfunc_2: u64 = 419509;
-/// `std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_dc2c6e289b47090a5dc26099a3758499>_>::vfunc_3` at 0x12ec7b0 (rtti, high); signature (low): `_Ref_count_resource<unsigned_char*___ptr64,<lambda_dc2c6e289b47090a5dc26099a3758499>_> * vfunc_3(_Ref_count_resource<unsigned_char*___ptr64,<lambda_dc2c6e289b47090a5dc26099a3758499>_> * this, longlong param_1)`
-pub const std___Ref_count_resource_unsigned_char____ptr64_lambda_dc2c6e289b47090a5dc26099a3758499____vfunc_3: u64 = 444952;
-/// `std::basic_filebuf<char,std::char_traits<char>_>::dtor` at 0xa74560 (layout_inference, high); signature (high): `undefined dtor(basic_filebuf<char,std::char_traits<char>_> * this)`
-pub const std__basic_filebuf_char_std__char_traits_char____dtor: u64 = 442829;
-/// `std::basic_filebuf<char,std::char_traits<char>_>::dtor_caller` at 0xa745d0 (callgraph, medium); signature (untiered): `undefined dtor_caller(longlong param_1)`
-pub const std__basic_filebuf_char_std__char_traits_char____dtor_caller: u64 = 442830;
-/// `std::basic_filebuf<char,std::char_traits<char>_>::dtor_caller_1` at 0xa74880 (callgraph, medium); signature (untiered): `undefined dtor_caller_1(longlong * param_1)`
-pub const std__basic_filebuf_char_std__char_traits_char____dtor_caller_1: u64 = 442836;
-/// `std::basic_filebuf<char,std::char_traits<char>_>::vfunc_0` at 0xa74970 (rtti, high); signature (low): `basic_filebuf<char,std::char_traits<char>_> * vfunc_0(basic_filebuf<char,std::char_traits<char>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const std__basic_filebuf_char_std__char_traits_char____vfunc_0: u64 = 442840;
-/// `std::basic_filebuf<char,std::char_traits<char>_>::vfunc_1` at 0xa74de0 (rtti, high); signature (high): `undefined vfunc_1(basic_filebuf<char,std::char_traits<char>_> * this)`
-pub const std__basic_filebuf_char_std__char_traits_char____vfunc_1: u64 = 442848;
-/// `std::basic_filebuf<char,std::char_traits<char>_>::vfunc_10` at 0xa75280 (rtti, high); signature (low): `fpos_t * vfunc_10(basic_filebuf<char,std::char_traits<char>_> * this, fpos_t * param_1, longlong param_2, int param_3)`
-pub const std__basic_filebuf_char_std__char_traits_char____vfunc_10: u64 = 442855;
-/// `std::basic_filebuf<char,std::char_traits<char>_>::vfunc_11` at 0xa75350 (rtti, high); signature (low): `longlong * vfunc_11(basic_filebuf<char,std::char_traits<char>_> * this, longlong * param_1, longlong * param_2)`
-pub const std__basic_filebuf_char_std__char_traits_char____vfunc_11: u64 = 442856;
-/// `std::basic_filebuf<char,std::char_traits<char>_>::vfunc_12` at 0xa753f0 (rtti, high); signature (low): `basic_filebuf<char,std::char_traits<char>_> * vfunc_12(basic_filebuf<char,std::char_traits<char>_> * this, char * param_1, size_t param_2)`
-pub const std__basic_filebuf_char_std__char_traits_char____vfunc_12: u64 = 442857;
-/// `std::basic_filebuf<char,std::char_traits<char>_>::vfunc_13` at 0xa75450 (rtti, high); signature (high): `undefined8 vfunc_13(basic_filebuf<char,std::char_traits<char>_> * this)`
-pub const std__basic_filebuf_char_std__char_traits_char____vfunc_13: u64 = 442858;
-/// `std::basic_filebuf<char,std::char_traits<char>_>::vfunc_14` at 0xa74f70 (rtti, high); signature (low): `undefined vfunc_14(basic_filebuf<char,std::char_traits<char>_> * this, locale * param_1, undefined8 param_2, undefined8 param_3)`
-pub const std__basic_filebuf_char_std__char_traits_char____vfunc_14: u64 = 442852;
-/// `std::basic_filebuf<char,std::char_traits<char>_>::vfunc_2` at 0xa74eb0 (rtti, high); signature (high): `undefined vfunc_2(basic_filebuf<char,std::char_traits<char>_> * this)`
-pub const std__basic_filebuf_char_std__char_traits_char____vfunc_2: u64 = 442850;
-/// `std::basic_filebuf<char,std::char_traits<char>_>::vfunc_3` at 0xa74fc0 (rtti, high); signature (low): `int vfunc_3(basic_filebuf<char,std::char_traits<char>_> * this, int param_1)`
-pub const std__basic_filebuf_char_std__char_traits_char____vfunc_3: u64 = 442853;
-/// `std::basic_filebuf<char,std::char_traits<char>_>::vfunc_4` at 0xa75160 (rtti, high); signature (low): `uint vfunc_4(basic_filebuf<char,std::char_traits<char>_> * this, uint param_1)`
-pub const std__basic_filebuf_char_std__char_traits_char____vfunc_4: u64 = 442854;
-/// `std::basic_filebuf<char,std::char_traits<char>_>::vfunc_6` at 0xa75810 (rtti, high); signature (high): `ulonglong vfunc_6(basic_filebuf<char,std::char_traits<char>_> * this)`
-pub const std__basic_filebuf_char_std__char_traits_char____vfunc_6: u64 = 442860;
-/// `std::basic_filebuf<char,std::char_traits<char>_>::vfunc_7` at 0xa754a0 (rtti, high); signature (low): `uint vfunc_7(basic_filebuf<char,std::char_traits<char>_> * this, undefined8 param_1, basic_filebuf<char,std::char_traits<char>_>_vtbl * param_2, basic_filebuf<char,std::char_traits<char>_>_vtbl * param_3)`
-pub const std__basic_filebuf_char_std__char_traits_char____vfunc_7: u64 = 442859;
-/// `std::basic_filebuf<char,std::char_traits<char>_>::vfunc_8` at 0xa75890 (rtti, high); signature (low): `longlong vfunc_8(basic_filebuf<char,std::char_traits<char>_> * this, char * param_1, size_t param_2)`
-pub const std__basic_filebuf_char_std__char_traits_char____vfunc_8: u64 = 442861;
-/// `std::basic_filebuf<char,std::char_traits<char>_>::vfunc_9` at 0xa75970 (rtti, high); signature (low): `longlong vfunc_9(basic_filebuf<char,std::char_traits<char>_> * this, char * param_1, size_t param_2)`
-pub const std__basic_filebuf_char_std__char_traits_char____vfunc_9: u64 = 442862;
-/// `std::basic_ifstream<char,std::char_traits<char>_>::vfunc_0_vtB0` at 0xa74950 (rtti, high); signature (high): `undefined vfunc_0_vtB0(basic_ifstream<char,std::char_traits<char>_> * this)`
-pub const std__basic_ifstream_char_std__char_traits_char____vfunc_0_vtB0: u64 = 442838;
-/// `std::basic_ifstream<char,std::char_traits<char>_>::vfunc_0_vtB0_sub0` at 0xa749b0 (callgraph, medium); signature (untiered): `void * vfunc_0_vtB0_sub0(longlong param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
-pub const std__basic_ifstream_char_std__char_traits_char____vfunc_0_vtB0_sub0: u64 = 442841;
-/// `std::basic_ostringstream<char,std::char_traits<char>,std::allocator<char>_>::vfunc_0_vt88` at 0xa7495c (rtti, high); signature (high): `undefined vfunc_0_vt88(basic_ostringstream<char,std::char_traits<char>,std::allocator<char>_> * this)`
-pub const std__basic_ostringstream_char_std__char_traits_char_std__allocator_char____vfunc_0_vt88: u64 = 442839;
-/// `std::basic_ostringstream<char,std::char_traits<char>,std::allocator<char>_>::vfunc_0_vt88_sub0` at 0xa749f0 (callgraph, medium); signature (untiered): `basic_ios<char,std::char_traits<char>_> * vfunc_0_vt88_sub0(basic_ios<char,std::char_traits<char>_> * param_1, ulonglong param_2)`
-pub const std__basic_ostringstream_char_std__char_traits_char_std__allocator_char____vfunc_0_vt88_sub0: u64 = 442842;
-/// `std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_>::ctor` at 0x13ab60 (layout_inference, medium); signature (low): `undefined ctor(basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_> * this, undefined8 param_1, void * param_2, undefined8 param_3)`
-pub const std__basic_stringbuf_char_std__char_traits_char_std__allocator_char____ctor: u64 = 441425;
-/// `std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_>::ctor` at 0x13b230 (layout_inference, medium); signature (low): `basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_> * ctor(basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const std__basic_stringbuf_char_std__char_traits_char_std__allocator_char____ctor_2: u64 = 441433;
-/// `std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_>::vfunc_0` at 0x13acf0 (rtti, high); signature (low): `basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_> * vfunc_0(basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_> * this, ulonglong param_1, void * param_2, undefined8 param_3)`
-pub const std__basic_stringbuf_char_std__char_traits_char_std__allocator_char____vfunc_0: u64 = 23282;
-/// `std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_>::vfunc_1` at 0x15a6c73 (rtti, high); signature (untiered): `void vfunc_1(basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_> * this)`
-pub const std__basic_stringbuf_char_std__char_traits_char_std__allocator_char____vfunc_1: u64 = 109567;
-/// `std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_>::vfunc_10` at 0x13a790 (rtti, high); signature (low): `ulonglong * vfunc_10(basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_> * this, ulonglong * param_1, longlong param_2, int param_3, byte param_4)`
-pub const std__basic_stringbuf_char_std__char_traits_char_std__allocator_char____vfunc_10: u64 = 441421;
-/// `std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_>::vfunc_11` at 0x13a6a0 (rtti, high); signature (low): `ulonglong * vfunc_11(basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_> * this, ulonglong * param_1, longlong * param_2, uint param_3)`
-pub const std__basic_stringbuf_char_std__char_traits_char_std__allocator_char____vfunc_11: u64 = 441420;
-/// `std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_>::vfunc_12` at 0x15a6c85 (rtti, high); signature (untiered): `basic_streambuf<char,struct_std::char_traits<char>_> * vfunc_12(basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_> * this, char * param_1, __int64 param_2)`
-pub const std__basic_stringbuf_char_std__char_traits_char_std__allocator_char____vfunc_12: u64 = 453555;
-/// `std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_>::vfunc_13` at 0x15a6c91 (rtti, high); signature (untiered): `int vfunc_13(basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_> * this)`
-pub const std__basic_stringbuf_char_std__char_traits_char_std__allocator_char____vfunc_13: u64 = 453557;
-/// `std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_>::vfunc_14` at 0x15a6c7f (rtti, high); signature (untiered): `void vfunc_14(basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_> * this, locale * param_1)`
-pub const std__basic_stringbuf_char_std__char_traits_char_std__allocator_char____vfunc_14: u64 = 453554;
-/// `std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_>::vfunc_2` at 0x15a6c79 (rtti, high); signature (untiered): `void vfunc_2(basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_> * this)`
-pub const std__basic_stringbuf_char_std__char_traits_char_std__allocator_char____vfunc_2: u64 = 109568;
-/// `std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_>::vfunc_3` at 0x13a9b0 (rtti, high); signature (low): `ulonglong vfunc_3(basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const std__basic_stringbuf_char_std__char_traits_char_std__allocator_char____vfunc_3: u64 = 441424;
-/// `std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_>::vfunc_4` at 0x13a950 (rtti, high); signature (low): `int vfunc_4(basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_> * this, int param_1)`
-pub const std__basic_stringbuf_char_std__char_traits_char_std__allocator_char____vfunc_4: u64 = 441423;
-/// `std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_>::vfunc_6` at 0x13a8e0 (rtti, high); signature (high): `ulonglong vfunc_6(basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_> * this)`
-pub const std__basic_stringbuf_char_std__char_traits_char_std__allocator_char____vfunc_6: u64 = 441422;
-/// `std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_>::vfunc_7` at 0x15a6c97 (rtti, high); signature (untiered): `int vfunc_7(basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_> * this)`
-pub const std__basic_stringbuf_char_std__char_traits_char_std__allocator_char____vfunc_7: u64 = 453558;
-/// `std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_>::vfunc_8` at 0x15a6c9d (rtti, high); signature (untiered): `__int64 vfunc_8(basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_> * this, char * param_1, __int64 param_2)`
-pub const std__basic_stringbuf_char_std__char_traits_char_std__allocator_char____vfunc_8: u64 = 453559;
-/// `std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_>::vfunc_9` at 0x15a6ca3 (rtti, high); signature (untiered): `__int64 vfunc_9(basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_> * this, char * param_1, __int64 param_2)`
-pub const std__basic_stringbuf_char_std__char_traits_char_std__allocator_char____vfunc_9: u64 = 453560;
-/// `std::basic_stringstream<char,std::char_traits<char>,std::allocator<char>_>::vfunc_0_vt98` at 0x13efa0 (rtti, high); signature (low): `undefined vfunc_0_vt98(basic_stringstream<char,std::char_traits<char>,std::allocator<char>_> * this, ulonglong param_1)`
-pub const std__basic_stringstream_char_std__char_traits_char_std__allocator_char____vfunc_0_vt98: u64 = 23281;
-/// `std::basic_stringstream<char,std::char_traits<char>,std::allocator<char>_>::vfunc_0_vt98_sub0` at 0x13ac50 (callgraph, medium); signature (untiered): `basic_ios<char,std::char_traits<char>_> * vfunc_0_vt98_sub0(basic_ios<char,std::char_traits<char>_> * param_1, ulonglong param_2)`
-pub const std__basic_stringstream_char_std__char_traits_char_std__allocator_char____vfunc_0_vt98_sub0: u64 = 23283;
-/// `std::exception::ctor` at 0x13906e0 (layout_inference, medium); signature (low): `exception * ctor(exception * this, longlong param_1)`
-pub const std__exception__ctor: u64 = 97174;
-/// `std::exception::ctor` at 0x1390740 (layout_inference, medium); signature (low): `exception * ctor(exception * this, longlong param_1)`
-pub const std__exception__ctor_2: u64 = 97176;
-/// `std::exception::ctor` at 0x1392e20 (layout_inference, medium); signature (low): `exception * ctor(exception * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const std__exception__ctor_3: u64 = 97246;
-/// `std::exception::dtor` at 0xa7cce0 (layout_inference, high); signature (high): `undefined dtor(exception * this)`
-pub const std__exception__dtor: u64 = 442988;
-/// `std::exception::vdtor` at 0xa7e480 (layout_inference, medium); signature (low): `exception * vdtor(exception * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const std__exception__vdtor: u64 = 97247;
-/// `std::exception::vfunc_1` at 0xa91470 (rtti, high); signature (high): `char * vfunc_1(exception * this)`
-pub const std__exception__vfunc_1: u64 = 97393;
-/// `type_info::vdtor` at 0x15a7410 (layout_inference, medium); signature (low): `type_info * vdtor(type_info * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const type_info__vdtor: u64 = 109587;

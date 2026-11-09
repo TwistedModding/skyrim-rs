@@ -7,6 +7,246 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSPlayerDistanceCheckController::vftable` at 0x1922cb8, id 207880 (rtti, high); 47 slots.
+#[repr(C)]
+pub struct BSPlayerDistanceCheckController_vtable {
+    /// `BSPlayerDistanceCheckController::vdtor` at 0x7382b0 (layout_inference, medium); signature (low): `BSPlayerDistanceCheckController * vdtor(BSPlayerDistanceCheckController * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `BSPlayerDistanceCheckController::vfunc_2` at 0x7382f0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
+    pub slot_22: *const c_void,
+    /// `BSPlayerDistanceCheckController::vfunc_23` at 0x737f40 (rtti, high); signature (low): `NiTimeController * vfunc_23(BSPlayerDistanceCheckController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_23: *const c_void,
+    /// `NiTimeController::vfunc_24` at 0xef7e30 (rtti, medium); signature (low): `undefined vfunc_24(NiTimeController * this, longlong param_1)`
+    pub slot_24: *const c_void,
+    /// `NiTimeController::vfunc_25` at 0xef7f80 (rtti, medium); signature (low): `undefined vfunc_25(NiTimeController * this, longlong param_1)`
+    pub slot_25: *const c_void,
+    /// `NiTimeController::vfunc_26` at 0xef7ff0 (rtti, medium); signature (low): `undefined1 vfunc_26(NiTimeController * this, longlong * param_1)`
+    pub slot_26: *const c_void,
+    /// `NiTimeController::vfunc_27` at 0xef8040 (rtti, medium); signature (low): `undefined vfunc_27(NiTimeController * this, longlong * param_1)`
+    pub slot_27: *const c_void,
+    /// `NiTimeController::vfunc_28` at 0xef81a0 (rtti, medium); signature (low): `ulonglong vfunc_28(NiTimeController * this, longlong * param_1)`
+    pub slot_28: *const c_void,
+    /// `NiTimeController::vfunc_29` at 0xef8900 (rtti, medium); signature (low): `undefined vfunc_29(NiTimeController * this, longlong param_1)`
+    pub slot_29: *const c_void,
+    /// `NiObject::vfunc_30` at 0xedcb50 (rtti, medium); signature (low): `undefined vfunc_30(void)`
+    pub slot_30: *const c_void,
+    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
+    pub slot_31: *const c_void,
+    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
+    pub slot_32: *const c_void,
+    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
+    pub slot_33: *const c_void,
+    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
+    pub slot_35: *const c_void,
+    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
+    pub slot_36: *const c_void,
+    /// `NiTimeController::vfunc_37` at 0xef8320 (rtti, medium); signature (low): `undefined vfunc_37(NiTimeController * this, undefined4 param_2)`
+    pub slot_37: *const c_void,
+    /// `NiTimeController::vfunc_38` at 0xef8340 (rtti, medium); signature (high): `undefined vfunc_38(NiTimeController * this)`
+    pub slot_38: *const c_void,
+    /// `BSPlayerDistanceCheckController::vfunc_39` at 0x738120 (rtti, high); signature (high): `undefined vfunc_39(BSPlayerDistanceCheckController * this)`
+    pub slot_39: *const c_void,
+    /// `NiTimeController::vfunc_40` at 0xef8370 (rtti, medium); signature (low): `undefined vfunc_40(NiTimeController * this, longlong param_1)`
+    pub slot_40: *const c_void,
+    /// `NiTimeController::vfunc_41` at 0x305d80 (rtti, medium); signature (low): `undefined1 vfunc_41(void)`
+    pub slot_41: *const c_void,
+    /// `NiTimeController::vfunc_42` at 0x305d90 (rtti, medium); signature (low): `undefined1 vfunc_42(void)`
+    pub slot_42: *const c_void,
+    /// `NiTimeController::vfunc_43` at 0xef86d0 (rtti, medium); signature (medium): `float vfunc_43(NiTimeController * this, float param_1)`
+    pub slot_43: *const c_void,
+    /// `NiTimeController::vfunc_44` at 0xef88f0 (rtti, medium); signature (low): `undefined vfunc_44(void)`
+    pub slot_44: *const c_void,
+    /// `NiTimeController::vfunc_45` at 0x305d70 (rtti, medium); signature (low): `undefined1 vfunc_45(void)`
+    pub slot_45: *const c_void,
+    /// `BSPlayerDistanceCheckController::vfunc_46` at 0x738270 (rtti, high); signature (high): `undefined * vfunc_46(BSPlayerDistanceCheckController * this)`
+    pub slot_46: *const c_void,
+}
+impl BSPlayerDistanceCheckController_vtable {
+    pub const ID: u64 = 207880;
+}
+
+/// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vftable` at 0x18d6b68, id 204083 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSPointerListBase_BSTempEffectDebris____ptr64_vtable {
+    /// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vdtor` at 0x4aa1c0 (slot_propagation, medium); signature (low): `BSPointerListBase<BSTempEffectDebris*___ptr64> * vdtor(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vfunc_1` at 0x4aa160 (rtti, medium); signature (low): `undefined vfunc_1(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vfunc_2` at 0x4aa1a0 (rtti, medium); signature (low): `undefined vfunc_2(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_2: *const c_void,
+}
+impl BSPointerListBase_BSTempEffectDebris____ptr64_vtable {
+    pub const ID: u64 = 204083;
+}
+
+/// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::vftable` at 0x1867e80, id 196398 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSPointerListBase_TriggerEntry__TriggerEvent____ptr64_vtable {
+    /// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::vdtor` at 0x408900 (slot_propagation, medium); signature (low): `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * vdtor(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::vfunc_1` at 0x408fc0 (rtti, medium); signature (low): `undefined vfunc_1(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::vfunc_2` at 0x408f60 (rtti, medium); signature (low): `undefined vfunc_2(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_2: *const c_void,
+}
+impl BSPointerListBase_TriggerEntry__TriggerEvent____ptr64_vtable {
+    pub const ID: u64 = 196398;
+}
+
+/// `BSPortal::vftable` at 0x1800560, id 188245 (rtti, high); 39 slots.
+#[repr(C)]
+pub struct BSPortal_vtable {
+    /// `BSPortal::vdtor` at 0x213b70 (layout_inference, medium); signature (low): `BSPortal * vdtor(BSPortal * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `BSPortal::vfunc_2` at 0x213c50 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
+    pub slot_22: *const c_void,
+    /// `BSPortal::vfunc_23` at 0xfe9f00 (rtti, high); signature (low): `BSOcclusionPlane * vfunc_23(BSPortal * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_23: *const c_void,
+    /// `NiObject::vfunc_24` at 0xedc790 (rtti, medium); signature (low): `undefined vfunc_24(void)`
+    pub slot_24: *const c_void,
+    /// `NiObject::vfunc_25` at 0xedc7a0 (rtti, medium); signature (low): `undefined vfunc_25(void)`
+    pub slot_25: *const c_void,
+    /// `NiObject::vfunc_26` at 0xedc7b0 (rtti, medium); signature (low): `undefined vfunc_26(NiObject * this, longlong * param_1)`
+    pub slot_26: *const c_void,
+    /// `NiObject::vfunc_27` at 0xedc7d0 (rtti, medium); signature (low): `undefined vfunc_27(void)`
+    pub slot_27: *const c_void,
+    /// `NiObject::vfunc_28` at 0xedc7e0 (rtti, medium); signature (low): `ulonglong vfunc_28(NiObject * this, longlong * param_1)`
+    pub slot_28: *const c_void,
+    /// `NiObject::vfunc_29` at 0xedca00 (rtti, medium); signature (low): `undefined vfunc_29(NiObject * this, longlong param_1)`
+    pub slot_29: *const c_void,
+    /// `NiObject::vfunc_30` at 0xedcb50 (rtti, medium); signature (low): `undefined vfunc_30(void)`
+    pub slot_30: *const c_void,
+    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
+    pub slot_31: *const c_void,
+    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
+    pub slot_32: *const c_void,
+    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
+    pub slot_33: *const c_void,
+    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
+    pub slot_35: *const c_void,
+    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
+    pub slot_36: *const c_void,
+    /// `BSOcclusionPlane::vfunc_37` at 0xfe9bb0 (rtti, medium); signature (low): `undefined1 vfunc_37(void)`
+    pub slot_37: *const c_void,
+    /// `BSOcclusionPlane::vfunc_38` at 0xfe9bc0 (rtti, medium); signature (low): `undefined1 vfunc_38(void)`
+    pub slot_38: *const c_void,
+}
+impl BSPortal_vtable {
+    pub const ID: u64 = 188245;
+}
+
+/// `BSPortalGraph::vftable` at 0x1a6ba78, id 238265 (rtti, high); 2 slots.
+#[repr(C)]
+pub struct BSPortalGraph_vtable {
+    /// `BSPortalGraph::vdtor` at 0xfdb1b0 (slot_propagation, medium); signature (low): `BSPortalGraph * vdtor(BSPortalGraph * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+}
+impl BSPortalGraph_vtable {
+    pub const ID: u64 = 238265;
+}
+
+/// `BSPortalGraphEntry::vftable` at 0x1a6ba60, id 238263 (rtti, high); 2 slots.
+#[repr(C)]
+pub struct BSPortalGraphEntry_vtable {
+    /// `BSPortalGraphEntry::vdtor` at 0xfdb1f0 (slot_propagation, medium); signature (low): `BSPortalGraphEntry * vdtor(BSPortalGraphEntry * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+}
+impl BSPortalGraphEntry_vtable {
+    pub const ID: u64 = 238263;
+}
+
 /// `BSPortalSharedNode::vftable` at 0x1a6dfd8, id 238387 (rtti, high); 62 slots.
 #[repr(C)]
 pub struct BSPortalSharedNode_vtable {
@@ -730,31 +970,31 @@ impl BSQueuedResourceCollectionBase_vtable_38 {
 /// `BSRagdollContactListenerModifier::vftable` at 0x1a03038, id 232622 (rtti, high); 25 slots.
 #[repr(C)]
 pub struct BSRagdollContactListenerModifier_vtable {
-    /// `BSRagdollContactListenerModifier::vdtor` at 0xbb28d0 (slot_propagation, medium); signature (low): `BSRagdollContactListenerModifier * vdtor(BSRagdollContactListenerModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSRagdollContactListenerModifier::vdtor` at 0xbb28d0 (semantic, high); signature (low): `BSRagdollContactListenerModifier * vdtor(BSRagdollContactListenerModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `BSRagdollContactListenerModifier* (BSRagdollContactListenerModifier* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `BSRagdollContactListenerModifier::vfunc_1` at 0xbb1f00 (rtti, high); signature (untiered): `undefined * vfunc_1(void)`
+    /// `BSRagdollContactListenerModifier::GetClassType` at 0xbb1f00 (semantic, medium); signature (untiered): `undefined * GetClassType(void)`; `GetClassType`: 0xbb1f00 (medium); semantic signature: `const hkClass* (BSRagdollContactListenerModifier* this)`
     pub slot_1: *const c_void,
     /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
     pub slot_2: *const c_void,
-    /// `BSRagdollContactListenerModifier::vfunc_3` at 0xbb1f10 (rtti, high); signature (low): `undefined vfunc_3(BSRagdollContactListenerModifier * this, undefined8 * param_1)`
+    /// `BSRagdollContactListenerModifier::CollectBindables` at 0xbb1f10 (semantic, medium); signature (untiered): `undefined CollectBindables(BSRagdollContactListenerModifier * this, undefined8 * param_1)`; `CollectBindables`: hkbBindable default 0xadba10 calls collector->vtbl[0](collector, this); overridden by classes holding hkbBoneIndexArray/hkbBoneWeightArray pointers (bindable children) (medium); semantic signature: `void (BSRagdollContactListenerModifier* this, void* collector)`
     pub slot_3: *const c_void,
-    /// `BSRagdollContactListenerModifier::vfunc_4` at 0xbb1fa0 (rtti, high); signature (low): `undefined vfunc_4(BSRagdollContactListenerModifier * this, undefined8 param_1)`
+    /// `BSRagdollContactListenerModifier::Activate` at 0xbb1fa0 (semantic, high); signature (untiered): `undefined Activate(BSRagdollContactListenerModifier * this, undefined8 param_1)`; `Activate`: resets runtime state when the node becomes active (high); semantic signature: `void (BSRagdollContactListenerModifier* this, const hkbContext* ctx)`
     pub slot_4: *const c_void,
-    /// `BSRagdollContactListenerModifier::vfunc_5` at 0xbb2370 (rtti, high); signature (low): `undefined vfunc_5(BSRagdollContactListenerModifier * this, longlong * param_1)`
+    /// `BSRagdollContactListenerModifier::Update` at 0xbb2370 (semantic, high); signature (untiered): `undefined Update(BSRagdollContactListenerModifier * this, longlong * param_1)`; `Update`: per-frame update before generate (high); semantic signature: `void (BSRagdollContactListenerModifier* this, const hkbContext* ctx, float timestep)`
     pub slot_5: *const c_void,
     /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
     pub slot_6: *const c_void,
-    /// `BSRagdollContactListenerModifier::vfunc_7` at 0xbb1fc0 (rtti, high); signature (low): `undefined vfunc_7(BSRagdollContactListenerModifier * this, undefined8 param_1)`
+    /// `BSRagdollContactListenerModifier::Deactivate` at 0xbb1fc0 (semantic, high); signature (untiered): `undefined Deactivate(BSRagdollContactListenerModifier * this, undefined8 param_1)`; `Deactivate`: releases runtime state (high); semantic signature: `void (BSRagdollContactListenerModifier* this, const hkbContext* ctx)`
     pub slot_7: *const c_void,
     /// `hkbNode::vfunc_8` at 0xad2140 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
     pub slot_8: *const c_void,
     /// `hkbNode::vfunc_9` at 0xad2110 (rtti, medium); signature (low): `undefined vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `BSRagdollContactListenerModifier::vfunc_10` at 0xbb1fe0 (rtti, high); signature (low): `ulonglong vfunc_10(BSRagdollContactListenerModifier * this, ulonglong * param_1)`
+    /// `BSRagdollContactListenerModifier::IsValid` at 0xbb1fe0 (semantic, high); signature (untiered): `ulonglong IsValid(BSRagdollContactListenerModifier * this, ulonglong * param_1)`; `IsValid`: validates the node's data, writing an error string (high); semantic signature: `bool (BSRagdollContactListenerModifier* this, const hkbCharacter* character, hkStringPtr* errorString)`
     pub slot_10: *const c_void,
     /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
     pub slot_11: *const c_void,
-    /// `BSRagdollContactListenerModifier::vfunc_12` at 0xbb1f50 (rtti, high); signature (high): `undefined vfunc_12(BSRagdollContactListenerModifier * this)`
+    /// `BSRagdollContactListenerModifier::CloneNode` at 0xbb1f50 (semantic, high); signature (untiered): `undefined CloneNode(BSRagdollContactListenerModifier * this)`; `CloneNode`: allocates a copy of the node (size argument = object size) through the copy constructor (high); semantic signature: `BSRagdollContactListenerModifier* (BSRagdollContactListenerModifier* this)`
     pub slot_12: *const c_void,
     /// `hkbNode::vfunc_13` at 0xadbed0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
     pub slot_13: *const c_void,
@@ -783,7 +1023,57 @@ pub struct BSRagdollContactListenerModifier_vtable {
 }
 impl BSRagdollContactListenerModifier_vtable {
     pub const ID: u64 = 232622;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `BSRagdollContactListenerModifier_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<BSRagdollContactListenerModifier_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSRagdollContactListenerModifier_vtable_vdtor>>(self.slot_0) }
+    }
+    pub const SLOT_GetClassType: usize = 1;
+    pub const SLOT_CollectBindables: usize = 3;
+    pub const SLOT_Activate: usize = 4;
+    /// Slot 4 as `BSRagdollContactListenerModifier_vtable_Activate`, `None` when the slot is null.
+    #[must_use]
+    pub fn Activate(&self) -> Option<BSRagdollContactListenerModifier_vtable_Activate> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSRagdollContactListenerModifier_vtable_Activate>>(self.slot_4) }
+    }
+    pub const SLOT_Update: usize = 5;
+    /// Slot 5 as `BSRagdollContactListenerModifier_vtable_Update`, `None` when the slot is null.
+    #[must_use]
+    pub fn Update(&self) -> Option<BSRagdollContactListenerModifier_vtable_Update> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSRagdollContactListenerModifier_vtable_Update>>(self.slot_5) }
+    }
+    pub const SLOT_Deactivate: usize = 7;
+    /// Slot 7 as `BSRagdollContactListenerModifier_vtable_Deactivate`, `None` when the slot is null.
+    #[must_use]
+    pub fn Deactivate(&self) -> Option<BSRagdollContactListenerModifier_vtable_Deactivate> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSRagdollContactListenerModifier_vtable_Deactivate>>(self.slot_7) }
+    }
+    pub const SLOT_IsValid: usize = 10;
+    /// Slot 10 as `BSRagdollContactListenerModifier_vtable_IsValid`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsValid(&self) -> Option<BSRagdollContactListenerModifier_vtable_IsValid> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSRagdollContactListenerModifier_vtable_IsValid>>(self.slot_10) }
+    }
+    pub const SLOT_CloneNode: usize = 12;
+    /// Slot 12 as `BSRagdollContactListenerModifier_vtable_CloneNode`, `None` when the slot is null.
+    #[must_use]
+    pub fn CloneNode(&self) -> Option<BSRagdollContactListenerModifier_vtable_CloneNode> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSRagdollContactListenerModifier_vtable_CloneNode>>(self.slot_12) }
+    }
 }
+/// `BSRagdollContactListenerModifier::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
+pub type BSRagdollContactListenerModifier_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::BSRagdollContactListenerModifier, flags: u32) -> *mut crate::BSRagdollContactListenerModifier;
+/// `BSRagdollContactListenerModifier::Activate`, slot 4: resets runtime state when the node becomes active (high).
+pub type BSRagdollContactListenerModifier_vtable_Activate = unsafe extern "C" fn(this: *mut crate::BSRagdollContactListenerModifier, ctx: *const c_void);
+/// `BSRagdollContactListenerModifier::Update`, slot 5: per-frame update before generate (high).
+pub type BSRagdollContactListenerModifier_vtable_Update = unsafe extern "C" fn(this: *mut crate::BSRagdollContactListenerModifier, ctx: *const c_void, timestep: f32);
+/// `BSRagdollContactListenerModifier::Deactivate`, slot 7: releases runtime state (high).
+pub type BSRagdollContactListenerModifier_vtable_Deactivate = unsafe extern "C" fn(this: *mut crate::BSRagdollContactListenerModifier, ctx: *const c_void);
+/// `BSRagdollContactListenerModifier::IsValid`, slot 10: validates the node's data, writing an error string (high).
+pub type BSRagdollContactListenerModifier_vtable_IsValid = unsafe extern "C" fn(this: *mut crate::BSRagdollContactListenerModifier, character: *const crate::hkbCharacter, errorString: *mut c_void) -> bool;
+/// `BSRagdollContactListenerModifier::CloneNode`, slot 12: allocates a copy of the node (size argument = object size) through the copy constructor (high).
+pub type BSRagdollContactListenerModifier_vtable_CloneNode = unsafe extern "C" fn(this: *mut crate::BSRagdollContactListenerModifier) -> *mut crate::BSRagdollContactListenerModifier;
 
 /// `BSRagdollContactListenerModifier::vftable_50` at 0x1a03108, id 232624 (rtti, high); 7 slots.
 #[repr(C)]
@@ -10564,221 +10854,5 @@ pub struct BSScript__NativeFunction1_Actor_int_unsigned_int_vtable {
 }
 impl BSScript__NativeFunction1_Actor_int_unsigned_int_vtable {
     pub const ID: u64 = 217495;
-}
-
-/// `BSScript::NativeFunction1<Actor,unsigned_int,Actor*___ptr64>::vftable` at 0x1997268, id 217499 (rtti, high); 23 slots.
-#[repr(C)]
-pub struct BSScript__NativeFunction1_Actor_unsigned_int_Actor____ptr64_vtable {
-    /// `BSScript::NativeFunction1<Actor,unsigned_int,Actor*___ptr64>::vdtor` at 0xa0c7b0 (slot_propagation, medium); signature (low): `NativeFunction1<Actor,unsigned_int,Actor*___ptr64> * vdtor(NativeFunction1<Actor,unsigned_int,Actor*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
-    pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
-    pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
-    pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
-    pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
-    pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
-    pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
-    pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
-    pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
-    pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
-    pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
-    pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
-    pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
-    pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
-    pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
-    pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
-    pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
-    pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
-    pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
-    pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
-    pub slot_20: *const c_void,
-    /// `BSScript::NativeFunction1<Actor,unsigned_int,Actor*___ptr64>::vfunc_21` at 0xa0e2d0 (rtti, high); signature (high): `bool vfunc_21(NativeFunction1<Actor,unsigned_int,Actor*___ptr64> * this)`
-    pub slot_21: *const c_void,
-    /// `BSScript::NativeFunction1<Actor,unsigned_int,Actor*___ptr64>::vfunc_22` at 0xa0f280 (rtti, high); signature (low): `bool vfunc_22(NativeFunction1<Actor,unsigned_int,Actor*___ptr64> * this, uint * param_1, undefined8 param_2, undefined4 param_3, ulonglong * param_4, uint * param_5)`
-    pub slot_22: *const c_void,
-}
-impl BSScript__NativeFunction1_Actor_unsigned_int_Actor____ptr64_vtable {
-    pub const ID: u64 = 217499;
-}
-
-/// `BSScript::NativeFunction1<Actor,void,Actor*___ptr64>::vftable` at 0x1997e68, id 217531 (rtti, high); 23 slots.
-#[repr(C)]
-pub struct BSScript__NativeFunction1_Actor_void_Actor____ptr64_vtable {
-    /// `BSScript::NativeFunction1<Actor,void,Actor*___ptr64>::vdtor` at 0xa0c9b0 (slot_propagation, medium); signature (low): `NativeFunction1<Actor,void,Actor*___ptr64> * vdtor(NativeFunction1<Actor,void,Actor*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
-    pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
-    pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
-    pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
-    pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
-    pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
-    pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
-    pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
-    pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
-    pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
-    pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
-    pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
-    pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
-    pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
-    pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
-    pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
-    pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
-    pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
-    pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
-    pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
-    pub slot_20: *const c_void,
-    /// `BSScript::NativeFunction1<Actor,void,Actor*___ptr64>::vfunc_21` at 0xa0e350 (rtti, high); signature (high): `bool vfunc_21(NativeFunction1<Actor,void,Actor*___ptr64> * this)`
-    pub slot_21: *const c_void,
-    /// `BSScript::NativeFunction1<Actor,void,Actor*___ptr64>::vfunc_22` at 0xa0faf0 (rtti, high); signature (low): `bool vfunc_22(NativeFunction1<Actor,void,Actor*___ptr64> * this, uint * param_1, longlong param_2, ulonglong param_3, ulonglong * param_4, uint * param_5)`
-    pub slot_22: *const c_void,
-}
-impl BSScript__NativeFunction1_Actor_void_Actor____ptr64_vtable {
-    pub const ID: u64 = 217531;
-}
-
-/// `BSScript::NativeFunction1<Actor,void,BGSPerk*___ptr64>::vftable` at 0x1995fa8, id 217449 (rtti, high); 23 slots.
-#[repr(C)]
-pub struct BSScript__NativeFunction1_Actor_void_BGSPerk____ptr64_vtable {
-    /// `BSScript::NativeFunction1<Actor,void,BGSPerk*___ptr64>::vdtor` at 0xa0c9f0 (slot_propagation, medium); signature (low): `NativeFunction1<Actor,void,BGSPerk*___ptr64> * vdtor(NativeFunction1<Actor,void,BGSPerk*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
-    pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
-    pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
-    pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
-    pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
-    pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
-    pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
-    pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
-    pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
-    pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
-    pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
-    pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
-    pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
-    pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
-    pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
-    pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
-    pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
-    pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
-    pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
-    pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
-    pub slot_20: *const c_void,
-    /// `BSScript::NativeFunction1<Actor,void,BGSPerk*___ptr64>::vfunc_21` at 0xa0e360 (rtti, high); signature (high): `bool vfunc_21(NativeFunction1<Actor,void,BGSPerk*___ptr64> * this)`
-    pub slot_21: *const c_void,
-    /// `BSScript::NativeFunction1<Actor,void,BGSPerk*___ptr64>::vfunc_22` at 0xa0fbf0 (rtti, high); signature (low): `bool vfunc_22(NativeFunction1<Actor,void,BGSPerk*___ptr64> * this, uint * param_1, ulonglong param_2, undefined4 param_3, ulonglong * param_4, uint * param_5)`
-    pub slot_22: *const c_void,
-}
-impl BSScript__NativeFunction1_Actor_void_BGSPerk____ptr64_vtable {
-    pub const ID: u64 = 217449;
-}
-
-/// `BSScript::NativeFunction1<Actor,void,BGSTextureSet*___ptr64>::vftable` at 0x1998828, id 217557 (rtti, high); 23 slots.
-#[repr(C)]
-pub struct BSScript__NativeFunction1_Actor_void_BGSTextureSet____ptr64_vtable {
-    /// `BSScript::NativeFunction1<Actor,void,BGSTextureSet*___ptr64>::vdtor` at 0xa0ca30 (slot_propagation, medium); signature (low): `NativeFunction1<Actor,void,BGSTextureSet*___ptr64> * vdtor(NativeFunction1<Actor,void,BGSTextureSet*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
-    pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
-    pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
-    pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
-    pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
-    pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
-    pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
-    pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
-    pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
-    pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
-    pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
-    pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
-    pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
-    pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
-    pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
-    pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
-    pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
-    pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
-    pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
-    pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
-    pub slot_20: *const c_void,
-    /// `BSScript::NativeFunction1<Actor,void,BGSTextureSet*___ptr64>::vfunc_21` at 0xa0e370 (rtti, high); signature (high): `bool vfunc_21(NativeFunction1<Actor,void,BGSTextureSet*___ptr64> * this)`
-    pub slot_21: *const c_void,
-    /// `BSScript::NativeFunction1<Actor,void,BGSTextureSet*___ptr64>::vfunc_22` at 0xa0fcd0 (rtti, high); signature (low): `bool vfunc_22(NativeFunction1<Actor,void,BGSTextureSet*___ptr64> * this, uint * param_1, ulonglong param_2, ulonglong param_3, ulonglong * param_4, uint * param_5)`
-    pub slot_22: *const c_void,
-}
-impl BSScript__NativeFunction1_Actor_void_BGSTextureSet____ptr64_vtable {
-    pub const ID: u64 = 217557;
 }
 

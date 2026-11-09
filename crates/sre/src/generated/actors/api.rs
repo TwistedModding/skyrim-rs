@@ -113,6 +113,15 @@ impl crate::AIProcess {
     /// `out` must point to what the engine expects.
     #[inline]
     pub unsafe fn get_animation_graph_manager(&self, out: *mut c_void) -> bool { unsafe { function!(39840, (*const Self, *mut c_void) -> bool)(core::ptr::from_ref(self), out) } }
+    /// `AIProcess::GetBodyShaderProperty`: returns middleHigh (+8) ->+0x178 (add-ref/release around it), the actor's body BSLightingShaderProperty whose +0x80 pass frame is the last render frame it was drawn
+    ///
+    /// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 39944, rva 0x726150.
+    /// `BSShaderProperty* (AIProcess* this)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn get_body_shader_property(&self) -> *mut crate::BSShaderProperty { unsafe { function!(39944, (*const Self) -> *mut crate::BSShaderProperty)(core::ptr::from_ref(self)) } }
     /// `AIProcess::GetEquippedEntry`: equipped weapon entry of a hand
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 39806, rva 0x720660.
@@ -765,12 +774,27 @@ impl crate::Actor {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn init_animation_pose_after_graph_load(&self) { unsafe { function!(37986, (*const Self))(core::ptr::from_ref(self).byte_add(0x38)) } }
+    /// `Actor::InitGraphVariables`: holder slot 7 per new graph: sets graph variables incl. bool bHumanoidFootIKEnable (names+0x308) = INI bHumanoidFootIKEnable:Animation (1), IsBeastRace, scale, sex, equipped types
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 37982, rva 0x6b0340.
+    /// `bool (IAnimationGraphManagerHolder* this, BShkbAnimationGraph** graph)`
+    ///
+    /// # Safety
+    /// `graph` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn init_graph_variables(&self, graph: *mut *mut crate::BShkbAnimationGraph) -> bool { unsafe { function!(37982, (*const Self, *mut *mut crate::BShkbAnimationGraph) -> bool)(core::ptr::from_ref(self).byte_add(0x38), graph) } }
     /// `Actor::IsAnimationDriven`: true when the movement controller's IMovementMotionDrivenControl reports not motion-driven
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37486, rva 0x687ac0.
     /// `bool (Actor* actor)`
     #[inline]
     pub fn is_animation_driven(&self) -> bool { unsafe { function!(37486, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `Actor::IsAnimationInterpolationAllowed`: data+0x2b
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 37988, rva 0x6b13d0.
+    /// `bool (Actor* this)`
+    #[inline]
+    pub fn is_animation_interpolation_allowed(&self) -> bool { unsafe { function!(37988, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `Actor::IsAnimationUpdateEnabled`: holder slot 14: (Actor+0x204 >> 8) & 1, i.e. boolFlags2 bit 8
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37985, rva 0x6b1160.
@@ -846,6 +870,15 @@ impl crate::Actor {
     /// `bool Actor::IsOnMount(Actor* this)`
     #[inline]
     pub fn is_on_mount(&self) -> bool { unsafe { function!(17965, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `Actor::IsRagdollOrDownState`: true when boolFlags (+0xe8) bit 31, or (slot 153(this,1) && flags2 +0xcc bit 4 clear), or knock state (flags1 bits 25-27) in 1..5, or life state (flags1 bits 21-24) == 3
+    ///
+    /// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 37491, rva 0x687c20.
+    /// `bool (Actor* this)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn is_ragdoll_or_down_state(&self) -> bool { unsafe { function!(37491, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `Actor::IsRunning`: whether moving at run speed
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 37234, rva 0x6742a0.
@@ -1348,6 +1381,16 @@ impl crate::Actor {
     pub fn set_movementController(&mut self, value: *mut crate::MovementControllerNPC) { unsafe { Self::__member_movementController(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn movementController_ptr(&self) -> *mut *mut crate::MovementControllerNPC { Self::__member_movementController(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_preCullState(this: *const Self) -> *mut u32 { unsafe { member!(this, "Actor.preCullState", 0x27C, u32) } }
+    /// `Actor::preCullState`, at +0x27C on 1.7.104.
+    #[inline]
+    pub fn preCullState(&self) -> u32 { unsafe { Self::__member_preCullState(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_preCullState(&mut self, value: u32) { unsafe { Self::__member_preCullState(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn preCullState_ptr(&self) -> *mut u32 { Self::__member_preCullState(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_race(this: *const Self) -> *mut *mut crate::TESRace { unsafe { member!(this, "Actor.race", 0x1F8, *mut crate::TESRace) } }
@@ -2241,6 +2284,16 @@ impl crate::Character {
     pub fn set_movementController(&mut self, value: *mut crate::MovementControllerNPC) { unsafe { Self::__member_movementController(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn movementController_ptr(&self) -> *mut *mut crate::MovementControllerNPC { Self::__member_movementController(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_preCullState(this: *const Self) -> *mut u32 { unsafe { member!(this, "Character.preCullState", 0x27C, u32) } }
+    /// `Character::preCullState`, at +0x27C on 1.7.104.
+    #[inline]
+    pub fn preCullState(&self) -> u32 { unsafe { Self::__member_preCullState(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_preCullState(&mut self, value: u32) { unsafe { Self::__member_preCullState(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn preCullState_ptr(&self) -> *mut u32 { Self::__member_preCullState(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_race(this: *const Self) -> *mut *mut crate::TESRace { unsafe { member!(this, "Character.race", 0x1F8, *mut crate::TESRace) } }
@@ -5480,6 +5533,16 @@ impl crate::PlayerCharacter {
     pub fn set_movementController(&mut self, value: *mut crate::MovementControllerNPC) { unsafe { Self::__member_movementController(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn movementController_ptr(&self) -> *mut *mut crate::MovementControllerNPC { Self::__member_movementController(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_preCullState(this: *const Self) -> *mut u32 { unsafe { member!(this, "PlayerCharacter.preCullState", 0x27C, u32) } }
+    /// `PlayerCharacter::preCullState`, at +0x27C on 1.7.104.
+    #[inline]
+    pub fn preCullState(&self) -> u32 { unsafe { Self::__member_preCullState(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_preCullState(&mut self, value: u32) { unsafe { Self::__member_preCullState(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn preCullState_ptr(&self) -> *mut u32 { Self::__member_preCullState(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_race(this: *const Self) -> *mut *mut crate::TESRace { unsafe { member!(this, "PlayerCharacter.race", 0x1F8, *mut crate::TESRace) } }

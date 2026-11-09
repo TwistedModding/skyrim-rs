@@ -115,16 +115,6 @@ impl crate::BSDecalPlacementVectorExtraData {
     pub unsafe fn vfunc_23_sub0(param_1: i64, param_2: i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(524252, (i64, i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 }
 
-impl crate::BSDirectAtModifier {
-    /// `BSDirectAtModifier::vfunc_23_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 63345, rva 0xbbdc20).
-    /// `undefined vfunc_23_sub0(longlong param_1, longlong param_2, undefined1[16] * param_3, float * param_4, longlong * param_5)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_23_sub0(param_1: i64, param_2: i64, param_3: *mut c_void, param_4: *mut f32, param_5: *mut i64) -> u64 { unsafe { function!(63345, (i64, i64, *mut c_void, *mut f32, *mut i64) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
-}
-
 impl crate::BSDistantTreeShader {
     /// `BSDistantTreeShader::vfunc_2_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 108996, rva 0x158dd00).
     /// `undefined4 vfunc_2_sub0(undefined4 param_1)`
@@ -191,6 +181,16 @@ impl crate::BSFaceGenMorphDataHead {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor_sub0(param_1: *mut i32, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(26945, (*mut i32, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+}
+
+impl crate::BSFadeNodeCuller {
+    /// `BSFadeNodeCuller::TestFrustum`, vtable slot 22, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 107507, rva 0x1555fd0).
+    /// `undefined TestFrustum(BSFadeNodeCuller * this, longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn test_frustum(&self, param_1: *mut i64) -> u64 { unsafe { virtual_function!(self, 22, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::BSFogProperty {
@@ -292,23 +292,6 @@ impl crate::BSLeafAnimNode {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_23_sub0_2(param_1: i64, param_2: *mut i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(105578, (i64, *mut i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-}
-
-impl crate::BSLookAtModifier {
-    /// `BSLookAtModifier::vfunc_23_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 63350, rva 0xbbeab0).
-    /// `undefined vfunc_23_sub0(longlong param_1, longlong * param_2, longlong * param_3, longlong * param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_23_sub0(param_1: i64, param_2: *mut i64, param_3: *mut i64, param_4: *mut i64) -> u64 { unsafe { function!(63350, (i64, *mut i64, *mut i64, *mut i64) -> u64)(param_1, param_2, param_3, param_4) } }
-    /// `BSLookAtModifier::vfunc_4_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 63269, rva 0xbb9c00).
-    /// `undefined vfunc_4_sub0(longlong param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_4_sub0(param_1: i64) -> u64 { unsafe { function!(63269, (i64) -> u64)(param_1) } }
 }
 
 impl crate::BSMultiBound {

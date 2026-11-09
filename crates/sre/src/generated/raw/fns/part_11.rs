@@ -7,6 +7,162 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GameSetting_fHUDCompassLocationMaxDist__atexit` at 0x177a790 (crt_init, medium); signature (high): `void GameSetting_fHUDCompassLocationMaxDist__atexit(void)`
+pub const GameSetting_fHUDCompassLocationMaxDist__atexit: u64 = 169059;
+/// `GameSetting_fHUDCompassLocationMaxDist__init` at 0x6a1f0 (crt_init, medium); signature (high): `void GameSetting_fHUDCompassLocationMaxDist__init(void)`
+pub const GameSetting_fHUDCompassLocationMaxDist__init: u64 = 3849;
+/// `GameSetting_fHandDamageSkillBase__atexit` at 0x1767780 (crt_init, medium); signature (high): `void GameSetting_fHandDamageSkillBase__atexit(void)`
+pub const GameSetting_fHandDamageSkillBase__atexit: u64 = 168086;
+/// `GameSetting_fHandDamageSkillBase__init` at 0x4c660 (crt_init, medium); signature (high): `void GameSetting_fHandDamageSkillBase__init(void)`
+pub const GameSetting_fHandDamageSkillBase__init: u64 = 2876;
+/// `GameSetting_fHandDamageSkillMult__atexit` at 0x17677d0 (crt_init, medium); signature (high): `void GameSetting_fHandDamageSkillMult__atexit(void)`
+pub const GameSetting_fHandDamageSkillMult__atexit: u64 = 168087;
+/// `GameSetting_fHandDamageSkillMult__init` at 0x4c6e0 (crt_init, medium); signature (high): `void GameSetting_fHandDamageSkillMult__init(void)`
+pub const GameSetting_fHandDamageSkillMult__init: u64 = 2877;
+/// `GameSetting_fHandDamageStrengthBase__atexit` at 0x1767820 (crt_init, medium); signature (high): `void GameSetting_fHandDamageStrengthBase__atexit(void)`
+pub const GameSetting_fHandDamageStrengthBase__atexit: u64 = 168088;
+/// `GameSetting_fHandDamageStrengthBase__init` at 0x4c760 (crt_init, medium); signature (high): `void GameSetting_fHandDamageStrengthBase__init(void)`
+pub const GameSetting_fHandDamageStrengthBase__init: u64 = 2878;
+/// `GameSetting_fHandDamageStrengthMult__atexit` at 0x1767870 (crt_init, medium); signature (high): `void GameSetting_fHandDamageStrengthMult__atexit(void)`
+pub const GameSetting_fHandDamageStrengthMult__atexit: u64 = 168089;
+/// `GameSetting_fHandDamageStrengthMult__init` at 0x4c7e0 (crt_init, medium); signature (high): `void GameSetting_fHandDamageStrengthMult__init(void)`
+pub const GameSetting_fHandDamageStrengthMult__init: u64 = 2879;
+/// `GameSetting_fHandHealthMax__atexit` at 0x17678c0 (crt_init, medium); signature (high): `void GameSetting_fHandHealthMax__atexit(void)`
+pub const GameSetting_fHandHealthMax__atexit: u64 = 168090;
+/// `GameSetting_fHandHealthMax__init` at 0x4c860 (crt_init, medium); signature (high): `void GameSetting_fHandHealthMax__init(void)`
+pub const GameSetting_fHandHealthMax__init: u64 = 2880;
+/// `GameSetting_fHandHealthMin__atexit` at 0x1767910 (crt_init, medium); signature (high): `void GameSetting_fHandHealthMin__atexit(void)`
+pub const GameSetting_fHandHealthMin__atexit: u64 = 168091;
+/// `GameSetting_fHandHealthMin__init` at 0x4c8e0 (crt_init, medium); signature (high): `void GameSetting_fHandHealthMin__init(void)`
+pub const GameSetting_fHandHealthMin__init: u64 = 2881;
+/// `GameSetting_fHandReachDefault__atexit` at 0x1767960 (crt_init, medium); signature (high): `void GameSetting_fHandReachDefault__atexit(void)`
+pub const GameSetting_fHandReachDefault__atexit: u64 = 168092;
+/// `GameSetting_fHandReachDefault__init` at 0x4c960 (crt_init, medium); signature (high): `void GameSetting_fHandReachDefault__init(void)`
+pub const GameSetting_fHandReachDefault__init: u64 = 2882;
+/// `GameSetting_fHavokTauRatio__atexit` at 0x1795810 (crt_init, medium); signature (high): `void GameSetting_fHavokTauRatio__atexit(void)`
+pub const GameSetting_fHavokTauRatio__atexit: u64 = 170886;
+/// `GameSetting_fHavokTauRatio__init` at 0x9c650 (crt_init, medium); signature (high): `void GameSetting_fHavokTauRatio__init(void)`
+pub const GameSetting_fHavokTauRatio__init: u64 = 5713;
+/// `GameSetting_fHazardDefaultTargetInterval__atexit` at 0x17458b0 (crt_init, medium); signature (high): `void GameSetting_fHazardDefaultTargetInterval__atexit(void)`
+pub const GameSetting_fHazardDefaultTargetInterval__atexit: u64 = 165978;
+/// `GameSetting_fHazardDefaultTargetInterval__init` at 0x16260 (crt_init, medium); signature (high): `void GameSetting_fHazardDefaultTargetInterval__init(void)`
+pub const GameSetting_fHazardDefaultTargetInterval__init: u64 = 775;
+/// `GameSetting_fHazardDropMaxDistance__atexit` at 0x1770330 (crt_init, medium); signature (high): `void GameSetting_fHazardDropMaxDistance__atexit(void)`
+pub const GameSetting_fHazardDropMaxDistance__atexit: u64 = 168533;
+/// `GameSetting_fHazardDropMaxDistance__init` at 0x5a1f0 (crt_init, medium); signature (high): `void GameSetting_fHazardDropMaxDistance__init(void)`
+pub const GameSetting_fHazardDropMaxDistance__init: u64 = 3323;
+/// `GameSetting_fHazardMaxWaitTime__atexit` at 0x1777130 (crt_init, medium); signature (high): `void GameSetting_fHazardMaxWaitTime__atexit(void)`
+pub const GameSetting_fHazardMaxWaitTime__atexit: u64 = 168885;
+/// `GameSetting_fHazardMaxWaitTime__init` at 0x64c00 (crt_init, medium); signature (high): `void GameSetting_fHazardMaxWaitTime__init(void)`
+pub const GameSetting_fHazardMaxWaitTime__init: u64 = 3675;
+/// `GameSetting_fHazardMinimumSpawnInterval__atexit` at 0x1745900 (crt_init, medium); signature (high): `void GameSetting_fHazardMinimumSpawnInterval__atexit(void)`
+pub const GameSetting_fHazardMinimumSpawnInterval__atexit: u64 = 165979;
+/// `GameSetting_fHazardMinimumSpawnInterval__init` at 0x162e0 (crt_init, medium); signature (high): `void GameSetting_fHazardMinimumSpawnInterval__init(void)`
+pub const GameSetting_fHazardMinimumSpawnInterval__init: u64 = 776;
+/// `GameSetting_fHazardSpacingMult__atexit` at 0x1777180 (crt_init, medium); signature (high): `void GameSetting_fHazardSpacingMult__atexit(void)`
+pub const GameSetting_fHazardSpacingMult__atexit: u64 = 168886;
+/// `GameSetting_fHazardSpacingMult__init` at 0x64c80 (crt_init, medium); signature (high): `void GameSetting_fHazardSpacingMult__init(void)`
+pub const GameSetting_fHazardSpacingMult__init: u64 = 3676;
+/// `GameSetting_fHeadTrackSpeedMaxAngle__atexit` at 0x17534b0 (crt_init, medium); signature (high): `void GameSetting_fHeadTrackSpeedMaxAngle__atexit(void)`
+pub const GameSetting_fHeadTrackSpeedMaxAngle__atexit: u64 = 167053;
+/// `GameSetting_fHeadTrackSpeedMaxAngle__init` at 0x2c6c0 (crt_init, medium); signature (high): `void GameSetting_fHeadTrackSpeedMaxAngle__init(void)`
+pub const GameSetting_fHeadTrackSpeedMaxAngle__init: u64 = 1843;
+/// `GameSetting_fHeadTrackSpeedMax__atexit` at 0x1753460 (crt_init, medium); signature (high): `void GameSetting_fHeadTrackSpeedMax__atexit(void)`
+pub const GameSetting_fHeadTrackSpeedMax__atexit: u64 = 167052;
+/// `GameSetting_fHeadTrackSpeedMax__init` at 0x2c640 (crt_init, medium); signature (high): `void GameSetting_fHeadTrackSpeedMax__init(void)`
+pub const GameSetting_fHeadTrackSpeedMax__init: u64 = 1842;
+/// `GameSetting_fHeadTrackSpeedMinAngle__atexit` at 0x1753550 (crt_init, medium); signature (high): `void GameSetting_fHeadTrackSpeedMinAngle__atexit(void)`
+pub const GameSetting_fHeadTrackSpeedMinAngle__atexit: u64 = 167055;
+/// `GameSetting_fHeadTrackSpeedMinAngle__init` at 0x2c7c0 (crt_init, medium); signature (high): `void GameSetting_fHeadTrackSpeedMinAngle__init(void)`
+pub const GameSetting_fHeadTrackSpeedMinAngle__init: u64 = 1845;
+/// `GameSetting_fHeadTrackSpeedMin__atexit` at 0x1753500 (crt_init, medium); signature (high): `void GameSetting_fHeadTrackSpeedMin__atexit(void)`
+pub const GameSetting_fHeadTrackSpeedMin__atexit: u64 = 167054;
+/// `GameSetting_fHeadTrackSpeedMin__init` at 0x2c740 (crt_init, medium); signature (high): `void GameSetting_fHeadTrackSpeedMin__init(void)`
+pub const GameSetting_fHeadTrackSpeedMin__init: u64 = 1844;
+/// `GameSetting_fHeadingMarkerAngleTolerance__atexit` at 0x17535a0 (crt_init, medium); signature (high): `void GameSetting_fHeadingMarkerAngleTolerance__atexit(void)`
+pub const GameSetting_fHeadingMarkerAngleTolerance__atexit: u64 = 167056;
+/// `GameSetting_fHeadingMarkerAngleTolerance__init` at 0x2c840 (crt_init, medium); signature (high): `void GameSetting_fHeadingMarkerAngleTolerance__init(void)`
+pub const GameSetting_fHeadingMarkerAngleTolerance__init: u64 = 1846;
+/// `GameSetting_fHealthDataValue1__atexit` at 0x173dd30 (crt_init, medium); signature (high): `void GameSetting_fHealthDataValue1__atexit(void)`
+pub const GameSetting_fHealthDataValue1__atexit: u64 = 165402;
+/// `GameSetting_fHealthDataValue1__init` at 0xa280 (crt_init, medium); signature (high): `void GameSetting_fHealthDataValue1__init(void)`
+pub const GameSetting_fHealthDataValue1__init: u64 = 208;
+/// `GameSetting_fHealthDataValue2__atexit` at 0x173dd80 (crt_init, medium); signature (high): `void GameSetting_fHealthDataValue2__atexit(void)`
+pub const GameSetting_fHealthDataValue2__atexit: u64 = 165403;
+/// `GameSetting_fHealthDataValue2__init` at 0xa300 (crt_init, medium); signature (high): `void GameSetting_fHealthDataValue2__init(void)`
+pub const GameSetting_fHealthDataValue2__init: u64 = 209;
+/// `GameSetting_fHealthDataValue3__atexit` at 0x173ddd0 (crt_init, medium); signature (high): `void GameSetting_fHealthDataValue3__atexit(void)`
+pub const GameSetting_fHealthDataValue3__atexit: u64 = 165404;
+/// `GameSetting_fHealthDataValue3__init` at 0xa380 (crt_init, medium); signature (high): `void GameSetting_fHealthDataValue3__init(void)`
+pub const GameSetting_fHealthDataValue3__init: u64 = 210;
+/// `GameSetting_fHealthDataValue4__atexit` at 0x173de20 (crt_init, medium); signature (high): `void GameSetting_fHealthDataValue4__atexit(void)`
+pub const GameSetting_fHealthDataValue4__atexit: u64 = 165405;
+/// `GameSetting_fHealthDataValue4__init` at 0xa400 (crt_init, medium); signature (high): `void GameSetting_fHealthDataValue4__init(void)`
+pub const GameSetting_fHealthDataValue4__init: u64 = 211;
+/// `GameSetting_fHealthDataValue5__atexit` at 0x173de70 (crt_init, medium); signature (high): `void GameSetting_fHealthDataValue5__atexit(void)`
+pub const GameSetting_fHealthDataValue5__atexit: u64 = 165406;
+/// `GameSetting_fHealthDataValue5__init` at 0xa480 (crt_init, medium); signature (high): `void GameSetting_fHealthDataValue5__init(void)`
+pub const GameSetting_fHealthDataValue5__init: u64 = 212;
+/// `GameSetting_fHealthDataValue6__atexit` at 0x173dec0 (crt_init, medium); signature (high): `void GameSetting_fHealthDataValue6__atexit(void)`
+pub const GameSetting_fHealthDataValue6__atexit: u64 = 165407;
+/// `GameSetting_fHealthDataValue6__init` at 0xa500 (crt_init, medium); signature (high): `void GameSetting_fHealthDataValue6__init(void)`
+pub const GameSetting_fHealthDataValue6__init: u64 = 213;
+/// `GameSetting_fHealthRegenDelayMax__atexit` at 0x17535f0 (crt_init, medium); signature (high): `void GameSetting_fHealthRegenDelayMax__atexit(void)`
+pub const GameSetting_fHealthRegenDelayMax__atexit: u64 = 167057;
+/// `GameSetting_fHealthRegenDelayMax__init` at 0x2c8c0 (crt_init, medium); signature (high): `void GameSetting_fHealthRegenDelayMax__init(void)`
+pub const GameSetting_fHealthRegenDelayMax__init: u64 = 1847;
+/// `GameSetting_fHitCasterSizeLarge__atexit` at 0x174dba0 (crt_init, medium); signature (high): `void GameSetting_fHitCasterSizeLarge__atexit(void)`
+pub const GameSetting_fHitCasterSizeLarge__atexit: u64 = 166714;
+/// `GameSetting_fHitCasterSizeLarge__init` at 0x23330 (crt_init, medium); signature (high): `void GameSetting_fHitCasterSizeLarge__init(void)`
+pub const GameSetting_fHitCasterSizeLarge__init: u64 = 1501;
+/// `GameSetting_fHitCasterSizeSmall__atexit` at 0x174dbf0 (crt_init, medium); signature (high): `void GameSetting_fHitCasterSizeSmall__atexit(void)`
+pub const GameSetting_fHitCasterSizeSmall__atexit: u64 = 166715;
+/// `GameSetting_fHitCasterSizeSmall__init` at 0x233b0 (crt_init, medium); signature (high): `void GameSetting_fHitCasterSizeSmall__init(void)`
+pub const GameSetting_fHitCasterSizeSmall__init: u64 = 1502;
+/// `GameSetting_fHorseMaxUpwardPitch__atexit` at 0x17a38b0 (crt_init, medium); signature (high): `void GameSetting_fHorseMaxUpwardPitch__atexit(void)`
+pub const GameSetting_fHorseMaxUpwardPitch__atexit: u64 = 172180;
+/// `GameSetting_fHorseMaxUpwardPitch__init` at 0xb24e0 (crt_init, medium); signature (high): `void GameSetting_fHorseMaxUpwardPitch__init(void)`
+pub const GameSetting_fHorseMaxUpwardPitch__init: u64 = 6721;
+/// `GameSetting_fHorseMountOffsetX__atexit` at 0x1770380 (crt_init, medium); signature (high): `void GameSetting_fHorseMountOffsetX__atexit(void)`
+pub const GameSetting_fHorseMountOffsetX__atexit: u64 = 168534;
+/// `GameSetting_fHorseMountOffsetX__init` at 0x5a270 (crt_init, medium); signature (high): `void GameSetting_fHorseMountOffsetX__init(void)`
+pub const GameSetting_fHorseMountOffsetX__init: u64 = 3324;
+/// `GameSetting_fHorseMountOffsetY__atexit` at 0x17703d0 (crt_init, medium); signature (high): `void GameSetting_fHorseMountOffsetY__atexit(void)`
+pub const GameSetting_fHorseMountOffsetY__atexit: u64 = 168535;
+/// `GameSetting_fHorseMountOffsetY__init` at 0x5a2f0 (crt_init, medium); signature (high): `void GameSetting_fHorseMountOffsetY__init(void)`
+pub const GameSetting_fHorseMountOffsetY__init: u64 = 3325;
+/// `GameSetting_fHostileActorExteriorDistance__atexit` at 0x1770420 (crt_init, medium); signature (high): `void GameSetting_fHostileActorExteriorDistance__atexit(void)`
+pub const GameSetting_fHostileActorExteriorDistance__atexit: u64 = 168536;
+/// `GameSetting_fHostileActorExteriorDistance__init` at 0x5a370 (crt_init, medium); signature (high): `void GameSetting_fHostileActorExteriorDistance__init(void)`
+pub const GameSetting_fHostileActorExteriorDistance__init: u64 = 3326;
+/// `GameSetting_fHostileActorInteriorDistance__atexit` at 0x1770470 (crt_init, medium); signature (high): `void GameSetting_fHostileActorInteriorDistance__atexit(void)`
+pub const GameSetting_fHostileActorInteriorDistance__atexit: u64 = 168537;
+/// `GameSetting_fHostileActorInteriorDistance__init` at 0x5a3f0 (crt_init, medium); signature (high): `void GameSetting_fHostileActorInteriorDistance__init(void)`
+pub const GameSetting_fHostileActorInteriorDistance__init: u64 = 3327;
+/// `GameSetting_fHostileFlyingActorExteriorDistance__atexit` at 0x17704c0 (crt_init, medium); signature (high): `void GameSetting_fHostileFlyingActorExteriorDistance__atexit(void)`
+pub const GameSetting_fHostileFlyingActorExteriorDistance__atexit: u64 = 168538;
+/// `GameSetting_fHostileFlyingActorExteriorDistance__init` at 0x5a470 (crt_init, medium); signature (high): `void GameSetting_fHostileFlyingActorExteriorDistance__init(void)`
+pub const GameSetting_fHostileFlyingActorExteriorDistance__init: u64 = 3328;
+/// `GameSetting_fIdleChatterCommentTimerMax__atexit` at 0x1753690 (crt_init, medium); signature (high): `void GameSetting_fIdleChatterCommentTimerMax__atexit(void)`
+pub const GameSetting_fIdleChatterCommentTimerMax__atexit: u64 = 167059;
+/// `GameSetting_fIdleChatterCommentTimerMax__init` at 0x2c9c0 (crt_init, medium); signature (high): `void GameSetting_fIdleChatterCommentTimerMax__init(void)`
+pub const GameSetting_fIdleChatterCommentTimerMax__init: u64 = 1849;
+/// `GameSetting_fIdleChatterCommentTimer__atexit` at 0x1753640 (crt_init, medium); signature (high): `void GameSetting_fIdleChatterCommentTimer__atexit(void)`
+pub const GameSetting_fIdleChatterCommentTimer__atexit: u64 = 167058;
+/// `GameSetting_fIdleChatterCommentTimer__init` at 0x2c940 (crt_init, medium); signature (high): `void GameSetting_fIdleChatterCommentTimer__init(void)`
+pub const GameSetting_fIdleChatterCommentTimer__init: u64 = 1848;
+/// `GameSetting_fIdleMarkerAngleTolerance__atexit` at 0x17536e0 (crt_init, medium); signature (high): `void GameSetting_fIdleMarkerAngleTolerance__atexit(void)`
+pub const GameSetting_fIdleMarkerAngleTolerance__atexit: u64 = 167060;
+/// `GameSetting_fIdleMarkerAngleTolerance__init` at 0x2ca40 (crt_init, medium); signature (high): `void GameSetting_fIdleMarkerAngleTolerance__init(void)`
+pub const GameSetting_fIdleMarkerAngleTolerance__init: u64 = 1850;
+/// `GameSetting_fImpactShaderMaxDistance__atexit` at 0x1770510 (crt_init, medium); signature (high): `void GameSetting_fImpactShaderMaxDistance__atexit(void)`
+pub const GameSetting_fImpactShaderMaxDistance__atexit: u64 = 168539;
+/// `GameSetting_fImpactShaderMaxDistance__init` at 0x5a4f0 (crt_init, medium); signature (high): `void GameSetting_fImpactShaderMaxDistance__init(void)`
+pub const GameSetting_fImpactShaderMaxDistance__init: u64 = 3329;
+/// `GameSetting_fImpactShaderMaxMagnitude__atexit` at 0x1770560 (crt_init, medium); signature (high): `void GameSetting_fImpactShaderMaxMagnitude__atexit(void)`
+pub const GameSetting_fImpactShaderMaxMagnitude__atexit: u64 = 168540;
+/// `GameSetting_fImpactShaderMaxMagnitude__init` at 0x5a570 (crt_init, medium); signature (high): `void GameSetting_fImpactShaderMaxMagnitude__init(void)`
+pub const GameSetting_fImpactShaderMaxMagnitude__init: u64 = 3330;
 /// `GameSetting_fImpactShaderMinMagnitude__atexit` at 0x17705b0 (crt_init, medium); signature (high): `void GameSetting_fImpactShaderMinMagnitude__atexit(void)`
 pub const GameSetting_fImpactShaderMinMagnitude__atexit: u64 = 168541;
 /// `GameSetting_fImpactShaderMinMagnitude__init` at 0x5a5f0 (crt_init, medium); signature (high): `void GameSetting_fImpactShaderMinMagnitude__init(void)`
@@ -9283,167 +9439,3 @@ pub const GetBit4OfFieldA0: u64 = 20480;
 pub const GetBit5OfField136: u64 = 39182;
 /// `GetBit6OfField20` at 0x4972b0 (decompiler, high); signature (untiered): `byte GetBit6OfField20(longlong param_1)`
 pub const GetBit6OfField20: u64 = 29501;
-/// `GetBit7OfField1F8Field108` at 0x673b40 (decompiler, high); signature (high): `uint GetBit7OfField1F8Field108(longlong param_1)`
-pub const GetBit7OfField1F8Field108: u64 = 37217;
-/// `GetBit7OfField20` at 0x4972e0 (decompiler, high); signature (untiered): `byte GetBit7OfField20(longlong param_1)`
-pub const GetBit7OfField20: u64 = 29502;
-/// `GetBit8OfGlobal358290EntryForFieldC0` at 0x14b870 (decompiler, medium); signature (untiered): `uint GetBit8OfGlobal358290EntryForFieldC0(longlong param_1)`
-pub const GetBit8OfGlobal358290EntryForFieldC0: u64 = 11084;
-/// `GetBlackboardFloatWithFlightMinRange` at 0x8f2d80 (decompiler, medium); signature (medium): `float GetBlackboardFloatWithFlightMinRange(longlong param_1)`
-pub const GetBlackboardFloatWithFlightMinRange: u64 = 50692;
-/// `GetBlockUsedSize` at 0xb621e0 (decompiler, medium); signature (untiered): `undefined2 GetBlockUsedSize(undefined2 * param_1, int param_2)`
-pub const GetBlockUsedSize: u64 = 61532;
-/// `GetBlurFilterMember` at 0xde2330 (decompiler, medium); signature (untiered): `undefined8 GetBlurFilterMember(longlong * param_1, longlong param_2, undefined8 * param_3, byte * param_4)`
-pub const GetBlurFilterMember: u64 = 87059;
-/// `GetBoolIfTypeIs5` at 0x14a2200 (decompiler, medium); signature (medium): `undefined GetBoolIfTypeIs5(int * param_1, undefined1 * param_2)`
-pub const GetBoolIfTypeIs5: u64 = 104524;
-/// `GetBooleanObjectPrimitiveValue` at 0xdb58a0 (decompiler, medium); signature (untiered): `undefined GetBooleanObjectPrimitiveValue(longlong param_1)`
-pub const GetBooleanObjectPrimitiveValue: u64 = 86172;
-/// `GetBoundObjectModelStatusCode` at 0x258470 (decompiler, medium); signature (medium): `undefined4 GetBoundObjectModelStatusCode(longlong param_1)`
-pub const GetBoundObjectModelStatusCode: u64 = 16683;
-/// `GetBoundRadius` at 0x277a80 (decompiler, medium); signature (medium): `float GetBoundRadius(longlong param_1)`
-pub const GetBoundRadius: u64 = 17662;
-/// `GetBoundsCornersTransformed` at 0xd336e0 (decompiler, medium); signature (medium): `undefined GetBoundsCornersTransformed(longlong * param_1, float * param_2, float * param_3, char param_4)`
-pub const GetBoundsCornersTransformed: u64 = 83471;
-/// `GetBoundsOfField330SpriteOrSelf` at 0xd60ff0 (decompiler, medium); signature (untiered): `undefined GetBoundsOfField330SpriteOrSelf(longlong * param_1, float * param_2)`
-pub const GetBoundsOfField330SpriteOrSelf: u64 = 84183;
-/// `GetBoundsTransformedByMatrix` at 0xd33680 (decompiler, medium); signature (medium): `float * GetBoundsTransformedByMatrix(longlong * param_1, float * param_2, float * param_3, char param_4)`
-pub const GetBoundsTransformedByMatrix: u64 = 83470;
-/// `GetBoxCorners` at 0xfe6640 (decompiler, medium); signature (untiered): `undefined GetBoxCorners(longlong param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetBoxCorners: u64 = 76407;
-/// `GetBucketIndexForString` at 0x58f790 (decompiler, medium); signature (untiered): `ulonglong GetBucketIndexForString(longlong param_1, undefined8 * param_2)`
-pub const GetBucketIndexForString: u64 = 523720;
-/// `GetBufferAtKeyOffset` at 0x1203070 (decompiler, medium); signature (medium): `longlong GetBufferAtKeyOffset(longlong param_1, ulonglong param_2)`
-pub const GetBufferAtKeyOffset: u64 = 91662;
-/// `GetBufferDataOrInlineStorage` at 0x1385480 (decompiler, medium); signature (medium): `longlong * GetBufferDataOrInlineStorage(longlong * param_1)`
-pub const GetBufferDataOrInlineStorage: u64 = 526885;
-/// `GetBufferDataOrInlineStorage_2` at 0x1385d60 (decompiler, medium); signature (medium): `longlong * GetBufferDataOrInlineStorage_2(longlong * param_1)`
-pub const GetBufferDataOrInlineStorage_2: u64 = 449092;
-/// `GetBufferDataPointer` at 0x99a4d0 (decompiler, medium); signature (untiered): `longlong * GetBufferDataPointer(longlong * param_1)`
-pub const GetBufferDataPointer: u64 = 53083;
-/// `GetByte13B` at 0x6e9740 (decompiler, high); signature (high): `undefined1 GetByte13B(longlong param_1)`
-pub const GetByte13B: u64 = 39138;
-/// `GetByte14` at 0x1e0a00 (decompiler, high); signature (high): `undefined1 GetByte14(longlong param_1)`
-pub const GetByte14: u64 = 441562;
-/// `GetByte19ForEntryNamed` at 0x220ad0 (decompiler, medium); signature (medium): `ulonglong GetByte19ForEntryNamed(longlong param_1, char * param_2, int * param_3)`
-pub const GetByte19ForEntryNamed: u64 = 15769;
-/// `GetByte310OfField8` at 0x7245c0 (decompiler, high); signature (untiered): `undefined1 GetByte310OfField8(longlong param_1)`
-pub const GetByte310OfField8: u64 = 39905;
-/// `GetByte412OfField30Locked` at 0x1308f40 (decompiler, medium); signature (medium): `undefined1 GetByte412OfField30Locked(longlong param_1)`
-pub const GetByte412OfField30Locked: u64 = 448101;
-/// `GetByte413OfField30Locked` at 0x1308fa0 (decompiler, medium); signature (medium): `undefined1 GetByte413OfField30Locked(longlong param_1)`
-pub const GetByte413OfField30Locked: u64 = 448102;
-/// `GetByte472OfField10` at 0x6f63a0 (decompiler, high); signature (untiered): `undefined1 GetByte472OfField10(longlong param_1)`
-pub const GetByte472OfField10: u64 = 39380;
-/// `GetByte690Locked` at 0x9daf60 (decompiler, high); signature (untiered): `undefined1 GetByte690Locked(longlong param_1)`
-pub const GetByte690Locked: u64 = 53957;
-/// `GetByteField0C2` at 0xb65860 (decompiler, high); signature (high): `undefined1 * GetByteField0C2(longlong param_1, undefined1 * param_2)`
-pub const GetByteField0C2: u64 = 61629;
-/// `GetByteField1872` at 0x12fe190 (decompiler, high); signature (untiered): `undefined1 GetByteField1872(longlong param_1)`
-pub const GetByteField1872: u64 = 446891;
-/// `GetByteField19` at 0xab0ad0 (decompiler, high); signature (high): `undefined1 GetByteField19(longlong param_1)`
-pub const GetByteField19: u64 = 57602;
-/// `GetByteField478` at 0x1cc6b0 (decompiler, high); signature (untiered): `undefined1 GetByteField478(longlong param_1)`
-pub const GetByteField478: u64 = 13961;
-/// `GetByteFieldCC` at 0xb86b80 (decompiler, high); signature (high): `undefined1 GetByteFieldCC(longlong param_1)`
-pub const GetByteFieldCC: u64 = 62276;
-/// `GetByteFieldDA5` at 0x1c2280 (decompiler, high); signature (high): `undefined1 GetByteFieldDA5(longlong param_1)`
-pub const GetByteFieldDA5: u64 = 441532;
-/// `GetByteKeyValueAtTime` at 0xf8ffb0 (decompiler, medium); signature (medium): `undefined1 GetByteKeyValueAtTime(float param_1, float * param_2, int param_3, uint param_4, byte param_5)`
-pub const GetByteKeyValueAtTime: u64 = 74196;
-/// `GetCachedDefaultObject86` at 0x5e9ae0 (decompiler, medium); signature (untiered): `longlong GetCachedDefaultObject86(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetCachedDefaultObject86: u64 = 35138;
-/// `GetCachedHighestScoredEntryField10` at 0x150aa0 (decompiler, medium); signature (untiered): `ulonglong GetCachedHighestScoredEntryField10(longlong * param_1)`
-pub const GetCachedHighestScoredEntryField10: u64 = 11302;
-/// `GetCachedObjectPairForValueTypeB` at 0xd0d4c0 (decompiler, medium); signature (untiered): `undefined8 * GetCachedObjectPairForValueTypeB(char * param_1, undefined8 * param_2, longlong param_3)`
-pub const GetCachedObjectPairForValueTypeB: u64 = 82900;
-/// `GetCachedOrComputedExtentX` at 0x685970 (decompiler, medium); signature (medium): `ulonglong GetCachedOrComputedExtentX(longlong param_1)`
-pub const GetCachedOrComputedExtentX: u64 = 37441;
-/// `GetCachedOrComputedMaxXYExtent` at 0x685900 (decompiler, medium); signature (medium): `ulonglong GetCachedOrComputedMaxXYExtent(longlong param_1)`
-pub const GetCachedOrComputedMaxXYExtent: u64 = 37439;
-/// `GetCachedScaledExtentZ` at 0x685a30 (decompiler, medium); signature (medium): `float GetCachedScaledExtentZ(longlong * param_1)`
-pub const GetCachedScaledExtentZ: u64 = 37444;
-/// `GetCachedStringLength` at 0x3bb1e0 (decompiler, medium); signature (untiered): `ulonglong GetCachedStringLength(longlong param_1)`
-pub const GetCachedStringLength: u64 = 24642;
-/// `GetCachedVfunc758Value` at 0x692340 (decompiler, medium); signature (untiered): `ulonglong GetCachedVfunc758Value(longlong * param_1)`
-pub const GetCachedVfunc758Value: u64 = 37588;
-/// `GetCachedVfunc770Value` at 0x6924f0 (decompiler, medium); signature (untiered): `ulonglong GetCachedVfunc770Value(longlong * param_1)`
-pub const GetCachedVfunc770Value: u64 = 37591;
-/// `GetCameraShakeStrength` at 0x558c30 (runtime, high); signature (untiered): `undefined4 GetCameraShakeStrength(void)`; semantic: returns g_CameraShakeStrength (0x3204860) (high); signature `float (void)`
-pub const GetCameraShakeStrength: u64 = 33014;
-/// `GetCameraShakeStrength` as a function pointer type (high).
-pub type GetCameraShakeStrength_fn = unsafe extern "C" fn() -> f32;
-/// `GetCameraShakeTimeRemaining` at 0x558c40 (semantic, high); signature (untiered): `undefined4 GetCameraShakeTimeRemaining(void)`; semantic: returns g_CameraShakeTimeRemaining (0x3204864) (high); signature `float (void)`
-pub const GetCameraShakeTimeRemaining: u64 = 33015;
-/// `GetCameraShakeTimeRemaining` as a function pointer type (high).
-pub type GetCameraShakeTimeRemaining_fn = unsafe extern "C" fn() -> f32;
-/// `GetCapsuleCapsuleClosestPoints` at 0xc84590 (decompiler, medium); signature (untiered): `undefined GetCapsuleCapsuleClosestPoints(longlong * param_1, longlong * param_2, longlong param_3, longlong * param_4)`
-pub const GetCapsuleCapsuleClosestPoints: u64 = 66849;
-/// `GetCapsuleTriangleClosestPoint` at 0xc85c20 (decompiler, medium); signature (untiered): `undefined4 GetCapsuleTriangleClosestPoint(longlong * param_1, longlong * param_2, longlong param_3, float * param_4, float * param_5)`
-pub const GetCapsuleTriangleClosestPoint: u64 = 66868;
-/// `GetCapsuleTriangleClosestPoints` at 0xc85210 (decompiler, medium); signature (untiered): `undefined GetCapsuleTriangleClosestPoints(longlong * param_1, longlong * param_2, longlong param_3, longlong * param_4)`
-pub const GetCapsuleTriangleClosestPoints: u64 = 66861;
-/// `GetCapsuleTriangleContacts` at 0xc85ad0 (decompiler, medium); signature (untiered): `undefined GetCapsuleTriangleContacts(longlong * param_1, longlong * param_2, longlong param_3, float * param_4, int param_5, float * param_6)`
-pub const GetCapsuleTriangleContacts: u64 = 66867;
-/// `GetCapsuleTrianglePenetrations` at 0xc85700 (decompiler, medium); signature (untiered): `undefined GetCapsuleTrianglePenetrations(longlong * param_1, longlong * param_2, longlong param_3, longlong * param_4)`
-pub const GetCapsuleTrianglePenetrations: u64 = 66863;
-/// `GetCellEncounterZone` at 0x2be700 (decompiler, medium); signature (untiered): `longlong GetCellEncounterZone(longlong param_1)`
-pub const GetCellEncounterZone: u64 = 18988;
-/// `GetCellImageSpaceData` at 0x2bf340 (decompiler, medium); signature (untiered): `undefined * GetCellImageSpaceData(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetCellImageSpaceData: u64 = 19008;
-/// `GetCellIndexInWorldBounds` at 0x30cde0 (decompiler, medium); signature (medium): `int GetCellIndexInWorldBounds(undefined8 param_1, undefined8 param_2, int param_3, int param_4)`
-pub const GetCellIndexInWorldBounds: u64 = 20457;
-/// `GetChangeFormInitialType` at 0x6204c0 (semantic, high); signature (untiered): `byte GetChangeFormInitialType(longlong param_1, uint param_2)`; semantic: kind of initial data a record carries: refs 5 created, 6 bits 3|25, 4 bits 1|2, else 0; cells with bit 30: 1 if bit 29, 2 if bit 28, else 3 (high); signature `ChangeFormInitialType (TESForm* form, u32 changeFlags)`
-pub const GetChangeFormInitialType: u64 = 35708;
-/// `GetChangeFormInitialType` as a function pointer type (high).
-pub type GetChangeFormInitialType_fn = unsafe extern "C" fn(form: *mut crate::TESForm, changeFlags: u32) -> u32;
-/// `GetChannelBytePtr` at 0x1044130 (decompiler, high); signature (high): `longlong GetChannelBytePtr(longlong param_1, longlong param_2)`
-pub const GetChannelBytePtr: u64 = 77775;
-/// `GetChannelBytePtr_2` at 0x1044160 (decompiler, high); signature (high): `longlong GetChannelBytePtr_2(longlong param_1, longlong param_2)`
-pub const GetChannelBytePtr_2: u64 = 77776;
-/// `GetCharAtIndex` at 0xd0a410 (decompiler, medium); signature (untiered): `uint GetCharAtIndex(longlong * param_1, uint param_2)`
-pub const GetCharAtIndex: u64 = 82835;
-/// `GetCharIndexInLineAtX` at 0xe4cf30 (decompiler, medium); signature (medium): `ulonglong GetCharIndexInLineAtX(longlong param_1, uint param_2, float param_3)`
-pub const GetCharIndexInLineAtX: u64 = 88591;
-/// `GetCheckForMissingContentOnStartup` at 0x623d80 (decompiler, high); signature (high): `undefined1 GetCheckForMissingContentOnStartup(void)`
-pub const GetCheckForMissingContentOnStartup: u64 = 442573;
-/// `GetCheckedOptionalValueFlag110` at 0x1284170 (decompiler, medium); signature (medium): `longlong GetCheckedOptionalValueFlag110(longlong param_1)`
-pub const GetCheckedOptionalValueFlag110: u64 = 524612;
-/// `GetCheckedOptionalValueFlag4` at 0x127a8a0 (decompiler, medium); signature (medium): `longlong GetCheckedOptionalValueFlag4(longlong param_1)`
-pub const GetCheckedOptionalValueFlag4: u64 = 524535;
-/// `GetCheckedOptionalValueFlag40` at 0x129ace0 (decompiler, medium); signature (medium): `longlong GetCheckedOptionalValueFlag40(longlong param_1)`
-pub const GetCheckedOptionalValueFlag40: u64 = 445087;
-/// `GetCheckedOptionalValueFlag68` at 0x129ad50 (decompiler, medium); signature (medium): `longlong GetCheckedOptionalValueFlag68(longlong param_1)`
-pub const GetCheckedOptionalValueFlag68: u64 = 445088;
-/// `GetChildAtArgDepth` at 0xd58080 (decompiler, medium); signature (untiered): `undefined GetChildAtArgDepth(longlong param_1)`
-pub const GetChildAtArgDepth: u64 = 84040;
-/// `GetChildBlendWeight` at 0xb236f0 (decompiler, medium); signature (medium): `float GetChildBlendWeight(longlong param_1, int param_2)`
-pub const GetChildBlendWeight: u64 = 60040;
-/// `GetClampedActorValue` at 0x447180 (decompiler, medium); signature (medium): `float GetClampedActorValue(longlong * param_1, int param_2)`
-pub const GetClampedActorValue: u64 = 27284;
-/// `GetClampedIndexFromField19C` at 0x28baf0 (decompiler, medium); signature (medium): `uint GetClampedIndexFromField19C(longlong param_1)`
-pub const GetClampedIndexFromField19C: u64 = 18080;
-/// `GetClampedRunIteratorAtPosition` at 0xe406c0 (decompiler, medium); signature (untiered): `undefined8 * GetClampedRunIteratorAtPosition(longlong * param_1, undefined8 * param_2, longlong param_3)`
-pub const GetClampedRunIteratorAtPosition: u64 = 88428;
-/// `GetClientOrServerString` at 0x13d2940 (decompiler, high); signature (high): `char * GetClientOrServerString(longlong param_1)`
-pub const GetClientOrServerString: u64 = 449894;
-/// `GetClosestCapsuleTriangleContact` at 0xc2f050 (decompiler, medium); signature (untiered): `undefined GetClosestCapsuleTriangleContact(longlong * param_1, undefined8 param_2, longlong param_3, float * param_4)`
-pub const GetClosestCapsuleTriangleContact: u64 = 64946;
-/// `GetClosestPointsSymmetricFlipped` at 0xc8ba60 (decompiler, medium); signature (untiered): `undefined GetClosestPointsSymmetricFlipped(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetClosestPointsSymmetricFlipped: u64 = 66986;
-/// `GetCoarseCellHeightAtPosition` at 0x2c02b0 (decompiler, medium); signature (medium): `bool GetCoarseCellHeightAtPosition(longlong param_1, float * param_2, float * param_3)`
-pub const GetCoarseCellHeightAtPosition: u64 = 19037;
-/// `GetColorField20AsFloat3` at 0x295610 (decompiler, high); signature (high): `undefined GetColorField20AsFloat3(longlong param_1, float * param_2)`
-pub const GetColorField20AsFloat3: u64 = 18288;
-/// `GetColorField24AsFloat3` at 0x295690 (decompiler, high); signature (high): `undefined GetColorField24AsFloat3(longlong param_1, float * param_2)`
-pub const GetColorField24AsFloat3: u64 = 18290;
-/// `GetColorField28AsFloat3` at 0x2957a0 (decompiler, high); signature (high): `undefined GetColorField28AsFloat3(longlong param_1, float * param_2)`
-pub const GetColorField28AsFloat3: u64 = 18296;
-/// `GetColorField68AsFloat3` at 0x295800 (decompiler, high); signature (high): `undefined GetColorField68AsFloat3(longlong param_1, float * param_2)`
-pub const GetColorField68AsFloat3: u64 = 18297;
-/// `GetColorMatrixFilterMember` at 0xde5630 (decompiler, medium); signature (untiered): `undefined GetColorMatrixFilterMember(longlong * param_1, longlong param_2, undefined8 * param_3, byte * param_4)`
-pub const GetColorMatrixFilterMember: u64 = 87122;
-/// `GetColorRGBAsNumber` at 0xd9fb80 (decompiler, medium); signature (untiered): `undefined GetColorRGBAsNumber(longlong param_1)`
-pub const GetColorRGBAsNumber: u64 = 85775;
-/// `GetColorTransformAsObject` at 0xd9f4a0 (decompiler, medium); signature (untiered): `undefined GetColorTransformAsObject(longlong param_1)`
-pub const GetColorTransformAsObject: u64 = 85773;

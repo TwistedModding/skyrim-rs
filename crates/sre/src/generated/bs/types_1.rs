@@ -2316,173 +2316,6 @@ const _: () = assert!(core::mem::offset_of!(BSDecomposeVectorModifier, __field_1
 const _: () = assert!(core::mem::offset_of!(BSDecomposeVectorModifier, __field_110) == 0x110);
 const _: () = assert!(core::mem::offset_of!(BSDecomposeVectorModifier, __field_114) == 0x114);
 
-/// `BSDirectAtModifier`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkbModifier`.
-/// Evidence: field field_114.
-/// Bases: `hkbModifier`@0x0, `hkbNode`@0x0, `hkbBindable`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C, align(8))]
-pub struct BSDirectAtModifier {
-    /// +0x0 `vtbl:BSDirectAtModifier:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSDirectAtModifier_vtable,
-    /// +0x8 `undefined4`, base hkbBindable
-    pub field_8: u32,
-    unknown_C: [u8; 4],
-    /// +0x10 `undefined8`, base hkBaseObject
-    pub m_hkpCollidableCollidableFilter_10: u64,
-    /// +0x18 `undefined8`, base hkBaseObject
-    pub m_hkpShapeCollectionFilter_18: u64,
-    /// +0x20 `undefined8`, base hkBaseObject
-    pub m_hkpRayShapeCollectionFilter_20: u64,
-    /// +0x28 `undefined8`, base hkBaseObject
-    pub m_hkpRayCollidableFilter_28: u64,
-    /// +0x30 `undefined4`, base hkBaseObject
-    pub field_30: u32,
-    /// +0x34 `undefined4`, base hkBaseObject
-    pub field_34: u32,
-    /// +0x38 `undefined4`, base hkBaseObject
-    pub field_38: u32,
-    /// +0x3C `undefined4`, base hkBaseObject
-    pub field_3C: u32,
-    /// +0x40 `undefined4`, base hkBaseObject
-    pub field_40: u32,
-    /// +0x44 `undefined4`, base hkBaseObject
-    pub field_44: u32,
-    /// +0x48 `undefined4`, base hkBaseObject
-    pub field_48: u32,
-    /// +0x4C `undefined4`, base hkBaseObject
-    pub field_4C: u32,
-    /// +0x50 `undefined4`, base hkBaseObject
-    pub field_50: u32,
-    /// +0x54 `undefined4`, base hkBaseObject
-    pub field_54: u32,
-    /// +0x58 `undefined4`, base hkBaseObject
-    pub field_58: u32,
-    /// +0x5C `undefined4`, base hkBaseObject
-    pub field_5C: u32,
-    /// +0x60 `undefined4`, base hkBaseObject
-    pub field_60: u32,
-    /// +0x64 `undefined4`, base hkBaseObject
-    pub field_64: u32,
-    /// +0x68 `undefined4`, base hkBaseObject
-    pub field_68: u32,
-    /// +0x6C `undefined4`, base hkBaseObject
-    pub field_6C: u32,
-    /// +0x70 `undefined4`, base hkBaseObject
-    pub field_70: u32,
-    /// +0x74 `undefined4`, base hkBaseObject
-    pub field_74: u32,
-    /// +0x78 `undefined4`, base hkBaseObject
-    pub field_78: u32,
-    /// +0x7C `undefined4`, base hkBaseObject
-    pub field_7C: u32,
-    /// +0x80 `undefined4`, base hkBaseObject
-    pub field_80: u32,
-    /// +0x84 `undefined4`, base hkBaseObject
-    pub field_84: u32,
-    /// +0x88 `undefined4`, base hkBaseObject
-    pub field_88: u32,
-    /// +0x8C `undefined4`, base hkBaseObject
-    pub field_8C: u32,
-    /// +0x90 `undefined4`, base hkBaseObject
-    pub field_90: u32,
-    /// +0x94 `undefined4`, base hkBaseObject
-    pub field_94: u32,
-    /// +0x98 `undefined4`, base hkBaseObject
-    pub field_98: u32,
-    /// +0x9C `undefined4`, base hkBaseObject
-    pub field_9C: u32,
-    /// +0xA0 `undefined4`, base hkBaseObject
-    pub field_A0: u32,
-    /// +0xA4 `undefined4`, base hkBaseObject
-    #[doc(hidden)]
-    pub __field_A4: [u8; 4],
-    /// +0xA8 `undefined8`, base hkBaseObject
-    #[doc(hidden)]
-    pub __field_A8: [u8; 8],
-    /// +0xB0 `undefined4`, base hkBaseObject
-    #[doc(hidden)]
-    pub __field_B0: [u8; 4],
-    /// +0xB4 `undefined4`, base hkBaseObject
-    #[doc(hidden)]
-    pub __field_B4: [u8; 4],
-    /// +0xB8 `undefined8`, base hkBaseObject
-    #[doc(hidden)]
-    pub __field_B8: [u8; 8],
-    /// +0xC0 `undefined4`, base hkBaseObject
-    #[doc(hidden)]
-    pub __field_C0: [u8; 4],
-    /// +0xC4 `undefined4`, base hkBaseObject
-    #[doc(hidden)]
-    pub __field_C4: [u8; 4],
-    unknown_C8: [u8; 8],
-    /// +0xD0 `undefined8`, ctor store
-    pub field_D0: u64,
-    /// +0xD8 `undefined4`, ctor store
-    pub field_D8: u32,
-    /// +0xDC `undefined4`, ctor store
-    pub field_DC: u32,
-    unknown_E0: [u8; 40],
-    /// +0x108 `undefined8`, base hkBaseObject
-    #[doc(hidden)]
-    pub __field_108: [u8; 8],
-    /// +0x110 `undefined4`, base hkBaseObject
-    #[doc(hidden)]
-    pub __field_110: [u8; 4],
-    /// +0x114 `undefined4`, base hkBaseObject
-    #[doc(hidden)]
-    pub __field_114: [u8; 4],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, m_hkpCollidableCollidableFilter_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, m_hkpShapeCollectionFilter_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, m_hkpRayShapeCollectionFilter_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, m_hkpRayCollidableFilter_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_54) == 0x54);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_5C) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_7C) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_84) == 0x84);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_8C) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_94) == 0x94);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_9C) == 0x9C);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __field_A4) == 0xA4);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __field_C4) == 0xC4);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_D0) == 0xD0);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_D8) == 0xD8);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_DC) == 0xDC);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __field_114) == 0x114);
-
 /// `BSDirectAtModifierInterface`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSIDirectAtModifierSingleton`.
 /// Evidence: vptr at 0x0.
 /// Bases: `BSIDirectAtModifierSingleton`@0x0, `BSTSingletonSDM<BSDirectAtModifierInterface,BSTSingletonSDMOpStaticBuffer>`@0x8, `BSTSingletonSDMBase<BSTSDMTraits<BSDirectAtModifierInterface,BSTSingletonSDMOpStaticBuffer<BSDirectAtModifierInterface>_>_>`@0x8, `BSTSDMTraits<BSDirectAtModifierInterface,BSTSingletonSDMOpStaticBuffer<BSDirectAtModifierInterface>_>`@0x8, `BSTSingletonSDMOpStaticBuffer<BSDirectAtModifierInterface>`@0x9.
@@ -4864,39 +4697,6 @@ const _: () = assert!(core::mem::offset_of!(BSGetTimeStepModifier, __field_108) 
 const _: () = assert!(core::mem::offset_of!(BSGetTimeStepModifier, __field_110) == 0x110);
 const _: () = assert!(core::mem::offset_of!(BSGetTimeStepModifier, __field_114) == 0x114);
 
-/// `BSGrabIKNote`: size >= 0x28 (lower bound); partial, the struct stops at the lower bound; primary base `BSAnimNote`.
-/// Evidence: field field_20.
-/// Bases: `BSAnimNote`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
-pub struct BSGrabIKNote {
-    /// +0x0 `vtbl:BSGrabIKNote:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSGrabIKNote_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `undefined4`, ctor store (widths [4, 8])
-    pub field_10: u32,
-    /// +0x14 `float`, ctor store
-    pub field_14: f32,
-    /// +0x18 `undefined4`, ctor store (widths [4, 8])
-    pub field_18: u32,
-    /// +0x1C `float`, ctor store
-    pub field_1C: f32,
-    /// +0x20 `undefined4`, ctor store
-    pub field_20: u32,
-    pub unknown_24: [u8; 4],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, field_14) == 0x14);
-const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, field_20) == 0x20);
-
 /// `BSGrassShader`: size 0x90 (exact, medium); primary base `BSShader`.
 /// Evidence: runtime: 0x90 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `BSShader`@0x0, `NiRefObject`@0x0, `NiBoneMatrixSetterI`@0x10, `BSReloadShaderI`@0x18.
@@ -5131,19 +4931,6 @@ pub struct BSIDirectAtModifierSingleton {
 const _: () = assert!(size_of::<BSIDirectAtModifierSingleton>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSIDirectAtModifierSingleton, __vftable) == 0x0);
 
-/// `BSIFootIkRaycastInterfaceDB`: size 0x8 (exact, medium).
-/// Evidence: lower bound vptr at 0x0 meets upper bound next base of BGSFootIkRaycastInterfaceDB at 0x8.
-#[repr(C)]
-pub struct BSIFootIkRaycastInterfaceDB {
-    /// +0x0 `vtbl:BSIFootIkRaycastInterfaceDB:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSIFootIkRaycastInterfaceDB_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BSIFootIkRaycastInterfaceDB>() == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSIFootIkRaycastInterfaceDB, __vftable) == 0x0);
-
 /// `BSIInputDevice`: size 0x8 (exact, low).
 /// Evidence: lower bound vptr at 0x0 meets upper bound first own field of BSGamepadDevice at 0x8 (soft).
 #[repr(C)]
@@ -5156,19 +4943,6 @@ pub struct BSIInputDevice {
 }
 const _: () = assert!(size_of::<BSIInputDevice>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSIInputDevice, __vftable) == 0x0);
-
-/// `BSILimbIKModifierSingleton`: size 0x8 (exact, medium).
-/// Evidence: lower bound vptr at 0x0 meets upper bound next base of BSLimbIKModifierUtility at 0x8.
-#[repr(C)]
-pub struct BSILimbIKModifierSingleton {
-    /// +0x0 `vtbl:BSILimbIKModifierSingleton:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSILimbIKModifierSingleton_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BSILimbIKModifierSingleton>() == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSILimbIKModifierSingleton, __vftable) == 0x0);
 
 /// `BSIPassByTargetTriggerModifierSingleton`: size 0x8 (exact, medium).
 /// Evidence: lower bound vptr at 0x0 meets upper bound next base of BSPassByTargetTriggerModifierInterface at 0x8.
@@ -5195,19 +4969,6 @@ pub struct BSIRagdollContactListenerModifierSingleton {
 }
 const _: () = assert!(size_of::<BSIRagdollContactListenerModifierSingleton>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSIRagdollContactListenerModifierSingleton, __vftable) == 0x0);
-
-/// `BSIRagdollDriver`: size 0x8 (exact, medium).
-/// Evidence: lower bound vptr at 0x0 meets upper bound next base of BShkbAnimationGraph at 0x8.
-#[repr(C)]
-pub struct BSIRagdollDriver {
-    /// +0x0 `vtbl:BSIRagdollDriver:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSIRagdollDriver_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BSIRagdollDriver>() == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSIRagdollDriver, __vftable) == 0x0);
 
 /// `BSIReverbType`: size 0x8 (exact, low).
 /// Evidence: lower bound vptr at 0x0 meets upper bound first own field of BGSReverbParameters at 0x28 (soft).
@@ -17502,4 +17263,155 @@ const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSAORawAONoTempor
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSAORawAONoTemporal, field_134) == 0x134);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSAORawAONoTemporal, field_198) == 0x198);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSAORawAONoTemporal, field_1A0) == 0x1A0);
+
+/// `BSImagespaceShaderISSILComposite`: size 0x1A8 (exact, medium); primary base `BSImagespaceShader`.
+/// Evidence: runtime: 0x1A8 at 1 allocation sites; agrees with the static allocation sites.
+/// Bases: `BSImagespaceShader`@0x0, `BSShader`@0x0, `NiRefObject`@0x0, `NiBoneMatrixSetterI`@0x10, `BSReloadShaderI`@0x18, `ImageSpaceEffect`@0x90.
+/// Packed: a field lies below its natural alignment.
+#[repr(C, packed)]
+pub struct BSImagespaceShaderISSILComposite {
+    /// +0x0 `vtbl:BSImagespaceShaderISSILComposite:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSImagespaceShaderISSILComposite_vtable,
+    /// +0x8 `undefined4`, base BSShader
+    pub field_8: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `vtbl:BSImagespaceShaderISSILComposite:10`, rtti
+    #[doc(hidden)]
+    pub __vftable_10: *const crate::raw::vtables::BSImagespaceShaderISSILComposite_vtable_10,
+    /// +0x18 `vtbl:BSImagespaceShaderISSILComposite:18`, rtti
+    #[doc(hidden)]
+    pub __vftable_18: *const crate::raw::vtables::BSImagespaceShaderISSILComposite_vtable_18,
+    /// +0x20 `undefined4`, base BSImagespaceShader
+    pub field_20: u32,
+    pub unknown_24: [u8; 16],
+    /// +0x34 `undefined8`, base BSShader
+    pub field_34: u64,
+    /// +0x3C `undefined4`, base BSShader
+    pub field_3C: u32,
+    /// +0x40 `undefined8`, base BSShader
+    pub field_40: u64,
+    pub unknown_48: [u8; 8],
+    /// +0x50 `undefined8`, base BSShader
+    pub field_50: u64,
+    pub unknown_58: [u8; 12],
+    /// +0x64 `undefined8`, base BSShader
+    pub field_64: u64,
+    /// +0x6C `undefined4`, base BSShader
+    pub field_6C: u32,
+    /// +0x70 `undefined8`, base BSShader
+    pub field_70: u64,
+    pub unknown_78: [u8; 8],
+    /// +0x80 `undefined8`, base BSShader
+    pub field_80: u64,
+    /// +0x88 `undefined8`, base BSShader
+    pub field_88: u64,
+    /// +0x90 `vtbl:BSImagespaceShaderISSILComposite:90`, rtti
+    #[doc(hidden)]
+    pub __vftable_90: *const crate::raw::vtables::BSImagespaceShaderISSILComposite_vtable_90,
+    /// +0x98 `undefined2`, base ImageSpaceEffect
+    pub field_98: u16,
+    pub unknown_9A: [u8; 6],
+    /// +0xA0 `undefined8`, base ImageSpaceEffect
+    pub m_NiTPrimitiveArray_A0: u64,
+    /// +0xA8 `undefined8`, base ImageSpaceEffect
+    pub field_A8: u64,
+    /// +0xB0 `undefined4`, base ImageSpaceEffect
+    pub field_B0: u32,
+    /// +0xB4 `undefined4`, base ImageSpaceEffect
+    pub field_B4: u32,
+    /// +0xB8 `undefined8`, base ImageSpaceEffect
+    pub m_NiTPrimitiveArray_B8: u64,
+    /// +0xC0 `undefined8`, base ImageSpaceEffect
+    pub field_C0: u64,
+    /// +0xC8 `undefined4`, base ImageSpaceEffect
+    pub field_C8: u32,
+    /// +0xCC `undefined4`, base ImageSpaceEffect
+    pub field_CC: u32,
+    /// +0xD0 `undefined8`, base ImageSpaceEffect
+    pub m_NiTPrimitiveArray_D0: u64,
+    /// +0xD8 `undefined8`, base ImageSpaceEffect
+    pub field_D8: u64,
+    /// +0xE0 `undefined4`, base ImageSpaceEffect
+    pub field_E0: u32,
+    /// +0xE4 `undefined4`, base ImageSpaceEffect
+    pub field_E4: u32,
+    /// +0xE8 `undefined8`, base ImageSpaceEffect
+    pub m_EffectInput____ptr64__E8: u64,
+    /// +0xF0 `undefined8`, base ImageSpaceEffect
+    pub field_F0: u64,
+    /// +0xF8 `undefined4`, base ImageSpaceEffect
+    pub field_F8: u32,
+    /// +0xFC `undefined4`, base ImageSpaceEffect
+    pub field_FC: u32,
+    /// +0x100 `undefined8`, base ImageSpaceEffect
+    pub m_NiTPrimitiveArray_100: u64,
+    /// +0x108 `undefined8`, base ImageSpaceEffect
+    pub field_108: u64,
+    /// +0x110 `undefined4`, base ImageSpaceEffect
+    pub field_110: u32,
+    /// +0x114 `undefined4`, base ImageSpaceEffect
+    pub field_114: u32,
+    /// +0x118 `undefined1`, base ImageSpaceEffect
+    pub field_118: u8,
+    pub unknown_119: [u8; 7],
+    /// +0x120 `undefined8`, base BSImagespaceShader
+    pub field_120: u64,
+    pub unknown_128: [u8; 8],
+    /// +0x130 `undefined4`, base BSImagespaceShader
+    pub field_130: u32,
+    /// +0x134 `undefined1`, base BSImagespaceShader
+    pub field_134: u8,
+    pub unknown_135: [u8; 99],
+    /// +0x198 `undefined8`, base BSImagespaceShader
+    pub field_198: u64,
+    /// +0x1A0 `undefined2`, base BSImagespaceShader
+    pub field_1A0: u16,
+    pub unknown_1A2: [u8; 6],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSImagespaceShaderISSILComposite>() == 0x1A8);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, __vftable_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, __vftable_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, __vftable_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, m_NiTPrimitiveArray_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, m_NiTPrimitiveArray_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_C8) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_CC) == 0xCC);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, m_NiTPrimitiveArray_D0) == 0xD0);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_D8) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_E0) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_E4) == 0xE4);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, m_EffectInput____ptr64__E8) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_F0) == 0xF0);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_F8) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_FC) == 0xFC);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, m_NiTPrimitiveArray_100) == 0x100);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_114) == 0x114);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_118) == 0x118);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_120) == 0x120);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_130) == 0x130);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_134) == 0x134);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_198) == 0x198);
+const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, field_1A0) == 0x1A0);
 

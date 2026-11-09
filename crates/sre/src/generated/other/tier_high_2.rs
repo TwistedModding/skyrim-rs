@@ -1785,20 +1785,6 @@ pub unsafe fn get_field_e8_2(param_1: i64) -> u32 { unsafe { function!(416400, (
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_field_ec_2(param_1: i64) -> u32 { unsafe { function!(42665, (i64) -> u32)(param_1) } }
-/// `GetFields20And28` (decompiler signature, tier high; ledger decompiler evidence, name high; id 58424, rva 0xad4140).
-/// `undefined GetFields20And28(longlong param_1, undefined8 * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_fields20_and28(param_1: i64, param_2: *mut u64) -> u64 { unsafe { function!(58424, (i64, *mut u64) -> u64)(param_1, param_2) } }
-/// `GetFields30And38` (decompiler signature, tier high; ledger decompiler evidence, name high; id 58425, rva 0xad4150).
-/// `undefined GetFields30And38(longlong param_1, undefined8 * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_fields30_and38(param_1: i64, param_2: *mut u64) -> u64 { unsafe { function!(58425, (i64, *mut u64) -> u64)(param_1, param_2) } }
 /// `GetFileNameFromPath` (decompiler signature, tier high; ledger decompiler evidence, name high; id 88699, rva 0xe15b70).
 /// `char * GetFileNameFromPath(char * param_1)`
 ///
@@ -5306,13 +5292,6 @@ pub unsafe fn is_weak_ptr_field28_alive(param_1: i64) -> u8 { unsafe { function!
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn is_whitespace_char(param_1: u8) -> u64 { unsafe { function!(443365, (u8) -> u64)(param_1) } }
-/// `IsWithinHeadTrackDistanceOfPlayer` (decompiler signature, tier high; ledger decompiler evidence, name high; id 37261, rva 0x675360).
-/// `bool IsWithinHeadTrackDistanceOfPlayer(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn is_within_head_track_distance_of_player(param_1: i64) -> u8 { unsafe { function!(37261, (i64) -> u8)(param_1) } }
 /// `KillActorByHandle` (decompiler signature, tier high; ledger decompiler evidence, name high; id 36994, rva 0x66c100).
 /// `undefined8 KillActorByHandle(uint * param_1)`
 ///
@@ -16345,3 +16324,24 @@ pub unsafe fn set_shadow_scene_node(param_1: i32, param_2: u64) -> u64 { unsafe 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_slot_pointers(param_1: i64, param_2: u8, param_3: i64) -> u64 { unsafe { function!(107490, (i64, u8, i64) -> u64)(param_1, param_2, param_3) } }
+/// `SetStaggerTimeToMaxDuration` (decompiler signature, tier high; ledger decompiler evidence, name high; id 40040, rva 0x7286f0).
+/// `undefined SetStaggerTimeToMaxDuration(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_stagger_time_to_max_duration(param_1: i64) -> u64 { unsafe { function!(40040, (i64) -> u64)(param_1) } }
+/// `SetStringField8` (decompiler signature, tier high; ledger decompiler evidence, name high; id 12951, rva 0x190aa0).
+/// `undefined SetStringField8(longlong param_1, char * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_string_field8(param_1: i64, param_2: *mut c_char) -> u64 { unsafe { function!(12951, (i64, *mut c_char) -> u64)(param_1, param_2) } }
+/// `SetThreadPriorityLevel_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 69068, rva 0xeaedf0).
+/// `undefined8 SetThreadPriorityLevel_2(longlong param_1, int param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_thread_priority_level_2(param_1: i64, param_2: i32) -> u64 { unsafe { function!(69068, (i64, i32) -> u64)(param_1, param_2) } }

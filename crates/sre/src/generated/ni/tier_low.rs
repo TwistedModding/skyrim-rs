@@ -1629,54 +1629,6 @@ impl crate::NiLightDimmerController {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(73702, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
-impl crate::NiLookAtController {
-    /// `NiLookAtController::Create` (decompiler signature, tier low; ledger string evidence, name high; id 73714, rva 0xf7fb60).
-    /// `NiTimeController * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn create(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::NiTimeController { unsafe { function!(73714, (u64, u64, u64, u64) -> *mut crate::NiTimeController)(param_1, param_2, param_3, param_4) } }
-    /// `NiLookAtController::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 73715, rva 0xf7fc20).
-    /// `NiLookAtController * vdtor(NiLookAtController * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(73715, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
-impl crate::NiLookAtInterpolator {
-    /// `NiLookAtInterpolator::Create` (decompiler signature, tier low; ledger string evidence, name medium; id 73740, rva 0xf81070).
-    /// `undefined Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn create(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(73740, (u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-    /// `NiLookAtInterpolator::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 73727, rva 0xf80330).
-    /// `NiLookAtInterpolator * ctor(NiLookAtInterpolator * this, undefined8 param_1, short param_2, char param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: i16, param_3: c_char) -> *mut Self { unsafe { function!(73727, (*const Self, u64, i16, c_char) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `NiLookAtInterpolator::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 73728, rva 0xf80490).
-    /// `undefined ctor(NiLookAtInterpolator * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(73728, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `NiLookAtInterpolator::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 73742, rva 0xf81120).
-    /// `NiLookAtInterpolator * vdtor(NiLookAtInterpolator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(73742, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
 impl crate::NiMemStream {
     /// `NiMemStream::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 107813, rva 0x156a900).
     /// `NiMemStream * ctor(NiMemStream * this, undefined8 param_1, undefined4 param_2)`

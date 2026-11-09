@@ -553,12 +553,6 @@ impl core::ops::Deref for crate::bhkRagdollConstraint {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `bhkRagdollController` is laid out from its primary base `hkaRaycastInterface`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::bhkRagdollController {
-    type Target = crate::hkaRaycastInterface;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `bhkRagdollLimitsConstraint` is laid out from its primary base `bhkConstraint`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::bhkRagdollLimitsConstraint {
     type Target = crate::bhkConstraint;
@@ -1735,12 +1729,6 @@ impl core::ops::Deref for crate::hkaDetectRagdollPenetration {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `hkaFootPlacementIkSolver` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkaFootPlacementIkSolver {
-    type Target = crate::hkReferencedObject;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `hkaFootstepAnalysisInfo` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkaFootstepAnalysisInfo {
     type Target = crate::hkReferencedObject;
@@ -1774,12 +1762,6 @@ impl core::ops::Deref for crate::hkaMirroredSkeleton {
 /// `hkaQuantizedAnimation` is laid out from its primary base `hkaAnimation`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkaQuantizedAnimation {
     type Target = crate::hkaAnimation;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `hkaRagdollInstance` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkaRagdollInstance {
-    type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -1981,20 +1963,8 @@ impl core::ops::Deref for crate::hkbCharacterControllerSceneModifier {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `hkbCharacterData` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbCharacterData {
-    type Target = crate::hkReferencedObject;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `hkbCharacterInfo` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbCharacterInfo {
-    type Target = crate::hkReferencedObject;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `hkbCharacterSetup` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbCharacterSetup {
     type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -2119,12 +2089,6 @@ impl core::ops::Deref for crate::hkbDampingModifierInternalState {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `hkbDefaultRaycastInterface` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbDefaultRaycastInterface {
-    type Target = crate::hkReferencedObject;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `hkbDelayedModifier` is laid out from its primary base `hkbModifierWrapper`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbDelayedModifier {
     type Target = crate::hkbModifierWrapper;
@@ -2133,18 +2097,6 @@ impl core::ops::Deref for crate::hkbDelayedModifier {
 }
 /// `hkbDelayedModifierInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbDelayedModifierInternalState {
-    type Target = crate::hkReferencedObject;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `hkbDetectCloseToGroundModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbDetectCloseToGroundModifier {
-    type Target = crate::hkbModifier;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `hkbDetectCloseToGroundModifierInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbDetectCloseToGroundModifierInternalState {
     type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -2233,36 +2185,6 @@ impl core::ops::Deref for crate::hkbExpressionDataArray {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `hkbExtractRagdollPoseModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbExtractRagdollPoseModifier {
-    type Target = crate::hkbModifier;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `hkbFootIkControlsModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbFootIkControlsModifier {
-    type Target = crate::hkbModifier;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `hkbFootIkDriver` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbFootIkDriver {
-    type Target = crate::hkReferencedObject;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `hkbFootIkDriverInfo` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbFootIkDriverInfo {
-    type Target = crate::hkReferencedObject;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `hkbFootIkModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbFootIkModifier {
-    type Target = crate::hkbModifier;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `hkbGenerator` is laid out from its primary base `hkbNode`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbGenerator {
     type Target = crate::hkbNode;
@@ -2311,30 +2233,6 @@ impl core::ops::Deref for crate::hkbGetWorldFromModelModifierInternalState {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `hkbHandIkControlsModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbHandIkControlsModifier {
-    type Target = crate::hkbModifier;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `hkbHandIkDriver` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbHandIkDriver {
-    type Target = crate::hkReferencedObject;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `hkbHandIkDriverInfo` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbHandIkDriverInfo {
-    type Target = crate::hkReferencedObject;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `hkbHandIkModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbHandIkModifier {
-    type Target = crate::hkbModifier;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `hkbHandle` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbHandle {
     type Target = crate::hkReferencedObject;
@@ -2353,26 +2251,8 @@ impl core::ops::Deref for crate::hkbIntVariableSequencedData {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `hkbKeyframeBonesModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbKeyframeBonesModifier {
-    type Target = crate::hkbModifier;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `hkbLinkedSymbolInfo` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbLinkedSymbolInfo {
-    type Target = crate::hkReferencedObject;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `hkbLookAtModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbLookAtModifier {
-    type Target = crate::hkbModifier;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `hkbLookAtModifierInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbLookAtModifierInternalState {
     type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -2485,24 +2365,6 @@ impl core::ops::Deref for crate::hkbParticleSystemEventPayload {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `hkbPoseMatchingGenerator` is laid out from its primary base `hkbBlenderGenerator`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbPoseMatchingGenerator {
-    type Target = crate::hkbBlenderGenerator;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `hkbPoseMatchingGeneratorInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbPoseMatchingGeneratorInternalState {
-    type Target = crate::hkReferencedObject;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `hkbPoweredRagdollControlsModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbPoweredRagdollControlsModifier {
-    type Target = crate::hkbModifier;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `hkbProjectData` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbProjectData {
     type Target = crate::hkReferencedObject;
@@ -2518,12 +2380,6 @@ impl core::ops::Deref for crate::hkbProjectStringData {
 /// `hkbProxyModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbProxyModifier {
     type Target = crate::hkbModifier;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `hkbRagdollSceneModifier` is laid out from its primary base `hkbSceneModifier`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbRagdollSceneModifier {
-    type Target = crate::hkbSceneModifier;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2554,12 +2410,6 @@ impl core::ops::Deref for crate::hkbReferencePoseGenerator {
 /// `hkbRegisteredGenerator` is laid out from its primary base `hkbBindable`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbRegisteredGenerator {
     type Target = crate::hkbBindable;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `hkbRigidBodyRagdollControlsModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbRigidBodyRagdollControlsModifier {
-    type Target = crate::hkbModifier;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2734,18 +2584,6 @@ impl core::ops::Deref for crate::hkbTransformVectorModifierInternalState {
 /// `hkbTransitionEffect` is laid out from its primary base `hkbGenerator`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbTransitionEffect {
     type Target = crate::hkbGenerator;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `hkbTwistModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbTwistModifier {
-    type Target = crate::hkbModifier;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `hkbVariableBindingSet` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkbVariableBindingSet {
-    type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -5991,199 +5829,6 @@ impl crate::bhkMoppBvTreeShape {
     pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
-}
-
-impl crate::bhkRagdollController {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_10(this: *const Self) -> *mut u32 { unsafe { member!(this, "bhkRagdollController.field_10", 0x10, u32) } }
-    /// `bhkRagdollController::field_10`, at +0x10 on 1.7.104.
-    #[inline]
-    pub fn field_10(&self) -> u32 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_10(&mut self, value: u32) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_10_ptr(&self) -> *mut u32 { Self::__member_field_10(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_100(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "bhkRagdollController.field_100", 0x100, [u8; 16]) } }
-    /// `bhkRagdollController::field_100`, at +0x100 on 1.7.104.
-    #[inline]
-    pub fn field_100(&self) -> [u8; 16] { unsafe { Self::__member_field_100(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_100(&mut self, value: [u8; 16]) { unsafe { Self::__member_field_100(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_100_ptr(&self) -> *mut [u8; 16] { Self::__member_field_100(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_110(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "bhkRagdollController.field_110", 0x110, [u8; 16]) } }
-    /// `bhkRagdollController::field_110`, at +0x110 on 1.7.104.
-    #[inline]
-    pub fn field_110(&self) -> [u8; 16] { unsafe { Self::__member_field_110(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_110(&mut self, value: [u8; 16]) { unsafe { Self::__member_field_110(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_110_ptr(&self) -> *mut [u8; 16] { Self::__member_field_110(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_120(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "bhkRagdollController.field_120", 0x120, [u8; 16]) } }
-    /// `bhkRagdollController::field_120`, at +0x120 on 1.7.104.
-    #[inline]
-    pub fn field_120(&self) -> [u8; 16] { unsafe { Self::__member_field_120(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_120(&mut self, value: [u8; 16]) { unsafe { Self::__member_field_120(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_120_ptr(&self) -> *mut [u8; 16] { Self::__member_field_120(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_130(this: *const Self) -> *mut u64 { unsafe { member!(this, "bhkRagdollController.field_130", 0x130, u64) } }
-    /// `bhkRagdollController::field_130`, at +0x130 on 1.7.104.
-    #[inline]
-    pub fn field_130(&self) -> u64 { unsafe { Self::__member_field_130(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_130(&mut self, value: u64) { unsafe { Self::__member_field_130(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_130_ptr(&self) -> *mut u64 { Self::__member_field_130(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_138(this: *const Self) -> *mut u32 { unsafe { member!(this, "bhkRagdollController.field_138", 0x138, u32) } }
-    /// `bhkRagdollController::field_138`, at +0x138 on 1.7.104.
-    #[inline]
-    pub fn field_138(&self) -> u32 { unsafe { Self::__member_field_138(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_138(&mut self, value: u32) { unsafe { Self::__member_field_138(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_138_ptr(&self) -> *mut u32 { Self::__member_field_138(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_13C(this: *const Self) -> *mut u16 { unsafe { member!(this, "bhkRagdollController.field_13C", 0x13C, u16) } }
-    /// `bhkRagdollController::field_13C`, at +0x13C on 1.7.104.
-    #[inline]
-    pub fn field_13C(&self) -> u16 { unsafe { Self::__member_field_13C(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_13C(&mut self, value: u16) { unsafe { Self::__member_field_13C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_13C_ptr(&self) -> *mut u16 { Self::__member_field_13C(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_148(this: *const Self) -> *mut u32 { unsafe { member!(this, "bhkRagdollController.field_148", 0x148, u32) } }
-    /// `bhkRagdollController::field_148`, at +0x148 on 1.7.104.
-    #[inline]
-    pub fn field_148(&self) -> u32 { unsafe { Self::__member_field_148(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_148(&mut self, value: u32) { unsafe { Self::__member_field_148(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_148_ptr(&self) -> *mut u32 { Self::__member_field_148(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_150(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "bhkRagdollController.field_150", 0x150, [u8; 16]) } }
-    /// `bhkRagdollController::field_150`, at +0x150 on 1.7.104.
-    #[inline]
-    pub fn field_150(&self) -> [u8; 16] { unsafe { Self::__member_field_150(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_150(&mut self, value: [u8; 16]) { unsafe { Self::__member_field_150(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_150_ptr(&self) -> *mut [u8; 16] { Self::__member_field_150(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_160(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "bhkRagdollController.field_160", 0x160, [u8; 16]) } }
-    /// `bhkRagdollController::field_160`, at +0x160 on 1.7.104.
-    #[inline]
-    pub fn field_160(&self) -> [u8; 16] { unsafe { Self::__member_field_160(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_160(&mut self, value: [u8; 16]) { unsafe { Self::__member_field_160(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_160_ptr(&self) -> *mut [u8; 16] { Self::__member_field_160(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_170(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "bhkRagdollController.field_170", 0x170, [u8; 16]) } }
-    /// `bhkRagdollController::field_170`, at +0x170 on 1.7.104.
-    #[inline]
-    pub fn field_170(&self) -> [u8; 16] { unsafe { Self::__member_field_170(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_170(&mut self, value: [u8; 16]) { unsafe { Self::__member_field_170(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_170_ptr(&self) -> *mut [u8; 16] { Self::__member_field_170(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_180(this: *const Self) -> *mut u64 { unsafe { member!(this, "bhkRagdollController.field_180", 0x180, u64) } }
-    /// `bhkRagdollController::field_180`, at +0x180 on 1.7.104.
-    #[inline]
-    pub fn field_180(&self) -> u64 { unsafe { Self::__member_field_180(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_180(&mut self, value: u64) { unsafe { Self::__member_field_180(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_180_ptr(&self) -> *mut u64 { Self::__member_field_180(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_188(this: *const Self) -> *mut u32 { unsafe { member!(this, "bhkRagdollController.field_188", 0x188, u32) } }
-    /// `bhkRagdollController::field_188`, at +0x188 on 1.7.104.
-    #[inline]
-    pub fn field_188(&self) -> u32 { unsafe { Self::__member_field_188(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_188(&mut self, value: u32) { unsafe { Self::__member_field_188(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_188_ptr(&self) -> *mut u32 { Self::__member_field_188(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_18C(this: *const Self) -> *mut u16 { unsafe { member!(this, "bhkRagdollController.field_18C", 0x18C, u16) } }
-    /// `bhkRagdollController::field_18C`, at +0x18C on 1.7.104.
-    #[inline]
-    pub fn field_18C(&self) -> u16 { unsafe { Self::__member_field_18C(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_18C(&mut self, value: u16) { unsafe { Self::__member_field_18C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_18C_ptr(&self) -> *mut u16 { Self::__member_field_18C(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_20(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "bhkRagdollController.field_20", 0x20, [u8; 16]) } }
-    /// `bhkRagdollController::field_20`, at +0x20 on 1.7.104.
-    #[inline]
-    pub fn field_20(&self) -> [u8; 16] { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_20(&mut self, value: [u8; 16]) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_20_ptr(&self) -> *mut [u8; 16] { Self::__member_field_20(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_30(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "bhkRagdollController.field_30", 0x30, [u8; 16]) } }
-    /// `bhkRagdollController::field_30`, at +0x30 on 1.7.104.
-    #[inline]
-    pub fn field_30(&self) -> [u8; 16] { unsafe { Self::__member_field_30(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_30(&mut self, value: [u8; 16]) { unsafe { Self::__member_field_30(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_30_ptr(&self) -> *mut [u8; 16] { Self::__member_field_30(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_320(this: *const Self) -> *mut u64 { unsafe { member!(this, "bhkRagdollController.field_320", 0x320, u64) } }
-    /// `bhkRagdollController::field_320`, at +0x320 on 1.7.104.
-    #[inline]
-    pub fn field_320(&self) -> u64 { unsafe { Self::__member_field_320(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_320(&mut self, value: u64) { unsafe { Self::__member_field_320(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_320_ptr(&self) -> *mut u64 { Self::__member_field_320(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_328(this: *const Self) -> *mut u32 { unsafe { member!(this, "bhkRagdollController.field_328", 0x328, u32) } }
-    /// `bhkRagdollController::field_328`, at +0x328 on 1.7.104.
-    #[inline]
-    pub fn field_328(&self) -> u32 { unsafe { Self::__member_field_328(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_328(&mut self, value: u32) { unsafe { Self::__member_field_328(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_328_ptr(&self) -> *mut u32 { Self::__member_field_328(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_F8(this: *const Self) -> *mut u32 { unsafe { member!(this, "bhkRagdollController.field_F8", 0xF8, u32) } }
-    /// `bhkRagdollController::field_F8`, at +0xF8 on 1.7.104.
-    #[inline]
-    pub fn field_F8(&self) -> u32 { unsafe { Self::__member_field_F8(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_F8(&mut self, value: u32) { unsafe { Self::__member_field_F8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_F8_ptr(&self) -> *mut u32 { Self::__member_field_F8(core::ptr::from_ref(self)) }
 }
 
 impl crate::bhkThreadMemorySource {
@@ -16202,6 +15847,315 @@ impl crate::hkaAnimation {
     #[inline]
     pub fn __member_field_C4(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkaAnimation.field_C4", 0xC4, u32) } }
     /// `hkaAnimation::field_C4`, at +0xC4 on 1.7.104.
+    #[inline]
+    pub fn field_C4(&self) -> u32 { unsafe { Self::__member_field_C4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C4(&mut self, value: u32) { unsafe { Self::__member_field_C4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C4_ptr(&self) -> *mut u32 { Self::__member_field_C4(core::ptr::from_ref(self)) }
+}
+
+impl crate::hkaAnimationContainer {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_108(this: *const Self) -> *mut u64 { unsafe { member!(this, "hkaAnimationContainer.field_108", 0x108, u64) } }
+    /// `hkaAnimationContainer::field_108`, at +0x108 on 1.7.104.
+    #[inline]
+    pub fn field_108(&self) -> u64 { unsafe { Self::__member_field_108(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_108(&mut self, value: u64) { unsafe { Self::__member_field_108(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_108_ptr(&self) -> *mut u64 { Self::__member_field_108(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_110(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkaAnimationContainer.field_110", 0x110, u32) } }
+    /// `hkaAnimationContainer::field_110`, at +0x110 on 1.7.104.
+    #[inline]
+    pub fn field_110(&self) -> u32 { unsafe { Self::__member_field_110(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_110(&mut self, value: u32) { unsafe { Self::__member_field_110(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_110_ptr(&self) -> *mut u32 { Self::__member_field_110(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_114(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkaAnimationContainer.field_114", 0x114, u32) } }
+    /// `hkaAnimationContainer::field_114`, at +0x114 on 1.7.104.
+    #[inline]
+    pub fn field_114(&self) -> u32 { unsafe { Self::__member_field_114(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_114(&mut self, value: u32) { unsafe { Self::__member_field_114(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_114_ptr(&self) -> *mut u32 { Self::__member_field_114(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A4(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkaAnimationContainer.field_A4", 0xA4, u32) } }
+    /// `hkaAnimationContainer::field_A4`, at +0xA4 on 1.7.104.
+    #[inline]
+    pub fn field_A4(&self) -> u32 { unsafe { Self::__member_field_A4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A4(&mut self, value: u32) { unsafe { Self::__member_field_A4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A4_ptr(&self) -> *mut u32 { Self::__member_field_A4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A8(this: *const Self) -> *mut u64 { unsafe { member!(this, "hkaAnimationContainer.field_A8", 0xA8, u64) } }
+    /// `hkaAnimationContainer::field_A8`, at +0xA8 on 1.7.104.
+    #[inline]
+    pub fn field_A8(&self) -> u64 { unsafe { Self::__member_field_A8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A8(&mut self, value: u64) { unsafe { Self::__member_field_A8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A8_ptr(&self) -> *mut u64 { Self::__member_field_A8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B0(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkaAnimationContainer.field_B0", 0xB0, u32) } }
+    /// `hkaAnimationContainer::field_B0`, at +0xB0 on 1.7.104.
+    #[inline]
+    pub fn field_B0(&self) -> u32 { unsafe { Self::__member_field_B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B0(&mut self, value: u32) { unsafe { Self::__member_field_B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B0_ptr(&self) -> *mut u32 { Self::__member_field_B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B4(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkaAnimationContainer.field_B4", 0xB4, u32) } }
+    /// `hkaAnimationContainer::field_B4`, at +0xB4 on 1.7.104.
+    #[inline]
+    pub fn field_B4(&self) -> u32 { unsafe { Self::__member_field_B4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B4(&mut self, value: u32) { unsafe { Self::__member_field_B4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B4_ptr(&self) -> *mut u32 { Self::__member_field_B4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "hkaAnimationContainer.field_B8", 0xB8, u64) } }
+    /// `hkaAnimationContainer::field_B8`, at +0xB8 on 1.7.104.
+    #[inline]
+    pub fn field_B8(&self) -> u64 { unsafe { Self::__member_field_B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B8(&mut self, value: u64) { unsafe { Self::__member_field_B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B8_ptr(&self) -> *mut u64 { Self::__member_field_B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkaAnimationContainer.field_C0", 0xC0, u32) } }
+    /// `hkaAnimationContainer::field_C0`, at +0xC0 on 1.7.104.
+    #[inline]
+    pub fn field_C0(&self) -> u32 { unsafe { Self::__member_field_C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C0(&mut self, value: u32) { unsafe { Self::__member_field_C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C0_ptr(&self) -> *mut u32 { Self::__member_field_C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C4(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkaAnimationContainer.field_C4", 0xC4, u32) } }
+    /// `hkaAnimationContainer::field_C4`, at +0xC4 on 1.7.104.
+    #[inline]
+    pub fn field_C4(&self) -> u32 { unsafe { Self::__member_field_C4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C4(&mut self, value: u32) { unsafe { Self::__member_field_C4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C4_ptr(&self) -> *mut u32 { Self::__member_field_C4(core::ptr::from_ref(self)) }
+}
+
+impl crate::hkaAnimationControl {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_108(this: *const Self) -> *mut u64 { unsafe { member!(this, "hkaAnimationControl.field_108", 0x108, u64) } }
+    /// `hkaAnimationControl::field_108`, at +0x108 on 1.7.104.
+    #[inline]
+    pub fn field_108(&self) -> u64 { unsafe { Self::__member_field_108(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_108(&mut self, value: u64) { unsafe { Self::__member_field_108(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_108_ptr(&self) -> *mut u64 { Self::__member_field_108(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_110(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkaAnimationControl.field_110", 0x110, u32) } }
+    /// `hkaAnimationControl::field_110`, at +0x110 on 1.7.104.
+    #[inline]
+    pub fn field_110(&self) -> u32 { unsafe { Self::__member_field_110(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_110(&mut self, value: u32) { unsafe { Self::__member_field_110(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_110_ptr(&self) -> *mut u32 { Self::__member_field_110(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_114(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkaAnimationControl.field_114", 0x114, u32) } }
+    /// `hkaAnimationControl::field_114`, at +0x114 on 1.7.104.
+    #[inline]
+    pub fn field_114(&self) -> u32 { unsafe { Self::__member_field_114(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_114(&mut self, value: u32) { unsafe { Self::__member_field_114(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_114_ptr(&self) -> *mut u32 { Self::__member_field_114(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A4(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkaAnimationControl.field_A4", 0xA4, u32) } }
+    /// `hkaAnimationControl::field_A4`, at +0xA4 on 1.7.104.
+    #[inline]
+    pub fn field_A4(&self) -> u32 { unsafe { Self::__member_field_A4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A4(&mut self, value: u32) { unsafe { Self::__member_field_A4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A4_ptr(&self) -> *mut u32 { Self::__member_field_A4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A8(this: *const Self) -> *mut u64 { unsafe { member!(this, "hkaAnimationControl.field_A8", 0xA8, u64) } }
+    /// `hkaAnimationControl::field_A8`, at +0xA8 on 1.7.104.
+    #[inline]
+    pub fn field_A8(&self) -> u64 { unsafe { Self::__member_field_A8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A8(&mut self, value: u64) { unsafe { Self::__member_field_A8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A8_ptr(&self) -> *mut u64 { Self::__member_field_A8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B0(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkaAnimationControl.field_B0", 0xB0, u32) } }
+    /// `hkaAnimationControl::field_B0`, at +0xB0 on 1.7.104.
+    #[inline]
+    pub fn field_B0(&self) -> u32 { unsafe { Self::__member_field_B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B0(&mut self, value: u32) { unsafe { Self::__member_field_B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B0_ptr(&self) -> *mut u32 { Self::__member_field_B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B4(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkaAnimationControl.field_B4", 0xB4, u32) } }
+    /// `hkaAnimationControl::field_B4`, at +0xB4 on 1.7.104.
+    #[inline]
+    pub fn field_B4(&self) -> u32 { unsafe { Self::__member_field_B4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B4(&mut self, value: u32) { unsafe { Self::__member_field_B4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B4_ptr(&self) -> *mut u32 { Self::__member_field_B4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "hkaAnimationControl.field_B8", 0xB8, u64) } }
+    /// `hkaAnimationControl::field_B8`, at +0xB8 on 1.7.104.
+    #[inline]
+    pub fn field_B8(&self) -> u64 { unsafe { Self::__member_field_B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B8(&mut self, value: u64) { unsafe { Self::__member_field_B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B8_ptr(&self) -> *mut u64 { Self::__member_field_B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkaAnimationControl.field_C0", 0xC0, u32) } }
+    /// `hkaAnimationControl::field_C0`, at +0xC0 on 1.7.104.
+    #[inline]
+    pub fn field_C0(&self) -> u32 { unsafe { Self::__member_field_C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C0(&mut self, value: u32) { unsafe { Self::__member_field_C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C0_ptr(&self) -> *mut u32 { Self::__member_field_C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C4(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkaAnimationControl.field_C4", 0xC4, u32) } }
+    /// `hkaAnimationControl::field_C4`, at +0xC4 on 1.7.104.
+    #[inline]
+    pub fn field_C4(&self) -> u32 { unsafe { Self::__member_field_C4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C4(&mut self, value: u32) { unsafe { Self::__member_field_C4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C4_ptr(&self) -> *mut u32 { Self::__member_field_C4(core::ptr::from_ref(self)) }
+}
+
+impl crate::hkaAnimationPreviewColorContainer {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_108(this: *const Self) -> *mut u64 { unsafe { member!(this, "hkaAnimationPreviewColorContainer.field_108", 0x108, u64) } }
+    /// `hkaAnimationPreviewColorContainer::field_108`, at +0x108 on 1.7.104.
+    #[inline]
+    pub fn field_108(&self) -> u64 { unsafe { Self::__member_field_108(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_108(&mut self, value: u64) { unsafe { Self::__member_field_108(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_108_ptr(&self) -> *mut u64 { Self::__member_field_108(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_110(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkaAnimationPreviewColorContainer.field_110", 0x110, u32) } }
+    /// `hkaAnimationPreviewColorContainer::field_110`, at +0x110 on 1.7.104.
+    #[inline]
+    pub fn field_110(&self) -> u32 { unsafe { Self::__member_field_110(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_110(&mut self, value: u32) { unsafe { Self::__member_field_110(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_110_ptr(&self) -> *mut u32 { Self::__member_field_110(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_114(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkaAnimationPreviewColorContainer.field_114", 0x114, u32) } }
+    /// `hkaAnimationPreviewColorContainer::field_114`, at +0x114 on 1.7.104.
+    #[inline]
+    pub fn field_114(&self) -> u32 { unsafe { Self::__member_field_114(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_114(&mut self, value: u32) { unsafe { Self::__member_field_114(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_114_ptr(&self) -> *mut u32 { Self::__member_field_114(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A4(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkaAnimationPreviewColorContainer.field_A4", 0xA4, u32) } }
+    /// `hkaAnimationPreviewColorContainer::field_A4`, at +0xA4 on 1.7.104.
+    #[inline]
+    pub fn field_A4(&self) -> u32 { unsafe { Self::__member_field_A4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A4(&mut self, value: u32) { unsafe { Self::__member_field_A4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A4_ptr(&self) -> *mut u32 { Self::__member_field_A4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A8(this: *const Self) -> *mut u64 { unsafe { member!(this, "hkaAnimationPreviewColorContainer.field_A8", 0xA8, u64) } }
+    /// `hkaAnimationPreviewColorContainer::field_A8`, at +0xA8 on 1.7.104.
+    #[inline]
+    pub fn field_A8(&self) -> u64 { unsafe { Self::__member_field_A8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A8(&mut self, value: u64) { unsafe { Self::__member_field_A8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A8_ptr(&self) -> *mut u64 { Self::__member_field_A8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B0(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkaAnimationPreviewColorContainer.field_B0", 0xB0, u32) } }
+    /// `hkaAnimationPreviewColorContainer::field_B0`, at +0xB0 on 1.7.104.
+    #[inline]
+    pub fn field_B0(&self) -> u32 { unsafe { Self::__member_field_B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B0(&mut self, value: u32) { unsafe { Self::__member_field_B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B0_ptr(&self) -> *mut u32 { Self::__member_field_B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B4(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkaAnimationPreviewColorContainer.field_B4", 0xB4, u32) } }
+    /// `hkaAnimationPreviewColorContainer::field_B4`, at +0xB4 on 1.7.104.
+    #[inline]
+    pub fn field_B4(&self) -> u32 { unsafe { Self::__member_field_B4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B4(&mut self, value: u32) { unsafe { Self::__member_field_B4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B4_ptr(&self) -> *mut u32 { Self::__member_field_B4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "hkaAnimationPreviewColorContainer.field_B8", 0xB8, u64) } }
+    /// `hkaAnimationPreviewColorContainer::field_B8`, at +0xB8 on 1.7.104.
+    #[inline]
+    pub fn field_B8(&self) -> u64 { unsafe { Self::__member_field_B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B8(&mut self, value: u64) { unsafe { Self::__member_field_B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B8_ptr(&self) -> *mut u64 { Self::__member_field_B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkaAnimationPreviewColorContainer.field_C0", 0xC0, u32) } }
+    /// `hkaAnimationPreviewColorContainer::field_C0`, at +0xC0 on 1.7.104.
+    #[inline]
+    pub fn field_C0(&self) -> u32 { unsafe { Self::__member_field_C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C0(&mut self, value: u32) { unsafe { Self::__member_field_C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C0_ptr(&self) -> *mut u32 { Self::__member_field_C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C4(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkaAnimationPreviewColorContainer.field_C4", 0xC4, u32) } }
+    /// `hkaAnimationPreviewColorContainer::field_C4`, at +0xC4 on 1.7.104.
     #[inline]
     pub fn field_C4(&self) -> u32 { unsafe { Self::__member_field_C4(core::ptr::from_ref(self)).read_unaligned() } }
     #[inline]

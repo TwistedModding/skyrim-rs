@@ -333,23 +333,6 @@ impl crate::BSDecomposeVectorModifier {
     pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(63184, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::BSDirectAtModifier {
-    /// `BSDirectAtModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 63189, rva 0xbb6570).
-    /// `BSDirectAtModifier * ctor(BSDirectAtModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(63189, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-    /// `BSDirectAtModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 63190, rva 0xbb6680).
-    /// `BSDirectAtModifier * ctor(BSDirectAtModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(63190, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::BSDirectAtModifierInterface {
     /// `BSDirectAtModifierInterface::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 43655, rva 0x7db580).
     /// `BSDirectAtModifierInterface * ctor(BSDirectAtModifierInterface * this)`
@@ -620,16 +603,6 @@ impl crate::BSGetTimeStepModifier {
     pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(63233, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::BSGrabIKNote {
-    /// `BSGrabIKNote::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 74038, rva 0xf8b3d0).
-    /// `BSGrabIKNote * ctor(BSGrabIKNote * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(74038, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::BSGrassShader {
     /// `BSGrassShader::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106709, rva 0x1523584).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSGrassShader * this)`
@@ -667,26 +640,6 @@ impl crate::BSIDirectAtModifierSingleton {
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(63072, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::BSIFootIkRaycastInterfaceDB {
-    /// `BSIFootIkRaycastInterfaceDB::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 32759, rva 0x54c230).
-    /// `undefined dtor(BSIFootIkRaycastInterfaceDB * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(32759, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::BSILimbIKModifierSingleton {
-    /// `BSILimbIKModifierSingleton::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 62919, rva 0xbaf120).
-    /// `undefined dtor(BSILimbIKModifierSingleton * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(62919, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::BSIPassByTargetTriggerModifierSingleton {
     /// `BSIPassByTargetTriggerModifierSingleton::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 63075, rva 0xbb1c00).
     /// `undefined dtor(BSIPassByTargetTriggerModifierSingleton * this)`
@@ -705,16 +658,6 @@ impl crate::BSIRagdollContactListenerModifierSingleton {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(63080, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::BSIRagdollDriver {
-    /// `BSIRagdollDriver::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 63554, rva 0xbc9a80).
-    /// `undefined dtor(BSIRagdollDriver * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(63554, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSISoundOutputModel__BSIAttenuationCharacteristics {
@@ -3593,23 +3536,6 @@ impl crate::BSInterpValueModifier {
     pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(63239, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::BSIsActiveModifier {
-    /// `BSIsActiveModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 63247, rva 0xbb8470).
-    /// `BSIsActiveModifier * ctor(BSIsActiveModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(63247, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-    /// `BSIsActiveModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 63248, rva 0xbb84f0).
-    /// `BSIsActiveModifier * ctor(BSIsActiveModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(63248, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::BSJobs__JobThread {
     /// `BSJobs::JobThread::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 69384, rva 0xebd020).
     /// `JobThread * ctor(JobThread * this)`
@@ -3875,77 +3801,6 @@ impl crate::BSLightingShaderPropertyUShortController {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(108380, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::BSLimbIKModifier {
-    /// `BSLimbIKModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 63256, rva 0xbb8750).
-    /// `BSLimbIKModifier * ctor(BSLimbIKModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(63256, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-    /// `BSLimbIKModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 63257, rva 0xbb87f0).
-    /// `BSLimbIKModifier * ctor(BSLimbIKModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(63257, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::BSLimbIKModifierUtility {
-    /// `BSLimbIKModifierUtility::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 32870, rva 0x552760).
-    /// `BSLimbIKModifierUtility * ctor(BSLimbIKModifierUtility * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(32870, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::BSLimbIKModifierUtilityCastInfo {
-    /// `BSLimbIKModifierUtilityCastInfo::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 32867, rva 0x5525c0).
-    /// `BSLimbIKModifierUtilityCastInfo * ctor(BSLimbIKModifierUtilityCastInfo * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(32867, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-    /// `BSLimbIKModifierUtilityCastInfo::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 32868, rva 0x552600).
-    /// `undefined ctor(BSLimbIKModifierUtilityCastInfo * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(32868, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::BSLookAtModifier {
-    /// `BSLookAtModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 63270, rva 0xbb9c10).
-    /// `BSLookAtModifier * ctor(BSLookAtModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(63270, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-    /// `BSLookAtModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 63271, rva 0xbb9d10).
-    /// `BSLookAtModifier * ctor(BSLookAtModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(63271, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::BSLookIKNote {
-    /// `BSLookIKNote::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 74062, rva 0xf8bca0).
-    /// `BSLookIKNote * ctor(BSLookIKNote * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(74062, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSMeshLODTriShape {
@@ -4880,37 +4735,6 @@ impl crate::BSQueuedResourceCollectionBase {
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(75760, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::BSRagdollContactListenerModifier {
-    /// `BSRagdollContactListenerModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 63082, rva 0xbb1d00).
-    /// `BSRagdollContactListenerModifier * ctor(BSRagdollContactListenerModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(63082, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-    /// `BSRagdollContactListenerModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 63083, rva 0xbb1db0).
-    /// `BSRagdollContactListenerModifier * ctor(BSRagdollContactListenerModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(63083, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-    /// `BSRagdollContactListenerModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 63084, rva 0xbb1e40).
-    /// `undefined ctor(BSRagdollContactListenerModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_3(&self) -> u64 { unsafe { function!(63084, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-    /// `BSRagdollContactListenerModifier::hkpContactListener_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 63096, rva 0xbb28c4).
-    /// `undefined hkpContactListener_vdtor(BSRagdollContactListenerModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn hkp_contact_listener_vdtor(&self) -> u64 { unsafe { function!(63096, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x50)) } }
-}
-
 impl crate::BSRagdollContactListenerModifierInterface {
     /// `BSRagdollContactListenerModifierInterface::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 43678, rva 0x7dc930).
     /// `BSRagdollContactListenerModifierInterface * ctor(BSRagdollContactListenerModifierInterface * this)`
@@ -5406,23 +5230,6 @@ impl crate::BSSpeedSamplerDBManager {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(63821, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::BSSpeedSamplerModifier {
-    /// `BSSpeedSamplerModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 63303, rva 0xbbb8f0).
-    /// `BSSpeedSamplerModifier * ctor(BSSpeedSamplerModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(63303, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-    /// `BSSpeedSamplerModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 63304, rva 0xbbb970).
-    /// `BSSpeedSamplerModifier * ctor(BSSpeedSamplerModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(63304, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSStepThread {

@@ -211,7 +211,10 @@ pub struct Actor {
     /// +0x268 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_268: [u8; 8],
-    unknown_270: [u8; 16],
+    unknown_270: [u8; 12],
+    /// +0x27C `u32`, semantic; bits 0-3 written each frame by the actor pre-cull: bit 0 tested against the portal graph, bit 1 not rejected by it, bit 2 fade amount >= 1e-5 (medium)
+    #[doc(hidden)]
+    pub __preCullState: [u8; 4],
     /// +0x280 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_280: [u8; 8],
@@ -282,6 +285,7 @@ const _: () = assert!(core::mem::offset_of!(Actor, __magickaModifiers) == 0x23C)
 const _: () = assert!(core::mem::offset_of!(Actor, __staminaModifiers) == 0x248);
 const _: () = assert!(core::mem::offset_of!(Actor, __voicePointsModifiers) == 0x254);
 const _: () = assert!(core::mem::offset_of!(Actor, __field_268) == 0x268);
+const _: () = assert!(core::mem::offset_of!(Actor, __preCullState) == 0x27C);
 const _: () = assert!(core::mem::offset_of!(Actor, __field_280) == 0x280);
 const _: () = assert!(core::mem::offset_of!(Actor, __field_288) == 0x288);
 const _: () = assert!(core::mem::offset_of!(Actor, __criticalSection) == 0x290);
@@ -771,7 +775,10 @@ pub struct Character {
     /// +0x279 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_279: [u8; 2],
-    unknown_27B: [u8; 5],
+    unknown_27B: [u8; 1],
+    /// +0x27C `u32`, base Actor, semantic; bits 0-3 written each frame by the actor pre-cull: bit 0 tested against the portal graph, bit 1 not rejected by it, bit 2 fade amount >= 1e-5 (medium)
+    #[doc(hidden)]
+    pub __preCullState: [u8; 4],
     /// +0x280 `undefined8`, base Actor
     #[doc(hidden)]
     pub __field_280: [u8; 8],
@@ -846,6 +853,7 @@ const _: () = assert!(core::mem::offset_of!(Character, __field_268) == 0x268);
 const _: () = assert!(core::mem::offset_of!(Character, __field_270) == 0x270);
 const _: () = assert!(core::mem::offset_of!(Character, __field_274) == 0x274);
 const _: () = assert!(core::mem::offset_of!(Character, __field_279) == 0x279);
+const _: () = assert!(core::mem::offset_of!(Character, __preCullState) == 0x27C);
 const _: () = assert!(core::mem::offset_of!(Character, __field_280) == 0x280);
 const _: () = assert!(core::mem::offset_of!(Character, __field_288) == 0x288);
 const _: () = assert!(core::mem::offset_of!(Character, __criticalSection) == 0x290);
@@ -1285,7 +1293,10 @@ pub struct PlayerCharacter {
     /// +0x279 `undefined2`, base Character
     #[doc(hidden)]
     pub __field_279: [u8; 2],
-    unknown_27B: [u8; 5],
+    unknown_27B: [u8; 1],
+    /// +0x27C `u32`, base Actor, semantic; bits 0-3 written each frame by the actor pre-cull: bit 0 tested against the portal graph, bit 1 not rejected by it, bit 2 fade amount >= 1e-5 (medium)
+    #[doc(hidden)]
+    pub __preCullState: [u8; 4],
     /// +0x280 `undefined8`, base Actor
     #[doc(hidden)]
     pub __field_280: [u8; 8],
@@ -2062,6 +2073,7 @@ const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_268) == 0x2
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_270) == 0x270);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_274) == 0x274);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_279) == 0x279);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __preCullState) == 0x27C);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_280) == 0x280);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_288) == 0x288);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __criticalSection) == 0x290);

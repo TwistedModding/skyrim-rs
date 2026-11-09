@@ -1354,7 +1354,11 @@ pub struct CachedRaycastData {
     /// +0x2C `undefined1`, semantic; when set the cast skips the phantom and bodies paths and uses the world (medium)
     #[doc(hidden)]
     pub __useWorldOnly: [u8; 1],
-    unknown_2D: [u8; 3],
+    unknown_2D: [u8; 1],
+    /// +0x2E `u8`, semantic (medium)
+    #[doc(hidden)]
+    pub __inUse: [u8; 1],
+    unknown_2F: [u8; 1],
     /// +0x30 `undefined1`, semantic; sticky: any cast hit (medium)
     #[doc(hidden)]
     pub __everHit: [u8; 1],
@@ -1370,6 +1374,7 @@ const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __collectedBodies
 const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __world) == 0x20);
 const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __collisionGroup) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __useWorldOnly) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __inUse) == 0x2E);
 const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __everHit) == 0x30);
 
 /// `Calendar`: size 0x40 (exact).
@@ -5481,7 +5486,19 @@ pub struct TESRace {
     pub __vftable_88: *const crate::raw::vtables::TESRace_vtable_88,
     /// +0x90 `undefined8`, base BGSAttackDataForm
     pub field_90: u64,
-    unknown_98: [u8; 160],
+    unknown_98: [u8; 96],
+    /// +0xF8 `float[2]`, semantic; male/female height (DATA+0x10) (high)
+    #[doc(hidden)]
+    pub __heights: [u8; 8],
+    unknown_100: [u8; 8],
+    /// +0x108 `u32`, semantic; race DATA flags (DATA+0x20); bit 15 gates head tracking (see flags); see the flag rows (medium)
+    #[doc(hidden)]
+    pub __dataFlags: [u8; 4],
+    unknown_10C: [u8; 28],
+    /// +0x128 `u32`, semantic; race size (DATA+0x40); 3 selects fAIMaxLargeCreatureHeadTrackDistance (medium)
+    #[doc(hidden)]
+    pub __size: [u8; 4],
+    unknown_12C: [u8; 12],
     /// +0x138 `i32`, semantic, runtime; the BipedAnim index used for the shield, the left-hand weapon and the left-hand light (race DATA +0x50; -1 before loading) (high)
     pub leftHandBipedIndex: u32,
     unknown_13C: [u8; 44],
@@ -5529,6 +5546,9 @@ const _: () = assert!(core::mem::offset_of!(TESRace, keywords) == 0x78);
 const _: () = assert!(core::mem::offset_of!(TESRace, numKeywords) == 0x80);
 const _: () = assert!(core::mem::offset_of!(TESRace, __vftable_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(TESRace, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(TESRace, __heights) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(TESRace, __dataFlags) == 0x108);
+const _: () = assert!(core::mem::offset_of!(TESRace, __size) == 0x128);
 const _: () = assert!(core::mem::offset_of!(TESRace, leftHandBipedIndex) == 0x138);
 const _: () = assert!(core::mem::offset_of!(TESRace, __field_168) == 0x168);
 const _: () = assert!(core::mem::offset_of!(TESRace, __field_170) == 0x170);
@@ -6792,33 +6812,35 @@ const _: () = assert!(core::mem::offset_of!(hkStridedVertices, striding) == 0xC)
 /// Evidence: per-leg runtime state of the driver; IC7 FS A (static-W); size: stride in 0xad42a0 and the run 0xad2300.
 #[repr(C, align(8))]
 pub struct hkbFootIkDriver__InternalLeg {
-    /// +0x0 `undefined16`, semantic; corrected ankle position (written when the pose has world-from-model weight) (medium)
+    /// +0x0 `class:hkVector4`, semantic; ankle world position with its height set to root height + groundHeight; only when alignWorldFromModelGain > 0 (high)
     #[doc(hidden)]
-    pub __ankleTargetMS: [u8; 16],
-    /// +0x10 `undefined16`, semantic; SolveFootIkLeg output (ground hit candidate) (low)
-    pub solverOut: [u8; 16],
-    /// +0x20 `pointer`, semantic; per-leg solver object (deleted through vtable slot 0 by 0xad42a0); +0x40 up vector written each frame, +0x50 normal-like vector (medium)
+    pub __groundPositionWS: [u8; 16],
+    /// +0x10 `class:hkVector4`, semantic; solver output +0: the ground normal used for the ankle (also kept in solver +0xa0) (high)
     #[doc(hidden)]
-    pub __legSolver: [u8; 8],
-    /// +0x28 `float`, semantic; solver output height; + info.verticalOffset (+0x2c) when +0x2c set (medium)
+    pub __groundNormalWS: [u8; 16],
+    /// +0x20 `ptr:hkaFootPlacementIkSolver`, semantic; the leg's solver (null for legs with an index < 0) (high)
+    #[doc(hidden)]
+    pub __solver: [u8; 8],
+    /// +0x28 `float`, semantic; vertical error of the leg (+ verticalOffset on a hit) (high)
     #[doc(hidden)]
     pub __groundHeight: [u8; 4],
-    /// +0x2C `u8`, semantic; the leg's ray hit (medium)
+    /// +0x2C `u8`, semantic; the leg's ray hit (high)
     #[doc(hidden)]
     pub __hit: [u8; 1],
-    /// +0x2D `u8`, semantic; ankle height below info leg footPlantedAnkleHeightMS (+0x30) (medium)
-    pub planted: u8,
+    /// +0x2D `u8`, semantic; original ankle height (model up) < footPlantedAnkleHeightMS (high)
+    #[doc(hidden)]
+    pub __isPlanted: [u8; 1],
     unknown_2E: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbFootIkDriver__InternalLeg>() == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, __ankleTargetMS) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, solverOut) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, __legSolver) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, __groundPositionWS) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, __groundNormalWS) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, __solver) == 0x20);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, __groundHeight) == 0x28);
 const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, __hit) == 0x2C);
-const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, planted) == 0x2D);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, __isPlanted) == 0x2D);
 
 /// `hkbFootIkDriverInfoLeg`: size 0x60 (exact).
 /// Meaning: per-leg foot IK data (toe point = footEndLS) (high, camera pass).
@@ -6885,7 +6907,7 @@ const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, __ankleIndex
 
 /// `hkbFootIkGains`: size 0x30 (exact).
 /// Meaning: foot IK gains (graph data of hkbFootIkControlsModifier); no engine INI feeds them (high, camera pass).
-/// Evidence: foot IK gains (graph data of hkbFootIkControlsModifier); no engine INI feeds them; IC7 FS A (static-W). Reflection member table 0x19c42b0. The [FootIK] INI gains are read only by the ragdoll path 0x10701d0.; size: reflection members to +0x2c.
+/// Evidence: foot IK gains (graph data of hkbFootIkControlsModifier); no engine INI feeds them; IC7 FS A (static-W). Reflection member table 0x19c42b0. The [FootIK] INI gains are read only by the ragdoll path 0x10701d0, which is unreachable in 1.7.104 (pass IK tracks D and E).; size: reflection members to +0x2c.
 #[repr(C, align(4))]
 pub struct hkbFootIkGains {
     /// +0x0 `float`, semantic; reflection (high)
@@ -8329,6 +8351,28 @@ impl TESObjectLIGH_flags {
     pub const SHADOW_OMNI: Self = Self(0x1000);
     /// Flag2000 (medium)
     pub const FLAG2000: Self = Self(0x2000);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `TESRace.dataFlags` (camera pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct TESRace_dataFlags(pub u32);
+
+impl TESRace_dataFlags {
+    /// alwaysAnimateVisible (medium)
+    pub const ALWAYS_ANIMATE_VISIBLE: Self = Self(0x80);
+    /// headTrackingRace (medium)
+    pub const HEAD_TRACKING_RACE: Self = Self(0x8000);
 
     #[must_use]
     pub const fn bits(self) -> u32 {

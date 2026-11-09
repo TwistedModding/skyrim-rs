@@ -120,16 +120,6 @@ impl crate::BGSExplosion {
     pub unsafe fn vfunc_6_sub2(param_1: *mut u64, param_2: i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(17010, (*mut u64, i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 }
 
-impl crate::BGSFootIkRaycastInterfaceDB {
-    /// `BGSFootIkRaycastInterfaceDB::GetRaycastInterface`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 32742, rva 0x54ac90).
-    /// `ulonglong GetRaycastInterface(BGSFootIkRaycastInterfaceDB * this, ulonglong param_1, ulonglong param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn get_raycast_interface(&self, param_1: u64, param_2: u64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
-}
-
 impl crate::BGSGamebryoSequenceGeneratorHolderSingleton {
     /// `BGSGamebryoSequenceGeneratorHolderSingleton::vfunc_1_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 32774, rva 0x54cad0).
     /// `undefined vfunc_1_sub0(undefined8 param_1, longlong param_2, longlong param_3, longlong * param_4)`

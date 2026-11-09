@@ -7,6 +7,314 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `WriteTopicInfoEntryToSave` at 0x5ed180 (decompiler, medium); signature (untiered): `undefined WriteTopicInfoEntryToSave(undefined8 * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+pub const WriteTopicInfoEntryToSave: u64 = 35250;
+/// `WriteTwoDwordTriplesAndDwordToStream` at 0xf45ad0 (decompiler, medium); signature (untiered): `undefined WriteTwoDwordTriplesAndDwordToStream(longlong param_1, longlong param_2)`
+pub const WriteTwoDwordTriplesAndDwordToStream: u64 = 72295;
+/// `WriteTwoDwordTriplesToStream` at 0xf4ea70 (decompiler, high); signature (high): `undefined WriteTwoDwordTriplesToStream(longlong param_1, longlong param_2)`
+pub const WriteTwoDwordTriplesToStream: u64 = 72339;
+/// `WriteTwoFlagBytesToSaveBuffer` at 0x95f8a0 (decompiler, medium); signature (untiered): `undefined WriteTwoFlagBytesToSaveBuffer(longlong param_1, longlong param_2)`
+pub const WriteTwoFlagBytesToSaveBuffer: u64 = 52213;
+/// `WriteTwoUInt32ToStream` at 0xeecd50 (decompiler, medium); signature (untiered): `undefined WriteTwoUInt32ToStream(longlong param_1, longlong param_2)`
+pub const WriteTwoUInt32ToStream: u64 = 70557;
+/// `WriteTypedEntriesToSave` at 0x532a80 (decompiler, medium); signature (untiered): `undefined WriteTypedEntriesToSave(void * param_1, longlong param_2)`
+pub const WriteTypedEntriesToSave: u64 = 32339;
+/// `WriteU32ToBoolMapEntriesToStream` at 0x9c9ff0 (decompiler, medium); signature (untiered): `undefined WriteU32ToBoolMapEntriesToStream(longlong param_1, char * param_2)`
+pub const WriteU32ToBoolMapEntriesToStream: u64 = 53729;
+/// `WriteUInt16` at 0x9bb300 (decompiler, high); signature (untiered): `undefined WriteUInt16(longlong * param_1, ushort param_2)`
+pub const WriteUInt16: u64 = 53533;
+/// `WriteUInt16AtOffsetD8` at 0xe7f370 (decompiler, medium); signature (untiered): `undefined WriteUInt16AtOffsetD8(longlong param_1, undefined4 param_2)`
+pub const WriteUInt16AtOffsetD8: u64 = 89816;
+/// `WriteUInt16ToBufferWithOptionalByteSwap` at 0x4e4260 (decompiler, medium); signature (medium): `undefined8 WriteUInt16ToBufferWithOptionalByteSwap(longlong param_1, ushort param_2)`
+pub const WriteUInt16ToBufferWithOptionalByteSwap: u64 = 30918;
+/// `WriteUInt16ToBufferWithOptionalByteSwap_2` at 0x4e42d0 (decompiler, medium); signature (medium): `undefined8 WriteUInt16ToBufferWithOptionalByteSwap_2(longlong param_1, ushort param_2)`
+pub const WriteUInt16ToBufferWithOptionalByteSwap_2: u64 = 30919;
+/// `WriteUInt16ToTextStream` at 0xaaf080 (decompiler, medium); signature (untiered): `longlong WriteUInt16ToTextStream(longlong param_1, ushort param_2)`
+pub const WriteUInt16ToTextStream: u64 = 57520;
+/// `WriteUInt16_2` at 0xab7970 (decompiler, medium); signature (untiered): `undefined WriteUInt16_2(undefined8 param_1, undefined2 param_2)`
+pub const WriteUInt16_2: u64 = 57829;
+/// `WriteUInt32` at 0x9b0ce0 (decompiler, high); signature (untiered): `undefined WriteUInt32(longlong * param_1, uint param_2)`
+pub const WriteUInt32: u64 = 53381;
+/// `WriteUInt32ToBufferWithOptionalByteSwap` at 0x4e4340 (decompiler, medium); signature (medium): `undefined8 WriteUInt32ToBufferWithOptionalByteSwap(longlong param_1, uint param_2)`
+pub const WriteUInt32ToBufferWithOptionalByteSwap: u64 = 30920;
+/// `WriteUInt32ToBufferWithOptionalByteSwap_2` at 0x4e43a0 (decompiler, medium); signature (medium): `undefined8 WriteUInt32ToBufferWithOptionalByteSwap_2(longlong param_1, uint param_2)`
+pub const WriteUInt32ToBufferWithOptionalByteSwap_2: u64 = 30921;
+/// `WriteUInt32ToBufferWithOptionalByteSwap_3` at 0x4e4550 (decompiler, medium); signature (medium): `undefined8 WriteUInt32ToBufferWithOptionalByteSwap_3(longlong param_1, uint param_2)`
+pub const WriteUInt32ToBufferWithOptionalByteSwap_3: u64 = 30925;
+/// `WriteUInt32ToPagedBytesAt` at 0xe7f4f0 (decompiler, high); signature (high): `undefined WriteUInt32ToPagedBytesAt(longlong * param_1, uint param_2, undefined4 param_3)`
+pub const WriteUInt32ToPagedBytesAt: u64 = 89818;
+/// `WriteUInt32_2` at 0xab79d0 (decompiler, medium); signature (medium): `undefined WriteUInt32_2(undefined8 param_1, undefined4 param_2)`
+pub const WriteUInt32_2: u64 = 57831;
+/// `WriteUInt32_3` at 0xab7a00 (decompiler, medium); signature (medium): `undefined WriteUInt32_3(longlong param_1, undefined4 param_2)`
+pub const WriteUInt32_3: u64 = 57832;
+/// `WriteUInt32_4` at 0x9ebe60 (decompiler, high); signature (high): `undefined WriteUInt32_4(longlong * param_1, uint param_2)`
+pub const WriteUInt32_4: u64 = 54104;
+/// `WriteUInt64` at 0x1491d90 (decompiler, high); signature (untiered): `undefined WriteUInt64(longlong * param_1, ulonglong param_2)`
+pub const WriteUInt64: u64 = 104298;
+/// `WriteUInt64ToBufferWithOptionalByteSwap` at 0x4e4400 (decompiler, medium); signature (medium): `undefined8 WriteUInt64ToBufferWithOptionalByteSwap(longlong param_1, ulonglong param_2)`
+pub const WriteUInt64ToBufferWithOptionalByteSwap: u64 = 30922;
+/// `WriteUInt64ToBufferWithOptionalByteSwap_2` at 0x4e4470 (decompiler, medium); signature (medium): `undefined8 WriteUInt64ToBufferWithOptionalByteSwap_2(longlong param_1, ulonglong param_2)`
+pub const WriteUInt64ToBufferWithOptionalByteSwap_2: u64 = 30923;
+/// `WriteUInt64ToTextStream` at 0xaaf220 (decompiler, medium); signature (untiered): `longlong WriteUInt64ToTextStream(longlong param_1, undefined8 param_2)`
+pub const WriteUInt64ToTextStream: u64 = 57525;
+/// `WriteUIntDigitsBackward` at 0xd742c0 (decompiler, medium); signature (untiered): `undefined WriteUIntDigitsBackward(longlong param_1, longlong param_2, uint param_3, char param_4, uint param_5)`
+pub const WriteUIntDigitsBackward: u64 = 84898;
+/// `WriteUnknownString` at 0xdd4b50 (decompiler, medium); signature (untiered): `undefined8 * WriteUnknownString(undefined8 param_1, undefined8 * param_2)`
+pub const WriteUnknownString: u64 = 86797;
+/// `WriteUnsignedDigitsBackward` at 0xd74370 (decompiler, medium); signature (untiered): `undefined WriteUnsignedDigitsBackward(longlong param_1, longlong param_2, ulonglong param_3, char param_4, uint param_5)`
+pub const WriteUnsignedDigitsBackward: u64 = 84899;
+/// `WriteUpdateCollectionRequestJson` at 0x136d180 (decompiler, medium); signature (untiered): `undefined WriteUpdateCollectionRequestJson(longlong param_1, longlong param_2, void * param_3, undefined8 param_4)`
+pub const WriteUpdateCollectionRequestJson: u64 = 526764;
+/// `WriteUpdateContentRequestJson` at 0x136e1f0 (decompiler, medium); signature (untiered): `undefined WriteUpdateContentRequestJson(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+pub const WriteUpdateContentRequestJson: u64 = 526774;
+/// `WriteUtf8CharBackward` at 0xd70b50 (decompiler, medium); signature (medium): `ulonglong WriteUtf8CharBackward(ulonglong param_1, ulonglong param_2, uint param_3)`
+pub const WriteUtf8CharBackward: u64 = 84838;
+/// `WriteValueBySizeCode` at 0x6141e0 (decompiler, medium); signature (medium): `undefined WriteValueBySizeCode(longlong param_1, undefined4 param_2, int param_3)`
+pub const WriteValueBySizeCode: u64 = 35524;
+/// `WriteValueBySizeCode_2` at 0x614260 (decompiler, high); signature (high): `undefined WriteValueBySizeCode_2(undefined4 * param_1, undefined4 param_2, int param_3)`
+pub const WriteValueBySizeCode_2: u64 = 35525;
+/// `WriteVarLengthUInt` at 0x639cd0 (decompiler, medium); signature (medium): `undefined WriteVarLengthUInt(longlong param_1, uint param_2)`
+pub const WriteVarLengthUInt: u64 = 36051;
+/// `WriteVarLengthUIntAt` at 0x639de0 (decompiler, medium); signature (untiered): `undefined WriteVarLengthUIntAt(longlong param_1, uint param_2, ulonglong param_3, undefined8 param_4)`
+pub const WriteVarLengthUIntAt: u64 = 36052;
+/// `WriteVarUIntToPagedBytes` at 0xe80c30 (decompiler, medium); signature (untiered): `undefined8 WriteVarUIntToPagedBytes(undefined8 * param_1, uint param_2)`
+pub const WriteVarUIntToPagedBytes: u64 = 89825;
+/// `WriteVariable` at 0x1490c60 (decompiler, medium); signature (untiered): `undefined8 WriteVariable(ulonglong * param_1, longlong * param_2, longlong * param_3, undefined8 param_4)`
+pub const WriteVariable: u64 = 104293;
+/// `WriteVariantMapEntries` at 0x148c4b0 (decompiler, medium); signature (untiered): `undefined8 WriteVariantMapEntries(ushort * param_1, undefined8 * param_2, uint * param_3, undefined8 param_4)`
+pub const WriteVariantMapEntries: u64 = 104210;
+/// `WriteVariantValue` at 0x148bb00 (decompiler, medium); signature (untiered): `undefined WriteVariantValue(undefined8 * param_1, short * param_2, undefined8 param_3, undefined8 param_4)`
+pub const WriteVariantValue: u64 = 104203;
+/// `WriteVec3AndForm` at 0x2a1070 (decompiler, medium); signature (untiered): `undefined WriteVec3AndForm(void * param_1, longlong param_2)`
+pub const WriteVec3AndForm: u64 = 18521;
+/// `WriteVec3FormAndFloat18` at 0x855910 (decompiler, medium); signature (untiered): `undefined WriteVec3FormAndFloat18(void * param_1, longlong param_2)`
+pub const WriteVec3FormAndFloat18: u64 = 46935;
+/// `WriteVec3QuatVec3ArrayToStream` at 0x10c2e60 (decompiler, medium); signature (untiered): `undefined WriteVec3QuatVec3ArrayToStream(longlong * param_1, longlong param_2)`
+pub const WriteVec3QuatVec3ArrayToStream: u64 = 80036;
+/// `WriteVec3QuatVec3ToStream` at 0x1094d30 (decompiler, medium); signature (untiered): `undefined WriteVec3QuatVec3ToStream(longlong param_1, longlong param_2)`
+pub const WriteVec3QuatVec3ToStream: u64 = 79312;
+/// `WriteVertexShaderCacheFile` at 0x1013230 (decompiler, medium); signature (untiered): `undefined WriteVertexShaderCacheFile(undefined8 param_1, undefined8 param_2, LPCVOID param_3)`
+pub const WriteVertexShaderCacheFile: u64 = 77408;
+/// `WriteWinHttpRequestBody` at 0x1343910 (decompiler, medium); signature (untiered): `longlong WriteWinHttpRequestBody(longlong * param_1)`
+pub const WriteWinHttpRequestBody: u64 = 447334;
+/// `WriteXmlArrayElements` at 0xc71ce0 (decompiler, medium); signature (untiered): `undefined WriteXmlArrayElements(undefined8 * param_1, undefined8 * param_2, ulonglong param_3, undefined8 param_4)`
+pub const WriteXmlArrayElements: u64 = 66486;
+/// `WriteXmlFloatArray` at 0xc72790 (decompiler, medium); signature (untiered): `undefined WriteXmlFloatArray(longlong param_1, longlong param_2, ulonglong param_3, undefined8 param_4)`
+pub const WriteXmlFloatArray: u64 = 66491;
+/// `WriteXmlFloatValue` at 0xc72390 (decompiler, medium); signature (untiered): `undefined WriteXmlFloatValue(longlong param_1, longlong param_2, uint param_3, undefined8 param_4)`
+pub const WriteXmlFloatValue: u64 = 66489;
+/// `WriteXmlMemberValue` at 0xc6ffb0 (decompiler, medium); signature (untiered): `undefined WriteXmlMemberValue(longlong * param_1, undefined8 * param_2, longlong param_3)`
+pub const WriteXmlMemberValue: u64 = 66434;
+/// `WriteZeroBytes` at 0xb31ef0 (decompiler, medium); signature (untiered): `undefined4 WriteZeroBytes(longlong param_1, uint param_2)`
+pub const WriteZeroBytes: u64 = 60204;
+/// `WriteZeroPaddingToAlignment` at 0xb31a30 (decompiler, medium); signature (medium): `undefined WriteZeroPaddingToAlignment(longlong * param_1, uint param_2)`
+pub const WriteZeroPaddingToAlignment: u64 = 60199;
+/// `WriteZigZagVarInt64` at 0xc6d4a0 (decompiler, medium); signature (medium): `undefined WriteZigZagVarInt64(longlong param_1, longlong param_2)`
+pub const WriteZigZagVarInt64: u64 = 66397;
+/// `Wscanf` at 0x15aa7e0 (decompiler, high); signature (untiered): `undefined Wscanf(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const Wscanf: u64 = 109859;
+/// `WscanfS` at 0x15aa884 (decompiler, medium); signature (untiered): `undefined WscanfS(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const WscanfS: u64 = 109861;
+/// `WscanfSWithLocale` at 0x15aa830 (decompiler, medium); signature (untiered): `undefined WscanfSWithLocale(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const WscanfSWithLocale: u64 = 109860;
+/// `WscanfWithLocale` at 0x15aa790 (decompiler, high); signature (untiered): `undefined WscanfWithLocale(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const WscanfWithLocale: u64 = 109858;
+/// `Zero128Bytes` at 0x115e790 (decompiler, high); signature (high): `undefined Zero128Bytes(undefined8 * param_1)`
+pub const Zero128Bytes: u64 = 81998;
+/// `ZeroArrayElements12` at 0x1593bb0 (decompiler, high); signature (high): `undefined ZeroArrayElements12(longlong param_1, ulonglong param_2, uint param_3)`
+pub const ZeroArrayElements12: u64 = 527790;
+/// `ZeroArrayElements16` at 0x15740d0 (decompiler, high); signature (high): `undefined ZeroArrayElements16(longlong param_1, ulonglong param_2, uint param_3)`
+pub const ZeroArrayElements16: u64 = 108232;
+/// `ZeroArrayElements16Range` at 0x9d53e0 (decompiler, medium); signature (medium): `undefined ZeroArrayElements16Range(longlong param_1, ulonglong param_2, uint param_3)`
+pub const ZeroArrayElements16Range: u64 = 53910;
+/// `ZeroArrayEntries16` at 0x76a6e0 (decompiler, medium); signature (medium): `undefined ZeroArrayEntries16(int * param_1, ulonglong param_2, uint param_3)`
+pub const ZeroArrayEntries16: u64 = 41000;
+/// `ZeroArrayEntriesQwordDword` at 0x1272400 (decompiler, medium); signature (medium): `undefined ZeroArrayEntriesQwordDword(longlong * param_1, ulonglong param_2, uint param_3)`
+pub const ZeroArrayEntriesQwordDword: u64 = 93486;
+/// `ZeroArrayEntriesTwoQwords` at 0x1272440 (decompiler, medium); signature (medium): `undefined ZeroArrayEntriesTwoQwords(longlong * param_1, ulonglong param_2, uint param_3)`
+pub const ZeroArrayEntriesTwoQwords: u64 = 419389;
+/// `ZeroArrayEntriesTwoQwords_2` at 0x1272480 (decompiler, medium); signature (medium): `undefined ZeroArrayEntriesTwoQwords_2(longlong * param_1, ulonglong param_2, uint param_3)`
+pub const ZeroArrayEntriesTwoQwords_2: u64 = 443737;
+/// `ZeroArrayRange16` at 0x14ae980 (decompiler, high); signature (high): `undefined ZeroArrayRange16(longlong param_1, ulonglong param_2, uint param_3)`
+pub const ZeroArrayRange16: u64 = 104745;
+/// `ZeroArrayRange16_2` at 0x29cef0 (decompiler, high); signature (high): `undefined ZeroArrayRange16_2(longlong * param_1, ulonglong param_2, uint param_3)`
+pub const ZeroArrayRange16_2: u64 = 18427;
+/// `ZeroArrayRange16_3` at 0x48d0c0 (decompiler, medium); signature (medium): `undefined ZeroArrayRange16_3(longlong * param_1, ulonglong param_2, uint param_3)`
+pub const ZeroArrayRange16_3: u64 = 29292;
+/// `ZeroArrayRange16_4` at 0x62e660 (decompiler, high); signature (high): `undefined ZeroArrayRange16_4(longlong * param_1, ulonglong param_2, uint param_3)`
+pub const ZeroArrayRange16_4: u64 = 442608;
+/// `ZeroEightQwords` at 0x3aee50 (decompiler, high); signature (high): `undefined8 * ZeroEightQwords(undefined8 * param_1)`
+pub const ZeroEightQwords: u64 = 24347;
+/// `ZeroEntriesInRange` at 0x121d510 (decompiler, medium); signature (untiered): `undefined ZeroEntriesInRange(int * param_1, ulonglong param_2, uint param_3)`
+pub const ZeroEntriesInRange: u64 = 524290;
+/// `ZeroEntryFields14And1CInRange` at 0x860e70 (decompiler, medium); signature (medium): `undefined ZeroEntryFields14And1CInRange(longlong * param_1, ulonglong param_2, uint param_3)`
+pub const ZeroEntryFields14And1CInRange: u64 = 523981;
+/// `ZeroEntryRange24` at 0x93c860 (decompiler, medium); signature (medium): `undefined ZeroEntryRange24(longlong * param_1, ulonglong param_2, uint param_3)`
+pub const ZeroEntryRange24: u64 = 51729;
+/// `ZeroField0` at 0xf5d440 (decompiler, high); signature (high): `undefined8 * ZeroField0(undefined8 * param_1)`
+pub const ZeroField0: u64 = 72561;
+/// `ZeroField8OfListItemsAt10` at 0x341a60 (decompiler, high); signature (high): `undefined ZeroField8OfListItemsAt10(longlong param_1)`
+pub const ZeroField8OfListItemsAt10: u64 = 21852;
+/// `ZeroFields0And8And10` at 0x3ddc50 (decompiler, high); signature (untiered): `undefined8 * ZeroFields0And8And10(undefined8 * param_1)`
+pub const ZeroFields0And8And10: u64 = 25132;
+/// `ZeroFields0And8And10_2` at 0xcf22b0 (decompiler, high); signature (high): `undefined8 * ZeroFields0And8And10_2(undefined8 * param_1)`
+pub const ZeroFields0And8And10_2: u64 = 68579;
+/// `ZeroFields0And8And10_3` at 0xcf22e0 (decompiler, high); signature (high): `undefined8 * ZeroFields0And8And10_3(undefined8 * param_1)`
+pub const ZeroFields0And8And10_3: u64 = 68580;
+/// `ZeroFields0To14AndInitField18` at 0x10dc70 (decompiler, medium); signature (untiered): `undefined8 * ZeroFields0To14AndInitField18(undefined8 * param_1)`
+pub const ZeroFields0To14AndInitField18: u64 = 523002;
+/// `ZeroFields0To14AndInitField18_2` at 0x10f640 (decompiler, medium); signature (untiered): `undefined8 * ZeroFields0To14AndInitField18_2(undefined8 * param_1)`
+pub const ZeroFields0To14AndInitField18_2: u64 = 523012;
+/// `ZeroFields0To14AndInitField18_3` at 0x11a7c0 (decompiler, medium); signature (untiered): `undefined8 * ZeroFields0To14AndInitField18_3(undefined8 * param_1)`
+pub const ZeroFields0To14AndInitField18_3: u64 = 523135;
+/// `ZeroFields0To14AndInitField18_4` at 0x11af40 (decompiler, medium); signature (untiered): `undefined8 * ZeroFields0To14AndInitField18_4(undefined8 * param_1)`
+pub const ZeroFields0To14AndInitField18_4: u64 = 523145;
+/// `ZeroFields8To0x48` at 0xf07490 (decompiler, high); signature (untiered): `longlong ZeroFields8To0x48(longlong param_1)`
+pub const ZeroFields8To0x48: u64 = 71132;
+/// `ZeroFill12ByteEntries` at 0x4c07c0 (decompiler, high); signature (high): `undefined ZeroFill12ByteEntries(longlong * param_1, ulonglong param_2, uint param_3)`
+pub const ZeroFill12ByteEntries: u64 = 523573;
+/// `ZeroFiveQwords` at 0x3419f0 (decompiler, high); signature (high): `undefined8 * ZeroFiveQwords(undefined8 * param_1)`
+pub const ZeroFiveQwords: u64 = 21850;
+/// `ZeroFourInt32s` at 0xcb88f0 (decompiler, high); signature (high): `undefined ZeroFourInt32s(undefined4 * param_1)`
+pub const ZeroFourInt32s: u64 = 67335;
+/// `ZeroInit` at 0x637370 (decompiler, high); signature (untiered): `undefined8 * ZeroInit(undefined8 * param_1)`
+pub const ZeroInit: u64 = 35984;
+/// `ZeroInit16Bytes` at 0x11016f0 (decompiler, medium); signature (medium): `undefined8 * ZeroInit16Bytes(undefined8 * param_1)`
+pub const ZeroInit16Bytes: u64 = 80987;
+/// `ZeroInit24Bytes` at 0x268110 (decompiler, high); signature (untiered): `undefined8 * ZeroInit24Bytes(undefined8 * param_1)`
+pub const ZeroInit24Bytes: u64 = 17217;
+/// `ZeroInit24Bytes_2` at 0xad18a0 (decompiler, high); signature (high): `undefined8 * ZeroInit24Bytes_2(undefined8 * param_1)`
+pub const ZeroInit24Bytes_2: u64 = 58388;
+/// `ZeroInit24Bytes_3` at 0xba7550 (decompiler, high); signature (high): `undefined8 * ZeroInit24Bytes_3(undefined8 * param_1)`
+pub const ZeroInit24Bytes_3: u64 = 62793;
+/// `ZeroInit38ByteStruct` at 0x4a6630 (decompiler, medium); signature (untiered): `undefined8 * ZeroInit38ByteStruct(undefined8 * param_1)`
+pub const ZeroInit38ByteStruct: u64 = 29870;
+/// `ZeroInit40ByteRecord` at 0x8ce5c0 (decompiler, medium); signature (untiered): `undefined4 * ZeroInit40ByteRecord(undefined4 * param_1)`
+pub const ZeroInit40ByteRecord: u64 = 523988;
+/// `ZeroInit88Bytes` at 0x1218830 (decompiler, high); signature (untiered): `undefined8 * ZeroInit88Bytes(undefined8 * param_1)`
+pub const ZeroInit88Bytes: u64 = 524288;
+/// `ZeroInitArrayElementsQwordDword` at 0x76a720 (decompiler, high); signature (high): `undefined ZeroInitArrayElementsQwordDword(longlong * param_1, ulonglong param_2, uint param_3)`
+pub const ZeroInitArrayElementsQwordDword: u64 = 41001;
+/// `ZeroInitArrayElementsQwordPair` at 0x76a760 (decompiler, high); signature (high): `undefined ZeroInitArrayElementsQwordPair(longlong * param_1, ulonglong param_2, uint param_3)`
+pub const ZeroInitArrayElementsQwordPair: u64 = 41002;
+/// `ZeroInitElementRange20` at 0x644140 (decompiler, high); signature (high): `undefined ZeroInitElementRange20(longlong * param_1, ulonglong param_2, uint param_3)`
+pub const ZeroInitElementRange20: u64 = 36235;
+/// `ZeroInitElementRange28` at 0x6410a0 (decompiler, medium); signature (medium): `undefined ZeroInitElementRange28(longlong * param_1, ulonglong param_2, uint param_3)`
+pub const ZeroInitElementRange28: u64 = 36196;
+/// `ZeroInitEntries12` at 0x822ce0 (decompiler, high); signature (high): `undefined ZeroInitEntries12(longlong * param_1, ulonglong param_2, uint param_3)`
+pub const ZeroInitEntries12: u64 = 44826;
+/// `ZeroInitEntries18Range` at 0x4e7590 (decompiler, high); signature (high): `undefined ZeroInitEntries18Range(longlong * param_1, ulonglong param_2, uint param_3)`
+pub const ZeroInitEntries18Range: u64 = 523575;
+/// `ZeroInitEntries38Range` at 0x11c6990 (decompiler, medium); signature (medium): `undefined ZeroInitEntries38Range(longlong param_1, ulonglong param_2, uint param_3)`
+pub const ZeroInitEntries38Range: u64 = 524282;
+/// `ZeroInitEntry` at 0x116f410 (decompiler, medium); signature (untiered): `undefined8 * ZeroInitEntry(undefined8 * param_1)`
+pub const ZeroInitEntry: u64 = 443438;
+/// `ZeroInitFields0And10` at 0x10bed0 (decompiler, medium); signature (untiered): `undefined8 * ZeroInitFields0And10(undefined8 * param_1)`
+pub const ZeroInitFields0And10: u64 = 439822;
+/// `ZeroInitFields0And10_2` at 0x10d940 (decompiler, medium); signature (untiered): `undefined8 * ZeroInitFields0And10_2(undefined8 * param_1)`
+pub const ZeroInitFields0And10_2: u64 = 522991;
+/// `ZeroInitFields0And10_3` at 0x1116c0 (decompiler, medium); signature (untiered): `undefined8 * ZeroInitFields0And10_3(undefined8 * param_1)`
+pub const ZeroInitFields0And10_3: u64 = 523034;
+/// `ZeroInitFields0And10_4` at 0x1119f0 (decompiler, medium); signature (untiered): `undefined8 * ZeroInitFields0And10_4(undefined8 * param_1)`
+pub const ZeroInitFields0And10_4: u64 = 523041;
+/// `ZeroInitFields0And10_5` at 0x11a3d0 (decompiler, medium); signature (untiered): `undefined8 * ZeroInitFields0And10_5(undefined8 * param_1)`
+pub const ZeroInitFields0And10_5: u64 = 523126;
+/// `ZeroInitFields0And10_6` at 0x11a510 (decompiler, medium); signature (untiered): `undefined8 * ZeroInitFields0And10_6(undefined8 * param_1)`
+pub const ZeroInitFields0And10_6: u64 = 523129;
+/// `ZeroInitFields0And8And10` at 0x31d250 (decompiler, medium); signature (medium): `undefined8 * ZeroInitFields0And8And10(undefined8 * param_1)`
+pub const ZeroInitFields0And8And10: u64 = 20815;
+/// `ZeroInitFields0And8And10_2` at 0x3252b0 (decompiler, medium); signature (medium): `undefined8 * ZeroInitFields0And8And10_2(undefined8 * param_1)`
+pub const ZeroInitFields0And8And10_2: u64 = 21043;
+/// `ZeroInitFields0And8And10_3` at 0x3eaef0 (decompiler, medium); signature (medium): `undefined8 * ZeroInitFields0And8And10_3(undefined8 * param_1)`
+pub const ZeroInitFields0And8And10_3: u64 = 25416;
+/// `ZeroInitFields0And8And10_4` at 0x11de870 (decompiler, medium); signature (medium): `undefined8 * ZeroInitFields0And8And10_4(undefined8 * param_1)`
+pub const ZeroInitFields0And8And10_4: u64 = 91054;
+/// `ZeroInitFields0Through20` at 0x148340 (decompiler, medium); signature (medium): `undefined8 * ZeroInitFields0Through20(undefined8 * param_1)`
+pub const ZeroInitFields0Through20: u64 = 10999;
+/// `ZeroInitFields0To32` at 0xe75ec0 (decompiler, high); signature (untiered): `undefined8 * ZeroInitFields0To32(undefined8 * param_1)`
+pub const ZeroInitFields0To32: u64 = 89322;
+/// `ZeroInitPair` at 0xd06980 (decompiler, high); signature (untiered): `undefined8 * ZeroInitPair(undefined8 * param_1)`
+pub const ZeroInitPair: u64 = 82760;
+/// `ZeroInitPointer` at 0xaa76c0 (decompiler, high); signature (high): `undefined8 * ZeroInitPointer(undefined8 * param_1)`
+pub const ZeroInitPointer: u64 = 57224;
+/// `ZeroInitPtrPtrDword` at 0x227ed0 (decompiler, high); signature (high): `undefined8 * ZeroInitPtrPtrDword(undefined8 * param_1)`
+pub const ZeroInitPtrPtrDword: u64 = 15981;
+/// `ZeroInitRange16ByteEntries` at 0x39a750 (decompiler, high); signature (high): `undefined ZeroInitRange16ByteEntries(longlong * param_1, ulonglong param_2, uint param_3)`
+pub const ZeroInitRange16ByteEntries: u64 = 23906;
+/// `ZeroInitRangeOfEntries20` at 0x8e78d0 (decompiler, medium); signature (untiered): `undefined ZeroInitRangeOfEntries20(longlong * param_1, ulonglong param_2, uint param_3)`
+pub const ZeroInitRangeOfEntries20: u64 = 523991;
+/// `ZeroInitRangeOfEntries40` at 0x8e7890 (decompiler, medium); signature (untiered): `undefined ZeroInitRangeOfEntries40(longlong * param_1, ulonglong param_2, uint param_3)`
+pub const ZeroInitRangeOfEntries40: u64 = 523990;
+/// `ZeroInitStride10ArrayRange` at 0x7b68e0 (decompiler, high); signature (high): `undefined ZeroInitStride10ArrayRange(longlong param_1, ulonglong param_2, uint param_3)`
+pub const ZeroInitStride10ArrayRange: u64 = 523974;
+/// `ZeroInitStruct28` at 0x387490 (decompiler, medium); signature (untiered): `undefined4 * ZeroInitStruct28(undefined4 * param_1)`
+pub const ZeroInitStruct28: u64 = 23341;
+/// `ZeroInitStruct38` at 0x4a67c0 (decompiler, high); signature (untiered): `undefined ZeroInitStruct38(undefined8 * param_1)`
+pub const ZeroInitStruct38: u64 = 29873;
+/// `ZeroInitStruct48` at 0x5ec460 (decompiler, high); signature (high): `undefined4 * ZeroInitStruct48(undefined4 * param_1)`
+pub const ZeroInitStruct48: u64 = 35219;
+/// `ZeroInitThreeQwords` at 0xac1e40 (decompiler, high); signature (high): `undefined8 * ZeroInitThreeQwords(undefined8 * param_1)`
+pub const ZeroInitThreeQwords: u64 = 58116;
+/// `ZeroInit_2` at 0x434e70 (decompiler, high); signature (untiered): `undefined4 * ZeroInit_2(undefined4 * param_1)`
+pub const ZeroInit_2: u64 = 26872;
+/// `ZeroMemoryIn16ByteBlocks` at 0xaa5fa0 (decompiler, medium); signature (medium): `undefined ZeroMemoryIn16ByteBlocks(undefined4 * param_1, int param_2)`
+pub const ZeroMemoryIn16ByteBlocks: u64 = 57151;
+/// `ZeroOverheadHeap::ctor` at 0xce8b70 (layout_inference, high); signature (low): `ZeroOverheadHeap * ctor(ZeroOverheadHeap * this, SIZE_T param_1, undefined8 param_2)`
+pub const ZeroOverheadHeap__ctor: u64 = 68380;
+/// `ZeroOverheadHeap::ctor` at 0xce8c20 (layout_inference, medium); signature (high): `undefined ctor(ZeroOverheadHeap * this)`
+pub const ZeroOverheadHeap__ctor_2: u64 = 68381;
+/// `ZeroOverheadHeap::ctor` at 0xce9050 (layout_inference, medium); signature (high): `undefined ctor(ZeroOverheadHeap * this)`
+pub const ZeroOverheadHeap__ctor_3: u64 = 68395;
+/// `ZeroOverheadHeap::vdtor` at 0xce9140 (layout_inference, medium); signature (low): `ZeroOverheadHeap * vdtor(ZeroOverheadHeap * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const ZeroOverheadHeap__vdtor: u64 = 68399;
+/// `ZeroOverheadHeap::vfunc_1` at 0xce8cd0 (rtti, medium); signature (low): `longlong vfunc_1(ZeroOverheadHeap * this, longlong param_1)`
+pub const ZeroOverheadHeap__vfunc_1: u64 = 68386;
+/// `ZeroOverheadHeap::vfunc_10` at 0xce8ca0 (rtti, medium); signature (low): `ulonglong vfunc_10(ZeroOverheadHeap * this, ulonglong param_1)`
+pub const ZeroOverheadHeap__vfunc_10: u64 = 68385;
+/// `ZeroOverheadHeap::vfunc_11` at 0xce8ce0 (rtti, medium); signature (high): `longlong vfunc_11(ZeroOverheadHeap * this)`
+pub const ZeroOverheadHeap__vfunc_11: u64 = 68387;
+/// `ZeroOverheadHeap::vfunc_12` at 0xce8d10 (rtti, medium); signature (low): `undefined vfunc_12(ZeroOverheadHeap * this, undefined8 * param_1)`
+pub const ZeroOverheadHeap__vfunc_12: u64 = 68389;
+/// `ZeroOverheadHeap::vfunc_13` at 0xce8e00 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
+pub const ZeroOverheadHeap__vfunc_13: u64 = 68391;
+/// `ZeroOverheadHeap::vfunc_14` at 0xce8d00 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+pub const ZeroOverheadHeap__vfunc_14: u64 = 68388;
+/// `ZeroOverheadHeap::vfunc_2` at 0xce8da0 (rtti, medium); signature (low): `undefined vfunc_2(ZeroOverheadHeap * this, undefined8 * param_1)`
+pub const ZeroOverheadHeap__vfunc_2: u64 = 68390;
+/// `ZeroOverheadHeap::vfunc_3` at 0xce8f60 (rtti, medium); signature (low): `ulonglong vfunc_3(ZeroOverheadHeap * this, ulonglong param_1)`
+pub const ZeroOverheadHeap__vfunc_3: u64 = 68393;
+/// `ZeroOverheadHeap::vfunc_4` at 0xce8e10 (rtti, medium); signature (low): `ulonglong vfunc_4(ZeroOverheadHeap * this, longlong param_1, int param_2)`
+pub const ZeroOverheadHeap__vfunc_4: u64 = 68392;
+/// `ZeroOverheadHeap::vfunc_7` at 0xce8c60 (rtti, medium); signature (high): `undefined8 vfunc_7(ZeroOverheadHeap * this)`
+pub const ZeroOverheadHeap__vfunc_7: u64 = 68382;
+/// `ZeroOverheadHeap::vfunc_8` at 0xce8c70 (rtti, medium); signature (low): `undefined vfunc_8(ZeroOverheadHeap * this, undefined8 param_1)`
+pub const ZeroOverheadHeap__vfunc_8: u64 = 68383;
+/// `ZeroOverheadHeap::vfunc_9` at 0xce8c90 (rtti, medium); signature (low): `undefined vfunc_9(void)`
+pub const ZeroOverheadHeap__vfunc_9: u64 = 68384;
+/// `ZeroPitchHandler::Handle` at 0x7cf480 (semantic, high); signature (untiered): `undefined1 Handle(void)`; semantic: animation event handler: PlayerCamera::SetPitchZero(camera, true) (starts the pitch-to-zero blend, PlayerCamera +0x158/+0x15c/+0x164); returns true (high); signature `bool (ZeroPitchHandler* this, Actor* actor)`
+pub const ZeroPitchHandler__Handle: u64 = 42901;
+/// `ZeroPitchHandler::Handle` as a function pointer type (high).
+pub type ZeroPitchHandler__Handle_fn = unsafe extern "C" fn(this: *mut crate::ZeroPitchHandler, actor: *mut crate::Actor) -> bool;
+/// `ZeroPitchHandler::vdtor` at 0x7d4870 (layout_inference, medium); signature (low): `ZeroPitchHandler * vdtor(ZeroPitchHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const ZeroPitchHandler__vdtor: u64 = 43375;
+/// `ZeroPointedDword` at 0x1c6210 (decompiler, high); signature (high): `undefined ZeroPointedDword(undefined8 * param_1)`
+pub const ZeroPointedDword: u64 = 13811;
+/// `ZeroPointer` at 0xec7e40 (decompiler, high); signature (high): `undefined ZeroPointer(undefined8 * param_1)`
+pub const ZeroPointer: u64 = 69678;
+/// `ZeroQword` at 0xce7400 (decompiler, high); signature (high): `undefined ZeroQword(undefined8 * param_1)`
+pub const ZeroQword: u64 = 68338;
+/// `ZeroQwordAndDword8` at 0xce0cb0 (decompiler, high); signature (high): `undefined8 * ZeroQwordAndDword8(undefined8 * param_1)`
+pub const ZeroQwordAndDword8: u64 = 68167;
+/// `ZeroQwordDword8AndDword10` at 0x1fd430 (decompiler, medium); signature (medium): `undefined8 * ZeroQwordDword8AndDword10(undefined8 * param_1)`
+pub const ZeroQwordDword8AndDword10: u64 = 15168;
+/// `ZeroQword_2` at 0x1378970 (decompiler, high); signature (high): `undefined ZeroQword_2(undefined8 * param_1)`
+pub const ZeroQword_2: u64 = 449234;
+/// `ZeroQwords0And8AndSetByte10` at 0x250e60 (decompiler, medium); signature (medium): `undefined8 * ZeroQwords0And8AndSetByte10(undefined8 * param_1, undefined1 param_2)`
+pub const ZeroQwords0And8AndSetByte10: u64 = 16495;
+/// `ZeroQwordsAndDword10` at 0x14aa4e0 (decompiler, high); signature (high): `undefined8 * ZeroQwordsAndDword10(undefined8 * param_1)`
+pub const ZeroQwordsAndDword10: u64 = 104660;
+/// `ZeroRange16ByteEntries` at 0x17e420 (decompiler, high); signature (high): `undefined ZeroRange16ByteEntries(longlong * param_1, ulonglong param_2, uint param_3)`
+pub const ZeroRange16ByteEntries: u64 = 12323;
 /// `ZeroRange24ByteEntries` at 0x17e460 (decompiler, high); signature (high): `undefined ZeroRange24ByteEntries(longlong * param_1, ulonglong param_2, uint param_3)`
 pub const ZeroRange24ByteEntries: u64 = 12324;
 /// `ZeroSmallArray12Range` at 0x124ac80 (decompiler, medium); signature (medium): `undefined ZeroSmallArray12Range(int * param_1, ulonglong param_2, uint param_3)`
@@ -1693,12 +2001,8 @@ pub const _anon_FA78E63F__BShkbAnimationGraphLoadScrapper__vdtor: u64 = 63548;
 pub const _anon_FA78E63F__BShkbAnimationGraphLoadScrapper__vfunc_1: u64 = 63547;
 /// `_anon_FA78E63F::GraphPhysicsStepListener::vdtor` at 0xbc9690 (layout_inference, medium); signature (low): `GraphPhysicsStepListener * vdtor(GraphPhysicsStepListener * this, ulonglong param_1)`
 pub const _anon_FA78E63F__GraphPhysicsStepListener__vdtor: u64 = 63553;
-/// `_anon_FA78E63F::GraphPhysicsStepListener::vfunc_1` at 0xbc9810 (rtti, high); signature (low): `undefined vfunc_1(GraphPhysicsStepListener * this, undefined4 param_2, undefined4 param_3)`
-pub const _anon_FA78E63F__GraphPhysicsStepListener__vfunc_1: u64 = 63551;
 /// `_anon_FA78E63F::GraphPhysicsStepListener::vfunc_1_sub0` at 0xbca840 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub0(longlong * param_1, float param_2, float param_3, ulonglong * param_4)`
 pub const _anon_FA78E63F__GraphPhysicsStepListener__vfunc_1_sub0: u64 = 63562;
-/// `_anon_FA78E63F::GraphPhysicsStepListener::vfunc_2` at 0xbc9920 (rtti, high); signature (low): `undefined vfunc_2(GraphPhysicsStepListener * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_FA78E63F__GraphPhysicsStepListener__vfunc_2: u64 = 63552;
 /// `_anon_FA78E63F::SynchronizedClipNameVisitor::vfunc_0` at 0xbd9a00 (rtti, high); signature (low): `SynchronizedClipNameVisitor * vfunc_0(SynchronizedClipNameVisitor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const _anon_FA78E63F__SynchronizedClipNameVisitor__vfunc_0: u64 = 63759;
 /// `_anon_FA78E63F::SynchronizedClipNameVisitor::vfunc_1` at 0xbdc370 (rtti, high); signature (low): `undefined8 vfunc_1(SynchronizedClipNameVisitor * this, ulonglong * param_1, undefined8 param_2, undefined1 * param_3)`
@@ -3751,8 +4055,16 @@ pub const bhkRagdollConstraint__vfunc_43: u64 = 79809;
 pub const bhkRagdollConstraint__vfunc_44: u64 = 79261;
 /// `bhkRagdollConstraint::vfunc_47` at 0x10b9a10 (rtti, high); signature (low): `bhkRagdollConstraint_vtbl * vfunc_47(bhkRagdollConstraint * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const bhkRagdollConstraint__vfunc_47: u64 = 79808;
-/// `bhkRagdollController::ctor` at 0x106c040 (layout_inference, medium); signature (low): `bhkRagdollController * ctor(bhkRagdollController * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
+/// `bhkRagdollController::InitControlGains` at 0x1076280 (semantic, high); signature (untiered): `undefined InitControlGains(longlong param_1, longlong * param_2, char * param_3)`; semantic: copies the 12 RagdollAnim gains into the controller's control block in this order: fHierarchyGain, fVelocityDamping, fAccelerationGain, fVelocityGain, fPositionGain, fPositionMaxLinearVelocity, fPositionMaxAngularVelocity, fSnapGain, fSnapMaxLinearVelocity, fSnapMaxAngularVelocity, fSnapMaxLinearDistance, fSnapMaxAngularDistance; then +0x371 = 1 (high); signature `void (bhkRagdollController* this, ...)`
+pub const bhkRagdollController__InitControlGains: u64 = 78484;
+/// `bhkRagdollController::SetupFootIkLeg` at 0x1071270 (semantic, medium); signature (untiered): `ulonglong SetupFootIkLeg(longlong param_1, longlong param_2, undefined8 * param_3)`; semantic: dead path: per-leg setup; ankle height += fAnkleOffset:FootIK (0x1071646), leg +0x60 = -fMaxStepVertError:FootIK (0x10716dc); fVertErrorGain:FootIK at 0x10717a8/0x10717b0 in code following it (medium); signature `void (bhkRagdollController* this, void* leg)`
+pub const bhkRagdollController__SetupFootIkLeg: u64 = 78437;
+/// `bhkRagdollController::UpdateLookIk` at 0x106e000 (semantic, medium); signature (untiered): `undefined UpdateLookIk(longlong param_1, float * param_2)`; semantic: dead path: look IK of the ragdoll controller; bAdditiveHeadAnim:LookIK at 0x106e2d0/0x106e927; calls 0x10779a0 (fEaseAngleShutOff) -> ApplyLookIkRotationEased 0x1078bc0 (fAngleMaxEase) (medium); signature `void (bhkRagdollController* this, float* rootQsTransform)`
+pub const bhkRagdollController__UpdateLookIk: u64 = 78429;
+/// `bhkRagdollController::ctor` at 0x106c040 (semantic, high); signature (low): `bhkRagdollController * ctor(bhkRagdollController * this, longlong * param_1, longlong * param_2, undefined8 param_3)`; semantic: constructor of the 'RagdollAnim' controller (0x3a0 bytes, vftable 0x1a82090); NEVER CALLED in 1.7.104 (high); signature `bhkRagdollController* (bhkRagdollController* this, void* a1, void* a2, char* a3)`
 pub const bhkRagdollController__ctor: u64 = 78403;
+/// `bhkRagdollController::ctor` as a function pointer type (high).
+pub type bhkRagdollController__ctor_fn = unsafe extern "C" fn(this: *mut crate::bhkRagdollController, a1: *mut c_void, a2: *mut c_void, a3: *mut c_char) -> *mut crate::bhkRagdollController;
 /// `bhkRagdollController::dtor` at 0x106c670 (layout_inference, high); signature (low): `undefined dtor(bhkRagdollController * this, undefined8 param_1, undefined8 param_2, char * * param_3)`
 pub const bhkRagdollController__dtor: u64 = 78404;
 /// `bhkRagdollController::dtor_sub0` at 0x1079790 (callgraph, medium); signature (untiered): `undefined8 dtor_sub0(longlong param_1, longlong param_2, uint param_3, longlong * param_4, undefined8 * param_5)`
@@ -5765,105 +6077,3 @@ pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void
 pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_420aad961b14: u64 = 446192;
 /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_af1c5628e4452240cdaa04843329f091>_>::vfunc_1` at 0x12cacb0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_af1c5628e4452240cdaa04843329f091>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
 pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_00c0c8ab5d01: u64 = 446269;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c52bf3fa64981bb2fac1cf8941423930>_>::vfunc_0` at 0x12d1ed0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c52bf3fa64981bb2fac1cf8941423930>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c52bf3fa64981bb2fac1cf8941423930>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1fc9df66ab17: u64 = 446536;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c52bf3fa64981bb2fac1cf8941423930>_>::vfunc_1` at 0x12d30d0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c52bf3fa64981bb2fac1cf8941423930>_> * this, longlong param_1, undefined8 param_2, TypeDescriptor * param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_09342e23c237: u64 = 446578;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4e662662591968f723ad2e6b67bd457>_>::vfunc_0` at 0x12d1f00 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4e662662591968f723ad2e6b67bd457>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4e662662591968f723ad2e6b67bd457>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d0cecb276c5f: u64 = 446537;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4e662662591968f723ad2e6b67bd457>_>::vfunc_1` at 0x12d3150 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4e662662591968f723ad2e6b67bd457>_> * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_bc6f44c87d72: u64 = 446579;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_dc47955391806d5d301a84fffe1e352f>_>::vfunc_0` at 0x12bc290 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_dc47955391806d5d301a84fffe1e352f>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_dc47955391806d5d301a84fffe1e352f>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9a76e1b84c6b: u64 = 445871;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_dc47955391806d5d301a84fffe1e352f>_>::vfunc_1` at 0x12bcf20 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_dc47955391806d5d301a84fffe1e352f>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_28b22d4339c1: u64 = 445902;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_>::vfunc_0` at 0x12c9310 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_471468c401f8: u64 = 446200;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_>::vfunc_1` at 0x12cad50 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4bf593477f53: u64 = 446277;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_04364feec46ca23c904cf67120bbb977>_>::vfunc_0` at 0x12c9630 (rtti, high); signature (low): `CopyableCallable<<lambda_04364feec46ca23c904cf67120bbb977>_> * vfunc_0(CopyableCallable<<lambda_04364feec46ca23c904cf67120bbb977>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5ad7cc43dd6a: u64 = 446222;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_04364feec46ca23c904cf67120bbb977>_>::vfunc_2` at 0x12c9de0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_04364feec46ca23c904cf67120bbb977>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_38148bee71e7: u64 = 446255;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_04364feec46ca23c904cf67120bbb977>_>::vfunc_3` at 0x12cb4e0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_04364feec46ca23c904cf67120bbb977>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6e4e33a8c291: u64 = 446296;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_084b388a05d378e142dad9a3c2e195ed>_>::vfunc_0` at 0x12c9660 (rtti, high); signature (low): `CopyableCallable<<lambda_084b388a05d378e142dad9a3c2e195ed>_> * vfunc_0(CopyableCallable<<lambda_084b388a05d378e142dad9a3c2e195ed>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_42a1d699de19: u64 = 446223;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_084b388a05d378e142dad9a3c2e195ed>_>::vfunc_2` at 0x12c9e40 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_084b388a05d378e142dad9a3c2e195ed>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_bedab991a132: u64 = 446256;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_084b388a05d378e142dad9a3c2e195ed>_>::vfunc_3` at 0x12cb540 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_084b388a05d378e142dad9a3c2e195ed>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d99199083570: u64 = 446297;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_11d18c60610d650d2f78796d0d278e87>_>::vfunc_0` at 0x12c9690 (rtti, high); signature (low): `CopyableCallable<<lambda_11d18c60610d650d2f78796d0d278e87>_> * vfunc_0(CopyableCallable<<lambda_11d18c60610d650d2f78796d0d278e87>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8934d6682ae8: u64 = 446224;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_11d18c60610d650d2f78796d0d278e87>_>::vfunc_2` at 0x12c9ea0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_11d18c60610d650d2f78796d0d278e87>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9af7f9ca8bfd: u64 = 446257;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_11d18c60610d650d2f78796d0d278e87>_>::vfunc_3` at 0x12cb5a0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_11d18c60610d650d2f78796d0d278e87>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f663938a5dc3: u64 = 446298;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_133c1da527c611c9dcda295aefdf806d>_>::vfunc_0` at 0x12c96c0 (rtti, high); signature (low): `CopyableCallable<<lambda_133c1da527c611c9dcda295aefdf806d>_> * vfunc_0(CopyableCallable<<lambda_133c1da527c611c9dcda295aefdf806d>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ca4dde98c3ef: u64 = 446219;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_133c1da527c611c9dcda295aefdf806d>_>::vfunc_2` at 0x12c9f00 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_133c1da527c611c9dcda295aefdf806d>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_bb9384d13dbb: u64 = 446252;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_133c1da527c611c9dcda295aefdf806d>_>::vfunc_3` at 0x12cb600 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_133c1da527c611c9dcda295aefdf806d>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_83c21a06ac29: u64 = 446293;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_1656df761702a34a262b091507cce5f7>_>::vfunc_0` at 0x12bc410 (rtti, high); signature (low): `CopyableCallable<<lambda_1656df761702a34a262b091507cce5f7>_> * vfunc_0(CopyableCallable<<lambda_1656df761702a34a262b091507cce5f7>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b7142a53b5f0: u64 = 445876;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_1656df761702a34a262b091507cce5f7>_>::vfunc_2` at 0x12bc840 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_1656df761702a34a262b091507cce5f7>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c3b893138d06: u64 = 445888;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_1656df761702a34a262b091507cce5f7>_>::vfunc_3` at 0x12bd1e0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_1656df761702a34a262b091507cce5f7>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fb7e69823c91: u64 = 445906;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_339b5ce6d6104c0c8fb09c9881f11023>_>::vfunc_0` at 0x12bc440 (rtti, high); signature (low): `CopyableCallable<<lambda_339b5ce6d6104c0c8fb09c9881f11023>_> * vfunc_0(CopyableCallable<<lambda_339b5ce6d6104c0c8fb09c9881f11023>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fa7d93b63fec: u64 = 445878;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_339b5ce6d6104c0c8fb09c9881f11023>_>::vfunc_2` at 0x12bc8a0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_339b5ce6d6104c0c8fb09c9881f11023>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7658d11cc31d: u64 = 445890;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_339b5ce6d6104c0c8fb09c9881f11023>_>::vfunc_3` at 0x12bd240 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_339b5ce6d6104c0c8fb09c9881f11023>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9f29188cddd9: u64 = 445908;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_3be0cd93eee1a525d5980446f7145a43>_>::vfunc_0` at 0x12c9720 (rtti, high); signature (low): `CopyableCallable<<lambda_3be0cd93eee1a525d5980446f7145a43>_> * vfunc_0(CopyableCallable<<lambda_3be0cd93eee1a525d5980446f7145a43>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e6e456c7b300: u64 = 446229;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_3be0cd93eee1a525d5980446f7145a43>_>::vfunc_2` at 0x12c9fc0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_3be0cd93eee1a525d5980446f7145a43>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0ab06c11a086: u64 = 446262;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_3be0cd93eee1a525d5980446f7145a43>_>::vfunc_3` at 0x12cb6c0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_3be0cd93eee1a525d5980446f7145a43>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2784cd23f2f3: u64 = 446303;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_41fd7ee57d994a684c6bd214f348446e>_>::vfunc_0` at 0x12c9780 (rtti, high); signature (low): `CopyableCallable<<lambda_41fd7ee57d994a684c6bd214f348446e>_> * vfunc_0(CopyableCallable<<lambda_41fd7ee57d994a684c6bd214f348446e>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f18614ca139a: u64 = 446228;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_41fd7ee57d994a684c6bd214f348446e>_>::vfunc_2` at 0x12ca080 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_41fd7ee57d994a684c6bd214f348446e>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c5ea81ed0087: u64 = 446261;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_41fd7ee57d994a684c6bd214f348446e>_>::vfunc_3` at 0x12cb780 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_41fd7ee57d994a684c6bd214f348446e>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_37ebeaf8206c: u64 = 446302;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_4d412f9360f2e770764471adcb40583d>_>::vfunc_0` at 0x12bc470 (rtti, high); signature (low): `CopyableCallable<<lambda_4d412f9360f2e770764471adcb40583d>_> * vfunc_0(CopyableCallable<<lambda_4d412f9360f2e770764471adcb40583d>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3effc8be4b83: u64 = 445877;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_4d412f9360f2e770764471adcb40583d>_>::vfunc_2` at 0x12bc900 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_4d412f9360f2e770764471adcb40583d>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f07a21bb65e7: u64 = 445889;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_4d412f9360f2e770764471adcb40583d>_>::vfunc_3` at 0x12bd2a0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_4d412f9360f2e770764471adcb40583d>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2bf1ebb61215: u64 = 445907;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_60f66320e7ff53969a066e9bb5390d87>_>::vfunc_0` at 0x12c9810 (rtti, high); signature (low): `CopyableCallable<<lambda_60f66320e7ff53969a066e9bb5390d87>_> * vfunc_0(CopyableCallable<<lambda_60f66320e7ff53969a066e9bb5390d87>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7253b50c8502: u64 = 525119;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_60f66320e7ff53969a066e9bb5390d87>_>::vfunc_2` at 0x12ca1a0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_60f66320e7ff53969a066e9bb5390d87>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f3ab207dfa5f: u64 = 525122;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_60f66320e7ff53969a066e9bb5390d87>_>::vfunc_3` at 0x12cb8a0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_60f66320e7ff53969a066e9bb5390d87>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b20fa3329cc9: u64 = 525127;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_6923c7db47795dd1ace1b80563a447ad>_>::vfunc_0` at 0x12bc4a0 (rtti, high); signature (low): `CopyableCallable<<lambda_6923c7db47795dd1ace1b80563a447ad>_> * vfunc_0(CopyableCallable<<lambda_6923c7db47795dd1ace1b80563a447ad>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5ce6c4d8f283: u64 = 445879;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_6923c7db47795dd1ace1b80563a447ad>_>::vfunc_2` at 0x12bc960 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_6923c7db47795dd1ace1b80563a447ad>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a6db5846f1cd: u64 = 445891;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_6923c7db47795dd1ace1b80563a447ad>_>::vfunc_3` at 0x12bd300 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_6923c7db47795dd1ace1b80563a447ad>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b925acf795bb: u64 = 445909;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7c6a748cf7ef983a0d58de9288ce9768>_>::vfunc_0` at 0x12bc4d0 (rtti, high); signature (low): `CopyableCallable<<lambda_7c6a748cf7ef983a0d58de9288ce9768>_> * vfunc_0(CopyableCallable<<lambda_7c6a748cf7ef983a0d58de9288ce9768>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ecf58e27e6a6: u64 = 445880;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7c6a748cf7ef983a0d58de9288ce9768>_>::vfunc_2` at 0x12bc9c0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_7c6a748cf7ef983a0d58de9288ce9768>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_00feebf693b8: u64 = 445892;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7c6a748cf7ef983a0d58de9288ce9768>_>::vfunc_3` at 0x12bd360 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_7c6a748cf7ef983a0d58de9288ce9768>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_acc360ca5faa: u64 = 445910;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_81362fefa0bafdc97634a2e2e71c0582>_>::vfunc_0` at 0x12bc500 (rtti, high); signature (low): `CopyableCallable<<lambda_81362fefa0bafdc97634a2e2e71c0582>_> * vfunc_0(CopyableCallable<<lambda_81362fefa0bafdc97634a2e2e71c0582>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ee27757d39e7: u64 = 445881;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_81362fefa0bafdc97634a2e2e71c0582>_>::vfunc_2` at 0x12bca20 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_81362fefa0bafdc97634a2e2e71c0582>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3850d10071b3: u64 = 445893;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_81362fefa0bafdc97634a2e2e71c0582>_>::vfunc_3` at 0x12bd3c0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_81362fefa0bafdc97634a2e2e71c0582>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d4663d48117d: u64 = 445911;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_84ba32da379f1a5a62094d61327152df>_>::vfunc_0` at 0x12c9840 (rtti, high); signature (low): `CopyableCallable<<lambda_84ba32da379f1a5a62094d61327152df>_> * vfunc_0(CopyableCallable<<lambda_84ba32da379f1a5a62094d61327152df>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_bac8f821a068: u64 = 525120;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_84ba32da379f1a5a62094d61327152df>_>::vfunc_2` at 0x12ca200 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_84ba32da379f1a5a62094d61327152df>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1ea43756a205: u64 = 525123;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_84ba32da379f1a5a62094d61327152df>_>::vfunc_3` at 0x12cb900 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_84ba32da379f1a5a62094d61327152df>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3466740ab9ab: u64 = 525128;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_996cdf0862a56af86372b0f56da3e7fc>_>::vfunc_0` at 0x12adb80 (rtti, high); signature (low): `CopyableCallable<<lambda_996cdf0862a56af86372b0f56da3e7fc>_> * vfunc_0(CopyableCallable<<lambda_996cdf0862a56af86372b0f56da3e7fc>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_63dcd0438d73: u64 = 445539;

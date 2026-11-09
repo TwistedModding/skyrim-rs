@@ -7,6 +7,208 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `NavMeshInfoMap::BSNavmeshInfoMap_vfunc_2` at 0x4c4ed0 (rtti, high); signature (low): `undefined8 BSNavmeshInfoMap_vfunc_2(NavMeshInfoMap * this, uint param_1)`
+pub const NavMeshInfoMap__BSNavmeshInfoMap_vfunc_2: u64 = 30383;
+/// `NavMeshInfoMap::BSNavmeshInfoMap_vfunc_3` at 0x4c4ff0 (rtti, high); signature (low): `undefined BSNavmeshInfoMap_vfunc_3(NavMeshInfoMap * this, longlong * param_1)`
+pub const NavMeshInfoMap__BSNavmeshInfoMap_vfunc_3: u64 = 30385;
+/// `NavMeshInfoMap::BSNavmeshInfoMap_vfunc_4` at 0x4c5190 (rtti, high); signature (low): `undefined BSNavmeshInfoMap_vfunc_4(NavMeshInfoMap * this, int * param_1, longlong * param_2, undefined8 param_3)`
+pub const NavMeshInfoMap__BSNavmeshInfoMap_vfunc_4: u64 = 30386;
+/// `NavMeshInfoMap::BSNavmeshInfoMap_vfunc_5` at 0x4c5510 (rtti, high); signature (low): `undefined BSNavmeshInfoMap_vfunc_5(NavMeshInfoMap * this, longlong * param_1)`
+pub const NavMeshInfoMap__BSNavmeshInfoMap_vfunc_5: u64 = 30387;
+/// `NavMeshInfoMap::ctor` at 0x4c3a50 (layout_inference, high); signature (low): `NavMeshInfoMap * ctor(NavMeshInfoMap * this, undefined8 param_1, uint * param_2, longlong * param_3)`
+pub const NavMeshInfoMap__ctor: u64 = 30376;
+/// `NavMeshInfoMap::ctor_sub0` at 0x4c7680 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const NavMeshInfoMap__ctor_sub0: u64 = 30407;
+/// `NavMeshInfoMap::ctor_sub1` at 0x4c7690 (callgraph, medium); signature (untiered): `undefined ctor_sub1(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const NavMeshInfoMap__ctor_sub1: u64 = 30408;
+/// `NavMeshInfoMap::ctor_sub2` at 0x4c8360 (callgraph, medium); signature (untiered): `undefined8 * ctor_sub2(undefined8 * param_1)`
+pub const NavMeshInfoMap__ctor_sub2: u64 = 30431;
+/// `NavMeshInfoMap::dtor` at 0x4c3b10 (layout_inference, high); signature (low): `undefined dtor(NavMeshInfoMap * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshInfoMap__dtor: u64 = 30377;
+/// `NavMeshInfoMap::vdtor` at 0x4c78b0 (layout_inference, medium); signature (low): `NavMeshInfoMap * vdtor(NavMeshInfoMap * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshInfoMap__vdtor: u64 = 30415;
+/// `NavMeshInfoMap::vfunc_19` at 0x4c4160 (rtti, high); signature (low): `undefined vfunc_19(NavMeshInfoMap * this, undefined8 param_1, undefined8 param_2, ulonglong param_3)`
+pub const NavMeshInfoMap__vfunc_19: u64 = 30380;
+/// `NavMeshInfoMap::vfunc_19_sub0` at 0x4c3380 (callgraph, medium); signature (untiered): `undefined8 vfunc_19_sub0(uint * param_1, undefined8 param_2, undefined8 param_3, longlong param_4)`
+pub const NavMeshInfoMap__vfunc_19_sub0: u64 = 30365;
+/// `NavMeshInfoMap::vfunc_19_sub1` at 0x4c5d80 (callgraph, medium); signature (untiered): `undefined vfunc_19_sub1(longlong * param_1)`
+pub const NavMeshInfoMap__vfunc_19_sub1: u64 = 30392;
+/// `NavMeshInfoMap::vfunc_36` at 0x4c4050 (rtti, high); signature (low): `undefined vfunc_36(NavMeshInfoMap * this, char param_1)`
+pub const NavMeshInfoMap__vfunc_36: u64 = 30379;
+/// `NavMeshInfoMap::vfunc_6` at 0x4c3b90 (rtti, high); signature (low): `undefined8 vfunc_6(NavMeshInfoMap * this, longlong param_1, undefined8 param_2, undefined1 * param_3)`
+pub const NavMeshInfoMap__vfunc_6: u64 = 30378;
+/// `NavMeshInfoMap::vfunc_6_sub0` at 0x4c28c0 (callgraph, medium); signature (untiered): `undefined vfunc_6_sub0(undefined4 * param_1, undefined4 * param_2, undefined8 param_3, undefined * param_4)`
+pub const NavMeshInfoMap__vfunc_6_sub0: u64 = 30361;
+/// `NavMeshInfoMap::vfunc_6_sub1` at 0x11ea0e0 (callgraph, medium); signature (untiered): `undefined vfunc_6_sub1(longlong param_1, longlong * param_2, undefined8 * param_3, undefined1 * param_4)`
+pub const NavMeshInfoMap__vfunc_6_sub1: u64 = 91219;
+/// `NavMeshInfoMap::vfunc_6_sub2` at 0x11f0ec0 (callgraph, medium); signature (untiered): `undefined vfunc_6_sub2(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+pub const NavMeshInfoMap__vfunc_6_sub2: u64 = 91354;
+/// `NavMeshObstacleManager::ctor` at 0x4c8c60 (layout_inference, medium); signature (low): `NavMeshObstacleManager * ctor(NavMeshObstacleManager * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshObstacleManager__ctor: u64 = 30441;
+/// `NavMeshObstacleManager::dtor` at 0x4c8fd0 (layout_inference, high); signature (low): `undefined dtor(NavMeshObstacleManager * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshObstacleManager__dtor: u64 = 30442;
+/// `NavMeshObstacleManager::dtor_sub0` at 0x4cf1e0 (callgraph, medium); signature (untiered): `undefined8 dtor_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const NavMeshObstacleManager__dtor_sub0: u64 = 30483;
+/// `NavMeshObstacleManager::vdtor` at 0x4d3900 (slot_propagation, medium); signature (low): `NavMeshObstacleManager * vdtor(NavMeshObstacleManager * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshObstacleManager__vdtor: u64 = 30560;
+/// `NavMeshObstacleManager::vfunc_1` at 0x4d0ad0 (rtti, high); signature (low): `undefined8 vfunc_1(NavMeshObstacleManager * this, longlong * param_1)`
+pub const NavMeshObstacleManager__vfunc_1: u64 = 30493;
+/// `NavMeshObstacleManager::vfunc_1_sub0` at 0x11e0010 (callgraph, medium); signature (untiered): `undefined8 vfunc_1_sub0(longlong * param_1, undefined8 * param_2)`
+pub const NavMeshObstacleManager__vfunc_1_sub0: u64 = 91084;
+/// `NavMeshSearchClosePoint::ctor` at 0x4e77c0 (layout_inference, high); signature (high): `NavMeshSearchClosePoint * ctor(NavMeshSearchClosePoint * this)`
+pub const NavMeshSearchClosePoint__ctor: u64 = 30995;
+/// `NavMeshSearchClosePoint::dtor` at 0x4e78d0 (layout_inference, high); signature (low): `undefined dtor(NavMeshSearchClosePoint * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshSearchClosePoint__dtor: u64 = 30996;
+/// `NavMeshSearchClosePoint::vdtor` at 0x4e96f0 (layout_inference, medium); signature (low): `NavMeshSearchClosePoint * vdtor(NavMeshSearchClosePoint * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshSearchClosePoint__vdtor: u64 = 31027;
+/// `NavMeshSearchClosePoint::vfunc_1` at 0x4e8010 (rtti, high); signature (low): `undefined8 vfunc_1(NavMeshSearchClosePoint * this, float * param_1, uint * param_2)`
+pub const NavMeshSearchClosePoint__vfunc_1: u64 = 31002;
+/// `NavMeshSearchClosePoint::vfunc_1_sub0` at 0x4ea290 (callgraph, medium); signature (untiered): `undefined8 vfunc_1_sub0(longlong * param_1, longlong param_2, float * param_3)`
+pub const NavMeshSearchClosePoint__vfunc_1_sub0: u64 = 31042;
+/// `NavMeshSearchClosePoint::vfunc_2` at 0x4e84b0 (rtti, high); signature (low): `uint vfunc_2(NavMeshSearchClosePoint * this, longlong param_1)`
+pub const NavMeshSearchClosePoint__vfunc_2: u64 = 31003;
+/// `NavMeshSearchFitSphere::ctor` at 0x4ea8a0 (layout_inference, high); signature (high): `NavMeshSearchFitSphere * ctor(NavMeshSearchFitSphere * this)`
+pub const NavMeshSearchFitSphere__ctor: u64 = 31057;
+/// `NavMeshSearchFitSphere::dtor` at 0x4ea9e0 (layout_inference, high); signature (low): `undefined dtor(NavMeshSearchFitSphere * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshSearchFitSphere__dtor: u64 = 31058;
+/// `NavMeshSearchFitSphere::vdtor` at 0x4ebed0 (layout_inference, medium); signature (low): `NavMeshSearchFitSphere * vdtor(NavMeshSearchFitSphere * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshSearchFitSphere__vdtor: u64 = 31079;
+/// `NavMeshSearchFitSphere::vfunc_1` at 0x4eae90 (rtti, high); signature (low): `bool vfunc_1(NavMeshSearchFitSphere * this, float * param_1, uint * param_2)`
+pub const NavMeshSearchFitSphere__vfunc_1: u64 = 31060;
+/// `NavMeshSearchFitSphere::vfunc_2` at 0x4eb2d0 (rtti, high); signature (low): `ulonglong vfunc_2(NavMeshSearchFitSphere * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshSearchFitSphere__vfunc_2: u64 = 31061;
+/// `NavMeshSearchFitSphere::vfunc_2_sub0` at 0x11be080 (callgraph, medium); signature (untiered): `undefined1 vfunc_2_sub0(undefined8 param_1, undefined8 * * param_2, float param_3)`
+pub const NavMeshSearchFitSphere__vfunc_2_sub0: u64 = 90426;
+/// `NavMeshSearchFlee::ctor` at 0x4ecdf0 (layout_inference, high); signature (high): `NavMeshSearchFlee * ctor(NavMeshSearchFlee * this)`
+pub const NavMeshSearchFlee__ctor: u64 = 31107;
+/// `NavMeshSearchFlee::dtor` at 0x4ecef0 (layout_inference, high); signature (low): `undefined dtor(NavMeshSearchFlee * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshSearchFlee__dtor: u64 = 31108;
+/// `NavMeshSearchFlee::vdtor` at 0x4eddb0 (layout_inference, medium); signature (low): `NavMeshSearchFlee * vdtor(NavMeshSearchFlee * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshSearchFlee__vdtor: u64 = 31113;
+/// `NavMeshSearchFlee::vfunc_1` at 0x4ed500 (rtti, high); signature (low): `undefined8 vfunc_1(NavMeshSearchFlee * this, float * param_1, uint * param_2)`
+pub const NavMeshSearchFlee__vfunc_1: u64 = 31111;
+/// `NavMeshSearchFlee::vfunc_2` at 0x4edbb0 (rtti, high); signature (low): `bool vfunc_2(NavMeshSearchFlee * this, longlong param_1)`
+pub const NavMeshSearchFlee__vfunc_2: u64 = 31112;
+/// `NavMeshSearchHide::ctor` at 0x4ede20 (layout_inference, high); signature (low): `NavMeshSearchHide * ctor(NavMeshSearchHide * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshSearchHide__ctor: u64 = 31114;
+/// `NavMeshSearchHide::dtor` at 0x4edeb0 (layout_inference, high); signature (low): `undefined dtor(NavMeshSearchHide * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshSearchHide__dtor: u64 = 31115;
+/// `NavMeshSearchHide::vdtor` at 0x4ee790 (layout_inference, medium); signature (low): `NavMeshSearchHide * vdtor(NavMeshSearchHide * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshSearchHide__vdtor: u64 = 31122;
+/// `NavMeshSearchHide::vfunc_2` at 0x4ee290 (rtti, high); signature (low): `bool vfunc_2(NavMeshSearchHide * this, longlong param_1)`
+pub const NavMeshSearchHide__vfunc_2: u64 = 31117;
+/// `NavMeshSearchHide::vfunc_2_sub0` at 0x11f8c70 (callgraph, medium); signature (untiered): `bool vfunc_2_sub0(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
+pub const NavMeshSearchHide__vfunc_2_sub0: u64 = 91504;
+/// `NavMeshSearchLOS::ctor` at 0x4eea10 (layout_inference, high); signature (high): `NavMeshSearchLOS * ctor(NavMeshSearchLOS * this)`
+pub const NavMeshSearchLOS__ctor: u64 = 31125;
+/// `NavMeshSearchLOS::dtor` at 0x4eeb30 (layout_inference, high); signature (low): `undefined dtor(NavMeshSearchLOS * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshSearchLOS__dtor: u64 = 31126;
+/// `NavMeshSearchLOS::vdtor` at 0x4f0050 (layout_inference, medium); signature (low): `NavMeshSearchLOS * vdtor(NavMeshSearchLOS * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshSearchLOS__vdtor: u64 = 31134;
+/// `NavMeshSearchLOS::vfunc_1` at 0x4ef300 (rtti, high); signature (low): `undefined8 vfunc_1(NavMeshSearchLOS * this, float * param_1, uint * param_2)`
+pub const NavMeshSearchLOS__vfunc_1: u64 = 31129;
+/// `NavMeshSearchLOS::vfunc_1_sub0` at 0x1203560 (callgraph, medium); signature (untiered): `undefined8 vfunc_1_sub0(longlong param_1, ulonglong param_2)`
+pub const NavMeshSearchLOS__vfunc_1_sub0: u64 = 91666;
+/// `NavMeshSearchLOS::vfunc_2` at 0x4efae0 (rtti, high); signature (low): `ulonglong vfunc_2(NavMeshSearchLOS * this, longlong param_1)`
+pub const NavMeshSearchLOS__vfunc_2: u64 = 31130;
+/// `NavMeshSearchMaxCost::ctor` at 0x4f0140 (layout_inference, high); signature (low): `NavMeshSearchMaxCost * ctor(NavMeshSearchMaxCost * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshSearchMaxCost__ctor: u64 = 31136;
+/// `NavMeshSearchMaxCost::dtor` at 0x4f01c0 (layout_inference, high); signature (low): `undefined dtor(NavMeshSearchMaxCost * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshSearchMaxCost__dtor: u64 = 31137;
+/// `NavMeshSearchMaxCost::vdtor` at 0x4f09a0 (layout_inference, medium); signature (low): `NavMeshSearchMaxCost * vdtor(NavMeshSearchMaxCost * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshSearchMaxCost__vdtor: u64 = 31144;
+/// `NavMeshSearchMaxCost::vfunc_2` at 0x4f08d0 (rtti, high); signature (high): `undefined1 vfunc_2(NavMeshSearchMaxCost * this)`
+pub const NavMeshSearchMaxCost__vfunc_2: u64 = 31140;
+/// `NavMeshSearchMultipleGoals::ctor` at 0x4f0b00 (layout_inference, high); signature (high): `NavMeshSearchMultipleGoals * ctor(NavMeshSearchMultipleGoals * this)`
+pub const NavMeshSearchMultipleGoals__ctor: u64 = 31148;
+/// `NavMeshSearchMultipleGoals::ctor` at 0x4f0b60 (layout_inference, medium); signature (low): `undefined ctor(NavMeshSearchMultipleGoals * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshSearchMultipleGoals__ctor_2: u64 = 31149;
+/// `NavMeshSearchMultipleGoals::vdtor` at 0x4f10e0 (layout_inference, medium); signature (low): `NavMeshSearchMultipleGoals * vdtor(NavMeshSearchMultipleGoals * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshSearchMultipleGoals__vdtor: u64 = 31152;
+/// `NavMeshSearchMultipleGoals::vfunc_2` at 0x4f1090 (rtti, high); signature (low): `char vfunc_2(NavMeshSearchMultipleGoals * this, longlong param_1)`
+pub const NavMeshSearchMultipleGoals__vfunc_2: u64 = 31151;
+/// `NavMeshSearchSLPoint::ctor` at 0x4f1170 (layout_inference, high); signature (low): `NavMeshSearchSLPoint * ctor(NavMeshSearchSLPoint * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshSearchSLPoint__ctor: u64 = 31153;
+/// `NavMeshSearchSLPoint::dtor` at 0x4f1230 (layout_inference, high); signature (low): `undefined dtor(NavMeshSearchSLPoint * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshSearchSLPoint__dtor: u64 = 31154;
+/// `NavMeshSearchSLPoint::vdtor` at 0x4f2060 (layout_inference, medium); signature (low): `NavMeshSearchSLPoint * vdtor(NavMeshSearchSLPoint * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NavMeshSearchSLPoint__vdtor: u64 = 31159;
+/// `NavMeshSearchSLPoint::vfunc_2` at 0x4f1ba0 (rtti, high); signature (low): `undefined8 vfunc_2(NavMeshSearchSLPoint * this, longlong param_1)`
+pub const NavMeshSearchSLPoint__vfunc_2: u64 = 31158;
+/// `NavMeshSearchSLPoint::vfunc_2_sub0` at 0x4f14a0 (callgraph, medium); signature (untiered): `undefined8 vfunc_2_sub0(longlong param_1, float * param_2, float * param_3, longlong param_4, float * param_5)`
+pub const NavMeshSearchSLPoint__vfunc_2_sub0: u64 = 31157;
+/// `NavMeshSearchSLPoint::vfunc_2_sub1` at 0x11df890 (callgraph, medium); signature (untiered): `undefined vfunc_2_sub1(longlong param_1, ushort param_2, longlong * param_3, longlong * param_4, longlong * param_5)`
+pub const NavMeshSearchSLPoint__vfunc_2_sub1: u64 = 91076;
+/// `NavMeshSearchSLPoint::vfunc_2_sub2` at 0x11e2620 (callgraph, medium); signature (untiered): `undefined vfunc_2_sub2(longlong param_1, ushort param_2, float * param_3)`
+pub const NavMeshSearchSLPoint__vfunc_2_sub2: u64 = 91116;
+/// `NeedToUpdateCreationClubCallback::vdtor` at 0x95e670 (layout_inference, medium); signature (low): `NeedToUpdateCreationClubCallback * vdtor(NeedToUpdateCreationClubCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NeedToUpdateCreationClubCallback__vdtor: u64 = 52180;
+/// `NeedToUpdateCreationClubCallback::vfunc_1` at 0x95e1a0 (rtti, high); signature (low): `undefined vfunc_1(NeedToUpdateCreationClubCallback * this, undefined8 param_1, ulonglong param_2, undefined8 param_3)`
+pub const NeedToUpdateCreationClubCallback__vfunc_1: u64 = 52171;
+/// `NeedToUpdateCreationClubCallback::vfunc_1_sub0` at 0x6116f0 (callgraph, medium); signature (untiered): `undefined8 vfunc_1_sub0(undefined8 param_1, uint * param_2, ulonglong param_3, undefined8 param_4)`
+pub const NeedToUpdateCreationClubCallback__vfunc_1_sub0: u64 = 442558;
+/// `NegateField10AndSwapFields38And39` at 0xca0ac0 (decompiler, medium); signature (medium): `undefined NegateField10AndSwapFields38And39(longlong param_1)`
+pub const NegateField10AndSwapFields38And39: u64 = 67126;
+/// `NewArrayOfStride0x4C` at 0xf94ea0 (decompiler, high); signature (high): `ulonglong * NewArrayOfStride0x4C(uint param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const NewArrayOfStride0x4C: u64 = 74362;
+/// `NewInventoryMenuItemLoadTask::BSResource_IEntryDB_PostFlushNotify_vdtor` at 0x93f6e8 (slot_propagation, medium); signature (high): `undefined BSResource_IEntryDB_PostFlushNotify_vdtor(NewInventoryMenuItemLoadTask * this)`
+pub const NewInventoryMenuItemLoadTask__BSResource_IEntryDB_PostFlushNotify_vdtor: u64 = 51785;
+/// `NewInventoryMenuItemLoadTask::vdtor` at 0x93f810 (slot_propagation, medium); signature (low): `NewInventoryMenuItemLoadTask * vdtor(NewInventoryMenuItemLoadTask * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NewInventoryMenuItemLoadTask__vdtor: u64 = 51788;
+/// `NewInventoryMenuItemLoadTask::vfunc_13` at 0x93f980 (rtti, high); signature (high): `undefined vfunc_13(NewInventoryMenuItemLoadTask * this)`
+pub const NewInventoryMenuItemLoadTask__vfunc_13: u64 = 51793;
+/// `NewInventoryMenuItemLoadTask::vfunc_14` at 0x93f990 (rtti, high); signature (high): `undefined vfunc_14(NewInventoryMenuItemLoadTask * this)`
+pub const NewInventoryMenuItemLoadTask__vfunc_14: u64 = 51794;
+/// `NextQueuedTlsDword` at 0xee53f0 (decompiler, medium); signature (untiered): `undefined4 NextQueuedTlsDword(longlong param_1)`
+pub const NextQueuedTlsDword: u64 = 70363;
+/// `NextTokenWithHash` at 0xeb2950 (decompiler, medium); signature (untiered): `ulonglong NextTokenWithHash(uint * param_1, undefined8 * param_2, undefined8 * param_3, char * param_4, char * param_5)`
+pub const NextTokenWithHash: u64 = 69199;
+/// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (untiered): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
+pub const NiAVObject__AcceptVisitor: u64 = 70254;
+/// `NiAVObject::CreateClone` at 0xedc740 (semantic, high); signature (untiered): `NiObject * CreateClone(NiAVObject * this)`
+pub const NiAVObject__CreateClone: u64 = 70180;
+/// `NiAVObject::Cull` at 0xee0f30 (runtime, high); signature (untiered): `undefined Cull(longlong param_1, longlong * param_2)`; semantic: the per-node gate of the tree walks (pass 12: the sun's cascade replay of its geometry lists, 0xfee650, and the focus maps, 0x1521ad0, do not call it): does nothing when flags bit 0 (hidden) is set, else tail-calls culler slot 22 CullNode(culler, node, orderedGroup) with r8 untouched; r8 is the BSOrderedNode group index (0xffffffff outside an ordered node; BSOrderedNode::OnVisible 0x1570700 hands its children 0, 1, 2 ...) that slot 24 uses to queue geometry for in-order drawing, not a plane mask (pass 6; the frustum mask is BSCullingProcess +0x9c) (high); signature `void (NiAVObject* this, NiCullingProcess* culler, u32 orderedGroup)`
+pub const NiAVObject__Cull: u64 = 70267;
+/// `NiAVObject::Cull` as a function pointer type (high).
+pub type NiAVObject__Cull_fn = unsafe extern "C" fn(this: *mut crate::NiAVObject, culler: *mut crate::NiCullingProcess, orderedGroup: u32);
+/// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (untiered): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
+pub const NiAVObject__GetObjectByName: u64 = 70257;
+/// `NiAVObject::SetParentDetachingFromOld` at 0xee0ef0 (semantic, high); signature (untiered): `undefined SetParentDetachingFromOld(longlong param_1, undefined8 param_2)`; semantic: old parent's slot 56 DetachChild(child), then child->parent = newParent (high); signature `void (NiAVObject* child, NiNode* newParent)`
+pub const NiAVObject__SetParentDetachingFromOld: u64 = 70266;
+/// `NiAVObject::SetParentDetachingFromOld` as a function pointer type (high).
+pub type NiAVObject__SetParentDetachingFromOld_fn = unsafe extern "C" fn(child: *mut crate::NiAVObject, newParent: *mut crate::NiNode);
+/// `NiAVObject::SetSelectiveUpdateFlags` at 0xee0a60 (semantic, medium); signature (untiered): `undefined SetSelectiveUpdateFlags(NiAVObject * this, char * param_1, byte param_2, byte * param_3)`
+pub const NiAVObject__SetSelectiveUpdateFlags: u64 = 70258;
+/// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (untiered): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
+pub const NiAVObject__UpdateControllers: u64 = 70253;
+/// `NiAVObject::UpdateDownwardPass` at 0xee0b30 (semantic, high); signature (untiered): `undefined UpdateDownwardPass(NiAVObject * this, longlong param_1)`
+pub const NiAVObject__UpdateDownwardPass: u64 = 70259;
+/// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+pub const NiAVObject__UpdateDownwardPassUnderParent: u64 = 70264;
+/// `NiAVObject::UpdateNode` at 0xee0930 (semantic, high); signature (untiered): `undefined UpdateNode(longlong * param_1, undefined8 param_2)`; semantic: slot 44 (+0x160) with (data, 0), then tail jump to the parent's (+0x30) slot 61 (+0x1e8); the call to make after writing a local transform (all camera states use it with a zeroed 8-byte record) (high); signature `void (NiAVObject* this, NiUpdateData* data)`
+pub const NiAVObject__UpdateNode: u64 = 70251;
+/// `NiAVObject::UpdateNode` as a function pointer type (high).
+pub type NiAVObject__UpdateNode_fn = unsafe extern "C" fn(this: *mut crate::NiAVObject, data: *mut crate::NiUpdateData);
+/// `NiAVObject::UpdateRigidDownwardPass` at 0xee0c90 (semantic, high); signature (untiered): `undefined UpdateRigidDownwardPass(NiAVObject * this, longlong param_1)`
+pub const NiAVObject__UpdateRigidDownwardPass: u64 = 70261;
+/// `NiAVObject::UpdateSelectedDownwardPass` at 0xee0bb0 (semantic, high); signature (untiered): `undefined UpdateSelectedDownwardPass(NiAVObject * this, longlong param_1)`
+pub const NiAVObject__UpdateSelectedDownwardPass: u64 = 70260;
+/// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (untiered): `undefined UpdateTransformsAndBound(NiAVObject * this)`
+pub const NiAVObject__UpdateTransformsAndBound: u64 = 70263;
+/// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+pub const NiAVObject__UpdateUpwardPass: u64 = 70265;
+/// `NiAVObject::UpdateWorldBound` at 0xee1320 (semantic, high); signature (untiered): `undefined UpdateWorldBound(void)`
+pub const NiAVObject__UpdateWorldBound: u64 = 70278;
+/// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
+pub const NiAVObject__UpdateWorldData: u64 = 70539;
+/// `NiAVObject::UpdateWorldTransformFromParent` at 0xeec1a0 (semantic, high); signature (untiered): `undefined UpdateWorldTransformFromParent(longlong param_1)`; semantic: world = parent.world * local (or local, or parent.world with flags bit 9) without the frame snapshot, controllers or children (high); signature `void (NiAVObject* this)`
+pub const NiAVObject__UpdateWorldTransformFromParent: u64 = 70540;
+/// `NiAVObject::UpdateWorldTransformFromParent` as a function pointer type (high).
+pub type NiAVObject__UpdateWorldTransformFromParent_fn = unsafe extern "C" fn(this: *mut crate::NiAVObject);
+/// `NiAVObject::ctor` at 0xee10b0 (layout_inference, high); signature (low): `NiAVObject * ctor(NiAVObject * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiAVObject__ctor: u64 = 524204;
+/// `NiAVObject::ctor_sub0` at 0xee1220 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong * param_1)`
+pub const NiAVObject__ctor_sub0: u64 = 70274;
 /// `NiAVObject::dtor` at 0xee0890 (layout_inference, high); signature (low): `undefined dtor(NiAVObject * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const NiAVObject__dtor: u64 = 70250;
 /// `NiAVObject::vdtor` at 0xee1250 (layout_inference, medium); signature (low): `NiAVObject * vdtor(NiAVObject * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -2489,14 +2691,14 @@ pub const NiLightDimmerController__vfunc_60: u64 = 73699;
 pub const NiLightDimmerController__vfunc_61: u64 = 73700;
 /// `NiLookAtController::Create` at 0xf7fb60 (string, high); signature (low): `NiTimeController * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const NiLookAtController__Create: u64 = 73714;
-/// `NiLookAtController::vdtor` at 0xf7fc20 (slot_propagation, medium); signature (low): `NiLookAtController * vdtor(NiLookAtController * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+/// `NiLookAtController::CreateClone` at 0xf7f1e0 (semantic, medium); signature (untiered): `NiTimeController * CreateClone(NiLookAtController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiLookAtController__CreateClone: u64 = 73704;
+/// `NiLookAtController::GetRTTI` at 0xf7fc60 (semantic, medium); signature (untiered): `TypeNode * GetRTTI(void)`
+pub const NiLookAtController__GetRTTI: u64 = 73716;
+/// `NiLookAtController::LoadBinary` at 0xf7f370 (semantic, medium); signature (untiered): `undefined LoadBinary(NiLookAtController * this, longlong param_1)`
+pub const NiLookAtController__LoadBinary: u64 = 73706;
+/// `NiLookAtController::vdtor` at 0xf7fc20 (semantic, high); signature (low): `NiLookAtController * vdtor(NiLookAtController * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const NiLookAtController__vdtor: u64 = 73715;
-/// `NiLookAtController::vfunc_2` at 0xf7fc60 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiLookAtController__vfunc_2: u64 = 73716;
-/// `NiLookAtController::vfunc_23` at 0xf7f1e0 (rtti, high); signature (low): `NiTimeController * vfunc_23(NiLookAtController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiLookAtController__vfunc_23: u64 = 73704;
-/// `NiLookAtController::vfunc_24` at 0xf7f370 (rtti, high); signature (low): `undefined vfunc_24(NiLookAtController * this, longlong param_1)`
-pub const NiLookAtController__vfunc_24: u64 = 73706;
 /// `NiLookAtController::vfunc_25` at 0xf7f3e0 (rtti, high); signature (low): `undefined vfunc_25(NiLookAtController * this, longlong param_1)`
 pub const NiLookAtController__vfunc_25: u64 = 73707;
 /// `NiLookAtController::vfunc_26` at 0xf7f420 (rtti, high); signature (low): `undefined1 vfunc_26(NiLookAtController * this, longlong * param_1)`
@@ -2515,18 +2717,18 @@ pub const NiLookAtController__vfunc_41: u64 = 73717;
 pub const NiLookAtController__vfunc_46: u64 = 73718;
 /// `NiLookAtInterpolator::Create` at 0xf81070 (string, medium); signature (low): `undefined Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const NiLookAtInterpolator__Create: u64 = 73740;
+/// `NiLookAtInterpolator::CreateClone` at 0xf7fcc0 (semantic, medium); signature (untiered): `NiLookAtInterpolator * CreateClone(NiLookAtInterpolator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiLookAtInterpolator__CreateClone: u64 = 73719;
+/// `NiLookAtInterpolator::GetRTTI` at 0xf811b0 (semantic, medium); signature (untiered): `TypeNode * GetRTTI(void)`
+pub const NiLookAtInterpolator__GetRTTI: u64 = 73743;
+/// `NiLookAtInterpolator::LoadBinary` at 0xf7ff50 (semantic, medium); signature (untiered): `undefined LoadBinary(NiLookAtInterpolator * this, longlong param_1)`
+pub const NiLookAtInterpolator__LoadBinary: u64 = 73721;
 /// `NiLookAtInterpolator::ctor` at 0xf80330 (layout_inference, high); signature (low): `NiLookAtInterpolator * ctor(NiLookAtInterpolator * this, undefined8 param_1, short param_2, char param_3)`
 pub const NiLookAtInterpolator__ctor: u64 = 73727;
 /// `NiLookAtInterpolator::ctor` at 0xf80490 (layout_inference, medium); signature (low): `undefined ctor(NiLookAtInterpolator * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const NiLookAtInterpolator__ctor_2: u64 = 73728;
-/// `NiLookAtInterpolator::vdtor` at 0xf81120 (layout_inference, medium); signature (low): `NiLookAtInterpolator * vdtor(NiLookAtInterpolator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+/// `NiLookAtInterpolator::vdtor` at 0xf81120 (semantic, high); signature (low): `NiLookAtInterpolator * vdtor(NiLookAtInterpolator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const NiLookAtInterpolator__vdtor: u64 = 73742;
-/// `NiLookAtInterpolator::vfunc_2` at 0xf811b0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiLookAtInterpolator__vfunc_2: u64 = 73743;
-/// `NiLookAtInterpolator::vfunc_23` at 0xf7fcc0 (rtti, high); signature (low): `NiLookAtInterpolator * vfunc_23(NiLookAtInterpolator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiLookAtInterpolator__vfunc_23: u64 = 73719;
-/// `NiLookAtInterpolator::vfunc_24` at 0xf7ff50 (rtti, high); signature (low): `undefined vfunc_24(NiLookAtInterpolator * this, longlong param_1)`
-pub const NiLookAtInterpolator__vfunc_24: u64 = 73721;
 /// `NiLookAtInterpolator::vfunc_25` at 0xf80020 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
 pub const NiLookAtInterpolator__vfunc_25: u64 = 73722;
 /// `NiLookAtInterpolator::vfunc_26` at 0xf80030 (rtti, high); signature (low): `undefined8 vfunc_26(NiLookAtInterpolator * this, longlong * param_1)`
@@ -7647,6 +7849,10 @@ pub const NormalizePoint: u64 = 86002;
 pub const NormalizePointsToUnitBox: u64 = 81252;
 /// `NormalizeQuaternionArray` at 0xca6420 (decompiler, medium); signature (medium): `undefined NormalizeQuaternionArray(longlong param_1, int param_2)`
 pub const NormalizeQuaternionArray: u64 = 67230;
+/// `NormalizeQuaternionPositiveW` at 0xad7160 (semantic, high); signature (untiered): `undefined NormalizeQuaternionPositiveW(float * param_1, float * param_2)`; semantic: normalises and flips the sign so w >= 0 (high); signature `void (const hkQuaternion* q, hkQuaternion* out)`
+pub const NormalizeQuaternionPositiveW: u64 = 58446;
+/// `NormalizeQuaternionPositiveW` as a function pointer type (high).
+pub type NormalizeQuaternionPositiveW_fn = unsafe extern "C" fn(q: *const crate::hkQuaternion, out: *mut crate::hkQuaternion);
 /// `NormalizeTransformArrayRotations` at 0xca6530 (decompiler, medium); signature (medium): `undefined NormalizeTransformArrayRotations(longlong param_1, int param_2)`
 pub const NormalizeTransformArrayRotations: u64 = 67231;
 /// `NormalizeTransformRotations` at 0xbf2d90 (decompiler, medium); signature (untiered): `undefined NormalizeTransformRotations(longlong param_1, int param_2)`
@@ -8545,203 +8751,3 @@ pub const Papyrus__Actor__RemoveShout: u64 = 54959;
 pub const Papyrus__Actor__RemoveSpell: u64 = 54647;
 /// `Papyrus::Actor::RemoveSpell_sub0` at 0x668fd0 (callgraph, medium); signature (untiered): `undefined RemoveSpell_sub0(longlong param_1, undefined4 * param_2, undefined8 param_3)`
 pub const Papyrus__Actor__RemoveSpell_sub0: u64 = 36962;
-/// `Papyrus::Actor::ResetHealthAndLimbs` at 0xa0d840 (papyrus_native, high); signature (medium): `void ResetHealthAndLimbs(IVirtualMachine * vm, uint stackId, Actor * self)`
-pub const Papyrus__Actor__ResetHealthAndLimbs: u64 = 54960;
-/// `Papyrus::Actor::RestoreActorValue` at 0xa01d60 (papyrus_native, high); signature (medium): `void RestoreActorValue(IVirtualMachine * vm, uint stackId, Actor * self, BSFixedString * a0, float a1)`
-pub const Papyrus__Actor__RestoreActorValue: u64 = 54737;
-/// `Papyrus::Actor::Resurrect` at 0xa01c20 (papyrus_native, high); signature (medium): `bool Resurrect(IVirtualMachine * vm, uint stackId, Actor * self)`
-pub const Papyrus__Actor__Resurrect: u64 = 54736;
-/// `Papyrus::Actor::SendAssaultAlarm` at 0xa01e10 (papyrus_native, high); signature (medium): `void SendAssaultAlarm(IVirtualMachine * vm, uint stackId, Actor * self)`
-pub const Papyrus__Actor__SendAssaultAlarm: u64 = 54738;
-/// `Papyrus::Actor::SendLycanthropyStateChanged` at 0xa01e70 (papyrus_native, high); signature (medium): `void SendLycanthropyStateChanged(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
-pub const Papyrus__Actor__SendLycanthropyStateChanged: u64 = 54739;
-/// `Papyrus::Actor::SendTrespassAlarm` at 0xa01e90 (papyrus_native, high); signature (medium): `void SendTrespassAlarm(IVirtualMachine * vm, uint stackId, Actor * self, Actor * a0)`
-pub const Papyrus__Actor__SendTrespassAlarm: u64 = 54740;
-/// `Papyrus::Actor::SendVampirismStateChanged` at 0xa01ed0 (papyrus_native, high); signature (medium): `void SendVampirismStateChanged(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
-pub const Papyrus__Actor__SendVampirismStateChanged: u64 = 54742;
-/// `Papyrus::Actor::SetActorValue` at 0xa01ef0 (papyrus_native, high); signature (medium): `void SetActorValue(IVirtualMachine * vm, uint stackId, Actor * self, BSFixedString * a0, float a1)`
-pub const Papyrus__Actor__SetActorValue: u64 = 54743;
-/// `Papyrus::Actor::SetAlert` at 0xa0d850 (papyrus_native, high); signature (medium): `void SetAlert(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
-pub const Papyrus__Actor__SetAlert: u64 = 54961;
-/// `Papyrus::Actor::SetAllowFlying` at 0xa02070 (papyrus_native, high); signature (medium): `void SetAllowFlying(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
-pub const Papyrus__Actor__SetAllowFlying: u64 = 54744;
-/// `Papyrus::Actor::SetAllowFlyingEx` at 0xa02130 (papyrus_native, high); signature (medium): `void SetAllowFlyingEx(IVirtualMachine * vm, uint stackId, Actor * self, bool a0, bool a1, bool a2)`
-pub const Papyrus__Actor__SetAllowFlyingEx: u64 = 54745;
-/// `Papyrus::Actor::SetAlpha` at 0xa02200 (papyrus_native, high); signature (medium): `void SetAlpha(IVirtualMachine * vm, uint stackId, Actor * self, float a0, bool a1)`
-pub const Papyrus__Actor__SetAlpha: u64 = 54746;
-/// `Papyrus::Actor::SetAttackActorOnSight` at 0xa0d860 (papyrus_native, high); signature (medium): `void SetAttackActorOnSight(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
-pub const Papyrus__Actor__SetAttackActorOnSight: u64 = 54962;
-/// `Papyrus::Actor::SetBribed` at 0xa0d870 (papyrus_native, high); signature (medium): `void SetBribed(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
-pub const Papyrus__Actor__SetBribed: u64 = 54963;
-/// `Papyrus::Actor::SetCrimeFaction` at 0xa0d880 (papyrus_native, high); signature (medium): `void SetCrimeFaction(IVirtualMachine * vm, uint stackId, Actor * self, TESFaction * a0)`
-pub const Papyrus__Actor__SetCrimeFaction: u64 = 54964;
-/// `Papyrus::Actor::SetCriticalStage` at 0xa02280 (papyrus_native, high); signature (medium): `void SetCriticalStage(IVirtualMachine * vm, uint stackId, Actor * self, uint a0)`
-pub const Papyrus__Actor__SetCriticalStage: u64 = 54747;
-/// `Papyrus::Actor::SetDoingFavor` at 0xa0d890 (papyrus_native, high); signature (medium): `void SetDoingFavor(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
-pub const Papyrus__Actor__SetDoingFavor: u64 = 54965;
-/// `Papyrus::Actor::SetDontMove` at 0xa02b60 (papyrus_native, high); signature (medium): `void SetDontMove(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
-pub const Papyrus__Actor__SetDontMove: u64 = 54761;
-/// `Papyrus::Actor::SetDontMove_sub0` at 0x687ba0 (callgraph, medium); signature (untiered): `undefined SetDontMove_sub0(TESObjectREFR * param_1, char param_2, undefined8 param_3, undefined8 param_4)`
-pub const Papyrus__Actor__SetDontMove_sub0: u64 = 37489;
-/// `Papyrus::Actor::SetExpressionOverride` at 0xa02300 (papyrus_native, high); signature (medium): `void SetExpressionOverride(IVirtualMachine * vm, uint stackId, Actor * self, uint a0, uint a1)`; semantic: data = self->GetFaceGenAnimationData(); data+0x21e (override lock) = 0; ApplySingleExpressionWeight(data, expression, min(strength,100) * 0.01); data+0x21e = 1 (high); signature `void (IVirtualMachine* vm, u32 stackId, Actor* self, u32 expression, u32 strength)`
-pub const Papyrus__Actor__SetExpressionOverride: u64 = 54748;
-/// `Papyrus::Actor::SetExpressionOverride` as a function pointer type (high).
-pub type Papyrus__Actor__SetExpressionOverride_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, expression: u32, strength: u32);
-/// `Papyrus::Actor::SetEyeTexture` at 0xa02410 (papyrus_native, high); signature (medium): `void SetEyeTexture(IVirtualMachine * vm, uint stackId, Actor * self, BGSTextureSet * a0)`
-pub const Papyrus__Actor__SetEyeTexture: u64 = 54749;
-/// `Papyrus::Actor::SetEyeTexture_sub0` at 0x3bfbb0 (callgraph, medium); signature (untiered): `undefined SetEyeTexture_sub0(longlong param_1, int param_2)`
-pub const Papyrus__Actor__SetEyeTexture_sub0: u64 = 24706;
-/// `Papyrus::Actor::SetEyeTexture_sub1` at 0x669730 (callgraph, medium); signature (untiered): `undefined SetEyeTexture_sub1(longlong param_1, longlong param_2, undefined8 param_3)`
-pub const Papyrus__Actor__SetEyeTexture_sub1: u64 = 36987;
-/// `Papyrus::Actor::SetFactionRank` at 0xa02570 (papyrus_native, high); signature (medium): `void SetFactionRank(IVirtualMachine * vm, uint stackId, Actor * self, TESFaction * a0, int a1)`
-pub const Papyrus__Actor__SetFactionRank: u64 = 54750;
-/// `Papyrus::Actor::SetForcedLandingMarker` at 0xa025d0 (papyrus_native, high); signature (medium): `void SetForcedLandingMarker(IVirtualMachine * vm, uint stackId, Actor * self, TESObjectREFR * a0)`
-pub const Papyrus__Actor__SetForcedLandingMarker: u64 = 54753;
-/// `Papyrus::Actor::SetForcedLandingMarker_sub0` at 0x172180 (callgraph, medium); signature (untiered): `undefined SetForcedLandingMarker_sub0(longlong param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
-pub const Papyrus__Actor__SetForcedLandingMarker_sub0: u64 = 12034;
-/// `Papyrus::Actor::SetGhost` at 0xa0d8a0 (papyrus_native, high); signature (medium): `void SetGhost(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
-pub const Papyrus__Actor__SetGhost: u64 = 54966;
-/// `Papyrus::Actor::SetHeadTracking` at 0xa025b0 (papyrus_native, high); signature (medium): `void SetHeadTracking(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`; semantic: ActorState flags2 (Actor+0xcc) bit 3 = enable; nothing else (high); signature `void (IVirtualMachine* vm, u32 stackId, Actor* self, bool enable)`
-pub const Papyrus__Actor__SetHeadTracking: u64 = 54752;
-/// `Papyrus::Actor::SetHeadTracking` as a function pointer type (high).
-pub type Papyrus__Actor__SetHeadTracking_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, enable: bool);
-/// `Papyrus::Actor::SetIntimidated` at 0xa0d8b0 (papyrus_native, high); signature (medium): `void SetIntimidated(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
-pub const Papyrus__Actor__SetIntimidated: u64 = 54967;
-/// `Papyrus::Actor::SetLookAt` at 0xa02640 (papyrus_native, high); signature (medium): `void SetLookAt(IVirtualMachine * vm, uint stackId, Actor * self, TESObjectREFR * a0, bool a1)`; semantic: with pathingLookAt false: slot 2 = target (0x6fe6d0) and ExtraHeadingTarget (extra 0x45) = target's handle; with true: a movement position request toward target (0x6a6b20), data+0x17c = target handle and target flag 0x40000; then self slot 10 (0x80000000) (high); signature `void (IVirtualMachine* vm, u32 stackId, Actor* self, TESObjectREFR* target, bool pathingLookAt)`
-pub const Papyrus__Actor__SetLookAt: u64 = 54754;
-/// `Papyrus::Actor::SetLookAt` as a function pointer type (high).
-pub type Papyrus__Actor__SetLookAt_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, target: *mut crate::TESObjectREFR, pathingLookAt: bool);
-/// `Papyrus::Actor::SetNoBleedoutRecovery` at 0xa0d8c0 (papyrus_native, high); signature (medium): `void SetNoBleedoutRecovery(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
-pub const Papyrus__Actor__SetNoBleedoutRecovery: u64 = 54968;
-/// `Papyrus::Actor::SetNotShowOnStealthMeter` at 0xa0d8d0 (papyrus_native, high); signature (medium): `void SetNotShowOnStealthMeter(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
-pub const Papyrus__Actor__SetNotShowOnStealthMeter: u64 = 54969;
-/// `Papyrus::Actor::SetOutfit` at 0xa02770 (papyrus_native, high); signature (medium): `void SetOutfit(IVirtualMachine * vm, uint stackId, Actor * self, BGSOutfit * a0, bool a1)`
-pub const Papyrus__Actor__SetOutfit: u64 = 54755;
-/// `Papyrus::Actor::SetPlayerControls` at 0xa02840 (papyrus_native, high); signature (medium): `void SetPlayerControls(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
-pub const Papyrus__Actor__SetPlayerControls: u64 = 54756;
-/// `Papyrus::Actor::SetPlayerResistingArrest` at 0xa028b0 (papyrus_native, high); signature (medium): `void SetPlayerResistingArrest(IVirtualMachine * vm, uint stackId, Actor * self)`
-pub const Papyrus__Actor__SetPlayerResistingArrest: u64 = 54757;
-/// `Papyrus::Actor::SetPlayerTeammate` at 0xa0d8e0 (papyrus_native, high); signature (medium): `void SetPlayerTeammate(IVirtualMachine * vm, uint stackId, Actor * self, bool a0, bool a1)`
-pub const Papyrus__Actor__SetPlayerTeammate: u64 = 54970;
-/// `Papyrus::Actor::SetRace` at 0xa028e0 (papyrus_native, high); signature (medium): `void SetRace(IVirtualMachine * vm, uint stackId, Actor * self, TESRace * a0)`
-pub const Papyrus__Actor__SetRace: u64 = 54758;
-/// `Papyrus::Actor::SetRelationshipRank` at 0xa02960 (papyrus_native, high); signature (medium): `void SetRelationshipRank(IVirtualMachine * vm, uint stackId, Actor * self, Actor * a0, int a1)`
-pub const Papyrus__Actor__SetRelationshipRank: u64 = 54759;
-/// `Papyrus::Actor::SetRelationshipRank_sub0` at 0x69d1f0 (callgraph, medium); signature (untiered): `undefined SetRelationshipRank_sub0(longlong param_1, char param_2, int param_3, ulonglong param_4)`
-pub const Papyrus__Actor__SetRelationshipRank_sub0: u64 = 37674;
-/// `Papyrus::Actor::SetRestrained` at 0xa02b20 (papyrus_native, high); signature (medium): `void SetRestrained(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
-pub const Papyrus__Actor__SetRestrained: u64 = 54760;
-/// `Papyrus::Actor::SetSubGraphFloatVariable` at 0xa02ba0 (papyrus_native, high); signature (medium): `void SetSubGraphFloatVariable(IVirtualMachine * vm, uint stackId, Actor * self, BSFixedString * a0, float a1)`
-pub const Papyrus__Actor__SetSubGraphFloatVariable: u64 = 54762;
-/// `Papyrus::Actor::SetSubGraphFloatVariable_sub0` at 0xa0b040 (callgraph, medium); signature (untiered): `undefined SetSubGraphFloatVariable_sub0(longlong param_1, ulonglong * param_2)`
-pub const Papyrus__Actor__SetSubGraphFloatVariable_sub0: u64 = 54814;
-/// `Papyrus::Actor::SetUnconscious` at 0xa02ca0 (papyrus_native, high); signature (medium): `void SetUnconscious(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
-pub const Papyrus__Actor__SetUnconscious: u64 = 54763;
-/// `Papyrus::Actor::SetVehicle` at 0xa02d50 (papyrus_native, high); signature (medium): `void SetVehicle(IVirtualMachine * vm, uint stackId, Actor * self, TESObjectREFR * a0)`
-pub const Papyrus__Actor__SetVehicle: u64 = 54764;
-/// `Papyrus::Actor::SetVoiceRecoveryTime` at 0xa0d900 (papyrus_native, high); signature (medium): `void SetVoiceRecoveryTime(IVirtualMachine * vm, uint stackId, Actor * self, float a0)`
-pub const Papyrus__Actor__SetVoiceRecoveryTime: u64 = 54971;
-/// `Papyrus::Actor::ShowBarterMenu` at 0xa02dd0 (papyrus_native, high); signature (medium): `void ShowBarterMenu(IVirtualMachine * vm, uint stackId, Actor * self)`
-pub const Papyrus__Actor__ShowBarterMenu: u64 = 54765;
-/// `Papyrus::Actor::ShowGiftMenu` at 0xa02de0 (papyrus_native, high); signature (medium): `bool ShowGiftMenu(IVirtualMachine * vm, uint stackId, Actor * self, bool a0, BGSListForm * a1, bool a2, bool a3)`
-pub const Papyrus__Actor__ShowGiftMenu: u64 = 54766;
-/// `Papyrus::Actor::ShowGiftMenu_sub0` at 0x930040 (callgraph, medium); signature (untiered): `undefined ShowGiftMenu_sub0(longlong param_1, longlong param_2, longlong * param_3, undefined8 param_4, undefined1 param_5)`
-pub const Papyrus__Actor__ShowGiftMenu_sub0: u64 = 51576;
-/// `Papyrus::Actor::ShowGiftMenu_sub1` at 0xa0c210 (callgraph, medium); signature (untiered): `undefined ShowGiftMenu_sub1(longlong * param_1)`
-pub const Papyrus__Actor__ShowGiftMenu_sub1: u64 = 54840;
-/// `Papyrus::Actor::StartCannibal` at 0xa02f90 (papyrus_native, high); signature (medium): `void StartCannibal(IVirtualMachine * vm, uint stackId, Actor * self, Actor * a0)`
-pub const Papyrus__Actor__StartCannibal: u64 = 54767;
-/// `Papyrus::Actor::StartCombat` at 0xa03090 (papyrus_native, high); signature (medium): `void StartCombat(IVirtualMachine * vm, uint stackId, Actor * self, Actor * a0)`
-pub const Papyrus__Actor__StartCombat: u64 = 54768;
-/// `Papyrus::Actor::StartCombat_sub0` at 0x668eb0 (callgraph, medium); signature (untiered): `undefined StartCombat_sub0(longlong param_1, longlong param_2, longlong param_3)`
-pub const Papyrus__Actor__StartCombat_sub0: u64 = 36959;
-/// `Papyrus::Actor::StartDeferredKill` at 0xa03b90 (papyrus_native, high); signature (medium): `void StartDeferredKill(IVirtualMachine * vm, uint stackId, Actor * self)`
-pub const Papyrus__Actor__StartDeferredKill: u64 = 54780;
-/// `Papyrus::Actor::StartSneaking` at 0xa03a30 (papyrus_native, high); signature (medium): `void StartSneaking(IVirtualMachine * vm, uint stackId, Actor * self)`
-pub const Papyrus__Actor__StartSneaking: u64 = 54778;
-/// `Papyrus::Actor::StartVampireFeed` at 0xa03320 (papyrus_native, high); signature (medium): `void StartVampireFeed(IVirtualMachine * vm, uint stackId, Actor * self, Actor * a0)`
-pub const Papyrus__Actor__StartVampireFeed: u64 = 54769;
-/// `Papyrus::Actor::StartVampireFeed_sub0` at 0x9e1560 (callgraph, medium); signature (untiered): `undefined StartVampireFeed_sub0(longlong param_1, longlong param_2, longlong param_3)`
-pub const Papyrus__Actor__StartVampireFeed_sub0: u64 = 54012;
-/// `Papyrus::Actor::StopCombat` at 0xa03480 (papyrus_native, high); signature (medium): `void StopCombat(IVirtualMachine * vm, uint stackId, Actor * self)`
-pub const Papyrus__Actor__StopCombat: u64 = 54770;
-/// `Papyrus::Actor::StopCombatAlarm` at 0xa034e0 (papyrus_native, high); signature (medium): `void StopCombatAlarm(IVirtualMachine * vm, uint stackId, Actor * self)`
-pub const Papyrus__Actor__StopCombatAlarm: u64 = 54771;
-/// `Papyrus::Actor::TrapSoul` at 0xa03520 (papyrus_native, high); signature (medium): `bool TrapSoul(IVirtualMachine * vm, uint stackId, Actor * self, Actor * a0)`
-pub const Papyrus__Actor__TrapSoul: u64 = 54772;
-/// `Papyrus::Actor::UnequipAll` at 0xa03540 (papyrus_native, high); signature (medium): `void UnequipAll(IVirtualMachine * vm, uint stackId, Actor * self)`
-pub const Papyrus__Actor__UnequipAll: u64 = 54773;
-/// `Papyrus::Actor::UnequipItem` at 0xa03560 (papyrus_native, high); signature (medium): `void UnequipItem(IVirtualMachine * vm, uint stackId, Actor * self, TESForm * a0, bool a1, bool a2)`
-pub const Papyrus__Actor__UnequipItem: u64 = 54774;
-/// `Papyrus::Actor::UnequipItemSlot` at 0xa03870 (papyrus_native, high); signature (medium): `void UnequipItemSlot(IVirtualMachine * vm, uint stackId, Actor * self, uint a0)`
-pub const Papyrus__Actor__UnequipItemSlot: u64 = 54775;
-/// `Papyrus::Actor::UnequipShout` at 0xa002e0 (papyrus_native, high); signature (medium): `void UnequipShout(IVirtualMachine * vm, uint stackId, Actor * self, TESShout * a0)`
-pub const Papyrus__Actor__UnequipShout: u64 = 54664;
-/// `Papyrus::Actor::UnequipSpell` at 0xa00380 (papyrus_native, high); signature (medium): `void UnequipSpell(IVirtualMachine * vm, uint stackId, Actor * self, SpellItem * a0, uint a1)`
-pub const Papyrus__Actor__UnequipSpell: u64 = 54669;
-/// `Papyrus::Actor::UnlockOwnedDoorsInCell` at 0xa03900 (papyrus_native, high); signature (medium): `void UnlockOwnedDoorsInCell(IVirtualMachine * vm, uint stackId, Actor * self)`
-pub const Papyrus__Actor__UnlockOwnedDoorsInCell: u64 = 54776;
-/// `Papyrus::Actor::WillIntimidateSucceed` at 0xa0d910 (papyrus_native, high); signature (medium): `bool WillIntimidateSucceed(IVirtualMachine * vm, uint stackId, Actor * self)`
-pub const Papyrus__Actor__WillIntimidateSucceed: u64 = 54972;
-/// `Papyrus::Actor::WornHasKeyword` at 0xa039a0 (papyrus_native, high); signature (medium): `bool WornHasKeyword(IVirtualMachine * vm, uint stackId, Actor * self, BGSKeyword * a0)`
-pub const Papyrus__Actor__WornHasKeyword: u64 = 54777;
-/// `Papyrus::ActorBase::GetClass` at 0xa3e030 (papyrus_native, high); signature (medium): `TESClass * GetClass(IVirtualMachine * vm, uint stackId, TESNPC * self)`
-pub const Papyrus__ActorBase__GetClass: u64 = 56002;
-/// `Papyrus::ActorBase::GetDeadCount` at 0xa3cab0 (papyrus_native, high); signature (medium): `int GetDeadCount(IVirtualMachine * vm, uint stackId, TESNPC * self)`
-pub const Papyrus__ActorBase__GetDeadCount: u64 = 55987;
-/// `Papyrus::ActorBase::GetGiftFilter` at 0xa3e040 (papyrus_native, high); signature (medium): `BGSListForm * GetGiftFilter(IVirtualMachine * vm, uint stackId, TESNPC * self)`
-pub const Papyrus__ActorBase__GetGiftFilter: u64 = 56003;
-/// `Papyrus::ActorBase::GetRace` at 0xa3e050 (papyrus_native, high); signature (medium): `TESRace * GetRace(IVirtualMachine * vm, uint stackId, TESNPC * self)`
-pub const Papyrus__ActorBase__GetRace: u64 = 56004;
-/// `Papyrus::ActorBase::GetSex` at 0xa3e060 (papyrus_native, high); signature (medium): `int GetSex(IVirtualMachine * vm, uint stackId, TESNPC * self)`
-pub const Papyrus__ActorBase__GetSex: u64 = 56005;
-/// `Papyrus::ActorBase::IsEssential` at 0xa3e070 (papyrus_native, high); signature (medium): `bool IsEssential(IVirtualMachine * vm, uint stackId, TESNPC * self)`
-pub const Papyrus__ActorBase__IsEssential: u64 = 56006;
-/// `Papyrus::ActorBase::IsInvulnerable` at 0xa3e080 (papyrus_native, high); signature (medium): `bool IsInvulnerable(IVirtualMachine * vm, uint stackId, TESNPC * self)`
-pub const Papyrus__ActorBase__IsInvulnerable: u64 = 56007;
-/// `Papyrus::ActorBase::IsProtected` at 0xa3e090 (papyrus_native, high); signature (medium): `bool IsProtected(IVirtualMachine * vm, uint stackId, TESNPC * self)`
-pub const Papyrus__ActorBase__IsProtected: u64 = 56008;
-/// `Papyrus::ActorBase::IsUnique` at 0xa3e0a0 (papyrus_native, high); signature (medium): `bool IsUnique(IVirtualMachine * vm, uint stackId, TESNPC * self)`
-pub const Papyrus__ActorBase__IsUnique: u64 = 56009;
-/// `Papyrus::ActorBase::RegisterFuncs` at 0xa3cb40 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const Papyrus__ActorBase__RegisterFuncs: u64 = 55991;
-/// `Papyrus::ActorBase::SetEssential` at 0xa3e0b0 (papyrus_native, high); signature (medium): `void SetEssential(IVirtualMachine * vm, uint stackId, TESNPC * self, bool a0)`
-pub const Papyrus__ActorBase__SetEssential: u64 = 56010;
-/// `Papyrus::ActorBase::SetInvulnerable` at 0xa3e100 (papyrus_native, high); signature (medium): `void SetInvulnerable(IVirtualMachine * vm, uint stackId, TESNPC * self, bool a0)`
-pub const Papyrus__ActorBase__SetInvulnerable: u64 = 56011;
-/// `Papyrus::ActorBase::SetOutfit` at 0xa3cad0 (papyrus_native, high); signature (medium): `void SetOutfit(IVirtualMachine * vm, uint stackId, TESNPC * self, BGSOutfit * a0, bool a1)`
-pub const Papyrus__ActorBase__SetOutfit: u64 = 55988;
-/// `Papyrus::ActorBase::SetProtected` at 0xa3e120 (papyrus_native, high); signature (medium): `void SetProtected(IVirtualMachine * vm, uint stackId, TESNPC * self, bool a0)`
-pub const Papyrus__ActorBase__SetProtected: u64 = 56012;
-/// `Papyrus::Alias::GetOwningQuest` at 0xa15550 (papyrus_native, high); signature (medium): `TESQuest * GetOwningQuest(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
-pub const Papyrus__Alias__GetOwningQuest: u64 = 55155;
-/// `Papyrus::Alias::RegisterForAnimationEvent` at 0xa138e0 (papyrus_native, high); signature (medium): `bool RegisterForAnimationEvent(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, TESObjectREFR * a0, BSFixedString * a1)`
-pub const Papyrus__Alias__RegisterForAnimationEvent: u64 = 55127;
-/// `Papyrus::Alias::RegisterForLOS` at 0xa139c0 (papyrus_native, high); signature (medium): `void RegisterForLOS(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, Actor * a0, TESObjectREFR * a1)`
-pub const Papyrus__Alias__RegisterForLOS: u64 = 55128;
-/// `Papyrus::Alias::RegisterForSingleLOSGain` at 0xa13a50 (papyrus_native, high); signature (medium): `void RegisterForSingleLOSGain(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, Actor * a0, TESObjectREFR * a1)`
-pub const Papyrus__Alias__RegisterForSingleLOSGain: u64 = 55129;
-/// `Papyrus::Alias::RegisterForSingleLOSLost` at 0xa13ae0 (papyrus_native, high); signature (medium): `void RegisterForSingleLOSLost(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, Actor * a0, TESObjectREFR * a1)`
-pub const Papyrus__Alias__RegisterForSingleLOSLost: u64 = 55130;
-/// `Papyrus::Alias::RegisterForSingleUpdate` at 0xa13b70 (runtime, high); signature (untiered): `void RegisterForSingleUpdate(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, float a0)`; semantic: the RegisterForSingleUpdate native of Alias (high); signature `void (BSScript::IVirtualMachine* vm, u32 stackId, BGSBaseAlias* self, float a0)`
-pub const Papyrus__Alias__RegisterForSingleUpdate: u64 = 55131;
-/// `Papyrus::Alias::RegisterForSingleUpdate` as a function pointer type (high).
-pub type Papyrus__Alias__RegisterForSingleUpdate_fn = unsafe extern "C" fn(vm: *mut crate::BSScript__IVirtualMachine, stackId: u32, self_: *mut crate::BGSBaseAlias, a0: f32);
-/// `Papyrus::Alias::RegisterForSingleUpdateGameTime` at 0xa13bd0 (papyrus_native, high); signature (medium): `void RegisterForSingleUpdateGameTime(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, float a0)`
-pub const Papyrus__Alias__RegisterForSingleUpdateGameTime: u64 = 55132;
-/// `Papyrus::Alias::RegisterForSleep` at 0xa13c30 (runtime, high); signature (untiered): `void RegisterForSleep(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`; semantic: the RegisterForSleep native of Alias (high); signature `void (BSScript::IVirtualMachine* vm, u32 stackId, BGSBaseAlias* self)`
-pub const Papyrus__Alias__RegisterForSleep: u64 = 55133;
-/// `Papyrus::Alias::RegisterForSleep` as a function pointer type (high).
-pub type Papyrus__Alias__RegisterForSleep_fn = unsafe extern "C" fn(vm: *mut crate::BSScript__IVirtualMachine, stackId: u32, self_: *mut crate::BGSBaseAlias);
-/// `Papyrus::Alias::RegisterForTrackedStatsEvent` at 0xa13c80 (papyrus_native, high); signature (medium): `void RegisterForTrackedStatsEvent(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
-pub const Papyrus__Alias__RegisterForTrackedStatsEvent: u64 = 55134;
-/// `Papyrus::Alias::RegisterForUpdate` at 0xa13cd0 (papyrus_native, high); signature (medium): `void RegisterForUpdate(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, float a0)`
-pub const Papyrus__Alias__RegisterForUpdate: u64 = 55135;
-/// `Papyrus::Alias::RegisterForUpdateGameTime` at 0xa13d30 (papyrus_native, high); signature (medium): `void RegisterForUpdateGameTime(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, float a0)`
-pub const Papyrus__Alias__RegisterForUpdateGameTime: u64 = 55136;
-/// `Papyrus::Alias::RegisterFuncs` at 0xa14190 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const Papyrus__Alias__RegisterFuncs: u64 = 55146;
-/// `Papyrus::Alias::StartObjectProfiling` at 0xa13d90 (papyrus_native, high); signature (medium): `void StartObjectProfiling(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
-pub const Papyrus__Alias__StartObjectProfiling: u64 = 55137;
-/// `Papyrus::Alias::StopObjectProfiling` at 0xa13e20 (papyrus_native, high); signature (medium): `void StopObjectProfiling(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
-pub const Papyrus__Alias__StopObjectProfiling: u64 = 55138;

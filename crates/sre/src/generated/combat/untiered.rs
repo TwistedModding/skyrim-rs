@@ -581,16 +581,6 @@ impl crate::CombatBehaviorTreeNodeObject_CombatBehaviorBlockAttack {
     pub unsafe fn vfunc_2_sub0(param_1: *mut u32) -> u64 { unsafe { function!(47831, (*mut u32) -> u64)(param_1) } }
 }
 
-impl crate::CombatBehaviorTreeNodeObject_CombatBehaviorCastShout {
-    /// `CombatBehaviorTreeNodeObject<CombatBehaviorCastShout>::vfunc_2_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 49764, rva 0x8d1150).
-    /// `undefined vfunc_2_sub0(undefined8 param_1, longlong * * param_2, undefined8 param_3, undefined8 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_2_sub0(param_1: u64, param_2: *mut *mut i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(49764, (u64, *mut *mut i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-}
-
 impl crate::CombatBehaviorTreeNodeObject_CombatBehaviorChase {
     /// `CombatBehaviorTreeNodeObject<CombatBehaviorChase>::vfunc_2_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 48367, rva 0x897b80).
     /// `undefined vfunc_2_sub0(longlong * param_1, undefined8 param_2, CombatTargetLocationSearch_vtbl * * param_3, undefined8 param_4)`

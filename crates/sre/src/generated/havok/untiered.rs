@@ -495,30 +495,6 @@ impl crate::bhkQuadOrientationController {
     pub unsafe fn vfunc_8_sub0(param_1: i64, param_2: i64, param_3: u64, param_4: i32, param_5: f32, param_6: f32) -> f32 { unsafe { function!(80142, (i64, i64, u64, i32, f32, f32) -> f32)(param_1, param_2, param_3, param_4, param_5, param_6) } }
 }
 
-impl crate::bhkRagdollController {
-    /// `bhkRagdollController::dtor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 78502, rva 0x1079790).
-    /// `undefined8 dtor_sub0(longlong param_1, longlong param_2, uint param_3, longlong * param_4, undefined8 * param_5)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor_sub0(param_1: i64, param_2: i64, param_3: u32, param_4: *mut i64, param_5: *mut u64) -> u64 { unsafe { function!(78502, (i64, i64, u32, *mut i64, *mut u64) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
-    /// `bhkRagdollController::dtor_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 78503, rva 0x1079900).
-    /// `undefined8 dtor_sub1(longlong param_1, longlong param_2, uint param_3, longlong * param_4, undefined8 * param_5)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor_sub1(param_1: i64, param_2: i64, param_3: u32, param_4: *mut i64, param_5: *mut u64) -> u64 { unsafe { function!(78503, (i64, i64, u32, *mut i64, *mut u64) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
-    /// `bhkRagdollController::dtor_sub2` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 78535, rva 0x107b2e0).
-    /// `void * dtor_sub2(void * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor_sub2(param_1: *mut c_void, param_2: u32, param_3: u64, param_4: u64) -> *mut c_void { unsafe { function!(78535, (*mut c_void, u32, u64, u64) -> *mut c_void)(param_1, param_2, param_3, param_4) } }
-}
-
 impl crate::bhkRagdollPenetrationUtil {
     /// `bhkRagdollPenetrationUtil::vfunc_1_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 78245, rva 0x1062060).
     /// `char vfunc_1_sub0(longlong param_1, float * param_2, float * param_3, float * param_4)`
@@ -1449,16 +1425,6 @@ impl crate::hkaQuantizedAnimation {
     pub unsafe fn ctor_sub0(param_1: *mut u32) -> *mut u32 { unsafe { function!(64415, (*mut u32) -> *mut u32)(param_1) } }
 }
 
-impl crate::hkaRagdollInstance {
-    /// `hkaRagdollInstance::ctor_caller` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 80076, rva 0x10c6f00).
-    /// `undefined ctor_caller(void)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_caller() -> u64 { unsafe { function!(80076, () -> u64)() } }
-}
-
 impl crate::hkbAnimationBindingSet {
     /// `hkbAnimationBindingSet::dtor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 59418, rva 0xaf9aa0).
     /// `undefined dtor_sub0(longlong param_1)`
@@ -1654,64 +1620,6 @@ impl crate::hkbEvaluateExpressionModifier {
     pub unsafe fn vfunc_5_sub0(param_1: i32, param_2: *mut i64, param_3: f32) -> u64 { unsafe { function!(59696, (i32, *mut i64, f32) -> u64)(param_1, param_2, param_3) } }
 }
 
-impl crate::hkbExtractRagdollPoseModifier {
-    /// `hkbExtractRagdollPoseModifier::vfunc_23_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 58289, rva 0xac6f10).
-    /// `undefined vfunc_23_sub0(void)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_23_sub0() -> u64 { unsafe { function!(58289, () -> u64)() } }
-}
-
-impl crate::hkbFootIkControlsModifier {
-    /// `hkbFootIkControlsModifier::vfunc_23_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 60056, rva 0xb27890).
-    /// `undefined vfunc_23_sub0(longlong param_1, longlong * param_2, undefined8 param_3, undefined4 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_23_sub0(param_1: i64, param_2: *mut i64, param_3: u64, param_4: u32) -> u64 { unsafe { function!(60056, (i64, *mut i64, u64, u32) -> u64)(param_1, param_2, param_3, param_4) } }
-}
-
-impl crate::hkbFootIkModifier {
-    /// `hkbFootIkModifier::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 59752, rva 0xb0f5d0).
-    /// `undefined8 * ctor_sub0(undefined8 * param_1, undefined8 * param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_sub0(param_1: *mut u64, param_2: *mut u64) -> *mut u64 { unsafe { function!(59752, (*mut u64, *mut u64) -> *mut u64)(param_1, param_2) } }
-    /// `hkbFootIkModifier::ctor_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 59753, rva 0xb0f6f0).
-    /// `undefined8 * ctor_sub1(undefined8 * param_1, undefined8 * param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_sub1(param_1: *mut u64, param_2: *mut u64) -> *mut u64 { unsafe { function!(59753, (*mut u64, *mut u64) -> *mut u64)(param_1, param_2) } }
-    /// `hkbFootIkModifier::vfunc_23_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 59745, rva 0xb0d360).
-    /// `undefined vfunc_23_sub0(longlong param_1, longlong * param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_23_sub0(param_1: i64, param_2: *mut i64, param_3: u64) -> u64 { unsafe { function!(59745, (i64, *mut i64, u64) -> u64)(param_1, param_2, param_3) } }
-    /// `hkbFootIkModifier::vfunc_23_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 59746, rva 0xb0d600).
-    /// `undefined vfunc_23_sub1(longlong param_1, longlong * param_2, longlong * param_3, longlong * param_4, float * param_5, float param_6)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_23_sub1(param_1: i64, param_2: *mut i64, param_3: *mut i64, param_4: *mut i64, param_5: *mut f32, param_6: f32) -> u64 { unsafe { function!(59746, (i64, *mut i64, *mut i64, *mut i64, *mut f32, f32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6) } }
-    /// `hkbFootIkModifier::vfunc_23_sub2` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 59747, rva 0xb0db30).
-    /// `undefined vfunc_23_sub2(longlong param_1, longlong * param_2, undefined8 param_3, longlong * param_4, float param_5)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_23_sub2(param_1: i64, param_2: *mut i64, param_3: u64, param_4: *mut i64, param_5: f32) -> u64 { unsafe { function!(59747, (i64, *mut i64, u64, *mut i64, f32) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
-}
-
 impl crate::hkbGeneratorTransitionEffect {
     /// `hkbGeneratorTransitionEffect::vfunc_23_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 60077, rva 0xb29e00).
     /// `undefined vfunc_23_sub0(longlong param_1, undefined8 * param_2, longlong * param_3)`
@@ -1730,36 +1638,6 @@ impl crate::hkbGetUpModifier {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_23_sub0(param_1: *mut f32, param_2: *mut f32, param_3: *mut f32, param_4: *mut f32, param_5: *mut f32, param_6: f32, param_7: f32) -> u64 { unsafe { function!(59321, (*mut f32, *mut f32, *mut f32, *mut f32, *mut f32, f32, f32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7) } }
-}
-
-impl crate::hkbHandIkControlsModifier {
-    /// `hkbHandIkControlsModifier::vfunc_23_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 60066, rva 0xb27cd0).
-    /// `undefined vfunc_23_sub0(longlong param_1, longlong * param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_23_sub0(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(60066, (i64, *mut i64) -> u64)(param_1, param_2) } }
-}
-
-impl crate::hkbHandIkModifier {
-    /// `hkbHandIkModifier::vfunc_23_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 59792, rva 0xb13000).
-    /// `undefined vfunc_23_sub0(longlong param_1, int param_2, float param_3, float * param_4, undefined8 param_5, longlong * param_6)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_23_sub0(param_1: i64, param_2: i32, param_3: f32, param_4: *mut f32, param_5: u64, param_6: *mut i64) -> u64 { unsafe { function!(59792, (i64, i32, f32, *mut f32, u64, *mut i64) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6) } }
-}
-
-impl crate::hkbKeyframeBonesModifier {
-    /// `hkbKeyframeBonesModifier::vfunc_23_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 60071, rva 0xb28c00).
-    /// `undefined vfunc_23_sub0(longlong param_1, longlong * param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_23_sub0(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(60071, (i64, *mut i64) -> u64)(param_1, param_2) } }
 }
 
 impl crate::hkbMirrorModifier {
@@ -1790,16 +1668,6 @@ impl crate::hkbMoveCharacterModifier {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_23_sub0(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(60068, (i64, *mut i64) -> u64)(param_1, param_2) } }
-}
-
-impl crate::hkbPoweredRagdollControlsModifier {
-    /// `hkbPoweredRagdollControlsModifier::vfunc_23_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 60069, rva 0xb283f0).
-    /// `undefined vfunc_23_sub0(longlong param_1, longlong * param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_23_sub0(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(60069, (i64, *mut i64) -> u64)(param_1, param_2) } }
 }
 
 impl crate::hkbProxyModifier {
@@ -1838,16 +1706,6 @@ impl crate::hkbProxyModifier {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_23_sub4() -> u64 { unsafe { function!(62634, () -> u64)() } }
-}
-
-impl crate::hkbRigidBodyRagdollControlsModifier {
-    /// `hkbRigidBodyRagdollControlsModifier::vfunc_23_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 60070, rva 0xb289d0).
-    /// `undefined vfunc_23_sub0(longlong param_1, longlong * param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_23_sub0(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(60070, (i64, *mut i64) -> u64)(param_1, param_2) } }
 }
 
 impl crate::hkbRotateCharacterModifier {
@@ -1962,16 +1820,6 @@ impl crate::hkbStateMachine {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_9_sub0(param_1: i64) -> u64 { unsafe { function!(59402, (i64) -> u64)(param_1) } }
-}
-
-impl crate::hkbTwistModifier {
-    /// `hkbTwistModifier::vfunc_23_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 60075, rva 0xb297b0).
-    /// `undefined vfunc_23_sub0(longlong param_1, longlong * param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_23_sub0(param_1: i64, param_2: *mut i64, param_3: u64) -> u64 { unsafe { function!(60075, (i64, *mut i64, u64) -> u64)(param_1, param_2, param_3) } }
 }
 
 impl crate::hkbWorld {

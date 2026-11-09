@@ -4128,13 +4128,6 @@ pub unsafe fn check_usable_attack_items_for_type_mask(param_1: i64, param_2: *mu
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn clamp_matrix_group_rms(param_1: i64, param_2: f32) -> u64 { unsafe { function!(27037, (i64, f32) -> u64)(param_1, param_2) } }
-/// `ClampScaledProduct` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 59325, rva 0xaf0820).
-/// `float ClampScaledProduct(float param_1, float param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn clamp_scaled_product(param_1: f32, param_2: f32) -> f32 { unsafe { function!(59325, (f32, f32) -> f32)(param_1, param_2) } }
 /// `ClassifyBoundAgainstSphereAndPlane` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 108609, rva 0x1587150).
 /// `char ClassifyBoundAgainstSphereAndPlane(longlong param_1, float * param_2)`
 ///
@@ -7334,13 +7327,6 @@ pub unsafe fn compute_repair_amount(param_1: i32, param_2: f32, param_3: f32, pa
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn compute_rotation_between_directions(param_1: *mut f32, param_2: *mut f32, param_3: *mut u64) -> u64 { unsafe { function!(91808, (*mut f32, *mut f32, *mut u64) -> u64)(param_1, param_2, param_3) } }
-/// `ComputeRotationQuaternionBetweenVectors` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 25781, rva 0x3fa250).
-/// `undefined ComputeRotationQuaternionBetweenVectors(float * param_1, float * param_2, float * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_rotation_quaternion_between_vectors(param_1: *mut f32, param_2: *mut f32, param_3: *mut f32) -> u64 { unsafe { function!(25781, (*mut f32, *mut f32, *mut f32) -> u64)(param_1, param_2, param_3) } }
 /// `ComputeRunSpeedFromWeight` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 26457, rva 0x420980).
 /// `float ComputeRunSpeedFromWeight(longlong * param_1, float param_2, undefined8 param_3, char param_4)`
 ///
@@ -13774,3 +13760,17 @@ pub unsafe fn detach_result_set_field90_12(param_1: i64, param_2: *mut u64, para
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn detach_result_set_field90_13(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(97831, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
+/// `DetachResultSetField90_14` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447601, rva 0x1360380).
+/// `undefined8 * DetachResultSetField90_14(longlong param_1, undefined8 * param_2, undefined8 param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn detach_result_set_field90_14(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447601, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
+/// `DetachResultSetField90_15` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447829, rva 0x13618a0).
+/// `undefined8 * DetachResultSetField90_15(longlong param_1, undefined8 * param_2, undefined8 param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn detach_result_set_field90_15(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447829, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }

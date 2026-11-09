@@ -5778,7 +5778,7 @@ pub struct BSFadeNodeCuller_vtable {
     pub slot_20: *const c_void,
     /// `BSFadeNodeCuller::vdtor` at 0x4411f0 (slot_propagation, medium); signature (low): `BSFadeNodeCuller * vdtor(BSFadeNodeCuller * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_21: *const c_void,
-    /// `BSFadeNodeCuller::vfunc_22` at 0x1555fd0 (rtti, high); signature (low): `undefined vfunc_22(BSFadeNodeCuller * this, longlong * param_1)`
+    /// `BSFadeNodeCuller::TestFrustum` at 0x1555fd0 (semantic, high); signature (untiered): `undefined TestFrustum(BSFadeNodeCuller * this, longlong * param_1)`
     pub slot_22: *const c_void,
     /// `BSFadeNodeCuller::vfunc_23` at 0x1555fc0 (rtti, high); signature (low): `undefined vfunc_23(BSFadeNodeCuller * this, undefined8 param_1)`
     pub slot_23: *const c_void,
@@ -6803,11 +6803,11 @@ impl BSGetTimeStepModifier_vtable {
 /// `BSGrabIKNote::vftable` at 0x1a5c690, id 237842 (rtti, high); 38 slots.
 #[repr(C)]
 pub struct BSGrabIKNote_vtable {
-    /// `BSGrabIKNote::vdtor` at 0xf8b820 (slot_propagation, medium); signature (low): `BSGrabIKNote * vdtor(BSGrabIKNote * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSGrabIKNote::vdtor` at 0xf8b820 (semantic, high); signature (low): `BSGrabIKNote * vdtor(BSGrabIKNote * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: destructor (high); semantic signature: `void* (BSGrabIKNote* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
-    /// `BSGrabIKNote::vfunc_2` at 0xf8b870 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    /// `BSGrabIKNote::GetRTTI` at 0xf8b870 (semantic, medium); signature (untiered): `TypeNode * GetRTTI(void)`; `GetRTTI`: 0xf8b870 (medium); semantic signature: `const NiRTTI* (BSGrabIKNote* this)`
     pub slot_2: *const c_void,
     /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
     pub slot_3: *const c_void,
@@ -6849,9 +6849,9 @@ pub struct BSGrabIKNote_vtable {
     pub slot_21: *const c_void,
     /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
     pub slot_22: *const c_void,
-    /// `BSGrabIKNote::vfunc_23` at 0xf8b210 (rtti, high); signature (low): `NiObject * vfunc_23(BSGrabIKNote * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSGrabIKNote::CreateClone` at 0xf8b210 (semantic, medium); signature (untiered): `NiObject * CreateClone(BSGrabIKNote * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `CreateClone`: 0xf8b210 writes the vtable on a new object (medium); semantic signature: `NiObject* (BSGrabIKNote* this, NiCloningProcess* cp)`
     pub slot_23: *const c_void,
-    /// `BSGrabIKNote::vfunc_24` at 0xf8af40 (rtti, high); signature (low): `undefined vfunc_24(BSGrabIKNote * this, longlong param_1)`
+    /// `BSGrabIKNote::LoadBinary` at 0xf8af40 (semantic, medium); signature (untiered): `undefined LoadBinary(BSGrabIKNote * this, longlong param_1)`; `LoadBinary`: 0xf8af40 (medium); semantic signature: `void (BSGrabIKNote* this, NiStream* stream)`
     pub slot_24: *const c_void,
     /// `BSGrabIKNote::vfunc_25` at 0xf8b000 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
     pub slot_25: *const c_void,
@@ -6877,12 +6877,23 @@ pub struct BSGrabIKNote_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `BSGrabIKNote::vfunc_37` at 0xf8b410 (rtti, high); signature (low): `ulonglong vfunc_37(BSGrabIKNote * this, undefined4 * param_1)`
+    /// `BSGrabIKNote::ParseText` at 0xf8b410 (semantic, high); signature (untiered): `ulonglong ParseText(BSGrabIKNote * this, undefined4 * param_1)`
     pub slot_37: *const c_void,
 }
 impl BSGrabIKNote_vtable {
     pub const ID: u64 = 237842;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `BSGrabIKNote_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<BSGrabIKNote_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSGrabIKNote_vtable_vdtor>>(self.slot_0) }
+    }
+    pub const SLOT_GetRTTI: usize = 2;
+    pub const SLOT_CreateClone: usize = 23;
+    pub const SLOT_LoadBinary: usize = 24;
 }
+/// `BSGrabIKNote::vdtor`, slot 0: destructor (high).
+pub type BSGrabIKNote_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::BSGrabIKNote, flags: u32) -> *mut c_void;
 
 /// `BSGrassShader::vftable` at 0x1b3f5f0, id 254719 (rtti, high); 10 slots.
 #[repr(C)]
@@ -7099,7 +7110,7 @@ impl BSIDirectAtModifierSingleton_vtable {
 /// `BSIFootIkRaycastInterfaceDB::vftable` at 0x18e9ce0, id 205114 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct BSIFootIkRaycastInterfaceDB_vtable {
-    /// `BSIFootIkRaycastInterfaceDB::vdtor` at 0x54c2b0 (layout_inference, medium); signature (low): `BSIFootIkRaycastInterfaceDB * vdtor(BSIFootIkRaycastInterfaceDB * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSIFootIkRaycastInterfaceDB::vdtor` at 0x54c2b0 (semantic, high); signature (low): `BSIFootIkRaycastInterfaceDB * vdtor(BSIFootIkRaycastInterfaceDB * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: 0x54c2b0 (high); semantic signature: `BSIFootIkRaycastInterfaceDB* (BSIFootIkRaycastInterfaceDB* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_1: *const c_void,
@@ -7108,7 +7119,15 @@ pub struct BSIFootIkRaycastInterfaceDB_vtable {
 }
 impl BSIFootIkRaycastInterfaceDB_vtable {
     pub const ID: u64 = 205114;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `BSIFootIkRaycastInterfaceDB_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<BSIFootIkRaycastInterfaceDB_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSIFootIkRaycastInterfaceDB_vtable_vdtor>>(self.slot_0) }
+    }
 }
+/// `BSIFootIkRaycastInterfaceDB::vdtor`, slot 0: 0x54c2b0 (high).
+pub type BSIFootIkRaycastInterfaceDB_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::BSIFootIkRaycastInterfaceDB, flags: u32) -> *mut crate::BSIFootIkRaycastInterfaceDB;
 
 /// `BSIInputDevice::vftable` at 0x1a24140, id 236724 (rtti, high); 9 slots.
 #[repr(C)]
@@ -7139,7 +7158,7 @@ impl BSIInputDevice_vtable {
 /// `BSILimbIKModifierSingleton::vftable` at 0x19fb7e0, id 230940 (rtti, high); 4 slots.
 #[repr(C)]
 pub struct BSILimbIKModifierSingleton_vtable {
-    /// `BSILimbIKModifierSingleton::vdtor` at 0xbaf130 (slot_propagation, medium); signature (low): `BSILimbIKModifierSingleton * vdtor(BSILimbIKModifierSingleton * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSILimbIKModifierSingleton::vdtor` at 0xbaf130 (semantic, high); signature (low): `BSILimbIKModifierSingleton * vdtor(BSILimbIKModifierSingleton * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: 0xbaf130 (high); semantic signature: `BSILimbIKModifierSingleton* (BSILimbIKModifierSingleton* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_1: *const c_void,
@@ -7150,7 +7169,15 @@ pub struct BSILimbIKModifierSingleton_vtable {
 }
 impl BSILimbIKModifierSingleton_vtable {
     pub const ID: u64 = 230940;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `BSILimbIKModifierSingleton_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<BSILimbIKModifierSingleton_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSILimbIKModifierSingleton_vtable_vdtor>>(self.slot_0) }
+    }
 }
+/// `BSILimbIKModifierSingleton::vdtor`, slot 0: 0xbaf130 (high).
+pub type BSILimbIKModifierSingleton_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::BSILimbIKModifierSingleton, flags: u32) -> *mut crate::BSILimbIKModifierSingleton;
 
 /// `BSIMusicTrack::vftable` at 0x1833cc8, id 191025 (rtti, high); 11 slots.
 #[repr(C)]
@@ -7297,7 +7324,7 @@ impl BSIRagdollContactListenerModifierSingleton_vtable {
 /// `BSIRagdollDriver::vftable` at 0x1a07d00, id 232868 (rtti, high); 14 slots.
 #[repr(C)]
 pub struct BSIRagdollDriver_vtable {
-    /// `BSIRagdollDriver::vdtor` at 0xbd9940 (layout_inference, medium); signature (low): `BSIRagdollDriver * vdtor(BSIRagdollDriver * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSIRagdollDriver::vdtor` at 0xbd9940 (semantic, high); signature (low): `BSIRagdollDriver * vdtor(BSIRagdollDriver * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: 0xbd9940; slots 1-13 pure; the only implementer in rtti.json is BShkbAnimationGraph (vtable 0x1a07d78 slots 1-13: HasRagdoll 0xbd3660, AddRagdollToWorld 0xbd36a0, RemoveRagdollFromWorld 0xbd3a00, SetWorld 0xbd3b40, ResetRagdoll 0xbd3b50, 0xbd3b70..0xbd4f20 unnamed) (high); semantic signature: `BSIRagdollDriver* (BSIRagdollDriver* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_1: *const c_void,
@@ -7328,7 +7355,15 @@ pub struct BSIRagdollDriver_vtable {
 }
 impl BSIRagdollDriver_vtable {
     pub const ID: u64 = 232868;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `BSIRagdollDriver_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<BSIRagdollDriver_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSIRagdollDriver_vtable_vdtor>>(self.slot_0) }
+    }
 }
+/// `BSIRagdollDriver::vdtor`, slot 0: 0xbd9940; slots 1-13 pure; the only implementer in rtti.json is BShkbAnimationGraph (vtable 0x1a07d78 slots 1-13: HasRagdoll 0xbd3660, AddRagdollToWorld 0xbd36a0, RemoveRagdollFromWorld 0xbd3a00, SetWorld 0xbd3b40, ResetRagdoll 0xbd3b50, 0xbd3b70..0xbd4f20 unnamed) (high).
+pub type BSIRagdollDriver_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::BSIRagdollDriver, flags: u32) -> *mut crate::BSIRagdollDriver;
 
 /// `BSIReverbType::vftable` at 0x18348b0, id 191059 (rtti, high); 11 slots.
 #[repr(C)]
@@ -14012,33 +14047,5 @@ pub struct BSImagespaceShaderISSAOCameraZAndMipsCS_vtable_18 {
 }
 impl BSImagespaceShaderISSAOCameraZAndMipsCS_vtable_18 {
     pub const ID: u64 = 254383;
-}
-
-/// `BSImagespaceShaderISSAOCameraZAndMipsCS::vftable_90` at 0x1b3b850, id 254385 (rtti, high); 10 slots.
-#[repr(C)]
-pub struct BSImagespaceShaderISSAOCameraZAndMipsCS_vtable_90 {
-    /// `BSImagespaceShaderISSAOCameraZAndMipsCS::ImageSpaceEffect_vdtor` at 0x1507744 (semantic, high); signature (high): `undefined ImageSpaceEffect_vdtor(BSImagespaceShaderISSAOCameraZAndMipsCS * this)`
-    pub slot_0: *const c_void,
-    /// `BSImagespaceShader::ImageSpaceEffect_vfunc_1` at 0x1564e30 (rtti, medium); signature (low): `undefined ImageSpaceEffect_vfunc_1(BSImagespaceShader * this, undefined8 param_1, undefined * param_2)`
-    pub slot_1: *const c_void,
-    /// `ImageSpaceEffect::vfunc_2` at 0x150b9f0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `BSImagespaceShader::ImageSpaceEffect_vfunc_3` at 0x15652a0 (rtti, medium); signature (low): `undefined ImageSpaceEffect_vfunc_3(BSImagespaceShader * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_3: *const c_void,
-    /// `ImageSpaceEffect::vfunc_4` at 0x1509bc0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
-    pub slot_4: *const c_void,
-    /// `ImageSpaceEffect::vfunc_5` at 0x150b820 (rtti, medium); signature (low): `undefined vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `ImageSpaceEffect::vfunc_6` at 0x150b480 (rtti, medium); signature (high): `undefined1 vfunc_6(ImageSpaceEffect * this)`
-    pub slot_6: *const c_void,
-    /// `ImageSpaceEffect::vfunc_7` at 0x150ba40 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `ImageSpaceEffect::vfunc_8` at 0x150b8e0 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `ImageSpaceEffect::vfunc_9` at 0x150b810 (rtti, medium); signature (low): `undefined1 vfunc_9(void)`
-    pub slot_9: *const c_void,
-}
-impl BSImagespaceShaderISSAOCameraZAndMipsCS_vtable_90 {
-    pub const ID: u64 = 254385;
 }
 

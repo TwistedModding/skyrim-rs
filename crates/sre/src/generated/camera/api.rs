@@ -1280,6 +1280,12 @@ impl crate::BSFaceGenKeyframeMultiple {
 }
 
 impl crate::BSFlattenedBoneTree {
+    /// `BSFlattenedBoneTree::FlattenNiNodeSubtree`: replaces a plain NiNode subtree with a BSFlattenedBoneTree: one 0x80-byte entry per descendant NiNode in depth-first order (parents first) with local, world, parent, name; an entry keeps its real NiNode (+0x70) when the node has a controller (+0x18), a collision object (+0x40) or extra data (+0x28 count), has a non-NiNode or kept child, or is an ancestor of a kept node; every other node is detached and only the entry remains
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 70731, rva 0xef4390.
+    /// `BSFlattenedBoneTree* (NiNode* subtreeRoot)`
+    #[inline]
+    pub fn flatten_ni_node_subtree(subtreeRoot: &crate::NiNode) -> Option<&'static Self> { unsafe { function!(70731, (*const crate::NiNode) -> Option<&'static Self>)(core::ptr::from_ref(subtreeRoot)) } }
     /// `BSFlattenedBoneTree::bones` at +0x130: array of 0x80-byte entries: +0x00 local NiTransform, +0x34 world NiTransform, +0x68 i16 parent index (<0: the tree node), +0x70 NiNode* materialised for the bone or null, +0x78 BSFixedString name
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
@@ -2393,6 +2399,15 @@ impl crate::BleedoutCameraState {
 }
 
 impl crate::CachedRaycastData {
+    /// `CachedRaycastData::PopulateFromREFRHandle`: for an actor with a character controller: group = controller filter info (slot 8) >> 16, world = controller slot 15, phantom or collected bodies from controller slot 16 (+0x48 == 2: phantom (+0x18)->+0x10 if its type is 2; == 1: list at +0x20+(+0x40)), useWorldOnly = race +0x108 bit 17 (actor+0x1f8); otherwise useWorldOnly = 1 and world/group from the first collision object under the 3D
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 32747, rva 0x54b280.
+    /// `void (CachedRaycastData* this, const RefHandle* handle)`
+    ///
+    /// # Safety
+    /// `handle` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn populate_from_refr_handle(&self, handle: *const c_void) { unsafe { function!(32747, (*const Self, *const c_void))(core::ptr::from_ref(self), handle) } }
     /// `CachedRaycastData::world` at +0x20: the actor's bhkWorld (fallback cast through slot 51)
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
@@ -2448,6 +2463,16 @@ impl crate::CachedRaycastData {
     pub fn set_handle(&mut self, value: u32) { unsafe { Self::__member_handle(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn handle_ptr(&self) -> *mut u32 { Self::__member_handle(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_inUse(this: *const Self) -> *mut u8 { unsafe { member!(this, "CachedRaycastData.inUse", 0x2E, u8) } }
+    /// `CachedRaycastData::inUse`, at +0x2E on 1.7.104.
+    #[inline]
+    pub fn inUse(&self) -> u8 { unsafe { Self::__member_inUse(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_inUse(&mut self, value: u8) { unsafe { Self::__member_inUse(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn inUse_ptr(&self) -> *mut u8 { Self::__member_inUse(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_useWorldOnly(this: *const Self) -> *mut u8 { unsafe { member!(this, "CachedRaycastData.useWorldOnly", 0x2C, u8) } }
@@ -7938,6 +7963,16 @@ impl crate::TESRace {
     pub fn get_form_editor_id(&self) -> *const c_char { unsafe { function!(25468, (*const Self) -> *const c_char)(core::ptr::from_ref(self)) } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_dataFlags(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESRace.dataFlags", 0x108, u32) } }
+    /// `TESRace::dataFlags`, at +0x108 on 1.7.104.
+    #[inline]
+    pub fn dataFlags(&self) -> u32 { unsafe { Self::__member_dataFlags(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_dataFlags(&mut self, value: u32) { unsafe { Self::__member_dataFlags(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn dataFlags_ptr(&self) -> *mut u32 { Self::__member_dataFlags(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_field_168(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESRace.field_168", 0x168, u64) } }
     /// `TESRace::field_168`, at +0x168 on 1.7.104.
     #[inline]
@@ -7996,6 +8031,26 @@ impl crate::TESRace {
     pub fn set_field_2E0(&mut self, value: u64) { unsafe { Self::__member_field_2E0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_2E0_ptr(&self) -> *mut u64 { Self::__member_field_2E0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_heights(this: *const Self) -> *mut [u8; 8] { unsafe { member!(this, "TESRace.heights", 0xF8, [u8; 8]) } }
+    /// `TESRace::heights`, at +0xF8 on 1.7.104.
+    #[inline]
+    pub fn heights(&self) -> [u8; 8] { unsafe { Self::__member_heights(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_heights(&mut self, value: [u8; 8]) { unsafe { Self::__member_heights(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn heights_ptr(&self) -> *mut [u8; 8] { Self::__member_heights(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_size(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESRace.size", 0x128, u32) } }
+    /// `TESRace::size`, at +0x128 on 1.7.104.
+    #[inline]
+    pub fn size(&self) -> u32 { unsafe { Self::__member_size(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_size(&mut self, value: u32) { unsafe { Self::__member_size(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn size_ptr(&self) -> *mut u32 { Self::__member_size(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESWeather {
@@ -9400,16 +9455,11 @@ impl crate::hkReferencedObject {
 }
 
 impl crate::hkbFootIkDriver__InternalLeg {
-    #[doc(hidden)]
+    /// `hkbFootIkDriver::InternalLeg::solver` at +0x20: the leg's solver (null for legs with an index < 0)
+    ///
+    /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn __member_ankleTargetMS(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "hkbFootIkDriver::InternalLeg.ankleTargetMS", 0x0, [u8; 16]) } }
-    /// `hkbFootIkDriver::InternalLeg::ankleTargetMS`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn ankleTargetMS(&self) -> [u8; 16] { unsafe { Self::__member_ankleTargetMS(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_ankleTargetMS(&mut self, value: [u8; 16]) { unsafe { Self::__member_ankleTargetMS(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn ankleTargetMS_ptr(&self) -> *mut [u8; 16] { Self::__member_ankleTargetMS(core::ptr::from_ref(self)) }
+    pub fn solver(&self) -> Option<&crate::hkaFootPlacementIkSolver> { unsafe { Self::__member_solver(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
     #[doc(hidden)]
     #[inline]
     pub fn __member_groundHeight(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkbFootIkDriver::InternalLeg.groundHeight", 0x28, f32) } }
@@ -9422,6 +9472,22 @@ impl crate::hkbFootIkDriver__InternalLeg {
     pub fn groundHeight_ptr(&self) -> *mut f32 { Self::__member_groundHeight(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_groundNormalWS(this: *const Self) -> *mut crate::hkVector4 { unsafe { member!(this, "hkbFootIkDriver::InternalLeg.groundNormalWS", 0x10, crate::hkVector4) } }
+    /// `hkbFootIkDriver::InternalLeg::groundNormalWS`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn groundNormalWS(&self) -> &crate::hkVector4 { unsafe { &*Self::__member_groundNormalWS(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn groundNormalWS_ptr(&self) -> *mut crate::hkVector4 { Self::__member_groundNormalWS(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_groundPositionWS(this: *const Self) -> *mut crate::hkVector4 { unsafe { member!(this, "hkbFootIkDriver::InternalLeg.groundPositionWS", 0x0, crate::hkVector4) } }
+    /// `hkbFootIkDriver::InternalLeg::groundPositionWS`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn groundPositionWS(&self) -> &crate::hkVector4 { unsafe { &*Self::__member_groundPositionWS(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn groundPositionWS_ptr(&self) -> *mut crate::hkVector4 { Self::__member_groundPositionWS(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_hit(this: *const Self) -> *mut u8 { unsafe { member!(this, "hkbFootIkDriver::InternalLeg.hit", 0x2C, u8) } }
     /// `hkbFootIkDriver::InternalLeg::hit`, at +0x2C on 1.7.104.
     #[inline]
@@ -9432,14 +9498,24 @@ impl crate::hkbFootIkDriver__InternalLeg {
     pub fn hit_ptr(&self) -> *mut u8 { Self::__member_hit(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_legSolver(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "hkbFootIkDriver::InternalLeg.legSolver", 0x20, *mut c_void) } }
-    /// `hkbFootIkDriver::InternalLeg::legSolver`, at +0x20 on 1.7.104.
+    pub fn __member_isPlanted(this: *const Self) -> *mut u8 { unsafe { member!(this, "hkbFootIkDriver::InternalLeg.isPlanted", 0x2D, u8) } }
+    /// `hkbFootIkDriver::InternalLeg::isPlanted`, at +0x2D on 1.7.104.
     #[inline]
-    pub fn legSolver(&self) -> *mut c_void { unsafe { Self::__member_legSolver(core::ptr::from_ref(self)).read_unaligned() } }
+    pub fn isPlanted(&self) -> u8 { unsafe { Self::__member_isPlanted(core::ptr::from_ref(self)).read_unaligned() } }
     #[inline]
-    pub fn set_legSolver(&mut self, value: *mut c_void) { unsafe { Self::__member_legSolver(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    pub fn set_isPlanted(&mut self, value: u8) { unsafe { Self::__member_isPlanted(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
-    pub fn legSolver_ptr(&self) -> *mut *mut c_void { Self::__member_legSolver(core::ptr::from_ref(self)) }
+    pub fn isPlanted_ptr(&self) -> *mut u8 { Self::__member_isPlanted(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_solver(this: *const Self) -> *mut *mut crate::hkaFootPlacementIkSolver { unsafe { member!(this, "hkbFootIkDriver::InternalLeg.solver", 0x20, *mut crate::hkaFootPlacementIkSolver) } }
+    /// `hkbFootIkDriver::InternalLeg::solver`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn solver_field(&self) -> *mut crate::hkaFootPlacementIkSolver { unsafe { Self::__member_solver(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_solver(&mut self, value: *mut crate::hkaFootPlacementIkSolver) { unsafe { Self::__member_solver(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn solver_ptr(&self) -> *mut *mut crate::hkaFootPlacementIkSolver { Self::__member_solver(core::ptr::from_ref(self)) }
 }
 
 impl crate::hkbFootIkDriverInfoLeg {
@@ -11188,15 +11264,6 @@ pub unsafe fn queue_pending_camera_path(registry: *mut c_void, path: *mut crate:
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn queue_reference_enable_or_disable(ref_: *mut crate::TESObjectREFR, enable: bool) { unsafe { function!(21913, (*mut crate::TESObjectREFR, bool))(ref_, enable) } }
-/// `RagdollAnimation::UpdateFootIk`: the ragdoll-animation foot IK (caller UpdateRagdollAnimation); the only reader of the [FootIK] INI gains fOnOffGain, fGroundAscendingGain, fGroundDescendingGain, fFootRaisedGain, fFootPlantedGain (0x1070253..0x107028b) plus fVertErrorGain, fControllerTetherLen, fPelvisUpDownBias, fPelvisOffsetDamping, iNumFramesFootEaseOut
-///
-/// Semantic, camera pass, high; ledger semantic evidence, name high; id 78436, rva 0x10701d0.
-/// `void (RagdollAnimation* this, float* dt)`
-///
-/// # Safety
-/// `this`, `dt` must point to what the engine expects.
-#[inline]
-pub unsafe fn ragdoll_animation__update_foot_ik(this: *mut c_void, dt: *mut f32) { unsafe { function!(78436, (*mut c_void, *mut f32))(this, dt) } }
 /// `RaycastVerticalAgainstPlaneShape`: casts a vertical ray at point against a plane shape owned by rdx, filtered by the camera body's filter word
 ///
 /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 32190, rva 0x52cbc0.
@@ -11458,15 +11525,6 @@ pub unsafe fn skyrim_script__set_scale_functor__run(this: *mut c_void, result: *
 /// May be null: `camera`.
 #[inline]
 pub fn snapshot_camera_for_hud(camera: Option<&crate::NiCamera>) -> u32 { unsafe { function!(51639, (*const crate::NiCamera) -> u32)(camera.map_or(core::ptr::null(), core::ptr::from_ref)) } }
-/// `SolveFootIkLeg`: per-leg solver shared by the graph driver (0xad2300) and the ragdoll path (0x10701d0); input struct initialised by InitFootIkDefaults 0xa9dce0 (+0x60 = 1, +0x68 raycast interface, +0x70 0.2, +0x74..+0x88 1.0)
-///
-/// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 56977, rva 0xa9ddf0.
-/// `void (FootIkLeg* leg, FootIkInput* in, FootIkOutput* out, hkaPose* pose)`
-///
-/// # Safety
-/// The pass rates the signature medium.
-#[inline]
-pub unsafe fn solve_foot_ik_leg(leg: *mut c_void, in_: *mut c_void, out: *mut c_void, pose: *mut c_void) { unsafe { function!(56977, (*mut c_void, *mut c_void, *mut c_void, *mut c_void))(leg, in_, out, pose) } }
 /// `SpeakSoundOrTopic`: plays a voice line (sound path or topic) on an actor with its lip file and speaker/listener idles; returns the duration
 ///
 /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 37542, rva 0x68d490.

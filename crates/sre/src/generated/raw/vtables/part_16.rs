@@ -7,6 +7,212 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `NiSwitchStringExtraData::vftable` at 0x1a4e950, id 237446 (rtti, high); 39 slots.
+#[repr(C)]
+pub struct NiSwitchStringExtraData_vtable {
+    /// `NiSwitchStringExtraData::vdtor` at 0xf16fb0 (layout_inference, medium); signature (low): `NiSwitchStringExtraData * vdtor(NiSwitchStringExtraData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `NiSwitchStringExtraData::vfunc_2` at 0xf17040 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
+    pub slot_22: *const c_void,
+    /// `NiSwitchStringExtraData::vfunc_23` at 0xf16660 (rtti, high); signature (low): `NiExtraData * vfunc_23(NiSwitchStringExtraData * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_23: *const c_void,
+    /// `NiSwitchStringExtraData::vfunc_24` at 0xf16930 (rtti, high); signature (low): `undefined vfunc_24(NiSwitchStringExtraData * this, longlong param_1)`
+    pub slot_24: *const c_void,
+    /// `NiSwitchStringExtraData::vfunc_25` at 0xf16a10 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
+    pub slot_25: *const c_void,
+    /// `NiSwitchStringExtraData::vfunc_26` at 0xf16a20 (rtti, high); signature (untiered): `undefined8 vfunc_26(NiSwitchStringExtraData * this, longlong * param_1)`
+    pub slot_26: *const c_void,
+    /// `NiSwitchStringExtraData::vfunc_27` at 0xf16a30 (rtti, high); signature (low): `undefined vfunc_27(NiSwitchStringExtraData * this, longlong param_1)`
+    pub slot_27: *const c_void,
+    /// `NiSwitchStringExtraData::vfunc_28` at 0xf16b00 (rtti, high); signature (low): `ulonglong vfunc_28(NiSwitchStringExtraData * this, longlong param_1)`
+    pub slot_28: *const c_void,
+    /// `NiObject::vfunc_29` at 0xedca00 (rtti, medium); signature (low): `undefined vfunc_29(NiObject * this, longlong param_1)`
+    pub slot_29: *const c_void,
+    /// `NiObject::vfunc_30` at 0xedcb50 (rtti, medium); signature (low): `undefined vfunc_30(void)`
+    pub slot_30: *const c_void,
+    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
+    pub slot_31: *const c_void,
+    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
+    pub slot_32: *const c_void,
+    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
+    pub slot_33: *const c_void,
+    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
+    pub slot_35: *const c_void,
+    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
+    pub slot_36: *const c_void,
+    /// `NiExtraData::IsStreamable` at 0xef9b60 (semantic, medium); signature (untiered): `undefined1 IsStreamable(void)`
+    pub slot_37: *const c_void,
+    /// `NiExtraData::Slot38ReturnsTrue` at 0xef9b70 (semantic, low); signature (untiered): `undefined1 Slot38ReturnsTrue(void)`
+    pub slot_38: *const c_void,
+}
+impl NiSwitchStringExtraData_vtable {
+    pub const ID: u64 = 237446;
+}
+
+/// `NiTArray<BGSAddonNode*___ptr64,NiTMallocInterface<BGSAddonNode*___ptr64>_>::vftable` at 0x17f5d88, id 187466 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_BGSAddonNode____ptr64_NiTMallocInterface_BGSAddonNode____ptr64___vtable {
+    /// `NiTArray<BGSAddonNode*___ptr64,NiTMallocInterface<BGSAddonNode*___ptr64>_>::vdtor` at 0x1c6ff0 (layout_inference, medium); signature (low): `NiTArray<BGSAddonNode*___ptr64,NiTMallocInterface<BGSAddonNode*___ptr64>_> * vdtor(NiTArray<BGSAddonNode*___ptr64,NiTMallocInterface<BGSAddonNode*___ptr64>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_BGSAddonNode____ptr64_NiTMallocInterface_BGSAddonNode____ptr64___vtable {
+    pub const ID: u64 = 187466;
+}
+
+/// `NiTArray<BGSCameraPath*___ptr64,NiTMallocInterface<BGSCameraPath*___ptr64>_>::vftable` at 0x182cf58, id 190460 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_BGSCameraPath____ptr64_NiTMallocInterface_BGSCameraPath____ptr64___vtable {
+    /// `NiTArray<BGSCameraPath*___ptr64,NiTMallocInterface<BGSCameraPath*___ptr64>_>::vdtor` at 0x3184a0 (layout_inference, medium); signature (low): `NiTArray<BGSCameraPath*___ptr64,NiTMallocInterface<BGSCameraPath*___ptr64>_> * vdtor(NiTArray<BGSCameraPath*___ptr64,NiTMallocInterface<BGSCameraPath*___ptr64>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_BGSCameraPath____ptr64_NiTMallocInterface_BGSCameraPath____ptr64___vtable {
+    pub const ID: u64 = 190460;
+}
+
+/// `NiTArray<BSAnimNoteListener::BSAnimReceiverType*___ptr64,NiTMallocInterface<BSAnimNoteListener::BSAnimReceiverType*___ptr64>_>::vftable` at 0x1a55828, id 237675 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_BSAnimNoteListener__BSAnimReceiverType____ptr64_NiTMallocInterface_BSAnimNoteListener___4e46c9b8682f_vtable {
+    /// `NiTArray<BSAnimNoteListener::BSAnimReceiverType*___ptr64,NiTMallocInterface<BSAnimNoteListener::BSAnimReceiverType*___ptr64>_>::vdtor` at 0xf6a6f0 (layout_inference, medium); signature (low): `NiTArray<BSAnimNoteListener::BSAnimReceiverType*___ptr64,NiTMallocInterface<BSAnimNoteListener::BSAnimReceiverType*___ptr64>_> * vdtor(NiTArray<BSAnimNoteListener::BSAnimReceiverType*___ptr64,NiTMallocInterface<BSAnimNoteListener::BSAnimReceiverType*___ptr64>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_BSAnimNoteListener__BSAnimReceiverType____ptr64_NiTMallocInterface_BSAnimNoteListener___4e46c9b8682f_vtable {
+    pub const ID: u64 = 237675;
+}
+
+/// `NiTArray<BSAnimNoteReceiver::BSAnimNoteReceiverType*___ptr64,NiTMallocInterface<BSAnimNoteReceiver::BSAnimNoteReceiverType*___ptr64>_>::vftable` at 0x1803408, id 188386 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_BSAnimNoteReceiver__BSAnimNoteReceiverType____ptr64_NiTMallocInterface_BSAnimNoteReceiv_05209fee2a29_vtable {
+    /// `NiTArray<BSAnimNoteReceiver::BSAnimNoteReceiverType*___ptr64,NiTMallocInterface<BSAnimNoteReceiver::BSAnimNoteReceiverType*___ptr64>_>::vdtor` at 0x221420 (layout_inference, medium); signature (low): `NiTArray<BSAnimNoteReceiver::BSAnimNoteReceiverType*___ptr64,NiTMallocInterface<BSAnimNoteReceiver::BSAnimNoteReceiverType*___ptr64>_> * vdtor(NiTArray<BSAnimNoteReceiver::BSAnimNoteReceiverType*___ptr64,NiTMallocInterface<BSAnimNoteReceiver::BSAnimNoteReceiverType*___ptr64>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_BSAnimNoteReceiver__BSAnimNoteReceiverType____ptr64_NiTMallocInterface_BSAnimNoteReceiv_05209fee2a29_vtable {
+    pub const ID: u64 = 188386;
+}
+
+/// `NiTArray<BSGraphics::TextureFilterMode,NiTMallocInterface<BSGraphics::TextureFilterMode>_>::vftable` at 0x1b40a18, id 254772 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_BSGraphics__TextureFilterMode_NiTMallocInterface_BSGraphics__TextureFilterMode___vtable {
+    /// `NiTArray<BSGraphics::TextureFilterMode,NiTMallocInterface<BSGraphics::TextureFilterMode>_>::vdtor` at 0x152b430 (layout_inference, medium); signature (low): `NiTArray<BSGraphics::TextureFilterMode,NiTMallocInterface<BSGraphics::TextureFilterMode>_> * vdtor(NiTArray<BSGraphics::TextureFilterMode,NiTMallocInterface<BSGraphics::TextureFilterMode>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_BSGraphics__TextureFilterMode_NiTMallocInterface_BSGraphics__TextureFilterMode___vtable {
+    pub const ID: u64 = 254772;
+}
+
+/// `NiTArray<CombatGroup*___ptr64,NiTMallocInterface<CombatGroup*___ptr64>_>::vftable` at 0x1953fd0, id 211983 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_CombatGroup____ptr64_NiTMallocInterface_CombatGroup____ptr64___vtable {
+    /// `NiTArray<CombatGroup*___ptr64,NiTMallocInterface<CombatGroup*___ptr64>_>::vdtor` at 0x8549c0 (layout_inference, medium); signature (low): `NiTArray<CombatGroup*___ptr64,NiTMallocInterface<CombatGroup*___ptr64>_> * vdtor(NiTArray<CombatGroup*___ptr64,NiTMallocInterface<CombatGroup*___ptr64>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_CombatGroup____ptr64_NiTMallocInterface_CombatGroup____ptr64___vtable {
+    pub const ID: u64 = 211983;
+}
+
+/// `NiTArray<ImageSpaceEffect*___ptr64,NiTMallocInterface<ImageSpaceEffect*___ptr64>_>::vftable` at 0x1b32938, id 253080 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_ImageSpaceEffect____ptr64_NiTMallocInterface_ImageSpaceEffect____ptr64___vtable {
+    /// `NiTArray<ImageSpaceEffect*___ptr64,NiTMallocInterface<ImageSpaceEffect*___ptr64>_>::vdtor` at 0x1507c20 (layout_inference, medium); signature (low): `NiTArray<ImageSpaceEffect*___ptr64,NiTMallocInterface<ImageSpaceEffect*___ptr64>_> * vdtor(NiTArray<ImageSpaceEffect*___ptr64,NiTMallocInterface<ImageSpaceEffect*___ptr64>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_ImageSpaceEffect____ptr64_NiTMallocInterface_ImageSpaceEffect____ptr64___vtable {
+    pub const ID: u64 = 253080;
+}
+
+/// `NiTArray<ImageSpaceEffect::EffectInput*___ptr64,NiTMallocInterface<ImageSpaceEffect::EffectInput*___ptr64>_>::vftable` at 0x1b48800, id 255179 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_ImageSpaceEffect__EffectInput____ptr64_NiTMallocInterface_ImageSpaceEffect__EffectInput____ptr64___vtable {
+    /// `NiTArray<ImageSpaceEffect::EffectInput*___ptr64,NiTMallocInterface<ImageSpaceEffect::EffectInput*___ptr64>_>::vdtor` at 0x1554af0 (layout_inference, medium); signature (low): `NiTArray<ImageSpaceEffect::EffectInput*___ptr64,NiTMallocInterface<ImageSpaceEffect::EffectInput*___ptr64>_> * vdtor(NiTArray<ImageSpaceEffect::EffectInput*___ptr64,NiTMallocInterface<ImageSpaceEffect::EffectInput*___ptr64>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_ImageSpaceEffect__EffectInput____ptr64_NiTMallocInterface_ImageSpaceEffect__EffectInput____ptr64___vtable {
+    pub const ID: u64 = 255179;
+}
+
+/// `NiTArray<ImageSpaceEffectParam*___ptr64,NiTMallocInterface<ImageSpaceEffectParam*___ptr64>_>::vftable` at 0x1b487c0, id 255171 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_ImageSpaceEffectParam____ptr64_NiTMallocInterface_ImageSpaceEffectParam____ptr64___vtable {
+    /// `NiTArray<ImageSpaceEffectParam*___ptr64,NiTMallocInterface<ImageSpaceEffectParam*___ptr64>_>::vdtor` at 0x1554b40 (layout_inference, medium); signature (low): `NiTArray<ImageSpaceEffectParam*___ptr64,NiTMallocInterface<ImageSpaceEffectParam*___ptr64>_> * vdtor(NiTArray<ImageSpaceEffectParam*___ptr64,NiTMallocInterface<ImageSpaceEffectParam*___ptr64>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_ImageSpaceEffectParam____ptr64_NiTMallocInterface_ImageSpaceEffectParam____ptr64___vtable {
+    pub const ID: u64 = 255171;
+}
+
+/// `NiTArray<ImageSpaceTexture*___ptr64,NiTMallocInterface<ImageSpaceTexture*___ptr64>_>::vftable` at 0x1b487e0, id 255175 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_ImageSpaceTexture____ptr64_NiTMallocInterface_ImageSpaceTexture____ptr64___vtable {
+    /// `NiTArray<ImageSpaceTexture*___ptr64,NiTMallocInterface<ImageSpaceTexture*___ptr64>_>::vdtor` at 0x1554b90 (layout_inference, medium); signature (low): `NiTArray<ImageSpaceTexture*___ptr64,NiTMallocInterface<ImageSpaceTexture*___ptr64>_> * vdtor(NiTArray<ImageSpaceTexture*___ptr64,NiTMallocInterface<ImageSpaceTexture*___ptr64>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_ImageSpaceTexture____ptr64_NiTMallocInterface_ImageSpaceTexture____ptr64___vtable {
+    pub const ID: u64 = 255175;
+}
+
+/// `NiTArray<NiAVObject*___ptr64,NiTMallocInterface<NiAVObject*___ptr64>_>::vftable` at 0x18d7550, id 204122 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_NiAVObject____ptr64_NiTMallocInterface_NiAVObject____ptr64___vtable {
+    /// `NiTArray<NiAVObject*___ptr64,NiTMallocInterface<NiAVObject*___ptr64>_>::vdtor` at 0x4b0290 (layout_inference, medium); signature (low): `NiTArray<NiAVObject*___ptr64,NiTMallocInterface<NiAVObject*___ptr64>_> * vdtor(NiTArray<NiAVObject*___ptr64,NiTMallocInterface<NiAVObject*___ptr64>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_NiAVObject____ptr64_NiTMallocInterface_NiAVObject____ptr64___vtable {
+    pub const ID: u64 = 204122;
+}
+
+/// `NiTArray<NiBoundingVolume*___ptr64,NiTMallocInterface<NiBoundingVolume*___ptr64>_>::vftable` at 0x1a512c0, id 237511 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_NiBoundingVolume____ptr64_NiTMallocInterface_NiBoundingVolume____ptr64___vtable {
+    /// `NiTArray<NiBoundingVolume*___ptr64,NiTMallocInterface<NiBoundingVolume*___ptr64>_>::vdtor` at 0xf3e250 (layout_inference, medium); signature (low): `NiTArray<NiBoundingVolume*___ptr64,NiTMallocInterface<NiBoundingVolume*___ptr64>_> * vdtor(NiTArray<NiBoundingVolume*___ptr64,NiTMallocInterface<NiBoundingVolume*___ptr64>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_NiBoundingVolume____ptr64_NiTMallocInterface_NiBoundingVolume____ptr64___vtable {
+    pub const ID: u64 = 237511;
+}
+
 /// `NiTArray<NiPick::Record*___ptr64,NiTScrapHeapInterface<NiPick::Record*___ptr64>_>::vftable` at 0x1a50900, id 237485 (rtti, high); 1 slots.
 #[repr(C)]
 pub struct NiTArray_NiPick__Record____ptr64_NiTScrapHeapInterface_NiPick__Record____ptr64___vtable {
@@ -6246,7 +6452,7 @@ pub struct PlayerCharacter_vtable {
     pub slot_198: *const c_void,
     /// `Actor::vfunc_199` at 0x6bdd60 (rtti, medium); signature (low): `undefined4 vfunc_199(void)`
     pub slot_199: *const c_void,
-    /// `Actor::vfunc_200` at 0x689370 (rtti, medium); signature (low): `longlong * vfunc_200(Actor * this, float param_1, float * param_2)`
+    /// `Actor::UpdateQuadrupedGroundPitch` at 0x689370 (semantic, low); signature (untiered): `longlong * UpdateQuadrupedGroundPitch(Actor * this, float param_1, float * param_2)`
     pub slot_200: *const c_void,
     /// `PlayerCharacter::vfunc_201` at 0x749170 (rtti, high); signature (low): `undefined vfunc_201(PlayerCharacter * this, undefined8 param_1, undefined8 * param_2, undefined8 * param_3)`
     pub slot_201: *const c_void,
@@ -8911,7 +9117,7 @@ impl RagdollFurnitureListener_vtable_8 {
 pub struct RagdollStartHandler_vtable {
     /// `RagdollStartHandler::vdtor` at 0x7d4570 (layout_inference, medium); signature (low): `RagdollStartHandler * vdtor(RagdollStartHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `RagdollStartHandler::vfunc_1` at 0x7ce940 (rtti, high); signature (low): `undefined8 vfunc_1(RagdollStartHandler * this, longlong param_1)`
+    /// `RagdollStartHandler::Handle` at 0x7ce940 (semantic, low); signature (untiered): `undefined8 Handle(RagdollStartHandler * this, longlong param_1)`
     pub slot_1: *const c_void,
 }
 impl RagdollStartHandler_vtable {
@@ -9500,7 +9706,7 @@ impl RemoveCallbackVisitor_vtable {
 pub struct RemoveRagdollHandler_vtable {
     /// `RemoveRagdollHandler::vdtor` at 0x7d45d0 (layout_inference, medium); signature (low): `RemoveRagdollHandler * vdtor(RemoveRagdollHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `RemoveRagdollHandler::vfunc_1` at 0x7ce8c0 (rtti, high); signature (low): `undefined8 vfunc_1(RemoveRagdollHandler * this, longlong * param_1)`
+    /// `RemoveRagdollHandler::Handle` at 0x7ce8c0 (semantic, medium); signature (untiered): `undefined8 Handle(RemoveRagdollHandler * this, longlong * param_1)`
     pub slot_1: *const c_void,
 }
 impl RemoveRagdollHandler_vtable {
@@ -12366,235 +12572,5 @@ pub struct SkyrimScript__Internal__IProfileCallQuery_vtable {
 }
 impl SkyrimScript__Internal__IProfileCallQuery_vtable {
     pub const ID: u64 = 216762;
-}
-
-/// `SkyrimScript::Logger::vftable` at 0x198b170, id 216736 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct SkyrimScript__Logger_vtable {
-    /// `SkyrimScript::Logger::vdtor` at 0x9bbe20 (layout_inference, medium); signature (low): `Logger * vdtor(Logger * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::Logger::vfunc_1` at 0x9bbca0 (rtti, high); signature (low): `undefined vfunc_1(Logger * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `BSScript::ErrorLogger::vfunc_2` at 0x9bbeb0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
-    pub slot_2: *const c_void,
-}
-impl SkyrimScript__Logger_vtable {
-    pub const ID: u64 = 216736;
-}
-
-/// `SkyrimScript::ObjectBindPolicy::vftable` at 0x1990fd0, id 216939 (rtti, high); 13 slots.
-#[repr(C)]
-pub struct SkyrimScript__ObjectBindPolicy_vtable {
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_0` at 0x9f0aa0 (rtti, high); signature (low): `ObjectBindPolicy * vfunc_0(ObjectBindPolicy * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_1` at 0x9bc830 (rtti, high); signature (low): `ObjectBindPolicy_vtbl * vfunc_1(ObjectBindPolicy * this, void * param_1)`
-    pub slot_1: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_2` at 0x9bc980 (rtti, high); signature (low): `undefined vfunc_2(ObjectBindPolicy * this, void * param_1)`
-    pub slot_2: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_3` at 0x9bcba0 (rtti, high); signature (low): `undefined vfunc_3(ObjectBindPolicy * this, void * param_1)`
-    pub slot_3: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_4` at 0x9bce70 (rtti, high); signature (low): `undefined vfunc_4(ObjectBindPolicy * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_5` at 0x9f1510 (rtti, high); signature (low): `undefined8 vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_6` at 0x9fb930 (rtti, high); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_7` at 0x9bcf60 (rtti, high); signature (low): `undefined vfunc_7(ObjectBindPolicy * this, undefined8 param_1, ushort param_2, uint * param_3, ulonglong * param_4, undefined8 param_5)`
-    pub slot_7: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_8` at 0x9bd1a0 (rtti, high); signature (high): `undefined1 vfunc_8(ObjectBindPolicy * this)`
-    pub slot_8: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_9` at 0x9bd300 (rtti, high); signature (low): `undefined vfunc_9(ObjectBindPolicy * this, undefined8 param_1, undefined8 param_2, longlong * param_3)`
-    pub slot_9: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_10` at 0x9bd220 (rtti, high); signature (low): `undefined vfunc_10(ObjectBindPolicy * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_10: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_11` at 0x9bd620 (rtti, high); signature (low): `undefined vfunc_11(ObjectBindPolicy * this, int * param_1, int * * param_2, longlong * param_3, undefined4 * param_4)`
-    pub slot_11: *const c_void,
-    /// `SkyrimScript::ObjectBindPolicy::vfunc_12` at 0x9bd3b0 (rtti, high); signature (low): `undefined vfunc_12(ObjectBindPolicy * this, undefined8 param_1, longlong * param_2, ulonglong param_3, undefined4 * param_4)`
-    pub slot_12: *const c_void,
-}
-impl SkyrimScript__ObjectBindPolicy_vtable {
-    pub const ID: u64 = 216939;
-}
-
-/// `SkyrimScript::PathingCallbackMgr::vftable` at 0x198be40, id 216755 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript__PathingCallbackMgr_vtable {
-    /// `SkyrimScript::PathingCallbackMgr::vdtor` at 0x9c2ab0 (layout_inference, medium); signature (low): `PathingCallbackMgr * vdtor(PathingCallbackMgr * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::PathingCallbackMgr::vfunc_1` at 0x9c2260 (rtti, high); signature (low): `undefined8 vfunc_1(PathingCallbackMgr * this, uint * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript__PathingCallbackMgr_vtable {
-    pub const ID: u64 = 216755;
-}
-
-/// `SkyrimScript::Profiler::vftable` at 0x198c2e0, id 216767 (rtti, high); 5 slots.
-#[repr(C)]
-pub struct SkyrimScript__Profiler_vtable {
-    /// `SkyrimScript::Profiler::vdtor` at 0x9c55a0 (layout_inference, medium); signature (low): `Profiler * vdtor(Profiler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::Profiler::vfunc_1` at 0x9c4030 (rtti, high); signature (low): `undefined vfunc_1(Profiler * this, uint param_1, uint param_2, longlong * param_3)`
-    pub slot_1: *const c_void,
-    /// `SkyrimScript::Profiler::vfunc_2` at 0x9c4190 (rtti, high); signature (low): `undefined vfunc_2(Profiler * this, uint param_1, ulonglong param_2, ulonglong * param_3, longlong * param_4, longlong * param_5, longlong * param_6)`
-    pub slot_2: *const c_void,
-    /// `SkyrimScript::Profiler::vfunc_3` at 0x9c42c0 (rtti, high); signature (low): `undefined vfunc_3(Profiler * this, uint param_1, ulonglong param_2, ulonglong * param_3, longlong * param_4, longlong * param_5, longlong * param_6)`
-    pub slot_3: *const c_void,
-    /// `SkyrimScript::Profiler::vfunc_4` at 0x9c43f0 (rtti, high); signature (low): `undefined vfunc_4(Profiler * this, uint param_1, ulonglong param_2, ulonglong * param_3, longlong * param_4, longlong * param_5, longlong * param_6)`
-    pub slot_4: *const c_void,
-}
-impl SkyrimScript__Profiler_vtable {
-    pub const ID: u64 = 216767;
-}
-
-/// `SkyrimScript::QuestCallbackMgr::vftable` at 0x198c9f8, id 216789 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript__QuestCallbackMgr_vtable {
-    /// `SkyrimScript::QuestCallbackMgr::vdtor` at 0x9cb120 (slot_propagation, medium); signature (low): `QuestCallbackMgr * vdtor(QuestCallbackMgr * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::QuestCallbackMgr::vfunc_1` at 0x9c6800 (rtti, high); signature (low): `undefined8 vfunc_1(QuestCallbackMgr * this, uint * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript__QuestCallbackMgr_vtable {
-    pub const ID: u64 = 216789;
-}
-
-/// `SkyrimScript::QuestCallbackMgr::vftable_8` at 0x198ca10, id 216791 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript__QuestCallbackMgr_vtable_8 {
-    /// `SkyrimScript::QuestCallbackMgr::BSTEventSink_TESQuestStartStopEvent_vdtor` at 0x9cb0d4 (slot_propagation, medium); signature (high): `undefined BSTEventSink_TESQuestStartStopEvent_vdtor(QuestCallbackMgr * this)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::QuestCallbackMgr::BSTEventSink_TESQuestStartStopEvent_vfunc_1` at 0x9c69e0 (rtti, high); signature (low): `undefined8 BSTEventSink_TESQuestStartStopEvent_vfunc_1(QuestCallbackMgr * this, uint * param_1, undefined8 param_2, ulonglong param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript__QuestCallbackMgr_vtable_8 {
-    pub const ID: u64 = 216791;
-}
-
-/// `SkyrimScript::QuestCallbackMgr::vftable_10` at 0x198ca28, id 216793 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript__QuestCallbackMgr_vtable_10 {
-    /// `SkyrimScript::QuestCallbackMgr::BSTEventSink_BGSEventProcessedEvent_vdtor` at 0x9cb0e0 (slot_propagation, medium); signature (high): `undefined BSTEventSink_BGSEventProcessedEvent_vdtor(QuestCallbackMgr * this)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::QuestCallbackMgr::BSTEventSink_BGSEventProcessedEvent_vfunc_1` at 0x9c6d30 (rtti, high); signature (low): `undefined8 BSTEventSink_BGSEventProcessedEvent_vfunc_1(QuestCallbackMgr * this, uint * param_1, undefined8 param_2, longlong * param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript__QuestCallbackMgr_vtable_10 {
-    pub const ID: u64 = 216793;
-}
-
-/// `SkyrimScript::SaveFileHandleReaderWriter::vftable` at 0x1990f98, id 216937 (rtti, high); 6 slots.
-#[repr(C)]
-pub struct SkyrimScript__SaveFileHandleReaderWriter_vtable {
-    /// `SkyrimScript::SaveFileHandleReaderWriter::vfunc_0` at 0x9f0ba0 (rtti, high); signature (low): `SaveFileHandleReaderWriter * vfunc_0(SaveFileHandleReaderWriter * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::BaseHandleReaderWriter::vfunc_1` at 0x9ba870 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `BaseHandleReaderWriter::WriteHandle` at 0x9ba880 (semantic, high); signature (untiered): `undefined8 WriteHandle(void * this, longlong * param_1, ulonglong param_2)`
-    pub slot_2: *const c_void,
-    /// `BaseHandleReaderWriter::ReadHandle` at 0x9ba920 (semantic, high); signature (untiered): `undefined8 ReadHandle(void * this, longlong * param_1, ulonglong * param_2)`
-    pub slot_3: *const c_void,
-    /// `SkyrimScript::SaveFileHandleReaderWriter::vfunc_4` at 0x9bab70 (rtti, high); signature (low): `undefined vfunc_4(SaveFileHandleReaderWriter * this, longlong * param_1, uint param_2)`
-    pub slot_4: *const c_void,
-    /// `SkyrimScript::SaveFileHandleReaderWriter::vfunc_5` at 0x9bab90 (rtti, high); signature (low): `undefined vfunc_5(SaveFileHandleReaderWriter * this, longlong * param_1, undefined4 * param_2)`
-    pub slot_5: *const c_void,
-}
-impl SkyrimScript__SaveFileHandleReaderWriter_vtable {
-    pub const ID: u64 = 216937;
-}
-
-/// `SkyrimScript::SavePatcher::vftable` at 0x198cae0, id 216795 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript__SavePatcher_vtable {
-    /// `SkyrimScript::SavePatcher::vdtor` at 0x9cd280 (layout_inference, medium); signature (low): `SavePatcher * vdtor(SavePatcher * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::SavePatcher::vfunc_1` at 0x9ccc50 (rtti, high); signature (low): `undefined vfunc_1(SavePatcher * this, uint * * param_1, uint * * param_2, ulonglong * param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript__SavePatcher_vtable {
-    pub const ID: u64 = 216795;
-}
-
-/// `SkyrimScript::SoundCallbackMgr::vftable` at 0x198cd18, id 216802 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct SkyrimScript__SoundCallbackMgr_vtable {
-    /// `SkyrimScript::SoundCallbackMgr::vdtor` at 0x9ce300 (layout_inference, medium); signature (low): `SoundCallbackMgr * vdtor(SoundCallbackMgr * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl SkyrimScript__SoundCallbackMgr_vtable {
-    pub const ID: u64 = 216802;
-}
-
-/// `SkyrimScript::Store::vftable` at 0x198cf18, id 216811 (rtti, high); 12 slots.
-#[repr(C)]
-pub struct SkyrimScript__Store_vtable {
-    /// `SkyrimScript::Store::vdtor` at 0x9cf0a0 (slot_propagation, medium); signature (low): `Store * vdtor(Store * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::Store::vfunc_1` at 0x9cee30 (rtti, high); signature (high): `undefined4 vfunc_1(Store * this)`
-    pub slot_1: *const c_void,
-    /// `SkyrimScript::Store::vfunc_2` at 0x9cee70 (rtti, high); signature (high): `undefined4 vfunc_2(Store * this)`
-    pub slot_2: *const c_void,
-    /// `SkyrimScript::Store::vfunc_3` at 0x9ceeb0 (rtti, high); signature (low): `bool vfunc_3(Store * this, int param_1, int param_2)`
-    pub slot_3: *const c_void,
-    /// `SkyrimScript::Store::vfunc_4` at 0x9cef50 (rtti, high); signature (low): `bool vfunc_4(Store * this, uint param_1, void * param_2)`
-    pub slot_4: *const c_void,
-    /// `BSScript::IStore::vfunc_5` at 0x9cf200 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `SkyrimScript::Store::vfunc_6` at 0x9ceac0 (rtti, high); signature (high): `undefined1 vfunc_6(Store * this)`
-    pub slot_6: *const c_void,
-    /// `SkyrimScript::Store::vfunc_7` at 0x9ceca0 (rtti, high); signature (low): `undefined vfunc_7(Store * this, undefined8 param_1, ulonglong param_2, undefined8 param_3)`
-    pub slot_7: *const c_void,
-    /// `SkyrimScript::Store::vfunc_8` at 0x9cf1f0 (rtti, high); signature (high): `Store * vfunc_8(Store * this)`
-    pub slot_8: *const c_void,
-    /// `SkyrimScript::Store::vfunc_9` at 0x9cf0f0 (rtti, high); signature (high): `undefined1 vfunc_9(Store * this)`
-    pub slot_9: *const c_void,
-    /// `SkyrimScript::Store::vfunc_10` at 0x9cf0e0 (rtti, high); signature (high): `undefined1 vfunc_10(Store * this)`
-    pub slot_10: *const c_void,
-    /// `SkyrimScript::Store::vfunc_11` at 0x9cede0 (rtti, high); signature (high): `undefined8 vfunc_11(Store * this)`
-    pub slot_11: *const c_void,
-}
-impl SkyrimScript__Store_vtable {
-    pub const ID: u64 = 216811;
-}
-
-/// `SkyrimScript::_anon_0B1D96E2::ScriptMessageBoxCallback::vftable` at 0x199b750, id 217737 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback_vtable {
-    /// `SkyrimScript::_anon_0B1D96E2::ScriptMessageBoxCallback::vdtor` at 0xa1a600 (layout_inference, medium); signature (low): `ScriptMessageBoxCallback * vdtor(ScriptMessageBoxCallback * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_0B1D96E2::ScriptMessageBoxCallback::Run` at 0xa1a4a0 (semantic, high); signature (untiered): `undefined Run(ScriptMessageBoxCallback * this, char param_1)`; `Run`: returns Variable{type 3, value button} to the stack via vm->vtbl[0x158/8] (high); semantic signature: `void (ScriptMessageBoxCallback* this, u8 button)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback_vtable {
-    pub const ID: u64 = 217737;
-    pub const SLOT_Run: usize = 1;
-    /// Slot 1 as `SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback_vtable_Run`, `None` when the slot is null.
-    #[must_use]
-    pub fn Run(&self) -> Option<SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback_vtable_Run> {
-        unsafe { core::mem::transmute::<*const c_void, Option<SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback_vtable_Run>>(self.slot_1) }
-    }
-}
-/// `SkyrimScript::_anon_0B1D96E2::ScriptMessageBoxCallback::Run`, slot 1: returns Variable{type 3, value button} to the stack via vm->vtbl[0x158/8] (high).
-pub type SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback_vtable_Run = unsafe extern "C" fn(this: *mut c_void, button: u8);
-
-/// `SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor::vftable` at 0x19937b8, id 217344 (rtti, high); 7 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_0D8D4B7E__AttachAshPileFunctor_vtable {
-    /// `SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor::vdtor` at 0xa09030 (slot_propagation, medium); signature (low): `AttachAshPileFunctor * vdtor(AttachAshPileFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor::vfunc_1` at 0x9feda0 (rtti, high); signature (low): `ulonglong * vfunc_1(AttachAshPileFunctor * this, ulonglong * param_1)`
-    pub slot_1: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor::vfunc_2` at 0xa09010 (rtti, high); signature (low): `undefined1 vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `SkyrimScript::DelayFunctor::vfunc_3` at 0x9b2670 (rtti, medium); signature (low): `undefined1 vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor::vfunc_4` at 0x9ff330 (rtti, high); signature (low): `undefined8 vfunc_4(AttachAshPileFunctor * this, longlong * param_1)`
-    pub slot_4: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor::vfunc_5` at 0xa09020 (rtti, high); signature (low): `undefined8 vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor::vfunc_6` at 0x9ff400 (rtti, high); signature (low): `undefined8 vfunc_6(AttachAshPileFunctor * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
-}
-impl SkyrimScript___anon_0D8D4B7E__AttachAshPileFunctor_vtable {
-    pub const ID: u64 = 217344;
 }
 

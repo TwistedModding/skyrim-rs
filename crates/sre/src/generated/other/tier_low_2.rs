@@ -84,13 +84,6 @@ pub unsafe fn cmd__dispel_all_spells_execute(param_1: u64, param_2: u64, param_3
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn cmd__dispel_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: u64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22074, (i64, i64, i64, u64, u64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
-/// `Cmd::DisplayGraphVariable_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23039, rva 0x379b30).
-/// `undefined1 DisplayGraphVariable_Execute(void)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__display_graph_variable_execute() -> u8 { unsafe { function!(23039, () -> u8)() } }
 /// `Cmd::DisplayPlayerIDs_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22942, rva 0x375330).
 /// `undefined8 DisplayPlayerIDs_Execute(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -6076,13 +6069,6 @@ pub unsafe fn cmd__lock_execute(param_1: i64, param_2: i64, param_3: *mut i64, p
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn cmd__log_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: *mut f64, param_8: *mut u32) -> u64 { unsafe { function!(22701, (i64, i64, i64, u64, i64, i64, *mut f64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
-/// `Cmd::Look_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22212, rva 0x356ea0).
-/// `ulonglong Look_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__look_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22212, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
 /// `Cmd::LoopGroup_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22061, rva 0x350db0).
 /// `bool LoopGroup_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 ///
@@ -7231,13 +7217,6 @@ pub unsafe fn cmd__set_ally_execute(param_1: i64, param_2: i64, param_3: i64, pa
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn cmd__set_angle_execute(param_1: i64, param_2: i64, param_3: *mut i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22051, (i64, i64, *mut i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
-/// `Cmd::SetAnimGraphVar_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22586, rva 0x3664f0).
-/// `ulonglong SetAnimGraphVar_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__set_anim_graph_var_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22586, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
 /// `Cmd::SetAtStart_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22052, rva 0x350670).
 /// `undefined8 SetAtStart_Execute(undefined8 param_1, undefined8 param_2, longlong * param_3)`
 ///
@@ -8309,13 +8288,6 @@ pub unsafe fn cmd__show_full_quest_log_execute(param_1: i64, param_2: i64, param
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn cmd__show_global_vars_execute(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(22927, (u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `Cmd::ShowHeadTrackTarget_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22858, rva 0x370c40).
-/// `undefined8 ShowHeadTrackTarget_Execute(undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__show_head_track_target_execute(param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(22858, (u64, u64, u64) -> u64)(param_1, param_2, param_3) } }
 /// `Cmd::ShowHighMaxHeights_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23077, rva 0x37a9a0).
 /// `bool ShowHighMaxHeights_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 ///
@@ -8687,13 +8659,6 @@ pub unsafe fn cmd__stop_combat_alarm_on_actor_execute(param_1: u64, param_2: u64
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn cmd__stop_combat_execute(param_1: u64, param_2: u64, param_3: *mut i64, param_4: u64) -> u64 { unsafe { function!(22064, (u64, u64, *mut i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `Cmd::StopLook_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22213, rva 0x356ff0).
-/// `undefined8 StopLook_Execute(undefined8 param_1, undefined8 param_2, longlong param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__stop_look_execute(param_1: u64, param_2: u64, param_3: i64) -> u64 { unsafe { function!(22213, (u64, u64, i64) -> u64)(param_1, param_2, param_3) } }
 /// `Cmd::StopMagicEffectVisuals_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22389, rva 0x35de50).
 /// `ulonglong StopMagicEffectVisuals_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 ///
@@ -12474,3 +12439,38 @@ pub unsafe fn wrap_memmove_id_440176(param_1: *mut c_void, param_2: i64, param_3
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn wrap_memmove_id_440254(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440254, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memmove_ID_440260` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440260, rva 0x11ea90).
+/// `longlong Wrap_memmove_ID_440260(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440260(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440260, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memmove_ID_440309` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440309, rva 0x11fe00).
+/// `longlong Wrap_memmove_ID_440309(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440309(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440309, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_440724` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440724, rva 0x12fff0).
+/// `longlong Wrap_memmove_ID_440724(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440724(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440724, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memmove_ID_440777` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440777, rva 0x136670).
+/// `longlong Wrap_memmove_ID_440777(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440777(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440777, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memmove_ID_440782` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440782, rva 0x1367e0).
+/// `longlong Wrap_memmove_ID_440782(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440782(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440782, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }

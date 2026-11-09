@@ -187,7 +187,7 @@ impl BShkbAnimationGraphExt for BShkbAnimationGraph {
         if setup.is_null() {
             return None;
         }
-        let skeleton = unsafe { setup.add(sre::member_offset!("hkbCharacterSetup.m_hkpRayShapeCollectionFilter_20")).cast::<*const sre::hkaSkeleton>().read_unaligned() };
+        let skeleton = unsafe { setup.add(sre::member_offset!("hkbCharacterSetup.animationSkeleton")).cast::<*const sre::hkaSkeleton>().read_unaligned() };
         unsafe { skeleton.as_ref() }.map(|s| s.boneCount)
     }
 
@@ -197,8 +197,7 @@ impl BShkbAnimationGraphExt for BShkbAnimationGraph {
 
     fn foot_ik_disabled(&self) -> Option<bool> {
         let driver = self.character.footIkDriver.cast::<u8>();
-        // The disabled byte (`SetDisabled`, id 58428) is the third of the ledger's `field_48`.
-        (!driver.is_null()).then(|| unsafe { driver.add(sre::member_offset!("hkbFootIkDriver.field_48") + 2).read() } != 0)
+        (!driver.is_null()).then(|| unsafe { driver.add(sre::member_offset!("hkbFootIkDriver.disabled")).read() } != 0)
     }
 }
 

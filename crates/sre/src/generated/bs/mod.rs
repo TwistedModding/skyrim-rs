@@ -21,8 +21,6 @@ mod api_2;
 pub use api_2::*;
 #[cfg(all(feature = "bs", feature = "tier-high"))]
 mod tier_high;
-#[cfg(all(feature = "bs", feature = "tier-medium"))]
-mod tier_medium;
 #[cfg(all(feature = "bs", feature = "tier-low"))]
 mod tier_low_1;
 #[cfg(all(feature = "bs", feature = "tier-low"))]

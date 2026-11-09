@@ -2201,43 +2201,6 @@ impl crate::hkaQuantizedAnimation {
     pub unsafe fn ctor(&self) -> u64 { unsafe { function!(64419, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::hkaRagdollInstance {
-    /// `hkaRagdollInstance::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 64145, rva 0xbf35c0).
-    /// `hkaRagdollInstance * ctor(hkaRagdollInstance * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(64145, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-    /// `hkaRagdollInstance::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 64146, rva 0xbf36d0).
-    /// `undefined dtor(hkaRagdollInstance * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(64146, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::hkaRagdollRaycastInterface {
-    /// `hkaRagdollRaycastInterface::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 78233, rva 0x1061750).
-    /// `undefined dtor(hkaRagdollRaycastInterface * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(78233, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::hkaRaycastInterface {
-    /// `hkaRaycastInterface::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 32760, rva 0x54c240).
-    /// `undefined dtor(hkaRaycastInterface * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(32760, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::hkaSkeletonMapper {
     /// `hkaSkeletonMapper::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 64071, rva 0xbeca60).
     /// `undefined dtor(hkaSkeletonMapper * this)`
@@ -2471,23 +2434,6 @@ impl crate::hkbCharacterControllerSceneModifier {
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(59456, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::hkbCharacterSetup {
-    /// `hkbCharacterSetup::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 59477, rva 0xaffcf0).
-    /// `hkbCharacterSetup * ctor(hkbCharacterSetup * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(59477, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-    /// `hkbCharacterSetup::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 59478, rva 0xaffd40).
-    /// `undefined dtor(hkbCharacterSetup * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(59478, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::hkbCharacterStringData {
     /// `hkbCharacterStringData::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 58583, rva 0xadd100).
     /// `undefined ctor(hkbCharacterStringData * this)`
@@ -2634,16 +2580,6 @@ impl crate::hkbDampingModifier {
     pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(59646, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::hkbDefaultRaycastInterface {
-    /// `hkbDefaultRaycastInterface::hkaRaycastInterface_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 60084, rva 0xb2a998).
-    /// `undefined hkaRaycastInterface_vdtor(hkbDefaultRaycastInterface * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn hka_raycast_interface_vdtor(&self) -> u64 { unsafe { function!(60084, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
-}
-
 impl crate::hkbDelayedModifier {
     /// `hkbDelayedModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 58725, rva 0xade100).
     /// `undefined ctor(hkbDelayedModifier * this)`
@@ -2659,23 +2595,6 @@ impl crate::hkbDelayedModifier {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(59660, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::hkbDetectCloseToGroundModifier {
-    /// `hkbDetectCloseToGroundModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 58730, rva 0xade1b0).
-    /// `undefined ctor(hkbDetectCloseToGroundModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(58730, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-    /// `hkbDetectCloseToGroundModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 59672, rva 0xb07820).
-    /// `hkbDetectCloseToGroundModifier * ctor(hkbDetectCloseToGroundModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(59672, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::hkbEvaluateExpressionModifier {
@@ -2766,74 +2685,6 @@ impl crate::hkbExpressionCondition {
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(59509, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::hkbExtractRagdollPoseModifier {
-    /// `hkbExtractRagdollPoseModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 58820, rva 0xadee80).
-    /// `undefined ctor(hkbExtractRagdollPoseModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(58820, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-    /// `hkbExtractRagdollPoseModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 59841, rva 0xb15b70).
-    /// `hkbExtractRagdollPoseModifier * ctor(hkbExtractRagdollPoseModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(59841, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::hkbFootIkControlsModifier {
-    /// `hkbFootIkControlsModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 58770, rva 0xade6b0).
-    /// `undefined ctor(hkbFootIkControlsModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(58770, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::hkbFootIkDriver {
-    /// `hkbFootIkDriver::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 58421, rva 0xad21f0).
-    /// `hkbFootIkDriver * ctor(hkbFootIkDriver * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(58421, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-    /// `hkbFootIkDriver::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 58422, rva 0xad2240).
-    /// `undefined dtor(hkbFootIkDriver * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(58422, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::hkbFootIkModifier {
-    /// `hkbFootIkModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 58964, rva 0xadfed0).
-    /// `hkbFootIkModifier * ctor(hkbFootIkModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(58964, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-    /// `hkbFootIkModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 59736, rva 0xb0a9b0).
-    /// `hkbFootIkModifier * ctor(hkbFootIkModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(59736, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-    /// `hkbFootIkModifier::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 59738, rva 0xb0ad40).
-    /// `undefined dtor(hkbFootIkModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(59738, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::hkbGeneratorTransitionEffect {
     /// `hkbGeneratorTransitionEffect::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 58933, rva 0xadfc00).
     /// `undefined ctor(hkbGeneratorTransitionEffect * this)`
@@ -2893,70 +2744,6 @@ impl crate::hkbGetWorldFromModelModifier {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(59770, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::hkbHandIkControlsModifier {
-    /// `hkbHandIkControlsModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 58795, rva 0xadea30).
-    /// `undefined ctor(hkbHandIkControlsModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(58795, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::hkbHandIkDriver {
-    /// `hkbHandIkDriver::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 59420, rva 0xaf9b90).
-    /// `hkbHandIkDriver * ctor(hkbHandIkDriver * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(59420, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::hkbHandIkModifier {
-    /// `hkbHandIkModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 58799, rva 0xadeae0).
-    /// `undefined ctor(hkbHandIkModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(58799, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-    /// `hkbHandIkModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 59782, rva 0xb11270).
-    /// `hkbHandIkModifier * ctor(hkbHandIkModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(59782, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::hkbKeyframeBonesModifier {
-    /// `hkbKeyframeBonesModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 58824, rva 0xadef20).
-    /// `undefined ctor(hkbKeyframeBonesModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(58824, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::hkbLookAtModifier {
-    /// `hkbLookAtModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 58804, rva 0xadebf0).
-    /// `undefined ctor(hkbLookAtModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(58804, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-    /// `hkbLookAtModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 59803, rva 0xb13940).
-    /// `hkbLookAtModifier * ctor(hkbLookAtModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(59803, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::hkbManualSelectorGenerator {
@@ -3125,33 +2912,6 @@ impl crate::hkbNode {
     pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(58965, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::hkbPoseMatchingGenerator {
-    /// `hkbPoseMatchingGenerator::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 59573, rva 0xb04280).
-    /// `undefined ctor(hkbPoseMatchingGenerator * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(59573, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::hkbPoweredRagdollControlsModifier {
-    /// `hkbPoweredRagdollControlsModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 58828, rva 0xadefc0).
-    /// `undefined ctor(hkbPoweredRagdollControlsModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(58828, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-    /// `hkbPoweredRagdollControlsModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 59856, rva 0xb16930).
-    /// `hkbPoweredRagdollControlsModifier * ctor(hkbPoweredRagdollControlsModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(59856, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::hkbProjectStringData {
     /// `hkbProjectStringData::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 58869, rva 0xadf5a0).
     /// `undefined ctor(hkbProjectStringData * this)`
@@ -3179,16 +2939,6 @@ impl crate::hkbProxyModifier {
     pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(59826, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::hkbRagdollSceneModifier {
-    /// `hkbRagdollSceneModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 59454, rva 0xafea40).
-    /// `hkbRagdollSceneModifier * ctor(hkbRagdollSceneModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(59454, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::hkbReferencePoseGenerator {
     /// `hkbReferencePoseGenerator::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 58682, rva 0xaddae0).
     /// `undefined ctor(hkbReferencePoseGenerator * this)`
@@ -3204,23 +2954,6 @@ impl crate::hkbReferencePoseGenerator {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(59587, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::hkbRigidBodyRagdollControlsModifier {
-    /// `hkbRigidBodyRagdollControlsModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 58832, rva 0xadf070).
-    /// `undefined ctor(hkbRigidBodyRagdollControlsModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(58832, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-    /// `hkbRigidBodyRagdollControlsModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 59862, rva 0xb16e40).
-    /// `hkbRigidBodyRagdollControlsModifier * ctor(hkbRigidBodyRagdollControlsModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(59862, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::hkbRotateCharacterModifier {
@@ -3390,33 +3123,6 @@ impl crate::hkbTransitionEffect {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(59487, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::hkbTwistModifier {
-    /// `hkbTwistModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 58968, rva 0xae0100).
-    /// `hkbTwistModifier * ctor(hkbTwistModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(58968, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-    /// `hkbTwistModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 59912, rva 0xb19380).
-    /// `hkbTwistModifier * ctor(hkbTwistModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(59912, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::hkbVariableBindingSet {
-    /// `hkbVariableBindingSet::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 59466, rva 0xaff310).
-    /// `undefined dtor(hkbVariableBindingSet * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(59466, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::hkbWorld {

@@ -7,6 +7,27 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `FreeField0_2` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 70899, rva 0xefb720).
+/// `undefined FreeField0_2(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn free_field0_2(param_1: *mut u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(70899, (*mut u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `FreeField10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 447418, rva 0x1348b30).
+/// `undefined FreeField10(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn free_field10(param_1: i64) -> u64 { unsafe { function!(447418, (i64) -> u64)(param_1) } }
+/// `FreeField10Array240Items` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 39339, rva 0x6f4b40).
+/// `undefined FreeField10Array240Items(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn free_field10_array240_items(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(39339, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `FreeField10ArrayAndClearField28` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 90325, rva 0x11b4d90).
 /// `undefined FreeField10ArrayAndClearField28(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -3437,13 +3458,6 @@ pub unsafe fn get_data_field54_or_override(param_1: i64) -> u32 { unsafe { funct
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_data_field_c_or_override(param_1: i64) -> u32 { unsafe { function!(18944, (i64) -> u32)(param_1) } }
-/// `GetDataFromField78OrField60` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 58317, rva 0xacaea0).
-/// `longlong GetDataFromField78OrField60(longlong * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_data_from_field78_or_field60(param_1: *mut i64) -> i64 { unsafe { function!(58317, (*mut i64) -> i64)(param_1) } }
 /// `GetDataHandlerGroup6ElementAtIndexOfPointer` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 24593, rva 0x3b8810).
 /// `undefined8 GetDataHandlerGroup6ElementAtIndexOfPointer(undefined8 param_1, longlong param_2, longlong param_3)`
 ///
@@ -4459,13 +4473,6 @@ pub unsafe fn get_extra_type8_field10(param_1: i64) -> i64 { unsafe { function!(
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_extra_type8_field10_if_flag40_bit0(param_1: i64) -> i64 { unsafe { function!(19007, (i64) -> i64)(param_1) } }
-/// `GetExtraType94Field10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 12027, rva 0x171cf0).
-/// `undefined4 GetExtraType94Field10(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_extra_type94_field10(param_1: i64) -> u32 { unsafe { function!(12027, (i64) -> u32)(param_1) } }
 /// `GetExtraType9BByte1A` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 12063, rva 0x173310).
 /// `undefined1 GetExtraType9BByte1A(longlong param_1)`
 ///
@@ -6286,13 +6293,6 @@ pub unsafe fn get_field6_c_2(param_1: i64) -> u32 { unsafe { function!(35544, (i
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_field70(param_1: i64) -> u32 { unsafe { function!(18303, (i64) -> u32)(param_1) } }
-/// `GetField70OrField78Field148` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 58463, rva 0xad7f70).
-/// `longlong GetField70OrField78Field148(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_field70_or_field78_field148(param_1: i64) -> i64 { unsafe { function!(58463, (i64) -> i64)(param_1) } }
 /// `GetField718` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 87838, rva 0x1193f30).
 /// `undefined8 GetField718(longlong param_1)`
 ///
@@ -12950,13 +12950,6 @@ pub unsafe fn inflate_zlib_stream(param_1: *mut u64, param_2: i32) -> u64 { unsa
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn inflate_zlib_stream_2(param_1: *mut i64, param_2: i32) -> u64 { unsafe { function!(453860, (*mut i64, i32) -> u64)(param_1, param_2) } }
-/// `Init80ByteRecordFromArgs` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 57620, rva 0xab1660).
-/// `undefined8 * Init80ByteRecordFromArgs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, undefined8 param_5, undefined4 param_6, undefined8 param_7, undefined4 param_8, undefined8 param_9, undefined4 param_10, undefined8 param_11, undefined8 param_12, undefined4 param_13, undefined4 param_14)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init80_byte_record_from_args(param_1: *mut u64, param_2: u64, param_3: u64, param_4: u32, param_5: u64, param_6: u32, param_7: u64, param_8: u32, param_9: u64, param_10: u32, param_11: u64, param_12: u64, param_13: u32, param_14: u32) -> *mut u64 { unsafe { function!(57620, (*mut u64, u64, u64, u32, u64, u32, u64, u32, u64, u32, u64, u64, u32, u32) -> *mut u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10, param_11, param_12, param_13, param_14) } }
 /// `InitActorLocationFromPackages` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 39110, rva 0x6e75c0).
 /// `undefined InitActorLocationFromPackages(longlong param_1, TESObjectCELL * param_2, char param_3)`
 ///
@@ -14189,3 +14182,17 @@ pub unsafe fn init_header_and_empty_array(param_1: *mut u32) -> *mut u32 { unsaf
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn init_hit_data(param_1: *mut f32, param_2: u64, param_3: *mut i64, param_4: f32, param_5: *mut i64) -> u64 { unsafe { function!(44005, (*mut f32, u64, *mut i64, f32, *mut i64) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
+/// `InitHitData_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 44002, rva 0x7f0030).
+/// `undefined InitHitData_2(float * param_1, longlong * param_2, float * param_3, longlong param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn init_hit_data_2(param_1: *mut f32, param_2: *mut i64, param_3: *mut f32, param_4: i64) -> u64 { unsafe { function!(44002, (*mut f32, *mut i64, *mut f32, i64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `InitHkArraysAndDefaults` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 65251, rva 0xc45020).
+/// `undefined8 * InitHkArraysAndDefaults(undefined8 * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn init_hk_arrays_and_defaults(param_1: *mut u64) -> *mut u64 { unsafe { function!(65251, (*mut u64) -> *mut u64)(param_1) } }

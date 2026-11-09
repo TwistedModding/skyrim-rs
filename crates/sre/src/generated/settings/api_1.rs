@@ -129,9 +129,6 @@ pub fn game_setting_f_ai_activate_height() -> *mut c_void { address!(370720) as 
 /// `GameSetting_fAIActivateReach` at 0x209f990, id 370717 (setting, high)
 #[inline]
 pub fn game_setting_f_ai_activate_reach() -> *mut c_void { address!(370717) as *mut c_void }
-/// `GameSetting_fAIActorPackTargetHeadTrackMod` at 0x209ff90, id 370887 (setting, high)
-#[inline]
-pub fn game_setting_f_ai_actor_pack_target_head_track_mod() -> *mut c_void { address!(370887) as *mut c_void }
 /// `GameSetting_fAIAimBlockedHalfCircleRadius` at 0x20a06e0, id 371099 (setting, high)
 #[inline]
 pub fn game_setting_f_ai_aim_blocked_half_circle_radius() -> *mut c_void { address!(371099) as *mut c_void }
@@ -141,9 +138,6 @@ pub fn game_setting_f_ai_aim_blocked_tolerance_degrees() -> *mut c_void { addres
 /// `GameSetting_fAIAwareofPlayerTimer` at 0x20a02f0, id 370983 (setting, high)
 #[inline]
 pub fn game_setting_f_ai_awareof_player_timer() -> *mut c_void { address!(370983) as *mut c_void }
-/// `GameSetting_fAIBestHeadTrackDistance` at 0x209ff30, id 370876 (setting, high)
-#[inline]
-pub fn game_setting_f_ai_best_head_track_distance() -> *mut c_void { address!(370876) as *mut c_void }
 /// `GameSetting_fAICombatFleeScoreThreshold` at 0x20a5e68, id 373641 (setting, high)
 #[inline]
 pub fn game_setting_f_ai_combat_flee_score_threshold() -> *mut c_void { address!(373641) as *mut c_void }
@@ -255,42 +249,6 @@ pub fn game_setting_f_ai_furniture_destination_radius() -> *mut c_void { address
 /// `GameSetting_fAIGreetingTimer` at 0x209fff0, id 370896 (setting, high)
 #[inline]
 pub fn game_setting_f_ai_greeting_timer() -> *mut c_void { address!(370896) as *mut c_void }
-/// `GameSetting_fAIHeadTrackDialogueOffsetRandomValue` at 0x20a0140, id 370937 (setting, high)
-#[inline]
-pub fn game_setting_f_ai_head_track_dialogue_offset_random_value() -> *mut c_void { address!(370937) as *mut c_void }
-/// `GameSetting_fAIHeadTrackDialoguePickNewOffsetTimer` at 0x20a00e0, id 370925 (setting, high)
-#[inline]
-pub fn game_setting_f_ai_head_track_dialogue_pick_new_offset_timer() -> *mut c_void { address!(370925) as *mut c_void }
-/// `GameSetting_fAIHeadTrackDialogueResetPositionTimer` at 0x20a00f8, id 370928 (setting, high)
-#[inline]
-pub fn game_setting_f_ai_head_track_dialogue_reset_position_timer() -> *mut c_void { address!(370928) as *mut c_void }
-/// `GameSetting_fAIHeadTrackDialogueStayInOffsetMax` at 0x20a0128, id 370934 (setting, high)
-#[inline]
-pub fn game_setting_f_ai_head_track_dialogue_stay_in_offset_max() -> *mut c_void { address!(370934) as *mut c_void }
-/// `GameSetting_fAIHeadTrackDialogueStayInOffsetMin` at 0x20a0110, id 370931 (setting, high)
-#[inline]
-pub fn game_setting_f_ai_head_track_dialogue_stay_in_offset_min() -> *mut c_void { address!(370931) as *mut c_void }
-/// `GameSetting_fAIHeadTrackOffsetRandomValueMax` at 0x20a00c8, id 370922 (setting, high)
-#[inline]
-pub fn game_setting_f_ai_head_track_offset_random_value_max() -> *mut c_void { address!(370922) as *mut c_void }
-/// `GameSetting_fAIHeadTrackOffsetRandomValueMin` at 0x20a00b0, id 370919 (setting, high)
-#[inline]
-pub fn game_setting_f_ai_head_track_offset_random_value_min() -> *mut c_void { address!(370919) as *mut c_void }
-/// `GameSetting_fAIHeadTrackPickNewOffsetTimer` at 0x20a0050, id 370908 (setting, high)
-#[inline]
-pub fn game_setting_f_ai_head_track_pick_new_offset_timer() -> *mut c_void { address!(370908) as *mut c_void }
-/// `GameSetting_fAIHeadTrackResetPositionTimer` at 0x20a0068, id 370911 (setting, high)
-#[inline]
-pub fn game_setting_f_ai_head_track_reset_position_timer() -> *mut c_void { address!(370911) as *mut c_void }
-/// `GameSetting_fAIHeadTrackStayInOffsetMax` at 0x20a0098, id 370916 (setting, high)
-#[inline]
-pub fn game_setting_f_ai_head_track_stay_in_offset_max() -> *mut c_void { address!(370916) as *mut c_void }
-/// `GameSetting_fAIHeadTrackStayInOffsetMin` at 0x20a0080, id 370914 (setting, high)
-#[inline]
-pub fn game_setting_f_ai_head_track_stay_in_offset_min() -> *mut c_void { address!(370914) as *mut c_void }
-/// `GameSetting_fAIHoldDefaultHeadTrackTimer` at 0x209eb38, id 370303 (setting, high)
-#[inline]
-pub fn game_setting_f_ai_hold_default_head_track_timer() -> *mut c_void { address!(370303) as *mut c_void }
 /// `GameSetting_fAIHorseSearchDistance` at 0x20a0f98, id 371340 (setting, high)
 #[inline]
 pub fn game_setting_f_ai_horse_search_distance() -> *mut c_void { address!(371340) as *mut c_void }
@@ -312,9 +270,6 @@ pub fn game_setting_f_ai_in_dialogue_mode_with_player_distance() -> *mut c_void 
 /// `GameSetting_fAIInDialogueModewithPlayerTimer` at 0x20a0308, id 370986 (setting, high)
 #[inline]
 pub fn game_setting_f_ai_in_dialogue_modewith_player_timer() -> *mut c_void { address!(370986) as *mut c_void }
-/// `GameSetting_fAIInteriorHeadTrackMult` at 0x209ffa8, id 370889 (setting, high)
-#[inline]
-pub fn game_setting_f_ai_interior_head_track_mult() -> *mut c_void { address!(370889) as *mut c_void }
 /// `GameSetting_fAIInteriorSpectatorDetection` at 0x20a01e8, id 370952 (setting, high)
 #[inline]
 pub fn game_setting_f_ai_interior_spectator_detection() -> *mut c_void { address!(370952) as *mut c_void }
@@ -336,15 +291,6 @@ pub fn game_setting_f_ai_marker_destination_radius() -> *mut c_void { address!(3
 /// `GameSetting_fAIMaxAngleRangeMovingToStartSceneDialogue` at 0x209ff78, id 370884 (setting, high)
 #[inline]
 pub fn game_setting_f_ai_max_angle_range_moving_to_start_scene_dialogue() -> *mut c_void { address!(370884) as *mut c_void }
-/// `GameSetting_fAIMaxHeadTrackDistance` at 0x209ff18, id 370873 (setting, high)
-#[inline]
-pub fn game_setting_f_ai_max_head_track_distance() -> *mut c_void { address!(370873) as *mut c_void }
-/// `GameSetting_fAIMaxHeadTrackDistanceFromPC` at 0x209ff00, id 370870 (setting, high)
-#[inline]
-pub fn game_setting_f_ai_max_head_track_distance_from_pc() -> *mut c_void { address!(370870) as *mut c_void }
-/// `GameSetting_fAIMaxLargeCreatureHeadTrackDistance` at 0x209ff48, id 370878 (setting, high)
-#[inline]
-pub fn game_setting_f_ai_max_large_creature_head_track_distance() -> *mut c_void { address!(370878) as *mut c_void }
 /// `GameSetting_fAIMaxSmileDistance` at 0x209ffd8, id 370894 (setting, high)
 #[inline]
 pub fn game_setting_f_ai_max_smile_distance() -> *mut c_void { address!(370894) as *mut c_void }
@@ -408,9 +354,6 @@ pub fn game_setting_f_ai_rang_magic_spell_mult() -> *mut c_void { address!(37296
 /// `GameSetting_fAIRangedWeaponMult` at 0x20a43b0, id 372963 (setting, high)
 #[inline]
 pub fn game_setting_f_ai_ranged_weapon_mult() -> *mut c_void { address!(372963) as *mut c_void }
-/// `GameSetting_fAIRevertToScriptTracking` at 0x20a1010, id 371355 (setting, high)
-#[inline]
-pub fn game_setting_f_ai_revert_to_script_tracking() -> *mut c_void { address!(371355) as *mut c_void }
 /// `GameSetting_fAIShoutMinAimSeconds` at 0x20a0698, id 371090 (setting, high)
 #[inline]
 pub fn game_setting_f_ai_shout_min_aim_seconds() -> *mut c_void { address!(371090) as *mut c_void }
@@ -462,9 +405,6 @@ pub fn game_setting_f_ai_spectator_threat_dist_mine() -> *mut c_void { address!(
 /// `GameSetting_fAISpectatorThreatDistRanged` at 0x20a0230, id 370959 (setting, high)
 #[inline]
 pub fn game_setting_f_ai_spectator_threat_dist_ranged() -> *mut c_void { address!(370959) as *mut c_void }
-/// `GameSetting_fAIStayonScriptHeadtrack` at 0x20a1028, id 371358 (setting, high)
-#[inline]
-pub fn game_setting_f_ai_stayon_script_headtrack() -> *mut c_void { address!(371358) as *mut c_void }
 /// `GameSetting_fAITrespassWarningTimer` at 0x20a02c0, id 370977 (setting, high)
 #[inline]
 pub fn game_setting_f_ai_trespass_warning_timer() -> *mut c_void { address!(370977) as *mut c_void }
@@ -2619,18 +2559,9 @@ pub fn game_setting_f_combat_select_target_switch_update_time() -> *mut c_void {
 /// `GameSetting_fCombatSelectTargetUpdateTime` at 0x20a16d0, id 371557 (setting, high)
 #[inline]
 pub fn game_setting_f_combat_select_target_update_time() -> *mut c_void { address!(371557) as *mut c_void }
-/// `GameSetting_fCombatShoutHeadTrackingAngleMovingMult` at 0x20a3008, id 372352 (setting, high)
-#[inline]
-pub fn game_setting_f_combat_shout_head_tracking_angle_moving_mult() -> *mut c_void { address!(372352) as *mut c_void }
-/// `GameSetting_fCombatShoutHeadTrackingAngleMult` at 0x20a2ff0, id 372349 (setting, high)
-#[inline]
-pub fn game_setting_f_combat_shout_head_tracking_angle_mult() -> *mut c_void { address!(372349) as *mut c_void }
 /// `GameSetting_fCombatShoutLongRecoveryTime` at 0x20a3068, id 372363 (setting, high)
 #[inline]
 pub fn game_setting_f_combat_shout_long_recovery_time() -> *mut c_void { address!(372363) as *mut c_void }
-/// `GameSetting_fCombatShoutMaxHeadTrackingAngle` at 0x20a3020, id 372355 (setting, high)
-#[inline]
-pub fn game_setting_f_combat_shout_max_head_tracking_angle() -> *mut c_void { address!(372355) as *mut c_void }
 /// `GameSetting_fCombatShoutReleaseTime` at 0x20a3038, id 372358 (setting, high)
 #[inline]
 pub fn game_setting_f_combat_shout_release_time() -> *mut c_void { address!(372358) as *mut c_void }
@@ -3480,66 +3411,6 @@ pub fn game_setting_f_expression_change_per_sec() -> *mut c_void { address!(3785
 /// `GameSetting_fExpressionStrengthAdd` at 0x20b0310, id 378506 (setting, high)
 #[inline]
 pub fn game_setting_f_expression_strength_add() -> *mut c_void { address!(378506) as *mut c_void }
-/// `GameSetting_fEyeHeadingMaxOffsetEmotionAngry` at 0x20b05b0, id 378587 (setting, high)
-#[inline]
-pub fn game_setting_f_eye_heading_max_offset_emotion_angry() -> *mut c_void { address!(378587) as *mut c_void }
-/// `GameSetting_fEyeHeadingMaxOffsetEmotionFear` at 0x20b0610, id 378597 (setting, high)
-#[inline]
-pub fn game_setting_f_eye_heading_max_offset_emotion_fear() -> *mut c_void { address!(378597) as *mut c_void }
-/// `GameSetting_fEyeHeadingMaxOffsetEmotionHappy` at 0x20b04f0, id 378563 (setting, high)
-#[inline]
-pub fn game_setting_f_eye_heading_max_offset_emotion_happy() -> *mut c_void { address!(378563) as *mut c_void }
-/// `GameSetting_fEyeHeadingMaxOffsetEmotionNeutral` at 0x20b0670, id 378609 (setting, high)
-#[inline]
-pub fn game_setting_f_eye_heading_max_offset_emotion_neutral() -> *mut c_void { address!(378609) as *mut c_void }
-/// `GameSetting_fEyeHeadingMaxOffsetEmotionSad` at 0x20b0550, id 378575 (setting, high)
-#[inline]
-pub fn game_setting_f_eye_heading_max_offset_emotion_sad() -> *mut c_void { address!(378575) as *mut c_void }
-/// `GameSetting_fEyeHeadingMinOffsetEmotionAngry` at 0x20b05c8, id 378590 (setting, high)
-#[inline]
-pub fn game_setting_f_eye_heading_min_offset_emotion_angry() -> *mut c_void { address!(378590) as *mut c_void }
-/// `GameSetting_fEyeHeadingMinOffsetEmotionFear` at 0x20b0628, id 378600 (setting, high)
-#[inline]
-pub fn game_setting_f_eye_heading_min_offset_emotion_fear() -> *mut c_void { address!(378600) as *mut c_void }
-/// `GameSetting_fEyeHeadingMinOffsetEmotionHappy` at 0x20b0508, id 378566 (setting, high)
-#[inline]
-pub fn game_setting_f_eye_heading_min_offset_emotion_happy() -> *mut c_void { address!(378566) as *mut c_void }
-/// `GameSetting_fEyeHeadingMinOffsetEmotionNeutral` at 0x20b0688, id 378612 (setting, high)
-#[inline]
-pub fn game_setting_f_eye_heading_min_offset_emotion_neutral() -> *mut c_void { address!(378612) as *mut c_void }
-/// `GameSetting_fEyeHeadingMinOffsetEmotionSad` at 0x20b0568, id 378578 (setting, high)
-#[inline]
-pub fn game_setting_f_eye_heading_min_offset_emotion_sad() -> *mut c_void { address!(378578) as *mut c_void }
-/// `GameSetting_fEyePitchMaxOffsetEmotionAngry` at 0x20b0580, id 378581 (setting, high)
-#[inline]
-pub fn game_setting_f_eye_pitch_max_offset_emotion_angry() -> *mut c_void { address!(378581) as *mut c_void }
-/// `GameSetting_fEyePitchMaxOffsetEmotionFear` at 0x20b05e0, id 378593 (setting, high)
-#[inline]
-pub fn game_setting_f_eye_pitch_max_offset_emotion_fear() -> *mut c_void { address!(378593) as *mut c_void }
-/// `GameSetting_fEyePitchMaxOffsetEmotionHappy` at 0x20b04c0, id 378557 (setting, high)
-#[inline]
-pub fn game_setting_f_eye_pitch_max_offset_emotion_happy() -> *mut c_void { address!(378557) as *mut c_void }
-/// `GameSetting_fEyePitchMaxOffsetEmotionNeutral` at 0x20b0640, id 378603 (setting, high)
-#[inline]
-pub fn game_setting_f_eye_pitch_max_offset_emotion_neutral() -> *mut c_void { address!(378603) as *mut c_void }
-/// `GameSetting_fEyePitchMaxOffsetEmotionSad` at 0x20b0520, id 378569 (setting, high)
-#[inline]
-pub fn game_setting_f_eye_pitch_max_offset_emotion_sad() -> *mut c_void { address!(378569) as *mut c_void }
-/// `GameSetting_fEyePitchMinOffsetEmotionAngry` at 0x20b0598, id 378584 (setting, high)
-#[inline]
-pub fn game_setting_f_eye_pitch_min_offset_emotion_angry() -> *mut c_void { address!(378584) as *mut c_void }
-/// `GameSetting_fEyePitchMinOffsetEmotionFear` at 0x20b05f8, id 378595 (setting, high)
-#[inline]
-pub fn game_setting_f_eye_pitch_min_offset_emotion_fear() -> *mut c_void { address!(378595) as *mut c_void }
-/// `GameSetting_fEyePitchMinOffsetEmotionHappy` at 0x20b04d8, id 378560 (setting, high)
-#[inline]
-pub fn game_setting_f_eye_pitch_min_offset_emotion_happy() -> *mut c_void { address!(378560) as *mut c_void }
-/// `GameSetting_fEyePitchMinOffsetEmotionNeutral` at 0x20b0658, id 378606 (setting, high)
-#[inline]
-pub fn game_setting_f_eye_pitch_min_offset_emotion_neutral() -> *mut c_void { address!(378606) as *mut c_void }
-/// `GameSetting_fEyePitchMinOffsetEmotionSad` at 0x20b0538, id 378572 (setting, high)
-#[inline]
-pub fn game_setting_f_eye_pitch_min_offset_emotion_sad() -> *mut c_void { address!(378572) as *mut c_void }
 /// `GameSetting_fFallLegDamageMult` at 0x20a8b38, id 374861 (setting, high)
 #[inline]
 pub fn game_setting_f_fall_leg_damage_mult() -> *mut c_void { address!(374861) as *mut c_void }
@@ -3600,9 +3471,6 @@ pub fn game_setting_f_favor_request_radius() -> *mut c_void { address!(370605) a
 /// `GameSetting_fFavorRequestWaitTimer` at 0x209f5b8, id 370602 (setting, high)
 #[inline]
 pub fn game_setting_f_favor_request_wait_timer() -> *mut c_void { address!(370602) as *mut c_void }
-/// `GameSetting_fFirstPersonLookAtVertOffset` at 0x20b74e8, id 381551 (setting, high)
-#[inline]
-pub fn game_setting_f_first_person_look_at_vert_offset() -> *mut c_void { address!(381551) as *mut c_void }
 /// `GameSetting_fFleeDistanceExterior` at 0x20a5e08, id 373629 (setting, high)
 #[inline]
 pub fn game_setting_f_flee_distance_exterior() -> *mut c_void { address!(373629) as *mut c_void }
@@ -3876,18 +3744,6 @@ pub fn game_setting_f_hazard_minimum_spawn_interval() -> *mut c_void { address!(
 /// `GameSetting_fHazardSpacingMult` at 0x20ab9e8, id 376201 (setting, high)
 #[inline]
 pub fn game_setting_f_hazard_spacing_mult() -> *mut c_void { address!(376201) as *mut c_void }
-/// `GameSetting_fHeadTrackSpeedMax` at 0x20a0170, id 370942 (setting, high)
-#[inline]
-pub fn game_setting_f_head_track_speed_max() -> *mut c_void { address!(370942) as *mut c_void }
-/// `GameSetting_fHeadTrackSpeedMaxAngle` at 0x20a01a0, id 370946 (setting, high)
-#[inline]
-pub fn game_setting_f_head_track_speed_max_angle() -> *mut c_void { address!(370946) as *mut c_void }
-/// `GameSetting_fHeadTrackSpeedMin` at 0x20a0158, id 370940 (setting, high)
-#[inline]
-pub fn game_setting_f_head_track_speed_min() -> *mut c_void { address!(370940) as *mut c_void }
-/// `GameSetting_fHeadTrackSpeedMinAngle` at 0x20a0188, id 370944 (setting, high)
-#[inline]
-pub fn game_setting_f_head_track_speed_min_angle() -> *mut c_void { address!(370944) as *mut c_void }
 /// `GameSetting_fHeadingMarkerAngleTolerance` at 0x20a0e48, id 371298 (setting, high)
 #[inline]
 pub fn game_setting_f_heading_marker_angle_tolerance() -> *mut c_void { address!(371298) as *mut c_void }
@@ -6285,12 +6141,6 @@ pub fn game_setting_f_track_dead_zone_xy() -> *mut c_void { address!(378542) as 
 /// `GameSetting_fTrackDeadZoneZ` at 0x20b0448, id 378545 (setting, high)
 #[inline]
 pub fn game_setting_f_track_dead_zone_z() -> *mut c_void { address!(378545) as *mut c_void }
-/// `GameSetting_fTrackEyeXY` at 0x20b0400, id 378536 (setting, high)
-#[inline]
-pub fn game_setting_f_track_eye_xy() -> *mut c_void { address!(378536) as *mut c_void }
-/// `GameSetting_fTrackEyeZ` at 0x20b0418, id 378539 (setting, high)
-#[inline]
-pub fn game_setting_f_track_eye_z() -> *mut c_void { address!(378539) as *mut c_void }
 /// `GameSetting_fTrackFudgeXY` at 0x20b0460, id 378548 (setting, high)
 #[inline]
 pub fn game_setting_f_track_fudge_xy() -> *mut c_void { address!(378548) as *mut c_void }
@@ -7029,9 +6879,6 @@ pub fn game_setting_i_base_disposition() -> *mut c_void { address!(359091) as *m
 /// `GameSetting_iBloodSplatterMaxCount` at 0x20a6dc8, id 374050 (setting, high)
 #[inline]
 pub fn game_setting_i_blood_splatter_max_count() -> *mut c_void { address!(374050) as *mut c_void }
-/// `GameSetting_iBoneLODDistMult` at 0x209f1f8, id 370512 (setting, high)
-#[inline]
-pub fn game_setting_i_bone_lod_dist_mult() -> *mut c_void { address!(370512) as *mut c_void }
 /// `GameSetting_iBrowMorphCount` at 0x209c900, id 369691 (setting, high)
 #[inline]
 pub fn game_setting_i_brow_morph_count() -> *mut c_void { address!(369691) as *mut c_void }
@@ -11019,9 +10866,6 @@ pub fn ini_setting_b_actor_self_shadowing_display() -> *mut c_void { address!(38
 /// `INISetting_bAddBipedWhenKeyframed_HAVOK` at 0x2077820, id 358838 (setting, high)
 #[inline]
 pub fn ini_setting_b_add_biped_when_keyframed_havok() -> *mut c_void { address!(358838) as *mut c_void }
-/// `INISetting_bAdditiveHeadAnim_LookIK` at 0x20d1cc0, id 389253 (setting, high)
-#[inline]
-pub fn ini_setting_b_additive_head_anim_look_ik() -> *mut c_void { address!(389253) as *mut c_void }
 /// `INISetting_bAimSights_Combat` at 0x207b308, id 360285 (setting, high)
 #[inline]
 pub fn ini_setting_b_aim_sights_combat() -> *mut c_void { address!(360285) as *mut c_void }
@@ -11067,9 +10911,6 @@ pub fn ini_setting_b_allow_yes_to_all_messages() -> *mut c_void { address!(38106
 /// `INISetting_bAlwaysActive_General` at 0x20b58b8, id 380767 (setting, high)
 #[inline]
 pub fn ini_setting_b_always_active_general() -> *mut c_void { address!(380767) as *mut c_void }
-/// `INISetting_bAlwaysDriveRagdoll_Animation` at 0x20c5c68, id 385972 (setting, high)
-#[inline]
-pub fn ini_setting_b_always_drive_ragdoll_animation() -> *mut c_void { address!(385972) as *mut c_void }
 /// `INISetting_bAlwaysSaveAllInfo_Animation` at 0x20c7970, id 386390 (setting, high)
 #[inline]
 pub fn ini_setting_b_always_save_all_info_animation() -> *mut c_void { address!(386390) as *mut c_void }
@@ -11304,9 +11145,6 @@ pub fn ini_setting_b_disable_duplicate_reference_check_general() -> *mut c_void 
 /// `INISetting_bDisableGearedUp_General` at 0x209c9b8, id 369708 (setting, high)
 #[inline]
 pub fn ini_setting_b_disable_geared_up_general() -> *mut c_void { address!(369708) as *mut c_void }
-/// `INISetting_bDisableHeadTracking_HeadTracking` at 0x20b6a88, id 381267 (setting, high)
-#[inline]
-pub fn ini_setting_b_disable_head_tracking_head_tracking() -> *mut c_void { address!(381267) as *mut c_void }
 /// `INISetting_bDisableHighTreeShadow_Display` at 0x20d67f0, id 390929 (setting, high)
 #[inline]
 pub fn ini_setting_b_disable_high_tree_shadow_display() -> *mut c_void { address!(390929) as *mut c_void }
@@ -11367,9 +11205,6 @@ pub fn ini_setting_b_draw_anim_pose_in_vdb_animation() -> *mut c_void { address!
 /// `INISetting_bDrawShaderGrass_Grass` at 0x2079398, id 359404 (setting, high)
 #[inline]
 pub fn ini_setting_b_draw_shader_grass_grass() -> *mut c_void { address!(359404) as *mut c_void }
-/// `INISetting_bDriveRagdollWithGraph_Animation` at 0x20c5b10, id 385960 (setting, high)
-#[inline]
-pub fn ini_setting_b_drive_ragdoll_with_graph_animation() -> *mut c_void { address!(385960) as *mut c_void }
 /// `INISetting_bDynamicDOF_Display` at 0x20b73c0, id 381513 (setting, high)
 #[inline]
 pub fn ini_setting_b_dynamic_dof_display() -> *mut c_void { address!(381513) as *mut c_void }
@@ -11484,9 +11319,6 @@ pub fn ini_setting_b_face_path_vector_pathfinding() -> *mut c_void { address!(39
 /// `INISetting_bFacegenDisableMorphs_General` at 0x20b07e0, id 378652 (setting, high)
 #[inline]
 pub fn ini_setting_b_facegen_disable_morphs_general() -> *mut c_void { address!(378652) as *mut c_void }
-/// `INISetting_bFeedbackToGraphFromCharacterController_Animation` at 0x20b6ba8, id 381302 (setting, high)
-#[inline]
-pub fn ini_setting_b_feedback_to_graph_from_character_controller_animation() -> *mut c_void { address!(381302) as *mut c_void }
 /// `INISetting_bFileCheckModelCollision_TestAllCells` at 0x2077d60, id 358993 (setting, high)
 #[inline]
 pub fn ini_setting_b_file_check_model_collision_test_all_cells() -> *mut c_void { address!(358993) as *mut c_void }
@@ -11532,18 +11364,6 @@ pub fn ini_setting_b_flying_mount_fast_travel_cruise_enabled_general() -> *mut c
 /// `INISetting_bFogEnabled_Weather` at 0x209e850, id 370217 (setting, high)
 #[inline]
 pub fn ini_setting_b_fog_enabled_weather() -> *mut c_void { address!(370217) as *mut c_void }
-/// `INISetting_bFootIKFeedback_Animation` at 0x20b93f0, id 382155 (setting, high)
-#[inline]
-pub fn ini_setting_b_foot_ik_feedback_animation() -> *mut c_void { address!(382155) as *mut c_void }
-/// `INISetting_bFootIK_Animation` at 0x20c5af8, id 385957 (setting, high)
-#[inline]
-pub fn ini_setting_b_foot_ik_animation() -> *mut c_void { address!(385957) as *mut c_void }
-/// `INISetting_bFootIK_RagdollAnim` at 0x20d1c00, id 389230 (setting, high)
-#[inline]
-pub fn ini_setting_b_foot_ik_ragdoll_anim() -> *mut c_void { address!(389230) as *mut c_void }
-/// `INISetting_bFootPlacementOn_FootIK` at 0x20d1d80, id 389276 (setting, high)
-#[inline]
-pub fn ini_setting_b_foot_placement_on_foot_ik() -> *mut c_void { address!(389276) as *mut c_void }
 /// `INISetting_bForceAllDecals_Decals` at 0x20792e0, id 359382 (setting, high)
 #[inline]
 pub fn ini_setting_b_force_all_decals_decals() -> *mut c_void { address!(359382) as *mut c_void }
@@ -11598,9 +11418,6 @@ pub fn ini_setting_b_global_nav_mesh_check_delete_warning_triangles_nav_mesh_gen
 /// `INISetting_bGlobalNavMeshCheck_NavMeshGeneration` at 0x20b3038, id 379819 (setting, high)
 #[inline]
 pub fn ini_setting_b_global_nav_mesh_check_nav_mesh_generation() -> *mut c_void { address!(379819) as *mut c_void }
-/// `INISetting_bGrabIK_RagdollAnim` at 0x20d1c18, id 389233 (setting, high)
-#[inline]
-pub fn ini_setting_b_grab_ik_ragdoll_anim() -> *mut c_void { address!(389233) as *mut c_void }
 /// `INISetting_bGrassPointLighting_Grass` at 0x2079410, id 359419 (setting, high)
 #[inline]
 pub fn ini_setting_b_grass_point_lighting_grass() -> *mut c_void { address!(359419) as *mut c_void }
@@ -11616,9 +11433,6 @@ pub fn ini_setting_b_health_bar_showing_game_play() -> *mut c_void { address!(38
 /// `INISetting_bHealthRegenFromRacePlayerOnly_General` at 0x20a1370, id 371462 (setting, high)
 #[inline]
 pub fn ini_setting_b_health_regen_from_race_player_only_general() -> *mut c_void { address!(371462) as *mut c_void }
-/// `INISetting_bHumanoidFootIKEnable_Animation` at 0x20b6bc0, id 381305 (setting, high)
-#[inline]
-pub fn ini_setting_b_humanoid_foot_ik_enable_animation() -> *mut c_void { address!(381305) as *mut c_void }
 /// `INISetting_bIgnoreThresholds_Pathfinding` at 0x20d4aa0, id 390479 (setting, high)
 #[inline]
 pub fn ini_setting_b_ignore_thresholds_pathfinding() -> *mut c_void { address!(390479) as *mut c_void }
@@ -11688,9 +11502,6 @@ pub fn ini_setting_b_load_markers_display() -> *mut c_void { address!(381021) as
 /// `INISetting_bLodZPrepass_Display` at 0x20d6cb0, id 391098 (setting, high)
 #[inline]
 pub fn ini_setting_b_lod_z_prepass_display() -> *mut c_void { address!(391098) as *mut c_void }
-/// `INISetting_bLookIK_RagdollAnim` at 0x20d1c30, id 389236 (setting, high)
-#[inline]
-pub fn ini_setting_b_look_ik_ragdoll_anim() -> *mut c_void { address!(389236) as *mut c_void }
 /// `INISetting_bLowHealthIModEnabled_Display` at 0x20b7640, id 381595 (setting, high)
 #[inline]
 pub fn ini_setting_b_low_health_i_mod_enabled_display() -> *mut c_void { address!(381595) as *mut c_void }
@@ -11739,12 +11550,6 @@ pub fn ini_setting_b_player_always_staggered_combat() -> *mut c_void { address!(
 /// `INISetting_bPlayerGraphFeedback_Controls` at 0x20b74a0, id 381542 (setting, high)
 #[inline]
 pub fn ini_setting_b_player_graph_feedback_controls() -> *mut c_void { address!(381542) as *mut c_void }
-/// `INISetting_bPoseMatching_RagdollAnim` at 0x20d1c60, id 389242 (setting, high)
-#[inline]
-pub fn ini_setting_b_pose_matching_ragdoll_anim() -> *mut c_void { address!(389242) as *mut c_void }
-/// `INISetting_bPreCullActors_General` at 0x20b5df8, id 380926 (setting, high)
-#[inline]
-pub fn ini_setting_b_pre_cull_actors_general() -> *mut c_void { address!(380926) as *mut c_void }
 /// `INISetting_bPrecipitation_Weather` at 0x209e838, id 370214 (setting, high)
 #[inline]
 pub fn ini_setting_b_precipitation_weather() -> *mut c_void { address!(370214) as *mut c_void }
@@ -11775,12 +11580,6 @@ pub fn ini_setting_b_projectile_on_reflection_display() -> *mut c_void { address
 /// `INISetting_bQueueWarnings_General` at 0x20779a0, id 358883 (setting, high)
 #[inline]
 pub fn ini_setting_b_queue_warnings_general() -> *mut c_void { address!(358883) as *mut c_void }
-/// `INISetting_bRagdollAnim_RagdollAnim` at 0x20d1be8, id 389227 (setting, high)
-#[inline]
-pub fn ini_setting_b_ragdoll_anim_ragdoll_anim() -> *mut c_void { address!(389227) as *mut c_void }
-/// `INISetting_bRagdollFeedback_RagdollAnim` at 0x20d1c48, id 389239 (setting, high)
-#[inline]
-pub fn ini_setting_b_ragdoll_feedback_ragdoll_anim() -> *mut c_void { address!(389239) as *mut c_void }
 /// `INISetting_bRandomizeGraphSeed_Animation` at 0x20c5cc0, id 385986 (setting, high)
 #[inline]
 pub fn ini_setting_b_randomize_graph_seed_animation() -> *mut c_void { address!(385986) as *mut c_void }
@@ -11820,9 +11619,6 @@ pub fn ini_setting_b_reset_game_after_streaming_install_stream_install() -> *mut
 /// `INISetting_bReturnTo1stPersonFromVanity_Camera` at 0x20ba700, id 382682 (setting, high)
 #[inline]
 pub fn ini_setting_b_return_to1st_person_from_vanity_camera() -> *mut c_void { address!(382682) as *mut c_void }
-/// `INISetting_bRigidBodyController_FootIK` at 0x20d1eb8, id 389311 (setting, high)
-#[inline]
-pub fn ini_setting_b_rigid_body_controller_foot_ik() -> *mut c_void { address!(389311) as *mut c_void }
 /// `INISetting_bRunMiddleLowLevelProcess_General` at 0x20b8028, id 381864 (setting, high)
 #[inline]
 pub fn ini_setting_b_run_middle_low_level_process_general() -> *mut c_void { address!(381864) as *mut c_void }
@@ -12261,9 +12057,6 @@ pub fn ini_setting_f_as_fade_in_time_audio() -> *mut c_void { address!(380384) a
 /// `INISetting_fASFadeOutTime_Audio` at 0x20b4aa0, id 380387 (setting, high)
 #[inline]
 pub fn ini_setting_f_as_fade_out_time_audio() -> *mut c_void { address!(380387) as *mut c_void }
-/// `INISetting_fAccelerationGain_RagdollAnim` at 0x20d1ab0, id 389191 (setting, high)
-#[inline]
-pub fn ini_setting_f_acceleration_gain_ragdoll_anim() -> *mut c_void { address!(389191) as *mut c_void }
 /// `INISetting_fAcceptableErrorRatio_Pathfinding` at 0x20d4468, id 390391 (setting, high)
 #[inline]
 pub fn ini_setting_f_acceptable_error_ratio_pathfinding() -> *mut c_void { address!(390391) as *mut c_void }
@@ -12297,12 +12090,6 @@ pub fn ini_setting_f_alpha_reduce_weather() -> *mut c_void { address!(358833) as
 /// `INISetting_fAlphaWeight_Display` at 0x20d8750, id 391441 (setting, high)
 #[inline]
 pub fn ini_setting_f_alpha_weight_display() -> *mut c_void { address!(391441) as *mut c_void }
-/// `INISetting_fAngleMaxEase_LookIK` at 0x20d1c90, id 389247 (setting, high)
-#[inline]
-pub fn ini_setting_f_angle_max_ease_look_ik() -> *mut c_void { address!(389247) as *mut c_void }
-/// `INISetting_fAngleMax_LookIK` at 0x20d1c78, id 389245 (setting, high)
-#[inline]
-pub fn ini_setting_f_angle_max_look_ik() -> *mut c_void { address!(389245) as *mut c_void }
 /// `INISetting_fAnimInterpFarDist_Animation` at 0x20c5ac8, id 385951 (setting, high)
 #[inline]
 pub fn ini_setting_f_anim_interp_far_dist_animation() -> *mut c_void { address!(385951) as *mut c_void }
@@ -12318,9 +12105,6 @@ pub fn ini_setting_f_anim_interp_near_dist_animation() -> *mut c_void { address!
 /// `INISetting_fAnimInterpSlop_Animation` at 0x20c5ae0, id 385954 (setting, high)
 #[inline]
 pub fn ini_setting_f_anim_interp_slop_animation() -> *mut c_void { address!(385954) as *mut c_void }
-/// `INISetting_fAnkleOffset_FootIK` at 0x20d1db0, id 389281 (setting, high)
-#[inline]
-pub fn ini_setting_f_ankle_offset_foot_ik() -> *mut c_void { address!(389281) as *mut c_void }
 /// `INISetting_fArchiveInitBufferMB_Papyrus` at 0x20b5888, id 380762 (setting, high)
 #[inline]
 pub fn ini_setting_f_archive_init_buffer_mb_papyrus() -> *mut c_void { address!(380762) as *mut c_void }
@@ -12390,9 +12174,6 @@ pub fn ini_setting_f_bad_triangle_multiplier_pathfinding() -> *mut c_void { addr
 /// `INISetting_fBetaDeferredKillTimer_General` at 0x20b7138, id 381437 (setting, high)
 #[inline]
 pub fn ini_setting_f_beta_deferred_kill_timer_general() -> *mut c_void { address!(381437) as *mut c_void }
-/// `INISetting_fBoneLODDistanceScale_Animation` at 0x20c5a68, id 385939 (setting, high)
-#[inline]
-pub fn ini_setting_f_bone_lod_distance_scale_animation() -> *mut c_void { address!(385939) as *mut c_void }
 /// `INISetting_fBookDistance_Interface` at 0x20ba810, id 382714 (setting, high)
 #[inline]
 pub fn ini_setting_f_book_distance_interface() -> *mut c_void { address!(382714) as *mut c_void }
@@ -12471,9 +12252,6 @@ pub fn ini_setting_f_camera_caster_size_camera() -> *mut c_void { address!(38259
 /// `INISetting_fCameraCasterTargetSize_Camera` at 0x20ba430, id 382593 (setting, high)
 #[inline]
 pub fn ini_setting_f_camera_caster_target_size_camera() -> *mut c_void { address!(382593) as *mut c_void }
-/// `INISetting_fCameraDist_RagdollAnim` at 0x20d1ba0, id 389221 (setting, high)
-#[inline]
-pub fn ini_setting_f_camera_dist_ragdoll_anim() -> *mut c_void { address!(389221) as *mut c_void }
 /// `INISetting_fCartLimitMax_Cart` at 0x209e118, id 370024 (setting, high)
 #[inline]
 pub fn ini_setting_f_cart_limit_max_cart() -> *mut c_void { address!(370024) as *mut c_void }
@@ -12552,9 +12330,6 @@ pub fn ini_setting_f_controller_dampen_time_controls() -> *mut c_void { address!
 /// `INISetting_fControllerSampleThreshold_Controls` at 0x20b80d8, id 381881 (setting, high)
 #[inline]
 pub fn ini_setting_f_controller_sample_threshold_controls() -> *mut c_void { address!(381881) as *mut c_void }
-/// `INISetting_fControllerTetherLen_FootIK` at 0x20d1e28, id 389296 (setting, high)
-#[inline]
-pub fn ini_setting_f_controller_tether_len_foot_ik() -> *mut c_void { address!(389296) as *mut c_void }
 /// `INISetting_fCrafting3DItemPosXWide_Interface` at 0x20baa50, id 382763 (setting, high)
 #[inline]
 pub fn ini_setting_f_crafting3_d_item_pos_x_wide_interface() -> *mut c_void { address!(382763) as *mut c_void }
@@ -12678,12 +12453,6 @@ pub fn ini_setting_f_default_waterfall_current_velocity_havok() -> *mut c_void {
 /// `INISetting_fDefaultWorldFOV_Display` at 0x20cf9d8, id 388784 (setting, high)
 #[inline]
 pub fn ini_setting_f_default_world_fov_display() -> *mut c_void { address!(388784) as *mut c_void }
-/// `INISetting_fDesiredVel_RagdollAnim` at 0x20d1930, id 389149 (setting, high)
-#[inline]
-pub fn ini_setting_f_desired_vel_ragdoll_anim() -> *mut c_void { address!(389149) as *mut c_void }
-/// `INISetting_fDetectionUpdateTimeSec_RagdollAnim` at 0x20d1960, id 389155 (setting, high)
-#[inline]
-pub fn ini_setting_f_detection_update_time_sec_ragdoll_anim() -> *mut c_void { address!(389155) as *mut c_void }
 /// `INISetting_fDialogueHardStopAngle1P_Controls` at 0x20b8698, id 382055 (setting, high)
 #[inline]
 pub fn ini_setting_f_dialogue_hard_stop_angle1_p_controls() -> *mut c_void { address!(382055) as *mut c_void }
@@ -12732,9 +12501,6 @@ pub fn ini_setting_f_dragon_landing_for_player_search_dist_general() -> *mut c_v
 /// `INISetting_fDragonMaxAngleBeforeTurn_Camera` at 0x20b3e98, id 380220 (setting, high)
 #[inline]
 pub fn ini_setting_f_dragon_max_angle_before_turn_camera() -> *mut c_void { address!(380220) as *mut c_void }
-/// `INISetting_fDriveGain_GrabIK` at 0x20d1cf0, id 389258 (setting, high)
-#[inline]
-pub fn ini_setting_f_drive_gain_grab_ik() -> *mut c_void { address!(389258) as *mut c_void }
 /// `INISetting_fDualCastChordTime_Controls` at 0x20b8890, id 382103 (setting, high)
 #[inline]
 pub fn ini_setting_f_dual_cast_chord_time_controls() -> *mut c_void { address!(382103) as *mut c_void }
@@ -12762,9 +12528,6 @@ pub fn ini_setting_f_dynamic_dof_near_dist_display() -> *mut c_void { address!(3
 /// `INISetting_fDynamicDOFNearRange_Display` at 0x20d8f48, id 391692 (setting, high)
 #[inline]
 pub fn ini_setting_f_dynamic_dof_near_range_display() -> *mut c_void { address!(391692) as *mut c_void }
-/// `INISetting_fEaseAngleShutOff_LookIK` at 0x20d1ca8, id 389250 (setting, high)
-#[inline]
-pub fn ini_setting_f_ease_angle_shut_off_look_ik() -> *mut c_void { address!(389250) as *mut c_void }
 /// `INISetting_fEncumberedReminderTimer_General` at 0x20b76b8, id 381612 (setting, high)
 #[inline]
 pub fn ini_setting_f_encumbered_reminder_timer_general() -> *mut c_void { address!(381612) as *mut c_void }
@@ -12786,9 +12549,6 @@ pub fn ini_setting_f_extra_tasklet_budget_ms_papyrus() -> *mut c_void { address!
 /// `INISetting_fEyeEnvmapLODEnd_LightingShader` at 0x20d6c98, id 391095 (setting, high)
 #[inline]
 pub fn ini_setting_f_eye_envmap_lod_end_lighting_shader() -> *mut c_void { address!(391095) as *mut c_void }
-/// `INISetting_fEyeIKDistanceMax_LookIK` at 0x20d1cd8, id 389256 (setting, high)
-#[inline]
-pub fn ini_setting_f_eye_ik_distance_max_look_ik() -> *mut c_void { address!(389256) as *mut c_void }
 /// `INISetting_fFadeInThreshold_LOD` at 0x2077910, id 358866 (setting, high)
 #[inline]
 pub fn ini_setting_f_fade_in_threshold_lod() -> *mut c_void { address!(358866) as *mut c_void }
@@ -12810,18 +12570,6 @@ pub fn ini_setting_f_fading_frac_start() -> *mut c_void { address!(391764) as *m
 /// `INISetting_fFastTravelFadeSecs_General` at 0x20bc528, id 383563 (setting, high)
 #[inline]
 pub fn ini_setting_f_fast_travel_fade_secs_general() -> *mut c_void { address!(383563) as *mut c_void }
-/// `INISetting_fFeedbackImpulseMult_RagdollAnim` at 0x20d1f30, id 389324 (setting, high)
-#[inline]
-pub fn ini_setting_f_feedback_impulse_mult_ragdoll_anim() -> *mut c_void { address!(389324) as *mut c_void }
-/// `INISetting_fFeedbackOnOffGainTimeMS_RagdollAnim` at 0x20d1f00, id 389318 (setting, high)
-#[inline]
-pub fn ini_setting_f_feedback_on_off_gain_time_ms_ragdoll_anim() -> *mut c_void { address!(389318) as *mut c_void }
-/// `INISetting_fFeedbackOnOffGain_RagdollAnim` at 0x20d1ee8, id 389315 (setting, high)
-#[inline]
-pub fn ini_setting_f_feedback_on_off_gain_ragdoll_anim() -> *mut c_void { address!(389315) as *mut c_void }
-/// `INISetting_fFeedbackTimeMS_RagdollAnim` at 0x20d1f18, id 389321 (setting, high)
-#[inline]
-pub fn ini_setting_f_feedback_time_ms_ragdoll_anim() -> *mut c_void { address!(389321) as *mut c_void }
 /// `INISetting_fFilmicWhiteScale_Display` at 0x20d7df0, id 391344 (setting, high)
 #[inline]
 pub fn ini_setting_f_filmic_white_scale_display() -> *mut c_void { address!(391344) as *mut c_void }
@@ -12873,15 +12621,6 @@ pub fn ini_setting_f_flying_mount_tutorial_message_delay_general() -> *mut c_voi
 /// `INISetting_fFollowerTeleportOffsetFudge_Pathfinding` at 0x20b6c38, id 381320 (setting, high)
 #[inline]
 pub fn ini_setting_f_follower_teleport_offset_fudge_pathfinding() -> *mut c_void { address!(381320) as *mut c_void }
-/// `INISetting_fFootIKDistance_GamePlay` at 0x20b6998, id 381242 (setting, high)
-#[inline]
-pub fn ini_setting_f_foot_ik_distance_game_play() -> *mut c_void { address!(381242) as *mut c_void }
-/// `INISetting_fFootPlantedGain_FootIK` at 0x20d1d68, id 389273 (setting, high)
-#[inline]
-pub fn ini_setting_f_foot_planted_gain_foot_ik() -> *mut c_void { address!(389273) as *mut c_void }
-/// `INISetting_fFootRaisedGain_FootIK` at 0x20d1d50, id 389270 (setting, high)
-#[inline]
-pub fn ini_setting_f_foot_raised_gain_foot_ik() -> *mut c_void { address!(389270) as *mut c_void }
 /// `INISetting_fFreeCameraRotationSpeed_Camera` at 0x20ba208, id 382524 (setting, high)
 #[inline]
 pub fn ini_setting_f_free_camera_rotation_speed_camera() -> *mut c_void { address!(382524) as *mut c_void }
@@ -13005,12 +12744,6 @@ pub fn ini_setting_f_grav_mult_cart() -> *mut c_void { address!(370060) as *mut 
 /// `INISetting_fGravity_Verlet` at 0x20b4c68, id 380439 (setting, high)
 #[inline]
 pub fn ini_setting_f_gravity_verlet() -> *mut c_void { address!(380439) as *mut c_void }
-/// `INISetting_fGroundAscendingGain_FootIK` at 0x20d1d20, id 389264 (setting, high)
-#[inline]
-pub fn ini_setting_f_ground_ascending_gain_foot_ik() -> *mut c_void { address!(389264) as *mut c_void }
-/// `INISetting_fGroundDescendingGain_FootIK` at 0x20d1d38, id 389267 (setting, high)
-#[inline]
-pub fn ini_setting_f_ground_descending_gain_foot_ik() -> *mut c_void { address!(389267) as *mut c_void }
 /// `INISetting_fHDLODSnowThresholdAngle_Terrain` at 0x20b3310, id 379896 (setting, high)
 #[inline]
 pub fn ini_setting_f_hdlod_snow_threshold_angle_terrain() -> *mut c_void { address!(379896) as *mut c_void }
@@ -13023,18 +12756,12 @@ pub fn ini_setting_f_havok_hit_impulse_mult_animation() -> *mut c_void { address
 /// `INISetting_fHavokHitTimeSec_Animation` at 0x20b8b58, id 382141 (setting, high)
 #[inline]
 pub fn ini_setting_f_havok_hit_time_sec_animation() -> *mut c_void { address!(382141) as *mut c_void }
-/// `INISetting_fHeadTrackingMaxAngle_HeadTracking` at 0x20b6b60, id 381294 (setting, high)
-#[inline]
-pub fn ini_setting_f_head_tracking_max_angle_head_tracking() -> *mut c_void { address!(381294) as *mut c_void }
 /// `INISetting_fHeadingAxisDeadzone_Controls` at 0x20b8338, id 381952 (setting, high)
 #[inline]
 pub fn ini_setting_f_heading_axis_deadzone_controls() -> *mut c_void { address!(381952) as *mut c_void }
 /// `INISetting_fHeadingToPathTangentMaxAngle_Pathfinding` at 0x20d3ea0, id 390275 (setting, high)
 #[inline]
 pub fn ini_setting_f_heading_to_path_tangent_max_angle_pathfinding() -> *mut c_void { address!(390275) as *mut c_void }
-/// `INISetting_fHierarchyGain_RagdollAnim` at 0x20d1a80, id 389185 (setting, high)
-#[inline]
-pub fn ini_setting_f_hierarchy_gain_ragdoll_anim() -> *mut c_void { address!(389185) as *mut c_void }
 /// `INISetting_fHighlightSpeechOverlap_Audio` at 0x20b4b78, id 380414 (setting, high)
 #[inline]
 pub fn ini_setting_f_highlight_speech_overlap_audio() -> *mut c_void { address!(380414) as *mut c_void }
@@ -13125,9 +12852,6 @@ pub fn ini_setting_f_ini_detect_doors_for_pathing_time_pathing() -> *mut c_void 
 /// `INISetting_fIdleChangeClearTime_Animation` at 0x20b7020, id 381404 (setting, high)
 #[inline]
 pub fn ini_setting_f_idle_change_clear_time_animation() -> *mut c_void { address!(381404) as *mut c_void }
-/// `INISetting_fImpulseLimit_RagdollAnim` at 0x20d1948, id 389152 (setting, high)
-#[inline]
-pub fn ini_setting_f_impulse_limit_ragdoll_anim() -> *mut c_void { address!(389152) as *mut c_void }
 /// `INISetting_fInAirFallingCharGravityMult_Havok` at 0x20d2550, id 389443 (setting, high)
 #[inline]
 pub fn ini_setting_f_in_air_falling_char_gravity_mult_havok() -> *mut c_void { address!(389443) as *mut c_void }
@@ -13695,12 +13419,6 @@ pub fn ini_setting_f_max_fitness_multiplier_pathfinding() -> *mut c_void { addre
 /// `INISetting_fMaxFocusShadowMapDistance_Display` at 0x20d9190, id 391767 (setting, high)
 #[inline]
 pub fn ini_setting_f_max_focus_shadow_map_distance_display() -> *mut c_void { address!(391767) as *mut c_void }
-/// `INISetting_fMaxFootCastMilliSec_FootIK` at 0x20d1e58, id 389302 (setting, high)
-#[inline]
-pub fn ini_setting_f_max_foot_cast_milli_sec_foot_ik() -> *mut c_void { address!(389302) as *mut c_void }
-/// `INISetting_fMaxFrameCounterDifferenceToConsiderVisible_Animation` at 0x20b6bf0, id 381311 (setting, high)
-#[inline]
-pub fn ini_setting_f_max_frame_counter_difference_to_consider_visible_animation() -> *mut c_void { address!(381311) as *mut c_void }
 /// `INISetting_fMaxHeightFromNavmeshToObstacleBoxBottom_Pathfinding` at 0x20d4d60, id 390519 (setting, high)
 #[inline]
 pub fn ini_setting_f_max_height_from_navmesh_to_obstacle_box_bottom_pathfinding() -> *mut c_void { address!(390519) as *mut c_void }
@@ -13725,9 +13443,6 @@ pub fn ini_setting_f_max_move_ramp_down_delta_controls() -> *mut c_void { addres
 /// `INISetting_fMaxMsUsagePerFrame_BudgetCaps` at 0x2079d00, id 359639 (setting, high)
 #[inline]
 pub fn ini_setting_f_max_ms_usage_per_frame_budget_caps() -> *mut c_void { address!(359639) as *mut c_void }
-/// `INISetting_fMaxPathLookAtPointDist_HeadTracking` at 0x20b6b30, id 381288 (setting, high)
-#[inline]
-pub fn ini_setting_f_max_path_look_at_point_dist_head_tracking() -> *mut c_void { address!(381288) as *mut c_void }
 /// `INISetting_fMaxPickTimeDebugVATS_HAVOK` at 0x2077880, id 358849 (setting, high)
 #[inline]
 pub fn ini_setting_f_max_pick_time_debug_vats_havok() -> *mut c_void { address!(358849) as *mut c_void }
@@ -13740,9 +13455,6 @@ pub fn ini_setting_f_max_pick_time_vats_havok() -> *mut c_void { address!(358844
 /// `INISetting_fMaxPickTime_HAVOK` at 0x2077838, id 358841 (setting, high)
 #[inline]
 pub fn ini_setting_f_max_pick_time_havok() -> *mut c_void { address!(358841) as *mut c_void }
-/// `INISetting_fMaxStepVertError_FootIK` at 0x20d1e40, id 389299 (setting, high)
-#[inline]
-pub fn ini_setting_f_max_step_vert_error_foot_ik() -> *mut c_void { address!(389299) as *mut c_void }
 /// `INISetting_fMaxSubtitleDistance_Interface` at 0x20bb9b8, id 383204 (setting, high)
 #[inline]
 pub fn ini_setting_f_max_subtitle_distance_interface() -> *mut c_void { address!(383204) as *mut c_void }
@@ -13761,9 +13473,6 @@ pub fn ini_setting_f_max_time_to_mark_sec_animation() -> *mut c_void { address!(
 /// `INISetting_fMaxTime_HAVOK` at 0x20d1778, id 389102 (setting, high)
 #[inline]
 pub fn ini_setting_f_max_time_havok() -> *mut c_void { address!(389102) as *mut c_void }
-/// `INISetting_fMaxTrackingDist_LookIK` at 0x20d1bb8, id 389223 (setting, high)
-#[inline]
-pub fn ini_setting_f_max_tracking_dist_look_ik() -> *mut c_void { address!(389223) as *mut c_void }
 /// `INISetting_fMenuKeyRepeatLong_Interface` at 0x20bb3c8, id 383031 (setting, high)
 #[inline]
 pub fn ini_setting_f_menu_key_repeat_long_interface() -> *mut c_void { address!(383031) as *mut c_void }
@@ -13803,9 +13512,6 @@ pub fn ini_setting_f_min_friction_speed_pathfinding() -> *mut c_void { address!(
 /// `INISetting_fMinNormalizedSpeedForSlowdown_Pathfinding` at 0x20d3e70, id 390269 (setting, high)
 #[inline]
 pub fn ini_setting_f_min_normalized_speed_for_slowdown_pathfinding() -> *mut c_void { address!(390269) as *mut c_void }
-/// `INISetting_fMinPathLookAtPointDist_HeadTracking` at 0x20b6b18, id 381285 (setting, high)
-#[inline]
-pub fn ini_setting_f_min_path_look_at_point_dist_head_tracking() -> *mut c_void { address!(381285) as *mut c_void }
 /// `INISetting_fMinSecondsForLoadFadeIn_Interface` at 0x2077970, id 358878 (setting, high)
 #[inline]
 pub fn ini_setting_f_min_seconds_for_load_fade_in_interface() -> *mut c_void { address!(358878) as *mut c_void }
@@ -13818,9 +13524,6 @@ pub fn ini_setting_f_min_stair_speed_pathfinding() -> *mut c_void { address!(381
 /// `INISetting_fMinTimeToNextPoint_Pathfinding` at 0x20d3ee8, id 390283 (setting, high)
 #[inline]
 pub fn ini_setting_f_min_time_to_next_point_pathfinding() -> *mut c_void { address!(390283) as *mut c_void }
-/// `INISetting_fMinTrackingDist_LookIK` at 0x20d1bd0, id 389225 (setting, high)
-#[inline]
-pub fn ini_setting_f_min_tracking_dist_look_ik() -> *mut c_void { address!(389225) as *mut c_void }
 /// `INISetting_fMinimalUsePathingCost_Pathfinding` at 0x20d3dc0, id 390259 (setting, high)
 #[inline]
 pub fn ini_setting_f_minimal_use_pathing_cost_pathfinding() -> *mut c_void { address!(390259) as *mut c_void }
@@ -14031,12 +13734,6 @@ pub fn ini_setting_f_obstacle_update_delta_when_moving_pathfinding() -> *mut c_v
 /// `INISetting_fObstacleUpdateDeltaWhenUnknown_Pathfinding` at 0x20b3238, id 379869 (setting, high)
 #[inline]
 pub fn ini_setting_f_obstacle_update_delta_when_unknown_pathfinding() -> *mut c_void { address!(379869) as *mut c_void }
-/// `INISetting_fOnOffGain_FootIK` at 0x20d1d08, id 389261 (setting, high)
-#[inline]
-pub fn ini_setting_f_on_off_gain_foot_ik() -> *mut c_void { address!(389261) as *mut c_void }
-/// `INISetting_fOriginalGroundHeightMS_FootIK` at 0x20d1d98, id 389278 (setting, high)
-#[inline]
-pub fn ini_setting_f_original_ground_height_ms_foot_ik() -> *mut c_void { address!(389278) as *mut c_void }
 /// `INISetting_fOutsideDialogueAngleRotationDampen_Controls` at 0x20b86c8, id 382061 (setting, high)
 #[inline]
 pub fn ini_setting_f_outside_dialogue_angle_rotation_dampen_controls() -> *mut c_void { address!(382061) as *mut c_void }
@@ -14085,9 +13782,6 @@ pub fn ini_setting_f_pov_smoother_avoid_node_cost_pathfinding() -> *mut c_void {
 /// `INISetting_fPackratRatio_Interface` at 0x20ba9a8, id 382743 (setting, high)
 #[inline]
 pub fn ini_setting_f_packrat_ratio_interface() -> *mut c_void { address!(382743) as *mut c_void }
-/// `INISetting_fPathLookAtPointTime_HeadTracking` at 0x20b6b48, id 381291 (setting, high)
-#[inline]
-pub fn ini_setting_f_path_look_at_point_time_head_tracking() -> *mut c_void { address!(381291) as *mut c_void }
 /// `INISetting_fPathManagerDebugInfoWindow_Pathfinding` at 0x20d4078, id 390311 (setting, high)
 #[inline]
 pub fn ini_setting_f_path_manager_debug_info_window_pathfinding() -> *mut c_void { address!(390311) as *mut c_void }
@@ -14097,12 +13791,6 @@ pub fn ini_setting_f_path_to_anim_length_max_multiplier_pathfinding() -> *mut c_
 /// `INISetting_fPathingLargeActorRadius_Pathfinding` at 0x20d40b8, id 390314 (setting, high)
 #[inline]
 pub fn ini_setting_f_pathing_large_actor_radius_pathfinding() -> *mut c_void { address!(390314) as *mut c_void }
-/// `INISetting_fPelvisOffsetDamping_FootIK` at 0x20d1de0, id 389287 (setting, high)
-#[inline]
-pub fn ini_setting_f_pelvis_offset_damping_foot_ik() -> *mut c_void { address!(389287) as *mut c_void }
-/// `INISetting_fPelvisUpDownBias_FootIK` at 0x20d1dc8, id 389284 (setting, high)
-#[inline]
-pub fn ini_setting_f_pelvis_up_down_bias_foot_ik() -> *mut c_void { address!(389284) as *mut c_void }
 /// `INISetting_fPickMouseRotationSpeed_Interface` at 0x20baf90, id 382918 (setting, high)
 #[inline]
 pub fn ini_setting_f_pick_mouse_rotation_speed_interface() -> *mut c_void { address!(382918) as *mut c_void }
@@ -14172,15 +13860,6 @@ pub fn ini_setting_f_poisson_radius_scale_display() -> *mut c_void { address!(39
 /// `INISetting_fPoleZOffset_Cart` at 0x209e1c0, id 370045 (setting, high)
 #[inline]
 pub fn ini_setting_f_pole_z_offset_cart() -> *mut c_void { address!(370045) as *mut c_void }
-/// `INISetting_fPositionGain_RagdollAnim` at 0x20d1ae0, id 389197 (setting, high)
-#[inline]
-pub fn ini_setting_f_position_gain_ragdoll_anim() -> *mut c_void { address!(389197) as *mut c_void }
-/// `INISetting_fPositionMaxAngularVelocity_RagdollAnim` at 0x20d1b10, id 389203 (setting, high)
-#[inline]
-pub fn ini_setting_f_position_max_angular_velocity_ragdoll_anim() -> *mut c_void { address!(389203) as *mut c_void }
-/// `INISetting_fPositionMaxLinearVelocity_RagdollAnim` at 0x20d1af8, id 389200 (setting, high)
-#[inline]
-pub fn ini_setting_f_position_max_linear_velocity_ragdoll_anim() -> *mut c_void { address!(389200) as *mut c_void }
 /// `INISetting_fPostLoadUpdateTimeMS_Papyrus` at 0x20bca80, id 383730 (setting, high)
 #[inline]
 pub fn ini_setting_f_post_load_update_time_ms_papyrus() -> *mut c_void { address!(383730) as *mut c_void }
@@ -14208,9 +13887,6 @@ pub fn ini_setting_f_quadratic_radius_mult_b_light_attenuation() -> *mut c_void 
 /// `INISetting_fQuadraticValue_bLightAttenuation` at 0x207ad60, id 360120 (setting, high)
 #[inline]
 pub fn ini_setting_f_quadratic_value_b_light_attenuation() -> *mut c_void { address!(360120) as *mut c_void }
-/// `INISetting_fQuadrupedPitchMult_HAVOK` at 0x20b6878, id 381213 (setting, high)
-#[inline]
-pub fn ini_setting_f_quadruped_pitch_mult_havok() -> *mut c_void { address!(381213) as *mut c_void }
 /// `INISetting_fQuestScriptDelayTime_MAIN` at 0x207e518, id 361075 (setting, high)
 #[inline]
 pub fn ini_setting_f_quest_script_delay_time_main() -> *mut c_void { address!(361075) as *mut c_void }
@@ -14220,18 +13896,12 @@ pub fn ini_setting_f_rf_havok() -> *mut c_void { address!(369250) as *mut c_void
 /// `INISetting_fRSMCameraLookAtPercent_Interface` at 0x20bb840, id 383162 (setting, high)
 #[inline]
 pub fn ini_setting_f_rsm_camera_look_at_percent_interface() -> *mut c_void { address!(383162) as *mut c_void }
-/// `INISetting_fRSMLookAtOnGain_Interface` at 0x20bb858, id 383165 (setting, high)
-#[inline]
-pub fn ini_setting_f_rsm_look_at_on_gain_interface() -> *mut c_void { address!(383165) as *mut c_void }
 /// `INISetting_fRThumbDeadzoneMax_Controls` at 0x20ccde0, id 388482 (setting, high)
 #[inline]
 pub fn ini_setting_f_r_thumb_deadzone_max_controls() -> *mut c_void { address!(388482) as *mut c_void }
 /// `INISetting_fRThumbDeadzone_Controls` at 0x20ccd98, id 388473 (setting, high)
 #[inline]
 pub fn ini_setting_f_r_thumb_deadzone_controls() -> *mut c_void { address!(388473) as *mut c_void }
-/// `INISetting_fRagdollFeedback_FootIK` at 0x20d1ea0, id 389309 (setting, high)
-#[inline]
-pub fn ini_setting_f_ragdoll_feedback_foot_ik() -> *mut c_void { address!(389309) as *mut c_void }
 /// `INISetting_fRatioDecreasePerSeconds_Display` at 0x20d0478, id 389025 (setting, high)
 #[inline]
 pub fn ini_setting_f_ratio_decrease_per_seconds_display() -> *mut c_void { address!(389025) as *mut c_void }
@@ -14370,21 +14040,6 @@ pub fn ini_setting_f_slow_vanity_increment_camera() -> *mut c_void { address!(35
 /// `INISetting_fSmoothingStepHeight_Pathfinding` at 0x20d4c08, id 390504 (setting, high)
 #[inline]
 pub fn ini_setting_f_smoothing_step_height_pathfinding() -> *mut c_void { address!(390504) as *mut c_void }
-/// `INISetting_fSnapGain_RagdollAnim` at 0x20d1b28, id 389206 (setting, high)
-#[inline]
-pub fn ini_setting_f_snap_gain_ragdoll_anim() -> *mut c_void { address!(389206) as *mut c_void }
-/// `INISetting_fSnapMaxAngularDistance_RagdollAnim` at 0x20d1b88, id 389218 (setting, high)
-#[inline]
-pub fn ini_setting_f_snap_max_angular_distance_ragdoll_anim() -> *mut c_void { address!(389218) as *mut c_void }
-/// `INISetting_fSnapMaxAngularVelocity_RagdollAnim` at 0x20d1b58, id 389212 (setting, high)
-#[inline]
-pub fn ini_setting_f_snap_max_angular_velocity_ragdoll_anim() -> *mut c_void { address!(389212) as *mut c_void }
-/// `INISetting_fSnapMaxLinearDistance_RagdollAnim` at 0x20d1b70, id 389215 (setting, high)
-#[inline]
-pub fn ini_setting_f_snap_max_linear_distance_ragdoll_anim() -> *mut c_void { address!(389215) as *mut c_void }
-/// `INISetting_fSnapMaxLinearVelocity_RagdollAnim` at 0x20d1b40, id 389209 (setting, high)
-#[inline]
-pub fn ini_setting_f_snap_max_linear_velocity_ragdoll_anim() -> *mut c_void { address!(389209) as *mut c_void }
 /// `INISetting_fSnowGeometrySpecPower_Display` at 0x20d8e00, id 391652 (setting, high)
 #[inline]
 pub fn ini_setting_f_snow_geometry_spec_power_display() -> *mut c_void { address!(391652) as *mut c_void }
@@ -14853,18 +14508,6 @@ pub fn ini_setting_f_update_budget_ms_papyrus() -> *mut c_void { address!(383724
 /// `INISetting_fUpdateBudget_Trees` at 0x20b0a60, id 378728 (setting, high)
 #[inline]
 pub fn ini_setting_f_update_budget_trees() -> *mut c_void { address!(378728) as *mut c_void }
-/// `INISetting_fUpdateDelayNewTargetSecondsMax_HeadTracking` at 0x20b6b00, id 381282 (setting, high)
-#[inline]
-pub fn ini_setting_f_update_delay_new_target_seconds_max_head_tracking() -> *mut c_void { address!(381282) as *mut c_void }
-/// `INISetting_fUpdateDelayNewTargetSecondsMin_HeadTracking` at 0x20b6ae8, id 381279 (setting, high)
-#[inline]
-pub fn ini_setting_f_update_delay_new_target_seconds_min_head_tracking() -> *mut c_void { address!(381279) as *mut c_void }
-/// `INISetting_fUpdateDelaySecondsMax_HeadTracking` at 0x20b6ad0, id 381276 (setting, high)
-#[inline]
-pub fn ini_setting_f_update_delay_seconds_max_head_tracking() -> *mut c_void { address!(381276) as *mut c_void }
-/// `INISetting_fUpdateDelaySecondsMin_HeadTracking` at 0x20b6ab8, id 381273 (setting, high)
-#[inline]
-pub fn ini_setting_f_update_delay_seconds_min_head_tracking() -> *mut c_void { address!(381273) as *mut c_void }
 /// `INISetting_fVATSCastingAfterKillDelay_VATS` at 0x20b95f0, id 382215 (setting, high)
 #[inline]
 pub fn ini_setting_f_vats_casting_after_kill_delay_vats() -> *mut c_void { address!(382215) as *mut c_void }
@@ -14928,15 +14571,6 @@ pub fn ini_setting_f_vats_light_color_g_vats() -> *mut c_void { address!(382206)
 /// `INISetting_fVatsLightColorR_VATS` at 0x20b9590, id 382203 (setting, high)
 #[inline]
 pub fn ini_setting_f_vats_light_color_r_vats() -> *mut c_void { address!(382203) as *mut c_void }
-/// `INISetting_fVelocityDamping_RagdollAnim` at 0x20d1a98, id 389188 (setting, high)
-#[inline]
-pub fn ini_setting_f_velocity_damping_ragdoll_anim() -> *mut c_void { address!(389188) as *mut c_void }
-/// `INISetting_fVelocityGain_RagdollAnim` at 0x20d1ac8, id 389194 (setting, high)
-#[inline]
-pub fn ini_setting_f_velocity_gain_ragdoll_anim() -> *mut c_void { address!(389194) as *mut c_void }
-/// `INISetting_fVertErrorGain_FootIK` at 0x20d1df8, id 389290 (setting, high)
-#[inline]
-pub fn ini_setting_f_vert_error_gain_foot_ik() -> *mut c_void { address!(389290) as *mut c_void }
 /// `INISetting_fVerticalCapsuleOffset_Verlet` at 0x20b6de8, id 381342 (setting, high)
 #[inline]
 pub fn ini_setting_f_vertical_capsule_offset_verlet() -> *mut c_void { address!(381342) as *mut c_void }
@@ -15270,9 +14904,6 @@ pub fn ini_setting_i_mounted_gesture_attack_buffer_controls() -> *mut c_void { a
 /// `INISetting_iNumBitsForFullySeen_General` at 0x20b6488, id 381117 (setting, high)
 #[inline]
 pub fn ini_setting_i_num_bits_for_fully_seen_general() -> *mut c_void { address!(381117) as *mut c_void }
-/// `INISetting_iNumFramesFootEaseOut_FootIK` at 0x20d1e10, id 389293 (setting, high)
-#[inline]
-pub fn ini_setting_i_num_frames_foot_ease_out_foot_ik() -> *mut c_void { address!(389293) as *mut c_void }
 /// `INISetting_iNumHWThreads_General` at 0x2077778, id 358819 (setting, high)
 #[inline]
 pub fn ini_setting_i_num_hw_threads_general() -> *mut c_void { address!(358819) as *mut c_void }
@@ -15324,3 +14955,372 @@ pub fn ini_setting_i_right_stick_repeat_rate_map_menu() -> *mut c_void { address
 /// `INISetting_iSaveGameBackupCount_SaveGame` at 0x20b5540, id 380689 (setting, high)
 #[inline]
 pub fn ini_setting_i_save_game_backup_count_save_game() -> *mut c_void { address!(380689) as *mut c_void }
+/// `INISetting_iShaderPackageMemoryCap_Display` at 0x20d90d8, id 391745 (setting, high)
+#[inline]
+pub fn ini_setting_i_shader_package_memory_cap_display() -> *mut c_void { address!(391745) as *mut c_void }
+/// `INISetting_iShowHitVector_Combat` at 0x20b6908, id 381228 (setting, high)
+#[inline]
+pub fn ini_setting_i_show_hit_vector_combat() -> *mut c_void { address!(381228) as *mut c_void }
+/// `INISetting_iSimType_HAVOK` at 0x209e2d0, id 370079 (setting, high)
+#[inline]
+pub fn ini_setting_i_sim_type_havok() -> *mut c_void { address!(370079) as *mut c_void }
+/// `INISetting_iSnowNoiseTextureSize` at 0x20d89f8, id 391526 (setting, high)
+#[inline]
+pub fn ini_setting_i_snow_noise_texture_size() -> *mut c_void { address!(391526) as *mut c_void }
+/// `INISetting_iSnowSSSCurrentColor_Display` at 0x20d8bf0, id 391588 (setting, high)
+#[inline]
+pub fn ini_setting_i_snow_sss_current_color_display() -> *mut c_void { address!(391588) as *mut c_void }
+/// `INISetting_iSnowSparklesColor_Display` at 0x20d8998, id 391514 (setting, high)
+#[inline]
+pub fn ini_setting_i_snow_sparkles_color_display() -> *mut c_void { address!(391514) as *mut c_void }
+/// `INISetting_iSubtitleSpeakerNameColor_Interface` at 0x20bb9e8, id 383210 (setting, high)
+#[inline]
+pub fn ini_setting_i_subtitle_speaker_name_color_interface() -> *mut c_void { address!(383210) as *mut c_void }
+/// `INISetting_iTake_CameraPath` at 0x20b5dc8, id 380920 (setting, high)
+#[inline]
+pub fn ini_setting_i_take_camera_path() -> *mut c_void { address!(380920) as *mut c_void }
+/// `INISetting_iTrilinearThreshold_Display` at 0x20d6a28, id 391018 (setting, high)
+#[inline]
+pub fn ini_setting_i_trilinear_threshold_display() -> *mut c_void { address!(391018) as *mut c_void }
+/// `INISetting_iUnstableFrameTimeHistorySize_Display` at 0x20b5840, id 380753 (setting, high)
+#[inline]
+pub fn ini_setting_i_unstable_frame_time_history_size_display() -> *mut c_void { address!(380753) as *mut c_void }
+/// `INISetting_iUpdateDetectionsAllowedPerFrame_General` at 0x20b0ef0, id 378853 (setting, high)
+#[inline]
+pub fn ini_setting_i_update_detections_allowed_per_frame_general() -> *mut c_void { address!(378853) as *mut c_void }
+/// `INISetting_iVolumetricLightingNoiseTextureDepth_Display` at 0x20d70a8, id 391199 (setting, high)
+#[inline]
+pub fn ini_setting_i_volumetric_lighting_noise_texture_depth_display() -> *mut c_void { address!(391199) as *mut c_void }
+/// `INISetting_iVolumetricLightingNoiseTextureHeight_Display` at 0x20d7090, id 391196 (setting, high)
+#[inline]
+pub fn ini_setting_i_volumetric_lighting_noise_texture_height_display() -> *mut c_void { address!(391196) as *mut c_void }
+/// `INISetting_iVolumetricLightingNoiseTextureWidth_Display` at 0x20d7078, id 391193 (setting, high)
+#[inline]
+pub fn ini_setting_i_volumetric_lighting_noise_texture_width_display() -> *mut c_void { address!(391193) as *mut c_void }
+/// `INISetting_iVolumetricLightingTextureDepthHigh_Display` at 0x20d7048, id 391188 (setting, high)
+#[inline]
+pub fn ini_setting_i_volumetric_lighting_texture_depth_high_display() -> *mut c_void { address!(391188) as *mut c_void }
+/// `INISetting_iVolumetricLightingTextureDepthLow_Display` at 0x20d6f88, id 391166 (setting, high)
+#[inline]
+pub fn ini_setting_i_volumetric_lighting_texture_depth_low_display() -> *mut c_void { address!(391166) as *mut c_void }
+/// `INISetting_iVolumetricLightingTextureDepthMedium_Display` at 0x20d6fe8, id 391177 (setting, high)
+#[inline]
+pub fn ini_setting_i_volumetric_lighting_texture_depth_medium_display() -> *mut c_void { address!(391177) as *mut c_void }
+/// `INISetting_iVolumetricLightingTextureFormatHigh_Display` at 0x20d7060, id 391191 (setting, high)
+#[inline]
+pub fn ini_setting_i_volumetric_lighting_texture_format_high_display() -> *mut c_void { address!(391191) as *mut c_void }
+/// `INISetting_iVolumetricLightingTextureFormatLow_Display` at 0x20d6fa0, id 391169 (setting, high)
+#[inline]
+pub fn ini_setting_i_volumetric_lighting_texture_format_low_display() -> *mut c_void { address!(391169) as *mut c_void }
+/// `INISetting_iVolumetricLightingTextureFormatMedium_Display` at 0x20d7000, id 391180 (setting, high)
+#[inline]
+pub fn ini_setting_i_volumetric_lighting_texture_format_medium_display() -> *mut c_void { address!(391180) as *mut c_void }
+/// `INISetting_iVolumetricLightingTextureHeightHigh_Display` at 0x20d7030, id 391185 (setting, high)
+#[inline]
+pub fn ini_setting_i_volumetric_lighting_texture_height_high_display() -> *mut c_void { address!(391185) as *mut c_void }
+/// `INISetting_iVolumetricLightingTextureHeightLow_Display` at 0x20d6f70, id 391163 (setting, high)
+#[inline]
+pub fn ini_setting_i_volumetric_lighting_texture_height_low_display() -> *mut c_void { address!(391163) as *mut c_void }
+/// `INISetting_iVolumetricLightingTextureHeightMedium_Display` at 0x20d6fd0, id 391174 (setting, high)
+#[inline]
+pub fn ini_setting_i_volumetric_lighting_texture_height_medium_display() -> *mut c_void { address!(391174) as *mut c_void }
+/// `INISetting_iVolumetricLightingTextureWidthHigh_Display` at 0x20d7018, id 391182 (setting, high)
+#[inline]
+pub fn ini_setting_i_volumetric_lighting_texture_width_high_display() -> *mut c_void { address!(391182) as *mut c_void }
+/// `INISetting_iVolumetricLightingTextureWidthLow_Display` at 0x20d6f58, id 391160 (setting, high)
+#[inline]
+pub fn ini_setting_i_volumetric_lighting_texture_width_low_display() -> *mut c_void { address!(391160) as *mut c_void }
+/// `INISetting_iVolumetricLightingTextureWidthMedium_Display` at 0x20d6fb8, id 391171 (setting, high)
+#[inline]
+pub fn ini_setting_i_volumetric_lighting_texture_width_medium_display() -> *mut c_void { address!(391171) as *mut c_void }
+/// `INISetting_iWarpMaxPathFailureCount_Pathfinding` at 0x20b81f8, id 381917 (setting, high)
+#[inline]
+pub fn ini_setting_i_warp_max_path_failure_count_pathfinding() -> *mut c_void { address!(381917) as *mut c_void }
+/// `INISetting_iWaterBlurAmount_Water` at 0x20b37e8, id 380000 (setting, high)
+#[inline]
+pub fn ini_setting_i_water_blur_amount_water() -> *mut c_void { address!(380000) as *mut c_void }
+/// `INISetting_iWaterNoiseResolution_Water` at 0x207bd88, id 360578 (setting, high)
+#[inline]
+pub fn ini_setting_i_water_noise_resolution_water() -> *mut c_void { address!(360578) as *mut c_void }
+/// `INISetting_rConsoleHistoryTextColor_Menu` at 0x20ba8f0, id 382735 (setting, high)
+#[inline]
+pub fn ini_setting_r_console_history_text_color_menu() -> *mut c_void { address!(382735) as *mut c_void }
+/// `INISetting_rConsoleTextColor_Menu` at 0x20ba8c0, id 382729 (setting, high)
+#[inline]
+pub fn ini_setting_r_console_text_color_menu() -> *mut c_void { address!(382729) as *mut c_void }
+/// `INISetting_rDebugTextColor_Menu` at 0x20d30b0, id 389594 (setting, high)
+#[inline]
+pub fn ini_setting_r_debug_text_color_menu() -> *mut c_void { address!(389594) as *mut c_void }
+/// `INISetting_rUIMistMenu_AmbientXNegRGB_Interface` at 0x20bb680, id 383112 (setting, high)
+#[inline]
+pub fn ini_setting_r_ui_mist_menu_ambient_x_neg_rgb_interface() -> *mut c_void { address!(383112) as *mut c_void }
+/// `INISetting_rUIMistMenu_AmbientXPosRGB_Interface` at 0x20bb698, id 383115 (setting, high)
+#[inline]
+pub fn ini_setting_r_ui_mist_menu_ambient_x_pos_rgb_interface() -> *mut c_void { address!(383115) as *mut c_void }
+/// `INISetting_rUIMistMenu_AmbientYNegRGB_Interface` at 0x20bb6b0, id 383118 (setting, high)
+#[inline]
+pub fn ini_setting_r_ui_mist_menu_ambient_y_neg_rgb_interface() -> *mut c_void { address!(383118) as *mut c_void }
+/// `INISetting_rUIMistMenu_AmbientYPosRGB_Interface` at 0x20bb6c8, id 383121 (setting, high)
+#[inline]
+pub fn ini_setting_r_ui_mist_menu_ambient_y_pos_rgb_interface() -> *mut c_void { address!(383121) as *mut c_void }
+/// `INISetting_rUIMistMenu_AmbientZNegRGB_Interface` at 0x20bb6e0, id 383124 (setting, high)
+#[inline]
+pub fn ini_setting_r_ui_mist_menu_ambient_z_neg_rgb_interface() -> *mut c_void { address!(383124) as *mut c_void }
+/// `INISetting_rUIMistMenu_AmbientZPosRGB_Interface` at 0x20bb6f8, id 383127 (setting, high)
+#[inline]
+pub fn ini_setting_r_ui_mist_menu_ambient_z_pos_rgb_interface() -> *mut c_void { address!(383127) as *mut c_void }
+/// `INISetting_sAccountsURL_Bethesda_net` at 0x20d50f0, id 502228 (setting, high)
+#[inline]
+pub fn ini_setting_s_accounts_url_bethesda_net() -> *mut c_void { address!(502228) as *mut c_void }
+/// `INISetting_sArchiveList_Archive` at 0x20b5978, id 380789 (setting, high)
+#[inline]
+pub fn ini_setting_s_archive_list_archive() -> *mut c_void { address!(380789) as *mut c_void }
+/// `INISetting_sArchiveToLoadInMemoryList_Archive` at 0x20ceca0, id 388532 (setting, high)
+#[inline]
+pub fn ini_setting_s_archive_to_load_in_memory_list_archive() -> *mut c_void { address!(388532) as *mut c_void }
+/// `INISetting_sAudioAPI_Audio` at 0x20b5c00, id 380863 (setting, high)
+#[inline]
+pub fn ini_setting_s_audio_api_audio() -> *mut c_void { address!(380863) as *mut c_void }
+/// `INISetting_sBumpFadeColor_Weather` at 0x20777d8, id 358830 (setting, high)
+#[inline]
+pub fn ini_setting_s_bump_fade_color_weather() -> *mut c_void { address!(358830) as *mut c_void }
+/// `INISetting_sCharGenQuest_General` at 0x20bb298, id 382994 (setting, high)
+#[inline]
+pub fn ini_setting_s_char_gen_quest_general() -> *mut c_void { address!(382994) as *mut c_void }
+/// `INISetting_sCloudInstanceMesh_Clouds` at 0x20b3d70, id 380183 (setting, high)
+#[inline]
+pub fn ini_setting_s_cloud_instance_mesh_clouds() -> *mut c_void { address!(380183) as *mut c_void }
+/// `INISetting_sConsoleDefaultINI_Menu` at 0x20ba938, id 502131 (setting, high)
+#[inline]
+pub fn ini_setting_s_console_default_ini_menu() -> *mut c_void { address!(502131) as *mut c_void }
+/// `INISetting_sConsoleINI_Menu` at 0x20ba920, id 502128 (setting, high)
+#[inline]
+pub fn ini_setting_s_console_ini_menu() -> *mut c_void { address!(502128) as *mut c_void }
+/// `INISetting_sControlsDefinitionFile` at 0x20ccd10, id 388458 (setting, high)
+#[inline]
+pub fn ini_setting_s_controls_definition_file() -> *mut c_void { address!(388458) as *mut c_void }
+/// `INISetting_sControlsDefinitionFile` at 0x20ce8a0, id 388496 (setting, high)
+#[inline]
+pub fn ini_setting_s_controls_definition_file_2() -> *mut c_void { address!(388496) as *mut c_void }
+/// `INISetting_sControlsRemapFile` at 0x20ccd28, id 388461 (setting, high)
+#[inline]
+pub fn ini_setting_s_controls_remap_file() -> *mut c_void { address!(388461) as *mut c_void }
+/// `INISetting_sCopyProtectionMessage2_CopyProtectionStrings` at 0x20b5fa8, id 380979 (setting, high)
+#[inline]
+pub fn ini_setting_s_copy_protection_message2_copy_protection_strings() -> *mut c_void { address!(380979) as *mut c_void }
+/// `INISetting_sCopyProtectionMessage_CopyProtectionStrings` at 0x20b5f78, id 380973 (setting, high)
+#[inline]
+pub fn ini_setting_s_copy_protection_message_copy_protection_strings() -> *mut c_void { address!(380973) as *mut c_void }
+/// `INISetting_sCopyProtectionTitle2_CopyProtectionStrings` at 0x20b5f90, id 380976 (setting, high)
+#[inline]
+pub fn ini_setting_s_copy_protection_title2_copy_protection_strings() -> *mut c_void { address!(380976) as *mut c_void }
+/// `INISetting_sCopyProtectionTitle_CopyProtectionStrings` at 0x20b5f60, id 380970 (setting, high)
+#[inline]
+pub fn ini_setting_s_copy_protection_title_copy_protection_strings() -> *mut c_void { address!(380970) as *mut c_void }
+/// `INISetting_sCreationsDownloadDirectory_Bethesda_net` at 0x20b4ce0, id 502100 (setting, high)
+#[inline]
+pub fn ini_setting_s_creations_download_directory_bethesda_net() -> *mut c_void { address!(502100) as *mut c_void }
+/// `INISetting_sCreditsFilePLRU_Interface` at 0x20bab40, id 382792 (setting, high)
+#[inline]
+pub fn ini_setting_s_credits_file_plru_interface() -> *mut c_void { address!(382792) as *mut c_void }
+/// `INISetting_sCreditsFile_Interface` at 0x20bab28, id 382789 (setting, high)
+#[inline]
+pub fn ini_setting_s_credits_file_interface() -> *mut c_void { address!(382789) as *mut c_void }
+/// `INISetting_sDeathCameraEffect_Audio` at 0x20ba030, id 382469 (setting, high)
+#[inline]
+pub fn ini_setting_s_death_camera_effect_audio() -> *mut c_void { address!(382469) as *mut c_void }
+/// `INISetting_sDebugText_Display` at 0x20b6098, id 381004 (setting, high)
+#[inline]
+pub fn ini_setting_s_debug_text_display() -> *mut c_void { address!(381004) as *mut c_void }
+/// `INISetting_sDefaultLandDiffuseTexture_Landscape` at 0x207b808, id 360427 (setting, high)
+#[inline]
+pub fn ini_setting_s_default_land_diffuse_texture_landscape() -> *mut c_void { address!(360427) as *mut c_void }
+/// `INISetting_sDefaultLandNormalTexture_Landscape` at 0x207b820, id 360430 (setting, high)
+#[inline]
+pub fn ini_setting_s_default_land_normal_texture_landscape() -> *mut c_void { address!(360430) as *mut c_void }
+/// `INISetting_sDeveloperEmail_Bethesda_net` at 0x20bb340, id 383015 (setting, high)
+#[inline]
+pub fn ini_setting_s_developer_email_bethesda_net() -> *mut c_void { address!(383015) as *mut c_void }
+/// `INISetting_sDeveloperUsername_Bethesda_net` at 0x20b4248, id 380294 (setting, high)
+#[inline]
+pub fn ini_setting_s_developer_username_bethesda_net() -> *mut c_void { address!(380294) as *mut c_void }
+/// `INISetting_sDirectoryName_CameraPath` at 0x20b5db0, id 380917 (setting, high)
+#[inline]
+pub fn ini_setting_s_directory_name_camera_path() -> *mut c_void { address!(380917) as *mut c_void }
+/// `INISetting_sDisabledProgramFlowContexts_MESSAGES` at 0x20b62d8, id 381069 (setting, high)
+#[inline]
+pub fn ini_setting_s_disabled_program_flow_contexts_messages() -> *mut c_void { address!(381069) as *mut c_void }
+/// `INISetting_sEnvReduceColor_Weather` at 0x20777a8, id 358824 (setting, high)
+#[inline]
+pub fn ini_setting_s_env_reduce_color_weather() -> *mut c_void { address!(358824) as *mut c_void }
+/// `INISetting_sEnvironment_Bethesda_net` at 0x20d4dd0, id 390532 (setting, high)
+#[inline]
+pub fn ini_setting_s_environment_bethesda_net() -> *mut c_void { address!(390532) as *mut c_void }
+/// `INISetting_sEsmToLoadInMemoryList_Archive` at 0x2077ff8, id 359067 (setting, high)
+#[inline]
+pub fn ini_setting_s_esm_to_load_in_memory_list_archive() -> *mut c_void { address!(359067) as *mut c_void }
+/// `INISetting_sEssentialFileCacheList_General` at 0x20b5930, id 380780 (setting, high)
+#[inline]
+pub fn ini_setting_s_essential_file_cache_list_general() -> *mut c_void { address!(380780) as *mut c_void }
+/// `INISetting_sFailureMessage_LANGUAGE` at 0x2077a00, id 358894 (setting, high)
+#[inline]
+pub fn ini_setting_s_failure_message_language() -> *mut c_void { address!(358894) as *mut c_void }
+/// `INISetting_sFileTypeGame_Voice` at 0x209cd50, id 369814 (setting, high)
+#[inline]
+pub fn ini_setting_s_file_type_game_voice() -> *mut c_void { address!(369814) as *mut c_void }
+/// `INISetting_sFileTypeLTF_Voice` at 0x209cd98, id 369823 (setting, high)
+#[inline]
+pub fn ini_setting_s_file_type_ltf_voice() -> *mut c_void { address!(369823) as *mut c_void }
+/// `INISetting_sFileTypeLip_Voice` at 0x209cd80, id 369820 (setting, high)
+#[inline]
+pub fn ini_setting_s_file_type_lip_voice() -> *mut c_void { address!(369820) as *mut c_void }
+/// `INISetting_sFileTypeSource_Voice` at 0x209cd68, id 369817 (setting, high)
+#[inline]
+pub fn ini_setting_s_file_type_source_voice() -> *mut c_void { address!(369817) as *mut c_void }
+/// `INISetting_sFontConfigFile_Fonts` at 0x20d2fd8, id 389581 (setting, high)
+#[inline]
+pub fn ini_setting_s_font_config_file_fonts() -> *mut c_void { address!(389581) as *mut c_void }
+/// `INISetting_sForcedLoadScreenEditorID_Interface` at 0x20baf38, id 382907 (setting, high)
+#[inline]
+pub fn ini_setting_s_forced_load_screen_editor_id_interface() -> *mut c_void { address!(382907) as *mut c_void }
+/// `INISetting_sGameCode_OAuth` at 0x20ba9c0, id 382746 (setting, high)
+#[inline]
+pub fn ini_setting_s_game_code_o_auth() -> *mut c_void { address!(382746) as *mut c_void }
+/// `INISetting_sGamepadDefinitionFile` at 0x20ccd68, id 388467 (setting, high)
+#[inline]
+pub fn ini_setting_s_gamepad_definition_file() -> *mut c_void { address!(388467) as *mut c_void }
+/// `INISetting_sGamerIconTextureName_General` at 0x20bb310, id 383009 (setting, high)
+#[inline]
+pub fn ini_setting_s_gamer_icon_texture_name_general() -> *mut c_void { address!(383009) as *mut c_void }
+/// `INISetting_sGeneralMasterMismatchWarning_GeneralWarnings` at 0x2077d30, id 358988 (setting, high)
+#[inline]
+pub fn ini_setting_s_general_master_mismatch_warning_general_warnings() -> *mut c_void { address!(358988) as *mut c_void }
+/// `INISetting_sHarnessBoneCart_Cart` at 0x209e220, id 370057 (setting, high)
+#[inline]
+pub fn ini_setting_s_harness_bone_cart_cart() -> *mut c_void { address!(370057) as *mut c_void }
+/// `INISetting_sHarnessBoneLeft_Cart` at 0x209e1f0, id 370051 (setting, high)
+#[inline]
+pub fn ini_setting_s_harness_bone_left_cart() -> *mut c_void { address!(370051) as *mut c_void }
+/// `INISetting_sHarnessBoneRight_Cart` at 0x209e208, id 370054 (setting, high)
+#[inline]
+pub fn ini_setting_s_harness_bone_right_cart() -> *mut c_void { address!(370054) as *mut c_void }
+/// `INISetting_sHkxDBNameContextPrefix_Animation` at 0x20c5a38, id 385933 (setting, high)
+#[inline]
+pub fn ini_setting_s_hkx_db_name_context_prefix_animation() -> *mut c_void { address!(385933) as *mut c_void }
+/// `INISetting_sHorseConnect_Cart` at 0x209e1d8, id 370048 (setting, high)
+#[inline]
+pub fn ini_setting_s_horse_connect_cart() -> *mut c_void { address!(370048) as *mut c_void }
+/// `INISetting_sIntroMovie_General` at 0x20b5750, id 380726 (setting, high)
+#[inline]
+pub fn ini_setting_s_intro_movie_general() -> *mut c_void { address!(380726) as *mut c_void }
+/// `INISetting_sIntroSequence_General` at 0x20b5720, id 380720 (setting, high)
+#[inline]
+pub fn ini_setting_s_intro_sequence_general() -> *mut c_void { address!(380720) as *mut c_void }
+/// `INISetting_sInvalidationFile_Archive` at 0x20b6050, id 380995 (setting, high)
+#[inline]
+pub fn ini_setting_s_invalidation_file_archive() -> *mut c_void { address!(380995) as *mut c_void }
+/// `INISetting_sKeyboardDefinitionFile` at 0x20ce568, id 388486 (setting, high)
+#[inline]
+pub fn ini_setting_s_keyboard_definition_file() -> *mut c_void { address!(388486) as *mut c_void }
+/// `INISetting_sLanguage_General` at 0x20779e8, id 358891 (setting, high)
+#[inline]
+pub fn ini_setting_s_language_general() -> *mut c_void { address!(358891) as *mut c_void }
+/// `INISetting_sLerpCloseColor_Weather` at 0x20777c0, id 358827 (setting, high)
+#[inline]
+pub fn ini_setting_s_lerp_close_color_weather() -> *mut c_void { address!(358827) as *mut c_void }
+/// `INISetting_sLocalCharacterDataPath_General` at 0x2077cd0, id 358978 (setting, high)
+#[inline]
+pub fn ini_setting_s_local_character_data_path_general() -> *mut c_void { address!(358978) as *mut c_void }
+/// `INISetting_sLocalMasterPath_General` at 0x2077ca0, id 358972 (setting, high)
+#[inline]
+pub fn ini_setting_s_local_master_path_general() -> *mut c_void { address!(358972) as *mut c_void }
+/// `INISetting_sLocalSavePath_General` at 0x2077cb8, id 358975 (setting, high)
+#[inline]
+pub fn ini_setting_s_local_save_path_general() -> *mut c_void { address!(358975) as *mut c_void }
+/// `INISetting_sMainMenuMovieIntro_General` at 0x20b5738, id 380723 (setting, high)
+#[inline]
+pub fn ini_setting_s_main_menu_movie_intro_general() -> *mut c_void { address!(380723) as *mut c_void }
+/// `INISetting_sMainMenuMusic_General` at 0x20bb2b0, id 382997 (setting, high)
+#[inline]
+pub fn ini_setting_s_main_menu_music_general() -> *mut c_void { address!(382997) as *mut c_void }
+/// `INISetting_sMapWorldDefaultWorldSpace_MapMenu` at 0x20bc558, id 383569 (setting, high)
+#[inline]
+pub fn ini_setting_s_map_world_default_world_space_map_menu() -> *mut c_void { address!(383569) as *mut c_void }
+/// `INISetting_sMasterMismatchWarning_GeneralWarnings` at 0x2077d18, id 358985 (setting, high)
+#[inline]
+pub fn ini_setting_s_master_mismatch_warning_general_warnings() -> *mut c_void { address!(358985) as *mut c_void }
+/// `INISetting_sMissingAssetSoundFile_Audio` at 0x20b5cc0, id 380887 (setting, high)
+#[inline]
+pub fn ini_setting_s_missing_asset_sound_file_audio() -> *mut c_void { address!(380887) as *mut c_void }
+/// `INISetting_sModsDownloadDirectory_Bethesda_net` at 0x20b4758, id 433165 (setting, high)
+#[inline]
+pub fn ini_setting_s_mods_download_directory_bethesda_net() -> *mut c_void { address!(433165) as *mut c_void }
+/// `INISetting_sModsInstallDirectory_Bethesda_net` at 0x20b4770, id 433167 (setting, high)
+#[inline]
+pub fn ini_setting_s_mods_install_directory_bethesda_net() -> *mut c_void { address!(433167) as *mut c_void }
+/// `INISetting_sMouseDefinitionFile` at 0x20ce590, id 388489 (setting, high)
+#[inline]
+pub fn ini_setting_s_mouse_definition_file() -> *mut c_void { address!(388489) as *mut c_void }
+/// `INISetting_sNif_CameraPath` at 0x20b5d80, id 380911 (setting, high)
+#[inline]
+pub fn ini_setting_s_nif_camera_path() -> *mut c_void { address!(380911) as *mut c_void }
+/// `INISetting_sOffsetID_CameraPath` at 0x20b5d68, id 380908 (setting, high)
+#[inline]
+pub fn ini_setting_s_offset_id_camera_path() -> *mut c_void { address!(380908) as *mut c_void }
+/// `INISetting_sPosePlayerRaceSexMenu_Interface` at 0x20bb870, id 383168 (setting, high)
+#[inline]
+pub fn ini_setting_s_pose_player_race_sex_menu_interface() -> *mut c_void { address!(383168) as *mut c_void }
+/// `INISetting_sResourceArchiveList2_Archive` at 0x20b59a8, id 380795 (setting, high)
+#[inline]
+pub fn ini_setting_s_resource_archive_list2_archive() -> *mut c_void { address!(380795) as *mut c_void }
+/// `INISetting_sResourceArchiveListBeta_Archive` at 0x20b59c0, id 380798 (setting, high)
+#[inline]
+pub fn ini_setting_s_resource_archive_list_beta_archive() -> *mut c_void { address!(380798) as *mut c_void }
+/// `INISetting_sResourceArchiveList_Archive` at 0x20b5990, id 380792 (setting, high)
+#[inline]
+pub fn ini_setting_s_resource_archive_list_archive() -> *mut c_void { address!(380792) as *mut c_void }
+/// `INISetting_sResourceArchiveRetainFileNameList_Archive` at 0x20b59f0, id 380804 (setting, high)
+#[inline]
+pub fn ini_setting_s_resource_archive_retain_file_name_list_archive() -> *mut c_void { address!(380804) as *mut c_void }
+/// `INISetting_sResourcePrefixList_Archive` at 0x20b59d8, id 380801 (setting, high)
+#[inline]
+pub fn ini_setting_s_resource_prefix_list_archive() -> *mut c_void { address!(380801) as *mut c_void }
+/// `INISetting_sSaveGameGameVersionOutdated_SaveGame` at 0x20b5558, id 380692 (setting, high)
+#[inline]
+pub fn ini_setting_s_save_game_game_version_outdated_save_game() -> *mut c_void { address!(380692) as *mut c_void }
+/// `INISetting_sSaveGameSafeMarkerID_SaveGame` at 0x20b5570, id 380695 (setting, high)
+#[inline]
+pub fn ini_setting_s_save_game_safe_marker_id_save_game() -> *mut c_void { address!(380695) as *mut c_void }
+/// `INISetting_sSaveGameScreenshotName` at 0x20b53f0, id 380654 (setting, high)
+#[inline]
+pub fn ini_setting_s_save_game_screenshot_name() -> *mut c_void { address!(380654) as *mut c_void }
+/// `INISetting_sScreenShotBaseName_Display` at 0x20b6450, id 381110 (setting, high)
+#[inline]
+pub fn ini_setting_s_screen_shot_base_name_display() -> *mut c_void { address!(381110) as *mut c_void }
+/// `INISetting_sStartingCellX_General` at 0x20b5b28, id 380843 (setting, high)
+#[inline]
+pub fn ini_setting_s_starting_cell_x_general() -> *mut c_void { address!(380843) as *mut c_void }
+/// `INISetting_sStartingCellY_General` at 0x20b5b40, id 380846 (setting, high)
+#[inline]
+pub fn ini_setting_s_starting_cell_y_general() -> *mut c_void { address!(380846) as *mut c_void }
+/// `INISetting_sStartingCell_General` at 0x20b5af8, id 380837 (setting, high)
+#[inline]
+pub fn ini_setting_s_starting_cell_general() -> *mut c_void { address!(380837) as *mut c_void }
+/// `INISetting_sStartingConsoleCommand_General` at 0x20b5b58, id 502116 (setting, high)
+#[inline]
+pub fn ini_setting_s_starting_console_command_general() -> *mut c_void { address!(502116) as *mut c_void }
+/// `INISetting_sStartingWorld_General` at 0x20b5b10, id 380840 (setting, high)
+#[inline]
+pub fn ini_setting_s_starting_world_general() -> *mut c_void { address!(380840) as *mut c_void }
+/// `INISetting_sSurfaceTexture_Water` at 0x20b3a28, id 380061 (setting, high)
+#[inline]
+pub fn ini_setting_s_surface_texture_water() -> *mut c_void { address!(380061) as *mut c_void }
+/// `INISetting_sSysUtil_AutoSaveWarning_LANGUAGE` at 0x2077a30, id 358900 (setting, high)
+#[inline]
+pub fn ini_setting_s_sys_util_auto_save_warning_language() -> *mut c_void { address!(358900) as *mut c_void }
+/// `INISetting_sSysUtil_AwardsConfiguring_LANGUAGE` at 0x2077b38, id 358933 (setting, high)
+#[inline]
+pub fn ini_setting_s_sys_util_awards_configuring_language() -> *mut c_void { address!(358933) as *mut c_void }
+/// `INISetting_sSysUtil_AwardsInstalling_LANGUAGE` at 0x2077b08, id 358927 (setting, high)
+#[inline]
+pub fn ini_setting_s_sys_util_awards_installing_language() -> *mut c_void { address!(358927) as *mut c_void }

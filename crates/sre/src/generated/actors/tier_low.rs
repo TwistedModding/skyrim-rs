@@ -141,13 +141,6 @@ impl crate::Actor {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn i_animation_graph_manager_holder_vfunc_6() -> u8 { unsafe { function!(37981, () -> u8)() } }
-    /// `Actor::IAnimationGraphManagerHolder_vfunc_7` (decompiler signature, tier low; ledger rtti evidence, name medium; id 37982, rva 0x6b0340).
-    /// `undefined8 IAnimationGraphManagerHolder_vfunc_7(Actor * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn i_animation_graph_manager_holder_vfunc_7(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(37982, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x38), param_1, param_2, param_3) } }
     /// `Actor::IAnimationGraphManagerHolder_vfunc_8` (decompiler signature, tier low; ledger rtti evidence, name medium; id 37983, rva 0x6b05f0).
     /// `undefined8 IAnimationGraphManagerHolder_vfunc_8(Actor * this, longlong * param_1)`
     ///

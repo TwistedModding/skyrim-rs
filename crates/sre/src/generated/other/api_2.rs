@@ -7071,6 +7071,18 @@ impl crate::RagdollFurnitureListener {
     pub fn as_hkp_entity_listener(&self) -> &crate::hkpEntityListener { unsafe { &*core::ptr::from_ref(self).byte_add(0x8).cast() } }
 }
 
+impl crate::RagdollStartHandler {
+    /// `RagdollStartHandler::Handle`: under the manager lock walks the graphs, clears actor+0x204 bit 29 and resets the controller
+    ///
+    /// Semantic, ik pass, low; ledger semantic evidence, name low; id 42878, rva 0x7ce940.
+    /// `bool (RagdollStartHandler* this, Actor* actor)`
+    ///
+    /// # Safety
+    /// The pass rates the signature low.
+    #[inline]
+    pub unsafe fn handle(&self, actor: *mut crate::Actor) -> bool { unsafe { function!(42878, (*const Self, *mut crate::Actor) -> bool)(core::ptr::from_ref(self), actor) } }
+}
+
 impl crate::RunActionAnimationLoadedCallback {
     #[doc(hidden)]
     #[inline]

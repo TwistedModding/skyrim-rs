@@ -684,23 +684,6 @@ impl crate::BGSExplosion {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: i64, param_3: *mut u8) -> *mut Self { unsafe { function!(17008, (*const Self, u64, i64, *mut u8) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
-impl crate::BGSFootIkRaycastInterfaceDB {
-    /// `BGSFootIkRaycastInterfaceDB::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 32732, rva 0x54a170).
-    /// `BGSFootIkRaycastInterfaceDB * ctor(BGSFootIkRaycastInterfaceDB * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(32732, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `BGSFootIkRaycastInterfaceDB::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 32761, rva 0x54c250).
-    /// `BGSFootIkRaycastInterfaceDB * vdtor(BGSFootIkRaycastInterfaceDB * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(32761, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
 impl crate::BGSFootstep {
     /// `BGSFootstep::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 20796, rva 0x31c730).
     /// `BGSFootstep * ctor(BGSFootstep * this, undefined8 param_1, uint * param_2, longlong * param_3)`

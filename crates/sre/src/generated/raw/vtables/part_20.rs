@@ -7,6 +7,126 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vftable` at 0x1ad5710, id 466467 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1f07fb75429c_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x129e7a0 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1f07fb75429c_vtable {
+    pub const ID: u64 = 466467;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_>::vftable` at 0x1aefee8, id 537473 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a586519434b0_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_>::vfunc_0` at 0x1337e10 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_>::vfunc_1` at 0x133a500 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a586519434b0_vtable {
+    pub const ID: u64 = 537473;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_47af9f2ced50f6065f1eccf21d3e4629>_>::vftable` at 0x1aefe48, id 537468 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_37a46b686ea9_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_47af9f2ced50f6065f1eccf21d3e4629>_>::vfunc_0` at 0x1337e50 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_47af9f2ced50f6065f1eccf21d3e4629>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_47af9f2ced50f6065f1eccf21d3e4629>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_47af9f2ced50f6065f1eccf21d3e4629>_>::vfunc_1` at 0x133a5c0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_47af9f2ced50f6065f1eccf21d3e4629>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_37a46b686ea9_vtable {
+    pub const ID: u64 = 537468;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_>::vftable` at 0x1aefda8, id 537460 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_268a060425ab_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_>::vfunc_0` at 0x1337ed0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_>::vfunc_1` at 0x133a5f0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_268a060425ab_vtable {
+    pub const ID: u64 = 537460;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_>::vftable` at 0x1af00c8, id 537482 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d91aefc204e7_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_>::vfunc_0` at 0x1337f00 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_>::vfunc_1` at 0x133a660 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d91aefc204e7_vtable {
+    pub const ID: u64 = 537482;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_>::vftable` at 0x1aeff10, id 537475 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b598d94cad70_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_>::vfunc_0` at 0x1338680 (rtti, high); signature (low): `CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_> * vfunc_0(CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_>::vfunc_1` at 0x133a500 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_>::vfunc_2` at 0x1339560 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_>::vfunc_3` at 0x133afc0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b598d94cad70_vtable {
+    pub const ID: u64 = 537475;
+}
+
 /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_47af9f2ced50f6065f1eccf21d3e4629>_>::vftable` at 0x1aefe70, id 537470 (rtti, high); 4 slots.
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9cb166b5828e_vtable {
@@ -8213,7 +8333,7 @@ impl hkaDetectRagdollPenetration_vtable {
 /// `hkaFootPlacementIkSolver::vftable` at 0x19ba1e8, id 218958 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct hkaFootPlacementIkSolver_vtable {
-    /// `hkaFootPlacementIkSolver::vdtor` at 0xa9ef70 (layout_inference, medium); signature (low): `hkaFootPlacementIkSolver * vdtor(hkaFootPlacementIkSolver * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `hkaFootPlacementIkSolver::vdtor` at 0xa9ef70 (semantic, high); signature (low): `hkaFootPlacementIkSolver * vdtor(hkaFootPlacementIkSolver * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkaFootPlacementIkSolver* (hkaFootPlacementIkSolver* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
     pub slot_1: *const c_void,
@@ -8222,7 +8342,15 @@ pub struct hkaFootPlacementIkSolver_vtable {
 }
 impl hkaFootPlacementIkSolver_vtable {
     pub const ID: u64 = 218958;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `hkaFootPlacementIkSolver_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<hkaFootPlacementIkSolver_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkaFootPlacementIkSolver_vtable_vdtor>>(self.slot_0) }
+    }
 }
+/// `hkaFootPlacementIkSolver::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
+pub type hkaFootPlacementIkSolver_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkaFootPlacementIkSolver, flags: u32) -> *mut crate::hkaFootPlacementIkSolver;
 
 /// `hkaFootstepAnalysisInfo::vftable` at 0x1a162a8, id 234935 (rtti, high); 3 slots.
 #[repr(C)]
@@ -8363,7 +8491,7 @@ impl hkaQuantizedAnimation_vtable {
 /// `hkaRagdollInstance::vftable` at 0x1a09e10, id 232978 (rtti, high); 4 slots.
 #[repr(C)]
 pub struct hkaRagdollInstance_vtable {
-    /// `hkaRagdollInstance::vdtor` at 0xbf53e0 (slot_propagation, medium); signature (low): `hkaRagdollInstance * vdtor(hkaRagdollInstance * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `hkaRagdollInstance::vdtor` at 0xbf53e0 (semantic, high); signature (low): `hkaRagdollInstance * vdtor(hkaRagdollInstance * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkaRagdollInstance* (hkaRagdollInstance* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
     pub slot_1: *const c_void,
@@ -8374,38 +8502,78 @@ pub struct hkaRagdollInstance_vtable {
 }
 impl hkaRagdollInstance_vtable {
     pub const ID: u64 = 232978;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `hkaRagdollInstance_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<hkaRagdollInstance_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkaRagdollInstance_vtable_vdtor>>(self.slot_0) }
+    }
 }
+/// `hkaRagdollInstance::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
+pub type hkaRagdollInstance_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkaRagdollInstance, flags: u32) -> *mut crate::hkaRagdollInstance;
 
 /// `hkaRagdollRaycastInterface::vftable` at 0x1a7ebd0, id 239024 (rtti, high); 2 slots.
 #[repr(C)]
 pub struct hkaRagdollRaycastInterface_vtable {
-    /// `hkaRagdollRaycastInterface::vdtor` at 0x1061b60 (layout_inference, medium); signature (low): `hkaRagdollRaycastInterface * vdtor(hkaRagdollRaycastInterface * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `hkaRagdollRaycastInterface::vdtor` at 0x1061b60 (semantic, high); signature (low): `hkaRagdollRaycastInterface * vdtor(hkaRagdollRaycastInterface * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: 0x1061b60 (high); semantic signature: `hkaRagdollRaycastInterface* (hkaRagdollRaycastInterface* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_1: *const c_void,
 }
 impl hkaRagdollRaycastInterface_vtable {
     pub const ID: u64 = 239024;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `hkaRagdollRaycastInterface_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<hkaRagdollRaycastInterface_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkaRagdollRaycastInterface_vtable_vdtor>>(self.slot_0) }
+    }
 }
+/// `hkaRagdollRaycastInterface::vdtor`, slot 0: 0x1061b60 (high).
+pub type hkaRagdollRaycastInterface_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkaRagdollRaycastInterface, flags: u32) -> *mut crate::hkaRagdollRaycastInterface;
 
 /// `hkaRaycastInterface::vftable` at 0x18e9d00, id 205116 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct hkaRaycastInterface_vtable {
-    /// `hkaRaycastInterface::vdtor` at 0x54c350 (layout_inference, medium); signature (low): `hkaRaycastInterface * vdtor(hkaRaycastInterface * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `hkaRaycastInterface::vdtor` at 0x54c350 (semantic, high); signature (low): `hkaRaycastInterface * vdtor(hkaRaycastInterface * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: destructor (0x54c350) (high); semantic signature: `hkaRaycastInterface* (hkaRaycastInterface* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `hkaRaycastInterface::vfunc_1` at 0xa9dc50 (rtti, medium); signature (low): `undefined1 * vfunc_1(hkaRaycastInterface * this, undefined1 * param_1)`
+    /// `hkaRaycastInterface::CastRayFiltered` at 0xa9dc50 (semantic, high); signature (untiered): `undefined1 * CastRayFiltered(hkaRaycastInterface * this, undefined1 * param_1)`; `CastRayFiltered`: ray with a filter info; base 0xa9dc50 returns false (high); semantic signature: `hkBool* (hkaRaycastInterface* this, hkBool* hit, const hkVector4* fromWS, const hkVector4* toWS, u32 collisionFilterInfo, float* hitFraction, hkVector4* normalWS)`
     pub slot_1: *const c_void,
-    /// `hkaRaycastInterface::vfunc_2` at 0xa9dc40 (rtti, medium); signature (low): `undefined1 * vfunc_2(hkaRaycastInterface * this, undefined1 * param_1)`
+    /// `hkaRaycastInterface::CastRay` at 0xa9dc40 (semantic, high); signature (untiered): `undefined1 * CastRay(hkaRaycastInterface * this, undefined1 * param_1)`; `CastRay`: ray without a filter; base 0xa9dc40 returns false (high); semantic signature: `hkBool* (hkaRaycastInterface* this, hkBool* hit, const hkVector4* fromWS, const hkVector4* toWS, float* hitFraction, hkVector4* normalWS)`
     pub slot_2: *const c_void,
 }
 impl hkaRaycastInterface_vtable {
     pub const ID: u64 = 205116;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `hkaRaycastInterface_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<hkaRaycastInterface_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkaRaycastInterface_vtable_vdtor>>(self.slot_0) }
+    }
+    pub const SLOT_CastRayFiltered: usize = 1;
+    /// Slot 1 as `hkaRaycastInterface_vtable_CastRayFiltered`, `None` when the slot is null.
+    #[must_use]
+    pub fn CastRayFiltered(&self) -> Option<hkaRaycastInterface_vtable_CastRayFiltered> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkaRaycastInterface_vtable_CastRayFiltered>>(self.slot_1) }
+    }
+    pub const SLOT_CastRay: usize = 2;
+    /// Slot 2 as `hkaRaycastInterface_vtable_CastRay`, `None` when the slot is null.
+    #[must_use]
+    pub fn CastRay(&self) -> Option<hkaRaycastInterface_vtable_CastRay> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkaRaycastInterface_vtable_CastRay>>(self.slot_2) }
+    }
 }
+/// `hkaRaycastInterface::vdtor`, slot 0: destructor (0x54c350) (high).
+pub type hkaRaycastInterface_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkaRaycastInterface, flags: u32) -> *mut crate::hkaRaycastInterface;
+/// `hkaRaycastInterface::CastRayFiltered`, slot 1: ray with a filter info; base 0xa9dc50 returns false (high).
+pub type hkaRaycastInterface_vtable_CastRayFiltered = unsafe extern "C" fn(this: *mut crate::hkaRaycastInterface, hit: *mut c_void, fromWS: *const crate::hkVector4, toWS: *const crate::hkVector4, collisionFilterInfo: u32, hitFraction: *mut f32, normalWS: *mut crate::hkVector4) -> *mut c_void;
+/// `hkaRaycastInterface::CastRay`, slot 2: ray without a filter; base 0xa9dc40 returns false (high).
+pub type hkaRaycastInterface_vtable_CastRay = unsafe extern "C" fn(this: *mut crate::hkaRaycastInterface, hit: *mut c_void, fromWS: *const crate::hkVector4, toWS: *const crate::hkVector4, hitFraction: *mut f32, normalWS: *mut crate::hkVector4) -> *mut c_void;
 
 /// `hkaSkeleton::vftable` at 0x1a07ce0, id 232866 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct hkaSkeleton_vtable {
-    /// `hkaSkeleton::vdtor` at 0xbd9a40 (slot_propagation, medium); signature (low): `hkaSkeleton * vdtor(hkaSkeleton * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `hkaSkeleton::vdtor` at 0xbd9a40 (semantic, high); signature (low): `hkaSkeleton * vdtor(hkaSkeleton * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkaSkeleton* (hkaSkeleton* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
     pub slot_1: *const c_void,
@@ -8414,7 +8582,15 @@ pub struct hkaSkeleton_vtable {
 }
 impl hkaSkeleton_vtable {
     pub const ID: u64 = 232866;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `hkaSkeleton_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<hkaSkeleton_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkaSkeleton_vtable_vdtor>>(self.slot_0) }
+    }
 }
+/// `hkaSkeleton::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
+pub type hkaSkeleton_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkaSkeleton, flags: u32) -> *mut crate::hkaSkeleton;
 
 /// `hkaSkeletonMapper::vftable` at 0x1a09ad8, id 232947 (rtti, high); 3 slots.
 #[repr(C)]
@@ -9182,7 +9358,7 @@ impl hkbBlendingTransitionEffectInternalState_vtable {
 /// `hkbBoneIndexArray::vftable` at 0x19dd8f8, id 226191 (rtti, high); 4 slots.
 #[repr(C)]
 pub struct hkbBoneIndexArray_vtable {
-    /// `hkbBoneIndexArray::vdtor` at 0xae1ff0 (slot_propagation, medium); signature (low): `hkbBoneIndexArray * vdtor(hkbBoneIndexArray * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `hkbBoneIndexArray::vdtor` at 0xae1ff0 (semantic, high); signature (low): `hkbBoneIndexArray * vdtor(hkbBoneIndexArray * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkbBoneIndexArray* (hkbBoneIndexArray* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
     pub slot_1: *const c_void,
@@ -9193,12 +9369,20 @@ pub struct hkbBoneIndexArray_vtable {
 }
 impl hkbBoneIndexArray_vtable {
     pub const ID: u64 = 226191;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `hkbBoneIndexArray_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<hkbBoneIndexArray_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbBoneIndexArray_vtable_vdtor>>(self.slot_0) }
+    }
 }
+/// `hkbBoneIndexArray::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
+pub type hkbBoneIndexArray_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkbBoneIndexArray, flags: u32) -> *mut crate::hkbBoneIndexArray;
 
 /// `hkbBoneWeightArray::vftable` at 0x19dd950, id 226195 (rtti, high); 4 slots.
 #[repr(C)]
 pub struct hkbBoneWeightArray_vtable {
-    /// `hkbBoneWeightArray::vdtor` at 0xae20b0 (slot_propagation, medium); signature (low): `hkbBoneWeightArray * vdtor(hkbBoneWeightArray * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `hkbBoneWeightArray::vdtor` at 0xae20b0 (semantic, high); signature (low): `hkbBoneWeightArray * vdtor(hkbBoneWeightArray * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkbBoneWeightArray* (hkbBoneWeightArray* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
     pub slot_1: *const c_void,
@@ -9209,7 +9393,15 @@ pub struct hkbBoneWeightArray_vtable {
 }
 impl hkbBoneWeightArray_vtable {
     pub const ID: u64 = 226195;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `hkbBoneWeightArray_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<hkbBoneWeightArray_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbBoneWeightArray_vtable_vdtor>>(self.slot_0) }
+    }
 }
+/// `hkbBoneWeightArray::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
+pub type hkbBoneWeightArray_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkbBoneWeightArray, flags: u32) -> *mut crate::hkbBoneWeightArray;
 
 /// `hkbBoolVariableSequencedData::vftable` at 0x19e2610, id 226676 (rtti, high); 4 slots.
 #[repr(C)]
@@ -9387,7 +9579,7 @@ impl hkbCharacterControllerSceneModifier_vtable {
 /// `hkbCharacterData::vftable` at 0x19e4188, id 226872 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct hkbCharacterData_vtable {
-    /// `hkbCharacterData::vdtor` at 0xb00e60 (slot_propagation, medium); signature (low): `hkbCharacterData * vdtor(hkbCharacterData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `hkbCharacterData::vdtor` at 0xb00e60 (semantic, high); signature (low): `hkbCharacterData * vdtor(hkbCharacterData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkbCharacterData* (hkbCharacterData* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
     pub slot_1: *const c_void,
@@ -9396,7 +9588,15 @@ pub struct hkbCharacterData_vtable {
 }
 impl hkbCharacterData_vtable {
     pub const ID: u64 = 226872;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `hkbCharacterData_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<hkbCharacterData_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbCharacterData_vtable_vdtor>>(self.slot_0) }
+    }
 }
+/// `hkbCharacterData::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
+pub type hkbCharacterData_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkbCharacterData, flags: u32) -> *mut crate::hkbCharacterData;
 
 /// `hkbCharacterInfo::vftable` at 0x1a95990, id 241289 (rtti, high); 3 slots.
 #[repr(C)]
@@ -9415,7 +9615,7 @@ impl hkbCharacterInfo_vtable {
 /// `hkbCharacterSetup::vftable` at 0x19e4148, id 226868 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct hkbCharacterSetup_vtable {
-    /// `hkbCharacterSetup::vdtor` at 0xb000d0 (slot_propagation, medium); signature (low): `hkbCharacterSetup * vdtor(hkbCharacterSetup * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `hkbCharacterSetup::vdtor` at 0xb000d0 (semantic, high); signature (low): `hkbCharacterSetup * vdtor(hkbCharacterSetup * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkbCharacterSetup* (hkbCharacterSetup* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
     pub slot_1: *const c_void,
@@ -9424,7 +9624,15 @@ pub struct hkbCharacterSetup_vtable {
 }
 impl hkbCharacterSetup_vtable {
     pub const ID: u64 = 226868;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `hkbCharacterSetup_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<hkbCharacterSetup_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbCharacterSetup_vtable_vdtor>>(self.slot_0) }
+    }
 }
+/// `hkbCharacterSetup::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
+pub type hkbCharacterSetup_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkbCharacterSetup, flags: u32) -> *mut crate::hkbCharacterSetup;
 
 /// `hkbCharacterSkinInfo::vftable` at 0x1a959d0, id 241293 (rtti, high); 3 slots.
 #[repr(C)]
@@ -9983,7 +10191,7 @@ impl hkbDampingModifierInternalState_vtable {
 /// `hkbDefaultRaycastInterface::vftable` at 0x19e5688, id 227029 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct hkbDefaultRaycastInterface_vtable {
-    /// `hkbDefaultRaycastInterface::vdtor` at 0xb2a9b0 (layout_inference, medium); signature (low): `hkbDefaultRaycastInterface * vdtor(hkbDefaultRaycastInterface * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `hkbDefaultRaycastInterface::vdtor` at 0xb2a9b0 (semantic, high); signature (low): `hkbDefaultRaycastInterface * vdtor(hkbDefaultRaycastInterface * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkbDefaultRaycastInterface* (hkbDefaultRaycastInterface* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
     pub slot_1: *const c_void,
@@ -9992,7 +10200,15 @@ pub struct hkbDefaultRaycastInterface_vtable {
 }
 impl hkbDefaultRaycastInterface_vtable {
     pub const ID: u64 = 227029;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `hkbDefaultRaycastInterface_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<hkbDefaultRaycastInterface_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbDefaultRaycastInterface_vtable_vdtor>>(self.slot_0) }
+    }
 }
+/// `hkbDefaultRaycastInterface::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
+pub type hkbDefaultRaycastInterface_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkbDefaultRaycastInterface, flags: u32) -> *mut crate::hkbDefaultRaycastInterface;
 
 /// `hkbDefaultRaycastInterface::vftable_10` at 0x19e56a8, id 227031 (rtti, high); 3 slots.
 #[repr(C)]
@@ -10001,7 +10217,7 @@ pub struct hkbDefaultRaycastInterface_vtable_10 {
     pub slot_0: *const c_void,
     /// `hkbDefaultRaycastInterface::hkaRaycastInterface_vfunc_1` at 0xb2a690 (rtti, high); signature (low): `undefined1 * hkaRaycastInterface_vfunc_1(hkbDefaultRaycastInterface * this, undefined1 * param_1, float * param_2, float * param_3, undefined4 param_4, float * param_5, float * param_6)`
     pub slot_1: *const c_void,
-    /// `hkaRaycastInterface::vfunc_2` at 0xa9dc40 (rtti, medium); signature (low): `undefined1 * vfunc_2(hkaRaycastInterface * this, undefined1 * param_1)`
+    /// `hkaRaycastInterface::CastRay` at 0xa9dc40 (semantic, high); signature (untiered): `undefined1 * CastRay(hkaRaycastInterface * this, undefined1 * param_1)`
     pub slot_2: *const c_void,
 }
 impl hkbDefaultRaycastInterface_vtable_10 {
@@ -10083,7 +10299,7 @@ impl hkbDelayedModifierInternalState_vtable {
 /// `hkbDetectCloseToGroundModifier::vftable` at 0x19dfac8, id 226420 (rtti, high); 25 slots.
 #[repr(C)]
 pub struct hkbDetectCloseToGroundModifier_vtable {
-    /// `hkbDetectCloseToGroundModifier::vdtor` at 0xae2d10 (slot_propagation, medium); signature (low): `hkbDetectCloseToGroundModifier * vdtor(hkbDetectCloseToGroundModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `hkbDetectCloseToGroundModifier::vdtor` at 0xae2d10 (semantic, high); signature (low): `hkbDetectCloseToGroundModifier * vdtor(hkbDetectCloseToGroundModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkbDetectCloseToGroundModifier* (hkbDetectCloseToGroundModifier* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
     pub slot_1: *const c_void,
@@ -10091,9 +10307,9 @@ pub struct hkbDetectCloseToGroundModifier_vtable {
     pub slot_2: *const c_void,
     /// `hkbBindable::vfunc_3` at 0xadba10 (rtti, medium); signature (low): `undefined vfunc_3(hkbBindable * this, undefined8 * param_1)`
     pub slot_3: *const c_void,
-    /// `hkbDetectCloseToGroundModifier::vfunc_4` at 0xb07930 (rtti, high); signature (high): `undefined vfunc_4(hkbDetectCloseToGroundModifier * this)`
+    /// `hkbDetectCloseToGroundModifier::Activate` at 0xb07930 (semantic, high); signature (untiered): `undefined Activate(hkbDetectCloseToGroundModifier * this)`; `Activate`: resets runtime state when the node becomes active (high); semantic signature: `void (hkbDetectCloseToGroundModifier* this, const hkbContext* ctx)`
     pub slot_4: *const c_void,
-    /// `hkbDetectCloseToGroundModifier::vfunc_5` at 0xb07940 (rtti, high); signature (low): `undefined vfunc_5(hkbDetectCloseToGroundModifier * this, longlong * param_1)`
+    /// `hkbDetectCloseToGroundModifier::Update` at 0xb07940 (semantic, high); signature (untiered): `undefined Update(hkbDetectCloseToGroundModifier * this, longlong * param_1)`; `Update`: per-frame update before generate (high); semantic signature: `void (hkbDetectCloseToGroundModifier* this, const hkbContext* ctx, float timestep)`
     pub slot_5: *const c_void,
     /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -10103,19 +10319,19 @@ pub struct hkbDetectCloseToGroundModifier_vtable {
     pub slot_8: *const c_void,
     /// `hkbNode::vfunc_9` at 0xad2110 (rtti, medium); signature (low): `undefined vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `hkbDetectCloseToGroundModifier::vfunc_10` at 0xb07a30 (rtti, high); signature (low): `ulonglong vfunc_10(hkbDetectCloseToGroundModifier * this, ulonglong * param_1)`
+    /// `hkbDetectCloseToGroundModifier::IsValid` at 0xb07a30 (semantic, high); signature (untiered): `ulonglong IsValid(hkbDetectCloseToGroundModifier * this, ulonglong * param_1)`; `IsValid`: validates the node's data, writing an error string (high); semantic signature: `bool (hkbDetectCloseToGroundModifier* this, const hkbCharacter* character, hkStringPtr* errorString)`
     pub slot_10: *const c_void,
     /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
     pub slot_11: *const c_void,
-    /// `hkbDetectCloseToGroundModifier::vfunc_12` at 0xb07af0 (rtti, high); signature (high): `undefined vfunc_12(hkbDetectCloseToGroundModifier * this)`
+    /// `hkbDetectCloseToGroundModifier::CloneNode` at 0xb07af0 (semantic, high); signature (untiered): `undefined CloneNode(hkbDetectCloseToGroundModifier * this)`; `CloneNode`: allocates a copy of the node (size argument = object size) through the copy constructor (high); semantic signature: `hkbDetectCloseToGroundModifier* (hkbDetectCloseToGroundModifier* this)`
     pub slot_12: *const c_void,
-    /// `hkbDetectCloseToGroundModifier::vfunc_13` at 0xb07d00 (rtti, high); signature (low): `undefined vfunc_13(void)`
+    /// `hkbDetectCloseToGroundModifier::CreateInternalState` at 0xb07d00 (semantic, high); signature (untiered): `undefined CreateInternalState(void)`; `CreateInternalState`: allocates the class's InternalState object (high); semantic signature: `hkReferencedObject* (hkbDetectCloseToGroundModifier* this)`
     pub slot_13: *const c_void,
-    /// `hkbDetectCloseToGroundModifier::vfunc_14` at 0xb07d40 (rtti, high); signature (low): `undefined vfunc_14(hkbDetectCloseToGroundModifier * this, longlong param_1)`
+    /// `hkbDetectCloseToGroundModifier::GetInternalState` at 0xb07d40 (semantic, high); signature (untiered): `undefined GetInternalState(hkbDetectCloseToGroundModifier * this, longlong param_1)`; `GetInternalState`: copies runtime members into the state object (high); semantic signature: `void (hkbDetectCloseToGroundModifier* this, hkReferencedObject* state)`
     pub slot_14: *const c_void,
     /// `hkbNode::vfunc_15` at 0xad2130 (rtti, medium); signature (low): `undefined vfunc_15(void)`
     pub slot_15: *const c_void,
-    /// `hkbDetectCloseToGroundModifier::vfunc_16` at 0xb07d50 (rtti, high); signature (low): `undefined vfunc_16(hkbDetectCloseToGroundModifier * this, longlong param_1)`
+    /// `hkbDetectCloseToGroundModifier::SetInternalState` at 0xb07d50 (semantic, high); signature (untiered): `undefined SetInternalState(hkbDetectCloseToGroundModifier * this, longlong param_1)`; `SetInternalState`: copies the state object back into the members (high); semantic signature: `void (hkbDetectCloseToGroundModifier* this, const hkReferencedObject* state)`
     pub slot_16: *const c_void,
     /// `hkbNode::vfunc_17` at 0xad21c0 (rtti, medium); signature (low): `undefined vfunc_17(void)`
     pub slot_17: *const c_void,
@@ -10129,19 +10345,84 @@ pub struct hkbDetectCloseToGroundModifier_vtable {
     pub slot_21: *const c_void,
     /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
     pub slot_22: *const c_void,
-    /// `hkbDetectCloseToGroundModifier::vfunc_23` at 0xb07b40 (rtti, high); signature (low): `undefined vfunc_23(hkbDetectCloseToGroundModifier * this, longlong * param_1, longlong * param_2)`
+    /// `hkbDetectCloseToGroundModifier::Modify` at 0xb07b40 (semantic, medium); signature (untiered): `undefined Modify(hkbDetectCloseToGroundModifier * this, longlong * param_1, longlong * param_2)`; `Modify`: 0xb07b40: casts down from the bone (animBoneIndex, or the ragdoll body of boneIndex through GetRagdollInstance) using GetCharacterRaycastInterface 0xad7f70 and GetWorldUpVector 0xacaea0; sets isCloseToGround and sends closeToGroundEvent (medium); semantic signature: `void (hkbDetectCloseToGroundModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
     pub slot_23: *const c_void,
     /// `hkbModifier::vfunc_24` at 0xae7000 (rtti, medium); signature (low): `undefined vfunc_24(void)`
     pub slot_24: *const c_void,
 }
 impl hkbDetectCloseToGroundModifier_vtable {
     pub const ID: u64 = 226420;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `hkbDetectCloseToGroundModifier_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<hkbDetectCloseToGroundModifier_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbDetectCloseToGroundModifier_vtable_vdtor>>(self.slot_0) }
+    }
+    pub const SLOT_Activate: usize = 4;
+    /// Slot 4 as `hkbDetectCloseToGroundModifier_vtable_Activate`, `None` when the slot is null.
+    #[must_use]
+    pub fn Activate(&self) -> Option<hkbDetectCloseToGroundModifier_vtable_Activate> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbDetectCloseToGroundModifier_vtable_Activate>>(self.slot_4) }
+    }
+    pub const SLOT_Update: usize = 5;
+    /// Slot 5 as `hkbDetectCloseToGroundModifier_vtable_Update`, `None` when the slot is null.
+    #[must_use]
+    pub fn Update(&self) -> Option<hkbDetectCloseToGroundModifier_vtable_Update> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbDetectCloseToGroundModifier_vtable_Update>>(self.slot_5) }
+    }
+    pub const SLOT_IsValid: usize = 10;
+    /// Slot 10 as `hkbDetectCloseToGroundModifier_vtable_IsValid`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsValid(&self) -> Option<hkbDetectCloseToGroundModifier_vtable_IsValid> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbDetectCloseToGroundModifier_vtable_IsValid>>(self.slot_10) }
+    }
+    pub const SLOT_CloneNode: usize = 12;
+    /// Slot 12 as `hkbDetectCloseToGroundModifier_vtable_CloneNode`, `None` when the slot is null.
+    #[must_use]
+    pub fn CloneNode(&self) -> Option<hkbDetectCloseToGroundModifier_vtable_CloneNode> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbDetectCloseToGroundModifier_vtable_CloneNode>>(self.slot_12) }
+    }
+    pub const SLOT_CreateInternalState: usize = 13;
+    /// Slot 13 as `hkbDetectCloseToGroundModifier_vtable_CreateInternalState`, `None` when the slot is null.
+    #[must_use]
+    pub fn CreateInternalState(&self) -> Option<hkbDetectCloseToGroundModifier_vtable_CreateInternalState> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbDetectCloseToGroundModifier_vtable_CreateInternalState>>(self.slot_13) }
+    }
+    pub const SLOT_GetInternalState: usize = 14;
+    /// Slot 14 as `hkbDetectCloseToGroundModifier_vtable_GetInternalState`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetInternalState(&self) -> Option<hkbDetectCloseToGroundModifier_vtable_GetInternalState> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbDetectCloseToGroundModifier_vtable_GetInternalState>>(self.slot_14) }
+    }
+    pub const SLOT_SetInternalState: usize = 16;
+    /// Slot 16 as `hkbDetectCloseToGroundModifier_vtable_SetInternalState`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetInternalState(&self) -> Option<hkbDetectCloseToGroundModifier_vtable_SetInternalState> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbDetectCloseToGroundModifier_vtable_SetInternalState>>(self.slot_16) }
+    }
+    pub const SLOT_Modify: usize = 23;
 }
+/// `hkbDetectCloseToGroundModifier::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
+pub type hkbDetectCloseToGroundModifier_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkbDetectCloseToGroundModifier, flags: u32) -> *mut crate::hkbDetectCloseToGroundModifier;
+/// `hkbDetectCloseToGroundModifier::Activate`, slot 4: resets runtime state when the node becomes active (high).
+pub type hkbDetectCloseToGroundModifier_vtable_Activate = unsafe extern "C" fn(this: *mut crate::hkbDetectCloseToGroundModifier, ctx: *const c_void);
+/// `hkbDetectCloseToGroundModifier::Update`, slot 5: per-frame update before generate (high).
+pub type hkbDetectCloseToGroundModifier_vtable_Update = unsafe extern "C" fn(this: *mut crate::hkbDetectCloseToGroundModifier, ctx: *const c_void, timestep: f32);
+/// `hkbDetectCloseToGroundModifier::IsValid`, slot 10: validates the node's data, writing an error string (high).
+pub type hkbDetectCloseToGroundModifier_vtable_IsValid = unsafe extern "C" fn(this: *mut crate::hkbDetectCloseToGroundModifier, character: *const crate::hkbCharacter, errorString: *mut c_void) -> bool;
+/// `hkbDetectCloseToGroundModifier::CloneNode`, slot 12: allocates a copy of the node (size argument = object size) through the copy constructor (high).
+pub type hkbDetectCloseToGroundModifier_vtable_CloneNode = unsafe extern "C" fn(this: *mut crate::hkbDetectCloseToGroundModifier) -> *mut crate::hkbDetectCloseToGroundModifier;
+/// `hkbDetectCloseToGroundModifier::CreateInternalState`, slot 13: allocates the class's InternalState object (high).
+pub type hkbDetectCloseToGroundModifier_vtable_CreateInternalState = unsafe extern "C" fn(this: *mut crate::hkbDetectCloseToGroundModifier) -> *mut crate::hkReferencedObject;
+/// `hkbDetectCloseToGroundModifier::GetInternalState`, slot 14: copies runtime members into the state object (high).
+pub type hkbDetectCloseToGroundModifier_vtable_GetInternalState = unsafe extern "C" fn(this: *mut crate::hkbDetectCloseToGroundModifier, state: *mut crate::hkReferencedObject);
+/// `hkbDetectCloseToGroundModifier::SetInternalState`, slot 16: copies the state object back into the members (high).
+pub type hkbDetectCloseToGroundModifier_vtable_SetInternalState = unsafe extern "C" fn(this: *mut crate::hkbDetectCloseToGroundModifier, state: *const crate::hkReferencedObject);
 
 /// `hkbDetectCloseToGroundModifierInternalState::vftable` at 0x19dfbd8, id 226424 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct hkbDetectCloseToGroundModifierInternalState_vtable {
-    /// `hkbDetectCloseToGroundModifierInternalState::vdtor` at 0xae2db0 (layout_inference, medium); signature (low): `hkbDetectCloseToGroundModifierInternalState * vdtor(hkbDetectCloseToGroundModifierInternalState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `hkbDetectCloseToGroundModifierInternalState::vdtor` at 0xae2db0 (semantic, high); signature (low): `hkbDetectCloseToGroundModifierInternalState * vdtor(hkbDetectCloseToGroundModifierInternalState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkbDetectCloseToGroundModifierInternalState* (hkbDetectCloseToGroundModifierInternalState* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
     pub slot_1: *const c_void,
@@ -10150,7 +10431,15 @@ pub struct hkbDetectCloseToGroundModifierInternalState_vtable {
 }
 impl hkbDetectCloseToGroundModifierInternalState_vtable {
     pub const ID: u64 = 226424;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `hkbDetectCloseToGroundModifierInternalState_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<hkbDetectCloseToGroundModifierInternalState_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbDetectCloseToGroundModifierInternalState_vtable_vdtor>>(self.slot_0) }
+    }
 }
+/// `hkbDetectCloseToGroundModifierInternalState::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
+pub type hkbDetectCloseToGroundModifierInternalState_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkbDetectCloseToGroundModifierInternalState, flags: u32) -> *mut crate::hkbDetectCloseToGroundModifierInternalState;
 
 /// `hkbEvaluateExpressionModifier::vftable` at 0x19dfc78, id 226430 (rtti, high); 25 slots.
 #[repr(C)]
@@ -10531,11 +10820,11 @@ impl hkbExpressionDataArray_vtable {
 /// `hkbExtractRagdollPoseModifier::vftable` at 0x19e1538, id 226574 (rtti, high); 25 slots.
 #[repr(C)]
 pub struct hkbExtractRagdollPoseModifier_vtable {
-    /// `hkbExtractRagdollPoseModifier::vdtor` at 0xae3630 (slot_propagation, medium); signature (low): `hkbExtractRagdollPoseModifier * vdtor(hkbExtractRagdollPoseModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `hkbExtractRagdollPoseModifier::vdtor` at 0xae3630 (semantic, high); signature (low): `hkbExtractRagdollPoseModifier * vdtor(hkbExtractRagdollPoseModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkbExtractRagdollPoseModifier* (hkbExtractRagdollPoseModifier* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
     pub slot_1: *const c_void,
-    /// `hkbExtractRagdollPoseModifier::vfunc_2` at 0xb15c60 (rtti, high); signature (untiered): `undefined vfunc_2(hkbExtractRagdollPoseModifier * this, undefined8 param_1, undefined * param_2)`
+    /// `hkbExtractRagdollPoseModifier::VisitMembers` at 0xb15c60 (semantic, low); signature (untiered): `undefined VisitMembers(hkbExtractRagdollPoseModifier * this, undefined8 param_1, undefined * param_2)`; `VisitMembers`: hkReferencedObject default 0xaa2c40 walks the members along the class chain; overridden where the object owns extra references (low); semantic signature: `void (hkbExtractRagdollPoseModifier* this, void* visitor, const hkClass* cls)`
     pub slot_2: *const c_void,
     /// `hkbBindable::vfunc_3` at 0xadba10 (rtti, medium); signature (low): `undefined vfunc_3(hkbBindable * this, undefined8 * param_1)`
     pub slot_3: *const c_void,
@@ -10551,11 +10840,11 @@ pub struct hkbExtractRagdollPoseModifier_vtable {
     pub slot_8: *const c_void,
     /// `hkbNode::vfunc_9` at 0xad2110 (rtti, medium); signature (low): `undefined vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `hkbExtractRagdollPoseModifier::vfunc_10` at 0xb15c70 (rtti, high); signature (low): `undefined8 vfunc_10(hkbExtractRagdollPoseModifier * this, ulonglong * param_1)`
+    /// `hkbExtractRagdollPoseModifier::IsValid` at 0xb15c70 (semantic, high); signature (untiered): `undefined8 IsValid(hkbExtractRagdollPoseModifier * this, ulonglong * param_1)`; `IsValid`: validates the node's data, writing an error string (high); semantic signature: `bool (hkbExtractRagdollPoseModifier* this, const hkbCharacter* character, hkStringPtr* errorString)`
     pub slot_10: *const c_void,
     /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
     pub slot_11: *const c_void,
-    /// `hkbExtractRagdollPoseModifier::vfunc_12` at 0xb15de0 (rtti, high); signature (high): `hkbExtractRagdollPoseModifier * vfunc_12(hkbExtractRagdollPoseModifier * this)`
+    /// `hkbExtractRagdollPoseModifier::CloneNode` at 0xb15de0 (semantic, high); signature (untiered): `hkbExtractRagdollPoseModifier * CloneNode(hkbExtractRagdollPoseModifier * this)`; `CloneNode`: allocates a copy of the node (size argument = object size) through the copy constructor (high); semantic signature: `hkbExtractRagdollPoseModifier* (hkbExtractRagdollPoseModifier* this)`
     pub slot_12: *const c_void,
     /// `hkbNode::vfunc_13` at 0xadbed0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
     pub slot_13: *const c_void,
@@ -10577,19 +10866,52 @@ pub struct hkbExtractRagdollPoseModifier_vtable {
     pub slot_21: *const c_void,
     /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
     pub slot_22: *const c_void,
-    /// `hkbExtractRagdollPoseModifier::vfunc_23` at 0xb15e50 (rtti, high); signature (low): `undefined vfunc_23(hkbExtractRagdollPoseModifier * this, longlong * param_1)`
+    /// `hkbExtractRagdollPoseModifier::Modify` at 0xb15e50 (semantic, high); signature (untiered): `undefined Modify(hkbExtractRagdollPoseModifier * this, longlong * param_1)`; `Modify`: applies the modifier to the generated pose/tracks (high); semantic signature: `void (hkbExtractRagdollPoseModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
     pub slot_23: *const c_void,
     /// `hkbModifier::vfunc_24` at 0xae7000 (rtti, medium); signature (low): `undefined vfunc_24(void)`
     pub slot_24: *const c_void,
 }
 impl hkbExtractRagdollPoseModifier_vtable {
     pub const ID: u64 = 226574;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `hkbExtractRagdollPoseModifier_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<hkbExtractRagdollPoseModifier_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbExtractRagdollPoseModifier_vtable_vdtor>>(self.slot_0) }
+    }
+    pub const SLOT_VisitMembers: usize = 2;
+    pub const SLOT_IsValid: usize = 10;
+    /// Slot 10 as `hkbExtractRagdollPoseModifier_vtable_IsValid`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsValid(&self) -> Option<hkbExtractRagdollPoseModifier_vtable_IsValid> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbExtractRagdollPoseModifier_vtable_IsValid>>(self.slot_10) }
+    }
+    pub const SLOT_CloneNode: usize = 12;
+    /// Slot 12 as `hkbExtractRagdollPoseModifier_vtable_CloneNode`, `None` when the slot is null.
+    #[must_use]
+    pub fn CloneNode(&self) -> Option<hkbExtractRagdollPoseModifier_vtable_CloneNode> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbExtractRagdollPoseModifier_vtable_CloneNode>>(self.slot_12) }
+    }
+    pub const SLOT_Modify: usize = 23;
+    /// Slot 23 as `hkbExtractRagdollPoseModifier_vtable_Modify`, `None` when the slot is null.
+    #[must_use]
+    pub fn Modify(&self) -> Option<hkbExtractRagdollPoseModifier_vtable_Modify> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbExtractRagdollPoseModifier_vtable_Modify>>(self.slot_23) }
+    }
 }
+/// `hkbExtractRagdollPoseModifier::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
+pub type hkbExtractRagdollPoseModifier_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkbExtractRagdollPoseModifier, flags: u32) -> *mut crate::hkbExtractRagdollPoseModifier;
+/// `hkbExtractRagdollPoseModifier::IsValid`, slot 10: validates the node's data, writing an error string (high).
+pub type hkbExtractRagdollPoseModifier_vtable_IsValid = unsafe extern "C" fn(this: *mut crate::hkbExtractRagdollPoseModifier, character: *const crate::hkbCharacter, errorString: *mut c_void) -> bool;
+/// `hkbExtractRagdollPoseModifier::CloneNode`, slot 12: allocates a copy of the node (size argument = object size) through the copy constructor (high).
+pub type hkbExtractRagdollPoseModifier_vtable_CloneNode = unsafe extern "C" fn(this: *mut crate::hkbExtractRagdollPoseModifier) -> *mut crate::hkbExtractRagdollPoseModifier;
+/// `hkbExtractRagdollPoseModifier::Modify`, slot 23: applies the modifier to the generated pose/tracks (high).
+pub type hkbExtractRagdollPoseModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbExtractRagdollPoseModifier, ctx: *const c_void, inOut: *mut c_void);
 
 /// `hkbFootIkControlsModifier::vftable` at 0x19e03e8, id 226476 (rtti, high); 25 slots.
 #[repr(C)]
 pub struct hkbFootIkControlsModifier_vtable {
-    /// `hkbFootIkControlsModifier::vdtor` at 0xae36c0 (slot_propagation, medium); signature (low): `hkbFootIkControlsModifier * vdtor(hkbFootIkControlsModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `hkbFootIkControlsModifier::vdtor` at 0xae36c0 (semantic, high); signature (low): `hkbFootIkControlsModifier * vdtor(hkbFootIkControlsModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkbFootIkControlsModifier* (hkbFootIkControlsModifier* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
     pub slot_1: *const c_void,
@@ -10597,9 +10919,9 @@ pub struct hkbFootIkControlsModifier_vtable {
     pub slot_2: *const c_void,
     /// `hkbBindable::vfunc_3` at 0xadba10 (rtti, medium); signature (low): `undefined vfunc_3(hkbBindable * this, undefined8 * param_1)`
     pub slot_3: *const c_void,
-    /// `hkbFootIkControlsModifier::vfunc_4` at 0xb0a710 (rtti, high); signature (low): `undefined vfunc_4(hkbFootIkControlsModifier * this, longlong * param_1)`
+    /// `hkbFootIkControlsModifier::Activate` at 0xb0a710 (semantic, high); signature (untiered): `undefined Activate(hkbFootIkControlsModifier * this, longlong * param_1)`; `Activate`: 0xb0a710: copies the character's foot IK driver legs (character+0x40 -> legs +0x10) into this->legs (high); semantic signature: `void (hkbFootIkControlsModifier* this, const hkbContext* ctx)`
     pub slot_4: *const c_void,
-    /// `hkbFootIkControlsModifier::vfunc_5` at 0xb0a750 (rtti, high); signature (low): `undefined vfunc_5(hkbFootIkControlsModifier * this, longlong * param_1)`
+    /// `hkbFootIkControlsModifier::Update` at 0xb0a750 (semantic, high); signature (untiered): `undefined Update(hkbFootIkControlsModifier * this, longlong * param_1)`; `Update`: 0xb0a750: same copy, then queues each leg's ungroundedEvent when isPlantedMS && !hitSomething (high); semantic signature: `void (hkbFootIkControlsModifier* this, const hkbContext* ctx)`
     pub slot_5: *const c_void,
     /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -10613,7 +10935,7 @@ pub struct hkbFootIkControlsModifier_vtable {
     pub slot_10: *const c_void,
     /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
     pub slot_11: *const c_void,
-    /// `hkbFootIkControlsModifier::vfunc_12` at 0xb0a6a0 (rtti, high); signature (high): `hkbFootIkControlsModifier * vfunc_12(hkbFootIkControlsModifier * this)`
+    /// `hkbFootIkControlsModifier::CloneNode` at 0xb0a6a0 (semantic, high); signature (untiered): `hkbFootIkControlsModifier * CloneNode(hkbFootIkControlsModifier * this)`; `CloneNode`: 0xb0a6a0: shares itself (cloneState 3) when no binding set, else allocates 0xb0 and copies (high); semantic signature: `hkbFootIkControlsModifier* (hkbFootIkControlsModifier* this)`
     pub slot_12: *const c_void,
     /// `hkbNode::vfunc_13` at 0xadbed0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
     pub slot_13: *const c_void,
@@ -10635,19 +10957,52 @@ pub struct hkbFootIkControlsModifier_vtable {
     pub slot_21: *const c_void,
     /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
     pub slot_22: *const c_void,
-    /// `hkbFootIkControlsModifier::vfunc_23` at 0xb0a8d0 (rtti, high); signature (low): `undefined vfunc_23(hkbFootIkControlsModifier * this, longlong * param_1, longlong * param_2)`
+    /// `hkbFootIkControlsModifier::Modify` at 0xb0a8d0 (semantic, medium); signature (untiered): `undefined Modify(hkbFootIkControlsModifier * this, longlong * param_1, longlong * param_2)`; `Modify`: 0xb0a8d0 'TtFootIkControlsModifier': writes controlData.gains into the generator output's foot IK track (track 11) and reads the driver's errorOutTranslation / alignWithGroundRotation back (GetField10Address_3 on the driver) (medium); semantic signature: `void (hkbFootIkControlsModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
     pub slot_23: *const c_void,
     /// `hkbModifier::vfunc_24` at 0xae7000 (rtti, medium); signature (low): `undefined vfunc_24(void)`
     pub slot_24: *const c_void,
 }
 impl hkbFootIkControlsModifier_vtable {
     pub const ID: u64 = 226476;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `hkbFootIkControlsModifier_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<hkbFootIkControlsModifier_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbFootIkControlsModifier_vtable_vdtor>>(self.slot_0) }
+    }
+    pub const SLOT_Activate: usize = 4;
+    /// Slot 4 as `hkbFootIkControlsModifier_vtable_Activate`, `None` when the slot is null.
+    #[must_use]
+    pub fn Activate(&self) -> Option<hkbFootIkControlsModifier_vtable_Activate> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbFootIkControlsModifier_vtable_Activate>>(self.slot_4) }
+    }
+    pub const SLOT_Update: usize = 5;
+    /// Slot 5 as `hkbFootIkControlsModifier_vtable_Update`, `None` when the slot is null.
+    #[must_use]
+    pub fn Update(&self) -> Option<hkbFootIkControlsModifier_vtable_Update> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbFootIkControlsModifier_vtable_Update>>(self.slot_5) }
+    }
+    pub const SLOT_CloneNode: usize = 12;
+    /// Slot 12 as `hkbFootIkControlsModifier_vtable_CloneNode`, `None` when the slot is null.
+    #[must_use]
+    pub fn CloneNode(&self) -> Option<hkbFootIkControlsModifier_vtable_CloneNode> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbFootIkControlsModifier_vtable_CloneNode>>(self.slot_12) }
+    }
+    pub const SLOT_Modify: usize = 23;
 }
+/// `hkbFootIkControlsModifier::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
+pub type hkbFootIkControlsModifier_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkbFootIkControlsModifier, flags: u32) -> *mut crate::hkbFootIkControlsModifier;
+/// `hkbFootIkControlsModifier::Activate`, slot 4: 0xb0a710: copies the character's foot IK driver legs (character+0x40 -> legs +0x10) into this->legs (high).
+pub type hkbFootIkControlsModifier_vtable_Activate = unsafe extern "C" fn(this: *mut crate::hkbFootIkControlsModifier, ctx: *const c_void);
+/// `hkbFootIkControlsModifier::Update`, slot 5: 0xb0a750: same copy, then queues each leg's ungroundedEvent when isPlantedMS && !hitSomething (high).
+pub type hkbFootIkControlsModifier_vtable_Update = unsafe extern "C" fn(this: *mut crate::hkbFootIkControlsModifier, ctx: *const c_void);
+/// `hkbFootIkControlsModifier::CloneNode`, slot 12: 0xb0a6a0: shares itself (cloneState 3) when no binding set, else allocates 0xb0 and copies (high).
+pub type hkbFootIkControlsModifier_vtable_CloneNode = unsafe extern "C" fn(this: *mut crate::hkbFootIkControlsModifier) -> *mut crate::hkbFootIkControlsModifier;
 
 /// `hkbFootIkDriver::vftable` at 0x19c0f18, id 220334 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct hkbFootIkDriver_vtable {
-    /// `hkbFootIkDriver::vdtor` at 0xad7080 (slot_propagation, medium); signature (low): `hkbFootIkDriver * vdtor(hkbFootIkDriver * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `hkbFootIkDriver::vdtor` at 0xad7080 (semantic, high); signature (low): `hkbFootIkDriver * vdtor(hkbFootIkDriver * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkbFootIkDriver* (hkbFootIkDriver* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
     pub slot_1: *const c_void,
@@ -10656,12 +11011,20 @@ pub struct hkbFootIkDriver_vtable {
 }
 impl hkbFootIkDriver_vtable {
     pub const ID: u64 = 220334;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `hkbFootIkDriver_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<hkbFootIkDriver_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbFootIkDriver_vtable_vdtor>>(self.slot_0) }
+    }
 }
+/// `hkbFootIkDriver::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
+pub type hkbFootIkDriver_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkbFootIkDriver, flags: u32) -> *mut crate::hkbFootIkDriver;
 
 /// `hkbFootIkDriverInfo::vftable` at 0x19dd9e8, id 226203 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct hkbFootIkDriverInfo_vtable {
-    /// `hkbFootIkDriverInfo::vdtor` at 0xae3740 (layout_inference, medium); signature (low): `hkbFootIkDriverInfo * vdtor(hkbFootIkDriverInfo * this, uint param_1, ulonglong param_2, undefined8 param_3)`
+    /// `hkbFootIkDriverInfo::vdtor` at 0xae3740 (semantic, high); signature (low): `hkbFootIkDriverInfo * vdtor(hkbFootIkDriverInfo * this, uint param_1, ulonglong param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkbFootIkDriverInfo* (hkbFootIkDriverInfo* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
     pub slot_1: *const c_void,
@@ -10670,12 +11033,20 @@ pub struct hkbFootIkDriverInfo_vtable {
 }
 impl hkbFootIkDriverInfo_vtable {
     pub const ID: u64 = 226203;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `hkbFootIkDriverInfo_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<hkbFootIkDriverInfo_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbFootIkDriverInfo_vtable_vdtor>>(self.slot_0) }
+    }
 }
+/// `hkbFootIkDriverInfo::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
+pub type hkbFootIkDriverInfo_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkbFootIkDriverInfo, flags: u32) -> *mut crate::hkbFootIkDriverInfo;
 
 /// `hkbFootIkModifier::vftable` at 0x19e0558, id 226484 (rtti, high); 25 slots.
 #[repr(C)]
 pub struct hkbFootIkModifier_vtable {
-    /// `hkbFootIkModifier::vdtor` at 0xae3810 (slot_propagation, medium); signature (low): `hkbFootIkModifier * vdtor(hkbFootIkModifier * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `hkbFootIkModifier::vdtor` at 0xae3810 (semantic, high); signature (low): `hkbFootIkModifier * vdtor(hkbFootIkModifier * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkbFootIkModifier* (hkbFootIkModifier* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
     pub slot_1: *const c_void,
@@ -10683,23 +11054,23 @@ pub struct hkbFootIkModifier_vtable {
     pub slot_2: *const c_void,
     /// `hkbBindable::vfunc_3` at 0xadba10 (rtti, medium); signature (low): `undefined vfunc_3(hkbBindable * this, undefined8 * param_1)`
     pub slot_3: *const c_void,
-    /// `hkbFootIkModifier::vfunc_4` at 0xb0aee0 (rtti, high); signature (high): `undefined vfunc_4(hkbFootIkModifier * this)`
+    /// `hkbFootIkModifier::Activate` at 0xb0aee0 (semantic, high); signature (untiered): `undefined Activate(hkbFootIkModifier * this)`; `Activate`: resets runtime state when the node becomes active (high); semantic signature: `void (hkbFootIkModifier* this, const hkbContext* ctx)`
     pub slot_4: *const c_void,
-    /// `hkbFootIkModifier::vfunc_5` at 0xb0b0a0 (rtti, high); signature (low): `undefined vfunc_5(hkbFootIkModifier * this, longlong * param_2, undefined4 param_3)`
+    /// `hkbFootIkModifier::Update` at 0xb0b0a0 (semantic, high); signature (untiered): `undefined Update(hkbFootIkModifier * this, longlong * param_2, undefined4 param_3)`; `Update`: per-frame update before generate (high); semantic signature: `void (hkbFootIkModifier* this, const hkbContext* ctx, float timestep)`
     pub slot_5: *const c_void,
     /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
     pub slot_6: *const c_void,
-    /// `hkbFootIkModifier::vfunc_7` at 0xb0b2b0 (rtti, high); signature (high): `undefined vfunc_7(hkbFootIkModifier * this)`
+    /// `hkbFootIkModifier::Deactivate` at 0xb0b2b0 (semantic, high); signature (untiered): `undefined Deactivate(hkbFootIkModifier * this)`; `Deactivate`: releases runtime state (high); semantic signature: `void (hkbFootIkModifier* this, const hkbContext* ctx)`
     pub slot_7: *const c_void,
     /// `hkbNode::vfunc_8` at 0xad2140 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
     pub slot_8: *const c_void,
     /// `hkbNode::vfunc_9` at 0xad2110 (rtti, medium); signature (low): `undefined vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `hkbFootIkModifier::vfunc_10` at 0xb0b370 (rtti, high); signature (low): `undefined8 vfunc_10(hkbFootIkModifier * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`
+    /// `hkbFootIkModifier::IsValid` at 0xb0b370 (semantic, high); signature (untiered): `undefined8 IsValid(hkbFootIkModifier * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`; `IsValid`: validates the node's data, writing an error string (high); semantic signature: `bool (hkbFootIkModifier* this, const hkbCharacter* character, hkStringPtr* errorString)`
     pub slot_10: *const c_void,
     /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
     pub slot_11: *const c_void,
-    /// `hkbFootIkModifier::vfunc_12` at 0xb0b620 (rtti, high); signature (high): `undefined vfunc_12(hkbFootIkModifier * this)`
+    /// `hkbFootIkModifier::CloneNode` at 0xb0b620 (semantic, high); signature (untiered): `undefined CloneNode(hkbFootIkModifier * this)`; `CloneNode`: allocates a copy of the node (size argument = object size) through the copy constructor (high); semantic signature: `hkbFootIkModifier* (hkbFootIkModifier* this)`
     pub slot_12: *const c_void,
     /// `hkbNode::vfunc_13` at 0xadbed0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
     pub slot_13: *const c_void,
@@ -10721,824 +11092,100 @@ pub struct hkbFootIkModifier_vtable {
     pub slot_21: *const c_void,
     /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
     pub slot_22: *const c_void,
-    /// `hkbFootIkModifier::vfunc_23` at 0xb0b670 (rtti, high); signature (low): `undefined vfunc_23(hkbFootIkModifier * this, longlong * param_1, longlong * param_2)`
+    /// `hkbFootIkModifier::Modify` at 0xb0b670 (semantic, high); signature (untiered): `undefined Modify(hkbFootIkModifier * this, longlong * param_1, longlong * param_2)`; `Modify`: 0xb0b670 (7392 bytes): the modifier version of the driver run; sets up its own hkaFootPlacementIkSolver per leg (0xb0d360, through InitFootIkLegDefaults 0xa9dc60 / ctor 0xa9dd40), uses the same raycast DB 0x325bb88 and SolveFootIkLeg 0xa9ddf0 (call 0xb0c18c) (high); semantic signature: `void (hkbFootIkModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
     pub slot_23: *const c_void,
     /// `hkbModifier::vfunc_24` at 0xae7000 (rtti, medium); signature (low): `undefined vfunc_24(void)`
     pub slot_24: *const c_void,
 }
 impl hkbFootIkModifier_vtable {
     pub const ID: u64 = 226484;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `hkbFootIkModifier_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<hkbFootIkModifier_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbFootIkModifier_vtable_vdtor>>(self.slot_0) }
+    }
+    pub const SLOT_Activate: usize = 4;
+    /// Slot 4 as `hkbFootIkModifier_vtable_Activate`, `None` when the slot is null.
+    #[must_use]
+    pub fn Activate(&self) -> Option<hkbFootIkModifier_vtable_Activate> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbFootIkModifier_vtable_Activate>>(self.slot_4) }
+    }
+    pub const SLOT_Update: usize = 5;
+    /// Slot 5 as `hkbFootIkModifier_vtable_Update`, `None` when the slot is null.
+    #[must_use]
+    pub fn Update(&self) -> Option<hkbFootIkModifier_vtable_Update> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbFootIkModifier_vtable_Update>>(self.slot_5) }
+    }
+    pub const SLOT_Deactivate: usize = 7;
+    /// Slot 7 as `hkbFootIkModifier_vtable_Deactivate`, `None` when the slot is null.
+    #[must_use]
+    pub fn Deactivate(&self) -> Option<hkbFootIkModifier_vtable_Deactivate> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbFootIkModifier_vtable_Deactivate>>(self.slot_7) }
+    }
+    pub const SLOT_IsValid: usize = 10;
+    /// Slot 10 as `hkbFootIkModifier_vtable_IsValid`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsValid(&self) -> Option<hkbFootIkModifier_vtable_IsValid> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbFootIkModifier_vtable_IsValid>>(self.slot_10) }
+    }
+    pub const SLOT_CloneNode: usize = 12;
+    /// Slot 12 as `hkbFootIkModifier_vtable_CloneNode`, `None` when the slot is null.
+    #[must_use]
+    pub fn CloneNode(&self) -> Option<hkbFootIkModifier_vtable_CloneNode> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbFootIkModifier_vtable_CloneNode>>(self.slot_12) }
+    }
+    pub const SLOT_Modify: usize = 23;
+    /// Slot 23 as `hkbFootIkModifier_vtable_Modify`, `None` when the slot is null.
+    #[must_use]
+    pub fn Modify(&self) -> Option<hkbFootIkModifier_vtable_Modify> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbFootIkModifier_vtable_Modify>>(self.slot_23) }
+    }
 }
+/// `hkbFootIkModifier::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
+pub type hkbFootIkModifier_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkbFootIkModifier, flags: u32) -> *mut crate::hkbFootIkModifier;
+/// `hkbFootIkModifier::Activate`, slot 4: resets runtime state when the node becomes active (high).
+pub type hkbFootIkModifier_vtable_Activate = unsafe extern "C" fn(this: *mut crate::hkbFootIkModifier, ctx: *const c_void);
+/// `hkbFootIkModifier::Update`, slot 5: per-frame update before generate (high).
+pub type hkbFootIkModifier_vtable_Update = unsafe extern "C" fn(this: *mut crate::hkbFootIkModifier, ctx: *const c_void, timestep: f32);
+/// `hkbFootIkModifier::Deactivate`, slot 7: releases runtime state (high).
+pub type hkbFootIkModifier_vtable_Deactivate = unsafe extern "C" fn(this: *mut crate::hkbFootIkModifier, ctx: *const c_void);
+/// `hkbFootIkModifier::IsValid`, slot 10: validates the node's data, writing an error string (high).
+pub type hkbFootIkModifier_vtable_IsValid = unsafe extern "C" fn(this: *mut crate::hkbFootIkModifier, character: *const crate::hkbCharacter, errorString: *mut c_void) -> bool;
+/// `hkbFootIkModifier::CloneNode`, slot 12: allocates a copy of the node (size argument = object size) through the copy constructor (high).
+pub type hkbFootIkModifier_vtable_CloneNode = unsafe extern "C" fn(this: *mut crate::hkbFootIkModifier) -> *mut crate::hkbFootIkModifier;
+/// `hkbFootIkModifier::Modify`, slot 23: 0xb0b670 (7392 bytes): the modifier version of the driver run; sets up its own hkaFootPlacementIkSolver per leg (0xb0d360, through InitFootIkLegDefaults 0xa9dc60 / ctor 0xa9dd40), uses the same raycast DB 0x325bb88 and SolveFootIkLeg 0xa9ddf0 (call 0xb0c18c) (high).
+pub type hkbFootIkModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbFootIkModifier, ctx: *const c_void, inOut: *mut c_void);
 
 /// `hkbFootIkSceneModifier::vftable` at 0x19c1048, id 220355 (rtti, high); 4 slots.
 #[repr(C)]
 pub struct hkbFootIkSceneModifier_vtable {
-    /// `hkbFootIkSceneModifier::vdtor` at 0xadb750 (layout_inference, medium); signature (low): `hkbFootIkSceneModifier * vdtor(hkbFootIkSceneModifier * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `hkbFootIkSceneModifier::vdtor` at 0xadb750 (semantic, high); signature (low): `hkbFootIkSceneModifier * vdtor(hkbFootIkSceneModifier * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkbFootIkSceneModifier* (hkbFootIkSceneModifier* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
     pub slot_1: *const c_void,
     /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
     pub slot_2: *const c_void,
-    /// `hkbFootIkSceneModifier::vfunc_3` at 0xafee20 (rtti, high); signature (low): `undefined vfunc_3(hkbFootIkSceneModifier * this, longlong * param_1)`
+    /// `hkbFootIkSceneModifier::Modify` at 0xafee20 (semantic, high); signature (untiered): `undefined Modify(hkbFootIkSceneModifier * this, longlong * param_1)`; `Modify`: runs hkbFootIkDriver::Run 0xad2300 for every character of the scene (driver = character+0x40, args from the entry's context/output pair) (high); semantic signature: `void (hkbFootIkSceneModifier* this, hkbSceneCharacters* characters)`
     pub slot_3: *const c_void,
 }
 impl hkbFootIkSceneModifier_vtable {
     pub const ID: u64 = 220355;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `hkbFootIkSceneModifier_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<hkbFootIkSceneModifier_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbFootIkSceneModifier_vtable_vdtor>>(self.slot_0) }
+    }
+    pub const SLOT_Modify: usize = 3;
+    /// Slot 3 as `hkbFootIkSceneModifier_vtable_Modify`, `None` when the slot is null.
+    #[must_use]
+    pub fn Modify(&self) -> Option<hkbFootIkSceneModifier_vtable_Modify> {
+        unsafe { core::mem::transmute::<*const c_void, Option<hkbFootIkSceneModifier_vtable_Modify>>(self.slot_3) }
+    }
 }
-
-/// `hkbGenerator::vftable` at 0x19c08c0, id 220253 (rtti, high); 28 slots.
-#[repr(C)]
-pub struct hkbGenerator_vtable {
-    /// `hkbGenerator::vdtor` at 0xad1d70 (slot_propagation, medium); signature (low): `hkbGenerator * vdtor(hkbGenerator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkbBindable::vfunc_3` at 0xadba10 (rtti, medium); signature (low): `undefined vfunc_3(hkbBindable * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
-    /// `hkbNode::vfunc_4` at 0xad20d0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
-    pub slot_4: *const c_void,
-    /// `hkbNode::vfunc_5` at 0xad21e0 (rtti, medium); signature (high): `undefined vfunc_5(hkbNode * this)`
-    pub slot_5: *const c_void,
-    /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `hkbNode::vfunc_7` at 0xad20e0 (rtti, medium); signature (low): `undefined vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `hkbNode::vfunc_8` at 0xad2140 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `hkbNode::vfunc_9` at 0xad2110 (rtti, medium); signature (low): `undefined vfunc_9(void)`
-    pub slot_9: *const c_void,
-    /// `hkbNode::vfunc_10` at 0xadbdc0 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
-    pub slot_10: *const c_void,
-    /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
-    pub slot_11: *const c_void,
-    /// `hkbNode::vfunc_12` at 0xadbdd0 (rtti, medium); signature (high): `void * vfunc_12(hkbNode * this)`
-    pub slot_12: *const c_void,
-    /// `hkbNode::vfunc_13` at 0xadbed0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
-    pub slot_13: *const c_void,
-    /// `hkbNode::vfunc_14` at 0xad2120 (rtti, medium); signature (low): `undefined vfunc_14(void)`
-    pub slot_14: *const c_void,
-    /// `hkbNode::vfunc_15` at 0xad2130 (rtti, medium); signature (low): `undefined vfunc_15(void)`
-    pub slot_15: *const c_void,
-    /// `hkbNode::vfunc_16` at 0xad21b0 (rtti, medium); signature (low): `undefined vfunc_16(void)`
-    pub slot_16: *const c_void,
-    /// `hkbNode::vfunc_17` at 0xad21c0 (rtti, medium); signature (low): `undefined vfunc_17(void)`
-    pub slot_17: *const c_void,
-    /// `hkbNode::vfunc_18` at 0xad20f0 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
-    /// `hkbNode::vfunc_19` at 0xadbee0 (rtti, medium); signature (low): `undefined1 vfunc_19(void)`
-    pub slot_19: *const c_void,
-    /// `hkbNode::vfunc_20` at 0xad2100 (rtti, medium); signature (low): `undefined vfunc_20(void)`
-    pub slot_20: *const c_void,
-    /// `hkbGenerator::vfunc_21` at 0xad2180 (rtti, medium); signature (low): `undefined1 vfunc_21(void)`
-    pub slot_21: *const c_void,
-    /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
-    pub slot_22: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_23: *const c_void,
-    /// `hkbGenerator::vfunc_24` at 0xadc020 (rtti, medium); signature (low): `undefined1 vfunc_24(void)`
-    pub slot_24: *const c_void,
-    /// `hkbGenerator::vfunc_25` at 0xadc030 (rtti, medium); signature (low): `undefined vfunc_25(hkbGenerator * this, undefined8 param_1, longlong param_2)`
-    pub slot_25: *const c_void,
-    /// `hkbGenerator::vfunc_26` at 0xadc050 (rtti, medium); signature (low): `undefined vfunc_26(void)`
-    pub slot_26: *const c_void,
-    /// `hkbGenerator::vfunc_27` at 0xad21d0 (rtti, medium); signature (low): `undefined vfunc_27(void)`
-    pub slot_27: *const c_void,
-}
-impl hkbGenerator_vtable {
-    pub const ID: u64 = 220253;
-}
-
-/// `hkbGeneratorTransitionEffect::vftable` at 0x19e2fa0, id 226748 (rtti, high); 33 slots.
-#[repr(C)]
-pub struct hkbGeneratorTransitionEffect_vtable {
-    /// `hkbGeneratorTransitionEffect::vdtor` at 0xae3890 (slot_propagation, medium); signature (low): `hkbGeneratorTransitionEffect * vdtor(hkbGeneratorTransitionEffect * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkbBindable::vfunc_3` at 0xadba10 (rtti, medium); signature (low): `undefined vfunc_3(hkbBindable * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
-    /// `hkbGeneratorTransitionEffect::vfunc_4` at 0xb1c8a0 (rtti, high); signature (low): `undefined vfunc_4(hkbGeneratorTransitionEffect * this, longlong * param_1)`
-    pub slot_4: *const c_void,
-    /// `hkbGeneratorTransitionEffect::vfunc_5` at 0xb1c9b0 (rtti, high); signature (low): `undefined vfunc_5(hkbGeneratorTransitionEffect * this, longlong * param_1, float param_2)`
-    pub slot_5: *const c_void,
-    /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `hkbGeneratorTransitionEffect::vfunc_7` at 0xb1cac0 (rtti, high); signature (high): `undefined vfunc_7(hkbGeneratorTransitionEffect * this)`
-    pub slot_7: *const c_void,
-    /// `hkbGeneratorTransitionEffect::vfunc_8` at 0xb1cad0 (rtti, high); signature (low): `undefined8 vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `hkbGeneratorTransitionEffect::vfunc_9` at 0xb1cae0 (rtti, high); signature (low): `undefined vfunc_9(hkbGeneratorTransitionEffect * this, uint param_1, undefined8 * param_2)`
-    pub slot_9: *const c_void,
-    /// `hkbGeneratorTransitionEffect::vfunc_10` at 0xb1cd20 (rtti, high); signature (low): `undefined8 vfunc_10(hkbGeneratorTransitionEffect * this, ulonglong * param_1)`
-    pub slot_10: *const c_void,
-    /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
-    pub slot_11: *const c_void,
-    /// `hkbGeneratorTransitionEffect::vfunc_12` at 0xb1cd60 (rtti, high); signature (high): `undefined vfunc_12(hkbGeneratorTransitionEffect * this)`
-    pub slot_12: *const c_void,
-    /// `hkbGeneratorTransitionEffect::vfunc_13` at 0xb1d0f0 (rtti, high); signature (low): `undefined vfunc_13(void)`
-    pub slot_13: *const c_void,
-    /// `hkbGeneratorTransitionEffect::vfunc_14` at 0xb1d130 (rtti, high); signature (low): `undefined vfunc_14(hkbGeneratorTransitionEffect * this, longlong param_1)`
-    pub slot_14: *const c_void,
-    /// `hkbNode::vfunc_15` at 0xad2130 (rtti, medium); signature (low): `undefined vfunc_15(void)`
-    pub slot_15: *const c_void,
-    /// `hkbGeneratorTransitionEffect::vfunc_16` at 0xb1d1a0 (rtti, high); signature (low): `undefined vfunc_16(hkbGeneratorTransitionEffect * this, longlong param_1)`
-    pub slot_16: *const c_void,
-    /// `hkbNode::vfunc_17` at 0xad21c0 (rtti, medium); signature (low): `undefined vfunc_17(void)`
-    pub slot_17: *const c_void,
-    /// `hkbNode::vfunc_18` at 0xad20f0 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
-    /// `hkbTransitionEffect::vfunc_19` at 0xb00210 (rtti, medium); signature (low): `undefined1 vfunc_19(void)`
-    pub slot_19: *const c_void,
-    /// `hkbNode::vfunc_20` at 0xad2100 (rtti, medium); signature (low): `undefined vfunc_20(void)`
-    pub slot_20: *const c_void,
-    /// `hkbGenerator::vfunc_21` at 0xad2180 (rtti, medium); signature (low): `undefined1 vfunc_21(void)`
-    pub slot_21: *const c_void,
-    /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
-    pub slot_22: *const c_void,
-    /// `hkbGeneratorTransitionEffect::vfunc_23` at 0xb1cdb0 (rtti, high); signature (low): `undefined vfunc_23(hkbGeneratorTransitionEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_23: *const c_void,
-    /// `hkbGenerator::vfunc_24` at 0xadc020 (rtti, medium); signature (low): `undefined1 vfunc_24(void)`
-    pub slot_24: *const c_void,
-    /// `hkbGeneratorTransitionEffect::vfunc_25` at 0xb1cdd0 (rtti, high); signature (low): `undefined vfunc_25(hkbGeneratorTransitionEffect * this, longlong * param_1, void * param_2)`
-    pub slot_25: *const c_void,
-    /// `hkbGenerator::vfunc_26` at 0xadc050 (rtti, medium); signature (low): `undefined vfunc_26(void)`
-    pub slot_26: *const c_void,
-    /// `hkbGenerator::vfunc_27` at 0xad21d0 (rtti, medium); signature (low): `undefined vfunc_27(void)`
-    pub slot_27: *const c_void,
-    /// `hkbGeneratorTransitionEffect::vfunc_28` at 0xb1cff0 (rtti, high); signature (high): `undefined1 vfunc_28(hkbGeneratorTransitionEffect * this)`
-    pub slot_28: *const c_void,
-    /// `hkbGeneratorTransitionEffect::vfunc_29` at 0xb1d020 (rtti, high); signature (low): `undefined vfunc_29(hkbGeneratorTransitionEffect * this, undefined8 param_1)`
-    pub slot_29: *const c_void,
-    /// `hkbGeneratorTransitionEffect::vfunc_30` at 0xb1d030 (rtti, high); signature (low): `undefined vfunc_30(hkbGeneratorTransitionEffect * this, undefined8 param_1)`
-    pub slot_30: *const c_void,
-    /// `hkbGeneratorTransitionEffect::vfunc_31` at 0xb1d040 (rtti, high); signature (low): `undefined4 vfunc_31(hkbGeneratorTransitionEffect * this)`
-    pub slot_31: *const c_void,
-    /// `hkbGeneratorTransitionEffect::vfunc_32` at 0xb1d050 (rtti, high); signature (low): `undefined4 vfunc_32(hkbGeneratorTransitionEffect * this)`
-    pub slot_32: *const c_void,
-}
-impl hkbGeneratorTransitionEffect_vtable {
-    pub const ID: u64 = 226748;
-}
-
-/// `hkbGeneratorTransitionEffectInternalState::vftable` at 0x19e30f0, id 226752 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct hkbGeneratorTransitionEffectInternalState_vtable {
-    /// `hkbGeneratorTransitionEffectInternalState::vdtor` at 0xae3930 (layout_inference, medium); signature (low): `hkbGeneratorTransitionEffectInternalState * vdtor(hkbGeneratorTransitionEffectInternalState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-}
-impl hkbGeneratorTransitionEffectInternalState_vtable {
-    pub const ID: u64 = 226752;
-}
-
-/// `hkbGetHandleOnBoneModifier::vftable` at 0x19e0720, id 226496 (rtti, high); 25 slots.
-#[repr(C)]
-pub struct hkbGetHandleOnBoneModifier_vtable {
-    /// `hkbGetHandleOnBoneModifier::vdtor` at 0xae39c0 (slot_propagation, medium); signature (low): `hkbGetHandleOnBoneModifier * vdtor(hkbGetHandleOnBoneModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkbBindable::vfunc_3` at 0xadba10 (rtti, medium); signature (low): `undefined vfunc_3(hkbBindable * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
-    /// `hkbGetHandleOnBoneModifier::vfunc_4` at 0xb0f910 (rtti, high); signature (low): `undefined vfunc_4(hkbGetHandleOnBoneModifier * this, longlong * param_1)`
-    pub slot_4: *const c_void,
-    /// `hkbNode::vfunc_5` at 0xad21e0 (rtti, medium); signature (high): `undefined vfunc_5(hkbNode * this)`
-    pub slot_5: *const c_void,
-    /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `hkbGetHandleOnBoneModifier::vfunc_7` at 0xb0fc20 (rtti, high); signature (high): `undefined vfunc_7(hkbGetHandleOnBoneModifier * this)`
-    pub slot_7: *const c_void,
-    /// `hkbNode::vfunc_8` at 0xad2140 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `hkbNode::vfunc_9` at 0xad2110 (rtti, medium); signature (low): `undefined vfunc_9(void)`
-    pub slot_9: *const c_void,
-    /// `hkbGetHandleOnBoneModifier::vfunc_10` at 0xb0fc50 (rtti, high); signature (low): `ulonglong vfunc_10(hkbGetHandleOnBoneModifier * this, ulonglong * param_1)`
-    pub slot_10: *const c_void,
-    /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
-    pub slot_11: *const c_void,
-    /// `hkbGetHandleOnBoneModifier::vfunc_12` at 0xb0fd00 (rtti, high); signature (high): `undefined vfunc_12(hkbGetHandleOnBoneModifier * this)`
-    pub slot_12: *const c_void,
-    /// `hkbNode::vfunc_13` at 0xadbed0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
-    pub slot_13: *const c_void,
-    /// `hkbNode::vfunc_14` at 0xad2120 (rtti, medium); signature (low): `undefined vfunc_14(void)`
-    pub slot_14: *const c_void,
-    /// `hkbNode::vfunc_15` at 0xad2130 (rtti, medium); signature (low): `undefined vfunc_15(void)`
-    pub slot_15: *const c_void,
-    /// `hkbNode::vfunc_16` at 0xad21b0 (rtti, medium); signature (low): `undefined vfunc_16(void)`
-    pub slot_16: *const c_void,
-    /// `hkbNode::vfunc_17` at 0xad21c0 (rtti, medium); signature (low): `undefined vfunc_17(void)`
-    pub slot_17: *const c_void,
-    /// `hkbNode::vfunc_18` at 0xad20f0 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
-    /// `hkbNode::vfunc_19` at 0xadbee0 (rtti, medium); signature (low): `undefined1 vfunc_19(void)`
-    pub slot_19: *const c_void,
-    /// `hkbNode::vfunc_20` at 0xad2100 (rtti, medium); signature (low): `undefined vfunc_20(void)`
-    pub slot_20: *const c_void,
-    /// `hkbNode::vfunc_21` at 0xad2190 (rtti, medium); signature (low): `undefined1 vfunc_21(void)`
-    pub slot_21: *const c_void,
-    /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
-    pub slot_22: *const c_void,
-    /// `hkbModifier::vfunc_23` at 0xae6ff0 (rtti, medium); signature (high): `undefined vfunc_23(hkbModifier * this)`
-    pub slot_23: *const c_void,
-    /// `hkbModifier::vfunc_24` at 0xae7000 (rtti, medium); signature (low): `undefined vfunc_24(void)`
-    pub slot_24: *const c_void,
-}
-impl hkbGetHandleOnBoneModifier_vtable {
-    pub const ID: u64 = 226496;
-}
-
-/// `hkbGetUpModifier::vftable` at 0x19e0830, id 226500 (rtti, high); 25 slots.
-#[repr(C)]
-pub struct hkbGetUpModifier_vtable {
-    /// `hkbGetUpModifier::vdtor` at 0xae3a70 (slot_propagation, medium); signature (low): `hkbGetUpModifier * vdtor(hkbGetUpModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkbBindable::vfunc_3` at 0xadba10 (rtti, medium); signature (low): `undefined vfunc_3(hkbBindable * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
-    /// `hkbGetUpModifier::vfunc_4` at 0xb0fe50 (rtti, high); signature (high): `undefined vfunc_4(hkbGetUpModifier * this)`
-    pub slot_4: *const c_void,
-    /// `hkbGetUpModifier::vfunc_5` at 0xb0fe70 (rtti, high); signature (low): `undefined vfunc_5(hkbGetUpModifier * this, undefined8 param_1, float param_2)`
-    pub slot_5: *const c_void,
-    /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `hkbNode::vfunc_7` at 0xad20e0 (rtti, medium); signature (low): `undefined vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `hkbNode::vfunc_8` at 0xad2140 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `hkbNode::vfunc_9` at 0xad2110 (rtti, medium); signature (low): `undefined vfunc_9(void)`
-    pub slot_9: *const c_void,
-    /// `hkbGetUpModifier::vfunc_10` at 0xb0fe90 (rtti, high); signature (low): `ulonglong vfunc_10(hkbGetUpModifier * this, ulonglong * param_1)`
-    pub slot_10: *const c_void,
-    /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
-    pub slot_11: *const c_void,
-    /// `hkbGetUpModifier::vfunc_12` at 0xb10040 (rtti, high); signature (high): `undefined vfunc_12(hkbGetUpModifier * this)`
-    pub slot_12: *const c_void,
-    /// `hkbGetUpModifier::vfunc_13` at 0xb10630 (rtti, high); signature (low): `undefined vfunc_13(void)`
-    pub slot_13: *const c_void,
-    /// `hkbGetUpModifier::vfunc_14` at 0xb10670 (rtti, high); signature (low): `undefined vfunc_14(hkbGetUpModifier * this, longlong param_1)`
-    pub slot_14: *const c_void,
-    /// `hkbNode::vfunc_15` at 0xad2130 (rtti, medium); signature (low): `undefined vfunc_15(void)`
-    pub slot_15: *const c_void,
-    /// `hkbGetUpModifier::vfunc_16` at 0xb10690 (rtti, high); signature (low): `undefined vfunc_16(hkbGetUpModifier * this, longlong param_1)`
-    pub slot_16: *const c_void,
-    /// `hkbNode::vfunc_17` at 0xad21c0 (rtti, medium); signature (low): `undefined vfunc_17(void)`
-    pub slot_17: *const c_void,
-    /// `hkbNode::vfunc_18` at 0xad20f0 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
-    /// `hkbNode::vfunc_19` at 0xadbee0 (rtti, medium); signature (low): `undefined1 vfunc_19(void)`
-    pub slot_19: *const c_void,
-    /// `hkbNode::vfunc_20` at 0xad2100 (rtti, medium); signature (low): `undefined vfunc_20(void)`
-    pub slot_20: *const c_void,
-    /// `hkbNode::vfunc_21` at 0xad2190 (rtti, medium); signature (low): `undefined1 vfunc_21(void)`
-    pub slot_21: *const c_void,
-    /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
-    pub slot_22: *const c_void,
-    /// `hkbGetUpModifier::vfunc_23` at 0xb10090 (rtti, high); signature (low): `undefined vfunc_23(hkbGetUpModifier * this, longlong * param_1, longlong * param_2)`
-    pub slot_23: *const c_void,
-    /// `hkbModifier::vfunc_24` at 0xae7000 (rtti, medium); signature (low): `undefined vfunc_24(void)`
-    pub slot_24: *const c_void,
-}
-impl hkbGetUpModifier_vtable {
-    pub const ID: u64 = 226500;
-}
-
-/// `hkbGetUpModifierInternalState::vftable` at 0x19e0930, id 226504 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct hkbGetUpModifierInternalState_vtable {
-    /// `hkbGetUpModifierInternalState::vdtor` at 0xae3b00 (layout_inference, medium); signature (low): `hkbGetUpModifierInternalState * vdtor(hkbGetUpModifierInternalState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-}
-impl hkbGetUpModifierInternalState_vtable {
-    pub const ID: u64 = 226504;
-}
-
-/// `hkbGetWorldFromModelModifier::vftable` at 0x19e0990, id 226508 (rtti, high); 25 slots.
-#[repr(C)]
-pub struct hkbGetWorldFromModelModifier_vtable {
-    /// `hkbGetWorldFromModelModifier::vdtor` at 0xae3b90 (slot_propagation, medium); signature (low): `hkbGetWorldFromModelModifier * vdtor(hkbGetWorldFromModelModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkbBindable::vfunc_3` at 0xadba10 (rtti, medium); signature (low): `undefined vfunc_3(hkbBindable * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
-    /// `hkbNode::vfunc_4` at 0xad20d0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
-    pub slot_4: *const c_void,
-    /// `hkbNode::vfunc_5` at 0xad21e0 (rtti, medium); signature (high): `undefined vfunc_5(hkbNode * this)`
-    pub slot_5: *const c_void,
-    /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `hkbNode::vfunc_7` at 0xad20e0 (rtti, medium); signature (low): `undefined vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `hkbNode::vfunc_8` at 0xad2140 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `hkbNode::vfunc_9` at 0xad2110 (rtti, medium); signature (low): `undefined vfunc_9(void)`
-    pub slot_9: *const c_void,
-    /// `hkbNode::vfunc_10` at 0xadbdc0 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
-    pub slot_10: *const c_void,
-    /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
-    pub slot_11: *const c_void,
-    /// `hkbGetWorldFromModelModifier::vfunc_12` at 0xb10790 (rtti, high); signature (high): `undefined vfunc_12(hkbGetWorldFromModelModifier * this)`
-    pub slot_12: *const c_void,
-    /// `hkbGetWorldFromModelModifier::vfunc_13` at 0xb10810 (rtti, high); signature (low): `undefined vfunc_13(void)`
-    pub slot_13: *const c_void,
-    /// `hkbGetWorldFromModelModifier::vfunc_14` at 0xb10850 (rtti, high); signature (low): `undefined vfunc_14(hkbGetWorldFromModelModifier * this, longlong param_1)`
-    pub slot_14: *const c_void,
-    /// `hkbNode::vfunc_15` at 0xad2130 (rtti, medium); signature (low): `undefined vfunc_15(void)`
-    pub slot_15: *const c_void,
-    /// `hkbGetWorldFromModelModifier::vfunc_16` at 0xb10870 (rtti, high); signature (low): `undefined vfunc_16(hkbGetWorldFromModelModifier * this, longlong param_1)`
-    pub slot_16: *const c_void,
-    /// `hkbNode::vfunc_17` at 0xad21c0 (rtti, medium); signature (low): `undefined vfunc_17(void)`
-    pub slot_17: *const c_void,
-    /// `hkbNode::vfunc_18` at 0xad20f0 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
-    /// `hkbNode::vfunc_19` at 0xadbee0 (rtti, medium); signature (low): `undefined1 vfunc_19(void)`
-    pub slot_19: *const c_void,
-    /// `hkbNode::vfunc_20` at 0xad2100 (rtti, medium); signature (low): `undefined vfunc_20(void)`
-    pub slot_20: *const c_void,
-    /// `hkbNode::vfunc_21` at 0xad2190 (rtti, medium); signature (low): `undefined1 vfunc_21(void)`
-    pub slot_21: *const c_void,
-    /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
-    pub slot_22: *const c_void,
-    /// `hkbGetWorldFromModelModifier::vfunc_23` at 0xb107e0 (rtti, high); signature (low): `undefined vfunc_23(hkbGetWorldFromModelModifier * this, undefined8 param_1, longlong * param_2)`
-    pub slot_23: *const c_void,
-    /// `hkbModifier::vfunc_24` at 0xae7000 (rtti, medium); signature (low): `undefined vfunc_24(void)`
-    pub slot_24: *const c_void,
-}
-impl hkbGetWorldFromModelModifier_vtable {
-    pub const ID: u64 = 226508;
-}
-
-/// `hkbGetWorldFromModelModifierInternalState::vftable` at 0x19e0aa0, id 226512 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct hkbGetWorldFromModelModifierInternalState_vtable {
-    /// `hkbGetWorldFromModelModifierInternalState::vdtor` at 0xae3c20 (layout_inference, medium); signature (low): `hkbGetWorldFromModelModifierInternalState * vdtor(hkbGetWorldFromModelModifierInternalState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-}
-impl hkbGetWorldFromModelModifierInternalState_vtable {
-    pub const ID: u64 = 226512;
-}
-
-/// `hkbHandIkControlsModifier::vftable` at 0x19e0b58, id 226519 (rtti, high); 25 slots.
-#[repr(C)]
-pub struct hkbHandIkControlsModifier_vtable {
-    /// `hkbHandIkControlsModifier::vdtor` at 0xae3cb0 (slot_propagation, medium); signature (low): `hkbHandIkControlsModifier * vdtor(hkbHandIkControlsModifier * this, uint param_1, ulonglong param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkbBindable::vfunc_3` at 0xadba10 (rtti, medium); signature (low): `undefined vfunc_3(hkbBindable * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
-    /// `hkbNode::vfunc_4` at 0xad20d0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
-    pub slot_4: *const c_void,
-    /// `hkbNode::vfunc_5` at 0xad21e0 (rtti, medium); signature (high): `undefined vfunc_5(hkbNode * this)`
-    pub slot_5: *const c_void,
-    /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `hkbHandIkControlsModifier::vfunc_7` at 0xb11030 (rtti, high); signature (high): `undefined vfunc_7(hkbHandIkControlsModifier * this)`
-    pub slot_7: *const c_void,
-    /// `hkbNode::vfunc_8` at 0xad2140 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `hkbNode::vfunc_9` at 0xad2110 (rtti, medium); signature (low): `undefined vfunc_9(void)`
-    pub slot_9: *const c_void,
-    /// `hkbHandIkControlsModifier::vfunc_10` at 0xb110a0 (rtti, high); signature (low): `ulonglong vfunc_10(hkbHandIkControlsModifier * this, ulonglong * param_1)`
-    pub slot_10: *const c_void,
-    /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
-    pub slot_11: *const c_void,
-    /// `hkbHandIkControlsModifier::vfunc_12` at 0xb111f0 (rtti, high); signature (high): `hkbHandIkControlsModifier * vfunc_12(hkbHandIkControlsModifier * this)`
-    pub slot_12: *const c_void,
-    /// `hkbNode::vfunc_13` at 0xadbed0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
-    pub slot_13: *const c_void,
-    /// `hkbNode::vfunc_14` at 0xad2120 (rtti, medium); signature (low): `undefined vfunc_14(void)`
-    pub slot_14: *const c_void,
-    /// `hkbNode::vfunc_15` at 0xad2130 (rtti, medium); signature (low): `undefined vfunc_15(void)`
-    pub slot_15: *const c_void,
-    /// `hkbNode::vfunc_16` at 0xad21b0 (rtti, medium); signature (low): `undefined vfunc_16(void)`
-    pub slot_16: *const c_void,
-    /// `hkbNode::vfunc_17` at 0xad21c0 (rtti, medium); signature (low): `undefined vfunc_17(void)`
-    pub slot_17: *const c_void,
-    /// `hkbNode::vfunc_18` at 0xad20f0 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
-    /// `hkbNode::vfunc_19` at 0xadbee0 (rtti, medium); signature (low): `undefined1 vfunc_19(void)`
-    pub slot_19: *const c_void,
-    /// `hkbNode::vfunc_20` at 0xad2100 (rtti, medium); signature (low): `undefined vfunc_20(void)`
-    pub slot_20: *const c_void,
-    /// `hkbNode::vfunc_21` at 0xad2190 (rtti, medium); signature (low): `undefined1 vfunc_21(void)`
-    pub slot_21: *const c_void,
-    /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
-    pub slot_22: *const c_void,
-    /// `hkbHandIkControlsModifier::vfunc_23` at 0xb11260 (rtti, high); signature (low): `undefined vfunc_23(hkbHandIkControlsModifier * this, undefined8 param_1, undefined8 param_2)`
-    pub slot_23: *const c_void,
-    /// `hkbModifier::vfunc_24` at 0xae7000 (rtti, medium); signature (low): `undefined vfunc_24(void)`
-    pub slot_24: *const c_void,
-}
-impl hkbHandIkControlsModifier_vtable {
-    pub const ID: u64 = 226519;
-}
-
-/// `hkbHandIkDriver::vftable` at 0x19e3f78, id 226847 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct hkbHandIkDriver_vtable {
-    /// `hkbHandIkDriver::vdtor` at 0xafbe30 (slot_propagation, medium); signature (low): `hkbHandIkDriver * vdtor(hkbHandIkDriver * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-}
-impl hkbHandIkDriver_vtable {
-    pub const ID: u64 = 226847;
-}
-
-/// `hkbHandIkDriverInfo::vftable` at 0x19dda08, id 226205 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct hkbHandIkDriverInfo_vtable {
-    /// `hkbHandIkDriverInfo::vdtor` at 0xae3d80 (slot_propagation, medium); signature (low): `hkbHandIkDriverInfo * vdtor(hkbHandIkDriverInfo * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-}
-impl hkbHandIkDriverInfo_vtable {
-    pub const ID: u64 = 226205;
-}
-
-/// `hkbHandIkFixupSceneModifier::vftable` at 0x19c1098, id 220359 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct hkbHandIkFixupSceneModifier_vtable {
-    /// `hkbHandIkFixupSceneModifier::vdtor` at 0xadb7e0 (layout_inference, medium); signature (low): `hkbHandIkFixupSceneModifier * vdtor(hkbHandIkFixupSceneModifier * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkbHandIkFixupSceneModifier::vfunc_3` at 0xafefa0 (rtti, high); signature (low): `undefined vfunc_3(undefined8 param_1, longlong * param_2, undefined4 param_3)`
-    pub slot_3: *const c_void,
-}
-impl hkbHandIkFixupSceneModifier_vtable {
-    pub const ID: u64 = 220359;
-}
-
-/// `hkbHandIkModifier::vftable` at 0x19e0cb0, id 226525 (rtti, high); 25 slots.
-#[repr(C)]
-pub struct hkbHandIkModifier_vtable {
-    /// `hkbHandIkModifier::vdtor` at 0xae3e00 (slot_propagation, medium); signature (low): `hkbHandIkModifier * vdtor(hkbHandIkModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkbHandIkModifier::vfunc_2` at 0xb12620 (rtti, high); signature (low): `undefined vfunc_2(hkbHandIkModifier * this, longlong * param_1)`
-    pub slot_2: *const c_void,
-    /// `hkbBindable::vfunc_3` at 0xadba10 (rtti, medium); signature (low): `undefined vfunc_3(hkbBindable * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
-    /// `hkbHandIkModifier::vfunc_4` at 0xb11580 (rtti, high); signature (low): `undefined vfunc_4(hkbHandIkModifier * this, ulonglong * param_1)`
-    pub slot_4: *const c_void,
-    /// `hkbHandIkModifier::vfunc_5` at 0xb11720 (rtti, high); signature (low): `undefined vfunc_5(hkbHandIkModifier * this, undefined8 param_1, float param_2)`
-    pub slot_5: *const c_void,
-    /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `hkbNode::vfunc_7` at 0xad20e0 (rtti, medium); signature (low): `undefined vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `hkbNode::vfunc_8` at 0xad2140 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `hkbNode::vfunc_9` at 0xad2110 (rtti, medium); signature (low): `undefined vfunc_9(void)`
-    pub slot_9: *const c_void,
-    /// `hkbHandIkModifier::vfunc_10` at 0xb11830 (rtti, high); signature (low): `undefined8 vfunc_10(hkbHandIkModifier * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_10: *const c_void,
-    /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
-    pub slot_11: *const c_void,
-    /// `hkbHandIkModifier::vfunc_12` at 0xb11ab0 (rtti, high); signature (high): `undefined vfunc_12(hkbHandIkModifier * this)`
-    pub slot_12: *const c_void,
-    /// `hkbNode::vfunc_13` at 0xadbed0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
-    pub slot_13: *const c_void,
-    /// `hkbNode::vfunc_14` at 0xad2120 (rtti, medium); signature (low): `undefined vfunc_14(void)`
-    pub slot_14: *const c_void,
-    /// `hkbNode::vfunc_15` at 0xad2130 (rtti, medium); signature (low): `undefined vfunc_15(void)`
-    pub slot_15: *const c_void,
-    /// `hkbNode::vfunc_16` at 0xad21b0 (rtti, medium); signature (low): `undefined vfunc_16(void)`
-    pub slot_16: *const c_void,
-    /// `hkbNode::vfunc_17` at 0xad21c0 (rtti, medium); signature (low): `undefined vfunc_17(void)`
-    pub slot_17: *const c_void,
-    /// `hkbNode::vfunc_18` at 0xad20f0 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
-    /// `hkbNode::vfunc_19` at 0xadbee0 (rtti, medium); signature (low): `undefined1 vfunc_19(void)`
-    pub slot_19: *const c_void,
-    /// `hkbNode::vfunc_20` at 0xad2100 (rtti, medium); signature (low): `undefined vfunc_20(void)`
-    pub slot_20: *const c_void,
-    /// `hkbNode::vfunc_21` at 0xad2190 (rtti, medium); signature (low): `undefined1 vfunc_21(void)`
-    pub slot_21: *const c_void,
-    /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
-    pub slot_22: *const c_void,
-    /// `hkbHandIkModifier::vfunc_23` at 0xb11b00 (rtti, high); signature (low): `undefined vfunc_23(hkbHandIkModifier * this, longlong * param_1, ulonglong * param_2)`
-    pub slot_23: *const c_void,
-    /// `hkbModifier::vfunc_24` at 0xae7000 (rtti, medium); signature (low): `undefined vfunc_24(void)`
-    pub slot_24: *const c_void,
-}
-impl hkbHandIkModifier_vtable {
-    pub const ID: u64 = 226525;
-}
-
-/// `hkbHandIkSceneModifier::vftable` at 0x19c1070, id 220357 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct hkbHandIkSceneModifier_vtable {
-    /// `hkbHandIkSceneModifier::vdtor` at 0xadb870 (layout_inference, medium); signature (low): `hkbHandIkSceneModifier * vdtor(hkbHandIkSceneModifier * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkbHandIkSceneModifier::vfunc_3` at 0xafeed0 (rtti, high); signature (low): `undefined vfunc_3(undefined8 param_1, longlong * param_2, undefined4 param_3)`
-    pub slot_3: *const c_void,
-}
-impl hkbHandIkSceneModifier_vtable {
-    pub const ID: u64 = 220357;
-}
-
-/// `hkbHandle::vftable` at 0x19dd4b8, id 226152 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct hkbHandle_vtable {
-    /// `hkbHandle::vdtor` at 0xae3e80 (layout_inference, medium); signature (low): `hkbHandle * vdtor(hkbHandle * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-}
-impl hkbHandle_vtable {
-    pub const ID: u64 = 226152;
-}
-
-/// `hkbIntEventPayload::vftable` at 0x19dd3b8, id 226136 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct hkbIntEventPayload_vtable {
-    /// `hkbIntEventPayload::vdtor` at 0xae3f10 (layout_inference, medium); signature (low): `hkbIntEventPayload * vdtor(hkbIntEventPayload * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-}
-impl hkbIntEventPayload_vtable {
-    pub const ID: u64 = 226136;
-}
-
-/// `hkbIntVariableSequencedData::vftable` at 0x19e2638, id 226678 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct hkbIntVariableSequencedData_vtable {
-    /// `hkbIntVariableSequencedData::vdtor` at 0xae3fa0 (layout_inference, medium); signature (low): `hkbIntVariableSequencedData * vdtor(hkbIntVariableSequencedData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkbIntVariableSequencedData::vfunc_3` at 0xb1b4e0 (rtti, high); signature (low): `undefined vfunc_3(hkbIntVariableSequencedData * this, undefined8 param_1, longlong * param_2, float param_3, undefined8 param_4, longlong param_5, int * param_6)`
-    pub slot_3: *const c_void,
-}
-impl hkbIntVariableSequencedData_vtable {
-    pub const ID: u64 = 226678;
-}
-
-/// `hkbKeyframeBonesModifier::vftable` at 0x19e1648, id 226578 (rtti, high); 25 slots.
-#[repr(C)]
-pub struct hkbKeyframeBonesModifier_vtable {
-    /// `hkbKeyframeBonesModifier::vdtor` at 0xae4070 (slot_propagation, medium); signature (low): `hkbKeyframeBonesModifier * vdtor(hkbKeyframeBonesModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkbKeyframeBonesModifier::vfunc_2` at 0xb160c0 (rtti, high); signature (low): `undefined vfunc_2(hkbKeyframeBonesModifier * this, longlong * param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkbKeyframeBonesModifier::vfunc_3` at 0xb16110 (rtti, high); signature (low): `undefined vfunc_3(hkbKeyframeBonesModifier * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
-    /// `hkbKeyframeBonesModifier::vfunc_4` at 0xb16150 (rtti, high); signature (high): `undefined vfunc_4(hkbKeyframeBonesModifier * this)`
-    pub slot_4: *const c_void,
-    /// `hkbNode::vfunc_5` at 0xad21e0 (rtti, medium); signature (high): `undefined vfunc_5(hkbNode * this)`
-    pub slot_5: *const c_void,
-    /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `hkbNode::vfunc_7` at 0xad20e0 (rtti, medium); signature (low): `undefined vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `hkbNode::vfunc_8` at 0xad2140 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `hkbNode::vfunc_9` at 0xad2110 (rtti, medium); signature (low): `undefined vfunc_9(void)`
-    pub slot_9: *const c_void,
-    /// `hkbKeyframeBonesModifier::vfunc_10` at 0xb16180 (rtti, high); signature (low): `undefined8 vfunc_10(hkbKeyframeBonesModifier * this, ulonglong * param_1)`
-    pub slot_10: *const c_void,
-    /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
-    pub slot_11: *const c_void,
-    /// `hkbKeyframeBonesModifier::vfunc_12` at 0xb16640 (rtti, high); signature (high): `hkbKeyframeBonesModifier * vfunc_12(hkbKeyframeBonesModifier * this)`
-    pub slot_12: *const c_void,
-    /// `hkbNode::vfunc_13` at 0xadbed0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
-    pub slot_13: *const c_void,
-    /// `hkbNode::vfunc_14` at 0xad2120 (rtti, medium); signature (low): `undefined vfunc_14(void)`
-    pub slot_14: *const c_void,
-    /// `hkbNode::vfunc_15` at 0xad2130 (rtti, medium); signature (low): `undefined vfunc_15(void)`
-    pub slot_15: *const c_void,
-    /// `hkbNode::vfunc_16` at 0xad21b0 (rtti, medium); signature (low): `undefined vfunc_16(void)`
-    pub slot_16: *const c_void,
-    /// `hkbNode::vfunc_17` at 0xad21c0 (rtti, medium); signature (low): `undefined vfunc_17(void)`
-    pub slot_17: *const c_void,
-    /// `hkbNode::vfunc_18` at 0xad20f0 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
-    /// `hkbNode::vfunc_19` at 0xadbee0 (rtti, medium); signature (low): `undefined1 vfunc_19(void)`
-    pub slot_19: *const c_void,
-    /// `hkbNode::vfunc_20` at 0xad2100 (rtti, medium); signature (low): `undefined vfunc_20(void)`
-    pub slot_20: *const c_void,
-    /// `hkbNode::vfunc_21` at 0xad2190 (rtti, medium); signature (low): `undefined1 vfunc_21(void)`
-    pub slot_21: *const c_void,
-    /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
-    pub slot_22: *const c_void,
-    /// `hkbKeyframeBonesModifier::vfunc_23` at 0xb166c0 (rtti, high); signature (low): `undefined vfunc_23(hkbKeyframeBonesModifier * this, undefined8 param_1, undefined8 param_2)`
-    pub slot_23: *const c_void,
-    /// `hkbModifier::vfunc_24` at 0xae7000 (rtti, medium); signature (low): `undefined vfunc_24(void)`
-    pub slot_24: *const c_void,
-}
-impl hkbKeyframeBonesModifier_vtable {
-    pub const ID: u64 = 226578;
-}
-
-/// `hkbLinkedSymbolInfo::vftable` at 0x1a95a70, id 241303 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct hkbLinkedSymbolInfo_vtable {
-    /// `hkbLinkedSymbolInfo::vdtor` at 0x10d1d90 (slot_propagation, medium); signature (low): `hkbLinkedSymbolInfo * vdtor(hkbLinkedSymbolInfo * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-}
-impl hkbLinkedSymbolInfo_vtable {
-    pub const ID: u64 = 241303;
-}
-
-/// `hkbLookAtModifier::vftable` at 0x19e0ef8, id 226536 (rtti, high); 25 slots.
-#[repr(C)]
-pub struct hkbLookAtModifier_vtable {
-    /// `hkbLookAtModifier::vdtor` at 0xae40f0 (slot_propagation, medium); signature (low): `hkbLookAtModifier * vdtor(hkbLookAtModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkbBindable::vfunc_3` at 0xadba10 (rtti, medium); signature (low): `undefined vfunc_3(hkbBindable * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
-    /// `hkbLookAtModifier::vfunc_4` at 0xb13af0 (rtti, high); signature (high): `undefined vfunc_4(hkbLookAtModifier * this)`
-    pub slot_4: *const c_void,
-    /// `hkbNode::vfunc_5` at 0xad21e0 (rtti, medium); signature (high): `undefined vfunc_5(hkbNode * this)`
-    pub slot_5: *const c_void,
-    /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `hkbNode::vfunc_7` at 0xad20e0 (rtti, medium); signature (low): `undefined vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `hkbNode::vfunc_8` at 0xad2140 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `hkbNode::vfunc_9` at 0xad2110 (rtti, medium); signature (low): `undefined vfunc_9(void)`
-    pub slot_9: *const c_void,
-    /// `hkbLookAtModifier::vfunc_10` at 0xb13b20 (rtti, high); signature (low): `ulonglong vfunc_10(hkbLookAtModifier * this, ulonglong * param_1)`
-    pub slot_10: *const c_void,
-    /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
-    pub slot_11: *const c_void,
-    /// `hkbLookAtModifier::vfunc_12` at 0xb13bd0 (rtti, high); signature (high): `undefined vfunc_12(hkbLookAtModifier * this)`
-    pub slot_12: *const c_void,
-    /// `hkbLookAtModifier::vfunc_13` at 0xb14490 (rtti, high); signature (low): `undefined vfunc_13(void)`
-    pub slot_13: *const c_void,
-    /// `hkbLookAtModifier::vfunc_14` at 0xb144d0 (rtti, high); signature (low): `undefined vfunc_14(hkbLookAtModifier * this, longlong param_1)`
-    pub slot_14: *const c_void,
-    /// `hkbNode::vfunc_15` at 0xad2130 (rtti, medium); signature (low): `undefined vfunc_15(void)`
-    pub slot_15: *const c_void,
-    /// `hkbLookAtModifier::vfunc_16` at 0xb14500 (rtti, high); signature (low): `undefined vfunc_16(hkbLookAtModifier * this, longlong param_1)`
-    pub slot_16: *const c_void,
-    /// `hkbNode::vfunc_17` at 0xad21c0 (rtti, medium); signature (low): `undefined vfunc_17(void)`
-    pub slot_17: *const c_void,
-    /// `hkbNode::vfunc_18` at 0xad20f0 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
-    /// `hkbNode::vfunc_19` at 0xadbee0 (rtti, medium); signature (low): `undefined1 vfunc_19(void)`
-    pub slot_19: *const c_void,
-    /// `hkbNode::vfunc_20` at 0xad2100 (rtti, medium); signature (low): `undefined vfunc_20(void)`
-    pub slot_20: *const c_void,
-    /// `hkbNode::vfunc_21` at 0xad2190 (rtti, medium); signature (low): `undefined1 vfunc_21(void)`
-    pub slot_21: *const c_void,
-    /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
-    pub slot_22: *const c_void,
-    /// `hkbLookAtModifier::vfunc_23` at 0xb13c20 (rtti, high); signature (low): `undefined vfunc_23(hkbLookAtModifier * this, longlong * param_1, longlong * param_2)`
-    pub slot_23: *const c_void,
-    /// `hkbModifier::vfunc_24` at 0xae7000 (rtti, medium); signature (low): `undefined vfunc_24(void)`
-    pub slot_24: *const c_void,
-}
-impl hkbLookAtModifier_vtable {
-    pub const ID: u64 = 226536;
-}
-
-/// `hkbLookAtModifierInternalState::vftable` at 0x19e0ff8, id 226540 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct hkbLookAtModifierInternalState_vtable {
-    /// `hkbLookAtModifierInternalState::vdtor` at 0xae4180 (layout_inference, medium); signature (low): `hkbLookAtModifierInternalState * vdtor(hkbLookAtModifierInternalState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-}
-impl hkbLookAtModifierInternalState_vtable {
-    pub const ID: u64 = 226540;
-}
-
-/// `hkbManualSelectorGenerator::vftable` at 0x19de528, id 226313 (rtti, high); 28 slots.
-#[repr(C)]
-pub struct hkbManualSelectorGenerator_vtable {
-    /// `hkbManualSelectorGenerator::vdtor` at 0xae4210 (slot_propagation, medium); signature (low): `hkbManualSelectorGenerator * vdtor(hkbManualSelectorGenerator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkbManualSelectorGenerator::vfunc_1` at 0xb034d0 (rtti, high); signature (untiered): `undefined * vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkbBindable::vfunc_3` at 0xadba10 (rtti, medium); signature (low): `undefined vfunc_3(hkbBindable * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
-    /// `hkbManualSelectorGenerator::vfunc_4` at 0xb034e0 (rtti, high); signature (high): `undefined vfunc_4(hkbManualSelectorGenerator * this)`
-    pub slot_4: *const c_void,
-    /// `hkbManualSelectorGenerator::vfunc_5` at 0xb03500 (rtti, high); signature (low): `undefined vfunc_5(hkbManualSelectorGenerator * this, longlong * param_1)`
-    pub slot_5: *const c_void,
-    /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `hkbNode::vfunc_7` at 0xad20e0 (rtti, medium); signature (low): `undefined vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `hkbManualSelectorGenerator::vfunc_8` at 0xb035e0 (rtti, high); signature (low): `undefined4 vfunc_8(hkbManualSelectorGenerator * this, byte param_1)`
-    pub slot_8: *const c_void,
-    /// `hkbManualSelectorGenerator::vfunc_9` at 0xb03600 (rtti, high); signature (low): `undefined vfunc_9(hkbManualSelectorGenerator * this, ulonglong param_1, undefined8 * param_2)`
-    pub slot_9: *const c_void,
-    /// `hkbManualSelectorGenerator::vfunc_10` at 0xb03710 (rtti, high); signature (low): `ulonglong vfunc_10(hkbManualSelectorGenerator * this, ulonglong * param_1)`
-    pub slot_10: *const c_void,
-    /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
-    pub slot_11: *const c_void,
-    /// `hkbManualSelectorGenerator::vfunc_12` at 0xb037a0 (rtti, high); signature (high): `undefined vfunc_12(hkbManualSelectorGenerator * this)`
-    pub slot_12: *const c_void,
-    /// `hkbManualSelectorGenerator::vfunc_13` at 0xb039a0 (rtti, high); signature (low): `undefined vfunc_13(void)`
-    pub slot_13: *const c_void,
-    /// `hkbManualSelectorGenerator::vfunc_14` at 0xb039e0 (rtti, high); signature (low): `undefined vfunc_14(hkbManualSelectorGenerator * this, longlong param_1)`
-    pub slot_14: *const c_void,
-    /// `hkbNode::vfunc_15` at 0xad2130 (rtti, medium); signature (low): `undefined vfunc_15(void)`
-    pub slot_15: *const c_void,
-    /// `hkbManualSelectorGenerator::vfunc_16` at 0xb039f0 (rtti, high); signature (low): `undefined vfunc_16(hkbManualSelectorGenerator * this, longlong param_1)`
-    pub slot_16: *const c_void,
-    /// `hkbNode::vfunc_17` at 0xad21c0 (rtti, medium); signature (low): `undefined vfunc_17(void)`
-    pub slot_17: *const c_void,
-    /// `hkbNode::vfunc_18` at 0xad20f0 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
-    /// `hkbNode::vfunc_19` at 0xadbee0 (rtti, medium); signature (low): `undefined1 vfunc_19(void)`
-    pub slot_19: *const c_void,
-    /// `hkbNode::vfunc_20` at 0xad2100 (rtti, medium); signature (low): `undefined vfunc_20(void)`
-    pub slot_20: *const c_void,
-    /// `hkbGenerator::vfunc_21` at 0xad2180 (rtti, medium); signature (low): `undefined1 vfunc_21(void)`
-    pub slot_21: *const c_void,
-    /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
-    pub slot_22: *const c_void,
-    /// `hkbManualSelectorGenerator::vfunc_23` at 0xb037f0 (rtti, high); signature (low): `undefined vfunc_23(hkbManualSelectorGenerator * this, undefined8 param_1, undefined8 * param_2, longlong * param_3)`
-    pub slot_23: *const c_void,
-    /// `hkbManualSelectorGenerator::vfunc_24` at 0xb03810 (rtti, high); signature (low): `undefined1 vfunc_24(void)`
-    pub slot_24: *const c_void,
-    /// `hkbManualSelectorGenerator::vfunc_25` at 0xb03820 (rtti, high); signature (low): `undefined vfunc_25(hkbManualSelectorGenerator * this, longlong * param_1, longlong param_2)`
-    pub slot_25: *const c_void,
-    /// `hkbGenerator::vfunc_26` at 0xadc050 (rtti, medium); signature (low): `undefined vfunc_26(void)`
-    pub slot_26: *const c_void,
-    /// `hkbGenerator::vfunc_27` at 0xad21d0 (rtti, medium); signature (low): `undefined vfunc_27(void)`
-    pub slot_27: *const c_void,
-}
-impl hkbManualSelectorGenerator_vtable {
-    pub const ID: u64 = 226313;
-}
-
-/// `hkbManualSelectorGeneratorInternalState::vftable` at 0x19de650, id 226317 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct hkbManualSelectorGeneratorInternalState_vtable {
-    /// `hkbManualSelectorGeneratorInternalState::vdtor` at 0xae4290 (layout_inference, medium); signature (low): `hkbManualSelectorGeneratorInternalState * vdtor(hkbManualSelectorGeneratorInternalState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-}
-impl hkbManualSelectorGeneratorInternalState_vtable {
-    pub const ID: u64 = 226317;
-}
+/// `hkbFootIkSceneModifier::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
+pub type hkbFootIkSceneModifier_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkbFootIkSceneModifier, flags: u32) -> *mut crate::hkbFootIkSceneModifier;
+/// `hkbFootIkSceneModifier::Modify`, slot 3: runs hkbFootIkDriver::Run 0xad2300 for every character of the scene (driver = character+0x40, args from the entry's context/output pair) (high).
+pub type hkbFootIkSceneModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbFootIkSceneModifier, characters: *mut c_void);
 

@@ -7,6 +7,40 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BGSPackageDataRefOLD::vftable_8` at 0x18c4cd8, id 200904 (rtti, high); 13 slots.
+#[repr(C)]
+pub struct BGSPackageDataRefOLD_vtable_8 {
+    /// `BGSPackageDataRefOLD::IPackageData_vdtor` at 0x44e914 (slot_propagation, medium); signature (high): `undefined IPackageData_vdtor(BGSPackageDataRefOLD * this)`
+    pub slot_0: *const c_void,
+    /// `BGSPackageDataRefOLD::IPackageData_vfunc_1` at 0x44db40 (rtti, high); signature (low): `undefined IPackageData_vfunc_1(BGSPackageDataRefOLD * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0>::IPackageData_vfunc_2` at 0x44ef20 (rtti, medium); signature (low): `undefined IPackageData_vfunc_2(BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0> * this, longlong param_1, undefined8 param_2, ulonglong param_3)`
+    pub slot_2: *const c_void,
+    /// `BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0>::IPackageData_vfunc_3` at 0x44ee50 (rtti, medium); signature (low): `undefined IPackageData_vfunc_3(BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0> * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+    /// `BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0>::IPackageData_vfunc_4` at 0x44ee90 (rtti, medium); signature (low): `longlong IPackageData_vfunc_4(BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0> * this, undefined8 param_1)`
+    pub slot_4: *const c_void,
+    /// `BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0>::IPackageData_vfunc_5` at 0x44f020 (rtti, medium); signature (low): `undefined1 IPackageData_vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `IPackageData::vfunc_6` at 0x44d510 (rtti, medium); signature (low): `undefined vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `IPackageData::vfunc_7` at 0x44d520 (rtti, medium); signature (low): `undefined vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `IPackageData::vfunc_8` at 0x44d530 (rtti, medium); signature (low): `undefined vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `IPackageData::vfunc_9` at 0x44d540 (rtti, medium); signature (low): `undefined vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `BGSPackageDataRefOLD::IPackageData_vfunc_10` at 0x44dd90 (rtti, high); signature (low): `undefined IPackageData_vfunc_10(BGSPackageDataRefOLD * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_10: *const c_void,
+    /// `BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0>::IPackageData_vfunc_11` at 0x44f030 (rtti, medium); signature (low): `undefined * IPackageData_vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `IPackageData::vfunc_12` at 0x44d550 (rtti, medium); signature (low): `undefined1 vfunc_12(void)`
+    pub slot_12: *const c_void,
+}
+impl BGSPackageDataRefOLD_vtable_8 {
+    pub const ID: u64 = 200904;
+}
+
 /// `BGSPackageDataSaveableTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault>::vftable` at 0x18c4858, id 200821 (rtti, high); 14 slots.
 #[repr(C)]
 pub struct BGSPackageDataSaveableTemplate_IPackageData_float_class_BSFixedString_const_kPackageDataFloatTyp_0cb254898459_vtable {

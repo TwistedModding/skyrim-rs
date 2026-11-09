@@ -15,7 +15,7 @@ pub const GameSetting_fAIAcquireObjectDistance: u64 = 370681;
 pub const GameSetting_fAIActivateHeight: u64 = 370720;
 /// `GameSetting_fAIActivateReach` at 0x209f990 (setting, high)
 pub const GameSetting_fAIActivateReach: u64 = 370717;
-/// `GameSetting_fAIActorPackTargetHeadTrackMod` at 0x209ff90 (setting, high)
+/// `GameSetting_fAIActorPackTargetHeadTrackMod` at 0x209ff90 (semantic, high); fAIActorPackTargetHeadTrackMod: no reader (high); type `undefined1`
 pub const GameSetting_fAIActorPackTargetHeadTrackMod: u64 = 370887;
 /// `GameSetting_fAIAimBlockedHalfCircleRadius` at 0x20a06e0 (setting, high)
 pub const GameSetting_fAIAimBlockedHalfCircleRadius: u64 = 371099;
@@ -23,7 +23,7 @@ pub const GameSetting_fAIAimBlockedHalfCircleRadius: u64 = 371099;
 pub const GameSetting_fAIAimBlockedToleranceDegrees: u64 = 371096;
 /// `GameSetting_fAIAwareofPlayerTimer` at 0x20a02f0 (setting, high)
 pub const GameSetting_fAIAwareofPlayerTimer: u64 = 370983;
-/// `GameSetting_fAIBestHeadTrackDistance` at 0x209ff30 (setting, high)
+/// `GameSetting_fAIBestHeadTrackDistance` at 0x209ff30 (semantic, high); fAIBestHeadTrackDistance: no reader (high); type `undefined1`
 pub const GameSetting_fAIBestHeadTrackDistance: u64 = 370876;
 /// `GameSetting_fAICombatFleeScoreThreshold` at 0x20a5e68 (setting, high)
 pub const GameSetting_fAICombatFleeScoreThreshold: u64 = 373641;
@@ -99,29 +99,29 @@ pub const GameSetting_fAIForceGreetingTimer: u64 = 370899;
 pub const GameSetting_fAIFurnitureDestinationRadius: u64 = 370723;
 /// `GameSetting_fAIGreetingTimer` at 0x209fff0 (setting, high)
 pub const GameSetting_fAIGreetingTimer: u64 = 370896;
-/// `GameSetting_fAIHeadTrackDialogueOffsetRandomValue` at 0x20a0140 (setting, high)
+/// `GameSetting_fAIHeadTrackDialogueOffsetRandomValue` at 0x20a0140 (semantic, high); fAIHeadTrackDialogueOffsetRandomValue: UpdateHeadTrackTargetOffset (high); type `undefined1`
 pub const GameSetting_fAIHeadTrackDialogueOffsetRandomValue: u64 = 370937;
-/// `GameSetting_fAIHeadTrackDialoguePickNewOffsetTimer` at 0x20a00e0 (setting, high)
+/// `GameSetting_fAIHeadTrackDialoguePickNewOffsetTimer` at 0x20a00e0 (semantic, high); fAIHeadTrackDialoguePickNewOffsetTimer: UpdateHeadTrackTargetOffset (dialogue) (high); type `undefined1`
 pub const GameSetting_fAIHeadTrackDialoguePickNewOffsetTimer: u64 = 370925;
-/// `GameSetting_fAIHeadTrackDialogueResetPositionTimer` at 0x20a00f8 (setting, high)
+/// `GameSetting_fAIHeadTrackDialogueResetPositionTimer` at 0x20a00f8 (semantic, high); fAIHeadTrackDialogueResetPositionTimer: UpdateHeadTrackTargetOffset (dialogue) (high); type `undefined1`
 pub const GameSetting_fAIHeadTrackDialogueResetPositionTimer: u64 = 370928;
-/// `GameSetting_fAIHeadTrackDialogueStayInOffsetMax` at 0x20a0128 (setting, high)
+/// `GameSetting_fAIHeadTrackDialogueStayInOffsetMax` at 0x20a0128 (semantic, high); fAIHeadTrackDialogueStayInOffsetMax: UpdateHeadTrackTargetOffset (high); type `undefined1`
 pub const GameSetting_fAIHeadTrackDialogueStayInOffsetMax: u64 = 370934;
-/// `GameSetting_fAIHeadTrackDialogueStayInOffsetMin` at 0x20a0110 (setting, high)
+/// `GameSetting_fAIHeadTrackDialogueStayInOffsetMin` at 0x20a0110 (semantic, high); fAIHeadTrackDialogueStayInOffsetMin: HeadTrackData::Retarget 0x71ea00, Actor slot 270 sub 0x6fec80, UpdateHeadTrackTargetOffset (high); type `undefined1`
 pub const GameSetting_fAIHeadTrackDialogueStayInOffsetMin: u64 = 370931;
-/// `GameSetting_fAIHeadTrackOffsetRandomValueMax` at 0x20a00c8 (setting, high)
+/// `GameSetting_fAIHeadTrackOffsetRandomValueMax` at 0x20a00c8 (semantic, high); fAIHeadTrackOffsetRandomValueMax: UpdateHeadTrackTargetOffset (high); type `undefined1`
 pub const GameSetting_fAIHeadTrackOffsetRandomValueMax: u64 = 370922;
-/// `GameSetting_fAIHeadTrackOffsetRandomValueMin` at 0x20a00b0 (setting, high)
+/// `GameSetting_fAIHeadTrackOffsetRandomValueMin` at 0x20a00b0 (semantic, high); fAIHeadTrackOffsetRandomValueMin: UpdateHeadTrackTargetOffset (high); type `undefined1`
 pub const GameSetting_fAIHeadTrackOffsetRandomValueMin: u64 = 370919;
-/// `GameSetting_fAIHeadTrackPickNewOffsetTimer` at 0x20a0050 (setting, high)
+/// `GameSetting_fAIHeadTrackPickNewOffsetTimer` at 0x20a0050 (semantic, high); fAIHeadTrackPickNewOffsetTimer: UpdateHeadTrackTargetOffset 0x6fe930 (random offset of the look point) (high); type `undefined1`
 pub const GameSetting_fAIHeadTrackPickNewOffsetTimer: u64 = 370908;
-/// `GameSetting_fAIHeadTrackResetPositionTimer` at 0x20a0068 (setting, high)
+/// `GameSetting_fAIHeadTrackResetPositionTimer` at 0x20a0068 (semantic, high); fAIHeadTrackResetPositionTimer: UpdateHeadTrackTargetOffset, SpeakSoundOrTopic 0x68d490 (high); type `undefined1`
 pub const GameSetting_fAIHeadTrackResetPositionTimer: u64 = 370911;
-/// `GameSetting_fAIHeadTrackStayInOffsetMax` at 0x20a0098 (setting, high)
+/// `GameSetting_fAIHeadTrackStayInOffsetMax` at 0x20a0098 (semantic, high); fAIHeadTrackStayInOffsetMax: InitField10Subobject 0x71b5f0 (high); type `undefined1`
 pub const GameSetting_fAIHeadTrackStayInOffsetMax: u64 = 370916;
-/// `GameSetting_fAIHeadTrackStayInOffsetMin` at 0x20a0080 (setting, high)
+/// `GameSetting_fAIHeadTrackStayInOffsetMin` at 0x20a0080 (semantic, high); fAIHeadTrackStayInOffsetMin: no reader (high); type `undefined1`
 pub const GameSetting_fAIHeadTrackStayInOffsetMin: u64 = 370914;
-/// `GameSetting_fAIHoldDefaultHeadTrackTimer` at 0x209eb38 (setting, high)
+/// `GameSetting_fAIHoldDefaultHeadTrackTimer` at 0x209eb38 (semantic, high); fAIHoldDefaultHeadTrackTimer: hold time after a new default target / procedure (6 readers) (high); type `undefined1`
 pub const GameSetting_fAIHoldDefaultHeadTrackTimer: u64 = 370303;
 /// `GameSetting_fAIHorseSearchDistance` at 0x20a0f98 (setting, high)
 pub const GameSetting_fAIHorseSearchDistance: u64 = 371340;
@@ -137,7 +137,7 @@ pub const GameSetting_fAIIdleWaitTimeComplexScene: u64 = 370775;
 pub const GameSetting_fAIInDialogueModeWithPlayerDistance: u64 = 370989;
 /// `GameSetting_fAIInDialogueModewithPlayerTimer` at 0x20a0308 (setting, high)
 pub const GameSetting_fAIInDialogueModewithPlayerTimer: u64 = 370986;
-/// `GameSetting_fAIInteriorHeadTrackMult` at 0x209ffa8 (setting, high)
+/// `GameSetting_fAIInteriorHeadTrackMult` at 0x209ffa8 (semantic, high); fAIInteriorHeadTrackMult: no reader (high); type `undefined1`
 pub const GameSetting_fAIInteriorHeadTrackMult: u64 = 370889;
 /// `GameSetting_fAIInteriorSpectatorDetection` at 0x20a01e8 (setting, high)
 pub const GameSetting_fAIInteriorSpectatorDetection: u64 = 370952;
@@ -153,11 +153,11 @@ pub const GameSetting_fAIMagicTimer: u64 = 373946;
 pub const GameSetting_fAIMarkerDestinationRadius: u64 = 370726;
 /// `GameSetting_fAIMaxAngleRangeMovingToStartSceneDialogue` at 0x209ff78 (setting, high)
 pub const GameSetting_fAIMaxAngleRangeMovingToStartSceneDialogue: u64 = 370884;
-/// `GameSetting_fAIMaxHeadTrackDistance` at 0x209ff18 (setting, high)
+/// `GameSetting_fAIMaxHeadTrackDistance` at 0x209ff18 (semantic, high); fAIMaxHeadTrackDistance: max distance actor -> target (CanHeadTrackTarget 0x6acdc0, GetHeadTrackTargetHandle 0x693b20) (high); type `undefined1`
 pub const GameSetting_fAIMaxHeadTrackDistance: u64 = 370873;
-/// `GameSetting_fAIMaxHeadTrackDistanceFromPC` at 0x209ff00 (setting, high)
+/// `GameSetting_fAIMaxHeadTrackDistanceFromPC` at 0x209ff00 (semantic, high); fAIMaxHeadTrackDistanceFromPC: max distance from the player for an actor to run head tracking (UpdateHeadTracking, UpdateHeadTrackingIfInRange 0x67d930, Actor::UpdateAnimation, CanHeadTrackTarget, IsWithinHeadTrackDistanceOfPlayer 0x675360); races with size 3 use the large-creature value (high); type `undefined1`
 pub const GameSetting_fAIMaxHeadTrackDistanceFromPC: u64 = 370870;
-/// `GameSetting_fAIMaxLargeCreatureHeadTrackDistance` at 0x209ff48 (setting, high)
+/// `GameSetting_fAIMaxLargeCreatureHeadTrackDistance` at 0x209ff48 (semantic, high); fAIMaxLargeCreatureHeadTrackDistance: the size-3 race (TESRace+0x128 == 3) replacement for both distance limits (high); type `undefined1`
 pub const GameSetting_fAIMaxLargeCreatureHeadTrackDistance: u64 = 370878;
 /// `GameSetting_fAIMaxSmileDistance` at 0x209ffd8 (setting, high)
 pub const GameSetting_fAIMaxSmileDistance: u64 = 370894;
@@ -201,7 +201,7 @@ pub const GameSetting_fAIRandomizeInitialLocationMinRadius: u64 = 370843;
 pub const GameSetting_fAIRangMagicSpellMult: u64 = 372969;
 /// `GameSetting_fAIRangedWeaponMult` at 0x20a43b0 (setting, high)
 pub const GameSetting_fAIRangedWeaponMult: u64 = 372963;
-/// `GameSetting_fAIRevertToScriptTracking` at 0x20a1010 (setting, high)
+/// `GameSetting_fAIRevertToScriptTracking` at 0x20a1010 (semantic, high); fAIRevertToScriptTracking: UpdateHeadTracking: threshold (negative) of the script-slot timer (high); type `undefined1`
 pub const GameSetting_fAIRevertToScriptTracking: u64 = 371355;
 /// `GameSetting_fAIShoutMinAimSeconds` at 0x20a0698 (setting, high)
 pub const GameSetting_fAIShoutMinAimSeconds: u64 = 371090;
@@ -237,7 +237,7 @@ pub const GameSetting_fAISpectatorThreatDistMelee: u64 = 370956;
 pub const GameSetting_fAISpectatorThreatDistMine: u64 = 370965;
 /// `GameSetting_fAISpectatorThreatDistRanged` at 0x20a0230 (setting, high)
 pub const GameSetting_fAISpectatorThreatDistRanged: u64 = 370959;
-/// `GameSetting_fAIStayonScriptHeadtrack` at 0x20a1028 (setting, high)
+/// `GameSetting_fAIStayonScriptHeadtrack` at 0x20a1028 (semantic, high); fAIStayonScriptHeadtrack: UpdateHeadTracking: when the script slot (2) timer drops below fAIRevertToScriptTracking it is reset to this (high); type `undefined1`
 pub const GameSetting_fAIStayonScriptHeadtrack: u64 = 371358;
 /// `GameSetting_fAITrespassWarningTimer` at 0x20a02c0 (setting, high)
 pub const GameSetting_fAITrespassWarningTimer: u64 = 370977;
@@ -1675,13 +1675,13 @@ pub const GameSetting_fCombatSearchWanderDistance: u64 = 372706;
 pub const GameSetting_fCombatSelectTargetSwitchUpdateTime: u64 = 371560;
 /// `GameSetting_fCombatSelectTargetUpdateTime` at 0x20a16d0 (setting, high)
 pub const GameSetting_fCombatSelectTargetUpdateTime: u64 = 371557;
-/// `GameSetting_fCombatShoutHeadTrackingAngleMovingMult` at 0x20a3008 (setting, high)
+/// `GameSetting_fCombatShoutHeadTrackingAngleMovingMult` at 0x20a3008 (semantic, high); fCombatShoutHeadTrackingAngleMovingMult: same, while moving (high); type `undefined1`
 pub const GameSetting_fCombatShoutHeadTrackingAngleMovingMult: u64 = 372352;
-/// `GameSetting_fCombatShoutHeadTrackingAngleMult` at 0x20a2ff0 (setting, high)
+/// `GameSetting_fCombatShoutHeadTrackingAngleMult` at 0x20a2ff0 (semantic, high); fCombatShoutHeadTrackingAngleMult: CastShout combat node 0x8d1150: shout aim cone from head tracking (high); type `undefined1`
 pub const GameSetting_fCombatShoutHeadTrackingAngleMult: u64 = 372349;
 /// `GameSetting_fCombatShoutLongRecoveryTime` at 0x20a3068 (setting, high)
 pub const GameSetting_fCombatShoutLongRecoveryTime: u64 = 372363;
-/// `GameSetting_fCombatShoutMaxHeadTrackingAngle` at 0x20a3020 (setting, high)
+/// `GameSetting_fCombatShoutMaxHeadTrackingAngle` at 0x20a3020 (semantic, high); fCombatShoutMaxHeadTrackingAngle: same, cap (high); type `undefined1`
 pub const GameSetting_fCombatShoutMaxHeadTrackingAngle: u64 = 372355;
 /// `GameSetting_fCombatShoutReleaseTime` at 0x20a3038 (setting, high)
 pub const GameSetting_fCombatShoutReleaseTime: u64 = 372358;
@@ -2251,45 +2251,45 @@ pub const GameSetting_fExplosiveProjectileBlockedWaitTime: u64 = 373029;
 pub const GameSetting_fExpressionChangePerSec: u64 = 378503;
 /// `GameSetting_fExpressionStrengthAdd` at 0x20b0310 (setting, high)
 pub const GameSetting_fExpressionStrengthAdd: u64 = 378506;
-/// `GameSetting_fEyeHeadingMaxOffsetEmotionAngry` at 0x20b05b0 (setting, high)
+/// `GameSetting_fEyeHeadingMaxOffsetEmotionAngry` at 0x20b05b0 (semantic, high); fEyeHeadingMaxOffsetEmotionAngry: eye offset range per facial emotion, BSFaceGenNiNode slot 44 sub 0x4253b0 (eye tracking); not a bone solver: eyes move through face morphs (high); type `undefined1`
 pub const GameSetting_fEyeHeadingMaxOffsetEmotionAngry: u64 = 378587;
-/// `GameSetting_fEyeHeadingMaxOffsetEmotionFear` at 0x20b0610 (setting, high)
+/// `GameSetting_fEyeHeadingMaxOffsetEmotionFear` at 0x20b0610 (semantic, high); fEyeHeadingMaxOffsetEmotionFear: eye offset range per facial emotion, BSFaceGenNiNode slot 44 sub 0x4253b0 (eye tracking); not a bone solver: eyes move through face morphs (high); type `undefined1`
 pub const GameSetting_fEyeHeadingMaxOffsetEmotionFear: u64 = 378597;
-/// `GameSetting_fEyeHeadingMaxOffsetEmotionHappy` at 0x20b04f0 (setting, high)
+/// `GameSetting_fEyeHeadingMaxOffsetEmotionHappy` at 0x20b04f0 (semantic, high); fEyeHeadingMaxOffsetEmotionHappy: eye offset range per facial emotion, BSFaceGenNiNode slot 44 sub 0x4253b0 (eye tracking); not a bone solver: eyes move through face morphs (high); type `undefined1`
 pub const GameSetting_fEyeHeadingMaxOffsetEmotionHappy: u64 = 378563;
-/// `GameSetting_fEyeHeadingMaxOffsetEmotionNeutral` at 0x20b0670 (setting, high)
+/// `GameSetting_fEyeHeadingMaxOffsetEmotionNeutral` at 0x20b0670 (semantic, high); fEyeHeadingMaxOffsetEmotionNeutral: eye offset range per facial emotion, BSFaceGenNiNode slot 44 sub 0x4253b0 (eye tracking); not a bone solver: eyes move through face morphs (high); type `undefined1`
 pub const GameSetting_fEyeHeadingMaxOffsetEmotionNeutral: u64 = 378609;
-/// `GameSetting_fEyeHeadingMaxOffsetEmotionSad` at 0x20b0550 (setting, high)
+/// `GameSetting_fEyeHeadingMaxOffsetEmotionSad` at 0x20b0550 (semantic, high); fEyeHeadingMaxOffsetEmotionSad: eye offset range per facial emotion, BSFaceGenNiNode slot 44 sub 0x4253b0 (eye tracking); not a bone solver: eyes move through face morphs (high); type `undefined1`
 pub const GameSetting_fEyeHeadingMaxOffsetEmotionSad: u64 = 378575;
-/// `GameSetting_fEyeHeadingMinOffsetEmotionAngry` at 0x20b05c8 (setting, high)
+/// `GameSetting_fEyeHeadingMinOffsetEmotionAngry` at 0x20b05c8 (semantic, high); fEyeHeadingMinOffsetEmotionAngry: eye offset range per facial emotion, BSFaceGenNiNode slot 44 sub 0x4253b0 (eye tracking); not a bone solver: eyes move through face morphs (high); type `undefined1`
 pub const GameSetting_fEyeHeadingMinOffsetEmotionAngry: u64 = 378590;
-/// `GameSetting_fEyeHeadingMinOffsetEmotionFear` at 0x20b0628 (setting, high)
+/// `GameSetting_fEyeHeadingMinOffsetEmotionFear` at 0x20b0628 (semantic, high); fEyeHeadingMinOffsetEmotionFear: eye offset range per facial emotion, BSFaceGenNiNode slot 44 sub 0x4253b0 (eye tracking); not a bone solver: eyes move through face morphs (high); type `undefined1`
 pub const GameSetting_fEyeHeadingMinOffsetEmotionFear: u64 = 378600;
-/// `GameSetting_fEyeHeadingMinOffsetEmotionHappy` at 0x20b0508 (setting, high)
+/// `GameSetting_fEyeHeadingMinOffsetEmotionHappy` at 0x20b0508 (semantic, high); fEyeHeadingMinOffsetEmotionHappy: eye offset range per facial emotion, BSFaceGenNiNode slot 44 sub 0x4253b0 (eye tracking); not a bone solver: eyes move through face morphs (high); type `undefined1`
 pub const GameSetting_fEyeHeadingMinOffsetEmotionHappy: u64 = 378566;
-/// `GameSetting_fEyeHeadingMinOffsetEmotionNeutral` at 0x20b0688 (setting, high)
+/// `GameSetting_fEyeHeadingMinOffsetEmotionNeutral` at 0x20b0688 (semantic, high); fEyeHeadingMinOffsetEmotionNeutral: eye offset range per facial emotion, BSFaceGenNiNode slot 44 sub 0x4253b0 (eye tracking); not a bone solver: eyes move through face morphs (high); type `undefined1`
 pub const GameSetting_fEyeHeadingMinOffsetEmotionNeutral: u64 = 378612;
-/// `GameSetting_fEyeHeadingMinOffsetEmotionSad` at 0x20b0568 (setting, high)
+/// `GameSetting_fEyeHeadingMinOffsetEmotionSad` at 0x20b0568 (semantic, high); fEyeHeadingMinOffsetEmotionSad: eye offset range per facial emotion, BSFaceGenNiNode slot 44 sub 0x4253b0 (eye tracking); not a bone solver: eyes move through face morphs (high); type `undefined1`
 pub const GameSetting_fEyeHeadingMinOffsetEmotionSad: u64 = 378578;
-/// `GameSetting_fEyePitchMaxOffsetEmotionAngry` at 0x20b0580 (setting, high)
+/// `GameSetting_fEyePitchMaxOffsetEmotionAngry` at 0x20b0580 (semantic, high); fEyePitchMaxOffsetEmotionAngry: eye offset range per facial emotion, BSFaceGenNiNode slot 44 sub 0x4253b0 (eye tracking); not a bone solver: eyes move through face morphs (high); type `undefined1`
 pub const GameSetting_fEyePitchMaxOffsetEmotionAngry: u64 = 378581;
-/// `GameSetting_fEyePitchMaxOffsetEmotionFear` at 0x20b05e0 (setting, high)
+/// `GameSetting_fEyePitchMaxOffsetEmotionFear` at 0x20b05e0 (semantic, high); fEyePitchMaxOffsetEmotionFear: no reader (high); type `undefined1`
 pub const GameSetting_fEyePitchMaxOffsetEmotionFear: u64 = 378593;
-/// `GameSetting_fEyePitchMaxOffsetEmotionHappy` at 0x20b04c0 (setting, high)
+/// `GameSetting_fEyePitchMaxOffsetEmotionHappy` at 0x20b04c0 (semantic, high); fEyePitchMaxOffsetEmotionHappy: eye offset range per facial emotion, BSFaceGenNiNode slot 44 sub 0x4253b0 (eye tracking); not a bone solver: eyes move through face morphs (high); type `undefined1`
 pub const GameSetting_fEyePitchMaxOffsetEmotionHappy: u64 = 378557;
-/// `GameSetting_fEyePitchMaxOffsetEmotionNeutral` at 0x20b0640 (setting, high)
+/// `GameSetting_fEyePitchMaxOffsetEmotionNeutral` at 0x20b0640 (semantic, high); fEyePitchMaxOffsetEmotionNeutral: eye offset range per facial emotion, BSFaceGenNiNode slot 44 sub 0x4253b0 (eye tracking); not a bone solver: eyes move through face morphs (high); type `undefined1`
 pub const GameSetting_fEyePitchMaxOffsetEmotionNeutral: u64 = 378603;
-/// `GameSetting_fEyePitchMaxOffsetEmotionSad` at 0x20b0520 (setting, high)
+/// `GameSetting_fEyePitchMaxOffsetEmotionSad` at 0x20b0520 (semantic, high); fEyePitchMaxOffsetEmotionSad: eye offset range per facial emotion, BSFaceGenNiNode slot 44 sub 0x4253b0 (eye tracking); not a bone solver: eyes move through face morphs (high); type `undefined1`
 pub const GameSetting_fEyePitchMaxOffsetEmotionSad: u64 = 378569;
-/// `GameSetting_fEyePitchMinOffsetEmotionAngry` at 0x20b0598 (setting, high)
+/// `GameSetting_fEyePitchMinOffsetEmotionAngry` at 0x20b0598 (semantic, high); fEyePitchMinOffsetEmotionAngry: eye offset range per facial emotion, BSFaceGenNiNode slot 44 sub 0x4253b0 (eye tracking); not a bone solver: eyes move through face morphs (high); type `undefined1`
 pub const GameSetting_fEyePitchMinOffsetEmotionAngry: u64 = 378584;
-/// `GameSetting_fEyePitchMinOffsetEmotionFear` at 0x20b05f8 (setting, high)
+/// `GameSetting_fEyePitchMinOffsetEmotionFear` at 0x20b05f8 (semantic, high); fEyePitchMinOffsetEmotionFear: no reader (high); type `undefined1`
 pub const GameSetting_fEyePitchMinOffsetEmotionFear: u64 = 378595;
-/// `GameSetting_fEyePitchMinOffsetEmotionHappy` at 0x20b04d8 (setting, high)
+/// `GameSetting_fEyePitchMinOffsetEmotionHappy` at 0x20b04d8 (semantic, high); fEyePitchMinOffsetEmotionHappy: eye offset range per facial emotion, BSFaceGenNiNode slot 44 sub 0x4253b0 (eye tracking); not a bone solver: eyes move through face morphs (high); type `undefined1`
 pub const GameSetting_fEyePitchMinOffsetEmotionHappy: u64 = 378560;
-/// `GameSetting_fEyePitchMinOffsetEmotionNeutral` at 0x20b0658 (setting, high)
+/// `GameSetting_fEyePitchMinOffsetEmotionNeutral` at 0x20b0658 (semantic, high); fEyePitchMinOffsetEmotionNeutral: eye offset range per facial emotion, BSFaceGenNiNode slot 44 sub 0x4253b0 (eye tracking); not a bone solver: eyes move through face morphs (high); type `undefined1`
 pub const GameSetting_fEyePitchMinOffsetEmotionNeutral: u64 = 378606;
-/// `GameSetting_fEyePitchMinOffsetEmotionSad` at 0x20b0538 (setting, high)
+/// `GameSetting_fEyePitchMinOffsetEmotionSad` at 0x20b0538 (semantic, high); fEyePitchMinOffsetEmotionSad: eye offset range per facial emotion, BSFaceGenNiNode slot 44 sub 0x4253b0 (eye tracking); not a bone solver: eyes move through face morphs (high); type `undefined1`
 pub const GameSetting_fEyePitchMinOffsetEmotionSad: u64 = 378572;
 /// `GameSetting_fFallLegDamageMult` at 0x20a8b38 (setting, high)
 pub const GameSetting_fFallLegDamageMult: u64 = 374861;
@@ -2331,7 +2331,7 @@ pub const GameSetting_fFavorRequestPickDistance: u64 = 370608;
 pub const GameSetting_fFavorRequestRadius: u64 = 370605;
 /// `GameSetting_fFavorRequestWaitTimer` at 0x209f5b8 (setting, high)
 pub const GameSetting_fFavorRequestWaitTimer: u64 = 370602;
-/// `GameSetting_fFirstPersonLookAtVertOffset` at 0x20b74e8 (setting, high)
+/// `GameSetting_fFirstPersonLookAtVertOffset` at 0x20b74e8 (semantic, high); fFirstPersonLookAtVertOffset: PlayerCharacter::GetLookAtPosition 0x75ad40 (slot 91): vertical offset of the point others look at on the player in first person (high); type `undefined1`
 pub const GameSetting_fFirstPersonLookAtVertOffset: u64 = 381551;
 /// `GameSetting_fFleeDistanceExterior` at 0x20a5e08 (setting, high)
 pub const GameSetting_fFleeDistanceExterior: u64 = 373629;
@@ -2517,13 +2517,13 @@ pub const GameSetting_fHazardMaxWaitTime: u64 = 376198;
 pub const GameSetting_fHazardMinimumSpawnInterval: u64 = 359969;
 /// `GameSetting_fHazardSpacingMult` at 0x20ab9e8 (setting, high)
 pub const GameSetting_fHazardSpacingMult: u64 = 376201;
-/// `GameSetting_fHeadTrackSpeedMax` at 0x20a0170 (setting, high)
+/// `GameSetting_fHeadTrackSpeedMax` at 0x20a0170 (semantic, high); fHeadTrackSpeedMax: no reader (high); type `undefined1`
 pub const GameSetting_fHeadTrackSpeedMax: u64 = 370942;
-/// `GameSetting_fHeadTrackSpeedMaxAngle` at 0x20a01a0 (setting, high)
+/// `GameSetting_fHeadTrackSpeedMaxAngle` at 0x20a01a0 (semantic, high); fHeadTrackSpeedMaxAngle: no reader (high); type `undefined1`
 pub const GameSetting_fHeadTrackSpeedMaxAngle: u64 = 370946;
-/// `GameSetting_fHeadTrackSpeedMin` at 0x20a0158 (setting, high)
+/// `GameSetting_fHeadTrackSpeedMin` at 0x20a0158 (semantic, high); fHeadTrackSpeedMin: no reader (high); type `undefined1`
 pub const GameSetting_fHeadTrackSpeedMin: u64 = 370940;
-/// `GameSetting_fHeadTrackSpeedMinAngle` at 0x20a0188 (setting, high)
+/// `GameSetting_fHeadTrackSpeedMinAngle` at 0x20a0188 (semantic, high); fHeadTrackSpeedMinAngle: no reader (high); type `undefined1`
 pub const GameSetting_fHeadTrackSpeedMinAngle: u64 = 370944;
 /// `GameSetting_fHeadingMarkerAngleTolerance` at 0x20a0e48 (setting, high)
 pub const GameSetting_fHeadingMarkerAngleTolerance: u64 = 371298;
@@ -4131,9 +4131,9 @@ pub const GameSetting_fTorchLightLevelNight: u64 = 374988;
 pub const GameSetting_fTrackDeadZoneXY: u64 = 378542;
 /// `GameSetting_fTrackDeadZoneZ` at 0x20b0448 (setting, high)
 pub const GameSetting_fTrackDeadZoneZ: u64 = 378545;
-/// `GameSetting_fTrackEyeXY` at 0x20b0400 (setting, high)
+/// `GameSetting_fTrackEyeXY` at 0x20b0400 (semantic, high); fTrackEyeXY: eye tracking 0x4251b0 (BSFaceGenAnimationData::UpdateEyeTracking 0x4256e0): yaw limit in degrees (converted with 0.01745); the clamped yaw/limit becomes the look-left/right face keyframe weights (keyframe +0x24/+0x28) (high); type `undefined1`
 pub const GameSetting_fTrackEyeXY: u64 = 378536;
-/// `GameSetting_fTrackEyeZ` at 0x20b0418 (setting, high)
+/// `GameSetting_fTrackEyeZ` at 0x20b0418 (semantic, high); fTrackEyeZ: same, pitch limit; look-up/down weights (+0x20/+0x2c) (high); type `undefined1`
 pub const GameSetting_fTrackEyeZ: u64 = 378539;
 /// `GameSetting_fTrackFudgeXY` at 0x20b0460 (setting, high)
 pub const GameSetting_fTrackFudgeXY: u64 = 378548;
@@ -4627,7 +4627,7 @@ pub const GameSetting_iBallisticProjectilePathPickSegments: u64 = 373105;
 pub const GameSetting_iBaseDisposition: u64 = 359091;
 /// `GameSetting_iBloodSplatterMaxCount` at 0x20a6dc8 (setting, high)
 pub const GameSetting_iBloodSplatterMaxCount: u64 = 374050;
-/// `GameSetting_iBoneLODDistMult` at 0x209f1f8 (setting, high)
+/// `GameSetting_iBoneLODDistMult` at 0x209f1f8 (semantic, high); no reader in the executable (high); type `class:Setting`
 pub const GameSetting_iBoneLODDistMult: u64 = 370512;
 /// `GameSetting_iBrowMorphCount` at 0x209c900 (setting, high)
 pub const GameSetting_iBrowMorphCount: u64 = 369691;
@@ -7293,7 +7293,7 @@ pub const INISetting_bActivateFromSave_General: u64 = 380756;
 pub const INISetting_bActorSelfShadowing_Display: u64 = 381207;
 /// `INISetting_bAddBipedWhenKeyframed_HAVOK` at 0x2077820 (setting, high)
 pub const INISetting_bAddBipedWhenKeyframed_HAVOK: u64 = 358838;
-/// `INISetting_bAdditiveHeadAnim_LookIK` at 0x20d1cc0 (setting, high)
+/// `INISetting_bAdditiveHeadAnim_LookIK` at 0x20d1cc0 (semantic, high); bAdditiveHeadAnim:LookIK: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (0x106e000) (high); type `undefined1`
 pub const INISetting_bAdditiveHeadAnim_LookIK: u64 = 389253;
 /// `INISetting_bAimSights_Combat` at 0x207b308 (setting, high)
 pub const INISetting_bAimSights_Combat: u64 = 360285;
@@ -7325,7 +7325,7 @@ pub const INISetting_bAllowShaderCache_Display: u64 = 388817;
 pub const INISetting_bAllowYesToAll_MESSAGES: u64 = 381063;
 /// `INISetting_bAlwaysActive_General` at 0x20b58b8 (setting, high)
 pub const INISetting_bAlwaysActive_General: u64 = 380767;
-/// `INISetting_bAlwaysDriveRagdoll_Animation` at 0x20c5c68 (setting, high)
+/// `INISetting_bAlwaysDriveRagdoll_Animation` at 0x20c5c68 (semantic, high); bAlwaysDriveRagdoll:Animation: GraphPhysicsStepListener 0xbda2c0: when 1 the graph drives the ragdoll every physics step regardless of the per-bone weights (high); type `undefined1`
 pub const INISetting_bAlwaysDriveRagdoll_Animation: u64 = 385972;
 /// `INISetting_bAlwaysSaveAllInfo_Animation` at 0x20c7970 (setting, high)
 pub const INISetting_bAlwaysSaveAllInfo_Animation: u64 = 386390;
@@ -7483,7 +7483,7 @@ pub const INISetting_bDisableCombatDialogue_Combat: u64 = 382258;
 pub const INISetting_bDisableDuplicateReferenceCheck_General: u64 = 358981;
 /// `INISetting_bDisableGearedUp_General` at 0x209c9b8 (setting, high)
 pub const INISetting_bDisableGearedUp_General: u64 = 369708;
-/// `INISetting_bDisableHeadTracking_HeadTracking` at 0x20b6a88 (setting, high)
+/// `INISetting_bDisableHeadTracking_HeadTracking` at 0x20b6a88 (semantic, high); bDisableHeadTracking:HeadTracking: Actor::UpdateHeadTracking 0x6b4565: forces the path look-at point instead of the target; BSFaceGenNiNode::UpdateFaceAnimation 0x43a5e6: skips the face's eye tracking (high); type `undefined1`
 pub const INISetting_bDisableHeadTracking_HeadTracking: u64 = 381267;
 /// `INISetting_bDisableHighTreeShadow_Display` at 0x20d67f0 (setting, high)
 pub const INISetting_bDisableHighTreeShadow_Display: u64 = 390929;
@@ -7525,7 +7525,7 @@ pub const INISetting_bDragonCameraTargetPlayer_Camera: u64 = 380223;
 pub const INISetting_bDrawAnimPoseInVDB_Animation: u64 = 385963;
 /// `INISetting_bDrawShaderGrass_Grass` at 0x2079398 (setting, high)
 pub const INISetting_bDrawShaderGrass_Grass: u64 = 359404;
-/// `INISetting_bDriveRagdollWithGraph_Animation` at 0x20c5b10 (setting, high)
+/// `INISetting_bDriveRagdollWithGraph_Animation` at 0x20c5b10 (semantic, high); bDriveRagdollWithGraph:Animation: BShkbAnimationGraph::LoadProject 0xbcebc3 and SetupRagdollDriveFromGraph 0xbdba51: when 0 the graph never drives the ragdoll (powered ragdoll / ragdoll driver path) (high); type `undefined1`
 pub const INISetting_bDriveRagdollWithGraph_Animation: u64 = 385960;
 /// `INISetting_bDynamicDOF_Display` at 0x20b73c0 (setting, high)
 pub const INISetting_bDynamicDOF_Display: u64 = 381513;
@@ -7603,7 +7603,7 @@ pub const INISetting_bFaceGenWarnings_MESSAGES: u64 = 378648;
 pub const INISetting_bFacePathVector_Pathfinding: u64 = 390449;
 /// `INISetting_bFacegenDisableMorphs_General` at 0x20b07e0 (setting, high)
 pub const INISetting_bFacegenDisableMorphs_General: u64 = 378652;
-/// `INISetting_bFeedbackToGraphFromCharacterController_Animation` at 0x20b6ba8 (setting, high)
+/// `INISetting_bFeedbackToGraphFromCharacterController_Animation` at 0x20b6ba8 (semantic, high); bFeedbackToGraphFromCharacterController:Animation: Actor slot 285 0x6b1680 (motion feedback from the controller to the graph); not IK, listed because it shares the feedback path (high); type `undefined1`
 pub const INISetting_bFeedbackToGraphFromCharacterController_Animation: u64 = 381302;
 /// `INISetting_bFileCheckModelCollision_TestAllCells` at 0x2077d60 (setting, high)
 pub const INISetting_bFileCheckModelCollision_TestAllCells: u64 = 358993;
@@ -7635,13 +7635,13 @@ pub const INISetting_bFixNavmeshInfosOnLoad_Pathfinding: u64 = 379851;
 pub const INISetting_bFlyingMountFastTravelCruiseEnabled_GENERAL: u64 = 381554;
 /// `INISetting_bFogEnabled_Weather` at 0x209e850 (setting, high)
 pub const INISetting_bFogEnabled_Weather: u64 = 370217;
-/// `INISetting_bFootIKFeedback_Animation` at 0x20b93f0 (setting, high)
+/// `INISetting_bFootIKFeedback_Animation` at 0x20b93f0 (semantic, high); bFootIKFeedback:Animation: Actor::ApplyFootIkFeedback 0x7dd164: when 0 the feedback record is not applied to the character controller (IC7, static-W) (high); type `undefined1`
 pub const INISetting_bFootIKFeedback_Animation: u64 = 382155;
-/// `INISetting_bFootIK_Animation` at 0x20c5af8 (setting, high)
+/// `INISetting_bFootIK_Animation` at 0x20c5af8 (semantic, high); bFootIK:Animation, read by BShkbAnimationGraph::Update 0xbcf2c2 and FinalizePose 0xbcca93/0xbccbbc (high); type `class:Setting`
 pub const INISetting_bFootIK_Animation: u64 = 385957;
-/// `INISetting_bFootIK_RagdollAnim` at 0x20d1c00 (setting, high)
+/// `INISetting_bFootIK_RagdollAnim` at 0x20d1c00 (semantic, high); gate of the dead ragdoll foot IK; written by Debug.SetFootIK (high); type `class:Setting`
 pub const INISetting_bFootIK_RagdollAnim: u64 = 389230;
-/// `INISetting_bFootPlacementOn_FootIK` at 0x20d1d80 (setting, high)
+/// `INISetting_bFootPlacementOn_FootIK` at 0x20d1d80 (semantic, high); bFootPlacementOn:FootIK: no reader (only its CRT init) (high); type `undefined1`
 pub const INISetting_bFootPlacementOn_FootIK: u64 = 389276;
 /// `INISetting_bForceAllDecals_Decals` at 0x20792e0 (setting, high)
 pub const INISetting_bForceAllDecals_Decals: u64 = 359382;
@@ -7679,7 +7679,7 @@ pub const INISetting_bGestureEngageButtonsRequired_Controls: u64 = 563930;
 pub const INISetting_bGlobalNavMeshCheckDeleteWarningTriangles_NavMeshGeneration: u64 = 379822;
 /// `INISetting_bGlobalNavMeshCheck_NavMeshGeneration` at 0x20b3038 (setting, high)
 pub const INISetting_bGlobalNavMeshCheck_NavMeshGeneration: u64 = 379819;
-/// `INISetting_bGrabIK_RagdollAnim` at 0x20d1c18 (setting, high)
+/// `INISetting_bGrabIK_RagdollAnim` at 0x20d1c18 (semantic, high); bGrabIK:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect; forced to 0 at startup by 0x3fd7f0 (high); type `undefined1`
 pub const INISetting_bGrabIK_RagdollAnim: u64 = 389233;
 /// `INISetting_bGrassPointLighting_Grass` at 0x2079410 (setting, high)
 pub const INISetting_bGrassPointLighting_Grass: u64 = 359419;
@@ -7691,7 +7691,7 @@ pub const INISetting_bHazardDebug_Combat: u64 = 382164;
 pub const INISetting_bHealthBarShowing_GamePlay: u64 = 381452;
 /// `INISetting_bHealthRegenFromRacePlayerOnly_General` at 0x20a1370 (setting, high)
 pub const INISetting_bHealthRegenFromRacePlayerOnly_General: u64 = 371462;
-/// `INISetting_bHumanoidFootIKEnable_Animation` at 0x20b6bc0 (setting, high)
+/// `INISetting_bHumanoidFootIKEnable_Animation` at 0x20b6bc0 (setting, high); bHumanoidFootIKEnable:Animation, read once at 0x6b0491 in the holder's graph setup 0x6b0340 (feeds the graph bool of the same name, g_AnimationVariableNames+0x308) (medium); type `class:Setting`
 pub const INISetting_bHumanoidFootIKEnable_Animation: u64 = 381305;
 /// `INISetting_bIgnoreThresholds_Pathfinding` at 0x20d4aa0 (setting, high)
 pub const INISetting_bIgnoreThresholds_Pathfinding: u64 = 390479;
@@ -7743,7 +7743,7 @@ pub const INISetting_bLoadMarkers_Display: u64 = 381021;
 pub const INISetting_bLockFramerate_Display: u64 = 388954;
 /// `INISetting_bLodZPrepass_Display` at 0x20d6cb0 (setting, high)
 pub const INISetting_bLodZPrepass_Display: u64 = 391098;
-/// `INISetting_bLookIK_RagdollAnim` at 0x20d1c30 (setting, high)
+/// `INISetting_bLookIK_RagdollAnim` at 0x20d1c30 (semantic, high); bLookIK:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_bLookIK_RagdollAnim: u64 = 389236;
 /// `INISetting_bLowHealthIModEnabled_Display` at 0x20b7640 (setting, high)
 pub const INISetting_bLowHealthIModEnabled_Display: u64 = 381595;
@@ -7777,9 +7777,9 @@ pub const INISetting_bPlayStaggers_Combat: u64 = 381246;
 pub const INISetting_bPlayerAlwaysStaggered_Combat: u64 = 381353;
 /// `INISetting_bPlayerGraphFeedback_Controls` at 0x20b74a0 (setting, high)
 pub const INISetting_bPlayerGraphFeedback_Controls: u64 = 381542;
-/// `INISetting_bPoseMatching_RagdollAnim` at 0x20d1c60 (setting, high)
+/// `INISetting_bPoseMatching_RagdollAnim` at 0x20d1c60 (semantic, high); bPoseMatching:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect; forced to 0 at startup by 0x3fd7f0 (high); type `undefined1`
 pub const INISetting_bPoseMatching_RagdollAnim: u64 = 389242;
-/// `INISetting_bPreCullActors_General` at 0x20b5df8 (setting, high)
+/// `INISetting_bPreCullActors_General` at 0x20b5df8 (semantic, high); enables the per-frame actor frustum/portal pre-cull that sets 3D flags bit 20 (value 1) (high); type `class:Setting`
 pub const INISetting_bPreCullActors_General: u64 = 380926;
 /// `INISetting_bPrecipitation_Weather` at 0x209e838 (setting, high)
 pub const INISetting_bPrecipitation_Weather: u64 = 370214;
@@ -7801,9 +7801,9 @@ pub const INISetting_bProjectileDebug_Combat: u64 = 382166;
 pub const INISetting_bProjectileOnReflection_Display: u64 = 391438;
 /// `INISetting_bQueueWarnings_General` at 0x20779a0 (setting, high)
 pub const INISetting_bQueueWarnings_General: u64 = 358883;
-/// `INISetting_bRagdollAnim_RagdollAnim` at 0x20d1be8 (setting, high)
+/// `INISetting_bRagdollAnim_RagdollAnim` at 0x20d1be8 (semantic, high); bRagdollAnim:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect; written by Debug.ToggleCollisions 0x1a7270 and 0x1a72d0 (= !arg) (high); type `undefined1`
 pub const INISetting_bRagdollAnim_RagdollAnim: u64 = 389227;
-/// `INISetting_bRagdollFeedback_RagdollAnim` at 0x20d1c48 (setting, high)
+/// `INISetting_bRagdollFeedback_RagdollAnim` at 0x20d1c48 (semantic, high); bRagdollFeedback:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_bRagdollFeedback_RagdollAnim: u64 = 389239;
 /// `INISetting_bRandomizeGraphSeed_Animation` at 0x20c5cc0 (setting, high)
 pub const INISetting_bRandomizeGraphSeed_Animation: u64 = 385986;
@@ -7831,7 +7831,7 @@ pub const INISetting_bRequireSixaxisLockpickingEngageLeft_Controls: u64 = 563966
 pub const INISetting_bResetGameAfterStreamingInstall_StreamInstall: u64 = 380786;
 /// `INISetting_bReturnTo1stPersonFromVanity_Camera` at 0x20ba700 (setting, high)
 pub const INISetting_bReturnTo1stPersonFromVanity_Camera: u64 = 382682;
-/// `INISetting_bRigidBodyController_FootIK` at 0x20d1eb8 (setting, high)
+/// `INISetting_bRigidBodyController_FootIK` at 0x20d1eb8 (semantic, high); bRigidBodyController:FootIK: no reader (high); type `undefined1`
 pub const INISetting_bRigidBodyController_FootIK: u64 = 389311;
 /// `INISetting_bRunMiddleLowLevelProcess_General` at 0x20b8028 (setting, high)
 pub const INISetting_bRunMiddleLowLevelProcess_General: u64 = 381864;
@@ -8131,7 +8131,7 @@ pub const INISetting_fAITurnSpeedScale_Pathfinding: u64 = 381872;
 pub const INISetting_fASFadeInTime_Audio: u64 = 380384;
 /// `INISetting_fASFadeOutTime_Audio` at 0x20b4aa0 (setting, high)
 pub const INISetting_fASFadeOutTime_Audio: u64 = 380387;
-/// `INISetting_fAccelerationGain_RagdollAnim` at 0x20d1ab0 (setting, high)
+/// `INISetting_fAccelerationGain_RagdollAnim` at 0x20d1ab0 (semantic, high); fAccelerationGain:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fAccelerationGain_RagdollAnim: u64 = 389191;
 /// `INISetting_fAcceptableErrorRatio_Pathfinding` at 0x20d4468 (setting, high)
 pub const INISetting_fAcceptableErrorRatio_Pathfinding: u64 = 390391;
@@ -8155,9 +8155,9 @@ pub const INISetting_fAimUpDegrees_Combat: u64 = 381424;
 pub const INISetting_fAlphaReduce_Weather: u64 = 358833;
 /// `INISetting_fAlphaWeight_Display` at 0x20d8750 (setting, high)
 pub const INISetting_fAlphaWeight_Display: u64 = 391441;
-/// `INISetting_fAngleMaxEase_LookIK` at 0x20d1c90 (setting, high)
+/// `INISetting_fAngleMaxEase_LookIK` at 0x20d1c90 (semantic, high); fAngleMaxEase:LookIK: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (ApplyLookIkRotationEased 0x1078bc0) (high); type `undefined1`
 pub const INISetting_fAngleMaxEase_LookIK: u64 = 389247;
-/// `INISetting_fAngleMax_LookIK` at 0x20d1c78 (setting, high)
+/// `INISetting_fAngleMax_LookIK` at 0x20d1c78 (semantic, high); fAngleMax:LookIK: no reader (high); type `undefined1`
 pub const INISetting_fAngleMax_LookIK: u64 = 389245;
 /// `INISetting_fAnimInterpFarDist_Animation` at 0x20c5ac8 (setting, high)
 pub const INISetting_fAnimInterpFarDist_Animation: u64 = 385951;
@@ -8169,7 +8169,7 @@ pub const INISetting_fAnimInterpMinTime_Animation: u64 = 385942;
 pub const INISetting_fAnimInterpNearDist_Animation: u64 = 385948;
 /// `INISetting_fAnimInterpSlop_Animation` at 0x20c5ae0 (setting, high)
 pub const INISetting_fAnimInterpSlop_Animation: u64 = 385954;
-/// `INISetting_fAnkleOffset_FootIK` at 0x20d1db0 (setting, high)
+/// `INISetting_fAnkleOffset_FootIK` at 0x20d1db0 (semantic, high); fAnkleOffset:FootIK: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect; SetupFootIkLeg 0x1071646 adds it to the ankle height (high); type `undefined1`
 pub const INISetting_fAnkleOffset_FootIK: u64 = 389281;
 /// `INISetting_fArchiveInitBufferMB_Papyrus` at 0x20b5888 (setting, high)
 pub const INISetting_fArchiveInitBufferMB_Papyrus: u64 = 380762;
@@ -8217,7 +8217,7 @@ pub const INISetting_fBackPedalAngle_Pathfinding: u64 = 390455;
 pub const INISetting_fBadTriangleMultiplier_Pathfinding: u64 = 390326;
 /// `INISetting_fBetaDeferredKillTimer_General` at 0x20b7138 (setting, high)
 pub const INISetting_fBetaDeferredKillTimer_General: u64 = 381437;
-/// `INISetting_fBoneLODDistanceScale_Animation` at 0x20c5a68 (setting, high)
+/// `INISetting_fBoneLODDistanceScale_Animation` at 0x20c5a68 (semantic, high); 1.0: scale of the bone LOD distance (high); type `class:Setting`
 pub const INISetting_fBoneLODDistanceScale_Animation: u64 = 385939;
 /// `INISetting_fBookDistance_Interface` at 0x20ba810 (setting, high)
 pub const INISetting_fBookDistance_Interface: u64 = 382714;
@@ -8271,7 +8271,7 @@ pub const INISetting_fCameraCasterFadeSittingRadius_HAVOK: u64 = 380136;
 pub const INISetting_fCameraCasterSize_Camera: u64 = 382590;
 /// `INISetting_fCameraCasterTargetSize_Camera` at 0x20ba430 (setting, high)
 pub const INISetting_fCameraCasterTargetSize_Camera: u64 = 382593;
-/// `INISetting_fCameraDist_RagdollAnim` at 0x20d1ba0 (setting, high)
+/// `INISetting_fCameraDist_RagdollAnim` at 0x20d1ba0 (semantic, high); fCameraDist:RagdollAnim: no reader (high); type `undefined1`
 pub const INISetting_fCameraDist_RagdollAnim: u64 = 389221;
 /// `INISetting_fCartLimitMax_Cart` at 0x209e118 (setting, high)
 pub const INISetting_fCartLimitMax_Cart: u64 = 370024;
@@ -8325,7 +8325,7 @@ pub const INISetting_fControllerBufferDepth_Controls: u64 = 381878;
 pub const INISetting_fControllerDampenTime_Controls: u64 = 381887;
 /// `INISetting_fControllerSampleThreshold_Controls` at 0x20b80d8 (setting, high)
 pub const INISetting_fControllerSampleThreshold_Controls: u64 = 381881;
-/// `INISetting_fControllerTetherLen_FootIK` at 0x20d1e28 (setting, high)
+/// `INISetting_fControllerTetherLen_FootIK` at 0x20d1e28 (semantic, high); fControllerTetherLen:FootIK: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fControllerTetherLen_FootIK: u64 = 389296;
 /// `INISetting_fCrafting3DItemPosXWide_Interface` at 0x20baa50 (setting, high)
 pub const INISetting_fCrafting3DItemPosXWide_Interface: u64 = 382763;
@@ -8415,9 +8415,9 @@ pub const INISetting_fDefaultWaterfallCurrentVelocity_HAVOK: u64 = 360549;
 pub const INISetting_fDefaultWorldFOV_Display: u64 = 388784;
 /// `INISetting_fDefaultWorldFOV_Display_value` at 0x20cf9e0 (semantic, high); 80; PlayerCamera ctor, ResetFOVToDefaults, revert, VATS pop, tween begin, ApplyLookPitch ratio, LookHandler motion; written by the fov command (high); type `float`
 pub const INISetting_fDefaultWorldFOV_Display_value: u64 = 388785;
-/// `INISetting_fDesiredVel_RagdollAnim` at 0x20d1930 (setting, high)
+/// `INISetting_fDesiredVel_RagdollAnim` at 0x20d1930 (semantic, high); fDesiredVel:RagdollAnim: ragdoll penetration recovery (0x105f590), not IK (high); type `undefined1`
 pub const INISetting_fDesiredVel_RagdollAnim: u64 = 389149;
-/// `INISetting_fDetectionUpdateTimeSec_RagdollAnim` at 0x20d1960 (setting, high)
+/// `INISetting_fDetectionUpdateTimeSec_RagdollAnim` at 0x20d1960 (semantic, high); fDetectionUpdateTimeSec:RagdollAnim: ragdoll penetration detection interval (0x105e8f0, 0x1060020), not IK (high); type `undefined1`
 pub const INISetting_fDetectionUpdateTimeSec_RagdollAnim: u64 = 389155;
 /// `INISetting_fDialogueHardStopAngle1P_Controls` at 0x20b8698 (setting, high)
 pub const INISetting_fDialogueHardStopAngle1P_Controls: u64 = 382055;
@@ -8451,7 +8451,7 @@ pub const INISetting_fDragonLandingForPlayerNavMeshSize_GENERAL: u64 = 381416;
 pub const INISetting_fDragonLandingForPlayerSearchDist_GENERAL: u64 = 381413;
 /// `INISetting_fDragonMaxAngleBeforeTurn_Camera` at 0x20b3e98 (setting, high)
 pub const INISetting_fDragonMaxAngleBeforeTurn_Camera: u64 = 380220;
-/// `INISetting_fDriveGain_GrabIK` at 0x20d1cf0 (setting, high)
+/// `INISetting_fDriveGain_GrabIK` at 0x20d1cf0 (semantic, high); fDriveGain:GrabIK: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (UpdateGrabIk 0x1072160: lerp gain) (high); type `undefined1`
 pub const INISetting_fDriveGain_GrabIK: u64 = 389258;
 /// `INISetting_fDualCastChordTime_Controls` at 0x20b8890 (setting, high)
 pub const INISetting_fDualCastChordTime_Controls: u64 = 382103;
@@ -8471,7 +8471,7 @@ pub const INISetting_fDynamicDOFNearBlur_Display: u64 = 391698;
 pub const INISetting_fDynamicDOFNearDist_Display: u64 = 391686;
 /// `INISetting_fDynamicDOFNearRange_Display` at 0x20d8f48 (setting, high)
 pub const INISetting_fDynamicDOFNearRange_Display: u64 = 391692;
-/// `INISetting_fEaseAngleShutOff_LookIK` at 0x20d1ca8 (setting, high)
+/// `INISetting_fEaseAngleShutOff_LookIK` at 0x20d1ca8 (semantic, high); fEaseAngleShutOff:LookIK: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (0x10779a0) (high); type `undefined1`
 pub const INISetting_fEaseAngleShutOff_LookIK: u64 = 389250;
 /// `INISetting_fEncumberedReminderTimer_General` at 0x20b76b8 (setting, high)
 pub const INISetting_fEncumberedReminderTimer_General: u64 = 381612;
@@ -8487,7 +8487,7 @@ pub const INISetting_fExteriorWaterReflectionThreshold_Water: u64 = 380047;
 pub const INISetting_fExtraTaskletBudgetMS_Papyrus: u64 = 383727;
 /// `INISetting_fEyeEnvmapLODEnd_LightingShader` at 0x20d6c98 (setting, high)
 pub const INISetting_fEyeEnvmapLODEnd_LightingShader: u64 = 391095;
-/// `INISetting_fEyeIKDistanceMax_LookIK` at 0x20d1cd8 (setting, high)
+/// `INISetting_fEyeIKDistanceMax_LookIK` at 0x20d1cd8 (semantic, high); fEyeIKDistanceMax:LookIK: no reader (high); type `undefined1`
 pub const INISetting_fEyeIKDistanceMax_LookIK: u64 = 389256;
 /// `INISetting_fFadeInThreshold_LOD` at 0x2077910 (setting, high)
 pub const INISetting_fFadeInThreshold_LOD: u64 = 358866;
@@ -8503,13 +8503,13 @@ pub const INISetting_fFadeToBlackFadeSeconds_Interface: u64 = 358875;
 pub const INISetting_fFadingFracStart: u64 = 391764;
 /// `INISetting_fFastTravelFadeSecs_General` at 0x20bc528 (setting, high)
 pub const INISetting_fFastTravelFadeSecs_General: u64 = 383563;
-/// `INISetting_fFeedbackImpulseMult_RagdollAnim` at 0x20d1f30 (setting, high)
+/// `INISetting_fFeedbackImpulseMult_RagdollAnim` at 0x20d1f30 (semantic, high); fFeedbackImpulseMult:RagdollAnim: no reader (high); type `undefined1`
 pub const INISetting_fFeedbackImpulseMult_RagdollAnim: u64 = 389324;
-/// `INISetting_fFeedbackOnOffGainTimeMS_RagdollAnim` at 0x20d1f00 (setting, high)
+/// `INISetting_fFeedbackOnOffGainTimeMS_RagdollAnim` at 0x20d1f00 (semantic, high); fFeedbackOnOffGainTimeMS:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fFeedbackOnOffGainTimeMS_RagdollAnim: u64 = 389318;
-/// `INISetting_fFeedbackOnOffGain_RagdollAnim` at 0x20d1ee8 (setting, high)
+/// `INISetting_fFeedbackOnOffGain_RagdollAnim` at 0x20d1ee8 (semantic, high); fFeedbackOnOffGain:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fFeedbackOnOffGain_RagdollAnim: u64 = 389315;
-/// `INISetting_fFeedbackTimeMS_RagdollAnim` at 0x20d1f18 (setting, high)
+/// `INISetting_fFeedbackTimeMS_RagdollAnim` at 0x20d1f18 (semantic, high); fFeedbackTimeMS:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fFeedbackTimeMS_RagdollAnim: u64 = 389321;
 /// `INISetting_fFilmicWhiteScale_Display` at 0x20d7df0 (setting, high)
 pub const INISetting_fFilmicWhiteScale_Display: u64 = 391344;
@@ -8545,11 +8545,11 @@ pub const INISetting_fFlyingMountSlowestSpeedMult_GENERAL: u64 = 381570;
 pub const INISetting_fFlyingMountTutorialMessageDelay_GENERAL: u64 = 381582;
 /// `INISetting_fFollowerTeleportOffsetFudge_Pathfinding` at 0x20b6c38 (setting, high)
 pub const INISetting_fFollowerTeleportOffsetFudge_Pathfinding: u64 = 381320;
-/// `INISetting_fFootIKDistance_GamePlay` at 0x20b6998 (setting, high)
+/// `INISetting_fFootIKDistance_GamePlay` at 0x20b6998 (setting, high); fFootIKDistance:GamePlay; no reader of its value (+8) found: only its init 0xa17d0 and atexit (medium); type `class:Setting`
 pub const INISetting_fFootIKDistance_GamePlay: u64 = 381242;
-/// `INISetting_fFootPlantedGain_FootIK` at 0x20d1d68 (setting, high)
+/// `INISetting_fFootPlantedGain_FootIK` at 0x20d1d68 (semantic, high); fFootPlantedGain:FootIK: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fFootPlantedGain_FootIK: u64 = 389273;
-/// `INISetting_fFootRaisedGain_FootIK` at 0x20d1d50 (setting, high)
+/// `INISetting_fFootRaisedGain_FootIK` at 0x20d1d50 (semantic, high); fFootRaisedGain:FootIK: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fFootRaisedGain_FootIK: u64 = 389270;
 /// `INISetting_fFreeCameraRotationSpeed_Camera` at 0x20ba208 (setting, high)
 pub const INISetting_fFreeCameraRotationSpeed_Camera: u64 = 382524;
@@ -8633,9 +8633,9 @@ pub const INISetting_fGrassWindMagnitudeMin_Grass: u64 = 359427;
 pub const INISetting_fGravMult_Cart: u64 = 370060;
 /// `INISetting_fGravity_Verlet` at 0x20b4c68 (setting, high)
 pub const INISetting_fGravity_Verlet: u64 = 380439;
-/// `INISetting_fGroundAscendingGain_FootIK` at 0x20d1d20 (setting, high)
+/// `INISetting_fGroundAscendingGain_FootIK` at 0x20d1d20 (semantic, high); fGroundAscendingGain:FootIK: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fGroundAscendingGain_FootIK: u64 = 389264;
-/// `INISetting_fGroundDescendingGain_FootIK` at 0x20d1d38 (setting, high)
+/// `INISetting_fGroundDescendingGain_FootIK` at 0x20d1d38 (semantic, high); fGroundDescendingGain:FootIK: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fGroundDescendingGain_FootIK: u64 = 389267;
 /// `INISetting_fHDLODSnowThresholdAngle_Terrain` at 0x20b3310 (setting, high)
 pub const INISetting_fHDLODSnowThresholdAngle_Terrain: u64 = 379896;
@@ -8645,13 +8645,13 @@ pub const INISetting_fHardLandingDamageThreshold_Audio: u64 = 381296;
 pub const INISetting_fHavokHitImpulseMult_Animation: u64 = 382146;
 /// `INISetting_fHavokHitTimeSec_Animation` at 0x20b8b58 (setting, high)
 pub const INISetting_fHavokHitTimeSec_Animation: u64 = 382141;
-/// `INISetting_fHeadTrackingMaxAngle_HeadTracking` at 0x20b6b60 (setting, high)
+/// `INISetting_fHeadTrackingMaxAngle_HeadTracking` at 0x20b6b60 (semantic, high); fHeadTrackingMaxAngle:HeadTracking: no reader (default 90) (high); type `undefined1`
 pub const INISetting_fHeadTrackingMaxAngle_HeadTracking: u64 = 381294;
 /// `INISetting_fHeadingAxisDeadzone_Controls` at 0x20b8338 (setting, high)
 pub const INISetting_fHeadingAxisDeadzone_Controls: u64 = 381952;
 /// `INISetting_fHeadingToPathTangentMaxAngle_Pathfinding` at 0x20d3ea0 (setting, high)
 pub const INISetting_fHeadingToPathTangentMaxAngle_Pathfinding: u64 = 390275;
-/// `INISetting_fHierarchyGain_RagdollAnim` at 0x20d1a80 (setting, high)
+/// `INISetting_fHierarchyGain_RagdollAnim` at 0x20d1a80 (semantic, high); fHierarchyGain:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (0x1076280 copies the 12 gains into the controller's control block) (high); type `undefined1`
 pub const INISetting_fHierarchyGain_RagdollAnim: u64 = 389185;
 /// `INISetting_fHighlightSpeechOverlap_Audio` at 0x20b4b78 (setting, high)
 pub const INISetting_fHighlightSpeechOverlap_Audio: u64 = 380414;
@@ -8713,7 +8713,7 @@ pub const INISetting_fIBLFLightsRangeDownshift_Display: u64 = 391371;
 pub const INISetting_fINIDetectDoorsForPathingTime_Pathing: u64 = 381407;
 /// `INISetting_fIdleChangeClearTime_Animation` at 0x20b7020 (setting, high)
 pub const INISetting_fIdleChangeClearTime_Animation: u64 = 381404;
-/// `INISetting_fImpulseLimit_RagdollAnim` at 0x20d1948 (setting, high)
+/// `INISetting_fImpulseLimit_RagdollAnim` at 0x20d1948 (semantic, high); fImpulseLimit:RagdollAnim: ragdoll penetration recovery (0x105f590), not IK (high); type `undefined1`
 pub const INISetting_fImpulseLimit_RagdollAnim: u64 = 389152;
 /// `INISetting_fInAirFallingCharGravityMult_Havok` at 0x20d2550 (setting, high)
 pub const INISetting_fInAirFallingCharGravityMult_Havok: u64 = 389443;
@@ -9093,9 +9093,9 @@ pub const INISetting_fMaxEdgeLength_Pathfinding: u64 = 390329;
 pub const INISetting_fMaxFitnessMultiplier_Pathfinding: u64 = 390338;
 /// `INISetting_fMaxFocusShadowMapDistance_Display` at 0x20d9190 (setting, high)
 pub const INISetting_fMaxFocusShadowMapDistance_Display: u64 = 391767;
-/// `INISetting_fMaxFootCastMilliSec_FootIK` at 0x20d1e58 (setting, high)
+/// `INISetting_fMaxFootCastMilliSec_FootIK` at 0x20d1e58 (semantic, high); no reader in the executable (no per-frame foot IK cast budget is enforced) (high); type `class:Setting`
 pub const INISetting_fMaxFootCastMilliSec_FootIK: u64 = 389302;
-/// `INISetting_fMaxFrameCounterDifferenceToConsiderVisible_Animation` at 0x20b6bf0 (setting, high)
+/// `INISetting_fMaxFrameCounterDifferenceToConsiderVisible_Animation` at 0x20b6bf0 (semantic, high); 0.0667: render frames since the body was drawn for a pre-culled actor to still count as visible (only 0 passes) (high); type `class:Setting`
 pub const INISetting_fMaxFrameCounterDifferenceToConsiderVisible_Animation: u64 = 381311;
 /// `INISetting_fMaxHeightFromNavmeshToObstacleBoxBottom_Pathfinding` at 0x20d4d60 (setting, high)
 pub const INISetting_fMaxHeightFromNavmeshToObstacleBoxBottom_Pathfinding: u64 = 390519;
@@ -9113,7 +9113,7 @@ pub const INISetting_fMaxMarkerSelectionDist_MapMenu: u64 = 383548;
 pub const INISetting_fMaxMoveRampDownDelta_Controls: u64 = 381944;
 /// `INISetting_fMaxMsUsagePerFrame_BudgetCaps` at 0x2079d00 (setting, high)
 pub const INISetting_fMaxMsUsagePerFrame_BudgetCaps: u64 = 359639;
-/// `INISetting_fMaxPathLookAtPointDist_HeadTracking` at 0x20b6b30 (setting, high)
+/// `INISetting_fMaxPathLookAtPointDist_HeadTracking` at 0x20b6b30 (semantic, high); fMaxPathLookAtPointDist:HeadTracking: path look-at point: max distance ahead (high); type `undefined1`
 pub const INISetting_fMaxPathLookAtPointDist_HeadTracking: u64 = 381288;
 /// `INISetting_fMaxPickTimeDebugVATS_HAVOK` at 0x2077880 (setting, high)
 pub const INISetting_fMaxPickTimeDebugVATS_HAVOK: u64 = 358849;
@@ -9123,7 +9123,7 @@ pub const INISetting_fMaxPickTimeDebug_HAVOK: u64 = 358847;
 pub const INISetting_fMaxPickTimeVATS_HAVOK: u64 = 358844;
 /// `INISetting_fMaxPickTime_HAVOK` at 0x2077838 (setting, high)
 pub const INISetting_fMaxPickTime_HAVOK: u64 = 358841;
-/// `INISetting_fMaxStepVertError_FootIK` at 0x20d1e40 (setting, high)
+/// `INISetting_fMaxStepVertError_FootIK` at 0x20d1e40 (semantic, high); fMaxStepVertError:FootIK: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect; SetupFootIkLeg stores -value at leg +0x60 (high); type `undefined1`
 pub const INISetting_fMaxStepVertError_FootIK: u64 = 389299;
 /// `INISetting_fMaxSubtitleDistance_Interface` at 0x20bb9b8 (setting, high)
 pub const INISetting_fMaxSubtitleDistance_Interface: u64 = 383204;
@@ -9137,7 +9137,7 @@ pub const INISetting_fMaxTimeSizeAvoidNode_Pathfinding: u64 = 390407;
 pub const INISetting_fMaxTimeToMarkSec_Animation: u64 = 380131;
 /// `INISetting_fMaxTime_HAVOK` at 0x20d1778 (setting, high)
 pub const INISetting_fMaxTime_HAVOK: u64 = 389102;
-/// `INISetting_fMaxTrackingDist_LookIK` at 0x20d1bb8 (setting, high)
+/// `INISetting_fMaxTrackingDist_LookIK` at 0x20d1bb8 (semantic, high); fMaxTrackingDist:LookIK: no reader (high); type `undefined1`
 pub const INISetting_fMaxTrackingDist_LookIK: u64 = 389223;
 /// `INISetting_fMenuKeyRepeatLong_Interface` at 0x20bb3c8 (setting, high)
 pub const INISetting_fMenuKeyRepeatLong_Interface: u64 = 383031;
@@ -9165,7 +9165,7 @@ pub const INISetting_fMinFailureDistance_Pathfinding: u64 = 381929;
 pub const INISetting_fMinFrictionSpeed_Pathfinding: u64 = 390285;
 /// `INISetting_fMinNormalizedSpeedForSlowdown_Pathfinding` at 0x20d3e70 (setting, high)
 pub const INISetting_fMinNormalizedSpeedForSlowdown_Pathfinding: u64 = 390269;
-/// `INISetting_fMinPathLookAtPointDist_HeadTracking` at 0x20b6b18 (setting, high)
+/// `INISetting_fMinPathLookAtPointDist_HeadTracking` at 0x20b6b18 (semantic, high); fMinPathLookAtPointDist:HeadTracking: path look-at point: min distance ahead (added to the actor's radius, process slot 11) (high); type `undefined1`
 pub const INISetting_fMinPathLookAtPointDist_HeadTracking: u64 = 381285;
 /// `INISetting_fMinSecondsForLoadFadeIn_Interface` at 0x2077970 (setting, high)
 pub const INISetting_fMinSecondsForLoadFadeIn_Interface: u64 = 358878;
@@ -9175,7 +9175,7 @@ pub const INISetting_fMinSoundVel_Audio: u64 = 370076;
 pub const INISetting_fMinStairSpeed_Pathfinding: u64 = 381911;
 /// `INISetting_fMinTimeToNextPoint_Pathfinding` at 0x20d3ee8 (setting, high)
 pub const INISetting_fMinTimeToNextPoint_Pathfinding: u64 = 390283;
-/// `INISetting_fMinTrackingDist_LookIK` at 0x20d1bd0 (setting, high)
+/// `INISetting_fMinTrackingDist_LookIK` at 0x20d1bd0 (semantic, high); fMinTrackingDist:LookIK: no reader (high); type `undefined1`
 pub const INISetting_fMinTrackingDist_LookIK: u64 = 389225;
 /// `INISetting_fMinimalUsePathingCost_Pathfinding` at 0x20d3dc0 (setting, high)
 pub const INISetting_fMinimalUsePathingCost_Pathfinding: u64 = 390259;
@@ -9321,9 +9321,9 @@ pub const INISetting_fObstacleManagerMinWidth_Pathfinding: u64 = 379877;
 pub const INISetting_fObstacleUpdateDeltaWhenMoving_Pathfinding: u64 = 379866;
 /// `INISetting_fObstacleUpdateDeltaWhenUnknown_Pathfinding` at 0x20b3238 (setting, high)
 pub const INISetting_fObstacleUpdateDeltaWhenUnknown_Pathfinding: u64 = 379869;
-/// `INISetting_fOnOffGain_FootIK` at 0x20d1d08 (setting, high)
+/// `INISetting_fOnOffGain_FootIK` at 0x20d1d08 (semantic, high); fOnOffGain:FootIK: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fOnOffGain_FootIK: u64 = 389261;
-/// `INISetting_fOriginalGroundHeightMS_FootIK` at 0x20d1d98 (setting, high)
+/// `INISetting_fOriginalGroundHeightMS_FootIK` at 0x20d1d98 (semantic, high); fOriginalGroundHeightMS:FootIK: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fOriginalGroundHeightMS_FootIK: u64 = 389278;
 /// `INISetting_fOutsideDialogueAngleRotationDampen_Controls` at 0x20b86c8 (setting, high)
 pub const INISetting_fOutsideDialogueAngleRotationDampen_Controls: u64 = 382061;
@@ -9357,7 +9357,7 @@ pub const INISetting_fPCDialogueLookStart_Controls: u64 = 382100;
 pub const INISetting_fPOVSmootherAvoidNodeCost_Pathfinding: u64 = 390498;
 /// `INISetting_fPackratRatio_Interface` at 0x20ba9a8 (setting, high)
 pub const INISetting_fPackratRatio_Interface: u64 = 382743;
-/// `INISetting_fPathLookAtPointTime_HeadTracking` at 0x20b6b48 (setting, high)
+/// `INISetting_fPathLookAtPointTime_HeadTracking` at 0x20b6b48 (semantic, high); fPathLookAtPointTime:HeadTracking: path look-at point: look-ahead time (high); type `undefined1`
 pub const INISetting_fPathLookAtPointTime_HeadTracking: u64 = 381291;
 /// `INISetting_fPathManagerDebugInfoWindow_Pathfinding` at 0x20d4078 (setting, high)
 pub const INISetting_fPathManagerDebugInfoWindow_Pathfinding: u64 = 390311;
@@ -9365,9 +9365,9 @@ pub const INISetting_fPathManagerDebugInfoWindow_Pathfinding: u64 = 390311;
 pub const INISetting_fPathToAnimLengthMaxMultiplier_Pathfinding: u64 = 390482;
 /// `INISetting_fPathingLargeActorRadius_Pathfinding` at 0x20d40b8 (setting, high)
 pub const INISetting_fPathingLargeActorRadius_Pathfinding: u64 = 390314;
-/// `INISetting_fPelvisOffsetDamping_FootIK` at 0x20d1de0 (setting, high)
+/// `INISetting_fPelvisOffsetDamping_FootIK` at 0x20d1de0 (semantic, high); fPelvisOffsetDamping:FootIK: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fPelvisOffsetDamping_FootIK: u64 = 389287;
-/// `INISetting_fPelvisUpDownBias_FootIK` at 0x20d1dc8 (setting, high)
+/// `INISetting_fPelvisUpDownBias_FootIK` at 0x20d1dc8 (semantic, high); fPelvisUpDownBias:FootIK: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fPelvisUpDownBias_FootIK: u64 = 389284;
 /// `INISetting_fPickMouseRotationSpeed_Interface` at 0x20baf90 (setting, high)
 pub const INISetting_fPickMouseRotationSpeed_Interface: u64 = 382918;
@@ -9415,11 +9415,11 @@ pub const INISetting_fPlayerZoomTime_Interface: u64 = 383159;
 pub const INISetting_fPoissonRadiusScale_Display: u64 = 391758;
 /// `INISetting_fPoleZOffset_Cart` at 0x209e1c0 (setting, high)
 pub const INISetting_fPoleZOffset_Cart: u64 = 370045;
-/// `INISetting_fPositionGain_RagdollAnim` at 0x20d1ae0 (setting, high)
+/// `INISetting_fPositionGain_RagdollAnim` at 0x20d1ae0 (semantic, high); fPositionGain:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fPositionGain_RagdollAnim: u64 = 389197;
-/// `INISetting_fPositionMaxAngularVelocity_RagdollAnim` at 0x20d1b10 (setting, high)
+/// `INISetting_fPositionMaxAngularVelocity_RagdollAnim` at 0x20d1b10 (semantic, high); fPositionMaxAngularVelocity:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fPositionMaxAngularVelocity_RagdollAnim: u64 = 389203;
-/// `INISetting_fPositionMaxLinearVelocity_RagdollAnim` at 0x20d1af8 (setting, high)
+/// `INISetting_fPositionMaxLinearVelocity_RagdollAnim` at 0x20d1af8 (semantic, high); fPositionMaxLinearVelocity:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fPositionMaxLinearVelocity_RagdollAnim: u64 = 389200;
 /// `INISetting_fPostLoadUpdateTimeMS_Papyrus` at 0x20bca80 (setting, high)
 pub const INISetting_fPostLoadUpdateTimeMS_Papyrus: u64 = 383730;
@@ -9439,7 +9439,7 @@ pub const INISetting_fProjectileDebugDuration_Combat: u64 = 382168;
 pub const INISetting_fQuadraticRadiusMult_bLightAttenuation: u64 = 360132;
 /// `INISetting_fQuadraticValue_bLightAttenuation` at 0x207ad60 (setting, high)
 pub const INISetting_fQuadraticValue_bLightAttenuation: u64 = 360120;
-/// `INISetting_fQuadrupedPitchMult_HAVOK` at 0x20b6878 (setting, high)
+/// `INISetting_fQuadrupedPitchMult_HAVOK` at 0x20b6878 (semantic, high); fQuadrupedPitchMult:HAVOK: Actor slot 200 0x689b8e: per-frame rate (value * frame delta) at which a quadruped's pitch follows the ground slope; ground alignment, not a solver (high); type `undefined1`
 pub const INISetting_fQuadrupedPitchMult_HAVOK: u64 = 381213;
 /// `INISetting_fQuestScriptDelayTime_MAIN` at 0x207e518 (setting, high)
 pub const INISetting_fQuestScriptDelayTime_MAIN: u64 = 361075;
@@ -9447,13 +9447,13 @@ pub const INISetting_fQuestScriptDelayTime_MAIN: u64 = 361075;
 pub const INISetting_fRF_HAVOK: u64 = 369250;
 /// `INISetting_fRSMCameraLookAtPercent_Interface` at 0x20bb840 (setting, high)
 pub const INISetting_fRSMCameraLookAtPercent_Interface: u64 = 383162;
-/// `INISetting_fRSMLookAtOnGain_Interface` at 0x20bb858 (setting, high)
+/// `INISetting_fRSMLookAtOnGain_Interface` at 0x20bb858 (semantic, high); fRSMLookAtOnGain:Interface: RaceSexMenu::SetupPlayerLookAt 0x96b930: written to the graph float 'LookAtOnGain' (0x32584f8) on the player while the race menu is open; the menu's ctor/vdtor also set/reset that variable (high); type `undefined1`
 pub const INISetting_fRSMLookAtOnGain_Interface: u64 = 383165;
 /// `INISetting_fRThumbDeadzoneMax_Controls` at 0x20ccde0 (setting, high)
 pub const INISetting_fRThumbDeadzoneMax_Controls: u64 = 388482;
 /// `INISetting_fRThumbDeadzone_Controls` at 0x20ccd98 (setting, high)
 pub const INISetting_fRThumbDeadzone_Controls: u64 = 388473;
-/// `INISetting_fRagdollFeedback_FootIK` at 0x20d1ea0 (setting, high)
+/// `INISetting_fRagdollFeedback_FootIK` at 0x20d1ea0 (semantic, high); fRagdollFeedback:FootIK: no reader (high); type `undefined1`
 pub const INISetting_fRagdollFeedback_FootIK: u64 = 389309;
 /// `INISetting_fRatioDecreasePerSeconds_Display` at 0x20d0478 (setting, high)
 pub const INISetting_fRatioDecreasePerSeconds_Display: u64 = 389025;
@@ -9547,15 +9547,15 @@ pub const INISetting_fSlowDownMultiplier_Pathfinding: u64 = 390452;
 pub const INISetting_fSlowVanityIncrement_Camera: u64 = 358968;
 /// `INISetting_fSmoothingStepHeight_Pathfinding` at 0x20d4c08 (setting, high)
 pub const INISetting_fSmoothingStepHeight_Pathfinding: u64 = 390504;
-/// `INISetting_fSnapGain_RagdollAnim` at 0x20d1b28 (setting, high)
+/// `INISetting_fSnapGain_RagdollAnim` at 0x20d1b28 (semantic, high); fSnapGain:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fSnapGain_RagdollAnim: u64 = 389206;
-/// `INISetting_fSnapMaxAngularDistance_RagdollAnim` at 0x20d1b88 (setting, high)
+/// `INISetting_fSnapMaxAngularDistance_RagdollAnim` at 0x20d1b88 (semantic, high); fSnapMaxAngularDistance:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fSnapMaxAngularDistance_RagdollAnim: u64 = 389218;
-/// `INISetting_fSnapMaxAngularVelocity_RagdollAnim` at 0x20d1b58 (setting, high)
+/// `INISetting_fSnapMaxAngularVelocity_RagdollAnim` at 0x20d1b58 (semantic, high); fSnapMaxAngularVelocity:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fSnapMaxAngularVelocity_RagdollAnim: u64 = 389212;
-/// `INISetting_fSnapMaxLinearDistance_RagdollAnim` at 0x20d1b70 (setting, high)
+/// `INISetting_fSnapMaxLinearDistance_RagdollAnim` at 0x20d1b70 (semantic, high); fSnapMaxLinearDistance:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fSnapMaxLinearDistance_RagdollAnim: u64 = 389215;
-/// `INISetting_fSnapMaxLinearVelocity_RagdollAnim` at 0x20d1b40 (setting, high)
+/// `INISetting_fSnapMaxLinearVelocity_RagdollAnim` at 0x20d1b40 (semantic, high); fSnapMaxLinearVelocity:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fSnapMaxLinearVelocity_RagdollAnim: u64 = 389209;
 /// `INISetting_fSnowGeometrySpecPower_Display` at 0x20d8e00 (setting, high)
 pub const INISetting_fSnowGeometrySpecPower_Display: u64 = 391652;
@@ -9869,13 +9869,13 @@ pub const INISetting_fUnsupportedGravMult_HAVOK: u64 = 389449;
 pub const INISetting_fUpdateBudgetMS_Papyrus: u64 = 383724;
 /// `INISetting_fUpdateBudget_Trees` at 0x20b0a60 (setting, high)
 pub const INISetting_fUpdateBudget_Trees: u64 = 378728;
-/// `INISetting_fUpdateDelayNewTargetSecondsMax_HeadTracking` at 0x20b6b00 (setting, high)
+/// `INISetting_fUpdateDelayNewTargetSecondsMax_HeadTracking` at 0x20b6b00 (semantic, high); fUpdateDelayNewTargetSecondsMax:HeadTracking: random delay after picking a new target max (high); type `undefined1`
 pub const INISetting_fUpdateDelayNewTargetSecondsMax_HeadTracking: u64 = 381282;
-/// `INISetting_fUpdateDelayNewTargetSecondsMin_HeadTracking` at 0x20b6ae8 (setting, high)
+/// `INISetting_fUpdateDelayNewTargetSecondsMin_HeadTracking` at 0x20b6ae8 (semantic, high); fUpdateDelayNewTargetSecondsMin:HeadTracking: random delay after picking a new target (Actor+0x124) min (high); type `undefined1`
 pub const INISetting_fUpdateDelayNewTargetSecondsMin_HeadTracking: u64 = 381279;
-/// `INISetting_fUpdateDelaySecondsMax_HeadTracking` at 0x20b6ad0 (setting, high)
+/// `INISetting_fUpdateDelaySecondsMax_HeadTracking` at 0x20b6ad0 (semantic, high); fUpdateDelaySecondsMax:HeadTracking: random re-evaluation delay max (same readers) (high); type `undefined1`
 pub const INISetting_fUpdateDelaySecondsMax_HeadTracking: u64 = 381276;
-/// `INISetting_fUpdateDelaySecondsMin_HeadTracking` at 0x20b6ab8 (setting, high)
+/// `INISetting_fUpdateDelaySecondsMin_HeadTracking` at 0x20b6ab8 (semantic, high); fUpdateDelaySecondsMin:HeadTracking: random re-evaluation delay (Actor+0xec) min; Actor ctor 0x6af749 and UpdateHeadTracking 0x6b4365 (high); type `undefined1`
 pub const INISetting_fUpdateDelaySecondsMin_HeadTracking: u64 = 381273;
 /// `INISetting_fVATSCastingAfterKillDelay_VATS` at 0x20b95f0 (setting, high)
 pub const INISetting_fVATSCastingAfterKillDelay_VATS: u64 = 382215;
@@ -9919,11 +9919,11 @@ pub const INISetting_fVatsLightColorB_VATS: u64 = 382209;
 pub const INISetting_fVatsLightColorG_VATS: u64 = 382206;
 /// `INISetting_fVatsLightColorR_VATS` at 0x20b9590 (setting, high)
 pub const INISetting_fVatsLightColorR_VATS: u64 = 382203;
-/// `INISetting_fVelocityDamping_RagdollAnim` at 0x20d1a98 (setting, high)
+/// `INISetting_fVelocityDamping_RagdollAnim` at 0x20d1a98 (semantic, high); fVelocityDamping:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fVelocityDamping_RagdollAnim: u64 = 389188;
-/// `INISetting_fVelocityGain_RagdollAnim` at 0x20d1ac8 (setting, high)
+/// `INISetting_fVelocityGain_RagdollAnim` at 0x20d1ac8 (semantic, high); fVelocityGain:RagdollAnim: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_fVelocityGain_RagdollAnim: u64 = 389194;
-/// `INISetting_fVertErrorGain_FootIK` at 0x20d1df8 (setting, high)
+/// `INISetting_fVertErrorGain_FootIK` at 0x20d1df8 (semantic, high); fVertErrorGain:FootIK: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect; also read at 0x10717a8/0x10717b0 (code Ghidra has not put in a function, found by a RIP-relative scan) (high); type `undefined1`
 pub const INISetting_fVertErrorGain_FootIK: u64 = 389290;
 /// `INISetting_fVerticalCapsuleOffset_Verlet` at 0x20b6de8 (setting, high)
 pub const INISetting_fVerticalCapsuleOffset_Verlet: u64 = 381342;
@@ -10147,7 +10147,7 @@ pub const INISetting_iMinNumSubSteps_HAVOK: u64 = 389113;
 pub const INISetting_iMountedGestureAttackBuffer_Controls: u64 = 563948;
 /// `INISetting_iNumBitsForFullySeen_General` at 0x20b6488 (setting, high)
 pub const INISetting_iNumBitsForFullySeen_General: u64 = 381117;
-/// `INISetting_iNumFramesFootEaseOut_FootIK` at 0x20d1e10 (setting, high)
+/// `INISetting_iNumFramesFootEaseOut_FootIK` at 0x20d1e10 (semantic, high); iNumFramesFootEaseOut:FootIK: only bhkRagdollController code reads it; that class is never constructed in 1.7.104 (ctor 0x106c040 has no caller, its vftable 0x1a82090 is written only by ctor/dtor), so the value has no effect (high); type `undefined1`
 pub const INISetting_iNumFramesFootEaseOut_FootIK: u64 = 389293;
 /// `INISetting_iNumHWThreads_General` at 0x2077778 (setting, high)
 pub const INISetting_iNumHWThreads_General: u64 = 358819;
@@ -10203,7 +10203,7 @@ pub const INISetting_iTake_CameraPath: u64 = 380920;
 pub const INISetting_iTrilinearThreshold_Display: u64 = 391018;
 /// `INISetting_iUnstableFrameTimeHistorySize_Display` at 0x20b5840 (setting, high)
 pub const INISetting_iUnstableFrameTimeHistorySize_Display: u64 = 380753;
-/// `INISetting_iUpdateActorsPerFrame_HeadTracking` at 0x20b6aa0 (setting, high)
+/// `INISetting_iUpdateActorsPerFrame_HeadTracking` at 0x20b6aa0 (semantic, high); iUpdateActorsPerFrame:HeadTracking: Actor::UpdateHeadTracking 0x6b3f8b: budget; the update runs only while the counter ID_403797 (incremented at each target re-evaluation; its reset was not read) is <= the value, else head tracking is cleared for bit-15 races (high); type `undefined1`
 pub const INISetting_iUpdateActorsPerFrame_HeadTracking: u64 = 381270;
 /// `INISetting_iUpdateDetectionsAllowedPerFrame_General` at 0x20b0ef0 (setting, high)
 pub const INISetting_iUpdateDetectionsAllowedPerFrame_General: u64 = 378853;
@@ -10673,7 +10673,7 @@ pub const INISetting_uiDynamicCellNodeBatch_JobList: u64 = 380610;
 pub const INISetting_uiDynamicPostRenderBatch_JobList: u64 = 380604;
 /// `INISetting_uiDynamicPreRenderBatch_JobList` at 0x20b51d8 (setting, high)
 pub const INISetting_uiDynamicPreRenderBatch_JobList: u64 = 380601;
-/// `INISetting_uiFeedbackTimeout_RagdollFeedback` at 0x20d1ed0 (setting, high)
+/// `INISetting_uiFeedbackTimeout_RagdollFeedback` at 0x20d1ed0 (semantic, high); uiFeedbackTimeout:RagdollFeedback: no reader (high); type `undefined1`
 pub const INISetting_uiFeedbackTimeout_RagdollFeedback: u64 = 389313;
 /// `INISetting_uiInitialCacheSize_Audio` at 0x20b5c90 (setting, high)
 pub const INISetting_uiInitialCacheSize_Audio: u64 = 380881;
@@ -11557,7 +11557,7 @@ pub const g_BSCoreMessage: u64 = 388441;
 pub const g_BSCullingProcess_ptr: u64 = 414783;
 /// `g_BSDirectAtModifierInterface_ptr` at 0x3252690 (xref_inference, medium)
 pub const g_BSDirectAtModifierInterface_ptr: u64 = 404802;
-/// `g_BSLimbIKModifierUtility_ptr` at 0x3204678 (xref_inference, medium)
+/// `g_BSLimbIKModifierUtility_ptr` at 0x3204678 (semantic, high); pointer to `BSLimbIKModifierUtility`: limb IK singleton; limb IK singleton (high); type `ptr:BSLimbIKModifierUtility`
 pub const g_BSLimbIKModifierUtility_ptr: u64 = 402597;
 /// `g_BSList_BSTempEffectDebris____ptr64` at 0x20b2ed8 (layout_inference, medium)
 pub const g_BSList_BSTempEffectDebris____ptr64: u64 = 379776;
@@ -12235,8 +12235,12 @@ pub const g_FocusShadowOwner: u64 = 415267;
 pub const g_FocusShadowsAssigned: u64 = 415041;
 /// `g_FocusShadowsEnabled` at 0x20d6810 (semantic, medium); 1 in the image, no writer found; gates focus maps (medium); type `u8`
 pub const g_FocusShadowsEnabled: u64 = 390932;
+/// `g_FootIkDefaultGains` at 0x19c0f50 (semantic, high); the driver's fallback gains before track 11 is copied over: +0x20 group (0,0,0,0.5) at 0x19c0f50, +0x10 group (1,1,0,1) at 0x19c0f70, +0 group (0.2,1,1,1) at 0x19c0f80 (high); type `float[12]`
+pub const g_FootIkDefaultGains: u64 = 220338;
 /// `g_FootIkRaycastInterfaceDB` at 0x31df418 (semantic, high); pointer to `BGSFootIkRaycastInterfaceDB`: the foot IK raycast database singleton; the foot IK raycast database singleton (high); type `ptr:BGSFootIkRaycastInterfaceDB`
 pub const g_FootIkRaycastInterfaceDB: u64 = 401101;
+/// `g_FootIkRaycastInterfaceDB_hk` at 0x325bb88 (semantic, high); pointer to `BGSFootIkRaycastInterfaceDB`: the DB pointer the Havok-side code reads (Run, legs setup, alignment, hkbFootIkModifier); the DB pointer the Havok-side code reads (Run, legs setup, alignment, hkbFootIkModifier) (high); type `ptr:BGSFootIkRaycastInterfaceDB`
+pub const g_FootIkRaycastInterfaceDB_hk: u64 = 407511;
 /// `g_FootstepEventSource_ptr` at 0x32309c8 (semantic, high); pointer to `BSTEventSource`: pointer to the BSTEventSource<BGSFootstepEvent> Main::ctor creates (static storage) followed by the BSTArray<BSFixedString> of forwarded tags at +0x60; actors notify it from their animation graph handler and BGSImpactManager is its sink; pointer to the BSTEventSource<BGSFootstepEvent> Main::ctor creates (static storage) followed by the BSTArray<BSFixedString> of forwarded tags at +0x60; actors notify it from their animation graph handler and BGSImpactManager is its sink (high); type `ptr:BSTEventSource`
 pub const g_FootstepEventSource_ptr: u64 = 403553;
 /// `g_FormTypeSignatures` at 0x17f95a0 (string, high)
@@ -12267,10 +12271,14 @@ pub const g_FreeCameraEventNames: u64 = 405792;
 pub const g_FreeShadowMapSlices: u64 = 391715;
 /// `g_GRefCountImplCore` at 0x20ce5c8 (layout_inference, medium)
 pub const g_GRefCountImplCore: u64 = 390206;
+/// `g_GainFrameRate` at 0x1b5be98 (semantic, high); 30.0, the frame rate the gains are expressed in (ClampScaledProduct) (high); type `float`
+pub const g_GainFrameRate: u64 = 470032;
 /// `g_GamePaused` at 0x32303b3 (runtime, high); 1 while any game-pausing menu is open: written every Main::Update as UI->numPausesGame (+0x160) != 0 (high); type `u8`
 pub const g_GamePaused: u64 = 403437;
 /// `g_GarbageCollector_ptr` at 0x219e5d0 (xref_inference, medium)
 pub const g_GarbageCollector_ptr: u64 = 400329;
+/// `g_GraphPhysicsStepListener` at 0x20c5b40 (semantic, high); the single step listener every ragdoll-in-world graph registers with (high); type `undefined1`
+pub const g_GraphPhysicsStepListener: u64 = 385965;
 /// `g_GrassShader` at 0x33d3de0 (semantic, high); pointer to `BSGrassShader`: holder; holder (high); type `ptr:BSGrassShader`
 pub const g_GrassShader: u64 = 414608;
 /// `g_GrassShaderInstance` at 0x33d4c30 (semantic, high); pointer to `BSGrassShader`: instance pointer; instance pointer (high); type `ptr:BSGrassShader`
@@ -12503,6 +12511,8 @@ pub const g_PendingAudioLoads: u64 = 410105;
 pub const g_PendingConsoleLines: u64 = 504100;
 /// `g_PerFrameConstantBuffer` at 0x3331f08 (semantic, high); ID3D11Buffer* bound to VS and PS constant slot 12 at every frame start (high); type `undefined8`
 pub const g_PerFrameConstantBuffer: u64 = 411384;
+/// `g_PhysicsTimeThisFrame` at 0x20d1748 (semantic, medium); physics time to step this frame (medium); type `float`
+pub const g_PhysicsTimeThisFrame: u64 = 389089;
 /// `g_PickBudgetDisabled` at 0x3336528 (semantic, medium); when set PickObject never refuses a pick for time; set and cleared by FindAutoAimTarget through SetGlobalByte411521 0x104df40 (medium); type `undefined1`
 pub const g_PickBudgetDisabled: u64 = 411521;
 /// `g_PickTimeThisStep` at 0x3336520 (semantic, low); compared with the pick budget in PickObject; reset by the world step (low); type `float`
@@ -13159,383 +13169,3 @@ pub const g_TypeNode_NiControllerManager: u64 = 410635;
 pub const g_TypeNode_NiControllerSequence: u64 = 410638;
 /// `g_TypeNode_NiCullingProcess` at 0x331d848 (string, high)
 pub const g_TypeNode_NiCullingProcess: u64 = 410541;
-/// `g_TypeNode_NiDefaultAVObjectPalette` at 0x331d800 (string, high)
-pub const g_TypeNode_NiDefaultAVObjectPalette: u64 = 410535;
-/// `g_TypeNode_NiDirectionalLight` at 0x331d838 (string, high)
-pub const g_TypeNode_NiDirectionalLight: u64 = 410540;
-/// `g_TypeNode_NiExtraData` at 0x331d7a0 (string, high)
-pub const g_TypeNode_NiExtraData: u64 = 410528;
-/// `g_TypeNode_NiExtraDataController` at 0x331f0b8 (string, high)
-pub const g_TypeNode_NiExtraDataController: u64 = 411039;
-/// `g_TypeNode_NiFloatController` at 0x331f0f8 (string, high)
-pub const g_TypeNode_NiFloatController: u64 = 411043;
-/// `g_TypeNode_NiFloatData` at 0x331eba8 (string, high)
-pub const g_TypeNode_NiFloatData: u64 = 410919;
-/// `g_TypeNode_NiFloatExtraData` at 0x331daa8 (string, high)
-pub const g_TypeNode_NiFloatExtraData: u64 = 410575;
-/// `g_TypeNode_NiFloatExtraDataController` at 0x331ec48 (string, high)
-pub const g_TypeNode_NiFloatExtraDataController: u64 = 410931;
-/// `g_TypeNode_NiFloatInterpController` at 0x331f0e8 (string, high)
-pub const g_TypeNode_NiFloatInterpController: u64 = 411042;
-/// `g_TypeNode_NiFloatInterpolator` at 0x331ebb8 (string, high)
-pub const g_TypeNode_NiFloatInterpolator: u64 = 410920;
-/// `g_TypeNode_NiFloatsExtraData` at 0x331dab8 (string, high)
-pub const g_TypeNode_NiFloatsExtraData: u64 = 410576;
-/// `g_TypeNode_NiFloatsExtraDataController` at 0x331ee78 (string, high)
-pub const g_TypeNode_NiFloatsExtraDataController: u64 = 410978;
-/// `g_TypeNode_NiFloatsExtraDataPoint3Controller` at 0x331ee88 (string, high)
-pub const g_TypeNode_NiFloatsExtraDataPoint3Controller: u64 = 410979;
-/// `g_TypeNode_NiFogProperty` at 0x331dac8 (string, high)
-pub const g_TypeNode_NiFogProperty: u64 = 410577;
-/// `g_TypeNode_NiGeometry` at 0x331d9f0 (string, high)
-pub const g_TypeNode_NiGeometry: u64 = 410558;
-/// `g_TypeNode_NiGeometryData` at 0x331d7b0 (string, high)
-pub const g_TypeNode_NiGeometryData: u64 = 410529;
-/// `g_TypeNode_NiIntegerExtraData` at 0x331dae0 (string, high)
-pub const g_TypeNode_NiIntegerExtraData: u64 = 410579;
-/// `g_TypeNode_NiIntegersExtraData` at 0x331daf0 (string, high)
-pub const g_TypeNode_NiIntegersExtraData: u64 = 410580;
-/// `g_TypeNode_NiInterpController` at 0x331ddd8 (string, high)
-pub const g_TypeNode_NiInterpController: u64 = 410644;
-/// `g_TypeNode_NiInterpolator` at 0x331ec80 (string, high)
-pub const g_TypeNode_NiInterpolator: u64 = 410934;
-/// `g_TypeNode_NiKeyBasedInterpolator` at 0x331ecb8 (string, high)
-pub const g_TypeNode_NiKeyBasedInterpolator: u64 = 410942;
-/// `g_TypeNode_NiKeyframeManager` at 0x331eea0 (string, high)
-pub const g_TypeNode_NiKeyframeManager: u64 = 410980;
-/// `g_TypeNode_NiLight` at 0x331c660 (string, high)
-pub const g_TypeNode_NiLight: u64 = 410503;
-/// `g_TypeNode_NiLightColorController` at 0x331eeb0 (string, high)
-pub const g_TypeNode_NiLightColorController: u64 = 410981;
-/// `g_TypeNode_NiLightDimmerController` at 0x331eec0 (string, high)
-pub const g_TypeNode_NiLightDimmerController: u64 = 410982;
-/// `g_TypeNode_NiLookAtController` at 0x331eed0 (string, high)
-pub const g_TypeNode_NiLookAtController: u64 = 410983;
-/// `g_TypeNode_NiLookAtInterpolator` at 0x331eee0 (string, high)
-pub const g_TypeNode_NiLookAtInterpolator: u64 = 410984;
-/// `g_TypeNode_NiMeshPSysData` at 0x331f1f8 (string, high)
-pub const g_TypeNode_NiMeshPSysData: u64 = 411062;
-/// `g_TypeNode_NiMeshParticleSystem` at 0x331f168 (string, high)
-pub const g_TypeNode_NiMeshParticleSystem: u64 = 411051;
-/// `g_TypeNode_NiMorphData` at 0x331eef0 (string, high)
-pub const g_TypeNode_NiMorphData: u64 = 410985;
-/// `g_TypeNode_NiMultiTargetTransformController` at 0x331ddb8 (string, high)
-pub const g_TypeNode_NiMultiTargetTransformController: u64 = 410642;
-/// `g_TypeNode_NiNode` at 0x331c4c8 (string, high)
-pub const g_TypeNode_NiNode: u64 = 410481;
-/// `g_TypeNode_NiObject` at 0x331c470 (string, high)
-pub const g_TypeNode_NiObject: u64 = 410472;
-/// `g_TypeNode_NiObjectNET` at 0x331c608 (string, high)
-pub const g_TypeNode_NiObjectNET: u64 = 410491;
-/// `g_TypeNode_NiPSysAgeDeathModifier` at 0x331f248 (string, high)
-pub const g_TypeNode_NiPSysAgeDeathModifier: u64 = 411067;
-/// `g_TypeNode_NiPSysAirFieldAirFrictionCtlr` at 0x331f208 (string, high)
-pub const g_TypeNode_NiPSysAirFieldAirFrictionCtlr: u64 = 411063;
-/// `g_TypeNode_NiPSysAirFieldInheritVelocityCtlr` at 0x331f218 (string, high)
-pub const g_TypeNode_NiPSysAirFieldInheritVelocityCtlr: u64 = 411064;
-/// `g_TypeNode_NiPSysAirFieldModifier` at 0x331f228 (string, high)
-pub const g_TypeNode_NiPSysAirFieldModifier: u64 = 411065;
-/// `g_TypeNode_NiPSysAirFieldSpreadCtlr` at 0x331f238 (string, high)
-pub const g_TypeNode_NiPSysAirFieldSpreadCtlr: u64 = 411066;
-/// `g_TypeNode_NiPSysBombModifier` at 0x331f258 (string, high)
-pub const g_TypeNode_NiPSysBombModifier: u64 = 411068;
-/// `g_TypeNode_NiPSysBoundUpdateModifier` at 0x331f268 (string, high)
-pub const g_TypeNode_NiPSysBoundUpdateModifier: u64 = 411069;
-/// `g_TypeNode_NiPSysBoxEmitter` at 0x331f278 (string, high)
-pub const g_TypeNode_NiPSysBoxEmitter: u64 = 411070;
-/// `g_TypeNode_NiPSysCollider` at 0x331f550 (string, high)
-pub const g_TypeNode_NiPSysCollider: u64 = 411118;
-/// `g_TypeNode_NiPSysColliderManager` at 0x331f288 (string, high)
-pub const g_TypeNode_NiPSysColliderManager: u64 = 411071;
-/// `g_TypeNode_NiPSysColorModifier` at 0x331f298 (string, high)
-pub const g_TypeNode_NiPSysColorModifier: u64 = 411072;
-/// `g_TypeNode_NiPSysCylinderEmitter` at 0x331f180 (string, high)
-pub const g_TypeNode_NiPSysCylinderEmitter: u64 = 411054;
-/// `g_TypeNode_NiPSysData` at 0x331f2a8 (string, high)
-pub const g_TypeNode_NiPSysData: u64 = 411073;
-/// `g_TypeNode_NiPSysDragFieldModifier` at 0x331f2b8 (string, high)
-pub const g_TypeNode_NiPSysDragFieldModifier: u64 = 411074;
-/// `g_TypeNode_NiPSysDragModifier` at 0x331f2c8 (string, high)
-pub const g_TypeNode_NiPSysDragModifier: u64 = 411075;
-/// `g_TypeNode_NiPSysEmitter` at 0x331f1a0 (string, high)
-pub const g_TypeNode_NiPSysEmitter: u64 = 411056;
-/// `g_TypeNode_NiPSysEmitterCtlr` at 0x331f130 (string, high)
-pub const g_TypeNode_NiPSysEmitterCtlr: u64 = 411047;
-/// `g_TypeNode_NiPSysEmitterCtlrData` at 0x331f2d8 (string, high)
-pub const g_TypeNode_NiPSysEmitterCtlrData: u64 = 411076;
-/// `g_TypeNode_NiPSysEmitterDeclinationCtlr` at 0x331f2e8 (string, high)
-pub const g_TypeNode_NiPSysEmitterDeclinationCtlr: u64 = 411077;
-/// `g_TypeNode_NiPSysEmitterDeclinationVarCtlr` at 0x331f2f8 (string, high)
-pub const g_TypeNode_NiPSysEmitterDeclinationVarCtlr: u64 = 411078;
-/// `g_TypeNode_NiPSysEmitterInitialRadiusCtlr` at 0x331f308 (string, high)
-pub const g_TypeNode_NiPSysEmitterInitialRadiusCtlr: u64 = 411079;
-/// `g_TypeNode_NiPSysEmitterLifeSpanCtlr` at 0x331f318 (string, high)
-pub const g_TypeNode_NiPSysEmitterLifeSpanCtlr: u64 = 411080;
-/// `g_TypeNode_NiPSysEmitterPlanarAngleCtlr` at 0x331f328 (string, high)
-pub const g_TypeNode_NiPSysEmitterPlanarAngleCtlr: u64 = 411081;
-/// `g_TypeNode_NiPSysEmitterPlanarAngleVarCtlr` at 0x331f338 (string, high)
-pub const g_TypeNode_NiPSysEmitterPlanarAngleVarCtlr: u64 = 411082;
-/// `g_TypeNode_NiPSysEmitterSpeedCtlr` at 0x331f348 (string, high)
-pub const g_TypeNode_NiPSysEmitterSpeedCtlr: u64 = 411083;
-/// `g_TypeNode_NiPSysFieldAttenuationCtlr` at 0x331f358 (string, high)
-pub const g_TypeNode_NiPSysFieldAttenuationCtlr: u64 = 411084;
-/// `g_TypeNode_NiPSysFieldMagnitudeCtlr` at 0x331f368 (string, high)
-pub const g_TypeNode_NiPSysFieldMagnitudeCtlr: u64 = 411085;
-/// `g_TypeNode_NiPSysFieldMaxDistanceCtlr` at 0x331f378 (string, high)
-pub const g_TypeNode_NiPSysFieldMaxDistanceCtlr: u64 = 411086;
-/// `g_TypeNode_NiPSysFieldModifier` at 0x331f530 (string, high)
-pub const g_TypeNode_NiPSysFieldModifier: u64 = 411116;
-/// `g_TypeNode_NiPSysGravityFieldModifier` at 0x331f388 (string, high)
-pub const g_TypeNode_NiPSysGravityFieldModifier: u64 = 411087;
-/// `g_TypeNode_NiPSysGravityModifier` at 0x331f140 (string, high)
-pub const g_TypeNode_NiPSysGravityModifier: u64 = 411048;
-/// `g_TypeNode_NiPSysGravityStrengthCtlr` at 0x331f398 (string, high)
-pub const g_TypeNode_NiPSysGravityStrengthCtlr: u64 = 411088;
-/// `g_TypeNode_NiPSysGrowFadeModifier` at 0x331f3a8 (string, high)
-pub const g_TypeNode_NiPSysGrowFadeModifier: u64 = 411089;
-/// `g_TypeNode_NiPSysInitialRotAngleCtlr` at 0x331f3b8 (string, high)
-pub const g_TypeNode_NiPSysInitialRotAngleCtlr: u64 = 411090;
-/// `g_TypeNode_NiPSysInitialRotAngleVarCtlr` at 0x331f3c8 (string, high)
-pub const g_TypeNode_NiPSysInitialRotAngleVarCtlr: u64 = 411091;
-/// `g_TypeNode_NiPSysInitialRotSpeedCtlr` at 0x331f3d8 (string, high)
-pub const g_TypeNode_NiPSysInitialRotSpeedCtlr: u64 = 411092;
-/// `g_TypeNode_NiPSysInitialRotSpeedVarCtlr` at 0x331f3e8 (string, high)
-pub const g_TypeNode_NiPSysInitialRotSpeedVarCtlr: u64 = 411093;
-/// `g_TypeNode_NiPSysMeshEmitter` at 0x331f3f8 (string, high)
-pub const g_TypeNode_NiPSysMeshEmitter: u64 = 411094;
-/// `g_TypeNode_NiPSysMeshUpdateModifier` at 0x331f1d8 (string, high)
-pub const g_TypeNode_NiPSysMeshUpdateModifier: u64 = 411060;
-/// `g_TypeNode_NiPSysModifier` at 0x331f1c8 (string, high)
-pub const g_TypeNode_NiPSysModifier: u64 = 411059;
-/// `g_TypeNode_NiPSysModifierActiveCtlr` at 0x331f428 (string, high)
-pub const g_TypeNode_NiPSysModifierActiveCtlr: u64 = 411099;
-/// `g_TypeNode_NiPSysModifierBoolCtlr` at 0x331f540 (string, high)
-pub const g_TypeNode_NiPSysModifierBoolCtlr: u64 = 411117;
-/// `g_TypeNode_NiPSysModifierCtlr` at 0x331f1b0 (string, high)
-pub const g_TypeNode_NiPSysModifierCtlr: u64 = 411057;
-/// `g_TypeNode_NiPSysModifierFloatCtlr` at 0x331f520 (string, high)
-pub const g_TypeNode_NiPSysModifierFloatCtlr: u64 = 411115;
-/// `g_TypeNode_NiPSysPlanarCollider` at 0x331f438 (string, high)
-pub const g_TypeNode_NiPSysPlanarCollider: u64 = 411100;
-/// `g_TypeNode_NiPSysPositionModifier` at 0x331f448 (string, high)
-pub const g_TypeNode_NiPSysPositionModifier: u64 = 411101;
-/// `g_TypeNode_NiPSysRadialFieldModifier` at 0x331f458 (string, high)
-pub const g_TypeNode_NiPSysRadialFieldModifier: u64 = 411102;
-/// `g_TypeNode_NiPSysResetOnLoopCtlr` at 0x331f468 (string, high)
-pub const g_TypeNode_NiPSysResetOnLoopCtlr: u64 = 411103;
-/// `g_TypeNode_NiPSysRotationModifier` at 0x331f478 (string, high)
-pub const g_TypeNode_NiPSysRotationModifier: u64 = 411104;
-/// `g_TypeNode_NiPSysSpawnModifier` at 0x331f488 (string, high)
-pub const g_TypeNode_NiPSysSpawnModifier: u64 = 411105;
-/// `g_TypeNode_NiPSysSphereEmitter` at 0x331f498 (string, high)
-pub const g_TypeNode_NiPSysSphereEmitter: u64 = 411106;
-/// `g_TypeNode_NiPSysSphericalCollider` at 0x331f4a8 (string, high)
-pub const g_TypeNode_NiPSysSphericalCollider: u64 = 411107;
-/// `g_TypeNode_NiPSysTurbulenceFieldModifier` at 0x331f4b8 (string, high)
-pub const g_TypeNode_NiPSysTurbulenceFieldModifier: u64 = 411108;
-/// `g_TypeNode_NiPSysUpdateCtlr` at 0x331f1e8 (string, high)
-pub const g_TypeNode_NiPSysUpdateCtlr: u64 = 411061;
-/// `g_TypeNode_NiPSysVolumeEmitter` at 0x331f510 (string, high)
-pub const g_TypeNode_NiPSysVolumeEmitter: u64 = 411114;
-/// `g_TypeNode_NiPSysVortexFieldModifier` at 0x331f4c8 (string, high)
-pub const g_TypeNode_NiPSysVortexFieldModifier: u64 = 411109;
-/// `g_TypeNode_NiParticleMeshes` at 0x331db58 (string, high)
-pub const g_TypeNode_NiParticleMeshes: u64 = 410586;
-/// `g_TypeNode_NiParticleMeshesData` at 0x331db48 (string, high)
-pub const g_TypeNode_NiParticleMeshesData: u64 = 410585;
-/// `g_TypeNode_NiParticleSystem` at 0x331f120 (string, high)
-pub const g_TypeNode_NiParticleSystem: u64 = 411046;
-/// `g_TypeNode_NiParticles` at 0x331d860 (string, high)
-pub const g_TypeNode_NiParticles: u64 = 410543;
-/// `g_TypeNode_NiParticlesData` at 0x331db38 (string, high)
-pub const g_TypeNode_NiParticlesData: u64 = 410584;
-/// `g_TypeNode_NiPathController` at 0x331ef00 (string, high)
-pub const g_TypeNode_NiPathController: u64 = 410986;
-/// `g_TypeNode_NiPathInterpolator` at 0x331ec08 (string, high)
-pub const g_TypeNode_NiPathInterpolator: u64 = 410925;
-/// `g_TypeNode_NiPoint3InterpController` at 0x331f0d8 (string, high)
-pub const g_TypeNode_NiPoint3InterpController: u64 = 411041;
-/// `g_TypeNode_NiPoint3Interpolator` at 0x331ef10 (string, high)
-pub const g_TypeNode_NiPoint3Interpolator: u64 = 410987;
-/// `g_TypeNode_NiPointLight` at 0x331d7f0 (semantic, high); NiPointLight's type node (id 410534); parent g_TypeNode_NiLight 0x331c660 (id 410503) (high); type `undefined1`
-pub const g_TypeNode_NiPointLight: u64 = 410534;
-/// `g_TypeNode_NiPosData` at 0x331ed48 (string, high)
-pub const g_TypeNode_NiPosData: u64 = 410959;
-/// `g_TypeNode_NiProperty` at 0x331c6b8 (string, high)
-pub const g_TypeNode_NiProperty: u64 = 410509;
-/// `g_TypeNode_NiQuaternionInterpolator` at 0x331ef20 (string, high)
-pub const g_TypeNode_NiQuaternionInterpolator: u64 = 410988;
-/// `g_TypeNode_NiRollController` at 0x331ef30 (string, high)
-pub const g_TypeNode_NiRollController: u64 = 410989;
-/// `g_TypeNode_NiRotData` at 0x331ef40 (string, high)
-pub const g_TypeNode_NiRotData: u64 = 410990;
-/// `g_TypeNode_NiSequence` at 0x331ef50 (string, high)
-pub const g_TypeNode_NiSequence: u64 = 410991;
-/// `g_TypeNode_NiSequenceStreamHelper` at 0x331ef70 (string, high)
-pub const g_TypeNode_NiSequenceStreamHelper: u64 = 410994;
-/// `g_TypeNode_NiShadeProperty` at 0x331da30 (string, high)
-pub const g_TypeNode_NiShadeProperty: u64 = 410567;
-/// `g_TypeNode_NiSingleInterpController` at 0x331ebe8 (string, high)
-pub const g_TypeNode_NiSingleInterpController: u64 = 410923;
-/// `g_TypeNode_NiSkinData` at 0x331da20 (string, high)
-pub const g_TypeNode_NiSkinData: u64 = 410566;
-/// `g_TypeNode_NiSkinInstance` at 0x331d9d0 (string, high)
-pub const g_TypeNode_NiSkinInstance: u64 = 410556;
-/// `g_TypeNode_NiSkinPartition` at 0x331d9b0 (string, high)
-pub const g_TypeNode_NiSkinPartition: u64 = 410554;
-/// `g_TypeNode_NiSourceTexture` at 0x331d708 (string, high)
-pub const g_TypeNode_NiSourceTexture: u64 = 410519;
-/// `g_TypeNode_NiSpotLight` at 0x331db68 (string, high)
-pub const g_TypeNode_NiSpotLight: u64 = 410587;
-/// `g_TypeNode_NiStringExtraData` at 0x331d770 (string, high)
-pub const g_TypeNode_NiStringExtraData: u64 = 410522;
-/// `g_TypeNode_NiStringPalette` at 0x331ef80 (string, high)
-pub const g_TypeNode_NiStringPalette: u64 = 410995;
-/// `g_TypeNode_NiStringsExtraData` at 0x331c680 (string, high)
-pub const g_TypeNode_NiStringsExtraData: u64 = 410505;
-/// `g_TypeNode_NiSwitchNode` at 0x331c670 (string, high)
-pub const g_TypeNode_NiSwitchNode: u64 = 410504;
-/// `g_TypeNode_NiSwitchStringExtraData` at 0x331db78 (string, high)
-pub const g_TypeNode_NiSwitchStringExtraData: u64 = 410588;
-/// `g_TypeNode_NiTextKeyExtraData` at 0x331ef90 (string, high)
-pub const g_TypeNode_NiTextKeyExtraData: u64 = 410996;
-/// `g_TypeNode_NiTexture` at 0x331d8a0 (string, high)
-pub const g_TypeNode_NiTexture: u64 = 410547;
-/// `g_TypeNode_NiTimeController` at 0x331d780 (string, high)
-pub const g_TypeNode_NiTimeController: u64 = 410523;
-/// `g_TypeNode_NiTransformController` at 0x331ec58 (string, high)
-pub const g_TypeNode_NiTransformController: u64 = 410932;
-/// `g_TypeNode_NiTransformData` at 0x331ed38 (string, high)
-pub const g_TypeNode_NiTransformData: u64 = 410958;
-/// `g_TypeNode_NiTransformInterpolator` at 0x331ebf8 (string, high)
-pub const g_TypeNode_NiTransformInterpolator: u64 = 410924;
-/// `g_TypeNode_NiTriBasedGeom` at 0x331dc80 (string, high)
-pub const g_TypeNode_NiTriBasedGeom: u64 = 410607;
-/// `g_TypeNode_NiTriBasedGeomData` at 0x331dc70 (string, high)
-pub const g_TypeNode_NiTriBasedGeomData: u64 = 410606;
-/// `g_TypeNode_NiTriShape` at 0x331db98 (string, high)
-pub const g_TypeNode_NiTriShape: u64 = 410590;
-/// `g_TypeNode_NiTriShapeData` at 0x331db88 (string, high)
-pub const g_TypeNode_NiTriShapeData: u64 = 410589;
-/// `g_TypeNode_NiTriStrips` at 0x331dbb8 (string, high)
-pub const g_TypeNode_NiTriStrips: u64 = 410592;
-/// `g_TypeNode_NiTriStripsData` at 0x331dba8 (string, high)
-pub const g_TypeNode_NiTriStripsData: u64 = 410591;
-/// `g_TypeNode_NiUVData` at 0x331efa0 (string, high)
-pub const g_TypeNode_NiUVData: u64 = 410997;
-/// `g_TypeNode_NiVectorExtraData` at 0x331dbc8 (string, high)
-pub const g_TypeNode_NiVectorExtraData: u64 = 410593;
-/// `g_TypeNode_NiVertWeightsExtraData` at 0x331d9c0 (string, high)
-pub const g_TypeNode_NiVertWeightsExtraData: u64 = 410555;
-/// `g_TypeNode_NiVisController` at 0x331efb0 (string, high)
-pub const g_TypeNode_NiVisController: u64 = 410998;
-/// `g_TypeNode_PArrayPoint` at 0x332e1c0 (string, high)
-pub const g_TypeNode_PArrayPoint: u64 = 411242;
-/// `g_TypeNode_REFRSyncController` at 0x31df440 (string, high)
-pub const g_TypeNode_REFRSyncController: u64 = 401106;
-/// `g_TypeNode_ReferenceEffect` at 0x3211930 (string, high)
-pub const g_TypeNode_ReferenceEffect: u64 = 402952;
-/// `g_TypeNode_SceneGraph` at 0x3242628 (string, high)
-pub const g_TypeNode_SceneGraph: u64 = 403753;
-/// `g_TypeNode_ShaderReferenceEffect` at 0x3211960 (semantic, high); id 402958; parent g_TypeNode_ReferenceEffect 0x3211930 (high); type `undefined1`
-pub const g_TypeNode_ShaderReferenceEffect: u64 = 402958;
-/// `g_TypeNode_ShadowSceneNode` at 0x33d4100 (string, high)
-pub const g_TypeNode_ShadowSceneNode: u64 = 414664;
-/// `g_TypeNode_SummonPlacementEffect` at 0x3211990 (string, high)
-pub const g_TypeNode_SummonPlacementEffect: u64 = 402966;
-/// `g_TypeNode_WeaponObject` at 0x33377d0 (string, high)
-pub const g_TypeNode_WeaponObject: u64 = 411577;
-/// `g_TypeNode_bhkAabbPhantom` at 0x33378b8 (string, high)
-pub const g_TypeNode_bhkAabbPhantom: u64 = 411596;
-/// `g_TypeNode_bhkAction` at 0x3337aa0 (string, high)
-pub const g_TypeNode_bhkAction: u64 = 411637;
-/// `g_TypeNode_bhkAngularDashpotAction` at 0x3338a48 (string, high)
-pub const g_TypeNode_bhkAngularDashpotAction: u64 = 411719;
-/// `g_TypeNode_bhkAttachmentCollisionObject` at 0x33377c0 (string, high)
-pub const g_TypeNode_bhkAttachmentCollisionObject: u64 = 411576;
-/// `g_TypeNode_bhkAutoWater` at 0x3204020 (string, high)
-pub const g_TypeNode_bhkAutoWater: u64 = 402390;
-/// `g_TypeNode_bhkAvoidBox` at 0x3337a10 (string, high)
-pub const g_TypeNode_bhkAvoidBox: u64 = 411625;
-/// `g_TypeNode_bhkBallAndSocketConstraint` at 0x3338958 (string, high)
-pub const g_TypeNode_bhkBallAndSocketConstraint: u64 = 411699;
-/// `g_TypeNode_bhkBallSocketConstraintChain` at 0x3338970 (string, high)
-pub const g_TypeNode_bhkBallSocketConstraintChain: u64 = 411701;
-/// `g_TypeNode_bhkBinaryAction` at 0x333ace8 (string, high)
-pub const g_TypeNode_bhkBinaryAction: u64 = 411936;
-/// `g_TypeNode_bhkBlendCollisionObject` at 0x33379f0 (string, high)
-pub const g_TypeNode_bhkBlendCollisionObject: u64 = 411622;
-/// `g_TypeNode_bhkBlendController` at 0x3338ad8 (string, high)
-pub const g_TypeNode_bhkBlendController: u64 = 411731;
-/// `g_TypeNode_bhkBoxShape` at 0x3337968 (string, high)
-pub const g_TypeNode_bhkBoxShape: u64 = 411611;
-/// `g_TypeNode_bhkBreakableConstraint` at 0x3338a30 (string, high)
-pub const g_TypeNode_bhkBreakableConstraint: u64 = 411717;
-/// `g_TypeNode_bhkBvTreeShape` at 0x3337998 (string, high)
-pub const g_TypeNode_bhkBvTreeShape: u64 = 411615;
-/// `g_TypeNode_bhkCachingShapePhantom` at 0x3338738 (string, high)
-pub const g_TypeNode_bhkCachingShapePhantom: u64 = 411653;
-/// `g_TypeNode_bhkCapsuleShape` at 0x3337950 (string, high)
-pub const g_TypeNode_bhkCapsuleShape: u64 = 411609;
-/// `g_TypeNode_bhkCartTether` at 0x31e0ab8 (string, high)
-pub const g_TypeNode_bhkCartTether: u64 = 401566;
-/// `g_TypeNode_bhkCharControllerShape` at 0x3338b28 (string, high)
-pub const g_TypeNode_bhkCharControllerShape: u64 = 411737;
-/// `g_TypeNode_bhkCharacterProxy` at 0x3339998 (string, high)
-pub const g_TypeNode_bhkCharacterProxy: u64 = 411921;
-/// `g_TypeNode_bhkCharacterRigidBody` at 0x33399b0 (string, high)
-pub const g_TypeNode_bhkCharacterRigidBody: u64 = 411923;
-/// `g_TypeNode_bhkCollisionBox` at 0x3338b40 (string, high)
-pub const g_TypeNode_bhkCollisionBox: u64 = 411739;
-/// `g_TypeNode_bhkCollisionObject` at 0x3337690 (string, high)
-pub const g_TypeNode_bhkCollisionObject: u64 = 411547;
-/// `g_TypeNode_bhkCompressedMeshShape` at 0x3338828 (string, high)
-pub const g_TypeNode_bhkCompressedMeshShape: u64 = 411674;
-/// `g_TypeNode_bhkCompressedMeshShapeData` at 0x3338838 (string, high)
-pub const g_TypeNode_bhkCompressedMeshShapeData: u64 = 411675;
-/// `g_TypeNode_bhkConstraint` at 0x3337a70 (string, high)
-pub const g_TypeNode_bhkConstraint: u64 = 411633;
-/// `g_TypeNode_bhkConstraintChain` at 0x333acd0 (string, high)
-pub const g_TypeNode_bhkConstraintChain: u64 = 411934;
-/// `g_TypeNode_bhkConvexShape` at 0x33378e8 (string, high)
-pub const g_TypeNode_bhkConvexShape: u64 = 411601;
-/// `g_TypeNode_bhkConvexSweepShape` at 0x3338850 (string, high)
-pub const g_TypeNode_bhkConvexSweepShape: u64 = 411677;
-/// `g_TypeNode_bhkConvexTransformShape` at 0x3338868 (string, high)
-pub const g_TypeNode_bhkConvexTransformShape: u64 = 411679;
-/// `g_TypeNode_bhkConvexTranslateShape` at 0x3338880 (string, high)
-pub const g_TypeNode_bhkConvexTranslateShape: u64 = 411681;
-/// `g_TypeNode_bhkConvexVerticesShape` at 0x3338898 (string, high)
-pub const g_TypeNode_bhkConvexVerticesShape: u64 = 411683;
-/// `g_TypeNode_bhkCylinderShape` at 0x33388b0 (string, high)
-pub const g_TypeNode_bhkCylinderShape: u64 = 411685;
-/// `g_TypeNode_bhkDashpotAction` at 0x3338a60 (string, high)
-pub const g_TypeNode_bhkDashpotAction: u64 = 411721;
-/// `g_TypeNode_bhkEntity` at 0x3337888 (string, high)
-pub const g_TypeNode_bhkEntity: u64 = 411592;
-/// `g_TypeNode_bhkExtraData` at 0x3338ae8 (string, high)
-pub const g_TypeNode_bhkExtraData: u64 = 411732;
-/// `g_TypeNode_bhkFixedConstraint` at 0x33389b8 (string, high)
-pub const g_TypeNode_bhkFixedConstraint: u64 = 411707;
-/// `g_TypeNode_bhkGenericConstraint` at 0x3338b18 (string, high)
-pub const g_TypeNode_bhkGenericConstraint: u64 = 411736;
-/// `g_TypeNode_bhkGroupConstraint` at 0x3338988 (string, high)
-pub const g_TypeNode_bhkGroupConstraint: u64 = 411703;
-/// `g_TypeNode_bhkHeightFieldShape` at 0x333acb8 (string, high)
-pub const g_TypeNode_bhkHeightFieldShape: u64 = 411932;
-/// `g_TypeNode_bhkHingeConstraint` at 0x33387b0 (string, high)
-pub const g_TypeNode_bhkHingeConstraint: u64 = 411663;
-/// `g_TypeNode_bhkHingeLimitsConstraint` at 0x33389a0 (string, high)
-pub const g_TypeNode_bhkHingeLimitsConstraint: u64 = 411705;
-/// `g_TypeNode_bhkLimitedHingeConstraint` at 0x3337a28 (string, high)
-pub const g_TypeNode_bhkLimitedHingeConstraint: u64 = 411627;
-/// `g_TypeNode_bhkLiquidAction` at 0x3338a78 (string, high)
-pub const g_TypeNode_bhkLiquidAction: u64 = 411723;
-/// `g_TypeNode_bhkListShape` at 0x3338940 (string, high)
-pub const g_TypeNode_bhkListShape: u64 = 411697;
-/// `g_TypeNode_bhkMalleableConstraint` at 0x3337a40 (string, high)
-pub const g_TypeNode_bhkMalleableConstraint: u64 = 411629;
-/// `g_TypeNode_bhkMoppBvTreeShape` at 0x3338910 (string, high)
-pub const g_TypeNode_bhkMoppBvTreeShape: u64 = 411693;
-/// `g_TypeNode_bhkMotorAction` at 0x3338a98 (string, high)
-pub const g_TypeNode_bhkMotorAction: u64 = 411726;

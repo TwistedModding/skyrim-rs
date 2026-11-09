@@ -154,16 +154,6 @@ impl crate::NiSkinPartition {
     pub unsafe fn vdtor(&self, param_1: u32, param_2: i64, param_3: *mut c_void) -> *mut Self { unsafe { function!(524206, (*const Self, u32, i64, *mut c_void) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
-impl crate::hkaSkeleton {
-    /// `hkaSkeleton::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 63760, rva 0xbd9a40).
-    /// `hkaSkeleton * vdtor(hkaSkeleton * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
 impl crate::hkbBehaviorGraph {
     /// `hkbBehaviorGraph::copyVariablesToMembersRoot` (decompiler signature, tier low; ledger string evidence, name medium; id 58382, rva 0xad0d70).
     /// `undefined copyVariablesToMembersRoot(hkbBehaviorGraph * this, longlong param_1, char param_2)`
@@ -210,23 +200,6 @@ impl crate::hkbCharacter {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
-impl crate::hkbRagdollDriver {
-    /// `hkbRagdollDriver::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 58312, rva 0xacacd0).
-    /// `hkbRagdollDriver * vdtor(hkbRagdollDriver * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `hkbRagdollDriver::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 58280, rva 0xac6930).
-    /// `hkbRagdollDriver * ctor(hkbRagdollDriver * this, undefined8 param_1, undefined1 param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u8) -> *mut Self { unsafe { function!(58280, (*const Self, u64, u8) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2) } }
 }
 
 impl crate::hkbVariableValueSet {

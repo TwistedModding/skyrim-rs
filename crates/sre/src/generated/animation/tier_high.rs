@@ -72,13 +72,6 @@ impl crate::hkbBehaviorGraph {
 }
 
 impl crate::hkbCharacter {
-    /// `hkbCharacter::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 58449, rva 0xad72f0).
-    /// `hkbCharacter * ctor(hkbCharacter * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(58449, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `hkbCharacter::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 58468, rva 0xad8150).
     /// `hkbCharacter * ctor(hkbCharacter * this)`
     ///

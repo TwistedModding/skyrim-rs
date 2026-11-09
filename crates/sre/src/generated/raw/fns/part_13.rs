@@ -7,6 +7,180 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `INISetting_bValidateRenderTargets_Display__init` at 0xe9c80 (crt_init, medium); signature (high): `void INISetting_bValidateRenderTargets_Display__init(void)`
+pub const INISetting_bValidateRenderTargets_Display__init: u64 = 9561;
+/// `INISetting_bVatsDebug_VATS__atexit` at 0x17a0ce0 (crt_init, medium); signature (high): `void INISetting_bVatsDebug_VATS__atexit(void)`
+pub const INISetting_bVatsDebug_VATS__atexit: u64 = 171858;
+/// `INISetting_bVatsDebug_VATS__init` at 0xaceb0 (crt_init, medium); signature (high): `void INISetting_bVatsDebug_VATS__init(void)`
+pub const INISetting_bVatsDebug_VATS__init: u64 = 6525;
+/// `INISetting_bVolumetricLightingDisableInterior_Display__atexit` at 0x17c2340 (crt_init, medium); signature (high): `void INISetting_bVolumetricLightingDisableInterior_Display__atexit(void)`
+pub const INISetting_bVolumetricLightingDisableInterior_Display__atexit: u64 = 174524;
+/// `INISetting_bVolumetricLightingDisableInterior_Display__init` at 0x101c80 (crt_init, medium); signature (high): `void INISetting_bVolumetricLightingDisableInterior_Display__init(void)`
+pub const INISetting_bVolumetricLightingDisableInterior_Display__init: u64 = 10368;
+/// `INISetting_bVolumetricLightingEnableTemporalAccumulation_Display__atexit` at 0x17c23e0 (crt_init, medium); signature (high): `void INISetting_bVolumetricLightingEnableTemporalAccumulation_Display__atexit(void)`
+pub const INISetting_bVolumetricLightingEnableTemporalAccumulation_Display__atexit: u64 = 174526;
+/// `INISetting_bVolumetricLightingEnableTemporalAccumulation_Display__init` at 0x101d60 (crt_init, medium); signature (high): `void INISetting_bVolumetricLightingEnableTemporalAccumulation_Display__init(void)`
+pub const INISetting_bVolumetricLightingEnableTemporalAccumulation_Display__init: u64 = 10370;
+/// `INISetting_bVolumetricLightingUpdateWeather_Display__atexit` at 0x17c2430 (crt_init, medium); signature (high): `void INISetting_bVolumetricLightingUpdateWeather_Display__atexit(void)`
+pub const INISetting_bVolumetricLightingUpdateWeather_Display__atexit: u64 = 174527;
+/// `INISetting_bVolumetricLightingUpdateWeather_Display__init` at 0x101dd0 (crt_init, medium); signature (high): `void INISetting_bVolumetricLightingUpdateWeather_Display__init(void)`
+pub const INISetting_bVolumetricLightingUpdateWeather_Display__init: u64 = 10371;
+/// `INISetting_bWONameSync_Havok__atexit` at 0x17b3f00 (crt_init, medium); signature (high): `void INISetting_bWONameSync_Havok__atexit(void)`
+pub const INISetting_bWONameSync_Havok__atexit: u64 = 173875;
+/// `INISetting_bWONameSync_Havok__init` at 0xeb380 (crt_init, medium); signature (high): `void INISetting_bWONameSync_Havok__init(void)`
+pub const INISetting_bWONameSync_Havok__init: u64 = 9621;
+/// `INISetting_bWarnIfHighLevelSearchFails_Pathfinding__atexit` at 0x17b5c50 (crt_init, medium); signature (high): `void INISetting_bWarnIfHighLevelSearchFails_Pathfinding__atexit(void)`
+pub const INISetting_bWarnIfHighLevelSearchFails_Pathfinding__atexit: u64 = 174061;
+/// `INISetting_bWarnIfHighLevelSearchFails_Pathfinding__init` at 0xf0df0 (crt_init, medium); signature (high): `void INISetting_bWarnIfHighLevelSearchFails_Pathfinding__init(void)`
+pub const INISetting_bWarnIfHighLevelSearchFails_Pathfinding__init: u64 = 9948;
+/// `INISetting_bWarnOnMaterialCollisions_General__atexit` at 0x17c6780 (crt_init, medium); signature (high): `void INISetting_bWarnOnMaterialCollisions_General__atexit(void)`
+pub const INISetting_bWarnOnMaterialCollisions_General__atexit: u64 = 174837;
+/// `INISetting_bWarnOnMaterialCollisions_General__init` at 0x108e60 (crt_init, medium); signature (high): `void INISetting_bWarnOnMaterialCollisions_General__init(void)`
+pub const INISetting_bWarnOnMaterialCollisions_General__init: u64 = 10703;
+/// `INISetting_bWarnOnMissingFileEntry_General__atexit` at 0x1741240 (crt_init, medium); signature (high): `void INISetting_bWarnOnMissingFileEntry_General__atexit(void)`
+pub const INISetting_bWarnOnMissingFileEntry_General__atexit: u64 = 165634;
+/// `INISetting_bWarnOnMissingFileEntry_General__init` at 0xf5c0 (crt_init, medium); signature (high): `void INISetting_bWarnOnMissingFileEntry_General__init(void)`
+pub const INISetting_bWarnOnMissingFileEntry_General__init: u64 = 437;
+/// `INISetting_bWarpOnConsecutiveFailures_Pathfinding__atexit` at 0x179dfa0 (crt_init, medium); signature (high): `void INISetting_bWarpOnConsecutiveFailures_Pathfinding__atexit(void)`
+pub const INISetting_bWarpOnConsecutiveFailures_Pathfinding__atexit: u64 = 171631;
+/// `INISetting_bWarpOnConsecutiveFailures_Pathfinding__init` at 0xa9490 (crt_init, medium); signature (high): `void INISetting_bWarpOnConsecutiveFailures_Pathfinding__init(void)`
+pub const INISetting_bWarpOnConsecutiveFailures_Pathfinding__init: u64 = 6404;
+/// `INISetting_bWorldMapNoSkyDepthBlur_MapMenu__atexit` at 0x17c69c0 (crt_init, medium); signature (high): `void INISetting_bWorldMapNoSkyDepthBlur_MapMenu__atexit(void)`
+pub const INISetting_bWorldMapNoSkyDepthBlur_MapMenu__atexit: u64 = 174845;
+/// `INISetting_bWorldMapNoSkyDepthBlur_MapMenu__init` at 0x109250 (crt_init, medium); signature (high): `void INISetting_bWorldMapNoSkyDepthBlur_MapMenu__init(void)`
+pub const INISetting_bWorldMapNoSkyDepthBlur_MapMenu__init: u64 = 10713;
+/// `INISetting_bWriteTACOutputToFile_Debug__atexit` at 0x173edd0 (crt_init, medium); signature (high): `void INISetting_bWriteTACOutputToFile_Debug__atexit(void)`
+pub const INISetting_bWriteTACOutputToFile_Debug__atexit: u64 = 165458;
+/// `INISetting_bWriteTACOutputToFile_Debug__init` at 0xba00 (crt_init, medium); signature (high): `void INISetting_bWriteTACOutputToFile_Debug__init(void)`
+pub const INISetting_bWriteTACOutputToFile_Debug__init: u64 = 263;
+/// `INISetting_bWriteTranslationFile_Interface__atexit` at 0x17b5a00 (crt_init, medium); signature (high): `void INISetting_bWriteTranslationFile_Interface__atexit(void)`
+pub const INISetting_bWriteTranslationFile_Interface__atexit: u64 = 174028;
+/// `INISetting_bWriteTranslationFile_Interface__init` at 0xf06e0 (crt_init, medium); signature (high): `void INISetting_bWriteTranslationFile_Interface__init(void)`
+pub const INISetting_bWriteTranslationFile_Interface__init: u64 = 9922;
+/// `INISetting_f1PArrowTiltUpAngle_Combat__atexit` at 0x17472f0 (crt_init, medium); signature (high): `void INISetting_f1PArrowTiltUpAngle_Combat__atexit(void)`
+pub const INISetting_f1PArrowTiltUpAngle_Combat__atexit: u64 = 166095;
+/// `INISetting_f1PArrowTiltUpAngle_Combat__init` at 0x18780 (crt_init, medium); signature (high): `void INISetting_f1PArrowTiltUpAngle_Combat__init(void)`
+pub const INISetting_f1PArrowTiltUpAngle_Combat__init: u64 = 891;
+/// `INISetting_f1PBoltTiltUpAngle_Combat__atexit` at 0x1747340 (crt_init, medium); signature (high): `void INISetting_f1PBoltTiltUpAngle_Combat__atexit(void)`
+pub const INISetting_f1PBoltTiltUpAngle_Combat__atexit: u64 = 166096;
+/// `INISetting_f1PBoltTiltUpAngle_Combat__init` at 0x18800 (crt_init, medium); signature (high): `void INISetting_f1PBoltTiltUpAngle_Combat__init(void)`
+pub const INISetting_f1PBoltTiltUpAngle_Combat__init: u64 = 892;
+/// `INISetting_f1st3rdSwitchDelay_Camera__atexit` at 0x17a2ef0 (crt_init, medium); signature (high): `void INISetting_f1st3rdSwitchDelay_Camera__atexit(void)`
+pub const INISetting_f1st3rdSwitchDelay_Camera__atexit: u64 = 172146;
+/// `INISetting_f1st3rdSwitchDelay_Camera__init` at 0xb1490 (crt_init, medium); signature (high): `void INISetting_f1st3rdSwitchDelay_Camera__init(void)`
+pub const INISetting_f1st3rdSwitchDelay_Camera__init: u64 = 6686;
+/// `INISetting_f1stHorzDampeningSpringConstant_Camera__atexit` at 0x17a2f40 (crt_init, medium); signature (high): `void INISetting_f1stHorzDampeningSpringConstant_Camera__atexit(void)`
+pub const INISetting_f1stHorzDampeningSpringConstant_Camera__atexit: u64 = 172147;
+/// `INISetting_f1stHorzDampeningSpringConstant_Camera__init` at 0xb1510 (crt_init, medium); signature (high): `void INISetting_f1stHorzDampeningSpringConstant_Camera__init(void)`
+pub const INISetting_f1stHorzDampeningSpringConstant_Camera__init: u64 = 6687;
+/// `INISetting_f1stHorzDampeningVelocityDampening_Camera__atexit` at 0x17a2f90 (crt_init, medium); signature (high): `void INISetting_f1stHorzDampeningVelocityDampening_Camera__atexit(void)`
+pub const INISetting_f1stHorzDampeningVelocityDampening_Camera__atexit: u64 = 172148;
+/// `INISetting_f1stHorzDampeningVelocityDampening_Camera__init` at 0xb1590 (crt_init, medium); signature (high): `void INISetting_f1stHorzDampeningVelocityDampening_Camera__init(void)`
+pub const INISetting_f1stHorzDampeningVelocityDampening_Camera__init: u64 = 6688;
+/// `INISetting_f1stPersonFarDepthRangeControlDriven_Display__atexit` at 0x17b30c0 (crt_init, medium); signature (high): `void INISetting_f1stPersonFarDepthRangeControlDriven_Display__atexit(void)`
+pub const INISetting_f1stPersonFarDepthRangeControlDriven_Display__atexit: u64 = 173823;
+/// `INISetting_f1stPersonFarDepthRangeControlDriven_Display__init` at 0xe9d70 (crt_init, medium); signature (high): `void INISetting_f1stPersonFarDepthRangeControlDriven_Display__init(void)`
+pub const INISetting_f1stPersonFarDepthRangeControlDriven_Display__init: u64 = 9563;
+/// `INISetting_f1stPersonFarDepthRange_Display__atexit` at 0x17b3070 (crt_init, medium); signature (high): `void INISetting_f1stPersonFarDepthRange_Display__atexit(void)`
+pub const INISetting_f1stPersonFarDepthRange_Display__atexit: u64 = 173822;
+/// `INISetting_f1stPersonFarDepthRange_Display__init` at 0xe9cf0 (crt_init, medium); signature (high): `void INISetting_f1stPersonFarDepthRange_Display__init(void)`
+pub const INISetting_f1stPersonFarDepthRange_Display__init: u64 = 9562;
+/// `INISetting_f1stPitchOffsetMouseFollowSpeed_Camera__atexit` at 0x17a2fe0 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMouseFollowSpeed_Camera__atexit(void)`
+pub const INISetting_f1stPitchOffsetMouseFollowSpeed_Camera__atexit: u64 = 172149;
+/// `INISetting_f1stPitchOffsetMouseFollowSpeed_Camera__init` at 0xb1610 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMouseFollowSpeed_Camera__init(void)`
+pub const INISetting_f1stPitchOffsetMouseFollowSpeed_Camera__init: u64 = 6689;
+/// `INISetting_f1stPitchOffsetMouseMaxLag_Camera__atexit` at 0x17a3030 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMouseMaxLag_Camera__atexit(void)`
+pub const INISetting_f1stPitchOffsetMouseMaxLag_Camera__atexit: u64 = 172150;
+/// `INISetting_f1stPitchOffsetMouseMaxLag_Camera__init` at 0xb1690 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMouseMaxLag_Camera__init(void)`
+pub const INISetting_f1stPitchOffsetMouseMaxLag_Camera__init: u64 = 6690;
+/// `INISetting_f1stPitchOffsetMultOffAccel_Camera__atexit` at 0x17a3080 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMultOffAccel_Camera__atexit(void)`
+pub const INISetting_f1stPitchOffsetMultOffAccel_Camera__atexit: u64 = 172151;
+/// `INISetting_f1stPitchOffsetMultOffAccel_Camera__init` at 0xb1710 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMultOffAccel_Camera__init(void)`
+pub const INISetting_f1stPitchOffsetMultOffAccel_Camera__init: u64 = 6691;
+/// `INISetting_f1stPitchOffsetMultOffMaxSpeed_Camera__atexit` at 0x17a30d0 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMultOffMaxSpeed_Camera__atexit(void)`
+pub const INISetting_f1stPitchOffsetMultOffMaxSpeed_Camera__atexit: u64 = 172152;
+/// `INISetting_f1stPitchOffsetMultOffMaxSpeed_Camera__init` at 0xb1790 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMultOffMaxSpeed_Camera__init(void)`
+pub const INISetting_f1stPitchOffsetMultOffMaxSpeed_Camera__init: u64 = 6692;
+/// `INISetting_f1stPitchOffsetMultOnAccel_Camera__atexit` at 0x17a3120 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMultOnAccel_Camera__atexit(void)`
+pub const INISetting_f1stPitchOffsetMultOnAccel_Camera__atexit: u64 = 172153;
+/// `INISetting_f1stPitchOffsetMultOnAccel_Camera__init` at 0xb1810 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMultOnAccel_Camera__init(void)`
+pub const INISetting_f1stPitchOffsetMultOnAccel_Camera__init: u64 = 6693;
+/// `INISetting_f1stPitchOffsetMultOnMaxSpeed_Camera__atexit` at 0x17a3170 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMultOnMaxSpeed_Camera__atexit(void)`
+pub const INISetting_f1stPitchOffsetMultOnMaxSpeed_Camera__atexit: u64 = 172154;
+/// `INISetting_f1stPitchOffsetMultOnMaxSpeed_Camera__init` at 0xb1890 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetMultOnMaxSpeed_Camera__init(void)`
+pub const INISetting_f1stPitchOffsetMultOnMaxSpeed_Camera__init: u64 = 6694;
+/// `INISetting_f1stPitchOffsetSixaxisMaxLag_Camera__atexit` at 0x17a31c0 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetSixaxisMaxLag_Camera__atexit(void)`
+pub const INISetting_f1stPitchOffsetSixaxisMaxLag_Camera__atexit: u64 = 534956;
+/// `INISetting_f1stPitchOffsetSixaxisMaxLag_Camera__init` at 0xb1910 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetSixaxisMaxLag_Camera__init(void)`
+pub const INISetting_f1stPitchOffsetSixaxisMaxLag_Camera__init: u64 = 522637;
+/// `INISetting_f1stPitchOffsetSixaxisMaxSnapDelta_Camera__atexit` at 0x17a3210 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetSixaxisMaxSnapDelta_Camera__atexit(void)`
+pub const INISetting_f1stPitchOffsetSixaxisMaxSnapDelta_Camera__atexit: u64 = 534957;
+/// `INISetting_f1stPitchOffsetSixaxisMaxSnapDelta_Camera__init` at 0xb1990 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetSixaxisMaxSnapDelta_Camera__init(void)`
+pub const INISetting_f1stPitchOffsetSixaxisMaxSnapDelta_Camera__init: u64 = 522638;
+/// `INISetting_f1stPitchOffsetTarget_Camera__atexit` at 0x17a3260 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetTarget_Camera__atexit(void)`
+pub const INISetting_f1stPitchOffsetTarget_Camera__atexit: u64 = 172155;
+/// `INISetting_f1stPitchOffsetTarget_Camera__init` at 0xb1a10 (crt_init, medium); signature (high): `void INISetting_f1stPitchOffsetTarget_Camera__init(void)`
+pub const INISetting_f1stPitchOffsetTarget_Camera__init: u64 = 6695;
+/// `INISetting_f1stVertDampeningSpringConstant_Camera__atexit` at 0x17a32b0 (crt_init, medium); signature (high): `void INISetting_f1stVertDampeningSpringConstant_Camera__atexit(void)`
+pub const INISetting_f1stVertDampeningSpringConstant_Camera__atexit: u64 = 172156;
+/// `INISetting_f1stVertDampeningSpringConstant_Camera__init` at 0xb1a90 (crt_init, medium); signature (high): `void INISetting_f1stVertDampeningSpringConstant_Camera__init(void)`
+pub const INISetting_f1stVertDampeningSpringConstant_Camera__init: u64 = 6696;
+/// `INISetting_f1stVertDampeningVelocityDampening_Camera__atexit` at 0x17a3300 (crt_init, medium); signature (high): `void INISetting_f1stVertDampeningVelocityDampening_Camera__atexit(void)`
+pub const INISetting_f1stVertDampeningVelocityDampening_Camera__atexit: u64 = 172157;
+/// `INISetting_f1stVertDampeningVelocityDampening_Camera__init` at 0xb1b10 (crt_init, medium); signature (high): `void INISetting_f1stVertDampeningVelocityDampening_Camera__init(void)`
+pub const INISetting_f1stVertDampeningVelocityDampening_Camera__init: u64 = 6697;
+/// `INISetting_f3PArrowTiltUpAngle_Combat__atexit` at 0x1747390 (crt_init, medium); signature (high): `void INISetting_f3PArrowTiltUpAngle_Combat__atexit(void)`
+pub const INISetting_f3PArrowTiltUpAngle_Combat__atexit: u64 = 166097;
+/// `INISetting_f3PArrowTiltUpAngle_Combat__init` at 0x18880 (crt_init, medium); signature (high): `void INISetting_f3PArrowTiltUpAngle_Combat__init(void)`
+pub const INISetting_f3PArrowTiltUpAngle_Combat__init: u64 = 893;
+/// `INISetting_fAICombatTurnSpeedScale_Pathfinding__atexit` at 0x179d8c0 (crt_init, medium); signature (high): `void INISetting_fAICombatTurnSpeedScale_Pathfinding__atexit(void)`
+pub const INISetting_fAICombatTurnSpeedScale_Pathfinding__atexit: u64 = 171585;
+/// `INISetting_fAICombatTurnSpeedScale_Pathfinding__init` at 0xa8120 (crt_init, medium); signature (high): `void INISetting_fAICombatTurnSpeedScale_Pathfinding__init(void)`
+pub const INISetting_fAICombatTurnSpeedScale_Pathfinding__init: u64 = 6371;
+/// `INISetting_fAITurnSpeedScale_Pathfinding__atexit` at 0x179d910 (crt_init, medium); signature (high): `void INISetting_fAITurnSpeedScale_Pathfinding__atexit(void)`
+pub const INISetting_fAITurnSpeedScale_Pathfinding__atexit: u64 = 171586;
+/// `INISetting_fAITurnSpeedScale_Pathfinding__init` at 0xa81a0 (crt_init, medium); signature (high): `void INISetting_fAITurnSpeedScale_Pathfinding__init(void)`
+pub const INISetting_fAITurnSpeedScale_Pathfinding__init: u64 = 6372;
+/// `INISetting_fASFadeInTime_Audio__atexit` at 0x1792160 (crt_init, medium); signature (high): `void INISetting_fASFadeInTime_Audio__atexit(void)`
+pub const INISetting_fASFadeInTime_Audio__atexit: u64 = 170669;
+/// `INISetting_fASFadeInTime_Audio__init` at 0x93170 (crt_init, medium); signature (high): `void INISetting_fASFadeInTime_Audio__init(void)`
+pub const INISetting_fASFadeInTime_Audio__init: u64 = 5493;
+/// `INISetting_fASFadeOutTime_Audio__atexit` at 0x17921b0 (crt_init, medium); signature (high): `void INISetting_fASFadeOutTime_Audio__atexit(void)`
+pub const INISetting_fASFadeOutTime_Audio__atexit: u64 = 170670;
+/// `INISetting_fASFadeOutTime_Audio__init` at 0x931f0 (crt_init, medium); signature (high): `void INISetting_fASFadeOutTime_Audio__init(void)`
+pub const INISetting_fASFadeOutTime_Audio__init: u64 = 5494;
+/// `INISetting_fAccelerationGain_RagdollAnim__atexit` at 0x17b4240 (crt_init, medium); signature (high): `void INISetting_fAccelerationGain_RagdollAnim__atexit(void)`
+pub const INISetting_fAccelerationGain_RagdollAnim__atexit: u64 = 173887;
+/// `INISetting_fAccelerationGain_RagdollAnim__init` at 0xeb820 (crt_init, medium); signature (high): `void INISetting_fAccelerationGain_RagdollAnim__init(void)`
+pub const INISetting_fAccelerationGain_RagdollAnim__init: u64 = 9634;
+/// `INISetting_fAcceptableErrorRatio_Pathfinding__atexit` at 0x17b6bf0 (crt_init, medium); signature (high): `void INISetting_fAcceptableErrorRatio_Pathfinding__atexit(void)`
+pub const INISetting_fAcceptableErrorRatio_Pathfinding__atexit: u64 = 174147;
+/// `INISetting_fAcceptableErrorRatio_Pathfinding__init` at 0xf31c0 (crt_init, medium); signature (high): `void INISetting_fAcceptableErrorRatio_Pathfinding__init(void)`
+pub const INISetting_fAcceptableErrorRatio_Pathfinding__init: u64 = 10024;
+/// `INISetting_fActivatePickLength_Interface__atexit` at 0x174dd70 (crt_init, medium); signature (high): `void INISetting_fActivatePickLength_Interface__atexit(void)`
+pub const INISetting_fActivatePickLength_Interface__atexit: u64 = 166721;
+/// `INISetting_fActivatePickLength_Interface__init` at 0x235e0 (crt_init, medium); signature (high): `void INISetting_fActivatePickLength_Interface__init(void)`
+pub const INISetting_fActivatePickLength_Interface__init: u64 = 1509;
+/// `INISetting_fActivatePickRadius_Interface__atexit` at 0x174ddc0 (crt_init, medium); signature (high): `void INISetting_fActivatePickRadius_Interface__atexit(void)`
+pub const INISetting_fActivatePickRadius_Interface__atexit: u64 = 166722;
+/// `INISetting_fActivatePickRadius_Interface__init` at 0x23660 (crt_init, medium); signature (high): `void INISetting_fActivatePickRadius_Interface__init(void)`
+pub const INISetting_fActivatePickRadius_Interface__init: u64 = 1510;
+/// `INISetting_fActorFadeOutLimit_Camera__atexit` at 0x17902e0 (crt_init, medium); signature (high): `void INISetting_fActorFadeOutLimit_Camera__atexit(void)`
+pub const INISetting_fActorFadeOutLimit_Camera__atexit: u64 = 170533;
+/// `INISetting_fActorFadeOutLimit_Camera__init` at 0x903e0 (crt_init, medium); signature (high): `void INISetting_fActorFadeOutLimit_Camera__init(void)`
+pub const INISetting_fActorFadeOutLimit_Camera__init: u64 = 5300;
+/// `INISetting_fActorLODMax_LOD__atexit` at 0x17ad0c0 (crt_init, medium); signature (high): `void INISetting_fActorLODMax_LOD__atexit(void)`
+pub const INISetting_fActorLODMax_LOD__atexit: u64 = 173000;
+/// `INISetting_fActorLODMax_LOD__init` at 0xc3680 (crt_init, medium); signature (high): `void INISetting_fActorLODMax_LOD__init(void)`
+pub const INISetting_fActorLODMax_LOD__init: u64 = 7569;
+/// `INISetting_fActorLODMin_LOD__atexit` at 0x17ad110 (crt_init, medium); signature (high): `void INISetting_fActorLODMin_LOD__atexit(void)`
+pub const INISetting_fActorLODMin_LOD__atexit: u64 = 173001;
+/// `INISetting_fActorLODMin_LOD__init` at 0xc3700 (crt_init, medium); signature (high): `void INISetting_fActorLODMin_LOD__init(void)`
+pub const INISetting_fActorLODMin_LOD__init: u64 = 7570;
+/// `INISetting_fAimChaseLookingMult_Combat__atexit` at 0x179a6f0 (crt_init, medium); signature (high): `void INISetting_fAimChaseLookingMult_Combat__atexit(void)`
+pub const INISetting_fAimChaseLookingMult_Combat__atexit: u64 = 171360;
+/// `INISetting_fAimChaseLookingMult_Combat__init` at 0xa3ea0 (crt_init, medium); signature (high): `void INISetting_fAimChaseLookingMult_Combat__init(void)`
+pub const INISetting_fAimChaseLookingMult_Combat__init: u64 = 6164;
 /// `INISetting_fAimDownDegrees_Combat__atexit` at 0x179a740 (crt_init, medium); signature (high): `void INISetting_fAimDownDegrees_Combat__atexit(void)`
 pub const INISetting_fAimDownDegrees_Combat__atexit: u64 = 171361;
 /// `INISetting_fAimDownDegrees_Combat__init` at 0xa3f20 (crt_init, medium); signature (high): `void INISetting_fAimDownDegrees_Combat__init(void)`
@@ -5883,8 +6057,6 @@ pub const IngredientItem__vfunc_87: u64 = 11272;
 pub const IngredientItem__vfunc_93: u64 = 11275;
 /// `IngredientItem::vfunc_96` at 0x14f490 (rtti, high); signature (low): `undefined8 vfunc_96(IngredientItem * this, longlong param_1)`
 pub const IngredientItem__vfunc_96: u64 = 11242;
-/// `Init80ByteRecordFromArgs` at 0xab1660 (decompiler, medium); signature (untiered): `undefined8 * Init80ByteRecordFromArgs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, undefined8 param_5, undefined4 param_6, undefined8 param_7, undefined4 param_8, undefined8 param_9, undefined4 param_10, undefined8 param_11, undefined8 param_12, undefined4 param_13, undefined4 param_14)`
-pub const Init80ByteRecordFromArgs: u64 = 57620;
 /// `InitA8EntriesRange` at 0x822d80 (decompiler, high); signature (high): `undefined InitA8EntriesRange(longlong * param_1, ulonglong param_2, uint param_3)`
 pub const InitA8EntriesRange: u64 = 44828;
 /// `InitActorLocationFromPackages` at 0x6e75c0 (decompiler, medium); signature (untiered): `undefined InitActorLocationFromPackages(longlong param_1, TESObjectCELL * param_2, char param_3)`
@@ -6257,6 +6429,18 @@ pub const InitFloatVectorWithSize: u64 = 65298;
 pub const InitFontCacheLayout: u64 = 89737;
 /// `InitFontCacheLayoutFromParams` at 0xe6fcc0 (decompiler, high); signature (high): `undefined InitFontCacheLayoutFromParams(longlong param_1, uint * param_2)`
 pub const InitFontCacheLayoutFromParams: u64 = 88049;
+/// `InitFootIkInputDefaults` at 0xa9dce0 (semantic, high); signature (untiered): `longlong InitFootIkInputDefaults(longlong param_1)`; semantic: input defaults: footIkOn 1, no raycast interface, onOffGain 0.2, other gains 1, filter 0, useFilter 0 (high); signature `hkaFootPlacementIkSolver::Input* (hkaFootPlacementIkSolver::Input* in)`
+pub const InitFootIkInputDefaults: u64 = 56975;
+/// `InitFootIkInputDefaults` as a function pointer type (high).
+pub type InitFootIkInputDefaults_fn = unsafe extern "C" fn(in_: *mut crate::hkaFootPlacementIkSolver__Input) -> *mut crate::hkaFootPlacementIkSolver__Input;
+/// `InitFootIkLegDefaults` at 0xa9dc60 (semantic, high); signature (untiered): `undefined8 * InitFootIkLegDefaults(undefined8 * param_1)`; semantic: solver setup defaults (high); signature `hkaFootPlacementIkSolver::Setup* (hkaFootPlacementIkSolver::Setup* setup)`
+pub const InitFootIkLegDefaults: u64 = 56974;
+/// `InitFootIkLegDefaults` as a function pointer type (high).
+pub type InitFootIkLegDefaults_fn = unsafe extern "C" fn(setup: *mut crate::hkaFootPlacementIkSolver__Setup) -> *mut crate::hkaFootPlacementIkSolver__Setup;
+/// `InitFootIkRaycastInterfaceDB` at 0x54a6e0 (semantic, high); signature (untiered): `undefined InitFootIkRaycastInterfaceDB(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: start-up: constructs the static DB 0x32047e0 (50 records) and publishes it in 0x31df418 and 0x325bb88 (high); signature `void ()`
+pub const InitFootIkRaycastInterfaceDB: u64 = 32736;
+/// `InitFootIkRaycastInterfaceDB` as a function pointer type (high).
+pub type InitFootIkRaycastInterfaceDB_fn = unsafe extern "C" fn();
 /// `InitFormFromRecordHeader` at 0x1ce0d0 (decompiler, medium); signature (untiered): `undefined InitFormFromRecordHeader(longlong param_1, longlong * param_2)`
 pub const InitFormFromRecordHeader: u64 = 13996;
 /// `InitFormTypeIteratorWithRefHandle` at 0x296060 (decompiler, medium); signature (untiered): `uint * InitFormTypeIteratorWithRefHandle(uint * param_1, longlong param_2, longlong param_3)`
@@ -6639,6 +6823,8 @@ pub const InitPoolPageAndLink: u64 = 68406;
 pub const InitPortalGraphAndMultiBoundMaps: u64 = 20514;
 /// `InitPoseAndUpdateGraphActiveNodes` at 0xad7a80 (decompiler, medium); signature (untiered): `undefined InitPoseAndUpdateGraphActiveNodes(longlong param_1, longlong param_2)`
 pub const InitPoseAndUpdateGraphActiveNodes: u64 = 58454;
+/// `InitPoseFromGeneratorOutput` at 0xad87b0 (semantic, medium); signature (untiered): `undefined InitPoseFromGeneratorOutput(longlong * param_1, longlong param_2, void * param_3)`; semantic: fills a stack hkaPose's local transforms from the output pose track (medium); signature `void (hkbGeneratorOutput* output, const hkaSkeleton* skeleton, void* buffer)`
+pub const InitPoseFromGeneratorOutput: u64 = 58478;
 /// `InitPoseMatchingGenerator` at 0xb040c0 (decompiler, medium); signature (untiered): `undefined8 * InitPoseMatchingGenerator(undefined8 * param_1)`
 pub const InitPoseMatchingGenerator: u64 = 59571;
 /// `InitPresetSettings` at 0x1117520 (decompiler, medium); signature (untiered): `undefined4 * InitPresetSettings(undefined4 * param_1, int param_2)`
@@ -8217,185 +8403,3 @@ pub const InsertSortedUIntKeyedStride10: u64 = 47472;
 pub const InsertSortedUInt_2: u64 = 47118;
 /// `InsertStringHashTableEntry` at 0x117acc0 (decompiler, medium); signature (untiered): `undefined InsertStringHashTableEntry(longlong * param_1, undefined8 param_2, ulonglong * param_3, ulonglong param_4)`
 pub const InsertStringHashTableEntry: u64 = 82642;
-/// `InsertStringIntoHashTable` at 0xf1ab10 (decompiler, medium); signature (untiered): `undefined InsertStringIntoHashTable(longlong param_1, undefined8 * param_2, uint param_3)`
-pub const InsertStringIntoHashTable: u64 = 71689;
-/// `InsertStringMapEntry` at 0xab5820 (decompiler, medium); signature (untiered): `ulonglong InsertStringMapEntry(longlong * param_1, byte * param_2, undefined8 param_3)`
-pub const InsertStringMapEntry: u64 = 57760;
-/// `InsertStringMapNode` at 0x1130d0 (decompiler, medium); signature (untiered): `undefined8 * InsertStringMapNode(undefined8 param_1, undefined8 * param_2, char param_3, longlong * param_4, undefined8 param_5, longlong * param_6)`
-pub const InsertStringMapNode: u64 = 440043;
-/// `InsertStringMapNode_2` at 0x116530 (decompiler, medium); signature (untiered): `undefined8 * InsertStringMapNode_2(undefined8 param_1, undefined8 * param_2, char param_3, longlong * param_4, undefined8 param_5, longlong * param_6)`
-pub const InsertStringMapNode_2: u64 = 440187;
-/// `InsertStringMapNode_3` at 0x125f30 (decompiler, medium); signature (untiered): `undefined8 * InsertStringMapNode_3(undefined8 param_1, undefined8 * param_2, char param_3, longlong * param_4, undefined8 param_5, longlong * param_6)`
-pub const InsertStringMapNode_3: u64 = 440499;
-/// `InsertStringPairHashEntry` at 0xd8bf70 (decompiler, medium); signature (untiered): `undefined InsertStringPairHashEntry(longlong * param_1, undefined8 param_2, ulonglong * param_3, ulonglong param_4)`
-pub const InsertStringPairHashEntry: u64 = 84669;
-/// `InsertStringRefHashEntry` at 0xd8c110 (decompiler, medium); signature (untiered): `undefined InsertStringRefHashEntry(longlong * param_1, undefined8 param_2, ulonglong * param_3, ulonglong param_4)`
-pub const InsertStringRefHashEntry: u64 = 85542;
-/// `InsertStringWithRealloc` at 0x117910 (decompiler, medium); signature (untiered): `longlong InsertStringWithRealloc(longlong * param_1, longlong * param_2, longlong * param_3, longlong * param_4)`
-pub const InsertStringWithRealloc: u64 = 440065;
-/// `InsertTaggedStringHashEntry` at 0xe573a0 (decompiler, medium); signature (untiered): `undefined InsertTaggedStringHashEntry(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
-pub const InsertTaggedStringHashEntry: u64 = 89064;
-/// `InsertTreeNodeAndRebalance` at 0x1303010 (decompiler, medium); signature (untiered): `undefined8 * InsertTreeNodeAndRebalance(longlong * param_1, undefined8 * param_2, char param_3, undefined8 * param_4, undefined8 param_5, longlong * param_6)`
-pub const InsertTreeNodeAndRebalance: u64 = 446939;
-/// `InsertTreeNodeAndRebalance_2` at 0x1297e0 (decompiler, medium); signature (untiered): `undefined8 * InsertTreeNodeAndRebalance_2(longlong * param_1, undefined8 * param_2, undefined8 param_3, undefined8 * param_4, undefined8 param_5, longlong * param_6)`
-pub const InsertTreeNodeAndRebalance_2: u64 = 440637;
-/// `InsertTreeNodeAndRebalance_3` at 0x58e330 (decompiler, medium); signature (untiered): `undefined8 * InsertTreeNodeAndRebalance_3(longlong * param_1, undefined8 * param_2, void * param_3, undefined8 * param_4, undefined8 param_5, longlong * param_6)`
-pub const InsertTreeNodeAndRebalance_3: u64 = 441837;
-/// `InsertTreeNodeAndRebalance_4` at 0xa79c70 (decompiler, medium); signature (untiered): `undefined8 * InsertTreeNodeAndRebalance_4(longlong * param_1, undefined8 * param_2, undefined8 param_3, undefined8 * param_4, undefined8 param_5, longlong * param_6)`
-pub const InsertTreeNodeAndRebalance_4: u64 = 442922;
-/// `InsertTreeNodeAndRebalance_5` at 0xea51a0 (decompiler, medium); signature (untiered): `undefined8 * InsertTreeNodeAndRebalance_5(longlong * param_1, undefined8 * param_2, char param_3, undefined8 * param_4, undefined8 param_5)`
-pub const InsertTreeNodeAndRebalance_5: u64 = 68898;
-/// `InsertTreeNodeWithHint` at 0xa7a180 (decompiler, medium); signature (untiered): `undefined8 * InsertTreeNodeWithHint(longlong * param_1, undefined8 * param_2, longlong * param_3, undefined8 * param_4, undefined8 param_5)`
-pub const InsertTreeNodeWithHint: u64 = 442924;
-/// `InsertU32IntoHashSet` at 0x29c0b0 (decompiler, medium); signature (untiered): `undefined8 InsertU32IntoHashSet(longlong param_1, uint * param_2)`
-pub const InsertU32IntoHashSet: u64 = 18400;
-/// `InsertU32KeyedEntryWithHash` at 0xd6fac0 (decompiler, medium); signature (untiered): `undefined InsertU32KeyedEntryWithHash(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
-pub const InsertU32KeyedEntryWithHash: u64 = 84804;
-/// `InsertU64HashEntry` at 0xe57740 (decompiler, medium); signature (untiered): `undefined InsertU64HashEntry(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
-pub const InsertU64HashEntry: u64 = 89066;
-/// `InsertU64HashEntry_2` at 0xe6d390 (decompiler, medium); signature (untiered): `undefined InsertU64HashEntry_2(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
-pub const InsertU64HashEntry_2: u64 = 88009;
-/// `InsertU64KeyMapIfAbsent` at 0xaa6770 (decompiler, medium); signature (untiered): `undefined InsertU64KeyMapIfAbsent(longlong * param_1, longlong * param_2, ulonglong param_3, undefined8 param_4)`
-pub const InsertU64KeyMapIfAbsent: u64 = 57186;
-/// `InsertU64KeyStringHolderAndNotify` at 0x9b1300 (decompiler, medium); signature (untiered): `undefined InsertU64KeyStringHolderAndNotify(longlong param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
-pub const InsertU64KeyStringHolderAndNotify: u64 = 53396;
-/// `InsertUInt16IntoHashTable` at 0xe7c510 (decompiler, medium); signature (untiered): `undefined InsertUInt16IntoHashTable(longlong * param_1, undefined8 param_2, byte * param_3)`
-pub const InsertUInt16IntoHashTable: u64 = 89779;
-/// `InsertUInt16PairIntoHashTable` at 0xe17770 (decompiler, medium); signature (untiered): `undefined InsertUInt16PairIntoHashTable(longlong * param_1, undefined8 param_2, undefined8 * param_3, ulonglong param_4)`
-pub const InsertUInt16PairIntoHashTable: u64 = 88739;
-/// `InsertUInt16WithHashIntoHashTable` at 0xe7cd50 (decompiler, medium); signature (untiered): `undefined InsertUInt16WithHashIntoHashTable(longlong * param_1, undefined8 param_2, undefined2 * param_3, ulonglong param_4)`
-pub const InsertUInt16WithHashIntoHashTable: u64 = 89784;
-/// `InsertUniqueDwordKeyFixedStringHashEntry` at 0x62b060 (decompiler, medium); signature (medium): `undefined8 InsertUniqueDwordKeyFixedStringHashEntry(longlong param_1, uint * param_2, longlong * param_3)`
-pub const InsertUniqueDwordKeyFixedStringHashEntry: u64 = 35804;
-/// `InsertUniqueHashEntryByUint` at 0x15634d0 (decompiler, medium); signature (untiered): `undefined8 InsertUniqueHashEntryByUint(longlong param_1, uint * param_2, undefined8 * param_3, ulonglong param_4)`
-pub const InsertUniqueHashEntryByUint: u64 = 107707;
-/// `InsertUniqueNodeByU64Key` at 0x12b32b0 (decompiler, medium); signature (untiered): `undefined8 * InsertUniqueNodeByU64Key(longlong * param_1, undefined8 * param_2, undefined8 param_3, ulonglong * param_4, void * param_5)`
-pub const InsertUniqueNodeByU64Key: u64 = 419716;
-/// `InsertUniqueNodeIntoStringTree505592` at 0x1133a0 (decompiler, medium); signature (untiered): `undefined8 * InsertUniqueNodeIntoStringTree505592(undefined8 param_1, undefined8 * param_2, undefined8 param_3, undefined8 * param_4, void * param_5)`
-pub const InsertUniqueNodeIntoStringTree505592: u64 = 440044;
-/// `InsertUniqueNodeIntoStringTree505592_2` at 0x126200 (decompiler, medium); signature (untiered): `undefined8 * InsertUniqueNodeIntoStringTree505592_2(undefined8 param_1, undefined8 * param_2, undefined8 param_3, undefined8 * param_4, void * param_5)`
-pub const InsertUniqueNodeIntoStringTree505592_2: u64 = 440500;
-/// `InsertUniqueNodeIntoU64Map` at 0x129a90 (decompiler, medium); signature (untiered): `undefined8 * InsertUniqueNodeIntoU64Map(longlong * param_1, undefined8 * param_2, undefined8 param_3, ulonglong * param_4, void * param_5)`
-pub const InsertUniqueNodeIntoU64Map: u64 = 440638;
-/// `InsertUniqueNodeIntoU64StringMap505605` at 0x116800 (decompiler, medium); signature (untiered): `undefined8 * InsertUniqueNodeIntoU64StringMap505605(undefined8 param_1, undefined8 * param_2, undefined8 param_3, ulonglong * param_4, void * param_5)`
-pub const InsertUniqueNodeIntoU64StringMap505605: u64 = 440188;
-/// `InsertUniquePtrIntoArray20` at 0x3a6570 (decompiler, medium); signature (untiered): `undefined InsertUniquePtrIntoArray20(longlong param_1, longlong param_2, uint param_3)`
-pub const InsertUniquePtrIntoArray20: u64 = 24111;
-/// `InsertUniqueSortedEntryIntoArray60` at 0x397260 (decompiler, medium); signature (untiered): `undefined8 InsertUniqueSortedEntryIntoArray60(longlong param_1, longlong * param_2)`
-pub const InsertUniqueSortedEntryIntoArray60: u64 = 23816;
-/// `InsertUniqueU32HashMapEntry` at 0x1561b70 (decompiler, medium); signature (medium): `undefined8 InsertUniqueU32HashMapEntry(longlong param_1, uint * param_2, uint * param_3, uint * param_4)`
-pub const InsertUniqueU32HashMapEntry: u64 = 107676;
-/// `InsertUniqueWStringKey` at 0xea5450 (decompiler, medium); signature (untiered): `undefined8 * InsertUniqueWStringKey(longlong * param_1, undefined8 * param_2, char param_3, ushort * param_4, undefined1 param_5)`
-pub const InsertUniqueWStringKey: u64 = 68899;
-/// `InsertUtf8CharAtCharIndex` at 0xcfee30 (decompiler, medium); signature (untiered): `undefined InsertUtf8CharAtCharIndex(ulonglong * param_1, uint param_2, size_t param_3)`
-pub const InsertUtf8CharAtCharIndex: u64 = 82626;
-/// `InsertUtf8CharIntoBufferAtCharIndex` at 0xcff010 (decompiler, medium); signature (untiered): `undefined InsertUtf8CharIntoBufferAtCharIndex(longlong * param_1, uint param_2, longlong param_3)`
-pub const InsertUtf8CharIntoBufferAtCharIndex: u64 = 82627;
-/// `InsertWithNextUniqueId` at 0xe76280 (decompiler, medium); signature (untiered): `longlong InsertWithNextUniqueId(longlong * param_1, undefined8 * param_2)`
-pub const InsertWithNextUniqueId: u64 = 89336;
-/// `InsertionSort0xA8ByString48` at 0x13c0740 (decompiler, medium); signature (untiered): `undefined InsertionSort0xA8ByString48(ulonglong * param_1, ulonglong * param_2, undefined1 * param_3, ulonglong * param_4)`
-pub const InsertionSort0xA8ByString48: u64 = 99326;
-/// `InsertionSortB0RecordsByString0` at 0x14190f0 (decompiler, medium); signature (untiered): `undefined InsertionSortB0RecordsByString0(undefined1 * * param_1, undefined1 * * param_2, undefined1 * param_3, undefined1 * param_4)`
-pub const InsertionSortB0RecordsByString0: u64 = 451838;
-/// `InsertionSortByStringKeyStride0x48` at 0x1473810 (decompiler, medium); signature (untiered): `undefined8 * InsertionSortByStringKeyStride0x48(undefined8 * param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
-pub const InsertionSortByStringKeyStride0x48: u64 = 103599;
-/// `InsertionSortEntries130ByKey0Key4` at 0x138e790 (decompiler, medium); signature (medium): `undefined InsertionSortEntries130ByKey0Key4(ushort * param_1, ushort * param_2)`
-pub const InsertionSortEntries130ByKey0Key4: u64 = 450031;
-/// `InsertionSortPagedArray12` at 0xe8bc90 (decompiler, medium); signature (untiered): `undefined InsertionSortPagedArray12(longlong * param_1, undefined * param_2)`
-pub const InsertionSortPagedArray12: u64 = 89939;
-/// `InsertionSortPagedArray12Range` at 0xe8bdf0 (decompiler, medium); signature (untiered): `undefined InsertionSortPagedArray12Range(longlong param_1, ulonglong param_2, longlong param_3, undefined * param_4)`
-pub const InsertionSortPagedArray12Range: u64 = 89940;
-/// `InsertionSortSharedPtrsByField18` at 0x1265b10 (decompiler, medium); signature (untiered): `longlong * InsertionSortSharedPtrsByField18(longlong * param_1, longlong * param_2)`
-pub const InsertionSortSharedPtrsByField18: u64 = 505856;
-/// `InsertionSortSharedPtrsByField18_2` at 0x1265e50 (decompiler, medium); signature (untiered): `longlong * InsertionSortSharedPtrsByField18_2(longlong * param_1, longlong * param_2)`
-pub const InsertionSortSharedPtrsByField18_2: u64 = 524435;
-/// `InsertionSortSharedPtrsByField18_3` at 0x1278380 (decompiler, medium); signature (untiered): `longlong * InsertionSortSharedPtrsByField18_3(longlong * param_1, longlong * param_2)`
-pub const InsertionSortSharedPtrsByField18_3: u64 = 505876;
-/// `InstallContentEntryByRequestId` at 0x64a0c0 (decompiler, medium); signature (untiered): `undefined4 InstallContentEntryByRequestId(longlong param_1, longlong param_2, longlong * param_3)`
-pub const InstallContentEntryByRequestId: u64 = 523926;
-/// `InstallModAndNotifyDataObjectChange` at 0x5b36f0 (decompiler, medium); signature (untiered): `undefined InstallModAndNotifyDataObjectChange(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const InstallModAndNotifyDataObjectChange: u64 = 442216;
-/// `InstallModFiles` at 0x5b3840 (decompiler, medium); signature (untiered): `bool InstallModFiles(MessageBoxData_vtbl * param_1)`
-pub const InstallModFiles: u64 = 33790;
-/// `InstallYesToAllCbtHook` at 0xfdcd70 (decompiler, high); signature (high): `undefined InstallYesToAllCbtHook(void)`
-pub const InstallYesToAllCbtHook: u64 = 76180;
-/// `InstalledContent::ProcessLoadGameEvent` at 0x609560 (runtime, high); signature (untiered): `undefined8 ProcessLoadGameEvent(InstalledContent * this, BSTArrayAllocatorFunctor<BSTArrayHeapAllocator>_vtbl * * param_1, undefined8 * * param_2, undefined8 param_3)`; semantic: forwards to 0x60b6c0 when the byte at +0x18 is set; returns 0 (high); signature `BSEventNotifyControl (InstalledContent* this, const TESLoadGameEvent* event, BSTEventSource<TESLoadGameEvent>* source)`
-pub const InstalledContent__ProcessLoadGameEvent: u64 = 442465;
-/// `InstalledContent::ProcessLoadGameEvent` as a function pointer type (high).
-pub type InstalledContent__ProcessLoadGameEvent_fn = unsafe extern "C" fn(this: *mut crate::InstalledContent, event: *const crate::TESLoadGameEvent, source: *mut c_void) -> u32;
-/// `InstalledContent::ctor` at 0x607ce0 (layout_inference, medium); signature (low): `InstalledContent * ctor(InstalledContent * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const InstalledContent__ctor: u64 = 442446;
-/// `InstalledContent::dtor` at 0x607df0 (layout_inference, high); signature (low): `undefined dtor(InstalledContent * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const InstalledContent__dtor: u64 = 442447;
-/// `InstalledContent::vdtor` at 0x60ae60 (slot_propagation, medium); signature (low): `InstalledContent * vdtor(InstalledContent * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const InstalledContent__vdtor: u64 = 442482;
-/// `InstantInteractionCallback::ctor` at 0x71a730 (layout_inference, medium); signature (low): `InstantInteractionCallback * ctor(InstantInteractionCallback * this, undefined8 param_1, longlong * param_2)`
-pub const InstantInteractionCallback__ctor: u64 = 39688;
-/// `InstantInteractionCallback::vdtor` at 0x71d1d0 (layout_inference, medium); signature (low): `InstantInteractionCallback * vdtor(InstantInteractionCallback * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const InstantInteractionCallback__vdtor: u64 = 39739;
-/// `InstantInteractionCallback::vfunc_1` at 0x71a780 (rtti, high); signature (low): `undefined vfunc_1(InstantInteractionCallback * this, uint param_1, InstantInteractionCallback * param_2, undefined8 param_3)`
-pub const InstantInteractionCallback__vfunc_1: u64 = 39689;
-/// `InstantInteractionCallback::vfunc_1_sub0` at 0x6f2910 (callgraph, medium); signature (untiered): `char vfunc_1_sub0(longlong param_1, longlong * param_2, longlong * param_3, undefined8 param_4)`
-pub const InstantInteractionCallback__vfunc_1_sub0: u64 = 39292;
-/// `IntSeenData::ctor` at 0x666870 (layout_inference, medium); signature (low): `IntSeenData * ctor(IntSeenData * this, undefined1 param_1, undefined1 param_2)`
-pub const IntSeenData__ctor: u64 = 36873;
-/// `IntSeenData::dtor` at 0x6668b0 (layout_inference, high); signature (high): `undefined dtor(IntSeenData * this)`
-pub const IntSeenData__dtor: u64 = 36874;
-/// `IntSeenData::vdtor` at 0x666ae0 (layout_inference, medium); signature (low): `IntSeenData * vdtor(IntSeenData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const IntSeenData__vdtor: u64 = 36877;
-/// `IntSeenData::vfunc_1` at 0x6668f0 (rtti, high); signature (low): `undefined vfunc_1(IntSeenData * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const IntSeenData__vfunc_1: u64 = 36875;
-/// `IntSeenData::vfunc_2` at 0x6669c0 (rtti, high); signature (low): `undefined vfunc_2(IntSeenData * this, longlong param_1)`
-pub const IntSeenData__vfunc_2: u64 = 36876;
-/// `IntegrateMotionBatch` at 0xb838a0 (decompiler, medium); signature (untiered): `uint IntegrateMotionBatch(longlong param_1, undefined4 * param_2, float * param_3, longlong * param_4, int param_5, int param_6)`
-pub const IntegrateMotionBatch: u64 = 62260;
-/// `InterfacedClass::dtor` at 0x19b530 (layout_inference, high); signature (high): `undefined dtor(InterfacedClass * this)`
-pub const InterfacedClass__dtor: u64 = 13171;
-/// `InterfacedClass::vdtor` at 0x19bf60 (layout_inference, medium); signature (low): `InterfacedClass * vdtor(InterfacedClass * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const InterfacedClass__vdtor: u64 = 13201;
-/// `InternCStringInGlobalVector` at 0x1138a0 (decompiler, medium); signature (medium): `char * InternCStringInGlobalVector(char * param_1, char * param_2, longlong param_3)`
-pub const InternCStringInGlobalVector: u64 = 440097;
-/// `InternConcatenatedString` at 0xd09ef0 (decompiler, medium); signature (untiered): `undefined8 * InternConcatenatedString(longlong param_1, void * param_2, size_t param_3, void * param_4, undefined8 * param_5)`
-pub const InternConcatenatedString: u64 = 82829;
-/// `InternConcatenatedString3` at 0xd09ca0 (decompiler, medium); signature (untiered): `undefined8 * InternConcatenatedString3(longlong param_1, void * param_2, size_t param_3, void * param_4, undefined8 * param_5, void * param_6, size_t param_7)`
-pub const InternConcatenatedString3: u64 = 82828;
-/// `InternStaticString` at 0xd09b20 (decompiler, medium); signature (untiered): `undefined8 * InternStaticString(longlong param_1, char * param_2, size_t param_3, uint param_4)`
-pub const InternStaticString: u64 = 82826;
-/// `InternStaticStringTable389956` at 0xd77d00 (decompiler, medium); signature (untiered): `undefined InternStaticStringTable389956(undefined8 * param_1)`
-pub const InternStaticStringTable389956: u64 = 85161;
-/// `InternString` at 0xd0a130 (decompiler, medium); signature (untiered): `longlong * InternString(longlong param_1, char * param_2, ulonglong param_3)`
-pub const InternString: u64 = 82830;
-/// `InternStringAndRegisterInMap505665` at 0x15e3b50 (decompiler, medium); signature (untiered): `char * InternStringAndRegisterInMap505665(char * param_1, undefined4 param_2, longlong param_3, undefined8 param_4)`
-pub const InternStringAndRegisterInMap505665: u64 = 453999;
-/// `InternStringInGlobalList` at 0x1274b0 (decompiler, medium); signature (medium): `char * InternStringInGlobalList(char * param_1, char * param_2, longlong param_3)`
-pub const InternStringInGlobalList: u64 = 440532;
-/// `InternStringInGlobalPool410596` at 0xf1a500 (decompiler, medium); signature (medium): `char * InternStringInGlobalPool410596(char * param_1)`
-pub const InternStringInGlobalPool410596: u64 = 71682;
-/// `InternStringRange` at 0xc6e3f0 (decompiler, medium); signature (untiered): `byte * InternStringRange(longlong param_1, int * param_2)`
-pub const InternStringRange: u64 = 66412;
-/// `InternString_2` at 0xabe3e0 (decompiler, medium); signature (medium): `byte * InternString_2(longlong param_1, byte * param_2)`
-pub const InternString_2: u64 = 57997;
-/// `InterpolateColorKeysAtTime` at 0xf6f150 (decompiler, medium); signature (untiered): `undefined8 * InterpolateColorKeysAtTime(undefined8 * param_1, float param_2, float * param_3, int param_4, uint param_5, int * param_6, byte param_7)`
-pub const InterpolateColorKeysAtTime: u64 = 73088;
-/// `InterpolateColorKeysClamped` at 0xf6f310 (decompiler, medium); signature (untiered): `undefined8 * InterpolateColorKeysClamped(undefined8 * param_1, float param_2, float * param_3, int param_4, uint param_5, byte param_6)`
-pub const InterpolateColorKeysClamped: u64 = 73089;
-/// `InterpolateEulerKeysToQuaternion` at 0xf6e150 (decompiler, medium); signature (untiered): `undefined InterpolateEulerKeysToQuaternion(float param_1, longlong param_2, undefined8 param_3, float * param_4)`
-pub const InterpolateEulerKeysToQuaternion: u64 = 73048;
-/// `InterpolateFloatKeys` at 0xf6ecb0 (decompiler, medium); signature (medium): `float InterpolateFloatKeys(float param_1, float * param_2, int param_3, uint param_4, int * param_5, byte param_6)`
-pub const InterpolateFloatKeys: u64 = 73075;
-/// `InterpolateFloatKeysClamped` at 0xf6ee80 (decompiler, medium); signature (medium): `float InterpolateFloatKeysClamped(float param_1, float * param_2, int param_3, uint param_4, byte param_5)`
-pub const InterpolateFloatKeysClamped: u64 = 73077;
-/// `InterpolateKeysAtTime` at 0xf8fe00 (decompiler, medium); signature (untiered): `undefined1 InterpolateKeysAtTime(float param_1, float * param_2, int param_3, uint param_4, int * param_5, byte param_6)`
-pub const InterpolateKeysAtTime: u64 = 74194;
-/// `InterpolatePathSegmentPoint` at 0x11d8d80 (decompiler, medium); signature (untiered): `undefined8 InterpolatePathSegmentPoint(longlong param_1, float param_2, float * param_3)`
-pub const InterpolatePathSegmentPoint: u64 = 90983;
-/// `InterpolatePoint3Keys` at 0xf6fdb0 (decompiler, medium); signature (medium): `float * InterpolatePoint3Keys(float * param_1, float param_2, float * param_3, int param_4, uint param_5, int * param_6, byte param_7)`
-pub const InterpolatePoint3Keys: u64 = 73114;
-/// `InterpolatePoint3KeysClamped` at 0xf70340 (decompiler, medium); signature (untiered): `float * InterpolatePoint3KeysClamped(float * param_1, float param_2, float * param_3, int param_4, uint param_5, byte param_6)`
-pub const InterpolatePoint3KeysClamped: u64 = 73117;
-/// `InterpolatePoints` at 0xdae1e0 (decompiler, medium); signature (untiered): `undefined InterpolatePoints(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const InterpolatePoints: u64 = 86007;
-/// `InterpolateQuatKeysAtTime` at 0x540360 (decompiler, medium); signature (medium): `undefined InterpolateQuatKeysAtTime(ulonglong * param_1, float param_2, float * param_3)`
-pub const InterpolateQuatKeysAtTime: u64 = 32583;
-/// `InterpolateQuaternionKeys` at 0xf6f860 (decompiler, medium); signature (untiered): `undefined8 * InterpolateQuaternionKeys(undefined8 * param_1, float param_2, float * param_3, int param_4, uint param_5, int * param_6, byte param_7)`
-pub const InterpolateQuaternionKeys: u64 = 73102;

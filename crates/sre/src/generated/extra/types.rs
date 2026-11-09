@@ -1100,21 +1100,6 @@ const _: () = assert!(core::mem::offset_of!(ExtraHavok, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(ExtraHavok, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(ExtraHavok, field_18) == 0x18);
 
-/// `ExtraHeadTrackingWeight`: size 0x18 (exact, medium); primary base `BSExtraData`.
-/// Evidence: runtime: 0x18 at 1 allocation sites.
-/// Bases: `BSExtraData`@0x0.
-#[repr(C)]
-pub struct ExtraHeadTrackingWeight {
-    /// +0x0 `vtbl:ExtraHeadTrackingWeight:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::ExtraHeadTrackingWeight_vtable,
-    pub unknown_8: [u8; 16],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<ExtraHeadTrackingWeight>() == 0x18);
-const _: () = assert!(core::mem::offset_of!(ExtraHeadTrackingWeight, __vftable) == 0x0);
-
 /// `ExtraHeadingTarget`: size 0x18 (exact, medium); primary base `BSExtraData`.
 /// Evidence: allocation sites (medium): {'24': 1}.
 /// Bases: `BSExtraData`@0x0.

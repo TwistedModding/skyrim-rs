@@ -781,16 +781,6 @@ impl crate::ExtraHavok {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(11562, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
-impl crate::ExtraHeadTrackingWeight {
-    /// `ExtraHeadTrackingWeight::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 12235, rva 0x17cc70).
-    /// `ExtraHeadTrackingWeight * vdtor(ExtraHeadTrackingWeight * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(12235, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
 impl crate::ExtraHeadingTarget {
     /// `ExtraHeadingTarget::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 12236, rva 0x17cca0).
     /// `ExtraHeadingTarget * vdtor(ExtraHeadingTarget * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`

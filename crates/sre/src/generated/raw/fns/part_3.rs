@@ -7,6 +7,26 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes>::vfunc_30` at 0x482ea0 (rtti, medium); signature (low): `undefined8 * vfunc_30(void)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes__vfunc_30: u64 = 29050;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes>::vfunc_34` at 0x482e80 (rtti, medium); signature (low): `undefined vfunc_34(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes__vfunc_34: u64 = 29049;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vdtor` at 0x483600 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vdtor: u64 = 29065;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vfunc_18` at 0x4837a0 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vfunc_18: u64 = 29073;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vfunc_19` at 0x483780 (rtti, medium); signature (low): `undefined * vfunc_19(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vfunc_19: u64 = 29072;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vfunc_20` at 0x483760 (rtti, medium); signature (low): `undefined1 vfunc_20(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vfunc_20: u64 = 29071;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vfunc_30` at 0x4837e0 (rtti, medium); signature (low): `undefined8 * vfunc_30(void)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vfunc_30: u64 = 29075;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vfunc_34` at 0x4837c0 (rtti, medium); signature (low): `undefined vfunc_34(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vfunc_34: u64 = 29074;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vdtor` at 0x485220 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vdtor: u64 = 29099;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_18` at 0x4855f0 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vfunc_18: u64 = 29111;
 /// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_19` at 0x4855d0 (rtti, medium); signature (low): `undefined * vfunc_19(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, uint param_1)`
 pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vfunc_19: u64 = 29110;
 /// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_20` at 0x4855b0 (rtti, medium); signature (low): `undefined1 vfunc_20(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, uint param_1)`
@@ -1654,7 +1674,7 @@ pub type BSAnimationGraphManager__SetGraph0FootIkDisabled_fn = unsafe extern "C"
 /// `BSAnimationGraphManager::Update` at 0xbc0680 (semantic, high); signature (untiered): `undefined Update(undefined8 * param_1, float * param_2)`; semantic: per frame: update channels, push channel values into each graph (0xbcf570), Update every graph (events collected from the active one), unlock, send the collected events through every graph that has sinks (0xbcf360), then write poses inline (0xbcf480 per graph) or hand the manager to the queue ID_409516 and release its semaphore (high); signature `void (BSAnimationGraphManager* this, BSAnimationUpdateData* data)`
 pub const BSAnimationGraphManager__Update: u64 = 63358;
 /// `BSAnimationGraphManager::Update` as a function pointer type (high).
-pub type BSAnimationGraphManager__Update_fn = unsafe extern "C" fn(this: *mut crate::BSAnimationGraphManager, data: *mut c_void);
+pub type BSAnimationGraphManager__Update_fn = unsafe extern "C" fn(this: *mut crate::BSAnimationGraphManager, data: *mut crate::BSAnimationUpdateData);
 /// `BSAnimationGraphManager::UpdateActiveGraphFootIk` at 0x7dd8c0 (semantic, high); signature (untiered): `undefined UpdateActiveGraphFootIk(longlong param_1, undefined8 * param_2)`; semantic: under the manager spin lock +0xa0, calls UpdateActiveGraphFootIkSwitch for the active graph (+0xb0) only (high); signature `void (BSAnimationGraphManager* this, FootIkFeedback** out)`
 pub const BSAnimationGraphManager__UpdateActiveGraphFootIk: u64 = 43692;
 /// `BSAnimationGraphManager::UpdateActiveGraphFootIk` as a function pointer type (high).
@@ -2785,6 +2805,8 @@ pub const BSExtraData__dtor_3: u64 = 12178;
 pub const BSExtraData__vdtor: u64 = 11560;
 /// `BSExtraData::vfunc_2` at 0x1565d0 (rtti, medium); signature (low): `undefined1 vfunc_2(void)`
 pub const BSExtraData__vfunc_2: u64 = 11565;
+/// `BSFaceGenAnimationData::ApplyEyeTrackAngles` at 0x4251b0 (semantic, medium); signature (untiered): `undefined ApplyEyeTrackAngles(longlong param_1, float param_2, float param_3)`; semantic: eye look-at: clamps yaw to +-fTrackEyeXY and pitch to +-fTrackEyeZ (degrees, capped by g_DefaultMaxPitchDown) and writes the normalised values into the four look-direction face keyframe weights (+0x110 -> +0x20..+0x2c); only when g_FaceAnimationSettings+0x58 (medium); signature `void (BSFaceGenAnimationData* this, float yaw, float pitch)`
+pub const BSFaceGenAnimationData__ApplyEyeTrackAngles: u64 = 26599;
 /// `BSFaceGenAnimationData::ComputeTrackTargetAngles` at 0x425860 (semantic, medium); signature (untiered): `bool ComputeTrackTargetAngles(longlong param_1, undefined8 param_2, undefined8 param_3, longlong param_4)`; semantic: from the look-at vector +0x1a0..+0x1a8 (in the head's frame: head world rotation +0x7c times a fixed euler matrix) computes the base eye heading +0x1d4 = atan2 and pitch +0x1d8, the per-axis speeds +0x1dc/+0x1e0 and head angles +0x1e8..+0x1f4; on +0x214 it snaps the current angles (+0x1bc/+0x1c0 = base, +0x1b4/+0x1b8) (medium); signature `bool (BSFaceGenAnimationData* this, ?, ?, NiAVObject* head)`
 pub const BSFaceGenAnimationData__ComputeTrackTargetAngles: u64 = 26603;
 /// `BSFaceGenAnimationData::FindKeyframeName` at 0x43afa0 (semantic, high); signature (untiered): `uint FindKeyframeName(char * param_1, undefined4 * param_2)`; semantic: case-insensitive lookup of a face channel name: expression table 0x20b0830 (17, type 1), modifier table 0x20b08c0 (17, type 2), phoneme table 0x20b0950 (16, type 0), custom 'SkinnyMorph' 0x20b0828 (type 3); returns the index or -1 (high); signature `u32 (const char* name, u32* outType)`
@@ -3053,12 +3075,14 @@ pub const BSFadeNode__vfunc_26: u64 = 105477;
 pub const BSFadeNode__vfunc_27: u64 = 105478;
 /// `BSFadeNode::vfunc_28` at 0x14e5980 (rtti, high); signature (untiered): `undefined8 vfunc_28(BSFadeNode * this, longlong param_1)`
 pub const BSFadeNode__vfunc_28: u64 = 105479;
+/// `BSFadeNodeCuller::TestFrustum` at 0x1555fd0 (semantic, high); signature (untiered): `undefined TestFrustum(BSFadeNodeCuller * this, longlong * param_1)`; semantic: for a fade node: flags |= 0x1000, then tests the world bound sphere (+0xe4 centre, +0xf0 radius) against the 6 planes at this+0x3c; outside any plane -> flags |= 0x100000 (bit 20), inside all -> flags &= ~0x100000 (high); signature `void (BSFadeNodeCuller* this, NiAVObject* object)`
+pub const BSFadeNodeCuller__TestFrustum: u64 = 107507;
+/// `BSFadeNodeCuller::TestFrustum` as a function pointer type (high).
+pub type BSFadeNodeCuller__TestFrustum_fn = unsafe extern "C" fn(this: *mut crate::BSFadeNodeCuller, object: *mut crate::NiAVObject);
 /// `BSFadeNodeCuller::vdtor` at 0x4411f0 (slot_propagation, medium); signature (low): `BSFadeNodeCuller * vdtor(BSFadeNodeCuller * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSFadeNodeCuller__vdtor: u64 = 27123;
 /// `BSFadeNodeCuller::vfunc_0` at 0x441480 (rtti, high); signature (low): `TypeNode * vfunc_0(void)`
 pub const BSFadeNodeCuller__vfunc_0: u64 = 27131;
-/// `BSFadeNodeCuller::vfunc_22` at 0x1555fd0 (rtti, high); signature (low): `undefined vfunc_22(BSFadeNodeCuller * this, longlong * param_1)`
-pub const BSFadeNodeCuller__vfunc_22: u64 = 107507;
 /// `BSFadeNodeCuller::vfunc_23` at 0x1555fc0 (rtti, high); signature (low): `undefined vfunc_23(BSFadeNodeCuller * this, undefined8 param_1)`
 pub const BSFadeNodeCuller__vfunc_23: u64 = 107506;
 /// `BSFile::ctor` at 0xebe730 (layout_inference, high); signature (low): `BSFile * ctor(BSFile * this, char * param_1, int param_2, undefined4 param_3, undefined1 param_4)`
@@ -3189,6 +3213,10 @@ pub const BSFixedStringVectorDeletingDtor: u64 = 70441;
 pub const BSFlatQuadConstructor__vfunc_0: u64 = 108227;
 /// `BSFlatQuadConstructor::vfunc_1` at 0x15934b0 (rtti, high); signature (low): `undefined8 vfunc_1(BSFlatQuadConstructor * this, longlong param_1, undefined8 param_2, longlong param_3)`
 pub const BSFlatQuadConstructor__vfunc_1: u64 = 109082;
+/// `BSFlattenedBoneTree::FlattenNiNodeSubtree` at 0xef4390 (semantic, high); signature (untiered): `NiNode * FlattenNiNodeSubtree(NiNode * param_1)`; semantic: replaces a plain NiNode subtree with a BSFlattenedBoneTree: one 0x80-byte entry per descendant NiNode in depth-first order (parents first) with local, world, parent, name; an entry keeps its real NiNode (+0x70) when the node has a controller (+0x18), a collision object (+0x40) or extra data (+0x28 count), has a non-NiNode or kept child, or is an ancestor of a kept node; every other node is detached and only the entry remains (high); signature `BSFlattenedBoneTree* (NiNode* subtreeRoot)`
+pub const BSFlattenedBoneTree__FlattenNiNodeSubtree: u64 = 70731;
+/// `BSFlattenedBoneTree::FlattenNiNodeSubtree` as a function pointer type (high).
+pub type BSFlattenedBoneTree__FlattenNiNodeSubtree_fn = unsafe extern "C" fn(subtreeRoot: *mut crate::NiNode) -> *mut crate::BSFlattenedBoneTree;
 /// `BSFlattenedBoneTree::GetObjectByName` at 0xef4da0 (semantic, high); signature (untiered): `NiNode * GetObjectByName(BSFlattenedBoneTree * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSFlattenedBoneTree__GetObjectByName: u64 = 70743;
 /// `BSFlattenedBoneTree::UpdateDownwardPass` at 0xef4d10 (semantic, high); signature (untiered): `undefined UpdateDownwardPass(BSFlattenedBoneTree * this, longlong param_1, uint param_2)`
@@ -3429,20 +3457,24 @@ pub const BSGetTimeStepModifier__vfunc_12: u64 = 63234;
 pub const BSGetTimeStepModifier__vfunc_5: u64 = 63235;
 /// `BSGrabIKNote::Create` at 0xf8b560 (string, high); signature (low): `NiObject * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const BSGrabIKNote__Create: u64 = 74040;
+/// `BSGrabIKNote::CreateClone` at 0xf8b210 (semantic, medium); signature (untiered): `NiObject * CreateClone(BSGrabIKNote * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSGrabIKNote__CreateClone: u64 = 74034;
+/// `BSGrabIKNote::GetRTTI` at 0xf8b870 (semantic, medium); signature (untiered): `TypeNode * GetRTTI(void)`
+pub const BSGrabIKNote__GetRTTI: u64 = 74051;
+/// `BSGrabIKNote::LoadBinary` at 0xf8af40 (semantic, medium); signature (untiered): `undefined LoadBinary(BSGrabIKNote * this, longlong param_1)`
+pub const BSGrabIKNote__LoadBinary: u64 = 74028;
+/// `BSGrabIKNote::ParseText` at 0xf8b410 (semantic, high); signature (untiered): `ulonglong ParseText(BSGrabIKNote * this, undefined4 * param_1)`; semantic: parses 'GrabIK R|L <float> Start|Stop': +0x18 hand (1 right, 0 left), +0x1c float, +0x20 (1 start, 2 stop) (high); signature `bool (BSGrabIKNote* this, BSAnimNoteText* text)`
+pub const BSGrabIKNote__ParseText: u64 = 74039;
+/// `BSGrabIKNote::ParseText` as a function pointer type (high).
+pub type BSGrabIKNote__ParseText_fn = unsafe extern "C" fn(this: *mut crate::BSGrabIKNote, text: *mut c_void) -> bool;
 /// `BSGrabIKNote::ctor` at 0xf8b310 (layout_inference, high); signature (low): `BSGrabIKNote * ctor(BSGrabIKNote * this, float param_1, undefined4 param_2, float param_3, undefined4 param_4)`
 pub const BSGrabIKNote__ctor: u64 = 74036;
 /// `BSGrabIKNote::ctor` at 0xf8b380 (layout_inference, high); signature (medium): `BSGrabIKNote * ctor(BSGrabIKNote * this, float param_1)`
 pub const BSGrabIKNote__ctor_2: u64 = 74037;
 /// `BSGrabIKNote::ctor` at 0xf8b3d0 (layout_inference, high); signature (high): `BSGrabIKNote * ctor(BSGrabIKNote * this)`
 pub const BSGrabIKNote__ctor_3: u64 = 74038;
-/// `BSGrabIKNote::vdtor` at 0xf8b820 (slot_propagation, medium); signature (low): `BSGrabIKNote * vdtor(BSGrabIKNote * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+/// `BSGrabIKNote::vdtor` at 0xf8b820 (semantic, high); signature (low): `BSGrabIKNote * vdtor(BSGrabIKNote * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSGrabIKNote__vdtor: u64 = 74049;
-/// `BSGrabIKNote::vfunc_2` at 0xf8b870 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const BSGrabIKNote__vfunc_2: u64 = 74051;
-/// `BSGrabIKNote::vfunc_23` at 0xf8b210 (rtti, high); signature (low): `NiObject * vfunc_23(BSGrabIKNote * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSGrabIKNote__vfunc_23: u64 = 74034;
-/// `BSGrabIKNote::vfunc_24` at 0xf8af40 (rtti, high); signature (low): `undefined vfunc_24(BSGrabIKNote * this, longlong param_1)`
-pub const BSGrabIKNote__vfunc_24: u64 = 74028;
 /// `BSGrabIKNote::vfunc_25` at 0xf8b000 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
 pub const BSGrabIKNote__vfunc_25: u64 = 74029;
 /// `BSGrabIKNote::vfunc_26` at 0xf8b010 (rtti, high); signature (low): `bool vfunc_26(BSGrabIKNote * this, longlong * param_1)`
@@ -3451,8 +3483,6 @@ pub const BSGrabIKNote__vfunc_26: u64 = 74030;
 pub const BSGrabIKNote__vfunc_27: u64 = 74031;
 /// `BSGrabIKNote::vfunc_28` at 0xf8b0f0 (rtti, high); signature (low): `ulonglong vfunc_28(BSGrabIKNote * this, longlong * param_1)`
 pub const BSGrabIKNote__vfunc_28: u64 = 74032;
-/// `BSGrabIKNote::vfunc_37` at 0xf8b410 (rtti, high); signature (low): `ulonglong vfunc_37(BSGrabIKNote * this, undefined4 * param_1)`
-pub const BSGrabIKNote__vfunc_37: u64 = 74039;
 /// `BSGrassShader::NiBoneMatrixSetterI_vdtor` at 0x1523584 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSGrassShader * this)`
 pub const BSGrassShader__NiBoneMatrixSetterI_vdtor: u64 = 106709;
 /// `BSGrassShader::ctor` at 0x1522440 (layout_inference, high); signature (high): `BSGrassShader * ctor(BSGrassShader * this)`
@@ -3521,13 +3551,13 @@ pub const BSIDirectAtModifierSingleton__dtor: u64 = 63072;
 pub const BSIDirectAtModifierSingleton__vdtor: u64 = 63073;
 /// `BSIFootIkRaycastInterfaceDB::dtor` at 0x54c230 (layout_inference, high); signature (high): `undefined dtor(BSIFootIkRaycastInterfaceDB * this)`
 pub const BSIFootIkRaycastInterfaceDB__dtor: u64 = 32759;
-/// `BSIFootIkRaycastInterfaceDB::vdtor` at 0x54c2b0 (layout_inference, medium); signature (low): `BSIFootIkRaycastInterfaceDB * vdtor(BSIFootIkRaycastInterfaceDB * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+/// `BSIFootIkRaycastInterfaceDB::vdtor` at 0x54c2b0 (semantic, high); signature (low): `BSIFootIkRaycastInterfaceDB * vdtor(BSIFootIkRaycastInterfaceDB * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSIFootIkRaycastInterfaceDB__vdtor: u64 = 32762;
 /// `BSIInputDevice::vdtor` at 0xcfc0b0 (layout_inference, medium); signature (low): `BSIInputDevice * vdtor(BSIInputDevice * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSIInputDevice__vdtor: u64 = 68708;
 /// `BSILimbIKModifierSingleton::dtor` at 0xbaf120 (layout_inference, medium); signature (high): `undefined dtor(BSILimbIKModifierSingleton * this)`
 pub const BSILimbIKModifierSingleton__dtor: u64 = 62919;
-/// `BSILimbIKModifierSingleton::vdtor` at 0xbaf130 (slot_propagation, medium); signature (low): `BSILimbIKModifierSingleton * vdtor(BSILimbIKModifierSingleton * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+/// `BSILimbIKModifierSingleton::vdtor` at 0xbaf130 (semantic, high); signature (low): `BSILimbIKModifierSingleton * vdtor(BSILimbIKModifierSingleton * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSILimbIKModifierSingleton__vdtor: u64 = 62920;
 /// `BSIMusicTrack::DoDuck` at 0x326960 (semantic, medium); signature (untiered): `undefined DoDuck(BSIMusicTrack * this, undefined2 param_1)`
 pub const BSIMusicTrack__DoDuck: u64 = 21093;
@@ -3591,7 +3621,7 @@ pub const BSIRagdollContactListenerModifierSingleton__dtor: u64 = 63080;
 pub const BSIRagdollContactListenerModifierSingleton__vdtor: u64 = 63081;
 /// `BSIRagdollDriver::dtor` at 0xbc9a80 (layout_inference, high); signature (high): `undefined dtor(BSIRagdollDriver * this)`
 pub const BSIRagdollDriver__dtor: u64 = 63554;
-/// `BSIRagdollDriver::vdtor` at 0xbd9940 (layout_inference, medium); signature (low): `BSIRagdollDriver * vdtor(BSIRagdollDriver * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+/// `BSIRagdollDriver::vdtor` at 0xbd9940 (semantic, high); signature (low): `BSIRagdollDriver * vdtor(BSIRagdollDriver * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSIRagdollDriver__vdtor: u64 = 63757;
 /// `BSISoundCategory::GetEffectiveAttenuation` at 0x329980 (semantic, medium); signature (untiered): `ushort GetEffectiveAttenuation(BSISoundCategory * this)`
 pub const BSISoundCategory__GetEffectiveAttenuation: u64 = 21222;
@@ -5667,46 +5697,48 @@ pub const BSLightingShaderPropertyUShortController__vfunc_54: u64 = 108387;
 pub const BSLightingShaderPropertyUShortController__vfunc_60: u64 = 108383;
 /// `BSLightingShaderPropertyUShortController::vfunc_61` at 0x157b440 (rtti, high); signature (low): `undefined vfunc_61(BSLightingShaderPropertyUShortController * this, float * param_1)`
 pub const BSLightingShaderPropertyUShortController__vfunc_61: u64 = 108384;
+/// `BSLimbIKModifier::Activate` at 0xbb8860 (semantic, high); signature (untiered): `undefined Activate(BSLimbIKModifier * this)`
+pub const BSLimbIKModifier__Activate: u64 = 63259;
+/// `BSLimbIKModifier::CloneNode` at 0xbb88d0 (semantic, high); signature (untiered): `undefined CloneNode(BSLimbIKModifier * this)`
+pub const BSLimbIKModifier__CloneNode: u64 = 63262;
+/// `BSLimbIKModifier::Deactivate` at 0xbb8870 (semantic, high); signature (untiered): `undefined Deactivate(BSLimbIKModifier * this)`
+pub const BSLimbIKModifier__Deactivate: u64 = 63260;
+/// `BSLimbIKModifier::GetClassType` at 0xbb8850 (semantic, medium); signature (untiered): `undefined * GetClassType(void)`
+pub const BSLimbIKModifier__GetClassType: u64 = 63258;
+/// `BSLimbIKModifier::IsValid` at 0xbb8880 (semantic, high); signature (untiered): `undefined8 IsValid(BSLimbIKModifier * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSLimbIKModifier__IsValid: u64 = 63261;
+/// `BSLimbIKModifier::Modify` at 0xbb8930 (semantic, medium); signature (untiered): `undefined Modify(BSLimbIKModifier * this, longlong * param_1, longlong * param_2)`
+pub const BSLimbIKModifier__Modify: u64 = 63264;
+/// `BSLimbIKModifier::Update` at 0xbb8920 (semantic, high); signature (untiered): `undefined Update(BSLimbIKModifier * this, undefined8 param_2, undefined4 param_3)`
+pub const BSLimbIKModifier__Update: u64 = 63263;
 /// `BSLimbIKModifier::ctor` at 0xbb8750 (layout_inference, medium); signature (high): `BSLimbIKModifier * ctor(BSLimbIKModifier * this)`
 pub const BSLimbIKModifier__ctor: u64 = 63256;
 /// `BSLimbIKModifier::ctor` at 0xbb87f0 (layout_inference, high); signature (high): `BSLimbIKModifier * ctor(BSLimbIKModifier * this)`
 pub const BSLimbIKModifier__ctor_2: u64 = 63257;
 /// `BSLimbIKModifier::ctor` at 0xbb9aa0 (layout_inference, high); signature (low): `BSLimbIKModifier * ctor(BSLimbIKModifier * this, longlong param_1)`
 pub const BSLimbIKModifier__ctor_3: u64 = 63265;
-/// `BSLimbIKModifier::vdtor` at 0xbb9b20 (slot_propagation, medium); signature (low): `BSLimbIKModifier * vdtor(BSLimbIKModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+/// `BSLimbIKModifier::vdtor` at 0xbb9b20 (semantic, high); signature (low): `BSLimbIKModifier * vdtor(BSLimbIKModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSLimbIKModifier__vdtor: u64 = 63266;
-/// `BSLimbIKModifier::vfunc_1` at 0xbb8850 (rtti, high); signature (untiered): `undefined * vfunc_1(void)`
-pub const BSLimbIKModifier__vfunc_1: u64 = 63258;
-/// `BSLimbIKModifier::vfunc_10` at 0xbb8880 (rtti, high); signature (low): `undefined8 vfunc_10(BSLimbIKModifier * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSLimbIKModifier__vfunc_10: u64 = 63261;
-/// `BSLimbIKModifier::vfunc_12` at 0xbb88d0 (rtti, high); signature (high): `undefined vfunc_12(BSLimbIKModifier * this)`
-pub const BSLimbIKModifier__vfunc_12: u64 = 63262;
-/// `BSLimbIKModifier::vfunc_23` at 0xbb8930 (rtti, high); signature (low): `undefined vfunc_23(BSLimbIKModifier * this, longlong * param_1, longlong * param_2)`
-pub const BSLimbIKModifier__vfunc_23: u64 = 63264;
-/// `BSLimbIKModifier::vfunc_4` at 0xbb8860 (rtti, high); signature (high): `undefined vfunc_4(BSLimbIKModifier * this)`
-pub const BSLimbIKModifier__vfunc_4: u64 = 63259;
-/// `BSLimbIKModifier::vfunc_5` at 0xbb8920 (rtti, high); signature (low): `undefined vfunc_5(BSLimbIKModifier * this, undefined8 param_2, undefined4 param_3)`
-pub const BSLimbIKModifier__vfunc_5: u64 = 63263;
-/// `BSLimbIKModifier::vfunc_7` at 0xbb8870 (rtti, high); signature (high): `undefined vfunc_7(BSLimbIKModifier * this)`
-pub const BSLimbIKModifier__vfunc_7: u64 = 63260;
 /// `BSLimbIKModifierCastInfo::vfunc_0` at 0xbaf170 (rtti, high); signature (low): `BSLimbIKModifierCastInfo * vfunc_0(BSLimbIKModifierCastInfo * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSLimbIKModifierCastInfo__vfunc_0: u64 = 62921;
-/// `BSLimbIKModifierUtility::ctor` at 0x552760 (layout_inference, high); signature (high): `BSLimbIKModifierUtility * ctor(BSLimbIKModifierUtility * this)`
+/// `BSLimbIKModifierUtility::BeginCast` at 0x5527d0 (semantic, medium); signature (untiered): `undefined1 * BeginCast(BSLimbIKModifierUtility * this, undefined1 * param_1, undefined8 * param_2, longlong * param_3, float * param_4, float * param_5)`
+pub const BSLimbIKModifierUtility__BeginCast: u64 = 32873;
+/// `BSLimbIKModifierUtility::CastRay` at 0x552a10 (semantic, high); signature (untiered): `undefined1 * CastRay(BSLimbIKModifierUtility * this, undefined1 * param_1, longlong param_2, float * param_3, float * param_4, undefined4 * param_5, float * param_6)`
+pub const BSLimbIKModifierUtility__CastRay: u64 = 32874;
+/// `BSLimbIKModifierUtility::GetWorldScaleInverse` at 0x5527c0 (semantic, high); signature (untiered): `undefined4 GetWorldScaleInverse(void)`
+pub const BSLimbIKModifierUtility__GetWorldScaleInverse: u64 = 32872;
+/// `BSLimbIKModifierUtility::ctor` at 0x552760 (layout_inference, high); signature (high): `BSLimbIKModifierUtility * ctor(BSLimbIKModifierUtility * this)`; semantic: constructs the static singleton and publishes it at g_BSLimbIKModifierUtility_ptr 0x3204678 (high); signature `BSLimbIKModifierUtility* (BSLimbIKModifierUtility* this)`
 pub const BSLimbIKModifierUtility__ctor: u64 = 32870;
-/// `BSLimbIKModifierUtility::vdtor` at 0x552da0 (layout_inference, medium); signature (low): `BSLimbIKModifierUtility * vdtor(BSLimbIKModifierUtility * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+/// `BSLimbIKModifierUtility::ctor` as a function pointer type (high).
+pub type BSLimbIKModifierUtility__ctor_fn = unsafe extern "C" fn(this: *mut crate::BSLimbIKModifierUtility) -> *mut crate::BSLimbIKModifierUtility;
+/// `BSLimbIKModifierUtility::vdtor` at 0x552da0 (semantic, high); signature (low): `BSLimbIKModifierUtility * vdtor(BSLimbIKModifierUtility * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSLimbIKModifierUtility__vdtor: u64 = 32875;
-/// `BSLimbIKModifierUtility::vfunc_1` at 0x5527c0 (rtti, high); signature (low): `undefined4 vfunc_1(void)`
-pub const BSLimbIKModifierUtility__vfunc_1: u64 = 32872;
-/// `BSLimbIKModifierUtility::vfunc_2` at 0x5527d0 (rtti, high); signature (low): `undefined1 * vfunc_2(BSLimbIKModifierUtility * this, undefined1 * param_1, undefined8 * param_2, longlong * param_3, float * param_4, float * param_5)`
-pub const BSLimbIKModifierUtility__vfunc_2: u64 = 32873;
-/// `BSLimbIKModifierUtility::vfunc_3` at 0x552a10 (rtti, high); signature (low): `undefined1 * vfunc_3(BSLimbIKModifierUtility * this, undefined1 * param_1, longlong param_2, float * param_3, float * param_4, undefined4 * param_5, float * param_6)`
-pub const BSLimbIKModifierUtility__vfunc_3: u64 = 32874;
 /// `BSLimbIKModifierUtilityCastInfo::ctor` at 0x5525c0 (layout_inference, high); signature (high): `BSLimbIKModifierUtilityCastInfo * ctor(BSLimbIKModifierUtilityCastInfo * this)`
 pub const BSLimbIKModifierUtilityCastInfo__ctor: u64 = 32867;
 /// `BSLimbIKModifierUtilityCastInfo::ctor` at 0x552600 (layout_inference, medium); signature (high): `undefined ctor(BSLimbIKModifierUtilityCastInfo * this)`
 pub const BSLimbIKModifierUtilityCastInfo__ctor_2: u64 = 32868;
-/// `BSLimbIKModifierUtilityCastInfo::vfunc_0` at 0x552df0 (rtti, high); signature (low): `BSLimbIKModifierUtilityCastInfo * vfunc_0(BSLimbIKModifierUtilityCastInfo * this, ulonglong param_1, ulonglong param_2, undefined8 param_3)`
-pub const BSLimbIKModifierUtilityCastInfo__vfunc_0: u64 = 32876;
+/// `BSLimbIKModifierUtilityCastInfo::vdtor` at 0x552df0 (semantic, medium); signature (untiered): `BSLimbIKModifierUtilityCastInfo * vdtor(BSLimbIKModifierUtilityCastInfo * this, ulonglong param_1, ulonglong param_2, undefined8 param_3)`
+pub const BSLimbIKModifierUtilityCastInfo__vdtor: u64 = 32876;
 /// `BSLines::ctor` at 0x1570bc0 (layout_inference, high); signature (low): `BSLines * ctor(BSLines * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined2 param_4)`
 pub const BSLines__ctor: u64 = 108133;
 /// `BSLines::ctor` at 0x1570c10 (layout_inference, high); signature (low): `BSLines * ctor(BSLines * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -5729,48 +5761,52 @@ pub const BSList_TriggerEntry__TriggerEvent____ptr64__vdtor: u64 = 26082;
 pub const BSListBase_BSTempEffectDebris____ptr64__vdtor: u64 = 30019;
 /// `BSListBase<TriggerEntry::TriggerEvent*___ptr64>::vdtor` at 0x4088d0 (layout_inference, medium); signature (low): `BSListBase<TriggerEntry::TriggerEvent*___ptr64> * vdtor(BSListBase<TriggerEntry::TriggerEvent*___ptr64> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSListBase_TriggerEntry__TriggerEvent____ptr64__vdtor: u64 = 26083;
+/// `BSLookAtModifier::Activate` at 0xbb9d90 (semantic, high); signature (untiered): `undefined Activate(BSLookAtModifier * this, longlong * param_1)`
+pub const BSLookAtModifier__Activate: u64 = 63273;
+/// `BSLookAtModifier::CloneNode` at 0xbba060 (semantic, high); signature (untiered): `undefined CloneNode(BSLookAtModifier * this)`
+pub const BSLookAtModifier__CloneNode: u64 = 63276;
+/// `BSLookAtModifier::Deactivate` at 0xbb9f00 (semantic, high); signature (untiered): `undefined Deactivate(BSLookAtModifier * this)`
+pub const BSLookAtModifier__Deactivate: u64 = 63274;
+/// `BSLookAtModifier::GetClassType` at 0xbb9d80 (semantic, high); signature (untiered): `undefined * GetClassType(void)`
+pub const BSLookAtModifier__GetClassType: u64 = 63272;
+/// `BSLookAtModifier::IsValid` at 0xbb9f20 (semantic, high); signature (untiered): `ulonglong IsValid(BSLookAtModifier * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSLookAtModifier__IsValid: u64 = 63275;
+/// `BSLookAtModifier::Modify` at 0xbba0c0 (semantic, medium); signature (untiered): `undefined Modify(BSLookAtModifier * this, longlong * param_1, longlong * param_2)`
+pub const BSLookAtModifier__Modify: u64 = 63278;
+/// `BSLookAtModifier::Solve` at 0xbbeab0 (semantic, medium); signature (untiered): `undefined Solve(longlong param_1, longlong * param_2, longlong * param_3, longlong * param_4)`; semantic: rotates the modifier's bone list (array +0x58, count +0x60, 0x40 per entry) and eye bone list (+0x68, count +0x70) toward the target with axis-angle steps (acos, SetQuaternionFromAxisAngle) on model-space transforms (ComputeModelSpaceBoneTransform), then copies back into the output (medium); signature `void (BSLookAtModifier* this, hkaPose* pose, hkbGeneratorOutput* output, hkbContext* ctx)`
+pub const BSLookAtModifier__Solve: u64 = 63350;
+/// `BSLookAtModifier::Update` at 0xbba0b0 (semantic, high); signature (untiered): `undefined Update(BSLookAtModifier * this, undefined8 param_2, undefined4 param_3)`
+pub const BSLookAtModifier__Update: u64 = 63277;
 /// `BSLookAtModifier::ctor` at 0xbb9c10 (layout_inference, medium); signature (high): `BSLookAtModifier * ctor(BSLookAtModifier * this)`
 pub const BSLookAtModifier__ctor: u64 = 63270;
 /// `BSLookAtModifier::ctor` at 0xbb9d10 (layout_inference, high); signature (high): `BSLookAtModifier * ctor(BSLookAtModifier * this)`
 pub const BSLookAtModifier__ctor_2: u64 = 63271;
 /// `BSLookAtModifier::ctor` at 0xbba2e0 (layout_inference, high); signature (low): `BSLookAtModifier * ctor(BSLookAtModifier * this, longlong param_1)`
 pub const BSLookAtModifier__ctor_3: u64 = 63279;
-/// `BSLookAtModifier::vdtor` at 0xbbace0 (slot_propagation, medium); signature (low): `BSLookAtModifier * vdtor(BSLookAtModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+/// `BSLookAtModifier::vdtor` at 0xbbace0 (semantic, high); signature (low): `BSLookAtModifier * vdtor(BSLookAtModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSLookAtModifier__vdtor: u64 = 63281;
-/// `BSLookAtModifier::vfunc_1` at 0xbb9d80 (rtti, high); signature (untiered): `undefined * vfunc_1(void)`
-pub const BSLookAtModifier__vfunc_1: u64 = 63272;
-/// `BSLookAtModifier::vfunc_10` at 0xbb9f20 (rtti, high); signature (low): `ulonglong vfunc_10(BSLookAtModifier * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSLookAtModifier__vfunc_10: u64 = 63275;
-/// `BSLookAtModifier::vfunc_12` at 0xbba060 (rtti, high); signature (high): `undefined vfunc_12(BSLookAtModifier * this)`
-pub const BSLookAtModifier__vfunc_12: u64 = 63276;
-/// `BSLookAtModifier::vfunc_23` at 0xbba0c0 (rtti, high); signature (low): `undefined vfunc_23(BSLookAtModifier * this, longlong * param_1, longlong * param_2)`
-pub const BSLookAtModifier__vfunc_23: u64 = 63278;
-/// `BSLookAtModifier::vfunc_23_sub0` at 0xbbeab0 (callgraph, medium); signature (untiered): `undefined vfunc_23_sub0(longlong param_1, longlong * param_2, longlong * param_3, longlong * param_4)`
-pub const BSLookAtModifier__vfunc_23_sub0: u64 = 63350;
-/// `BSLookAtModifier::vfunc_4` at 0xbb9d90 (rtti, high); signature (low): `undefined vfunc_4(BSLookAtModifier * this, longlong * param_1)`
-pub const BSLookAtModifier__vfunc_4: u64 = 63273;
 /// `BSLookAtModifier::vfunc_4_sub0` at 0xbb9c00 (callgraph, medium); signature (untiered): `undefined vfunc_4_sub0(longlong param_1)`
 pub const BSLookAtModifier__vfunc_4_sub0: u64 = 63269;
-/// `BSLookAtModifier::vfunc_5` at 0xbba0b0 (rtti, high); signature (low): `undefined vfunc_5(BSLookAtModifier * this, undefined8 param_2, undefined4 param_3)`
-pub const BSLookAtModifier__vfunc_5: u64 = 63277;
-/// `BSLookAtModifier::vfunc_7` at 0xbb9f00 (rtti, high); signature (high): `undefined vfunc_7(BSLookAtModifier * this)`
-pub const BSLookAtModifier__vfunc_7: u64 = 63274;
 /// `BSLookIKNote::Create` at 0xf8be20 (string, high); signature (low): `NiObject * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const BSLookIKNote__Create: u64 = 74064;
+/// `BSLookIKNote::CreateClone` at 0xf8bae0 (semantic, medium); signature (untiered): `NiObject * CreateClone(BSLookIKNote * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSLookIKNote__CreateClone: u64 = 74058;
+/// `BSLookIKNote::GetRTTI` at 0xf8c020 (semantic, medium); signature (untiered): `TypeNode * GetRTTI(void)`
+pub const BSLookIKNote__GetRTTI: u64 = 74070;
+/// `BSLookIKNote::LoadBinary` at 0xf8b880 (semantic, medium); signature (untiered): `undefined LoadBinary(BSLookIKNote * this, longlong param_1)`
+pub const BSLookIKNote__LoadBinary: u64 = 74052;
+/// `BSLookIKNote::ParseText` at 0xf8bce0 (semantic, high); signature (untiered): `ulonglong ParseText(BSLookIKNote * this, undefined4 * param_1)`; semantic: parses an animation text key 'LookIK <float> Start|Stop' into +0x18 (float) and +0x1c (1 start, 2 stop) (high); signature `bool (BSLookIKNote* this, BSAnimNoteText* text)`
+pub const BSLookIKNote__ParseText: u64 = 74063;
+/// `BSLookIKNote::ParseText` as a function pointer type (high).
+pub type BSLookIKNote__ParseText_fn = unsafe extern "C" fn(this: *mut crate::BSLookIKNote, text: *mut c_void) -> bool;
 /// `BSLookIKNote::ctor` at 0xf8bbe0 (layout_inference, high); signature (low): `BSLookIKNote * ctor(BSLookIKNote * this, float param_1, float param_2, undefined4 param_3)`
 pub const BSLookIKNote__ctor: u64 = 74060;
 /// `BSLookIKNote::ctor` at 0xf8bc50 (layout_inference, high); signature (medium): `BSLookIKNote * ctor(BSLookIKNote * this, float param_1)`
 pub const BSLookIKNote__ctor_2: u64 = 74061;
 /// `BSLookIKNote::ctor` at 0xf8bca0 (layout_inference, high); signature (high): `BSLookIKNote * ctor(BSLookIKNote * this)`
 pub const BSLookIKNote__ctor_3: u64 = 74062;
-/// `BSLookIKNote::vdtor` at 0xf8bfe0 (slot_propagation, medium); signature (low): `BSLookIKNote * vdtor(BSLookIKNote * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+/// `BSLookIKNote::vdtor` at 0xf8bfe0 (semantic, high); signature (low): `BSLookIKNote * vdtor(BSLookIKNote * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSLookIKNote__vdtor: u64 = 74069;
-/// `BSLookIKNote::vfunc_2` at 0xf8c020 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const BSLookIKNote__vfunc_2: u64 = 74070;
-/// `BSLookIKNote::vfunc_23` at 0xf8bae0 (rtti, high); signature (low): `NiObject * vfunc_23(BSLookIKNote * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSLookIKNote__vfunc_23: u64 = 74058;
-/// `BSLookIKNote::vfunc_24` at 0xf8b880 (rtti, high); signature (low): `undefined vfunc_24(BSLookIKNote * this, longlong param_1)`
-pub const BSLookIKNote__vfunc_24: u64 = 74052;
 /// `BSLookIKNote::vfunc_25` at 0xf8b910 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
 pub const BSLookIKNote__vfunc_25: u64 = 74053;
 /// `BSLookIKNote::vfunc_26` at 0xf8b920 (rtti, high); signature (low): `bool vfunc_26(BSLookIKNote * this, longlong * param_1)`
@@ -5779,8 +5815,6 @@ pub const BSLookIKNote__vfunc_26: u64 = 74054;
 pub const BSLookIKNote__vfunc_27: u64 = 74055;
 /// `BSLookIKNote::vfunc_28` at 0xf8b9d0 (rtti, high); signature (low): `ulonglong vfunc_28(BSLookIKNote * this, longlong * param_1)`
 pub const BSLookIKNote__vfunc_28: u64 = 74056;
-/// `BSLookIKNote::vfunc_37` at 0xf8bce0 (rtti, high); signature (low): `ulonglong vfunc_37(BSLookIKNote * this, undefined4 * param_1)`
-pub const BSLookIKNote__vfunc_37: u64 = 74063;
 /// `BSMap<BSFadeNode_const*___ptr64,unsigned_int>::dtor` at 0x1521980 (layout_inference, high); signature (low): `undefined dtor(BSMap<BSFadeNode_const*___ptr64,unsigned_int> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSMap_BSFadeNode_const____ptr64_unsigned_int__dtor: u64 = 106621;
 /// `BSMap<BSFadeNode_const*___ptr64,unsigned_int>::vdtor` at 0x1521ce0 (slot_propagation, medium); signature (low): `BSMap<BSFadeNode_const*___ptr64,unsigned_int> * vdtor(BSMap<BSFadeNode_const*___ptr64,unsigned_int> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -7933,69 +7967,3 @@ pub const BSPointerHandleManager__CreateHandle_2: u64 = 12325;
 pub const BSPointerListBase_BSTempEffectDebris____ptr64__dtor: u64 = 30039;
 /// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vdtor` at 0x4aa1c0 (slot_propagation, medium); signature (low): `BSPointerListBase<BSTempEffectDebris*___ptr64> * vdtor(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSPointerListBase_BSTempEffectDebris____ptr64__vdtor: u64 = 30022;
-/// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vfunc_1` at 0x4aa160 (rtti, medium); signature (low): `undefined vfunc_1(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_BSTempEffectDebris____ptr64__vfunc_1: u64 = 30020;
-/// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vfunc_2` at 0x4aa1a0 (rtti, medium); signature (low): `undefined vfunc_2(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_BSTempEffectDebris____ptr64__vfunc_2: u64 = 30021;
-/// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::dtor` at 0x408470 (callgraph, high); signature (untiered): `undefined dtor(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_TriggerEntry__TriggerEvent____ptr64__dtor: u64 = 26070;
-/// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::dtor` at 0x408490 (layout_inference, high); signature (low): `undefined dtor(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_TriggerEntry__TriggerEvent____ptr64__dtor_2: u64 = 26071;
-/// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::vdtor` at 0x408900 (slot_propagation, medium); signature (low): `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * vdtor(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_TriggerEntry__TriggerEvent____ptr64__vdtor: u64 = 26084;
-/// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::vfunc_1` at 0x408fc0 (rtti, medium); signature (low): `undefined vfunc_1(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_TriggerEntry__TriggerEvent____ptr64__vfunc_1: u64 = 26103;
-/// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::vfunc_2` at 0x408f60 (rtti, medium); signature (low): `undefined vfunc_2(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_TriggerEntry__TriggerEvent____ptr64__vfunc_2: u64 = 26101;
-/// `BSPortal::vdtor` at 0x213b70 (layout_inference, medium); signature (low): `BSPortal * vdtor(BSPortal * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortal__vdtor: u64 = 15555;
-/// `BSPortal::vfunc_2` at 0x213c50 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const BSPortal__vfunc_2: u64 = 15560;
-/// `BSPortal::vfunc_23` at 0xfe9f00 (rtti, high); signature (low): `BSOcclusionPlane * vfunc_23(BSPortal * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortal__vfunc_23: u64 = 76449;
-/// `BSPortalGraph::ctor` at 0xfd9ac0 (layout_inference, high); signature (high): `BSPortalGraph * ctor(BSPortalGraph * this)`
-pub const BSPortalGraph__ctor: u64 = 76125;
-/// `BSPortalGraph::dtor` at 0xfd9c70 (layout_inference, high); signature (low): `undefined dtor(BSPortalGraph * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalGraph__dtor: u64 = 76126;
-/// `BSPortalGraph::vdtor` at 0xfdb1b0 (slot_propagation, medium); signature (low): `BSPortalGraph * vdtor(BSPortalGraph * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalGraph__vdtor: u64 = 76152;
-/// `BSPortalGraphEntry::ctor` at 0xfd92c0 (layout_inference, high); signature (high): `BSPortalGraphEntry * ctor(BSPortalGraphEntry * this)`
-pub const BSPortalGraphEntry__ctor: u64 = 76114;
-/// `BSPortalGraphEntry::ctor_sub0` at 0xfdb0c0 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong param_1)`
-pub const BSPortalGraphEntry__ctor_sub0: u64 = 76149;
-/// `BSPortalGraphEntry::dtor` at 0xfd9370 (layout_inference, high); signature (low): `undefined dtor(BSPortalGraphEntry * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalGraphEntry__dtor: u64 = 76115;
-/// `BSPortalGraphEntry::vdtor` at 0xfdb1f0 (slot_propagation, medium); signature (low): `BSPortalGraphEntry * vdtor(BSPortalGraphEntry * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalGraphEntry__vdtor: u64 = 524235;
-/// `BSPortalSharedNode::ctor` at 0xfe9d10 (layout_inference, high); signature (low): `BSPortalSharedNode * ctor(BSPortalSharedNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalSharedNode__ctor: u64 = 76446;
-/// `BSPortalSharedNode::ctor` at 0xfe9d90 (layout_inference, medium); signature (low): `undefined ctor(BSPortalSharedNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalSharedNode__ctor_2: u64 = 76447;
-/// `BSPortalSharedNode::vdtor` at 0xfea050 (layout_inference, medium); signature (low): `BSPortalSharedNode * vdtor(BSPortalSharedNode * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalSharedNode__vdtor: u64 = 76456;
-/// `BSPortalSharedNode::vfunc_2` at 0xfea100 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const BSPortalSharedNode__vfunc_2: u64 = 76457;
-/// `BSPortalSharedNode::vfunc_23` at 0xfe9c20 (rtti, high); signature (low): `NiNode * vfunc_23(BSPortalSharedNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalSharedNode__vfunc_23: u64 = 76444;
-/// `BSPortalSharedNode::vfunc_52` at 0xfe9e20 (rtti, high); signature (low): `undefined vfunc_52(BSPortalSharedNode * this, BSPortalSharedNode * param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalSharedNode__vfunc_52: u64 = 76448;
-/// `BSPrecomputedNavmeshInfoPathMap::INavmeshInfoVisitor::vdtor` at 0x11f1fa0 (semantic, high); signature (low): `INavmeshInfoVisitor * vdtor(INavmeshInfoVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; semantic: slot 0: vtable reset, OperatorDelete(this, 8) when flags bit 0 (high); signature `INavmeshInfoVisitor* (INavmeshInfoVisitor* this, u64 flags)`
-pub const BSPrecomputedNavmeshInfoPathMap__INavmeshInfoVisitor__vdtor: u64 = 91369;
-/// `BSPrecomputedNavmeshInfoPathMap::INavmeshInfoVisitor::vdtor` as a function pointer type (high).
-pub type BSPrecomputedNavmeshInfoPathMap__INavmeshInfoVisitor__vdtor_fn = unsafe extern "C" fn(this: *mut c_void, flags: u64) -> *mut c_void;
-/// `BSPrecomputedNavmeshInfoSearch::ctor` at 0x11c8a20 (layout_inference, high); signature (high): `BSPrecomputedNavmeshInfoSearch * ctor(BSPrecomputedNavmeshInfoSearch * this)`
-pub const BSPrecomputedNavmeshInfoSearch__ctor: u64 = 90545;
-/// `BSPrecomputedNavmeshInfoSearch::vdtor` at 0x11c95d0 (layout_inference, medium); signature (low): `BSPrecomputedNavmeshInfoSearch * vdtor(BSPrecomputedNavmeshInfoSearch * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPrecomputedNavmeshInfoSearch__vdtor: u64 = 90565;
-/// `BSPrecomputedNavmeshInfoSearch::vfunc_2` at 0x11c8b50 (rtti, high); signature (low): `longlong vfunc_2(BSPrecomputedNavmeshInfoSearch * this, longlong param_1)`
-pub const BSPrecomputedNavmeshInfoSearch__vfunc_2: u64 = 90547;
-/// `BSProceduralLightningController::Create` at 0xffdf50 (string, medium); signature (low): `undefined Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const BSProceduralLightningController__Create: u64 = 76939;
-/// `BSProceduralLightningController::ctor` at 0xffcc50 (layout_inference, high); signature (high): `BSProceduralLightningController * ctor(BSProceduralLightningController * this)`
-pub const BSProceduralLightningController__ctor: u64 = 76916;
-/// `BSProceduralLightningController::ctor` at 0xffcd80 (layout_inference, medium); signature (low): `undefined ctor(BSProceduralLightningController * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSProceduralLightningController__ctor_2: u64 = 76917;
-/// `BSProceduralLightningController::ctor_sub0` at 0xffe0c0 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const BSProceduralLightningController__ctor_sub0: u64 = 76942;
-/// `BSProceduralLightningController::ctor_sub1` at 0xffe200 (callgraph, medium); signature (untiered): `undefined ctor_sub1(longlong * param_1)`
-pub const BSProceduralLightningController__ctor_sub1: u64 = 76945;

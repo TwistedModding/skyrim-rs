@@ -379,12 +379,6 @@ impl core::ops::Deref for crate::ExtraHavok {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `ExtraHeadTrackingWeight` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::ExtraHeadTrackingWeight {
-    type Target = crate::BSExtraData;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `ExtraHeadingTarget` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ExtraHeadingTarget {
     type Target = crate::BSExtraData;

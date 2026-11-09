@@ -7,27 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `UnescapeJsonStringIntoFixedString256` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 449592, rva 0x13efce0).
-/// `undefined UnescapeJsonStringIntoFixedString256(undefined8 * param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn unescape_json_string_into_fixed_string256(param_1: *mut u64, param_2: *mut u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(449592, (*mut u64, *mut u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `UnescapeJsonStringToFixedString2000` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 450928, rva 0x13c3890).
-/// `undefined UnescapeJsonStringToFixedString2000(undefined8 * param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn unescape_json_string_to_fixed_string2000(param_1: *mut u64, param_2: *mut u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(450928, (*mut u64, *mut u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `UnescapeJsonStringToFixedString512` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 449206, rva 0x13768e0).
-/// `byte * UnescapeJsonStringToFixedString512(undefined8 * param_1, byte * param_2, undefined8 param_3, char * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn unescape_json_string_to_fixed_string512(param_1: *mut u64, param_2: *mut u8, param_3: u64, param_4: *mut c_char) -> *mut u8 { unsafe { function!(449206, (*mut u64, *mut u8, u64, *mut c_char) -> *mut u8)(param_1, param_2, param_3, param_4) } }
 /// `UnescapeJsonStringToFixedString64` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 449595, rva 0x13f07a0).
 /// `undefined UnescapeJsonStringToFixedString64(undefined8 * param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -1939,13 +1918,6 @@ pub unsafe fn update_gc_schedule_and_collect(param_1: i64, param_2: *mut u32, pa
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn update_gjk_simplex(param_1: i64, param_2: *mut f32) -> u64 { unsafe { function!(33343, (i64, *mut f32) -> u64)(param_1, param_2) } }
-/// `UpdateGrabIk` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 78448, rva 0x1072160).
-/// `undefined UpdateGrabIk(longlong param_1, float * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn update_grab_ik(param_1: i64, param_2: *mut f32) -> u64 { unsafe { function!(78448, (i64, *mut f32) -> u64)(param_1, param_2) } }
 /// `UpdateGrassFadeDistance` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 15379, rva 0x208c60).
 /// `undefined UpdateGrassFadeDistance(longlong param_1)`
 ///
@@ -2303,13 +2275,6 @@ pub unsafe fn update_quiver_arrow_visibility(param_1: i64, param_2: *mut i64, pa
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn update_quiver_slot_model(param_1: *mut i32, param_2: i64, param_3: u64) -> u64 { unsafe { function!(15688, (*mut i32, i64, u64) -> u64)(param_1, param_2, param_3) } }
-/// `UpdateRagdollAnimation` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 78408, rva 0x106cbc0).
-/// `undefined UpdateRagdollAnimation(longlong param_1, undefined4 param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn update_ragdoll_animation(param_1: i64, param_2: u32) -> u64 { unsafe { function!(78408, (i64, u32) -> u64)(param_1, param_2) } }
 /// `UpdateRagdollFeedbackIfEnabled` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 78409, rva 0x106ce30).
 /// `undefined UpdateRagdollFeedbackIfEnabled(longlong param_1)`
 ///

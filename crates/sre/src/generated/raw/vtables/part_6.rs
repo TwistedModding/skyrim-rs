@@ -7,6 +7,34 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSImagespaceShaderISSAOCameraZAndMipsCS::vftable_90` at 0x1b3b850, id 254385 (rtti, high); 10 slots.
+#[repr(C)]
+pub struct BSImagespaceShaderISSAOCameraZAndMipsCS_vtable_90 {
+    /// `BSImagespaceShaderISSAOCameraZAndMipsCS::ImageSpaceEffect_vdtor` at 0x1507744 (semantic, high); signature (high): `undefined ImageSpaceEffect_vdtor(BSImagespaceShaderISSAOCameraZAndMipsCS * this)`
+    pub slot_0: *const c_void,
+    /// `BSImagespaceShader::ImageSpaceEffect_vfunc_1` at 0x1564e30 (rtti, medium); signature (low): `undefined ImageSpaceEffect_vfunc_1(BSImagespaceShader * this, undefined8 param_1, undefined * param_2)`
+    pub slot_1: *const c_void,
+    /// `ImageSpaceEffect::vfunc_2` at 0x150b9f0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `BSImagespaceShader::ImageSpaceEffect_vfunc_3` at 0x15652a0 (rtti, medium); signature (low): `undefined ImageSpaceEffect_vfunc_3(BSImagespaceShader * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_3: *const c_void,
+    /// `ImageSpaceEffect::vfunc_4` at 0x1509bc0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `ImageSpaceEffect::vfunc_5` at 0x150b820 (rtti, medium); signature (low): `undefined vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `ImageSpaceEffect::vfunc_6` at 0x150b480 (rtti, medium); signature (high): `undefined1 vfunc_6(ImageSpaceEffect * this)`
+    pub slot_6: *const c_void,
+    /// `ImageSpaceEffect::vfunc_7` at 0x150ba40 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `ImageSpaceEffect::vfunc_8` at 0x150b8e0 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `ImageSpaceEffect::vfunc_9` at 0x150b810 (rtti, medium); signature (low): `undefined1 vfunc_9(void)`
+    pub slot_9: *const c_void,
+}
+impl BSImagespaceShaderISSAOCameraZAndMipsCS_vtable_90 {
+    pub const ID: u64 = 254385;
+}
+
 /// `BSImagespaceShaderISSAOCompositeFog::vftable` at 0x1b3bb48, id 254415 (rtti, high); 15 slots.
 #[repr(C)]
 pub struct BSImagespaceShaderISSAOCompositeFog_vtable {
@@ -6795,31 +6823,31 @@ impl BSLightingShaderPropertyUShortController_vtable {
 /// `BSLimbIKModifier::vftable` at 0x1a046e8, id 232697 (rtti, high); 25 slots.
 #[repr(C)]
 pub struct BSLimbIKModifier_vtable {
-    /// `BSLimbIKModifier::vdtor` at 0xbb9b20 (slot_propagation, medium); signature (low): `BSLimbIKModifier * vdtor(BSLimbIKModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSLimbIKModifier::vdtor` at 0xbb9b20 (semantic, high); signature (low): `BSLimbIKModifier * vdtor(BSLimbIKModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `BSLimbIKModifier* (BSLimbIKModifier* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `BSLimbIKModifier::vfunc_1` at 0xbb8850 (rtti, high); signature (untiered): `undefined * vfunc_1(void)`
+    /// `BSLimbIKModifier::GetClassType` at 0xbb8850 (semantic, medium); signature (untiered): `undefined * GetClassType(void)`; `GetClassType`: returns the class's hkClass object (BS* reflected classes); hkReferencedObject default 0xaa2c30 returns 0 (medium); semantic signature: `const hkClass* (BSLimbIKModifier* this)`
     pub slot_1: *const c_void,
     /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
     pub slot_2: *const c_void,
     /// `hkbBindable::vfunc_3` at 0xadba10 (rtti, medium); signature (low): `undefined vfunc_3(hkbBindable * this, undefined8 * param_1)`
     pub slot_3: *const c_void,
-    /// `BSLimbIKModifier::vfunc_4` at 0xbb8860 (rtti, high); signature (high): `undefined vfunc_4(BSLimbIKModifier * this)`
+    /// `BSLimbIKModifier::Activate` at 0xbb8860 (semantic, high); signature (untiered): `undefined Activate(BSLimbIKModifier * this)`; `Activate`: resets runtime state when the node becomes active (high); semantic signature: `void (BSLimbIKModifier* this, const hkbContext* ctx)`
     pub slot_4: *const c_void,
-    /// `BSLimbIKModifier::vfunc_5` at 0xbb8920 (rtti, high); signature (low): `undefined vfunc_5(BSLimbIKModifier * this, undefined8 param_2, undefined4 param_3)`
+    /// `BSLimbIKModifier::Update` at 0xbb8920 (semantic, high); signature (untiered): `undefined Update(BSLimbIKModifier * this, undefined8 param_2, undefined4 param_3)`; `Update`: per-frame update before generate (high); semantic signature: `void (BSLimbIKModifier* this, const hkbContext* ctx, float timestep)`
     pub slot_5: *const c_void,
     /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
     pub slot_6: *const c_void,
-    /// `BSLimbIKModifier::vfunc_7` at 0xbb8870 (rtti, high); signature (high): `undefined vfunc_7(BSLimbIKModifier * this)`
+    /// `BSLimbIKModifier::Deactivate` at 0xbb8870 (semantic, high); signature (untiered): `undefined Deactivate(BSLimbIKModifier * this)`; `Deactivate`: releases runtime state (high); semantic signature: `void (BSLimbIKModifier* this, const hkbContext* ctx)`
     pub slot_7: *const c_void,
     /// `hkbNode::vfunc_8` at 0xad2140 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
     pub slot_8: *const c_void,
     /// `hkbNode::vfunc_9` at 0xad2110 (rtti, medium); signature (low): `undefined vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `BSLimbIKModifier::vfunc_10` at 0xbb8880 (rtti, high); signature (low): `undefined8 vfunc_10(BSLimbIKModifier * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSLimbIKModifier::IsValid` at 0xbb8880 (semantic, high); signature (untiered): `undefined8 IsValid(BSLimbIKModifier * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`; `IsValid`: validates the node's data, writing an error string (high); semantic signature: `bool (BSLimbIKModifier* this, const hkbCharacter* character, hkStringPtr* errorString)`
     pub slot_10: *const c_void,
     /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
     pub slot_11: *const c_void,
-    /// `BSLimbIKModifier::vfunc_12` at 0xbb88d0 (rtti, high); signature (high): `undefined vfunc_12(BSLimbIKModifier * this)`
+    /// `BSLimbIKModifier::CloneNode` at 0xbb88d0 (semantic, high); signature (untiered): `undefined CloneNode(BSLimbIKModifier * this)`; `CloneNode`: allocates a copy of the node (size argument = object size) through the copy constructor (high); semantic signature: `BSLimbIKModifier* (BSLimbIKModifier* this)`
     pub slot_12: *const c_void,
     /// `hkbNode::vfunc_13` at 0xadbed0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
     pub slot_13: *const c_void,
@@ -6841,14 +6869,64 @@ pub struct BSLimbIKModifier_vtable {
     pub slot_21: *const c_void,
     /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
     pub slot_22: *const c_void,
-    /// `BSLimbIKModifier::vfunc_23` at 0xbb8930 (rtti, high); signature (low): `undefined vfunc_23(BSLimbIKModifier * this, longlong * param_1, longlong * param_2)`
+    /// `BSLimbIKModifier::Modify` at 0xbb8930 (semantic, medium); signature (untiered): `undefined Modify(BSLimbIKModifier * this, longlong * param_1, longlong * param_2)`; `Modify`: 0xbb8930 (4451 bytes): builds a pose (InitPoseFromGeneratorOutput 0xad87b0), casts along the limb chain startBoneIndex..endBoneIndex through BSLimbIKModifierUtility (BSILimbIKModifierSingleton) and pitches the chain by up to limitAngleDegrees (acos, SetQuaternionFromAxisAngle 0xaa46d0, gain via ClampScaledProduct-like 'ComputeClampedScaledProduct') (medium); semantic signature: `void (BSLimbIKModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
     pub slot_23: *const c_void,
     /// `hkbModifier::vfunc_24` at 0xae7000 (rtti, medium); signature (low): `undefined vfunc_24(void)`
     pub slot_24: *const c_void,
 }
 impl BSLimbIKModifier_vtable {
     pub const ID: u64 = 232697;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `BSLimbIKModifier_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<BSLimbIKModifier_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSLimbIKModifier_vtable_vdtor>>(self.slot_0) }
+    }
+    pub const SLOT_GetClassType: usize = 1;
+    pub const SLOT_Activate: usize = 4;
+    /// Slot 4 as `BSLimbIKModifier_vtable_Activate`, `None` when the slot is null.
+    #[must_use]
+    pub fn Activate(&self) -> Option<BSLimbIKModifier_vtable_Activate> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSLimbIKModifier_vtable_Activate>>(self.slot_4) }
+    }
+    pub const SLOT_Update: usize = 5;
+    /// Slot 5 as `BSLimbIKModifier_vtable_Update`, `None` when the slot is null.
+    #[must_use]
+    pub fn Update(&self) -> Option<BSLimbIKModifier_vtable_Update> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSLimbIKModifier_vtable_Update>>(self.slot_5) }
+    }
+    pub const SLOT_Deactivate: usize = 7;
+    /// Slot 7 as `BSLimbIKModifier_vtable_Deactivate`, `None` when the slot is null.
+    #[must_use]
+    pub fn Deactivate(&self) -> Option<BSLimbIKModifier_vtable_Deactivate> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSLimbIKModifier_vtable_Deactivate>>(self.slot_7) }
+    }
+    pub const SLOT_IsValid: usize = 10;
+    /// Slot 10 as `BSLimbIKModifier_vtable_IsValid`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsValid(&self) -> Option<BSLimbIKModifier_vtable_IsValid> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSLimbIKModifier_vtable_IsValid>>(self.slot_10) }
+    }
+    pub const SLOT_CloneNode: usize = 12;
+    /// Slot 12 as `BSLimbIKModifier_vtable_CloneNode`, `None` when the slot is null.
+    #[must_use]
+    pub fn CloneNode(&self) -> Option<BSLimbIKModifier_vtable_CloneNode> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSLimbIKModifier_vtable_CloneNode>>(self.slot_12) }
+    }
+    pub const SLOT_Modify: usize = 23;
 }
+/// `BSLimbIKModifier::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
+pub type BSLimbIKModifier_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::BSLimbIKModifier, flags: u32) -> *mut crate::BSLimbIKModifier;
+/// `BSLimbIKModifier::Activate`, slot 4: resets runtime state when the node becomes active (high).
+pub type BSLimbIKModifier_vtable_Activate = unsafe extern "C" fn(this: *mut crate::BSLimbIKModifier, ctx: *const c_void);
+/// `BSLimbIKModifier::Update`, slot 5: per-frame update before generate (high).
+pub type BSLimbIKModifier_vtable_Update = unsafe extern "C" fn(this: *mut crate::BSLimbIKModifier, ctx: *const c_void, timestep: f32);
+/// `BSLimbIKModifier::Deactivate`, slot 7: releases runtime state (high).
+pub type BSLimbIKModifier_vtable_Deactivate = unsafe extern "C" fn(this: *mut crate::BSLimbIKModifier, ctx: *const c_void);
+/// `BSLimbIKModifier::IsValid`, slot 10: validates the node's data, writing an error string (high).
+pub type BSLimbIKModifier_vtable_IsValid = unsafe extern "C" fn(this: *mut crate::BSLimbIKModifier, character: *const crate::hkbCharacter, errorString: *mut c_void) -> bool;
+/// `BSLimbIKModifier::CloneNode`, slot 12: allocates a copy of the node (size argument = object size) through the copy constructor (high).
+pub type BSLimbIKModifier_vtable_CloneNode = unsafe extern "C" fn(this: *mut crate::BSLimbIKModifier) -> *mut crate::BSLimbIKModifier;
 
 /// `BSLimbIKModifierCastInfo::vftable` at 0x19fb7d0, id 230938 (rtti, high); 1 slots.
 #[repr(C)]
@@ -6863,27 +6941,53 @@ impl BSLimbIKModifierCastInfo_vtable {
 /// `BSLimbIKModifierUtility::vftable` at 0x18eab58, id 205170 (rtti, high); 4 slots.
 #[repr(C)]
 pub struct BSLimbIKModifierUtility_vtable {
-    /// `BSLimbIKModifierUtility::vdtor` at 0x552da0 (layout_inference, medium); signature (low): `BSLimbIKModifierUtility * vdtor(BSLimbIKModifierUtility * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSLimbIKModifierUtility::vdtor` at 0x552da0 (semantic, high); signature (low): `BSLimbIKModifierUtility * vdtor(BSLimbIKModifierUtility * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: 0x552da0, size 0x10 (high); semantic signature: `BSLimbIKModifierUtility* (BSLimbIKModifierUtility* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `BSLimbIKModifierUtility::vfunc_1` at 0x5527c0 (rtti, high); signature (low): `undefined4 vfunc_1(void)`
+    /// `BSLimbIKModifierUtility::GetWorldScaleInverse` at 0x5527c0 (semantic, high); signature (untiered): `undefined4 GetWorldScaleInverse(void)`; `GetWorldScaleInverse`: g_HavokWorldScaleInverse (high); semantic signature: `float (BSLimbIKModifierUtility* this)`
     pub slot_1: *const c_void,
-    /// `BSLimbIKModifierUtility::vfunc_2` at 0x5527d0 (rtti, high); signature (low): `undefined1 * vfunc_2(BSLimbIKModifierUtility * this, undefined1 * param_1, undefined8 * param_2, longlong * param_3, float * param_4, float * param_5)`
+    /// `BSLimbIKModifierUtility::BeginCast` at 0x5527d0 (semantic, medium); signature (untiered): `undefined1 * BeginCast(BSLimbIKModifierUtility * this, undefined1 * param_1, undefined8 * param_2, longlong * param_3, float * param_4, float * param_5)`; `BeginCast`: cast info for the owning actor (medium); semantic signature: `bool* (BSLimbIKModifierUtility* this, bool* outOk, BSLimbIKModifierCastInfo** outInfo, hkbContext* ctx, const hkVector4* aabbMin, const hkVector4* aabbMax)`
     pub slot_2: *const c_void,
-    /// `BSLimbIKModifierUtility::vfunc_3` at 0x552a10 (rtti, high); signature (low): `undefined1 * vfunc_3(BSLimbIKModifierUtility * this, undefined1 * param_1, longlong param_2, float * param_3, float * param_4, undefined4 * param_5, float * param_6)`
+    /// `BSLimbIKModifierUtility::CastRay` at 0x552a10 (semantic, high); signature (untiered): `undefined1 * CastRay(BSLimbIKModifierUtility * this, undefined1 * param_1, longlong param_2, float * param_3, float * param_4, undefined4 * param_5, float * param_6)`; `CastRay`: layer 0x2b pick (high); semantic signature: `bool* (BSLimbIKModifierUtility* this, bool* outHit, BSLimbIKModifierUtilityCastInfo* info, const hkVector4* from, const hkVector4* to, float* outFraction, hkVector4* outNormal)`
     pub slot_3: *const c_void,
 }
 impl BSLimbIKModifierUtility_vtable {
     pub const ID: u64 = 205170;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `BSLimbIKModifierUtility_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<BSLimbIKModifierUtility_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSLimbIKModifierUtility_vtable_vdtor>>(self.slot_0) }
+    }
+    pub const SLOT_GetWorldScaleInverse: usize = 1;
+    /// Slot 1 as `BSLimbIKModifierUtility_vtable_GetWorldScaleInverse`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetWorldScaleInverse(&self) -> Option<BSLimbIKModifierUtility_vtable_GetWorldScaleInverse> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSLimbIKModifierUtility_vtable_GetWorldScaleInverse>>(self.slot_1) }
+    }
+    pub const SLOT_BeginCast: usize = 2;
+    pub const SLOT_CastRay: usize = 3;
+    /// Slot 3 as `BSLimbIKModifierUtility_vtable_CastRay`, `None` when the slot is null.
+    #[must_use]
+    pub fn CastRay(&self) -> Option<BSLimbIKModifierUtility_vtable_CastRay> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSLimbIKModifierUtility_vtable_CastRay>>(self.slot_3) }
+    }
 }
+/// `BSLimbIKModifierUtility::vdtor`, slot 0: 0x552da0, size 0x10 (high).
+pub type BSLimbIKModifierUtility_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::BSLimbIKModifierUtility, flags: u32) -> *mut crate::BSLimbIKModifierUtility;
+/// `BSLimbIKModifierUtility::GetWorldScaleInverse`, slot 1: g_HavokWorldScaleInverse (high).
+pub type BSLimbIKModifierUtility_vtable_GetWorldScaleInverse = unsafe extern "C" fn(this: *mut crate::BSLimbIKModifierUtility) -> f32;
+/// `BSLimbIKModifierUtility::CastRay`, slot 3: layer 0x2b pick (high).
+pub type BSLimbIKModifierUtility_vtable_CastRay = unsafe extern "C" fn(this: *mut crate::BSLimbIKModifierUtility, outHit: *mut bool, info: *mut crate::BSLimbIKModifierUtilityCastInfo, from: *const crate::hkVector4, to: *const crate::hkVector4, outFraction: *mut f32, outNormal: *mut crate::hkVector4) -> *mut bool;
 
 /// `BSLimbIKModifierUtilityCastInfo::vftable` at 0x18eab48, id 205168 (rtti, high); 1 slots.
 #[repr(C)]
 pub struct BSLimbIKModifierUtilityCastInfo_vtable {
-    /// `BSLimbIKModifierUtilityCastInfo::vfunc_0` at 0x552df0 (rtti, high); signature (low): `BSLimbIKModifierUtilityCastInfo * vfunc_0(BSLimbIKModifierUtilityCastInfo * this, ulonglong param_1, ulonglong param_2, undefined8 param_3)`
+    /// `BSLimbIKModifierUtilityCastInfo::vdtor` at 0x552df0 (semantic, medium); signature (untiered): `BSLimbIKModifierUtilityCastInfo * vdtor(BSLimbIKModifierUtilityCastInfo * this, ulonglong param_1, ulonglong param_2, undefined8 param_3)`; `vdtor`: 0x552df0 (medium); semantic signature: `BSLimbIKModifierUtilityCastInfo* (BSLimbIKModifierUtilityCastInfo* this, u32 flags)`
     pub slot_0: *const c_void,
 }
 impl BSLimbIKModifierUtilityCastInfo_vtable {
     pub const ID: u64 = 205168;
+    pub const SLOT_vdtor: usize = 0;
 }
 
 /// `BSLines::vftable` at 0x1b4b970, id 255361 (rtti, high); 56 slots.
@@ -7065,31 +7169,31 @@ impl BSListBase_TriggerEntry__TriggerEvent____ptr64_vtable {
 /// `BSLookAtModifier::vftable` at 0x1a04898, id 232704 (rtti, high); 25 slots.
 #[repr(C)]
 pub struct BSLookAtModifier_vtable {
-    /// `BSLookAtModifier::vdtor` at 0xbbace0 (slot_propagation, medium); signature (low): `BSLookAtModifier * vdtor(BSLookAtModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSLookAtModifier::vdtor` at 0xbbace0 (semantic, high); signature (low): `BSLookAtModifier * vdtor(BSLookAtModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `BSLookAtModifier* (BSLookAtModifier* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `BSLookAtModifier::vfunc_1` at 0xbb9d80 (rtti, high); signature (untiered): `undefined * vfunc_1(void)`
+    /// `BSLookAtModifier::GetClassType` at 0xbb9d80 (semantic, high); signature (untiered): `undefined * GetClassType(void)`; `GetClassType`: 0xbb9d80 returns its hkClass 0x3266e30 (high); semantic signature: `const hkClass* (BSLookAtModifier* this)`
     pub slot_1: *const c_void,
     /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
     pub slot_2: *const c_void,
     /// `hkbBindable::vfunc_3` at 0xadba10 (rtti, medium); signature (low): `undefined vfunc_3(hkbBindable * this, undefined8 * param_1)`
     pub slot_3: *const c_void,
-    /// `BSLookAtModifier::vfunc_4` at 0xbb9d90 (rtti, high); signature (low): `undefined vfunc_4(BSLookAtModifier * this, longlong * param_1)`
+    /// `BSLookAtModifier::Activate` at 0xbb9d90 (semantic, high); signature (untiered): `undefined Activate(BSLookAtModifier * this, longlong * param_1)`; `Activate`: resets runtime state when the node becomes active (high); semantic signature: `void (BSLookAtModifier* this, const hkbContext* ctx)`
     pub slot_4: *const c_void,
-    /// `BSLookAtModifier::vfunc_5` at 0xbba0b0 (rtti, high); signature (low): `undefined vfunc_5(BSLookAtModifier * this, undefined8 param_2, undefined4 param_3)`
+    /// `BSLookAtModifier::Update` at 0xbba0b0 (semantic, high); signature (untiered): `undefined Update(BSLookAtModifier * this, undefined8 param_2, undefined4 param_3)`; `Update`: per-frame update before generate (high); semantic signature: `void (BSLookAtModifier* this, const hkbContext* ctx, float timestep)`
     pub slot_5: *const c_void,
     /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
     pub slot_6: *const c_void,
-    /// `BSLookAtModifier::vfunc_7` at 0xbb9f00 (rtti, high); signature (high): `undefined vfunc_7(BSLookAtModifier * this)`
+    /// `BSLookAtModifier::Deactivate` at 0xbb9f00 (semantic, high); signature (untiered): `undefined Deactivate(BSLookAtModifier * this)`; `Deactivate`: releases runtime state (high); semantic signature: `void (BSLookAtModifier* this, const hkbContext* ctx)`
     pub slot_7: *const c_void,
     /// `hkbNode::vfunc_8` at 0xad2140 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
     pub slot_8: *const c_void,
     /// `hkbNode::vfunc_9` at 0xad2110 (rtti, medium); signature (low): `undefined vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `BSLookAtModifier::vfunc_10` at 0xbb9f20 (rtti, high); signature (low): `ulonglong vfunc_10(BSLookAtModifier * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSLookAtModifier::IsValid` at 0xbb9f20 (semantic, high); signature (untiered): `ulonglong IsValid(BSLookAtModifier * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`; `IsValid`: validates the node's data, writing an error string (high); semantic signature: `bool (BSLookAtModifier* this, const hkbCharacter* character, hkStringPtr* errorString)`
     pub slot_10: *const c_void,
     /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
     pub slot_11: *const c_void,
-    /// `BSLookAtModifier::vfunc_12` at 0xbba060 (rtti, high); signature (high): `undefined vfunc_12(BSLookAtModifier * this)`
+    /// `BSLookAtModifier::CloneNode` at 0xbba060 (semantic, high); signature (untiered): `undefined CloneNode(BSLookAtModifier * this)`; `CloneNode`: allocates a copy of the node (size argument = object size) through the copy constructor (high); semantic signature: `BSLookAtModifier* (BSLookAtModifier* this)`
     pub slot_12: *const c_void,
     /// `hkbNode::vfunc_13` at 0xadbed0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
     pub slot_13: *const c_void,
@@ -7111,23 +7215,80 @@ pub struct BSLookAtModifier_vtable {
     pub slot_21: *const c_void,
     /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
     pub slot_22: *const c_void,
-    /// `BSLookAtModifier::vfunc_23` at 0xbba0c0 (rtti, high); signature (low): `undefined vfunc_23(BSLookAtModifier * this, longlong * param_1, longlong * param_2)`
+    /// `BSLookAtModifier::Modify` at 0xbba0c0 (semantic, medium); signature (untiered): `undefined Modify(BSLookAtModifier * this, longlong * param_1, longlong * param_2)`; `Modify`: 0xbba0c0: builds a pose and calls the look-at worker (the decompiler shows a nested BSLookAtModifier::vfunc_23 helper) that rotates each bone of bones/eyeBones toward targetLocation (or the camera point) within limitAngleDegrees with on/off gains (medium); semantic signature: `void (BSLookAtModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
     pub slot_23: *const c_void,
     /// `hkbModifier::vfunc_24` at 0xae7000 (rtti, medium); signature (low): `undefined vfunc_24(void)`
     pub slot_24: *const c_void,
 }
 impl BSLookAtModifier_vtable {
     pub const ID: u64 = 232704;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `BSLookAtModifier_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<BSLookAtModifier_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSLookAtModifier_vtable_vdtor>>(self.slot_0) }
+    }
+    pub const SLOT_GetClassType: usize = 1;
+    /// Slot 1 as `BSLookAtModifier_vtable_GetClassType`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetClassType(&self) -> Option<BSLookAtModifier_vtable_GetClassType> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSLookAtModifier_vtable_GetClassType>>(self.slot_1) }
+    }
+    pub const SLOT_Activate: usize = 4;
+    /// Slot 4 as `BSLookAtModifier_vtable_Activate`, `None` when the slot is null.
+    #[must_use]
+    pub fn Activate(&self) -> Option<BSLookAtModifier_vtable_Activate> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSLookAtModifier_vtable_Activate>>(self.slot_4) }
+    }
+    pub const SLOT_Update: usize = 5;
+    /// Slot 5 as `BSLookAtModifier_vtable_Update`, `None` when the slot is null.
+    #[must_use]
+    pub fn Update(&self) -> Option<BSLookAtModifier_vtable_Update> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSLookAtModifier_vtable_Update>>(self.slot_5) }
+    }
+    pub const SLOT_Deactivate: usize = 7;
+    /// Slot 7 as `BSLookAtModifier_vtable_Deactivate`, `None` when the slot is null.
+    #[must_use]
+    pub fn Deactivate(&self) -> Option<BSLookAtModifier_vtable_Deactivate> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSLookAtModifier_vtable_Deactivate>>(self.slot_7) }
+    }
+    pub const SLOT_IsValid: usize = 10;
+    /// Slot 10 as `BSLookAtModifier_vtable_IsValid`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsValid(&self) -> Option<BSLookAtModifier_vtable_IsValid> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSLookAtModifier_vtable_IsValid>>(self.slot_10) }
+    }
+    pub const SLOT_CloneNode: usize = 12;
+    /// Slot 12 as `BSLookAtModifier_vtable_CloneNode`, `None` when the slot is null.
+    #[must_use]
+    pub fn CloneNode(&self) -> Option<BSLookAtModifier_vtable_CloneNode> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSLookAtModifier_vtable_CloneNode>>(self.slot_12) }
+    }
+    pub const SLOT_Modify: usize = 23;
 }
+/// `BSLookAtModifier::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
+pub type BSLookAtModifier_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::BSLookAtModifier, flags: u32) -> *mut crate::BSLookAtModifier;
+/// `BSLookAtModifier::GetClassType`, slot 1: 0xbb9d80 returns its hkClass 0x3266e30 (high).
+pub type BSLookAtModifier_vtable_GetClassType = unsafe extern "C" fn(this: *mut crate::BSLookAtModifier) -> *const crate::hkClass;
+/// `BSLookAtModifier::Activate`, slot 4: resets runtime state when the node becomes active (high).
+pub type BSLookAtModifier_vtable_Activate = unsafe extern "C" fn(this: *mut crate::BSLookAtModifier, ctx: *const c_void);
+/// `BSLookAtModifier::Update`, slot 5: per-frame update before generate (high).
+pub type BSLookAtModifier_vtable_Update = unsafe extern "C" fn(this: *mut crate::BSLookAtModifier, ctx: *const c_void, timestep: f32);
+/// `BSLookAtModifier::Deactivate`, slot 7: releases runtime state (high).
+pub type BSLookAtModifier_vtable_Deactivate = unsafe extern "C" fn(this: *mut crate::BSLookAtModifier, ctx: *const c_void);
+/// `BSLookAtModifier::IsValid`, slot 10: validates the node's data, writing an error string (high).
+pub type BSLookAtModifier_vtable_IsValid = unsafe extern "C" fn(this: *mut crate::BSLookAtModifier, character: *const crate::hkbCharacter, errorString: *mut c_void) -> bool;
+/// `BSLookAtModifier::CloneNode`, slot 12: allocates a copy of the node (size argument = object size) through the copy constructor (high).
+pub type BSLookAtModifier_vtable_CloneNode = unsafe extern "C" fn(this: *mut crate::BSLookAtModifier) -> *mut crate::BSLookAtModifier;
 
 /// `BSLookIKNote::vftable` at 0x1a5c870, id 237845 (rtti, high); 38 slots.
 #[repr(C)]
 pub struct BSLookIKNote_vtable {
-    /// `BSLookIKNote::vdtor` at 0xf8bfe0 (slot_propagation, medium); signature (low): `BSLookIKNote * vdtor(BSLookIKNote * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSLookIKNote::vdtor` at 0xf8bfe0 (semantic, high); signature (low): `BSLookIKNote * vdtor(BSLookIKNote * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: destructor (high); semantic signature: `void* (BSLookIKNote* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
-    /// `BSLookIKNote::vfunc_2` at 0xf8c020 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    /// `BSLookIKNote::GetRTTI` at 0xf8c020 (semantic, medium); signature (untiered): `TypeNode * GetRTTI(void)`; `GetRTTI`: 0xf8c020 (medium); semantic signature: `const NiRTTI* (BSLookIKNote* this)`
     pub slot_2: *const c_void,
     /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
     pub slot_3: *const c_void,
@@ -7169,9 +7330,9 @@ pub struct BSLookIKNote_vtable {
     pub slot_21: *const c_void,
     /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
     pub slot_22: *const c_void,
-    /// `BSLookIKNote::vfunc_23` at 0xf8bae0 (rtti, high); signature (low): `NiObject * vfunc_23(BSLookIKNote * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSLookIKNote::CreateClone` at 0xf8bae0 (semantic, medium); signature (untiered): `NiObject * CreateClone(BSLookIKNote * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `CreateClone`: 0xf8bae0 writes the vtable on a new object (medium); semantic signature: `NiObject* (BSLookIKNote* this, NiCloningProcess* cp)`
     pub slot_23: *const c_void,
-    /// `BSLookIKNote::vfunc_24` at 0xf8b880 (rtti, high); signature (low): `undefined vfunc_24(BSLookIKNote * this, longlong param_1)`
+    /// `BSLookIKNote::LoadBinary` at 0xf8b880 (semantic, medium); signature (untiered): `undefined LoadBinary(BSLookIKNote * this, longlong param_1)`; `LoadBinary`: 0xf8b880 (medium); semantic signature: `void (BSLookIKNote* this, NiStream* stream)`
     pub slot_24: *const c_void,
     /// `BSLookIKNote::vfunc_25` at 0xf8b910 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
     pub slot_25: *const c_void,
@@ -7197,12 +7358,23 @@ pub struct BSLookIKNote_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `BSLookIKNote::vfunc_37` at 0xf8bce0 (rtti, high); signature (low): `ulonglong vfunc_37(BSLookIKNote * this, undefined4 * param_1)`
+    /// `BSLookIKNote::ParseText` at 0xf8bce0 (semantic, high); signature (untiered): `ulonglong ParseText(BSLookIKNote * this, undefined4 * param_1)`
     pub slot_37: *const c_void,
 }
 impl BSLookIKNote_vtable {
     pub const ID: u64 = 237845;
+    pub const SLOT_vdtor: usize = 0;
+    /// Slot 0 as `BSLookIKNote_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<BSLookIKNote_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSLookIKNote_vtable_vdtor>>(self.slot_0) }
+    }
+    pub const SLOT_GetRTTI: usize = 2;
+    pub const SLOT_CreateClone: usize = 23;
+    pub const SLOT_LoadBinary: usize = 24;
 }
+/// `BSLookIKNote::vdtor`, slot 0: destructor (high).
+pub type BSLookIKNote_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::BSLookIKNote, flags: u32) -> *mut c_void;
 
 /// `BSMap<BSFadeNode_const*___ptr64,unsigned_int>::vftable` at 0x1b3f080, id 254678 (rtti, high); 7 slots.
 #[repr(C)]
@@ -13557,245 +13729,5 @@ pub struct BSPlatform__BSUserContentSearcherAgent_vtable {
 }
 impl BSPlatform__BSUserContentSearcherAgent_vtable {
     pub const ID: u64 = 467953;
-}
-
-/// `BSPlayerDistanceCheckController::vftable` at 0x1922cb8, id 207880 (rtti, high); 47 slots.
-#[repr(C)]
-pub struct BSPlayerDistanceCheckController_vtable {
-    /// `BSPlayerDistanceCheckController::vdtor` at 0x7382b0 (layout_inference, medium); signature (low): `BSPlayerDistanceCheckController * vdtor(BSPlayerDistanceCheckController * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
-    pub slot_1: *const c_void,
-    /// `BSPlayerDistanceCheckController::vfunc_2` at 0x7382f0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
-    pub slot_4: *const c_void,
-    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
-    pub slot_9: *const c_void,
-    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
-    pub slot_10: *const c_void,
-    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
-    pub slot_11: *const c_void,
-    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
-    pub slot_12: *const c_void,
-    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
-    pub slot_13: *const c_void,
-    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
-    pub slot_14: *const c_void,
-    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
-    pub slot_15: *const c_void,
-    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
-    pub slot_16: *const c_void,
-    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
-    pub slot_17: *const c_void,
-    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
-    pub slot_18: *const c_void,
-    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
-    pub slot_19: *const c_void,
-    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
-    pub slot_20: *const c_void,
-    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
-    pub slot_21: *const c_void,
-    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
-    pub slot_22: *const c_void,
-    /// `BSPlayerDistanceCheckController::vfunc_23` at 0x737f40 (rtti, high); signature (low): `NiTimeController * vfunc_23(BSPlayerDistanceCheckController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_23: *const c_void,
-    /// `NiTimeController::vfunc_24` at 0xef7e30 (rtti, medium); signature (low): `undefined vfunc_24(NiTimeController * this, longlong param_1)`
-    pub slot_24: *const c_void,
-    /// `NiTimeController::vfunc_25` at 0xef7f80 (rtti, medium); signature (low): `undefined vfunc_25(NiTimeController * this, longlong param_1)`
-    pub slot_25: *const c_void,
-    /// `NiTimeController::vfunc_26` at 0xef7ff0 (rtti, medium); signature (low): `undefined1 vfunc_26(NiTimeController * this, longlong * param_1)`
-    pub slot_26: *const c_void,
-    /// `NiTimeController::vfunc_27` at 0xef8040 (rtti, medium); signature (low): `undefined vfunc_27(NiTimeController * this, longlong * param_1)`
-    pub slot_27: *const c_void,
-    /// `NiTimeController::vfunc_28` at 0xef81a0 (rtti, medium); signature (low): `ulonglong vfunc_28(NiTimeController * this, longlong * param_1)`
-    pub slot_28: *const c_void,
-    /// `NiTimeController::vfunc_29` at 0xef8900 (rtti, medium); signature (low): `undefined vfunc_29(NiTimeController * this, longlong param_1)`
-    pub slot_29: *const c_void,
-    /// `NiObject::vfunc_30` at 0xedcb50 (rtti, medium); signature (low): `undefined vfunc_30(void)`
-    pub slot_30: *const c_void,
-    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
-    pub slot_31: *const c_void,
-    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
-    pub slot_32: *const c_void,
-    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
-    pub slot_33: *const c_void,
-    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
-    pub slot_34: *const c_void,
-    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
-    pub slot_35: *const c_void,
-    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
-    pub slot_36: *const c_void,
-    /// `NiTimeController::vfunc_37` at 0xef8320 (rtti, medium); signature (low): `undefined vfunc_37(NiTimeController * this, undefined4 param_2)`
-    pub slot_37: *const c_void,
-    /// `NiTimeController::vfunc_38` at 0xef8340 (rtti, medium); signature (high): `undefined vfunc_38(NiTimeController * this)`
-    pub slot_38: *const c_void,
-    /// `BSPlayerDistanceCheckController::vfunc_39` at 0x738120 (rtti, high); signature (high): `undefined vfunc_39(BSPlayerDistanceCheckController * this)`
-    pub slot_39: *const c_void,
-    /// `NiTimeController::vfunc_40` at 0xef8370 (rtti, medium); signature (low): `undefined vfunc_40(NiTimeController * this, longlong param_1)`
-    pub slot_40: *const c_void,
-    /// `NiTimeController::vfunc_41` at 0x305d80 (rtti, medium); signature (low): `undefined1 vfunc_41(void)`
-    pub slot_41: *const c_void,
-    /// `NiTimeController::vfunc_42` at 0x305d90 (rtti, medium); signature (low): `undefined1 vfunc_42(void)`
-    pub slot_42: *const c_void,
-    /// `NiTimeController::vfunc_43` at 0xef86d0 (rtti, medium); signature (medium): `float vfunc_43(NiTimeController * this, float param_1)`
-    pub slot_43: *const c_void,
-    /// `NiTimeController::vfunc_44` at 0xef88f0 (rtti, medium); signature (low): `undefined vfunc_44(void)`
-    pub slot_44: *const c_void,
-    /// `NiTimeController::vfunc_45` at 0x305d70 (rtti, medium); signature (low): `undefined1 vfunc_45(void)`
-    pub slot_45: *const c_void,
-    /// `BSPlayerDistanceCheckController::vfunc_46` at 0x738270 (rtti, high); signature (high): `undefined * vfunc_46(BSPlayerDistanceCheckController * this)`
-    pub slot_46: *const c_void,
-}
-impl BSPlayerDistanceCheckController_vtable {
-    pub const ID: u64 = 207880;
-}
-
-/// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vftable` at 0x18d6b68, id 204083 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct BSPointerListBase_BSTempEffectDebris____ptr64_vtable {
-    /// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vdtor` at 0x4aa1c0 (slot_propagation, medium); signature (low): `BSPointerListBase<BSTempEffectDebris*___ptr64> * vdtor(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vfunc_1` at 0x4aa160 (rtti, medium); signature (low): `undefined vfunc_1(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vfunc_2` at 0x4aa1a0 (rtti, medium); signature (low): `undefined vfunc_2(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
-}
-impl BSPointerListBase_BSTempEffectDebris____ptr64_vtable {
-    pub const ID: u64 = 204083;
-}
-
-/// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::vftable` at 0x1867e80, id 196398 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct BSPointerListBase_TriggerEntry__TriggerEvent____ptr64_vtable {
-    /// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::vdtor` at 0x408900 (slot_propagation, medium); signature (low): `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * vdtor(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::vfunc_1` at 0x408fc0 (rtti, medium); signature (low): `undefined vfunc_1(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::vfunc_2` at 0x408f60 (rtti, medium); signature (low): `undefined vfunc_2(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
-}
-impl BSPointerListBase_TriggerEntry__TriggerEvent____ptr64_vtable {
-    pub const ID: u64 = 196398;
-}
-
-/// `BSPortal::vftable` at 0x1800560, id 188245 (rtti, high); 39 slots.
-#[repr(C)]
-pub struct BSPortal_vtable {
-    /// `BSPortal::vdtor` at 0x213b70 (layout_inference, medium); signature (low): `BSPortal * vdtor(BSPortal * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
-    pub slot_1: *const c_void,
-    /// `BSPortal::vfunc_2` at 0x213c50 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
-    pub slot_4: *const c_void,
-    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
-    pub slot_9: *const c_void,
-    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
-    pub slot_10: *const c_void,
-    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
-    pub slot_11: *const c_void,
-    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
-    pub slot_12: *const c_void,
-    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
-    pub slot_13: *const c_void,
-    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
-    pub slot_14: *const c_void,
-    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
-    pub slot_15: *const c_void,
-    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
-    pub slot_16: *const c_void,
-    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
-    pub slot_17: *const c_void,
-    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
-    pub slot_18: *const c_void,
-    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
-    pub slot_19: *const c_void,
-    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
-    pub slot_20: *const c_void,
-    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
-    pub slot_21: *const c_void,
-    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
-    pub slot_22: *const c_void,
-    /// `BSPortal::vfunc_23` at 0xfe9f00 (rtti, high); signature (low): `BSOcclusionPlane * vfunc_23(BSPortal * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_23: *const c_void,
-    /// `NiObject::vfunc_24` at 0xedc790 (rtti, medium); signature (low): `undefined vfunc_24(void)`
-    pub slot_24: *const c_void,
-    /// `NiObject::vfunc_25` at 0xedc7a0 (rtti, medium); signature (low): `undefined vfunc_25(void)`
-    pub slot_25: *const c_void,
-    /// `NiObject::vfunc_26` at 0xedc7b0 (rtti, medium); signature (low): `undefined vfunc_26(NiObject * this, longlong * param_1)`
-    pub slot_26: *const c_void,
-    /// `NiObject::vfunc_27` at 0xedc7d0 (rtti, medium); signature (low): `undefined vfunc_27(void)`
-    pub slot_27: *const c_void,
-    /// `NiObject::vfunc_28` at 0xedc7e0 (rtti, medium); signature (low): `ulonglong vfunc_28(NiObject * this, longlong * param_1)`
-    pub slot_28: *const c_void,
-    /// `NiObject::vfunc_29` at 0xedca00 (rtti, medium); signature (low): `undefined vfunc_29(NiObject * this, longlong param_1)`
-    pub slot_29: *const c_void,
-    /// `NiObject::vfunc_30` at 0xedcb50 (rtti, medium); signature (low): `undefined vfunc_30(void)`
-    pub slot_30: *const c_void,
-    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
-    pub slot_31: *const c_void,
-    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
-    pub slot_32: *const c_void,
-    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
-    pub slot_33: *const c_void,
-    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
-    pub slot_34: *const c_void,
-    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
-    pub slot_35: *const c_void,
-    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
-    pub slot_36: *const c_void,
-    /// `BSOcclusionPlane::vfunc_37` at 0xfe9bb0 (rtti, medium); signature (low): `undefined1 vfunc_37(void)`
-    pub slot_37: *const c_void,
-    /// `BSOcclusionPlane::vfunc_38` at 0xfe9bc0 (rtti, medium); signature (low): `undefined1 vfunc_38(void)`
-    pub slot_38: *const c_void,
-}
-impl BSPortal_vtable {
-    pub const ID: u64 = 188245;
-}
-
-/// `BSPortalGraph::vftable` at 0x1a6ba78, id 238265 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct BSPortalGraph_vtable {
-    /// `BSPortalGraph::vdtor` at 0xfdb1b0 (slot_propagation, medium); signature (low): `BSPortalGraph * vdtor(BSPortalGraph * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
-    pub slot_1: *const c_void,
-}
-impl BSPortalGraph_vtable {
-    pub const ID: u64 = 238265;
-}
-
-/// `BSPortalGraphEntry::vftable` at 0x1a6ba60, id 238263 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct BSPortalGraphEntry_vtable {
-    /// `BSPortalGraphEntry::vdtor` at 0xfdb1f0 (slot_propagation, medium); signature (low): `BSPortalGraphEntry * vdtor(BSPortalGraphEntry * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
-    pub slot_1: *const c_void,
-}
-impl BSPortalGraphEntry_vtable {
-    pub const ID: u64 = 238263;
 }
 

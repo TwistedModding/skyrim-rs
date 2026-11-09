@@ -193,12 +193,6 @@ impl core::ops::Deref for crate::BSDecomposeVectorModifier {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `BSDirectAtModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::BSDirectAtModifier {
-    type Target = crate::hkbModifier;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `BSDirectAtModifierInterface` is laid out from its primary base `BSIDirectAtModifierSingleton`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSDirectAtModifierInterface {
     type Target = crate::BSIDirectAtModifierSingleton;
@@ -382,12 +376,6 @@ impl core::ops::Deref for crate::BSGeometryListCullingProcess {
 /// `BSGetTimeStepModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSGetTimeStepModifier {
     type Target = crate::hkbModifier;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `BSGrabIKNote` is laid out from its primary base `BSAnimNote`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::BSGrabIKNote {
-    type Target = crate::BSAnimNote;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -1189,12 +1177,6 @@ impl core::ops::Deref for crate::BSInvMarker {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `BSIsActiveModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::BSIsActiveModifier {
-    type Target = crate::hkbModifier;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `BSJobs::JobThread` is laid out from its primary base `BSThread`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSJobs__JobThread {
     type Target = crate::BSThread;
@@ -1327,24 +1309,6 @@ impl core::ops::Deref for crate::BSLightingShaderPropertyUShortController {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `BSLimbIKModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::BSLimbIKModifier {
-    type Target = crate::hkbModifier;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `BSLimbIKModifierUtility` is laid out from its primary base `BSILimbIKModifierSingleton`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::BSLimbIKModifierUtility {
-    type Target = crate::BSILimbIKModifierSingleton;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `BSLimbIKModifierUtilityCastInfo` is laid out from its primary base `BSLimbIKModifierCastInfo`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::BSLimbIKModifierUtilityCastInfo {
-    type Target = crate::BSLimbIKModifierCastInfo;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `BSLines` is laid out from its primary base `BSGeometry`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSLines {
     type Target = crate::BSGeometry;
@@ -1360,18 +1324,6 @@ impl core::ops::Deref for crate::BSList_BSTempEffectDebris____ptr64 {
 /// `BSList<TriggerEntry::TriggerEvent*___ptr64>` is laid out from its primary base `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSList_TriggerEntry__TriggerEvent____ptr64 {
     type Target = crate::BSPointerListBase_TriggerEntry__TriggerEvent____ptr64;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `BSLookAtModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::BSLookAtModifier {
-    type Target = crate::hkbModifier;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `BSLookIKNote` is laid out from its primary base `BSAnimNote`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::BSLookIKNote {
-    type Target = crate::BSAnimNote;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2053,12 +2005,6 @@ impl core::ops::Deref for crate::BSQueuedResourceCollectionBase {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `BSRagdollContactListenerModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::BSRagdollContactListenerModifier {
-    type Target = crate::hkbModifier;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `BSRagdollContactListenerModifierInterface` is laid out from its primary base `BSIRagdollContactListenerModifierSingleton`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSRagdollContactListenerModifierInterface {
     type Target = crate::BSIRagdollContactListenerModifierSingleton;
@@ -2446,12 +2392,6 @@ impl core::ops::Deref for crate::BSSocketServer {
 /// `BSSpeedSamplerDBManager` is laid out from its primary base `BSISpeedSamplerDB`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSSpeedSamplerDBManager {
     type Target = crate::BSISpeedSamplerDB;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `BSSpeedSamplerModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::BSSpeedSamplerModifier {
-    type Target = crate::hkbModifier;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -6938,109 +6878,6 @@ impl crate::BSDecomposeVectorModifier {
     pub fn field_C4_ptr(&self) -> *mut u32 { Self::__member_field_C4(core::ptr::from_ref(self)) }
 }
 
-impl crate::BSDirectAtModifier {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_108(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSDirectAtModifier.field_108", 0x108, u64) } }
-    /// `BSDirectAtModifier::field_108`, at +0x108 on 1.7.104.
-    #[inline]
-    pub fn field_108(&self) -> u64 { unsafe { Self::__member_field_108(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_108(&mut self, value: u64) { unsafe { Self::__member_field_108(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_108_ptr(&self) -> *mut u64 { Self::__member_field_108(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_110(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSDirectAtModifier.field_110", 0x110, u32) } }
-    /// `BSDirectAtModifier::field_110`, at +0x110 on 1.7.104.
-    #[inline]
-    pub fn field_110(&self) -> u32 { unsafe { Self::__member_field_110(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_110(&mut self, value: u32) { unsafe { Self::__member_field_110(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_110_ptr(&self) -> *mut u32 { Self::__member_field_110(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_114(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSDirectAtModifier.field_114", 0x114, u32) } }
-    /// `BSDirectAtModifier::field_114`, at +0x114 on 1.7.104.
-    #[inline]
-    pub fn field_114(&self) -> u32 { unsafe { Self::__member_field_114(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_114(&mut self, value: u32) { unsafe { Self::__member_field_114(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_114_ptr(&self) -> *mut u32 { Self::__member_field_114(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_A4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSDirectAtModifier.field_A4", 0xA4, u32) } }
-    /// `BSDirectAtModifier::field_A4`, at +0xA4 on 1.7.104.
-    #[inline]
-    pub fn field_A4(&self) -> u32 { unsafe { Self::__member_field_A4(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_A4(&mut self, value: u32) { unsafe { Self::__member_field_A4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_A4_ptr(&self) -> *mut u32 { Self::__member_field_A4(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_A8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSDirectAtModifier.field_A8", 0xA8, u64) } }
-    /// `BSDirectAtModifier::field_A8`, at +0xA8 on 1.7.104.
-    #[inline]
-    pub fn field_A8(&self) -> u64 { unsafe { Self::__member_field_A8(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_A8(&mut self, value: u64) { unsafe { Self::__member_field_A8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_A8_ptr(&self) -> *mut u64 { Self::__member_field_A8(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_B0(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSDirectAtModifier.field_B0", 0xB0, u32) } }
-    /// `BSDirectAtModifier::field_B0`, at +0xB0 on 1.7.104.
-    #[inline]
-    pub fn field_B0(&self) -> u32 { unsafe { Self::__member_field_B0(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_B0(&mut self, value: u32) { unsafe { Self::__member_field_B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_B0_ptr(&self) -> *mut u32 { Self::__member_field_B0(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_B4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSDirectAtModifier.field_B4", 0xB4, u32) } }
-    /// `BSDirectAtModifier::field_B4`, at +0xB4 on 1.7.104.
-    #[inline]
-    pub fn field_B4(&self) -> u32 { unsafe { Self::__member_field_B4(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_B4(&mut self, value: u32) { unsafe { Self::__member_field_B4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_B4_ptr(&self) -> *mut u32 { Self::__member_field_B4(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSDirectAtModifier.field_B8", 0xB8, u64) } }
-    /// `BSDirectAtModifier::field_B8`, at +0xB8 on 1.7.104.
-    #[inline]
-    pub fn field_B8(&self) -> u64 { unsafe { Self::__member_field_B8(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_B8(&mut self, value: u64) { unsafe { Self::__member_field_B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_B8_ptr(&self) -> *mut u64 { Self::__member_field_B8(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSDirectAtModifier.field_C0", 0xC0, u32) } }
-    /// `BSDirectAtModifier::field_C0`, at +0xC0 on 1.7.104.
-    #[inline]
-    pub fn field_C0(&self) -> u32 { unsafe { Self::__member_field_C0(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_C0(&mut self, value: u32) { unsafe { Self::__member_field_C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_C0_ptr(&self) -> *mut u32 { Self::__member_field_C0(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_C4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSDirectAtModifier.field_C4", 0xC4, u32) } }
-    /// `BSDirectAtModifier::field_C4`, at +0xC4 on 1.7.104.
-    #[inline]
-    pub fn field_C4(&self) -> u32 { unsafe { Self::__member_field_C4(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_C4(&mut self, value: u32) { unsafe { Self::__member_field_C4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_C4_ptr(&self) -> *mut u32 { Self::__member_field_C4(core::ptr::from_ref(self)) }
-}
-
 impl crate::BSDirectAtModifierInterface {
     /// `BSDirectAtModifierInterface::vfunc_1`: the direct-at (look/aim) target point for a character: for the player uses the camera's look point; writes xyz (w = 0) and the found byte
     ///
@@ -8656,109 +8493,6 @@ impl crate::BSInterpValueModifier {
     #[inline]
     pub fn __member_field_C4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSInterpValueModifier.field_C4", 0xC4, u32) } }
     /// `BSInterpValueModifier::field_C4`, at +0xC4 on 1.7.104.
-    #[inline]
-    pub fn field_C4(&self) -> u32 { unsafe { Self::__member_field_C4(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_C4(&mut self, value: u32) { unsafe { Self::__member_field_C4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_C4_ptr(&self) -> *mut u32 { Self::__member_field_C4(core::ptr::from_ref(self)) }
-}
-
-impl crate::BSIsActiveModifier {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_108(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSIsActiveModifier.field_108", 0x108, u64) } }
-    /// `BSIsActiveModifier::field_108`, at +0x108 on 1.7.104.
-    #[inline]
-    pub fn field_108(&self) -> u64 { unsafe { Self::__member_field_108(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_108(&mut self, value: u64) { unsafe { Self::__member_field_108(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_108_ptr(&self) -> *mut u64 { Self::__member_field_108(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_110(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSIsActiveModifier.field_110", 0x110, u32) } }
-    /// `BSIsActiveModifier::field_110`, at +0x110 on 1.7.104.
-    #[inline]
-    pub fn field_110(&self) -> u32 { unsafe { Self::__member_field_110(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_110(&mut self, value: u32) { unsafe { Self::__member_field_110(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_110_ptr(&self) -> *mut u32 { Self::__member_field_110(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_114(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSIsActiveModifier.field_114", 0x114, u32) } }
-    /// `BSIsActiveModifier::field_114`, at +0x114 on 1.7.104.
-    #[inline]
-    pub fn field_114(&self) -> u32 { unsafe { Self::__member_field_114(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_114(&mut self, value: u32) { unsafe { Self::__member_field_114(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_114_ptr(&self) -> *mut u32 { Self::__member_field_114(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_A4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSIsActiveModifier.field_A4", 0xA4, u32) } }
-    /// `BSIsActiveModifier::field_A4`, at +0xA4 on 1.7.104.
-    #[inline]
-    pub fn field_A4(&self) -> u32 { unsafe { Self::__member_field_A4(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_A4(&mut self, value: u32) { unsafe { Self::__member_field_A4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_A4_ptr(&self) -> *mut u32 { Self::__member_field_A4(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_A8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSIsActiveModifier.field_A8", 0xA8, u64) } }
-    /// `BSIsActiveModifier::field_A8`, at +0xA8 on 1.7.104.
-    #[inline]
-    pub fn field_A8(&self) -> u64 { unsafe { Self::__member_field_A8(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_A8(&mut self, value: u64) { unsafe { Self::__member_field_A8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_A8_ptr(&self) -> *mut u64 { Self::__member_field_A8(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_B0(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSIsActiveModifier.field_B0", 0xB0, u32) } }
-    /// `BSIsActiveModifier::field_B0`, at +0xB0 on 1.7.104.
-    #[inline]
-    pub fn field_B0(&self) -> u32 { unsafe { Self::__member_field_B0(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_B0(&mut self, value: u32) { unsafe { Self::__member_field_B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_B0_ptr(&self) -> *mut u32 { Self::__member_field_B0(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_B4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSIsActiveModifier.field_B4", 0xB4, u32) } }
-    /// `BSIsActiveModifier::field_B4`, at +0xB4 on 1.7.104.
-    #[inline]
-    pub fn field_B4(&self) -> u32 { unsafe { Self::__member_field_B4(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_B4(&mut self, value: u32) { unsafe { Self::__member_field_B4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_B4_ptr(&self) -> *mut u32 { Self::__member_field_B4(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSIsActiveModifier.field_B8", 0xB8, u64) } }
-    /// `BSIsActiveModifier::field_B8`, at +0xB8 on 1.7.104.
-    #[inline]
-    pub fn field_B8(&self) -> u64 { unsafe { Self::__member_field_B8(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_B8(&mut self, value: u64) { unsafe { Self::__member_field_B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_B8_ptr(&self) -> *mut u64 { Self::__member_field_B8(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSIsActiveModifier.field_C0", 0xC0, u32) } }
-    /// `BSIsActiveModifier::field_C0`, at +0xC0 on 1.7.104.
-    #[inline]
-    pub fn field_C0(&self) -> u32 { unsafe { Self::__member_field_C0(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_C0(&mut self, value: u32) { unsafe { Self::__member_field_C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_C0_ptr(&self) -> *mut u32 { Self::__member_field_C0(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_C4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSIsActiveModifier.field_C4", 0xC4, u32) } }
-    /// `BSIsActiveModifier::field_C4`, at +0xC4 on 1.7.104.
     #[inline]
     pub fn field_C4(&self) -> u32 { unsafe { Self::__member_field_C4(core::ptr::from_ref(self)).read_unaligned() } }
     #[inline]
@@ -12414,109 +12148,6 @@ impl crate::BSLightingShaderPropertyUShortController {
     pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
 }
 
-impl crate::BSLimbIKModifier {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_108(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSLimbIKModifier.field_108", 0x108, u64) } }
-    /// `BSLimbIKModifier::field_108`, at +0x108 on 1.7.104.
-    #[inline]
-    pub fn field_108(&self) -> u64 { unsafe { Self::__member_field_108(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_108(&mut self, value: u64) { unsafe { Self::__member_field_108(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_108_ptr(&self) -> *mut u64 { Self::__member_field_108(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_110(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSLimbIKModifier.field_110", 0x110, u32) } }
-    /// `BSLimbIKModifier::field_110`, at +0x110 on 1.7.104.
-    #[inline]
-    pub fn field_110(&self) -> u32 { unsafe { Self::__member_field_110(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_110(&mut self, value: u32) { unsafe { Self::__member_field_110(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_110_ptr(&self) -> *mut u32 { Self::__member_field_110(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_114(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSLimbIKModifier.field_114", 0x114, u32) } }
-    /// `BSLimbIKModifier::field_114`, at +0x114 on 1.7.104.
-    #[inline]
-    pub fn field_114(&self) -> u32 { unsafe { Self::__member_field_114(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_114(&mut self, value: u32) { unsafe { Self::__member_field_114(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_114_ptr(&self) -> *mut u32 { Self::__member_field_114(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_A4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSLimbIKModifier.field_A4", 0xA4, u32) } }
-    /// `BSLimbIKModifier::field_A4`, at +0xA4 on 1.7.104.
-    #[inline]
-    pub fn field_A4(&self) -> u32 { unsafe { Self::__member_field_A4(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_A4(&mut self, value: u32) { unsafe { Self::__member_field_A4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_A4_ptr(&self) -> *mut u32 { Self::__member_field_A4(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_A8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSLimbIKModifier.field_A8", 0xA8, u64) } }
-    /// `BSLimbIKModifier::field_A8`, at +0xA8 on 1.7.104.
-    #[inline]
-    pub fn field_A8(&self) -> u64 { unsafe { Self::__member_field_A8(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_A8(&mut self, value: u64) { unsafe { Self::__member_field_A8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_A8_ptr(&self) -> *mut u64 { Self::__member_field_A8(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_B0(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSLimbIKModifier.field_B0", 0xB0, u32) } }
-    /// `BSLimbIKModifier::field_B0`, at +0xB0 on 1.7.104.
-    #[inline]
-    pub fn field_B0(&self) -> u32 { unsafe { Self::__member_field_B0(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_B0(&mut self, value: u32) { unsafe { Self::__member_field_B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_B0_ptr(&self) -> *mut u32 { Self::__member_field_B0(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_B4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSLimbIKModifier.field_B4", 0xB4, u32) } }
-    /// `BSLimbIKModifier::field_B4`, at +0xB4 on 1.7.104.
-    #[inline]
-    pub fn field_B4(&self) -> u32 { unsafe { Self::__member_field_B4(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_B4(&mut self, value: u32) { unsafe { Self::__member_field_B4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_B4_ptr(&self) -> *mut u32 { Self::__member_field_B4(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSLimbIKModifier.field_B8", 0xB8, u64) } }
-    /// `BSLimbIKModifier::field_B8`, at +0xB8 on 1.7.104.
-    #[inline]
-    pub fn field_B8(&self) -> u64 { unsafe { Self::__member_field_B8(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_B8(&mut self, value: u64) { unsafe { Self::__member_field_B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_B8_ptr(&self) -> *mut u64 { Self::__member_field_B8(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSLimbIKModifier.field_C0", 0xC0, u32) } }
-    /// `BSLimbIKModifier::field_C0`, at +0xC0 on 1.7.104.
-    #[inline]
-    pub fn field_C0(&self) -> u32 { unsafe { Self::__member_field_C0(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_C0(&mut self, value: u32) { unsafe { Self::__member_field_C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_C0_ptr(&self) -> *mut u32 { Self::__member_field_C0(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_C4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSLimbIKModifier.field_C4", 0xC4, u32) } }
-    /// `BSLimbIKModifier::field_C4`, at +0xC4 on 1.7.104.
-    #[inline]
-    pub fn field_C4(&self) -> u32 { unsafe { Self::__member_field_C4(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_C4(&mut self, value: u32) { unsafe { Self::__member_field_C4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_C4_ptr(&self) -> *mut u32 { Self::__member_field_C4(core::ptr::from_ref(self)) }
-}
-
 impl crate::BSLines {
     #[doc(hidden)]
     #[inline]
@@ -12556,109 +12187,6 @@ impl crate::BSLines {
     pub fn set_previousWorldFrame(&mut self, value: u32) { unsafe { Self::__member_previousWorldFrame(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn previousWorldFrame_ptr(&self) -> *mut u32 { Self::__member_previousWorldFrame(core::ptr::from_ref(self)) }
-}
-
-impl crate::BSLookAtModifier {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_108(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSLookAtModifier.field_108", 0x108, u64) } }
-    /// `BSLookAtModifier::field_108`, at +0x108 on 1.7.104.
-    #[inline]
-    pub fn field_108(&self) -> u64 { unsafe { Self::__member_field_108(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_108(&mut self, value: u64) { unsafe { Self::__member_field_108(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_108_ptr(&self) -> *mut u64 { Self::__member_field_108(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_110(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSLookAtModifier.field_110", 0x110, u32) } }
-    /// `BSLookAtModifier::field_110`, at +0x110 on 1.7.104.
-    #[inline]
-    pub fn field_110(&self) -> u32 { unsafe { Self::__member_field_110(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_110(&mut self, value: u32) { unsafe { Self::__member_field_110(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_110_ptr(&self) -> *mut u32 { Self::__member_field_110(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_114(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSLookAtModifier.field_114", 0x114, u32) } }
-    /// `BSLookAtModifier::field_114`, at +0x114 on 1.7.104.
-    #[inline]
-    pub fn field_114(&self) -> u32 { unsafe { Self::__member_field_114(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_114(&mut self, value: u32) { unsafe { Self::__member_field_114(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_114_ptr(&self) -> *mut u32 { Self::__member_field_114(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_A4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSLookAtModifier.field_A4", 0xA4, u32) } }
-    /// `BSLookAtModifier::field_A4`, at +0xA4 on 1.7.104.
-    #[inline]
-    pub fn field_A4(&self) -> u32 { unsafe { Self::__member_field_A4(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_A4(&mut self, value: u32) { unsafe { Self::__member_field_A4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_A4_ptr(&self) -> *mut u32 { Self::__member_field_A4(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_A8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSLookAtModifier.field_A8", 0xA8, u64) } }
-    /// `BSLookAtModifier::field_A8`, at +0xA8 on 1.7.104.
-    #[inline]
-    pub fn field_A8(&self) -> u64 { unsafe { Self::__member_field_A8(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_A8(&mut self, value: u64) { unsafe { Self::__member_field_A8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_A8_ptr(&self) -> *mut u64 { Self::__member_field_A8(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_B0(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSLookAtModifier.field_B0", 0xB0, u32) } }
-    /// `BSLookAtModifier::field_B0`, at +0xB0 on 1.7.104.
-    #[inline]
-    pub fn field_B0(&self) -> u32 { unsafe { Self::__member_field_B0(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_B0(&mut self, value: u32) { unsafe { Self::__member_field_B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_B0_ptr(&self) -> *mut u32 { Self::__member_field_B0(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_B4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSLookAtModifier.field_B4", 0xB4, u32) } }
-    /// `BSLookAtModifier::field_B4`, at +0xB4 on 1.7.104.
-    #[inline]
-    pub fn field_B4(&self) -> u32 { unsafe { Self::__member_field_B4(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_B4(&mut self, value: u32) { unsafe { Self::__member_field_B4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_B4_ptr(&self) -> *mut u32 { Self::__member_field_B4(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSLookAtModifier.field_B8", 0xB8, u64) } }
-    /// `BSLookAtModifier::field_B8`, at +0xB8 on 1.7.104.
-    #[inline]
-    pub fn field_B8(&self) -> u64 { unsafe { Self::__member_field_B8(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_B8(&mut self, value: u64) { unsafe { Self::__member_field_B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_B8_ptr(&self) -> *mut u64 { Self::__member_field_B8(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSLookAtModifier.field_C0", 0xC0, u32) } }
-    /// `BSLookAtModifier::field_C0`, at +0xC0 on 1.7.104.
-    #[inline]
-    pub fn field_C0(&self) -> u32 { unsafe { Self::__member_field_C0(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_C0(&mut self, value: u32) { unsafe { Self::__member_field_C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_C0_ptr(&self) -> *mut u32 { Self::__member_field_C0(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_C4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSLookAtModifier.field_C4", 0xC4, u32) } }
-    /// `BSLookAtModifier::field_C4`, at +0xC4 on 1.7.104.
-    #[inline]
-    pub fn field_C4(&self) -> u32 { unsafe { Self::__member_field_C4(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_C4(&mut self, value: u32) { unsafe { Self::__member_field_C4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_C4_ptr(&self) -> *mut u32 { Self::__member_field_C4(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSMasterParticleSystem {
@@ -15004,5 +14532,422 @@ impl crate::BSParticleSystemManager {
     pub fn set_previousWorldFrame(&mut self, value: u32) { unsafe { Self::__member_previousWorldFrame(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn previousWorldFrame_ptr(&self) -> *mut u32 { Self::__member_previousWorldFrame(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSPassByTargetTriggerModifier {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_108(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPassByTargetTriggerModifier.field_108", 0x108, u64) } }
+    /// `BSPassByTargetTriggerModifier::field_108`, at +0x108 on 1.7.104.
+    #[inline]
+    pub fn field_108(&self) -> u64 { unsafe { Self::__member_field_108(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_108(&mut self, value: u64) { unsafe { Self::__member_field_108(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_108_ptr(&self) -> *mut u64 { Self::__member_field_108(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_110(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSPassByTargetTriggerModifier.field_110", 0x110, u32) } }
+    /// `BSPassByTargetTriggerModifier::field_110`, at +0x110 on 1.7.104.
+    #[inline]
+    pub fn field_110(&self) -> u32 { unsafe { Self::__member_field_110(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_110(&mut self, value: u32) { unsafe { Self::__member_field_110(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_110_ptr(&self) -> *mut u32 { Self::__member_field_110(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_114(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSPassByTargetTriggerModifier.field_114", 0x114, u32) } }
+    /// `BSPassByTargetTriggerModifier::field_114`, at +0x114 on 1.7.104.
+    #[inline]
+    pub fn field_114(&self) -> u32 { unsafe { Self::__member_field_114(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_114(&mut self, value: u32) { unsafe { Self::__member_field_114(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_114_ptr(&self) -> *mut u32 { Self::__member_field_114(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSPassByTargetTriggerModifier.field_A4", 0xA4, u32) } }
+    /// `BSPassByTargetTriggerModifier::field_A4`, at +0xA4 on 1.7.104.
+    #[inline]
+    pub fn field_A4(&self) -> u32 { unsafe { Self::__member_field_A4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A4(&mut self, value: u32) { unsafe { Self::__member_field_A4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A4_ptr(&self) -> *mut u32 { Self::__member_field_A4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPassByTargetTriggerModifier.field_A8", 0xA8, u64) } }
+    /// `BSPassByTargetTriggerModifier::field_A8`, at +0xA8 on 1.7.104.
+    #[inline]
+    pub fn field_A8(&self) -> u64 { unsafe { Self::__member_field_A8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A8(&mut self, value: u64) { unsafe { Self::__member_field_A8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A8_ptr(&self) -> *mut u64 { Self::__member_field_A8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B0(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSPassByTargetTriggerModifier.field_B0", 0xB0, u32) } }
+    /// `BSPassByTargetTriggerModifier::field_B0`, at +0xB0 on 1.7.104.
+    #[inline]
+    pub fn field_B0(&self) -> u32 { unsafe { Self::__member_field_B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B0(&mut self, value: u32) { unsafe { Self::__member_field_B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B0_ptr(&self) -> *mut u32 { Self::__member_field_B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSPassByTargetTriggerModifier.field_B4", 0xB4, u32) } }
+    /// `BSPassByTargetTriggerModifier::field_B4`, at +0xB4 on 1.7.104.
+    #[inline]
+    pub fn field_B4(&self) -> u32 { unsafe { Self::__member_field_B4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B4(&mut self, value: u32) { unsafe { Self::__member_field_B4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B4_ptr(&self) -> *mut u32 { Self::__member_field_B4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPassByTargetTriggerModifier.field_B8", 0xB8, u64) } }
+    /// `BSPassByTargetTriggerModifier::field_B8`, at +0xB8 on 1.7.104.
+    #[inline]
+    pub fn field_B8(&self) -> u64 { unsafe { Self::__member_field_B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B8(&mut self, value: u64) { unsafe { Self::__member_field_B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B8_ptr(&self) -> *mut u64 { Self::__member_field_B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSPassByTargetTriggerModifier.field_C0", 0xC0, u32) } }
+    /// `BSPassByTargetTriggerModifier::field_C0`, at +0xC0 on 1.7.104.
+    #[inline]
+    pub fn field_C0(&self) -> u32 { unsafe { Self::__member_field_C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C0(&mut self, value: u32) { unsafe { Self::__member_field_C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C0_ptr(&self) -> *mut u32 { Self::__member_field_C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSPassByTargetTriggerModifier.field_C4", 0xC4, u32) } }
+    /// `BSPassByTargetTriggerModifier::field_C4`, at +0xC4 on 1.7.104.
+    #[inline]
+    pub fn field_C4(&self) -> u32 { unsafe { Self::__member_field_C4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C4(&mut self, value: u32) { unsafe { Self::__member_field_C4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C4_ptr(&self) -> *mut u32 { Self::__member_field_C4(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSPathBuilder {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPathBuilder.field_10", 0x10, u64) } }
+    /// `BSPathBuilder::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> u64 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: u64) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut u64 { Self::__member_field_10(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSPathEventManager {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_source_BSPathEvent(this: *const Self) -> *mut crate::BSTEventSource { unsafe { member!(this, "BSPathEventManager.source_BSPathEvent", 0x10, crate::BSTEventSource) } }
+    /// `BSPathEventManager::source_BSPathEvent`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn source_BSPathEvent(&self) -> &crate::BSTEventSource { unsafe { &*Self::__member_source_BSPathEvent(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn source_BSPathEvent_ptr(&self) -> *mut crate::BSTEventSource { Self::__member_source_BSPathEvent(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSPathSmootherPOVSearch {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPathSmootherPOVSearch.field_10", 0x10, u64) } }
+    /// `BSPathSmootherPOVSearch::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> u64 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: u64) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut u64 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPathSmootherPOVSearch.field_18", 0x18, u64) } }
+    /// `BSPathSmootherPOVSearch::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u64 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPathSmootherPOVSearch.field_20", 0x20, u64) } }
+    /// `BSPathSmootherPOVSearch::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPathSmootherPOVSearch.field_28", 0x28, u64) } }
+    /// `BSPathSmootherPOVSearch::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u64 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u64) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u64 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPathSmootherPOVSearch.field_8", 0x8, u64) } }
+    /// `BSPathSmootherPOVSearch::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u64 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u64) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u64 { Self::__member_field_8(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSPathfindingTemporary_PathingDoor {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSPathfindingTemporary<PathingDoor>.field_10", 0x10, u32) } }
+    /// `BSPathfindingTemporary<PathingDoor>::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> u32 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: u32) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut u32 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_14(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSPathfindingTemporary<PathingDoor>.field_14", 0x14, u32) } }
+    /// `BSPathfindingTemporary<PathingDoor>::field_14`, at +0x14 on 1.7.104.
+    #[inline]
+    pub fn field_14(&self) -> u32 { unsafe { Self::__member_field_14(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_14(&mut self, value: u32) { unsafe { Self::__member_field_14(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_14_ptr(&self) -> *mut u32 { Self::__member_field_14(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSPathfindingTemporary_PathingRequest {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPathfindingTemporary<PathingRequest>.field_C8", 0xC8, u64) } }
+    /// `BSPathfindingTemporary<PathingRequest>::field_C8`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn field_C8(&self) -> u64 { unsafe { Self::__member_field_C8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C8(&mut self, value: u64) { unsafe { Self::__member_field_C8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C8_ptr(&self) -> *mut u64 { Self::__member_field_C8(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSPathfindingTemporary_PathingRequestClosePoint {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPathfindingTemporary<PathingRequestClosePoint>.field_C8", 0xC8, u64) } }
+    /// `BSPathfindingTemporary<PathingRequestClosePoint>::field_C8`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn field_C8(&self) -> u64 { unsafe { Self::__member_field_C8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C8(&mut self, value: u64) { unsafe { Self::__member_field_C8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C8_ptr(&self) -> *mut u64 { Self::__member_field_C8(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSPathfindingTemporary_PathingRequestCover {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_100(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPathfindingTemporary<PathingRequestCover>.field_100", 0x100, u64) } }
+    /// `BSPathfindingTemporary<PathingRequestCover>::field_100`, at +0x100 on 1.7.104.
+    #[inline]
+    pub fn field_100(&self) -> u64 { unsafe { Self::__member_field_100(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_100(&mut self, value: u64) { unsafe { Self::__member_field_100(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_100_ptr(&self) -> *mut u64 { Self::__member_field_100(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_108(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSPathfindingTemporary<PathingRequestCover>.field_108", 0x108, u32) } }
+    /// `BSPathfindingTemporary<PathingRequestCover>::field_108`, at +0x108 on 1.7.104.
+    #[inline]
+    pub fn field_108(&self) -> u32 { unsafe { Self::__member_field_108(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_108(&mut self, value: u32) { unsafe { Self::__member_field_108(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_108_ptr(&self) -> *mut u32 { Self::__member_field_108(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_120(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSPathfindingTemporary<PathingRequestCover>.field_120", 0x120, u16) } }
+    /// `BSPathfindingTemporary<PathingRequestCover>::field_120`, at +0x120 on 1.7.104.
+    #[inline]
+    pub fn field_120(&self) -> u16 { unsafe { Self::__member_field_120(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_120(&mut self, value: u16) { unsafe { Self::__member_field_120(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_120_ptr(&self) -> *mut u16 { Self::__member_field_120(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_134(this: *const Self) -> *mut f32 { unsafe { member!(this, "BSPathfindingTemporary<PathingRequestCover>.field_134", 0x134, f32) } }
+    /// `BSPathfindingTemporary<PathingRequestCover>::field_134`, at +0x134 on 1.7.104.
+    #[inline]
+    pub fn field_134(&self) -> f32 { unsafe { Self::__member_field_134(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_134(&mut self, value: f32) { unsafe { Self::__member_field_134(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_134_ptr(&self) -> *mut f32 { Self::__member_field_134(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPathfindingTemporary<PathingRequestCover>.field_C8", 0xC8, u64) } }
+    /// `BSPathfindingTemporary<PathingRequestCover>::field_C8`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn field_C8(&self) -> u64 { unsafe { Self::__member_field_C8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C8(&mut self, value: u64) { unsafe { Self::__member_field_C8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C8_ptr(&self) -> *mut u64 { Self::__member_field_C8(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSPathfindingTemporary_PathingRequestSafeStraightLine {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPathfindingTemporary<PathingRequestSafeStraightLine>.field_C8", 0xC8, u64) } }
+    /// `BSPathfindingTemporary<PathingRequestSafeStraightLine>::field_C8`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn field_C8(&self) -> u64 { unsafe { Self::__member_field_C8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C8(&mut self, value: u64) { unsafe { Self::__member_field_C8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C8_ptr(&self) -> *mut u64 { Self::__member_field_C8(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSPathingLOSGridMap {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_14(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPathingLOSGridMap.field_14", 0x14, u64) } }
+    /// `BSPathingLOSGridMap::field_14`, at +0x14 on 1.7.104.
+    #[inline]
+    pub fn field_14(&self) -> u64 { unsafe { Self::__member_field_14(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_14(&mut self, value: u64) { unsafe { Self::__member_field_14(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_14_ptr(&self) -> *mut u64 { Self::__member_field_14(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_38(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSPathingLOSGridMap.field_38", 0x38, u32) } }
+    /// `BSPathingLOSGridMap::field_38`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn field_38(&self) -> u32 { unsafe { Self::__member_field_38(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_38(&mut self, value: u32) { unsafe { Self::__member_field_38(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_38_ptr(&self) -> *mut u32 { Self::__member_field_38(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_70(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPathingLOSGridMap.field_70", 0x70, u64) } }
+    /// `BSPathingLOSGridMap::field_70`, at +0x70 on 1.7.104.
+    #[inline]
+    pub fn field_70(&self) -> u64 { unsafe { Self::__member_field_70(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_70(&mut self, value: u64) { unsafe { Self::__member_field_70(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_70_ptr(&self) -> *mut u64 { Self::__member_field_70(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSPathingRequest {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPathingRequest.field_C8", 0xC8, u64) } }
+    /// `BSPathingRequest::field_C8`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn field_C8(&self) -> u64 { unsafe { Self::__member_field_C8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C8(&mut self, value: u64) { unsafe { Self::__member_field_C8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C8_ptr(&self) -> *mut u64 { Self::__member_field_C8(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSPathingSearchRayCast {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_74(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPathingSearchRayCast.field_74", 0x74, u64) } }
+    /// `BSPathingSearchRayCast::field_74`, at +0x74 on 1.7.104.
+    #[inline]
+    pub fn field_74(&self) -> u64 { unsafe { Self::__member_field_74(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_74(&mut self, value: u64) { unsafe { Self::__member_field_74(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_74_ptr(&self) -> *mut u64 { Self::__member_field_74(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_7C(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPathingSearchRayCast.field_7C", 0x7C, u64) } }
+    /// `BSPathingSearchRayCast::field_7C`, at +0x7C on 1.7.104.
+    #[inline]
+    pub fn field_7C(&self) -> u64 { unsafe { Self::__member_field_7C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_7C(&mut self, value: u64) { unsafe { Self::__member_field_7C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_7C_ptr(&self) -> *mut u64 { Self::__member_field_7C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_84(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPathingSearchRayCast.field_84", 0x84, u64) } }
+    /// `BSPathingSearchRayCast::field_84`, at +0x84 on 1.7.104.
+    #[inline]
+    pub fn field_84(&self) -> u64 { unsafe { Self::__member_field_84(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_84(&mut self, value: u64) { unsafe { Self::__member_field_84(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_84_ptr(&self) -> *mut u64 { Self::__member_field_84(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64__ {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_30(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>.field_30", 0x30, u64) } }
+    /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>::field_30`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn field_30(&self) -> u64 { unsafe { Self::__member_field_30(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_30(&mut self, value: u64) { unsafe { Self::__member_field_30(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_30_ptr(&self) -> *mut u64 { Self::__member_field_30(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_38(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>.field_38", 0x38, u64) } }
+    /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>::field_38`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn field_38(&self) -> u64 { unsafe { Self::__member_field_38(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_38(&mut self, value: u64) { unsafe { Self::__member_field_38(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_38_ptr(&self) -> *mut u64 { Self::__member_field_38(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_40(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>.field_40", 0x40, u32) } }
+    /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>::field_40`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn field_40(&self) -> u32 { unsafe { Self::__member_field_40(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_40(&mut self, value: u32) { unsafe { Self::__member_field_40(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_40_ptr(&self) -> *mut u32 { Self::__member_field_40(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_80(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>.field_80", 0x80, u64) } }
+    /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>::field_80`, at +0x80 on 1.7.104.
+    #[inline]
+    pub fn field_80(&self) -> u64 { unsafe { Self::__member_field_80(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_80(&mut self, value: u64) { unsafe { Self::__member_field_80(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_80_ptr(&self) -> *mut u64 { Self::__member_field_80(core::ptr::from_ref(self)) }
 }
 
