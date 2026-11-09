@@ -7,7 +7,9 @@
 //!
 //! [`install`] redirects `RenderFrame`'s call to `PresentFrame` (the frame pass: the frame's
 //! present on the main thread, after the world, the menus and the screenshot; the loading screen
-//! and the Bink loop present through other callers and are left alone) and, once the input
+//! and the Bink loop present through other callers and are left alone; when another plugin has
+//! already patched that call, it detours `PresentFrame`'s entry and draws only while `RenderFrame`
+//! runs on the calling thread) and, once the input
 //! manager exists, puts a sink at the front of the input source. The toggle key (F11) opens and
 //! closes the overlay and the close key (Escape) closes it once no widget has the focus; neither
 //! key's press nor its release reaches the game while the overlay uses it. While the overlay is
@@ -26,6 +28,7 @@
 //! plugin's, in its own DLL) and handed over as [`Painted`] meshes: the guest over the windows, in a
 //! rect the windows leave for it, with the pointer and keyboard events routed to it.
 
+use std::cell::Cell;
 use std::fmt;
 use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::{Mutex, OnceLock};
@@ -54,11 +57,27 @@ pub use input::{Capture, DEFAULT_CLOSE, DEFAULT_TOGGLE, GameMouse, GamePad, Hotk
 /// How far into `RenderFrame` its one call to `PresentFrame` is looked for (it sits at +0x601).
 const RENDER_FRAME_LEN: usize = 0x800;
 
+/// Where [`install`] put the overlay.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Placement {
+    /// On `RenderFrame`'s `call rel32` to `PresentFrame`.
+    RenderFrameCall,
+    /// On `PresentFrame`'s entry, because another plugin had already patched `RenderFrame`'s call.
+    PresentEntry,
+}
+
+impl fmt::Display for Placement {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.write_str(match self {
+            Self::RenderFrameCall => "on RenderFrame's call to PresentFrame",
+            Self::PresentEntry => "on PresentFrame's entry, RenderFrame's call to it is patched by another plugin",
+        })
+    }
+}
+
 #[derive(Debug)]
 pub enum Error {
     Hook(hook::Error),
-    /// `RenderFrame` holds no `call rel32` to `PresentFrame`.
-    NoPresentCall,
     /// Neither the game's font nor `segoeui.ttf` or `consola.ttf` from the Windows font folder could be read.
     NoFont,
     AlreadyInstalled,
@@ -68,7 +87,6 @@ impl fmt::Display for Error {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             Self::Hook(e) => e.fmt(f),
-            Self::NoPresentCall => f.write_str("no call to PresentFrame found in RenderFrame"),
             Self::NoFont => f.write_str("no system font to draw text with"),
             Self::AlreadyInstalled => f.write_str("the overlay is already installed"),
         }
@@ -96,7 +114,15 @@ struct State {
     claim: Option<input::Claim>,
 }
 
-static SITE: OnceLock<hook::CallSite<PresentFn>> = OnceLock::new();
+/// `RenderFrame` forwarded with all four argument registers: its untiered signature has four.
+type RenderFrameFn = unsafe extern "C" fn(usize, usize, usize, usize);
+
+static PRESENT: OnceLock<PresentFn> = OnceLock::new();
+/// Set only when the overlay sits on `PresentFrame`'s entry.
+static RENDER_FRAME: OnceLock<RenderFrameFn> = OnceLock::new();
+thread_local! {
+    static IN_RENDER_FRAME: Cell<bool> = const { Cell::new(false) };
+}
 static STATE: Mutex<Option<State>> = Mutex::new(None);
 static WINDOWS: Mutex<Vec<Window>> = Mutex::new(Vec::new());
 static OPEN: AtomicBool = AtomicBool::new(false);
@@ -112,19 +138,30 @@ static KEYBOARD_FOCUS: AtomicBool = AtomicBool::new(false);
 
 /// Installs the overlay. Call it once from `SKSEPlugin_Load`, after `skyrim::init`, before the
 /// first frame is drawn: the call site is patched in place.
-pub fn install() -> Result<(), Error> {
+pub fn install() -> Result<Placement, Error> {
     let ctx = themed_context(font_definitions().ok_or(Error::NoFont)?.clone());
     let reloc = skyrim::reloc();
     let render_frame = reloc.address(sre::id!(fns::RenderFrame))?;
     let present = reloc.address(sre::id!(fns::PresentFrame))?;
-    let site = hook::find_call(render_frame, RENDER_FRAME_LEN, present).ok_or(Error::NoPresentCall)?;
     let mut state = STATE.lock().unwrap();
     if state.is_some() {
         return Err(Error::AlreadyInstalled);
     }
     *state = Some(State { ctx, painter: None, start: Instant::now(), cursor: None, router: input::Router::default(), claim: None });
-    let _ = SITE.set(unsafe { hook::CallSite::install(site, present_detour as PresentFn) }?);
-    Ok(())
+    drop(state);
+    if let Some(site) = hook::find_call(render_frame, RENDER_FRAME_LEN, present) {
+        let site = unsafe { hook::CallSite::create(site, present_detour as PresentFn) }?;
+        let _ = PRESENT.set(site.original());
+        unsafe { site.enable() }?;
+        return Ok(Placement::RenderFrameCall);
+    }
+    let frame = unsafe { hook::Hook::create(render_frame, render_frame_detour as RenderFrameFn) }?;
+    let entry = unsafe { hook::Hook::create(present, present_detour as PresentFn) }?;
+    let _ = RENDER_FRAME.set(frame.original());
+    let _ = PRESENT.set(entry.original());
+    entry.enable()?;
+    frame.enable()?;
+    Ok(Placement::PresentEntry)
 }
 
 /// Adds a window: `draw` runs on the main thread every frame the overlay is open, with the
@@ -254,7 +291,20 @@ pub fn captures_input() -> bool {
     input::installed()
 }
 
+unsafe extern "C" fn render_frame_detour(a: usize, b: usize, c: usize, d: usize) {
+    IN_RENDER_FRAME.set(true);
+    unsafe { RENDER_FRAME.get().expect("stored before the hook was enabled")(a, b, c, d) };
+    IN_RENDER_FRAME.set(false);
+}
+
 unsafe extern "C" fn present_detour() {
+    if RENDER_FRAME.get().is_none() || IN_RENDER_FRAME.get() {
+        before_present();
+    }
+    unsafe { PRESENT.get().expect("stored before the hook was enabled")() }
+}
+
+fn before_present() {
     input::ensure_sink();
     input::begin_frame();
     if let Some(frame) = FRAME.get() {
@@ -270,7 +320,6 @@ unsafe extern "C" fn present_detour() {
             }
         }
     }
-    unsafe { SITE.get().expect("stored before the call site was patched").original()() }
 }
 
 #[allow(clippy::cast_precision_loss)]

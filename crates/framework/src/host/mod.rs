@@ -245,7 +245,7 @@ pub fn load(skse: &skse::Interface) -> bool {
     open_settings(NAME, &dir);
     keys::declare_host();
     match overlay::install() {
-        Ok(()) => log!("overlay installed, toggled with {}, closed with {}", keys::show(keys::key(keys::TOGGLE)), keys::show(keys::key(keys::CLOSE))),
+        Ok(placement) => log!("overlay installed {placement}, toggled with {}, closed with {}", keys::show(keys::key(keys::TOGGLE)), keys::show(keys::key(keys::CLOSE))),
         Err(e) => log!("overlay: {e}"),
     }
     log!("overlay font: {}", overlay::font_source());
