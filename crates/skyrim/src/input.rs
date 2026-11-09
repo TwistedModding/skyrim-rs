@@ -190,16 +190,44 @@ pub fn player_input_handlers() -> &'static [*mut c_void] {
     unsafe { core::slice::from_raw_parts(handlers.data.cast::<*mut c_void>(), handlers.size as usize) }
 }
 
-/// Prints one line to the console (`ConsoleLog::Print`); call it from the game's threads, as the
-/// engine's commands do.
+/// The most bytes one console line holds: `ConsoleLog::VPrint` (0x90f1e0) formats with no bound
+/// into a 0x407-byte buffer at log+1, and the history string's data pointer follows at log+0x408,
+/// so a longer line overwrites that pointer and the next append faults (RE request IK1, 2026-11-09).
+pub const CONSOLE_LINE: usize = 1030;
+
+/// Prints text to the console (`ConsoleLog::Print`), one call per line and per [`CONSOLE_LINE`]
+/// bytes of a longer line; call it from the game's threads, as the engine's commands do.
 pub fn print(text: &str) {
     let log = unsafe { *sre::g_console_log() };
     if log.is_null() {
         return;
     }
-    let text = std::ffi::CString::new(text.replace('\0', "")).expect("no interior nul left");
     let print: PrintFn = unsafe { crate::engine_fn(sre::id!(fns::ConsoleLog__Print)) };
-    unsafe { print(log, c"%s".as_ptr(), text.as_ptr()) }
+    for piece in console_pieces(text) {
+        let piece = std::ffi::CString::new(piece).expect("nul removed");
+        unsafe { print(log, c"%s".as_ptr(), piece.as_ptr()) }
+    }
+}
+
+/// `text` without NULs, split at its line breaks and at [`CONSOLE_LINE`] bytes on a char boundary.
+fn console_pieces(text: &str) -> Vec<String> {
+    let mut pieces = Vec::new();
+    for line in text.replace('\0', "").lines() {
+        let mut rest = line;
+        loop {
+            let mut cut = rest.len().min(CONSOLE_LINE);
+            while !rest.is_char_boundary(cut) {
+                cut -= 1;
+            }
+            let (head, tail) = rest.split_at(cut);
+            pieces.push(head.to_owned());
+            if tail.is_empty() {
+                break;
+            }
+            rest = tail;
+        }
+    }
+    pieces
 }
 
 /// One parameter of a console command, laid out as the engine's `ParamInfo`, because a `static` of
@@ -577,6 +605,18 @@ mod tests {
 
     unsafe extern "C" fn own(_: *const sre::ParamInfo, _: *const c_void, _: *mut c_void, _: *mut c_void, _: *mut c_void, _: *mut c_void, _: *mut f64, _: *mut u32) -> bool {
         true
+    }
+
+    #[test]
+    fn console_text_goes_out_a_line_at_a_time_within_the_line_buffer() {
+        assert_eq!(console_pieces("one\ntwo\0"), ["one", "two"]);
+        assert_eq!(console_pieces(""), Vec::<String>::new());
+        let long = "x".repeat(CONSOLE_LINE * 2 + 5);
+        assert_eq!(console_pieces(&long).iter().map(String::len).collect::<Vec<_>>(), [CONSOLE_LINE, CONSOLE_LINE, 5]);
+        let wide = "\u{e9}".repeat(CONSOLE_LINE);
+        let pieces = console_pieces(&wide);
+        assert!(pieces.iter().all(|p| p.len() <= CONSOLE_LINE));
+        assert_eq!(pieces.concat(), wide);
     }
 
     #[test]
